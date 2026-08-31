@@ -1,0 +1,1068 @@
+\specialchapter{WARNING}
+
+This new printing of the fascicule of results on manifolds reproduces without change the works published previously (fascicules XXXIII and XXXXI), regrouping them into a single volume.
+
+Nancago, autumn 1982
+
+N. BOURBAKI
+
+\part{Paragraphs 1 to 7 (97 pages)}
+
+\specialchapter{INTRODUCTION}
+
+This fascicule brings together the fundamental notions and the principal results of the theory of differentiable manifolds (over the field of real numbers) and of analytic manifolds (over a complete non-discrete valued field). It contains no proofs.
+
+The definitions and results of the first six books are assumed to be known.
+
+\specialchapter{NOTATIONS AND CONVENTIONS (paragraphs 1 to 7)}
+
+\specialsection{Base field}
+
+Throughout this fascicule, the letter K denotes either the valued field R of real numbers, or the valued field C of complex numbers, or a complete commutative non-discrete valued field with ultrametric absolute value (Top. Gen., ch. IX, 3rd ed., § 3).
+
+\specialsection{Topological vector spaces}
+
+When K is different from R or C, we shall call a semi-norm (resp. norm) on a vector space F over K an ultra-semi-norm (resp. an ultra-semi-norm which is a norm) on F (Esp. Vect. Top., ch. II, 2nd ed., §1). If γ is a semi-norm on F, and if x ∈ F, one will sometimes write \textbar\textbar x\textbar\textbar γ instead of γ(x).
+
+We shall call a normable space a topological vector space over K whose topology can be defined by a single norm, and a Banach space a complete normable space \(^{1}\) . We shall call a polynormed space a topological vector space over K whose topology can be defined by a family of semi-norms; when K = R or C, this notion coincides with that of a locally convex space.
+
+If E and F are polynormed spaces, we shall denote by \(\mathcal{L}_{m}(\mathrm{E};\mathrm{F})\) the space of continuous \(m\) -linear maps from \(\mathbf{E}^{m}\) into F, equipped with the topology of uniform convergence on the bounded subsets of \(\mathbf{E}^{m}\) ; it is a polynormed space. If moreover E is normed, and if \(\gamma\) is a continuous semi-norm on F, and if \(u\in\mathcal{L}_{m}(\mathrm{E};\mathrm{F})\) , one denotes by \(\|u\|_{\gamma}\) the lower bound of the real numbers \(a\geqslant0\) such that
+
+\[
+\left\| u (x _ {1}, \dots , x _ {m}) \right\| _ {\gamma} \leqslant a \| x _ {1} \| \dots \| x _ {m} \|
+\]
+
+for all \(x_{1}, \ldots, x_{m}\) in E.
+
+\specialsection{Multi-indices}
+
+Let I be a set. For \(\alpha = (\alpha_{i})\) and \(\beta = (\beta_{i})\) belonging to \(\mathbf{N}^{(I)}\) , we set (cf. Alg., ch. III, \(3^{\mathrm{e}}\) ed., beginning of the chapter):
+
+\[
+| \alpha | = \sum_ {i \in I} \alpha_ {i}
+\]
+
+\[
+\alpha ! = \prod_ {i \in I} \alpha_ {i}!
+\]
+
+\[
+\alpha + \beta = (\alpha_ {i} + \beta_ {i}) _ {i \in I}
+\]
+
+\[
+((\alpha , \beta)) = \prod_ {i \in I} \frac {(\alpha_ {i} + \beta_ {i}) !}{\alpha_ {i} ! \beta_ {i} !}.
+\]
+
+We set \(\alpha \leqslant \beta\) when \(\alpha_{i} \leqslant \beta_{i}\) for all \(i \in I\) , which is equivalent to the existence of \(\gamma \in \mathbf{N}^{(I)}\) such that \(\beta = \alpha + \gamma\) ; this element \(\gamma\) is then unique, and is denoted \(\beta - \alpha\) .
+
+If \(\mathbf{x} = (x_i)_{i \in I}\) is a family of elements commuting pairwise in a ring A possessing an identity element 1, we set:
+
+\[
+\mathbf {x} ^ {\alpha} = \prod_ {i \in \mathbf {I}} x _ {i} ^ {\alpha_ {i}} \quad (\text { with   the   convention   that } x ^ {0} = 1).
+\]
+
+One has \(\mathbf{x}^{\alpha +\beta} = \mathbf{x}^{\alpha}\cdot \mathbf{x}^{\beta}\)
+
+For \(i\in I\) , one denotes by \(\varepsilon_{i}\) the element of \(\mathbf{N}^{(I)}\) all of whose coordinates are zero, except for that of index \(i\) which is equal to 1. We have \(\alpha=\sum_{i\in I}\alpha_{i}\varepsilon_{i}\) for every element \(\alpha=(\alpha_{i})\) of \(\mathbf{N}^{(I)}\) .
+
+\specialsection{Restriction of a map}
+
+If \(f\) is a map from a set \(A\) into a set \(B\) and if \(C\) is a subset of \(A\) , one denotes by \(f|C\) the restriction of \(f\) to \(C\) .
+
+\specialsection{The elements ∞ and ω}
+
+We adjoin to the set of integers two elements denoted ∞ and ω. The order relation between integers is extended by the convention
+
+\[
+n <   \infty <   \omega \quad \text { for   every   integer } n.
+\]
+
+We set:
+
+\[
+\infty + n = n + \infty = \infty \quad \text { and } \quad \omega + n = n + \omega = \omega , \quad n \in \mathbf {Z}.
+\]
+
+The letter \(r\) denotes either an integer \(\geqslant 1\) , or one of the elements \(\infty\) or \(\omega\) . When \(K \neq R\) , the letter \(r\) always denotes the element \(\omega\) . When \(r = \infty\) (resp. \(r = \omega\) ), we set \(r - k = r\) for every integer \(k \geqslant 1\) .
+
+\section{Differentiable functions}
+
+In this section, the letter E denotes a normable topological vector space over K; the letter F denotes a separated polynormed space over K.
+
+\subsection{Order of contact of two functions at a point}
+
+1.1.1. Let X be a topological space and \(\theta\) a positive numerical function defined in a neighborhood of a point \(x_0\) of X. A function \(f\) , defined in a neighborhood of \(x_0\) and taking values in F, is said to be negligible with respect to \(\theta\) at \(x_0\) if the following condition is satisfied:
+
+For every \(\varepsilon > 0\) and for every continuous seminorm \(\gamma\) on \(F\) , there exists a neighborhood \(V\) of \(x_0\) on which \(f\) and \(\theta\) are defined and such that
+
+\[
+\| f (x) \| _ {\gamma} \leqslant \varepsilon \theta (x) \quad \text { for   every } x \in \mathbf {V}.
+\]
+
+For \(f\) to be negligible with respect to \(\theta\) , it suffices that this condition be satisfied for a family of seminorms \(\gamma\) defining the topology of F. The fact that \(f\) is negligible or not with respect to \(\theta\) at \(x_{0}\) depends only on the germs of \(f\) and of \(\theta\) at \(x_{0}\) . One denotes by \(o_{x_{0}}(\theta)\) (or \(o(\theta)\) when there is no ambiguity about \(x_{0}\) ) the set of germs at \(x_{0}\) of functions negligible with respect to \(\theta\) at \(x_{0}\) : it is a vector subspace of the space of germs at \(x_{0}\) of mappings with values in F. If \(f\) is negligible with respect to \(\theta\) , we shall write, by abuse of notation, \(f \in o_{x_{0}}(\theta)\) or also \(f(x) \in o(\theta(x))\) when \(x\) tends to \(x_{0}\) .
+
+If \(f\) and \(g\) are two mappings from a neighborhood of \(x_{0}\) to \(F\) , we shall also write \(f \equiv g \mod o(\theta)\) if \(f - g\) is negligible with respect to \(\theta\) .
+
+Suppose that K is equal to R or C and that \(x_{0}\) is adherent to the set Y of points of X where \(\theta\) is defined and nonzero. The relation \(f \in o(\theta)\) then means that \(f(x)/\theta(x)\) tends to 0 as x tends to \(x_{0}\) while remaining in Y, and that \(\theta(x) = 0\) implies \(f(x) = 0\) .
+
+1.1.2. Let \(f\) and \(g\) be two functions with values in \(F\) , defined in a neighborhood of a point \(x_0\) of \(E\) . If \(m\) is a positive integer, we say that \(f\) and \(g\) have contact of order \(\geqslant m\) at \(x_0\) if we have:
+
+\[
+f (x) - g (x) \in o (\| x - x _ {0} \| ^ {m}) \quad \text { for } x \text { tending   toward } x _ {0}
+\]
+
+whatever norm is chosen to define the topology of E. For this, it suffices that the preceding relation be verified for one norm defining the topology of E. If this is so, we have \(f(x_0) = g(x_0)\) .
+
+If \(f\) and \(g\) take the same value at \(x_{0}\) , we call the order of contact of \(f\) and \(g\) at \(x_{0}\) the upper bound (finite or equal to \(+\infty\) ) of the integers \(m\) such that \(f\) and \(g\) have contact of order \(\geqslant m\) at \(x_{0}\) .
+
+1.1.3. The order of contact of \(f\) and \(g\) at \(x_{0}\) depends only on the germs of these functions at the point \(x_{0}\) . One can therefore speak of the order of contact of two germs \(\varphi\) and \(\psi\) of maps from E to F at the point \(x_{0}\) . The relation \(\langle\varphi\) and \(\psi\) have contact of order \(\geqslant m\rangle\) is an equivalence relation compatible with the vector structure.
+
+\subsection{Differentiable functions at a point}
+
+1.2.1. Let \(f\) be a function defined in a neighborhood of the point \(x_{0}\) of E and with values in F. We say that \(f\) is differentiable at \(x_{0}\) if there exists a continuous affine function \(v\) from E into F having at \(x_{0}\) a contact of order \(\geqslant 1\) with \(f\) . This mapping \(v\) is unique; there exists one and only one continuous linear mapping, denoted \(Df(x_{0})\) , from E into F such that:
+
+\[
+v (x) = v \left(x _ {0}\right) + D f \left(x _ {0}\right). \left(x - x _ {0}\right).
+\]
+
+If one chooses a norm on E, this is equivalent to:
+
+\(f(x_0 + h) \equiv f(x_0) + Df(x_0).h \mod o(\|h\|)\) for \(h\) tending toward 0,
+
+which can also be written in the form:
+
+\[
+\lim _ {h \rightarrow 0, h \neq 0} \frac {\| f (x _ {0} + h) - f (x _ {0}) - D f (x _ {0}) . h \| _ {\gamma}}{\| h \|} = 0
+\]
+
+for every continuous seminorm γ on F.
+
+The element \(Df(x_{0})\) of \(\mathcal{L}(\mathrm{E},\mathrm{F})\) is called the derivative of f at \(x_{0}\) . One sometimes writes \(D_{h}f(x_{0})\) for \(Df(x_{0}).h\) . It is an element of F defined by the relation:
+
+\[
+\mathrm{D} _ {h} f (x _ {0}) = \lim _ {t \rightarrow 0, t \neq 0} \frac {f (x _ {0} + t h) - f (x _ {0})}{t}.
+\]
+
+1.2.2. We say that a function \(f\) is strictly differentiable at \(x_{0}\) if it is differentiable at \(x_{0}\) and if, for every norm defining the topology of E, one has the relation:
+
+\[
+f (y) - f (z) \equiv D f (x _ {0}). (y - z) \quad \text {   mod   } o (\| y - z \|)
+\]
+
+for \((y, z)\) tending toward \((x_0, x_0)\) in \(E \times E\) . For this, it suffices that this condition be satisfied for one norm defining the topology of \(E\) . Suppose moreover \(E\) and \(F\) normed; for every number \(c > \|Df(x_0)\|\) there then exists a neighborhood V of \(x_{0}\) such that \(\|f(y)-f(z)\|\leqslant c.\|y-z\|\) for y, z in V; this implies that f is uniformly continuous in V.
+
+1.2.3. The property of a function \(f\) being differentiable or strictly differentiable at \(x_{0}\) depends only on the germ of \(f\) at \(x_{0}\) . The germs of differentiable functions at \(x_{0}\) form a vector subspace \(\mathcal{V}\) of the space of all germs and the mapping \(f\mapsto\mathrm{D}f(x_{0})\) of \(\mathcal{V}\) to \(\mathcal{L}(\mathrm{E};\mathrm{F})\) is linear. The germs of functions strictly differentiable at \(x_{0}\) form a vector subspace of \(\mathcal{V}\) .
+
+1.2.4. A function differentiable at \(x_0\) is continuous at \(x_0\) .
+
+1.2.5. When E = K, the map \(u \mapsto u(1)\) is an isomorphism of \(\mathcal{L}(\mathbf{E}; \mathbf{F})\) onto F; if the function f is differentiable at \(x_{0}\) , the element
+
+\[
+f ^ {\prime} (x _ {0}) = \mathrm{D} f (x _ {0}). 1
+\]
+
+is none other than the derivative of \(f\) at \(x_0\) in the sense given in Fonct. Var. Réelle, chap. I, § 1, n° 6, remark 2.
+
+\subsection{Composition of differentiable functions}
+
+1.3.1. Suppose F is normable. Let \(x_0 \in E\) and \(y_0 \in F\) , let U be a neighborhood of \(x_0\) and V a neighborhood of \(y_0\) ; finally, let \(f\) be a mapping from U into V, differentiable at \(x_0\) , with \(f(x_0) = y_0\) . If \(g\) is a mapping from V into a separated polynormed vector space G, differentiable at \(y_0\) , the map \(g \circ f\) from U into G is differentiable at \(x_0\) , and one has:
+
+\[
+\mathbf {D} (g \circ f) (x _ {0}) = \mathbf {D} g (y _ {0}) \circ \mathbf {D} f (x _ {0}).\tag{1}
+\]
+
+If \(f\) and \(g\) are strictly differentiable, the same holds for \(g \circ f\) .
+
+1.3.2. Let \(f\) be a map defined in a neighborhood of a point \(x_0\) of \(E\) and with values in \(F\) , differentiable at \(x_0\) ; if \(u\) is a continuous linear map from \(F\) into a separated polynormed space \(G\) , the function \(u \circ f\) is differentiable at \(x_0\) and we have:
+
+\[
+\mathrm{D} (u \circ f) (x _ {0}) = u \circ \mathrm{D} f (x _ {0}).\tag{2}
+\]
+
+1.3.3. Suppose that F is the product of a family \((F_{i})_{i\in I}\) of separated polynormed vector spaces; for every i in I, let \(f_{i}\) be a mapping defined in a neighborhood U of a point \(x_{0}\) of E and taking values in F, and let \(f = (f_{i})_{i\in I}\) . For f to be differentiable (resp. strictly differentiable) at \(x_{0}\) , it is necessary and sufficient that all the \(f_{i}\) be so; we have:
+
+\[
+\mathrm{D} _ {h} f (x _ {0}) = (\mathrm{D} _ {h} f _ {i} (x _ {0})) _ {i \in \mathbf {I}} \quad \text { for   every } h \text { in } E.\tag{3}
+\]
+
+1.3.4. If E = K, one may replace \(Df(x_{0})\) by \(f'(x_{0})\) and \(D_{h}f_{i}(x_{0})\) by \(f_{i}'(x_{0})\) in formulas (1) and (3).
+
+\subsection{Product of differentiable functions}
+
+1.4.1. Let \(F_{1}, \ldots, F_{m}\) be separated polynormed spaces and let u be a continuous m-linear mapping of \(F_{1} \times \cdots \times F_{m}\) into F. Let U be a neighborhood of a point \(x_{0}\) of E, and let \(f_{i}\) be a mapping of U into \(F_{i}\) (for \(1 \leqslant i \leqslant m\) ). If the \(f_{i}\) are differentiable (resp. strictly differentiable) at \(x_{0}\) , then so is \(u(f_{1}, \ldots, f_{m}) = g\) and we have:
+
+\[
+\mathrm{D} _ {h} g (x _ {0}) = \sum_ {j = 1} ^ {m} u (f _ {1} (x _ {0}), \dots , \mathrm{D} _ {h} f _ {j} (x _ {0}), \dots , f _ {m} (x _ {0})) \quad \text { for } h \text { in } E, \tag {4}
+\]
+
+which will be written more succinctly as:
+
+\[
+\mathrm{D} g = \sum_ {j = 1} ^ {m} u (f _ {1}, \dots , \mathrm{D} f _ {j}, \dots , f _ {m}).\tag{5}
+\]
+
+In particular, for \(m = 2\) , we have:
+
+\[
+\mathrm{D} u (f _ {1}, f _ {2}) = u (\mathrm{D} f _ {1}, f _ {2}) + u (f _ {1}, \mathrm{D} f _ {2}).\tag{6}
+\]
+
+For \(m = 1\) , we recover 1.3.2.
+
+1.4.2. When E = K, one may replace Dg by \(g'\) and \(Df_{j}\) by \(f_{j}'\) in formulas (4) to (6).
+
+\subsection{First variants of the implicit function theorem}
+
+Suppose that E and F are Banach spaces and let \(x_{0}\) be a point of E, let U be a neighborhood of \(x_{0}\), and let f be a mapping from U into F. Suppose further that f is strictly differentiable at \(x_{0}\) .
+
+If \(Df(x_0)\) is an isomorphism from E onto F, there exists an open neighborhood \(U_0\) of \(x_0\) contained in U and an open neighborhood \(V_0\) of \(f(x_0)\) such that \(f|U_0\) is a homeomorphism of \(U_0\) onto \(V_0\) . The map \(g: V_0 \to U_0\) inverse to \(f|U_0\) is strictly differentiable at the point \(f(x_0)\) and we have:
+
+\[
+\mathrm{Dg} (f (x _ {0})) = \mathrm{Df} (x _ {0}) ^ {- 1}.
+\]
+
+1.5.2. If \(Df(x_{0})\) is a surjective map from E onto F, there exists an open neighborhood \(U_{0}\) of \(x_{0}\) contained in U, such that \(f|U_{0}\) is an open mapping.
+
+1.5.3. If \(Df(x_{0})\) is injective and has closed image, there exists a closed neighborhood \(U_{0}\) of \(x_{0}\) contained in U, such that \(f|U_{0}\) is a homeomorphism of \(U_{0}\) onto a closed subset of F.
+
+\subsection{Partial derivatives}
+
+1.6.1. Let \(f\) be a function defined in a neighborhood \(U\) of the point \(x_0\) of \(E\) and with values in \(F\) . Let \(X\) be a vector subspace of \(E\) and \(V\) the set of points \(x\) of \(X\) such that \(x_0 + x \in U\) ; set \(g(x) = f(x_0 + x)\) for \(x \in V\) . We say that \(f\) admits a partial derivative with respect to \(X\) at \(x_0\) if \(g\) admits a derivative at 0; this derivative is denoted \(D_X f(x_0)\) ; it is a continuous linear map from \(X\) to \(F\) . If \(f\) is differentiable at \(x_0\) it admits a partial derivative with respect to \(X\) at \(x_0\) and this partial derivative is the restriction of \(Df(x_0)\) to \(X\) .
+
+1.6.2. Suppose that \(E\) is the product of a finite family of normed vector spaces \(E_{i}\) ( \(1 \leqslant i \leqslant n\) ) canonically identified with subspaces of \(E\); let \(x_{0} = (x_{0}^{1}, \ldots, x_{0}^{n})\) be in \(E\) and let \(U\) be a neighborhood of \(x_{0}\) in \(E\); finally let \(f\) be a mapping from \(U\) into \(F\). We denote by \(D_{i}f(x_{0})\) the derivative at the point \(x_{0}^{i}\) , if it exists, of the mapping \(z_{i} \mapsto f(x_{0}^{1}, \ldots, z_{i}, \ldots, x_{0}^{n})\) defined in a neighborhood of \(x_{0}^{i}\) in \(E_{i}\) and taking values in \(F\). This is an element of \(\mathcal{L}(E_{i}; F)\) which is called the i-th partial derivative of \(f\) at \(x_{0}\) . If \(f\) is differentiable at \(x_{0}\) , the \(n\) partial derivatives exist, and determine \(Df(x_{0})\) by the formula:
+
+\[
+\mathrm{D} f (x _ {0}). h = \sum_ {i = 1} ^ {n} \mathrm{D} _ {i} f (x _ {0}). h _ {i} \quad \text { for } h = (h _ {1}, \dots , h _ {n}) \text { in } E.
+\]
+
+1.6.3. More particularly, let \(E = K^{n}\) . If the partial derivatives of f at \(x_{0}\) exist, we denote \(\partial_{i}f(x_{0})\) the element \(D_{i}f(x_{0}).1\) of F. The following notation is often used; suppose that a notation has been chosen for the coordinate functions on \(K^{n}\) , for example \(u_{i}\) denotes the i-th projection of \(K^{n}\) onto K. One then writes:
+
+\[
+\frac {\partial f}{\partial u _ {i}} \left(x _ {0}\right) \quad \text { or } \quad \left. \frac {\partial f}{\partial u _ {i}} \right| _ {x = x _ {0}}
+\]
+
+instead of \(\partial_{i}f(x_{0})\) .
+
+1.6.4. Let \(E = K^{n}\) and \(F = K^{m}\) ; suppose that the function \(f = (f_{1}, \ldots, f_{m})\) with values in F is differentiable at the point \(x_{0}\) of E. The partial derivatives \(a_{ji} = \partial_{i} f_{j}(x_{0})\) then exist (they are elements of K). The matrix with m rows and n columns formed by the \(a_{ji}\) (element in the row of index j and the column of index i) is called the Jacobian matrix of f at \(x_{0}\) ; this is the matrix of the linear map \(Df(x_{0})\) of \(K^{n}\) to \(K^{m}\) with respect to the canonical bases of these spaces.
+
+\subsection{Iterated derivatives}
+
+1.7.1. Let \(f\) be a function defined in a neighborhood of a point \(x_{0}\) of E, taking values in F. If \(f\) is differentiable in a neighborhood of \(x_{0}\) , its derivative Df is a mapping from a neighborhood of \(x_{0}\) in the polynormed space \(\mathcal{L}(\mathrm{E};\mathrm{F})\) of continuous linear mappings from E into F. Let \(p\) be an integer \(\geqslant 2\) :
+
+we say that \(f\) is \(p\) times differentiable at \(x_0\) if \(f\) is differentiable in a neighborhood of \(x_0\) and if its derivative \(Df\) is \((p - 1)\) times differentiable at \(x_0\) . We then define the \(p\)-th derivative of \(f\) at \(x_0\); this is the continuous \(p\)-linear map \(D^p f(x_0)\) from \(E^p\) into \(F\) , defined by:
+
+\[
+\mathrm{D} ^ {p} f (x _ {0}). (h _ {1}, \dots , h _ {p}) = (\mathrm{D} (\mathrm{D} ^ {p - 1} f) (x _ {0}). h _ {1}). (h _ {2}, \dots , h _ {p}).
+\]
+
+We also set \(D^{0}f = f\) and \(D^{1}f = Df\) . If \(f\) is \(p\) times differentiable at \(x_{0}\) and if \(q\) and \(s\) are two integers such that \(q + s = p\) , with \(s > 0\), then \(f\) is \(q\) times differentiable in a neighborhood of \(x_{0}\) , the function \(D^{q}f\) (with values in \(\mathcal{L}_{q}(E; F)\) ) is \(s\) times differentiable at \(x_{0}\) , and we have:
+
+\[
+\mathrm{D} ^ {q + s} f (x _ {0}). (h _ {1}, \dots , h _ {q + s}) = (\mathrm{D} ^ {s} (\mathrm{D} ^ {q} f) (x _ {0}). (h _ {1}, \dots , h _ {s})) \cdot (h _ {s + 1}, \dots , h _ {q + s})
+\]
+
+a relation which, by abuse of notation, is written in the form:
+
+\[
+\mathbf {D} ^ {q + s} f = \mathbf {D} ^ {s} \mathbf {D} ^ {q} f.
+\]
+
+1.7.2. Let \((\mathbf{E}_{i})_{1\leqslant i\leqslant n}\) be closed vector subspaces of E, such that E is the topological direct sum of the \(E_{i}\) . One then defines, when it exists, the iterated partial derivative \(D_{i_{1}}\ldots D_{i_{m}}f\) of a map f from a neighborhood of \(x_{0}\in E\) into F; it is a continuous multilinear map from
+
+\[
+\mathbf {E} _ {i _ {1}} \times \dots \times \mathbf {E} _ {i _ {m}}
+\]
+
+into F, defined by induction on the integer \(m \geqslant 1\) as follows: if \(D_{i_{2}} \ldots D_{i_{m}} f(x)\) exists in a neighborhood of \(x_{0}\) and has a partial derivative with respect to \(E_{i_{1}}\) , then \(D_{i_{1}} \ldots D_{i_{m}} f(x_{0})\) is given by:
+
+\[
+\mathrm{D} _ {i _ {1}} \dots \mathrm{D} _ {i _ {m}} f (x _ {0}). (h _ {1}, \dots , h _ {m}) = (\mathrm{D} _ {i _ {1}} (\mathrm{D} _ {i _ {2}} \dots \mathrm{D} _ {i _ {m}} f) (x _ {0}). h _ {1}). (h _ {2}, \dots , h _ {m})
+\]
+
+for \(h_{k} \in E_{i_{k}}\) .
+
+If \(f\) is \(m\) times differentiable at \(x_{0}\) , then the partial derivative \(\mathbf{D}_{i_{1}}\ldots\mathbf{D}_{i_{m}}f(x_{0})\) exists and is equal to the restriction of \(\mathbf{D}^{m}f(x_{0})\) to the subspace \(\mathbf{E}_{i_{1}}\times\cdots\times\mathbf{E}_{i_{m}}\) of \(\mathbf{E}^{m}\) . Consequently, \(\mathbf{D}^{m}f(x_{0})\) is completely determined by the iterated partial derivatives of order \(m\) at \(x_{0}\) .
+
+1.7.3. Suppose that E is finite-dimensional and let \((e_{1},\ldots,e_{n})\) be a basis of E. Set \(E_{i}=Ke_{i}\) and let f be a map from a neighborhood of \(x_{0}\) into F. If the partial derivative \(D_{i_{1}}\ldots D_{i_{m}}f(x_{0})\) (with the notations of 1.7.2) exists, one sets:
+
+\[
+\partial_ {i _ {1}} \dots \partial_ {i _ {m}} f (x _ {0}) = \mathbf {D} _ {i _ {1}} \dots \mathbf {D} _ {i _ {m}} f (x _ {0}). (e _ {i _ {1}}, \dots , e _ {i _ {m}}).
+\]
+
+\section{Real differentiable functions}
+
+In this section, one assumes that K = R. The letter E denotes a normed vector space over R; the letter F denotes a separated locally convex topological vector space over R.
+
+\subsection{Differentiable functions at a point}
+
+2.1.1. Let \(f\) be a function defined in a neighborhood of a point \(x_{0}\) of E and with values in F. Let \(u\) be an element of the space \(\mathcal{L}(\mathrm{E};\mathrm{F})\) of continuous linear maps from E into F. For \(f\) to be differentiable at \(x_{0}\) and to admit \(u\) as derivative there, it is necessary and sufficient that one have
+
+\[
+\lim _ {h \rightarrow 0, h \neq 0} \frac {f (x _ {0} + h) - f (x _ {0}) - u (h)}{\| h \|} = 0.
+\]
+
+2.1.2. For \(f\) to be strictly differentiable at \(x_{0}\) , it is necessary and sufficient that one have
+
+\[
+\lim_{\substack{(h,k)\to (0,0)\\ h\neq k}}\frac{f(x_{0} + h) - f(x_{0} + k) - \mathrm{D}f(x_{0})\cdot(h - k)}{\|h - k\|} = 0.
+\]
+
+2.1.3. Let \(F_{1}\) and \(F_{2}\) be two separated locally convex spaces and let u be a bilinear map from \(F_{1} \times F_{2}\) into F, satisfying the following continuity condition:
+
+(SC) If \(((a_{n}, b_{n}))\) is a sequence of elements of \(F_{1} \times F_{2}\) converging to an element \((a, b) \in \mathbf{F}_{1} \times \mathbf{F}_{2}\) , then the sequence \((u(a_{n}, b_{n}))\) converges to \(u(a, b)\) in F.
+
+Let \(f_{i}\) (for \(i = 1, 2\) ) be a map from a neighborhood of a point \(x_{0}\) in E into \(F_{i}\) . If \(f_{1}\) and \(f_{2}\) are differentiable at \(x_{0}\) , then \(u(f_{1}, f_{2})\) is differentiable at \(x_{0}\) and we have:
+
+\[
+\mathbf {D} (u (f _ {1}, f _ {2})) (x _ {0}). h = u (\mathbf {D} f _ {1} (x _ {0}). h, f _ {2} (x _ {0})) + u (f _ {1} (x _ {0}), \mathbf {D} f _ {2} (x _ {0}). h)
+\]
+
+for all \(h \in E\) .
+
+\subsection{The mean value theorem}
+
+2.2.1. Let \(x,y\) be in \(E\), and let \([x,y]\) be the closed segment joining these two points. Let moreover \(f\) be a map from a neighborhood of \([x,y]\) into the space \(F\), differentiable at every point of \([x,y]\). Then \(f(x)-f(y)\) belongs to the closed convex hull of the set of points \(Df(z).(x-y)\) for \(z\) in \([x,y]\).
+
+2.2.2. Let U be a connected open subset of E, and let f be a map from U into
+F, admitting a zero derivative at every point of U; then f is constant on U.
+
+2.2.3. Let U be a convex open subset of E, and f a map from U into F, differentiable at every point of U. Given a continuous seminorm γ on F and a real number M ≥ 0, the following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  For every \(x\) in \(\mathbf{U}\) , one has \(\| Df(x)\|_{\gamma}\leqslant M\) .
+\item
+  For every \(x\) and every \(y\) in \(U\) , one has \(\| f(x) - f(y)\|_{\gamma} \leqslant M . \| x - y\| \) .
+\end{enumerate}
+
+2.2.4. Let U be a neighborhood of a point \(x_0\) of E and let \(f\) be a function defined in the complement of \(x_0\) in U, with values in F. Suppose that \(f\) has a derivative \(Df(x)\) at every point \(x\) of U, \(x \neq x_0\) and that the function \(x \mapsto Df(x)\) has a limit \(D_0\) as \(x\) tends to \(x_0\) . Then, if dim (E) \(\geqslant 2\) , \(f\) has a limit at \(x_0\) and the function \(f\) extended by continuity to all of U is differentiable with derivative \(D_0\) at \(x_0\) ; the same holds if dim (E) = 1 and one supposes that \(f\) has a limit at \(x_0\) .
+
+\subsection{\texorpdfstring{Functions of class \(C^{r}\) ( \(r \neq \omega\) )}{Functions of class C\^{}\{r\} (r ≠ ω)}}
+
+2.3.1. Let U be an open subset of E and f a mapping from U into F. One defines the relation “f is of class \(C^{r}\) ” (for \(r \in N\) ) by induction on r in the following manner:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  \(f\) is of class \(\mathbf{C}^{0}\) if and only if it is continuous;
+\item
+  if \(r\) is an integer \(\geqslant 1\) , the function \(f\) is of class \(\mathbf{C}^{r}\) if and only if it is differentiable at every point of \(\mathbf{U}\) and if the derivative \(Df\) from \(\mathbf{U}\) to \(\mathcal{L}(\mathbf{E};\mathbf{F})\) is of class \(\mathbf{C}^{r-1}\) .
+\end{enumerate}
+
+The functions of class C \(^{r}\) are also called r times continuously differentiable functions.
+
+One says that \(f\) is of class \(\mathbf{C}^{\infty}\) (or infinitely differentiable) if it is of class \(\mathbf{C}^{r}\) for every integer \(r\) .
+
+If \(f\) is of class \(\mathbf{C}^{r}\) in \(\mathbf{U}\) , then \(f\) is \(p\) times differentiable for every integer \(p \leqslant r\) and the function \(\mathbf{D}^{p}f\) is of class \(\mathbf{C}^{r-p}\) .
+
+2.3.2. The mappings of class \(C^{r}\) from an open subset U of E into F form a vector subspace \(\mathcal{C}^{r}(U;F)\) of the space of all mappings from U into F. One has \(\mathcal{C}^{s}(U;F)\subset\mathcal{C}^{r}(U;F)\) for \(s\geqslant r\) .
+
+2.3.3. For a function \(f\) to be of class \(\mathbf{C}^{1}\) in an open subset U of E, it is necessary and sufficient that it be strictly differentiable at every point of U.
+
+If E is a product of normed spaces \(E_{i}\), a map \(f\) from an open set V of E into F is of class \(C^{r}\) if and only if \(f\) possesses iterated partial derivatives \(D_{i_{1}}\ldots D_{i_{m}}f\) continuous for every integer \(m \leqslant r\) .
+
+2.3.4. Let G be a normed space and let U be an open subset of E. Let V be an open subset of G, \(g \in \mathcal{C}^{r}(U; G)\) and \(f \in \mathcal{C}^{r}(V; F)\) . If \(g(U) \subset V\) , the map \(f \circ g\) of U into F is of class \(C^{r}\) .
+
+Let \(\mathbf{F}_1\) and \(\mathbf{F}_2\) be two separated locally convex spaces and let \(u\) be a bilinear mapping from \(\mathbf{F}_1 \times \mathbf{F}_2\) to \(\mathbf{F}\) , hypocontinuous with respect to the set of bounded subsets of \(\mathbf{F}_1\) (resp. \(\mathbf{F}_2\) ) (Topological Vector Spaces, ch. III, § 4, no. 2). Let \(\mathbf{U}\) be an open subset of \(\mathbf{E}\) and \(f_i \in \mathcal{C}^r(\mathbf{U};\mathbf{F}_i)\) (for \(i = 1,2\) ). Then the function \(u(f_1,f_2)\) belongs to \(\mathcal{C}^r(\mathbf{U};\mathbf{F})\) . If \(\mathbf{E}\) is finite-dimensional, it suffices to assume that \(u\) satisfies condition (SC) of no. 2.1.3.
+
+2.3.5. If E is a product of normed spaces \(E_{i}\) ( \(1 \leqslant i \leqslant n\) ) and if f is a continuous n-linear mapping from E into F, then f is of class \(C^{\infty}\) and one has \(D^{p}f = 0\) for \(p \geqslant n + 1\) .
+
+2.3.6. Suppose that E and F are Banach spaces. Let f be a function of class \(C^{r}\) (with \(r \geqslant 1\) ) defined in a neighborhood of a point \(x_{0}\) of E and with values in F. Let \(y_{0} = f(x_{0})\) and suppose that \(Df(x_{0})\) is an isomorphism from E onto F. Then f induces a homeomorphism g from a neighborhood of \(x_{0}\) onto a neighborhood of \(y_{0}\) (1.5), and the inverse mapping of g is of class \(C^{r}\) in a neighborhood of \(y_{0}\) .
+
+\subsection{\texorpdfstring{Derivatives of functions of class \(C^{r}\)}{Derivatives of functions of class C\^{}\{r\}}}
+
+2.4.1. Let \(f\) be a map of class \(\mathbf{C}^{r}\) from an open set U of E into F. For every \(x \in \mathbf{U}\) , and every integer \(s\) with \(s \leqslant r\) , the multilinear mapping \(\mathbf{D}^{s}f(x)\) is symmetric.
+
+2.4.2. Suppose moreover that E is finite-dimensional and let \((e_{1},\ldots,e_{n})\) be a basis of E. The partial derivatives \(\partial_{i_{1}}\ldots\partial_{i_{s}}f\) depend symmetrically on the indices \(i_{1},\ldots,i_{s}\) . Let \(\alpha_{k}\) be the number of times the index k occurs in the sequence \(i_{1},\ldots,i_{s}\) and let \(\alpha=(\alpha_{1},\ldots,\alpha_{n})\) . We then set:
+
+\[
+\partial^ {\alpha} f = \partial_ {1} ^ {\alpha_ {1}} \dots \partial_ {n} ^ {\alpha_ {n}} f = \partial_ {i _ {1}} \dots \partial_ {i _ {s}} f
+\]
+
+When the coordinates relative to the basis \((e_{1},\ldots,e_{n})\) are denoted \(x_{1},\ldots,x_{n}\) , one also writes \(\partial^{\alpha}f\) in the form:
+
+\[
+\frac {\partial^ {| \alpha |} f}{\partial x _ {1} ^ {\alpha_ {1}} \dots \partial x _ {n} ^ {\alpha_ {n}}}
+\]
+
+\subsection{Taylor's formula}
+
+2.5.1. Let \(r\) be an integer \(\geqslant 1\) and let \(f\) be a map of class \(C^r\) from an open set U of E into F. For \(x \in U\) , \(h \in E\) and \(p \leqslant r\) , let us agree to write \(D^{p}f(x_0).h^p\) instead of \(D^{p}f(x_0).(h,\ldots,h)\) . If the segment \([x,x + h]\) is contained in U, one has the formula ("Taylor's formula"):
+
+\[
+f (x + h) = \sum_ {p = 0} ^ {r - 1} \frac {1}{p !} \mathbf {D} ^ {p} f (x). h ^ {p} + v _ {r} (x; h)
+\]
+
+where the "remainder" \(v_{r}(x; h)\) is given by:
+
+\[
+v _ {r} (x; h) = \int_ {0} ^ {1} \frac {(1 - t) ^ {r - 1}}{(r - 1) !} \mathrm{D} ^ {r} f (x + t h). h ^ {r} d t
+\]
+
+One has:
+
+\[
+v _ {r} (x; h) \equiv \frac {1}{r !} \mathrm{D} ^ {r} f (x). h ^ {r} \quad \text {   mod   } o (\| h \| ^ {r}) \quad \text {   when   } h \text {   tends   to   } 0
+\]
+
+and
+
+\[
+f (x + h) \equiv \sum_ {p = 0} ^ {r} \frac {1}{p !} \mathrm{D} ^ {p} f (x). h ^ {p} \quad \mod o (\| h \| ^ {r})
+\]
+
+as h tends to zero.
+
+2.5.2. Let moreover \(\gamma\) be a continuous seminorm on \(F\) ; if one has \(\|D^{r}f(z)\|_{\gamma}\leqslant M\) for every point \(z\) of the segment \([x,x + h]\) , then one has:
+
+\[
+\| v _ {r} (x; h) \| _ {\gamma} \leqslant \frac {\mathbf {M}}{r !} \| h \| ^ {r}
+\]
+
+2.5.3. Suppose in addition that \(\mathbf{E} = \mathbf{R}^n\) . One then has:
+
+\[
+f (x + h) \equiv \sum_ {| \alpha | \leqslant r} \Delta^ {\alpha} f (x) h ^ {\alpha} \quad \mod o (\| h \| ^ {r}) \text {   when   } h \text {   tends   to   } 0
+\]
+
+by setting:
+
+\[
+\Delta^ {\alpha} f (x) = \frac {1}{\alpha !} \partial^ {\alpha} f (x)
+\]
+
+2.5.4. Let \(f\) and \(g\) two functions of class \(C^r\) on an open set \(U\) of \(E\) , with values in \(F\) . For \(f\) and \(g\) to have at a point \(x\) of \(U\) a contact of order \(\geqslant r\) , it is necessary and sufficient that one has \(D^p f(x) = D^p g(x)\) for every integer \(p\) with \(0 \leqslant p \leqslant r\) . When \(E\) is of finite dimension, this amounts to saying that the iterated partial derivatives of order \(\leqslant r\) of \(f\) and of \(g\) (with respect to a basis of \(E\) ) are equal at the point \(x\) .
+
+2.5.5. Let U be an open subset of \(E \times R^{n}\) of the form \(V \times I_{1} \times \cdots \times I_{n}\) , where V is an open subset of E and \(I_{1}, \ldots, I_{n}\) open intervals of R containing 0. Set \(U_{0} = V\) and \(U_{j} = V \times I_{1} \times \cdots \times I_{j}\) for \(1 \leqslant j \leqslant n\) . Given a function \(f \in \mathcal{C}^{r}(U; F)\) (with \(1 \leqslant r \leqslant \infty\) ), there exists one and only one sequence of functions \(f_{j}\in\mathcal{C}^{r-1}(\mathbf{U}_{j};\mathbf{F})\) (for \(0\leqslant j\leqslant n\) ) such that:
+
+\[
+f (x, t _ {1}, \dots , t _ {n}) = f _ {0} (x) + \sum_ {j = 1} ^ {n} t _ {j} f _ {j} (x, t _ {1}, \dots , t _ {j})
+\]
+
+for \(x \in V\) and \(t_j \in I_j\) . We have:
+
+\[
+f _ {0} (x) = f (x, 0, \dots , 0)
+\]
+
+\[
+f _ {j} (x, t _ {1}, \dots , t _ {j}) = \int_ {0} ^ {1} \partial_ {j} f (x, t _ {1}, \dots , t _ {j - 1}, t _ {j} u, 0, \dots , 0) d u
+\]
+
+for \(1 \leqslant j \leqslant n\) . In this last formula, \(\partial_j f\) denotes the \(j\) -th partial derivative of the function \((t_1, \ldots, t_n) \mapsto f(x, t_1, \ldots, t_n)\) .
+
+\subsection{Criteria for differentiability}
+
+2.6.1. Suppose that F, in addition to its topology T, is equipped with a coarser topology T', which also makes F a separated locally convex space. Suppose further that T and T' satisfy the following condition:
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  For every neighborhood V of 0 for the topology T, there exists a neighborhood W of 0 for T such that the T'-closed convex hull of every T-compact subset of W is contained in V.
+\end{enumerate}
+
+Let \(f\) be a map from an open subset U of E into F. Suppose that \(f\) is of class \(\mathbf{C}^{r}\) (\(1 \leqslant r \leqslant \infty\)) when F is equipped with the topology \(\mathcal{T}'\), that \(\mathrm{D}^{m}f(x)\) is, for all \(x\) in U and every integer \(m \leqslant r\), a continuous multilinear map from \(\mathrm{E}^{m}\) into F equipped with the topology \(\mathcal{T}\), and that the map \(x \mapsto \mathrm{D}^{m}f(x)\) is continuous from U into \(\mathcal{L}_{m}(\mathrm{E};\mathrm{F})\) (F being equipped with the topology \(\mathcal{T}\)). Then \(f\) is of class \(\mathbf{C}^{r}\) when F is equipped with the topology \(\mathcal{T}\), and its derivatives \(\mathrm{D}^{m}f\) are the same for \(\mathcal{T}\) and \(\mathcal{T}'\) .
+
+Condition (S) is in particular satisfied if there exists a fundamental system of neighborhoods of 0 for the topology T which are closed for the topology T': this is the case if the dual of F equipped with T is identical to the dual of F equipped with T'. Condition (S) is also satisfied if F equipped with the topology T is quasi-complete (Topological Vector Spaces, chap. III, § 2, no. 5).
+
+2.6.2. Let \(f\) be a mapping from an open set \(U\) of \(E\) to \(F\) . If \(f\) is of class \(C^r\) (with \(0 \leqslant r \leqslant \infty\)), the scalar functions \(u \circ f\) are of class \(C^r\) for every continuous linear form \(u\) on F. Conversely, if \(F\) is quasi-complete and if the functions \(u \circ f\) are of class \(C^{r+1}\) for all \(u \in F'\) , then \(f\) is of class \(C^r\) .
+
+\section{Real or complex analytic functions}
+
+In this paragraph, we assume that K = R or C. We denote by \((\mathrm{E}_{i})\) , \(1 \leqslant i \leqslant n\) , a finite family of normed spaces over K, by E the product space of the \(E_{i}\) and by F a separated locally convex topological vector space over K.
+
+\subsection{Convergent series}
+
+3.1.1. Let \(f = \sum f_{\alpha}\) be a formal series belonging to \(\hat{\mathbf{P}}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) (Appendix, no. A.5). If \(\gamma\) is a continuous semi-norm on \(\mathbf{F}\) and \(\mathbf{R} = (\mathbf{R}_1, \ldots, \mathbf{R}_n)\) a sequence of \(n\) strictly positive real numbers, we set:
+
+\[
+\| f \| _ {\gamma , \mathbf {R}} = \sum_ {\alpha} \mathbf {R} ^ {\alpha} \| f _ {\alpha} \| _ {\gamma}.
+\]
+
+If \(F\) is a normed space and if \(\gamma\) is the norm of \(F\) , we write \(\| f \|_{\mathbb{R}}\) instead of \(\| f \|_{\gamma, \mathbb{R}}\) .
+
+The set \(\mathcal{H}_{\mathbb{R}}(\mathbf{E}_{1},\ldots,\mathbf{E}_{n};\mathbf{F})\) of \(f\in\hat{\mathbf{P}}(\mathbf{E}_{1},\ldots,\mathbf{E}_{n};\mathbf{F})\) such that \(\|f\|_{\gamma,\mathbb{R}}\) is finite for every continuous seminorm \(\gamma\) on \(\mathbf{F}\) is a vector subspace of \(\hat{\mathbf{P}}(\mathbf{E}_{1},\ldots,\mathbf{E}_{n};\mathbf{F})\) . One has
+
+\[
+\mathcal {H} _ {\mathbb {R}} (\mathrm{E} _ {1}, \dots , \mathrm{E} _ {n}; \mathrm{F}) \subset \mathcal {H} _ {\mathbb {R} ^ {\prime}} (\mathrm{E} _ {1}, \dots , \mathrm{E} _ {n}; \mathrm{F})
+\]
+
+whenever \(R_{i} \geqslant R_{i}'\) for \(1 \leqslant i \leqslant n\) . The union of the
+
+\[
+\mathcal {H} _ {\mathbf {R}} (\mathrm{E} _ {1}, \dots , \mathrm{E} _ {n}; \mathrm{F})
+\]
+
+is a vector subspace, denoted \(\mathcal{H}(E_{1},\ldots,E_{n};F)\) , of \(\hat{\mathrm{P}}(E_{1},\ldots,E_{n};F)\) , whose elements are called convergent series on the product of the \(E_{i}\) , with values in \(F\) . It depends only on the topology of the \(E_{i}\) and not on their norms. One can therefore speak of the space \(\mathcal{H}(E_{1},\ldots,E_{n};F)\) when the \(E_{i}\) are normable spaces, without having to choose a norm on each \(E_{i}\) .
+
+3.1.2. The map \(f\mapsto\|f\|_{\gamma,\mathbb{R}}\) is a seminorm on \(\mathcal{H}_{\mathbb{R}}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) . The topology defined by these seminorms as \(\gamma\) runs over the set of continuous seminorms on F (or simply a set of seminorms defining the topology of F) is Hausdorff. If F is normable (resp. complete), so is \(\mathcal{H}_{\mathbb{R}}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) . The seminorms on \(\mathcal{H}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) whose restriction to each \(\mathcal{H}_{\mathbb{R}}\) is continuous define a Hausdorff topology on \(\mathcal{H}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) , which depends only on the topologies of the \(\mathrm{E}_{i}\) . The injection of \(\mathcal{H}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) into \(\hat{\mathrm{P}}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) is continuous.
+
+3.1.3. The canonical isomorphism of \(\hat{\mathbf{P}}(\mathbf{E};\mathbf{F})\) onto \(\hat{\mathbf{P}}(\mathbf{E}_{1},\ldots,\mathbf{E}_{n};\mathbf{F})\) gives by restriction an isomorphism of topological vector spaces from \(\mathcal{H}(\mathbf{E};\mathbf{F})\) onto \(\mathcal{H}(\mathbf{E}_{1},\ldots,\mathbf{E}_{n};\mathbf{F})\) .
+
+3.1.4. Let \(f \in \mathcal{H}(\mathrm{E}_1, \ldots, \mathrm{E}_n; \mathrm{F})\) and let \(J(f)\) be the set of \(R \in (\mathbf{R}_+^*)^n\) such that \(f \in \mathcal{H}_{\mathbb{R}}(\mathrm{E}_1, \ldots, \mathrm{E}_n; \mathrm{F})\) . The interior \(I(f)\) of \(J(f)\) is called the strict convergence indicator of \(f\) . It consists of the set of \(R\) for which there exists an \(R' \in J(f)\) with \(0 < R_i < R'_i\) for \(1 \leqslant i \leqslant n\) . We denote by \(\Omega(f)\) the set of points \((\log R_1, \ldots, \log R_n)\) of \(R^n\) for \(R \in I(f)\) : it is a convex subset of \(R^n\) .
+
+When \(n=1\) , the set \(\mathbf{I}(f)\) is an interval \([0,\rho(f)]\) of \(\mathbf{R}\) and \(\rho(f)\) is called the strict radius of convergence of \(f\) . It is also the supremum (finite or \(+\infty\) ) of the set of real numbers \(R>0\) such that for every continuous seminorm \(\gamma\) on \(F\) , there exists a constant \(M\) such that \(\|f_{m}\|_{\gamma}\leqslant MR^{-m}\) (with \(f=\sum f_{m},f_{m}\in P_{m}(E;F)\) ) for every integer \(m\geqslant0\) .
+
+The set of points \(x = (x_i) \in \mathbf{E}_1 \times \cdots \times \mathbf{E}_n\) such that there exists \(\mathbf{R} \in \mathbf{I}(f)\) with \(\|x_i\| \leqslant R_i\) for all i, is called the strict domain of convergence of f and is denoted \(\mathbf{C}(f)\) . It is also the interior of the set of points x for which there exists \(\mathbf{R} \in \mathbf{J}(f)\) with \(\|x_i\| < R_i\) for all i.
+
+3.1.5. For \(f_{\alpha} \in \mathbf{P}_{\alpha}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) and for every continuous seminorm \(\gamma\) on \(\mathbf{F}\) , set:
+
+\[
+\| f _ {\alpha} \| _ {\gamma} = \sup _ {\| x _ {i} \| \leqslant 1} \| f _ {\alpha} (x _ {1}, \dots , x _ {n}) \| _ {\gamma}.
+\]
+
+We then have the inequalities:
+
+\[
+\left\| \left| f _ {\alpha} \right| \right\| _ {\gamma} \leqslant \left\| f _ {\alpha} \right\| _ {\gamma} \leqslant \frac {\alpha^ {\alpha}}{\alpha !} \left\| \left| f _ {\alpha} \right| \right\| _ {\gamma}.
+\]
+
+For \(f = \sum f_{\alpha} \in \hat{\mathbf{P}}(\mathrm{E}_1, \ldots, \mathrm{E}_n; \mathbf{F})\) and \(\mathbf{R} \in (\mathbf{R}_{+}^{*})^n\) , set:
+
+\[
+\| | f \| | _ {\gamma , \mathbf {R}} = \sum_ {\alpha} \mathbf {R} ^ {\alpha} \| | f _ {\alpha} \| | _ {\gamma}
+\]
+
+and let us denote by \(\tilde{\mathcal{H}}_{\mathbb{R}}(\mathrm{E}_{1},\ldots ,\mathrm{E}_{n};\mathrm{F})\) the vector subspace of
+
+\[
+\hat {\mathbf {P}} (\mathbf {E} _ {1}, \dots , \mathbf {E} _ {n}; \mathbf {F})
+\]
+
+formed by the \(f\) such that \(\| | f \| | _ {\gamma,\mathbb{R}}\) is finite for every \(\gamma\) , equipped with the topology defined by the seminorms \(f\mapsto\| | f \| | _ {\gamma,\mathbb{R}}\) . One has \(\mathcal{H}_{\mathbb{R}}\subset\tilde{\mathcal{H}}_{\mathbb{R}}\) and the injection of \(\mathcal{H}_{\mathbb{R}}\) into \(\tilde{\mathcal{H}}_{\mathbb{R}}\) is continuous. The space \(\mathcal{H}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) is the union of the \(\tilde{\mathcal{H}}_{\mathbb{R}}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\), and its topology is the finest locally convex topology making the injections of \(\mathcal{H}_{\mathbb{R}}\) into \(\mathcal{H}\) continuous.
+
+If \(f \in \mathcal{H}(E_1, \ldots, E_n; F)\), one calls the convergence indicator the interior \(\tilde{I}(f)\) of the set \(\tilde{J}(f)\) of \(R \in (\mathbf{R}_+^*)\) such that \(f \in \mathcal{H}_{\mathbb{R}}\). We have:
+
+\[
+e ^ {- 1} \mathbf {I} (f) \subset \tilde{\mathbf {I}} (f) \subset \mathbf {I} (f)
+\]
+
+(where e is the base of natural logarithms). Starting from \(\tilde{I}(f)\) , one defines as in 3.1.4. the domain of convergence \(\tilde{C}(f)\) and, when \(n = 1\) , the radius of convergence \(\tilde{\rho}(f)\) . In particular, we have:
+
+\[
+e ^ {- 1} \tilde {\rho} (f) \leqslant \rho (f) \leqslant \tilde {\rho} (f).
+\]
+
+3.1.6. For \(\mathbf{R} \in (\mathbf{R}_{+}^{*})^{n}\), we call the (closed) polyball centered at 0 and with radius \(\mathbf{R}\) in E the set \(\mathbf{B}(\mathbf{R})\) of \(x \in \mathbf{E}\) such that \(\|x_{i}\| \leqslant \mathbf{R}_{i}\) for all \(i\). If \(\dim \mathbf{E}_{i} = 1\), we also say polydisk. If \(f \in \mathcal{H}(\mathbf{E}_{1}, \ldots, \mathbf{E}_{n}; \mathbf{F})\), the domain of convergence (resp. strict) of \(f\) is the union of the polyballs \(\mathbf{B}(\mathbf{R})\) for \(\mathbf{R} \in \tilde{\mathbf{I}}(f)\) (resp. \(\mathbf{R} \in \mathbf{I}(f)\)).
+
+3.1.7. Let \(f \in \mathcal{H}(E_1, \ldots, E_n; F)\) . Suppose F is quasi-complete. For every \(x \in \tilde{\mathbf{C}}(f)\) , the family of \(f_{\alpha}(x)\) is summable in F. Its sum, denoted \(\hat{f}(x)\) or simply \(f(x)\) , is a continuous function on \(\tilde{\mathbf{C}}(f)\) . More precisely, for every R such that \(f \in \tilde{\mathcal{H}}_{\mathbb{R}}\) , the family of \(f_{\alpha}(x)\) is uniformly summable for \(x \in B(R)\) . The map \(f \mapsto \hat{f}\) is a continuous linear injective map from \(\tilde{\mathcal{H}}_{\mathbb{R}}\) into the space of bounded continuous functions on \(B(R)\) , equipped with the topology of uniform convergence.
+
+3.1.8. Let \(F_1, \ldots, F_m\) be separated polynormed spaces and let \(u\) be a continuous \(m\) -linear map from \(F_1 \times \cdots \times F_m\) to \(F\) . Let \(f_i \in \mathcal{H}(E_1, \ldots, E_n; F_i)\) for \(1 \leqslant i \leqslant m\) . The formal series \(u(f_1, \ldots, f_m)\) belongs to \(\mathcal{H}(E_1, \ldots, E_n; F)\) . We have:
+
+\[
+\mathrm{C} (u (f _ {1}, \dots , f _ {m})) \supset \bigcap_ {i} \mathrm{C} (f _ {i})
+\]
+
+\[
+\tilde {C} (u (f _ {1}, \dots , f _ {m})) \supset \bigcap_ {i} \tilde {C} (f _ {i})
+\]
+
+and if \(x \in \bigcap_{i} \tilde{C}(f_i)\) , F and the \(F_i\) being quasi-complete, we have:
+
+\[
+u (f _ {1}, \dots , f _ {m}) (x) = u (f _ {1} (x), \dots , f _ {m} (x)).
+\]
+
+3.1.9. Let \(\mathbf{F}_1, \ldots, \mathbf{F}_m\) be complete normed spaces and suppose \(\mathbf{F}\) quasi-complete. Let \(\mathbf{f} = (f_i)_{1 \leqslant i \leqslant m}\) with \(f_i \in \mathcal{H}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F}_i)\) and \(g \in \mathcal{H}(\mathbf{F}_1, \ldots, \mathbf{F}_m; \mathbf{F})\) , such that \((f_i(0))_{1 \leqslant i \leqslant m}\) belongs to the strict domain of convergence of \(g\) . Then, for every \(\alpha \in \mathbb{N}^m\) , the formal series \(g_\alpha \circ \mathbf{f}\) belongs to \(\mathcal{H}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) and the family of \(g_\alpha \circ \mathbf{f}\) is summable in \(\mathcal{H}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) and a fortiori in \(\hat{\mathbf{P}}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) . Its sum will be denoted \(g \circ \mathbf{f}\) .
+
+More precisely, there exists \(\mathbb{R}\in\bigcap_{i}\mathrm{I}(f_{i})\) and \(\mathbb{R}^{\prime}\in\mathrm{I}(g)\) such that \(\|f_{i}\|_{\mathbb{R}}<R_{i}^{\prime}\) for \(1\leqslant i\leqslant m\) . Under these conditions, the formal series \(g_{\alpha}\circ f\) belongs to \(\mathcal{H}_{\mathbb{R}}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) and the family of \(g_{\alpha}\circ f\) is summable in \(\mathcal{H}_{\mathbb{R}}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) . Finally, if \(x\in\mathrm{B}(\mathbb{R})\) , then \(\mathbf{f}(x)=(f_{i}(x))\) belongs to \(\mathrm{B}(\mathrm{R}^{\prime})\subset\mathrm{F}_{1}\times\cdots\times\mathrm{F}_{m}\) and we have:
+
+\[
+g (\mathbf {f} (x)) = (g \circ \mathbf {f}) (x).
+\]
+
+3.1.10. Suppose that \(E_{i} = K\) for \(1 \leqslant i \leqslant n\) . The space \(\hat{\mathbf{P}}(\mathbf{K}^{n}; \mathbf{F})\) is then identified with the space of formal power series in n indeterminates \(X_{1}, \ldots, X_{n}\) with coefficients in F and an element of \(\hat{\mathbf{P}}(\mathbf{K}^{n};\mathbf{F})\) is written:
+
+\[
+f = \sum_ {\alpha} X ^ {\alpha} c _ {\alpha} \quad \text {   with   } c _ {\alpha} \in F.
+\]
+
+If \(\mathbf{R} \in (\mathbf{R}_{+}^{*})^{n}\) and if \(\gamma\) is a continuous semi-norm on \(\mathbf{F}\) , we have:
+
+\[
+\| | f \| | _ {\gamma , \mathbf {R}} = \| f \| _ {\gamma , \mathbf {R}} = \sum_ {\alpha} \mathbf {R} ^ {\alpha} \| c _ {\alpha} \| _ {\gamma}
+\]
+
+One has \(\mathbf{I}(f) = \tilde{\mathbf{I}}(f)\) , \(\mathbf{C}(f) = \tilde{\mathbf{C}}(f)\) and, when \(n = 1\) , \(\rho(f) = \tilde{\rho}(f)\) .
+
+The space \(\mathcal{H}(\mathbf{K}^{n};\mathbf{K})\) of convergent series with coefficients in \(\mathbf{K}\) is also denoted \(\mathbf{K}\{\{\mathbf{X}_{1},\ldots ,\mathbf{X}_{n}\}\}\) ; it is a subalgebra of \(\mathbf{K}[[\mathbf{X}_1,\dots ,\mathbf{X}_n]]\) . The space \(\mathcal{H}(\mathbf{K}^n;\mathbf{F})\) is a module over \(\mathbf{K}\{\{\mathbf{X}_1,\ldots ,\mathbf{X}_n\}\}\) and if \(\mathbf{F}\) is finite-dimensional, this module is identified with \(\mathbf{K}\{\{\mathbf{X}_1,\ldots ,\mathbf{X}_n\}\} \otimes_{\mathbf{K}}\mathbf{F}\) .
+
+3.1.11. Let \(\mathbf{f} \in \mathcal{H}(\mathbf{K}^n; \mathbf{K}^m)\), represented by a system of \(m\) convergent series \(f_j(X_1, \ldots, X_n)\), with coefficients in K. Let likewise \(\mathbf{g} \in \mathcal{H}(\mathbf{K}^m; \mathbf{K}^p)\), represented by a system of \(p\) convergent series \(g_k(Y_1, \ldots, Y_m) = \sum g_{k,\beta} Y^\beta\). The element \(\mathbf{h} = \mathbf{g} \circ \mathbf{f}\) of \(\mathcal{H}(\mathbf{K}^n; \mathbf{K}^p)\) (cf. 3.1.9) is represented by \(p\) formal series \(h_k(X_1, \ldots, X_n)\) determined as follows: for \(\alpha \in \mathbf{N}^n\) and \(\beta \in \mathbf{N}^m\), let \(c_{\alpha,\beta}\) be the coefficient of \(X^\alpha\) in the formal series \(\mathbf{f}^\beta = \prod f_j^{\beta_j}\); then the family \((g_{k,\beta} c_{\alpha,\beta})_{\beta \in \mathbb{N}^m}\) is summable in K and has as its sum the coefficient of \(X^\alpha\) in \(h_k\).
+
+3.1.12. Suppose F is quasi-complete and let \(\hat{\mathbf{E}}_{i}\) be the completion of \(\mathbf{E}_{i}\). A continuous polynomial on \(\mathbf{E}_{1} \times \cdots \times \mathbf{E}_{n}\) taking values in F extends by continuity to a polynomial-continuous map on \(\hat{\mathbf{E}}_{1} \times \cdots \times \hat{\mathbf{E}}_{n}\) with values in F. From this we deduce a bijection \(j\) of \(\hat{\mathbf{P}}(\mathbf{E}_{1}, \ldots, \mathbf{E}_{n}; \mathbf{F})\) onto \(\hat{\mathbf{P}}(\hat{\mathbf{E}}_{1}, \ldots, \hat{\mathbf{E}}_{n}; \mathbf{F})\) . If \(f \in \mathcal{H}(\mathbf{E}_{1}, \ldots, \mathbf{E}_{n}; \mathbf{F})\) , then \(j(f) \in \mathcal{H}(\hat{\mathbf{E}}_{1}, \ldots, \hat{\mathbf{E}}_{n}; \mathbf{F})\) and conversely. The strict convergence indicators of \(f\) and of \(j(f)\) are the same.
+
+3.1.13. Suppose that K = R, but that F is equipped with a complex vector space structure compatible with its real vector space structure. Let \(E_{i}^{C} = E_{i} \otimes_{R} C\) . If \(y \in E_{i}^{C}\) , set:
+
+\[
+\| y \| = \inf \sum_ {k} | a _ {k} |. \| x _ {k} \|,
+\]
+
+the infimum being taken over all finite families of pairs \((x_{k}, a_{k}) \in \mathrm{E}_{i} \times \mathbf{C}\) such that \(y = \sum_{k} x_{k} \otimes a_{k}\) . One thus obtains a norm on the complex vector space \(E_{i}^{c}\) ; this norm extends the given norm on \(E_{i}\) if one agrees to identify \(x \in E_{i}\) with \(x \otimes 1\) . Let \(h\) be an R-polynomial-continuous map on \(E_{1} \times \cdots \times E_{n}\), taking values in F, and homogeneous of multidegree \(\alpha\); there then exists a C-polynomial-continuous \(\tilde{h}\) on \(E_{1}^{c} \times \cdots \times E_{n}^{c}\), and a unique one, with values in F, extending h, and homogeneous of multidegree \(\alpha\). One has
+
+\[
+\| \tilde {h} \| _ {\gamma} = \| h \| _ {\gamma}
+\]
+
+for every continuous seminorm γ on the complex vector space F.
+
+\[
+f = \sum_ {\alpha} f _ {\alpha} \in \mathcal {H} (\mathrm{E} _ {1}, \dots , \mathrm{E} _ {n}; \mathrm{F}), \text {   then   } \tilde {f} = \sum_ {\alpha} \tilde {f} _ {\alpha} \in \mathcal {H} (\mathrm{E} _ {1} ^ {\mathrm{c}}, \dots , \mathrm{E} _ {n} ^ {\mathrm{c}}; \mathrm{F}).
+\]
+
+The series \(f\) and \(\tilde{f}\) have the same strict convergence indicator (and the same strict radius of convergence when \(n = 1\) ).
+
+Conversely, suppose K = C. Let \(E_{i}^{0}\) and \(F^{0}\) the spaces over R obtained by restriction of scalars. If \(f_{\alpha} \in \mathrm{P}_{\alpha}(\mathrm{E}_{1}, \ldots, \mathrm{E}_{n}; \mathrm{F})\) , then \(f_{\alpha} \in \mathrm{P}_{\alpha}(\mathrm{E}_{1}^{0}, \ldots, \mathrm{E}_{n}^{0}; \mathrm{F}^{0})\) . If \(f = \sum_{\alpha} f_{\alpha} \in \mathcal{H}(\mathrm{E}_{1}, \ldots, \mathrm{E}_{n}; \mathrm{F})\) then the formal series \(f^{0} = \sum_{\alpha} f_{\alpha} \in \hat{\mathrm{P}}(\mathrm{E}_{1}^{0}, \ldots, \mathrm{E}_{n}^{0}; \mathrm{F}^{0})\) is a convergent series. The convergence indicators (resp. strict convergence indicators) of f and \(f^{0}\) are identical, and we have \(f(x) = f^{0}(x)\) for all \(x \in \tilde{\mathbf{C}}(f) = \tilde{\mathbf{C}}(f^{0})\) .
+
+\subsection{Analytic functions}
+
+3.2.1. Let U be an open subset of E and f a mapping from U into F. We say that f is of class \(C^{\omega}\) , or K-analytic (or simply analytic) in U if, for every point a in U, there exists a convergent series \(f_{a} \in \mathcal{H}(E; F)\) such that \(f(a + x) = f_{a}(x)\) for all x in E sufficiently close to zero. If K = R (resp. C), one also says that f is real analytic (resp. complex analytic or holomorphic). The analytic maps from U into F form a vector subspace, denoted \(\mathcal{C}^{\omega}(U; F)\) , of the space of all mappings from U into F.
+
+For \(a \in \mathbf{U}\) , the formal series \(f_{a}\) is unique: it is called the power series expansion of \(f\) at the point \(a\) . If \(f_{a} = \sum_{\alpha}(f_{a})_{\alpha}\) (with \((f_{a})_{\alpha} \in \mathrm{P}_{\alpha}(\mathrm{E}_{1}, \ldots, \mathrm{E}_{n}; \mathrm{F})\) ), we set:
+
+\[
+\Delta^ {\alpha} f (a) = \left(f _ {a}\right) _ {\alpha}.
+\]
+
+3.2.2. If \(f \in \mathcal{C}^{\omega}(\mathrm{U};\mathrm{F})\) , the map \(\Delta^{\alpha}f: a \mapsto \Delta^{\alpha}f(a)\) from U into
+
+\[
+\mathbf {P} _ {\alpha} (\mathrm{E} _ {1}, \dots , \mathrm{E} _ {n}; \mathrm{F})
+\]
+
+is analytic. The map \(\Delta^{\alpha}: f \mapsto \Delta^{\alpha}f\) is a K-linear map from \(\mathcal{C}^{\omega}(\mathrm{U};\mathrm{F})\) to \(\mathcal{C}^{\omega}(\mathrm{U};\mathrm{P}_{\alpha}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F}))\) . For \(a \in \mathrm{U}\) , we therefore have, for \(\alpha, \beta \in \mathbf{N}^{n}\) , \(\Delta^{\beta}(\Delta^{\alpha}f)(a) \in \mathrm{P}_{\beta}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{P}_{\alpha}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F}))\) . If \(x = (x_{i}) \in \mathrm{E}\) , we therefore have \((\Delta^{\beta}(\Delta^{\alpha}f)(a))(x) \in \mathrm{P}_{\alpha}(\mathrm{E}_{1},\ldots,\mathrm{E}_{n};\mathrm{F})\) and \(((\Delta^{\beta}(\Delta^{\alpha}f)(a))(x))(x) \in \mathrm{F}\) . This element of F is equal to \(((\alpha, \beta)) (\Delta^{\alpha + \beta}f(a))(x)\) . This is expressed by writing:
+
+\[
+\Delta^ {\beta} \circ \Delta^ {\alpha} = ((\alpha , \beta)) \Delta^ {\alpha + \beta}.
+\]
+
+3.2.3. Strict convergence indicators (and strict radii of convergence when \(n=1\) ) of power series expansions of \(f\) and of \(\Delta^{\alpha}f\) at the same point \(a\) of U, are identical.
+
+3.2.4. Let \(f \in \mathcal{C}^{\omega}(\mathrm{U};\mathrm{F})\) . Then \(f\) is strictly differentiable and infinitely differentiable in \(\mathbf{U}\) (if \(\mathbf{K} = \mathbf{R}\) , \(f\) is of class \(\mathbf{C}^{\infty}\) in \(\mathbf{U} \) ). The iterated derivatives of \(f\) are analytic, and their values at a point \(a\) are symmetric multilinear maps. One can then introduce the notation \(\mathbf{D}^{a}f\) for iterated partial derivatives as in no. 2.4.2. We have:
+
+\[
+\alpha ! \Delta^ {\alpha} f (a) (h) = D ^ {\alpha} f (a). (h, \dots , h)
+\]
+
+for all \(a \in \mathbf{U}\) and \(h \in \mathbf{E}\) , which we write:
+
+\[
+\alpha ! \Delta^ {\alpha} f = D ^ {\alpha} f.
+\]
+
+3.2.5. Let U be an open subset of E and f, g two analytic mappings from U into F. Let \(a \in U\) . For f and g to have contact of order \(\geqslant k\) at a, it is necessary and sufficient that \(\Delta^{\alpha}f(a) = \Delta^{\alpha}g(a)\) for all \(\alpha\) with \(|\alpha| \leqslant k\) . If f and g have contact of infinite order at a, they are equal in a neighborhood of a. The set of points of U where f and g have contact of infinite order is open and closed.
+
+In particular, if U is connected and if there exists a nonempty open subset of U on which f and g are equal, then f = g ("principle of analytic continuation").
+
+3.2.6. Let U be an open subset of E and let f be an analytic map from U into F. If the derivative Df of f is zero, then f is locally constant.
+
+3.2.7. Suppose F is quasi-complete and let G be a complete normed space. Let g be an analytic map from an open subset U of E into G, and let f be an analytic map from an open subset V of G, containing g(U), into F. The composite map \(f \circ g\) is analytic in U. Suppose further that \(0 \in U\) and that \(g(0) = 0\) . The expansion of \(f \circ g\) as a power series at 0 is then obtained by substituting, in the expansion of f at 0, the power series expansion of g at 0 (3.1.9).
+
+3.2.8. Let \(F_{1},\ldots,F_{m}\) be separated polynormed spaces and u a continuous multilinear mapping from \(F_{1}\times\cdots\times F_{m}\) into F. Let U be an open subset of E and \(f_{i}\in\mathcal{C}^{\omega}(U;F_{i})\) . The function \(u(f_{1},\ldots,f_{m})\) is analytic, and its power series expansion at a point \(a\in U\) is the series \(u((f_{1})_{a},\ldots,(f_{m})_{a})\) (3.1.8).
+
+3.2.9. We assume \(F\) quasi-complete. Let \(f \in \mathcal{H}(E_1, \ldots, E_n; F)\); the function \(x \mapsto f(x)\) (3.1.7) is analytic in the open set \(C(f)\), the strict convergence domain of \(f\) . If \(n = 1\) and if \(\|a\| < \rho(f)\) , the strict radius of convergence of the expansion of \(f\) as a power series in \(a\) is at least equal to \(\rho(f) - \|a\|\) . If \(\rho(f) = +\infty\) , one says that \(f\) is an entire function.
+
+3.2.10. Keep the hypotheses of 3.2.9. If K = C, the results of 3.2.9 remain exactly valid if one replaces C(f) by \(\tilde{C}(f)\) and \(\rho(f)\) by \(\tilde{\rho}(f)\) (for \(n = 1\) ). If K = R, the function \(x \mapsto f(x)\) is analytic in \(\tilde{C}(f)\) .
+
+3.2.11. Suppose that \(E_{i} = K\) for \(1 \leqslant i \leqslant n\) . Let U be an open subset of \(K^{n}\) and \(f \in \mathcal{C}^{\omega}(K^{n}; F)\) . If \(0 \in U\) and if \(f_{0} = \sum_{\alpha} X^{\alpha} c_{\alpha}\) is the power series expansion of f at 0, the power series expansion of \(\Delta^{\alpha} f\) at 0 is written (after identifying \(P_{\alpha}(K^{n}; F)\) with F):
+
+\[
+(\Delta^ {\alpha} f) _ {0} = \sum_ {\beta} ((\alpha , \beta)) X ^ {\beta} c _ {\alpha + \beta}.
+\]
+
+In particular, for \(1 \leqslant i \leqslant n\) and for \(x \in \mathbf{C}(f_0)\) :
+
+\[
+\partial_ {i} f (x) = \sum_ {\alpha} (\alpha_ {i} + 1) x ^ {\alpha} c _ {\alpha + \varepsilon_ {i}}.
+\]
+
+\subsection{Holomorphic Functions}
+
+In this section, we assume that K = C.
+
+3.3.1. Suppose F is quasi-complete. Let U be an open subset of E and f a mapping from U into F. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(f\) is holomorphic;
+\item
+  \(f\) is differentiable;
+\item
+  \(f\) is locally bounded and for any \(a \in \mathbf{U}\) and \(h \in \mathbf{E}\) , the function \(t \mapsto f(a + th)\) defined in an open neighborhood of 0 in \(\mathbf{C}\) is holomorphic;
+\item
+  \(f\) is locally bounded and for every continuous linear form \(u\) on F, the function \(u \circ f\) with values in C is holomorphic;
+\item
+  \(f\) is continuous and locally bounded, and there exists a total set H in the dual of F such that \(u \circ f\) is holomorphic for every \(u \in \mathbf{H}\) .
+\end{enumerate}
+
+When E is finite-dimensional (resp. when F is a Banach space), these conditions are still equivalent to conditions (iii′), (iv′), or (v′) (resp. (iv′) or (v′)) obtained from (iii), (iv), or (v) (resp. (iv) or (v)) by removing the hypothesis “f is locally bounded.”
+
+3.3.2. Suppose F is quasi-complete. Let U be an open subset of E and \((f_{n})\) a sequence of holomorphic maps from U into F, having the following property:
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{22}
+\tightlist
+\item
+  Every point of U has a neighborhood in which the sequence \((f_{n})\) converges uniformly.
+\end{enumerate}
+
+Then the limit \(f\) of the sequence \((f_{n})\) is holomorphic, the sequence of derivatives \((\mathrm{D}f_{n})\) (with values in the quasi-complete space \(\mathcal{L}(\mathrm{E};\mathrm{F})\) ) possesses property (W) and Df is the limit of \((\mathrm{D}f_{n})\) .
+
+3.3.3. Let U be an open subset of E and f a holomorphic map from U into F, with F assumed to be quasi-complete. Let \(\mathbf{R} = (\mathbf{R}_{i}) \in (\mathbf{R}_{+}^{*})^{n}\) and suppose that the polyball \(\mathbf{B}(\mathbf{R})\) is contained in U and f is bounded on \(\mathbf{B}(\mathbf{R})\) . We then have, for every \(\alpha \in N^{n}\) and every \(x = (x_{i}) \in \mathbf{B}(\mathbf{R})\) :
+
+\[
+\Delta^ {\alpha} f (0) (x) = \int_ {0} ^ {1} \dots \int_ {0} ^ {1} f (\mathbf {e} (\theta_ {1}) x _ {1}, \dots , \mathbf {e} (\theta_ {n}) x _ {n}) \mathbf {e} (- \alpha_ {1} \theta_ {1} - \dots - \alpha_ {n} \theta_ {n}) d \theta_ {1} \dots d \theta_ {n}
+\]
+
+\((\text{with } \mathbf{e}(\theta) = \exp 2\pi i \theta)\) .
+
+Additionally, let \(\gamma\) be a continuous seminorm on \(F\) and let \(M\) be the supremum of \(\|f(x)\|_{\gamma}\) for \(\|x_{i}\|=R_{i}\) . One has \(\|\Delta^{\alpha}f(0)(x)\|_{\gamma}\leqslant M\) for all \(x\in B(R)\) and \(\|\Delta^{\alpha}f(0)\|_{\gamma}\leqslant MR^{-\alpha}\) . Finally, the domain of convergence of the series expansion of \(f\) at 0 contains the interior of the polydisc \(B(R)\) .
+
+3.3.4. We keep the hypotheses of 3.3.3 and suppose moreover that \(\mathbf{E}_i = \mathbf{C}\) . Let \(\sum X^{\alpha}c_{\alpha}\) be the series expansion of \(f\) at 0. We have:
+
+\[
+c _ {\alpha} = \mathbf {R} ^ {- \alpha} \int_ {0} ^ {1} \dots \int_ {0} ^ {1} f (\mathbf {e} (\theta_ {1}) \mathrm{R} _ {1}, \dots , \mathbf {e} (\theta_ {n}) \mathrm{R} _ {n}) \mathbf {e} (- \alpha_ {1} \theta_ {1} - \dots - \alpha_ {n} \theta_ {n}) d \theta_ {1} \dots d \theta_ {n}
+\]
+
+and:
+
+\[
+\| c _ {\alpha} \| _ {\gamma} \leqslant \mathbf {R} ^ {- \alpha} \sup _ {x \in \mathbf {B} (\mathbf {R})} \| f (x) \| _ {\gamma}
+\]
+
+("Cauchy inequalities"). The strict domain of convergence of the series \(\sum_{\alpha} X^{\alpha} c_{\alpha}\) contains the interior of B(R).
+
+3.3.5. Suppose E is finite-dimensional and F is quasi-complete. There then exists in \(\mathcal{H}(\mathbf{E};\mathbf{F})\) a series \(f_{0}\), one and only one, with infinite radius of convergence (for every norm on E), such that \(f(x)=f_{0}(x)\) for all \(x\in E\) .
+
+3.3.6. If \(f\) is a holomorphic mapping from E into F such that \(f(E)\) is bounded, then the function \(f\) is constant (“Liouville’s theorem”).
+
+3.3.7. We assume that \(E \neq 0\) . Let f be a holomorphic mapping from an open set U of E into F. Let \(a\) be a point of U and \(\gamma\) be a continuous seminorm on F. For every neighborhood V of a, contained in U, there exists \(x \in V\) , \(x \neq a\) , such that:
+
+\[
+\| f (a) \| _ {\gamma} \leqslant \| f (x) \| _ {\gamma}.
+\]
+
+If moreover F = C and if f is not constant in a neighborhood of a, we have \(|f(a)| < \sup_{x \in V, x \neq a} |f(x)|\) and the map f is open in a neighborhood of a. Finally, let B be a bounded open set whose closure is contained in U, and let B' be its
+
+boundary. We have:
+
+\[
+\sup _ {x \in \overline {{\mathbf {B}}}} | f (x) | = \sup _ {x \in \mathbf {B} ^ {\prime}} | f (x) |
+\]
+
+(“maximum principle”).
+
+3.3.8. Suppose E is finite-dimensional. Let U be an open subset of E, and let S be a vector subspace of codimension \(\geqslant2\) of E and f a holomorphic mapping from \(\mathrm{U}\cap(\mathrm{E}-\mathrm{S})\) into F. Then f extends continuously to a holomorphic mapping from U into F.
+
+Suppose that E = C and let \(0 \leqslant \lambda < \mu \leqslant +\infty\) . Let f be a holomorphic mapping from the open set \(U = \{z \in C | \lambda < |z| < \mu\}\) into F. There exists a unique family \((a_{n}(f))_{n \in \mathbb{Z}}\) of elements of F such that, for every compact H of U, the family \((a_{n}(f)z^{n})_{n \in \mathbb{Z}}\) is uniformly summable, with sum \(f(z)\) as z ranges over H ("Laurent expansion").
+
+Suppose further that \(\lambda=0\) . We call the order of \(f\) at the point \(x=0\) the lower bound (finite or infinite) of the set of integers \(n\) such that \(a_{n}(f)\neq0\) . If there exists a neighborhood V of 0 such that \(f\) is bounded in V- \(\{0\}\) , then \(f\) is of order 0 at the point \(x=0\) and extends by continuity to a holomorphic function on the open set \(|z|<\mu\) . Let \(p\) be an integer \(>0\) ; if \(f\) is of order \(-p\) at the point \(x=0\) , one says that 0 is a pole of order \(p\) of \(f\) .
+
+3.3.10. Suppose that E = C and that F is normed. Let f be a holomorphic mapping from the open unit disk U of E into F, such that \(f(0) = 0\) and let \(M = \sup_{z \in U} \|f(z)\|\) . One then has \(\|f(z)\| \leqslant M \cdot |z|\) for all \(z \in U\) (“Schwarz lemma”).
+
+\subsection{Real analytic functions}
+
+Suppose that K = R.
+
+3.4.1. Let U be an open subset of E and f a mapping from U into F, assumed to be quasi-complete.
+
+The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(f\) is analytic.
+\item
+  \(f\) is of class \(\mathbf{C}^{\infty}\) and, for every \(a\in\mathbf{U} \) , there exists a neighborhood \(\mathbf{V}_{a}\) of \(a\) and a real number \(M\) such that, for every continuous semi-norm \(\gamma\) on F, there exists a constant \(\mathbf{A}_{\gamma}\) such that one has
+\end{enumerate}
+
+\[
+\| \Delta^ {\alpha} f (x) \| _ {\gamma} \leqslant A _ {\gamma} M ^ {| \alpha |} \quad \text {   for   every   } x \in V _ {a} \text {   and   every   } \alpha \in \mathbf {N} ^ {n}.
+\]
+
+3.4.2. Let U be an open subset of E and f a mapping from U into F. If F is quasi-complete, and if its strong dual F' is a Baire space, then f is analytic if and only if \(u \circ f\) is analytic for every \(u \in F'\) .
+
+\section{Analytic functions (ultrametric case)}
+
+In this section, one assumes that the absolute value of K is ultrametric. One denotes by \((\mathbf{E}_{i})_{1\leqslant i\leqslant n}\) a finite family of normed spaces over K, and by E the product space of the \(E_{i}\) , equipped with the norm:
+
+\[
+\| x \| = \sup \| x _ {i} \| \quad \text { if } \quad x = (x _ {i}).
+\]
+
+One denotes by F a separated polynormed space over K.
+
+\subsection{Convergent series}
+
+4.1.1. Let \(f = \sum_{\alpha} f_{\alpha}\) be a formal series belonging to \(\hat{\mathbf{P}}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) , (cf. Appendix). If \(\gamma\) is a continuous semi-norm on \(\mathbf{F}\) , and \(\mathbf{R} = (\mathbf{R}_i)\) is a system of \(n\) real numbers \(>0\) , we set
+
+\[
+\| f \| _ {\gamma , \mathbf {R}} = \sup _ {\alpha} \| f _ {\alpha} \| _ {\gamma} \mathbf {R} ^ {\alpha}.
+\]
+
+The definitions and results of no. 3.1.1 (second paragraph) and of no. 3.1.2 apply without change; in particular, one defines the spaces
+
+\[
+\mathcal {H} _ {\mathrm{R}} (\mathrm{E} _ {1}, \dots , \mathrm{E} _ {n}; \mathrm{F}) \quad \text { and } \quad \mathcal {H} (\mathrm{E} _ {1}, \dots , \mathrm{E} _ {n}; \mathrm{F}).
+\]
+
+4.1.2. The canonical isomorphism \(j\) of \(\hat{\mathbf{P}}(\mathbf{E};\mathbf{F})\) onto \(\hat{\mathbf{P}}(\mathbf{E}_{1},\ldots,\mathbf{E}_{n};\mathbf{F})\) gives, by restriction, an isomorphism of topological vector spaces from \(\mathcal{H}_{\mathbb{R}}(\mathbf{E};\mathbf{F})\) onto \(\mathcal{H}_{(\mathbb{R},\ldots,\mathbb{R})}(\mathbf{E}_{1},\ldots,\mathbf{E}_{n};\mathbf{F})\) for all \(\mathbf{R}\in\mathbb{R}_{+}^{*}\) ; it also gives an isomorphism of \(\mathcal{H}(\mathbf{E};\mathbf{F})\) onto \(\mathcal{H}(\mathbf{E}_{1},\ldots,\mathbf{E}_{n};\mathbf{F})\) . More precisely, if \(f=\sum_{m}f_{m}\in\hat{\mathbf{P}}(\mathbf{E};\mathbf{F})\) and if \(j(f)=\sum_{\alpha}f_{\alpha}\) , one has, for every continuous semi-norm \(\gamma\) on \(\mathbf{F}\) :
+
+\[
+\begin{array}{l} \| f _ {m} \| _ {\gamma} = \sup _ {| \alpha | = m} \| f _ {\alpha} \| _ {\gamma} \\ \| f \| _ {\gamma , \mathbf {R}} = \| j (f) \| _ {\gamma , (\mathbf {R}, \dots , \mathbf {R})}. \end{array}
+\]
+
+4.1.3. Let \(f = \sum_{\alpha} f_{\alpha}\) be an element of \(\mathcal{H}(E_1, \ldots, E_n; F)\); let \(I(f)\) be the set of \(R \in (\mathbf{R}_+^*)^n\) such that, for every continuous semi-norm \(\gamma\) on F, the product \(\|f_{\alpha}\|_{\gamma} R^{\alpha}\) tends to zero when \(|\alpha|\) tends to infinity. The set \(I(f)\) is nonempty; it is called the strict convergence indicator of \(f\). The set \(\Omega(f)\) of points
+
+\[
+(\log \mathbf {R} _ {1}, \dots , \log \mathbf {R} _ {n}) \quad \text { for } \quad \mathbf {R} \in I (f)
+\]
+
+is a convex subset of \(\mathbf{R}^{n}\) .
+
+When \(n=1\) , the set \(\mathbf{I}(f)\) is an interval of \(\mathbf{R}\) , open on the left and open or closed on the right; its upper bound (finite or \(+\infty\) ) is denoted \(\rho(f)\) and is called the strict radius of convergence of \(f\) .
+
+With the notations of 4.1.2, one has \(\mathbf{R} \in \mathbf{I}(f)\) if and only if
+
+\[
+(\mathbf {R}, \dots , \mathbf {R}) \in \mathrm{I} (j (f)).
+\]
+
+The set of points \(x = (x_i)\) such that there exists \(\mathbf{R} = (\mathbf{R}_i) \in I(f)\) with \(\| x_i \| \leqslant \mathbf{R}_i\) for \(1 \leqslant i \leqslant n\) is called the strict domain of convergence of \(f\) and is denoted \(C(f)\) . It is an open subset of \(E\), the union of the polyballs
+
+\[
+\mathrm{B} (\mathbf {R}) = \{x \in \mathrm{E} | \| x _ {i} \| \leqslant \mathrm{R} _ {i} \text {   for   } 1 \leqslant i \leqslant n \},
+\]
+
+for \(\mathbf{R}\in\mathbf{I}(f)\) .
+
+4.1.4. The results of 3.1.7 and 3.1.8 remain valid, replacing everywhere therein \(\tilde{\mathbf{C}}(f)\) by \(\mathbf{C}(f)\) and \(\tilde{\mathcal{H}}_{\mathbb{R}}\) by \(\mathcal{H}_{\mathbb{R}}\) .
+
+4.1.5. Let \(\mathbf{F}_1, \ldots, \mathbf{F}_m\) be complete normed spaces and suppose \(\mathbf{F}\) quasi-complete. Let \(\mathbf{f} = (f_i)_{1 \leqslant i \leqslant m}\) , with \(f_i \in \mathcal{H}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F}_i)\) and let \(g \in \mathcal{H}(\mathbf{F}_1, \ldots, \mathbf{F}_m; \mathbf{F})\) , such that the point \((f_i(0))_{1 \leqslant i \leqslant m}\) of \(\mathbf{E}\) belongs to the strict domain of convergence of \(g\) . Then, for every \(\alpha \in \mathbb{N}^m\) , the formal series \(g_\alpha \circ \mathbf{f}\) belongs to \(\mathcal{H}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) and the family of \(g_\alpha \circ \mathbf{f}\) is summable in \(\mathcal{H}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) (hence a fortiori in \(\hat{\mathbf{P}}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) ). Its sum will be denoted \(g \circ \mathbf{f}\) .
+
+More precisely, there exists \(\mathbb{R} \in \bigcap_{i} \mathrm{I}(f_i)\) and \(\mathbb{R}' \in \mathrm{I}(g)\) such that \(\sup_{|\alpha| > 0} \| f_{i,\alpha} \| \mathbb{R}^{\alpha} < \mathbb{R}_i'\) (for \(1 \leqslant i \leqslant m\) ). Under these conditions, the formal series \(g_{\alpha} \circ \mathbf{f}\) belongs to \(\mathcal{H}_{\mathbb{R}}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) and the family of \(g_{\alpha} \circ \mathbf{f}\) is summable in \(\mathcal{H}_{\mathbb{R}}(\mathbf{E}_1, \ldots, \mathbf{E}_n; \mathbf{F})\) . Finally, if \(x \in \mathbf{B}(\mathbb{R})\) , then \(\mathbf{f}(x) = (f_i(x))\) belongs to \(\mathbf{C}(g)\) and we have:
+
+\[
+g (\mathbf {f} (x)) = (g \circ \mathbf {f}) (x).
+\]
+
+Suppose further that, for each \(i\) , there exists a family \((e_{j}^{i})\) of elements of \(\mathbf{E}_{i}\) such that every element \(x\) of \(\mathbf{E}_{i}\) is the sum of a summable family \((\lambda_{j}e_{j}^{i})\) (with \(\lambda_{j}\in\mathbf{K}\) ) such that \(\|x\|=\sup_{j}|\lambda_{j}|\) . One can then, in the preceding paragraph, replace the condition \(\sup_{|\alpha|>0}\|f_{i,\alpha}\|\mathbf{R}^{\alpha}<\mathbf{R}_{i}^{\prime}\) by the condition \(\|f_{i}\|_{\mathbf{R}}\leqslant\mathbf{R}_{i}^{\prime}\) .
+
+4.1.6. Suppose that \(E_{i} = K\) for \(1 \leqslant i \leqslant n\) . The space \(\hat{\mathbf{P}}(\mathbf{K}^{n}; \mathbf{F})\) is then identified with the space of formal power series in n indeterminates \(X_{1}, \ldots, X_{n}\) with coefficients in F, and an element f of \(\hat{\mathbf{P}}(\mathbf{K}^{n}; \mathbf{F})\) is written:
+
+\[
+f = \sum_ {\alpha} X ^ {\alpha} c _ {\alpha} \quad \text { with } c _ {\alpha} \in F.
+\]
+
+\[
+\| f \| _ {\gamma , \mathbf {R}} = \sup \| c _ {\alpha} \| _ {\gamma}. \mathbf {R} ^ {\alpha}.
+\]
+
+If \(\mathbf{R} \in (\mathbf{R}_{+}^{*})^{n}\) and if \(\gamma\) is a continuous semi-norm on \(F\) , we have:
+
+The last paragraph of 3.1.10 remains valid, as does 3.1.11.
+
+4.1.7. Suppose that K is a closed subfield of a complete valued field (necessarily ultrametric) L. For \(y \in E_{i} \otimes_{K} L\) , set:
+
+\[
+\| y \| = \inf (\sup _ {k} | a _ {k} |. \| x _ {k} \|)
+\]
+
+the infimum being taken over all finite families of pairs \((x_{k}, a_{k}) \in E_{i} \times L\) such that \(y = \sum_{k} x_{k} \otimes a_{k}\) . We thus obtain a norm on the L-vector space \(E_{i} \otimes_{K} L\) , which induces on \(E_{i}\) the given norm. We denote by \(E_{i}^{L}\) the completion of \(E_{i} \otimes_{K} L\) for this norm.
+
+Now let F be a separated complete polynormed L-vector space. For every K-polynomial-continuous map \(f_{\alpha}\), homogeneous of multidegree \(\alpha\), on \(E_1 \times \cdots \times E_n\), with values in the K-vector space polynormed \(F_K\) underlying F, there exists one and only one L-polynomial-continuous map \(\tilde{f}_{\alpha}\), homogeneous of the same multidegree, on \(E_1^L \times \cdots \times E_n^L\), with values in F, which extends \(f_{\alpha}\). For every continuous semi-norm on the L-vector space F, we have
+
+\[
+\| \tilde {f} _ {\alpha} \| _ {\gamma} = \| f _ {\alpha} \| _ {\gamma}.
+\]
+
+If \(f = \sum_{\alpha} f_{\alpha} \in \mathcal{H}(E_1, \ldots, E_n; F_K)\) , then \(\tilde{f} = \sum_{\alpha} \tilde{f}_{\alpha} \in \mathcal{H}(E_1^L, \ldots, E_n^L; F)\) . The series \(f\) and \(\tilde{f}\) have the same strict convergence indicator (and the same strict radius of convergence when \(n = 1\) ).
+
+Conversely, let L be a non-discrete closed subfield of K and let \(E_{i}^{0}\) and \(F^{0}\) be the spaces over L obtained by restriction of scalars from the \(E_{i}\) and from F. If \(f = \sum f_{\alpha} \in \mathcal{H}(E_{1}, \ldots, E_{n}; F)\) , then \(f_{\alpha} \in \mathrm{P}_{\alpha}(E_{1}^{0}, \ldots, E_{n}^{0}; F^{0})\) ; if we set \(f^{0} = \sum_{\alpha} f_{\alpha} \in \hat{\mathrm{P}}(E_{1}^{0}, \ldots, E_{n}^{0}; F^{0})\) , then \(f^{0} \in \mathcal{H}(E_{1}^{0}, \ldots, E_{n}^{0}; F^{0})\) . One has \(C(f) \subset C(f^{0})\) and \(f(x) = f^{0}(x)\) for all \(x \in C(f)\) .
+
+\subsection{Analytic functions}
+
+4.2.1. The definitions and results of 3.2.1 and 3.2.2 remain valid without change.
+
+4.2.2. With the notation of 3.2.2, the strict convergence indicator of the power series expansion of \(\Delta^{a}f\) at a point \(a\) of U contains that of the power series expansion of \(f\) at \(a\) .
+
+4.2.3. The results of 3.2.4, 3.2.5, 3.2.7, 3.2.8 and 3.2.11 remain exact. That of 3.2.6 also, provided one assumes in addition that K is of characteristic zero.
+
+
+
+4.2.4. Suppose F is quasi-complete and let \(f\in\mathcal{H}(E_{1},\ldots,E_{n};F)\) . The function \(x\mapsto f(x)\) is analytic in C(f). For every \(a\in\mathbf{C}(f)\) , the convergence indicator of the power series expansion of \(f\) at \(a\) is equal to that of \(f\) .
+
+\subsection{Some inequalities}
+
+4.3.1. We assume that K satisfies at least one of the following conditions: (a) the residue field of K is infinite;
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  the image of K under the map \(a \mapsto |a|\) is dense in \(\mathbf{R}_{+}\) . (In other words, we assume that K is not locally compact).
+\end{enumerate}
+
+Let \(f = \sum_{\alpha} f_{\alpha} \in \mathcal{H}(E_1, \ldots, E_n; F)\) and let \(R \in I(f)\) . We have:
+
+\[
+\sup _ {x \in \mathbf {B} (\mathbb {R})} \| f (x) \| _ {\gamma} = \sup _ {\alpha} \sup _ {x \in \mathbf {B} (\mathbb {R})} \| f _ {\alpha} (x) \| _ {\gamma}
+\]
+
+for every continuous semi-norm γ on F ("Cauchy inequalities").
+
+4.3.2. There exists a constant \(a > 0\) such that for every continuous homogeneous polynomial \(f_{\alpha} \in \mathbf{P}_{\alpha}(\mathrm{E}_{1}, \ldots, \mathrm{E}_{n}; \mathbf{F})\) and every \(\mathbf{R} \in (\mathbf{R}_{+}^{*})^{n}\) , we have:
+
+\[
+a ^ {| \alpha |} \mathbf {R} ^ {\alpha} | \alpha ! | \| f _ {\alpha} \| _ {\gamma} \leqslant \sup _ {x \in \mathbf {B} (\mathbf {R})} \| f _ {\alpha} (x) \| _ {\gamma} \leqslant \| f _ {\alpha} \| _ {\gamma} \mathbf {R} ^ {\alpha}
+\]
+
+for every continuous semi-norm \(\gamma\) on F. If K satisfies condition (b) of 4.3.1 or if the image of \(E_{i}\) under the map \(x \mapsto \|x\|\) is contained in the image of K under the map \(a \mapsto |a|\) and contains \(\mathbf{R}_{i}\) (for \(1 \leqslant i \leqslant n\) ), one may take \(a = 1\) .
+
+4.3.3. If K has characteristic zero, the formal series \(f = \sum_{\alpha} f_{\alpha}\) belongs to \(\mathcal{H}(E_1, \ldots, E_n; F)\) if and only if there exists \(R \in (R_+^*)^n\) such that
+
+\[
+\sup _ {\alpha} \sup _ {x \in B (R)} \| f _ {\alpha} (x) \| _ {\gamma} <   + \infty
+\]
+
+for every continuous seminorm γ on F.
+
+\section{Manifolds}
+
+\subsection{Charts and atlases. Manifolds.}
+
+5.1.1. Let X be a set. A chart on X is a triple \(c = (U, \varphi, E)\) , where U is a subset of X, E a Banach space and \(\varphi\) a bijection from U onto an open subset of E. We say that U is the domain of the chart c. If E is of finite dimension n, we say that c is of dimension n. Otherwise, we set \(\dim c = +\infty\) .
+
+5.1.2. We say that two charts \(c = (\mathbf{U}, \varphi, \mathbf{E})\) and \(c' = (\mathbf{U}', \varphi', \mathbf{E}')\) of \(X\) are \(C^r\)-compatible (or simply compatible when there can be no ambiguity about \(r\)) when the following conditions are satisfied:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  \(\varphi (\mathbf{U}\cap \mathbf{U}^{\prime})\) (resp. \(\varphi^{\prime}(\mathbf{U}\cap \mathbf{U}^{\prime}))\) is open in \(\mathbf{E}\) (resp. \(\mathbf{E}'\) );
+\item
+  the map \(\varphi \circ \varphi'^{-1}\) (resp. \(\varphi' \circ \varphi^{-1}\) ) of \(\varphi'(U \cap U')\) onto \(\varphi(U \cap U')\) (resp. of \(\varphi(U \cap U')\) onto \(\varphi'(U \cap U')\) ) is of class \(C^r\) (cf. 2.3.1, 3.2.1 and 4.2.1).
+\end{enumerate}
+
+5.1.3. We call a \(\mathbf{C}^{r}\)-atlas (or simply atlas) of a set X a set of charts of X that are pairwise \(\mathbf{C}^{r}\)-compatible and whose domains have union X. Two atlases A and B of X are said to be \(\mathbf{C}^{r}\)-equivalent if \(A \cup B\) is an atlas. The relation of \(\mathbf{C}^{r}\)-equivalence between atlases is an equivalence relation.
+
+5.1.4. Let \(\mathfrak{S}\) be a set of Banach spaces. We say that an atlas \(\mathcal{A}\) is of type \(\mathfrak{S}\) if one has \(E \in \mathfrak{S}\) for every chart \(c = (U, \varphi, E)\) of \(\mathcal{A}\) . Similarly, one says that an atlas \(\mathcal{A}\) is of Hilbert type (resp. of Hilbert type with countable dimension) if \(E\) is a Hilbert space (resp. Hilbert space of countable type) for every chart \((U, \varphi, E)\) of \(\mathcal{A}\) .
+
+5.1.5. One calls a K-manifold of class \(\mathbf{C}^{r}\) (or manifold of class \(\mathbf{C}^{r}\) over K, or simply manifold when there can be no ambiguity about K and r) a set X equipped with a class of equivalent atlases (Sets, chap. II, § 6, no. 9) for the relation of \(\mathbf{C}^{r}\)-equivalence. An atlas of this class is called an atlas of the manifold X. A chart belonging to an atlas of X is called a chart of the manifold X. A chart of X whose domain contains a point a \(\in X\) is called a chart of X at a. A chart centered at a is a chart (U, \(\varphi\), E) of X at a such that \(\varphi(a) = 0\).
+
+If X is a set and A an atlas of X, the set X equipped with the equivalence class of A is called the manifold defined by A.
+
+When \(r \neq \omega\) (hence \(K = R\) ), a manifold of class \(C^r\) is sometimes called a differentiable manifold. A manifold of class \(C^\omega\) is also called an analytic manifold over \(K\) (or also a \(K\) -analytic manifold).
+
+When moreover K = R (resp. C, \(Q_{p}\) ), one also says real analytic manifold (resp. complex analytic manifold, p-adic analytic manifold).
+
+5.1.6. Let X be a manifold. The subsets of X that are unions of domains of charts of X form the set of open sets for a topology on X, called the topology underlying the manifold structure of X. For every chart \(c = (U, \varphi, E)\) of X, the map \(\varphi\) is a homeomorphism from the open set U, equipped with the topology induced by that of X, onto the open set \(\varphi(U)\) of E.
+
+The topological space underlying X is a Baire space. When K is equal to R or C, it is locally connected.
+
+Let X be a manifold and let A be an atlas of X. For the topological space X to be Hausdorff, it is necessary and sufficient that the following condition be satisfied: for any charts (U, \(\varphi\) , E) and (V, \(\psi\) , F) belonging to the atlas A, the graph of the mapping \(\psi \circ \varphi^{-1}\) of \(\varphi(\mathrm{U} \cap \mathrm{V})\) to \(\psi(\mathrm{U} \cap \mathrm{V})\) is closed in \(\varphi(\mathrm{U}) \times \psi(\mathrm{V})\) .
+
+Let X be a manifold; suppose that the topological space X is regular. Then for every point \(a \in X\) there exists a chart (U, \(\varphi\) , E) of X at a possessing the following property: for a subset Y of U to be closed in X, it is necessary and sufficient that its image \(\varphi(Y)\) be closed in E. If the space X is paracompact, there exists on X a distance compatible with the topology of X and making X into a complete metric space.
+
+5.1.7. Let S be a set of Banach spaces. A manifold is said to be of type S (resp. of Hilbertian type, resp. of Hilbertian type of countable dimension) if it possesses an atlas of type S (resp. of Hilbertian type, resp. of Hilbertian type of countable dimension). If S is reduced to a single element E, a manifold of type S is also called a pure manifold of type E.
+
+A pure manifold of dimension n is called a pure manifold of type \(K^{n}\) . A manifold is said to be locally of finite dimension if it is of type S with \(S = \{K^{n}; n \in N\}\) .
+
+5.1.8. Let X be a manifold and let \(x \in X\) . The dimension (finite or \(+\infty\) ) of a chart of X at x depends only on x. It is called the dimension of X at x and is denoted \(\dim_{x}X\) . The dimension of X, denoted \(\dim X\) , is the upper bound of the \(\dim_{x}X\) for \(x \in X\) .
+
+The function \(x \mapsto \dim_x X\) is locally constant. The manifold \(X\) is locally of finite dimension (resp. pure of dimension \(n\) ) if and only if one has \(\dim_x X < +\infty\) (resp. \(\dim_x X = n\) ) for all \(x \in X\) .
+
+5.1.9. Suppose K is locally compact. Let X be a separated manifold. Then, for X to be locally of finite dimension, it is necessary and sufficient that X be locally compact.
+
+5.1.10. Let X be a manifold and let \(\xi^{1},\ldots,\xi^{n}\) be maps from a subset U of X into K. One says that \(\xi=(\xi^{1},\ldots,\xi^{n})\) is a coordinate system of X in U if the triple (U, \(\xi\) , K \(^{n}\) ) is a chart of X; this chart is also denoted (U; \(\xi\) ) or (U; \(\xi^{1},\ldots,\xi^{n}\) ). If \(a\in\mathbf{U}\) , we also say that \(\xi\) is a coordinate system of X at a; if moreover \(\xi^{i}(a)=0\) for \(i=1,2,\ldots,n\) , one says that the coordinate system \(\xi\) is centered at a.
+
+\subsection{Examples of manifolds}
+
+5.2.1. Let X be a set; there exists on X one and only one manifold structure for which the underlying topological space is discrete; this structure is a pure manifold structure of dimension 0.
+
+5.2.2. Let E be a Banach space. The triple \(c = (\mathrm{E}, \mathrm{Id}_{\mathrm{E}}, \mathrm{E})\) is a chart of E and \(\mathcal{A} = \{c\}\) is an atlas of E, hence defines a pure manifold structure of type E on E; the underlying topology is the given topology on E. In what follows, when we speak of the manifold structure on E, it will always be to the preceding structure that we refer.
+
+In particular, this applies to every finite-dimensional vector space over K, equipped with the unique Hausdorff topology compatible with its vector structure (Esp. Vect. Top., chap. I, § 2, no. 3).
+
+5.2.3. Let X be a manifold and U an open subset of X. There exists on U a manifold structure whose charts are the charts of the manifold X with domain contained in U. This structure is said to be induced by that of X (cf. no. 5.3.4); equipped with this structure, U is called an open submanifold of X.
+
+In particular, every open subset of a Banach space E is equipped with a canonical structure of pure manifold of type E. Let X be a manifold; for a triple (U, \(\varphi\) , E) to be a chart of X, it is necessary and sufficient that U be open in X and that \(\varphi\) be an isomorphism of the open submanifold U of X onto an open submanifold of E.
+
+5.2.4. Let X be a set, and \((X_{i})_{i\in I}\) a covering of X. Suppose that on each \(X_{i}\) there is given a manifold structure such that the following condition is satisfied:
+
+For any \(i\) and \(j\) in I, the set \(\mathbf{X}_{i} \cap \mathbf{X}_{j}\) is open in \(\mathbf{X}_{i}\) and \(\mathbf{X}_{j}\) and the manifold structures induced on \(\mathbf{X}_{i} \cap \mathbf{X}_{j}\) by those of \(\mathbf{X}_{i}\) and \(\mathbf{X}_{j}\) coincide.
+
+There then exists on X one and only one manifold structure such that \(X_{i}\) is an open submanifold of X for every i in I. One says that the manifold X is obtained by gluing together the manifolds \(X_{i}\) .
+
+5.2.5. Let X be a manifold. The set \(X_{n}\) of points x of X such that \(\dim_{x}X=n\ (n\ \text{integer}\geqslant0)\) is an open submanifold of X, which is pure of dimension n.
+
+5.2.6. Let E be a Banach space. One can equip the set \(\mathbf{G}(\mathbf{E})\) of vector subspaces of E admitting a topological supplement with an analytic manifold structure in the following way: for every pair \((\mathrm{F}_0, \mathrm{G}_0) \in \mathbf{G}(\mathbf{E}) \times \mathbf{G}(\mathbf{E})\) such that \(\mathrm{E} = \mathrm{F}_0 \oplus \mathrm{G}_0\) , one denotes by \(\mathrm{U}_{\mathrm{G}_0}\) the set of \(\mathrm{F} \in \mathbf{G}(\mathbf{E})\) admitting \(\mathrm{G}_0\) as supplement, and one defines a bijection \(\varphi_{\mathrm{F}_0, \mathrm{G}_0}\) of \(\mathrm{U}_{\mathrm{G}_0}\) onto the Banach space \(\mathcal{L}(\mathrm{F}_0; \mathrm{G}_0)\) by associating to every \(\mathrm{F} \in \mathrm{U}_{\mathrm{G}_0}\) the map from \(\mathrm{F}_0\) to \(\mathrm{G}_0\) having as graph the subspace F of \(\mathrm{E} = \mathrm{F}_0 \times \mathrm{G}_0\) . The charts \((\mathrm{U}_{\mathrm{G}_0}, \varphi_{\mathrm{F}_0, \mathrm{G}_0}, \mathcal{L}(\mathrm{F}_0; \mathrm{G}_0))\) form an atlas of \(\mathbf{G}(\mathbf{E})\) . Equipped with the manifold structure defined by this atlas, \(\mathbf{G}(\mathbf{E})\) is called the Grassmannian manifold of E.
+
+The topological space G(E) is metrizable. If K is locally compact and E is finite-dimensional, G(E) is compact.
+
+For every integer \(n \geqslant 0\) , the set \(\mathbf{G}_{n}(\mathbf{E})\) (resp. \(\mathbf{G}^{n}(\mathbf{E})\) ) of \(\mathbf{F} \in \mathbf{G}(\mathbf{E})\) of dimension (resp. codimension) \(n\) is open and closed in \(\mathbf{G}(\mathbf{E})\) and is a pure open submanifold of \(\mathbf{G}(\mathbf{E})\) . If \(\mathbf{K} = \mathbf{R}\) or \(\mathbf{C}\) , \(\mathbf{G}_{n}(\mathbf{E})\) is connected for every \(n\) .
+
+The map which associates to each \(F \in \mathbf{G}(\mathbf{E})\) its orthogonal in the dual \(E'\) of E is a morphism of \(\mathbf{G}(\mathbf{E})\) to \(\mathbf{G}(\mathbf{E}')\) which induces an isomorphism of \(\mathbf{G}^{n}(\mathbf{E})\) onto \(\mathbf{G}_{n}(\mathbf{E}')\) for every integer n.
+
+If K = R or C, or if E is finite-dimensional, \(\mathbf{G}_{1}(\mathbf{E})\) is none other than the projective space associated with E, which is thus equipped with an analytic manifold structure.
+
+\subsection{\texorpdfstring{Functions of class C \(^{r}\) and morphisms of manifolds}{Functions of class C\^{}\{r\} and morphisms of manifolds}}
+
+5.3.1. Let X be a manifold of class \(\mathbf{C}^{r}\), let F be a separated polynormed space, and let \(f\) be a map from X into F. We say that \(f\) is of class \(\mathbf{C}^{r}\) if, for every chart \((V, \varphi, E)\) of X, the map \(f\circ\varphi^{-1}\) from \(\varphi(\mathrm V)\) into \(F\) is of class \(\mathbf{C}^{r}\). For this, it suffices that this condition be satisfied for the charts of an atlas of X. The set of maps of class \(\mathbf{C}^{r}\) from X into F forms a vector subspace of the space of all maps from X into F. We denote it by \(\mathcal{C}^{r}(\mathrm{X};\mathrm{F})\) .
+
+When F = K, we set \(\mathcal{C}^{r}(X;K)=\mathcal{C}^{r}(X)\) ; it is a sub-K-algebra of the algebra of maps from X into K. The elements of \(\mathcal{C}^{r}(X)\) are also called morphic functions.
+
+When X is an open subset of a Banach space, this terminology agrees with that of nos. 2.3.1, 3.2.1 and 4.2.1.
+
+5.3.2. Let X and Y be two manifolds of class \(\mathbf{C}^{r}\) and let \(f\) be a map from X into Y. We say that \(f\) is of class \(\mathbf{C}^{r}\) or is a morphism of manifolds (of class \(\mathbf{C}^{r}\) ) if it is continuous and if, for every chart \((\mathbf{V},\psi ,\mathbf{F})\)
+
+of Y, the map \(\psi \circ f\) from the open submanifold \(f^{-1}(\mathbf{V})\) into the Banach space F is of class \(\mathbf{C}^{r}\) . For this, it suffices that there exist an atlas \(\mathcal{A}\) of Y such that, for every chart \((\mathbf{V}, \psi, \mathbf{F}) \in \mathcal{A}\) , the set \(f^{-1}(\mathbf{V})\) is open in X and the map \(\psi \circ f\) from the open submanifold \(f^{-1}(\mathbf{V})\) of X into F is of class \(\mathbf{C}^{r}\) . The set of morphisms from X into Y is denoted by \(\mathcal{C}^{r}(\mathbf{X}; \mathbf{Y})\) . When Y is a Banach space equipped with its canonical manifold structure, the definitions of 5.3.1 and 5.3.2 are consistent. A map of class \(\mathbf{C}^{\omega}\) is also called a K-analytic map (or simply analytic). When \(\mathbf{K} = \mathbf{C}\) , we also say holomorphic map.
+
+Let (U, \(\varphi\) , E) be a chart of X and (V, \(\psi\) , F) a chart of Y such that \(f(\mathbf{U}) \subset \mathbf{V}\) . The map \(\psi \circ f \circ \varphi^{-1}\) of the open subset \(\varphi(\mathbf{U})\) of E into the open subset \(\psi(\mathbf{V})\) of F is called the expression of \(f\) in the given charts.
+
+5.3.3. Suppose X and Y are of finite dimension; let \(a \in \mathbf{X}\) , \(b \in \mathbf{Y}\) and \(f\) be a map from X into Y with \(f(a) = b\) . Suppose first that \(f\) is of class \(\mathbf{C}^r\) and consider coordinate systems \((\mathrm{U}; \xi^1, \ldots, \xi^m)\) of X at \(a\) and \((\mathrm{V}; \eta^1, \ldots, \eta^n)\) of Y at \(b\) respectively, with \(f(\mathrm{U}) \subset \mathrm{V}\) . Let \(\xi\) be the map \((\xi^1, \ldots, \xi^m)\) from U into \(\mathbf{K}^m\) . There then exist functions \(u^j\) of class \(\mathbf{C}^r\) on the open subset \(\xi(\mathrm{U})\) of \(\mathbf{K}^m\) , with values in K, such that the coordinates of a point \(y = f(x)\) of Y, (for \(x\) in U), are given by the formulas:
+
+\[
+\eta^ {j} (y) = u ^ {j} (\xi^ {1} (x), \dots , \xi^ {m} (x)) \quad \text { for } 1 \leqslant j \leqslant n\tag{1}
+\]
+
+which is equivalent to:
+
+\[
+\eta^ {j} \circ f = u ^ {j} (\xi^ {1}, \dots , \xi^ {m}) \quad \text { for } 1 \leqslant j \leqslant n.\tag{2}
+\]
+
+We say that the preceding formulas constitute the expression of f by means of the chosen coordinate systems.
+
+Conversely, if, for every point \(a\) of X, one can find a coordinate system of X at \(a\) and a coordinate system of Y at \(b = f(a)\) satisfying the preceding conditions, then \(f\) is of class \(\mathbf{C}^{r}\) .
+
+5.3.4. Morphisms of manifolds satisfy the axioms of Ens., chap. IV, § 2:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  The composite of two morphisms is a morphism.
+\item
+  For a bijection \(f:X\to Y\) to be an isomorphism, it is necessary and sufficient that \(f\) and \(f^{-1}\) are morphisms.
+\end{enumerate}
+
+5.3.5. Suppose that \(r = \omega\) . Let X be a manifold and \(f, g\) two analytic maps from X into a separated polynormed space or into a separated analytic manifold. The set of points in a neighborhood of which \(f\) and \(g\) are equal, is open and closed in X.
+
+5.3.6. Suppose that K = R and \(r \neq \omega\) . A manifold X is said to admit partitions of unity of class \(C^{r}\) if, for every locally finite open covering of X, there exists a continuous partition of unity (Top. Gén., ch. IX, § 4, n° 3) subordinate to this covering and consisting of functions of class \(C^{r}\) .
+
+Let E be a Banach space; consider the following property:
+
+For any disjoint closed subsets A and B of E, there exists a function f of class \(C^{r}\) on E, with values in R, such that \(f(x) = 0\) for \(x \in A\) , \(f(x) = 1\) for \(x \in B\) and \(0 \leqslant f(x) \leqslant 1\) for all \(x \in E\) .
+
+If S is a set of Banach spaces having property (PU), then every paracompact manifold of type S admits partitions of unity of class \(\mathbf{C}^{r}\).
+
+Every finite-dimensional space, every separable Hilbert space, has property (PU).
+
+5.3.7. Suppose K is ultrametric. Let X be a paracompact manifold. For every open cover U of X, there exists a partition of X into open and closed subsets subordinate to the cover U.
+
+5.3.8. Suppose K is locally compact. Let X and Y be two pure manifolds of finite dimension, and let f be a morphism from X to Y. If dim X \textless{} dim Y and if the topology of X admits a countable base of open sets, \(f(X)\) is meager in Y.

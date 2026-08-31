@@ -1,0 +1,922 @@
+\subsection{通过其函数层刻画流形}
+
+5.4.1. 设 X 是一个拓扑空间，Y 是一个集合。假设对于 X 的每个开集 U，给定一个从 U 到 Y 的映射集 \(\mathcal{L}(\mathrm{U})\)。如果函数族 \(\mathcal{L} = \{\mathcal{L}(\mathrm{U})\}\) 满足下述条件，我们称其为取值于 Y 的函数层：
+
+设 \((\mathbf{U}_{i})_{i\in\mathbf{I}}\) 是 X 的开子集族，其并为 U，且 f 是从 U 到 Y 的映射；f 属于 \(\mathcal{L}(\mathbf{U})\) 的充分必要条件是：对于 I 中所有 i，\(f|\mathbf{U}_{i}\) 属于 \(\mathcal{L}(\mathbf{U}_{i})\)。
+
+5.4.2. 设 X 和 Y 是两个流形；对于每个开集 \(U \subset X\)，令 \(\mathcal{L}(U)\) 为从 U 到 Y 的态射集；则 L 是取值于 Y 的函数层。
+
+当 Y = K 时，将如此定义的层记为 \(C_{X}^{r}\)。
+
+5.4.3. 设 X 是一个拓扑空间，S 是 Banach 空间的集合。对每个 \(E \in S\)，设 \(F_{E}\) 是 X 上取值于 E 的函数层。假设由 \(F_{E}\)（其中 \(E \in S\)）组成的族满足下述条件：
+
+对于每个 \(x \in X\)，存在 x 的一个开邻域 U，以及一个空间
+
+\(E_{0} \in S\)，以及一个把 U 映到 \(\varphi\) 的某个开子集上的同胚 \(E_{0}\)，使得对于每个开集 \(V \subset U\) 和每个 \(E \in S\)，集合 \(\mathcal{F}_{E}(V)\) 由函数 \(g \circ \varphi\) 组成，其中 g 遍历空间 \(\mathcal{C}^{r}(\varphi(V); E)\)。
+
+于是，在 X 上存在一个 C＾\(C^{r}\)r 类且类型为 S 的流形结构，并且这种结构是唯一的；它与 X 上给定的拓扑相容，且在此结构下，\(F_{E}\) 是 X 上取值于 E 的 C＾\(C^{r}\)r 类函数层。
+
+5.4.4. 设 X 是一个拓扑空间，F 是一个取值于 K 的函数层，满足下述条件：对于 X 的每个点 x，存在一个整数 n、x 的一个开邻域 U，以及一个把 U 映到  的某个开子集上的同胚 \(\varphi\)，使得对于 U 的每个开集 V，集合 \(K^{n}\)\(\mathcal{F}(V)\) 由函数 \(g \circ \varphi\) 组成，其中 g 遍历 \(C^{r}\) 的开集 \(\varphi(V)\) 上取值于 K 的 C＾\(K^{n}\)r 类函数集。
+
+于是，在 X 上存在唯一的局部有限维 C＾\(C^{r}\)r 类流形结构，使得 \(F = C_{X}^{r}\)。
+
+5.4.5. 设 X 和 X' 是两个局部有限维的 C＾\(C^{r}\)r 类流形，f 是从 X 到 X' 的连续映射。f 是态射的充分必要条件是：对于 X' 的每个开集 U' 以及每个函数 \(g \in \mathcal{C}^{r}(U'; K)\)，函数 \(g \circ f\) 属于 \(\mathcal{C}^{r}(U; K)\)，其中 \(U = f^{-1}(U')\)。
+
+\subsection{切空间、切线性映射}
+
+5.5.1. 设 X 是一个流形，且 \(a\in\mathbb{X}\)。考虑有序对 \((c,h)\)，其中 \(c=(\mathrm{U},\varphi,\mathrm{E})\) 是流形 X 在 \(a\) 处的一个图，\(h\) 是 E 的一个元素。若映射 \((c,h)\) 在 \((c',h')\) 处的导数（它定义在 \(\varphi(a)\) 的某个邻域上）将 \(\varphi'\circ\varphi^{-1}\) 变为 \(\varphi(a)\)，则称两个这样的有序对 \(h\) 和 \(h'\) 等价。这样就在有序对 \((c,h)\) 之间得到一个等价关系，并把 X 在 \(a\) 处的切向量定义为等价有序对 \((c,h)\) 的等价类（集合论，第~II~章，§ 6，第 9 号）。
+
+X 在 \(a\) 处的切向量构成一个集合，记为 \(\mathrm{T}_{a}(\mathrm{X})\)。若 \(c = (\mathrm{U}, \varphi, \mathrm{E})\) 是流形 X 在 \(a\) 处的一个图，则把 E 中元素 \(\theta_{c}\) 与由有序对 \(\mathrm{T}_{a}(\mathrm{X})\) 表示的切向量对应起来的映射 \(h\) 从 E 到 \((c, h)\) 是双射。借助 \(\mathrm{T}_{a}(\mathrm{X})\)，把 E 上的拓扑 K-向量空间结构传递给 \(\theta_{c}\)，所得结构与 \(c\) 的选择无关，并使 \(\mathrm{T}_{a}(\mathrm{X})\) 成为一个 Banach 空间，称为 X 在 \(a\) 处的切空间。\(+\infty\) 的维数（有限或 \(\mathrm{T}_{a}(\mathrm{X})\)）等于 X 在 \(a\) 处的维数。
+
+5.5.2. 设 X、Y 是两个流形，\(f\) 是从 X 到 Y 的态射，\(a\) 是 X 的一点。考虑 X 在 a 处的图 \(c = (U, \varphi, E)\)，以及 Y 在 \(a\) 处的图 \(c' = (V, \psi, F)\)，其中 \(b\)\(f(U) \subset V\)；从 \(\Phi = \psi \circ f \circ \varphi^{-1}\)\(\varphi(U)\) 到 \(F\) 的映射 \(C^{r}\) 是 C＾r 类的，并且其在点  处的导数 \(\mathbf{D}\Phi(\varphi(a))\)\(\varphi(a)\)
+
+是从 E 到 F 的连续线性映射。从 \(\theta_{c'} \circ D\Phi(\varphi(a)) \circ \theta_{c}^{-1}\) 到 \(T_{a}(X)\) 的连续线性映射 \(T_{b}(Y)\) 不依赖于所选的图 \(c\) 和 \(c'\)；记作 \(T_{a}(f)\)，称为 \(f\) 在 \(a\) 处的切线性映射。若 \(g\) 是从 Y 到流形 Z 的态射，则有：
+
+\[
+\mathrm{T} _ {a} (g \circ f) = \mathrm{T} _ {f (a)} (g) \circ \mathrm{T} _ {a} (f).
+\]
+
+5.5.3. 设 \(f:X\to Y\) 是流形的一个态射。若 \(f\) 局部为常值，则对 X 中所有 \(\mathrm{T}_{a}(f)=0\)，都有 \(a\)。反之，若对所有 \(\mathrm{T}_{a}(f)=0\) 都有 \(a\in X\)，且域 K 的特征为 0，则 \(f\) 局部为常值。
+
+5.5.4. 设 U 是流形 X 的一个开子集，f 是从 U 到 X 的典范嵌入；对于 U 中每个点 a，从 \(\mathrm{T}_{a}(f)\) 到 \(\mathrm{T}_{a}(\mathrm{U})\) 的映射 \(\mathrm{T}_{a}(\mathrm{X})\) 是拓扑向量空间的同构，今后据此把这两个空间等同起来。
+
+5.5.5. 设 U 是 Banach 空间 E 的一个开子集；若 \(\iota\) 是 U 到 E 的典范嵌入，则三元组 \(c = (U, \iota, E)\) 是 U 的一个图，而图册 \(\{c\}\) 定义了 U 的流形结构。给定 U 中一点 \(a\)，映射 \(\theta_c\) 是从 E 到 \(T_a(U)\) 的拓扑向量空间同构；其逆同构记为 \(\zeta_E(a)\)。
+
+设 \(f\) 是从 U 到 Banach 空间 F 的开子集 V 的 \(\mathbf{C}^{r}\) 类映射；对于 U 中每一点 \(a\)，有：
+
+\[
+\mathbf {D} f (a) \circ \zeta_ {\mathbf {E}} (a) = \zeta_ {\mathbf {F}} (f (a)) \circ \mathrm{T} _ {a} (f)
+\]
+
+其中 Df(a) 是 f 在 a 处的导数（1.2.1）。换言之，下图：
+
+\[
+\begin{array}{c} \mathrm{T} _ {a} (\mathrm{U}) \xrightarrow {\mathrm{T} _ {a} (f)} \mathrm{T} _ {f (a)} (\mathrm{V}) \\ \Biggl \downarrow \zeta_ {\mathbf {E}} (a) \qquad \qquad \qquad \Biggl \downarrow \zeta_ {\mathbf {F}} (f (a)) \\ \mathrm{E} \xrightarrow {\mathrm{D} f (a)} \mathrm{F} \end{array}
+\]
+
+是交换的。
+
+5.5.6. X 在 a 处的余切向量，也称为切余向量，或简称为 a 处的余向量，是拓扑向量空间 \(\mathrm{T}_{a}(\mathrm{X})\) 上的任意连续线性形式；因此，这些余向量就是 X 在 a 处的切空间的拓扑对偶 \(\mathrm{T}_{a}(\mathrm{X})'\) 的元素。赋予这个空间以 \(\mathrm{T}_{a}(\mathrm{X})\) 的有界子集上一致收敛的拓扑；在此拓扑下，\(\mathrm{T}_{a}(\mathrm{X})'\) 是一个 Banach 空间，称为 X 在 a 处的余切空间。它也记为 \(\mathrm{T}_{a}^{\prime}(\mathrm{X})\)。
+
+设 \(f\) 是从 X 到 Banach 空间 E 的态射。称从 \(f\) 到 E 的连续线性映射 \(a\) 为 \(d_{a}f\) 在 \(df_{a}\) 处的微分，记作 \(\zeta_{\mathbf{E}}(f(a)) \circ \mathbf{T}_{a}(f)\) 或 \(\mathbf{T}_{a}(\mathbf{X})\)。对于 \(t \in \mathbf{T}_{a}(\mathbf{X})\)，有时把线性映射 \(t(f)\) 在点 t 处的值 \(d_{a}f(t)\) 记为 \(d_{a}f\) 或 t.f。映射 \(f \mapsto d_{a}f\) 是线性的。
+
+若 \(E = K\)，则 \(d_a f\)\(f\) 在 \(a\) 处的微分 \(X\)\(a\) 是 X 在 a 处的一个余向量。
+
+设 E、F、G 是三个 Banach 空间，且 \((u, v) \mapsto u \cdot v\) 是从 \(F \times G\) 到 E 的连续双线性映射。设 f（分别为 g）是从 X 到 F（分别为 G）的态射。则映射 \(f \cdot g : x \mapsto f(x) \cdot g(x)\) 是从 X 到 E 的态射，并且对于每个 \(t \in \mathrm{T}_{a}(\mathrm{X})\)，有：
+
+\[
+d _ {a} (f. g) (t) = f (a). d _ {a} g (t) + d _ {a} f (t). g (a).
+\]
+
+特别取 G = E、F = K，且所讨论的双线性映射为乘法，则有：
+
+\[
+d _ {a} (f g) = f (a) d _ {a} g + g (a) d _ {a} f.
+\]
+
+5.5.7. 设 X 是一个局部有限维流形，\(\xi^{1},\ldots,\xi^{m}\) 是定义在 X 中一点 \(a\) 的某个开邻域 U 上的态射函数。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  存在包含于 U 的 a 的一个开邻域 V，使得函数 \(\xi^{i}|V\)（对 \(1 \leqslant i \leqslant m\)）构成 X 在 V 中的一个坐标系；
+\item
+  微分 \(d_a\xi^i\)（对 \(1 \leqslant i \leqslant m\)）构成 \(T_a(X)'\) 的一个基；
+\item
+  映射 \(\xi = (\xi^1, \ldots, \xi^m)\) 从 U 到 \(K^m\) 在 \(a\) 处是 étale 的（参见第 5.7.6 号）。
+\end{enumerate}
+
+微分 \(d_{a}\xi^{1},\ldots,d_{a}\xi^{m}\) 线性无关的充分必要条件是：存在包含于 U 的 \(a\) 的一个邻域 V，使得函数 \(\xi^{i}|V\) 是 X 在 V 中某个坐标系的一部分。
+
+5.5.8. 设 X 是一个局部有限维流形，且 \(\xi = (\xi^1, \ldots, \xi^m)\) 是 X 在开集 U 中的一个坐标系。令 \(a \in \mathbf{U}\)：我们把 \((\partial_{1,a}, \ldots, \partial_{m,a})\) 记为切空间 \(\mathrm{T}_a(\mathrm{X})\) 的基，它与 \((d_a\xi^1, \ldots, d_a\xi^m)\) 的基 \(\mathrm{T}_a(\mathrm{X})'\) 对偶。因此有：
+
+\[
+\partial_ {i, a} (\xi^ {j}) = \delta_ {i, j} \quad (\text { Kronecker index }).
+\]
+
+切向量 \(\partial_{i,a}\) 也记为 \((\partial/\partial\xi^{i})_{a}\)。
+
+设 \(f\) 是 U 上取值于 Banach 空间 E 的 \(\mathbf{C}^r\) 类函数。把函数 \(\partial_i f\) 记为 \(\partial f / \partial \xi^i\) 或 \(a \mapsto \partial_{i,a}(f)\)：它是 U 上取值于 E 的 \(\mathbf{C}^{r-1}\) 类函数（当 \(r = 1\) 时是连续函数）。它在 U 中一点 \(a\) 处的值有时记为 \((\partial f / \partial \xi^i)_a\)。对于每个 \(t \in \mathrm{T}_a(X)\)，有：
+
+\[
+d _ {a} f (t) = \sum_ {i = 1} ^ {m} d _ {a} \xi^ {i} (t) \frac {\partial f}{\partial \xi^ {i}} (a),
+\]
+
+也可写成：
+
+\[
+d _ {a} f = \sum_ {i = 1} ^ {m} \frac {\partial f}{\partial \xi^ {i}} (a) d _ {a} \xi^ {i}.
+\]
+
+这些记号与 1.6.3 中的记号一致。
+
+5.5.9. 设 X 和 Y 是两个流形，f 是从 X 到 Y 的态射。称线性映射 \(rg_{a}f\) 的秩（有限或等于 +∞）为 f 在 X 中一点 a 处的秩，记为 \(\overline{T}_{a}(f)\)。映射 \(a \mapsto rg_{a}f\) 是下半连续的。
+
+\subsection{流形的乘积}
+
+5.6.1. 设 X 和 X' 是两个集合，且 \(c = (\mathrm{U}, \varphi, \mathrm{E})\)（分别地，\(c' = (\mathrm{U}', \varphi, \mathrm{E}')\)）是 X（分别地，X'）的一个图。三元组
+
+\[
+(\mathbf {U} \times \mathbf {U} ^ {\prime}, \varphi \times \varphi^ {\prime}, \mathbf {E} \times \mathbf {E} ^ {\prime})
+\]
+
+是乘积集 \(X \times X'\) 的一个图，记为 \(c \times c'\)。
+
+5.6.2. 设 X 和 X' 是两个 C＾\(C^{r}\)\(C^{r}\)r 类流形。在乘积集 X × X' 上存在唯一的 C＾r 类流形结构，使得对于 X 的每个图 c 和 X' 的每个图 c'，c × c' 都是 X × X' 的一个图。赋予此结构后，称 X × X' 为流形 X 和 X' 的乘积流形。任意有限个流形的乘积类似地定义。流形 X × X' 的拓扑是 X 和 X' 的拓扑的乘积拓扑。对于 a ∈ X 和 b ∈ X'，有：
+
+\[
+\dim_ {(a, b)} (\mathrm{X} \times \mathrm{X} ^ {\prime}) = \dim_ {a} \mathrm{X} + \dim_ {b} \mathrm{X} ^ {\prime}.
+\]
+
+5.6.3. 设 X 和 X' 是两个流形，X × X' 是它们的乘积。令 a ∈ X，a' ∈ X'。典范投影
+
+\[
+\operatorname{pr} _ {1}: \mathrm{X} \times \mathrm{X} ^ {\prime} \rightarrow \mathrm{X} \quad \text { and } \quad \operatorname{pr} _ {2}: \mathrm{X} \times \mathrm{X} ^ {\prime} \rightarrow \mathrm{X} ^ {\prime}
+\]
+
+是态射。设 \(\pi_{i}\)（\(i=1,2\)）是它们在点 \((a,a')\) 处的切线性映射。映射
+
+\[
+(\pi_ {1}, \pi_ {2}): \mathrm{T} _ {(a, a ^ {\prime})} (\mathrm{X} \times \mathrm{X} ^ {\prime}) \rightarrow \mathrm{T} _ {a} (\mathrm{X}) \times \mathrm{T} _ {a ^ {\prime}} (\mathrm{X} ^ {\prime})
+\]
+
+是一个同构，从而可以把 X × X' 在 (a, a') 处的切空间与乘积 \(T_{a}(X) \times T_{a'}(X')\) 等同起来。
+
+由此等同得到的从 \(\mathbf{T}_{a}(\mathbf{X})\) 到 \(\mathbf{T}_{(a,a^{\prime})}(\mathbf{X}\times \mathbf{X}^{\prime})\) 的嵌入，是从 \(a\) 到 \(x\mapsto (x,a^{\prime})\) 的态射 \(\mathbf{X}\) 在 \(\mathbf{X}\times \mathbf{X}^{\prime}\) 处的切线性映射；对于从 \(\mathbf{T}_{a^{\prime}}(\mathbf{X}^{\prime})\) 到 \(\mathbf{T}_{(a,a^{\prime})}(\mathbf{X}\times \mathbf{X}^{\prime})\) 的嵌入，也有类似结果。
+
+5.6.4. 设 W、X 和 X' 是三个流形，且 \(f: \mathbf{W} \to \mathbf{X}\)、\(f': \mathbf{W} \to \mathbf{X'}\) 是两个映射。对于映射
+
+\[
+(f, f ^ {\prime}): \mathbf {W} \rightarrow \mathbf {X} \times \mathbf {X} ^ {\prime}
+\]
+
+要成为态射，其充分必要条件是 \(f\) 和 \(f'\) 都是态射（这说明了使用“乘积”一词的合理性，参见~集合论，第~IV~章，§ 2，第 4 号）。在此情形下，若 \(a\) 是 W 的一点，则有：
+
+\[
+\mathrm{T} _ {a} (f, f ^ {\prime}) = (\mathrm{T} _ {a} (f), \mathrm{T} _ {a} (f ^ {\prime})),
+\]
+
+其中考虑了上面所作的等同。
+
+5.6.5. 设 \(f: \mathbf{X} \to \mathbf{Y}\) 和 \(f': \mathbf{X}' \to \mathbf{Y}'\) 是流形的态射。则 \(f \times f': \mathbf{X} \times \mathbf{X}' \to \mathbf{Y} \times \mathbf{Y}'\) 是一个态射。若 \(a \in \mathbf{X}\) 且 \(a' \in \mathbf{X}'\)，则有：
+
+\[
+\begin{array}{l} \mathrm{T} _ {(a, a ^ {\prime})} (f \times f ^ {\prime}) = \mathrm{T} _ {a} (f) \times \mathrm{T} _ {a ^ {\prime}} (f ^ {\prime}) \\ \mathrm{rg} _ {(a, a ^ {\prime})} (f \times f ^ {\prime}) = \mathrm{rg} _ {a} f + \mathrm{rg} _ {a ^ {\prime}} f ^ {\prime}. \end{array}
+\]
+
+5.6.6. 设 \(X_{1}\)、\(X_{2}\) 和 Z 是三个流形，f 是从 \(X_{1} \times X_{2}\) 到 Z 的态射。令 \(a \in X_{1}\)，\(b \in X_{2}\)。将 \(x \mapsto f(x, b)\)（分别为 \(y \mapsto f(a, y)\)）到 Z 的偏映射 \(X_{1}\)（分别为 \(X_{2}\)）的切线性映射记为 \(T_{(a,b)}^{1}(f)\)（分别为 \(T_{(a,b)}^{2}(f)\)）。若把 \(T_{(a,b)}(X_{1} \times X_{2})\) 与 \(T_{a}(X_{1}) \times T_{b}(X_{2})\) 等同，则有：
+
+\[
+\mathrm{T} _ {(a, b)} (f). (u, v) = \mathrm{T} _ {(a, b)} ^ {1} (f). u + \mathrm{T} _ {(a, b)} ^ {2} (f). v
+\]
+
+对于每个 \(u \in \mathrm{T}_a(\mathrm{X}_1)\) 和每个 \(v \in \mathrm{T}_b(\mathrm{X}_2)\)v  T＿b(X＿2)。
+
+5.6.7.（“隐函数定理”）。在前一号的假设和记号下，再设 \(\mathrm{T}_{(a,b)}^{2}(f)\) 是双射。则存在 \(X_{1}\) 中 a 的一个开邻域 U 和 \(X_{2}\) 中 b 的一个开邻域 V，具有如下性质：对于每个 \(x \in U\)，存在 V 中唯一的一点 \(g(x)\)，使得 \(f(x, g(x)) = f(a, b)\)，且映射 g 是从 U 到 V 的态射。对于每个 \(x \in U\)，有
+
+\[
+\mathrm{T} _ {x} (g) = - \left(\mathrm{T} _ {(x, g (x))} ^ {2} (f)\right) ^ {- 1} \circ \mathrm{T} _ {(x, g (x))} ^ {1} (f).
+\]
+
+\subsection{浸入、étale 态射}
+
+5.7.1. 设 X 和 Y 是两个流形，f 是从 X 到 Y 的态射，a 是 X 的一点。置 \(b = f(a)\)。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  线性映射 \(T_{a}(f)\) 是单射，且其像是 \(\mathbf{T}_{b}(\mathbf{Y})\) 的一个具有拓扑补空间 \(^{1}\) 的闭向量子空间；
+\item
+  存在 Banach 空间 F、F 的一个具有拓扑补空间的闭向量子空间 E，以及 X 在 \(\varphi\) 处的图 (U, \(a\) , E) 和 Y 在 \(\psi\) 处的图 (V, \(b\) , F)，使得 \(f(\mathbf{U}) \subset \mathbf{V}\) 且 \(\varphi = \psi \circ (f|\mathbf{U})\)。
+\item
+  存在 a 的一个开邻域 U、包含 \(f(\mathbf{U})\) 的 b 的一个开邻域 V、一个流形 Z、Z 的一点 c，以及从 \(U \times Z\) 到 V 的流形同构 g，使得对于所有 \(f(x) = g(x, c)\)，都有 \(x \in U\)。
+\item
+  存在 a 的一个开邻域 U、b 的一个开邻域 V，以及从 V 到 X 的态射 q，使得 \(f(\mathbf{U}) \subset \mathbf{V}\)，并且对于所有 \(q(f(x)) = x\)，都有 \(x \in U\)。
+\end{enumerate}
+
+当 X 和 Y 都是有限维时，前述条件还等价于下列条件：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  存在 a 的一个开邻域 U、Y 在包含 \((\eta^{1},\ldots,\eta^{n})\) 的 b 的一个开邻域 V 中的坐标系 \(f(\mathrm{U})\)，以及一个整数 \(m\leqslant n\)，使得当 \(\eta^{j}\circ f=0\) 时 \(m<j\leqslant n\)，并且函数 \(\eta^{1}\circ f,\ldots,\eta^{m}\circ f\) 构成 X 在 U 中的一个坐标系。
+\end{enumerate}
+
+若性质 (i) 至 (iv) 成立，则称 \(f\) 在 \(a\) 处是浸入的。
+
+\(f\) 为浸入的点集是 \(X\) 中的开集；若这个开集就是 \(X\) 的全部，则称 \(f\) 是浸入。
+
+\(f\) 是浸入的充分必要条件是：X 可以由开集 \(\mathbf{U}_{i}\) 覆盖，并且对所有 \(i\)，\(f|\mathbf{U}_{i}\) 都是从 \(\mathbf{U}_{i}\) 到 Y 的某个子流形上的同构（参见~第 5.8.3 号）。
+
+5.7.2. 例：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  若 X 是流形 Y 的一个开子集，则 X 到 Y 的典范嵌入是浸入。
+\item
+  设 E 和 F 是两个 Banach 空间，u 是从 E 到 F 的连续线性映射。则 u 是浸入，当且仅当 u 是从 E 到 F 的某个具有拓扑补空间的闭向量子空间上的同构。
+\end{enumerate}
+
+5.7.3. 设 \(f: \mathbf{X} \to \mathbf{Y}\) 和 \(g: \mathbf{Y} \to \mathbf{Z}\) 是两个态射。若 \(f\) 和 \(g\) 都是浸入，则 \(g \circ f\) 是浸入。反之，若 \(g \circ f\) 是浸入，则 \(f\) 是浸入。若 \(f: \mathbf{X} \to \mathbf{Y}\) 和 \(f': \mathbf{X}' \to \mathbf{Y}'\) 是浸入，则 \(f \times f'\) 是浸入。
+
+5.7.4. 设 X 和 Y 是特征为 0 的域 K 上的有限维流形。若 \(f:X\to Y\) 是单射态射，则 f 为浸入的 X 中点集是 X 的稠密开子集。若 K = R 或 C，则只假设 X 有限维时该结果仍然成立。\(f\)
+
+5.7.5. 设 \(f:X\to Y\) 是一个浸入，\(g\) 是从流形 \(Z\) 到 \(X\) 的连续映射。\(g\) 是态射的充分必要条件是 \(f\circ g\) 是态射。
+
+5.7.6. 设 \(f: X \to Y\) 是一个态射，且 \(a\) 属于 \(X\)。下列两个性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\mathbf{T}_{a}(f)\) 是双射。
+\item
+  存在 a 的一个开邻域 U 和 \(f(a)\) 的一个开邻域 V，使得 f 诱导出从 U 到 V 的同构。
+\end{enumerate}
+
+若这些性质成立，则称 \(f\) 在 \(a\) 处是局部同构，或称 \(f\) 在 \(a\) 处是 étale 的。若对每个 \(a \in X\) 都成立，则称 \(f\) 是 étale 的，或称其为 étale 映射，或称 \(X\) 是在 \(Y\) 上 étale 的（借助 \(f\)）。一个态射是 étale 的充分必要条件是它既是浸入（第 \(n^{\circ}\) 5.7.1 号）又是浸没（第 \(n^{\circ}\) 5.9.1 号）。
+
+5.7.7. 设 \(f:X\to Y\) 是一个浸入；假设流形 X 是纯有限维的。则在下列两种情形中，\(f\) 都是 étale 的：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\dim Y = \dim X\) ;
+\item
+  \(f\) 是满射，且 X 的拓扑有一个可数开集基。
+\end{enumerate}
+
+5.7.8. 态射 \(f\) 是到某个开子流形上的同构（分别地，是同构）的充分必要条件是 \(f\) 是 étale 且单射（分别地，是 étale 且双射）。
+
+\subsection{流形结构的逆像、子流形}
+
+5.8.1. 设 X 是一个拓扑空间，Y 是一个流形，f 是从 X 到 Y 的映射。考虑下列条件：
+
+(QR)（分别为 (R)）对于每个 \(a \in X\)，存在 X 中 a 的一个开邻域 \(U\) 以及流形 Y 在 \(X\) 处的一个图 \((V, \varphi, E)\)，使得 \(Y\)\(f(a)\)\(f(U) \subset V\)，且 \(\varphi \circ f\) 将 U 同胚地映到 \(U\)\(\varphi(V)\) 与 E 的一个闭向量子空间 \(F\) 的交集上（分别地，映到与 E 的一个具有拓扑补空间的闭向量子空间 \(E\) 的交集上）。
+
+若条件 (QR) 成立，则 X 上存在唯一的流形结构，使得三元组 (U, \(\varphi \circ f\) , F)（记号如 (QR)）是 X 的图。称其为由 \(f\) 从 Y 的流形结构得到的逆像结构。其拓扑就是 X 的拓扑。
+
+X 上存在一个与给定拓扑相容且使 \(f\) 成为浸入的流形结构的充分必要条件是条件 (R) 成立。此结构随后是唯一的：它是 Y 的流形结构在 f 下的逆像。
+
+5.8.2. 特别地，当对每个 \(a \in X\) 都存在 a 的一个开邻域 U，使得 \(a\)\(f|U\) 是从 \(U\) 到 Y 的某个开子集上的同胚时，上述条件 (R) 成立。在此情形下，得到的流形 \(Y\)\(X\) 在 \(Y\) 上是 étale 的（5.7.6）。
+
+5.8.3. 现在设 X 是 Y 的一个拓扑子空间，f 是典范嵌入。若 f 满足第 5.8.1 号的条件 (R)（分别为 (QR)），则赋予 X 以 Y 的流形结构在 f 下的逆像结构后，称 X 为 Y 的子流形（分别为拟子流形）。子流形是拟子流形。
+
+每个拟子流形都是局部闭的；每个开集都是子流形，且其结构就是第 5.2.3 号所定义的结构。
+
+当 Y 局部有限维时，Y 的拓扑子空间 X 是 Y 的子流形，当且仅当对于每个 \(a \in X\)，存在 Y 中 a 的一个开邻域 U、Y 在 U 中的一个坐标系 \((\xi^{1}, \ldots, \xi^{m})\) 以及一个整数 \(k \leqslant m\)，使得 \(U \cap X\) 是 U 中使得当 \(\xi^{i}\) 时函数 \(1 \leqslant i \leqslant k\) 同时为零的点集。
+
+设 \(f:X\to Y\) 是流形的一个态射。假设 \(f\)\(f\) 是浸入，且 f 诱导出从 X 到 \(f(X)\) 的同胚。则 \(f(X)\) 是 Y 的子流形，且 f 诱导出从 X 到 \(f\)\(f(X)\) 的同构；此时称 \(f\) 是 X 到 Y 的嵌入。
+
+5.8.4. 设 Y 和 W 是两个流形，X 是 Y 的一个子流形，f 是从 X 到 W 的映射。f 是态射的充分必要条件是：对于每个 \(a \in X\)，存在 Y 中 a 的一个邻域 U 和一个态射 \(g : U \to W\)，使得 g 在 \(U \cap X\) 上与 f 重合。
+
+5.8.5. 设 X 是流形 Y 的一个拟子流形，g 是从流形 Z 到 X 的映射。假设 K 的特征为 0，或 X 是 Y 的子流形。g 是从 Z 到 X 的态射的充分必要条件是它是从 Z 到 Y 的态射；换言之，X 的流形结构由 Y 的流形结构诱导（集合论，第~IV~章，§ 2，第 4 号）。
+
+5.8.6. 若 X 是 Y 的子流形（分别为拟子流形），且 Y 是流形 Z 的子流形，则 X 是 Z 的子流形（分别为拟子流形）。
+
+5.8.7. 设 \(X_{i}\)（i = 1, 2）是一个流形，\(Y_{i}\) 是 \(X_{i}\) 的子流形（分别为拟子流形）（i = 1, 2）。则 \(Y_{1} \times Y_{2}\) 是 \(X_{1} \times X_{2}\) 的子流形（分别为拟子流形）。
+
+5.8.8. 设 X 是流形 Y 的一个拟子流形；令 x 是 X 的一点，并以 f 表示 X 到 Y 的典范嵌入。映射 \(T_{x}(f):T_{x}(X)\to T_{x}(Y)\) 是单射，从而可以把空间 \(T_{x}(X)\) 与 \(T_{x}(Y)\) 的一个闭向量子空间等同起来。拓扑向量空间商 \(T_{x}(Y)/T_{x}(X)\) 是一个 Banach 空间，称为 X 在 x 处（于 Y 中）的横截空间。它的维数（有限或 +∞）称为 X 在点 x 处于 Y 中的余维。
+
+若进一步 X 是 Y 的子流形，则空间 \(T_{x}(X)\) 在 \(T_{x}(Y)\) 中具有拓扑补空间。
+
+5.8.9. 设 \(f\) 是从流形 X 到流形 Y 的映射，\(\Gamma\) 是它的图。\(f\) 是态射的充分必要条件是满足下列两个条件：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\Gamma\) 是 \(X \times Y\) 的子流形。
+\item
+  对每个 \((x, y) \in \Gamma\)，有
+\end{enumerate}
+
+\[
+\mathrm{T} _ {(x, y)} (\mathrm{X} \times \mathrm{Y}) = \mathrm{T} _ {(x, y)} (\Gamma) \oplus \mathrm{T} _ {y} (\mathrm{Y}).
+\]
+
+若此条件成立，则映射 \(\mathsf{pr}_1\) 诱导出从 \(\Gamma\) 到 X 的同构，并且 \(X\)\(\mathrm{T}_{(x,y)}(\Gamma)\) 与 \(\mathrm{T}_x(f)\) 的图等同。
+
+特别地，\(X \times X\) 的对角线是 \(X \times X\) 的子流形。
+
+5.8.10. 设 Y 是一个流形，\((f_{i})_{i\in I}\) 是 Y 上的有限个态射函数组成的族。令 X 为满足对每个 i 都有 \(x\in Y\) 的 \(f_{i}(x)=0\) 的集合。假设下列条件成立：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  对每个 \(x \in X\)，微分 \(d_x f_i\) 在 \(T_x'(Y)\) 中线性无关。
+\end{enumerate}
+
+则 X 是 Y 的闭子流形，切空间 \(T_{x}(X)\) 是由满足对 I 中每个 i 都有 \(T_{x}(Y)\) 的 \(\alpha\) 所组成的 \(\alpha.f_{i}=0\) 的子空间。此外，X 在 Y 中每一点处的余维都等于 Card (I)。
+
+5.8.11.（理想的简单点）。设 \(\mathfrak{a}\) 是多项式代数 \(\mathrm{K}[\mathrm{X}_1,\ldots ,\mathrm{X}_n]\) 的一个理想。若  中的点 \(x = (x_{1},\dots,x_{n})\) 对所有 \(\mathbf{K}^n\) 都满足 f(x) = 0，则称其为 \(\mathfrak{a}\) 的零点。若 \(f(x) = 0\)\(f\in \mathfrak{a}\)\(x\in \mathbf{K}^n\)，以 \(\mathbf{S}_x\) 表示由分式  构成的 \(\mathrm{K}(\mathrm{X}_1,\dots,\mathrm{X}_n)\) 的子代数，其中 \(f / g\)\(f,g\in \mathrm{K}[\mathrm{X}_1,\dots,\mathrm{X}_n]\) 且 \(g(x)\neq 0\)；以 \(\mathfrak{a}_x\) 表示 \(\mathbf{S}_x\) 中由 \(\mathfrak{a}\) 生成的理想。若点 \(\mathbf{S}_x\)\(x\) 是 \(\mathfrak{a}\) 的零点且满足下列条件，则称 x 为 \(\mathfrak{a}\) 的简单零点：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  存在一个由 \((f_1, \ldots, f_m)\) 中元素组成的有限序列 \(\mathfrak{a}\)，它们生成理想 \(\mathfrak{a}_x\)，且它们在 \(x\) 处的微分线性无关。（该条件等价于局部环 \(\mathbf{S}_x / \mathfrak{a}_x\) 是正则的（交换代数，即将出版）。）
+\end{enumerate}
+
+令 \(Z\)（分别为 \(Z_s\)）为 \(\mathfrak{a}\) 的零点集（分别为简单零点集）。集合 \(Z\) 在 \(K^n\) 中是闭的，\(Z_s\) 在 \(Z\) 中是开的，而 \(Z_s\) 是 \(K^{n}\) 的子流形。若 \(x \in Z_{s}\)，则理想 \(\mathrm{K}[\mathrm{X}_{1}, \ldots, \mathrm{X}_{n}] \cap \mathfrak{a}_{x}\) 由在 \(Z_{s}\) 中 x 的某个邻域上消失的多项式 f 构成。
+
+令 \(\overline{\mathfrak{a}}\) 为在 Z 上消失的多项式构成的理想。若 K 是代数闭域，则 \(\mathfrak{a}\) 的简单零点集在 Z 中稠密。
+
+5.8.12. 设 X 是一个流形，L 是由有序对 \((x, Z)\) 组成的集合，其中 x 是 X 的一点，Z 是包含 x 的 X 的子流形。给定两个有序对 \(\pi = (x, Z)\) 和 \(\pi' = (x', Z')\)，用 \(R\{\pi, \pi'\}\) 表示如下关系：
+
+“我们有 \(x = x'\)，且存在 \(x\) 的一个邻域 U，使得 \(\mathbf{U} \cap \mathbf{Z} = \mathbf{U} \cap \mathbf{Z'}\)。于是 R 是 L 上的等价关系；把有序对 \(\gamma_x(Z)\) 的等价类记为 \((x, Z) \in L\)。在集合 \(J = L/R\) 上存在唯一的流形结构，满足下列条件：
+
+对于 X 的每个子流形 Z，映射 \(x \mapsto \gamma_{x}(Z)\) 从 Z 到 J 是从 Z 到 J 的一个开子流形上的同构。
+
+称 J 为 X 的子流形芽的流形（参见~一般拓扑，第~I~章，第 4 \(^{e}\) 版，§ 6，第 10 号）。
+
+由  定义的映射 \(\rho: J \to X\) 是一个浸入；称其为 J 到 X 的典范浸入。\(\rho(\gamma_x(Z)) = x\)\(J\)\(X\)
+
+若 X 是有限维的分离解析流形，则 J 也如此。
+
+\subsection{浸没与商流形}
+
+5.9.1. 设 \(f: X \to Y\) 是流形的一个态射，\(a\) 是 \(X\) 的一点，并置 \(b = f(a)\)。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  线性映射 \(T_{a}(f)\) 是满射，且其核在 \(T_{a}(X)\) 中具有拓扑补空间。
+\item
+  存在 X 在 \(\varphi\) 处的一个图 (U, \(a\) , E)、Y 在 \(\psi\) 处的一个图 (V, \(b\) , F)，以及从 E 到 F 的满连续线性映射 \(u\)，使得
+\end{enumerate}
+
+\[
+f (\mathrm{U}) \subset \mathrm{V}, \quad \psi \circ f = u \circ \varphi
+\]
+
+且 \(u\) 的核在 E 中具有拓扑补空间。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\item
+  存在 a 的一个开邻域 U、包含 \(f(\mathbf{U})\) 的 b 的一个开邻域 V，以及从 U 到流形 Z 的态射 g，使得映射 \((f,g)\) 从 U 到 \(V \times Z\) 是一个同构。
+\item
+  存在 b 的一个开邻域 V 和从 V 到 X 的态射 s，使得 \(s(b) = a\)，且对 V 中所有 y，都有 \(f(s(y)) = y\)（“局部截面”）。
+\end{enumerate}
+
+当 X 和 Y 都是有限维时，前述条件等价于下列条件：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  存在 a 的一个开邻域 U、包含 \(f(\mathbf{U})\) 的 b 的一个开邻域 V，以及 V 上的一个坐标系 \((\eta^{1},\ldots,\eta^{n})\)，使得函数 \(\eta^{i}\circ f\) 在 U 上构成 U 上某个坐标系的一部分。
+\end{enumerate}
+
+若性质 (i) 至 (iv) 成立，则称 \(f\) 在 \(a\) 处是浸没的。\(f\) 为浸没的点集是 \(X\) 中的开集；若这个开集就是 X 的全部，则称 f 是浸没。
+
+5.9.2. 设 \(f: X \to Y\) 和 \(g: Y \to Z\) 是两个态射。若 \(f\) 和 \(g\) 都是浸没，则 \(g \circ f\) 也是浸没。反之，若 \(g \circ f\) 是浸没且 \(f\) 是满射，则 \(g\) 是浸没。
+
+5.9.3. 若 \(f: X \to Y\) 和 \(f': X' \to Y'\) 是浸没，则 \(f \times f'\) 是浸没。
+
+5.9.4. 浸没 \(f: X \to Y\) 是开映射（参见一般拓扑，第 I 章，第 4 \(^{e}\) 版，§ 5，第 1 号）；特别地，由 \(f\) 定义的等价关系 R 是开的，f 通过取商定义了从 X/R 到 \(f\)\(f(X)\) 的同胚，且 \(f(X)\) 在 Y 中是开的。
+
+5.9.5. 设 R 是流形 X 上的一个等价关系。若在商空间 X/R 上存在流形结构，使典范投影 \(p: X \to X/R\) 为浸没，则称 R 是正规的；此流形结构于是是唯一的；它是 X 的流形结构的商（集合论，第~IV~章，§ 2，第 6 号）：换言之，从 X/R 到流形 Y 的态射 \(g\) 存在的充分必要条件是 \(g \circ p\) 是从 X 到 Y 的态射。
+
+令 \(C \subset X \times X\) 为 R 的图。R 为正规的充分必要条件是满足下列两个条件：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  C 是 X × X 的子流形。
+\item
+  映射 \(pr_{1}\) 从 C 到 X 是浸没。
+\end{enumerate}
+
+(ii) 还意味着：若 \(a\) 和 \(b\) 模 \(\mathbf{R}\) 同余，则存在 a 的一个开邻域 U 和从 U 到 X 的态射 \(a\)\(s\)，使得 \(s(a) = b\)，且对所有 ，\(s(x)\) 模  与 \(x\) 同余。\(\mathbf{R}\)\(x \in \mathbf{U}\)
+
+假设 R 是正规的。商流形 X/R 是分离的充分必要条件是 R 的图在 \(X \times X\) 中闭。
+
+5.9.6. 设 X 和 X' 是两个流形，R 和 R' 分别是 X 和 X' 上的正规等价关系，\(f: X \to X'\) 是一个与关系 R 和 R' 相容的态射。由 f 通过取商得到的映射 \(\bar{f}: X/R \to X'/R'\) 是一个态射。\(f\)
+
+5.9.7.（“商的传递性”）设 R 和 S 是流形 X 上的两个等价关系，且 R 蕴含 S；令 S/R 为 X/R 上的商等价关系。假设 R 是正规的。则 S 为正规的充分必要条件是 S/R 为正规；若条件成立，则典范双射
+
+\[
+(\mathrm{X} / \mathrm{R}) / (\mathrm{S} / \mathrm{R}) \rightarrow \mathrm{X} / \mathrm{S}
+\]
+
+是流形的同构。
+
+5.9.8.（“商的乘积”）设 \((\mathbf{X}_{i})_{i\in I}\) 是有限个流形组成的族，每个流形都赋有一个正规等价关系 \(R_{i}\)。令 \(X = \prod_{i\in I} X_{i}\)，并令 R 为 X 上由 \(R_{i}\) 的乘积得到的等价关系（参见一般拓扑，第 I 章，第 4 版，§ 5，第 3 号，命题 8 的推论）。则 R 是正规的，且从 X/R 到 \(\prod_{i\in I}(X_{i}/R_{i})\) 的典范双射是流形同构。
+
+\subsection{子浸入}
+
+5.10.1. 设 \(f:X\to Y\) 是流形的一个态射，\(\Gamma\) 是 \(f\) 的图。映射 \(j:x\mapsto(x,f(x))\) 是 X 到 \(X\)\(X\times Y\) 的浸入，其像是子流形 \(\Gamma\)；而 \(f=\mathrm{pr}_{2}\circ j\) 是先浸入 \(j\)、再经浸没 \(\mathrm{pr}_{2}\) 所得的复合。
+
+令 \(a \in X\)。若存在 a 的一个开邻域 、一个流形 、从 U 到 Z 的浸没  以及从 Z 到 Y 的浸入 ，使得 ，则称 \(f\) 在 \(a\) 处是子浸入。\(U\)\(a\)\(Z\)\(s\)\(U\)\(Z\)\(i\)\(Z\)\(Y\)\(f|U = i \circ s\)\(X\)\(f\) 为子浸入的 X 中点集是 X 的开子集；若这个开集就是 X 本身，则称 \(X\)\(X\)\(f\) 是子浸入。
+
+5.10.2. 浸入和浸没都是子浸入。若 \(f: X \to Y\) 是子浸入，\(g: Y \to Z\) 是浸入，且 \(h: W \to X\) 是浸没，则 \(g \circ f \circ h\) 是子浸入。
+
+若 \(f\) 和 \(f'\) 是子浸入，则 \(f \times f'\) 是子浸入。
+
+5.10.3. \(f: X \to Y\) 在 X 中一点 \(a\) 处为子浸入的充分必要条件是：存在 \(X\) 在 a 处的一个图 \((U, \varphi, E)\)、Y 在点 \(X\)\(a\) 处的一个图 \((V, \psi, F)\)，以及从 E 到 F 的连续线性映射 \(Y\)\(f(a)\)\(g\)，使得：\(E\)\(F\)
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(f(\mathbf{U}) \subset \mathbf{V}\) , \(g(\varphi(\mathbf{U})) \subset \psi(\mathbf{V})\) 且 \(f|\mathbf{U} = \psi^{-1} \circ g \circ \varphi\) ;
+\item
+  g 的核（分别地，像）是 E（分别地，F）的具有拓扑补空间的闭子空间。
+\end{enumerate}
+
+5.10.4. 设 X 和 Y 是两个有限维流形。态射 \(f\) 从 X 到 Y 在 X 中一点 \(a\) 处为子浸入的充分必要条件是：存在 X 在 \((\xi^{1},\ldots,\xi^{m})\) 处的坐标系 \(a\)、Y 在 \((\eta^{1},\ldots,\eta^{n})\) 处的坐标系 \(f(a)\)，以及一个整数 \(k\leqslant\inf(m,n)\)，使得
+
+\[
+\eta^ {i} \circ f = \xi^ {i} \quad \text { for } 1 \leqslant i \leqslant k
+\]
+
+\[
+\eta^ {i} \circ f = 0 \quad \text {   for   } k <   i \leqslant n.
+\]
+
+5.10.5. 设 \(f: X \to Y\) 是子浸入。对于每个 \(b \in Y\)，\(f^{-1}(b)\) 是 X 的子流形；在点 \(X\) 处与子流形  相切的 \(\mathrm{T}_{a}(X)\) 的子空间是 \(f^{-1}(b)\)\(a \in f^{-1}(b)\)\(\mathrm{T}_{a}(f)\) 的核。
+
+5.10.6.（“常秩定理”）设 \(f: X \to Y\) 是流形的一个态射，且 \(a \in X\)。若 \(f\) 在 \(a\) 处是子浸入，则当 \(\operatorname{rg}_{x} f = \operatorname{rg}_{a} f\) 充分接近 \(x\) 时，有 \(a\)。
+
+反之，假设域 K 的特征为 0。设 (U, \(\varphi\) , E) 是 X 在 \(a\) 处的一个图，(V, \(\psi\) , F) 是 Y 在 \(f(a)\) 处的一个图，且 \(f(U) \subset V\)。置 \(g = \psi \circ f \circ \varphi^{-1}\)。若存在 E 的一个闭向量子空间 \(E_{1}\) 和 F 的一个闭向量子空间 \(F_{1}\)，使得对于每个 \(x \in U\)，子空间 \(E_{1}\)（分别为 \(F_{1}\)）是 g 在点 \(\varphi(x)\) 处的导数 Dg( \(g\)\(\varphi(x)\) ) 的核（分别为像）的拓扑补空间，则 \(f\) 在 \(a\) 处是子浸入。
+
+若 K 的特征为 0（分别地，K = R 或 C），且 Y 是有限维的（分别地，\(rg_{a}f < +\infty\)），则 f 在 a 处是子浸入，当且仅当对于所有充分接近 a 的 x，都有 \(rg_{x}f = rg_{a}f\)。
+
+若 K 的特征为 0（分别地，K = R 或 C），且 Y（分别地，X）是有限维的，则 f 为子浸入的点集 \(x \in X\) 是 X 的稠密开子集。
+
+5.10.7.（“子浸入的典范分解”）每个子浸入都是一个浸没与一个浸入的复合。具体地，设 \(f: X \to Y\) 是子浸入，J 是 Y 的子流形芽的流形（5.8.12）。令 \(x\) 属于 X 且 \(y = f(x)\)；存在 x 的开邻域 U，使得 \(x\)\(f|U\) 是从 U 到 Y 的一个子流形 Z 上的浸没；J 的元素 \(\gamma_y(Z)\) 只依赖于 \(x\)，而不依赖于所选的邻域 U，若将其记为 \(\lambda(x)\)，则映射 \(\lambda\) 是从 X 到 J 的浸没；若以 \(\rho\) 表示 J 到 Y 的典范浸入，则有 \(f = \rho \circ \lambda\)。若 \(f\) 是浸入，则从 X 到 J 的态射 \(\lambda\) 是 étale 的。
+
+若 g 是从 X 到流形 Z 的满浸没，h 是从 Z 到 Y 的态射，且 \(f = h \circ g\)，则存在唯一的从 Z 到 J 的浸没 \(\mu\)，使得 \(\lambda = \mu \circ g\)。
+
+\subsection{纤维积与逆像}
+
+5.11.1. 设 F 是一个 Banach 空间，\((\mathrm{E}_{i})_{i\in I}\) 是有限个 Banach 空间组成的族，\(\mathbf{f}=(f_{i})_{i\in I}\) 是由从 \(f_{i}\) 到 F 的连续线性映射 \(E_{i}\) 组成的族。令 E 为各 \(E_{i}\) 的乘积，令 f 为从 E 到 \(F^{I}\) 的连续线性映射，即各 \(f_{i}\) 的乘积。最后，令 D 为 \(F^{I}\) 的闭子空间，它由满足 \((y_{i})_{i\in I}\) 与 i 无关的 \(y_{i}\) 构成（\(F^{I}\) 的“对角线”）。称族 f 是横截的，如果将 f 与从 \(F^{I}\) 到商空间 \(F^{I}/D\) 的典范投影复合所得的连续线性映射是满射，且其核 \(f^{-1}(D)\) 具有拓扑补空间。
+
+若空间 \(E_{i}\) 和 F 都是有限维的，则族 f 是
+
+横截的，当且仅当有：
+
+\[
+\operatorname{codim} \left(\bigcap_ {i} \operatorname{Im} f _ {i}\right) = \sum_ {i} \operatorname{codim} \left(\operatorname{Im} f _ {i}\right)
+\]
+
+若 \(I = \{1, 2\}\)，则有序对 \((f_1, f_2)\) 横截，当且仅当映射
+
+\[
+f _ {1} + f _ {2}: \mathbf {E} _ {1} \oplus \mathbf {E} _ {2} \rightarrow \mathbf {F}
+\]
+
+是满射且其核具有拓扑补空间（如果 \(E_{1}\) 和 \(E_{2}\) 是有限维的，这等价于说
+
+\[
+\operatorname{Im} f _ {1} + \operatorname{Im} f _ {2} = \mathrm{F}).
+\]
+
+5.11.2. 设 S 是一个流形，\((X_{i})_{i\in I}\) 是有限个流形组成的族，\(\mathbf{f}=(f_{i})_{i\in I}\) 是由从 \(f_{i}\) 到 S 的态射 \(X_{i}\) 组成的族。令 P 为各 \(X_{i}\) 的乘积 X 的子集，它由满足 \((x_{i})_{i\in I}\) 与 i 无关的点 \(f_{i}(x_{i})\) 构成。令 \(x\in P\)，并令 \(y=f_{i}(x_{i})\in S\)。若映射 \(T_{x}(f_{i})\) 构成取值于 Banach 空间 \(T_{y}(S)\) 的连续线性映射的横截族，则称族 f 在 P 的点 x 处横截。若 f 在 P 的每一点处都横截，则称 f 是横截的。
+
+若 f 是横截的，则 P 是 X 的子流形，称为在 S 上方（相对于族 f）的各 \(X_{i}\) 的纤维积，记为 \(\prod_{i\in I}X_{i}\)（例如当 \(X_{1}\times_{S}X_{2}\) 时也简写为 \(I=\{1,2\}\)）。对于 P 的每一点 \(x=(x_{i})\)，切空间 \(T_{x}(\prod_{S}X_{i})\) 是 \(\prod T_{x}(X_{i})\) 的子空间，由满足 \(t=(t_{i})\) 与指标 i 无关的切向量 \(T_{x_{i}}(f_{i}).t_{i}\) 组成。
+
+若 \(f_{1}: X_{1} \to Y\) 是浸没，\(f_{2}: X_{2} \to Y\) 是态射，则有序对 \((f_{1}, f_{2})\) 是横截的。
+
+5.11.3.（“纤维积的泛性质”）设 \(\mathbf{f} = (f_i)_{i \in I}\) 是态射 \(f_i: X_i \to S\) 的横截族，P 是在 S 上各 \(X_i\) 的纤维积；对于每个 \(i \in I\)，以 \(\pi_i\) 表示从 P 到 \(X_i\) 的态射，它由将 X 到 \(X_i\) 的投影限制在 P 上得到；于是 \(f_i \circ \pi_i\) 是从 P 到 S 的态射，且与 \(i\) 无关。设 T 是一个流形，\(g_i: T \to X_i\) 是流形的态射，并且 \(f_i \circ g_i\) 是从 T 到 S 的态射，且与 \(i \in I\) 无关；则存在唯一的从 T 到 P 的态射 \(h\)，使得对于所有 \(g_i = \pi_i \circ h\)，都有 \(i \in I\)。
+
+5.11.4.（“纤维积的结合律”）设 \(\mathbf{f} = (f_i)_{i \in I}\) 是流形态射 \(f_i: \mathbf{X}_i \to \mathbf{S}\) 的有限族，\((\mathrm{J}_{\lambda})_{\lambda \in \Lambda}\) 是 I 的一个划分。假设对 \(\lambda\) 中每个 \(\Lambda\)，族 \(\mathbf{f}_{\lambda} = (f_i)_{i \in \mathrm{J}_{\lambda}}\) 都是横截的，并以 \(\mathrm{P}_{\lambda}\) 表示该族的纤维积；对于 \(x = (x_i)_{i \in \mathrm{J}_{\lambda}}\) 的每个点 \(\mathrm{P}_{\lambda}\)，S 中的元素 \(f_i(x_i)\) 与 \(i \in \mathrm{J}_{\lambda}\) 无关，记为 \(u_{\lambda}(x)\)；
+
+于是 \(u_{\lambda}\) 是从 \(P_{\lambda}\) 到 S 的态射。族 \(\mathbf{u} = (u_{\lambda})\) 横截的充分必要条件是族 \(\mathbf{f}\) 横截。于是，从 \(\prod_{\lambda \in \Lambda} \prod_{i \in J_{\lambda}} X_i\) 到 \(\prod_{i \in I} X_i\) 的典范双射限制后给出从纤维积 \(\prod_{\lambda \in \Lambda} {}_{S}P_{\lambda}\) 到纤维积 \(\prod_{i \in I} {}_{S}X_i\) 的同构。
+
+5.11.5. 设 S 是一个流形。称 S 上的流形为赋有态射 \(\lambda: X \to S\) 的流形 X。设 \((X, \lambda)\) 是 S 上的流形，\(f: S' \to S\) 是流形的态射，且有序对 \((f, \lambda)\) 横截。记 \(f^*(X)\) 为流形 \(S' \times_{S} X\)，并赋予它由 \(f^*(\lambda): S' \times_{S} X\) 定义的态射，其中 \(f^*(\lambda)(s', x) = s'\)。称 \(f^*(X)\) 是沿 f 通过从 S 到 \(S'\) 的基变换由 X 得到的。若 \(f\)\(\lambda\) 是浸没（分别为浸入、子浸入、étale 态射），则 \(f^*(\lambda)\) 也具有相应性质。
+
+5.11.6. 设 \(f: X \to Y\) 是流形的一个态射，W 是 Y 的子流形；令 \(i\) 为 W 到 Y 的典范嵌入。若有序对 \(f\) 在 \(x \in f^{-1}(W)\) 的点 \((f, i)\) 处横截，则称 \((x, f(x))\) 在点 \(X \times W\) 处横截于 W。其充分必要条件是满足下列条件：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  切空间 \(\mathbf{T}_{f(x)}(\mathbf{Y})\) 是 \(\mathbf{T}_{f(x)}(\mathbf{W})\) 与 \(\mathbf{T}_{x}(f)\) 的像之和；
+\item
+\(\mathrm{T}_{x}(f)^{-1}(\mathrm{T}_{f(x)}(\mathrm{W}))\) 是 \(f(x)\) 处 W 的切空间的逆像，具有拓扑补空间。
+\end{enumerate}
+
+若  在  的每一点处都横截于 ，则称 \(f\) 横截于 \(W\)。\(W\)\(f^{-1}(W)\)
+
+从 X 到 Y 的态射是浸没的充分条件是它横截于 Y 的每一点，而必要条件是它横截于 Y 的每个子流形。有限个态射 \(f_{i}:X_{i}\to S\) 横截的充分必要条件是：由 \(g\) 定义的从 \(\prod_{i\in I}X_{i}\) 到 \(S^{I}\) 的态射 \(g((x_{i})_{i\in I})=(f_{i}(x_{i}))_{i\in I}\) 横截于 \(S^{I}\) 的对角线。
+
+5.11.7. 假设态射 \(f:X\to Y\) 横截于 Y 的子流形 W。则  是 X 的子流形；对于 \(f^{-1}(W)\) 中的 \(x\)，与 \(f^{-1}(W)\) 相切的 \(\mathrm{T}_{x}(\mathrm{X})\) 的子空间是 \(f^{-1}(W)\)\(\mathrm{T}_{x}(f)\) 下 \(\mathrm{T}_{f(x)}(\mathrm{W})\) 的逆像。通过取商，线性映射 \(\mathrm{T}_{x}(f)\) 诱导出从 \(f^{-1}(W)\) 在 \(x\) 处的横截空间到 W 在 \(y=f(x)\) 处的横截空间的拓扑向量空间同构。若 W 在 Y 中 y 处的余维为 \(d\)，则 X 的子流形 \(y\)\(f^{-1}(W)\) 在其每一点处的余维均为 \(d\)。最后，映射 \(f^{-1}(W)\)\(x\mapsto(x,f(x))\) 是从 \(f^{-1}(W)\) 到纤维积 \(\mathrm{X}\times_{\mathrm{Y}}\mathrm{W}\) 的流形同构。
+
+5.11.8. 设 \(Y_{1}\) 和 \(Y_{2}\) 是流形 X 的两个子流形，\(\iota_{j}\) 是 \(Y_{j}\) 到 X 的嵌入。若有序对 \(Y_{1}\) 横截，则称 \(Y_{2}\) 和 \((\iota_{1},\iota_{2})\) 横截；这等价于：对于 \(Y_{1}\cap Y_{2}\) 的每一点 x，\(T_{x}(Y_{1})\) 和 \(T_{x}(Y_{2})\) 作为 \(T_{x}(X)\) 的子空间，其和为 \(T_{x}(X)\)，且它们的交在 \(T_{x}(X)\) 中具有拓扑补空间。在这些条件下，\(Y_{1}\cap Y_{2}\) 是 X 的子流形，并且对于 \(Y_{1}\cap Y_{2}\) 中每个 x，有：
+
+\[
+\mathrm{T} _ {x} (\mathrm{Y} _ {1} \cap \mathrm{Y} _ {2}) = \mathrm{T} _ {x} (\mathrm{Y} _ {1}) \cap \mathrm{T} _ {x} (\mathrm{Y} _ {2});
+\]
+
+若进一步 \(\mathbf{Y}_i\) 在 \(d_i\) 处的余维为 \(x\)，则 \(\mathbf{Y}_1 \cap \mathbf{Y}_2\) 在 \(d_1 + d_2\) 处的余维为 \(x\)。
+
+5.11.9. 设 \(f\) 和 \(g\) 是从流形 X 到流形 Y 的两个态射。若态射 \((f,g):\mathrm{X}\to\mathrm{Y}\times\mathrm{Y}\) 横截于 \(\mathrm{Y}\times\mathrm{Y}\) 的对角线，则 X 中由满足 \(x\) 的点 \(f(x)=g(x)\) 组成的子集 N 是 X 的子流形；称其为双箭头的核。
+
+\[
+f, g: \mathrm{X} \longrightarrow \mathrm{Y}.
+\]
+
+\subsection{群流形}
+
+5.12.1. 设 G 是一个群。如果 G 上的流形结构与 G 的群结构相容，是指映射 \((x, y) \mapsto xy\) 从 \(G \times G\) 到 G 是态射。于是映射 \(x \mapsto x^{-1}\) 是从 G 到自身的态射。赋予 G 以其群结构和流形结构后，称其为群流形（若需精确说明，则称为“C＾\(C^{r}\)r 类群流形”），也称为李群。若 \(r = \omega\)，也称为解析群。若 K = R（分别为 C、\(Q_{p}\)），也称为实（分别为复、p-adic）李群。每个群流形都是纯的。群流形之间的同态（或简称同态）是一个从群流形到另一个群流形的映射，它既是群同态又是流形态射。
+
+若 G 是群流形，则 G 的流形结构所对应的拓扑结构使 G 成为可度量化的完备拓扑群；当 K 局部紧且 G 有限维时，它是局部紧的。
+
+5.12.2. 例：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  若 V 是 Banach 空间，则 V 的典范流形结构与其交换群结构相容。
+\item
+  设 A 是带单位元的完备赋范 K-代数，A* 是 A 的可逆元素组成的群。它是 A 的一个开子空间，而由 K-向量空间 A 的典范流形结构在这个开集上诱导的流形结构与 A* 上的群结构相容。特别地，取 A 为 Banach 空间 E 的连续自同态代数 \(\mathcal{L}(E)\)；群 \(A^{*}\) 由拓扑向量空间 E 的自同构组成；把如此定义的群流形记为 \(\mathbf{GL}(E)\)。当 \(A = M_{n}(K)\) 时，我们在 \(\mathbf{GL}(n, K)\) 上得到群流形结构。
+\item
+  若 \(G_{1},\ldots,G_{n}\) 是群流形，则乘积群 \(G=G_{1}\times\cdots\times G_{n}\) 在赋予各 \(G_{i}\) 的流形结构的乘积流形结构后，是一个群流形。
+\end{enumerate}
+
+5.12.3. 设 G 是一个群流形，H 是一个拓扑群，且 \(f:H\to G\) 是满足第 5.8.1 号条件 (QR) 的连续同态。G 的流形结构在 \(f\) 下的逆像结构使 H 成为群流形。当 H 是 G 的一个子群且为子流形（分别为拟子流形）时尤其适用；这样的子群称为 G 的群子流形（分别为群拟子流形）；它必然是 G 中的闭集。
+
+若 \(H_{i}(i=1,\ldots,n)\) 是 \(G_{i}\) 的群子流形，则 \(H_{1}\times\cdots\times H_{n}\) 是 \(G_{1}\times\cdots\times G_{n}\) 的群子流形。
+
+5.12.4. 设 G 是一个群流形，H 是 G 的群子流形。等价关系 \(x^{-1}y \in H\) 是正规的，这使得可以在左陪集 xH 组成的空间 G/H 上赋予一个流形结构，称为 G 的流形结构的商。映射 \((g, x) \mapsto g.x\) 从 \(G \times (G/H)\) 到 G/H 是态射。对于由右陪集 Hx 组成的齐性空间 \(H\backslash G\)，也有类似结果。若 H 是正规子群，则 G/H 的流形结构与其群结构相容。
+
+5.12.5. 设 G 是一个群流形，X 是一个流形。群 G 在流形 X 上的左作用是从 \((s, x) \mapsto sx\) 到 X 的态射 \(G \times X\)，满足
+
+\[
+\begin{array}{l l} s (t x) = (s t) x & \text { if } \quad s, t \in G, x \in X \\ e x = x & \text { if } \quad x \in X (e \text { being   the   identity   element   of } G). \end{array}
+\]
+
+也称群流形 G 在 X 上左作用；右作用律类似地定义。
+
+令 \(x \in X\)，令 \(G_x\) 为 x 在 G 中的稳定子。假设映射 \(G\)\(g \mapsto g \cdot x\) 是子浸入（当 \(K\) 的特征为 0 且 X 有限维时，这一假设自动满足）。则 \(X\)\(G_x\) 是 G 的群子流形，由 \(G\) 通过取商得到的从 \(G/G_x\) 到 X 的映射是浸入。若进一步 x 的轨道 \(X\)\(g \mapsto g \cdot x\)\(G \cdot x\) 是局部闭的，且 G 的拓扑有可数基，则 \(x\)\(G\)\(G \cdot x\) 是 X 的子流形，而映射 \(X\)\(G/G_x \to G \cdot x\) 是流形同构。
+
+\subsection{结构的弱化}
+
+在本节中，字母 r、s、r'、s' 或表示整数 \(\geqslant1\)，或表示符号 \(\infty\) 和 \(\omega\) 之一。假设 K = R。
+
+5.13.1. 设 \(r \leqslant s\)，且 X 是 C＾s 类流形。在拓扑空间 X 上存在唯一的 C＾r 类流形结构，使得原结构下 X 的每个图也是这一新结构下 X 的图。令 \(C^s\)\(C^r\)\(X_r\) 为如此定义的 C＾r 类流形。称它是通过弱化 X 的流形结构从 X 得到的，或称其流形结构蕴含于 X 的流形结构中。弱化的概念具有传递性：若 \(C^r\)\(r' \leqslant r\)，则有 \(X_{r'} = (X_r)_{r'}\)；它与乘积相容：若 Y 是 C＾s 类的，则有 \(C^s\)\((X \times Y)_r = X_r \times Y_r\)；在第 5.11.2 号的假设下，对于 \(X \times_s Y\) 也有类似结果。
+
+令 \(a\in X\)，\(c\) 是 X 在 \(X\)\(a\) 处的一个图；\(c\) 也是 \(X_r\) 在 \(a\) 处的一个图。由此根据（5.5.1）得到同构
+
+\[
+\theta_ {c}: \mathrm{E} \rightarrow \mathrm{T} _ {a} (\mathrm{X}), \quad \theta_ {c} ^ {\prime}: \mathrm{E} \rightarrow \mathrm{T} _ {a} (\mathrm{X} _ {r}),
+\]
+
+从而得到同构 \(\theta_{c}^{\prime}\circ\theta_{c}^{-1}:T_{a}(X)\to T_{a}(X_{r})\)。该同构与 \(c\) 的选择无关；它使我们能够把 X 与 \(X_{r}\) 在 \(a\) 处的切空间等同起来。
+
+5.13.2. 设 X（分别为 \(\mathbf{X}'\)）是 \(\mathbf{C}^s\) 类（分别为 \(\mathbf{C}^{s'}\) 类）流形，且 \(r\) 满足 \(r \leqslant \inf(s, s')\)。若映射 \(f: \mathbf{X} \to \mathbf{X}'\) 是从 \(\mathbf{C}^r\)\(\mathbf{X}_r\) 到 \(\mathbf{X}_r'\) 的态射，则称其为  类映射；这种映射对于所有  都是 \(\mathbf{C}^{r'}\) 类的。此外，\(r' \leqslant r\)\(f: \mathbf{X}_r \to \mathbf{X}_r'\) 在点 \(a \in X\) 处的切线性映射，与把 f 视为从 \(f\)\(\mathbf{X}_{r'}\) 到 \(\mathbf{X}_{r'}'\) 的态射时的切线性映射相同。
+
+通常用同一符号表示流形 X 和 \(X_{r}\)；因此，若 X 是 \(C^{s}\) 类的，则“X 的 \(C^{r}\) 类子流形”（\(r \leqslant s\)）这一表述意指“\(X_{r}\) 的子流形”。
+
+\subsection{基域的限制}
+
+本号中给定两个完备的非离散赋值交换域 K 和 L，以及把赋值域 K 同构到 L 的一个子域上的同构 \(\sigma\)。若 E 是 L 上的 Banach 空间，则以 \(\sigma_{*}(\mathbf{E})\) 表示通过限制标量得到的 K-向量空间（参见~代数，第~II~章，第 3 版，§ 8）；E 上给定的拓扑与 K-向量空间结构相容，且 \(\sigma_{*}(\mathbf{E})\) 是 K 上的 Banach 空间。
+
+5.14.1. 设 X 是 L 上的解析流形，\(c = (U, \varphi, E)\) 是 X 的一个图。映射 \(\varphi\) 将 U 双射到 \(\sigma_{*}(E)\) 的一个开子集上，三元组 \(c_{\sigma} = (U, \varphi, \sigma_{*}(E))\) 是 X 的一个图。在 X 上存在唯一的 K 上解析流形结构，使得对于 L-解析流形 X 的每个图 c，\(c_{\sigma}\) 都是图。将如此得到的 K 上解析流形记为 \(X_{\sigma}\)，称 \(X_{\sigma}\) 是通过限制标量（借助 \(\sigma\) 从 L 到 K）由 X 得到的。\(X_{\sigma}\) 所对应的拓扑空间与 X 所对应的拓扑空间相同。
+
+5.14.2. 例：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  取 K = R、L = C，σ 为 R 到 C 的典范嵌入。因此，每个复解析流形都典范地带有实解析流形结构；这个实解析结构本身为每个 r 定义了 \(C^{r}\) 类微分结构。
+\item
+  取 K = C、L = C，σ 为共轭 \(x \mapsto \bar{x}\)。于是给每个复解析流形 X 关联一个复解析流形 \(\bar{X}\)，称为 X 的共轭。若 f 是定义在 X 的一个开子集 U 上的复值函数，则 f 对 \(\bar{X}\) 的结构解析，当且仅当共轭函数 \(\bar{f}\) 对 X 的结构解析。流形 X 和 \(\bar{X}\) 通过限制标量定义同一个实解析流形。
+\end{enumerate}
+
+5.14.3. 设 X 是 K 上的解析流形，Y 是 L 上的解析流形。若映射 \(f:X\to Y\) 是从 X 到  的态射，则称其为 \(\sigma\)-解析的。若 \(Y_{\sigma}\)\(K\subset L\)，σ 是 K 到 L 的嵌入，且 X 是 L 上的解析流形，则称从  到 Y 的 \(\sigma\)-解析映射为 K-解析映射。\(\sigma\)\(X_{\sigma}\)
+
+5.14.4. 设 V 是 L 上的 Banach 空间。有 \(V_{\sigma} = \sigma_{*}(V)\)；\(\sigma_{*}(V)\) 在 K 上的典范解析流形结构由 V 在 L 上的典范解析流形结构通过限制标量得到。
+
+5.14.5. 设 X 是 L 上的解析流形，且 \(a \in X\)。令 c 为 X 在 a 处的一个图；则 \(c_{\sigma}\) 是 \(X_{\sigma}\) 在 a 处的一个图，并由此得到同构
+
+\[
+\theta_ {c} \colon \mathrm{E} \rightarrow \mathrm{T} _ {a} (\mathrm{X}), \quad \theta_ {c _ {\sigma}} \colon \sigma_ {*} (\mathrm{E}) \rightarrow \mathrm{T} _ {a} (\mathrm{X} _ {\sigma})
+\]
+
+从而得到从 \(\theta_{c_{\sigma}} \circ \sigma_{*}(\theta_{c})^{-1}\) 到 \(\sigma_{*}(\mathrm{T}_{a}(\mathrm{X}))\) 的同构 \(\mathrm{T}_{a}(\mathrm{X}_{\sigma})\)；该同构与 \(c\) 的选择无关；借助记号的滥用，它使我们能够把 \(\mathrm{T}_{a}(\mathrm{X}_{\sigma})\) 与 \(\sigma_{*}(\mathrm{T}_{a}(\mathrm{X}))\)，甚至与 \(\mathrm{T}_{a}(\mathrm{X})\) 等同起来。
+
+若 \(f\) 是从 X 到流形 Y 的 L-解析映射，则 \(f\) 在 \(a\) 处的切线性映射（将 \(f\) 视为从 \(\mathrm{X}_{\sigma}\) 到 \(\mathrm{Y}_{\sigma}\) 的态射）等于 \(\sigma_{*}(\mathrm{T}_{a}(f))\)。
+
+5.14.6. 设 X 和 Y 是 L 上的两个解析流形，且 \(f: \mathbf{X}_{\sigma} \to \mathbf{Y}\) 是连续的 \(\sigma\)-解析映射。假设 K 的特征为 0。则 \(f\) 是 L-解析的充分必要条件是：对于每个 \(a \in \mathbf{X}\)，映射 \(\mathrm{T}_{a}(f)\) 是 L-线性的。
+
+当 K = R、L = C 时（第 5.14.2 号的情形 (a)），有更精确的结果：若 X 和 Y 都是有限维的，且 \(f: X \to Y\) 是 \(C^{1}\) 类映射，其在 X 每一点处的切映射都是 C-线性的，则 \(f\) 是复解析的。
+
+5.14.7. 设 X 是复解析流形，g 是从 X 到自身的映射，满足下列条件：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  有 \(g \circ g = \mathrm{Id}_{\mathbf{X}}\)。
+\item
+  映射 \(g\) 是从解析流形 \(X\) 到共轭流形 \(\overline{X}\) 的同构（5.14.2）。
+\end{enumerate}
+
+X 中满足 \(X_{0}\) 的点 x 组成的集合 \(g(x) = x\)，是 X 所对应的实解析流形的闭解析子流形。对于 \(x \in X_{0}\)，有 \(\mathbf{T}_{x}(\mathbf{X}) = \mathbf{T}_{x}(\mathbf{X}_{0}) \oplus i\mathbf{T}_{x}(\mathbf{X}_{0})\)。
+
+设 U 是 X 的一个连通开子集，f 和 g 是从 U 到复分离局部凸空间或复分离解析流形的两个复解析映射。若 f 和 g 在 \(U \cap X_{0}\) 的一个非空子集上重合，且该子集在 \(X_{0}\) 中是开的，则 f = g。
+
+假设 \(X_{0}\) 是旁紧的。若 f 是从 \(X_{0}\) 到分离局部凸空间或分离复解析流形的实解析映射，则存在 X 中 \(X_{0}\) 的一个开邻域 U，以及从 U 到 f 的值域的复解析映射，延拓 f。任意两个这样的延拓在 X 中 \(X_{0}\) 的某个邻域上重合。
+
+假设 X 是有限维的。对于每个点 \(a \in X_{0}\)，存在 a 的某个开邻域 U 中的一组（复）坐标 \(\zeta^{1}, \ldots, \zeta^{n}\)，使得当 \(a\) 时有 \(\zeta^{i} \circ g = \bar{\zeta}^{i}\)；于是 \(1 \leqslant i \leqslant n\)\(\xi^{i}\)\(\zeta^{i}\) 在 \(U \cap X_{0}\) 上的限制  取实值，而 \((\xi^{1}, \ldots, \xi^{n})\) 是实解析流形 \(a\)\(X_{0}\) 在 a 处的一组坐标。
+
+5.14.8. 对于每个旁紧实解析流形 Y，存在一个有序对 \((X, g)\)，其中 X 是复解析流形，g 是从 X 到自身的映射，满足 5.14.7 的条件 (i) 和 (ii)，并且存在从 Y 到 \(X_{0}\) 的同构 f。称赋予 f 和 g 的 X 为 Y 的复化。
+
+\section{\texorpdfstring{纤维化 \(^{1}\)}{纤维化 ¹}}
+
+\subsection{纤维化}
+
+6.1.1. C＾\(C^{r}\)r 类纤维化，或简称纤维化，是一个三元组 \((X, B, \pi)\)，其中 B 和 X 是 C＾\(C^{r}\)r 类流形，\(\pi\) 是从 X 到 B 的态射，并具有下述性质：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  对于每个 \(x \in \mathbf{B}\)，存在 x 的一个开邻域 \(\mathbf{U}\)、一个流形 \(x\)\(\mathbf{F}\)，以及从 \(\varphi\)\(\pi^{-1}(\mathbf{U})\) 到 \(\mathbf{U} \times \mathbf{F}\) 的同构 \(\pi(\varphi^{-1}(x, y)) = x\)，使得对于所有 \(x \in \mathbf{U}\) 和每个 \(y \in \mathbf{F}\)，都有 。
+\end{enumerate}
+
+若 \(\lambda = (X, B, \pi)\) 是纤维化，则称 X 为 \(X\)\(\lambda\) 的空间，B 为 \(B\)\(\lambda\) 的底空间，\(\pi\) 为 \(\lambda\) 的投影。映射 \(\pi\) 是浸没；特别地，\(\pi(X)\) 在 B 中是开集，若 R 表示 \(B\)\(R\)\(\pi\) 在 X 上定义的等价关系，则从 \(X\)\(X/R\) 到 \(\pi(X)\) 的典范映射是同构。对于每个 \(x \in B\)，逆像 \(\pi^{-1}(x)\) 是 X 的闭子流形，称为 x 的纤维，记为 \(X\)\(x\)\(X_x\)。
+
+6.1.2. 例：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  若 B 和 F 是两个流形，则三元组 \((\mathbf{B} \times \mathbf{F}, \mathbf{B}, \mathbf{pr}_{1})\) 是一个纤维化，其纤维与 F 典范同构。
+\item
+  若 \(\lambda = (\mathbf{X},\mathbf{B},\pi)\) 和 \(\lambda^{\prime} = (\mathbf{X}^{\prime},\mathbf{B}^{\prime},\pi^{\prime})\) 是纤维化，
+\end{enumerate}
+
+\[
+\lambda \times \lambda^ {\prime} = (\mathrm{X} \times \mathrm{X} ^ {\prime}, \mathrm{B} \times \mathrm{B} ^ {\prime}, \pi \times \pi^ {\prime})
+\]
+
+是一个纤维化；称其为 \(\lambda\) 与 \(\lambda'\) 的乘积。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  若 \(\lambda = (X, B, \pi)\) 和 \(\lambda' = (X', B, \pi')\) 是具有同一底空间的纤维化，则 \(\lambda \times_{B} \lambda' = (X \times_{B} X', B, \pi \times_{B} \pi')\) 是纤维化；称其为在 B 上的 \(\lambda\) 与 \(\lambda'\) 的乘积，或称 \(B\)\(\lambda\) 与 \(\lambda'\) 的纤维积。
+\end{enumerate}
+
+6.1.3. 设 \(\lambda = (X, B, \pi)\) 和 \(\lambda' = (X', B', \pi')\) 是两个纤维化。称从 \(\lambda\) 到 \(\lambda'\) 的态射为任意有序对 \((f, g)\)，其中 \(f\) 是从 \(B\) 到 \(B'\) 的态射，g 是从 X 到 \(g\)\(X\)\(X'\) 的态射，且满足 \(\pi' \circ g = f \circ \pi\)。当 \(B = B'\) 且 \(f = \mathrm{Id}_B\) 时，称 g 是从 \(g\)\(B\)\(\lambda\) 到 \(\lambda'\) 的 B-态射；若 g 是从 X 到 \(g\)\(X\)\(X'\) 的同构，则 \(g^{-1}\) 是从 \(B\)\(\lambda'\) 到 \(\lambda\) 的 B-态射，并称 g 是从 \(g\)\(B\)\(\lambda\) 到 \(\lambda'\) 的 B-同构；成为这种情形的充分必要条件是：对于每个 \(x \in B\)，由 g 诱导的映射 \(g_x: X_x \to X'_x\) 是同构。\(g\)
+
+6.1.4. 纤维化 \((\mathbf{B} \times \mathbf{F}, \mathbf{B}, \mathbf{pr}_{1})\) 称为以 B 为底空间、以 F 为纤维的平凡纤维化。纤维化 \(\lambda\) 到平凡纤维化上的同构称为 \(\lambda\) 的平凡化。
+
+6.1.5. 设 \(\lambda = (X, B, \pi)\) 是一个纤维化，且 \(f: B' \to B\) 是一个态射。令 \(\pi'\) 为从 \(B' \times_B X\) 到 \(B'\) 的典范态射。三元组 \((B' \times_B X, B', \pi')\) 是一个纤维化，称为 \(\lambda\) 在 f 下的逆像，或称为沿 f 将 B 基变换到 \(f\) 后由 \(\lambda\) 得到的纤维化，记为 \(B\)\(B'\)\(f\)\(B' \times_B \lambda\)，或记为 \(f^*\lambda\)。若 \(f'\) 表示从 \(B' \times_B X\) 到 X 的典范映射，则有序对 \(X\)\((f, f')\) 是从 \(B' \times_B \lambda\) 到 \(\lambda\) 的态射；它具有如下泛性质：若 \((f, g)\) 是底空间为 B' 的纤维化 \(\lambda'\) 到纤维化 \(B'\)\(\lambda\) 的态射，则存在唯一的 B'-态射 \(B'\)\(\varphi: \lambda' \to B' \times_B \lambda\)，使得 \((f, g) = (f, f') \circ \varphi\)。
+
+当 B' 是 B 的子流形，且 f 是 B' 到 B 的典范嵌入时，把 \(B' \times_{B} X\) 与 X 的子流形 \(\pi^{-1}(B')\) 等同，并把 \(\pi'\) 与 \(\pi\) 在 \(\pi^{-1}(B')\) 上的限制等同；此时，\(\lambda\) 在 f 下的逆像称为 \(\lambda\) 在 B' 上诱导的纤维化。
+
+6.1.6. 若 \(\lambda = (X, B, \pi)\) 是纤维化，则称满足 \(\lambda\) 的每个态射 \(s: B \to X\) 为 \(\pi \circ s = \mathrm{Id}_B\) 的态射截面（或简称截面）。
+
+\subsection{主纤维化}
+
+6.2.1. 设 B 是一个流形，G 是一个群流形。以 B 为底空间、以 G 为结构群的主纤维化称为四元组 \(\lambda = (P, G, B, \pi)\)，其中 P 是一个流形，G 通过 \((x, g) \mapsto x \cdot g\) 在其上右作用（参见第 5.12.5 号），且 \(\pi\) 是从 P 到 B 的态射；这些数据满足下述公理：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  对于每个 \(b \in \mathbf{B}\)，存在 b 的一个开邻域 \(\mathbf{U}\) 以及从 \(b\) 到 \(f: \mathbf{U} \times \mathbf{G} \to \pi^{-1}(\mathbf{U})\) 的同构 f，使得有
+\end{enumerate}
+
+\[
+\pi (f (u, g)) = u \text {   and   } f (u, g g ^ {\prime}) = f (u, g) \cdot g ^ {\prime} \text {   if   } u \in \mathbf {U} \text {   and   } g, g ^ {\prime} \in \mathbf {G}.
+\]
+
+6.2.2. 设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 是主纤维化。三元组 \((\mathbf{P}, \mathbf{B}, \pi)\) 是纤维化；有 \(\pi(\mathbf{P}) = \mathbf{B}\)。\(\mathbf{R}\) 在 \(\pi\) 上定义的等价关系 \(\mathbf{P}\) 与 \(\mathbf{G}\) 定义的等价关系重合；它的图正是乘积 \(\mathbf{P} \times_{\mathbf{B}} \mathbf{P}\)（参见~第 5.11.2 号）；它是 \(\mathbf{P} \times \mathbf{P}\) 的子流形。映射 \((x, g) \mapsto (x, x \cdot g)\) 是从 \(\mathbf{P} \times \mathbf{G}\) 到 \(\mathbf{P} \times_{\mathbf{B}} \mathbf{P}\) 的同构；把每个 \((x, y) \in \mathbf{P} \times_{\mathbf{B}} \mathbf{P}\) 对应到满足 \(g \in \mathbf{G}\) 的唯一元素 \(y = x \cdot g\) 的映射，是从 \(\mathbf{P} \times_{\mathbf{B}} \mathbf{P}\) 到 \(\mathbf{G}\) 的态射。
+
+群 G 在 P 上适当地且自由地作用（参见一般拓扑，第 III 章，第 3 版，§ 4）。若 \(x \in \mathbf{P}\) 且 \(b = \pi(x)\)，则映射 \(g \mapsto x \cdot g\) 是从群流形 G 到 b 上纤维的同构。
+
+6.2.3. 反之，设 G 是一个群流形，P 是一个流形，G 在 P 上右作用并满足下列两个条件：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  G 在 P 上适当地且自由地作用。
+\item
+  对于每个 \(x \in P\)，映射 \(g \mapsto x \cdot g\) 是从 G 到 P 的浸入。
+\end{enumerate}
+
+则 G 在 P 中定义的等价关系是正规的；若 P/G 表示商流形，\(\pi\) 表示从 P 到 P/G 的典范投影，则四元组 (P, G, P/G, \(\pi\) ) 是主纤维化。
+
+当 K 的特征为 0 且 P 有限维时，上述条件 (b) 是条件 (a) 的结果。
+
+6.2.4. 前一号的条件在下列两种情形中成立：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  P 是群流形，G 是通过右平移作用于 P 上的子群流形；由此得到的主纤维化的底空间是齐性空间 P/G。
+\item
+  G 是在 P 上适当地且自由地作用的离散群。于是投影 \(\pi: \mathrm{P} \to \mathrm{P} / \mathrm{G}\) 是 étale 态射（第 5.7.6 号）。
+\end{enumerate}
+
+6.2.5. 例：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  设 B 是一个流形，G 是一个群流形。令 G 按照 \(B \times G\) 在 \((b, g) \cdot g' = (b, gg')\) 上作用。四元组 \((B \times G, G, B, pr_{1})\) 是主纤维化。
+\item
+  设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 和 \(\lambda' = (\mathbf{P}', \mathbf{G}', \mathbf{B}', \pi')\) 是两个主纤维化。令 \(\mathbf{G} \times \mathbf{G}'\) 按下式在 \(\mathbf{P} \times \mathbf{P}'\) 上作用：
+\end{enumerate}
+
+\[
+(x, x ^ {\prime}). (g, g ^ {\prime}) = (x. g, x ^ {\prime}. g ^ {\prime}), \quad x \in \mathbf {P}, x ^ {\prime} \in \mathbf {P} ^ {\prime}, g \in \mathbf {G}, g ^ {\prime} \in \mathbf {G} ^ {\prime}.
+\]
+
+四元组 \(\lambda \times \lambda' = (\mathbf{P} \times \mathbf{P}', \mathbf{G} \times \mathbf{G}', \mathbf{B} \times \mathbf{B}', \pi \times \pi')\) 是主纤维化；称其为 \(\lambda\) 与 \(\lambda'\) 的乘积。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(\lambda = (P, G, B, \pi)\) 和 \(\lambda' = (P', G', B, \pi')\) 是具有同一底空间的两个主纤维化。\(P \times_{B} P'\) 是 \(P \times P'\) 的子流形，在 \(G \times G'\) 的作用下稳定，且四元组
+\end{enumerate}
+
+\[
+\lambda \times_ {\mathbf {B}} \lambda^ {\prime} = (\mathbf {P} \times_ {\mathbf {B}} \mathbf {P} ^ {\prime}, \mathbf {G} \times \mathbf {G} ^ {\prime}, \mathbf {B}, \pi \times_ {\mathbf {B}} \pi^ {\prime})
+\]
+
+是主纤维化；称其为在 B 上的 \(\lambda\) 与 \(\lambda'\) 的乘积，或等价地称为 \(\lambda\) 与 \(\lambda'\) 的纤维积。
+
+\subsection{主纤维化的态射}
+
+6.3.1. 设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 和 \(\lambda' = (\mathbf{P}', \mathbf{G}', \mathbf{B}', \pi')\) 是两个主纤维化。从 \(\lambda\) 到 \(\lambda'\) 的态射是一个三元组 \((f, \varphi, h)\)，其中 \(f: \mathbf{P} \to \mathbf{P}'\) 和 \(h: \mathbf{B} \to \mathbf{B}'\) 是态射，\(\varphi: \mathbf{G} \to \mathbf{G}'\) 是群流形的同态，并且满足 \(\pi' \circ f = h \circ \pi\) 和 \(f(x \cdot g) = f(x) \cdot \varphi(g)\)
+
+其中 \(x \in \mathbf{P}, g \in \mathbf{G}\)。注意 f 决定 h；通常把 \(f\)\(h\)\((f, \varphi)\)，甚至仅把 f 称为态射。\(f\)
+
+当 \(B = B'\) 且 \(h = \mathrm{Id}_{B}\)（分别地，当 \(G = G'\) 且 \(\varphi = \mathrm{Id}_{G}\)）时，称态射为与 \(\varphi\) 相容的 B-态射（分别为与 h 相容的 G-态射）。既是 B-态射又是 G-态射的态射称为 G-B-态射（这里同样地，在不会混淆时常简称为“态射”）。每个 G-B-态射 \(f : P \to P'\) 都是从流形 P 到流形 \(P'\) 的同构；其逆同构 \(f^{-1}\) 是 G-B-态射：f 是从 P 到 \(P'\) 的 G-B-同构。
+
+具有同一底空间 B 和同一结构群 G 的两个主纤维丛 P 和 P'，若存在从 P 到 P' 的 G-B-同构，则称它们 G-B-同构（或简称同构）。
+
+6.3.2. 主纤维化 \((\mathbf{B} \times \mathbf{G}, \mathbf{G}, \mathbf{B}, \mathbf{pr}_{1})\) 称为以 B 为底空间、以 G 为结构群的平凡主纤维化。主纤维化 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 到以 B 为底空间、以 G 为结构群的平凡主纤维化上的同构称为 \(\lambda\) 的平凡化。\(\lambda\) 的每个截面 s 按下式定义 \(f_{s}\) 的平凡化 \(\lambda\)：
+
+\[
+f _ {s} ^ {- 1} (b, g) = s (b). g \quad \text {   for   } b \in \mathbf {B} \text {   and   } g \in \mathbf {G}.
+\]
+
+从而得到从 \(\lambda\) 的截面集到 \(\lambda\) 的平凡化集的双射。此外，若 \(s_0\) 是 \(\lambda\) 的一个截面，则 \(s\) 的每个截面 \(\lambda\) 都能唯一地写成 \(s(b) = s_0(b) \cdot r(b)\) 的形式，其中 \(r: B \to G\) 是一个态射。
+
+6.3.3. 设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 是主纤维化，且 \(h: \mathbf{B}' \to \mathbf{B}\) 是态射。令 \(\pi'\)（分别为 \(h'\)）为从 \(\mathbf{B}' \times_{\mathbf{B}} \mathbf{P}\) 到 \(\mathbf{B}'\)（分别到 \(\mathbf{P}\)）的典范态射。令 \(\mathbf{G}\) 按下式在 \(\mathbf{B}' \times_{\mathbf{B}} \mathbf{P}\) 上作用
+
+\[
+(b ^ {\prime}, x). g = (b ^ {\prime}, x. g), \quad (b ^ {\prime}, x) \in \mathbf {B} ^ {\prime} \times_ {\mathbf {B}} \mathbf {P}, \quad g \in \mathbf {G}.
+\]
+
+四元组 \((\mathbf{B}' \times_{\mathbf{B}} \mathbf{P}, \mathbf{G}, \mathbf{B}', \pi')\) 是主纤维化，称为 \(\lambda\) 在 h 下的逆像，记为 \(h\)\(\mathbf{B}' \times_{\mathbf{B}} \lambda\)，或记为 \(h^*\lambda\)。映射 \(h': \mathbf{B}' \times_{\mathbf{B}} \mathbf{P} \to \mathbf{P}\) 是与 h 相容的 G-态射；它具有如下泛性质：若 f 是底空间为 \(h\)\(f\)\(h\) 的主纤维化 \(\lambda'\) 到纤维化 \(\mathbf{B}'\)\(\lambda\) 的与 h 相容的 G-态射，则存在唯一的 G-B'-同构 \(k: \lambda' \to \mathbf{B}' \times_{\mathbf{B}} \lambda\)，使得 \(f = h' \circ k\)。
+
+当 B' 是 B 的子流形，且 h 是 B' 到 B 的典范嵌入时，把 \(B' \times_{B} P\) 与 P 的子流形 \(\pi^{-1}(B')\) 等同；称其为 P 在 B' 上诱导的主纤维丛，记为 \(\pi^{-1}(B')\)，或等价地记为 P\textbar B'。对于每个 \(x \in B\)，存在 x 的一个开邻域 U，使得 P\textbar U 是平凡的。
+
+\subsection{用上循环构造主纤维化}
+
+设 B 是一个流形，G 是一个群流形，且 \(\mathcal{U} = (\mathrm{U}_{i})_{i\in I}\) 是 B 的一个开覆盖。
+
+6.4.1. 称 B 上取值于 G、从属于 U 的 C＾\(C^{r}\)r 类上循环为具有下列两个性质的族 \((g_{i,j})_{(i,j)\in\mathbf{I}\times\mathbf{I}}\)：(1) 对于每一对 \((i,j)\in\mathbf{I}\times\mathbf{I}\)，\(g_{i,j}\) 是从 B 的开子集 \(C^{r}\)\(U_{i}\cap U_{j}\) 到 G 的 C＾r 类映射；
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  对于每个三元组 \((i,j,k)\in \mathbf{I}^3\)，都有
+\end{enumerate}
+
+\[
+g _ {i, k} (x) = g _ {i, j} (x). g _ {j, k} (x) \quad \text { for   every } \quad x \in \mathrm{U} _ {i} \cap \mathrm{U} _ {j} \cap \mathrm{U} _ {k}.
+\]
+
+若存在一个族 \((g_{i,j})\)\((g'_{i,j})\)\((h_{i})_{i\in I}\)，使得对每个 \(i\in I\)，\(h_{i}\) 是从 \(C^{r}\)\(U_{i}\) 到 G 的 C＾r 类映射，并满足下式，则称两个这样的上循环  和  上同调等价：
+
+\[
+g _ {i, j} ^ {\prime} (x) = h _ {i} (x) ^ {- 1}. g _ {i, j} (x). h _ {j} (x) \quad \text { for   every } \quad x \in \mathrm{U} _ {i} \cap \mathrm{U} _ {j}.\tag{3}
+\]
+
+6.4.2. 设 \(\lambda = (\mathbf{P},\mathbf{G},\mathbf{B},\pi)\) 是主纤维化。对于每个 \(i\in \mathbf{I}\)，令 \(s_i\) 为 \(\lambda\) 在 \(\mathbf{U}_i\) 上的一个截面（6.3.3）。对于每一对 \((i,j)\in \mathrm{I}^2\)，存在唯一的从 \(g_{i,j}\) 到 \(\mathbf{U}_i\cap \mathbf{U}_j\) 的态射 \(\mathbf{G}\)，使得：
+
+\[
+s _ {j} (b) = s _ {i} (b). g _ {i, j} (b) \quad \text { for   every } \quad b \in \mathrm{U} _ {i} \cap \mathrm{U} _ {j}.\tag{4}
+\]
+
+由 \(g_{i,j}\) 组成的族是 B 上取值于 G、从属于开覆盖 \(\mathcal{U}\) 的上循环。称此上循环与对象 \((\lambda, \mathcal{U}, (s_i)_{i \in I})\) 相关，并称映射 \(g_{i,j}\) 为该对象的过渡函数。
+
+对于 \(i \in I\)，令 \(x \mapsto (\pi(x), f_i(x))\) 为由 \(s_i\) 的截面 \(\lambda |U_i\) 定义的平凡化（6.3.2）。对于 \(x \in \pi^{-1}(U_i \cap U_j)\)，有：
+
+\[
+f _ {i} (x) = g _ {i, j} (\pi (x)). f _ {j} (x).\tag{5}
+\]
+
+6.4.3. 反之，设 \(g = (g_{i,j})\) 是 B 上取值于 G、从属于覆盖 \(\mathcal{U}\) 的上循环。于是存在主纤维化 \(\lambda = (\mathrm{P},\mathrm{G},\mathrm{B},\pi)\) 及其在各  上的截面族 \((s_i)_{i\in I}\)，使得关系 (4) 成立；关系 (5) 也成立。若进一步 \(\lambda\)\(U_i\)\((\lambda',(s_i'))\) 满足同样条件，则存在唯一的从 \(f\)\(\lambda\) 到 \(\lambda'\) 的 G-B-同构 ，使得对所有 ，都有 \(s_i' = f\circ s_i\)。我们称这一结果为：\(i\in I\)\((\lambda,(s_i))\) 由上循环 \(g\) 唯一同构地确定。
+
+6.4.4. 设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 和 \(\lambda' = (\mathbf{P}', \mathbf{G}, \mathbf{B}, \pi')\) 是两个主纤维化。令 \((s_i)\)（分别为 \((s_i')\)）为 \(\lambda\)（分别为 \(\lambda'\)）在各 \(U_i\) 上的截面族，令 \(g\)（分别为 \(g'\)）为与 \((\lambda, \mathcal{U}, (s_i))\)（分别与 \((\lambda', \mathcal{U}, (s_i'))\)）相关的上循环。\(\lambda\) 和 \(\lambda'\) G-B-同构的充分必要条件是
+
+上循环 g 和 g′ 上同调等价。更确切地说，对于从 λ 到 λ′ 的每个 G-B-同构 f，存在唯一的由 \((h_{i})_{i\in I}\) 到 G 的态射组成的族 \(U_{i}\)，使关系 (3) 成立，并且对于所有 \(f\circ s_{i}^{\prime}(x)=s_{i}(x) \cdot h_{i}(x)\) 及所有 \(i\in I\)，有 \(x\in U_{i}\)；从而得到从 λ 到 λ' 的 G-B-同构集到满足 (3) 的族 \((h_{i})_{i\in I}\) 的集合之间的双射。
+
+6.4.5. 回到 6.4.2 的记号，令 \(\mathcal{V} = (\mathrm{V}_{\alpha})_{\alpha \in \mathrm{A}}\) 是比开覆盖 \(\mathcal{U}\) 更细的开覆盖。令 \(\tau : \mathrm{A} \to \mathrm{I}\) 是满足对所有 \(\mathrm{V}_{\alpha} \subset \mathrm{U}_{\tau(\alpha)}\) 都有 \(\alpha \in \mathrm{A}\) 的映射。令 \(s_{\alpha}'\) 为截面 \(\mathrm{V}_{\alpha}\) 在 \(s_{\tau(\alpha)}\) 上的限制，令 \(g' = (g_{\alpha,\beta}')\) 为与 \(\mathcal{V}\) 相关且从属于开覆盖 \((\lambda, \mathcal{V}, (s_{\alpha}'))\) 的上循环。于是，过渡函数 \(g_{\alpha,\beta}'\) 是过渡函数 \(\mathrm{V}_{\alpha} \cap \mathrm{V}_{\beta}\) 在 \(g_{\tau(\alpha),\tau(\beta)}\) 上的限制。
+
+\subsection{与主纤维化相关的纤维丛}
+
+6.5.1. 设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 是主纤维化。设 F 是一个流形，群 G 在其上左作用；以 \((g, y) \mapsto g \cdot y\) 表示 G 在 F 上的作用律。群 G 按公式 \(\mathbf{P} \times \mathbf{F}\) 在 \((x, f) \cdot g = (x \cdot g, g^{-1} \cdot f)\) 上右作用；G 在 \(\mathbf{P} \times \mathbf{F}\) 中定义的等价关系是正规的；商 \(\mathbf{P} \times^{\mathbf{G}}\mathbf{F} = (\mathbf{P} \times \mathbf{F}) / \mathbf{G}\) 赋有流形结构。
+
+设 E 是一个流形。若给定一个态射 ρ : P × F → E，满足下述性质，则称 E 赋有与 λ 相关且典型纤维为 F 的纤维丛结构：
+
+(As) 对于 \(\rho(x \cdot g,g^{-1} \cdot f)=\rho(x,f)\)、\(x\in\mathbf{P}\)、\(f\in\mathbf{F}\)，有 \(g\in\mathbf{G}\)，并且由 \(\bar{\rho}:\mathbf{P}\times^{\mathbf{G}}\mathbf{F}\to\mathbf{E}\) 通过取商得到的映射 \(\rho\) 是流形同构。
+
+这等价于说 \((\mathbf{P} \times \mathbf{F}, \mathbf{G}, \mathbf{E}, \rho)\) 是主纤维化。映射 \(\rho\)（有时也指映射 \(\bar{\rho}\)）称为 E 的标架映射，记为 \((x, f) \mapsto x \cdot f\)；有
+
+\[
+(x. g). f = x. (g. f), \quad \text {   for   } x \in \mathbf {P}, g \in \mathbf {G} \text {   and   } f \in \mathbf {F}.
+\]
+
+\(\lambda\) 和 F 的数据唯一确定 E（差一个同构）；特别地，可以取 E 为流形 P × \(^{\text{G}}\) F 本身；称其为 \(\lambda\) 的、纤维类型为 F 的相关纤维丛，记为 \(\lambda(\text{F})\)。
+
+6.5.2. 设 E 是与 \(\lambda\) 相关且典型纤维为 F 的纤维丛。存在唯一的从 E 到 B 的态射 \(\pi_{\mathbf{E}}\)，使得当 \(\pi_{\mathbf{E}}(x,f)=\pi(x)\) 时，\(x\in\mathbf{P},f\in\mathbf{F}\)；三元组 (E, B, \(\pi_{\mathbf{E}}\) ) 是纤维化；若 B 和 F 是分离的，则 E 也是分离的。
+
+令 \(b \in \mathbf{B}\)，并令 \(\mathbf{F}_b = \pi_{\mathbf{E}}^{-1}(b)\)；它是 E 的闭子流形。若 \(x \in \mathbf{P}\) 满足 \(\pi(x) = b\)，令 \(\theta_x: \mathbf{F} \to \mathbf{F}_b\) 为由 \(\theta_x(f) = x.f\) 定义的映射；它是流形同构。此外，对于每个 \(g \in \mathbf{G}\)，有 \(\theta_{x.g} = \theta_x \circ \rho_g\)，其中 \(\rho_g\) 表示 F 的自同构 \(f \mapsto g.f\)。假设
+
+F 赋有任意种类 \(\Sigma\) 的结构 s（参见~集合论，第~IV~章，§1，第 4 号），并假设 s 在 G 的作用下不变；于是 \(\mathbf{F}_{b}\) 上存在唯一的 \(s_{b}\) 种类结构 \(\Sigma\)，使得 \(\theta_{x}: F \to F_{b}\) 是同构；该结构可借助某个 \(\theta_{x}\) 将 s 传递得到（同上，第 5 号）。
+
+若 \(s\) 是 \(\mathbf{P}\) 的开集 \(\mathbf{U}\) 上的 \(\mathbf{B}\) 的截面，则映射 \((b, f) \mapsto s(b)\) . \(f\) 是从 \(\mathbf{U} \times \mathbf{F}\) 到 \(\pi_{\mathbf{E}}^{-1}(\mathbf{U})\) 的同构。
+
+6.5.3. 例：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  设 \(\lambda = (\mathbf{B} \times \mathbf{G}, \mathbf{B}, \mathrm{pr}_1)\)，令 \(\mathbf{E} = \mathbf{B} \times \mathbf{F}\)，并令
+\end{enumerate}
+
+\[
+\rho : (\mathbf {B} \times \mathbf {G}) \times \mathbf {F} \rightarrow \mathbf {E}
+\]
+
+为映射 \((b, g, f) \mapsto (b, g \cdot f)\)。于是，在 \(\mathbf{B} \times \mathbf{F}\) 上得到与 \(\lambda\) 相关且典型纤维为 \(\mathbf{F}\) 的纤维丛结构，称为平凡的。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(\lambda = (\mathbf{P},\mathbf{G},\mathbf{B},\pi)\) 和 \(\lambda' = (\mathbf{P}',\mathbf{G}',\mathbf{B}',\pi')\) 是两个主纤维化。令 F（分别为 F'）为 G（分别为 G'）左作用的流形；令 E（分别为 E'）为与 \(\lambda\)（分别与 \(\lambda'\)）相关且纤维类型为 F（分别为 F'）的纤维空间。群 \(\mathbf{G} \times \mathbf{G}'\) 按 \(\mathbf{F} \times \mathbf{F}'\) 在 \((g, g') \cdot (f, f') = (g \cdot f, g' \cdot f')\) 上作用。映射 \((\mathbf{P} \times \mathbf{P}') \times (\mathbf{F} \times \mathbf{F}') \to \mathbf{E} \times \mathbf{E}'\) 是标架映射 \(\mathbf{P} \times \mathbf{F} \to \mathbf{E}\) 与 \(\mathbf{P}' \times \mathbf{F}' \to \mathbf{E}'\) 的乘积，并赋予 \(\mathbf{E} \times \mathbf{E}'\) 以与 \(\lambda \times \lambda'\) 相关且典型纤维为 \(\mathbf{F} \times \mathbf{F}'\) 的纤维丛结构。
+\item
+  在 (b) 的记号下，若假设 \(B' = B\)，则以同样方式在 \(E \times_{B} E'\) 上定义与 \(\lambda \times_{B} \lambda'\) 相关且典型纤维为 \(F \times F'\) 的纤维丛结构。
+\end{enumerate}
+
+6.5.4. 采用第 6.5.1 号的记号，设 \(h: \mathbf{B}' \to \mathbf{B}\) 是一个态射，\(\lambda' = \mathbf{B}' \times_{\mathbf{B}} \lambda\)，\(\mathbf{E}' = \mathbf{B}' \times_{\mathbf{B}} \mathbf{E}\)。若 \(\mathbf{P}' = \mathbf{B}' \times_{\mathbf{B}} \mathbf{P}\)，则通过规定 (b', x).f = (b', x.f) 定义映射 \(\mathbf{P}' \times \mathbf{F} \to \mathbf{E}'\)；于是赋予 \((b', x).f = (b', x.f)\)\(\mathbf{E}'\) 以与 \(\lambda'\) 相关且纤维类型为 F 的纤维丛结构；称其为 E 上给定结构在 h 下的逆像。\(h\)
+
+6.5.5. 设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 是主纤维化，E（分别为 E'）是与 \(\lambda\) 相关且纤维类型为 F（分别为 F'）的纤维空间。设 \(u: \mathbf{F} \to \mathbf{F}'\) 是与 G 的作用相容的态射（即对于 \(u(g.f) = g \cdot u(f)\)、\(f \in \mathbf{F}\)，满足 \(g \in \mathbf{G}\)）。于是存在唯一的态射 \(\bar{u}: \mathbf{E} \to \mathbf{E}'\)，使得对于 \(\bar{u}(x.f) = x \cdot u(f)\)、\(x \in \mathbf{P}\)，有 \(f \in \mathbf{F}\)。若 \(u\) 是浸入（分别为浸没、子浸入），则 \(\bar{u}\) 也具有相同性质。
+
+特别地，假设群流形 H 在 F 上右作用，并且对于 \(g.(f.h) = (g.f).h\)、\(g \in G\)、\(f \in F\)，有 \(h \in H\)。于是每个 \(h \in H\) 定义 F 的一个与 G 的作用相容的自同构 \(u_h\)，从而得到 E 的一个自同构 \(\bar{u}_h\)；群 H 通过 \((y,h) \mapsto \bar{u}_h(y)\) 在 E 上右作用。
+
+6.5.6. 设 \(\lambda = (\mathbf{P},\mathbf{G},\mathbf{B},\pi)\) 是主纤维化，E 是与 \(\lambda\) 相关且纤维类型为 F 的纤维空间。设 \(s: \mathbf{B} \to \mathbf{E}\) 是 E 的一个截面。对于每个 \(x \in \mathbf{P}\)，存在唯一的元素 \(\sigma(x) \in \mathbf{F}\)，使得 \(s(\pi(x)) = x \cdot \sigma(x)\)。如此定义的映射 \(\sigma: \mathbf{P} \to \mathbf{F}\) 是流形态射，并满足恒等式：
+
+\[
+\sigma (x. g) = g ^ {- 1}. \sigma (x).\tag{*}
+\]
+
+映射 \(s \mapsto \sigma\) 是从 E 的截面集到从 P 到 F 且满足恒等式 (*) 的态射集的双射。
+
+6.5.7. 设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 和 \(\lambda' = (\mathbf{P}', \mathbf{G}, \mathbf{B}, \pi')\) 是具有同一底空间 \(\mathbf{B}\) 和同一结构群 \(\mathbf{G}\) 的两个主纤维化。主纤维化 \(\lambda \times_{\mathbf{B}} \lambda' = (\mathbf{P} \times_{\mathbf{B}} \mathbf{P}', \mathbf{G} \times \mathbf{G}, \mathbf{B}, (\pi, \pi')_{\mathbf{B}})\) 的结构群为 \(\mathbf{G} \times \mathbf{G}\)。令 \(\mathbf{G} \times \mathbf{G}\) 按下式在 \(\mathbf{G}\) 上左作用：
+
+\[
+(g, g ^ {\prime}) \cdot g _ {1} = g \cdot g _ {1} \cdot g ^ {- 1},
+\]
+
+设 E 是与 \(\lambda \times_{\mathbf{B}} \lambda'\) 相关且纤维类型为 G 的纤维丛（赋予上述作用律）。于是 E 的截面与从 P 到 P' 的同构一一对应。具体地，若 s 是 E 的一个截面，它按照（参见~第 6.5.6 号）对应于态射 \(\sigma: \mathbf{P} \times_{\mathbf{B}} \mathbf{P}' \to \mathbf{G}\)，则存在 G-B-同构 \(f_s: \mathbf{P} \to \mathbf{P}'\)，使得对所有 \(\sigma(x, f_s(x)) = e\)，有 \(x \in \mathbf{P}\)；映射 \(s \mapsto f_s\) 是从 E 的截面集到从 P 到 P' 的 G-B-同构集的双射。
+
+\subsection{结构群的扩张与限制}
+
+6.6.1. 设 \(\lambda = (\mathbf{P}, \mathbf{G}, \mathbf{B}, \pi)\) 是主纤维化，且 \(\varphi\) 是从 \(\mathbf{G}\) 到群流形 \(\mathbf{H}\) 的同态。令 \(\mathbf{G}\) 按 \(\mathbf{H}\) 在 \(g \cdot h = \varphi(g) \cdot h\) 上左作用，并令 \(\mathbf{P} \times^{\mathbf{G}} \mathbf{H}\) 为与 \(\lambda\) 相关且典型纤维为 \(\mathbf{H}\) 的纤维丛。由于 \(\mathbf{H}\) 中的右平移与 \(\mathbf{G}\) 的运算相容，群 \(\mathbf{H}\) 在 \(\mathbf{P} \times^{\mathbf{G}} \mathbf{H}\) 上右作用（参见第 6.5.5 节）；若 \(\pi_{\mathbf{H}}\) 表示从 \(\mathbf{P} \times^{\mathbf{G}} \mathbf{H}\) 到 \(\mathbf{B}\) 的投影，则四元组（\(\mathbf{P} \times^{\mathbf{G}} \mathbf{H}\)，\(\mathbf{H}\)，\(\mathbf{B}\)，\(\pi_{\mathbf{H}}\)）是一个主纤维化，记为 \(\varphi(\lambda)\)；称其为通过同态 \(\lambda\) 由 \(\varphi\) 得到的。
+
+把  对应到  的等价类的映射 \(f\) 是从 \(\mathbf{P}\) 到 \(\mathbf{P} \times^{\mathbf{G}}\mathbf{H}\) 的与 \(x \in \mathbf{P}\)\((x, e)\) 相容的 \(\mathbf{B}\)-态射（参见第 6.3.1 节）。此外，若  是从 \(\mathbf{P}\) 到结构群为 \(\mathbf{P} \times^{\mathbf{G}}\mathbf{H}\)\(\varphi\)\(f'\) 的主纤维丛  的 \(\mathbf{B}\)-态射，且 \(\mathbf{P}\)\(\mathbf{P}'\)\(\mathbf{H}\)\(f'\) 与 \(\varphi\) 相容，则存在唯一的从  到  的 \(\mathbf{H}\)-\(\mathbf{B}\)-同构 \(\theta\)，使得 \(\mathbf{P} \times^{\mathbf{G}}\mathbf{H}\)\(\mathbf{P}'\)\(f' = \theta \circ f\)。
+
+6.6.2. 假设 \(\lambda\) 由 B 的开覆盖 \(\mathcal{V} = (\mathrm{U}_i)\) 和上循环 \((g_{ij})\)（6.4.2）定义。则 \(\varphi(\lambda)\) 可用同一覆盖和上循环 \((h_{ij})\) 定义，其中 \(h_{ij} = \varphi \circ g_{ij}\)。
+
+6.6.3. 设 F 是一个流形，群 H 在其上左作用；用 \((h, y) \mapsto h \cdot y\) 表示 H 在 F 上的作用律。群 G 通过 \((g, y) \mapsto \varphi(g) \cdot y\) 在 F 上作用。设 E 是与 \(\varphi(\lambda)\) 相关且典型纤维为 F 的纤维丛。映射 \((x, y) \mapsto f(x) \cdot y\) 从 P × F 到 E（映射 f 即第 6.6.1 节中定义的映射）赋予 E 一个与 \(\lambda\) 相关且纤维类型为 F 的纤维丛结构。特别地，\((\mathbf{P} \times^{\mathbf{G}}\mathbf{H}) \times^{\mathbf{H}}\mathbf{F}\) 可与 P × \(^{\mathbf{G}}\) F 识别。
+
+6.6.4. 假设 G 是 H 的李子群，且 \(\varphi: \mathbf{G} \to \mathbf{H}\) 是 G 到 H 的典范嵌入。此时称 \(\varphi(\lambda)\) 是通过将结构群扩张为 H 由 \(\lambda\) 得到的。第 6.6.1 节的态射 \(f: \mathbf{P} \to \mathbf{P} \times^{\mathbf{G}} \mathbf{H}\) 是从 P 到 \(\mathbf{P} \times^{\mathbf{G}} \mathbf{H}\) 的一个同构，其像为后者的闭子流形（当 \(\mathbf{P} \times^{\mathbf{G}} \mathbf{H}\) 时等于 \(\mathbf{G} = \mathbf{H}\)）；这个同构与 G 的运算相容（注意 G 作为 H 的子群在 \(\mathbf{P} \times^{\mathbf{G}} \mathbf{H}\) 上作用）。
+
+6.6.5. 进一步假设 G 是 H 的李子群，并设 \(\mu = (Q, H, B, \pi)\) 是结构群为 H、基空间为 B 的主纤维化，E 是与 \(\mu\) 相关且纤维类型为 H/G 的纤维丛。若 \(\gamma\) 表示从 H 到 H/G 的典范投影，则对  置 \(\delta(y) = y \cdot \gamma(e)\)（其中 e 表示 H 的单位元）；于是得到一个态射 \(y \in Q\)\(e\)\(\delta: Q \to E\)，且四元组 \((Q, G, E, \delta)\) 是一个主纤维化。特别地，Q/G 可典范地识别为 E，而 E 又同构于 \(Q \times^{H} H/G^{1}\) 。
+
+现在设 \(s: \mathbf{B} \to \mathbf{E}\) 是 \(\mathbf{E}\) 的一个截面，并设 \(\lambda_s\) 是我们刚刚定义的纤维化 \(s\) 在 \((\mathbf{Q}, \mathbf{G}, \mathbf{E}, \delta)\) 下的逆像。它是一个以 \(\mathbf{B}\) 为基空间、结构群为 \(\mathbf{G}\) 的主纤维化，并且其向 \(\mathbf{H}\) 的扩张同构于 \(\mu\)；具有这些性质的任意主纤维化都可以通过这种方式在同构意义下得到；\(s_1\) 的两个截面 \(s_2\) 和 \(\mathbf{E}\) 定义同构的纤维化，当且仅当它们可由 \(\mu\) 的一个 H-B-自同构相互变换。
+
+\subsection{结构的改变}
+
+本段所述的结构和运算与第 5.13 和 5.14 节所述的结构改变相容。
+
+\section{向量丛}
+
+在本段中，字母 B 表示一个 \(C^{r}\) 类流形（\(r \geqslant 1\)），字母 M 表示一个配备了从 M 到 B 的映射 \(\pi\) 的集合。称 B 为 M 的基空间；对于每个 \(b \in B\)，用 \(M_{b}\) 表示 M 在 b 处的纤维，并称其为 M 的子集 \(\pi^{-1}(b)\)。

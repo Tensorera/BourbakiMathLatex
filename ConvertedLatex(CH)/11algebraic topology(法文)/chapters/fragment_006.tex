@@ -1,0 +1,678 @@
+\subsection{子群胚}
+
+定义 5. —— 设 C 为范畴。C 的子范畴是 C 的满足下列条件的子箭图 D：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对 D 的每个顶点 a，\(e_a\) 是 D 的箭；
+\item
+  对 C 中属于 D 的每对可合成箭 \((f,g)\) ，积 fg 是 D 的箭；
+\end{enumerate}
+
+设 C 为范畴，D 为 C 的子范畴；赋有把 C 的合成法则限制到子集上而诱导的合成法则，D 是一个范畴。
+
+C 的每个全子箭图都是 C 的子范畴。C 的一族子范畴的交是 C 的子范畴。
+
+定义 6. —— 设 G 为群胚。G 的子群胚是 G 的这样一个子范畴 H：G 中属于 H 的每个箭的逆都是 H 的箭。
+
+设 G 为群胚。G 的每个子群胚都是群胚。G 的每个全子箭图都是 G 的子群胚。G 的一族子群胚的交是 G 的子群胚。
+
+设 H 为 G 的子箭图。以 H 为子箭图的 G 的诸子群胚之交称为由 H 生成的 G 的子群胚。其顶点集与 H 的顶点集相同，其轨道即 H 的连通分支。
+
+例. —— 1) 设 X 为集合；以 X × X 表示 X 的配对群胚（II, 第 163 页, 例 2）。设 R 为 X 上的等价关系。以 X 为顶点集、以等价关系 R 的图为箭集的配对群胚 X × X 的子箭图，是 X × X 的一个子群胚。其轨道即关系 R 的等价类。
+
+反之，X × X 中顶点集为 X 的每个子群胚都具有上述形式。
+
+设 X 与 S 为集合，\(p: X \rightarrow S\) 为映射。映射 p 在 X 上定义一个等价关系（E, II, 第 41 页）。以 \(X \times_{S} X\) 表示由该等价关系定义的 \(X \times X\) 的子群胚，并称之为 \((X, p)\) 的配对群胚。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 G 与 G' 为群胚，\(\varphi\) 与 \(\psi\) 为从 G 到 G' 的群胚态射。\(\varphi\) 与 \(\psi\) 的均衡子（参看 II, 第 153 页）是 G 的子群胚。
+\item
+  设 X 为集合，\(\Gamma\) 为群。以 \(X \times \Gamma \times X\) 表示这样的箭图：其顶点集为 X，其箭集为 \(X \times \Gamma \times X\) ，源映射与靶映射分别为 \(\mathrm{pr}_1\) 与 \(\mathrm{pr}_3\) 。赋有合成法则 \((x, \gamma, x') \cdot (x', \gamma', x'') = (x, \gamma \gamma', x'')\) 之后，它是一个群胚。它还是从群胚 \((\mathrm{X}\times\mathrm{X})\times\Gamma\) ——即配对群胚 \(X\times X\) 与群 \(\Gamma\) 相伴的群胚（II, 第 163 页, 例 1）之积——借助于双射 \((x,x',\gamma)\mapsto(x,\gamma,x')\) （它从 \(X\times X\times\Gamma\) 到 \(X\times\Gamma\times X\) ）经结构转移而得的群胚。
+\end{enumerate}
+
+设 \(m\colon X \times \Gamma \to X\) 为群 \(\Gamma\) 在 \(X\) 上的一个（右）作用。\(F\) （映射 \(m\) 的图像），也就是三元组 \((x, \gamma, x') \in X \times \Gamma \times X\) （满足 \(x' = x\gamma\) ）所成的集合，是唯一的子群胚 \(G\) （作为 \(X \times \Gamma \times X\) 的子群胚）的箭集。此群胚的轨道即 \(\Gamma\) 在 \(X\) 上的轨道；若 \(x \in X\) ，则 \(G\) 在 \(x\) 处的迷向群是形如 \((x, \gamma, x)\) 的元素所成的集合，其中 \(\gamma\) 取遍 \(x\) 在 \(\Gamma\) 中的稳定子。
+
+反之，设 G 为群胚 \(X \times \Gamma \times X\) 的子群胚，且映射 \((\mathrm{pr}_{1}, \mathrm{pr}_{2})\) （从 \(\mathrm{Fl}(\mathrm{G})\) 到 \(X \times \Gamma\) ）是双射，则 G 具有上述形式。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 G 为群胚，X 为集合，\(\varphi\colon\mathrm{X}\to\mathrm{Som}(\mathrm{G})\) 为映射。我们如下定义箭图 \(\mathrm{G}'\) ：集合 \(\mathrm{Som}(\mathrm{G}')\) 就是集合 X；对 X 中每一对元素 \((x,y)\) ，集合 \(\mathrm{Fl}_{x,y}(\mathrm{G}')\) 是三元组 \((x,f,y)\in\mathrm{X}\times\mathrm{Fl}(\mathrm{G})\times\mathrm{X}\) 的集合，其中 \(f\) 是 \(\mathrm{Fl}_{\varphi(x),\varphi(y)}(\mathrm{G})\) 的元素。设 \(x,y,z\) 为 X 的元素，\(f\in\mathrm{Fl}_{\varphi(x),\varphi(y)}(\mathrm{G})\) 与 \(g\in\mathrm{Fl}_{\varphi(y),\varphi(z)}(\mathrm{G})\) 为 G 的箭，并令 \((x,f,y)\cdot(y,g,z)=(x,fg,z)\) 。这就在箭图 \(\mathrm{G}'\) 中定义了一个合成法则，使之成为群胚。它称为群胚 G 经映射 \(\varphi\) 的逆像群胚，记作 \(\varphi^{*}(\mathrm{G})\) 。
+\end{enumerate}
+
+偶 \((\varphi,\psi)\) ——其中 \(\psi\colon\mathrm{Fl}(\varphi^{*}(\mathrm{G}))\to\mathrm{Fl}(\mathrm{G})\) 是由 \((x,f,y)\mapsto f\) 定义的映射——是从 \(\varphi^{*}(\mathrm{G})\) 到 G 的群胚态射，称为典范态射。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 \(\varphi\colon\mathrm{G}\to\mathrm{G}^{\prime}\) 为群胚态射。设 H 为 G 的子箭图，其顶点集为 \(\mathrm{Som}(\mathrm{G})\) ，其箭集由 \(f\in\mathrm{Fl}(\mathrm{G})\) （满足 \(\varphi(f)\) 为 \(\mathrm{G}^{\prime}\) 的单位元）组成。对一切 \(a\in\mathrm{Som}(\mathrm{G})\) ，有 \(e_{a}\in\mathrm{H}_{a,a}\) 。对一切 \(f\in\mathrm{Fl}(\mathrm{H})\) ，有 \(\varphi(f^{-1})=\varphi(f)^{-1}\) ；因而 \(f^{-1}\in\mathrm{Fl}(\mathrm{H})\) 。此外，若 \(f\) 与 \(g\) 是 H 的可合成箭，则 \(\varphi(fg)=\varphi(f)\varphi(g)=e_{t(\varphi(f))}e_{o(\varphi(g))}=e_{t(\varphi(f))}\) ，因而 \(fg\) 是 H 的箭。这就证明了 H 是 G 的子群胚。它称为 \(\varphi\) 的核，记作 \(\mathrm{Ker}(\varphi)\) 。
+\end{enumerate}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/part002_cf856079.jpg}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  设 \(\varphi\colon\mathrm{G}\to\mathrm{G}^{\prime}\) 为群胚态射。箭图 \(\varphi(\mathrm{G})\) （其顶点集为 \(\varphi(\mathrm{Som}(\mathrm{G}))\) ，箭集为 \(\varphi(\mathrm{Fl}(\mathrm{G}))\) ）一般不是 \(\mathrm{G}^{\prime}\) 的子群胚。
+\end{enumerate}
+
+然而，若映射 Som(\(\varphi\)) 是单射，则它确为子群胚（II, 第 225 页, 习题 5）。
+
+\subsection{群胚的作用}
+
+设 G 为群胚，以 S 表示其顶点集。设 X 为集合，\(p\colon \mathrm{X}\to \mathrm{S}\) 为映射。群胚 G 在集合 X 上的（右）作用 \(\varphi\) （相对于 \(p\) ）是指一个群胚态射 \(\varphi\) ，它从 G 到群胚 \(\mathcal{B}(\mathrm{X},p)\) （相对于 \(p\) 的、集合 X 的置换所成的群胚，II, 第 163 页），并在顶点集上诱导恒同映射。换言之，\(\varphi\) 是指如下数据：对 S 的每一对点 \((a,b)\) 以及每条箭 \(g\in \mathrm{G}\) （它连接 \(a\) 与 \(b\) ），给出一个映射 \(\varphi (g)\colon \mathrm{X}_a\to \mathrm{X}_b\) ，使得对 G 的每一对可合成箭 \((f,g)\) ，
+
+\[
+\varphi (f g) = \varphi (g) \circ \varphi (f),
+\]
+
+并且使得对每个 \(a \in S\) ，\(\varphi(e_a)\) 都是 \(X_a\) 上的恒等映射。
+
+设 \(\varphi\) 与 \(\varphi'\) 为群胚 G 在集合 X 上的、相对于映射 \(p\colon X\to S\) 的作用。为使 \(\varphi=\varphi'\) 成立，只需存在 G 的一个生成 G 的子箭图 H，使得 \(\varphi(f)=\varphi'(f)\) 对一切 \(f\in\mathrm{Fl}(\mathrm{H})\) 成立。事实上，G 的箭 \(f\) （满足 \(\varphi(f)=\varphi'(f)\) ）所成之集是 G 的某个子群胚的箭集，其顶点集为 S。
+
+设 G 为顶点集为 S 的群胚，X 为集合，\(p \colon \mathrm{X} \to \mathrm{S}\) 为映射，\(\varphi\) 为 G 在 X 上相对于 \(p\) 的作用。以 \(\mathrm{G}_{\varphi}\) 表示 \(p^{*}(\mathrm{G})\) 的子箭图，其顶点集为 X，其箭集是三元组 \((x, f, y) \in \mathrm{X} \times \mathrm{Fl}(\mathrm{G}) \times \mathrm{X}\) （满足 \(\varphi(f)(x) = y\) ）所成之集。它是 \(p^{*}(\mathrm{G})\) 的子群胚。
+
+反之，设 \(\Gamma\) 为 \(p^{*}(\mathrm{G})\) 的子群胚；设映射 \((x,f,y)\mapsto (x,f)\) （从 \(\mathrm{Fl}(\Gamma)\) 到 \(\mathrm{X}\times \mathrm{Fl}(\mathrm{G})\) ）是单射，且其像是偶 \((x,f)\) （满足 \(p(x) = o(f)\) ）所成之集。则存在群胚 G 在 X 上的唯一作用 \(\varphi\) ，使得 \(\Gamma = \mathrm{G}_{\varphi}\) 。
+
+群胚 \(G_{\varphi}\) 的轨道称为 G 在 X 上作用的轨道。按定义，它们是 X 上由“ \(R\{x,y\}\) 当且仅当存在 \(f \in \mathrm{Fl}(G)\) 使得 \(\varphi(f)(x) = y\) ”给出的关系的等价类。
+
+例. —— 1) 设 G 为群，\(\mathcal{G}\) 为与 G 相伴的群胚（II, 第 163 页, 例 1）。若 X 为集合，则群胚 \(\mathcal{G}\) 在 X 上的（右）作用无非就是群 G 在 X 上的（右）作用。而且，\(\mathcal{G}\) 的作用的轨道与群 G 的作用的轨道重合。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathrm{G} = (\mathrm{S},\mathrm{F},o,t)\) 为群胚。存在 \(\mathrm{G}\) 在集合 \(\mathrm{S}\) 上的、相对于 \(\mathrm{Id}_{\mathrm{S}}\) 的唯一作用。它由 \(\varphi(f)(a) = b\) 给出（当 \(f \in \mathrm{G}_{a,b}\) 时）。此作用下的轨道就是第 162 页所定义的意义下 \(\mathrm{G}\) 的轨道。
+\end{enumerate}
+
+设 G 为群胚，S 为其顶点集，X 为集合，\(p: X \to S\) 为映射。设 \(\varphi\) 为 G 在 X 上相对于 p 的作用。若对每一点 \(a \in S\) 及每个元素 \(f \in G_{a}\) ，\(\varphi(f)\) 都是 \(X_{a}\) 上的恒等映射，则称群胚 G 无单值地作用于 X。若群胚 G 是传递的，则只需对 S 的一点验证此事即可。
+
+设 \(a\) 为 S 的一点，并设 \(\varphi(f) = \mathrm{Id}_{\mathrm{X}_a}\) 对一切 \(f \in \mathrm{G}_a\) 成立。设 \(b\) 为 S 中属于 \(a\) 的轨道的一点，\(g\) 为 G 中连接 \(a\) 与 \(b\) 的一条箭。对一切 \(f \in \mathrm{G}_b\) ，\(\mathrm{Int}(g)(f) = gfg^{-1}\) 是 \(\mathrm{G}_a\) 的元素；于是有 \(\mathrm{Id}_{\mathrm{X}_a} = \varphi(gfg^{-1}) = \varphi(g)\varphi(f)\varphi(g)^{-1}\) ，从而 \(\varphi(f) = \mathrm{Id}_{\mathrm{X}_b}\) 。设 \(b\) 为 S 中属于 \(a\) 的轨道的一点，\(g\) 与 \(g'\) 为 G 中连接 \(a\) 与 \(b\) 的箭；则 \(g'g^{-1}\) 是 \(a\) 处的一个圈，从而 \(\varphi(g'g^{-1}) = \mathrm{Id}_{\mathrm{X}_a}\) 且 \(\varphi(g) = \varphi(g')\) 。
+
+\subsection{正规子群胚；群胚的商}
+
+定义 7. —— 设 G 为群胚。称 G 的子群胚 H 为正规子群胚，如果 Som(H) = Som(G)，并且对 H 的顶点的每一对 (a, b) 及每条箭 \(f \in \mathrm{G}_{a,b}\) ，有 \(Int(f)(H_b) = H_a\) 。
+
+设 G 为群胚，H 为 G 的子群胚，其顶点集等于 Som(G)。为验证 H 是正规子群胚，只需证明 \(fH_{b}f^{-1} \subset H_{a}\) 对一切 \(a \in \text{Som}(G)\) 、一切 \(b \in \text{Som}(\mathbf{G})\) 以及每条 \(f \in \mathbf{G}_{a,b}\) 皆然。事实上，若此成立，则也有 \(f^{-1}\mathrm{H}_a f \subset \mathrm{H}_b\) （对每条箭 \(f \in \mathbf{G}_{b,a}\) ），即 \(\mathrm{H}_a \subset f\mathrm{H}_b f^{-1}\) ，从而 \(f\mathrm{H}_b f^{-1} = \mathrm{H}_a\) 。
+
+设 G 为群胚，H 为 G 的正规子群胚。对 G 的每个顶点 a，子群 \(H_{a}\) （\(G_{a}\) 的子群）是 \(G_{a}\) 的正规子群。
+
+设 \(\varphi\colon\mathrm{G}\to\mathrm{G}^{\prime}\) 为群胚态射。\(\varphi\) 的核（II, 第 166 页, 例 5）是 G 的正规子群胚。事实上，设 \(f\) 为 G 中连接 \(a\) 与 \(b\) 的箭，并设 \(g\in\mathrm{Ker}(\varphi)_{b}\) ；则我们有 \(\varphi(fgf^{-1})=\varphi(f)\varphi(g)\varphi(f^{-1})=\varphi(f)e_{\varphi(b)}\varphi(f)^{-1}=e_{\varphi(a)}\) ，由此得到包含关系 \(f\mathrm{Ker}(\varphi)_{b}f^{-1}\subset\mathrm{Ker}(\varphi)_{a}\) 。
+
+设 G 为群胚。群胚 G 以及箭集为 G 的单位元全体的那个 G 的子群胚，都是 G 的正规子群胚。G 的一族正规子群胚的交是 G 的正规子群胚。特别地，对每个子集 F ⊂ Fl(G)，存在箭集包含 F 的最小的 G 的正规子群胚。称之为由 F 生成的正规子群胚。
+
+设 H 为 G 的正规子群胚。设 R 为 \(\mathrm{Fl}(\mathrm{G})\) 中由“ \(R\{f,g\}\) 当且仅当存在 \(\mathrm{Fl}(\mathrm{H})\) 中的箭 x 与 y 使得 f = xgy”定义的等价关系。若 f 与 g 是模 R 等价的 G 的箭，则它们的起点（相应地，终点）属于 H 的同一轨道。令 \(F' = \mathrm{Fl}(\mathrm{G}) / \mathcal{R}\) ，以 \(o'\) 与 \(t'\) 表示由 o 与 t 通过取商而得的从 \(F'\) 到 \(\mathrm{Orb}(\mathrm{H})\) 的映射。以 G/H 表示箭图 \((\mathrm{Orb}(\mathrm{H}), \mathrm{F}', o', t')\) 。
+
+引理. —— 对 G/H 的给定的可合成箭 u 与 v，可以在 Fl(G) 中选取 u 与 v 的可合成的代表 f 与 g。积 fg 模 R 的类不依赖于 f 与 g 的选取。
+
+设 \(f\) 与 \(g\) 为 \(u\) 与 \(v\) 在 \(\mathrm{Fl(G)}\) 中的任意代表。\(f\) 的终点与 \(g\) 的起点属于 H 的同一轨道，因而可用 H 的一条箭 \(x\) 连接（II, 第 162 页, 命题 1）。于是箭 \(fx\) 与 \(g\) 是 \(u\) 与 \(v\) 在 F 中的在 G 内可合成的代表。这就证明了第一个断言。
+
+现在设 \(f\) 、\(g\) 与 \(f'\) 、\(g'\) 分别为 \(u\) 与 \(v\) 的在 G 内可合成的代表。按假设，存在 H 中的箭 \(x\) 、\(y\) 、\(z\) 、\(t\) ，使得 \(f' = xfy\) 且 \(g' = zgt\) 。于是有 \(yz \in \mathrm{H}_{t(f)}\) 及 \(f'g' = x f y z g t = x f(yz)f^{-1}f g t\) 。由于 H 是 G 的正规子群胚，箭 \(f(yz)f^{-1}\) 是 H 的箭。因此箭 \(x f(yz)f^{-1}\) 亦然，这就证明了 \(f'g'\) 与 \(fg\) 模 \(\mathcal{R}\) 等价。
+
+根据此引理，在箭图 G/H 中存在唯一的合成法则 \(m\) ，使得对每一对可合成箭 \((u,v)\) ，\(m(u,v)\) 都是模 \(\mathcal{R}\) 由积 \(fg\) 所代表的类，其中 \((f,g)\) 取遍 G 中满足 \(u\) 为 \(f\) 的类且 \(v\) 为 \(g\) 的类的可合成箭对。赋有此合成法则的 G/H 是一个群胚。设 \(p_1\colon \operatorname{Som}(\mathrm{G}) \to \operatorname{Som}(\mathrm{G}/\mathrm{H})\) 与 \(p_2\colon \operatorname{Fl}(\mathrm{G}) \to \operatorname{Fl}(\mathrm{G}/\mathrm{H})\) 为典范满射。偶 \(p = (p_1,p_2)\) 是从 G 到 G/H 的群胚态射，其核为正规子群胚 H。
+
+定义 8. —— 我们称 G/H 为 G 对 H 的商群胚，称 p: G → G/H 为典范态射。
+
+注. —— 1) 映射 Som(p) 通过取商定义从 G 的轨道集到 G/H 的轨道集上的一个双射。特别地，G 传递当且仅当 G/H 传递。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(a\) 与 \(b\) 为 G 的顶点。从 \(\mathrm{G}_{a,b}\) 到 \((\mathrm{G} / \mathrm{H})_{p(a),p(b)}\) 的、由 \(p\) 诱导的映射是满射。事实上，设 \(u\) 为 G/H 中连接 \(p(a)\) 与 \(p(b)\) 的一条箭；它是 G 的某条箭的模 \(\mathcal{R}\) 类，设该箭为 \(f\) 。其起点 \(o(f)\) （\(f\) 的起点）属于 \(a\) 在 H 中的轨道；因此存在 H 中的一条箭 \(x\) 连接 \(a\) 与 \(o(f)\) 。类似地，存在 H 中的一条箭 \(y\) 连接 \(t(f)\) 与 \(b\) 。于是，\(f' = xfy\) 是 \(\mathrm{G}_{a,b}\) 的元素，其模 \(\mathcal{R}\) 的类为 \(u\) 。
+\end{enumerate}
+
+命题 2. —— 设 a 为 G 的顶点。由 p 通过取迷向群而得的群同态 \(p_{a}\colon\mathrm{G}_{a}\to(\mathrm{G}/\mathrm{H})_{p(a)}\) 是满射的；其核为 \(\mathrm{H}_{a}\) 。
+
+由前面的注，同态 \(p_a\) 是满射的。其核包含 \(\mathrm{H}_a\) ，这由群胚 \(\mathrm{G / H}\) 的构造可知。设 \(f\) 为 \(\mathrm{G}_a\) 中使得 \(p_a(f) = e_{p(a)}\) 的元素。这意味着 \(f\) 与 \(e_a\) 模 \(\mathcal{R}\) 等价；于是存在 H 的箭 \(x\) 与 \(y\) ，使得 \(f = xe_a y\) 。必然地，\(x\) 与 \(y\) 属于 \(\mathrm{H}_a\) ，由此 \(f \in \mathrm{H}_a\) 。
+
+命题 3. —— 设 G 为群胚，H 为 G 的正规子群胚，p: G → G/H 为典范态射。设 \(\varphi\colon G\to G'\) 为群胚态射，满足 \(H\subset\operatorname{Ker}(\varphi)\) 。则存在唯一的群胚态射 \(\overline{\varphi}\colon G/H\to G'\) ，使得 \(\overline{\varphi}\circ p=\varphi\) 。
+
+我们称 \(\overline{\varphi}\) 为 \(\varphi\) 通过取商诱导的群胚态射。
+
+这种态射的唯一性是显然的，因为映射 \(\operatorname{Som}(p)\) 与 \(\operatorname{Fl}(p)\) 都是满射。
+
+设 \(a\) 与 \(b\) 为 G 的顶点。若它们属于 H 的同一轨道，则存在 H 中的一条箭 \(f\) 连接 \(a\) 与 \(b\) ，且有 \(\varphi(f) = e_{\varphi(a)}\) 。特别地，\(\varphi(a) = \varphi(b)\) 。于是，映射 \(\operatorname{Som}(\varphi)\) 通过取商定义了一个映射 \(\overline{\varphi}_1\colon \operatorname{Orb}(\mathrm{H}) \to \operatorname{Som}(\mathrm{G}')\) 。设 \(f\) 与 \(g\) 为 G 中的箭。若 \(f\) 与 \(g\) 模 \(\mathcal{R}\) 等价，则存在 H 中的箭 \(x\) 与 \(y\) ，使得 \(f = xgy\) 。于是，\(\varphi(f) = \varphi(x)\varphi(g)\varphi(y) = \varphi(g)\) ，因为 \(\varphi(x)\) 与 \(\varphi(y)\) 是单位元。因此，映射 \(\operatorname{Fl}(\varphi)\) 通过取商定义了一个映射 \(\overline{\varphi}_2\colon \operatorname{Fl}(\mathrm{G}) / \mathcal{R} \to \operatorname{Fl}(\mathrm{G}')\) 。
+
+设 \(f\) 与 \(g\) 为 \(G\) 的可合成箭；以 \(u\) 与 \(v\) 表示它们在 \(\mathrm{Fl}(\mathrm{G} / \mathrm{H})\) 中的类。我们有 \(\overline{\varphi}_2(uv) = \varphi(fg) = \varphi(f)\varphi(g) = \overline{\varphi}_2(u)\overline{\varphi}_2(v)\) 。
+
+偶 \(\overline{\varphi} = (\overline{\varphi}_1, \overline{\varphi}_2)\) 是从 G/H 到 G' 的群胚态射，且有 \(\overline{\varphi} \circ p = \varphi\) 。
+
+\subsection{图的道路类群胚}
+
+设 G 为图。以 \(\Omega_{\mathrm{G}}\) 表示 G 的底层箭图的道路范畴（II, 第 160 页, 例 1）。考虑 \(\mathcal{R}\) ，它是 \(\mathrm{Ch(G)}\) 中满足下列条件的最细等价关系：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对 G 的每一对顶点 \((a,b)\) 以及 G 中连接 a 与 b 的每条箭 f，道路 \((a,f,b,\overline{f},a)\) 与 \(e_{a}\) 模 R 等价；
+\item
+  若 \((c,d)\) 与 \((c',d')\) 是 G 中的可拼接道路对，使得 \(R\{c,c'\}\) 与 \(R\{d,d'\}\) 等价，则道路 \(c*d\) 与 \(c'*d'\) 模 R 等价。
+\end{enumerate}
+
+模 \(\mathcal{R}\) 等价的两条道路有相同的起点与相同的终点。映射 \(o\) 与 \(t\) （从 \(\mathrm{Ch(G)}\) 到 \(\mathrm{Som(G)}\) 的映射）通过取商，定义了映射 \(o'\) 与 \(t'\) （从 \(\mathrm{Ch(G)/\mathcal{R}}\) 到 \(\mathrm{Som(G)}\) ）。以 \(\varpi_{G}\) 表示箭图 (Som(G), Ch(G)/R, \(o', t'\) ) 。由 Som(G) 的恒同映射与 Ch(G) 到 Ch(G)/R 上的典范投射所组成的偶 \(\varphi\) 是从 \(\Omega_{G}\) 到 \(\varpi_{G}\) 的箭图态射。Ch(G) 中道路的拼接通过取商在 \(\varpi_{G}\) 中定义了一个合成法则。
+
+命题 4. —— 赋有此合成法则的 \(\varpi_{\mathrm{G}}\) 是一个群胚。
+
+按构造，我们有关系 \(\varphi(cc') = \varphi(c)\varphi(c')\) ，其中 \((c,c')\) 取遍 G 中的可拼接道路对。\(\varpi_{\mathrm{G}}\) 的每条箭都具有 \(\varphi(c)\) 的形式，其中 \(c\) 是 G 中的一条道路。由此推出 \(\varpi_{\mathrm{G}}\) 的合成法则是结合的，且 \(\varphi(e_a)\) 是 \(a\) 处的单位元——这里 \(a\) 取遍 \(\varpi_{\mathrm{G}}\) 的顶点。剩下要证 \(\varpi_{\mathrm{G}}\) 的每条箭都可逆。设 \(c\) 是 G 中的一条道路，我们对 \(c\) 的长度作归纳来证明 \(\varphi(c)\varphi(\overline{c}) = \varphi(e_{o(c)})\) 。当 \(c\) 的长度为 0 时此等式成立。若 \(c\) 的长度为 \(n \geqslant 1\) ，则可写 \(c = c_1c_2\) ，其中 \(c_1\) 的长度为 1，\(c_2\) 的长度为 \(n - 1\) 。于是 \(\overline{c} = \overline{c_2}\overline{c_1}\) ，从而有
+
+\[
+\begin{array}{c} \varphi (c) \varphi (\overline {{c}}) = \varphi (c _ {1}) \varphi (c _ {2}) \varphi (\overline {{c _ {2}}}) \varphi (\overline {{c _ {1}}}) = \varphi (c _ {1}) \varphi (e _ {o (c _ {2})}) \varphi (\overline {{c _ {1}}}) = \varphi (c _ {1}) \varphi (\overline {{c _ {1}}}) \\ = \varphi (c _ {1} \overline {{c _ {1}}}) = \varphi (e _ {o (c _ {1})}) \end{array}
+\]
+
+由关系 \(\mathcal{R}\) 的定义即得。
+
+把此等式应用于道路 \(\overline{c}\) ，即见 \(\varphi(\overline{c})\varphi(c)=\varphi(e_{t(c)})\) 。于是 \(\varphi(c)\) 可逆，其逆为 \(\varphi(\overline{c})\) 。
+
+关系 \(\mathcal{R}\) 的等价类称为图 G 中的道路类；群胚 \(\varpi_{\mathrm{G}}\) 称为图 G 的道路类群胚。它与 G 有相同的顶点集，其轨道是图 G 的连通分支。
+
+以 \(v\) 表示一个映射，它把 \(f\) （\(G\) 中的箭）对应到 \((o(f), f, t(f))\) （\(G\) 中的道路）的类。偶 \(j = (\mathrm{Id}_{\mathrm{Som}(G)}, v)\) 是从 \(G\) 到 \(\varpi_G\) 的箭图态射，称为典范态射。其像生成 \(\varpi_G\) ；设 \(f\) 为 \(G\) 的箭，则有 \(j(\overline{f}) = j(f)^{-1}\) 。
+
+设 G 与 \(G'\) 为图，设 \(\varphi\colon G \to G'\) 为图态射。以 \(j\colon G \to \varpi_{G}\) 与 \(j'\colon G' \to \varpi_{G'}\) 表示典范态射。若 \(c = (a_0, f_1, a_1, \ldots, a_n)\) 是 G 中的道路，则道路 \(\varphi(c) = (\varphi(a_0), \varphi(f_1), \varphi(a_1), \ldots, \varphi(a_n))\) 的类只依赖于 c 的类。于是通过取等价类定义了一个箭图态射 \(\varpi(\varphi)\colon\varpi_{\mathrm{G}}\to\varpi_{\mathrm{G}^{\prime}}\) ，使得 \(\varpi(\varphi)\circ j=j^{\prime}\circ\varphi\) 。它是群胚态射。
+
+命题 5. —— 设 G 为图；以 j 表示从 G 到 \(\varpi_{\mathrm{G}}\) 的典范箭图态射。设 \(\varphi\) 为从 G 到群胚 \(\mathrm{G}'\) 中的箭图态射，满足 \(\varphi(\overline{f}) = \varphi(f)^{-1}\) （对 G 的每条箭 \(f\) ）。则存在唯一的群胚态射 \(\varphi'\) ，它从 \(\varpi_{\mathrm{G}}\) 到 \(\mathrm{G}'\) ，使得 \(\varphi' \circ j = \varphi\) 。
+
+按下式定义映射 \(u\colon \mathrm{Ch}(\mathrm{G})\to \mathrm{Fl}(\mathrm{G}^{\prime})\) ：对 G 中的每条道路 \(c = (a_0,f_1,a_1,\ldots ,f_n,a_n)\) ，令 \(u(c) = e_{a_0}\varphi (f_1)\dots \varphi (f_n)\) 。对 G 中每一对可拼接的道路 \((c,c')\) ，我们有 \(u(cc^{\prime}) = u(c)u(c^{\prime})\) 。映射 \(u\) 与上面定义的等价关系 \(\mathcal{R}\) 相容，从而通过取商得到映射 \(u'\colon \mathrm{Ch}(\mathrm{G}) / \mathcal{R}\to \mathrm{Fl}(\mathrm{G}')\) 。于是令 \(\varphi ' = (\mathrm{Som}(\varphi),u')\) 。它是从 \(\varpi_{\mathrm{G}}\) 到 \(\mathrm{G}'\) 的群胚态射，满足 \(\varphi '\circ j = \varphi\) 。
+
+设 \(\psi\) 为从 \(\varpi_{\mathrm{G}}\) 到 \(\mathbf{G}'\) 的群胚态射，满足 \(\psi \circ j = \varphi\) 。\(\varphi'\) 与 \(\psi\) 的均衡子是 \(\varpi_{\mathrm{G}}\) 的一个子群胚，它包含 \(j(\mathrm{G})\) 。因此它等于 \(\varpi_{\mathrm{G}}\) ，因为 \(\varpi_{\mathrm{G}}\) 由 \(j(\mathrm{G})\) 生成且有 \(\psi = \varphi'\) 。
+
+推论 1. —— 在图中，每个道路类恰含一条无折返道路。
+
+设 G 为图。以 \(j\colon G\to\varpi_{G}\) 表示典范箭图态射。
+
+对 G 的每条道路 \(c\) ，都存在与之等价的无折返道路；这一点对 \(c\) 的长度作归纳立即得到（参看 II, 第 157 页）。
+
+设 A 为 G 的一个定向，G' 为与在 A 上构造的自由群 F(A) 相伴的群胚（II, 第 163 页, 例 1）。设 ψ 为从 G 到 G' 的箭图态射，使得对每个 \(f \in A\) ，\(\psi(f)\) 是 F(A) 的元素 f，而 \(\psi(\overline{f})\) 是 F(A) 的元素 \(f^{-1}\) 。设 ψ' 为从 \(\varpi_{G}\) 到 G' 的唯一群胚态射，满足 ψ' ∘ j = ψ。
+
+设 \(c\) 与 \(c'\) 为模 \(\mathcal{R}\) 等价的无折返道路。它们有相同的源与相同的靶。为证它们相等，只需证明它们的箭的序列 \((f_1, \ldots, f_n)\) 与 \((g_1, \ldots, g_m)\) 相等。在 \(\psi'\) 下，\(c\) 与 \(c'\) 的公共类的像等于 \(\psi(f_1) \ldots \psi(f_n)\) 且等于 \(\psi(g_1) \ldots \psi(g_m)\) 。而序列 \((\psi(f_1), \ldots, \psi(f_n))\) 与 \((\psi(g_1), \ldots, \psi(g_m))\) 的诸项属于 \(\mathrm{A} \cup \mathrm{A}^{-1}\) （\(\mathrm{F(A)}\) 的一个子集），且这些序列中相邻两项互不为逆。由 A, I, 第 84 页, 命题 7，此二序列相等。由此推出序列 \((f_{1},\ldots,f_{n})\) 与 \((g_{1},\ldots,g_{m})\) 相等，从而 \(c=c'\) ，唯一性得证。
+
+推论 2. —— 从 G 到 \(\varpi_{\mathrm{G}}\) 的典范态射是单射。
+
+这由推论 1 立即得到。
+
+推论 3. —— 设 G' 为 G 的子图。由 G' 到 G 中的单射所诱导的、从 \(\varpi_{\mathrm{G}'}\) 到 \(\varpi_{\mathrm{G}}\) 的态射是单射。
+
+以 \(i\) 表示 \(\mathbf{G}'\) 到 \(\mathbf{G}\) 中的内射态射，以 \(\varpi(i)\) 表示由它诱导的从 \(\varpi_{\mathbf{G}'}\) 到 \(\varpi_{\mathbf{G}}\) 的态射。映射 \(\operatorname{Som}(i)\) 与 \(\operatorname{Som}(\varpi(i))\) 相一致。此外，若 \(c\) 是 \(\mathbf{G}'\) 中的无折返道路，则道路 \(i(c)\) 是 \(\mathbf{G}\) 中的无折返道路。因而结论由推论 1 得出。
+
+推论 4. —— 非空图 G 是树，当且仅当群胚 \(\varpi_{\mathrm{G}}\) 是单传递的。
+
+设 \(a\) 为 G 的一点。由推论 1，下列性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\varpi_{\mathrm{G}}\) 在 \(a\) 处的迷向群退缩为单位元；
+\item
+  G 中以 \(a\) 为起点的无折返圈只有以 \(a\) 为基点的常值圈。
+\end{enumerate}
+
+群胚 \(\varpi_{G}\) 单传递，当且仅当它传递且对每个 a 具有性质 (i)。图 G 是树，当且仅当它连通且对每点 a 具有性质 (ii)。由于 \(\varpi_{G}\) 的轨道等同于 G 的连通分支，推论得证。
+
+\subsection{自由群胚}
+
+定义 9. —— 设 C 为箭图。在 C 上构造的自由群胚（记作 \(\mathrm{Grp}(\mathrm{C})\) ）是群胚 \(\varpi_{\widetilde{C}}\) ——与 C 相伴的图 \(\widetilde{C}\) 的道路类群胚。
+
+Grp(C) 的顶点集等于 C 的顶点集；Grp(C) 的轨道是 C 的连通分支。
+
+设 C 为非空箭图。由第 174 页推论 4，与 C 相伴的图 \(\widetilde{\mathrm{C}}\) 是树，当且仅当在 C 上构造的自由群胚 \(\mathrm{Grp}(\mathrm{C})\) 是单传递的。
+
+典范箭图态射 \(i\colon \mathrm{C}\to \widetilde{\mathrm{C}}\) 与 \(j\colon \widetilde{\mathrm{C}}\to \varpi_{\widetilde{\mathrm{C}}}\) 的合成是从 C 到 \(\mathrm{Grp}(\mathrm{C})\) 的箭图态射，我们称之为从 C 到 \(\mathrm{Grp}(\mathrm{C})\) 的典范态射。把它记作 \(\theta\) 。对 C 的每个顶点 \(a\) ，有 \(\theta (a) = a\) 。若 \(f\) 是 C 的箭，则 \(\theta (f)\) 是道路 \((o(f),(f,1),t(f))\) （属于 \(\widetilde{\mathrm{C}}\) ）的类。态射 \(\theta\) 是单射（II, 第 174 页, 推论 2），其像生成群胚 \(\mathrm{Grp}(\mathrm{C})\) 。
+
+设 \(\varphi\colon\mathrm{C}\to\mathrm{C}^{\prime}\) 为箭图态射。以 \(\theta_{\mathrm{C}}\) （相应地，\(\theta_{\mathrm{C}^{\prime}}\) ）表示从 C 到 \(\mathrm{Grp}(\mathrm{C})\) （相应地，从 \(\mathrm{C}^{\prime}\) 到 \(\mathrm{Grp}(\mathrm{C}^{\prime})\) ）的典范态射。态射 \(\varpi(\widetilde{\varphi})\) 是唯一的群胚态射 \(\psi\) ，它从 \(\mathrm{Grp}(\mathrm{C})\) 到 \(\mathrm{Grp}(\mathrm{C}^{\prime})\) ，使得 \(\psi\circ\theta_{\mathrm{C}}=\theta_{\mathrm{C}^{\prime}}\circ\varphi\) 。
+
+命题 6. —— 设 C 为箭图，G 为群胚，\(\varphi\) 为从 C 到 G 的箭图态射。存在唯一的从 Grp(C) 到 G 的群胚态射 \(\varphi'\) ，使得 \(\varphi' \circ \theta_{\mathrm{C}} = \varphi\) 。
+
+设 \(\psi\) 为从 \(\widetilde{\mathbf{C}}\) 到 G 的箭图态射，满足 \(\psi(a) = \varphi(a)\) （对 C 的每个顶点 \(a\) ）以及 \(\psi(f, \varepsilon) = \varphi(f)^{\varepsilon}\) （对 C 的每条箭 \(f\) 及每个 \(\varepsilon \in \{-1, 1\}\) ）。我们有 \(\psi \circ i = \varphi\) 。由第 173 页命题 5，存在态射 \(\varphi'\) ，它从 \(\mathrm{Grp}(\mathrm{C}) = \varpi_{\widetilde{\mathrm{C}}}\) 到 G，使得 \(\varphi' \circ j = \psi\) 。于是有 \(\varphi' \circ \theta_{\mathrm{C}} = \varphi' \circ j \circ i = \psi \circ i = \varphi\) 。如同命题 5 的证明那样，\(\varphi'\) 的唯一性由 \(\theta_{\mathrm{C}}(\mathrm{C})\) 生成群胚 \(\mathrm{Grp}(\mathrm{C})\) 这一事实得出。
+
+在命题 6 的假设下，有时称 \(\varphi'\) 为从 Grp(C) 到 G 的、开拓箭图态射 \(\varphi\) 的群胚态射。
+
+例. —— 设 C 为只有一个顶点 s 的箭图，A 为其箭集。群胚 \(\mathrm{Grp}(\mathrm{C})\) 就是与在 A 上构造的自由群 \(\mathrm{F}(\mathrm{A})\) 相伴的群胚。事实上，它只有一个顶点 s，且由命题 6 立即推出，从 A 到 \(\mathrm{Grp}(\mathrm{C})_{s}\) 的典范映射——它由从 C 到 \(\mathrm{Grp}(\mathrm{C})\) 的典范态射导出——满足自由群的泛性质（A, I, 第 85 页, 命题 8）。
+
+\subsection{群胚箭的缩并}
+
+设 G 为群胚，F 为 G 的箭集的一个子集。设 H 为由 F 生成的 G 的正规子群胚。群胚 G/H 称为由 G 缩并箭集 F 而得的群胚，记作 G/F。若以 p 表示从 G 到 G/F 的典范态射，则有 \(p(o(f)) = p(t(f))\) 与 \(p(f) = e_{p(o(f))}\) （对每条箭 \(f \in F\) ）。
+
+此态射满足下列泛性质。
+
+命题 7. —— 对任何群胚态射 \(\varphi\colon G\to G'\) （它把属于 F 的每条箭都映为 \(G'\) 的单位元素），存在唯一的群胚态射 \(\varphi'\colon G/F\to G'\) ，使得 \(\varphi'\circ p=\varphi\) 。
+
+\(\varphi\) 的核是 G 的正规子群胚，其箭集包含 F。按定义，H 是 G 的箭集包含 F 的最小正规子群胚；因此它含于 \(\varphi\) 的核。命题由 II, 第 170 页, 命题 3 得出。
+
+以 \(\Gamma\) 表示 G 的子箭图，其顶点集为 Som(G)，箭集为 F。H 的轨道等同于箭图 \(\Gamma\) 的连通分支。按群胚对正规子群胚的商的定义，G/F 的顶点集等同于 \(\Gamma\) 的连通分支所成之集；换言之，它是 Som(G) 关于最细等价关系的商集，该关系使得 \(o(f)\) 与 \(t(f)\) 等价（对每条箭 \(f \in \mathrm{F}\) ）。
+
+映射 p 通过取商诱导从 G 的轨道集到 G/F 的轨道集上的一个双射（II, 第 170 页, 注 1）。
+
+本节的目的，是计算由 p 通过取迷向群而诱导的同态；据命题 2（II, 第 170 页），这等价于计算子群胚 H 的迷向群。
+
+命题 8. —— 设 δ 为从自由群胚 \(\mathrm{Grp}(\Gamma)\) 到 G 中的典范态射，它开拓 Γ 到 G 中的典范单射态射。设 a 为 G 的顶点，A 为 a 在 G 中的轨道。对每个 b ∈ A，设 \(f_{ab}\) 为 G 中连接 a 与 b 的箭。迷向群 \(H_{a}\) 是 \(G_{a}\) 的正规子群，由元素 \(\operatorname{Int}(f_{ab})(\delta(c))\) 生成，其中 b 取遍集合 A，c 取遍 \(\mathrm{Grp}(\Gamma)_{b}\) 的元素。
+
+设 x 与 y 为 G 中属于同一轨道的顶点，且 \(x \neq a\) ；我们再固定一条连接 x 与 y 的 G 的箭 \(f_{xy}\) 。对 G 的每个点 x，以 \(N_{x}\) 表示 \(G_{x}\) 的由元素 \(\operatorname{Int}(f_{xy})(\delta(c))\) 生成的正规子群，其中 y 取遍 x 在 G 中的轨道，c 取遍群 \(\operatorname{Grp}(\Gamma)_{y}\) 。对一切 \(f \in G_{xy}\) 以及每个 \(g \in N_{y}\) ，有 \(fgf^{-1} \in N_{x}\) 。设 \(x \in \operatorname{Som}(G)\) 。我们有 \(\delta(\operatorname{Grp}(\Gamma)_{x}) \subset N_{x}\) （按 \(N_{x}\) 的定义）。按群胚 H 的定义，\(\delta(f)\) 是 H 的箭——对 \(\operatorname{Grp}(\Gamma)\) 的每条箭 f 皆是；因而 \(\delta(\operatorname{Grp}(\Gamma)_{x})\) 含于 \(H_{x}\) 。由于 H 是 G 的正规子群胚，我们于是有
+
+\[
+\operatorname{Int} (f _ {x y}) (\delta (c)) \in \operatorname{Int} (f _ {x y}) (\mathrm{N} _ {y}) \subset \operatorname{Int} (f _ {x y}) (\mathrm{H} _ {y}) \subset \mathrm{H} _ {x}
+\]
+
+对一切 \(y \in \operatorname{Som}(\mathbf{G})\) ，便有 \(\mathrm{N}_x \subset \mathrm{H}_x\) 。
+
+设 \(x\) 与 \(y\) 为 \(\Gamma\) 的顶点。令 \(\mathrm{N}_{x,y} = \varnothing\) （若 \(x\) 与 \(y\) 不属于 \(\Gamma\) 的同一连通分支）。否则，设 \(c\) 与 \(c'\) 为连接 \(x\) 与 \(y\) 的道路类（在图 \(\widetilde{\Gamma}\) ——与 \(\Gamma\) 相伴——中）。设 \(z\) 为 G 中属于 \(y\) 的轨道的顶点，\(\ell\) 为 \(\mathrm{Grp}(\Gamma)_z\) 的元素；在群 \(\mathrm{G}_x\) 中有等式：
+
+\[
+\begin{array}{r l} & {\delta (c) f _ {y z} \delta (\ell) f _ {y z} ^ {- 1} \delta (c ^ {\prime}) ^ {- 1}} \\ & {\qquad = \delta (c) f _ {y z} f _ {x z} ^ {- 1} \big (f _ {x z} \delta (\ell) f _ {x z} ^ {- 1} \big) f _ {x z} f _ {y z} ^ {- 1} \delta (c) ^ {- 1} \delta (c (c ^ {\prime}) ^ {- 1}).} \end{array}
+\]
+
+箭 \(\delta(c(c')^{-1})\) 是 \(x\) 处的一个圈（在箭图 \(\Gamma\) 中）的类，故属于 \(\mathrm{N}_x\) ，箭 \(f_{xz}\delta(\ell)f_{xz}^{-1}\) 亦然。由于 \(\delta(c)f_{yz}f_{xz}^{-1}\) 属于 \(\mathrm{G}_x\) ，且 \(\mathrm{N}_x\) 是 \(\mathrm{G}_x\) 的正规子群，故 \(\delta(c)f_{yz}\delta(\ell)f_{yz}^{-1}\delta(c')^{-1}\) 属于 \(\mathrm{N}_x\) 。从而 \(\delta(c)\mathrm{N}_y\subset \mathrm{N}_x\delta(c')\) 。由对称性，有 \(\delta(c)\mathrm{N}_y = \mathrm{N}_x\delta(c')\) 。这蕴含该集合不依赖于 \(c\) 与 \(c'\) 的选取；把它记作 \(\mathrm{N}_{x,y}\) 。
+
+设 N 为 G 的子箭图，其顶点集为 Som(G)，且其从 x 到 y 的箭集等于 \(N_{x,y}\) （对 G 的每一对顶点 \((x,y)\) ）。它是 G 的正规子群胚，其箭集包含 F；因而 H 是 N 的子群胚。特别地，\(H_{a} \subset N_{a}\) ，由此得到等式。
+
+推论 1. —— 再设对 F 的每条箭 f 有 \(o(f) = t(f)\) 。那么箭图 \(\Gamma\) 中每条道路的起点与靶相重合。设 a 为 G 的顶点，A 为其在 G 中的轨道。对 F 的每个起点 b 属于 A 的元素 c，固定一条连接 a 与 b 的 G 的箭 \(f_{c}\) ，并令 \(\kappa(c) = \operatorname{Int}(f_{c})(\delta(c)) = f_{c}\delta(c)f_{c}^{-1}\) 。
+
+群 \(H_{a}\) 这时就是 \(G_{a}\) 的由箭 \(\kappa(c)\) 生成的正规子群。
+
+由命题 8，诸箭 \(\kappa(c)\) 都含于群 \(H_a\) 。设 \(N_a\) 为 \(G_a\) 的包含它们的最小正规子群。按此命题，只需证明：对 G 的每个属于 A 的顶点 \(b\) 、每条箭 \(f_{ab}\) （它在 G 中连接 \(a\) 与 \(b\) ）以及每个元素 \(c\) （\(\mathrm{Grp}(\Gamma)_b\) 的），\(\operatorname{Int}(f_{ab})(\delta(c))\) 属于 \(N_a\) 。由于 F 的每个元素的起点与靶相等，顶点 \(b\) 处的圈（在图 \(\widetilde{\Gamma}\) 中）形如 \((b,(f_1,\varepsilon_1),b,\ldots,(f_n,\varepsilon_n),b)\) ，其中对每个 \(i\in\{1,\ldots,n\}\) ，\(f_i\) 是以 \(b\) 为起点的 F 的元素，且 \(\varepsilon_i\in\{-1,1\}\) 。我们有
+
+\[
+\operatorname{Int} (f _ {a b}) (\delta (c)) = f _ {a b} f _ {c} ^ {- 1} \kappa (f _ {1}) ^ {\varepsilon_ {1}} \dots \kappa (f _ {n}) ^ {\varepsilon_ {n}} f _ {c} f _ {a b} ^ {- 1}.
+\]
+
+由于 \(f_{ab}f_c^{-1} \in \mathrm{G}_a\) ，故 \(\operatorname{Int}(f_{ab})(\delta(c))\) 属于 \(\mathrm{N}_a\) 。
+
+推论 2. —— 若与箭图 \(\Gamma\) 相伴的图是森林，则同态 \(p_a\) （从 \(\mathrm{G}_a\) 到 \((\mathrm{G} / \mathrm{F})_{p(a)}\) ）是双射，对 G 的每个顶点 a 皆然。
+
+事实上，在此假设下，对 G 的每个顶点 b 有 \(\mathrm{Grp}(\Gamma)_{b}=\{e_{b}\}\) （II, 第 173 页, 推论 1）。于是由命题 8 推出，对 G 的每个顶点 a，群 \(H_{a}\) 退缩为单位元。
+
+\subsection{图的庞加莱群}
+
+设 G 为图。设 a 为 G 的顶点；群胚 \(\mathrm{Grp}(G)\) 在 a 处的迷向群称为 G 在 a 处的庞加莱群，记作 \(\pi_{1}(G,a)\) 。设 c 为 G 中的道路类，a 为其起点，b 为其靶。映射 \(\operatorname{Int}(c): \pi_{1}(G,b)\to\pi_{1}(G,a)\) （由 \(c'\mapsto cc'c^{-1}\) 定义）是群同构。设 \(\varphi:G\to H\) 为图态射。以 \(\theta_{G}:G\to\mathrm{Grp}(G)\) 与 \(\theta_{H}:H\to\mathrm{Grp}(H)\) 表示典范态射。若以 \(\overline{\varphi}\) 表示唯一的群胚态射 \(\mathrm{Grp}(G) \to \mathrm{Grp}(H)\) （它满足 \(\overline{\varphi}\circ\theta_{G}=\theta_{H}\circ\varphi\) ），则群同态 \(\overline{\varphi}_{a}:\pi_{1}(G,a)\to\pi_{1}(H,\varphi(a))\) 记作 \(\pi_{1}(\varphi,a)\) 。
+
+设 G 为连通图，S 为 G 的一个定向，A 为 G 的极大定向树（II, 第 157 页, 命题 1）。给定 G 的顶点 \(a\) 与 \(b\) ，存在唯一的道路类 \(\gamma_{a,b}\) （在与 A 相伴的图 \(\widetilde{\mathrm{A}}\) 中），它连接 \(a\) 与 \(b\) （II, 第 174 页, 命题 5 的推论 4）。若 \(a\) 、\(b\) 与 \(c\) 是 G 的顶点，则有 \(\gamma_{a,b}\gamma_{b,c} = \gamma_{a,c}\) ，这两个道路类都等于连接 \(a\) 与 \(c\) 的唯一道路类（在 \(\widetilde{\mathrm{A}}\) 中）。
+
+命题 9. —— 设 a 为 G 的顶点。存在唯一的同态 \(\lambda\) ，它从自由群 \(\mathrm{F}(\mathrm{S}-\mathrm{Fl}(\mathrm{A}))\) 到 \(\pi_1(G, a)\) ，使得
+
+\[
+\lambda (f) = \gamma_ {a, o (f)} \cdot f \cdot \gamma_ {t (f), a}\tag{1}
+\]
+
+对 \(f \in \mathrm{S} - \mathrm{Fl}(\mathrm{A})\) 成立。同态 \(\lambda\) 是群同构。
+
+以 L 表示群 \(\mathrm{F}(\mathrm{S}-\mathrm{Fl}(\mathrm{A}))\) 。满足关系式 (1) 的同态 \(\lambda\colon L\to\pi_{1}(\mathrm{G},a)\) 的存在性与唯一性由 A, I, 第 85 页, 命题 8 得出。设 L 为与群 L 相伴的群胚（II, 第 163 页, 例 1）；以 s 表示其唯一的顶点。存在唯一的群胚态射 \(\mu\colon\mathrm{Grp}(\mathrm{G})\to\mathcal{L}\) ，使得 \(\mu(\theta_{\mathrm{G}}(f))=f\) （对每条箭 \(f\in\mathrm{S}-\mathrm{Fl}(\mathrm{A})\) ）且 \(\mu(\theta_{\mathrm{G}}(f))=e_{s}\) （对每条箭 \(f\in\mathrm{Fl}(\mathrm{A})\) ）（II, 第 173 页, 命题 5）。对 \(f\in\mathrm{S}-\mathrm{Fl}(\mathrm{A})\) ，有 \(\mu(\theta_{\mathrm{G}}(f))=f\) ；因此同态 \(\mu_{a}\circ\lambda\) 是群 L 的恒同同构（A, I, 第 85 页, 命题 8）。由此推出 \(\lambda\) 是单射的。
+
+设 \(\varpi_{\mathrm{G}} / \mathrm{A}\) 为由 \(\varpi_{\mathrm{G}}\) 经缩并 A 的箭而得的群胚，设 \(p\colon \varpi_{\mathrm{G}}\to \varpi_{\mathrm{G}} / \mathrm{A}\) 为典范群胚态射。它是满射的，且群同态 \(p_a\) （由 \(p\) 通过取迷向群而得）是同构（II, 第 178 页, 命题 8 的推论 2）。由于假定图 G 连通且 A 是它的极大树，群胚 \(\varpi_{\mathrm{G}} / \mathrm{A}\) 有唯一的顶点（II, 第 176 页）。此外，\(\varpi_{\mathrm{G}}\) 由 \(\theta_{\mathrm{G}}(\mathrm{G})\) 生成；因此 \(\varpi_{\mathrm{G}} / \mathrm{A}\) 由诸圈 \(p(f)\) （对 \(f\in \mathrm{S}\) ）生成，且群 \((\varpi_{\mathrm{G}} / \mathrm{A})_{p(a)}\) 由形如 \(p(\theta_{\mathrm{G}}(f))\) 的元素（对 \(f\in \mathrm{S} - \mathrm{Fl}(\mathrm{A})\) ）生成。因此同态 \(p_a\circ \lambda\) 是满射的。从而 \(\lambda\) 是满射的。
+
+注. —— 1) 同态 \(\mu_{a}\) 是 \(\lambda\) 的逆同构。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  存在唯一的同态 \(\lambda\colon\mathrm{F}(\mathrm{Fl}(\mathrm{G}))\to\pi_{1}(\mathrm{G},a)\) ，它对一切 \(f\in\mathrm{Fl}(\mathrm{G})\) 由关系式 (1) 定义。由命题 8 推出，同态 \(\lambda\) 是满射的，其核是 \(\mathrm{F}(\mathrm{Fl}(\mathrm{G}))\) 的最小正规子群，它包含元素 \(f\) （对 \(f\in\mathrm{Fl}(\mathrm{A})\) ）以及元素 \(f\cdot\overline{f}\) （对 \(f\in\mathrm{Fl}(\mathrm{G})\) ）。
+\end{enumerate}
+
+\section{同伦}
+
+\subsection{同伦的定义}
+
+定义 1. —— 设 G 为群胚，H 为箭图，\(\varphi\) 与 \(\varphi'\) 为从 H 到 G 的箭图态射。连接 \(\varphi\) 与 \(\varphi'\) 的同伦是指从 H 的顶点集到 G 的箭集的、满足下列性质的映射 h：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对 H 的每个顶点 a，箭 \(h(a)\) 以 \(\varphi(a)\) 为起点、以 \(\varphi'(a)\) 为靶；
+\item
+  对 H 的每条箭 \(f\) （以 \(a\) 为起点、\(b\) 为靶），有 \(\varphi(f)h(b)=h(a)\varphi'(f)\) 。
+\end{enumerate}
+
+我们称 \(\varphi\) 与 \(\varphi'\) 同伦，如果存在连接 \(\varphi\) 与 \(\varphi'\) 的同伦。
+
+设 G 为群胚，H 为箭图，\(\varphi\) 、\(\varphi'\) 、\(\varphi''\) 为从 H 到 G 的箭图态射。映射 \(a \mapsto e_{\varphi(a)}\) 是连接 \(\varphi\) 与 \(\varphi\) 的同伦。若 \(h\) 是连接 \(\varphi\) 与 \(\varphi'\) 的同伦，则映射 \(a \mapsto h(a)^{-1}\) 是连接 \(\varphi'\) 与 \(\varphi\) 的同伦。设 \(h\) 与 \(h'\) 分别是连接 \(\varphi\) 与 \(\varphi'\) 、\(\varphi'\) 与 \(\varphi''\) 的同伦。对 H 的每个顶点 \(a\) ，箭 \(h(a)\) 与 \(h'(a)\) 可合成。映射 \(a \mapsto h(a)h'(a)\) 是连接 \(\varphi\) 与 \(\varphi''\) 的同伦。
+
+由此推出，关系“ \(\varphi\) 与 \(\varphi'\) 同伦”是从 H 到 G 的箭图态射集上的一个等价关系。
+
+设 G 为群胚，H 为箭图，\(\varphi\) 与 \(\varphi'\) 为从 H 到 G 的、互相同伦的箭图态射。由定义 1 的条件 (i)，对 H 的每个顶点 \(a\) ，顶点 \(\varphi(a)\) 与 \(\varphi'(a)\) 属于 G 的同一轨道。
+
+再设 H 是群胚，并设 h 为连接 \(\varphi\) 与 \(\varphi'\) 的同伦。映射 \(\operatorname{Orb}(\varphi)\) 与 \(\operatorname{Orb}(\varphi')\) （分别由 \(\varphi\) 与 \(\varphi'\) 通过取轨道而得）于是相等。对 H 的每个顶点 a 以及每条箭 \(f \in H_{a}\) ，由定义 1 的条件 (ii)，有 \(\varphi(f) = h(a)\varphi'(f)h(a)^{-1} = \operatorname{Int}(h(a))(\varphi'(f))\) 。换言之，同态 \(\varphi_{a}\) 等于 \(\operatorname{Int}(h(a)) \circ \varphi_{a}'\) 。特别地，若同态 \(\varphi_{a}\) 是单射的（相应地，双射的，相应地，满射的），则同态 \(\varphi_{a}'\) 亦然。
+
+注. —— 1) 设 G, G' 为群胚，H, H' 为箭图，\(u\colon\mathrm{H}'\to\mathrm{H}\) 为箭图态射，\(v\colon\mathrm{G}\to\mathrm{G}'\) 为群胚态射。若从 H 到 G 的箭图态射 \(\varphi,\varphi'\) 互相同伦，则从 H' 到 G' 的箭图态射 \(v\circ\varphi\circ u\) 与 \(v\circ\varphi'\circ u\) 同伦。更精确地说，若 \(h\) 是连接 \(\varphi\) 与 \(\varphi'\) 的同伦，则映射 \(\mathrm{Fl}(v)\circ h\circ\mathrm{Som}(u)\) 是连接 \(v\circ\varphi\circ u\) 与 \(v\circ\varphi'\circ u\) 的同伦。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 G 为群胚，H 为箭图，\(\varphi, \psi\) 为从 H 到 G 的箭图态射。以 \(j\) 表示从 H 到 Grp(H) 的典范态射，设 \(\overline{\varphi}\) 与 \(\overline{\psi}\) 为从 Grp(H) 到 G 的群胚态射，使得 \(\overline{\varphi} \circ j = \varphi\) 且 \(\overline{\psi} \circ j = \psi\) 。
+\end{enumerate}
+
+回顾 \(\operatorname{Som}(\mathrm{H}) = \operatorname{Som}(\operatorname{Grp}(\mathrm{H}))\) 。
+
+同伦 \(h\colon \operatorname{Som}(\mathrm{H})\to \operatorname{Fl}(\mathrm{G})\) ——它连接 \(\varphi\) 与 \(\psi\) ——也是连接 \(\overline{\varphi}\) 与 \(\overline{\psi}\) 的同伦。
+
+\subsection{群胚的同伦等价态射}
+
+在本节中，我们将用记号 \(u \sim v\) 来表示两个群胚态射 u 与 v 同伦。
+
+定义 2. —— 设 G, G' 为群胚，\(\varphi\) 为从 G 到 G' 的态射。\(\varphi\) 的同伦逆是指从 G' 到 G 的群胚态射 \(\psi\) ，使得态射 \(\psi \circ \varphi\) 与 \(\varphi \circ \psi\) 分别同伦于 \(\mathrm{Id}_{\mathrm{G}}\) 与 \(\mathrm{Id}_{\mathrm{G}'}\) 。称 \(\varphi\) 为同伦等价态射，如果存在 \(\varphi\) 的同伦逆。
+
+群胚的同构是同伦等价态射。
+
+设 G 与 G' 为群胚。设 \(\varphi\) 与 \(\varphi'\) 为从 G 到 G' 的、互相同伦的群胚态射。若 \(\varphi\) 是同伦等价态射，则 \(\varphi'\) 亦然。事实上，若以 \(\psi\) 表示 \(\varphi\) 的一个同伦逆，则有 \(\psi \circ \varphi' \sim \psi \circ \varphi \sim \mathrm{Id}_{\mathrm{G}}\) 与 \(\varphi' \circ \psi \sim \varphi \circ \psi \sim \mathrm{Id}_{\mathrm{G}'}\) ，这就证明 \(\psi\) 是 \(\varphi'\) 的同伦逆。
+
+设 G, G' 与 G'' 为群胚，\(\varphi\colon\mathrm{G}\to\mathrm{G}'\) 、\(\varphi'\colon\mathrm{G}'\to\mathrm{G}''\) 、\(\psi\colon\mathrm{G}'\to\mathrm{G}\) 、\(\psi'\colon\mathrm{G}''\to\mathrm{G}'\) 为群胚态射。那么，在下列条件中：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\psi\) 是 \(\varphi\) 的同伦逆；
+\item
+  \(\psi'\) 是 \(\varphi'\) 的同伦逆；
+\item
+  \(\psi \circ \psi'\) 是 \(\varphi' \circ \varphi\) 的同伦逆；
+\end{enumerate}
+
+任何两个蕴含第三个。事实上，先设 (i) 与 (ii) 成立；则有
+
+\[
+\psi \circ \psi^ {\prime} \circ \varphi^ {\prime} \circ \varphi \sim \psi \circ \mathrm{Id} _ {\mathrm{G} ^ {\prime}} \circ \varphi \sim \psi \circ \varphi \sim \mathrm{Id} _ {\mathrm{G}}
+\]
+
+且类似地有 \(\varphi' \circ \varphi \circ \psi \circ \psi' \sim \mathrm{Id}_{\mathrm{G}'}\) ，由此得 (iii)。
+
+\[
+\varphi^ {\prime} \circ \psi^ {\prime} \sim \varphi^ {\prime} \circ \varphi \circ \psi \circ \psi^ {\prime} \sim \mathrm{Id} _ {\mathrm{G} ^ {\prime \prime}}
+\]
+
+以及
+
+\[
+\psi^ {\prime} \circ \varphi^ {\prime} \sim (\varphi \circ \psi) \circ \psi^ {\prime} \circ \varphi^ {\prime} \circ (\varphi \circ \psi) \sim \varphi \circ \psi \sim \mathrm{Id} _ {\mathrm{G} ^ {\prime}},
+\]
+
+由此得条件 (ii)。条件 (ii) 与 (iii) 蕴含条件 (i) 的证明是类似的。
+
+特别地，若态射 \(\varphi\) 、\(\varphi'\) 、\(\varphi'\circ\varphi\) 中有两个是同伦等价态射，则第三个亦然。
+
+命题 1. —— 设 G, G' 为群胚，\(\varphi\) 为从 G 到 G' 的态射，A 为与 G 的每个轨道都相交的 G 的顶点集的子集。为使 \(\varphi\) 是同伦等价态射，必须且只需下列条件成立：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  映射 \(\mathrm{Orb}(\varphi)\) （从 \(\mathrm{Orb}(\mathrm{G})\) 到 \(\mathrm{Orb}(\mathrm{G}')\) ，由 \(\varphi\) 通过取轨道而得）是双射；
+\item
+  对一切 \(a \in \mathrm{A}\) ，同态 \(\varphi_a \colon \mathrm{G}_a \to \mathrm{G}_{\varphi(a)}'\) 是双射的。
+\end{enumerate}
+
+先设 \(\varphi\) 是同伦等价态射，并设 \(\psi\) 为 \(\varphi\) 的一个同伦逆。则
+
+\[
+\operatorname{Orb} (\psi) \circ \operatorname{Orb} (\varphi) = \operatorname{Orb} (\psi \circ \varphi) = \operatorname{Orb} (\operatorname{Id} _ {\mathrm{G}}) = \operatorname{Id} _ {\operatorname{Orb} (\mathrm{G})},
+\]
+
+因为互相同伦的群胚态射通过取轨道诱导相同的映射。同样，\(\mathrm{Orb}(\varphi) \circ \mathrm{Orb}(\psi) = \mathrm{Id}_{\mathrm{Orb}(G')}\) 。因此映射 \(\mathrm{Orb}(\varphi)\) 是双射，由此得断言 (i)。
+
+\[
+\psi_ {\varphi (a)} \circ \varphi_ {a} = (\psi \circ \varphi) _ {a};
+\]
+
+由于 \(\psi \circ \varphi\) 同伦于 \(\mathrm{Id}_{\mathrm{G}}\) ，同态 \((\psi \circ \varphi)_a\) 是双射的（参看第 180 页），因此 \(\varphi_a\) 是单射的而 \(\psi_{\varphi(a)}\) 是满射的。交换 \(\varphi\) 与 \(\psi\) 的角色，即见 \(\varphi_a\) 也是满射的，由此得条件 (ii)。
+
+现在设条件 (i) 与 (ii) 成立，我们来证明 \(\varphi\) 是同伦等价态射。
+
+先处理 G' 的每个轨道退缩为一点的情形。
+
+对每个顶点 \(b\) （\(G'\) 的），选取顶点 \(u(b)\) （\(G\) 的、属于 \(A\) 的），使其在 \(\varphi\) 下的像为 \(b\) 。这是可能的，因为映射 \(\operatorname{Orb}(\varphi)\) 是满射的，且 \(A\) 与 \(G\) 的每个轨道相交。设 \(f\) 为 \(G'\) 的箭；按假设有 \(o(f) = t(f)\) ；令 \(b = o(f)\) 且 \(a = u(b)\) 。由条件 (ii)，存在唯一的箭 \(v(f) \in G_a\) ，它在 \(\varphi\) 下的像为 \(f\) 。偶 \(\psi = (u, v)\) 是从 \(G'\) 到 \(G\) 的群胚态射。我们来证明 \(\psi\) 是 \(\varphi\) 的同伦逆。我们已有 \(\varphi \circ \psi = \mathrm{Id}_{\mathrm{G}'}\) （按 \(\psi\) 的构造）。
+
+设 \(x\) 为 G 的顶点。令 \(a = \psi(\varphi(x))\) ；这是 A 中满足 \(\varphi(a) = \varphi(x)\) 的元素。由于 \(\mathrm{Orb}(\varphi)\) 是单射的，\(a\) 属于 \(x\) 在 G 中的轨道，且存在 G 中的箭 \(f\) 连接 \(a\) 与 \(x\) 。于是箭 \(h(x) = \psi(\varphi(f))^{-1}f\) 连接 \(a\) 与 \(x\) ，且有 \(\varphi(h(x)) = e_{\varphi(a)}\) 。
+
+我们来证明这样定义的映射 \(h \colon \operatorname{Som}(\mathbf{G}) \to \operatorname{Fl}(\mathbf{G})\) 是连接 \(\psi \circ \varphi\) 与 \(\operatorname{Id}_{\mathbf{G}}\) 的同伦。按构造，定义 1 的条件 (i) 成立。设 \(f\) 为 \(\mathbf{G}\) 的箭，\(x\) 为其起点，\(y\) 为其靶。有 \(\varphi(x) = \varphi(y)\) ；令 \(a = \psi(\varphi(x)) = \psi(\varphi(y))\) 。箭 \(h(x)fh(y)^{-1}\) 与 \(\psi \circ \varphi(f)\) 都属于 \(\mathrm{G}_a\) ，且都有像 \(\varphi(f)\) （在 \(\mathrm{G}'_{\varphi(a)}\) 中）。由于映射 \(\varphi_a\) 是单射的，有 \(h(x)fh(y)^{-1} = \psi \circ \varphi(f)\) 。于是定义 1 的条件 (ii) 成立。
+
+现在来证明一般情形下的命题 1。设 X 为 G' 的极大定向森林（II, 第 157 页, 命题 1）。设 G'' 为由 G' 经缩并 X 的箭而得的群胚，\(\varphi'\colon G' \to G''\) 为典范态射。态射 \(\varphi'\) 满足命题 1 的条件（II, 第 170 页, 注 1 及第 178 页, 推论 2），态射 \(\varphi'\circ\varphi\) 亦然。
+
+由于 G'' 的轨道都退缩为点，由已证的特例推出 \(\varphi'\) 与 \(\varphi'\circ\varphi\) 都是同伦等价态射，因而 \(\varphi\) 也是。
+
+推论 1. —— 设 G 为群胚，A 为集合，\(f\colon A \to \operatorname{Som}(G)\) 为映射。若 \(f\) 的像与 G 的每个轨道相交，则典范群胚态射 \(\varphi\) （从 \(f^{*}G\) 到 G）是同伦等价态射。
+
+按逆像群胚的定义（II, 第 166 页, 例 4），A 是群胚 \(f^{*}\mathrm{G}\) 的顶点集，且有 \(\mathrm{Fl}_{a,b}(f^{*}\mathrm{G}) = \mathrm{Fl}_{f(a),f(b)}(\mathrm{G})\) （对 A 的每一对元素 \((a,b)\) ）。此外，有 \(\operatorname{Som}(\varphi) = f\) ，且 \(\operatorname{Fl}(\varphi)\) 诱导从 \(\operatorname{Fl}_{a,b}(f^{*}\mathrm{G})\) 到 \(\operatorname{Fl}_{f(a),f(b)}(\mathrm{G})\) 的恒同映射。因此映射 \(\operatorname{Orb}(\varphi)\) 是双射的，且同态 \(\varphi_{a}\colon (f^{*}\mathrm{G})_{a} \to \operatorname{G}_{f(a)}\) 是同构（对一切 \(a \in A\) ）。于是命题 1 的假设得到满足。
+
+推论 2. —— 设 G 为群胚，X 为 G 的定向森林，G' 为由 G 经缩并 X 的箭而得的群胚。则从 G 到 G' 的典范态射是同伦等价态射。
+
+这由 II, 第 170 页, 注 1 及 II, 第 178 页, 推论 2 得出，它们表明命题 1 的假设得到满足。
+
+\subsection{上同伦子}
+
+设 H 为箭图，G 为群胚，\(\varphi\) 与 \(\psi\) 为从 H 到 G 的箭图态射。
+
+以 \(G_{1}\) 表示按下述方式定义的箭图：\(G_{1}\) 的顶点就是 G 的顶点；\(G_{1}\) 的箭是集 \(\mathrm{Fl(G)}\) 与 \(\mathrm{Som(H)}\) 的不交并的元素；\(G_{1}\) 的源映射与 G 的源映射在 \(\mathrm{Fl(G)}\) 上相重合，且与 \(\mathrm{Som}(\varphi)\) 在 \(\mathrm{Som(H)}\) 上相重合；\(G_{1}\) 的靶映射与 G 的靶映射在 \(\mathrm{Fl(G)}\) 上相重合，且与 \(\mathrm{Som}(\psi)\) 在 \(\mathrm{Som(H)}\) 上相重合。以 \(\alpha_{1}\) 表示从 G 到 \(G_{1}\) 的箭图态射，它由 \(\mathrm{Som(G)}\) 的恒同映射以及 \(\mathrm{Fl(G)}\) 到 \(\mathrm{Fl(G_{1})}\) 中的典范单射定义。以 \(h_{1}\) 表示典范单射 \(\mathrm{Som(H)} \to \mathrm{Fl(G_{1})}\) 。
+
+考虑自由群胚 \(\mathrm{Grp}(G_{1})\) （在 \(G_{1}\) 上构造；II, 第 174 页, 定义 9），并以 \(\theta_{1}\) 表示从 \(G_{1}\) 到 \(\mathrm{Grp}(G_{1})\) 的典范箭图态射。最后，以 \(\mathrm{Coh}(\varphi,\psi)\) 表示由 \(\mathrm{Grp}(G_{1})\) 经缩并圈（在 \(x\) 的起点处）而得的群胚。
+
+\[
+\alpha_ {1} (x) \alpha_ {1} (y) \alpha_ {1} (x y) ^ {- 1},\tag{1}
+\]
+
+对 G 的每一对可合成箭 \((x,y)\) ，以及圈（在 \(\varphi(a)\) 处）
+
+\[
+\alpha_ {1} (\varphi (f)) h _ {1} (b) \alpha_ {1} (\psi (f)) ^ {- 1} h _ {1} (a) ^ {- 1}\tag{2}
+\]
+
+其中 \(a\) 、\(b\) 属于 \(\operatorname{Som}(\mathrm{H})\) 且 \(f \in \operatorname{Fl}_{ab}(\mathrm{H})\) 。以 \(\pi: \operatorname{Grp}(\mathrm{G}_1) \to \operatorname{Coh}(\varphi, \psi)\) 表示典范态射；令 \(\alpha = \pi \circ \theta_1 \circ \alpha_1\) 与 \(h = \operatorname{Fl}(\pi \circ \theta_1) \circ h_1\) 。
+
+命题 2. —— 群胚 Coh(φ,ψ) 由这样的子箭图生成：其顶点集为 Som(G)，其箭集为映射 Fl(α) 与 h 的像的并。
+
+此子箭图是箭图 \(G_{1}\) 在箭图态射 \(\pi \circ \theta_{1}\) 下的像，故命题由 \(\mathrm{Coh}(\varphi, \psi)\) 的构造立即得出。
+
+命题 3. —— 箭图态射 \(\alpha\) 是从 G 到 \(\mathrm{Coh}(\varphi, \psi)\) 的群胚态射，而映射 \(h\) 是连接 \(\alpha \circ \varphi\) 与 \(\alpha \circ \psi\) 的同伦。
+
+三元组 \((\mathrm{Coh}(\varphi,\psi),\alpha,h)\) 具有下列泛性质：若 \(G'\) 为群胚，\(\alpha'\) 为从 G 到 \(G'\) 的群胚态射，且 \(h'\colon\mathrm{Som}(\mathrm{H})\to\mathrm{Fl}(\mathrm{G}')\) 为连接 \(\alpha'\circ\varphi\) 与 \(\alpha'\circ\psi\) 的同伦，则存在唯一的群胚态射 \(\eta\colon\mathrm{Coh}(\varphi,\psi)\to\mathrm{G}'\) ，使得
+
+\[
+\alpha^ {\prime} = \eta \circ \alpha \qquad\text{且}\qquad h ^ {\prime} = \operatorname{Fl} (\eta) \circ h.\tag{3}
+\]
+
+鉴于经缩并箭而得的群胚的定义，圈 (1) 的缩并蕴含 \(\alpha\) 是群胚态射，而圈 (2) 的缩并蕴含 \(h\) 是连接 \(\alpha \circ \varphi\) 与 \(\alpha \circ \psi\) 的同伦。
+
+设 \(G'\) 、\(\alpha'\) 、\(h'\) 如命题所述。设 \(\eta_{1}\) 为从 \(G_{1}\) 到 \(G'\) 的箭图态射，使得 \(\operatorname{Som}(\eta_{1})\) 等于 \(\operatorname{Som}(\alpha')\) ，且 \(\operatorname{Fl}(\eta_{1})\) 与 \(\operatorname{Fl}(\alpha')\) 在 \(\operatorname{Fl}(G)\) 上相重合、与 \(h'\) 在 \(\operatorname{Som}(H)\) 上相重合。存在唯一的群胚态射 \(\eta_{2}: \operatorname{Grp}(G_{1}) \to G'\) ，使得 \(\eta_{1} = \eta_{2} \circ \theta_{1}\) 。由于 \(\alpha'\) 是群胚态射且 \(h'\) 是连接 \(\alpha' \circ \varphi\) 与 \(\alpha' \circ \psi\) 的同伦，\(\eta_{2}\) 通过取商定义了一个群胚态射 \(\eta\) （从 \(\operatorname{Coh}(\varphi, \psi)\) 到 \(G'\) ）（II, 第 170 页, 命题 3）。此态射满足关系式 (3)，且是唯一的（II, 第 185 页, 命题 2）。
+
+定义 3. —— 群胚 Coh(φ,ψ) 称为偶 (φ,ψ) 的上同伦子。称 α 为从 G 到 Coh(φ,ψ) 的典范态射，称 h 为联系 α∘φ 与 α∘ψ 的典范同伦。
+
+我们称偶 \((\varphi,\psi)\) 的框架为这样的箭图：其顶点集为 G 的轨道集，其箭集为 H 的连通分支集，其源映射与靶映射由 \(\varphi\) 与 \(\psi\) 通过取商诱导。
+
+命题 4. —— 映射 Orb(α): Orb(G) → Orb(Coh(φ,ψ)) 是满射的，其纤维是偶 (φ,ψ) 的框架的连通分支。
+
+态射 \(\alpha\) 是态射 \(\alpha_{1}\colon\mathrm{G}\to\mathrm{G}_{1}\) 、\(\theta_{1}\colon\mathrm{G}_{1}\to\mathrm{Grp}(\mathrm{G}_{1})\) 与 \(\pi\colon\mathrm{Grp}(\mathrm{G}_{1})\to\mathrm{Coh}(\varphi,\psi)\) 的合成。映射 \(\theta_{1}\) 诱导从箭图 \(\mathrm{G}_{1}\) 的连通分支集到 \(\mathrm{Grp}(\mathrm{G}_{1})\) 的轨道集的双射，且映射 \(\mathrm{Orb}(\pi)\colon\mathrm{Orb}(\mathrm{Grp}(\mathrm{G}_{1}))\to\mathrm{Orb}(\mathrm{Coh}(\varphi,\psi))\) 是双射（II, 第 170 页, 注 1）。因此只需证明从 \(\mathrm{Orb}(\mathrm{G})\) 到 \(\pi_{0}(\mathrm{G}_{1})\) 的映射（由 \(\alpha_{1}\) 诱导）是满射的，且其纤维是偶 \((\varphi,\psi)\) 的框架的连通分支。满射性由映射 \(\mathrm{Som}(\alpha_{1})\) 是恒同映射这一事实得出。\(\mathrm{Som}(\mathrm{G})\) 中由“\(a\) 与 \(b\) 位于 \(\mathrm{G}_{1}\) 的同一连通分支中”给出的等价关系，由关系“存在 G 的一条箭连接 \(a\) 与 \(b\)”以及“存在 H 的顶点 \(h\) 使得 \(\varphi(h)=a\) 且 \(\psi(h)=b\)”生成。此等价关系与从 \(\mathrm{Som}(\mathrm{G})\) 到 \(\mathrm{Orb}(\mathrm{G})\) 的映射相容，且在 \(\mathrm{Orb}(\mathrm{G})\) 上诱导的关系由关系“存在 H 的轨道 \(\eta\) 使得 \(\mathrm{Orb}(\varphi)(\eta)=\alpha\) 且 \(\mathrm{Orb}(\psi)(\eta)=\beta\)”生成。因而这就是关系“\(\alpha\) 与 \(\beta\) 位于偶 \((\alpha,\beta)\) 的框架的同一连通分支中”。
+
+命题 5. —— 设 G' 为群胚，η, η' 为从 Coh(φ,ψ) 到 G' 的群胚态射，k 为从 Som(G) 到 Fl(G') 的映射。为使 k 是连接 η 与 η' 的同伦，必须且只需下列两个条件成立：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  映射 \(k\) 是连接 \(\eta \circ \alpha\) 与 \(\eta' \circ \alpha\) 的同伦；
+\item
+  对 H 的每个顶点 a，有
+\end{enumerate}
+
+\[
+\eta (h (a)) k (\psi (a)) = k (\varphi (a)) \eta^ {\prime} (h (a)).
+\]
+
+按定义，为使 k 是连接 \(\eta\) 与 \(\eta'\) 的同伦，必须且只需下列两个条件成立（回忆 \(\operatorname{Som}(G) = \operatorname{Som}(\operatorname{Coh}(\varphi, \psi))\) ）：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个顶点 \(x\) （\(\operatorname{Coh}(\varphi, \psi)\) 的），\(k(x)\) 连接 \(\eta(x)\) 与 \(\eta'(x)\) ；
+\item
+  对每一对顶点 \((x,y)\) （属于 \(\mathrm{Coh}(\varphi,\psi)\) ）以及每条箭 \(f\in\mathrm{Fl}_{x,y}(\mathrm{Coh}(\varphi,\psi))\) ，有 \(\eta(f)k(y)=k(x)\eta'(f)\) 。
+\end{enumerate}
+
+由命题 2，只需验证条件 \(b\) ）——当 \(f\) 属于 \(\mathrm{Fl}(\alpha)\) 的像或 \(h\) 的像时；于是 \(b\) ) 等价于下列两个条件 \(c\) ) 与 \(d\) ) 的合取：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  当 \(x \in \operatorname{Som}(\mathrm{G})\) 、\(y \in \operatorname{Som}(\mathrm{G})\) 且 \(g \in \operatorname{Fl}_{x,y}(\mathrm{G})\) 时，有 \(\eta(\alpha(g))k(y) = k(x)\eta'(\alpha(g))\) ；
+\item
+  对每个 \(a \in \operatorname{Som}(\mathrm{H})\) ，有 \(\eta(h(a))k(\psi(a)) = k(\varphi(a))\eta'(h(a))\) 。条件 (i) 等价于 a) 与 c) 的合取，而条件 (ii) 即条件 d)，由此得推论。
+\end{enumerate}
+
+\subsection{两个上同伦子的比较}
+
+考虑一个图表
+
+\[
+\begin{array}{c} \mathrm{H} \xrightarrow {\varphi} \mathrm{G} \\ u \Big \downarrow \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \Big \downarrow v \\ \mathrm{H} ^ {\prime} \xrightarrow {\varphi^ {\prime}} \mathrm{G} ^ {\prime} \\ \psi^ {\prime} \end{array}\tag{4}
+\]
+
+其中 H, H', G, G' 为群胚，u, v, \(\varphi\) 、\(\psi\) 、\(\varphi'\) 、\(\psi'\) 为群胚态射，满足 \(v \circ \varphi = \varphi' \circ u\) 且 \(v \circ \psi = \psi' \circ u\) 。
+
+以 \(\alpha\) 表示从 G 到上同伦子 \(\mathrm{Coh}(\varphi, \psi)\) 的典范态射，以 \(h\) 表示连接 \(\alpha \circ \varphi\) 与 \(\alpha \circ \psi\) 的典范同伦；类似地定义 \(\alpha'\) 与 \(h'\) 。于是，\(\alpha' \circ v\) 是从 G 到 \(\mathrm{Coh}(\varphi', \psi')\) 的群胚态射，而 \(h' \circ \mathrm{Som}(u)\) 是连接 \(\alpha' \circ \varphi' \circ u\) 与 \(\alpha' \circ \psi' \circ u\) 的同伦，亦即连接 \(\alpha' \circ v \circ \varphi\) 与 \(\alpha' \circ v \circ \psi\) 的同伦。由上同伦子的泛性质（II, 第 185 页, 命题 3），存在唯一的群胚态射 \(w\) ，它从 \(\mathrm{Coh}(\varphi, \psi)\) 到 \(\mathrm{Coh}(\varphi', \psi')\) ，使得 \(w \circ \alpha = \alpha' \circ v\) 且 \(\mathrm{Fl}(w) \circ h = h' \circ \mathrm{Som}(u)\) 。我们特别地把图表 (4) 扩充成了图表
+
+\[
+\begin{array}{c} \mathrm{H} \xrightarrow [ \psi ]{\varphi} \mathrm{G} \xrightarrow {\alpha} \mathrm{Coh} (\varphi , \psi) \\ u \Biggl \downarrow \qquad \qquad \qquad \Biggl \downarrow v \qquad \qquad \Biggl \downarrow w \\ \mathrm{H} ^ {\prime} \xrightarrow [ \psi^ {\prime} ]{\varphi^ {\prime}} \mathrm{G} ^ {\prime} \xrightarrow {\alpha^ {\prime}} \mathrm{Coh} (\varphi^ {\prime}, \psi^ {\prime}) \end{array}\tag{5}
+\]
+
+其中第二个方块是交换的。
+
+定理 1. —— 假设下列假设成立：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  群胚态射 v 是同伦等价态射；
+\item
+  映射 \(\operatorname{Orb}(u)\colon\operatorname{Orb}(\mathrm{H})\to\operatorname{Orb}(\mathrm{H}')\) （由 u 通过取轨道而得）是双射；
+\item
+  在 H 的每个轨道中存在一点 a，使得同态 \(u_a \colon \mathrm{H}_a \to \mathrm{H}_{u(a)}'\) 是满射的。
+\end{enumerate}
+
+那么，群胚态射 \(w\colon \operatorname{Coh}(\varphi,\psi)\to\operatorname{Coh}(\varphi',\psi')\) 是同伦等价态射。
+
+设 G'' 为由 G' 经缩并某个极大定向森林的箭而得的群胚。典范态射 \(v'\colon G' \to G''\) 是同伦等价态射（II, 第 184 页, 命题 1 的推论 2）。两个图表
+
+\[
+\begin{array}{c c c} \mathrm{H} \xrightarrow [ \psi ]{\varphi} \mathrm{G} & & \mathrm{H} ^ {\prime} \xrightarrow [ \psi^ {\prime} ]{\varphi^ {\prime}} \mathrm{G} ^ {\prime} \\ u \Big \downarrow & \Big \downarrow_ {v ^ {\prime} \circ v} & \text {and} \quad \mathrm{Id} _ {\mathrm{H} ^ {\prime}} \Big \downarrow \\ \mathrm{H} ^ {\prime} \xrightarrow [ v ^ {\prime} \circ \psi^ {\prime} ]{v ^ {\prime} \circ \varphi^ {\prime}} \mathrm{G} ^ {\prime} & & \mathrm{H} ^ {\prime} \xrightarrow [ v ^ {\prime} \circ \psi^ {\prime} ]{v ^ {\prime} \circ \varphi^ {\prime}} \mathrm{G} ^ {\prime \prime} \end{array}
+\]
+
+给出群胚态射 \(w_1' \colon \mathrm{Coh}(\varphi, \psi) \to \mathrm{Coh}(v' \circ \varphi', v' \circ \psi')\) 与 \(w_2' \colon \mathrm{Coh}(\varphi', \psi') \to \mathrm{Coh}(v' \circ \varphi', v' \circ \psi')\) ；我们有 \(w_1' = w_2' \circ w\) 。因此只需证明 \(w_1'\) 与 \(w_2'\) 都是同伦等价态射。由于映射 \(\mathrm{Som}(v' \circ v) \colon \mathrm{Som}(\mathrm{G}) \to \mathrm{Som}(\mathrm{G}'' )\) 与 \(\mathrm{Som}(v') \colon \mathrm{Som}(\mathrm{G}') \to \mathrm{Som}(\mathrm{G}'' )\) 都是满射的，从而只需在附加假设——映射 \(\mathrm{Som}(v)\) 是满射的——之下证明定理，我们在余下的证明中始终作此假设。
+
+我们相继证明下列断言：
+
+- 映射 Orb(w) 是双射；
+
+- 对 G 的每个顶点 \(a\) ，同态 \(w_{a}\) 是满射的；
+
+- 对 G 的每个顶点 \(a\) ，同态 \(w_{a}\) 是单射的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  按假设，映射 \(\operatorname{Orb}(u)\) 是双射；由于 v 是同伦等价态射，据 II, 第 182 页, 命题 1，映射 \(\operatorname{Orb}(v)\) 亦然。于是，从偶 \((\varphi,\psi)\) 的框架到偶 \((\varphi',\psi')\) 的框架的、由映射 \(\operatorname{Orb}(u)\) 与 \(\operatorname{Orb}(v)\) 定义的箭图态射是一个同构。特别地，由它通过取连通分支而得的映射是双射。于是 II, 第 185 页, 命题 4 蕴含映射 \(\operatorname{Orb}(w)\) 是双射。
+\item
+  设 \(f'\) 为 \(G'\) 的箭，以 \(a'\) 表示其起点，\(b'\) 表示其靶。由于映射 \(\operatorname{Som}(v)\) 是满射的，存在 G 中的顶点 \(a\) 与 \(b\) ，使得 \(a' = v(a)\) 且 \(b' = v(b)\) 。由于态射 v 是同伦等价态射，存在 G 的一条箭 \(f\) （它连接 \(a\) 与 \(b\) ），以及元素 \(g \in G_{a}\) ，使得 \(v(g) = f'v(f)^{-1}\) （II, 第 182 页, 命题 1），由此 \(f' = v(gf)\) 。这就证明映射 \(\mathrm{Fl}(v)\) 是满射的。
+\end{enumerate}
+
+接着证明映射 \(\mathrm{Fl}(w)\) 是满射的。它的像包含 \(\mathrm{Fl}(\alpha')\) 的像，因为有 \(\alpha'\circ v=w\circ\alpha\) 且映射 \(\mathrm{Fl}(v)\) 是满射的。设 b 为 \(H'\) 的顶点；设 a 为 H 的顶点，使得 b 与 \(u(a)\) 位于 \(H'\) 的同一轨道，且设 f 为 \(H'\) 中连接 \(u(a)\) 与 b 的箭。则，
+
+\[
+h ^ {\prime} (u (a)) \cdot (\alpha^ {\prime} \circ \psi^ {\prime}) (f) = (\alpha^ {\prime} \circ \varphi^ {\prime}) (f) \cdot h ^ {\prime} (b),
+\]
+
+因为 \(h'\) 是连接 \(\alpha' \circ \varphi'\) 与 \(\alpha' \circ \psi'\) 的同伦。箭 \(h'(u(a)) = w(h(a))\) 属于 \(\mathrm{Fl}(w)\) 的像，由前所述，两条箭 \(\alpha'(\psi'(f))\) 与 \(\alpha'(\varphi'(f))\) 亦然。由此推出箭 \(h'(b)\) 属于 \(\mathrm{Fl}(w)\) 的像，这就证明 \(\mathrm{Fl}(w)\) 的像包含 \(h'\) 的像。由 II, 第 185 页, 命题 2，映射 \(\mathrm{Fl}(w)\) 是满射的。
+
+设 \(g' \in \mathrm{Coh}(\varphi', \psi')_{u(a)}\) 。设 g 为 \(\mathrm{Coh}(\varphi, \psi)\) 的箭，使得 \(w(g) = g'\) 。以 x 与 y 表示 g 的源与靶；我们有 \(u(x) = u(y) = u(a)\) 。设 \(g_1\) （相应地，\(g_2\) ）为 G 中连接 a 与 x（相应地，a 与 y）的箭，其在 v 下的像为 \(e_{u(a)}\) 。则 \(\alpha(g_1)g\alpha(g_2)^{-1}\) 是 \(\mathrm{Coh}(\varphi, \psi)_a\) 的元素，其在 \(w_a\) 下的像为 \(g'\) 。因而，对 G 的每个顶点 a，同态 \(w_a\) 是满射的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  我们来证明，对 G 的每个顶点 \(a\) ，同态 \(w_{a}\) 是单射的。相继考虑图表
+\end{enumerate}
+
+\[
+\begin{array}{c c c} \mathrm{H} \xrightarrow {\varphi} \mathrm{G} & & \mathrm{H} \xrightarrow {v \circ \varphi} \mathrm{G} ^ {\prime} \\ \mathrm{Id} _ {\mathrm{H}} \Biggl \downarrow \quad \psi & \Biggl \downarrow v & u \Biggl \downarrow \quad \Biggl \downarrow \mathrm{Id} _ {\mathrm{G} ^ {\prime}} \\ \mathrm{H} \xrightarrow {v \circ \varphi} \mathrm{G} ^ {\prime} & & \mathrm{H} ^ {\prime} \xrightarrow {\varphi^ {\prime}} \mathrm{G} ^ {\prime} \\ & v \circ \psi & \psi^ {\prime} \end{array}
+\]
+
+于是我们归结为处理下列两种情形：1) H' = H 且 \(u = \mathrm{Id}_{\mathrm{H}}\) ；2) G' = G 且 \(v = \mathrm{Id}_{\mathrm{G}}\) 。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  设 H' = H 且 \(u = \mathrm{Id}_{\mathrm{H}}\) 。
+\end{enumerate}
+
+考虑一个在同伦意义下为 v 之逆的群胚态射 \(v^{\prime}: G^{\prime} \to G\) ，以及一个同伦 \(k: \operatorname{Som}(G) \to \operatorname{Fl}(G)\) （它连接 \(v^{\prime} \circ v\) 与 \(\mathrm{Id}_{\mathrm{G}}\) ）。由 II, 第 181 页, 注 1，映射 \(\alpha \circ k \circ \varphi\) 与 \(\alpha \circ k \circ \psi\) 分别是连接 \(\alpha \circ v^{\prime} \circ \varphi^{\prime}\) 与 \(\alpha \circ \varphi\) 以及连接 \(\alpha\circ v^{\prime}\circ\psi^{\prime}\) 与 \(\alpha\circ\psi\) 的同伦。因而（参看 II, 第 180 页），映射
+
+\[
+\begin{array}{c} h _ {1} \colon \operatorname{Som} (\mathrm{H}) \to \operatorname{Fl} (\operatorname{Coh} (\varphi , \psi)), \\ x \mapsto (\alpha \circ k \circ \varphi) (x) \cdot h (x) \cdot ((\alpha \circ k \circ \psi) (x)) ^ {- 1} \end{array}
+\]
+
+是连接 \(\alpha \circ v' \circ \varphi'\) 与 \(\alpha \circ v' \circ \psi'\) 的同伦。由上同伦子的泛性质（II, 第 185 页, 命题 3），存在唯一的群胚态射 \(w'\colon \mathrm{Coh}(\varphi', \psi') \to \mathrm{Coh}(\varphi, \psi)\) ，使得 \(\alpha \circ v' = w' \circ \alpha'\) 且 \(h_1 = \mathrm{Fl}(w') \circ h'\) 。
+
+\[
+\begin{array}{c} \mathrm{H} \xrightarrow [ \psi ]{\varphi} \mathrm{G} \xrightarrow {\alpha} \mathrm{Coh} (\varphi , \psi) \\ \mathrm{Id} _ {\mathrm{H}} \Biggl \downarrow \qquad \qquad \qquad \Biggl \downarrow v \qquad \qquad \Biggl \downarrow w \\ \mathrm{H} \xrightarrow [ \psi^ {\prime} ]{\varphi^ {\prime}} \mathrm{G} ^ {\prime} \xrightarrow {\alpha^ {\prime}} \mathrm{Coh} (\varphi^ {\prime}, \psi^ {\prime}) \\ \mathrm{Id} _ {\mathrm{H}} \Biggl \downarrow \qquad \qquad \qquad \Biggl \downarrow v ^ {\prime} \qquad \qquad \Biggl \downarrow w ^ {\prime} \\ \mathrm{H} \xrightarrow [ \psi ]{\varphi} \mathrm{G} \xrightarrow {\alpha} \mathrm{Coh} (\varphi , \psi)  . \end{array}
+\]
+
+特别地，我们有
+
+\[
+\alpha \circ v ^ {\prime} \circ v = w ^ {\prime} \circ \alpha^ {\prime} \circ v = w ^ {\prime} \circ w \circ \alpha .
+\]
+
+由于 k 是连接 \(v'\circ v\) 与 \(\mathrm{Id}_{\mathrm{G}}\) 的同伦，\(\alpha\circ k\) 是连接 \(w'\circ w\circ\alpha\) 与 \(\alpha\) 的同伦。由于 \(\mathrm{Fl}(w'\circ w)\circ h=\mathrm{Fl}(w')\circ h'=h_{1}\) ，故对 H 的每个顶点 x，有
+
+\[
+\operatorname{Fl} \left(w ^ {\prime} \circ w\right) \circ h (x) \cdot (\alpha \circ k \circ \psi) (x) = h _ {1} (x) \cdot (\alpha \circ k \circ \psi) (x) = (\alpha \circ k \circ \varphi) (x) \cdot h (x),
+\]
+
+此按 \(h_1\) 的定义。把 II, 第 186 页, 命题 5 应用于群胚态射 \(w' \circ w\) 与 \(\mathrm{Id}_{\mathrm{Coh}(\varphi, \psi)}\) ，即知映射 \(\alpha \circ k\) 是连接 \(w' \circ w\) 与 \(\mathrm{Id}_{\mathrm{G}}\) 的同伦。特别地，\(w' \circ w\) 是同伦等价态射。
+
+因而对 G 的每个顶点 \(a\) ，群同态 \((w' \circ w)_a\) 是双射的（II, 第 182 页, 命题 1）。由此推出同态 \(w_a\) 是单射的，从而得到情形 A) 的结论。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 G' = G 且 \(v = \mathrm{Id}_{\mathrm{G}}\) 。
+\end{enumerate}
+
+设 \(x\) 为 H' 的顶点。由于映射 \(\operatorname{Orb}(u)\) 是满射的，存在 H 的顶点 \(a\) 以及 H' 的箭 \(f\) ，它连接 \(u(a)\) 与 \(x\) 。箭 \(\alpha(\varphi'(f))^{-1}\) 、\(h(a)\) 与 \(\alpha(\psi'(f))\) 分别连接 \(\varphi'(x)\) 与 \(\varphi'(u(a)) = \varphi(a)\) 、\(\varphi(a)\) 与 \(\psi(a)\) 以及 \(\psi'(u(a)) = \psi(a)\) 与 \(\psi'(x)\) ；因此它们在 \(\operatorname{Coh}(\varphi, \psi)\) 中可合成。令
+
+\[
+h _ {2} (x) = \alpha (\varphi^ {\prime} (f)) ^ {- 1} \cdot h (a) \cdot \alpha (\psi^ {\prime} (f)).
+\]
+
+我们来验证这样定义的箭 \(h_{2}(x)\) 不依赖于所选的元素 a 与 f。设 \(a'\) 为 H 的顶点，\(f'\) 为 \(H'\) 中连接 \(u(a')\) 与 x 的箭。由于映射 \(\operatorname{Orb}(u)\) 是单射的，H 的顶点 a 与 \(a'\) 属于同一轨道，且存在箭 \(c \in \operatorname{Fl}(\operatorname{H})\) 连接 a 与 \(a'\) 。于是 \(u(c)f'f^{-1}\) 是 \(u(a)\) 处的圈（在 \(H'\) 中）。由假设 (iii)，存在 H 的顶点 b 使得同态 \(u_{b}\) 是满射的，且存在 H 的从 b 到 a 的箭 \(c'\) ；于是 \(\operatorname{Int}(u(c'))(u(c)f'f^{-1})\) 是 H 中 \(u(b)\) 处的圈，因而它是 \(u_{b}\) 下、b 处的一个圈 \(c''\) 的像。因此，H 的箭 \(g = (c'c)^{-1}c''c'\) 连接顶点 \(a'\) 与顶点 a，且满足 \(f' = u(g)f\) 。于是有
+
+\[
+\begin{array}{r l} & {\alpha (\varphi^ {\prime} (f ^ {\prime})) ^ {- 1} h (a ^ {\prime}) \alpha (\psi^ {\prime} (f ^ {\prime}))} \\ & {\qquad = \alpha (\varphi^ {\prime} (f)) ^ {- 1} \alpha (\varphi^ {\prime} (u (g))) ^ {- 1} h (a ^ {\prime}) \alpha (\psi^ {\prime} (u (g))) \alpha (\psi^ {\prime} (f))} \\ & {\qquad = \alpha (\varphi^ {\prime} (f)) ^ {- 1} \alpha (\varphi (g)) ^ {- 1} h (a ^ {\prime}) \alpha (\psi (g)) \alpha (\psi^ {\prime} (f))} \\ & {\qquad = \alpha (\varphi^ {\prime} (f)) ^ {- 1} \cdot h (a) \cdot \alpha (\psi^ {\prime} (f))} \end{array}
+\]
+
+因为 h 是连接 \(\alpha \circ \varphi\) 与 \(\alpha \circ \psi\) 的同伦。这就证明了所述的不依赖性。
+
+按构造，我们有 \(h_{2}(u(x)) = h(x)\) （对一切 \(x \in \operatorname{Som}(\mathrm{H})\) ）。我们这样就定义了一个映射 \(h_{2}\) （从 \(\operatorname{Som}(\mathrm{H}')\) 到 \(\operatorname{Fl}(\operatorname{Coh}(\varphi, \psi))\) ）。设 c 为 \(H'\) 的箭，以 x 表示其源，y 表示其靶。设 a 为 H 的顶点，f 为 \(H'\) 中连接 \(u(a)\) 与 x 的箭。则 fc 是 \(H'\) 中连接 \(u(a)\) 与 y 的箭。按 \(h_{2}\) 的定义，我们于是有
+
+\[
+\begin{array}{r l} & h _ {2} (x) \alpha (\psi^ {\prime} (c)) = \alpha (\varphi^ {\prime} (f)) ^ {- 1} h (a) \alpha (\psi^ {\prime} (f)) \alpha (\psi^ {\prime} (c)) \\ & \qquad = \alpha (\varphi^ {\prime} (c)) \alpha (\varphi^ {\prime} (f c)) ^ {- 1} h (a) \alpha (\psi^ {\prime} (f c)) \\ & \qquad = \alpha (\varphi^ {\prime} (c)) h _ {2} (y). \end{array}
+\]
+
+这就证明 \(h_{2}\) 是连接 \(\alpha \circ \varphi'\) 与 \(\alpha \circ \psi'\) 的同伦。
+
+由上同伦子的泛性质，存在唯一的群胚态射 \(w'\colon \mathrm{Coh}(\varphi', \psi') \to \mathrm{Coh}(\varphi, \psi)\) ，使得 \(w' \circ \alpha' = \alpha\) 且 \(h_2 = \mathrm{Fl}(w') \circ h'\) 。我们有 \(w' \circ w \circ \alpha = w' \circ \alpha' = \alpha\) 与 \(\mathrm{Fl}(w' \circ w) \circ h = \mathrm{Fl}(w') \circ h' \circ \mathrm{Som}(u) = h_2 \circ u = h\) （按 \(h_2\) 的定义）。由上同伦子的泛性质，这蕴含 \(w' \circ w = \mathrm{Id}_{\mathrm{Coh}(\varphi, \psi)}\) 。特别地，对每个 \(a \in \mathrm{Som}(G)\) ，同态 \(w_a\) 是单射的。
+
+于是由 II, 第 182 页, 命题 1 推出，态射 w 是同伦等价态射，定理得证。

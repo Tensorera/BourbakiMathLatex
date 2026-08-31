@@ -1,0 +1,996 @@
+\subsection{Macaulay modules over a local ring}
+
+PROPOSITION 3. - Let A be a Noetherian local ring, M a nonzero finitely generated A-module, and d the dimension of M. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  the A-module M is Macaulay
+\item
+  we have \(\operatorname{prof}(\mathbf{M}) = d\) ;
+\item
+  we have \(\mathrm{Ext}_{\Lambda}^{i}(\kappa_{\mathrm{A}},\mathrm{M}) = 0\) for every integer \(i < d\) ;
+\item
+  we have \(\mathrm{Ext}_{\mathrm{A}}^{i}(\mathrm{N},\mathrm{M}) = 0\) for every A-module N of finite length and every integer \(i < d\) ;
+\item
+  we have \(\operatorname{Ext}_A^i (\mathrm{N},\mathrm{M}) = 0\) for every finitely generated A-module N and every integer \(i < d - \dim (\mathrm{M}\otimes_{\mathrm{A}}\mathrm{N})\) ;
+\item
+  there exists an M-regular sequence of elements of \(\mathfrak{m}_{\mathrm{A}}\) of length \(d\) .
+\end{enumerate}
+
+Condition (i) is equivalent to the equality prof(M) = d, that is, to condition (ii), or again to the inequality prof(M) ≥ d, that is, to (iii) and (vi) (§ 1, no. 4, th. 2). The implications (v) ⇒ (iv) and (iv) ⇒ (iii) are evident.
+
+Finally, suppose M is Macaulay and let N be a finitely generated A-module. Set \(F = \text{Supp}(N)\); by II, § 4, no. 4, prop. 18, we have \(\text{Supp}(M) \cap F = \text{Supp}(M \otimes_{A} N)\) , so that
+
+\[
+\operatorname{prof} _ {F} (M) = \operatorname{codim} (\operatorname{Supp} (M) \cap F, \operatorname{Supp} (M)) = \dim M - \dim (M \otimes_ {A} N)
+\]
+
+(No. 1, cor. of Prop. 1 and No. 2, cor. of Prop. 2). The implication (i)⇒(v) then follows from Remark 1 of § 1, No. 5.
+
+In the rest of this section, we shall say that a finitely generated module M over a Noetherian local ring A is pure if, for every prime ideal p associated with M, we have \(\dim(\mathrm{A}/\mathfrak{p}) = \dim(\mathrm{M})\). This also means that M has no embedded associated prime ideals and that the irreducible components of the support of M all have the same dimension. Every Macaulay module over a Noetherian local ring is pure (no. 2, prop. 2 and its corollary).
+
+Lemma 1.-- Let A be a Noetherian local ring, M a finitely generated and pure A-module, and x an element of \(\mathfrak{m}_{\mathrm{A}}\). The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  we have \(\dim(M/xM)=\dim(M)-1\) ;
+\item
+  the homothety \(x_{M}\) is injective.
+\end{enumerate}
+
+We may assume M is nonzero. Assertion (i) is equivalent to the fact that x belongs to none of the minimal elements p of Supp(M) such that dim(A/p) = dim(M) (VIII, § 3, no. 2, prop. 3), and assertion (ii) is equivalent to the fact that x belongs to none of the prime ideals associated with M (IV, § 1, no. 1, cor. 2 of prop. 2). Since M is pure, its associated prime ideals are the minimal elements of Supp(M), hence (i) and (ii) are equivalent.
+
+Let A be a Noetherian local ring and M a nonzero finitely generated A-module. Recall (VIII, § 3, no. 2) that a sequence \((x_{1},\ldots,x_{r})\) of elements of \(m_{A}\) is said to be secant for M if one has \(\dim(M/(x_{1}M+\ldots+x_{r}M))=\dim(M)-r\) .
+
+PROPOSITION 4. Let A be a Noetherian local ring, M a nonzero finitely generated A-module, and \((x_{1},\ldots ,x_{r})\) be a sequence of elements of \(\mathfrak{m}_{A}\) secant for M. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  the A-module M is Macaulay
+\item
+  the sequence \((x_{1},\ldots,x_{r})\) is M-regular and the A-module \(\mathrm{M}/(x_{1}\mathrm{M}+\ldots+x_{r}\mathrm{M})\) is Macaulay.
+\end{enumerate}
+
+Suppose that the sequence \((x_{1},\ldots,x_{r})\) is M-regular. We then have
+
+\[
+\dim (\mathrm{M}) = r + \dim (\mathrm{M} / (x _ {1} \mathrm{M} + \dots + x _ {r} \mathrm{M}))
+\]
+
+\[
+\operatorname{prof} (\mathrm{M}) = r + \operatorname{prof} \left(\mathrm{M} / (x _ {1} \mathrm{M} + \dots + x _ {r} \mathrm{M})\right)
+\]
+
+(§ 1, no. 4, prop. 7), whence the implication (ii)⇒(i).
+
+Suppose the A-module M is Macaulay and let us prove (ii) by induction on \(r\). The assertion is evident if \(r = 0\). If \(r \geqslant 1\) , the A-module \(N = M/(x_1M + \ldots + x_{r-1}M)\) is Macaulay by the induction hypothesis and one has \(\dim(N/x_rN) = \dim(N) - 1\) since the sequence \((x_1, \ldots, x_r)\) is secant; the homothety \((x_r)_N\) is therefore injective (lemma 1), and \(N/x_rN\) is Macaulay (\(\mathrm{no.}\) 1, example 3), whence (ii).
+
+THEOREM 1.--- Let \(A\) be a Noetherian local ring, M a nonzero finitely generated A-module, d the dimension of M, and let \(\mathbf{x} = (x_1, \ldots, x_d)\) be a sequence of elements of \(\mathfrak{m}_{\mathrm{A}}\) secant for M, and J the ideal it generates. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  the A-module M is Macaulay
+\item
+  the sequence x is M-regular;
+\item
+  the sequence x is completely secant for M (A, X, p.~157, def. 2);
+\item
+  the multiplicity (VIII, § 7, no. 1, def. 1) \(e_{\mathrm{J}}(\mathrm{M})\) of M relative to the ideal J is equal to the length of the A-module M/JM ;
+\item
+  for every integer i such that \(1 \leqslant i \leqslant d\) , the A-module \(\mathrm{M}/(x_{1}\mathrm{M}+\ldots+x_{i-1}\mathrm{M})\) is pure.
+\end{enumerate}
+
+The equivalence of (ii) and (iii) follows from A, X, p.~160, cor. 1 of th. 1. Since the A-module M/JM has finite length (VIII, § 3, no. 2, th. 1), the equivalence of (iii) and (iv) follows from VIII, § 4, no. 3, prop. 4 and no. 4, th. 3. It remains to prove the equivalence of (i), (ii), and (v).
+
+(i)⇒(v): if M is Macaulay, each of the modules \(\mathrm{M}/(x_{1}\mathrm{M}+\ldots+x_{i-1}\mathrm{M})\) is Macaulay (prop. 4), hence pure.
+
+(v)⇒(ii): this follows from Lemma 1 applied to each of the modules M/(x₁M+\ldots+\(x_{i-1}\){}M).
+
+(ii)⇒(i): this follows from Prop. 4, since M/JM is of finite length, hence Macaulay.
+
+\subsection{Strongly secant parts and quotients of a Macaulay module}
+
+Let A be a Noetherian ring, M a finitely generated A-module, and S a subset of A. In accordance with the conventions of Chapter VIII, we denote by SM the submodule \(\sum_{s\in S}sM\) of M, and let G be the ideal of A generated by S.
+
+Lemma 2.--- Let \(\overline{\mathfrak{G}}\) be the image of \(\mathfrak{G}\) in A/Ann(M). We have
+
+\[
+\operatorname{ht} (\overline {{\mathfrak {G}}}) = \operatorname{codim} (\operatorname{Supp} (\mathrm{M} / \mathrm{SM}), \operatorname{Supp} (\mathrm{M})) .
+\]
+
+When moreover SM ≠ M, we have
+
+\[
+\operatorname{ht} (\overline {{{\mathfrak {G}}}}) \leqslant \operatorname{Card} (S).
+\]
+
+Let a denote the annihilator of M. By the corollary to Proposition 18 of II, § 4, no. 4, the support of the A-module M/SM is V(S + a). Its codimension in Supp(M) is therefore equal to the codimension of V(S + a) in V(a), which in turn equals the codimension of V((S + a)/a) in Spec(A/a), namely the height of G.
+
+Suppose SM ≠ M; the inequality ht(G) ≤ Card(S) is evident when S is infinite, and follows from prop. 4 b) of VIII, § 3, no. 3 when S is finite.
+
+DEFINITION 2.--- Let A be a Noetherian ring, M a finitely generated A-module, and S a finite subset of A. One says that S is strongly secant for M if one has
+
+\[
+\operatorname{Card} (\mathrm{S}) \leqslant \operatorname{codim} (\operatorname{Supp} (\mathrm{M} / \mathrm{SM}), \operatorname{Supp} (\mathrm{M})) .
+\]
+
+Remarks. - 1) Every finite subset S of A such that SM = M is strongly secant for M. When SM ≠ M, it follows from Lemma 2 that for S to be strongly secant for M, it is necessary and sufficient that Card(S) = codim(Supp(M/SM), Supp(M)), or equivalently ht(G) = Card(S).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  If the ring A is local and the module M is nonzero, every subset S of \(m_{A}\) strongly secant for M is secant for M. Indeed, since the A-module M/SM is nonzero, we have
+\end{enumerate}
+
+\[
+\operatorname{Card} (S) \leqslant \operatorname{codim} (\operatorname{Supp} (M / S M), \operatorname{Supp} (M)) \leqslant \dim (M) - \dim (M / S M)
+\]
+
+(VIII, § 1, no. 2, prop. 3 a)), whence our assertion.
+
+PROPOSITION 5. --- Let A be a Noetherian ring, M a finitely generated A-module, and S a finite subset of A. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  the subset S of A is strongly secant for M;
+\item
+  for every element p of Supp(M/SM), the canonical map \(A \to A_{\mathfrak{p}}\) induces a bijection from S onto a subset of \(\mathfrak{p}A_{\mathfrak{p}}\) secant for \(M_{\mathfrak{p}}\) .
+\item
+  (i) \(\Rightarrow\) (ii): Let \(\mathfrak{p} \in \operatorname{Supp}(\mathrm{M} / \mathrm{SM})\) and let \(S'\) the image of S in \(A_{\mathfrak{p}}\) . The set \(S'\) is contained in the maximal ideal \(\mathfrak{p} A_{\mathfrak{p}}\) and one has
+\end{enumerate}
+
+\[
+\dim (\mathrm{M} _ {\mathfrak {p}} / \mathrm{S} ^ {\prime} \mathrm{M} _ {\mathfrak {p}}) = \operatorname{codim} (\mathrm{V} (\mathfrak {p}), \operatorname{Supp} (\mathrm{M} / \mathrm{SM}))
+\]
+
+(VIII, § 1, no. 4, prop. 9). The inequality Card(S) ≤ codim(Supp(M/SM), Supp(M)) and prop. 3 b) of VIII, § 1, no. 2 imply the relations
+
+\[
+\operatorname{Card} (S) + \dim \left(M _ {\mathfrak {p}} / S ^ {\prime} M _ {\mathfrak {p}}\right) \leqslant \operatorname{codim} \left(V (\mathfrak {p}), \operatorname{Supp} (M)\right) = \dim \left(M _ {\mathfrak {p}}\right).
+\]
+
+As \(M_{p}\) is nonzero, on the other hand we have \(\dim(M_{\mathfrak{p}}) \leqslant \text{Card}(S') + \dim(M_{\mathfrak{p}}/S'M_{\mathfrak{p}})\) (VIII, § 3, no. 2, formula (8)). Condition (ii) then follows from the inequality \(\text{Card}(S') \leqslant \text{Card}(S)\) .
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  (ii) \(\Rightarrow\) (i): We may assume SM \(\neq\) M. If condition (ii) is satisfied, then for every prime ideal \(\mathfrak{p}\) of Supp(M/SM)
+\end{enumerate}
+
+\[
+\operatorname{Card} (S) = \operatorname{Card} \left(S ^ {\prime}\right) \leqslant \dim \left(M _ {\mathfrak {p}}\right) = \operatorname{codim} (V (\mathfrak {p}), \operatorname{Supp} (M)),
+\]
+
+which implies (i) by passing to the infimum.
+
+COROLLARY.--- Let A be a Noetherian ring and M a finitely generated A-module. Every M-regular sequence is strongly secant for M.
+
+Let x be an M-regular sequence, and let J be the ideal of \(A\) that it generates. For every prime ideal \(\mathfrak{p} \in \operatorname{Supp}(\mathrm{M/JM})\) , the image of x in \(A_{\mathfrak{p}}\) is an \(\mathrm{M}_{\mathfrak{p}}\)-regular sequence of elements of \(\mathfrak{pA}_{\mathfrak{p}}\) , hence a secant sequence for \(\mathrm{M}_{\mathfrak{p}}\) (VIII, § 3, no. 2, cor. of prop. 3).
+
+PROPOSITION 6. Let A be a Noetherian ring, M a finitely generated Macaulay A-module, and S a finite subset of A strongly secant for M. Then the A-module M/SM is Macaulay.
+
+For every maximal ideal \(\mathfrak{m} \in \operatorname{Supp}(\mathrm{M} / \mathrm{SM})\) , the image of S in \(A_{\mathfrak{m}}\) is secant for \(M_{\mathfrak{m}}\) (prop. 5). Since \(M_{\mathfrak{m}}\) is a Macaulay \(A_{\mathfrak{m}}\)-module, so is \((\mathrm{M} / \mathrm{SM})_{\mathfrak{m}}\) (prop. 4), whence the proposition.
+
+THEOREM 2 (Macaulay-Cohen).--- Let A be a Noetherian ring and M a finitely generated A-module. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  the A-module M is Macaulay
+\item
+  for every ideal J of A generated by an M-regular sequence of elements of A, the A-module M/JM has no embedded associated prime ideals;
+\item
+  for every finite subset S of A strongly secant for M, the A-module M/SM has no embedded associated prime ideals.
+\end{enumerate}
+
+(i)⇒(iii): Let S be a finite subset of A strongly secant for M. The A-module M/SM is Macaulay (prop. 6) and in particular has no embedded associated prime ideals (no. 2, prop. 2, a)).
+
+(iii)⇒(ii): This follows from the cor. of prop. 5.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  (ii) → (i): Let \(\mathfrak{p} \in \text{Supp}(M)\) ; let us prove that the \(A_{\mathfrak{p}}\) -module \(M_{\mathfrak{p}}\) is Macaulay. We reason by induction on the integer dim( \(M_{\mathfrak{p}}\) ). If dim( \(M_{\mathfrak{p}}\) ) is zero, \(M_{\mathfrak{p}}\) is an \(A_{\mathfrak{p}}\) -module of finite length, hence Macaulay (example 1, no. 1). Suppose that dim( \(M_{\mathfrak{p}}\) ) is nonzero, that is, that p is not a minimal element of Supp(M) (VIII, § 1, n° 4, prop. 9 a)). Since M has no embedded associated prime ideals, p is contained in no associated prime ideal of M, and there exists an element x of p such that the homothety \(x_{M}\) is injective (§ 1, remark 2). The homothety \(x_{M_{\mathfrak{p}}}\) is then injective, and one has dim( \(M_{\mathfrak{p}}/xM_{\mathfrak{p}}\) ) \textless{} dim( \(M_{\mathfrak{p}}\) ) (VIII, § 3, n° 2, prop. 3). By the induction hypothesis applied to the A-module M/xM and to the prime ideal p of Supp(M/xM), the \(A_{\mathfrak{p}}\) -module \(M_{\mathfrak{p}}/xM_{\mathfrak{p}}\) is Macaulay, which implies that the \(A_{\mathfrak{p}}\) -module \(M_{\mathfrak{p}}\) is Macaulay (n° 3, prop. 4).
+\end{enumerate}
+
+\subsection{Macaulay rings}
+
+DEFINITION 3.--- A ring A is said to be Macaulay, or to be a Macaulay ring, if it is Noetherian and the A-module A is Macaulay.
+
+Examples. - 1) Every Artinian ring is a Macaulay ring (no. 1, example 1). 2) A Macaulay ring has no embedded associated prime ideals (no. 2, prop. 2). Conversely, let A be a Noetherian ring of dimension ≤ 1 with no embedded associated prime ideals; for every nonempty finite strongly secant subset S of A, the A-module A/SA has dimension ≤ 0, hence is Macaulay (no. 1, example 1); consequently A is a Macaulay ring (no. 4, th. 2). In particular, a reduced Noetherian ring of dimension ≤ 1 is a Macaulay ring.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\item
+  A normal Noetherian ring of dimension \(\leqslant 2\) is a Macaulay ring (\(\S 1, n^{\circ} 10\), text preceding Th. 4). Conversely, let \(A\) be a Macaulay ring whose local ring \(A_{\mathfrak{p}}\) at every prime ideal \(\mathfrak{p}\) of height \(\leqslant 1\) is integrally closed; then A is normal (\(\S 1, n^{\circ} 10\), cf. th. 4).
+\item
+  If A is a Macaulay ring, then so is \(S^{-1}A\) for every multiplicative subset S of A (\(n^{\circ}\) 1, remark). Conversely, if the ring \(A_{m}\) is a Macaulay ring for every maximal ideal m of A, then the ring A is Macaulay (\(n^{\circ}\) 1, def. 1).
+\item
+  Let A be a Noetherian ring and J an ideal of \(A\). For A/J to be a Macaulay ring, it is necessary and sufficient that it be an \(A\)-Macaulay module (no. 1, example 4).
+\item
+  Let A be a Noetherian local ring and J an ideal of A generated by an A-regular sequence. For A/J to be a Macaulay ring, it is necessary and sufficient that A be one (example 5 and prop. 4 of no. 3).
+\item
+  For a Noetherian local ring A to be Macaulay, it is necessary and sufficient that it possess an ideal of definition generated by an A-regular sequence: this follows from prop. 3 of no. 3, and from the fact that an A-regular sequence of elements of m\_A generates an ideal of definition if and only if it has length dim(A) (VIII, § 3, no. 2, th. 1 and cor. of prop. 3). In particular, every regular Noetherian local ring is a Macaulay ring (VIII, § 5, no. 2, th. 1). More generally, the quotient of a regular Noetherian local ring A by an ideal generated by an A-regular sequence is a Macaulay ring (example 6).
+\end{enumerate}
+
+PROPOSITION 7. -- Let A be a Noetherian ring. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  A is a Macaulay ring;
+\item
+  for every closed subset F of Spec(A), one has \(\mathrm{prof}_{\mathrm{F}}(\mathrm{A}) = \mathrm{codim}(\mathrm{F})\) ;
+\item
+  every ideal J of A contains an A-regular sequence of length ht(J) ;
+\end{enumerate}
+
+(iii') every maximal ideal m of A contains an A-regular sequence of length ht(m) ;
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  for every ideal J of A, one has \(\mathrm{Ext}_A^i (\mathrm{A} / \mathrm{J},\mathrm{A}) = 0\) for \(i <   \mathrm{ht}(\mathrm{J})\)
+\end{enumerate}
+
+(iv') for every maximal ideal m of A, one has Ext \(_{A}^{i}\) (A/m, A) = 0 for i \textless{} ht(m);
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  for every prime ideal p of A and every ideal J of \(A_{p}\) generated by a maximal secant sequence for \(A_{p}\) , one has \(e_{\mathrm{J}}(\mathrm{A}_{\mathfrak{p}})=\mathrm{long}(\mathrm{A}_{\mathfrak{p}}/\mathrm{JA}_{\mathfrak{p}})\) ;
+\end{enumerate}
+
+(v') for every maximal ideal m of A, there exists an ideal J of \(A_{m}\) , generated by a maximal secant sequence for \(A_{m}\) , satisfying \(e_{\mathrm{J}}(A_{\mathrm{m}})=\mathrm{long}(\mathrm{A}_{\mathrm{m}}/\mathrm{JA}_{\mathrm{m}})\) ;
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  (Macaulay-Cohen criterion) for every finite subset S of A such that the ideal G generated by S has height Card(S), the A-module A/G has no embedded associated prime ideals.
+\end{enumerate}
+
+The equivalence of (i) and (ii) follows from no. 1, cor. of prop. 1. By th. 2 of § 1, no. 4, and the definition of depth, conditions (iii) and (iv) (resp. (iii') and (iv')) mean that one has \(\mathrm{prof}_{\mathrm{A}}(\mathrm{J};\mathrm{A})\geqslant \mathrm{ht}(\mathrm{J})\) for every ideal (resp. every maximal ideal) J of A. One therefore has
+
+\[
+(i) \Leftrightarrow (ii) \Rightarrow (iii) \Leftrightarrow (iv) \Rightarrow (iii') \Leftrightarrow (iv').
+\]
+
+But (iv') implies, for every maximal ideal m of A, \(\operatorname{Ext}_{A_{m}}^{i}(\kappa(m), A_{m}) = 0\) for \(i < \dim(A_{m})\) , whence \(\operatorname{prof}(A_{m}) \geqslant \dim(A_{m})\) , so that A is a Macaulay ring.
+
+The equivalence of (i), (v) and (v') follows from th. 1 of no. 3, and that of (i) and (vi) from th. 2 of no. 4.
+
+\subsection{Macaulay modules and finite algebras}
+
+Remark.--- Let \(\rho: A \to B\) be a ring homomorphism, and let \(\mathfrak{p} \in \operatorname{Spec}(A)\) . Let \(\overline{B}\) be the ring \(\kappa(\mathfrak{p}) \otimes_{A} B\) . It is identified with \(S^{-1}B/\mathfrak{p}(S^{-1}B)\) , where \(S\) is the multiplicative subset \(\rho(A - \mathfrak{p})\) of \(B\) ; the prime ideals of \(\overline{B}\) are therefore the ideals \(\mathfrak{q}\overline{B}\) , where \(\mathfrak{q}\) is a prime ideal of \(B\) which contains \(\mathfrak{p}B\) and does not meet \(S\) , in other words a prime ideal of \(B\) above \(\mathfrak{p}\) . For such an ideal \(\mathfrak{q}\) , one has \(S \subset B - \mathfrak{q}\) , hence the local ring of \(\overline{B}\) at \(\mathfrak{q}\overline{B}\) is identified with \(B_{\mathfrak{q}}/pB_{\mathfrak{q}}\) , that is, again with \(\kappa(\mathfrak{p}) \otimes_{A} B_{\mathfrak{q}}\) .
+
+Similarly, if N is a B-module, the \(\overline{\mathrm{B}}_{\mathfrak{q}\overline{\mathrm{B}}}\) -module \(\left(\kappa(\mathfrak{p})\otimes_{\mathrm{A}}\mathrm{N}\right)_{\mathfrak{q}\overline{\mathrm{B}}}\) is identified with \(\kappa(\mathfrak{p})\otimes_{\mathrm{A}}\mathrm{N}_{\mathfrak{q}}\) . Suppose further that the B-module N is finitely generated; by Nakayama's lemma, the condition \(\kappa(\mathfrak{p})\otimes_{\mathrm{A}}\mathrm{N}_{\mathfrak{q}}=0\) is equivalent to \(\mathrm{N}_{\mathfrak{q}}=0\) . Thus the support of the \(\overline{\mathrm{B}}\) -module \(\kappa(\mathfrak{p})\otimes_{\mathrm{A}}\mathrm{N}\) is formed by the ideals \(\mathfrak{q}\overline{\mathrm{B}}\) , where \(\mathfrak{q}\) runs through the prime ideals of \(\operatorname{Supp}_{\mathrm{B}}(\mathrm{N})\) above \(\mathfrak{p}\) . In particular, for the module \(\kappa(\mathfrak{p})\otimes_{\mathrm{A}}\mathrm{N}\) to be nonzero, it is necessary and sufficient that there exists a prime ideal of \(\operatorname{Supp}_{\mathrm{B}}(\mathrm{N})\) above \(\mathfrak{p}\) .
+
+PROPOSITION 8.--- Let \(\rho: A \to B\) be a homomorphism of Noetherian rings and let \(N\) be a \(B\) -module that is an \(A\) -module of finite type. For the \(A\) -module \(N\) to be Macaulay, it is necessary and sufficient that the \(B\) -module \(N\) be Macaulay and that, for every pair \((\mathfrak{n}, \mathfrak{n}')\) of maximal ideals of \(\mathrm{Supp}_{\mathrm{B}}(N)\) such that \(\rho^{-1}(\mathfrak{n}) = \rho^{-1}(\mathfrak{n}')\) , one has \(\dim_{B_{\mathfrak{n}}} (N_{\mathfrak{n}}) = \dim_{B_{\mathfrak{n}}'} (N_{\mathfrak{n}}')\) .
+
+The A-module B/Ann \(_B(N)\) is isomorphic to a submodule of the finitely generated A-module \(\text{End}_A(N)\) and therefore is of finite type. Replacing A by A/Ann \(_A(N)\) and B by B/Ann \(_B(N)\) , we reduce to the case where \(\rho\) is injective and makes B a finite A-algebra, and where one has \(\text{Supp}_A(N) = \text{Spec}(A)\) and \(\text{Supp}_B(N) = \text{Spec}(B)\) . The map \(f: \text{Spec}(B) \to \text{Spec}(A)\) deduced from \(\rho\) is then surjective and a prime ideal \(\mathfrak{q}\) of B is maximal if and only if \(f(\mathfrak{q})\) is a maximal ideal of A (V, § 2, no. 1, th. 1 and prop. 1).
+
+Let m be a maximal ideal of A. By the remark above, the prime ideals of the ring \(B_{m}\) containing \(mB_{m}\) are the ideals of the form \(qB_{m}\) where \(q \in \text{Spec}(B)\) is an ideal of B (necessarily maximal) such that \(f(\mathfrak{q}) = \mathfrak{m}\) . One has
+
+\[
+\operatorname{prof} _ {\mathrm{A} _ {\mathfrak {m}}} \left(\mathrm{N} _ {\mathfrak {m}}\right) = \operatorname{prof} _ {\mathrm{B} _ {\mathfrak {m}}} \left(\mathfrak {m B} _ {\mathfrak {m}}; \mathrm{N} _ {\mathfrak {m}}\right) = \inf _ {\mathfrak {q} \in f ^ {- 1} (\mathfrak {m})} \left(\operatorname{prof} _ {\mathrm{B} _ {\mathfrak {q}}} \left(\mathrm{N} _ {\mathfrak {q}}\right)\right)
+\]
+
+(§ 1, no. 3, prop. 4 and no. 5, prop. 8), and
+
+\[
+\dim_ {A _ {\mathfrak {m}}} \left(N _ {\mathfrak {m}}\right) = \dim_ {B _ {\mathfrak {m}}} \left(N _ {\mathfrak {m}}\right) = \sup _ {\mathfrak {q} \in f ^ {- 1} (\mathfrak {m})} \left(\dim_ {B _ {\mathfrak {q}}} \left(N _ {\mathfrak {q}}\right)\right)
+\]
+
+(VIII, § 2, no. 3, th. 1 and § 1, no. 4, prop. 9). Since we have \(\mathrm{prof}_{\mathcal{B}_{\mathfrak{q}}}(\mathbf{N}_{\mathfrak{q}}) \leqslant \dim_{\mathcal{B}_{\mathfrak{q}}}(\mathbf{N}_{\mathfrak{q}})\) for every \(\mathfrak{q} \in f^{-1}(\mathfrak{m})\) , the proposition follows from these equalities.
+
+COROLLARY 1.--- Let \(\rho: A \to B\) be a homomorphism of Noetherian rings. If B is a finite A-algebra and a Macaulay A-module, then it is a Macaulay ring. If moreover \(\rho\) is injective, we have ht(aB) = ht(a) for every ideal a of A, and ht(b) = ht(ρ \(^{-1}\) (b)) for every ideal b of B.
+
+The first assertion follows from prop. 8. Suppose \(\rho\) injective. Let \(\mathfrak{a}\) be an ideal of A. We have \(\mathrm{ht}(\mathfrak{a}) = \mathrm{prof}_{\mathrm{A}}(\mathfrak{a};\mathrm{B})\) since the A-module B is Macaulay, with support equal to \(\mathrm{Spec}(\mathrm{A})\) (\(n^{\circ}1\), cor. of prop. 1), \(\mathrm{ht}(\mathfrak{a}\mathrm{B}) = \mathrm{prof}_{\mathrm{B}}(\mathfrak{a}\mathrm{B};\mathrm{B})\) (loc. cit.) and \(\mathrm{prof}_{\mathrm{A}}(\mathfrak{a};\mathrm{B}) = \mathrm{prof}_{\mathrm{B}}(\mathfrak{a}\mathrm{B};\mathrm{B})\) (\(\S 1, n^{\circ}3\), prop. 4), whence \(\mathrm{ht}(\mathfrak{a}\mathrm{B}) = \mathrm{ht}(\mathfrak{a})\) . Let \(\mathfrak{b}\) be an ideal of B. By what precedes, we have \(\mathrm{ht}(\boldsymbol{\rho}^{-1}(\mathfrak{b})) = \mathrm{ht}(\boldsymbol{\rho}^{-1}(\mathfrak{b})\mathrm{B})\) . But \(\boldsymbol{\rho}^{-1}(\mathfrak{b})\mathrm{B}\) is contained in \(\mathfrak{b}\) , hence of height less than \(\mathrm{ht}(\mathfrak{b})\) and we have \(\mathrm{ht}(\mathfrak{b}) \leqslant \mathrm{ht}(\boldsymbol{\rho}^{-1}(\mathfrak{b}))\) by VIII, \(\S 2, n^{\circ}3\) , th. 1, b).
+
+COROLLARY 2.--- Let A be an integrally closed Noetherian ring and B a ring containing A. Suppose that B is a torsion-free A-module of finite type. If B is a Macaulay ring, the A-module B is Macaulay.
+
+Indeed, two prime ideals of B lying over the same ideal of A have the same height (VIII, § 2, no. 3, th. 2). One can therefore apply prop. 8 with N = B.
+
+COROLLARY 3.--- Let A be an integrally closed ring, K its field of fractions, L a finite K-algebra such that {[}L : K{]} \(1_{\mathrm{A}}\) is invertible in A, and B a sub-A-algebra of L, finite over A.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  The sub-A-module A1B of B is a direct factor.
+\item
+  For every ideal J of A, one has the inequality \(\operatorname{prof}_{\mathrm{A}}(\mathrm{J};\mathrm{A})\geqslant\operatorname{prof}_{\mathrm{B}}(\mathrm{JB};\mathrm{B})\) .
+\item
+  If B is a Macaulay ring, so is A.
+\end{enumerate}
+
+The K-linear map \(\mathrm{Tr}_{\mathrm{L/K}}: \mathrm{L} \to \mathrm{K}\) maps B into A (V, § 1, no. 6, cor. 2 of prop. 17), hence defines by restriction an A-linear map \(t: \mathrm{B} \to \mathrm{A}\) . For every \(x \in \mathrm{A}\) , one has \(t(x1_{\mathrm{B}}) = [\mathrm{L}: \mathrm{K}]x\) , whence a).
+
+By prop. 4 of § 1, no. 3, one has \(\operatorname{prof}_{\mathrm{A}}(\mathrm{J};\mathrm{B}) = \operatorname{prof}_{\mathrm{B}}(\mathrm{JB};\mathrm{B})\) ; but by a) and remark 4 of § 1, no. 1, one has \(\operatorname{prof}_{\mathrm{A}}(\mathrm{J};\mathrm{A}) \geqslant \operatorname{prof}_{\mathrm{A}}(\mathrm{J};\mathrm{B})\) , whence b).
+
+If the ring B is Noetherian, so is A: indeed, by a) one has \(\mathfrak{a}\mathrm{B} \cap \mathrm{A} = \mathfrak{a}\) for every ideal \(\mathfrak{a}\) of A; thus every increasing sequence \((\mathfrak{a}_n)_{n \in \mathbf{N}}\) of ideals of A is stationary since the sequence \((\mathfrak{a}_n\mathrm{B})_{n \in \mathbf{N}}\) is stationary. Under the hypotheses of c), the A-module B is Macaulay (cor. 2), and the same holds for the A-module A (no. 1, example 2).
+
+Example.--- Corollary 3 applies in particular in the following two situations:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Consider a Noetherian integrally closed ring A, a separable extension L of its field of fractions, of finite degree n such that \(n1_{A}\) is invertible in A, and we take for B the integral closure of A in L (V, § 1, no. 6, cor. 1 of prop. 18).
+\item
+  Consider a Noetherian integrally closed ring B and a finite group G of automorphisms of B, such that \(\mathrm{Card(G)1_B}\) is invertible in B. We take for A the ring of elements of B invariant under the action of G. Let us verify that we are in a particular case of a). The group G acts on the field of fractions L of B, and the field of invariants of L for this action is the field of fractions K of A (V, § 1, no. 9, cor. of prop. 23). The extension L of K is Galois, and a fortiori separable; its Galois group is isomorphic to G, so that {[}L : K{]} is equal to Card G. The inverse of {[}L : K{]} \(_{1_{B}}\) is invariant under G, so that {[}L : K{]} \(_{1_{A}}\) is invertible in A. Since B is integrally closed, the ring A, equal to K ∩ B, is integrally closed and B is its integral closure in L (loc. cit., prop. 22).
+\end{enumerate}
+
+In particular, if B is a Macaulay ring, then so is A.
+
+\subsection{Macaulay modules and flat algebras}
+
+PROPOSITION 9. — Let \(\rho: A \to B\) be a homomorphism of Noetherian rings, M a finitely generated A-module and N a finitely generated B-module, flat over A. Denote by \({}^{a}\rho: \operatorname{Spec}(B) \longrightarrow \operatorname{Spec}(A)\) the map associated with \(\rho\). The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  the B-module M ⊗A N is Macaulay;
+\item
+  the \((\kappa(\mathfrak{p})\otimes_{\mathrm{A}}\mathrm{B})\) -module \(\kappa(\mathfrak{p})\otimes_{\mathrm{A}}\mathrm{N}\) is Macaulay for every \(\mathfrak{p}\in\mathrm{Supp}_{\mathrm{A}}(\mathrm{M})\) , and the \(\mathrm{A}_{\mathfrak{p}}\) -module \(\mathrm{M}_{\mathfrak{p}}\) is Macaulay for every \(\mathfrak{p}\in{}^{a}\rho(\mathrm{Supp}_{\mathrm{B}}(\mathrm{N}))\) ;
+\item
+  for every maximal ideal of \(\mathrm{Supp}_{\mathrm{B}}(\mathrm{N})\) whose inverse image \(\mathfrak{p}\) in A belongs to \(\mathrm{Supp}_{\mathrm{A}}(\mathrm{M})\) , the \(\mathrm{A}_{\mathfrak{p}}\) -module \(\mathrm{M}_{\mathfrak{p}}\) and the \((\kappa(\mathfrak{p}) \otimes_{\mathrm{A}} \mathrm{B})\) -module \(\kappa(\mathfrak{p}) \otimes_{\mathrm{A}} \mathrm{N}\) are Macaulay.
+\end{enumerate}
+
+If moreover the B-module N is faithfully flat, these conditions imply that the A-module M is Macaulay.
+
+Let q be a prime ideal of B belonging to the support of \(M \otimes_{A} N\) . Set \(\mathfrak{p} = \rho^{-1}(\mathfrak{q})\) . Since the module \((\mathrm{M} \otimes_{\mathrm{A}} \mathrm{N})_{\mathfrak{q}}\) is identified with \(M_{p} \otimes_{A_{p}} N_{q}\) , the modules \(M_{p}\) and \(N_{q}\) are nonzero, and the same is true of \(\kappa(\mathfrak{p}) \otimes_{A} N_{\mathfrak{q}}\) ( \(n^{\circ} 6\) , remark). The \(A_{p}\) -module \(N_{q}\) , being isomorphic to a module of fractions of \(N_{p}\) , is flat and one has the equalities
+
+\[
+\operatorname{prof} _ {\mathrm{B} _ {\mathfrak {q}}} \left(\left(\mathrm{M} \otimes_ {\mathrm{A}} \mathrm{N}\right) _ {\mathfrak {q}}\right) = \operatorname{prof} _ {A_ {\mathfrak {p}}} \left(\mathrm{M} _ {\mathfrak {p}}\right) + \operatorname{prof} _ {\mathrm{B} _ {\mathfrak {q}}} (\kappa (\mathfrak {p}) \otimes_ {\mathrm{A}} \mathrm{N} _ {\mathfrak {q}})
+\]
+
+\[
+\dim_ {B _ {q}} \left(\left(M \otimes_ {A} N\right) _ {q}\right) = \dim_ {A _ {p}} \left(M _ {p}\right) + \dim_ {B _ {q}} \left(\kappa (p) \otimes_ {A} N _ {q}\right)
+\]
+
+(§ 1, n° 6, prop. 11, b) and remark), in which each term is an integer ≥ 0. Taking into account the fact that the B \(_{q}\) -module κ(p) ⊗A N \(_{q}\) is Macaulay if and only if it is Macaulay as a (κ(p) ⊗A B \(_{q}\) )-module (n° 1, example 4), one deduces the equivalence of the following two conditions:
+
+(α) the Bq-module (M ⊗A N)q is Macaulay;
+
+(β) the \(A_{p}\) -module \(M_{p}\) and the \((\kappa(\mathfrak{p})\otimes_{A}B_{\mathfrak{q}})\) -module \(\kappa(\mathfrak{p})\otimes_{A}N_{\mathfrak{q}}\) are Macaulay. Let us now prove that (iii) implies (i). Let n be a maximal ideal of B belonging to the support of \(M\otimes_{A}N\) , and \(\mathfrak{p}=\rho^{-1}(\mathfrak{n})\) . From what precedes, we have \(\mathfrak{p}\in\operatorname{Supp}_{A}(M)\cap{}^{a}\rho(\operatorname{Supp}_{B}(N))\) ; condition (iii) and the remark of no. 6 imply that condition (β) above is satisfied with q=n. It follows that the \(B_{n}\) -module \((M\otimes_{A}N)_{n}\) is Macaulay, whence (i).
+
+The implication (ii)⇒ (iii) is clear; let us prove that (i) implies (ii). Suppose the B-module M ⊗\_A N is Macaulay. Let p be an element of Supp\_A(M). We may assume that the (κ(p) ⊗\_A B)-module κ(p) ⊗\_A N is nonzero, that is, there exists a prime ideal q of Supp\_B(N) lying over p (no. 6, remark). The B\_q-module (M ⊗\_A N)\_q is Macaulay (no. 1, example 3); it follows from the implication (α) ⇒ (β) proved previously and from the remark of no. 6 that the A\_p-module M\_p and the (κ(p) ⊗\_A B)-module (κ(p) ⊗\_A N) are Macaulay, whence (ii).
+
+If moreover N is faithfully flat over A, we have \(\kappa(\mathfrak{p})\otimes_{\mathrm{A}}\mathrm{N}\neq 0\) for every \(\mathfrak{p}\in\operatorname{Spec}(\mathrm{A})\) , whence \({}^{a}\rho(\operatorname{Supp}_{\mathrm{B}}(\mathrm{N}))=\operatorname{Spec}(\mathrm{A})\) (no. 6, remark), so that (ii) implies that M is Macaulay.
+
+COROLLARY 1.--- Let \(\rho: A \to B\) be a local homomorphism of Noetherian local rings, M a nonzero finitely generated A-module and N a nonzero finitely generated B-module which is a flat A-module. For the B-module M \(\otimes_{A}N\) to be Macaulay, it is necessary and sufficient that the A-module M be Macaulay and that the B/ \(\mathfrak{m}_{A}\)B-module N/ \(\mathfrak{m}_{A}\)N be Macaulay.
+
+Indeed, N is a faithfully flat A-module since \(N/m_{A}N\) is nonzero (I, § 3, no. 1, definition 1).
+
+COROLLARY 2.-- Let \(\rho: A \to B\) be a homomorphism of Noetherian rings making \(B\) a faithfully flat \(A\)-module and let \(M\) be an \(A\)-module of finite type. For the \(B\)-module \(M \otimes_{A} B\) to be Macaulay, it is necessary and sufficient that the \(A\)-module \(M\) be Macaulay and that \(\kappa(\mathfrak{p}) \otimes_{A} B\) be a Macaulay ring for every \(\mathfrak{p} \in \operatorname{Supp}(M)\) .
+
+COROLLARY 3.--- Let A be a Noetherian ring, B a finite flat A-algebra, and M a finitely generated Macaulay A-module. The B-module M⊗ \(_{A}\) B is Macaulay.
+
+Indeed, for every \(\mathfrak{p} \in \operatorname{Spec}(A)\) , the ring \(\kappa(\mathfrak{p}) \otimes_{A} B\) is a finite \(\kappa(\mathfrak{p})\)-algebra, hence is Macaulay (no. 5, example 1), and we apply prop. 9.
+
+COROLLARY 4.--- Let A be a Noetherian ring, J an ideal of A, and M a finitely generated A-module. Denote by \(\hat{A}\) and \(\hat{M}\) the separated completions of A and M for the J-adic topology, and S the multiplicative subset \(1 + J\) from A. Consider the following conditions:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  the A-module M is Macaulay
+\item
+  the \(\widehat{\mathrm{A}}\) -module \(\widehat{\mathrm{M}}\) is Macaulay;
+\item
+  the \(\mathrm{S}^{-1}\mathrm{A}\) -module \(\mathrm{S}^{-1}\mathrm{M}\) is Macaulay;
+\item
+  for every maximal ideal \(\mathfrak{m} \in \operatorname{Supp}(\mathrm{M}) \cap \mathrm{V}(\mathrm{J})\) , the \(\mathrm{A}_{\mathfrak{m}}\) -module \(\mathrm{M}_{\mathfrak{m}}\) is Macaulay;
+\item
+  for every prime ideal \(\mathfrak{p} \in \operatorname{Supp}(M)\) such that \(\mathfrak{p} + J \neq A\) , the \(A_{\mathfrak{p}}\) -module \(M_{\mathfrak{p}}\) is Macaulay and the ring \(\kappa(\mathfrak{p}) \otimes_{A} \widehat{A}\) is Macaulay.
+\end{enumerate}
+
+Conditions (ii) through (v) are equivalent, and are implied by (i). When the ideal J is contained in the radical of A, conditions (i) through (v) are equivalent.
+
+We know that (i) implies (iii) (no. 1, example 3), and (iii) is identical to (i) when J is contained in the radical of A (since the elements of S are then invertible).
+
+The ring \(\widehat{\mathrm{A}}\) is Noetherian (III, § 3, no. 4, prop. 8); it is identified with the completion of S \(^{-1}\) A for the topology S \(^{-1}\) J-adic, and the \(\widehat{\mathrm{A}}\) -module \(\widehat{\mathrm{M}}\) is identified with the completion of S \(^{-1}\) M for the topology S \(^{-1}\) J-adic (III, § 3, no. 5, prop. 12). Consequently, to prove the equivalence of conditions (ii) through (v), one may replace \(A\) by S \(^{-1}\) A, J by S \(^{-1}\) J and M by S \(^{-1}\) M; in other words, one may assume that J is contained in the radical of A. The A-module \(\widehat{\mathrm{A}}\) is then faithfully flat (loc. cit., prop. 9).
+
+It is clear that (v) implies (iv) and that (iv) implies (i).
+
+(i)⇒(ii): Let m be a maximal ideal of A; then mÂ is a maximal ideal of Â above m, and every maximal ideal of Â is obtained in this way (III, § 3, no. 4, prop. 8). The ring κ(m) ⊗A Â is a field, hence a Macaulay ring; if the A-module M is Macaulay, then so is the Â-module M by the implication (iii)⇒(i) of prop. 9.
+
+(ii)⇒(v): The \(\hat{A}\) -module \(\hat{M}\) is isomorphic to \(M\otimes_{A}\hat{A}\) (III, § 3, no. 4, th. 3); if it is Macaulay, it follows from prop. 9, (i)⇒(ii) that \(\kappa(\mathfrak{p})\otimes_{A}\hat{A}\) is a Macaulay ring for every \(\mathfrak{p}\in\mathrm{Supp}(M)\) and that the A-module M is Macaulay.
+
+PROPOSITION 10. - Let \(\rho: A \to B\) be a homomorphism of Noetherian rings making B a flat A-module. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  B is a Macaulay ring;
+\item
+  for every prime ideal q of B, the rings \(A_{\rho^{-1}(\mathfrak{q})}\) and \(\kappa(\rho^{-1}(\mathfrak{q}))\otimes_{A}B\) are Macaulay;
+\item
+  for every maximal ideal n of B, the rings \(A_{\rho^{-1}(\mathfrak{n})}\) and \(\kappa(\rho^{-1}(\mathfrak{n})) \otimes_{A} B\) are Macaulay.
+\end{enumerate}
+
+If moreover B is faithfully flat over A, these conditions imply that A is a Macaulay ring.
+
+This is the special case M = A, N = B of Prop. 9.
+
+COROLLARY 1.--- Every algebra that is finite and flat over a Macaulay ring is a Macaulay ring.
+
+COROLLARY 2. Let A be a Macaulay ring and n a positive integer; then \(\mathrm{A}[\mathrm{X}_1,\dots ,\mathrm{X}_n]\) and \(\mathrm{A}[[\mathrm{X}_1,\dots ,\mathrm{X}_n]]\) are Macaulay rings.
+
+It suffices to treat the case \(n = 1\). The ring A{[}T{]} is Noetherian (A, VIII, § 1, n° 4, cor. 1), and, for every field \(k\) , the ring \(k[T]\) is a Macaulay ring (no. 5, example 2); consequently, the ring A{[}T{]} is Macaulay (prop. 10) and the ring A{[}{[}T{]}{]} is Macaulay (cor. 4 of prop. 9).
+
+COROLLARY 3.--- Every finitely generated algebra over a Macaulay Noetherian ring is catenary.
+
+Indeed, such an algebra is a quotient of a polynomial ring over a Macaulay ring, hence a quotient of a Macaulay ring (cor. 2), and consequently is catenary (no. 2).
+
+\section{Depth and homological dimension}
+
+\subsection{Projective dimension, injective dimension, homological dimension}
+
+Let A be a ring, and M an A-module. Recall (A, X, p.~134, def. 1) that the projective dimension of M, denoted \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M})\), is the lower bound (in \(\overline{\mathbf{Z}}\) ) of the set of lengths of projective resolutions of M. We have \(\mathrm{dp}_{\mathrm{A}}(0) = -\infty\) and \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M}) \geqslant 0\) if M is nonzero. For M to be projective, it is necessary and sufficient that one has \(\mathrm{dp}_{A}(\mathrm{M}) \leqslant 0\) .
+
+Example. Let J be an ideal of A generated by an A-regular sequence \(\mathbf{x} = (x_{1}, \ldots, x_{r})\) . We have dp \(_{A}\) (A/J) ≤ r. Indeed, this is clear if A is zero; otherwise, the Koszul complex \(\mathbf{K}_{\bullet}(\mathbf{x}, \mathrm{A})\) is a free resolution of A/J of length r (loc. cit., p.~159, remark 3). Moreover, for every A-module N, the A-modules Ext \(_{A}^{r}\) (A/J, N) and N/JN are isomorphic (loc. cit.); consequently, for one to have dp \(_{A}\) (A/J) = r, it is necessary and sufficient that J be distinct from A (loc. cit., p.~134, prop. 1).
+
+One defines similarly the injective dimension of M, denoted \(\mathrm{di}_{\mathrm{A}}(\mathrm{M})\) , as the lower bound of the set of lengths of injective resolutions of M. We have \(\mathrm{di}_{\mathrm{A}}(0) = -\infty\) , and \(\mathrm{di}_{\mathrm{A}}(\mathrm{M}) \geqslant 0\) if \(M \neq 0\) . For M to be injective, it is necessary and sufficient that one has \(\mathrm{di}_{\mathrm{A}}(\mathrm{M}) \leqslant 0\) .
+
+PROPOSITION 1.- Let A be a ring, M an A-module, and n an integer \(\geqslant 0\). The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  we have \(\mathrm{di}_{\mathrm{A}}(\mathrm{M}) \leqslant n\) (in other words, M possesses an injective resolution of length \(\leqslant n\) );
+\item
+  for every A-module N and every integer \(i > n\) , one has \(\mathrm{Ext}_A^i (\mathrm{N},\mathrm{M}) = 0\) ;
+\item
+  for every ideal \(\mathfrak{a}\) of A, we have \(\operatorname{Ext}_{\mathrm{A}}^{n+1}(\mathrm{A}/\mathfrak{a},\mathrm{M})=0\) ;
+\item
+  for every exact sequence of A-modules
+\end{enumerate}
+
+\[
+0 \rightarrow \mathrm{M} \longrightarrow \mathrm{I} ^ {0} \longrightarrow \mathrm{I} ^ {1} \longrightarrow \dots \longrightarrow \mathrm{I} ^ {n - 1} \longrightarrow \mathrm{Q} \rightarrow 0,
+\]
+
+where the \(I^{i}\) are injective, the A-module Q is injective.
+
+(i)⇒(ii): this follows from A, X, p.~100, th. 1.
+
+(ii)⇒(iii): This is clear.
+
+\((\mathrm{iii}) \Rightarrow (\mathrm{iv}) : \text{in the situation of (iv), for every A-module N there is an isomorphism of Ext}_A^1(\mathrm{N}, \mathrm{Q}) \text{onto Ext}_A^{n+1}(\mathrm{N}, \mathrm{M}) (\mathrm{A}, \mathrm{X}, \text{p. 128, cor. 4}) ; \text{under the hypothesis (iii), the A-module Ext}_A^1(A / \mathfrak{a}, \mathrm{Q}) \text{ is zero for every ideal } \mathfrak{a} \text{ of A and Q is injective (A, X, p. 93, prop. 11).}\)
+
+(iv)⇒(i): Consider the exact sequence (A, X, p.~52)
+
+\[
+0 \longrightarrow \mathrm{M} \longrightarrow \mathrm{I} ^ {0} (\mathrm{M}) \longrightarrow \dots \longrightarrow \mathrm{I} ^ {n - 1} (\mathrm{M}) \longrightarrow \mathrm{K} ^ {n - 1} (\mathrm{M}) \longrightarrow 0;
+\]
+
+if condition (iv) is satisfied, the A-module \(K^{n-1}(M)\) is injective, whence (i).
+
+Recall (A, X, p.~138, def. 2) that the homological dimension of the ring A, denoted dh(A), is the supremum in \(\overline{\mathbf{Z}}\) of the set of integers \(n\) for which there exist two A-modules M and N such that Ext \(_{A}^{n}\) (M,N) is nonzero. It is therefore also the supremum of the set of projective (or injective) dimensions of all A-modules; when A is Noetherian, one may restrict to finitely generated A-modules (A, X, p.~139, cor.).
+
+\subsection{Localization of homological dimension}
+
+PROPOSITION 2.--- Let A be a ring, M and N be A-modules, i an integer, and S a multiplicative subset of \(A\). We have a canonical isomorphism of \(\mathrm{S}^{-1}\mathrm{A}\) -modules
+
+\[
+\mathrm{S} ^ {- 1} \operatorname{Tor} _ {i} ^ {A} (\mathrm{M}, \mathrm{N}) \longrightarrow \operatorname{Tor} _ {i} ^ {\mathrm{S} ^ {- 1} A} (\mathrm{S} ^ {- 1} \mathrm{M}, \mathrm{S} ^ {- 1} \mathrm{N}).
+\]
+
+If the ring A is Noetherian and the A-module M is finitely generated, one has a canonical isomorphism of S \(^{-1}\) A-modules
+
+\[
+\mathrm{S} ^ {- 1} \operatorname{Ext} _ {A} ^ {i} (\mathrm{M}, \mathrm{N}) \longrightarrow \operatorname{Ext} _ {\mathrm{S} ^ {- 1} \mathrm{A}} ^ {i} (\mathrm{S} ^ {- 1} \mathrm{M}, \mathrm{S} ^ {- 1} \mathrm{N}).
+\]
+
+As the A-module \(S^{-1}A\) is flat, this follows from A, X, p.~110, prop. 9 and p.~111, prop. 10.
+
+COROLLARY.--- Let A be a ring, M and N be A-modules, and i an integer.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  The support of \(\mathrm{Tor}_{i}^{A}(\mathrm{M},\mathrm{N})\) is contained in \(\mathrm{Supp}(\mathrm{M})\cap \mathrm{Supp}(\mathrm{N})\) and the same is true of the support of \(\mathrm{Ext}_{\mathrm{A}}^{i}(\mathrm{M},\mathrm{N})\) if A is Noetherian and M is finitely generated.
+\item
+  Suppose A is Noetherian and the modules M and N are finitely generated; if the A-module M⊗A N has finite length, then so do Tor \(_{i}^{A}\) (M, N) and Ext \(_{A}^{i}\) (M, N).
+\end{enumerate}
+
+If p is a prime ideal of A not belonging to Supp(M) ∩ Supp(N), one of the modules \(M_{p}\) or \(N_{p}\) is zero, which implies a) in view of prop. 2.
+
+For a finitely generated module over a Noetherian ring to be of finite length, it is necessary and sufficient that its support consist of maximal ideals (IV, § 2, no. 5, prop. 7). Under hypothesis b), the A-modules Tor \(_{i}^{A}\) (M, N) and Ext \(_{A}^{i}\) (M,N) are finitely generated (A, X, p.~108, cor.); assertion b) therefore follows from a).
+
+PROPOSITION 3.--- Let A be a Noetherian ring, M a finitely generated A-module, and N an A-module.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  We have
+\end{enumerate}
+
+\[
+\mathrm{dp} _ {\mathrm{A}} (\mathrm{M}) = \sup _ {\mathfrak {p}} \mathrm{dp} _ {\mathrm{A} _ {\mathfrak {p}}} \left(\mathrm{M} _ {\mathfrak {p}}\right), \quad \mathrm{di} _ {\mathrm{A}} (\mathrm{N}) = \sup _ {\mathfrak {p}} \mathrm{di} _ {\mathrm{A} _ {\mathfrak {p}}} \left(\mathrm{N} _ {\mathfrak {p}}\right), \quad \mathrm{dh} (\mathrm{A}) = \sup _ {\mathfrak {p}} \mathrm{dh} \left(\mathrm{A} _ {\mathfrak {p}}\right),
+\]
+
+where p ranges over the set of prime (resp. maximal) ideals of A.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  The map \(\mathfrak{p} \mapsto \mathrm{dp}_{A_{\mathfrak{p}}}(\mathrm{M}_{\mathfrak{p}})\) of \(\operatorname{Spec}(A)\) in \(\overline{Z}\) is upper semi-continuous.
+\end{enumerate}
+
+Let us prove a). Let \(n\) be an integer \(\geqslant 0\). Suppose we have \(\mathrm{dp}_{A}(\mathbf{M}) < n\). For every prime ideal \(\mathfrak{p}\) of A and every \(\mathrm{A}_{\mathfrak{p}}\) -module Q, the \(\mathrm{A}_{\mathfrak{p}}\) -module \(\mathrm{Ext}_{\mathrm{A}_{\mathfrak{p}}}^{n}(\mathrm{M}_{\mathfrak{p}},\mathrm{Q})\) is isomorphic to \((\mathrm{Ext}_{\mathrm{A}}^{n}(\mathrm{M},\mathrm{Q}))_{\mathfrak{p}}\) (prop. 2), hence is zero; from this one deduces the inequality \(\mathrm{dp}_{A_{\mathfrak{p}}}(\mathrm{M}_{\mathfrak{p}}) \leqslant \mathrm{dp}_{\mathrm{A}}(\mathrm{M})\) (A, X, p.~134, prop. 1). Suppose conversely that one has \(\mathrm{dp}_{A_{\mathfrak{m}}}(\mathrm{M}_{\mathfrak{m}}) < n\) for every maximal ideal \(\mathfrak{m}\) of A, and let R be an A-module. One has \((\operatorname{Ext}_{\mathrm{A}}^{n}(\mathrm{M}, \mathrm{R}))_{\mathfrak{m}} = 0\) for every \(\mathfrak{m}\) (prop. 2), hence \(\operatorname{Ext}_{\mathrm{A}}^{n}(\mathrm{M}, \mathrm{R}) = 0\) (II, § 3, n° 3, cor. 2 of th. 1), which implies \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M}) < n\) (A, X, p.~134, prop. 1). The first equality of a) follows from this. The second is proved in the same way, using the characterization of injective dimension given in prop. 1 (iii). Since dh(A) is the upper bound of the set of injective dimensions of A-modules (n° 1), the third equality follows from this.
+
+Let us prove b). Let \(\mathfrak{p}\) be a prime ideal of A and \(n = \mathrm{dp}_{\mathrm{A}_{\mathfrak{p}}}(M_{\mathfrak{p}})\) . Let us show that there exists a neighborhood U of \(\mathfrak{p}\) in \(\operatorname{Spec}(A)\) such that one has \(\mathrm{dp}_{\mathrm{A}_{\mathfrak{q}}}(M_{\mathfrak{q}}) \leqslant n\) for every \(\mathfrak{q} \in U\) . This is clear if \(n = +\infty\) ; if \(n = -\infty\) , this follows from the fact that the support of M is closed. Now suppose \(n\) is finite and choose an exact sequence of A-modules
+
+\[
+\mathrm{P} _ {n - 1} \stackrel {d _ {n - 1}} {\longrightarrow} \mathrm{P} _ {n - 2} \longrightarrow \dots \longrightarrow \mathrm{P} _ {0} \stackrel {d _ {0}} {\longrightarrow} \mathrm{M} \rightarrow 0,
+\]
+
+where the \(P_{i}\) are free of finite type (A, X, p.~53, prop. 6). Set \(P = Ker d_{n-1}\) ; it is a finitely presented module. The \(A_{p}\) -module \(P_{p}\) is projective (A, X, p. 134, prop. 1), hence free (II, § 3, no. 2, cor. 2 of prop. 5). By II, § 5, no. 1, cor. of prop. 2, there exists an element f of \(A - p\) such that the \(A_{f}\) -module \(P_{f}\) is free; the \(A_{q}\) -module \(P_{q}\) is then free for every prime ideal q of the open set U of Spec(A) consisting of the prime ideals not containing f. This proves b).
+
+COROLLARY 1.--- For every multiplicative subset S of A, we have
+
+\[
+\mathrm{dp} _ {\mathrm{S} ^ {- 1} \mathrm{A}} (\mathrm{S} ^ {- 1} \mathrm{M}) \leqslant \mathrm{dp} _ {\mathrm{A}} (\mathrm{M}), \quad \mathrm{di} _ {\mathrm{S} ^ {- 1} \mathrm{A}} (\mathrm{S} ^ {- 1} \mathrm{N}) \leqslant \mathrm{di} _ {\mathrm{A}} (\mathrm{N}), \quad \mathrm{dh} (\mathrm{S} ^ {- 1} \mathrm{A}) \leqslant \mathrm{dh} (\mathrm{A}).
+\]
+
+COROLLARY 2.--- If one has dp \(_{A_m}\) (M \(_m\) ) \textless{} +∞ for every maximal ideal m of Supp(M), we have dp \(_A\) (M) \textless{} +∞.
+
+Indeed, the subspace X of Supp(M) consisting of the maximal ideals is quasi-compact (II, § 4, no. 2, props. 8 and 9 and no. 3, cor. 7 of prop. 11); the map \(\mathfrak{m} \mapsto \mathrm{dp}_{\mathrm{A}_{\mathfrak{m}}}(\mathrm{M}_{\mathfrak{m}})\) of X into \(\overline{\mathbf{R}}\) is upper semicontinuous (prop. 3), hence bounded (TG, IV, p.~30, cor. of th. 3).
+
+Remark. --- Let A be a regular Noetherian ring of infinite dimension (VIII, § 5, exerc. 6 c)). We shall see below (n° 7, th. 2 and § 4, n° 1, prop. 1) that one has \(\mathrm{di}_{\mathrm{A_m}}(\mathrm{A_m}) = \mathrm{dh}(\mathrm{A_m}) < +\infty\) for every maximal ideal m of A; Proposition 3 therefore implies \(\mathrm{di}_{\mathrm{A}}(\mathrm{A}) = \mathrm{dh}(\mathrm{A}) = +\infty\). Consequently, the functions \(\mathfrak{p} \mapsto \mathrm{di}_{A_{\mathfrak{p}}}(\mathrm{N}_{\mathfrak{p}})\) and \(\mathfrak{p} \mapsto \mathrm{dh}(\mathrm{A}_{\mathfrak{p}})\) are not in general upper semicontinuous.
+
+\subsection{Homological dimension of Noetherian rings}
+
+Let A be a Noetherian local ring, and M a finitely generated A-module. Recall (A, X, § 3, no. 6) that a resolution
+
+\[
+\dots \longrightarrow \mathrm{L} _ {n} \stackrel {d _ {n}} {\longrightarrow} \mathrm{L} _ {n - 1} \longrightarrow \dots \longrightarrow \mathrm{L} _ {0} \stackrel {d _ {0}} {\longrightarrow} \mathrm{M} \rightarrow 0
+\]
+
+of M is a minimal projective resolution if each of the modules \(L_{i}\) is free of finite type, and if the complex \(\kappa_{A} \otimes_{A} L\) has zero differential. For every integer \(i \geqslant 0\) ,
+
+we have
+
+\[
+[ \mathrm{Ext} _ {\mathrm{A}} ^ {i} (\mathrm{M}, \kappa_ {\mathrm{A}}): \kappa_ {\mathrm{A}} ] = [ \mathrm{Tor} _ {i} ^ {\mathrm{A}} (\mathrm{M}, \kappa_ {\mathrm{A}}): \kappa_ {\Lambda} ] = \mathrm{rg} _ {\mathrm{A}} (\mathrm{L} _ {i})\tag{1}
+\]
+
+(A, X, p.~103, example 3). Every finitely generated A-module admits such a resolution (A, X, p.~56, prop. 10).
+
+PROPOSITION 4. Let A be a Noetherian local ring, M a finitely generated A-module, and n an integer ≥ 0. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  we have \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M}) < n\)
+\item
+  we have \(\mathrm{Tor}_n^{\mathrm{A}}(\mathrm{M},\kappa_{\mathrm{A}}) = 0\) ;
+\item
+  we have \(\operatorname{Ext}_{\mathrm{A}}^{n}(\mathrm{M},\kappa_{\mathrm{A}}) = 0\) ;
+\item
+  every minimal projective resolution of M has length \textless{} n.
+\end{enumerate}
+
+The implications (i)⇒(ii) and (i)⇒(iii) are immediate (A, X, p.~100, th. 1). Let L be a minimal projective resolution of M; if (ii) or (iii) holds, then we have \(L_{n}=0\) by (1). Since every minimal projective resolution of M is isomorphic to L (A, X, p.~54, prop. 8), we deduce (iv). The implication (iv)⇒(i) is trivial.
+
+COROLLARY 1.--- Let A be a Noetherian local ring and n an integer ≥ 0. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  we have \(\mathrm{dh}(\mathrm{A}) < n\)
+\item
+  we have \(\mathrm{Ext}_{A}^{i}(\mathrm{M},\mathrm{N}) = 0\) and \(\mathrm{Tor}_i^A (\mathrm{M},\mathrm{N}) = 0\) for every pair \((\mathbf{M},\mathbf{N})\) of A-modules and every integer \(i\geqslant n\) ;
+\item
+  we have \(\mathrm{Tor}_n^{\mathrm{A}}(\kappa_{\mathrm{A}},\kappa_{\mathrm{A}}) = 0\)
+\item
+  we have \(\operatorname{Ext}_{\mathrm{A}}^{n}(\kappa_{\mathrm{A}},\kappa_{\mathrm{A}}) = 0\) ;
+\item
+  we have \(\mathrm{dp}_{\mathrm{A}}(\kappa_{\mathrm{A}}) < n\) .
+\end{enumerate}
+
+It is clear that (i) implies (ii) and that (ii) implies (iii) and (iv). By Prop. 4 applied to the A-module \(\kappa_{\mathrm{A}}\) each of the conditions (iii) and (iv) implies (v). We prove that (v) implies (i): if \(\mathrm{dp}_{A}(\kappa_{\mathrm{A}}) < n\) , one has \(\operatorname{Tor}_{n}^{\mathrm{A}}(\mathrm{M}, \kappa_{\mathrm{A}}) = 0\) for every A-module M; consequently every finitely generated A-module has finite projective dimension \(< n\) (prop. 4), which entails \(\mathrm{dh}(\mathrm{A}) < n\) (A, X, p. 138, prop. 4).
+
+\[
+\text { COROLLARY   2. } - \text { We   have   dh(A) = dp } _ {A} (\kappa_ {A})  .
+\]
+
+Remarks.- 1) Let A be a local ring. The A-module \(\mathrm{Tor}_{1}^{\mathrm{A}}(\kappa_{\mathrm{A}},\kappa_{\mathrm{A}})\) is isomorphic to \(\mathfrak{m}_{A}/\mathfrak{m}_{A}^{2}\). Consequently, when A is Noetherian, for \(\mathrm{Tor}_{1}^{\mathrm{A}}(\kappa_{\mathrm{A}},\kappa_{\mathrm{A}})\) to be zero, it is necessary and sufficient that \(\mathfrak{m}_{\mathrm{A}}\) be zero, that is, that A be a field. Cor. 1 therefore implies that a Noetherian local ring of homological dimension 0 is a field.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let A be a Noetherian local ring, M a finitely generated A-module of finite projective dimension n, and N a nonzero finitely generated A-module. The A-module Ext \(_{A}^{n}(M,N)\) is nonzero: indeed, let L be a minimal projective resolution of M, and let d be its differential. We have an exact sequence
+\end{enumerate}
+
+\[
+\operatorname{Hom} _ {\mathrm{A}} \left(\mathrm{L} _ {n - 1}, \mathrm{N}\right) \xrightarrow {\operatorname{Hom} \left(d _ {n} , 1\right)} \operatorname{Hom} _ {\mathrm{A}} \left(\mathrm{L} _ {n}, \mathrm{N}\right) \longrightarrow \operatorname{Ext} _ {\mathrm{A}} ^ {n} (\mathrm{M}, \mathrm{N}) \rightarrow 0.
+\]
+
+As \(d_n \otimes 1_{\kappa_A}\) is zero, we deduce by tensor product with \(\kappa_A\) an isomorphism \(\kappa_A \otimes_A \operatorname{Hom}_A(L_n, N) \longrightarrow \kappa_A \otimes_A \operatorname{Ext}_A^n(M, N)\) , whence, taking into account formula (1) above,
+
+\[
+\left[ \kappa_ {\mathrm{A}} \otimes_ {\mathrm{A}} \operatorname{Ext} _ {\mathrm{A}} ^ {n} (\mathrm{M}, \mathrm{N}): \kappa_ {\mathrm{A}} \right] = \left[ \operatorname{Ext} _ {\mathrm{A}} ^ {n} (\mathrm{M}, \kappa_ {\mathrm{A}}): \kappa_ {\mathrm{A}} \right] \left[ \kappa_ {\mathrm{A}} \otimes_ {\mathrm{A}} \mathrm{N}: \kappa_ {A} \right],
+\]
+
+which is nonzero by Prop. 4 and Nakayama’s lemma. Consequently, the projective dimension of M is the largest integer i such that Ext \(_{A}^{i}(M,N)\) is nonzero.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let A be a Noetherian ring, M a finitely generated A-module of finite projective dimension, and N a finitely generated A-module whose support is equal to \(\operatorname{Spec}(A)\) . By the preceding remark and Propositions 2 and 3 of No. 2, the projective dimension \(n\) of \(M\) is the largest integer \(i\) such that \(\operatorname{Ext}_{A}^{i}(M,N)\) is nonzero; the support of the A-module \(\operatorname{Ext}_{A}^{n}(M,N)\) is the set of elements \(\mathfrak{p}\) of \(\operatorname{Spec}(A)\) such that \(\mathrm{dp}_{A_{\mathfrak{p}}}(M_{\mathfrak{p}})=n\) .
+\end{enumerate}
+
+There may exist finitely generated A-modules M of finite projective dimension \(+\infty\) , satisfying \(\operatorname{Ext}_{\mathrm{A}}^{i}(\mathrm{M},\mathrm{A})=0\) for \(i\) large enough: * this is the case, for example, of the A-module \(\kappa_{\Lambda}\) when \(\Lambda\) is a Gorenstein local ring that is not regular*.
+
+PROPOSITION 5.--- Let A be a Noetherian ring, M a finitely generated A-module, and n an integer ≥ 0. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  we have \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M}) < n\)
+\item
+  for every maximal ideal \(\mathfrak{m}\) of \(A\) , one has \(\operatorname{Ext}_{\mathrm{A}}^{n}(\mathrm{M},\mathrm{A}/\mathfrak{m}) = 0\) (respectively, one has \(\operatorname{Tor}_{n}^{\mathrm{A}}(\mathrm{M},\mathrm{A}/\mathfrak{m}) = 0\) );
+\item
+  for every maximal ideal m of A, we have \(\operatorname{Ext}_{\mathrm{A}_{m}}^{n}(\mathrm{M}_{\mathfrak{m}},\mathrm{A}/\mathfrak{m})=0\) (respectively, one has \(\operatorname{Tor}_{n}^{\mathrm{A}_{\mathfrak{m}}}(\mathrm{M}_{\mathfrak{m}},A/\mathfrak{m})=0\) ).
+\end{enumerate}
+
+(i)⇒(ii): this is clear.
+
+(ii)⇒(iii): this follows from prop. 2 of no. 2.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  (iii) \(\Rightarrow\) (i): by prop. 4, condition (iii) implies the inequality \(\mathrm{dp}_{A_{\mathfrak{m}}}(M_{\mathfrak{m}}) < n\) for every maximal ideal \(\mathfrak{m}\) of A, and we conclude by Prop. 3.
+\end{enumerate}
+
+Remark 4. — Let A be a Noetherian ring and \(n\) an integer \(\geqslant 0\). If \(\mathfrak{m}\) and \(\mathfrak{m}'\) are two distinct maximal ideals of A, the A-modules \(\mathrm{Ext}_{\mathrm{A}}^{n}(\mathrm{A/m},\mathrm{A/m}')\) and \(\mathrm{Tor}_{n}^{\mathrm{A}}(\mathrm{A/m},\mathrm{A/m}')\) are annihilated by \(\mathfrak{m} + \mathfrak{m}'\) and therefore are zero. By a proof analogous to that of Cor. 1 of Prop. 4, one deduces from Prop. 5 the equivalence of the following conditions:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  we have \(\mathrm{dh}(\mathrm{A}) < n\)
+\item
+  we have \(\operatorname{Ext}_A^i (\mathrm{M},\mathrm{N}) = 0\) and \(\operatorname{Tor}_i^{\mathrm{A}}(\mathrm{M},\mathrm{N}) = 0\) for every pair \((\mathrm{M},\mathrm{N})\) of A-modules and every integer \(i\geqslant n\) ;
+\item
+  we have \(\mathrm{Tor}_n^{\mathrm{A}}(\mathrm{A} / \mathfrak{m},\mathrm{A} / \mathfrak{m}) = 0\) for every maximal ideal \(\mathfrak{m}\) of A;
+\item
+  we have \(\operatorname{Ext}_{\mathsf{A}}^{n}(\mathsf{A} / \mathfrak{m},\mathsf{A} / \mathfrak{m}) = 0\) for every maximal ideal \(\mathfrak{m}\) of A;
+\item
+  one has dp \(_{A}\) (A/m) \textless{} n for every maximal ideal m of A.
+\end{enumerate}
+
+In particular, we have \(\mathrm{dh}(\Lambda)=\sup_{\mathfrak{m}}\mathrm{dp}_{\mathrm{A}}(\Lambda/\mathfrak{m})\) , where m ranges over the set of maximal ideals of A.
+
+PROPOSITION 6. Let A be a Noetherian ring, N an A-module, and n an integer ≥ 0. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  we have \(\mathrm{di}_{\mathrm{A}}(\mathrm{N}) < n\) ;
+\item
+  for every prime ideal \(\mathfrak{p}\) of \(A\) , one has \(\mathrm{Ext}_{\mathrm{A}}^{n}(A/\mathfrak{p},\mathrm{N})=0\) ;
+\item
+  for every prime ideal \(\mathfrak{p}\) of A, we have \(\operatorname{Ext}_{\mathrm{A}_{\mathfrak{p}}}^{n}(\kappa(\mathfrak{p}),\mathrm{N}_{\mathfrak{p}})=0\) .
+\end{enumerate}
+
+If moreover the A-module N is finitely generated, these conditions are equivalent to:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  for every maximal ideal m of A, we have \(\operatorname{Ext}_{\mathrm{A}}^{i}(\mathrm{A}/\mathfrak{m},\mathrm{N})=0\) for \(n\leqslant i\leqslant n+\operatorname{ht}(\mathfrak{m})\) .
+\end{enumerate}
+
+Observe that condition (iii) is equivalent to
+
+(iii') for every prime ideal \(\mathfrak{p}\) of A, we have \(\operatorname{Ext}_{\mathrm{A}}^{n}(\mathrm{A}/\mathfrak{p},\mathrm{N})\otimes_{\mathrm{A}}\kappa(\mathfrak{p})=0\) .
+
+Indeed, as \(\operatorname{Ext}_{\mathrm{A}}^{n}(\mathrm{A}/\mathfrak{p},\mathrm{N})\) is annihilated by \(\mathfrak{p}\) , the A-module \(\operatorname{Ext}_{\mathrm{A}}^{n}(\mathrm{A}/\mathfrak{p},\mathrm{N})\otimes_{\mathrm{A}}\kappa(\mathfrak{p})\) is isomorphic to \(\operatorname{Ext}_{\mathrm{A}}^{n}(\mathrm{A}/\mathfrak{p},\mathrm{N})\otimes_{\mathrm{A}}\mathrm{A}_{\mathfrak{p}}\) , hence to \(\operatorname{Ext}_{\mathrm{A}_{\mathfrak{p}}}^{n}(\kappa(\mathfrak{p}),\mathrm{N}_{\mathfrak{p}})\) ( \(n^{\circ}\) 2, prop. 2).
+
+The implications (i)⇒(ii) and (i)⇒(iv) follow from prop. 1 of no. 1, and the implication (ii)⇒(iii') is clear.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  (iii): for every A-module M, set T(M) = Ext \(_{A}^{n}\) (M,N). Suppose that (i) does not hold. Then (no. 1, prop. 1) there exists an ideal a of A such that T(A/a) ≠ 0. Let p be an ideal of A maximal among the ideals having this property; let us prove that p is prime. By IV, § 1, no. 4, th. 1 and th. 2, there exists a composition series (M \(_{i}\) ) \(_{0\leqslant i\leqslant m}\) of A/p such that each quotient M \(_{i}\) /M \(_{i+1}\) is isomorphic to a module A/p \(_{i}\) , where p \(_{i}\) (0 ≤ i ≤ m - 1) is a prime ideal containing p. If T(A/p \(_{i}\) ) were zero for all i, one would deduce by induction on i from the exact sequences
+\end{enumerate}
+
+\[
+\mathrm{T} \left(\mathrm{M} _ {0} / \mathrm{M} _ {i}\right) \longrightarrow \mathrm{T} \left(\mathrm{M} _ {0} / \mathrm{M} _ {i + 1}\right) \longrightarrow \mathrm{T} \left(\mathrm{M} _ {i} / \mathrm{M} _ {i + 1}\right)
+\]
+
+that \(\mathrm{T}(\mathrm{M}_{0}/\mathrm{M}_{m})=\mathrm{T}(\mathrm{A}/\mathfrak{p})\) is zero, which is not the case. There therefore exists an index i such that \(\mathrm{T}(\mathrm{A}/\mathfrak{p}_{i})\neq0\) . By the maximality of p, we have \(p=p_{i}\) , so that p is prime.
+
+Let \(x\) be an element of \(\mathrm{A} - \mathfrak{p}\) ; we deduce from the exact sequence
+
+\[
+0 \rightarrow \mathrm{A} / \mathfrak {p} \stackrel {{x _ {\mathrm{A} / \mathfrak {p}}}} {{\longrightarrow}} \mathrm{A} / \mathfrak {p} \longrightarrow \mathrm{A} / (\mathfrak {p} + x \mathrm{A}) \rightarrow 0
+\]
+
+an exact sequence
+
+\[
+\mathrm{T} (\mathrm{A} / (\mathfrak {p} + x \mathrm{A})) \longrightarrow \mathrm{T} (\mathrm{A} / \mathfrak {p}) \stackrel {{u}} {{\longrightarrow}} \mathrm{T} (\mathrm{A} / \mathfrak {p}),
+\]
+
+where \(u = \operatorname{Ext}_{\mathrm{A}}^{n}(x_{\mathrm{A}}, 1_{\mathrm{N}}) - x_{\mathrm{T(A/p)}}\) (A, X, p.~89, prop. 6). By the maximality of \(\mathfrak{p}\) , one has \(\mathrm{T(A / (\mathfrak{p} + xA))} = 0\) , so that the homomorphism \(u\) is injective. The nonzero A/p-module \(\mathrm{T(A/p)}\) is therefore torsion-free. This implies that \(\mathrm{T(A/p)} \otimes_{\mathrm{A}} \kappa(\mathfrak{p})\) is nonzero (A, II, p.~117, cor. 1), which contradicts (iii').
+
+Suppose the A-module N is finitely generated, and let us prove that (iv) implies (iii). Let p be a prime ideal of A and m a maximal ideal of A containing p. There exists a saturated chain of prime ideals of A with endpoints p and m. The length r of this chain is less than ht(m); under hypothesis (iv), we therefore have
+
+\[
+\operatorname{Ext} _ {\mathrm{A} _ {\mathfrak {m}}} ^ {n + r} (\kappa (\mathfrak {m}), \mathrm{N} _ {\mathfrak {m}}) = \operatorname{Ext} _ {\mathrm{A}} ^ {n + r} (\mathrm{A} / \mathfrak {m}, \mathrm{N}) \otimes_ {A} \mathrm{A} _ {\mathfrak {m}} = 0.
+\]
+
+It then follows from Lemma 3 of § 1, No. 7 that we have \(\mathrm{Ext}_{\mathrm{A}_{\mathfrak{p}}}^{n}(\kappa(\mathfrak{p}),\mathrm{N}_{\mathfrak{p}})=0\), which proves (iii).
+
+Remark 5.— Let N be a finitely generated A-module; the condition \(\operatorname{Ext}_{\mathrm{A}}^{n}(A/\mathfrak{m},\mathrm{N})=0\) for every maximal ideal \(\mathfrak{m}\) of A does not necessarily imply \(\operatorname{di}_{\mathrm{A}}(\mathrm{N})<n\). If, for example, the ring A is local and is not a Gorenstein ring (no. 7, def. 1), we have \(\operatorname{Ext}_{A}^{n}(A/\mathfrak{m},\mathrm{A})=0\) for \(n<\operatorname{prof}(\mathrm{A})\) but \(\operatorname{di}_{\mathrm{A}}(\mathrm{A})=+\infty\) .
+
+\subsection{Quotient by a cancellable element}
+
+In this section, A denotes a ring and x is a cancellable element of A.
+
+Let M be an A-module and \(p: P \to M\) a projective resolution of M. By A, X, p.~101, cor. of th. 1, \(\mathrm{H}_{n}(\mathrm{P}/x\mathrm{P})\) is identified with \(\mathrm{Tor}_{n}^{\mathrm{A}}(\mathrm{M}, \mathrm{A}/x\mathrm{A})\) , hence is isomorphic to M/xM if n = 0, to \(\mathrm{Ker}(x_{\mathrm{M}})\) if n = 1, and is zero otherwise (loc. cit., p.~102, example 1). Consider the complexes of (A/xA)-modules R and R' such that
+
+\[
+\begin{array}{l l} \mathrm{R} _ {n} = \mathrm{P} _ {n} / x \mathrm{P} _ {n} & \quad \mathrm{R} _ {n} ^ {\prime} = 0 \qquad \text { for } n \geqslant 2, \\ \mathrm{R} _ {1} = \mathrm{Z} _ {1} (\mathrm{P} / x \mathrm{P}) & \quad \mathrm{R} _ {1} ^ {\prime} = (\mathrm{P} _ {1} / x \mathrm{P} _ {1}) / \mathrm{R} _ {1}, \\ \mathrm{R} _ {n} = 0 & \quad \mathrm{R} _ {n} ^ {\prime} = \mathrm{P} _ {n} / x \mathrm{P} _ {n} \qquad \text { for } n \leqslant 0, \end{array}
+\]
+
+and whose differentials are induced by those of P. The complexes R(1) and R' are left resolutions of \(\mathrm{Ker}(x_{\mathrm{M}})\) and M/xM respectively, and one has an exact sequence of complexes
+
+\[
+0 \rightarrow \mathrm{R} \longrightarrow \mathrm{P} / x \mathrm{P} \longrightarrow \mathrm{R} ^ {\prime} \longrightarrow 0.\tag{2}
+\]
+
+Similarly, let \(e: \mathrm{M} \to \mathrm{E}\) be an injective resolution of M; denote by K the complex \(\operatorname{Ker}(x_{\mathrm{E}})\) . By A, X, p.~101, cor. of th. 1, \(\mathrm{H}_n(\mathrm{K})\) is identified with \(\operatorname{Ext}_A^n (\mathrm{A} / x\mathrm{A},\mathrm{M})\) , hence is isomorphic to \(\operatorname{Ker}(x_{\mathrm{M}})\) if \(n = 0\) , to \(\mathrm{M} / x\mathrm{M}\) if \(n = 1\) , and is zero otherwise (loc. cit., p.~102, example 1). From E one derives complexes of (A/xA)-modules S and \(S'\) such that
+
+\[
+\begin{array}{l l l} \mathrm{S} ^ {n} = \mathrm{K} ^ {n} & \quad \mathrm{S} ^ {\prime n} = 0 & \quad \text {for} n \leqslant 0, \\ \mathrm{S} ^ {1} = \mathrm{B} ^ {1} (\mathrm{K}) & \quad \mathrm{S} ^ {\prime 1} = \mathrm{K} ^ {1} / \mathrm{S} ^ {1}, \\ \mathrm{S} ^ {n} = 0 & \quad \mathrm{S} ^ {\prime n} = \mathrm{K} ^ {n} & \quad \text {for} n \geqslant 2. \end{array}
+\]
+
+The complexes S and \(S'(-1)\) are right resolutions of \(\mathrm{Ker}(x_{\mathrm{M}})\) and M/xM respectively, and one has an exact sequence of complexes
+
+\[
+0 \to \mathrm{S} \longrightarrow \operatorname{Ker} (x _ {\mathrm{E}}) \longrightarrow \mathrm{S} ^ {\prime} \to 0.\tag{3}
+\]
+
+Let N be an (A/xA)-module, and \(e': \mathrm{N} \to \mathrm{E}'\) an injective resolution of N. From the exact sequence (2) one derives an exact sequence of complexes of (A/xA)-modules
+
+\[
+0 \to \operatorname{Homgr} _ {\mathrm{A} / x A} \left(\mathrm{R} ^ {\prime}, \mathrm{E} ^ {\prime}\right) \longrightarrow \operatorname{Homgr} _ {\mathrm{A} / x A} \left(\mathrm{P} / x \mathrm{P}, \mathrm{E} ^ {\prime}\right) \longrightarrow \operatorname{Homgr} _ {\mathrm{A} / x \mathrm{A}} \left(\mathrm{R}, \mathrm{E} ^ {\prime}\right)\rightarrow 0
+\]
+
+Consider the exact homology sequence associated with this exact sequence. By A, X, p.~100, th. 1, we have for every integer \(n \geqslant 0\) isomorphisms
+
+\[
+\begin{array}{c} \mathrm{H} ^ {n} (\mathrm{Homgr} _ {A / x \mathrm{A}} (\mathrm{R} ^ {\prime}, \mathrm{E} ^ {\prime})) \longrightarrow \mathrm{Ext} _ {\mathrm{A} / x \mathrm{A}} ^ {n} (\mathrm{M} / x \mathrm{M}, \mathrm{N}) \\ \mathrm{H} ^ {n} (\mathrm{Homgr} _ {A / x A} (\mathrm{P} / x \mathrm{P}, \mathrm{E} ^ {\prime})) \longrightarrow \mathrm{H} ^ {n} (\mathrm{Homgr} _ {\mathrm{A}} (\mathrm{P}, \mathrm{E} ^ {\prime})) \longrightarrow \mathrm{Ext} _ {\mathrm{A}} ^ {n} (\mathrm{M}, \mathrm{N}) \\ \Pi^ {n} (\mathrm{Homgr} _ {\mathrm{A} / x \mathrm{A}} (\mathrm{R}, \mathrm{E} ^ {\prime})) = \mathrm{H} ^ {n - 1} (\mathrm{Homgr} _ {\mathrm{A} / x \mathrm{A}} (\mathrm{R} (1), \mathrm{E} ^ {\prime})) \longrightarrow \mathrm{Ext} _ {A / x A} ^ {n - 1} (\mathrm{Ker} (x _ {\mathrm{M}}), \mathrm{N}); \end{array}
+\]
+
+From this we deduce a long exact sequence of (A/xA)-modules.
+
+\[
+\begin{array}{c} \dots \longrightarrow \operatorname{Ext} _ {\mathrm{A} / x \mathrm{A}} ^ {n} (\mathrm{M} / x \mathrm{M}, \mathrm{N}) \longrightarrow \operatorname{Ext} _ {\mathrm{A}} ^ {n} (\mathrm{M}, \mathrm{N}) \longrightarrow \operatorname{Ext} _ {\mathrm{A} / x \mathrm{A}} ^ {n - 1} (\operatorname{Ker} (x _ {\mathrm{M}}), \mathrm{N}) \\ \longrightarrow \operatorname{Ext} _ {\mathrm{A} / x \mathrm{A}} ^ {n + 1} (\mathrm{M} / x \mathrm{M}, \mathrm{N}) \longrightarrow \operatorname{Ext} _ {\mathrm{A}} ^ {n + 1} (\mathrm{M}, \mathrm{N}) \longrightarrow \dots \end{array}\tag{4}
+\]
+
+Similarly, let \(p' : \mathrm{P}' \to \mathrm{N}\) be a projective resolution of the \((A / x\mathrm{A})\) -module \(\mathrm{N}\) . From the exact sequence (3), we deduce an exact sequence of complexes of \((\mathrm{A} / x\mathrm{A})\) -modules
+
+\[
+0 \to \mathrm{Homgr} _ {\mathrm{A} / x \mathrm{A}} (\mathrm{P} ^ {\prime}, \mathrm{S}) \longrightarrow \mathrm{Homgr} _ {\mathrm{A} / x \mathrm{A}} (\mathrm{P} ^ {\prime}, \mathrm{Ker} (x _ {\mathrm{E}})) \longrightarrow \mathrm{Homgr} _ {\mathrm{A} / x \mathrm{A}} (\mathrm{P} ^ {\prime}, \mathrm{S} ^ {\prime}) \rightarrow 0
+\]
+
+Taking into account the isomorphism \(\mathrm{Homgr}_{\mathrm{A}/x_{\mathrm{A}}}(P',\mathrm{Ker}(x_{\mathrm{F}})) \longrightarrow \mathrm{Homgr}_{\mathrm{A}}(P',\mathrm{E})\) , the associated exact homology sequence is written
+
+\[
+\begin{array}{c} \dots \longrightarrow \operatorname{Ext} _ {\mathrm{A} / x A} ^ {n} (\mathrm{N}, \operatorname{Ker} (x _ {\mathrm{M}})) \longrightarrow \operatorname{Ext} _ {A} ^ {n} (\mathrm{N}, \mathrm{M}) \longrightarrow \operatorname{Ext} _ {\mathrm{A} / x A} ^ {n - 1} (\mathrm{N}, \mathrm{M} / x \mathrm{M}) \\ \longrightarrow \operatorname{Ext} _ {A / x A} ^ {n + 1} (\mathrm{N}, \operatorname{Ker} (x _ {\mathrm{M}})) \longrightarrow \operatorname{Ext} _ {A} ^ {n + 1} (\mathrm{N}, \mathrm{M}) \longrightarrow \dots \end{array}\tag{5}
+\]
+
+Finally, consider the exact sequence of complexes of (A/xA)-modules
+
+\[
+0 \rightarrow \mathrm{R} \otimes_ {\mathrm{A} / x \mathrm{A}} \mathrm{P} ^ {\prime} \longrightarrow (\mathrm{P} / x \mathrm{P}) \otimes_ {\mathrm{A} / x \mathrm{A}} \mathrm{P} ^ {\prime} \longrightarrow \mathrm{R} ^ {\prime} \otimes_ {\mathrm{A} / x \mathrm{A}} \mathrm{P} ^ {\prime} \rightarrow 0
+\]
+
+deduced from the exact sequence (2); taking into account the isomorphism \(P \otimes_{A} P' \longrightarrow (P/xP) \otimes_{A/xA} P'\) , the associated exact homology sequence is written
+
+\[
+\begin{array}{c} \ldots \longrightarrow \operatorname{Tor} _ {n} ^ {\mathrm{A}} (\mathrm{M}, \mathrm{N}) \longrightarrow \operatorname{Tor} _ {n} ^ {\mathrm{A} / x \mathrm{A}} (\mathrm{M} / x \mathrm{M}, \mathrm{N}) \longrightarrow \operatorname{Tor} _ {n - 2} ^ {\mathrm{A} / x \mathrm{A}} (\operatorname{Ker} x _ {\mathrm{M}}, \mathrm{N}) \\ \longrightarrow \operatorname{Tor} _ {n - 1} ^ {\mathrm{A}} (\mathrm{M}, \mathrm{N}) \longrightarrow \operatorname{Tor} _ {n - 1} ^ {\mathrm{A} / x \mathrm{A}} (\mathrm{M} / x \mathrm{M}, \mathrm{N}) \longrightarrow \ldots \end{array}\tag{6}
+\]
+
+PROPOSITION 7. - Let A be a ring, \(x\) a cancellable element of A, M an A-module such that the homothety \(x_{\mathrm{M}}\) is injective, N an A-module annihilated by \(x\), where n is an integer. The canonical homomorphisms of (A/xA)-modules
+
+\[
+\begin{array}{r l r} \mathrm{Ext} _ {\mathrm{A} / x \mathrm{A}} ^ {n} (\mathrm{M} / x \mathrm{M}, \mathrm{N}) & \longrightarrow & \mathrm{Ext} _ {\mathrm{A}} ^ {n} (\mathrm{M}, \mathrm{N}), \\ \mathrm{Ext} _ {\mathrm{A}} ^ {n} (\mathrm{N}, \mathrm{M}) & \longrightarrow & \mathrm{Ext} _ {\mathrm{A} / x \mathrm{A}} ^ {n - 1} (\mathrm{N}, \mathrm{M} / x \mathrm{M}), \\ \mathrm{Tor} _ {n} ^ {A} (\mathrm{M}, \mathrm{N}) & \longrightarrow & \mathrm{Tor} _ {n} ^ {\mathrm{A} / x \mathrm{A}} (\mathrm{M} / x \mathrm{M}, \mathrm{N}) \end{array}
+\]
+
+deduced from the exact sequences (4), (5), and (6) are isomorphisms.
+
+COROLLARY.--- Let A be a Noetherian local ring, M a finitely generated A-module, and J an ideal of A generated by a sequence \((x_{1},\ldots,x_{r})\) of elements of \(m_{A}\) which is both A-regular and M-regular. We have dp \(_{A/J}\) (M/JM) = dp \(_{A}\) (M) and di \(_{A/J}\) (M/JM) = di \(_{A}\) (M) - r.
+
+It suffices to treat the case \(r = 1\) . Then set \(x = x_1\). The A-modules \(\mathrm{Ext}_{\mathrm{A} / x\mathrm{A}}^{n}(\mathrm{M} / x\mathrm{M},\kappa_{\mathrm{A}})\) and \(\mathrm{Ext}_{\mathrm{A}}^{n}(\mathrm{M},\kappa_{\mathrm{A}})\) are isomorphic for every integer \(n\) (prop. 7); the equality \(\mathrm{dp}_{\mathrm{A} / x\mathrm{A}}(\mathrm{M} / x\mathrm{M}) = \mathrm{dp}_{\mathrm{A}}(\mathrm{M})\) follows from prop. 4 of no. 3. Similarly, the A-modules \(\mathrm{Ext}_{A /x\mathrm{A}}^{n - 1}(\kappa_{\mathrm{A}},\mathrm{M} / x\mathrm{M})\) and \(\mathrm{Ext}_{\mathrm{A}}^{n}(\kappa_{\mathrm{A}},\mathrm{M})\) are isomorphic for every integer \(n\) , and the equality \(\mathrm{di}_{\mathrm{A} / x\mathrm{A}}(\mathrm{M} / x\mathrm{M}) = \mathrm{di}_{\mathrm{A}}(\mathrm{M}) - 1\) follows from prop. 6 of no. 3.
+
+\subsection{Depth and projective dimension}
+
+THEOREM 1 (Auslander-Buchsbaum).--- Let A be a Noetherian local ring and M a finitely generated A-module of finite projective dimension. One has the equality
+
+\[
+\mathrm{dp} _ {\mathrm{A}} (\mathrm{M}) + \operatorname{prof} _ {\mathrm{A}} (\mathrm{M}) = \operatorname{prof} (\mathrm{A}).
+\]
+
+We reason by induction on \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M})\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  If dp \(_{A}\) (M) is zero, M is a nonzero finitely generated free A-module; its depth is equal to prof(A) (§ 1, no. 1, remark 4).
+\item
+  Suppose \(\mathrm{dp}_{A}(\mathbf{M}) = 1\) and let us choose a minimal projective resolution
+\end{enumerate}
+
+\[
+0 \to \mathrm{L} _ {1} \xrightarrow {d _ {1}} \mathrm{L} _ {0} \xrightarrow {d _ {0}} \mathrm{M} \to 0
+\]
+
+of M (no. 3, prop. 4, (iv)). The A-modules L₀ and L₁ are nonzero finitely generated free modules, hence of depth prof(A) (§ 1, no. 1, remark 4). The map \(1_{\kappa_{A}} \otimes d_{1} : \kappa_{A} \otimes_{A} L_{1} \longrightarrow \kappa_{A} \otimes_{A} L_{0}\) is zero, which implies that \(d_{1}\) belongs to \(\mathfrak{m}_{A} \operatorname{Hom}_{A}(L_{1}, L_{0})\). By Remark 5 of § 1, No. 1, we have \(\operatorname{prof}_{A}(M) = \operatorname{prof}(A) - 1\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Suppose \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M}) > 1\). Choose an exact sequence
+\end{enumerate}
+
+\[
+0 \to \mathrm{N} \longrightarrow \mathrm{L} \longrightarrow \mathrm{M} \to 0
+\]
+
+where L is a finitely generated free A-module. We then have \(\operatorname{prof}_{\mathrm{A}}(\mathrm{L}) = \operatorname{prof}(\mathrm{A})\) ( \(\S 1\), no. 1, remark 4), \(\mathrm{dp}_{\mathrm{A}}(\mathrm{N}) = \mathrm{dp}_{\mathrm{A}}(\mathrm{M}) - 1\) (A, X, p.~135, cor. 2 c)), whence \(\operatorname{prof}_{\mathrm{A}}(\mathrm{N}) = \operatorname{prof}(\mathrm{A}) - \mathrm{dp}_{\mathrm{A}}(\mathrm{N})\) (induction hypothesis), and in particular \(\operatorname{prof}_{\mathrm{A}}(\mathrm{N}) < \operatorname{prof}_{\mathrm{A}}(\mathrm{L})\) . By prop. 1 of \(\S 1\), no. 1, we then have \(\operatorname{prof}_{\mathrm{A}}(\mathrm{M}) = \operatorname{prof}_{\mathrm{A}}(\mathrm{N}) - 1\) , which completes the proof.
+
+Remark. In view of cor. 2 of prop. 4 (no. 3), th. 1 applied to the A-module \(\kappa_{\mathrm{A}}\) implies that we are in one or the other of the following cases:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  we have \(\mathrm{dp}_{\mathrm{A}}(\kappa_{\mathrm{A}}) = \mathrm{dh}(\mathrm{A}) = +\infty\)
+\item
+  we have \(\mathrm{dp}_{\mathrm{A}}(\kappa_{\mathrm{A}}) = \mathrm{dh}(\mathrm{A}) = \mathrm{prof}(\mathrm{A}) < +\infty\) .
+\end{enumerate}
+
+We shall see later (§ 4, no. 2) that (ii) characterizes regular local rings.
+
+COROLLARY 1.--- Let us keep the hypotheses of theorem 1.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  We have dp \(_{A}\) (M) ≤ prof(A). For equality to hold, it is necessary and sufficient that the maximal ideal m \(_{A}\) be associated with M.
+\item
+  We have \(\operatorname{prof}_A(M) \leqslant \operatorname{prof}(A)\) . For equality to hold, it is necessary and sufficient that M be free.
+\item
+  Indeed, “ \(\operatorname{prof}_{A}(\mathsf{M}) = 0\) ” is equivalent to “ \(\mathfrak{m}_A \in \operatorname{Ass}(A)\) ” (§ 1, no. 1, remark 2).
+\item
+  Indeed, “dp \(_{A}\) (M) = 0” is equivalent to “M is free”.
+\end{enumerate}
+
+COROLLARY 2. Let us keep the hypotheses of theorem 1 and suppose moreover that A is a Macaulay ring. Then dp \(_{A}\) (M) is the sum of the two positive integers dim(A) - dim \(_{A}\) (M) and dim \(_{A}\) (M) - prof(M).
+
+In particular, \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M})\) is then greater than \(\dim (\mathrm{A}) - \dim_{A}(\mathrm{M})\) , and there is equality if and only if M is Macaulay.
+
+COROLLARY 3. Let A be a Noetherian ring, M a finitely generated A-module of finite projective dimension, i an integer \(\geqslant 0\) , N a finitely generated A-module and F the support of the A-module \(\operatorname{Ext}_{\mathrm{A}}^{i}(\mathrm{M},\mathrm{N})\) (resp. \(\operatorname{Tor}_{i}^{A}(\mathrm{M},\mathrm{N})\) ). We then have \(\operatorname{prof}_{\mathrm{F}}(\mathrm{A}) \geqslant i\) .
+
+Indeed, let \(\mathfrak{p} \in \mathrm{F}\) . One has \(\operatorname{Ext}_{\mathrm{A}_{\mathfrak{p}}}^{i}(\mathrm{M}_{\mathfrak{p}}, \mathrm{N}_{\mathfrak{p}}) \neq 0\) (resp. \(\operatorname{Tor}_{i}^{\mathrm{A}_{\mathfrak{p}}}(\mathrm{M}_{\mathfrak{p}}, \mathrm{N}_{\mathfrak{p}}) \neq 0\) ) by prop. 2 of no. 2, hence \(i \leqslant \mathrm{dp}_{\mathrm{A}_{\mathfrak{p}}}(\mathrm{M}_{\mathfrak{p}}) \leqslant \mathrm{dp}_{\mathrm{A}}(\mathrm{M}) < +\infty\) (no. 2, prop. 3). Th. 1 implies \(\operatorname{prof}(\mathrm{A}_{\mathfrak{p}}) \geqslant i\) . Consequently (§ 1, no. 5, prop. 8)
+
+\[
+\operatorname{prof} _ {F} (A) = \inf _ {\mathfrak {p} \in F} \operatorname{prof} (A _ {\mathfrak {p}}) \geqslant i.
+\]
+
+With the terminology of § 1, no. 5, remark 4, the conclusion of cor. 3 means that the modules \(\operatorname{Ext}_{A}^{i}(M,N)\) and \(\operatorname{Tor}_{i}^{A}(M,N)\) have grade \(\geqslant i\) . It implies that the codimension of their support in \(\operatorname{Spec}(A)\) is \(\geqslant i\) ( \(\S 1\) , no. 7, prop. 12).
+
+COROLLARY 4. - Let A be a Noetherian Macaulay ring and M a finitely generated A-module of finite projective dimension.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Let \(\mathfrak{p} \in \operatorname{Spec}(A)\). Let us denote \(\mathcal{C}(\mathfrak{p})\) the set of irreducible components of \(\operatorname{Supp}(M)\) containing \(\mathfrak{p}\) . One has
+\end{enumerate}
+
+\[
+\dim_ {A _ {\mathfrak {p}}} \left(M _ {\mathfrak {p}}\right) - \operatorname{prof} _ {A _ {\mathfrak {p}}} \left(M _ {\mathfrak {p}}\right) = \mathrm{dp} _ {A _ {\mathfrak {p}}} \left(M _ {\mathfrak {p}}\right) - \inf _ {X \in \mathscr {C} (\mathfrak {p})} \operatorname{codim} (X, \operatorname{Spec} (A)).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  The map \(\mathfrak{p}\mapsto\dim_{\mathrm{A}_{\mathfrak{p}}}(M_{\mathfrak{p}})-\operatorname{prof}_{\mathrm{A}_{\mathfrak{p}}}(M_{\mathfrak{p}})\) of Spec(A) into \(\overline{Z}\) is upper semi-continuous.
+\item
+  The set of prime ideals p of \(A\) such that the A \(_{p}\) -module M \(_{p}\) is Macaulay is open and dense in \(\operatorname{Spec}(A)\) . Its intersection with \(\operatorname{Supp}(M)\) is dense in \(\operatorname{Supp}(M)\) .
+\item
+  We may assume \(\mathfrak{p} \in \operatorname{Supp}(M)\) . Set \(\varphi(\mathfrak{p}) = \dim(A_{\mathfrak{p}}) - \dim_{A_{\mathfrak{p}}}(M_{\mathfrak{p}})\) . By cor. 2 above, we have
+\end{enumerate}
+
+\[
+\dim_ {A _ {\mathfrak {p}}} (M _ {\mathfrak {p}}) - \operatorname{prof} _ {A _ {\mathfrak {p}}} (M _ {\mathfrak {p}}) = \mathrm{dp} _ {A _ {\mathfrak {p}}} (M _ {\mathfrak {p}}) - \varphi (\mathfrak {p}).
+\]
+
+Since A is a Macaulay ring, we have
+
+\[
+\dim (A _ {\mathfrak {p}}) = \operatorname{codim} (V (\mathfrak {p}), \operatorname{Spec} (A)) = \operatorname{codim} (V (\mathfrak {p}), X) + \operatorname{codim} (X, \operatorname{Spec} (A))
+\]
+
+for all \(X \in \mathcal{C}(\mathfrak{p})\) (§ 2, no. 2, prop. 2 b)); on the other hand, we have (VIII, § 1, no. 4, prop. 9 and no. 2, remark 3)
+
+\[
+\dim_ {A_ {\mathfrak {p}}} \left(\mathrm{M} _ {\mathfrak {p}}\right) = \operatorname{codim} (\mathrm{V} (\mathfrak {p}), \operatorname{Supp} (\mathrm{M})) = \sup _ {\mathrm{X} \in \mathscr {C} (\mathfrak {p})} \operatorname{codim} (\mathrm{V} (\mathfrak {p}), \mathrm{X})
+\]
+
+and consequently
+
+\[
+\varphi (\mathfrak {p}) = \inf _ {X \in \mathscr {C} (\mathfrak {p})} \operatorname{codim} (X, \operatorname{Spec} (A)).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Let \(\mathfrak{p} \in \operatorname{Spec}(A)\) , and let \(F\) be the union of the irreducible components of \(\operatorname{Supp}(M)\) that do not contain \(\mathfrak{p}\) . For every element \(\mathfrak{q}\) of \(\operatorname{Spec}(A) - F\) , one has \(\mathcal{C}(\mathfrak{q}) \subset \mathcal{C}(\mathfrak{p})\) , whence \(\varphi(\mathfrak{q}) \geqslant \varphi(\mathfrak{p})\) according to the formula above. Consequently, the function \(\varphi\) is lower semicontinuous; assertion b) then follows from prop. 3 of no. 2.
+\item
+  Let U be the set of elements p of Spec(A) such that \(M_{p}\) is Macaulay. The condition \(p \in U\) is equivalent to \(\dim(M_{p}) - \text{prof}(M_{p}) \leqslant 0\) , so that U is open by b). Since U contains \(\text{Spec}(A) - \text{Supp}(M)\) , it suffices to prove that \(U \cap \text{Supp}(M)\) is dense in \(\text{Supp}(M)\) . For every minimal prime ideal p of \(\text{Supp}(M)\) , the \(A_{p}\) -module \(M_{p}\) is of finite length (IV, § 2, n° 5, cor. 2 of prop. 7 and § 1, n° 3, cor. 1 of prop. 7), hence Macaulay; consequently U meets every irreducible component of \(\text{Supp}(M)\) . One concludes with the aid of prop. 1 of II, § 4, n° 1.
+\end{enumerate}
+
+\subsection{Depth and injective dimension}
+
+PROPOSITION 8.--- Let A be a Noetherian ring, M a finitely generated A-module. One has \(\dim_{A}(M) \leqslant \mathrm{di}_{A}(M)\) .
+
+Let \(r\) be a positive integer less than \(\dim_{\mathrm{A}}(\mathrm{M})\). There exists a saturated chain of prime ideals \(\mathfrak{p} \subset \mathfrak{p}_{1} \subset \ldots \subset \mathfrak{p}_{r-1} \subset \mathfrak{q}\) such that \(\mathfrak{p}\) is a minimal element of the support of M; then \(\mathrm{A}_{\mathfrak{p}}\) -module \(\mathrm{M}_{\mathfrak{p}}\) is of finite length, so that we have \(\mathrm{Hom}_{\mathrm{A}_{\mathfrak{p}}}(\kappa(\mathfrak{p}), \mathrm{M}_{\mathfrak{p}}) \neq 0\) , hence \(\mathrm{Ext}_{A_{\mathfrak{q}}}^{r}(\kappa(\mathfrak{q}), \mathrm{M}_{\mathfrak{q}}) \neq 0\) ( \(\S 1, n^{\circ} 7\) lemma 3), which implies \(\mathrm{di}_{\mathrm{A}}(\mathrm{M}) \geqslant r\) ( \(n^{\circ} 3\) , prop. 6).
+
+PROPOSITION 9.--- Let A be a Noetherian local ring and M a nonzero finitely generated A-module of finite injective dimension. Then one has \(\mathrm{di}_{\mathrm{A}}(\mathrm{M}) = \mathrm{prof}(\mathrm{A})\) .
+
+Set \(r = \mathrm{di}_{A}(\mathrm{M})\). One has \(\operatorname{Ext}_{A}^{i}(\kappa_{A}, \mathrm{M}) = 0\) for \(i > r\) , hence \(\operatorname{Ext}_{\mathrm{A}}^{r}(\kappa_{\mathrm{A}}, \mathrm{M}) \neq 0\) according to Prop. 6 of \(\mathfrak{n}^{\circ}\) 3, (iv)⇒(i). Let \(s\) be the depth of A and let \((x_1, \ldots, x_s)\) be an A-regular sequence of elements of \(\mathfrak{m}_{\mathrm{A}}\) (§ 1, \(\mathfrak{n}^{\circ}\) 4, th. 2); set \(\mathrm{N} = \mathrm{A}/(x_1\mathrm{A} + \ldots + x_s\mathrm{A})\) . By the example in \(\mathfrak{n}^{\circ}\) 1, we have \(\mathrm{dp}_{\mathrm{A}}(\mathrm{N}) = s\) and \(\operatorname{Ext}_{\mathrm{A}}^{s}(\mathrm{N}, \mathrm{M}) \neq 0\) , hence \(s \leqslant \mathrm{di}_{\mathrm{A}}(\mathrm{M}) = r\). But N is of depth 0 (§ 1, \(\mathfrak{n}^{\circ}\) 4, prop. 7), so there exists an exact sequence of A-modules
+
+\[
+0 \rightarrow \kappa_ {\mathrm{A}} \longrightarrow \mathrm{N} \longrightarrow \mathrm{N} ^ {\prime} \rightarrow 0.
+\]
+
+From this we deduce an exact sequence of extension modules
+
+\[
+\operatorname{Ext} _ {\mathrm{A}} ^ {r} (\mathrm{N}, \mathrm{M}) \longrightarrow \operatorname{Ext} _ {\mathrm{A}} ^ {r} (\kappa_ {A}, \mathrm{M}) \longrightarrow \operatorname{Ext} _ {\mathrm{A}} ^ {r + 1} (\mathrm{N} ^ {\prime}, \mathrm{M});
+\]
+
+as we have \(\mathrm{Ext}_{\mathrm{A}}^{r + 1}(\mathrm{N}^{\prime},\mathrm{M}) = 0\) and \(\mathrm{Ext}_{\mathrm{A}}^{r}(\mathbf{k}_{\mathrm{A}},\mathrm{M})\neq 0\) , we obtain \(\mathrm{Ext}_{\mathrm{A}}^{r}(\mathrm{N},\mathrm{M})\neq 0\) , whence \(r\leqslant \mathrm{dp}_{\mathrm{A}}(\mathrm{N}) = s\). In the end, we have \(r = s\) , which completes the proof.

@@ -1,0 +1,636 @@
+\subsection{Blow-up and gluing}
+
+Let C be a topological space and let \((\mathrm{B}_{\ell})_{\ell\in\mathrm{L}}\) be a finite family of pairwise disjoint closed subsets of C. Let B be a topological space and, for each \(\ell\in L\), let \(h_{\ell}\) be a homeomorphism from B onto \(B_{\ell}\). We denote by \(B_{L}\) the union of the family \((\mathrm{B}_{\ell})_{\ell\in\mathrm{L}}\). We will assume that B and L are not empty. Let R be the equivalence relation on C defined as follows. The class of an element \(x\) of \(C - B_L\) is the set \(\{x\}\); if \(x\) is an element of \(B_\ell\), where \(\ell \in L\), the class of \(x\) is the set of elements \(h_k(h_\ell^{-1}(x))\), where \(k\) ranges over \(L\). Denote by A the quotient topological space \(C/R\), and let \(f: C \to A\) be the canonical surjection. We say that the space A is obtained from the space C by identifying the sets \(B_\ell\) by means of the homeomorphisms \(h_\ell\).
+
+The map \(f \circ h_{\ell}\) from B into A is independent of the element \(\ell\) of L; it is closed and injective and therefore induces a homeomorphism from B onto a closed subset of A. We will thus identify B with \(f \circ h_{\ell}(\mathrm{B})\) via the homeomorphism \(f \circ h_{\ell}\); the map \(f\) induces a homeomorphism from \(\mathrm{C} - \mathrm{B}_{\mathrm{L}}\) onto \(\mathrm{A} - \mathrm{B}\).
+
+Suppose moreover that there exists a family \((\mathrm{N}_{\ell})_{\ell\in\mathrm{L}}\) of pairwise disjoint open subsets of C such that \(N_{\ell}\) contains \(B_{\ell}\) for all \(\ell\in L\). The union U of the family \((f(\mathrm{N}_{\ell}))_{\ell\in\mathrm{L}}\) is open in A and contains B. The set U-B is the union of the pairwise disjoint open sets \(f(\mathrm{N}_{\ell}-\mathrm{B}_{\ell})\), for \(\ell\in L\).
+
+Lemma 2. --- The map f: C → A is proper and separated; its fibers are finite.
+
+Let us prove that \(f\) is closed. Let X be a closed subset of C. Let us prove that its image is closed in A. For every \(\ell \in L\), \(X \cap B_{\ell}\) is closed in \(B_{\ell}\), hence the space \(Y = \bigcup_{\ell \in L} h_{\ell}^{-1}(X \cap B_{\ell})\) is closed in B since L is finite. The saturation \(X^{*}\) of X for the equivalence relation R is then equal to \(X \cup \bigcup_{\ell \in L} h_{k}(Y)\), hence it is closed in C. Consequently, \(f(X) = f(X^{*})\) is closed in A, as was to be proved.
+
+The fibers of \(f\) are the equivalence classes of the relation \(\mathbb{R}\); they are finite. Consequently, the map \(f\) is proper (TG, I, p. 75, theorem 1).
+
+Let us finally show that \(f\) is separated. Let \(x\) and \(y\) be distinct points of C that have the same image under \(f\). There therefore exists a point \(b \in \mathrm{B}\) and distinct elements \(\ell\) and \(m \in \mathrm{L}\) such that \(x = h_{\ell}(b)\) and \(y = h_{m}(b)\). Consequently, \(\mathrm{N}_{\ell}\) and \(\mathrm{N}_m\) are disjoint neighborhoods of \(x\) and \(y\) in C, whence the desired assertion follows by virtue of prop. 1 of I, p. 25.
+
+Let us further make the following assumptions:
+
+- the space A is deloopable and connected;
+
+- the space C is deloopable;
+
+- the space B is connected and locally path-connected.
+
+Set I = \(\pi_{0}(C)\); if i is an element of I, denote by \(C_{i}\) the connected component of C corresponding to i. Denote by \(\eta: L \rightarrow I\) the map that associates with an element \(\ell \in L\) the connected component of C that contains \(B_{\ell}\). The map \(\eta\) is surjective. Indeed, argue by contradiction and consider a connected component X of C that meets none of the sets \(B_{\ell}\). It is an open and closed subset of C, saturated for the equivalence relation R. Consequently, its image \(f(X)\) is an open and closed subset of A, disjoint from B. Since A is assumed connected and B is nonempty, \(f(X)\) is empty, a contradiction.
+
+Let \(\sigma\colon I\to L\) be a section of the map \(\eta\); set \(\tau=\sigma\circ\eta\) and \(T=\sigma(I)\).
+
+Let us choose a point \(b\) of B. For every \(\ell \in \mathrm{L}\), set \(b_{\ell} = h_{\ell}(b)\) and choose the class \(\beta_{\ell}\) of a path joining \(b_{\ell}\) to \(b_{\tau(\ell)}\) in C; if \(\ell = \tau(\ell)\), choose for \(\beta_{\ell}\) the class of the constant path with image \(b_{\ell}\). For all \(\ell \in \mathrm{L}\), denote by \(\vartheta_{\ell}\) the homomorphism from \(\pi_1(\mathrm{B}, b)\) to \(\pi_1(\mathrm{C}, b_{\tau(\ell)})\) defined by
+
+\[
+\vartheta_ {\ell} (v) = \operatorname{Int} (\beta_ {\ell}) ^ {- 1} ((h _ {\ell}) _ {*} (v)) = \beta_ {\ell} ^ {- 1} (h _ {\ell}) _ {*} (v) \beta_ {\ell},
+\]
+
+for all \(v \in \pi_{1}(B, b)\) . Finally, fix an element \(\ell_{0}\) of L such that \(\ell_{0} = \tau(\ell_{0})\) .
+
+Let Q be the unique group homomorphism
+
+\[
+\mathrm{Q} \colon \big (\underset {i \in \mathrm{I}} {*} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) * \mathrm{F} (\mathrm{L} - \mathrm{T}) \to \pi_ {1} (\mathrm{A}, b)
+\]
+
+such that \(\mathsf{Q}(\ell) = f_{*}(\beta_{\ell})\) for all \(\ell \in \mathrm{L} - \mathrm{T}\) and which coincides with \(\pi_1(f, b_{\sigma(i)})\) on \(\pi_1(\mathrm{C}_i, b_{\sigma(i)})\) for all \(i \in \mathrm{I}\) .
+
+PROPOSITION 5 (Van Kampen). --- The homomorphism Q is surjective; its kernel is the smallest normal subgroup containing the elements
+
+\[
+\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1} \quad \text { for } v \in \pi_ {1} (\mathrm{B}, b) \text { and } \ell \in \mathrm{T},
+\]
+
+\[
+\vartheta_ {\ell_ {0}} (v) \ell \vartheta_ {\ell} (v) ^ {- 1} \ell^ {- 1} \quad \text { for } v \in \pi_ {1} (\mathrm{B}, b) \text { and } \ell \in \mathrm{L} - \mathrm{T}.
+\]
+
+The map \(f \colon \mathrm{C} \to \mathrm{A}\) is proper and separated, with finite fibers (IV, p. 430, lemma 2); the spaces A and C are deloopable. Moreover, \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) is the union of the diagonal \(\Delta_{\mathrm{C}}\) and of the pairwise disjoint subsets \(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{k} = (h_{\ell}, h_{k})(\mathrm{B})\), for \((\ell, k) \in \mathrm{L}^2\) with \(\ell \neq k\). For such a pair \((\ell, k)\), we have \(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{k} = \mathrm{N}_{\ell} \times_{\mathrm{A}} \mathrm{N}_{k}\); consequently, this subset is both open and closed in \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\). The diagonal \(\Delta_{\mathrm{C}}\) is thus open, and its complement in \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\), a finite union of pairwise disjoint subsets homeomorphic to B, is locally connected. This proves that the map \(f\) satisfies property (VK) (case (ii) of IV, p. 405). In order to apply th. 1 of IV, p. 408, we shall define a van Kampen datum for f.
+
+For every \(i \in \mathrm{I}\) , choose as base point in \(\mathrm{C}_i\) the point \(\mathfrak{a}(i) = b_{\sigma(i)}\) .
+
+Let J be the set of path-connected components of \(C \times_{A} C\). The sets \(\Delta_{C_{i}}\), for \(i \in I\), are the connected components of the diagonal \(\Delta_{C}\), which is open and closed in \(C \times_{A} C\); hence these sets belong to J. Likewise, the sets \([\ell_{1}, \ell_{2}] = B_{\ell_{1}} \times_{A} B_{\ell_{2}}\), for \(\ell_{1}\) and \(\ell_{2}\) in L with \(\ell_{1} \neq \ell_{2}\), belong to J. Since these sets form a partition of \(C \times_{A} C\), they describe the set J.
+
+Let \(j\) be an element of J of the form \(\Delta_{\mathrm{C}_i}\), for \(i \in \mathbf{I}\). Choose as base point \(\mathsf{b}(j)\) the point \((\mathsf{a}(i), \mathsf{a}(i)) = (b_{\sigma(i)}, b_{\sigma(i)})\) and take as path classes \(\beta_1(j)\) and \(\beta_2(j)\) the class of the constant path at \(b_{\sigma(i)}\). If \(j\) is an element of J of the form \([\ell_1, \ell_2]\), where \(\ell_1\) and \(\ell_2\) are distinct elements of L, then set \(\mathsf{b}([\ell_1, \ell_2]) = (b_{\ell_1}, b_{\ell_2})\), \(\beta_1([\ell_1, \ell_2]) = \beta_{\ell_1}\) and \(\beta_2([\ell_1, \ell_2]) = \beta_{\ell_2}\).
+
+\[
+\text { Let } \mathrm{K} = \pi_ {0} (\mathrm{C} \times_ {\mathrm{A}} \mathrm{C} \times_ {\mathrm{A}} \mathrm{C}).
+\]
+
+Denote by \(\Delta_{\mathrm{C}}^{\prime}\) the diagonal of the space \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\); it is a closed subset of \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) since \(f\) is separated, and it is homeomorphic to C. For every \(i \in \mathrm{I}\), also denote by \(\Delta_{\mathrm{C}_i}^{\prime}\) the image of \(\mathrm{C}_i\) under the diagonal map of C into \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\); these are open and closed subsets of \(\Delta_{\mathrm{C}}^{\prime}\). For every triple \((\ell_1, \ell_2, \ell_3)\) of elements of L, also set \([\ell_1, \ell_2, \ell_3] = \mathrm{B}_{\ell_1} \times_{\mathrm{A}} \mathrm{B}_{\ell_2} \times_{\mathrm{A}} \mathrm{B}_{\ell_3}\); these are closed subsets of \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\), homeomorphic to B. If the set \(\{\ell_1, \ell_2, \ell_3\}\) has at least two elements, then \([\ell_1, \ell_2, \ell_3] = \mathrm{N}_{\ell_1} \times_{\mathrm{A}} \mathrm{N}_{\ell_2} \times_{\mathrm{A}} \mathrm{N}_{\ell_3}\), which implies that \([\ell_1, \ell_2, \ell_3]\) is also open in \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\). Moreover, \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) is the union of the pairwise disjoint subsets \(\Delta_{\mathrm{C}}^{\prime}\) and \([\ell_1, \ell_2, \ell_3]\), where \((\ell_1, \ell_2, \ell_3)\) ranges over all triples of elements of L that are not all equal to the same element. Thus, \(\Delta_{\mathrm{C}}^{\prime}\), and then the \(\Delta_{\mathrm{C}_i}^{\prime}\), for \(i \in \mathrm{I}\), are open and closed in \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\). This implies that the set K of connected components of this space is the union of the disjoint sets \(\mathrm{K}_0\) and \(\mathrm{K}_1\) as follows.
+
+The set \(K_{0}\) is the set of components of the form \(\Delta_{C_{i}}^{\prime}\). Let \(i \in I\) and let \(k = \Delta_{C_{i}}^{\prime}\). We set \(\mathsf{c}(k) = (b_{\sigma(i)}, b_{\sigma(i)}, b_{\sigma(i)})\). For \((s, t) \in \{(1,2), (2,3), (1,3)\}\), we choose for \(\gamma_{st}(k)\) the class of the constant path at \((b_{\sigma(i)}, b_{\sigma(i)})\).
+
+The set \(K_{1}\) is made up of components of the form \(k = [\ell_{1}, \ell_{2}, \ell_{3}]\), where \(\ell_{1}, \ell_{2}, \ell_{3}\) are three elements of B such that the set \(\{\ell_{1},\ell_{2},\ell_{3}\}\) has cardinality \(\geqslant 2\). We set \(c(k)=(b_{\ell_{1}},b_{\ell_{2}},b_{\ell_{3}})\). Let \((s,t)\in\{(1,2),(1,3),(2,3)\}\). If \(\ell_{s}=\ell_{t}\), we take for \(\gamma_{st}(k)\) the class \((\beta_{\ell_{s}},\beta_{\ell_{t}})\); if \(\ell_{s}\neq\ell_{t}\), we take for \(\gamma_{st}(k)\) the class of the constant path at \((b_{\ell_{s}},b_{\ell_{t}})\).
+
+We then verify that, for all \(k \in K\) and for every \(s \in \{1,2,3\}\), the loop class \(\lambda_{s}(k)\) defined by relation (2) of IV, p. 407, is trivial.
+
+The framework \(\Gamma\) of the pair of groupoid morphisms \((\varpi(p_1), \varpi(p_2))\) from \(\varpi(\mathrm{C} \times_{\mathrm{A}} \mathrm{C})\) to \(\varpi(\mathrm{C})\) has as vertices the set I and as oriented edges the set J. If \(i \in \mathrm{I}\), the arrow \(j = \Delta_{\mathrm{C}_i}\) has origin and terminus \(i\); if \((\ell_1, \ell_2)\) is a pair of distinct elements of L, the arrow \(j = [\ell_1, \ell_2]\) has origin \(\eta(\ell_1)\) and terminus \(\eta(\ell_2)\).
+
+Let \(\mathsf{T}\) be the subquiver of \(\Gamma\) whose vertex set is I and whose arrows are those of the form \([\ell_0,\ell ]\), for \(\ell \in \mathrm{T} - \{\ell_0\}\). The graph associated with \(\mathsf{T}\) is a maximal tree of \(\widetilde{\Gamma}\).
+
+Let us set \(i_0 = \eta (\ell_0)\) .
+
+If \(i \in \mathbf{I} - \{i_0\}\), the unique path of \(\mathsf{T}\) connecting \(i_0\) to \(i\) is \((i_0, [\ell_0, \sigma(i)], i)\). The groupoid morphism from \(\mathrm{Grp}(\Gamma)\) to \(\varpi(\mathrm{Y})\) defined on p. 407 (and denoted \(\tau\) in loc. cit.) sends \(j\) to the identity element if \(j = \Delta_{\mathrm{C}_i}\), for \(i \in \mathrm{I}\), and sends \(j = [\ell_1, \ell_2]\) to \(f_*(\beta_{\ell_1})^{-1}f_*(\beta_{\ell_2})\) if \(\ell_1\) and \(\ell_2\) are distinct elements of L. For every \(i \in \mathrm{I}\), the path class \(\delta_i\) defined loc. cit. and joining \(b = f(b_{\sigma(i_0)})\) to \(b = f(b_{\sigma(i)})\) is given by
+
+\[
+\delta_ {i} = f _ {*} (\beta_ {\ell_ {0}}) ^ {- 1} f _ {*} (\beta_ {\sigma (i)}) = e,
+\]
+
+since \(\beta_{\ell} = e\) if \(\ell \in T\) .
+
+We have thus defined a van Kampen datum of the map f. Consider then the unique group homomorphism
+
+\[
+\mathbf {Q} ^ {\prime} \colon \big (\ast_ {i \in \mathrm{I}} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) * \mathrm{F} (\mathrm{J}) \to \pi_ {1} (\mathrm{A}, b)
+\]
+
+which coincides with \(\pi_1(f, b_{\sigma(i)})\) on \(\pi_1(\mathrm{C}, b_{\sigma(i)})\) and such that
+
+\[
+\mathrm{Q} ^ {\prime} (j) = f _ {*} (\beta_ {1} (j)) ^ {- 1} f _ {*} (\beta_ {2} (j))
+\]
+
+for \(j \in \mathrm{J}\). By IV, p. 408, th. 1, this homomorphism is surjective and its kernel is the smallest distinguished subgroup containing the relators \(\mathsf{r}_1(j)\) (for \(j \in \mathrm{Fl}(\mathsf{T})\)), \(\mathsf{r}_2(j,v)\) (for \(j \in \mathrm{J}\) and \(v \in \pi_1(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}, \mathsf{b}(j))\)) and \(\mathsf{r}_3(k)\) (for \(k \in \mathrm{K}\)) defined, loc. cit., by the equations \((\mathrm{R}_1), (\mathrm{R}_2)\) and \((\mathrm{R}_3)\).
+
+Let \(q'\) be the unique homomorphism from F(L) to F(L-T) such that \(q'(\ell) = \ell\) if \(\ell \in L - T\) and \(q'(\ell) = e\) otherwise. Let
+
+\[
+q \colon \big (\underset {i \in \mathrm{I}} {\ast} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) \ast \mathrm{F(J)} \to \big (\underset {i \in \mathrm{I}} {\ast} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) \ast \mathrm{F(L-T)}
+\]
+
+the unique group homomorphism that coincides with the identity on \(\pi_{1}(\mathrm{C}_{i},b_{\sigma(i)})\), for \(i\in I\), and such that \(q(j)=e\) if \(j=\Delta_{\mathrm{C}_{i}}\), \(q([\ell,\ell'])=q'(\ell)^{-1}q'(\ell')\) if \(\ell\) and \(\ell'\) are distinct elements of L. The homomorphism \(q\) is surjective.
+
+If \(i \in \mathrm{I}\) and \(j = \Delta_{\mathrm{C}_i}\), we have \(\mathsf{Q}'(j) = e_b = \mathsf{Q}'(q(j))\). If \(j = [\ell, \ell']\), for distinct \(\ell\) and \(\ell'\) in L, we have
+
+\[
+\begin{array}{c} \mathsf {Q} ^ {\prime} (j) = f _ {*} (\beta_ {\ell}) ^ {- 1} f _ {*} (\beta_ {\ell^ {\prime}}) = \mathsf {Q} (q ^ {\prime} (\ell)) ^ {- 1} \mathsf {Q} (q ^ {\prime} (\ell^ {\prime})) \\ = \mathsf {Q} (q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} (\ell^ {\prime})) = \mathsf {Q} \circ q ([ \ell , \ell^ {\prime} ]). \end{array}
+\]
+
+Therefore, \(Q' = Q \circ q\) . It follows that the homomorphism Q is surjective and that its kernel is the smallest normal subgroup of \(\left(\ast\pi_{1}(\mathrm{C}_{i}, b_{\sigma(i)})\right)\ast\mathrm{F}(\mathrm{L}-\mathrm{T})\) containing the images under q of the relators \(r_{1}(j)\) (for \(j \in \mathrm{Fl}(\mathsf{T})\) ), \(r_{2}(j, v)\) (for \(j \in J\) and \(v \in \pi_{1}(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}, \mathsf{b}(j))\) ) and \(r_{3}(k)\) (for \(k \in K\) ).
+
+If \(\ell\in\mathrm{T}-\{\ell_{0}\}\) and \(j=[\ell_{0},\ell]\) , we have \(\mathsf{r}_{1}(j)=j\) and \(q(\mathsf{r}_{1}(j))=e\) .
+
+Let \(k \in \mathrm{K}\) . We have \(r_3(k) = j_{12}(k)j_{23}(k)j_{13}(k)^{-1}\) . If \(k = \Delta_{\mathrm{C}_i}'\) , for \(i \in \mathrm{I}\) , set \(j = \Delta_{\mathrm{C}_i}\) ; then we have
+
+\[
+q (\mathsf {r} _ {3} (k)) = q (j j j ^ {- 1}) = q (j) = e.
+\]
+
+Let \(\ell\) and \(\ell'\) be distinct elements of L. If \(k = [\ell, \ell, \ell']\), we therefore have
+
+\[
+q (\mathsf {r} _ {3} (k)) = q \left(\Delta_ {\mathrm{C} _ {\eta (\ell)}} [ \ell , \ell^ {\prime} ] [ \ell , \ell^ {\prime} ] ^ {- 1}\right) = q \left(\Delta_ {\mathrm{C} _ {\eta (\ell)}}\right) = e.
+\]
+
+If \(k = [\ell, \ell', \ell]\) , it follows
+
+\[
+\begin{array}{c} q (\mathsf {r} _ {3} (k)) = q ([ \ell , \ell^ {\prime} ] [ \ell^ {\prime}, \ell ] \Delta_ {\mathrm{C} _ {\eta (\ell)}} ^ {- 1}) \\ = q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} (\ell^ {\prime}) q ^ {\prime} (\ell^ {\prime}) ^ {- 1} q ^ {\prime} (\ell) q (\Delta_ {\mathrm{C} _ {\eta} (\ell)}) ^ {- 1} = e. \end{array}
+\]
+
+Moreover, if \(k = [\ell', \ell, \ell]\) , we have
+
+\[
+\begin{array}{r l} & q (\mathsf {r} _ {3} (k)) = q ([ \ell^ {\prime}, \ell ] \Delta_ {\mathrm{C} _ {\eta (\ell)}} [ \ell^ {\prime}, \ell ] ^ {- 1}) \\ & \qquad = q (\ell^ {\prime}) ^ {- 1} q (\ell) q (\Delta_ {\mathrm{C} _ {\eta (\ell)}}) q (\ell) ^ {- 1} q (\ell^ {\prime}) = e. \end{array}
+\]
+
+Finally, if \(k = [\ell_{1}, \ell_{2}, \ell_{3}]\) , where \(\ell_{1}, \ell_{2}, \ell_{3}\) are elements of L, pairwise distinct, we have
+
+\[
+q (\mathsf {r} _ {3} (k)) = q ([ \ell_ {1}, \ell_ {2} ]) q ([ \ell_ {2}, \ell_ {3} ]) q ([ \ell_ {1}, \ell_ {3} ]) ^ {- 1} = e.
+\]
+
+Let \(i \in I\) and let us set \(j = \Delta_{C_i}\). The group homomorphisms \(\varphi_j\) and \(\psi_j\) from \(\pi_1(C \times_A C, \mathfrak{b}(j)) = \pi_1(C_i, \mathfrak{a}(i))\) to \(\pi_1(C, \mathfrak{a}(i))\) defined by the relations (1) of IV, p. 407, are respectively equal to \((p_1)_*\) and \((p_2)_*\). We then have, for \(v \in \pi_1(C_i, \mathfrak{a}(i))\), \(r_2(j, v) = v j v^{-1} j^{-1}\), whence \(q(r_2(j, v)) = e\).
+
+Finally, let \(j = [\ell, \ell']\), where \(\ell\) and \(\ell'\) are distinct elements of L. The group homomorphism \(\varphi_j \colon \pi_1(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{\ell'}) \to \pi_1(\mathrm{C}_{\eta(\ell)}, b_{\tau(\ell)})\) defined loc. cit. is the homomorphism \(\vartheta_\ell\), and the homomorphism \(\psi_j\) is the homomorphism \(\vartheta_{\ell'}\). We then have, for \(v \in \pi_1(\mathrm{B}_\ell \times_{\mathrm{A}} \mathrm{B}_{\ell'}, \mathfrak{b}(j))\)
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \vartheta_ {\ell} (v) q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} \left(\ell^ {\prime}\right) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} q ^ {\prime} \left(\ell^ {\prime}\right) ^ {- 1} q ^ {\prime} (\ell).
+\]
+
+Let us distinguish four cases. If \(\ell\) and \(\ell'\) both belong to T, we have
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \left. \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1}\right) ^ {- 1} \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1}\right). \right.
+\]
+
+When \(\ell' = \ell_0\) , we obtain the inverse of the element \(\vartheta_{\ell_0}(v)\vartheta_\ell(v)^{-1}\) . If \(\ell \in \mathrm{T}\) but \(\ell' \notin \mathrm{T}\) , we have
+
+\[
+\begin{array}{r l} & q (\mathsf {r} _ {2} (j, v)) = \vartheta_ {\ell} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} (\ell^ {\prime}) ^ {- 1} \\ & \qquad = \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1}\right) ^ {- 1} \vartheta_ {\ell_ {0}} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} (\ell^ {\prime}) ^ {- 1}. \end{array}
+\]
+
+Similarly, if \(\ell\notin\mathrm{T}\) and \(\ell^{\prime}\in\mathrm{T}\) , we have
+
+\[
+\begin{array}{c} q (\mathsf {r} _ {2} (j, v)) = \vartheta_ {\ell} (v) \ell^ {- 1} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \ell \\ = \ell^ {- 1} \bigl (\vartheta_ {\ell_ {0}} (v) \ell \vartheta_ {\ell} (v) ^ {- 1} \ell^ {- 1} \bigr) ^ {- 1} \bigl (\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \bigr) \ell . \end{array}
+\]
+
+Taking \(\ell' = \ell_0\) , we obtain an element conjugate to the inverse of \(\vartheta_{\ell_0}(v)\ell\vartheta_\ell(v)^{-1}\ell^{-1}\) . Finally, if neither \(\ell\) nor \(\ell'\) belongs to T, we have
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \left(\vartheta_ {\ell} (v) \ell^ {- 1} \vartheta_ {\ell_ {0}} (v) ^ {- 1} \ell\right) \ell^ {- 1} \left(\vartheta_ {\ell_ {0}} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \left(\ell^ {\prime}\right) ^ {- 1}\right) \ell .
+\]
+
+These relations show, on the one hand, that the elements announced in the proposition belong to the kernel of the homomorphism Q, and, on the other hand, that these elements \(q(\mathsf{r}_{2}(j,v))\) all belong to the smallest distinguished subgroup containing the elements announced by the statement. The proposition follows.
+
+Remark. --- Let A be a topological space, let B be a closed subset of A, and let U be an open neighborhood of B in A. Suppose that the set U-B is the union of a finite family \((\mathrm{M}_{\ell})_{\ell\in\mathrm{L}}\) of pairwise disjoint open sets. For every \(\ell\in L\), set \(N_{\ell}^{\prime}=M_{\ell}\cup B\). Denote by \(C^{\prime}\) the topological sum of the spaces A-B and \(N_{\ell}^{\prime}\), for \(\ell\in L\); we also denote by \(\varphi:A-B\to C^{\prime}\) and \(\varphi_{\ell}:N_{\ell}^{\prime}\to C^{\prime}\), for \(\ell\in L\), the canonical injections. Let C be the topological quotient of C' by the equivalence relation S, the finest relation for which the points \(\varphi(x)\) and \(\varphi_{\ell}(x)\) are equivalent, for every \(\ell \in L\) and every \(x \in M_{\ell}\); let \(\rho: C' \to C\) be the canonical map.
+
+Let us prove that one recovers the space A from the space C by identifying the sets \(B_{\ell}\) by means of the homeomorphisms \(\rho \circ (\varphi_{\ell} \mid B)\): \(B \to B_{\ell}\).
+
+For every \(\ell \in L\), the set \(M_{\ell}\) is open in A-B and in \(N_{\ell}'\). The maps \(\rho \circ \varphi\) and \(\rho \circ \varphi_{\ell}\) are homeomorphisms of the spaces A-B and \(N_{\ell}'\), for \(\ell \in L\), onto open subsets of C (TG, I, p. 17, prop. 9). For every \(\ell \in L\), the set \(\varphi_{\ell}(B)\) is closed in \(C'\) and saturated for the equivalence relation S. Consequently, the set \(B_{\ell} = \rho(\varphi_{\ell}(B))\) is closed in C and the map \(\rho \circ \varphi_{\ell}\) induces a homeomorphism of B onto \(B_{\ell}\) (loc. cit.). Similarly, for every \(\ell \in L\), the set \(N_{\ell} = \rho(\varphi_{\ell}(N_{\ell}'))\) is an open neighborhood of \(B_{\ell}\); the sets \(N_{\ell}\) are mutually disjoint.
+
+By passing to the quotient, the map \(f' \colon \mathrm{C}' \to \mathrm{A}\) deduced from the canonical injections into A of the spaces A-B and \(\mathrm{N}_{\ell}'\), for \(\ell \in \mathrm{L}\), induces a continuous map \(f \colon \mathrm{C} \to \mathrm{A}\). If \(x\) is a point of B, the fiber \(f^{-1}(x)\) is the set of points \(\rho(\varphi_{\ell}(x))\), for \(\ell \in \mathrm{L}\). The equivalence relation on C associated with the map \(f\) is the relation R defined at the beginning of the section. Let us denote by \(\mathrm{B}_{\mathrm{L}}\) the union of the family \((\mathrm{B}_{\ell})_{\ell \in \mathrm{L}}\). By construction, the map \(f\) induces a homeomorphism from \(\mathrm{C} - \mathrm{B}_{\mathrm{L}}\) onto \(\mathrm{A} - \mathrm{B}\) and, for \(\ell \in \mathrm{L}\), a homeomorphism from \(\mathrm{N}_{\ell}'\) onto \(\mathrm{N}_{\ell}\). We shall prove that the map \(f\) is closed; the topology of A will therefore be the quotient topology of C by the equivalence relation R (I, p. 18, example 2). To do this, let us prove that if F is a subset of A such that \(\mathrm{F} \cap (\mathrm{A} - \mathrm{B})\) is closed in \(\mathrm{A} - \mathrm{B}\) and such that \(\mathrm{F} \cap \mathrm{N}_{\ell}'\) is closed in \(\mathrm{N}_{\ell}'\), for \(\ell \in \mathrm{L}\), the set F is closed in A. The set U, the union of the family \((\mathrm{N}_{\ell}')_{\ell \in \mathrm{L}}\), is open in A, and the sets \(\mathrm{N}_{\ell}'\), for \(\ell \in \mathrm{L}\), form a finite closed covering of it. Consequently, the set F∩U is closed in U (TG, I, p. 18, prop. 3). The sets U and A-B form an open covering of A, so the set F is closed in A (loc. cit.).
+
+\section{CLASSIFYING SPACES}
+
+\subsection{Extension of homotopies}
+
+PROPOSITION 1. --- Let X' be a normal topological space, let X be a subspace of X', let A be a closed subspace of X' contained in X, and let U be a neighborhood of A in X.
+
+Denote by \(i_{A}\) the canonical injection of A into X, \(i_{U}\) the canonical injection from U into X; denote by \(j_{A}\) and \(j_{U}\) the corresponding injections from \(\mathrm{Cyl}(i_{\mathrm{A}})\) and \(\mathrm{Cyl}(i_{\mathrm{U}})\) into \(X \times I\).
+
+There exists a continuous map \(r \colon \mathrm{X} \times \mathbf{I} \to \operatorname{Cyl}(i_{\mathrm{U}})\) such that \(j_{\mathrm{U}} \circ r(x) = x\) for every point \(x \in j_{\mathrm{A}}(\operatorname{Cyl}(i_{\mathrm{A}}))\) .
+
+Let U' be an open subset of X' such that A ⊂ X ∩ U' ⊂ U. By definition of a normal space (TG, IX, p. 41), there exists an open neighborhood V' of A in X' such that A ⊂ V' ⊂ \(\overline{V'}\) ⊂ U' and a continuous function φ': X' → I that is equal to 1 at every point of A and to 0 at every point of CV'. Set φ = φ' \textbar{} X and V = X ∩ V'. Also denote α: U × I → Cyl(i\_U) and β: X → Cyl(i\_U) the canonical maps (III, p. 238).
+
+Let \(r\) be the map from \(\mathrm{X} \times \mathbf{I}\) into \(\operatorname{Cyl}(i_{\mathrm{U}})\) given by
+
+\[
+r (x, t) = \left\{ \begin{array}{l l} \alpha (x, 1 - (1 - t) \varphi (x)) & \text { for } (x, t) \in \mathrm{U} \times \mathbf {I}, \\ \beta (x) & \text { otherwise }. \end{array} \right.
+\]
+
+The map \(r\) is continuous on \(\mathrm{U} \times \mathbf{I}\). For every point \((x, t) \in \mathrm{U} \times \mathbf{I}\) such that \(x \notin \mathrm{V}\), we have \(\varphi(x) = 0\), whence \(r(x, t) = \alpha(x, 1) = \beta(x)\). Consequently, the maps \(r\) and \(\beta \circ \mathrm{pr}_1\) coincide on \((\mathrm{X} - \mathrm{V}) \times \mathbf{I}\), which implies that \(r\) is continuous on this subspace. Since U and the interior of \(\mathrm{X} - \mathrm{V}\) cover X, the map \(r\) is continuous.
+
+Let \(y\) be a point of \(\mathrm{Cyl}(i_{\mathrm{A}})\); set \((x,t) = j_{\mathrm{A}}(y)\). If \(x \in \mathrm{A}\), \(\varphi(x) = 1\) and \(r(x,t) = \alpha(x,t)\), whence \(j_{\mathrm{U}}(r(x,t)) = (x,t)\). Otherwise, \(t = 1\) and one has \(r(x,t) = \alpha(x,1)\) if \(x \in \mathrm{U}\) and \(r(x,t) = \beta(x)\) otherwise; consequently, \(j_{\mathrm{U}}(r(x,t)) = (x,t)\) in this case. This implies that \(j_{\mathrm{U}} \circ r\) maps every point of \(j_{\mathrm{A}}(\mathrm{Cyl}(i_{\mathrm{A}}))\) to itself, whence the proposition.
+
+COROLLARY 1. --- Let X be a normal topological space, let f be a continuous map from X into a topological space Z. Let A be a closed subspace of X, let U be a neighborhood of A in X, and let σ: U × I → Z be a homotopy whose terminal map is the map f \textbar{} U. There exists a homotopy \(\widetilde{\sigma}\colon\mathbf{X}\times\mathbf{I}\to\mathbf{Z}\) whose terminal map is \(f\) and which coincides with \(\sigma\) on \(\mathbf{A}\times\mathbf{I}\).
+
+Let us set \(X' = X\) and let \(r: X \times I \to \text{Cyl}(i_{\text{U}})\) be the continuous map given by Prop. 1. With the notation introduced in the proof of this proposition, there exists a unique continuous map \(F: \text{Cyl}(i_{\text{U}}) \to Z\) such that \(\text{F}(\alpha(x,t)) = \sigma(x,t)\) for \((x,t) \in \text{U} \times \text{I}\) and \(\text{F}(\beta(x)) = f(x)\) for \(x \in X\) (III, p. 238, prop. 4). The map \(F \circ r: X \times I \to Z\) is a homotopy; its terminal map sends a point \(x \in X\) to \(\text{F}(r(x,1)) = \text{F}(\beta(x)) = f(x)\). If \((x,t) \in A \times I\), \(\text{F}(r(x,t)) = \text{F}(\alpha(x,t)) = \sigma(x,t)\); hence this homotopy coincides with \(\sigma\) on \(A \times I\).
+
+COROLLARY 2. --- Let X be a normal topological space, let A be a closed subspace of X, and let U be a neighborhood of A in X. Let f and f' be continuous homotopic maps from U into a topological space Z. If f has a continuous extension to X, then so does the map f' \textbar{} A.
+
+Let F be a continuous mapping from X into Z such that \(F \textbar{} U = f\). Let us choose a homotopy \(\sigma\colon A \times I \to Z\) joining f'	extbar{} A to f	extbar{} A. By Cor. 1, there exists a homotopy \(\widetilde{\sigma}\colon X \times I \to Z\) whose terminal map is F and which extends \(\sigma\). The initial map of \(\widetilde{\sigma}\) is then a continuous map from X to Z that coincides with \(f'\) on A.
+
+COROLLARY 3. — Let X be a normal topological space, let A be a closed subspace of X, and let U be a neighborhood of A in X. Let Z be a topological space homotopy equivalent to a point, and let g: U → Z be a continuous map. There exists a continuous map \(\widetilde{g}\) : X → Z which coincides with g on A.
+
+Since Z is homotopic to a point, the map g is homotopic to a constant map f. The map f extends continuously to X; the assertion therefore follows from Cor. 2.
+
+COROLLARY 4. --- Let X be a paracompact topological space, let A be a closed subspace of X. Let n be an integer ≥ 0 and let V be an open subset of R \(^{n}\). Let f: X → V be a continuous map and let σ: A × I → V be a homotopy with terminal map f \textbar{} A. There exists a homotopy \(\widetilde{\sigma}\): X × I → V with terminal map f that extends σ.
+
+Denote by \(i_{\mathrm{A}}\) the canonical injection of A into X, \(\alpha_{\mathrm{A}}: \mathrm{A} \times \mathbf{I} \to \operatorname{Cyl}(i_{\mathrm{A}})\) and \(\beta_{\mathrm{A}}: \mathrm{X} \to \operatorname{Cyl}(i_{\mathrm{A}})\) the canonical maps, as well as \(j_{\mathrm{A}}: \operatorname{Cyl}(i_{\mathrm{A}}) \to \mathrm{X} \times \mathbf{I}\) the canonical injection. Since A is closed in X, \(j_{\mathrm{A}}\) defines a homeomorphism from \(\mathrm{Cyl}(i_{\mathrm{A}})\) onto the closed subspace \((\mathrm{A}\times\mathbf{I})\cup(\mathrm{X}\times\{1\})\) of \(X\times I\). Let \(\widetilde{\sigma}_{0}\) be the unique map from \(\mathrm{Cyl}(i_{\mathrm{A}})\) into V such that \(\widetilde{\sigma}_{0}\circ\alpha_{A}=\sigma\) and \(\widetilde{\sigma}_{0}\circ\beta_{A}=f\); it is continuous (III, p. 238, prop. 4).
+
+Since X is paracompact and I is compact, the space \(X \times I\) is paracompact (TG, I, p. 70, prop. 17), hence normal (TG, IX, p. 49, prop. 4). There therefore exists a continuous map \(k: X \times I \to R^{n}\) such that \(k \circ j_{A} = \widetilde{\sigma}_{0}\) (TG, IX, p. 45, corollary).
+
+The set U of points \(x \in X\) such that \(k(x, t) \in V\) for all \(t \in I\) is open in X (IV, p. 439, lemma 1). It is therefore a neighborhood of A. By Corollary 1, applied to the map f and to the homotopy \(k | U \times I\), there exists a homotopy \(\widetilde{\sigma} \colon X \times I \to V\) with initial map f which coincides with k, hence with \(\sigma\), on \(A \times I\).
+
+Lemma 1. — Let Z be a topological space, K a compact topological space, and W an open subset of Z × K. The set U of points z ∈ Z such that \{z\} × K is contained in W is open in Z.
+
+The first projection \(pr_{1}: Z \times K \to Z\) is proper (TG, I, p. 77, cor. 5), hence closed. Consequently, \(\mathbb{C}U = \mathrm{pr}_{1}(\mathbb{C}W)\) is closed in Z and U is open.
+
+COROLLARY 5. --- Let X' be a normal topological space, let X be a subspace of X', let A be a closed subspace of X' contained in X, and let U be a neighborhood of A in X.
+
+Let Y and Z be topological spaces; let \(f\colon X \times \{1\} \times Y \to X \times \{1\} \times Z\) be an \(X \times \{1\}\)-morphism and let \(g\colon U \times I \times Y \to U \times I \times Z\) be a \(U \times I\)-morphism that agrees with \(f\) on \(U \times \{1\} \times Y\).
+
+There then exists an \(X \times I\)-morphism \(h: X \times I \times Y \to X \times I \times Z\) which coincides with f on \(X \times \{1\} \times Y\) and with g on \(A \times I \times Y\).
+
+Moreover, if f and g are homeomorphisms, one can choose a homeomorphism h having the required properties.
+
+Let U' be an open neighborhood of A in X' such that U'∩X ⊂ U. Since the space X' is normal, there exists an open neighborhood V' of A in X' such that A ⊂ V' ⊂ \(\overline{V'}\) ⊂ U' (TG, IX, p. 41). Replacing U if necessary by \(\overline{V'}\) ∩ X, one may thus suppose that U is closed in X. We then take up again the notations of prop. 1 and its proof; let \(r: X \times I \to \text{Cyl}(i_{\text{U}})\) be a continuous map such that \(j_{\text{U}} \circ r(x) = x\) for every point \(x \in j_{\text{A}}(\text{Cyl}(i_{\text{A}}))\).
+
+Also put \(f' = pr_{3} \circ f\) and \(g' = pr_{3} \circ g\) . Since \(f'\) and \(g'\) coincide on \(U \times \{1\} \times Y\) , there exists a unique map
+
+\[
+\varphi \colon \operatorname{Cyl} (i _ {\mathrm{U}}) \times \mathrm{Y} \to \operatorname{Cyl} (i _ {\mathrm{U}}) \times \mathrm{Z}
+\]
+
+such that \(\varphi(\alpha(x,t),y) = (\alpha(x,t),g'(x,t,y))\) for \((x,t,y) \in \mathrm{U} \times \mathbf{I} \times \mathrm{Y}\) and \(\varphi(\beta(x),y) = (\beta(x),f'(x,1,y))\) for \((x,y) \in \mathrm{X} \times \mathrm{Y}\). Since U is closed in X, the canonical surjection \(\pi\) from \((\mathrm{U} \times \mathbf{I}) \cup \mathrm{X}\) onto \(\mathrm{Cyl}(i_{\mathrm{U}})\) is universally strict (III, p. 239, remark 2). Since the map \(\varphi \circ (\pi \times \mathrm{Id}_{\mathrm{Y}})\) is continuous, the map \(\varphi\) is continuous. It is therefore a morphism of \(\mathrm{Cyl}(i_{\mathrm{U}})\)-spaces, and even an isomorphism if \(f\) and \(g\) are homeomorphisms.
+
+Now let \(h \colon \mathrm{X} \times \mathbf{I} \times \mathrm{Y} \to \mathrm{X} \times \mathbf{I} \times \mathrm{Z}\) be the map \(r^*(\varphi)\) deduced from \(\varphi\) by base change \(r\). It is given by \(h(x,t,y) = (x,t,\mathrm{pr}_2(\varphi(r(x,t),y)))\) for \((x,t,y) \in \mathrm{X} \times \mathbf{I} \times \mathrm{Y}\). It is a morphism of \(\mathrm{X} \times \mathbf{I}\)-spaces, and even an isomorphism if \(\varphi\) is. If \((x,t,y) \in \mathrm{A} \times \mathbf{I} \times \mathrm{Y}\), we have \(r(x,t) = (x,t)\), whence
+
+\[
+h (x, t, y) = (x, t, \mathrm{pr} _ {2} (\varphi (x, t, y))) = (x, t, g ^ {\prime} (x, t, y)) = g (x, t, y),
+\]
+
+which proves that h coincides with g on A × I × Y. Similarly, for \(x \in X\) and \(y \in Y\), we have \(r(x,1) = (x,1)\), therefore
+
+\[
+h (x, 1, y) = (x, 1, \operatorname{pr} _ {2} (\varphi (x, 1, y))) = (x, 1, f ^ {\prime} (x, 1, y)) = f (x, 1, y)
+\]
+
+so that h coincides with f on \(X \times \{1\} \times Y\). The corollary is thus proved.
+
+\subsection{Locally trivial fiber spaces with base B × I}
+
+PROPOSITION 2. --- Let B be a paracompact topological space and let (E, p) be a locally trivial fiber space over B × I. Set E₁ = \(\overline{p}^{-1}(B \times \{1\})\) and denote by \(p_{1}: E_{1} \to B\) the map \(pr_{1} \circ p | E_{1}\). Then the B × I-spaces (E, p) and (E₁ × I, \(p_{1} \times Id_{I}\)) are isomorphic.
+
+Let us first prove two lemmas.
+
+Lemma 2. --- Let \(\alpha\), \(\beta\), \(\gamma\) be real numbers such that \(\alpha \leqslant \beta \leqslant \gamma\); let B be a topological space and let \(p: \mathrm{E} \to \mathrm{B} \times [\alpha, \gamma]\) be a continuous map. Set \(\mathrm{B}_0 = \mathrm{B} \times [\alpha, \beta]\), \(\mathrm{B}_1 = \mathrm{B} \times [\beta, \gamma]\), \(\mathrm{E}_0 = p^{-1}(\mathrm{B}_0)\), \(\mathrm{E}_1 = p^{-1}(\mathrm{B}_1)\) and denote by \(p_0: \mathrm{E}_0 \to \mathrm{B}_0\), \(p_1: \mathrm{E}_1 \to \mathrm{B}_1\) the maps induced by \(p\). If \((\mathrm{E}_0, p_0)\) and \((\mathrm{E}_1, p_1)\) are trivializable fiber spaces, the same holds for \((\mathrm{E}, p)\).
+
+Let \(g_0 \colon \mathrm{E}_0 \to \mathrm{B}_0 \times \mathrm{F}_0\) and \(g_1 \colon \mathrm{E}_1 \to \mathrm{B}_1 \times \mathrm{F}_1\) be trivializations of \(\mathrm{E}_0\) and \(\mathrm{E}_1\), respectively. Let us denote by \(g_0'\) and \(g_1'\) the trivializations of the \(\mathrm{B} \times \{\beta\}\)-fiber space \(p^{-1}(B \times \{\beta\})\) deduced from \(g_0\) and \(g_1\) by restriction. The map \(h = g_0' \circ (g_1')^{-1}\) is a \(B \times \{\beta\}\)-isomorphism of \(B \times \{\beta\} \times F_1\) onto \(B \times \{\beta\} \times F_0\). We define a continuous map \(h'\) from \(B \times F_1\) to \(F_0\) by setting \(h'(a, y) = \mathrm{pr}_3 \circ h(a, \beta, y)\) for \((a, y) \in B \times F_1\). For \((a, t, y) \in B \times [\beta, \gamma] \times F_1\), set \(H(a, t, y) = (a, t, h'(a, y))\). The map H thus defined is a \((B \times [\beta, \gamma])\)-isomorphism of \(B \times [\beta, \gamma] \times F_1\) onto \(B \times [\beta, \gamma] \times F_0\), and one has \(g_0 | p^{-1}(B \times \{\beta\}) = H \circ g_1 | p^{-1}(B \times \{\beta\})\). There therefore exists a continuous map \(g \colon E \to B \times [\alpha, \gamma] \times F_0\) such that \(g | E_0 = g_0\) and \(g | E_1 = H \circ g_1\). The map \(g\) is an isomorphism of \(B \times [\alpha, \gamma]\)-spaces, hence E is trivializable.
+
+Lemma 3. --- Let B be a topological space and let (E, p) be a locally trivial fiber space over B×I. Every point a of B has a neighborhood V such that the V × I-space \(E_{V \times I}\) is trivializable.
+
+Let \(a\) be a point of B; for every point \(t\) of \(\mathbf{I}\), there exists an open neighborhood \(\mathrm{W}_t\) of \(t\) in \(\mathbf{I}\) and a neighborhood \(\mathrm{V}_t\) of \(a\) in B such that E is trivializable over \(\mathrm{V}_t \times \mathrm{W}_t\). There then exists an integer \(n > 0\) and, for every integer \(i\) such that \(1 \leqslant i \leqslant n\), a point \(t_i\) of \(\mathbf{I}\) such that the interval \([\frac{i-1}{n}, \frac{i}{n}]\) is contained in \(\mathrm{W}_{t_i}\) (III, p. 272, lemma 4). Set \(\mathrm{V} = \cap_{1 \leqslant i \leqslant n} \mathrm{V}_{t_i}\). The fibered space E is trivializable over \(\mathrm{V} \times [\frac{i-1}{n}, \frac{i}{n}]\) for every integer \(i\) such that \(1 \leqslant i \leqslant n\). Lemma 3 then follows from Lemma 2 by induction on \(n\).
+
+Now let us prove the proposition. By Lemma 3, there exists an open covering \((\mathrm{U}_j)_{j\in \mathrm{J}}\) of B such that, for every \(j\in \mathrm{J}\), E is trivializable over \(\mathrm{U}_j\times \mathbf{I}\). Since the space B is paracompact, we may assume the covering \((\mathrm{U}_j)_{j\in \mathrm{J}}\) locally finite (TG, IX, p. 49) and choose a covering \((\mathrm{A}_j)_{j\in \mathrm{J}}\) of B where, for every \(j\in \mathrm{J}\), the set \(\mathrm{A}_j\) is closed in B and contained in \(\mathrm{U}_j\) (TG, IX, p. 49, prop. 4 and p. 48, cor. 1).
+
+For every open subset U of B, denote by \(\mathcal{F}(\mathrm{U})\) the set of \(\mathrm{U}\times\mathbf{I}\) -isomorphisms of \(\stackrel{-1}{p}(\mathrm{U}\times\mathbf{I})\) onto \(\stackrel{-1}{p_{1}}(\mathrm{U})\times\mathbf{I}\) which induce the identity map of \(\stackrel{-1}{p}(\mathrm{U}\times\{1\})\) onto \(\stackrel{-1}{p_{1}}(\mathrm{U})\times\{1\}\) . For every pair (V, U)
+
+of open sets of B such that U ⊂ V, denote by \(r_{\mathrm{UV}} \colon \mathcal{F}(\mathrm{V}) \to \mathcal{F}(\mathrm{U})\) the map which, to a \((\mathrm{V} \times \mathbf{I})\) -isomorphism \(g \colon \stackrel{-1}{p}(\mathrm{V} \times \mathbf{I}) \to \stackrel{-1}{p_0}(\mathrm{V}) \times \mathbf{I}\) , associates the \((\mathrm{U} \times \mathbf{I})\) -isomorphism deduced from g by passing to subspaces. The pair \(\mathcal{F} = ((\mathcal{F}(\mathrm{U})), (r_{\mathrm{UV}}))\) is a sheaf on B (I, p. 45, example 4). To prove the proposition, it suffices to prove that the sheaf F is soft (I, p. 64).
+
+Let \(j \in \mathrm{J}\) , let A be a closed subset of \(\mathrm{A}_j\) , let V be an open set in B such that \(\mathrm{A} \subset \mathrm{V} \subset \mathrm{U}_j\) and let \(g\) be an element of \(\mathcal{F}(\mathrm{V})\) . There exists an open neighborhood W of A such that \(\overline{\mathrm{W}} \subset \mathrm{V}\) , because a paracompact space is normal (TG, IX, p. 49, prop. 4). We shall prove that there exists an element \(g'\) of \(\mathcal{F}(\mathrm{U}_j)\) such that \(g' | \mathrm{W} = g | \mathrm{W}\) . Corollary 2 (I, p. 65) of prop. 6 then implies that the sheaf \(\mathcal{F}\) is soft.
+
+Since the B × I-space E is trivializable over \(U_{j} \times I\), we may assume that \(\overline{p}^{-1}(U_{j} \times I) = U_{j} \times I \times F\), where F is a topological space. The element g of \(\mathcal{F}(V)\) is then a V × I-isomorphism of V × I × F onto itself which induces the identity map of V × \{1\}×F. Apply cor. 5 of IV, p. 439, to the spaces \(X' = X\), \(X = U_{j}\), A = overline{W}, \(U = V\), and \(Y = Z = F\), to the map g: V 	imes I 	imes F 	o V 	imes I 	imes F, and to the identity map of \(U_{j} \times \{1\} \times F\). There therefore exists a \(U_{j} \times I\)-isomorphism \(g'\) of \(U_{j} \times I \times F\) onto itself which induces the identity map of \(U_{j} \times \{1\} \times F\) and which coincides with g on \(\overline{W} \times I \times F\), and a fortiori on W × I × F. Hence the proposition.
+
+COROLLARY 1. --- Let B be a paracompact topological space and let (E, p) be a locally trivial fiber space over B × I (I, p. 71, corollary 2). For \(t \in I\), denote by \((E_{t}, p_{t})\) the locally trivial fibered B-space \(i_{t}^{*}E\), where \(i_{t} \colon B \to B \times \{t\}\) is the map \(b \mapsto (b, t)\). The locally trivial fibered B-spaces \(E_{0}\) and \(E_{t}\) are isomorphic for every \(t \in I\).
+
+COROLLARY 2. --- Let B and B' be topological spaces, let E be a locally trivial fiber bundle over B. Let \(f_0\) and \(f_1\) be continuous maps from B' into B. Suppose that the space B' is paracompact. If the maps \(f_0\) and \(f_1\) are homotopic, the locally trivial fibered B'-spaces \(f_0^*E\) and \(f_1^*E\) are isomorphic.
+
+Let \(\sigma\colon\mathrm{B}^{\prime}\times\mathbf{I}\to\mathrm{B}\) be a homotopy joining \(f_{0}\) to \(f_{1}\) and denote by \(\mathrm{E}^{\prime}\) the \(\mathrm{B}^{\prime}\times\mathbf{I}\)-space \(\sigma^{*}\mathrm{E}\); it is a locally trivial fibered space. Denote by \(i_{0}\) and \(i_{1}\) the maps from \(\mathrm{B}^{\prime}\) into \(\mathrm{B}^{\prime}\times\mathbf{I}\) given by \(x\mapsto(x,0)\) and \(x\mapsto(x,1)\). By Cor. 1, the \(\mathrm{B}^{\prime}\)-fibered spaces \(i_{0}^{*}\mathrm{E}^{\prime}\) and \(i_{1}^{*}\mathrm{E}^{\prime}\) are isomorphic. Since \(\sigma\circ i_{0}=f_{0}\), the \(\mathrm{B}^{\prime}\)-space \(i_{0}^{*}\mathrm{E}^{\prime}\) is identified with \(f_{0}^{*}\mathrm{E}\);
+
+Similarly, the B'-space \(i_{1}^{*}E'\) is identified with \(f_{1}^{*}E\). Consequently, the B'-fibered spaces \(f_{0}^{*}E\) and \(f_{1}^{*}E\) are isomorphic, which is what was to be proved.
+
+COROLLARY 3. --- Let B be a paracompact topological space. If B is homotopy equivalent to a point, then every locally trivial fiber bundle with base B is trivializable.
+
+COROLLARY 4. --- Let B and B' be topological spaces, let (E, p) be a locally trivial fiber space over B, let f be a continuous map from B' into B, let \(\sigma: \mathrm{B}' \times \mathbf{I} \to \mathrm{B}\) be a homotopy with initial map f, and let \(\widetilde{f}\) be a continuous lift of f to E. If the space B' is paracompact, there exists a homotopy \(\widetilde{\sigma}: \mathrm{B}' \times \mathbf{I} \to \mathrm{E}\) with initial map \(\widetilde{f}\) that is a lift of \(\sigma\) to E.
+
+Let \((\mathrm{E}^{\prime},p^{\prime})\) be the \(B^{\prime}\times I\)-space deduced from \((\mathrm{E},p)\) by base change along the map \(\sigma\colon B^{\prime}\times I\to B\). It is a locally trivial fiber space (I, p. 71, cor. 2), and the map \(s\colon B^{\prime}\times\{0\}\to E^{\prime}\) defined by \(s((a,0))=((a,0),\widetilde{f}(a))\) is continuous for \(a\in B^{\prime}\) and is a continuous section of \(p^{\prime}\) over \(B^{\prime}\times\{0\}\). By Prop. 2, there exists a continuous section \(\widetilde{s}\) of \(p^{\prime}\) which extends s. The map \(\widetilde{\sigma}=\operatorname{pr}_{2}\circ\widetilde{s}\) has the required property.
+
+\subsection{Principal fiber bundles with base B × I}
+
+Let G be a topological group. We shall see that Proposition 2 and its corollaries remain valid when, in each statement, “locally trivial fiber space” is replaced by “principal fiber space with group G”.
+
+Lemma 4. --- Let B be a topological space, let G be a topological group, and let E, E′ be principal fiber bundles with group G and base B. Denote by F the topological space G equipped with the left action of G×G given by \((g,g')\cdot f=g'fg^{-1}\), and denote by \(M = (\mathrm{E}\times_{\mathrm{B}}\mathrm{E}')\times^{\mathrm{G}\times\mathrm{G}}\mathrm{F}\) the locally trivial fiber bundle with fiber type F and base B associated.
+
+The sheaf \(\mathcal{S}\) on B of sections of M is isomorphic to the sheaf on B of isomorphisms of principal fiber bundles from E to E'.
+
+Denote by \(p\), \(p'\) and \(q\) the projections of the B-spaces E, E' and M. For \((x, x') \in \mathrm{E} \times_{\mathrm{B}} \mathrm{E}'\) and \(f \in \mathrm{F}\), denote by \([x, x', f]\) the class in M of the element \(((x, x'), f) \in (\mathrm{E} \times_{\mathrm{B}} \mathrm{E}') \times \mathrm{F}\). Denote by \(\mathcal{M}\) the sheaf on B of isomorphisms of principal fiber bundles from E to E'; its sections over an open subset U of B are the isomorphisms of principal fiber bundles from \(E_{U}\) to \(E_{U}'\).
+
+Denote by \(e\) the identity element of G. Let U be an open subset of B and let \(\varphi\colon\mathrm{E}_{\mathrm{U}}\to\mathrm{E}_{\mathrm{U}}^{\prime}\) be an isomorphism of principal fiber bundles with group G and base U. The map from \(\mathrm{E}_{\mathrm{U}}\) to \((\mathrm{E}\times_{\mathrm{B}}\mathrm{E}^{\prime})\times^{\mathrm{G}\times\mathrm{G}}\mathrm{F}\) defined by \(x\mapsto[x,\varphi(x),e]\) is continuous. For \(g\in\mathrm{G}\) and \(x\in\mathrm{E}_{\mathrm{U}}\), it sends \(x\cdot g\) to \([x\cdot g,\varphi(x\cdot g),e]=[x,\varphi(x),geg^{-1}]=[x,\varphi(x),e]\). There therefore exists a unique continuous map \(\alpha_{\mathrm{U}}(\varphi)\colon\mathrm{U}\to\mathrm{M}\) such that \(\alpha_{\mathrm{U}}(\varphi)(p(x))=[x,\varphi(x),e]\) for all \(x\in\mathrm{E}_{\mathrm{U}}\); we have \(\alpha_{\mathrm{U}}(\varphi)\in\mathcal{S}(\mathrm{U})\).
+
+It is immediate that the maps \(\alpha_{U}\) define a morphism of sheaves \(\alpha\) from M into S.
+
+Lemma 5. --- The morphism of sheaves α is an isomorphism.
+
+Suppose first that the principal fiber bundles E and E' are both trivializable; let us choose sections \(i: B \to E\) and \(i': B \to E'\). There then exists a unique continuous map \(\theta\) from M into \(B \times G\) such that
+
+\[
+\theta ([ i (b) \cdot g, i ^ {\prime} (b) \cdot g ^ {\prime}, f ]) = (b, g ^ {\prime} f g ^ {- 1})
+\]
+
+continuous for \(b \in \mathrm{B}\), \(g \in \mathrm{G}\), \(g' \in \mathrm{G}\) and \(f \in \mathrm{F}\); it is an isomorphism of B-spaces. Let \(\varphi\) be an isomorphism of principal fiber bundles from E to \(\mathrm{E}'\); there exists a unique continuous map \(\gamma: \mathrm{B} \to \mathrm{G}\) such that \(\varphi(i(b)) = i'(b) \cdot \gamma(b)\) for \(b \in \mathrm{B}\). The image of \(\varphi\) under the map \(\alpha_{\mathrm{B}}\) is the map \(b \mapsto \theta^{-1}(b, \gamma(b))\) from B to M. This implies that \(\alpha_{\mathrm{B}}\) is a bijection.
+
+Consequently, \(\alpha_{\mathrm{U}}\) is a bijection for every open set U of B such that the principal fiber bundles \(\mathrm{E_U}\) and \(\mathrm{E_U}'\) are trivializable. By corollary 2 of I, p. 55, this implies that \(\alpha\) is an isomorphism of sheaves.
+
+PROPOSITION 3. --- Let G be a topological group, let B be a paracompact topological space, and let (E, p) be a principal fiber bundle with group G and base B × I. Set \(E_{1} = \overline{p}^{-1}(B \times \{1\})\) and let \(p_{1}: E_{1} \to B\) be the map \(pr_{1} \circ p \mid E_{1}\). Then (E, p) and \((E_{1} \times I, p_{1} \times Id_{I})\) are isomorphic principal fiber bundles with group G and base B × I.
+
+Let F be the topological space G equipped with the left action of the group \(G \times G\) given by \((g, g') \cdot f = g' fg^{-1}\). Let \((M, q)\) be the locally trivial fiber bundle with base \(B \times I\) and fiber type F associated with the principal fiber bundle \(E \times_{B \times I}(E_1 \times I)\) of the group \(G \times G\). Set \(M_1 = \overline{q}^{-1}(B \times \{1\})\)
+
+and \(q_1 = \mathrm{pr}_1 \circ q \mid M_1\); the B-space \((M_1, q_1)\) is identified with the locally trivial fiber bundle with fiber type F associated with \(E_1 \times_\mathrm{B} E_1\). By Lemma 4, where one takes the principal fiber bundles E and \(E'\) equal to \(E_1\), the B-space \(M_1\) has a section. Since the \(B \times I\)-spaces \((M, q)\) and \((M_1 \times I, q_1 \times \mathrm{Id}_{I})\) are isomorphic (IV, p. 440, Prop. 2), the \(B \times I\)-space \((M, q)\) has a section, which implies that the principal G-bundles E and \(E_1 \times I\) are isomorphic.
+
+COROLLARY 1. --- Let B be a paracompact topological space, let G be a topological group, and let (E,p) be a principal G-bundle over B × I. For \(t \in I\), denote by \((E_{t}, p_{t})\) the principal B-fiber bundle \(i_{t}^{*}E\), where \(i_{t}: B \to B \times \{t\}\) is the map \(b \mapsto (b, t)\). The principal B-fiber bundles \(E_{0}\) and \(E_{t}\) are isomorphic for every \(t \in I\).
+
+COROLLARY 2. --- Let B and B' be topological spaces, let G be a topological group, let E be a principal B-fiber bundle with group G. Let \(f_0\) and \(f_1\) be continuous maps from B' into B. Suppose that the space B' is paracompact. If the maps \(f_0\) and \(f_1\) are homotopic, the principal B'-fiber bundles \(f_0^*E\) and \(f_1^*E\) are isomorphic.
+
+COROLLARY 3. --- Let B be a paracompact topological space and let G be a topological group. If B is homotopy equivalent to a point, then every principal G-bundle over B is trivializable.
+
+Remark. --- An alternative proof of these results would consist in verifying that the isomorphisms of fiber spaces constructed in Prop. 2 and its corollaries are isomorphisms of principal fiber spaces.
+
+\subsection{Universal fiber bundles}
+
+Let G be a topological group, let B and B' be topological spaces, and let \((\mathrm{E}, p)\) and \((\mathrm{E}', p')\) be principal fiber bundles with structure group G and base spaces B and B', respectively.
+
+Let U be an open subset of B, and let \(f'\colon \overline{p}^{-1}(U) \to E'\) be a continuous map that is compatible with the operations of G in \(\overline{p}^{-1}(U)\) and \(E'\), respectively. There then exists a unique continuous map \(f\colon U \to B'\) such that \(f \circ p_{U} = p' \circ f'\) and the commutative square
+
+\[
+\begin{array}{c} \mathrm {E_ {U}} \xrightarrow {f ^ {\prime}} \mathrm {E^ {\prime}} \\ \Biggl \downarrow p _ {\mathrm{U}} \\ \mathrm{U} \xrightarrow {f} \mathrm {B^ {\prime}} \end{array}
+\]
+
+is then Cartesian (I, p. 94, example (FP)).
+
+For every open subset U of B, denote \(\mathcal{F}(\mathrm{U})\) as the set of continuous maps \(g\colon \mathrm{E}_{\mathrm{U}}\to \mathrm{E}'\) compatible with the operations of G in \(\overline{p}^{-1}(\mathrm{U})\) and \(\mathrm{E}'\), respectively. For every pair (U,V) of open sets of B such that \(\mathrm{U}\subset \mathrm{V}\), let \(r_{\mathrm{UV}}\colon \mathcal{F}(\mathrm{V})\to \mathcal{F}(\mathrm{U})\) be the map defined by \(r_{\mathrm{UV}}(g) = g\mid \mathrm{E}_{\mathrm{U}}\). One checks immediately that one has thus defined a sheaf \(\mathcal{F} = ((\mathcal{F}(\mathrm{U})),(r_{\mathrm{UV}}))\) on B. We shall call this sheaf the sheaf on B of morphisms of principal fiber bundles with group G from E to \(\mathrm{E}'\).
+
+PROPOSITION 4. --- If the space B is paracompact and if the space E' is homotopy equivalent to a point, the sheaf on B of morphisms of principal fiber bundles with group G from E to E' is a soft sheaf.
+
+There exists an open covering \((\mathrm{U}_{j})_{j\in\mathrm{J}}\) of B such that, for every \(j\in J\) , the fiber bundle \(E_{U_{j}}\) is trivializable. Since the space B is paracompact, one may assume the covering \((\mathrm{U}_{j})_{j\in\mathrm{J}}\) locally finite (TG, IX, p. 49) and choose a covering \((\mathrm{A}_{j})_{j\in\mathrm{J}}\) of B where, for every \(j\in J\) the set \(A_{j}\) is closed in B and contained in \(U_{j}\) (TG, IX, p. 49, prop. 4 and p. 48, cor. 1).
+
+By I, p. 65, cor. 2 of prop. 6, it suffices, to prove the proposition, to establish the following assertion: let U be an open subset of B such that the principal fiber bundle \((E_{U}, p_{U})\) is trivializable, let A be a closed subset of B contained in U, let V be an open neighborhood of A contained in U, and let f be an element of \(\mathcal{F}(V)\); then there exists an open neighborhood W of A in V and an element \(f'\) of \(\mathcal{F}(U)\) such that \(r_{\mathrm{WU}}(f') = r_{\mathrm{WV}}(f)\). Let us prove this assertion.
+
+Let W be an open subset of B such that \(A \subset W \subset \overline{W} \subset V\). Let \(s: U \to E_{U}\) be a section of \((\mathrm{E}_{\mathrm{U}}, p_{\mathrm{U}})\). Apply Corollary 3 (IV, p. 438) to the space B, to the closed set \(\overline{W}\), to the neighborhood V of \(\overline{W}\), and to the map \(g = f \circ (s\textbar{} V)\) from \(V\) into \(E'\). There therefore exists a continuous map \(\widetilde{g}: B \to E'\) which coincides with g on \(\overline{W}\). Let \(h = \widetilde{g}\textbar{} U\). We have \(h\textbar{} W = g\textbar{} W = f \circ (s\textbar{} W)\).
+
+The map H: U × G → E' defined by H(x, g) = h(x) · g for (x, g) ∈ U × G is continuous and compatible with the operations of G in U × G and E'. Set \(f' = H \circ s^{-1}\) ; it is an element of \(\mathcal{F}(U)\) . For all \(x \in W\) , the maps f and \(f'\) coincide at the point \(s(x)\) , hence at every point of \(\overline{p}^{-1}(x)\) since these are morphisms of principal fiber bundles. The proposition follows.
+
+THEOREM 1. --- Let G be a topological group, let \(B_{u}\) be a topological space, and let \((\mathrm{E}_{\mathrm{u}}, p_{\mathrm{u}})\) be a principal fiber bundle with group G and base \(B_{u}\). We assume that the space \(E_{u}\) is homotopy equivalent to a point.
+
+Let B be a paracompact topological space.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Every principal fiber bundle with group G and base B is isomorphic to a principal fiber bundle of the form \(f^{*}E_{u}\) , where \(f: B \to B_{u}\) is a continuous map.
+\item
+  Let \(f_{0}\) and \(f_{1}\) be continuous maps from B into \(B_{u}\). For \(f_{0}^{*}E_{u}\) and \(f_{1}^{*}E_{u}\) to be isomorphic principal fiber bundles with group G and base B, it is necessary and sufficient that the maps \(f_{0}\) and \(f_{1}\) be homotopic.
+\end{enumerate}
+
+In other words, there exists a map from \([B, B_{u}]\) to \(P(B; G)\) which associates with the homotopy class of a continuous map f from B into \(B_{u}\) the isomorphism class of the principal fiber bundle \(f^{*}E_{u}\). This map is bijective.
+
+Let E be a principal fiber bundle with group G and base B. By Prop. 4, the sheaf \(\mathcal{F}\) on B of morphisms of principal fiber bundles from E into \(\mathrm{E_u}\) is soft. Consequently, \(\mathcal{F}(\mathrm{B})\) is nonempty, whence \(a\).
+
+Let \(f_{0}\) and \(f_{1}\) be continuous maps from B into \(B_{u}\). If the maps \(f_{0}\) and \(f_{1}\) are homotopic, the principal fiber bundles \(f_{0}^{*}E_{u}\) and \(f_{1}^{*}E_{u}\) are isomorphic (IV, p. 445, cor. 2). Let us prove the converse. For \(\alpha\in\{0,1\}\), denote by \(E_{\alpha}\) the \(B_{u}\)-principal fiber bundle \(f_{\alpha}^{*}E_{u}\), \(g_{\alpha} \colon E_{\alpha} \to E_{u}\) the first projection and \(p_{\alpha} \colon E_{\alpha} \to B\) the second projection. Let \(i \colon E_{0} \to E_{1}\) be an isomorphism of principal fiber bundles. Let \(p\) be the map \(p_{0} \times Id_{I} \colon E_{0} \times I \to B \times I\).
+
+Since the space B × I is paracompact (TG, IX, p. 70, prop. 17), the sheaf G on B × I of morphisms of principal fiber bundles from E₀ × I into Eᵤ is soft (IV, p. 446, prop. 4). Set A = B × \{0,1\}, U = B × ([0, ½[∪]½, 1]), and define an element g of G(U) by setting
+
+\[
+g (x, t) = \left\{ \begin{array}{l l} g _ {0} (x) & \text { for } (x, t) \in \mathrm{E} _ {0} \times [ 0, \frac {1}{2} [, \\ g _ {1} \circ i (x) & \text { for } (x, t) \in \mathrm{E} _ {0} \times ] \frac {1}{2}, 1 ]. \end{array} \right.
+\]
+
+Since the sheaf \(\mathcal{G}\) is soft, there exists an element \(h \in \mathcal{G}(\mathrm{B} \times \mathbf{I})\) and an open neighborhood V of A in U such that \(h \mid \mathrm{V} = g \mid \mathrm{V}\); such an element is a continuous map \(\mathrm{H} \colon \mathrm{E}_0 \times \mathbf{I} \to \mathrm{E}_{u}\) compatible with the operations of G and such that \(\mathrm{H}(x,0) = g_0(x)\), \(\mathrm{H}(x,1) = g_1(i(x))\) for all \(x \in \mathrm{E}_0\). There then exists a map \(h' \colon \mathrm{B} \times \mathbf{I} \to \mathrm{B}_{u}\) such that \(h'(p_0(x),t) = p_{\mathrm{u}}(\mathrm{H}(x,t))\) for \(x \in \mathrm{E}_0\) and \(t \in \mathbf{I}\); this map is continuous and is a homotopy joining \(f_0\) to \(f_1\).
+
+COROLLARY. --- Let G be a topological group, and let B and B' be paracompact topological spaces. Let (E,p) and (E',p') be principal fiber bundles with group G and bases B and B', respectively. Suppose that the spaces E and E' are both homotopy equivalent to a point. The spaces B and B' are homotopy equivalent.
+
+Indeed, there exists a continuous map \(f \colon \mathrm{B} \to \mathrm{B}'\) such that the principal fiber bundle E is isomorphic to the principal fiber bundle \(f^* \mathrm{E}'\) and a continuous map \(g \colon \mathrm{B}' \to \mathrm{B}\) such that the principal fiber bundle \(\mathrm{E}'\) is isomorphic to the principal fiber bundle \(g^* \mathrm{E}\) (Theorem 1, (a)). The principal fiber bundles \((g \circ f)^* \mathrm{E}\) and E are then isomorphic, so the map \(g \circ f\) is homotopic to the map \(\mathrm{Id}_{\mathrm{B}}\) (Theorem 1, (b)). Likewise, the map \(f \circ g\) is homotopic to the map \(\mathrm{Id}_{\mathrm{B}'}\).
+
+Let G be a topological group, let B be a topological space, and let E be a principal G-bundle with base B. Suppose that the space E is homotopy equivalent to a point. One says that the principal bundle E is universal for principal G-bundles with paracompact base, and one says that the space B is a classifying space for G. If two classifying spaces for G are paracompact, they are homotopy equivalent. When a classifying space exists, the study of isomorphism classes of principal G-bundles with paracompact base can be regarded as a problem in homotopy theory.
+
+Example. --- Equipped with the map \(p: R \to S^{1}\), \(t \mapsto e^{2\pi it}\), and with the action of Z by translation, the space R is a principal covering with group Z. The space \(S^{1}\) is thus a classifying space for the group Z.
+
+For every discrete group G, we will construct in the next section a metrizable space that is a classifying space for G.
+
+\subsection{Classifying space for a discrete group}
+
+Let G be a topological group; denote its identity element by e. Let G* be the set of maps \(h\colon[0,1[ \to G\) for which there exists a finite sequence \((t_{i})_{0\leqslant i\leqslant n}\) with \(0=t_{0}<t_{1}<\cdots<t_{n}=1\) such that h is constant on the intervals \([t_{i-1},t_{i}[\) for \(1\leqslant i\leqslant n\). Such a sequence will be said to be adapted to h. For every finite subset of G*, there exists a sequence adapted to each of its elements.
+
+The set \(G^{*}\) is a subgroup of \(G^{[0,1[}\). We denote by \(e^{*}\) its identity element; the inverse of an element \(h \in G^{*}\) is the map \(t \mapsto h(t)^{-1}\), denoted \(h^{-1}\).
+
+Let V be a neighborhood of \(e\) in G. Let \(h \in \mathbf{G}^*\) and let \((t_i)_{0 \leqslant i \leqslant n}\) be a sequence adapted to \(h\). The set of elements \(t \in [0,1[\) such that \(h(t) \notin \mathbf{V}\) is the union of some of the intervals \([t_{i-1}, t_i[\); the sum of the lengths \(t_i - t_{i-1}\) of these intervals does not depend on the sequence \((t_i)_{0 \leqslant i \leqslant n}\) chosen; denote it by \(p_{\mathrm{V}}(h)\). For every real number \(\varepsilon\) such that \(\varepsilon > 0\), denote by \(\mathrm{V}_{\varepsilon}^*\) the set of \(h \in \mathbf{G}^*\) such that \(p_{\mathrm{V}}(h) < \varepsilon\).
+
+PROPOSITION 5. --- There exists a unique topology on G* compatible with its group structure for which the sets V* form a base of neighborhoods of the identity element.
+
+Let us verify that the sets \(V_{\varepsilon}^{*}\) satisfy the axioms \((\mathrm{GV}_{\mathrm{I}}^{\prime})\) , \((\mathrm{GV}_{\mathrm{II}}^{\prime})\) and \((\mathrm{GV}_{\mathrm{III}}^{\prime})\) from TG, III, p. 4.
+
+Let V be a neighborhood of \(e\) in G and let \(\varepsilon\) be a strictly positive real number. Let W be a neighborhood of \(e\) in G such that \(\mathrm{W} \cdot \mathrm{W} \subset \mathrm{V}\). Let \(h\) and \(h'\) be elements of \(\mathbf{G}^*\). If \(t \in [0,1[\) is such that \(h(t)h'(t) \notin \mathrm{V}\), then \(h(t) \notin \mathrm{W}\) or \(h'(t) \notin \mathrm{W}\). It follows that \(p_{\mathrm{V}}(hh') \leqslant p_{\mathrm{W}}(h) + p_{\mathrm{W}}(h')\). Consequently, \(\mathrm{W}_{\varepsilon/2}^* \cdot \mathrm{W}_{\varepsilon/2}^* \subset \mathrm{V}_{\varepsilon}^*\), which proves the axiom ( \(\mathrm{GV}_I'\) ).
+
+Let W be a neighborhood of e in G such that \(W^{-1} \subset V\) . Then \((\mathrm{W}_{\varepsilon}^{*})^{-1} = (\mathrm{W}^{-1})_{\varepsilon}^{*} \subset \mathrm{V}_{\varepsilon}^{*}\) , whence the axiom \((\mathrm{GV}_{\mathrm{II}}^{\prime})\) .
+
+Let \(k\) be an element of \(\mathbf{G}^*\); since the function \(k\) takes only a finite number of values, there exists a neighborhood W of \(e\) in G such that \(k(t)\mathrm{W}k(t)^{-1}\subset \mathrm{V}\) for all \(t\in [0,1[\). Let \(h\) be an element of \(\mathbf{G}^*\). For \(t\in [0,1[\), if \(k(t)h(t)k(t)^{-1}\not\in\mathrm{V}\), then \(h(t)\not\in\mathrm{W}\). Consequently, \(p_{\mathrm{V}}(khk^{-1})\leqslant p_{\mathrm{W}}(h)\). This proves that \(k\mathrm{W}_{\varepsilon}^{*}k^{-1}\subset\mathrm{V}_{\varepsilon}^{*}\), whence the axiom ( \(\mathrm{GV}_{\mathrm{III}}'\) ).
+
+PROPOSITION 6. --- The space G* is contractible and locally contractible at each of its points.
+
+For \(h \in \mathbf{G}^*\) and \(t \in \mathbf{I}\), denote by \(\sigma(h, t)\) the map from [0,1[ into G given by \(\sigma(h, t)(x) = h(x)\) if \(0 \leqslant x < t\) and \(\sigma(h, t) = e\) otherwise.
+
+Let us show that the map \(\sigma\colon\mathbf{G}^{*}\times\mathbf{I}\to\mathbf{G}^{*}\) thus defined is continuous. Indeed, let \(k\in\mathbf{G}^{*}, u\in\mathbf{I}\), let V be a neighborhood of \(e\) in G and let \(\varepsilon\) be a strictly positive real number. The element \(\sigma(h,t)\sigma(k,u)^{-1}\) of \(\mathbf{G}^{*}\) is the map \(f\) from [0,1[ into G given by
+
+\[
+f (x) = \left\{ \begin{array}{l l} h (x) k (x) ^ {- 1} & \text { if } 0 \leqslant x <   \min (t, u); \\ h (x) & \text { if } u \leqslant x <   t; \\ k (x) ^ {- 1} & \text { if } t \leqslant x <   u; \\ e & \text { otherwise. } \end{array} \right.
+\]
+
+Therefore,
+
+\[
+p _ {\mathrm{V}} (\sigma (h, t) \sigma (k, u) ^ {- 1}) \leqslant p _ {\mathrm{V}} (h k ^ {- 1}) + | t - u |;
+\]
+
+in other words, for \(\sigma(h,t) \in V_{\varepsilon}^{*}\sigma(k,u)\), it suffices that one have \(|t-u| \leqslant \frac{\varepsilon}{2}\) and \(h \in V_{\varepsilon/2}^{*}k\), which proves the continuity of \(\sigma\) at \((k,u)\). For all \(h \in G^{*}\), \(\sigma(h,0)\) is the constant map with image \(\{e\}\), while \(\sigma(h,1)=h\). Moreover, \(\sigma(e,t)=e\) for all \(t \in I\). Consequently, \(\sigma\) is a pointed homotopy at \(e \in G^{*}\) relating the constant map with image \(\{e\}\) to the identity map of \(G^{*}\). This proves that \(G^{*}\) is contractible to \(e^{*}\).
+
+Furthermore, for every neighborhood V of e in G and every real number \(\varepsilon > 0\), we have \(\sigma(\mathrm{V}_{\varepsilon}^{*} \times \mathbf{I}) \subset \mathrm{V}_{\varepsilon}^{*}\). Consequently, \(V_{\varepsilon}^{*}\) is also contractible to \(e^{*} \in G^{*}\), so that \(G^{*}\) is locally contractible at \(e^{*}\).
+
+Since G* is a topological group, it is contractible and locally contractible at each of its points.
+
+Let \(\iota\) be the map from G to \(\mathrm{G}^*\) which associates with \(g\in \mathrm{G}\) the constant map with image \(\{g\}\) from [0,1[ into G. The map \(\iota\) is an injective group homomorphism. Let V be a neighborhood of \(e\) in G and let \(\varepsilon\) be a strictly positive real number. We have \(\iota^{-1}(\mathrm{V}_{\varepsilon}^{*}) = \mathrm{V}\) if \(\varepsilon \leqslant 1\) and \(\iota^{-1}(\mathrm{V}_{\varepsilon}^{*}) = \mathrm{G}\) otherwise. The inverse image of a neighborhood of the identity element of \(\mathrm{G}^*\) is a neighborhood of the identity element of G, whence the continuity of \(\iota\). Moreover, \(\iota(\mathrm{V}) = \mathrm{V}_1^* \cap \iota(\mathrm{G})\) for every neighborhood V of \(e\) in G. Consequently, \(\iota\) defines an isomorphism of topological groups from G onto its image.
+
+Remark 1. --- If G is a separated topological group, \(\iota(\mathrm{G})\) is closed in \(\mathrm{G}^*\) .
+
+Indeed, let \(h \in \mathbf{G}^*\) such that \(h \notin \iota(\mathbf{G})\), let \((t_i)_{0 \leqslant i \leqslant n}\) be a sequence adapted to \(h\), and set \(\varepsilon = \min_{1 \leqslant i \leqslant n} (t_i - t_{i-1})\). Let \(V\) be a neighborhood of \(e\) in \(G\) such that \(h(t_i)^{-1}h(t_j) \notin V\), for every pair \((i,j)\) of integers such that \(0 \leqslant i, j \leqslant n-1\) and \(h(t_i) \neq h(t_j)\); such a neighborhood exists because \(G\) is separated. Let \(W\) be a neighborhood of \(e\) in \(G\) such that \(W \cdot W^{-1} \subset V\). Let us prove that then \(hW_\varepsilon^*\) does not meet \(\iota(G)\).
+
+Let us reason by contradiction. Let \(f\) be an element of \(W_{\varepsilon}^{*}\) and \(g\) be an element of \(G\) such that \(hf = \iota(g)\). We therefore have \(f(t) = h(t)^{-1}g\) for all \(t \in [0,1[\), so that the sequence \((t_i)\) is also adapted to the function \(f\). If the value taken by \(f\) on the interval \([t_{i-1}, t_i[\) does not belong to \(W\), then \(t_i - t_{i-1} < \varepsilon\) since \(f \in W_{\varepsilon}^{*}\). But this inequality is impossible by the definition of \(\varepsilon\); hence \(f(t) \in W\) for all \(t \in [0,1[\). Let then \(i\) and \(j\) be elements of \(\{0, \ldots, n-1\}\) such that \(h(t_i) \neq h(t_j)\); we have
+
+\[
+h (t _ {i}) ^ {- 1} h (t _ {j}) = f (t _ {i}) g ^ {- 1} g f (t _ {j}) ^ {- 1} = f (t _ {i}) f (t _ {j}) ^ {- 1} \in \mathrm{W} \cdot \mathrm{W} ^ {- 1},
+\]
+
+which contradicts the choice of W. The subgroup \(\iota(G)\) of \(G^{*}\) is therefore closed.
+
+Suppose that G is a metrizable topological group and let d be a metric on G that defines its topology. Let h and \(h' \in G^{*}\) and let \((t_{i})_{0 \leqslant i \leqslant n}\) be a sequence adapted to h and \(h'\). The real number
+
+\[
+\sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) d \bigl (h (t _ {i - 1}), h ^ {\prime} (t _ {i - 1}) \bigr)
+\]
+
+does not depend on the sequence \((t_{i})\) chosen; denote it by \(d^{*}(h,h')\) .
+
+Let us prove that \(d^{*}\) is a distance on \(\mathbf{G}^{*}\). We have \(d^{*}(h,h^{\prime}) = d^{*}(h^{\prime},h)\) for \(h, h^{\prime} \in \mathbf{G}^{*}\), and \(d^{*}(h,h) = 0\) for all \(h \in \mathbf{G}^{*}\). Conversely, let \(h\) and \(h^{\prime}\) be elements of \(\mathbf{G}^{*}\) such that \(d^{*}(h,h^{\prime}) = 0\). Let \((t_{i})_{0\leqslant i\leqslant n}\) be a sequence adapted to \(h\) and \(h'\). Since
+
+\[
+0 = d ^ {*} (h, h ^ {\prime}) = \sum_ {i = 1} ^ {n} \left(t _ {i} - t _ {i - 1}\right) d \left(h \left(t _ {i - 1}\right), h ^ {\prime} \left(t _ {i - 1}\right)\right)
+\]
+
+and since all terms of this sum are positive or zero, we have \(d(h(t_{i-1}), h'(t_{i-1})) = 0\) for all \(i \in \{1, \ldots, n\}\) , whence \(h = h'\) . Finally, let \(h\) , \(h'\) , \(h''\) be elements of \(\mathbf{G}^*\) and let \((t_i)_{0 \leqslant i \leqslant n}\) a sequence adapted to each of them. Then,
+
+\[
+\begin{array}{l} d ^ {*} (h, h ^ {\prime \prime}) = \sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) d \big (h (t _ {i - 1}), h ^ {\prime \prime} (t _ {i - 1}) \big) \\ \leqslant \sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) \left(d \big (h (t _ {i - 1}), h ^ {\prime} (t _ {i - 1}) \big) + d \big (h (t _ {i - 1}), h ^ {\prime \prime} (t _ {i - 1}) \big)\right) \\ = d ^ {*} (h, h ^ {\prime}) + d ^ {*} (h, h ^ {\prime \prime}), \end{array}
+\]
+
+therefore \(d^{*}\) satisfies the triangle inequality.
+
+This distance \(d^{*}\) is invariant under right translations (resp. left translations) if d is.
+
+PROPOSITION 7. --- Suppose that G is a metrizable topological group. Then the topological group G* is metrizable. More precisely, if d is a bounded metric on G that defines its topology, then the topology of G* is defined by the metric d*.
+
+Let \(d\) be a metric on G that defines its topology. Then, the map \(d'\) given by \(d'(h,h') = \inf (d(h,h'),1)\) is a bounded metric on G which also defines its topology (TG, IX, p. 3). It therefore suffices to prove that \(d^{*}\) defines the topology of \(G^{*}\) under the hypothesis that \(d\) is bounded.
+
+Let V be a neighborhood of e in G, and let \(\varepsilon\) be a strictly positive real number. Let \(\delta\) be a strictly positive real number such that V contains the ball \(\mathrm{B}(e,\delta)\). Let \(h \in G^{*}\) and let \((t_{i})_{0 \leqslant i \leqslant n}\) be a sequence adapted to h.
+
+Then,
+
+\[
+\begin{aligned} p_{\mathrm{V}}(h) & = \sum_{\substack{i = 1\\ h(t_{i - 1})\not\in\mathrm{V}}}^{n}(t_{i} - t_{i - 1})\\ & \leqslant \sum_{\substack{i = 1\\ d(h(t_{i - 1}),e)\geqslant \delta}}^{n}(t_{i} - t_{i - 1})\frac{d(h(t_{i - 1}),e)}{\delta}\\ & \leqslant \frac{d^{*}(h,e^{*})}{\delta}. \end{aligned}
+\]
+
+Therefore, the ball \(\mathrm{B}(e^{*},\varepsilon\delta)\) in \(G^{*}\) is contained in \(V_{\varepsilon}^{*}\).
+
+Conversely, let \(\delta\) be a strictly positive real number and let \(\Delta\) be a strictly positive upper bound for the diameter of G. Let V be a neighborhood of \(e\) in G contained in the ball B \((e,\delta/2)\). For a function \(h\in\mathrm{G}^{*}\) and a sequence \((t_{i})_{0\leqslant i\leqslant n}\) adapted to \(h\), we have
+
+\[
+\begin{array}{l}d^{*}(h,e^{*}) = \sum_{i = 1}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ = \sum_{\substack{i = 1\\ d(h(t_{i - 1}),e)\leqslant \delta /2}}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ +\sum_{\substack{i = 1\\ d(h(t_{i - 1}),e) > \delta /2}}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ \\ \leqslant \frac{\delta}{2} +\Delta \sum_{\substack{i = 1\\ h(t_{i - 1})\not\in\mathrm{V}}}^{n}(t_{i} - t_{i - 1})\\ \\ \leqslant \frac{\delta}{2} +\Delta p_{\mathrm{V}}(h). \end{array}
+\]
+
+The preceding inequality implies that, for every element \(h\) of \(\mathrm{V}_{\delta/2\Delta}^{*}\), we have \(d^{*}(h,e^{*})\leqslant\delta\). Consequently, every ball of \(\mathrm{G}^{*}\) for the distance \(d^{*}\) contains a neighborhood of the identity element.
+
+Remarks. --- 2) Let d be a bounded metric defining the topology of G. When one equips the topological group \(G^{*}\) with the metric \(d^{*}\), the homomorphism \(\iota: G \to G^{*}\) is an isometry.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Suppose that G is a discrete topological group. The subgroup \(\iota(\mathrm{G})\) is then a discrete subgroup of \(G^{*}\). Indeed, the topology of G is defined by the metric d on G given by \(d(g,g') = 1\) if \(g \neq g'\) and \(d(g, g') = 0\) otherwise; the assertion then follows from the previous remark.
+\end{enumerate}
+
+THEOREM 2. --- Let G be a discrete topological group. Let G act on the right on G* by h · g = hι(g), and denote by B the quotient topological space G*/G.
+
+The space G* is a covering of B, principal with group G; it is simply path-connected.
+
+The space B is a metrizable topological space, path-connected, locally contractible, and its Poincaré group at every point is isomorphic to G.
+
+Thus, the space B is a classifying space for the group G.
+
+The group G* is contractible to its identity element (IV, p. 450, prop. 6). In particular, it is path-connected (III, p. 260) and simply path-connected (IV, p. 340).
+
+The group \(\iota(\mathrm{G})\) is closed in \(\mathrm{G}^*\); therefore the space \(\mathrm{G}^*/\mathrm{G}\) is metrizable (TG, III, p. 13, prop. 18 and TG, IX, p. 25, prop. 4). It is also path-connected (III, p. 258, prop. 3). Since the group \(\iota(\mathrm{G})\) is discrete, it follows from Corollary 2 of I, p. 100, that \(\mathrm{G}^*\) is a principal G-bundle over B. The pointed covering \((\mathrm{G}^*, e^*)\) is then a universal covering of the pointed space B based at the image of \(e^*\); the Poincaré group of B (at each of its points) is isomorphic to G.
+
+\exerciseshdr{Exercises}
+
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Let S be the graph of the map from ]0, 1[ into R given by \(t \mapsto \sin(\pi/t)\). Let W be the union of S and the image of a path in \(\mathbf{R}^2 - \mathbf{S}\) joining the points (0, 0) and (1, 0) (“Warsaw circle”).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Prove that the space W is simply path-connected but that it is not simply connected.
+\item
+  For every integer \(n \geqslant 0\), set \(X_{n} = R/2^{n}Z\) and denote by \(f_{n}: X_{n+1} \to X_{n}\) the canonical surjection; let X be the space \(\varprojlim_{n} X_{n}\). Prove that the space X is simply path-connected but is not simply connected.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  Let X be the topological space of Exercise 4 of III, p. 331, and let Y be its suspension (I, p. 149, exerc. 1). Prove that the space Y is simply connected but that \(\pi_1(Y, y) \neq \{e_y\}\) for all \(y \in Y\) .
+\item
+  Let X be a topological space and let x be a point of X.
+\end{enumerate}
+
+Let R be a category of coverings of X and E a category of sets (cf. II, p. 160, example 2).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  We assume that for every covering E of X which is an object of R, the fiber \(E_{x}\) of E over x is an object of E; one then sets \(\Phi_{x}(\mathrm{E}) = \mathrm{E}_{x}\). For every morphism \(f: E' \to E\) of coverings of B that are objects of R, denote by \(\Phi_{x}(f)\) the map from \(E'_{x}\) to \(E_{x}\) induced by f on the fibers. Prove that \(\Phi_{x}\) is a functor from the category R to the category E.
+\item
+  Let \(\mathrm{G}(x)\) be the set of families \(\varphi = (\varphi_{\mathrm{E}})\) where, for every object E of R, \(\varphi_{E}\) is a permutation of the set \(\Phi_{x}(\mathrm{E})\) such that for every arrow \(f: E' \to E\) of R, one has \(f_{*} \circ \varphi_{E'} = \varphi_{E} \circ f_{*}\) (“automorphisms of the functor \(\Phi_{x}\)”).
+\end{enumerate}
+
+The relation given by \(\varphi \cdot \psi = (\varphi_{\mathrm{E}} \circ \psi_{\mathrm{E}})\) for \(\varphi, \psi \in \mathrm{G}(x)\) endows the set \(\mathrm{G}(x)\) with a group structure. For every object E of \(\mathcal{R}\), denote by \(\mathrm{G}(x)_{\mathrm{E}}\) the set of \(\varphi \in \mathrm{G}(x)\) such that \(\varphi_{\mathrm{E}} = \mathrm{Id}_{\Phi_x(\mathrm{E})}\); it is a subgroup of \(\mathrm{G}(x)\).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  Prove that there exists a unique structure of topological group on \(\mathrm{G}(x)\) for which the groups \(\mathrm{G}(x)_{\mathrm{E}}\) form a neighborhood base at the identity element.
+\item
+  Let T be a simply connected subspace of X. If x and y are points of T, the topological groups \(\mathrm{G}(x)\) and \(\mathrm{G}(y)\) are isomorphic.
+\item
+  Prove that the lifting of paths defines a continuous group homomorphism from \(\pi_{1}(X,x)\) to \(G(x)\). This homomorphism is not necessarily surjective (exerc. 1; I, p. 146, exerc. 6) nor injective (exerc. 2). It is an isomorphism if X is deloopable and if every connected covering of X is isomorphic to an object of R.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  For every integer \(n \geqslant 1\), let \(X_{n}\) be the union of the three segments of the coordinate plane \(R^{2}\) whose endpoints are \((0,1)\), \((1/2n,0)\) and \((1/(2n-1),0)\). Let \(X_{0}\) be the segment with endpoints \((0,1)\) and \((0,0)\). Let X be the union of the sets \(X_{n}\), for \(n \geqslant 1\), and let Y = \(\overline{X}\). Let \(a = (0,1)\).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Prove that \(Y = X \cup X_{0}\).
+\item
+  Show that X is locally contractible.
+\item
+  Show that the canonical injection of X into Y induces a group isomorphism from \(\pi_1(\mathrm{X},a)\) onto \(\pi_1(\mathrm{Y},a)\).
+\end{enumerate}
+
+\(d)\) Show that the quotient topology of the compact-convergence topology on \(\pi_1(Y,a)\) is not discrete.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Let X be the subspace of \(\mathbf{R}^2\) that is the union of \([0,1] \times \{0,1\}\), \(\{0\} \times [0,1]\), and the segments \(\{\frac{1}{n}\} \times [0,1]\), for \(n \geqslant 1\).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that every point a of X admits a neighborhood V such that the image of \(\pi_{1}(V,a)\) in \(\pi_{1}(X,a)\) is trivial.
+\item
+  Show that the quotient topology of the topology of compact convergence on the group \(\pi_{1}(X,a)\) is not discrete.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Let X be the space \(R^{2}-Q^{2}\).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that the space X is path-connected.
+\item
+  Let \(a, b\) be points of \(\mathbf{R} - \mathbf{Q}\). Let \(c_{a,b}: \mathbf{I} \to \mathbf{R}^2\) be the unique map satisfying \(c(0) = (a, a)\), \(c(1/4) = (a, b)\), \(c(1/2) = (b, b)\), \(c(3/4) = (b, a)\) and \(c(1) = (a, a)\) and whose restrictions to the intervals \([(m-1)/4, m/4]\) are affine, for \(1 \leqslant m \leqslant 4\). Prove that \(c_{a,b}\) is a loop in \(\mathbf{X}\).
+\item
+  Let \(a, b, b'\) be elements of \(\mathbf{R} - \mathbf{Q}\) such that \(b \neq b'\). Show that the loops \(c_{a,b}\) and \(c_{a,b'}\) are not strictly homotopic.
+\end{enumerate}
+
+\(d)\) Deduce that, for every \(a \in \mathbf{R} - \mathbf{Q}\), the group \(\pi_1(\mathrm{X}, (a, a))\) has the cardinality of the continuum.

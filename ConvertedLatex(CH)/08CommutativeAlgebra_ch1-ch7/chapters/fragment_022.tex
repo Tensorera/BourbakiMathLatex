@@ -1,0 +1,979 @@
+
+由一族元素 \((p_{\iota})\) 标定，其中每个 \(A p_{\iota}\) 都是素理想（注意，每个与 S 相交的除性素理想都是主理想）。
+
+¶ 15. (a) 设 A 为整环，a、b 为 A 中两个不等于 0 的元素，且 \(Aa \cap Ab = Aab\) 。证明在多项式环 A{[}X{]} 中，由 \(aX + b\) 生成的主理想是素理想（证明每个多项式 \(f(X) \in A[X]\) 在满足 \(f(-b/a) = 0\) 时都是 \(aX + b\) 的倍式，并对 f 的次数作归纳）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 A 为 Krull 整环，\(a, b\) 是 A 中的两个元素，且 \(Aa\) 与 \(Aa + Ab\) 是不同的素理想。证明 \(\mathrm{A}[\mathrm{X}] / (a\mathrm{X} + b)\) 是 Krull 整环，且 \(\mathrm{C}(\mathrm{A}[\mathrm{X}] / (a\mathrm{X} + b))\) 同构于 \(\mathrm{C}(\mathrm{A})\)。（借助 (a) 注意到，\(\mathrm{A}[\mathrm{X}] / (a\mathrm{X} + b)\) 同构于 \(\mathrm{A}[b / a] = \mathrm{B}\) ；证明 \(Ba\) 是 B 中的素理想。观察到 \(\mathrm{A}[a^{-1}] = \mathrm{B}[a^{-1}]\) 是 Krull 整环，并使用习题 12。）
+\item
+  设 A 为整闭 Noether 整环，a、b 为 A 的 Jacobson 根 r 中的两个元素。假设理想 \(Aa + Ab\) 是非除性的素理想；证明 Aa 和 Ab 是素理想。（首先证明 \(Aa \cap Ab = Aab\)，考虑 \(\operatorname{Ass}(A/Aa)\) 中的理想。其次证明关系 \(xy \in Ab\) 和 \(y \notin Aa + Ab\) 对所有 h 都蕴含 \(x \in Ab + Aa^{h}\)，对 h 作归纳；从而得到 \(x \in Ab\)。最后证明，若 \(xy \in Ab\)、\(x \notin Ab\)、\(y \notin Ab\)，则必有 \(x \in Ab + Aa^{h}\) 且 \(y \in Ab + Aa^{h}\) 对所有 h 成立，同样对 h 作归纳；导出矛盾。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  设 \(A = \bigoplus_{n \in Z} A_n\) 为分次 Krull 整环。令 \(\mathrm{D}_g(\mathrm{A})\)（分别为 \(\mathrm{F}_g(\mathrm{A})\)）表示由分次整除性理想的除子（分别由除子 \(\operatorname{div}(a)\)，其中 a 是 A 中的齐次元）生成的群；记 \(\mathrm{C}_g(\mathrm{A}) = \mathrm{D}_g(\mathrm{A}) / \mathrm{F}_g(\mathrm{A})\) 。令 S 为 A 中的齐次元 \(\neq 0\) 组成的乘性子集。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明 A 中每个与 S 相交的高度为 1 的素理想都是分次的（使用第三章 § 1 第 4 节命题 5）。
+\item
+  令 \(\mathbf{B} = \mathbf{S}^{-1}\mathbf{A}\) ，这是一个分次环（第二章 § 2 第 9 节）；写成 \(\mathbf{B} = \bigoplus_{n\in \mathbf{Z}}\mathbf{B}_n\) ；证明 \(\mathbf{B}_0\) 是域，并且若 \(\mathbf{A}\neq \mathbf{A}_0\) ，则 \(\mathbf{B}\) 同构于环 \(\mathbf{B}_0[\mathbf{X},\mathbf{X}^{-1}]\) ，其元素为 \(\mathrm{P}(\mathbf{X}) / \mathbf{X}^k\) 形式的有理函数，其中 \(\mathrm{P}(\mathbf{X})\in \mathrm{B}_0[\mathbf{X}]\) 。
+\item
+  证明 \(C_{g}(A)\) 与 \(C(A)\) 典范同构（使用 (a)、(b) 以及第 10 节的公式 (5)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  设 \(\mathbf{A} = \bigoplus_{n\in \mathbf{Z}}\mathbf{A}_n\) 为分次 Krull 整环，且 \(p\in \mathbf{A}_1\) 满足 \(\mathbf{A}p\) 是素理想且 \(\neq 0\) 。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  若 B 是第三章 § 1 习题 1 (a) 中定义的环 \(\mathbf{A}_{(p)}\)，证明 B 是 Krull 整环，且群 C(A) 与 C(B) 典范同构。（先证明 C(B) 同构于 C(B{[}p,p \(^{-1}\) {]})，并注意到 B{[}p,p \(^{-1}\) {]} = A{[}p \(^{-1}\) {]}。）
+\item
+  在习题 15 (b) 的假设下，证明群 \(\mathbf{C}(\mathbf{A})\) 与 \(\mathbf{C}(\mathbf{A}[\mathbf{X},\mathbf{Y}] / (a\mathbf{X} + b\mathbf{Y}))\) 同构。
+\end{enumerate}
+
+¶ 18. 设 \(A = \bigoplus_{n \in \mathbf{Z}} A_n\) 为具有正次数的分次 Krull 整环，且 \(A_0\) 是域；令 \(m = \bigoplus_{n \geqslant 1} A_n\) ，它是 \(A\) 的极大理想。令 \(S\) 为齐次元 \(\neq 0\) 的 \(A\) 所成的乘性集，从而环 \(S^{-1}A\) 是主理想整环（习题 16 (b)）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  设 p 是 A 的一个高度为 1 且与 A --- m 相交的素理想；则 p 不是分次的（否则 p = A），并且 S \(^{-1}\) p 是 S \(^{-1}\) A 的主理想，由形如 x = 1 + x \(_{1}\) + · · · + x \(_{n}\) 的元素生成，其中 x \(_{j}\) ∈ (S \(^{-1}\) A) \(_{j}\)。将 p 中形如 1 + a \(_{1}\) + · · · + a \(_{q}\) 的元素（a \(_{i}\) ∈ A \(_{i}\)）在 S \(^{-1}\) A 中写成 x 的倍数，并使用第五章，§ 1，第 3 节，命题 11，证明 x ∈ p；最后将 p 的每个元素在 S \(^{-1}\) A 中写成 x 的倍数，证明 p = Ax。
+\item
+ 由 (a) 推出 C(A) 与 C(A \(_{m}\) ) 典范同构（使用第 10 节命题 17）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  设 A 为局部 Krull 整环，m 为其极大理想；若 \(\mathbf{A}' = (\mathbf{A}[\mathbf{X}])_{\mathfrak{m}\mathbf{A}[\mathbf{X}]}\) ，证明 \(\mathbf{C}(\mathbf{A})\) 与 \(\mathbf{C}(\mathbf{A}')\) 典范同构。（使用习题 12 (c)，应用第 10 节命题 17 的判别准则。）
+\end{enumerate}
+
+¶ 20. 若整环 A 的每个有限生成理想都是主理想，则称 A 为 Bézout 整环（或 Bezout 整环）。每个 Bézout Noether 整环都是主理想整环。每个赋值环都是 Bézout 整环（因此 Bézout 整环未必是 Noether 环，也未必完全整闭）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明每个 Bézout 整环都是整闭的（参见习题 6）。若一个整环是右定向的 Bézout 子整环族的并，则它是 Bézout 整环。若 A 是 Bézout 整环，则对于 A 的每个乘性子集 S，S \(^{-1}\) A 也是 Bézout 整环，只要 0 \(\notin\) S。
+\item
+  设 \(v_{i}\)（ \(1 \leqslant i \leqslant n\)）为域 \(K\) 上的独立赋值，\(A_{i}\) 为赋值 \(v_{i}\) 的环。证明 \(A\)（各 \(A_{i}\) 的交）是 Bézout 整环。（若理想 \(a\) 是 \(A\) 的有限生成理想，则 \(v_{i}(x)\)（对 \(x \in a\) 取值）的集合有最小元 \(\alpha_{i}\)，该最小元属于 \(v_{i}\) 的取值群；对所有 \(i\)，取 \(x_{i} \in a\) 使得 \(v_{i}(x_{i}) = \alpha_{i}\) 。使用逼近定理（第六章 §7 第 2 节，
+\end{enumerate}
+
+定理 1），证明存在 \(a_i \in \mathbf{A}\)，使得 \(x = \sum_{i=1}^{n} a_i x_i \in \mathfrak{a}\) 满足关系 \(v_i(x) = \alpha_i\)（\(1 \leqslant i \leqslant n\)）。若 \(v_i\) 是离散赋值，则 \(\mathbf{A}\) 是主理想整环。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 K 为特征 \(\neq2\) 的代数闭域，且 A 为 \(\mathbf{K}(\mathbf{X})\) 的代数闭包中由 \(\mathbf{K}\) 以及两个元素序列 \((x_{n})\)、\((1 / x_{n})\)（ \(1 \leqslant n < +\infty\)）生成的子环，其中 \(x_{1} = \mathbf{X}\) 且 \(x_{n-1} = x_{n}^{2}\)。证明 \(\mathbf{A}\) 是 Bézout 整环（使用 (a)）。若 \(\mathfrak{p}\) 是满足 \(\neq 0\) 的 \(\mathbf{A}\) 中的素理想，证明 \(\mathfrak{p}\) 由形如 \(x_{n} - a_{n}\) 的元素序列生成，其中 \(a_{n} \in \mathbf{K}\)、\(a_{n} \neq 0\) 且 \(a_{n}^{2} = a_{n-1}\)（考虑对所有 \(n\) 的交 \(\mathfrak{p} \cap \mathbf{K}[x_{n}, 1 / x_{n}]\)）。证明 \(\mathfrak{p}\) 不是有限生成的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  设整环 A 称为伪 Bézout 整环（分别为伪主理想整环），若按习题 5 的记号，群 K*/U 是格序的（完全格序的）。每个 Bézout *（分别为因子分解）* 整环都是伪 Bézout *（分别为伪主理想）* 整环。每个伪主理想整环都是伪 Bézout 整环。一个取值群为 R 的赋值环是伪主理想整环，但不是主理想整环。每个伪 Bézout（分别为伪主理想）整环都是整闭的（分别为完全整闭的）（使用习题 6）。* 每个 Noether 伪 Bézout 整环都是因子分解整环。* 举出一个整闭 Noether（因而为 Krull）整环的例子，它不是伪 Bézout 整环（参见习题 2）。若 A 是伪 Bézout 整环，则对 A 的每个不含 0 的乘性子集 S，S \(^{-1}\) A 也是伪 Bézout 整环（使用第二章 § 2 习题 1）。
+\end{enumerate}
+
+¶ 22. (a) 设 \(\Gamma\) 为格序加法群，A 为 \(\Gamma\) 在域 \(k\) 上的代数；A 是整环（代数第二章 §11 第 4 节命题 8）。A 中每个 \(x \neq 0\) 都能唯一写成 \(x = \sum_{i=1}^{n} \alpha_i e^{\nu_i}\)，其中 \(\nu_i\) 是 \(\Gamma\) 中彼此不同的元素，\(e^{\nu_i}\) 是 A 在 \(k\) 上的典范基中相应的元素，而 \(\alpha_i\) 是 \(\neq 0\) 的 \(k\) 中元素。记 \(\phi(x) = \inf(\nu_1, \ldots, \nu_n)\) 于 \(\Gamma\) 中；证明 \(\phi(x + y) \geqslant \inf(\phi(x), \phi(y))\)，若 \(x, y\) 以及 \(x + y\) 在 A 中均为 \(\neq 0\)，且 \(\phi(xy) = \phi(x) + \phi(y)\) 若 \(xy \neq 0\) 在 A 中成立。（为证明第二个断言，先建立下述引理：给定有限族 \((\xi_j)\)（其元素属于 \(\Gamma\)），要使 \(\inf_{i} (\xi_j) = 0\)，充要条件是：对所有 \(\eta > 0\) 的 \(\Gamma\) 中元素，都存在一个指标 \(j\) 和一个元素 \(\zeta \in \Gamma\)，使得 \(0 < \zeta \leqslant \eta\) 且 \(\inf(\xi_j, \zeta) = 0\)。应用此引理，将其归约到 \(\phi(x) = \phi(y) = 0\) 的情形。）
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  由 (a) 推出，若 \(\mathbf{K}\) 是 \(\mathbf{A},\phi\) 的分式域，则该映射可延拓为从 \(\mathbf{K}^*\) 到 \(\Gamma\) 的同态（仍记为 \(\phi\)），使得
+\end{enumerate}
+
+\[
+\phi (x + y) \geqslant \inf (\phi (x), \phi (y))
+\]
+
+若 \(x, y\) 以及 \(x + y\) 都是 \(\neq 0\) 的 \(\mathbf{K}\) 中元素，则由此推出，若 \(\mathbf{B}\) 是由 \(x \in \mathbf{K}\) 所成且满足 \(x = 0\) 或 \(\phi(x) \geqslant 0\) 的集合，则 \(\mathbf{B}\) 是一个分式域为 \(\mathbf{K}\) 的整环，并且若 \(\mathbf{U}\) 是 \(\mathbf{B}\) 的可逆元群，则 \(\mathbf{K}^*/\mathbf{U}\) 同构于 \(\Gamma\)（特别地，\(\mathbf{B}\) 是伪 Bézout 整环）。导出一个不是完全整闭的伪 Bézout 整环的例子，一个不是伪主理想整环的完全整闭伪 Bézout 整环的例子（参见
+
+代数第六章 § 1 习题 31) * 以及一个不是因子分解整环的伪主理想整环。 *
+
+* (c) 由 (b) 导出一个整环的例子，它是一个右定向的因子分解子整环族的并，完全整闭但不是伪 Bézout 整环。（令 \(\theta\) 为无理数，位于 {[}0, 1{]} 中；对每个整数 \(j\)，令 \(q_j\) 为满足 \(q_j / 2^j < \theta\) 的最大整数。对所有 \(j\)，在乘积群 \(\mathbf{Q} \times \mathbf{Q}\) 上定义格序群结构：取 \((\mathrm{G}_j)_+\) 作为该群中 \(\geqslant 0\) 的元素集，其元素为有序对 \((\xi, \eta)\)，满足 \(\xi \geqslant 0\) 且 \(0 \leqslant \eta \leqslant (q_j 2^{-j}) \xi\)。*
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{22}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    设 A 为伪 Bézout 整环（习题 21），K 为其分式域；对每个多项式 \(f \in \mathrm{A}[\mathrm{X}]\)，\(f\) 的系数的一个最大公因子（在 A 的一个可逆元以内确定）称为 \(f\) 的容度。设 \(f, g\) 为 \(\mathrm{A}[\mathrm{X}]\) 中的两个多项式；证明要使 \(f\) 整除 \(g\)（在 \(\mathrm{A}[\mathrm{X}]\) 中），充要条件是 \(f\) 整除 \(g\)（在 \(\mathrm{K}[\mathrm{X}]\) 中），且一个 \(f\) 的容度整除一个 \(g\) 的容度（使用习题 12）（参见习题 30 (c)）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  由 (a) 推出，若 A 是伪 Bézout（分别为伪主理想）整环，则 A{[}X{]} 也是伪 Bézout（分别为伪主理想）整环。此外，若 \((a_{t})\) 是 A 中不等于 \(\neq0\) 的元素组成的有限族（分别为任意族），且 d 是该族在 A 中的一个最大公因子，则 d 也是该族在 A{[}X{]} 中的一个最大公因子。
+\item
+  由 (b) 推出，若 A 是伪 Bézout（分别为伪主理想）整环，则 \(A[X_{\lambda}]_{\lambda \in L}\) 是伪 Bézout（分别为伪主理想）整环，其中 \((\mathbf{X}_{\lambda})_{\lambda \in L}\) 是任意族的不定元。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{23}
+\item
+  设 K 为代数闭域，A = K{[}X, Y{]} 为 K 上两个不定元的多项式环，它是 Krull 整环 *（甚至是因子分解整环）。* 对每个有序对 \((\alpha, \beta) \in \mathrm{K}^{2}\)，令 \(w_{\alpha,\beta}\) 为 A 上的离散赋值，使得对于每个 \(f \neq 0\) 的多项式，\(w_{\alpha,\beta}(f)\) 等于 \(\neq 0\) 的单项式在 \(f(\mathrm{X} + \alpha, \mathrm{Y} + \beta)\) 中的最低次数。证明 A 是赋值环 \(w_{\alpha,\beta}\) 的交，且这些赋值中没有一个是 A 的本性赋值。
+\item
+  若整闭整环 \(\mathbf{A}\) 存在一个赋值族 \((v_{\iota})_{\iota \in I}\)，定义在 \(\mathbf{A}\) 的分式域上并满足性质 \((\mathrm{AK}_{\Pi})\) 和 \((\mathrm{AK}_{\mathrm{III}})\)，则称其具有有限特征。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  证明若 A 整闭且具有有限特征，则对 A 中每个 \(x \neq 0\)，序主除子群中不超过 \(\leqslant \operatorname{div}(x)\) 的极端元只能有有限多个。（令 \(J \subset I\) 为满足 \(v_{\iota}(x) > 0\) 的有限指标集。若 \(m\) 是 J 中元素的数目，证明不可能存在 \(m + 1\) 个元素 \(y_{j}\)（ \(1 \leqslant j \leqslant m + 1\)），它们整除 \(x\) 且 \(\operatorname{div}(y_{j})\) 是极端元；注意对所有 \(j\)，\(\operatorname{div}(y_{j})\) 必须与 \(\sum_{k \neq j} \operatorname{div}(y_{k})\) 互素。）
+\end{enumerate}
+
+* (b) 证明第一类超越函数环（第五章 § 1 习题 12）是伪主理想整环（习题 21），但不是有限特征整环（使用 (a)）。 *
+
+¶ 26. 设 A 为整环，K 为其分式域。若 K 上的赋值 v 的赋值环是 A 在 A 的某个素理想 p 处的局部环 \(A_{p}\)（即 A 与 v 的理想的交），则称 v 对 A 是本性赋值。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  设 \(v\) 是对 \(A\) 的高度为 1 的本性赋值，且 \(p\) 是 \(A\) 中由元素 \(x\)（满足 \(v(x) > 0\)）组成的素理想。证明 \(p\) 的高度为 1。若 \(x \in K\) 不属于 \(A_p\)，则 \(A \cap x^{-1}A \subset p\)。若 \(w\) 是 \(K\) 上的赋值，其赋值环 \(B\) 包含 \(A\)，且其理想 \(q\) 满足 \(q \cap A \subset p\)，证明 \(w\) 与 \(v\) 等价。
+\item
+  若整闭整环 A 的分式域为 K，且存在一个在 K 上、高度为 1 的赋值族 \((v_{\iota})_{\iota\in I}\)，满足性质 \((\mathbf{AK}_{\mathrm{II}})\) 和 \((\mathbf{AK}_{\mathrm{III}})\)，则称 A 具有有限特征且为实型。在这些条件下，证明若 \(z\in K\) 不属于 A，且 p 是满足 \(A\cap z^{-1}A\subset p\) 的 A 的素理想，则存在 \(\iota\in I\)，使 \(v_{\iota}(z)<0\)，并且素理想 \(q_{\iota}\) 由 \(x\in A\) 中满足 \(v_{\iota}(x)>0\) 的元素组成，且包含于 p。（反证法：考虑有限个 \(v_{\iota_{k}}\)，它们满足 \(v_{\iota_{k}}(z)<0\)；证明存在 \(a\in A\)，使 \(a\notin p\) 且对所有 k 都有 \(v_{\iota_{k}}(a)>0\)；推出 \(a^{n}z\notin A\) 对每个整数 n\textgreater0 都成立，并证明这导致矛盾。）由此推出每个对 A 高度为 1 的本性赋值都等价于某个 \(v_{\iota}\)（使用 (a)）。K 的具有有限特征且为实型的子整环的有限交仍是具有有限特征且为实型的整环。
+\item
+  假设 (b) 的条件成立，并且所有 \(v_{\iota}\) 都是本性赋值。证明对 A 的每个高度为 1 的素理想 p，\(A_{p}\) 都是某个赋值 \(v_{\iota}\) 的环（使用 (b)，取 \(z^{-1} \in p\)）。对所有 \(x \in A\)，主理想 Ax 因而都有唯一的既约准素分解（第四章 § 2 习题 20）；与此分解相应的素理想正是包含 x 的高度为 1 的素理想。
+\item
+  假设 (b) 的条件成立。令 S 为 A 中不含 0 的乘性子集，且 \(J \subset I\) 是满足 \(\iota \in I\) 且 \(v_{\iota}(x) = 0\)（在 S 上）的指标集合。证明族 \((v_{\iota})_{\iota \in I-J}\) 满足性质 \((\mathrm{AK}_{\mathrm{II}})\) 和 \((\mathrm{AK}_{\mathrm{III}})\)，适用于环 \(S^{-1}A\)；若前述赋值族是 A 的本性赋值族，则 \(S^{-1}A\) 的本性赋值包括 \((v_{\iota})_{\iota \in I}\)。
+\item
+将第 5 节命题 9 推广到满足 (c) 的假设的情形。
+\item
+  假设 (b) 的条件成立。令 \(K'\) 为 K 的有限扩张，\(A'\) 为 A 在 \(K'\) 中的整闭包。证明定义在 \(K'\) 上且延拓 \(v_{\iota}\) 的彼此不等价赋值满足 \(AK_{II}\) 和 \(AK_{III}\) 对 \(A'\) 成立，因而后者是具有有限特征且为实型的整环；若 \(v_{\iota}\) 对 A 都是本性赋值，则它们对 \(A'\) 的延拓也是本性赋值（仿照第 8 节命题 12，并使用第六章 § 8 第 3 节注）。
+\item
+  若 \(\mathbf{A}\) 是具有有限特征且为实型的整环，则 \(\mathbf{A}[\mathbf{X}]\) 也是如此；若 (c) 的条件成立，确定 A{[}X{]} 的本性赋值（仿照第 9 节）。类似地推广习题 8。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{26}
+\tightlist
+\item
+  在习题 22 中取 \(\Gamma\) 为族 \((\Gamma_{\iota})_{\iota\in I}\) 的直和，其中 \(\Gamma_{\iota}\) 是加法群 \(\mathbf{R}\) 的子群。证明习题 22 (b) 中定义的环 \(\mathbf{B}\) 是具有有限特征且为实型的整环，并且是 \(\mathbf{B}\) 的一族本性赋值环的交；此外，每个素理想 \(\neq 0\) 的 \(\mathbf{B}\) 都是极大理想。
+\end{enumerate}
+
+¶ 28. 若整闭整环 A 的分式域为 K，且存在一个赋值族 \((v_{\iota})_{\iota \in I}\)，它们定义在 K 上，满足性质 \((\mathbf{AK}_{\mathrm{II}})\) 和 \((\mathbf{AK}_{\mathrm{III}})\)，且它们的取值群是加法群 Q 的子群，则称 A 具有有限特征且为有理型。证明 A 的高度为 1 的本性赋值族满足 \((\mathbf{AK}_{\mathrm{II}})\) 和 \((\mathbf{AK}_{\mathrm{III}})\)。（对所有 \(\iota \in I\)，令 \(p_{\iota}\) 为由满足 \(v_{\iota}(x) > 0\) 的 x 组成的 A 的素理想，并令 \(V_{\iota}\) 为赋值 \(v_{\iota}\) 的环。证明若存在两个指标 \(\alpha, \beta\) 使 \(p_{\beta} \subset p_{\alpha}\)，则 A 是 \(V_{\iota}\)（其中指标 \(\iota \neq \alpha\)）的交。为此，反证证明否则存在 \(x \in K^{*}\)、\(y \in p_{\beta}\) 以及两个正整数 r、s，使 \(v_{\beta}(x^{r}y^{s}) > 0\)、\(v_{\alpha}(x^{r}y^{s}) = 0\) 且 \(v_{\iota}(x^{r}y^{s}) \geqslant 0\) 对所有 \(\iota \in I\) 成立，这与假设矛盾。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{28}
+\tightlist
+\item
+  设 A 为整闭整环，K 为其分式域。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  设 L 为 K 的代数扩张，B 为 A 在 L 中的整闭包。证明对 A 的每个分式理想 a，若记 b = aB，则 \(\tilde{b} \cap A = \tilde{a}\)。（将问题化为 \(A \subset \tilde{a}\) 的情形，换言之为 A: \(a \subset A\)，并证明 B: \(b \subset B\)；为此，取 \(x \in B\) : b，令 \(c_i\)（ \(1 \leqslant i \leqslant n\)）为 x 在 K 上的极小多项式的系数；注意对所有 \(y \in a\)，元素 \(c_i y^i\)（ \(1 \leqslant i \leqslant n\)）属于 A，并推出 \(c_i\) 属于 A。）
+\item
+  令 C 为任意一族不定元上的多项式环 \(\mathbf{A}[\mathbf{X}_{\lambda}]_{\lambda \in L}\)。证明对 A 的每个分式理想 \(\mathfrak{a}\)，若记 \(\mathfrak{c} = \mathfrak{aC}\)，则 \(\tilde{\mathfrak{c}} \cap \mathbf{A} = \tilde{\mathfrak{a}}\)（同法）。
+\end{enumerate}
+
+¶ 30. 若在幺半群 D(A) 中，每个有限生成除子（习题 11）都是正则元，则称整环 A 为正则整闭的。每个完全整闭整环都是正则整闭的；每个伪 Bézout 整环（习题 21）都是正则整闭的。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  若 A 是正则整闭的，且 \(d, d', d''\) 是三个有限生成除子，则关系 \(d + d'' \leqslant d' + d''\) 蕴含 \(d \leqslant d'\)。
+\item
+  由 (a) 推出，整环 A 为正则整闭的充要条件是：对 A 的每个分式理想 a，只要 \(\text{div}(a)\) 是有限生成除子，就有 \(a: a = A\)；特别地，A 是整闭的（习题 6 (b)）。（使用事实 A: (bc) = (A: b): c，其中 b、c 是 A 的两个分式理想，并取 b = a、c = A: a。）此外，\(\text{div}(a)\) 在 D(A) 中是可逆的。
+\item
+  设 A 为正则整闭整环，K 为其分式域；A 的有限生成除子幺半群 \(\mathrm{D}_{f}(\mathrm{A})\) 在 \(\mathrm{D}(\mathrm{A})\) 中生成一个格序群 \(\mathrm{G}_{f}(\mathrm{A})\)。对每个多项式 \(p \in K[X]\)，令 \(d(p)\) 表示 A 的由 p 的系数生成的分式理想的除子；对 \(\mathrm{K}(\mathrm{X})\) 中的每个有理函数 r = p/q，其中 p、q 属于 \(K[X]\) 且 \(q \neq 0\)，\(d(p) - d(q)\) 在 \(\mathrm{G}_{f}(\mathrm{A})\) 上是良定义的（与将 r 表示为两个多项式之商的方式无关）；记为 \(d(r)\)（参见习题 12 (c)）。若记 \(\gamma(r) = ((r), d(r))\)，其中 (r) 是 \(K[X]\) 中由 r 生成的分式主理想，则 \(\gamma\) 是有序群 \(\mathcal{P}^{*}(\mathrm{A}[\mathrm{X}])\)（§3 第 2 节的记号）到乘积有序群的一个子群的同构
+\end{enumerate}
+
+\[
+\mathscr {P} ^ {*} (\mathrm{K} [ \mathrm{X} ]) \times \mathrm{G} _ {f} (\mathrm{A}) \subset \mathscr {P} ^ {*} (\mathrm{K} [ \mathrm{X} ]) \times \mathrm{D} (\mathrm{A}).
+\]
+
+证明 \(\mathbf{A}[\mathbf{X}]\) 是正则整闭整环，且 \(\mathrm{D}_f(\mathbf{A}[\mathbf{X}])\) 同构于 \(\mathcal{P}^* (\mathbf{K}[\mathbf{X}])\times \mathrm{D}_f(\mathbf{A})\)（使用 (a)、(b) 以及习题 29 (b)）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 B 为整闭整环，K 为其分式域，A 为多项式环 K{[}X, Y{]} 的子环，由常数项属于 B 的多项式组成。证明若 \(B \neq K\)，则 A 整闭但不是正则整闭（证明除子 \(\inf(\text{div}(X), \text{div}(Y))\) 对应于某个除性理想 a，使 \(a: a \neq A\)）。
+\end{enumerate}
+
+¶ 31. (a) 设 A 为正则整闭整环（习题 30），K 为其分式域；对每个多项式 P ∈ K{[}X{]}，令 c(P) 表示除子 div(a)，其中 a 是 K 中由 P 的系数生成的分式理想。令 B 为 K(X) 的子环，由满足 c(P) ≥ c(Q) 的有理函数 P/Q 组成（使用习题 30 (a) 和 12 (c) 证明此条件只取决于元素 P/Q）。则 B ∩ K = A。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  证明 B 是 Bézout 整环（习题 20）（注意，若 P、Q 是 A{[}X{]} 中的两个多项式，则当 m 足够大时，P + X \(^{m}\) Q 在 B 中同时整除 P 和 Q）。
+\item
+  证明若 A 是 Krull 整环，则 B 是主理想整环（考虑 B 的有限生成分式主理想的递增序列）。举出 A 完全整闭但 B 不是主理想整环的例子（参见习题 22）。
+\item
+  由 (c) 导出一个 Noether 整环 B 的例子：存在 B 的分式域的一个子域 K，使得 \(B \cap K\) 不是 Noether 环。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{31}
+\tightlist
+\item
+  设 A 为整环，\((a_{i})_{1 \leqslant i \leqslant n}\) 为 A 中元素的有限族，a 为理想 \(\sum_{i} A a_{i}\)，R 为 \(A^{n}\) 中由元素 \((a_{1}, \ldots, a_{n})\) 生成的子模。证明 A-模 \(M = A^{n}/R\) 的挠子模成为 M 的直和因子，当且仅当
+\end{enumerate}
+
+\[
+\mathfrak {a} (\mathrm{A}: \mathfrak {a}) + (\mathrm{A}: (\mathrm{A}: \mathfrak {a})) = \mathrm{A}.
+\]
+
+\exercisesection{2}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    证明若 \(\mathfrak{a}\) 是一个 \(\neq 0\) 的 Dedekind 整环 \(\mathbf{A}\) 中的理想，则环 \(\mathbf{A} / \mathfrak{a}\) 是主理想环（代数第七章 § 1 习题 5）（注意 \(\mathbf{A} / \mathfrak{a}\) 是半局部的，并仿照第 2 节命题 1 论证）。再次推出 \(\mathbf{A}\) 的每个分式理想至多由两个元素生成（参见习题 11 (a)）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在多项式环 \(\mathbf{A} = k[\mathbf{X},\mathbf{Y}]\) 中（其基域为 \(k\)），令 \(\mathfrak{m}\) 为理想 \(\mathbf{AX} + \mathbf{AY}\)。证明对每个整数 \(n\)，理想 \(\mathfrak{m}^n\) 的最小生成元数为 \(n + 1\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    设 \(\mathfrak{a}\)、\(\mathfrak{b}\) 为 Dedekind 整环 \(\mathbf{A}\) 的两个整理想；证明存在一个整理想 \(\mathfrak{c}\)，它与 \(\mathfrak{b}\) 互素，并使得 \(\mathfrak{ac}\) 为主理想（使用第一节第 5 节命题 9）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathfrak{a}, \mathfrak{b}\) 为 \(\mathbf{A}\) 的两个整理想；证明存在 \(x \neq 0\) 属于 \(\mathbf{A}\) 的分式域，使 \(x\mathfrak{a}\) 是 \(\mathbf{A}\) 的一个与 \(\mathfrak{b}\) 互素的整理想（同法）。推出模 \(\mathfrak{a}/\mathfrak{ab}\) 同构于 \(\mathbf{A}/\mathfrak{b}\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\item
+  设 A 为 Dedekind 整环，K 为其分式域，P 为 A 的素理想 \(\neq 0\) 的集合；对每个 \(p \in P\)，令 \(v_{p}\) 为 K 上相应的本性赋值。对 K 的每个子 A-模 M 以及每个 \(p \in P\)，记 \(v_{p}(M) = \inf v_{p}(x)\)（取于 \(\overline{\mathbf{R}}\) 中）；若 \(M \neq 0\)，则 \(v_{p}(M) < +\infty\) 对所有 \(p \in P\) 成立，且 \(v_{p}(M) \leqslant 0\) 对几乎所有 \(p \in P\) 成立。若 M、N 是 K 的两个子 A-模，证明关系 \(M \subset N\) 等价于 \(v_{p}(N) \leqslant v_{p}(M)\) 对所有 \(p \in P\) 成立（使用第一节第 5 节命题 9）。反之，对于每族 \((v_{p})_{p \in P}\) 的元素，每个元素等于某个整数或 \(-\infty\)，且 \(v_{p} \leqslant 0\) 对几乎所有 \(p \in P\) 成立，证明存在唯一的 K 的子 A-模 M，使 \(v_{p}(M) = v_{p}\) 对所有 \(p \in P\) 成立。
+\item
+  设 A 为 Dedekind 整环，K 为其分式域。若 L 是 K 的子域，且 A 对 \(A \cap L\) 为整，则 \(A \cap L\) 是 Dedekind 整环（先证明 \(A \cap L\) 是 Krull 整环，然后使用第五章 §2 第 1 节定理 1 证明 \(A \cap L\) 中每个素理想都是极大理想）。
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    设 k 为域，K 为有理函数域 \(k(\mathbf{X}, \mathbf{Y})\)，即 k 上两个不定元的有理函数域；A 为一个不定元上的多项式环 K{[}Z{]}，它是主理想整环。令 L 为 \(k(\mathbf{Z}, \mathbf{X} + \mathbf{Y}\mathbf{Z})\) 的子域 \(k(\mathbf{X}, \mathbf{Y}, \mathbf{Z})\)；证明 \(A \cap L\) 不是 Dedekind 整环（证明这个环中存在非零且不是极大理想的素理想 \(\neq 0\)）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 A 为非主理想整环的 Dedekind 整环，且其理想类群 C(A) 是有限的 *（有限代数扩张 Q 的整数环具有此性质）。* 令 \((\mathfrak{a}_{j})_{1 \leqslant j \leqslant r}\) 为 A 的分式理想群 I(A) 模去 \(\neq 0\) 的分式主理想子群的代表系，该代表系由 A 的整理想组成；令 \(p_{i} (1 \leqslant i \leqslant s)\) 为至少整除某个 \(a_{j}\) 的素理想。令 S（分别为 T）
+\end{enumerate}
+
+表示由 \(x \in \mathbf{A}\) 满足 \(v_{\mathfrak{p}_i}(x) = 0\) 对所有 \(i\) 组成的乘性集（分别地，由 1 以及满足 \(x \in \mathbf{A}\) 且 \(v_{\mathfrak{q}}(x) = 0\) 的、其中 \(\mathfrak{q}\) 异于 \(\mathfrak{p}_i\) 的所有素理想，并且满足 \(v_{\mathfrak{p}_i}(x) \geqslant 1\) 对所有 \(i\) 的元素组成；假设蕴含 \(\mathbf{T}\) 不退化为 1）。证明 \(S^{-1}\mathbf{A}\) 和 \(T^{-1}\mathbf{A}\) 是主理想整环，且 \(A = (S^{-1}A) \cap (T^{-1}A)\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\item
+  证明在 Dedekind 整环中，准素理想、不可约理想、素理想（第四章 § 2 习题 33）、拟素理想（第四章 § 2 习题 34）以及素理想的幂这几个概念彼此相同。
+\item
+  设 A 为 Noether 整环。证明下列性质彼此等价：
+\end{enumerate}
+
+\((\alpha)\) A 是 Dedekind 整环。
+
+(β) 对 A 的每个极大理想 m，不存在异于 m 和 \(m^{2}\) 的理想 a，使 \(m^{2} \subset a \subset m\)。
+
+\((\gamma)\) 对每个极大理想 \(\mathfrak{m}\)（属于 \(\mathbf{A}\)），关于 \(\mathfrak{m}\) 的准素理想按包含关系全序。
+
+(δ) 对 A 的每个极大理想 m，关于 m 的每个准素理想都是素理想的乘积。
+
+（证明性质 \((\gamma)\) 和 \((\delta)\) 各自蕴含 \((\beta)\)；然后证明 \((\beta)\) 蕴含 \(A_{m}\) 是域或离散赋值环（参见第六章 § 3 第 5 节命题 9）。）
+
+举出一个满足性质 \((\beta)\)、\((\gamma)\) 和 \((\delta)\) 但不是赋值环的局部整环的例子（参见第六章 § 3 习题 7）。
+
+¶ 8. 设 A 为整环，其中每个素理想 ≠0 都是可逆的。证明 A 是 Dedekind 整环。（先证明 A 的每个素理想 p' ≠ 0 都是极大理想，注意若 p 是满足 p ≠ p' 且 p ⊃ p' 的素理想，则 p': p = p'（第二章 § 1 习题 8 (b)），另一方面 p': p = p'p⁻¹，从而得到矛盾。推出 A 是 Noether 环（第二章 § 1 习题 6 (b)），最后使用第二章 § 5 第 6 节定理 4，证明对 A 的每个极大理想 m，A\_m 是域或离散赋值环。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  设 A 为整环。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  设 \((\mathfrak{p}_i)_{1\leqslant i\leqslant m},(\mathfrak{p}_j')_{1\leqslant j\leqslant n}\) 为两个有限的可逆素理想族，且 \(\mathfrak{p}_1\mathfrak{p}_2\dots \mathfrak{p}_m = \mathfrak{p}_1'\mathfrak{p}_2'\dots \mathfrak{p}_n'\)。证明 \(m = n\)，并证明存在一个置换 \(\pi\)，它是 \([1,n]\) 上的置换，使得 \(\mathfrak{p}_i' = \mathfrak{p}_{\pi (i)}\) 对所有 \(i\)（满足 \(1\leqslant i\leqslant n\)）成立。
+\item
+  设 \(\mathfrak{p}\) 为 \(\mathbf{A}\) 的素理想，且 \(a\) 属于 \(\mathbf{A} - \mathfrak{p}\)；若 \(\mathfrak{p} \subset \mathbf{A}a + \mathfrak{p}^2\)，证明 \(\mathfrak{p} = \mathfrak{p}(\mathbf{A}a + \mathfrak{p})\)；推出若 \(\mathfrak{p}\) 可逆，则 \(\mathbf{A}a + \mathfrak{p} = \mathbf{A}\)。
+\item
+  证明若 A 的每个理想都是 A 的素理想之积（事先不要求唯一），则 A 是 Dedekind 整环。（先证明每个可逆素理想 p 都是极大理想：考虑 \(a \in A - p\)，将 \(Aa + p\) 和 \(Aa^{2} + p\) 分解为素理想之积，并应用 (a)
+\end{enumerate}
+
+在环 A/p 中证明 \(Aa^{2} + p = (Aa + p)^{2}\)；然后使用 (b)。再证明每个 \(p \neq 0\) 的素理想都是可逆的：将含有 \(b \in p\) 的主理想 Ab 分解为素理想之积，注意该积的因子都是可逆的，并应用上述结论证明 p 必等于这些因子中的一个。借助习题 8 得出结论。）
+
+¶ 10. 设 A 为一个环，其中每个理想都是素理想之积。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明对 A 的每个素理想 p，A/p 是 Dedekind 整环（习题 9）。
+\item
+  证明 A 的极小素理想  的集\(\mathfrak{p}_i\)\(\mathbf{A}\)证明 A 的极小素理想  的集合是有限的（将 (0) 分解为素理想之积）。
+\item
+  假设 \(\mathbf{A} / \mathfrak{p}_i\) 不是域。证明若 \(y \in \mathfrak{p}_i\)，则对所有 \(x \in \mathbf{A} - \mathfrak{p}_i\)，存在 \(z \in \mathfrak{p}_i\)，使 \(y = zx\)。（在 A 中考虑 Ax 和 Ax + Ay 分解为素理想之积，并考虑它们在 \(\mathbf{A} / \mathfrak{p}_i\) 中的相应分解。）推出对所有非零 \(y \in \mathfrak{p}_i\)，\(Ay = \mathfrak{p}_i\)（考虑 \(\mathfrak{p}_i / Ay\)，将 Ay 分解为素理想之积）；最后证明 \(\mathfrak{p}_i = \mathfrak{p}_i^2\)，从而在 \(\mathfrak{p}_i\) 中存在幂等元 \(e_i\)，使 \(\mathfrak{p}_i = Ae_i\)（参见第二章 § 4 习题 15）。于是 A 是环 \(Ae_i\) 与环 \(\mathbf{A}(1 - e_i)\) 的直积，后者同构于 Dedekind 整环 \(\mathbf{A} / \mathfrak{p}_i\)。
+\item
+  现在假设所有 \(p_{i}\) 都是极大理想，于是 A 是形如 \(A/p_{i}^{v_{i}}\) 的环的直积（第二章 § 1 第 2 节命题 5），因此只需考察 A 为准素环或 A 的唯一素理想 p 为幂零的情形。证明在此情形下，该假设蕴含 A 是主理想环（代数第七章 § 1 习题 5、6）。
+\item
+  由 (c) 和 (d) 推出 A 是有限个 Dedekind 整环与一个主理想环的乘积。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  设 K 为域\((v_{\iota})_{\iota\in I}\)， 为 K 上满足 §1 \((\mathbf{AK}_{\mathbf{I}})\)\((\mathbf{AK}_{\mathbf{III}})\)设 K 为域， 为 K 上满足 §1 第\((n_{h})_{1\leqslant h\leqslant r}\)\(\geqslant0\) \((\iota_{h})_{1\leqslant h\leqslant r}\)为域， 为 K 上满\((a_{h})_{1\leqslant h\leqslant r}\)\(x\in K\)\(v_{\iota_{h}}(x-a_{h})\geqslant n_{h}\)\(1\leqslant h\leqslant r\)\(v_{\iota}(x)=0\)设 K 为域，\(\iota_{h}\) 为 K 上满足 §1 第\(v_{\iota}\)\((v_{\iota})_{\iota\in I}\) 3 节的  和  条件的离散赋值族，并且对每个整数 r、每族  的非负整数、每族\(\neq0\)  的 I 中彼此不同的元素以及每族  的 K 中元素，都存在 ，使得 （），并且对不同于各  的 ι 有 。证明赋值环  的交 A 是 Dedekind 整环，其分式域为 K，且  是 A 的本性赋值族。（使用第一节习题 7；然后证明两个不同的高度为 1 的素理想互素，并推出 A 的每个素理想  都是极大理想。）
+\end{enumerate}
+
+¶ 12. 设 A 为整环，K 为其分式域。证明下列性质彼此等价：
+
+\((\alpha)\) 对 A 的每个素理想 \(\mathfrak{p}\)，局部环 \(A_{\mathfrak{p}}\) 都是赋值环。
+
+(β) 对 A 的每个极大理想 m，局部环 \(A_{m}\) 都是赋值环。
+
+ A 中每个有限生成理\(\neq0\)想  都是可逆的（因而有限\(\neq0\)生成分式理想  构成一个群）。
+
+(δ) 每个无挠有限生成 A-模都是投射模。
+
+(ε) 对所有 \(x \in \mathbf{K}\)，分式理想 \(\mathbf{A} + \mathbf{A}x\) 都是可逆的。
+
+(ζ) 对所有 \(x \neq 0\) 的 \(\mathbf{K}\) 中元素，存在 \(y \in \mathbf{K}\)，使 \(y \equiv 0 \pmod{1}\)、\(y \equiv 0 \pmod{x}\) 且 \(y \equiv 1 \pmod{1 - x}\)。
+
+\((\eta)\) 若 A 的理想有限族为 \((a_{i})\)，则同余方程组 \(x \equiv c_{i} \pmod{a_{i}}\) 有解的充要条件是对每一对指标 i、j 都有 \(c_{i} \equiv c_{j} \pmod{(a_{i} + a_{j})}\)（“中国剩余定理”）。
+
+(θ) 若 \(a, b, c\) 是三个 \(A\) 的理想，则 \(a \cap (b + c) = a \cap b + a \cap c\)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item[(ι)]
+(ι) 若 \(a, b, c\) 是三个 \(A\) 的理想，则 \(a + (b \cap c) = (a + b) \cap (a + c)\)。
+\item[(κ)]
+(κ) A 是整闭的，且 A 的每个有限生成理想都是除性的。
+\end{enumerate}
+
+(λ) A 是整闭的，并且对属于 \(z \neq 0\)\(\mathbf{K}\)) A \(x, y\)\(\mathbf{A}\)) A\(z = x + yz^2\) 是整闭的，并且对属于  的 ，存在属于  的 ，使 。
+
+(μ) A 是整闭的，并且若 a、b、c 是三个有限生成分式理想 \(\neq0\)，关系 ab = ac 蕴含 b = c。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  对每个有限生成 A-模 M，M 的挠子模是 M 的直和因子。
+\end{enumerate}
+
+(σ) 每个满足 A ⊂ B ⊂ K 的环 B 都是整闭整环。
+
+于是称 A 为 Prüfer 整环（或 Prüferian 整环）。
+
+（证明 \((\alpha)\)、\((\beta)\)、\((\gamma)\) 和 \((\delta)\) 的等价性，使用第二章 § 5 第 2 节定理 1 和第 6 节定理 4。为证明 \((\varepsilon)\) 蕴含 \((\gamma)\)，使用整环中三个分式理想之间的恒等式 \((a + b)(b + c)(c + a) = (a + b + c)(ab + bc + ca)\)。为证明 \((\zeta)\) 蕴含 \((\eta)\)，对 \(a_i\) 的个数作归纳。\((\eta)\)、\((\theta)\) 和 \((\iota)\) 的等价性已在代数第六章 § 1 习题 25 中证明。证明 \((\lambda)\) 蕴含 \((\varepsilon)\)：注意 \((\lambda)\) 蕴含关系
+
+\[
+x (\mathbf {A} + \mathbf {A} z) \subset z (\mathbf {A} + \mathbf {A} z),
+\]
+
+使用§ 1 的习题 6 (b)，并注意
+
+\[
+(\mathbf {A} + \mathbf {A} z) (\mathbf {A} y + \mathbf {A} x / z) = \mathbf {A}.
+\]
+
+证明 \((\mu)\) 蕴含 \((\lambda)\)，注意恒有
+
+\[
+z (\mathrm{A} + \mathrm{Az}) \subset (\mathrm{A} + \mathrm{Az} ^ {2}) (\mathrm{A} + \mathrm{Az}).
+\]
+
+证明 \((\kappa)\)\((\lambda)\) 蕴含 ，注意每个分式\(A t\)\(A\)\(A z^2\)明  \(A z\)蕴\((\nu)\)\((\gamma)\) 蕴含 ，注意每个分式主理\(\mathfrak{a} \neq 0\)\(A\)明  蕴含 \(c \in \mathfrak{a}(A: \mathfrak{a})\)，注意每个\(\mathfrak{b} = c \mathfrak{a}\)\((\sigma)\)\((\beta)\) 蕴含 ，注\(A\)意每\(z \in K - A\)\(z^{-1} \in A\)蕴含 ，注意每个分\(z \in A[z^2]\)式主理想  都包含  和 ，也包含 。为证明  蕴含 ，对非零有限生成整理想  的 ，取非零元素 ，并对理想  应用第一节习题 32。为证明  蕴含 ，将问题化为  是局部环的情形，取 ，证明 ，注意该假设蕴含 。
+
+¶ 13. (a) 在 Prüfer 整环 A 中，设 \(a\)、\(b\) 是两个有限生成理想；证明：若 \(b \notin a\)，则存在有限生成理想 \(c\)，使得 \(a \subset c\)、\(a \neq c\) 且 \(bc \subset a\)（考虑理想 \(a + b\)）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  由 (a) 推出：若 a 是 Prüfer 整环 A 中的有限生成理想，则在环 A/a 中，每个不是零因子的元素都是可逆的。特别地，如果素理想是极大理想，则 A 的素理想不可能是有限生成的。
+\item
+  证明在 Prüfer 整环 A 中，两个互不包含于对方的素理想 p、p' 互素（对 A 的每个极大理想 m，考虑理想 \(pA_{m} + p'A_{m}\)）。
+\item
+  在 Prüfer 整环 A 中，设 \(\mathfrak{a}\) 是一个有限生成理想。要使 \(\mathfrak{a}\) 成为本原理想（第四章，§ 2，习题 33），必要且充分条件是 \(\mathfrak{a}\) 只包含于 A 的一个极大理想中（使用 (b)）；此时 \(\mathfrak{a}\) 是不可约且拟素的（第四章，§ 2，习题 34），所以对于有限生成理想，这三个概念彼此等价。要使 \(\mathfrak{a}\) 成为准素理想，必要且充分条件是它只包含于一个素理想（必为极大理想）\(\mathfrak{m}\) 中；要使 \(\mathfrak{a}\) 成为强准素理想（第四章，§ 2，习题 27），必要且充分条件还包括 \(\mathfrak{mA}_{\mathfrak{m}}\) 是主理想。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\item
+  设 A 是 Prüfer 整环。证明：对于 A-模 M，平坦的必要且充分条件是无挠（使用习题 12 (δ)）。推出 A 是凝聚环（第一章，§ 2，习题 12）。
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    若 A 是 Prüfer 整环，则对于 A 的每个素理想 p，A/p 也是 Prüfer 整环。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  若 A 是 Prüfer 整环，则对于 A 的每个不含 0 的乘法子集 S，\(S^{-1}A\) 也是 Prüfer 整环。
+\item
+  设 K 是一个域，\((\mathbf{A}_{\lambda})\) 是 K 的子环组成的一个非空右有向族。证明：若各个 \(A_{\lambda}\) 都是 Prüfer 整环，则它们的并 A 也是 Prüfer 整环（使用习题 12 (ζ)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  设 A 是 Prüfer 整环，K 是它的分式域，L 是 K 的一个（有限或非有限）代数扩张；证明 A 在 L 中的整闭包 A' 是 Prüfer 整环。（取 \(x \in L\)，设 \(a_{0}X^{n} + a_{1}X^{n-1} + \cdots + a_{n}\) 是 A{[}X{]} 中以 x 为根的多项式；若我们写成
+\end{enumerate}
+
+\[
+a _ {0} \mathrm{X} ^ {n} + a _ {1} \mathrm{X} ^ {n - 1} + \dots + a _ {n} = (\mathrm{X} - x) (b _ {0} \mathrm{X} ^ {n - 1} + \dots + b _ {n - 1}),
+\]
+
+  证明 \(b_{i}\) 和 \(b_{i}x\) 属于 \(A'\)，使用 §1，习题 12 (a)。若 \(a = \sum_{i=0}^{n} A a_{i}\)，\(b = \sum_{j=0}^{n-1} B b_{j}\)，证明理想 \(b.B a^{-1}\) 是 \(B + B x\) 的逆理想。）
+
+¶ 17. 设 A 是一个整环。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  对于 A 成为 Bézout 整环（§ 1，习题 20），必要且充分条件是它是 Prüfer 整环且是伪 Bézout 整环（§ 1，习题 21）。
+\item
+  对于 A 成为 Dedekind 整环，必要且充分条件是它是 Prüfer 整环 Krull 整环（证明 A 的每个除性理想都是有限生成的，使用习题 12 (κ) 和 § 1，习题 11 (a)；推出 A 的每个素理想 \(\neq 0\) 都是极大理想（习题 13 (b)），然后推出 A 的每个素理想都是有限生成的，并借助第二章，§ 1，习题 6 得出结论）。
+\item
+  对于 A 成为 Dedekind 整环，必要且充分条件是它是 Prüfer 整环且强 Lasker（第四章，§ 2，习题 28）。（注意：若 A 是 Prüfer 整环且强 Lasker，则 A 的每个极大理想 m 都使得 \(A_{m}\) 是离散赋值环；进而对 A 中每个非零 \(x \in A\)，存在一个由 A 的有限个极大理想组成的乘积，包含于理想 Ax 中，由此得出 A 是 Krull 整环。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  设 A 是一个环，它是由一族右有向的子环 \(A_{\alpha}\) 的并，而这些子环都是 Dedekind 整环。假设：对于 \(A_{\alpha}\) 的每个素理想 p，存在 \(\beta \geqslant \alpha\)，使得 \(A_{\beta}\) 中至少有两个不同的素理想位于 p 之上。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明所有代数整数构成的环（\(\mathbf{Z}\) 在 \(\mathbf{C}\) 中的整闭包）满足上述条件（参见第五章，§ 2，习题 6）。
+\item
+  \(v\)设  是  上的真赋\(\mathbf{A}\)\(z \in \mathbf{A}\) 设 \(v(z) > 0\)\(\mathfrak{a}\)  是\(\mathbf{A}\) \(x\)\(v(x) \geqslant v(z)\) \(\mathbf{A}: \mathfrak{a} = \mathbf{A}\)是\(\mathfrak{a}\)  上的真赋值， 且 ，并\(m\)\(\mathbf{A}\)\(\mathfrak{a}\mathrm{A}_{m}\) 设  是  上的真赋值， 且\(\mathrm{A}_{\mathfrak{m}}\) ，并设  是  中由满足  的 x 组成的理想。证明 ，从而  不可逆，尽管对于  的每个极大理想 m， 是赋值环  中的主理想（参见第二章，§ 5，第 6 节，定理 4）。
+\item
+  由 (a) 和 (b) 得到一个完全整闭但不是 Krull 整环的 Prüfer 整环例子（参见习题 15 (c) 和 17 (b) 以及第五章，§ 1，习题 14）。
+\end{enumerate}
+
+¶ 19. 若整环 A 的 D(A)（§ 1，习题 11）的有限生成除子集合构成一个群，则称 A 为伪 Prüfer 整环。伪 Prüfer 整环是正则整闭的（§ 1，习题 29）。伪 Bézout 整环（§ 1，习题 21）是伪 Prüfer 整环；Prüfer 整环是伪 Prüfer 整环；Krull 整环是伪 Prüfer 整环。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  通过例子证明，最后三个断言的逆命题不一定成立。
+\item
+  \(\theta\)设  是一个\(>0\)\(\Gamma\)设 \(\mathbf{R}^2\) 是一个  的无理数\((\alpha, \beta)\)\(\alpha \geqslant 0\)\(\beta \geqslant \theta \alpha\)设  是一个  的无理数， 是\(\Gamma\)群 ，其序由以\(\Gamma\)下方式给出：取满足 \(k\)\(\mathbf{Q}^2\)\(\mathbf{R}^2\) 设  是一个  的无理数， 是群 ，其序由以下方式给出：取满足  且  的有序对  作为正元素；有序群  是一个完备格。\(\mathrm{K}^*/\mathrm{U}\)\(\Gamma \cap \mathbf{Q}^2\) 的无理数，\(\Gamma\) 是群 ，其序由以下方式给出：取满足  且  的有序对  作为正元素；有序群  是一个完备格。设 B 是由 § 1，习题 22 的过程从  导出的伪主理想整环，设 A 是 B 与  的子群  在 k 上的代数的交。证明 A 是完全整闭整环，但不是伪 Prüfer 整环（注意：若 K 是 A 的分式域，U 是 A 的可逆元素群，则有序群  同构于 ，其序由  上的序诱导）。
+\item
+  若整环 A 是伪 Prüfer 整环，证明多项式整环 A{[}X{]} 是伪 Prüfer 整环（参见 § 1，习题 30 (c)）。
+\item
+  设 A 是伪 Prüfer 整环，K 是其分式域。证明 A 在 K 的一个代数扩张 L 中的整闭包 B 是伪 Prüfer 整环（采用习题 16 的方法，并使用 § 1，习题 29 (a)）。
+\end{enumerate}
+
+* (e) 由 § 1 的习题 30 (d) 推出一个例子：存在一个具有相同分式域的因子分解整环递增序列 \((\mathbf{A}_n)\)，其并不是正则整闭整环（因而更不可能是伪 Prüfer 整环）（在所引用的例子中，取 B 为离散赋值环）。 *
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  设 A 是 Dedekind 整环，K 是其分式域，L 是 K 的有限代数扩张，B 是 A 在 L 中的整闭包，它是 Dedekind 整环。设 f 是 B 的一\(A \subset C \subset B\)\(p'\)\(B/p'\)\(A/(p' \cap A)\) Dedekind 整环，K 是其分式域，L 是\(p'\)\(p'\)设 A 是 Dedekind 整环，K 是其分式域，L 是 K 的有\(C_{0} = A + f\)\(A + f\)是 K 的有限代数扩张，B 是 A 在 L 中的整闭包，它是 Dedekind 整环。设 f 是 B 的一个理想。要存在一个环 C，使得 ，且 f 是 B 在 A 中的导子（第五章，§ 1，第 5 节），必要且充分条件是：对于 B 的每个包含 f 的素理想 ，若域  同构于 （剩余次数为 1 的素理想），则 f 与 p' 在 f 中的传递子 f:  在 A 中的交相等。（注意：如果存在这样的环 C，则 B 在环  中的导子也等于 f；因此 C 的存在等价于这样的事实： 不包含异于 f 且包含 f 的 B 理想。要证明后一条件等价于命题中的条件，将问题化为 A 是离散赋值环的情形。）
+\end{enumerate}
+
+¶ 21. (a) 设 A 是一个整环，f、g 是 A{[}X{]} 中的两个多项式，且 h = fg。记 a、b、c 分别为由 f、g、h 的系数生成的 A 的理想。证明：若 \(\deg(g) = n\)，则 \(a^{n+1}b = a^{n}c\)。（令 \(f(X) = \sum_{i=1}^{m} a_{i}X^{i}\)，\(g(X) = \sum_{j=1}^{n} b_{j}X^{j}\)；对于每个递增序列
+
+\[
+\sigma = (i _ {k}) _ {1 \leqslant k \leqslant n + 1}
+\]
+
+的整数 ，\(\leqslant m\)\(j\)，且对所有 ，令
+
+\[
+u _ {\sigma , j} = a _ {i _ {1}} a _ {i _ {2}} \dots a _ {i _ {j + 1}} b _ {j} a _ {i _ {j + 2}} \dots a _ {i _ {n + 1}};
+\]
+
+在集合  上取\(u_{\sigma,j}\)一个全序，\(j < j'\)\(u_{\sigma,j} < u_{\tau,j'}\)集合\(\sigma, \tau\)  上\(j\)\(u_{\sigma,j} \leqslant u_{\tau,j}\)集合  上\(\sigma \leqslant \tau\)取一个全序，使\([0, m]^{n+1}\)得当  时，对所有  都有 ；并且对每个 ，当且仅当在  上按字典序排列时 ，有 。然后对这个全序集作归纳论证。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  由 (a) 推出：如果 A 是 Prüfer 整环（习题 12），则 c = ab。
+\item
+  取 A 为多项式环 \(\mathbf{Z}[\mathbf{Y}]\)\(f, g\)\(\mathrm{A}[\mathbf{X}]\)\(c \neq ab\) A 为多项式环 ，给出  中两个一次多项式  的例子，使得 。
+\end{enumerate}
+
+¶ 22. (a) 设 A 是一个 Noether 整环，其每个素理想  都是极大理想，因此每个理想 a  都能唯一写\(\prod_{i} q_{i}\)\(p_{i}\)er 整环，其每个素理想  都是极大理想，因此每个理想 a  都能唯一写成相对于包含 a 的不同素理想 p＿i 的准素理想之积 。
+
+ \(\mathfrak{a}\) 设  是  中的\(\mathbf{A}\)\(\mathfrak{b}\)  \(\neq 0\)\(\mathbf{A}\) 设  是  中的可逆理\(\mathfrak{c}\)\(\mathfrak{b} + \mathfrak{c} = \mathbf{A}\)\(\mathfrak{ac}\)设  是  中的可逆\((\mathfrak{p}_i)_{1 \leqslant i \leqslant n}\)理想， 是 \(\mathbf{A}\)\(\mathfrak{r}_i = \prod_{j \neq i} \mathfrak{p}_j\)\(\mathfrak{a} = \sum_i \mathfrak{ar}_i\)\(\bigcap_i \mathfrak{ar}_i = \mathfrak{ap}_1\mathfrak{p}_2 \ldots \mathfrak{p}_n\)设  是  中的可逆理想， 是  中任意的  理想；证明\(x \in \mathfrak{a}\)\(x^{-1}\mathfrak{a} + \mathfrak{b} = \mathbf{A}\) 是\(\mathfrak{a}\)  中的可逆理想， 是  中任意的  理想；证明存在理想 ，使得 ，且  是主理想（注意：若  是  的有限个互异极大理想组成的族，且记 ，则 ，且 ；使用第二章，§ 1，第 2 节，命题 6，推出存在元素 ，使得 。）推出  由两个元素生成（参见习题 1）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 K 是一个域，A 是形式幂级数环 \(K[[T]]\) 的子环，由形如 \(a_{0} + T^{n}P(T)\) 的级数组成，其中 \(a_{0} \in K\)、\(P(T) \in K[[T]]\)，对给定整数 n 而言。证明 A 是一个 Noether 局部整环，只有一个素理想 \(m \neq 0\)，但 m 的生成系的最小基数是 n。
+\end{enumerate}
+
+\exercisesection{3}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  对于一个整环成为因子分解整环，必要且充分条件是存在一个从 A - 0\(x \mapsto s(x)\) 到 \{N\} 的映射 \(s(xy) = s(x) + s(y)\)，使得 ，关\(s(x) = 0\)系  蕴含 x 在 A 中可逆；最后，对于 A - 0 中任\{\}意两个元素 x、y（它们互不整除），存在 A - 0 中\{\}的元素 \(ax + by = zt\)a\(s(z) < s(x)\)、b、z、t，使得 ，，且 t 与 x、y 互素。（若此条件满足，先证明 A 的每个非零元素都是极端元之积，再证明对每个极端元 p，Ap 是素理想；借助定理 1 (d) 得出结论）。
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    设 A 是一个整环，它是右有向子环族  的并\((\mathbf{A}_{\lambda})\)。假设每个  都是因子分解整环\(A_{\lambda}\)，并且当  时，A＿\(\lambda \leqslant \mu\)bda 的每个极端元在\(A_{\lambda}\) A＿ 中\(A_{\mu}\)仍为极端元。证明 A 是因子分解整环，且其极端元集合是各 A＿ 的极端元集合之并（参见 § 2，习\(A_{\lambda}\)题 19 (e)）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  由 (a) 推出：对于每个因子分解整环 \(\mathbf{A}\)，任意一族不定元上的多项式整环 \(\mathbf{A}[\mathbf{X}_{\lambda}]_{\lambda \in \mathbf{L}}\) 都是因子分解整环。
+\item
+  设 A 是一个因子分解整环，并且有限个不定元的每个形式幂级数整环 \(A[[X_{1},\ldots,X_{n}]]\) 都是因子分解整环。证明任意一族不定元的形式幂级数整环 \(A[[X_{\lambda}]]_{\lambda\in L}\)（《代数》第四章，§5，习题 1）也是因子分解整环（方法相同）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    设 \(A = \bigoplus_{n \geqslant 0} A_n\) 是域 k 上具有正次数的分次代数；假设 \(A_0 = k\)，且 A 是 Krull 整环。证明 A 成为因子分解整环的必要且充分条件是：A 的每个高度为 l 的分次素理想 p 都具有 p = Aa 的形式，其中 a 是一个齐次元素（使用 §1 的习题 16）。证明 A 的每个 \(\neq 0\) 齐次元素都是齐次极端元之积。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设\(\mathbf{A}\)  \(k\)是满足 (a) 条件的分次 k\(k'\)\(k\)\(\mathbf{A} \otimes_k k'\)\(\mathbf{A}\)\(\mathfrak{a}\)\(\mathbf{A}\)\(\mathfrak{a} \otimes_k k'\)\(\mathbf{A} \otimes_k k'\)\(\mathfrak{a}\)-代数。设  是 k 的扩域，并假设  是因子分解整环；证明  是因子分解整环。（若  的一个分次理想  使得  在  中是主理想，证明  是主理想；然后使用 (a)。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    证明环 ，其\(\mathbf{A} = \mathbf{Q}[\mathbf{X},\mathbf{Y}] / p\)\(p\)中 p 是\(\mathbf{X}^2 +\mathbf{Y}^2 -1\)\(\mathbf{Q}[\mathbf{X},\mathbf{Y}]\) \(x\)\(\mathbf{X}\)\(\mathbf{A}\)\(x\)\(\mathbf{A}\)\(\mathbf{A}x\)\(\mathbf{A}\) 中由  生成的主理想，是一个非因子分解的 Krull 整环（若 x 是  在  中的像，证明 x 是  的极端元，但  不是  的极大理想）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  证明环 \(\mathbf{A} \otimes_{\mathbf{Q}} \mathbf{Q}(i)\) 是因子分解整环（证明该环同构于 \(\mathbf{Q}(i) [X, Y]\) 除以主理想（ \(XY - 1\) ）所得的商；与习题 3 (b) 比较）。
+\end{enumerate}
+
+¶ 5. (a) 设 k 是一个 Noether 因子分解整环，B 是多项式环 \(k[X_{1},\ldots,X_{n}]\)，其中 \(n\geqslant3\)；设 \(g_{i}\;(0\leqslant i\leqslant r)\) 是 \(k[X_{3},\ldots,X_{n}]\) 中的元素
+
+其中\(g_0\)  是极端元\(g = \mathbf{X}_1\mathbf{X}_2 - \sum_{i=0} g_i\mathbf{X}_1^i\)。令 \(\mathbf{A} = \mathbf{B}/g\mathbf{B}\)\(\mathbf{A}\)\(\mathbf{S}\)，\(\mathbf{A}\)\(\mathbf{X}_1\)\(\mathbf{A}\)\(\mathbf{S}^{-1}\mathbf{A}\)考虑商环 。证明  是因子分解整环。（令  为  中由 1 和  的像生成的乘法子集；对  应用第 4 节命题 3。）
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  \(k\)设 k 是特征\(\neq 2\)\(F\)  的域，F\(k[\mathbf{X}_1, \ldots, \mathbf{X}_n]\)\(n \geqslant 5\) 是\(k^n\) \(k[\mathbf{X}_1, \ldots, \mathbf{X}_n] / (\mathbf{F})\)\(G\)\(k[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 中的二次齐次多项式，其中 \(n \geqslant 3\)\(k\)，并且相应的 k＾n 上多项式函数是非退化二次型。证明整环  是因子分解整环。（首先证明：若  是  中的二次齐次多项式，且相应多项式函数是非退化二次型，则当  时 G 是极端元。然后在 k 代数闭时使用 (a) 证明命题；最后借助习题 3 (b) 推到一般情形。）
+\item
+  若 \(F = X_{1}X_{2} - X_{3}X_{4}\)，证明整环 \(k[X_{1}, X_{2}, X_{3}, X_{4}]/(F)\) 不是因子分解整环。（证明该环中各 \(X_{i}\) 的像都是极端元。）
+\end{enumerate}
+
+¶ 6. (a) 设 K 是一个特征  的代数闭域。确定环
+
+\[
+\mathrm{K} [ \mathrm{X}, \mathrm{Y}, \mathrm{Z} ] / (\mathrm{X} ^ {2} + \mathrm{Y} ^ {2} + \mathrm{Z} ^ {2}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设\(k\) k 是一个有\(a, b, c\)\(>0\)\(k\)\(A\)\(k[X, Y, Z] / (aX^2 + bY^2 + cZ^2)\)\(A\)序域，a、b、c 是 k \(k\)中的  元素，A 是环 。证明 A 是因子分解整环\(A\)。（使用习题 3 (b) 将其化为 k 是极大有序域的情形；然后利用 (a) 证明 A 的每个高度 1 的分次素理想都是主理想，并应用习题 3 (a)。）
+\item
+  设\(k\)  是一个有序域，a、b \(a, b\)是 k 中\(> 0\)的 \(k\) 元素\(B\)，B 是环
+\end{enumerate}
+
+\[
+k [ \mathrm{X}, \mathrm{Y} ] / (a \mathrm{X} ^ {2} + b \mathrm{Y} ^ {2} + 1).
+\]
+
+证明 B 是因子分解整环（使用 (b) 和 § 1 的习题 17 (a)）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  证明整环 \(\mathbf{C} = \mathbf{Q}[\mathrm{X},\mathrm{Y}] / (\mathrm{X}^2 +2\mathrm{Y}^2 +1)\) 是因子分解整环，但整环 \(\mathbf{C}\otimes_{\mathbf{Q}}\mathbf{Q}(i)\)（其中 \(i^2 = -1\)）不是因子分解整环。
+\end{enumerate}
+
+¶ 7. 设 K 是一个 Noether 因子分解整环，F 是多项式\(K[X_{1},\ldots,X_{n}]\)环  中的极端元；假设当\(q(i)>0\)给\(1\leqslant i\leqslant n\)每个  赋予权 （\(X_{i}\)）时，F 是等重的且权为\textgreater q0。设 A 是分式域  的代数闭包  \(\Omega\)中由 K、（）以及多项式\(K(X_{1},\ldots,X_{n})\)  的一\(X_{i}\)个根\(1\leqslant i\leqslant n\) z 生成的整环，其中 \(Z^{c}-F\)c 是与 q 互素的整数。证明以下两种情形中 A 是因子分解整环：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  \(c \equiv 1 \pmod{q}\)；
+\item
+  每个有限生成的射影 K-模都是自由的（例如 K 是域、主理想整环或局部环时成立）。（第一种情形，考虑分式环 A[1/z]；证明它是因子分解整环{}，{并}应用第 4 节命题 3。第二种情形，取整数 d 使 ，并取  中满足  的 ；整环 B =\(cd \equiv 1 \pmod{q}\) A[\(z' \in \Omega\)z'] 由\(z = z'^{d}\)第一种情形是因{}子{}分解的，并且是自由 A-模。将 B 看作分次环，令  的权为 q，每个  的\(z'\)权为 ，并将问题化为证\(X_{i}\)明 A \(cdq(i)\)的两个齐次元素 u、v 的理想 Au ∩ Av 是主理想，使用 §1 的习题 16；最后考虑 B 中的理想 Bu ∩ Bv，并使用第一章，§3，第 6 节，命题 12。）特别地，如果 K 是域，且 a、b、\textgreater 是两两互素的三个整数 0，则整环
+\end{enumerate}
+
+\[
+\mathbf {A} = \mathrm{K} [ \mathrm{X}, \mathrm{Y}, \mathrm{Z} ] / (\mathrm{Z} ^ {a} - \mathrm{X} ^ {b} - \mathrm{Y} ^ {c})
+\]
+
+是因子分解的。
+
+¶ 8. 设 A 是一个整环，x、y、z 是 A 的三个非零元素，其中 x 是极端元且 Ax ∩ Ay = Axy。设 S 是由 \(x^{n}\)（\(n \geqslant 0\)）组成的乘法集，并令 B = S \(^{-1}\) A；考虑形式幂级数整环 A{[}{[}T{]}{]} 和 B{[}{[}T{]}{]}。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+    设 \(i, j, k\) 是三个满足 \(\geqslant 0\) 的整数，使得 \(ijk - ij - jk - ki \geqslant 0\) 且 \(z^i \in Ax^j + Ay^k\)。在 A{[}{[}T{]}{]} 中考虑元素 \(v = xy - z^{i-1}\mathrm{T}\)。证明存在一个整数 \(t > 0\) 和一个级数
+\end{enumerate}
+
+\[
+v ^ {\prime} = y ^ {t} x ^ {- 1} + b _ {1} x ^ {- 2} \mathrm{T} + \dots + b _ {n - 1} x ^ {- n} \mathrm{T} ^ {n - 1} + \dots
+\]
+
+在 {}{}B{}{}[[T]]\(vv' \in A[[T]]\) 中，使得 \(b_{n}\)（递归确定 ，在 N 中按长度为 ij 的区间推进；在每个区间的内部，取
+
+\[
+b _ {n + 1} = b _ {n} z ^ {i - 1} x ^ {- 1};
+\]
+
+在每个区间内部，取\(ijk + ij - jk - ki \geqslant 0\) 
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  假设 \(z^{i-1} \notin Ax + Ay\)。证明在环 A[[T]] 中{不}{}{存}{}在常数项为 （k 是  的整数\(y^k\)）\(k\)且在 B\(>0\)[[T]] 中与 v 相伴的形式幂级{}{数}{}{（}计算 v 与 B[[T]] 中一个可逆元素的乘积的 T 系{数}{}）{}{}。
+\item
+  由 (a)、(b) 和习题 7 推出一个因子分解整环 A 的例子，使得形式幂级数整环 A[[T{}{]}{}{]} 不是因子分解的。（在上述记号中，并假定关于 x、y、z、i、j、k 的 (a)、(b) 条件均满足，证明  \(vv'\)不可能在 A[[T]] 中分解为极\(u_{h}\)端因\(1 \leqslant h \leqslant r\)子 {（}{}）{}{之}积；注意  是\(u_{h}\)常数项为 y 的幂的形式幂级数。然后考虑环 C = S'-1A[[T]]，其\^{}\{中\} {}{}S{}{'} 由常数项属于 S 的级数组成；B[[T]] 是 C{}{ }{的}{} Zariski 环的完备化；证明  属于 \(v' \in C\)C，且 v 和 \(u_{h}\) 在 C 中是极端元；最后由 (b) 得到矛盾。）
+\item
+  由 (c) 推出一个 Noether 因子分解局部整环 A 的例子，其完备化 \(\hat{A}\) 是非因子分解的 Krull 整环。
+\end{enumerate}
+
+¶ 9. (a) 设 A 是一个 Noether 整环，使得对 A 的每个极大理想 m，\(A_{m}\) 都是离散赋值环。若 B 是形式幂级数环 \(A[[X_{1},\ldots,X_{n}]]\)，证明对 B 的每个极大理想 n，整环 \(B_{n}\) 都是因子分解整环（考虑其完备化，使用第 9 节命题 8）。推出 B 的每个除性理想都是投射 B-模。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 C 是一个 Noether 环，使得每个有限生成投射 C-模都是自由的；证明形式幂级数环 C{[}{[}X{]}{]} 具有相同性质（参见第二章，§ 3，第 2 节，命题 5）。
+\item
+  由 (a) 和 (b) 推出：如果 A 是主理想整环，则形式幂级数整环 \(A[[X_{1},\ldots,X_{n}]]\) 是因子分解的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    Prüfer（§ 2，习题 12）因子分解整环是主理想整环。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  伪 Bézout（§ 1，习题 21）Krull 整环是因子分解的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\item
+  设 K 是一个域，A 是多项式整环 \(K[X,Y]\)，它是因子分解的；若 L 是域 \(K(X^{2},Y/X) \subset K(X,Y)\)，证明整环 \(A \cap L\) 不是因子分解的。
+\item
+  使用第三章，§ 2，第 8 节，定理 1 的推论 3 证明第 8 节命题 5。
+\item
+  将第 8 节命题 7 的推论推广到完备 Hausdorff 局部环 A 不是整环的情形（使用《代数》第八章，§6，习题 6 (b)）。
+\item
+  设 A 是一个完备 Noether 局部环，其剩余域的特\textgreater{}征为 。在形式幂级数环 A[{}{}[{}{}T]] 中，对每\(\omega_{n} = (1 - T)^{p^{n}}\)个整\(\gamma_{n} = 1 - \omega_{n}\)数 ，考虑元素\textgreater{}  和 。\(\gamma_{n}\)证明  除了一个符号因子外是一个特异多项式（第 \(A_{n} = A[[T]]/(\gamma_{n})\)8 节）；推出  可识别为 A 上群
+\end{enumerate}
+
+\(G_{n} = Z/p^{n}Z\)。证明主理想 \((\gamma_{n})\) 的交为 0；推出 A{[}{[}T{]}{]} 可识别为逆极限 \(\lim A_{n}\)。
+
+¶ 15. 设 K 是一个关于赋值 v 完备的域，A 是该赋值的环，k 是其剩余域，P 是 A[X₁, , Xₙ] 中总次{}数为\ldots d{} 的多项式，满足以下性质：存在 K' 的一个代数扩张，使得在 K'[X₁, , Xₙ] 中{} P\ldots {是}总次数为 1 的多项式之积。进一步假设 A[X₁, , Xₙ] 中存在两个多项式 Q、R，{}使 \ldots {}的总次数为 s，且含有单项式 ，其中 （ 表示典\(aX_1^{s}\)范同态 A → k），R 的次数 ≤d - s，且  . （第三章，§ 4\(\overline{\mathbf{P}} = \overline{\mathbf{Q}}\) 的\(\overline{\mathbf{R}}\)记号）。证明于是存在 A[X₁, , Xₙ] 中的两{个}多\ldots 项式{} Q₀、R₀，其次数分别为 s、d - s，使得 P = Q₀R\(\overline{\mathbf{Q}} = \overline{\mathbf{Q}}_0\)₀\(\overline{\mathbf{R}} = \overline{\mathbf{R}}_0\)，，，且 Q₀ 含有单项\(a_0X_1^{s}\)式 ，其中 。（将 P、Q、R 看作关于 X₁ 的多项式，其系数在环 B 中；B 是 A[X₂{}, \ldots, {}Xₙ] 关于通过第六章，§ 10，第 1 节，命题 2 的方法将 v 延拓所得赋值的完备化；然后应用 Hensel 引理；最后使用 P 的初始假设。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{15}
+\item
+  设 B 是一个剩余域为有限域且不是素域的离散赋值环；设  是\(k_{0}\) k 的素子域，A 是 B 的子环，由剩余域中类属于  的元素组成。设  是 B 的\(k_{0}\)一个\(\pi\)一致化元， 是 \((\theta_{i})_{1\leq i\leq m}\)B 的一组可逆元素，使得  的模  的类\(\bar{\theta}_{i}\)  \(\pi\)构成\(\theta_{i}\) k＾* 模  的代表系\(k^{*}\)。证\(k_{0}^{*}\)明元素  和元素\(p_{i}=\theta_{i}\pi\)  在 A \(\pi\)中都是极端元，且 A 中每个元素都是一个可逆元素与  及  的幂的\(p_{i}\)乘\(\pi\)积，尽管 A 不是整闭的。
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+  设 A 是一个整环；证明在环  \(A[X_{ij}]\)中，其\((\mathbf{X}_{ij})\)中  是由 \(n^{2}\)n² 个不\((1 \leqslant i \leqslant n, 1 \leqslant j \leqslant n)\)定元组成的\(\det(\mathbf{X}_{ij})\)族（，），元素  是极端元。（将其化为 A 是域的情形；注\(\det(\mathbf{X}_{ij})\)意  的因子必为齐次多项式，然后对 n 作归纳。）
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \(\mathbf{K}\)设  是无限域， \(\mathbf{F}\)是  中的\(\mathbf{K}[\mathbf{Y}_1,\dots ,\mathbf{Y}_m]\)多项式，也写作 ；\(\mathrm{F(Y)}\)对于 K 上任意一\(s = (\alpha_{ij})\)个 m\(m\) 阶方阵 ，记 \(F(s.Y)\) 为如下多项式 F：将元素  \(\sum_{j=1}^{m}\alpha_{ij}Y_{j}\)代入每个 。证明若 \(Y_{i}\)F 是极端元，则对于每个\(F(s.Y)\)可逆矩阵 s， 也是极端元。若存在整数 \(k\geqslant0\) 使得
+\end{enumerate}
+
+\[
+\mathbf {F} (s. \mathbf {Y}) = (\det (s)) ^ {k} \mathbf {F} (\mathbf {Y})
+\]
+
+对于每个可逆矩阵\(s\) \(\mathbf{F}\)s， 必然关于每个  齐次\(\mathbf{Y}_j\)；
+
+此外，若 ，其\(\mathbf{F} = \mathbf{GH}\)中  \(\mathbf{G}\)和  \(\mathbf{H}\)是  中的两个多项式，则\(\mathbf{K}[\mathbf{Y}_1,\dots ,\mathbf{Y}_m]\)存在两个整数 p、q，使得 p\(p\) +\(q\) q = k\(p + q = k\) 且
+
+\[
+\mathbf {G} (s. \mathbf {Y}) = (\det (s)) ^ {p} \mathbf {G} (\mathbf {Y}), \quad \mathbf {H} (s. \mathbf {Y}) = (\det (s)) ^ {q} \mathbf {H} (\mathbf {Y})
+\]
+
+对于每个可逆矩阵 s（使用 \(s\)(a)）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 A 是一个不为 0 的环；考虑多项式环 ，其中  是 （分别为 \(\mathbf{A}[\mathbf{X}_{ij}]\)）个不定元，\(\mathbf{X}_{ij}\)满足\(n(n + 1)/2\) （分别\(2n(2n - 1)/2\)为 ）；设 （分别为 \(1 \leqslant i \leqslant j \leqslant n\)）是  \(1 \leqslant i < j \leqslant 2n\)上的 n\(U = (\xi_{ij})\) 阶（分\(V = (\eta_{ij})\)别为 2n 阶）方阵，满足：当 \(n\) 时 \(2n\)，且当 \(\mathbf{A}[\mathbf{X}_{ij}]\)i > j \(\xi_{ij} = \mathbf{X}_{ij}\)时 \(1 \leqslant i \leqslant j \leqslant n\)（分\(\xi_{ij} = \mathbf{X}_{ji}\)别地，\(i > j\)当  时\(\eta_{ii} = 0\) ，\(1 \leqslant i \leqslant 2n\)当\(\eta_{ij} = \mathbf{X}_{ij}\)  时\(1 \leqslant i < j \leqslant 2n\) \(\eta_{ij} = -\mathbf{X}_{ji}\)，当 \(i > j\)i > j \(\det(U)\)时 ）。\(\operatorname{Pf}(V)\)证明 （分别为 ）是  中的\(\mathbf{A}[\mathbf{X}_{ij}]\)极端元（仿照 (b)，考虑  \(\det(s, U, {}^ts)\)和 ）\(\operatorname{Pf}(s, V, {}^ts)\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  设 K 是一个域，f = g/h 是二元不定元的有理函数域 \(\mathrm{K}(\mathrm{U}, \mathrm{V})\) 中的元素，其中 g、h 是 \(\mathrm{K}[\mathrm{U}, \mathrm{V}]\) 中互素的两个多项式。证明在有理函数域
+\end{enumerate}
+
+\[
+\mathrm{K} \left(\mathrm{X} _ {1}, \mathrm{Y} _ {1}, \dots , \mathrm{X} _ {n}, \mathrm{Y} _ {n}\right)
+\]
+
+在含有 \(2n\) 个不定元的有理函数域中，行列式 \(\operatorname{det}(f(\mathbf{X}_i, \mathbf{Y}_j))\) 等于：
+
+\[
+\left(\prod_ {i, j} h \left(\mathrm{X} _ {i}, \mathrm{Y} _ {j}\right)\right) ^ {- 1} \mathrm{V} \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {n}\right) \mathrm{V} \left(\mathrm{Y} _ {1}, \dots , \mathrm{Y} _ {n}\right) \mathrm{F} \left(\mathrm{X} _ {1}, \mathrm{Y} _ {1}, \dots , \mathrm{X} _ {n}, \mathrm{Y} _ {n}\right)
+\]
+
+其中 F 是  中的多项式， \(K[X_{1}, Y_{1}, \ldots, X_{n}, Y_{n}]\)是 V\(V(X_{1}, \ldots, X_{n})\)andermonde 行列式（《代数》第三章，§ 6，第 4 节）。考虑 f = 1/(U + V) 的特殊情形（\(f = 1/(U + V)\)“Cauchy 恒等式”）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  \(U\)若 U 是 n 阶方阵，\(n\) \(\Delta\)是其行列式， 是\(\Delta_p\) U 的第 p 个外\(p\)幂的行列式（《代数\(U\)》第三章，§ 6，第 3 节），证明：
+\end{enumerate}
+
+\[
+\Delta_ {p} = \Delta^ {\binom {n - 1} {p - 1}}
+\]
+
+（使用《代数》第三章，§ 6 的习题 11 和上面的习题 17 (a)。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  \(\mathbf{A}\)设  是一个因子分解整\(f = \sum_{k=0}^{n} a_k \mathbf{X}^k\)环， 是  \(\mathbf{A}[\mathbf{X}]\)中的多项式；假设 A 中存在一个极端元\(p\) p\(\mathbf{A}\)，使得：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  存在一个索引 ，使 a\(k \leqslant n\)＿k 不被 \(a_{k}\)p 整除，但当 i <\(p\) k \(a_{i}\)时 a＿i 被 p\(p\) 整除\(i < k\)；
+\item
+ \(a_0\) a＿0 被  整除，\(\pmb{p}\)但不被  整除\(p^2\)。
+\end{enumerate}
+
+证明在这些条件下，f 在  中的不可约因子之一的次数 \(f\)（在\(\mathbf{A}[\mathbf{X}]\)  中论证\(\geqslant k\)）。考虑 \((\mathbf{A} / p\mathbf{A})[\mathbf{X}]\)k = n 的特殊情形（“Eis\(k = n\)enstein 不可约性判别法”）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  证明在\(\mathbf{Z}[\mathbf{X}]\)  中下列多项式不可约：，其中 \(\mathbf{X}^n - a\)a 的一个素因子指数为 1；\(a\)（将  替换\(\mathbf{X}^{2^k} + 1\)为 ）；\(\mathbf{X}\)；。\(\mathbf{X} + 1\)（\(\mathbf{X}^4 + 3\mathbf{X}^3 + 3\mathbf{X}^2 - 5\)使\(5\mathbf{X}^4 - 6\mathbf{X}^3 - a\mathbf{X}^2 - 4\mathbf{X} + 2\)用习题 20。）
+\end{enumerate}
+
+¶ 22. (a) 设 k 是一个有序域，A 是多项式环 k{[}X, Y, Z{]} 除以主理想 \((\mathbf{X}^{2} + \mathbf{Y}^{2} + \mathbf{Z}^{2} - 1)\) 所得的商；设 x、y、z 表示 X、Y、Z 在 A 中的典范像。证明 A 是因子分解整环（考虑分式环 \(A_{z-1}\)（第二章，§ 5，第 1 节的记号），使用第 4 节命题 3）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \((e_i)_{1 \leq i \leq 3}\)设  是  的典\(\mathbf{A}^3\)范基，\(\mathbf{M}\) 是  除以由\(\mathbf{A}^3\)  生成的单生成子 \(\mathbf{N}\)A-模 \(xe_1 + ye_2 + ze_3\) 所得的\(\mathbf{M}\)商；证明  是投射 A-模（在  中为\(\mathbf{N}\)  \(\mathbf{A}^3\)构造一个补子模\(k = \mathbf{R}\)）。* (\(\mathbf{M}\)c) 证明若 ，\(\mathbf{M}\)A-模  不是自由的（将  识别为单位球面切向量丛的连续截面模的子模，并使用球面上不存在在每一点都不为 0 的连续切向\(\neq 0\)量场这一事实）。 *
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{22}
+\tightlist
+\item
+  设 B 是 Krull 整环，E 是其分式域，\(\Delta\) 是 E 的一个导子，满足 \(\Delta(\mathbf{B}) \subset \mathbf{B}\)，K 是 E 中 \(\Delta\) 的核所成的子域，A 是 Krull 整环 \(B \cap K\)；假设 K 的特征为 p \textgreater{} 0；则 \(E^{p} \subset K\) 且 \(B^{p} \subset A\)，因此 B 是 A 在 E 中的整闭包，且典范同态 \(\vec{i}: C(A) \to C(B)\) 有定义（\(\S 1\)，第 10 节）。记 U 为 B 的可逆元素群。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item  若  满足  是  中某个除子的典范像，证明 （注意，对  的每个高度为 1 的素理想 ，存在 ，使得 ，并注意  在  下不变）。令  为  的加法子群，由属于  的 （“对数导数”）组成（对于  或 ，这两者等价，且 ），并令  为  的子群，由 （其中 ）组成。证明：对于每个 ，若 d 的像是  中的主除子，则对所有满足  的 b， 在模  下的类只取决于 d 在  中的类，并导出从  到  的典范单射同态 。
+  \(b \in \mathbf{E}\)若  满足\(\mathrm{div}_{\mathbf{B}}(b)\)  是  中某个除子的典范像\(\mathbf{D}(\mathbf{A})\)，证明 \(\Delta b / b \in \mathbf{B}\)（注意，对  的每个高度\(\mathfrak{P}\)为 \(\mathbf{B}\)1 的素理想 ，存\(b' \in \mathbf{K}\)在 ，使\(v_{\mathfrak{P}}(b) = v_{\mathfrak{P}}(b')\)得 ，并注意\(\mathbf{B}_{\mathfrak{P}}\)  在  下不\(\Delta\)变）。\(\mathbf{L}\)令  为  的加法子\(\mathbf{B}\)群，由属于  \(\Delta b / b\)的 （“对数导数”）组成（对于 \(\mathbf{B}\) 或\(b \in \mathbf{E}\) ，\(b \in \mathbf{B}\)这两者等价，且 ），并令\(b \neq 0\)  为\(\mathbf{L}'\)  的子群，由\(\mathbf{L}\) （其中 ）组\(\Delta u / u\)成。证\(u \in \mathbf{U}\)明：对于每个 ，若 d\(d \in \mathbf{D}(\mathbf{A})\) 的像是  中的主\(d\)除子，则对所有满足\(\mathbf{D}(\mathbf{B})\)  的 b， \(\mathbf{L}'\)在\(\Delta b / b\)模  \(b\)下的类只\(i(d) = \mathrm{div}_{\mathbf{B}}(b)\)取决于 d 在  中的\(d\)类\(\mathbf{C}(\mathbf{A})\)，并导出从  到  的典范单射\(\phi\)同态\(\operatorname{Ker}(\bar{i})\) \(\mathbf{L} / \mathbf{L}'\)。
+\item
+  证明：若\(\Delta(B)\)  不包含于 B 的任何\(B\)高度为 1 \([E: K] = p\)的\(\phi\)素理想，且 ，则  是双射。（化为\(b \in E\)证明：若 \(\Delta b / b \in B\) 满\(\mathfrak{P}\)足 ，且  是\(B\) B 的高度为 \(v_{\mathfrak{P}}(b)\)1 的素理想，使\(p\)得  \(e(\mathfrak{P} / \mathfrak{p}) = 1\)不是 \(\mathfrak{p} = \mathfrak{P} \cap A\)p 的倍数，则 ，其中 ；为此，由假\(t\)设推出：若 t\(B_{\mathfrak{P}}\) 是 \(\Delta t / t \in B_{\mathfrak{P}}\) 的一致\(\mathfrak{P}B_{\mathfrak{P}}\)化元，则 ，从\(\Delta\)而  在\(\Delta\)  下不变，因而  通过取商在剩余域\(\overline{\Delta}\)  上定义一个导\(k = B_{\mathfrak{P}} / \mathfrak{P}B_{\mathfrak{P}}\)子；证明 \(\overline{\Delta} \neq 0\)，并推出 。\(f(\mathfrak{P} / \mathfrak{p}) = p\))
+\item
+  \(k\)设 k 是特征 2 的域，B 是多项\(k[\mathbf{X}, \mathbf{Y}, \mathbf{Z}]\)式环\(\Delta\) ， 是  \(\mathbf{E} = k(\mathbf{X}, \mathbf{Y}, \mathbf{Z})\)的导子\(\Delta(\mathbf{X}) = \mathbf{Y}^4\)，\(\Delta(\mathbf{Y}) = \mathbf{X}^2\)满\(\Delta(\mathbf{Z}) = \mathbf{XYZ}\)足 、、；\(\mathbf{K}\)域  是 \(\Delta\) 的核，\([\mathbf{E} : \mathbf{K}] = 4\)并满足\(\Delta(\mathbf{Z}) / \mathbf{Z} \in \mathbf{B}\) 。于是 \(\mathrm{div}_{\mathbf{B}}(\mathbf{Z})\)，但证明  不是  中某个除子\(\mathrm{D}(\mathbf{A})\)的典范像。（反证，假设对于 、，\(e(\mathfrak{P} / \mathfrak{p}) = 1\)有\(\mathfrak{P} = \mathbf{B}\mathbf{Z}\) \(\mathfrak{p} = \mathfrak{P} \cap \mathbf{A}\)；那么  中会有 \(\mathbf{A}\) 的一致化元\(\mathrm{B}_{\mathfrak{P}}\)，它必为  的形式\(a(\mathbf{X}, \mathbf{Y}, \mathbf{Z})\mathbf{Z}\)，其\(b = a(\mathbf{X}, \mathbf{Y}, 0) \neq 0\)中 ；推出\(\Delta b / b = -\mathbf{X}\mathbf{Y}\) ，并通过计算  得到矛盾。\(\Delta(-\mathbf{X}\mathbf{Y})\)）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{23}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    设 E 是特征 2 的域，\(\Delta\) 是 E 的导子，K 是 E 中  的核所成的\(\Delta\)子域；假设 \([E:K]=2\)。证明 ，\(\Delta^{2}=a\Delta\)其中 \(a\in K\)，并证明对于 E 中\(t\in E\)元素 t，要写成\(\Delta x/x\)  的形式，必要且充分条件是 \(\Delta t=at+t^{2}\)。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 B 是特征 2 的因子分解局部整环，m 是其极大理想，E 是其分式域， 是 E\(\Delta\) 的导子；假设 E 的子域 K（ 的核）满足 ；此\(\Delta\)外，假设 {}m{ }中存在两个元素 x、y，使  和  生成 B 的理想 \(\Delta x\)q，\(\Delta y\)该理想由  生成。证明：若  \(\Delta(B)\)属于 q，则存在\(t = \Delta z / z\) B 的一个可逆元素 u，使 （写成 ，其中 r\(t = \Delta u / u\)、s \(t = r \Delta x + s \Delta y\)属于 B，并使用 (a)）。
+\end{enumerate}
+
+¶ 25. 设 k 是特征 2 的域，B 是形式幂级数环 ，E 是\(k[[X,Y]]\)其分式域， 是由 、 定义的\(\Delta\) E 的 k-导子（i、j \(\Delta(X)=Y^{2j}\)是满\(\Delta(Y)=X^{2i}\)足  的整数\(\geqslant0\)）；B 中由满足  的  组成的子\(x\in B\)环 A，是\(\Delta x=0\)  中的形式幂级数环，其中以  代\(k[[X,Y,Z]]\)替 X\(X^{2}\)、以  代替 Y、\(Y^{2}\)以  代替\(X^{2i+1}+Y^{2j+1}\) Z。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明 C(A) 包含一个维数为  的 k 上向量\(N(i,j)\)空间，该维数等于满足 、 且  的整\((a,b)\)数有序对\(0 \leqslant a < i, 0 \leqslant b < j\)  \((2j + 1)a + (2i + 1)b \geqslant 2ij\)的个数。（使用习题 23 (b) 和习题 24 (a)；注意 L 的元素\(F \in B\)是 B \(\Delta F = F^{2}\)中满足  的形式幂级数；\(2j + 1\)给 X 赋予权\(2i + 1\) ，给 Y 赋予权 ，将 F 分解为等重多项式\(L_{q}\)的无穷和；若  是 L 的子\(F \in L\)群，由其等重分量的权  的  \(\geqslant q\)组\(L/L'\)成，则  同构于群  的直和，其中\(C_{q}/C_{q+1}\) ；对 \(C_{q} = L_{q}/(L' \cap L_{q})\)，使用习题 24 (b\(q \geqslant 4ij\)) 计算这些群。）
+\item
+证明 A 的理想 \(AX^{2}\) 是素理想；若 \(A' = A[X^{-2}]\)，推出 C(A') 与 C(A) 同构（第 4 节命题 3）。证明 A' 是 Dedekind 整环（考虑环 \(B' = B[X^{-2}]\)，它整于 A' 且是主理想整环，并使用第五章，§ 2，第 4 节，定理 3）。推出一个 Dedekind 整环的例子，其理想类群是无限的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{25}
+\tightlist
+\item
+  设 A 是一个因子分解整环，K 是其分式域。要\(i\)使\(1 \leqslant i \leqslant r\) B {=}\(_{1}\) \ldots[\(_{n}\){}X  , , X  \(\sum_{i=1}^{r} \text{Bf}_i\)] 中的元素 （）满足理想  等于 B，必要且充分\(v_{i}\)条\(1 \leqslant i \leqslant r\)件是\(\mathbf{K}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\)存在  \(\sum_{i=1}^{r} v_i f_i = 1\)中的多项式 （），使得 ，并且满足以下附加条\(v_i = w_i / d\)件：若\(d \in \mathbf{A}\)写 ，其中 \(w_i\)，多项式\(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\)  属于 ，且所有  的系数集合的最\(w_i\)大\(1 \leqslant i \leqslant r\)公因子（）等于 1，则对于 A 的\(p\)每个整除 \(d\)d 的极端元 p， 在环  中\(f_i\)的类所生成\((\mathrm{A} / \mathrm{A}p)[\mathrm{X}_1, \ldots, \mathrm{X}_n]\)的理想就是整个环。
+\end{enumerate}
+
+¶ 27. (a) 设 K 是一个域，B 是在四个不定元 K(U, V, X, Y) 的有理函数域的代数闭包中由多项式环 K{[}U, V, X, Y{]} 和多项式
+
+\[
+\mathrm{F} = \mathrm{Z} ^ {7} - \mathrm{U} ^ {5} \mathrm{X} ^ {2} - \mathrm{V} ^ {4} \mathrm{Y} ^ {3}.
+\]
+
+证明 \(\mathbf{B}\) 是因子分解整环（参见习题 7）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 p 是 A 中由 X、Y、U、V 和 z 生成的（素）理想，并记 \(C = A_{p}[[T]]\)；证明 C 是一个 Noether 局部整环，不是因子分解的，但其伴随分次整环 \(\text{gr}(C)\) 是因子分解的（使用习题 8）。
+\end{enumerate}

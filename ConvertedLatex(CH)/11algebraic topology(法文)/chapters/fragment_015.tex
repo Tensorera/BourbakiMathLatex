@@ -1,0 +1,636 @@
+\subsection{拉开与粘合}
+
+设 C 是一个拓扑空间，并设 \((\mathrm{B}_{\ell})_{\ell\in\mathrm{L}}\) 是 C 的一族有限个两两不交的闭子集。设 B 是一个拓扑空间，并且对每个 \(\ell\in L\)，设 \(h_{\ell}\) 是从 B 到 \(B_{\ell}\) 的同胚。我们将 \(B_{L}\) 记为这族 \((\mathrm{B}_{\ell})_{\ell\in\mathrm{L}}\) 的并。我们假设 B 和 L 均非空。令 R 为 C 上如下定义的等价关系。对于元素 \(x\)（来自 \(C - B_L\)），其等价类为集合 \(\{x\}\)；若 \(x\) 是 \(B_\ell\) 中的元素，其中 \(\ell \in L\)，则 \(x\) 的等价类是元素 \(h_k(h_\ell^{-1}(x))\) 所成的集合，其中 \(k\) 遍历 \(L\)。记 A 为商拓扑空间 \(C/R\)，并令 \(f: C \to A\) 为典范满射。我们说，空间 A 是从空间 C 得到的，方法是识别各集合 \(B_\ell\)（借助同胚 \(h_\ell\)）。
+
+映射 \(f \circ h_{\ell}\) 从 B 到 A 与 L 中的元素 \(\ell\) 无关；它是闭映射且为单射，因而诱导出从 B 到 A 的一个闭子集的同胚。因此，我们将 B 与 \(f \circ h_{\ell}(\mathrm{B})\) 通过同胚 \(f \circ h_{\ell}\) 识别；映射 \(f\) 诱导出从 \(\mathrm{C} - \mathrm{B}_{\mathrm{L}}\) 到 \(\mathrm{A} - \mathrm{B}\) 的同胚。
+
+进一步假设存在 C 的一族两两不交的开子集 \((\mathrm{N}_{\ell})_{\ell\in\mathrm{L}}\)，使 \(N_{\ell}\) 包含 \(B_{\ell}\)，对所有 \(\ell\in L\) 均如此。族 \((f(\mathrm{N}_{\ell}))_{\ell\in\mathrm{L}}\) 的并 U 是 A 中包含 B 的开集。集合 U-B 是两两不交的开集 \(f(\mathrm{N}_{\ell}-\mathrm{B}_{\ell})\)（\(\ell\in L\)）的并。
+
+引理 2. --- 映射 f: C → A 是逆紧且分离的；其纤维是有限的。
+
+证明 \(f\) 是闭映射。设 X 是 C 的闭子集。我们证明它的像在 A 中是闭的。对每个 \(\ell \in L\)，\(X \cap B_{\ell}\) 在 \(B_{\ell}\) 中是闭的，因此空间 \(Y = \bigcup_{\ell \in L} h_{\ell}^{-1}(X \cap B_{\ell})\) 在 B 中是闭的，因为 L 是有限的。于是，X 关于等价关系 R 的饱和集 \(X^{*}\) 等于 \(X \cup \bigcup_{\ell \in L} h_{k}(Y)\)，所以它在 C 中是闭的。因而，\(f(X) = f(X^{*})\) 在 A 中是闭的，证毕。
+
+\(f\) 的纤维是关系 \(\mathbb{R}\) 的等价类；它们是有限的。因此，映射 \(f\) 是逆紧的（TG, I, p. 75, theorem 1）。
+
+最后证明 \(f\) 是分离的。设 \(x\) 和 \(y\) 是 C 中在 \(f\) 下具有相同像的不同点。因此存在一点 \(b \in \mathrm{B}\) 以及不同的元素 \(\ell\) 和 \(m \in \mathrm{L}\)，使得 \(x = h_{\ell}(b)\) 且 \(y = h_{m}(b)\)。于是，\(\mathrm{N}_{\ell}\) 和 \(\mathrm{N}_m\) 是 C 中分别含有 \(x\) 和 \(y\) 的不交邻域，所需断言由 prop. 1 of I, p. 25 得出。
+
+下面再作如下假设：
+
+- 空间 A 是可解圈的且连通；
+
+- 空间 C 是可解圈的；
+
+- 空间 B 连通且局部道路连通。
+
+置 I = \(\pi_{0}(C)\)；若 i 是 I 中的元素，记 C 中与 i 对应的连通分支为 \(C_{i}\)。记 \(\eta: L \rightarrow I\) 为如下映射：它将 \(\ell \in L\) 对应到包含 \(B_{\ell}\) 的 C 的连通分支。映射 \(\eta\) 是满射。事实上，反设存在一个与所有集合 \(B_{\ell}\) 都不相交的 C 的连通分支 X。它是 C 的开闭子集，并且关于等价关系 R 是饱和的。因此，其像 \(f(X)\) 是 A 中与 B 不相交的开闭子集。由于假设 A 连通且 B 非空，\(f(X)\) 为空，矛盾。
+
+令 \(\sigma\colon I\to L\) 为映射 \(\eta\) 的一个截面；置 \(\tau=\sigma\circ\eta\) 和 \(T=\sigma(I)\)。
+
+选取 \(b\) 作为 B 中的一点。对每个 \(\ell \in \mathrm{L}\)，置 \(b_{\ell} = h_{\ell}(b)\)，并选取道路类 \(\beta_{\ell}\)，即 C 中从 \(b_{\ell}\) 连接到 \(b_{\tau(\ell)}\) 的一条道路的道路类；若 \(\ell = \tau(\ell)\)，则将 \(\beta_{\ell}\) 取为像为 \(b_{\ell}\) 的常值道路的道路类。对所有 \(\ell \in \mathrm{L}\)，记 \(\vartheta_{\ell}\) 为从 \(\pi_1(\mathrm{B}, b)\) 到 \(\pi_1(\mathrm{C}, b_{\tau(\ell)})\) 的同态，其定义为
+
+\[
+\vartheta_ {\ell} (v) = \operatorname{Int} (\beta_ {\ell}) ^ {- 1} ((h _ {\ell}) _ {*} (v)) = \beta_ {\ell} ^ {- 1} (h _ {\ell}) _ {*} (v) \beta_ {\ell},
+\]
+
+对所有 \(v \in \pi_{1}(B, b)\) 成立。最后，固定 L 中的一个元素 \(\ell_{0}\)，满足 \(\ell_{0} = \tau(\ell_{0})\)。
+
+令 Q 为唯一的群同态
+
+\[
+\mathrm{Q} \colon \big (\underset {i \in \mathrm{I}} {*} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) * \mathrm{F} (\mathrm{L} - \mathrm{T}) \to \pi_ {1} (\mathrm{A}, b)
+\]
+
+使得 \(\mathsf{Q}(\ell) = f_{*}(\beta_{\ell})\) 对所有 \(\ell \in \mathrm{L} - \mathrm{T}\) 成立，并且与 \(\pi_1(f, b_{\sigma(i)})\) 在 \(\pi_1(\mathrm{C}_i, b_{\sigma(i)})\) 上一致，对所有 \(i \in \mathrm{I}\)。
+
+命题 5（范坎彭）. --- 群同态 Q 是满射；其核是包含下列元素的最小正规子群
+
+\[
+\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1} \quad \text { for } v \in \pi_ {1} (\mathrm{B}, b) \text { and } \ell \in \mathrm{T},
+\]
+
+\[
+\vartheta_ {\ell_ {0}} (v) \ell \vartheta_ {\ell} (v) ^ {- 1} \ell^ {- 1} \quad \text { for } v \in \pi_ {1} (\mathrm{B}, b) \text { and } \ell \in \mathrm{L} - \mathrm{T}.
+\]
+
+映射 \(f \colon \mathrm{C} \to \mathrm{A}\) 是逆紧且分离的，纤维有限（IV, p. 430, lemma 2）；空间 A 和 C 是可解圈的。此外，\(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 是对角线 \(\Delta_{\mathrm{C}}\) 与两两不交的子集 \(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{k} = (h_{\ell}, h_{k})(\mathrm{B})\) 的并，其中 \((\ell, k) \in \mathrm{L}^2\) 且 \(\ell \neq k\)。对于这样的对 \((\ell, k)\)，有 \(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{k} = \mathrm{N}_{\ell} \times_{\mathrm{A}} \mathrm{N}_{k}\)；因此，这个子集在 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 中既开又闭。于是对角线 \(\Delta_{\mathrm{C}}\) 是开集，并且它在 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 中的补集是有限个两两不交且同胚于 B 的子集之并，从而是局部连通的。这证明映射 \(f\) 满足性质 (VK)（case (ii) of IV, p. 405）。为了应用 th. 1 of IV, p. 408，我们将为 f 定义一个范坎彭数据。
+
+对每个 \(i \in \mathrm{I}\)，在 \(\mathrm{C}_i\) 中取点 \(\mathfrak{a}(i) = b_{\sigma(i)}\) 作为基点。
+
+令 J 为 \(C \times_{A} C\) 的道路连通分支所成的集合。集合 \(\Delta_{C_{i}}\)（\(i \in I\)）是对角线 \(\Delta_{C}\) 的连通分支，而后者在 \(C \times_{A} C\) 中既开又闭；因此这些集合属于 J。同样地，集合 \([\ell_{1}, \ell_{2}] = B_{\ell_{1}} \times_{A} B_{\ell_{2}}\)（其中 \(\ell_{1}\) 和 \(\ell_{2}\) 属于 L 且 \(\ell_{1} \neq \ell_{2}\)）属于 J。由于这些集合构成 \(C \times_{A} C\) 的一个划分，它们刻画了集合 J。
+
+设 \(j\) 是 J 中形如 \(\Delta_{\mathrm{C}_i}\) 的元素，其中 \(i \in \mathbf{I}\)。取点 \(\mathsf{b}(j)\) 为 \((\mathsf{a}(i), \mathsf{a}(i)) = (b_{\sigma(i)}, b_{\sigma(i)})\)，作为基点，并将 \(\beta_1(j)\) 和 \(\beta_2(j)\) 取为在 \(b_{\sigma(i)}\) 处的常值道路的道路类。若 \(j\) 是形如 \([\ell_1, \ell_2]\) 的 J 中元素，其中 \(\ell_1\) 和 \(\ell_2\) 是 L 中的不同元素，则置 \(\mathsf{b}([\ell_1, \ell_2]) = (b_{\ell_1}, b_{\ell_2})\)、\(\beta_1([\ell_1, \ell_2]) = \beta_{\ell_1}\) 和 \(\beta_2([\ell_1, \ell_2]) = \beta_{\ell_2}\)。
+
+\[
+\text { Let } \mathrm{K} = \pi_ {0} (\mathrm{C} \times_ {\mathrm{A}} \mathrm{C} \times_ {\mathrm{A}} \mathrm{C}).
+\]
+
+记 \(\Delta_{\mathrm{C}}^{\prime}\) 为 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 的对角线；它是 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 的闭子集（因为 \(f\) 是分离的），并且同胚于 C。对每个 \(i \in \mathrm{I}\)，也记 \(\Delta_{\mathrm{C}_i}^{\prime}\) 为 \(\mathrm{C}_i\) 在 C 到 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 的对角映射下的像；这些是 \(\Delta_{\mathrm{C}}^{\prime}\) 的开闭子集。对 L 中的每个三元组 \((\ell_1, \ell_2, \ell_3)\)，再置 \([\ell_1, \ell_2, \ell_3] = \mathrm{B}_{\ell_1} \times_{\mathrm{A}} \mathrm{B}_{\ell_2} \times_{\mathrm{A}} \mathrm{B}_{\ell_3}\)；这些是 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 的闭子集，同胚于 B。若集合 \(\{\ell_1, \ell_2, \ell_3\}\) 至少含有两个元素，则 \([\ell_1, \ell_2, \ell_3] = \mathrm{N}_{\ell_1} \times_{\mathrm{A}} \mathrm{N}_{\ell_2} \times_{\mathrm{A}} \mathrm{N}_{\ell_3}\)，这表明 \([\ell_1, \ell_2, \ell_3]\) 也是 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 中的开集。此外，\(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 是两两不交的子集 \(\Delta_{\mathrm{C}}^{\prime}\) 与 \([\ell_1, \ell_2, \ell_3]\) 的并，其中 \((\ell_1, \ell_2, \ell_3)\) 遍历 L 中不全相同的所有三元组。因此，\(\Delta_{\mathrm{C}}^{\prime}\) 以及 \(\Delta_{\mathrm{C}_i}^{\prime}\)（\(i \in \mathrm{I}\)）在 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 中都是开闭的。这说明该空间的连通分支集合 K 是如下两个不交集合 \(\mathrm{K}_0\) 和 \(\mathrm{K}_1\) 的并。
+
+集合 \(K_{0}\) 是形如 \(\Delta_{C_{i}}^{\prime}\) 的分支所成。设 \(i \in I\)，并令 \(k = \Delta_{C_{i}}^{\prime}\)。置 \(\mathsf{c}(k) = (b_{\sigma(i)}, b_{\sigma(i)}, b_{\sigma(i)})\)。对于 \((s, t) \in \{(1,2), (2,3), (1,3)\}\)，将 \(\gamma_{st}(k)\) 取为在 \((b_{\sigma(i)}, b_{\sigma(i)})\) 处的常值道路的道路类。
+
+集合 \(K_{1}\) 由形如 \(k = [\ell_{1}, \ell_{2}, \ell_{3}]\) 的分支组成，其中 \(\ell_{1}, \ell_{2}, \ell_{3}\) 是 B 的三个元素，且集合 \(\{\ell_{1},\ell_{2},\ell_{3}\}\) 的基数为 \(\geqslant 2\)。置 \(c(k)=(b_{\ell_{1}},b_{\ell_{2}},b_{\ell_{3}})\)。令 \((s,t)\in\{(1,2),(1,3),(2,3)\}\)。若 \(\ell_{s}=\ell_{t}\)，则将 \(\gamma_{st}(k)\) 取为道路类 \((\beta_{\ell_{s}},\beta_{\ell_{t}})\)；若 \(\ell_{s}\neq\ell_{t}\)，则将 \(\gamma_{st}(k)\) 取为在 \((b_{\ell_{s}},b_{\ell_{t}})\) 处的常值道路的道路类。
+
+随后验证：对所有 \(k \in K\) 以及每个 \(s \in \{1,2,3\}\)，由 IV, p. 407 的 relation (2) 定义的圈类 \(\lambda_{s}(k)\) 是平凡的。
+
+框架 \(\Gamma\) 的一对群胚态射 \((\varpi(p_1), \varpi(p_2))\) 从 \(\varpi(\mathrm{C} \times_{\mathrm{A}} \mathrm{C})\) 到 \(\varpi(\mathrm{C})\)；它的顶点集是 I，定向边集是 J。若 \(i \in \mathrm{I}\)，箭 \(j = \Delta_{\mathrm{C}_i}\) 的起点和终点都是 \(i\)；若 \((\ell_1, \ell_2)\) 是 L 中两个不同元素组成的对，则箭 \(j = [\ell_1, \ell_2]\) 的起点为 \(\eta(\ell_1)\)，终点为 \(\eta(\ell_2)\)。
+
+令 \(\mathsf{T}\) 为 \(\Gamma\) 的子箭图，其顶点集为 I，箭为形如 \([\ell_0,\ell ]\) 的那些箭，其中 \(\ell \in \mathrm{T} - \{\ell_0\}\)。与 \(\mathsf{T}\) 相关的图是 \(\widetilde{\Gamma}\) 的一棵极大树。
+
+置 \(i_0 = \eta (\ell_0)\)。
+
+若 \(i \in \mathbf{I} - \{i_0\}\)，则 \(\mathsf{T}\) 中连接 \(i_0\) 与 \(i\) 的唯一道路是 \((i_0, [\ell_0, \sigma(i)], i)\)。在 p. 407 定义的、从 \(\mathrm{Grp}(\Gamma)\) 到 \(\varpi(\mathrm{Y})\) 的群胚态射（在 loc. cit. 中记为 \(\tau\)）将 \(j\) 送到单位元，当 \(j = \Delta_{\mathrm{C}_i}\) 且 \(i \in \mathrm{I}\) 时；若 \(j = [\ell_1, \ell_2]\)，则将其送到 \(f_*(\beta_{\ell_1})^{-1}f_*(\beta_{\ell_2})\)，其中 \(\ell_1\) 和 \(\ell_2\) 是不同元素。对每个 \(i \in \mathrm{I}\)，loc. cit. 中定义的道路类 \(\delta_i\) 连接 \(b = f(b_{\sigma(i_0)})\) 到 \(b = f(b_{\sigma(i)})\)，给出为
+
+\[
+\delta_ {i} = f _ {*} (\beta_ {\ell_ {0}}) ^ {- 1} f _ {*} (\beta_ {\sigma (i)}) = e,
+\]
+
+由于 \(\beta_{\ell} = e\)（当 \(\ell \in T\) 时）。
+
+因此，我们已经为映射 f 定义了一个范坎彭数据。于是考虑唯一的群同态
+
+\[
+\mathbf {Q} ^ {\prime} \colon \big (\ast_ {i \in \mathrm{I}} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) * \mathrm{F} (\mathrm{J}) \to \pi_ {1} (\mathrm{A}, b)
+\]
+
+它与 \(\pi_1(f, b_{\sigma(i)})\) 在 \(\pi_1(\mathrm{C}, b_{\sigma(i)})\) 上一致，并且满足
+
+\[
+\mathrm{Q} ^ {\prime} (j) = f _ {*} (\beta_ {1} (j)) ^ {- 1} f _ {*} (\beta_ {2} (j))
+\]
+
+对 \(j \in \mathrm{J}\) 成立。根据 IV, p. 408, th. 1，该同态是满射，其核是包含关系元 \(\mathsf{r}_1(j)\)（\(j \in \mathrm{Fl}(\mathsf{T})\)）、\(\mathsf{r}_2(j,v)\)（\(j \in \mathrm{J}\) 且 \(v \in \pi_1(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}, \mathsf{b}(j))\)）以及 \(\mathsf{r}_3(k)\)（\(k \in \mathrm{K}\)）的最小正规子群；这些关系元由 loc. cit. 中的方程 \((\mathrm{R}_1), (\mathrm{R}_2)\) 和 \((\mathrm{R}_3)\) 定义。
+
+令 \(q'\) 为从 F(L) 到 F(L-T) 的唯一同态，使得 \(q'(\ell) = \ell\)（若 \(\ell \in L - T\)）且 \(q'(\ell) = e\)（否则）。令
+
+\[
+q \colon \big (\underset {i \in \mathrm{I}} {\ast} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) \ast \mathrm{F(J)} \to \big (\underset {i \in \mathrm{I}} {\ast} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) \ast \mathrm{F(L-T)}
+\]
+
+唯一的群同态在 \(\pi_{1}(\mathrm{C}_{i},b_{\sigma(i)})\) 上为恒等，对 \(i\in I\) 均如此，并且满足 \(q(j)=e\)（当 \(j=\Delta_{\mathrm{C}_{i}}\) 时）以及 \(q([\ell,\ell'])=q'(\ell)^{-1}q'(\ell')\)（当 \(\ell\) 和 \(\ell'\) 是 L 中的不同元素时）。同态 \(q\) 是满射。
+
+若 \(i \in \mathrm{I}\) 且 \(j = \Delta_{\mathrm{C}_i}\)，则有 \(\mathsf{Q}'(j) = e_b = \mathsf{Q}'(q(j))\)。若 \(j = [\ell, \ell']\)，对于 L 中不同的 \(\ell\) 和 \(\ell'\)，有
+
+\[
+\begin{array}{c} \mathsf {Q} ^ {\prime} (j) = f _ {*} (\beta_ {\ell}) ^ {- 1} f _ {*} (\beta_ {\ell^ {\prime}}) = \mathsf {Q} (q ^ {\prime} (\ell)) ^ {- 1} \mathsf {Q} (q ^ {\prime} (\ell^ {\prime})) \\ = \mathsf {Q} (q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} (\ell^ {\prime})) = \mathsf {Q} \circ q ([ \ell , \ell^ {\prime} ]). \end{array}
+\]
+
+因此，\(Q' = Q \circ q\)。从而，同态 Q 是满射，其核是 \(\left(\ast\pi_{1}(\mathrm{C}_{i}, b_{\sigma(i)})\right)\ast\mathrm{F}(\mathrm{L}-\mathrm{T})\) 中包含 q 下的关系元 \(r_{1}(j)\)（\(j \in \mathrm{Fl}(\mathsf{T})\)）、\(r_{2}(j, v)\)（\(j \in J\) 且 \(v \in \pi_{1}(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}, \mathsf{b}(j))\)）以及 \(r_{3}(k)\)（\(k \in K\)）的最小正规子群。
+
+若 \(\ell\in\mathrm{T}-\{\ell_{0}\}\) 且 \(j=[\ell_{0},\ell]\)，则 \(\mathsf{r}_{1}(j)=j\) 且 \(q(\mathsf{r}_{1}(j))=e\)。
+
+设 \(k \in \mathrm{K}\)。有 \(r_3(k) = j_{12}(k)j_{23}(k)j_{13}(k)^{-1}\)。若 \(k = \Delta_{\mathrm{C}_i}'\)，其中 \(i \in \mathrm{I}\)，置 \(j = \Delta_{\mathrm{C}_i}\)；则有
+
+\[
+q (\mathsf {r} _ {3} (k)) = q (j j j ^ {- 1}) = q (j) = e.
+\]
+
+设 \(\ell\) 和 \(\ell'\) 是 L 中的不同元素。若 \(k = [\ell, \ell, \ell']\)，则有
+
+\[
+q (\mathsf {r} _ {3} (k)) = q \left(\Delta_ {\mathrm{C} _ {\eta (\ell)}} [ \ell , \ell^ {\prime} ] [ \ell , \ell^ {\prime} ] ^ {- 1}\right) = q \left(\Delta_ {\mathrm{C} _ {\eta (\ell)}}\right) = e.
+\]
+
+若 \(k = [\ell, \ell', \ell]\)，则有
+
+\[
+\begin{array}{c} q (\mathsf {r} _ {3} (k)) = q ([ \ell , \ell^ {\prime} ] [ \ell^ {\prime}, \ell ] \Delta_ {\mathrm{C} _ {\eta (\ell)}} ^ {- 1}) \\ = q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} (\ell^ {\prime}) q ^ {\prime} (\ell^ {\prime}) ^ {- 1} q ^ {\prime} (\ell) q (\Delta_ {\mathrm{C} _ {\eta} (\ell)}) ^ {- 1} = e. \end{array}
+\]
+
+此外，若 \(k = [\ell', \ell, \ell]\)，则有
+
+\[
+\begin{array}{r l} & q (\mathsf {r} _ {3} (k)) = q ([ \ell^ {\prime}, \ell ] \Delta_ {\mathrm{C} _ {\eta (\ell)}} [ \ell^ {\prime}, \ell ] ^ {- 1}) \\ & \qquad = q (\ell^ {\prime}) ^ {- 1} q (\ell) q (\Delta_ {\mathrm{C} _ {\eta (\ell)}}) q (\ell) ^ {- 1} q (\ell^ {\prime}) = e. \end{array}
+\]
+
+最后，若 \(k = [\ell_{1}, \ell_{2}, \ell_{3}]\)，其中 \(\ell_{1}, \ell_{2}, \ell_{3}\) 是 L 中两两不同的元素，则有
+
+\[
+q (\mathsf {r} _ {3} (k)) = q ([ \ell_ {1}, \ell_ {2} ]) q ([ \ell_ {2}, \ell_ {3} ]) q ([ \ell_ {1}, \ell_ {3} ]) ^ {- 1} = e.
+\]
+
+设 \(i \in I\)，并令 \(j = \Delta_{C_i}\)。由 \(\varphi_j\) 和 \(\psi_j\) 从 \(\pi_1(C \times_A C, \mathfrak{b}(j)) = \pi_1(C_i, \mathfrak{a}(i))\) 到 \(\pi_1(C, \mathfrak{a}(i))\) 的群同态（由 IV, p. 407 的 relation (1) 定义）分别等于 \((p_1)_*\) 和 \((p_2)_*\)。于是，对 \(v \in \pi_1(C_i, \mathfrak{a}(i))\)，有 \(r_2(j, v) = v j v^{-1} j^{-1}\)，从而 \(q(r_2(j, v)) = e\)。
+
+最后，设 \(j = [\ell, \ell']\)，其中 \(\ell\) 和 \(\ell'\) 是 L 中的不同元素。由 loc. cit. 定义的群同态 \(\varphi_j \colon \pi_1(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{\ell'}) \to \pi_1(\mathrm{C}_{\eta(\ell)}, b_{\tau(\ell)})\) 是同态 \(\vartheta_\ell\)，而群同态 \(\psi_j\) 是同态 \(\vartheta_{\ell'}\)。于是，对 \(v \in \pi_1(\mathrm{B}_\ell \times_{\mathrm{A}} \mathrm{B}_{\ell'}, \mathfrak{b}(j))\)
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \vartheta_ {\ell} (v) q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} \left(\ell^ {\prime}\right) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} q ^ {\prime} \left(\ell^ {\prime}\right) ^ {- 1} q ^ {\prime} (\ell).
+\]
+
+下面区分四种情形。若 \(\ell\) 和 \(\ell'\) 都属于 T，则有
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \left. \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1}\right) ^ {- 1} \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1}\right). \right.
+\]
+
+当 \(\ell' = \ell_0\) 时，我们得到元素 \(\vartheta_{\ell_0}(v)\vartheta_\ell(v)^{-1}\) 的逆元。若 \(\ell \in \mathrm{T}\) 而 \(\ell' \notin \mathrm{T}\)，则有
+
+\[
+\begin{array}{r l} & q (\mathsf {r} _ {2} (j, v)) = \vartheta_ {\ell} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} (\ell^ {\prime}) ^ {- 1} \\ & \qquad = \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1}\right) ^ {- 1} \vartheta_ {\ell_ {0}} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} (\ell^ {\prime}) ^ {- 1}. \end{array}
+\]
+
+同样地，若 \(\ell\notin\mathrm{T}\) 且 \(\ell^{\prime}\in\mathrm{T}\)，则有
+
+\[
+\begin{array}{c} q (\mathsf {r} _ {2} (j, v)) = \vartheta_ {\ell} (v) \ell^ {- 1} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \ell \\ = \ell^ {- 1} \bigl (\vartheta_ {\ell_ {0}} (v) \ell \vartheta_ {\ell} (v) ^ {- 1} \ell^ {- 1} \bigr) ^ {- 1} \bigl (\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \bigr) \ell . \end{array}
+\]
+
+取 \(\ell' = \ell_0\) 时，我们得到与 \(\vartheta_{\ell_0}(v)\ell\vartheta_\ell(v)^{-1}\ell^{-1}\) 的逆元共轭的元素。最后，若 \(\ell\) 和 \(\ell'\) 均不属于 T，则有
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \left(\vartheta_ {\ell} (v) \ell^ {- 1} \vartheta_ {\ell_ {0}} (v) ^ {- 1} \ell\right) \ell^ {- 1} \left(\vartheta_ {\ell_ {0}} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \left(\ell^ {\prime}\right) ^ {- 1}\right) \ell .
+\]
+
+这些关系一方面表明命题中所述元素属于群同态 Q 的核，另一方面表明这些元素 \(q(\mathsf{r}_{2}(j,v))\) 全都属于包含命题所述元素的最小正规子群。因此命题得证。
+
+注. --- 设 A 是一个拓扑空间，B 是 A 的闭子集，U 是 A 中 B 的一个开邻域。假设集合 U-B 是有限族 \((\mathrm{M}_{\ell})_{\ell\in\mathrm{L}}\) 的并，且这些开集两两不交。对每个 \(\ell\in L\)，置 \(N_{\ell}^{\prime}=M_{\ell}\cup B\)。记 \(C^{\prime}\) 为空间 A-B 与 \(N_{\ell}^{\prime}\)（\(\ell\in L\)）的拓扑和；我们也将典范嵌入 \(\varphi:A-B\to C^{\prime}\) 与 \(\varphi_{\ell}:N_{\ell}^{\prime}\to C^{\prime}\)（\(\ell\in L\)）记为典范嵌入。令 C 为 C' 关于等价关系 S 的商拓扑空间；S 是使点 \(\varphi(x)\) 与 \(\varphi_{\ell}(x)\) 等价（对每个 \(\ell \in L\) 及每个 \(x \in M_{\ell}\)）的最细关系；令 \(\rho: C' \to C\) 为典范映射。
+
+我们证明可以从空间 C 恢复空间 A，方法是识别集合 \(B_{\ell}\)，所用同胚为 \(\rho \circ (\varphi_{\ell} \mid B)\)：\(B \to B_{\ell}\)。
+
+对每个 \(\ell \in L\)，集合 \(M_{\ell}\) 在 A-B 和 \(N_{\ell}'\) 中都是开集。映射 \(\rho \circ \varphi\) 和 \(\rho \circ \varphi_{\ell}\) 是从空间 A-B 和 \(N_{\ell}'\) 到 C 中开子集的同胚，对 \(\ell \in L\) 均如此。对每个 \(\ell \in L\)，集合 \(\varphi_{\ell}(B)\) 在 \(C'\) 中是闭的，并且关于等价关系 S 是饱和的。因此，集合 \(B_{\ell} = \rho(\varphi_{\ell}(B))\) 在 C 中是闭的，而映射 \(\rho \circ \varphi_{\ell}\) 诱导出从 B 到 \(B_{\ell}\) 的同胚（loc. cit.）。同样地，对每个 \(\ell \in L\)，集合 \(N_{\ell} = \rho(\varphi_{\ell}(N_{\ell}'))\) 是 \(B_{\ell}\) 的开邻域；集合 \(N_{\ell}\) 两两不交。
+
+通过商映射，取映射 \(f' \colon \mathrm{C}' \to \mathrm{A}\)，它由空间 A-B 和 \(\mathrm{N}_{\ell}'\)（\(\ell \in \mathrm{L}\)）到 A 的典范嵌入经商得到，并诱导出连续映射 \(f \colon \mathrm{C} \to \mathrm{A}\)。若 \(x\) 是 B 中的一点，则 \(f^{-1}(x)\) 的纤维是点 \(\rho(\varphi_{\ell}(x))\)（\(\ell \in \mathrm{L}\)）所成的集合。与映射 \(f\) 相伴的 C 上等价关系是本节开头定义的关系 R。我们将 \(\mathrm{B}_{\mathrm{L}}\) 记为族 \((\mathrm{B}_{\ell})_{\ell \in \mathrm{L}}\) 的并。按构造，映射 \(f\) 诱导出从 \(\mathrm{C} - \mathrm{B}_{\mathrm{L}}\) 到 \(\mathrm{A} - \mathrm{B}\) 的同胚，并且对 \(\ell \in \mathrm{L}\)，诱导出从 \(\mathrm{N}_{\ell}'\) 到 \(\mathrm{N}_{\ell}\) 的同胚。我们将证明映射 \(f\) 是闭的；因此，A 的拓扑将是 C 关于等价关系 R 的商拓扑（I, p. 18, example 2）。为此，证明如下：若 F 是 A 的子集，满足 \(\mathrm{F} \cap (\mathrm{A} - \mathrm{B})\) 在 \(\mathrm{A} - \mathrm{B}\) 中是闭的，且满足 \(\mathrm{F} \cap \mathrm{N}_{\ell}'\) 在 \(\mathrm{N}_{\ell}'\) 中是闭的（\(\ell \in \mathrm{L}\)），则 F 在 A 中是闭的。集合 U，即族 \((\mathrm{N}_{\ell}')_{\ell \in \mathrm{L}}\) 的并，是 A 中的开集；集合 \(\mathrm{N}_{\ell}'\)（\(\ell \in \mathrm{L}\)）构成它的有限闭覆盖。因此，集合 F∩U 在 U 中是闭的（TG, I, p. 18, prop. 3）。集合 U 和 A-B 构成 A 的一个开覆盖，所以 F 在 A 中是闭的（loc. cit.）。
+
+\section{分类空间}
+
+\subsection{同伦延拓}
+
+命题 1. --- 设 X' 是正规拓扑空间，X 是 X' 的子空间，A 是包含于 X 中的 X' 的闭子空间，U 是 X 中 A 的一个邻域。
+
+记 \(i_{A}\) 为 A 到 X 的典范嵌入，\(i_{U}\) 为 U 到 X 的典范嵌入；记 \(j_{A}\) 和 \(j_{U}\) 为相应的从 \(\mathrm{Cyl}(i_{\mathrm{A}})\) 和 \(\mathrm{Cyl}(i_{\mathrm{U}})\) 到 \(X \times I\) 的嵌入。
+
+存在连续映射 \(r \colon \mathrm{X} \times \mathbf{I} \to \operatorname{Cyl}(i_{\mathrm{U}})\)，满足 \(j_{\mathrm{U}} \circ r(x) = x\) 对 \(x \in j_{\mathrm{A}}(\operatorname{Cyl}(i_{\mathrm{A}}))\) 中的每个点成立。
+
+设 U' 是 X' 的一个开子集，使 A ⊂ X ∩ U' ⊂ U。根据正规空间的定义（TG, IX, p. 41），存在 A 在 X' 中的一个开邻域 V'，使 A ⊂ V' ⊂ \(\overline{V'}\) ⊂ U'，以及一个连续函数 φ': X' → I，它在 A 的每一点取值为 1，在 CV' 的每一点取值为 0。置 φ = φ' \textbar{} X 且 V = X ∩ V'。还记 α: U × I → Cyl(i\_U) 和 β: X → Cyl(i\_U) 为典范映射（III, p. 238）。
+
+令 \(r\) 为从 \(\mathrm{X} \times \mathbf{I}\) 到 \(\operatorname{Cyl}(i_{\mathrm{U}})\) 的映射，由下式给出
+
+\[
+r (x, t) = \left\{ \begin{array}{l l} \alpha (x, 1 - (1 - t) \varphi (x)) & \text { for } (x, t) \in \mathrm{U} \times \mathbf {I}, \\ \beta (x) & \text { otherwise }. \end{array} \right.
+\]
+
+映射 \(r\) 在 \(\mathrm{U} \times \mathbf{I}\) 上连续。对于每个点 \((x, t) \in \mathrm{U} \times \mathbf{I}\)，若 \(x \notin \mathrm{V}\)，则有 \(\varphi(x) = 0\)，从而 \(r(x, t) = \alpha(x, 1) = \beta(x)\)。因此，映射 \(r\) 与 \(\beta \circ \mathrm{pr}_1\) 在 \((\mathrm{X} - \mathrm{V}) \times \mathbf{I}\) 上一致，这表明 \(r\) 在该子空间上连续。由于 U 与 \(\mathrm{X} - \mathrm{V}\) 的内部覆盖 X，映射 \(r\) 连续。
+
+设 \(y\) 是 \(\mathrm{Cyl}(i_{\mathrm{A}})\) 中的一点，并置 \((x,t) = j_{\mathrm{A}}(y)\)。若 \(x \in \mathrm{A}\)，则 \(\varphi(x) = 1\) 且 \(r(x,t) = \alpha(x,t)\)，从而 \(j_{\mathrm{U}}(r(x,t)) = (x,t)\)。否则 \(t = 1\)，有 \(r(x,t) = \alpha(x,1)\)（当 \(x \in \mathrm{U}\) 时），否则 \(r(x,t) = \beta(x)\)；因此在此情形下 \(j_{\mathrm{U}}(r(x,t)) = (x,t)\)。这说明 \(j_{\mathrm{U}} \circ r\) 将 \(j_{\mathrm{A}}(\mathrm{Cyl}(i_{\mathrm{A}}))\) 中的每一点映到自身，故命题得证。
+
+推论 1. --- 设 X 是正规拓扑空间，f 是从 X 到拓扑空间 Z 的连续映射。设 A 是 X 的闭子空间，U 是 X 中 A 的一个邻域，且 σ: U × I → Z 是一条同伦，其终映射为映射 f \textbar{} U。存在同伦 \(\widetilde{\sigma}\colon\mathbf{X}\times\mathbf{I}\to\mathbf{Z}\)，其终映射为 \(f\)，并且与 \(\sigma\) 在 \(\mathbf{A}\times\mathbf{I}\) 上一致。
+
+置 \(X' = X\)，并令 \(r: X \times I \to \text{Cyl}(i_{\text{U}})\) 为命题 1 给出的连续映射。利用本命题证明中引入的记号，存在唯一的连续映射 \(F: \text{Cyl}(i_{\text{U}}) \to Z\)，使得 \(\text{F}(\alpha(x,t)) = \sigma(x,t)\) 对 \((x,t) \in \text{U} \times \text{I}\) 成立，且 \(\text{F}(\beta(x)) = f(x)\) 对 \(x \in X\) 成立（III, p. 238, prop. 4）。映射 \(F \circ r: X \times I \to Z\) 是一条同伦；其终映射将 \(x \in X\) 中的一点送到 \(\text{F}(r(x,1)) = \text{F}(\beta(x)) = f(x)\)。若 \((x,t) \in A \times I\)，则 \(\text{F}(r(x,t)) = \text{F}(\alpha(x,t)) = \sigma(x,t)\)；因此该同伦与 \(\sigma\) 在 \(A \times I\) 上一致。
+
+推论 2. --- 设 X 是正规拓扑空间，A 是 X 的闭子空间，U 是 X 中 A 的一个邻域。设 f 和 f' 是从 U 到拓扑空间 Z 的连续同伦映射。若 f 可连续延拓到 X，则映射 f' \textbar{} A 也可如此。
+
+设 F 是从 X 到 Z 的连续映射，满足 \(F \textbar{} U = f\)。选取同伦 \(\sigma\colon A \times I \to Z\)，它连接 f'	extbar{} A 与 f	extbar{} A。由 Cor. 1，存在同伦 \(\widetilde{\sigma}\colon X \times I \to Z\)，其终映射为 F，并且延拓 \(\sigma\)。于是，\(\widetilde{\sigma}\) 的初映射是从 X 到 Z 的连续映射，并且在 A 上与 \(f'\) 一致。
+
+推论 3. — 设 X 是正规拓扑空间，A 是 X 的闭子空间，U 是 X 中 A 的一个邻域。设 Z 是与一点同伦等价的拓扑空间，且 g: U → Z 是连续映射。存在连续映射 \(\widetilde{g}\) : X → Z，在 A 上与 g 一致。
+
+由于 Z 与一点同伦等价，映射 g 同伦于常值映射 f。映射 f 可连续延拓到 X；因此断言由推论 2 得出。
+
+推论 4. --- 设 X 是仿紧拓扑空间，A 是 X 的闭子空间。设 n 是满足 ≥ 0 的整数，V 是 R \(^{n}\) 的开子集。设 f: X → V 是连续映射，且 σ: A × I → V 是以 f \textbar{} A 为终映射的同伦。存在同伦 \(\widetilde{\sigma}\): X × I → V，其终映射为 f，并且延拓 σ。
+
+记 \(i_{\mathrm{A}}\) 为 A 到 X 的典范嵌入，\(\alpha_{\mathrm{A}}: \mathrm{A} \times \mathbf{I} \to \operatorname{Cyl}(i_{\mathrm{A}})\) 和 \(\beta_{\mathrm{A}}: \mathrm{X} \to \operatorname{Cyl}(i_{\mathrm{A}})\) 为典范映射，并记 \(j_{\mathrm{A}}: \operatorname{Cyl}(i_{\mathrm{A}}) \to \mathrm{X} \times \mathbf{I}\) 为典范嵌入。由于 A 在 X 中闭，\(j_{\mathrm{A}}\) 定义了从 \(\mathrm{Cyl}(i_{\mathrm{A}})\) 到闭子空间 \((\mathrm{A}\times\mathbf{I})\cup(\mathrm{X}\times\{1\})\) 的同胚，该子空间是 \(X\times I\) 的闭子空间。令 \(\widetilde{\sigma}_{0}\) 为从 \(\mathrm{Cyl}(i_{\mathrm{A}})\) 到 V 的唯一映射，使 \(\widetilde{\sigma}_{0}\circ\alpha_{A}=\sigma\) 且 \(\widetilde{\sigma}_{0}\circ\beta_{A}=f\)；它是连续的（III, p. 238, prop. 4）。
+
+由于 X 是仿紧的且 I 是紧的，空间 \(X \times I\) 是仿紧的（TG, I, p. 70, prop. 17），因而是正规的（TG, IX, p. 49, prop. 4）。因此存在连续映射 \(k: X \times I \to R^{n}\)，满足 \(k \circ j_{A} = \widetilde{\sigma}_{0}\)（TG, IX, p. 45, corollary）。
+
+集合 U 由满足 \(x \in X\) 且 \(k(x, t) \in V\)（对所有 \(t \in I\)）的点 x 所成，它在 X 中是开集（IV, p. 439, lemma 1）。因此它是 A 的一个邻域。由推论 1 将映射 f 和同伦 \(k | U \times I\) 应用于该情形，存在同伦 \(\widetilde{\sigma} \colon X \times I \to V\)，其初映射为 f，并且与 k（从而与 \(\sigma\)）在 \(A \times I\) 上一致。
+
+引理 1. — 设 Z 是拓扑空间，K 是紧拓扑空间，W 是 Z × K 的开子集。集合 U 由满足 \{z\} × K 包含于 W 的点 z ∈ Z 所成，它在 Z 中是开集。
+
+第一投影 \(pr_{1}: Z \times K \to Z\) 是逆紧的（TG, I, p. 77, cor. 5），因而是闭的。因此，\(\mathbb{C}U = \mathrm{pr}_{1}(\mathbb{C}W)\) 在 Z 中是闭的，而 U 是开集。
+
+推论 5. --- 设 X' 是正规拓扑空间，X 是 X' 的子空间，A 是包含于 X 中的 X' 的闭子空间，U 是 X 中 A 的一个邻域。
+
+设 Y 和 Z 是拓扑空间；令 \(f\colon X \times \{1\} \times Y \to X \times \{1\} \times Z\) 为一个 \(X \times \{1\}\)-态射，并令 \(g\colon U \times I \times Y \to U \times I \times Z\) 为一个 \(U \times I\)-态射，且 \(f\) 在 \(U \times \{1\} \times Y\) 上与它一致。
+
+于是存在一个 \(X \times I\)-态射 \(h: X \times I \times Y \to X \times I \times Z\)，它在 \(X \times \{1\} \times Y\) 上与 f 一致，并在 \(A \times I \times Y\) 上与 g 一致。
+
+此外，若 f 和 g 是同胚，则可以选取具有所需性质的同胚 h。
+
+取 X' 中 A 的一个开邻域 U'，使 U'∩X ⊂ U。由于空间 X' 是正规的，存在 X' 中 A 的一个开邻域 V'，使 A ⊂ V' ⊂ \(\overline{V'}\) ⊂ U'（TG, IX, p. 41）。必要时以 \(\overline{V'}\) ∩ X 替换 U，于是可设 U 在 X 中是闭的。现在继续使用命题 1 及其证明中的记号；令 \(r: X \times I \to \text{Cyl}(i_{\text{U}})\) 为连续映射，使 \(j_{\text{U}} \circ r(x) = x\) 对 \(x \in j_{\text{A}}(\text{Cyl}(i_{\text{A}}))\) 中的每个点成立。
+
+再置 \(f' = pr_{3} \circ f\) 和 \(g' = pr_{3} \circ g\)。由于 \(f'\) 与 \(g'\) 在 \(U \times \{1\} \times Y\) 上一致，存在唯一映射
+
+\[
+\varphi \colon \operatorname{Cyl} (i _ {\mathrm{U}}) \times \mathrm{Y} \to \operatorname{Cyl} (i _ {\mathrm{U}}) \times \mathrm{Z}
+\]
+
+使得 \(\varphi(\alpha(x,t),y) = (\alpha(x,t),g'(x,t,y))\) 对 \((x,t,y) \in \mathrm{U} \times \mathbf{I} \times \mathrm{Y}\) 成立，且 \(\varphi(\beta(x),y) = (\beta(x),f'(x,1,y))\) 对 \((x,y) \in \mathrm{X} \times \mathrm{Y}\) 成立。由于 U 在 X 中闭，典范满射 \(\pi\) 从 \((\mathrm{U} \times \mathbf{I}) \cup \mathrm{X}\) 到 \(\mathrm{Cyl}(i_{\mathrm{U}})\) 是普遍严格的（III, p. 239, remark 2）。由于映射 \(\varphi \circ (\pi \times \mathrm{Id}_{\mathrm{Y}})\) 连续，映射 \(\varphi\) 连续。因此，它是 \(\mathrm{Cyl}(i_{\mathrm{U}})\)-空间的态射；若 \(f\) 和 \(g\) 是同胚，它甚至是同构。
+
+现在令 \(h \colon \mathrm{X} \times \mathbf{I} \times \mathrm{Y} \to \mathrm{X} \times \mathbf{I} \times \mathrm{Z}\) 为映射 \(r^*(\varphi)\)，它由 \(\varphi\) 通过换基 \(r\) 得到。它由 \(h(x,t,y) = (x,t,\mathrm{pr}_2(\varphi(r(x,t),y)))\) 给出，对 \((x,t,y) \in \mathrm{X} \times \mathbf{I} \times \mathrm{Y}\) 成立。它是 \(\mathrm{X} \times \mathbf{I}\)-空间的态射；若 \(\varphi\) 是同构，它甚至是同构。若 \((x,t,y) \in \mathrm{A} \times \mathbf{I} \times \mathrm{Y}\)，则有 \(r(x,t) = (x,t)\)，从而
+
+\[
+h (x, t, y) = (x, t, \mathrm{pr} _ {2} (\varphi (x, t, y))) = (x, t, g ^ {\prime} (x, t, y)) = g (x, t, y),
+\]
+
+同样，对于 \(x \in X\) 和 \(y \in Y\)，有 \(r(x,1) = (x,1)\)，因此
+
+\[
+h (x, 1, y) = (x, 1, \operatorname{pr} _ {2} (\varphi (x, 1, y))) = (x, 1, f ^ {\prime} (x, 1, y)) = f (x, 1, y)
+\]
+
+所以 h 在 \(X \times \{1\} \times Y\) 上与 f 一致。推论得证。
+
+\subsection{以 B × I 为底空间的局部平凡纤维空间}
+
+命题 2. --- 设 B 是一个仿紧拓扑空间，且 (E, p) 是 B × I 上的局部平凡纤维空间。置 E₁ = \(\overline{p}^{-1}(B \times \{1\})\)，并记 \(p_{1}: E_{1} \to B\) 为映射 \(pr_{1} \circ p | E_{1}\)。则 B × I-空间 (E, p) 与 (E₁ × I, \(p_{1} \times Id_{I}\)) 同构。
+
+我们先证明两个引理。
+
+引理 2. --- 设 \(\alpha\)、\(\beta\)、\(\gamma\) 是满足 \(\alpha \leqslant \beta \leqslant \gamma\) 的实数；设 B 是一个拓扑空间，且 \(p: \mathrm{E} \to \mathrm{B} \times [\alpha, \gamma]\) 是连续映射。置 \(\mathrm{B}_0 = \mathrm{B} \times [\alpha, \beta]\)、\(\mathrm{B}_1 = \mathrm{B} \times [\beta, \gamma]\)、\(\mathrm{E}_0 = p^{-1}(\mathrm{B}_0)\)、\(\mathrm{E}_1 = p^{-1}(\mathrm{B}_1)\)，并记 \(p_0: \mathrm{E}_0 \to \mathrm{B}_0\)、\(p_1: \mathrm{E}_1 \to \mathrm{B}_1\) 为由 \(p\) 诱导的映射。若 \((\mathrm{E}_0, p_0)\) 和 \((\mathrm{E}_1, p_1)\) 是可平凡化的纤维空间，则 \((\mathrm{E}, p)\) 也具有同样性质。
+
+令 \(g_0 \colon \mathrm{E}_0 \to \mathrm{B}_0 \times \mathrm{F}_0\) 和 \(g_1 \colon \mathrm{E}_1 \to \mathrm{B}_1 \times \mathrm{F}_1\) 分别为 \(\mathrm{E}_0\) 和 \(\mathrm{E}_1\) 的平凡化。记 \(g_0'\) 和 \(g_1'\) 为 \(\mathrm{B} \times \{\beta\}\)-纤维空间 \(p^{-1}(B \times \{\beta\})\) 的平凡化，它们由 \(g_0\) 和 \(g_1\) 通过限制导出。映射 \(h = g_0' \circ (g_1')^{-1}\) 是一个 \(B \times \{\beta\}\)-同构，将 \(B \times \{\beta\} \times F_1\) 映到 \(B \times \{\beta\} \times F_0\) 上。我们定义一个连续映射 \(h'\)，它从 \(B \times F_1\) 到 \(F_0\)，规定 \(h'(a, y) = \mathrm{pr}_3 \circ h(a, \beta, y)\) 对于 \((a, y) \in B \times F_1\)。对于 \((a, t, y) \in B \times [\beta, \gamma] \times F_1\)，置 \(H(a, t, y) = (a, t, h'(a, y))\)。这样定义的映射 H 是一个 \((B \times [\beta, \gamma])\)-同构，将 \(B \times [\beta, \gamma] \times F_1\) 映到 \(B \times [\beta, \gamma] \times F_0\) 上，并且有 \(g_0 | p^{-1}(B \times \{\beta\}) = H \circ g_1 | p^{-1}(B \times \{\beta\})\)。因而存在连续映射 \(g \colon E \to B \times [\alpha, \gamma] \times F_0\)，使得 \(g | E_0 = g_0\) 且 \(g | E_1 = H \circ g_1\)。映射 \(g\) 是一个 \(B \times [\alpha, \gamma]\)-空间同构，因此 E 是可平凡化的。
+
+引理 3. --- 设 B 是一个拓扑空间，且 (E, p) 是 B×I 上的局部平凡纤维空间。B 的每一点 a 都有一个邻域 V，使得 V × I-空间 \(E_{V \times I}\) 是可平凡化的。
+
+设 \(a\) 是 B 中的一点；对于每一点 \(t\) \(\mathbf{I}\)，存在 \(\mathrm{W}_t\)，它是 \(t\) 在 \(\mathbf{I}\) 中的一个开邻域，以及一个邻域 \(\mathrm{V}_t\)，它是 \(a\) 在 B 中的一个邻域，使得 E 在 \(\mathrm{V}_t \times \mathrm{W}_t\) 上可平凡化。因而存在一个整数 \(n > 0\)，并且对于每个整数 \(i\)（满足 \(1 \leqslant i \leqslant n\)），存在一点 \(t_i\)，它属于 \(\mathbf{I}\)，使得区间 \([\frac{i-1}{n}, \frac{i}{n}]\) 包含于 \(\mathrm{W}_{t_i}\) 中（III, p. 272, lemma 4）。置 \(\mathrm{V} = \cap_{1 \leqslant i \leqslant n} \mathrm{V}_{t_i}\)。纤维空间 E 在 \(\mathrm{V} \times [\frac{i-1}{n}, \frac{i}{n}]\) 上可平凡化，对于每个整数 \(i\)（满足 \(1 \leqslant i \leqslant n\)）。引理 3 随即由引理 2 对 \(n\) 作归纳得到。
+
+现在证明命题。由引理 3，存在 B 的一个开覆盖 \((\mathrm{U}_j)_{j\in \mathrm{J}}\)，使得对于每个 \(j\in \mathrm{J}\)，E 在 \(\mathrm{U}_j\times \mathbf{I}\) 上可平凡化。由于空间 B 是仿紧的，我们可以设覆盖 \((\mathrm{U}_j)_{j\in \mathrm{J}}\) 是局部有限的（TG, IX, p. 49），并选取 B 的一个覆盖 \((\mathrm{A}_j)_{j\in \mathrm{J}}\)，使得对于每个 \(j\in \mathrm{J}\)，集合 \(\mathrm{A}_j\) 在 B 中是闭的且包含于 \(\mathrm{U}_j\) 中（TG, IX, p. 49, prop. 4 and p. 48, cor. 1）。
+
+对于 B 的每个开子集 U，记 \(\mathcal{F}(\mathrm{U})\) 为所有 \(\mathrm{U}\times\mathbf{I}\) -同构的集合：这些同构将 \(\stackrel{-1}{p}(\mathrm{U}\times\mathbf{I})\) 映到 \(\stackrel{-1}{p_{1}}(\mathrm{U})\times\mathbf{I}\) 上，并将 \(\stackrel{-1}{p}(\mathrm{U}\times\{1\})\) 到 \(\stackrel{-1}{p_{1}}(\mathrm{U})\times\{1\}\) 的映射诱导为恒等映射。对于 B 的每一对开集 (V, U)
+
+且满足 U ⊂ V，记 \(r_{\mathrm{UV}} \colon \mathcal{F}(\mathrm{V}) \to \mathcal{F}(\mathrm{U})\) 为如下映射：它将一个 \((\mathrm{V} \times \mathbf{I})\) -同构 \(g \colon \stackrel{-1}{p}(\mathrm{V} \times \mathbf{I}) \to \stackrel{-1}{p_0}(\mathrm{V}) \times \mathbf{I}\) 映到由 g 通过取子空间导出的 \((\mathrm{U} \times \mathbf{I})\) -同构。二元组 \(\mathcal{F} = ((\mathcal{F}(\mathrm{U})), (r_{\mathrm{UV}}))\) 是 B 上的一个层（I, p. 45, example 4）。为了证明命题，只需证明层 F 是柔软的（I, p. 64）。
+
+取 \(j \in \mathrm{J}\)，令 A 为 \(\mathrm{A}_j\) 的闭子集，令 V 为 B 中的开集，满足 \(\mathrm{A} \subset \mathrm{V} \subset \mathrm{U}_j\)，并令 \(g\) 为 \(\mathcal{F}(\mathrm{V})\) 的一个元素。由于仿紧空间是正规的（TG, IX, p. 49, prop. 4），存在 A 的一个开邻域 W，使得 \(\overline{\mathrm{W}} \subset \mathrm{V}\)。我们将证明存在一个元素 \(g'\)，它属于 \(\mathcal{F}(\mathrm{U}_j)\)，使得 \(g' | \mathrm{W} = g | \mathrm{W}\)。于是，命题 6 的推论 2（I, p. 65）意味着层 \(\mathcal{F}\) 是柔软的。
+
+由于 B × I-空间 E 在 \(U_{j} \times I\) 上可平凡化，我们可以设 \(\overline{p}^{-1}(U_{j} \times I) = U_{j} \times I \times F\)，其中 F 是一个拓扑空间。于是，层 \(\mathcal{F}(V)\) 的元素 g 是 V × I 到自身的 V × I-同构，它在 V × \{1\}×F 上诱导恒等映射。将 cor. 5 of IV, p. 439 应用于空间 \(X' = X\)、\(X = U_{j}\)、A = overline{W}、\(U = V\) 和 \(Y = Z = F\)，应用于映射 g: V 	imes I 	imes F 	o V 	imes I 	imes F，以及 \(U_{j} \times \{1\} \times F\) 的恒等映射。因而存在一个 \(U_{j} \times I\)-同构 \(g'\)，它将 \(U_{j} \times I \times F\) 映到自身，在 \(U_{j} \times \{1\} \times F\) 上诱导恒等映射，并且在 \(\overline{W} \times I \times F\) 上与 g 重合，从而在 W × I × F 上也重合。因此命题得证。
+
+推论 1. --- 设 B 是一个仿紧拓扑空间，且 (E, p) 是 B × I 上的局部平凡纤维空间（I, p. 71, corollary 2）。对于 \(t \in I\)，记 \((E_{t}, p_{t})\) 为局部平凡的纤维 B-空间 \(i_{t}^{*}E\)，其中 \(i_{t} \colon B \to B \times \{t\}\) 是由 \(b \mapsto (b, t)\) 给出的映射。局部平凡的纤维 B-空间 \(E_{0}\) 和 \(E_{t}\) 对每个 \(t \in I\) 都同构。
+
+推论 2. --- 设 B 和 B' 是拓扑空间，E 是 B 上的局部平凡纤维丛。令 \(f_0\) 和 \(f_1\) 为从 B' 到 B 的连续映射。设空间 B' 是仿紧的。若映射 \(f_0\) 和 \(f_1\) 同伦，则局部平凡的纤维 B'-空间 \(f_0^*E\) 和 \(f_1^*E\) 同构。
+
+令 \(\sigma\colon\mathrm{B}^{\prime}\times\mathbf{I}\to\mathrm{B}\) 为连接 \(f_{0}\) 与 \(f_{1}\) 的同伦，并记 \(\mathrm{E}^{\prime}\) 为 \(\mathrm{B}^{\prime}\times\mathbf{I}\)-空间 \(\sigma^{*}\mathrm{E}\)；它是一个局部平凡纤维空间。记 \(i_{0}\) 和 \(i_{1}\) 为从 \(\mathrm{B}^{\prime}\) 到 \(\mathrm{B}^{\prime}\times\mathbf{I}\) 的映射，它们分别由 \(x\mapsto(x,0)\) 和 \(x\mapsto(x,1)\) 给出。由 Cor. 1，\(\mathrm{B}^{\prime}\)-纤维空间 \(i_{0}^{*}\mathrm{E}^{\prime}\) 和 \(i_{1}^{*}\mathrm{E}^{\prime}\) 同构。由于 \(\sigma\circ i_{0}=f_{0}\)，\(\mathrm{B}^{\prime}\)-空间 \(i_{0}^{*}\mathrm{E}^{\prime}\) 被识别为 \(f_{0}^{*}\mathrm{E}\)；
+
+同样，B'-空间 \(i_{1}^{*}E'\) 被识别为 \(f_{1}^{*}E\)。因此，B'-纤维空间 \(f_{0}^{*}E\) 和 \(f_{1}^{*}E\) 同构，这正是要证明的结论。
+
+推论 3. --- 设 B 是一个仿紧拓扑空间。若 B 与一个点同伦等价，则每个以 B 为底的局部平凡纤维丛都是可平凡化的。
+
+推论 4. --- 设 B 和 B' 是拓扑空间，(E, p) 是 B 上的局部平凡纤维空间，f 是从 B' 到 B 的连续映射，\(\sigma: \mathrm{B}' \times \mathbf{I} \to \mathrm{B}\) 是以 f 为初始映射的同伦，且 \(\widetilde{f}\) 是 f 到 E 的连续提升。若空间 B' 是仿紧的，则存在同伦 \(\widetilde{\sigma}: \mathrm{B}' \times \mathbf{I} \to \mathrm{E}\)，它以 \(\widetilde{f}\) 为初始映射，并且是 \(\sigma\) 到 E 的提升。
+
+设 \((\mathrm{E}^{\prime},p^{\prime})\) 为从 \(B^{\prime}\times I\)-空间 \((\mathrm{E},p)\) 沿映射 \(\sigma\colon B^{\prime}\times I\to B\) 进行基变换得到的空间。它是一个局部平凡纤维空间（I, p. 71, cor. 2），且映射 \(s\colon B^{\prime}\times\{0\}\to E^{\prime}\) 由 \(s((a,0))=((a,0),\widetilde{f}(a))\) 定义；对于 \(a\in B^{\prime}\)，它是连续的，并且是 \(p^{\prime}\) 在 \(B^{\prime}\times\{0\}\) 上的连续截面。由 Prop. 2，存在一个连续截面 \(\widetilde{s}\)，它是 \(p^{\prime}\) 的截面，并延拓 s。映射 \(\widetilde{\sigma}=\operatorname{pr}_{2}\circ\widetilde{s}\) 具有所需性质。
+
+\subsection{以 B × I 为底空间的主纤维丛}
+
+设 G 是一个拓扑群。我们将看到，在每个陈述中将“局部平凡纤维空间”替换为“群 G 的主纤维空间”后，命题 2 及其推论仍然有效。
+
+引理 4. --- 设 B 是一个拓扑空间，G 是一个拓扑群，且 E、E′ 是以 B 为底、群 G 的主纤维丛。记 F 为拓扑空间 G，并赋予它由 G×G 给出的左作用 \((g,g')\cdot f=g'fg^{-1}\)，并记 \(M = (\mathrm{E}\times_{\mathrm{B}}\mathrm{E}')\times^{\mathrm{G}\times\mathrm{G}}\mathrm{F}\) 为与之相关联的、纤维型为 F 且底空间为 B 的局部平凡纤维丛。
+
+层 \(\mathcal{S}\)（即 B 上由 M 的截面组成的层）同构于 B 上由 E 到 E' 的主纤维丛同构组成的层。
+
+记 \(p\)、\(p'\) 和 \(q\) 为 B-空间 E、E' 和 M 的投影。对于 \((x, x') \in \mathrm{E} \times_{\mathrm{B}} \mathrm{E}'\) 和 \(f \in \mathrm{F}\)，记 \([x, x', f]\) 为元素 \(((x, x'), f) \in (\mathrm{E} \times_{\mathrm{B}} \mathrm{E}') \times \mathrm{F}\) 在 M 中的等价类。记 \(\mathcal{M}\) 为 B 上由 E 到 E' 的主纤维丛同构组成的层；它在 B 的开子集 U 上的截面是从 \(E_{U}\) 到 \(E_{U}'\) 的主纤维丛同构。
+
+记 \(e\) 为 G 的单位元。设 U 是 B 的开子集，且 \(\varphi\colon\mathrm{E}_{\mathrm{U}}\to\mathrm{E}_{\mathrm{U}}^{\prime}\) 是群 G、底空间 U 的主纤维丛同构。从 \(\mathrm{E}_{\mathrm{U}}\) 到 \((\mathrm{E}\times_{\mathrm{B}}\mathrm{E}^{\prime})\times^{\mathrm{G}\times\mathrm{G}}\mathrm{F}\) 的映射由 \(x\mapsto[x,\varphi(x),e]\) 定义，且是连续的。对于 \(g\in\mathrm{G}\) 和 \(x\in\mathrm{E}_{\mathrm{U}}\)，它将 \(x\cdot g\) 送到 \([x\cdot g,\varphi(x\cdot g),e]=[x,\varphi(x),geg^{-1}]=[x,\varphi(x),e]\)。因而存在唯一连续映射 \(\alpha_{\mathrm{U}}(\varphi)\colon\mathrm{U}\to\mathrm{M}\)，使得 \(\alpha_{\mathrm{U}}(\varphi)(p(x))=[x,\varphi(x),e]\)，对于所有 \(x\in\mathrm{E}_{\mathrm{U}}\) 均成立；我们有 \(\alpha_{\mathrm{U}}(\varphi)\in\mathcal{S}(\mathrm{U})\)。
+
+显然，映射 \(\alpha_{U}\) 定义了从层 M 到层 S 的层态射 \(\alpha\)。
+
+引理 5. --- 层态射 α 是一个同构。
+
+首先假设主纤维丛 E 和 E' 都是可平凡化的；取截面 \(i: B \to E\) 和 \(i': B \to E'\)。于是存在唯一连续映射 \(\theta\)，从 M 到 \(B \times G\)，使得
+
+\[
+\theta ([ i (b) \cdot g, i ^ {\prime} (b) \cdot g ^ {\prime}, f ]) = (b, g ^ {\prime} f g ^ {- 1})
+\]
+
+对 \(b \in \mathrm{B}\)、\(g \in \mathrm{G}\)、\(g' \in \mathrm{G}\) 和 \(f \in \mathrm{F}\)，该映射是连续的；它是 B-空间的同构。设 \(\varphi\) 是从 E 到 \(\mathrm{E}'\) 的主纤维丛同构；存在唯一连续映射 \(\gamma: \mathrm{B} \to \mathrm{G}\)，使得 \(\varphi(i(b)) = i'(b) \cdot \gamma(b)\) 对于 \(b \in \mathrm{B}\) 成立。\(\varphi\) 在映射 \(\alpha_{\mathrm{B}}\) 下的像是从 B 到 M 的映射 \(b \mapsto \theta^{-1}(b, \gamma(b))\)。这表明 \(\alpha_{\mathrm{B}}\) 是双射。
+
+因此，\(\alpha_{\mathrm{U}}\) 对于 B 的每个开集 U 都是双射，只要主纤维丛 \(\mathrm{E_U}\) 和 \(\mathrm{E_U}'\) 是可平凡化的。由 I, p. 55 的 corollary 2，这意味着 \(\alpha\) 是层的同构。
+
+命题 3. --- 设 G 是一个拓扑群，B 是一个仿紧拓扑空间，且 (E, p) 是以 B × I 为底、群 G 的主纤维丛。置 \(E_{1} = \overline{p}^{-1}(B \times \{1\})\)，并令 \(p_{1}: E_{1} \to B\) 为映射 \(pr_{1} \circ p \mid E_{1}\)。则 (E, p) 与 \((E_{1} \times I, p_{1} \times Id_{I})\) 是以 B × I 为底、群 G 的同构主纤维丛。
+
+设 F 为拓扑空间 G，并赋予它由 \(G \times G\) 给出的左作用 \((g, g') \cdot f = g' fg^{-1}\)。设 \((M, q)\) 为以 \(B \times I\) 为底、与主纤维丛 \(E \times_{B \times I}(E_1 \times I)\) 相关联的、群为 \(G \times G\)、纤维型为 F 的局部平凡纤维丛。置 \(M_1 = \overline{q}^{-1}(B \times \{1\})\)
+
+且 \(q_1 = \mathrm{pr}_1 \circ q \mid M_1\)；B-空间 \((M_1, q_1)\) 被识别为与 \(E_1 \times_\mathrm{B} E_1\) 相关联的、纤维型为 F 的局部平凡纤维丛。由引理 4（其中取主纤维丛 E 和 \(E'\) 都等于 \(E_1\)），B-空间 \(M_1\) 有一个截面。由于 \(B \times I\)-空间 \((M, q)\) 与 \((M_1 \times I, q_1 \times \mathrm{Id}_{I})\) 同构（IV, p. 440, Prop. 2），\(B \times I\)-空间 \((M, q)\) 有一个截面，这意味着主 G-丛 E 和 \(E_1 \times I\) 同构。
+
+推论 1. --- 设 B 是一个仿紧拓扑空间，G 是一个拓扑群，且 (E,p) 是 B × I 上的主 G-丛。对于 \(t \in I\)，记 \((E_{t}, p_{t})\) 为主 B-纤维丛 \(i_{t}^{*}E\)，其中 \(i_{t}: B \to B \times \{t\}\) 是由 \(b \mapsto (b, t)\) 给出的映射。主 B-纤维丛 \(E_{0}\) 和 \(E_{t}\) 对每个 \(t \in I\) 都同构。
+
+推论 2. --- 设 B 和 B' 是拓扑空间，G 是一个拓扑群，E 是群 G、底空间 B 的主 B-纤维丛。令 \(f_0\) 和 \(f_1\) 为从 B' 到 B 的连续映射。设空间 B' 是仿紧的。若映射 \(f_0\) 和 \(f_1\) 同伦，则主 B'-纤维丛 \(f_0^*E\) 和 \(f_1^*E\) 同构。
+
+推论 3. --- 设 B 是一个仿紧拓扑空间，G 是一个拓扑群。若 B 与一个点同伦等价，则每个以 B 为底的主 G-丛都是可平凡化的。
+
+注记。 --- 这些结果的另一种证明方式，是验证命题 2 及其推论中构造的纤维空间同构实际上都是主纤维空间同构。
+
+\subsection{万有纤维丛}
+
+设 G 是一个拓扑群，B 和 B' 是拓扑空间，且 \((\mathrm{E}, p)\) 和 \((\mathrm{E}', p')\) 分别是结构群为 G、底空间分别为 B 和 B' 的主纤维丛。
+
+设 U 是 B 的一个开子集，且 \(f'\colon \overline{p}^{-1}(U) \to E'\) 是一个连续映射，它分别与 \(\overline{p}^{-1}(U)\) 和 \(E'\) 中 G 的运算相容。因而存在唯一连续映射 \(f\colon U \to B'\)，使得 \(f \circ p_{U} = p' \circ f'\)，并且交换方形
+
+\[
+\begin{array}{c} \mathrm {E_ {U}} \xrightarrow {f ^ {\prime}} \mathrm {E^ {\prime}} \\ \Biggl \downarrow p _ {\mathrm{U}} \\ \mathrm{U} \xrightarrow {f} \mathrm {B^ {\prime}} \end{array}
+\]
+
+随后该交换方形是笛卡尔的（I, p. 94, example (FP)）。
+
+对于 B 的每个开子集 U，记 \(\mathcal{F}(\mathrm{U})\) 为所有连续映射 \(g\colon \mathrm{E}_{\mathrm{U}}\to \mathrm{E}'\) 的集合；这些映射分别与 \(\overline{p}^{-1}(\mathrm{U})\) 和 \(\mathrm{E}'\) 中 G 的运算相容。对于 B 的每一对开集 (U,V)，若 \(\mathrm{U}\subset \mathrm{V}\)，令 \(r_{\mathrm{UV}}\colon \mathcal{F}(\mathrm{V})\to \mathcal{F}(\mathrm{U})\) 为由 \(r_{\mathrm{UV}}(g) = g\mid \mathrm{E}_{\mathrm{U}}\) 定义的映射。立即可验证，这样便在 B 上定义了层 \(\mathcal{F} = ((\mathcal{F}(\mathrm{U})),(r_{\mathrm{UV}}))\)。我们称此层为 B 上由 E 到 \(\mathrm{E}'\) 的群 G 主纤维丛态射层。
+
+命题 4. --- 若空间 B 是仿紧的，且空间 E' 与一个点同伦等价，则 B 上由 E 到 E' 的群 G 主纤维丛态射层是柔软层。
+
+存在 B 的一个开覆盖 \((\mathrm{U}_{j})_{j\in\mathrm{J}}\)，使得对于每个 \(j\in J\)，纤维丛 \(E_{U_{j}}\) 可平凡化。由于空间 B 是仿紧的，可以设覆盖 \((\mathrm{U}_{j})_{j\in\mathrm{J}}\) 是局部有限的（TG, IX, p. 49），并选取 B 的一个覆盖 \((\mathrm{A}_{j})_{j\in\mathrm{J}}\)，使得对于每个 \(j\in J\)，集合 \(A_{j}\) 在 B 中是闭的且包含于 \(U_{j}\) 中（TG, IX, p. 49, prop. 4 and p. 48, cor. 1）。
+
+由 I, p. 65, cor. 2 of prop. 6，要证明命题只需建立以下断言：设 U 是 B 的一个开子集，使得主纤维丛 \((E_{U}, p_{U})\) 可平凡化；设 A 是包含于 U 中的 B 的闭子集；设 V 是包含 A 且包含于 U 中的开邻域，并令 f 为 \(\mathcal{F}(V)\) 中的一个元素；则存在 V 中 A 的一个开邻域 W，以及一个元素 \(f'\)，它属于 \(\mathcal{F}(U)\)，满足 \(r_{\mathrm{WU}}(f') = r_{\mathrm{WV}}(f)\)。我们来证明这个断言。
+
+取 B 的一个开子集 W，使得 \(A \subset W \subset \overline{W} \subset V\)。令 \(s: U \to E_{U}\) 为 \((\mathrm{E}_{\mathrm{U}}, p_{\mathrm{U}})\) 的一个截面。将 Corollary 3 (IV, p. 438) 应用于空间 B、闭集 \(\overline{W}\)、\(\overline{W}\) 的邻域 V，以及映射 \(g = f \circ (s\textbar{} V)\)，该映射从 \(V\) 到 \(E'\)。因而存在连续映射 \(\widetilde{g}: B \to E'\)，它在 \(\overline{W}\) 上与 g 重合。令 \(h = \widetilde{g}\textbar{} U\)。有 \(h\textbar{} W = g\textbar{} W = f \circ (s\textbar{} W)\)。
+
+映射 H: U × G → E' 由 H(x, g) = h(x) · g 定义，对于 (x, g) ∈ U × G，它是连续的，并且分别与 U × G 和 E' 中 G 的运算相容。置 \(f' = H \circ s^{-1}\)；它是 \(\mathcal{F}(U)\) 中的一个元素。对于所有 \(x \in W\)，映射 f 和 \(f'\) 在点 \(s(x)\) 处重合，因此由于它们是主纤维丛态射，在 \(\overline{p}^{-1}(x)\) 的每一点处也重合。命题得证。
+
+定理 1. --- 设 G 是一个拓扑群，设 \(B_{u}\) 是一个拓扑空间，且 \((\mathrm{E}_{\mathrm{u}}, p_{\mathrm{u}})\) 是以 \(B_{u}\) 为底、群 G 的主纤维丛。我们假设空间 \(E_{u}\) 与一个点同伦等价。
+
+设 B 是一个仿紧拓扑空间。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+每个群 G、底空间为 B 的主纤维丛，都同构于某个形如 \(f^{*}E_{u}\) 的主纤维丛，其中 \(f: B \to B_{u}\) 是连续映射。
+\item
+令 \(f_{0}\) 和 \(f_{1}\) 为从 B 到 \(B_{u}\) 的连续映射。要使 \(f_{0}^{*}E_{u}\) 和 \(f_{1}^{*}E_{u}\) 成为以 B 为底、群 G 的同构主纤维丛，\(f_{0}\) 和 \(f_{1}\) 同伦是充要条件。
+\end{enumerate}
+
+换言之，存在从 \([B, B_{u}]\) 到 \(P(B; G)\) 的映射，它将从 B 到 \(B_{u}\) 的连续映射 f 的同伦类对应到主纤维丛 \(f^{*}E_{u}\) 的同构类。该映射是双射。
+
+设 E 是群 G、底空间为 B 的主纤维丛。由 Prop. 4，B 上的主纤维丛态射层 \(\mathcal{F}\)（由 E 到 \(\mathrm{E_u}\)）是柔软的。因此，\(\mathcal{F}(\mathrm{B})\) 非空，从而 \(a\)。
+
+令 \(f_{0}\) 和 \(f_{1}\) 为从 B 到 \(B_{u}\) 的连续映射。若映射 \(f_{0}\) 和 \(f_{1}\) 同伦，则主纤维丛 \(f_{0}^{*}E_{u}\) 和 \(f_{1}^{*}E_{u}\) 同构（IV, p. 445, cor. 2）。现在证明逆命题。对于 \(\alpha\in\{0,1\}\)，记 \(E_{\alpha}\) 为以 \(B_{u}\) 为底的主纤维丛 \(f_{\alpha}^{*}E_{u}\)，记 \(g_{\alpha} \colon E_{\alpha} \to E_{u}\) 为第一投影，并记 \(p_{\alpha} \colon E_{\alpha} \to B\) 为第二投影。设 \(i \colon E_{0} \to E_{1}\) 是主纤维丛同构。令 \(p\) 为映射 \(p_{0} \times Id_{I} \colon E_{0} \times I \to B \times I\)。
+
+由于空间 B × I 是仿紧的（TG, IX, p. 70, prop. 17），B × I 上从 E₀ × I 到 Eᵤ 的主纤维丛态射层 G 是柔软的（IV, p. 446, prop. 4）。置 A = B × \{0,1\}，U = B × ([0, ½[∪]½, 1])，并通过下式定义 G(U) 中的元素 g：
+
+\[
+g (x, t) = \left\{ \begin{array}{l l} g _ {0} (x) & \text { for } (x, t) \in \mathrm{E} _ {0} \times [ 0, \frac {1}{2} [, \\ g _ {1} \circ i (x) & \text { for } (x, t) \in \mathrm{E} _ {0} \times ] \frac {1}{2}, 1 ]. \end{array} \right.
+\]
+
+由于层 \(\mathcal{G}\) 是柔软的，存在一个 \(h \in \mathcal{G}(\mathrm{B} \times \mathbf{I})\) 以及 A 在 U 中的一个开邻域 V，使得 \(h \mid \mathrm{V} = g \mid \mathrm{V}\)；这样的元素是一个连续映射 \(\mathrm{H} \colon \mathrm{E}_0 \times \mathbf{I} \to \mathrm{E}_{u}\)，它与 G 的运算相容，并满足 \(\mathrm{H}(x,0) = g_0(x)\)、\(\mathrm{H}(x,1) = g_1(i(x))\)，对于所有 \(x \in \mathrm{E}_0\) 都成立。因而存在映射 \(h' \colon \mathrm{B} \times \mathbf{I} \to \mathrm{B}_{u}\)，使得 \(h'(p_0(x),t) = p_{\mathrm{u}}(\mathrm{H}(x,t))\)，对于 \(x \in \mathrm{E}_0\) 和 \(t \in \mathbf{I}\) 成立；该映射连续，并且是连接 \(f_0\) 与 \(f_1\) 的同伦。
+
+推论。 --- 设 G 是一个拓扑群，B 和 B' 是仿紧拓扑空间。设 (E,p) 和 (E',p') 分别是群 G、底空间为 B 和 B' 的主纤维丛。假设空间 E 和 E' 都与一个点同伦等价。则空间 B 和 B' 同伦等价。
+
+事实上，存在连续映射 \(f \colon \mathrm{B} \to \mathrm{B}'\)，使得主纤维丛 E 同构于主纤维丛 \(f^* \mathrm{E}'\)，以及连续映射 \(g \colon \mathrm{B}' \to \mathrm{B}\)，使得主纤维丛 \(\mathrm{E}'\) 同构于主纤维丛 \(g^* \mathrm{E}\)（定理 1, (a)）。于是主纤维丛 \((g \circ f)^* \mathrm{E}\) 与 E 同构，因此映射 \(g \circ f\) 同伦于映射 \(\mathrm{Id}_{\mathrm{B}}\)（定理 1, (b)）。同样，映射 \(f \circ g\) 同伦于映射 \(\mathrm{Id}_{\mathrm{B}'}\)。
+
+设 G 是一个拓扑群，B 是一个拓扑空间，E 是以 B 为底的主 G-丛。若空间 E 与一个点同伦等价，则称主丛 E 是具有仿紧底空间的主 G-丛的万有丛，并称空间 B 是 G 的分类空间。若 G 有两个分类空间是仿紧的，则它们同伦等价。当分类空间存在时，可以把具有仿紧底空间的主 G-丛的同构类的研究看作同伦论中的一个问题。
+
+例。 --- 赋予 R 映射 \(p: R \to S^{1}\)、\(t \mapsto e^{2\pi it}\)，并赋予 Z 平移作用后，空间 R 是群 Z 的主覆盖。因此，空间 \(S^{1}\) 是群 Z 的分类空间。
+
+对于每个离散群 G，我们将在下一节构造一个度量空间，它是 G 的分类空间。
+
+\subsection{离散群的分类空间}
+
+设 G 是一个拓扑群；记其单位元为 e。记 G* 为所有映射 \(h\colon[0,1[ \to G\) 的集合，其中存在一个有限序列 \((t_{i})_{0\leqslant i\leqslant n}\)，满足 \(0=t_{0}<t_{1}<\cdots<t_{n}=1\)，使得 h 在区间 \([t_{i-1},t_{i}[\) 上为常值（其中 \(1\leqslant i\leqslant n\)）。这样的序列称为适合 h 的序列。对于 G* 的每个有限子集，都存在一个适合其中每个元素的序列。
+
+集合 \(G^{*}\) 是 \(G^{[0,1[}\) 的子群。我们记其单位元为 \(e^{*}\)；元素 \(h \in G^{*}\) 的逆元是映射 \(t \mapsto h(t)^{-1}\)，记为 \(h^{-1}\)。
+
+设 V 是 G 中 \(e\) 的一个邻域。设 \(h \in \mathbf{G}^*\)，并设 \((t_i)_{0 \leqslant i \leqslant n}\) 是适合 \(h\) 的序列。满足 \(t \in [0,1[\) 且 \(h(t) \notin \mathbf{V}\) 的 t 的集合，是若干区间 \([t_{i-1}, t_i[\) 的并；这些区间的长度 \(t_i - t_{i-1}\) 之和不依赖于所选的序列 \((t_i)_{0 \leqslant i \leqslant n}\)；将其记为 \(p_{\mathrm{V}}(h)\)。对于每个实数 \(\varepsilon\)，若 \(\varepsilon > 0\)，记 \(\mathrm{V}_{\varepsilon}^*\) 为所有 \(h \in \mathbf{G}^*\) 且满足 \(p_{\mathrm{V}}(h) < \varepsilon\) 的元素所成的集合。
+
+命题 5. --- 在与群结构相容的拓扑中，G* 存在唯一拓扑，使得集合 V* 构成单位元的邻域基。
+
+我们来验证集合 \(V_{\varepsilon}^{*}\) 满足 TG, III, p. 4 中的公理 \((\mathrm{GV}_{\mathrm{I}}^{\prime})\)、\((\mathrm{GV}_{\mathrm{II}}^{\prime})\) 和 \((\mathrm{GV}_{\mathrm{III}}^{\prime})\)。
+
+设 V 是 G 中 \(e\) 的一个邻域，且 \(\varepsilon\) 是严格正实数。设 W 是 G 中 \(e\) 的一个邻域，使得 \(\mathrm{W} \cdot \mathrm{W} \subset \mathrm{V}\)。设 \(h\) 和 \(h'\) 是 \(\mathbf{G}^*\) 中的元素。若 \(t \in [0,1[\) 满足 \(h(t)h'(t) \notin \mathrm{V}\)，则 \(h(t) \notin \mathrm{W}\) 或 \(h'(t) \notin \mathrm{W}\)。因此 \(p_{\mathrm{V}}(hh') \leqslant p_{\mathrm{W}}(h) + p_{\mathrm{W}}(h')\)。于是，\(\mathrm{W}_{\varepsilon/2}^* \cdot \mathrm{W}_{\varepsilon/2}^* \subset \mathrm{V}_{\varepsilon}^*\)，这就证明了公理（\(\mathrm{GV}_I'\)）。
+
+设 W 是 G 中 e 的一个邻域，使得 \(W^{-1} \subset V\)。则 \((\mathrm{W}_{\varepsilon}^{*})^{-1} = (\mathrm{W}^{-1})_{\varepsilon}^{*} \subset \mathrm{V}_{\varepsilon}^{*}\)，从而得到公理 \((\mathrm{GV}_{\mathrm{II}}^{\prime})\)。
+
+设 \(k\) 是 \(\mathbf{G}^*\) 中的一个元素；由于函数 \(k\) 只取有限个值，存在 G 中 \(e\) 的一个邻域 W，使得 \(k(t)\mathrm{W}k(t)^{-1}\subset \mathrm{V}\) 对所有 \(t\in [0,1[\) 都成立。设 \(h\) 是 \(\mathbf{G}^*\) 中的一个元素。对于 \(t\in [0,1[\)，若 \(k(t)h(t)k(t)^{-1}\not\in\mathrm{V}\)，则 \(h(t)\not\in\mathrm{W}\)。因此，\(p_{\mathrm{V}}(khk^{-1})\leqslant p_{\mathrm{W}}(h)\)。这证明了 \(k\mathrm{W}_{\varepsilon}^{*}k^{-1}\subset\mathrm{V}_{\varepsilon}^{*}\)，从而得到公理（\(\mathrm{GV}_{\mathrm{III}}'\)）。
+
+命题 6. --- 空间 G* 是可缩的，并且在其每一点处局部可缩。
+
+对于 \(h \in \mathbf{G}^*\) 和 \(t \in \mathbf{I}\)，记 \(\sigma(h, t)\) 为从 [0,1[ 到 G 的映射，它由 \(\sigma(h, t)(x) = h(x)\)（当 \(0 \leqslant x < t\) 时）以及 \(\sigma(h, t) = e\)（其他情形）给出。
+
+我们来证明这样定义的映射 \(\sigma\colon\mathbf{G}^{*}\times\mathbf{I}\to\mathbf{G}^{*}\) 是连续的。事实上，设 \(k\in\mathbf{G}^{*}, u\in\mathbf{I}\)，并设 V 是 G 中 \(e\) 的一个邻域，且 \(\varepsilon\) 是严格正实数。元素 \(\sigma(h,t)\sigma(k,u)^{-1}\) 属于 \(\mathbf{G}^{*}\)，它是从 [0,1[ 到 G 的映射 \(f\)，由下式给出
+
+\[
+f (x) = \left\{ \begin{array}{l l} h (x) k (x) ^ {- 1} & \text { if } 0 \leqslant x <   \min (t, u); \\ h (x) & \text { if } u \leqslant x <   t; \\ k (x) ^ {- 1} & \text { if } t \leqslant x <   u; \\ e & \text { otherwise. } \end{array} \right.
+\]
+
+因此，
+
+\[
+p _ {\mathrm{V}} (\sigma (h, t) \sigma (k, u) ^ {- 1}) \leqslant p _ {\mathrm{V}} (h k ^ {- 1}) + | t - u |;
+\]
+
+换言之，对于 \(\sigma(h,t) \in V_{\varepsilon}^{*}\sigma(k,u)\)，只要 \(|t-u| \leqslant \frac{\varepsilon}{2}\) 且 \(h \in V_{\varepsilon/2}^{*}k\) 即可；这证明了 \(\sigma\) 在 \((k,u)\) 处连续。对于所有 \(h \in G^{*}\)，\(\sigma(h,0)\) 是像为 \(\{e\}\) 的常值映射，而 \(\sigma(h,1)=h\)。此外，\(\sigma(e,t)=e\) 对于所有 \(t \in I\) 成立。因此，\(\sigma\) 是在 \(e \in G^{*}\) 处的基点同伦，它将像为 \(\{e\}\) 的常值映射与 \(G^{*}\) 的恒等映射联系起来。这证明了 \(G^{*}\) 可缩到 \(e^{*}\)。
+
+此外，对于 G 中 e 的每个邻域 V 和每个实数 \(\varepsilon > 0\)，有 \(\sigma(\mathrm{V}_{\varepsilon}^{*} \times \mathbf{I}) \subset \mathrm{V}_{\varepsilon}^{*}\)。因此，\(V_{\varepsilon}^{*}\) 也可缩到 \(e^{*} \in G^{*}\)，所以 \(G^{*}\) 在 \(e^{*}\) 处局部可缩。
+
+由于 G* 是一个拓扑群，所以它在其每一点处都是可缩且局部可缩的。
+
+令 \(\iota\) 为从 G 到 \(\mathrm{G}^*\) 的映射，它把 \(g\in \mathrm{G}\) 对应到从 [0,1[ 到 G 的像为 \(\{g\}\) 的常值映射。映射 \(\iota\) 是单射群同态。设 V 是 G 中 \(e\) 的一个邻域，且 \(\varepsilon\) 是严格正实数。我们有 \(\iota^{-1}(\mathrm{V}_{\varepsilon}^{*}) = \mathrm{V}\)（当 \(\varepsilon \leqslant 1\) 时），而当其他情形时 \(\iota^{-1}(\mathrm{V}_{\varepsilon}^{*}) = \mathrm{G}\)。单位元 \(\mathrm{G}^*\) 的邻域的逆像是 G 的单位元的邻域，从而 \(\iota\) 连续。此外，\(\iota(\mathrm{V}) = \mathrm{V}_1^* \cap \iota(\mathrm{G})\) 对于 G 中 \(e\) 的每个邻域 V 都成立。因此，\(\iota\) 定义了从 G 到其像的拓扑群同构。
+
+注记 1. --- 若 G 是一个分离拓扑群，则 \(\iota(\mathrm{G})\) 是 \(\mathrm{G}^*\) 中的闭集。
+
+事实上，设 \(h \in \mathbf{G}^*\)，且 \(h \notin \iota(\mathbf{G})\)；设 \((t_i)_{0 \leqslant i \leqslant n}\) 是适合 \(h\) 的序列，并置 \(\varepsilon = \min_{1 \leqslant i \leqslant n} (t_i - t_{i-1})\)。设 \(V\) 是 \(e\) 在 \(G\) 中的一个邻域，使得 \(h(t_i)^{-1}h(t_j) \notin V\) 对每一对整数 \((i,j)\)（满足 \(0 \leqslant i, j \leqslant n-1\) 且 \(h(t_i) \neq h(t_j)\)）都成立；由于 \(G\) 是分离的，这样的邻域存在。设 \(W\) 是 \(e\) 在 \(G\) 中的一个邻域，使得 \(W \cdot W^{-1} \subset V\)。我们证明 \(hW_\varepsilon^*\) 不与 \(\iota(G)\) 相交。
+
+反设 \(f\) 是 \(W_{\varepsilon}^{*}\) 中的元素，\(g\) 是 \(G\) 中的元素，且 \(hf = \iota(g)\)。因此有 \(f(t) = h(t)^{-1}g\)，对所有 \(t \in [0,1[\) 成立，所以序列 \((t_i)\) 也适合函数 \(f\)。若 \(f\) 在区间 \([t_{i-1}, t_i[\) 上所取的值不属于 \(W\)，则有 \(t_i - t_{i-1} < \varepsilon\)，因为 \(f \in W_{\varepsilon}^{*}\)。但根据 \(\varepsilon\) 的定义，这个不等式不可能成立；因此都有 \(f(t) \in W\)，对于所有 \(t \in [0,1[\) 成立。于是取 \(i\) 和 \(j\) 为 \(\{0, \ldots, n-1\}\) 中的元素，使得 \(h(t_i) \neq h(t_j)\)；我们有
+
+\[
+h (t _ {i}) ^ {- 1} h (t _ {j}) = f (t _ {i}) g ^ {- 1} g f (t _ {j}) ^ {- 1} = f (t _ {i}) f (t _ {j}) ^ {- 1} \in \mathrm{W} \cdot \mathrm{W} ^ {- 1},
+\]
+
+因此，子群 \(\iota(G)\) 是 \(G^{*}\) 中的闭子群。
+
+设 G 是一个可度量化拓扑群，并令 d 为定义其拓扑的度量。设 h 和 \(h' \in G^{*}\) 是元素，并设 \((t_{i})_{0 \leqslant i \leqslant n}\) 是适合 h 和 \(h'\) 的序列。实数
+
+\[
+\sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) d \bigl (h (t _ {i - 1}), h ^ {\prime} (t _ {i - 1}) \bigr)
+\]
+
+不依赖于所选的序列 \((t_{i})\)；将其记为 \(d^{*}(h,h')\)。
+
+我们来证明 \(d^{*}\) 是 \(\mathbf{G}^{*}\) 上的距离。我们有 \(d^{*}(h,h^{\prime}) = d^{*}(h^{\prime},h)\)，对于 \(h, h^{\prime} \in \mathbf{G}^{*}\) 成立；并且 \(d^{*}(h,h) = 0\)，对于所有 \(h \in \mathbf{G}^{*}\) 成立。反之，设 \(h\) 和 \(h^{\prime}\) 是 \(\mathbf{G}^{*}\) 中的元素，且 \(d^{*}(h,h^{\prime}) = 0\)。设 \((t_{i})_{0\leqslant i\leqslant n}\) 是适合 \(h\) 和 \(h'\) 的序列。由于
+
+\[
+0 = d ^ {*} (h, h ^ {\prime}) = \sum_ {i = 1} ^ {n} \left(t _ {i} - t _ {i - 1}\right) d \left(h \left(t _ {i - 1}\right), h ^ {\prime} \left(t _ {i - 1}\right)\right)
+\]
+
+并且由于这个和式的所有项都为正或为零，都有 \(d(h(t_{i-1}), h'(t_{i-1})) = 0\)，对于所有 \(i \in \{1, \ldots, n\}\) 成立，从而 \(h = h'\)。最后，设 \(h\)、\(h'\)、\(h''\) 是 \(\mathbf{G}^*\) 中的元素，并设 \((t_i)_{0 \leqslant i \leqslant n}\) 是适合它们中每一个的序列。于是，
+
+\[
+\begin{array}{l} d ^ {*} (h, h ^ {\prime \prime}) = \sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) d \big (h (t _ {i - 1}), h ^ {\prime \prime} (t _ {i - 1}) \big) \\ \leqslant \sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) \left(d \big (h (t _ {i - 1}), h ^ {\prime} (t _ {i - 1}) \big) + d \big (h (t _ {i - 1}), h ^ {\prime \prime} (t _ {i - 1}) \big)\right) \\ = d ^ {*} (h, h ^ {\prime}) + d ^ {*} (h, h ^ {\prime \prime}), \end{array}
+\]
+
+因此 \(d^{*}\) 满足三角不等式。
+
+若 d 具有平移不变性，则这个距离 \(d^{*}\) 在右平移（分别为左平移）下不变。
+
+命题 7. --- 设 G 是一个可度量化拓扑群。则拓扑群 G* 是可度量化的。更确切地，若 d 是定义 G 拓扑的有界度量，则 G* 的拓扑由度量 d* 定义。
+
+设 \(d\) 是定义 G 拓扑的度量。则 \(d'\) 是由 \(d'(h,h') = \inf (d(h,h'),1)\) 给出的一个有界度量，并且它也定义 G 的拓扑（TG, IX, p. 3）。因此，只需证明 \(d^{*}\) 定义 \(G^{*}\) 的拓扑，假设 \(d\) 有界。
+
+设 V 是 G 中 e 的一个邻域，且 \(\varepsilon\) 是严格正实数。设 \(\delta\) 是严格正实数，使得 V 包含球 \(\mathrm{B}(e,\delta)\)。设 \(h \in G^{*}\)，并设 \((t_{i})_{0 \leqslant i \leqslant n}\) 是适合 h 的序列。
+
+于是，
+
+\[
+\begin{aligned} p_{\mathrm{V}}(h) & = \sum_{\substack{i = 1\\ h(t_{i - 1})\not\in\mathrm{V}}}^{n}(t_{i} - t_{i - 1})\\ & \leqslant \sum_{\substack{i = 1\\ d(h(t_{i - 1}),e)\geqslant \delta}}^{n}(t_{i} - t_{i - 1})\frac{d(h(t_{i - 1}),e)}{\delta}\\ & \leqslant \frac{d^{*}(h,e^{*})}{\delta}. \end{aligned}
+\]
+
+因此，球 \(\mathrm{B}(e^{*},\varepsilon\delta)\) 在 \(G^{*}\) 中包含于 \(V_{\varepsilon}^{*}\)。
+
+反之，设 \(\delta\) 是严格正实数，并令 \(\Delta\) 为 G 的直径的一个严格正上界。设 V 是 \(e\) 在 G 中的一个邻域，且包含于球 B \((e,\delta/2)\) 中。对于函数 \(h\in\mathrm{G}^{*}\) 以及序列 \((t_{i})_{0\leqslant i\leqslant n}\)，该序列适合 \(h\)，我们有
+
+\[
+\begin{array}{l}d^{*}(h,e^{*}) = \sum_{i = 1}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ = \sum_{\substack{i = 1\\ d(h(t_{i - 1}),e)\leqslant \delta /2}}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ +\sum_{\substack{i = 1\\ d(h(t_{i - 1}),e) > \delta /2}}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ \\ \leqslant \frac{\delta}{2} +\Delta \sum_{\substack{i = 1\\ h(t_{i - 1})\not\in\mathrm{V}}}^{n}(t_{i} - t_{i - 1})\\ \\ \leqslant \frac{\delta}{2} +\Delta p_{\mathrm{V}}(h). \end{array}
+\]
+
+前一不等式意味着，对于每个元素 \(h\)（属于 \(\mathrm{V}_{\delta/2\Delta}^{*}\)），有 \(d^{*}(h,e^{*})\leqslant\delta\)。因此，\(\mathrm{G}^{*}\) 中关于距离 \(d^{*}\) 的每个球都包含单位元的一个邻域。
+
+注记。 --- 2) 设 d 是定义 G 拓扑的有界度量。当赋予拓扑群 \(G^{*}\) 度量 \(d^{*}\) 时，同态 \(\iota: G \to G^{*}\) 是等距映射。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+假设 G 是离散拓扑群。于是子群 \(\iota(\mathrm{G})\) 是 \(G^{*}\) 的离散子群。事实上，G 的拓扑由 G 上的度量 d 定义，其中 \(d(g,g') = 1\) 当 \(g \neq g'\) 时，而 \(d(g, g') = 0\) 在其他情形下；该断言由前一注记推出。
+\end{enumerate}
+
+定理 2. --- 设 G 是一个离散拓扑群。令 G 通过右作用 h · g = hι(g) 作用于 G* 上，并记 B = G*/G 为商拓扑空间。
+
+空间 G* 是以 G 为群的 B 的覆盖空间；它是单道路连通的。
+
+空间 B 是一个可度量化、道路连通且局部可缩的拓扑空间，并且它在每一点处的庞加莱群同构于 G。
+
+因此，空间 B 是群 G 的分类空间。
+
+群 G* 可缩到其单位元（IV, p. 450, prop. 6）。特别地，它是道路连通的（III, p. 260）且单道路连通的（IV, p. 340）。
+
+群 \(\iota(\mathrm{G})\) 在 \(\mathrm{G}^*\) 中是闭的；因此空间 \(\mathrm{G}^*/\mathrm{G}\) 是可度量化的（TG, III, p. 13, prop. 18 and TG, IX, p. 25, prop. 4）。它也是道路连通的（III, p. 258, prop. 3）。由于群 \(\iota(\mathrm{G})\) 是离散的，由 Corollary 2 of I, p. 100 可得，\(\mathrm{G}^*\) 是 B 上的主 G-丛。带基点的覆盖 \((\mathrm{G}^*, e^*)\) 因而是以 \(e^*\) 的像为基点的空间 B 的万有覆盖；B 的庞加莱群（在其每一点处）同构于 G。
+
+\exerciseshdr{习题}
+
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+设 S 是从 ]0, 1[ 到 R 的映射 \(t \mapsto \sin(\pi/t)\) 的图。设 W 是 S 与一条位于 \(\mathbf{R}^2 - \mathbf{S}\) 中、连接点 (0, 0) 和 (1, 0) 的道路的像的并（“Warsaw circle”）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+证明空间 W 是单道路连通的，但不是单连通的。
+\item
+对于每个整数 \(n \geqslant 0\)，置 \(X_{n} = R/2^{n}Z\)，并记 \(f_{n}: X_{n+1} \to X_{n}\) 为典范满射；令 X 为 \(\varprojlim_{n} X_{n}\) 所成的空间。证明空间 X 是单道路连通的，但不是单连通的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+设 X 是 III, p. 331 的习题 4 中的拓扑空间，令 Y 为它的悬挂（I, p. 149, exerc. 1）。证明空间 Y 是单连通的，但 \(\pi_1(Y, y) \neq \{e_y\}\) 对所有 \(y \in Y\) 都成立。
+\item
+设 X 是一个拓扑空间，x 是 X 的一个点。
+\end{enumerate}
+
+设 R 是 X 的覆盖范畴，E 是集合范畴（cf. II, p. 160, example 2）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+假设对于 R 的每个对象 E，E 这个 X 的覆盖的纤维 \(E_{x}\) 是 E 的一个对象；于是置 \(\Phi_{x}(\mathrm{E}) = \mathrm{E}_{x}\)。对于 R 中作为对象的 B 的覆盖之间的每个态射 \(f: E' \to E\)，记 \(\Phi_{x}(f)\) 为 f 在纤维上诱导的从 \(E'_{x}\) 到 \(E_{x}\) 的映射。证明 \(\Phi_{x}\) 是从范畴 R 到范畴 E 的函子。
+\item
+令 \(\mathrm{G}(x)\) 为由族 \(\varphi = (\varphi_{\mathrm{E}})\) 构成的集合，其中对于 R 的每个对象 E，\(\varphi_{E}\) 是集合 \(\Phi_{x}(\mathrm{E})\) 的一个置换，并且对于 R 的每个箭头 \(f: E' \to E\)，有 \(f_{*} \circ \varphi_{E'} = \varphi_{E} \circ f_{*}\)（“函子 \(\Phi_{x}\) 的自同构”）。
+\end{enumerate}
+
+由关系 \(\varphi \cdot \psi = (\varphi_{\mathrm{E}} \circ \psi_{\mathrm{E}})\) 对于 \(\varphi, \psi \in \mathrm{G}(x)\)，赋予集合 \(\mathrm{G}(x)\) 群结构。对于 \(\mathcal{R}\) 的每个对象 E，记 \(\mathrm{G}(x)_{\mathrm{E}}\) 为所有 \(\varphi \in \mathrm{G}(x)\) 且满足 \(\varphi_{\mathrm{E}} = \mathrm{Id}_{\Phi_x(\mathrm{E})}\) 的元素所成的集合；它是 \(\mathrm{G}(x)\) 的子群。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+证明存在 \(\mathrm{G}(x)\) 上唯一的拓扑群结构，使得各群 \(\mathrm{G}(x)_{\mathrm{E}}\) 在单位元处构成邻域基。
+\item
+设 T 是 X 的单连通子空间。若 x 和 y 是 T 的点，则拓扑群 \(\mathrm{G}(x)\) 和 \(\mathrm{G}(y)\) 同构。
+\item
+证明道路的提升定义了从 \(\pi_{1}(X,x)\) 到 \(G(x)\) 的连续群同态。这个同态不必是满射（exerc. 1; I, p. 146, exerc. 6），也不必是单射（exerc. 2）。若 X 可解圈，且 X 的每个连通覆盖都同构于 R 的一个对象，则它是一个同构。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+对于每个整数 \(n \geqslant 1\)，令 \(X_{n}\) 为坐标平面 \(R^{2}\) 中三个线段的并，它们的端点是 \((0,1)\)、\((1/2n,0)\) 和 \((1/(2n-1),0)\)。令 \(X_{0}\) 为端点是 \((0,1)\) 和 \((0,0)\) 的线段。令 X 为集合 \(X_{n}\)（对于 \(n \geqslant 1\)）的并，并令 Y = \(\overline{X}\)。令 \(a = (0,1)\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+证明 \(Y = X \cup X_{0}\)。
+\item
+证明 X 是局部可缩的。
+\item
+证明 X 到 Y 的典范嵌入诱导了一个从 \(\pi_1(\mathrm{X},a)\) 到 \(\pi_1(\mathrm{Y},a)\) 的群同构。
+\end{enumerate}
+
+\(d)\) 证明 \(\pi_1(Y,a)\) 上的紧致收敛拓扑的商拓扑不是离散的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+设 X 是 \(\mathbf{R}^2\) 的子空间，它是 \([0,1] \times \{0,1\}\)、\(\{0\} \times [0,1]\) 以及 \(\{\frac{1}{n}\} \times [0,1]\)（\(n \geqslant 1\)）的并。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+证明 X 的每一点 a 都有一个邻域 V，使得 \(\pi_{1}(V,a)\) 在 \(\pi_{1}(X,a)\) 中的像是平凡的。
+\item
+证明群 \(\pi_{1}(X,a)\) 上的紧致收敛拓扑的商拓扑不是离散的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+令 X 为 \(R^{2}-Q^{2}\) 这个空间。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+证明空间 X 是道路连通的。
+\item
+设 \(a, b\) 是 \(\mathbf{R} - \mathbf{Q}\) 中的点。令 \(c_{a,b}: \mathbf{I} \to \mathbf{R}^2\) 为满足 \(c(0) = (a, a)\)、\(c(1/4) = (a, b)\)、\(c(1/2) = (b, b)\)、\(c(3/4) = (b, a)\) 以及 \(c(1) = (a, a)\) 的唯一映射，并且它在区间 \([(m-1)/4, m/4]\) 上的限制对于 \(1 \leqslant m \leqslant 4\) 是仿射的。证明 \(c_{a,b}\) 是 \(\mathbf{X}\) 中的圈。
+\item
+设 \(a, b, b'\) 是 \(\mathbf{R} - \mathbf{Q}\) 中的元素，且 \(b \neq b'\)。证明圈 \(c_{a,b}\) 和 \(c_{a,b'}\) 不严格同伦。
+\end{enumerate}
+
+\(d)\) 推出，对于每个 \(a \in \mathbf{R} - \mathbf{Q}\)，群 \(\pi_1(\mathrm{X}, (a, a))\) 的基数为连续统。

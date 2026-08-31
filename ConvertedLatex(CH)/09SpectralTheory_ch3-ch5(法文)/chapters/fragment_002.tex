@@ -1,0 +1,931 @@
+\subsection{以核定义的勒贝格空间之间的线性映射}
+
+这里我们取 K = C。设 X 是赋有正测度 \(\mu\) 的一个局部紧拓扑空间。对每个 \(r \in [1, +\infty]\)，我们记 \(\mathcal{L}^r (\mathrm{X}) = \mathcal{L}_{\mathbf{C}}^r (\mathrm{X},\mu)\)，\(\mathrm{L}^r (\mathrm{X}) = \mathrm{L}_{\mathbf{C}}^r (\mathrm{X},\mu)\)。当 \(r\in [1, + \infty [\) 时，我们把 \(\mathrm{L}^r (\mathrm{X})\) 的对偶与 \(\mathrm{L}^{r^{\prime}}(\mathrm{X})\) 等同起来，其中 \(r^\prime\) 是 \(r\) 的共轭指数，满足 \(1 / r + 1 / r' = 1\)（INT, V, p. 61, § 5, 第 8 目, th. 4）。我们用 \(\| f\| _r\) 表示 \(f\in \mathrm{L}^r (\mathrm{X})\)（或 \(f\in \mathcal{L}^r (\mathrm{X})\)）的范数（或半范数）。
+
+回顾一下，X 的子集 A 称为 \(\mu\) -适度的（INT, V, p. 4, § 1, 第 2 目），如果它含于由一列 \(\mu\) -可积集所成的并之中；而函数 \(f\)（它定义在 X 上，取值于一个向量空间或 \(\overline{\mathbf{R}}\) 中）称为 \(\mu\) -适度的，如果它在 X 的某个 \(\mu\) -适度子集的余集上为零。若 \(1 \leqslant p < +\infty\) 且 \(f \in \mathcal{L}^p(\mathrm{X})\)，则 \(f\) 是适度的（INT, V, p. 9, § 1, 第 3 目, cor.）。若 \(f\) 是 \(\mu\) -适度的，则 \(fg\) 是 \(\mu\) -适度的（对任何函数 \(g\)）。
+
+设 \(p\) 和 \(q\) 是 \(]1, +\infty[\) 中的元素。设 X 与 Y 是局部紧拓扑空间，分别赋有正测度 \(\mu\) 与 \(\nu\)。我们在空间 \(X \times Y\)（相应地，\(Y \times X\)）上赋以乘积测度 \(\mu \otimes \nu\)（相应地，\(\nu \otimes \mu\)）。
+
+我们用 \(\mathcal{N}^{p,q}(\mathrm{X}\times\mathrm{Y},\mu\otimes\nu)\)，或简作 \(\mathcal{N}^{p,q}(\mathrm{X}\times\mathrm{Y})\)，表示满足下列条件的、从 X × Y 到 C 中的关于 \((\mu\otimes\nu)\) 可测的函数 k 所成的集：存在一个实数 \(C\geqslant0\)，使得
+
+\[
+\int_ {\mathrm{X} \times \mathrm{Y}} ^ {*} | k (x, y) f (x) g (y) | d (\mu \otimes \nu) (x, y) \leqslant \mathrm{C} \| f \| _ {p} \| g \| _ {q}\tag{2}
+\]
+
+对一切函数 \(f \in \mathcal{L}^p(\mathrm{X})\) 与 \(g \in \mathcal{L}^q(\mathrm{Y})\) 成立。我们随后用 \(\| k \|_{p,q}\) 表示具有该性质的实数 C 所成之集的下确界。
+
+注记. --- 设 \(f \in \mathcal{L}^{p}(\mathrm{X})\)，\(g \in \mathcal{L}^{q}(\mathrm{Y})\)。由于 \(p < +\infty\) 且 \(q < +\infty\)，函数 f 与 g 都是适度的，而由 \((x, y) \mapsto f(x)g(y)\) 定义的函数是 \((\mu \otimes \nu)\) -适度的（参见 INT, V, p. 92, § 8, 第 3 目, cor. 2）。因此，函数 \((x, y) \mapsto k(x, y)f(x)g(y)\) 是 \((\mu \otimes \nu)\) -适度的，特别地，其绝对值的上积分与本质上积分重合（INT, V, p. 6, § 1, 第 3 目, prop. 7）。
+
+集 \(\mathcal{N}^{p,q}(\mathrm{X}\times \mathrm{Y})\) 是从 \(\mathrm{X}\times\mathrm{Y}\) 到 \(\mathbf{C}\) 中的函数空间的一个向量子空间，而由 \(k\mapsto \| k\|_{p,q}\) 定义的映射是 \(\mathcal{N}^{p,q}(\mathrm{X}\times \mathrm{Y})\) 上的一个半范数。
+
+引理 1. --- 设 \(k \in \mathcal{N}^{p,q}(X \times Y)\)。函数 \(k\) 是局部 \((\mu \otimes \nu)\) -可积的。
+
+映射 \(k\) 依假设是 \((\mu \otimes \nu)\) -可测的。设 A 是 \(\mathrm{X} \times \mathrm{Y}\) 的一个紧子集。存在紧子集 \(\mathrm{B} \subset \mathrm{X}\) 与 C ⊂ Y，使得 A ⊂ B × C。把 (2) 应用于 B 的特征函数 \(\varphi_{B}\) 与 C 的特征函数 \(\varphi_{C}\)，我们得到
+
+\[
+\begin{array}{l} \int_ {X \times Y} ^ {*} | k (x, y) | \varphi_ {\mathrm{A}} (x, y) d (\mu \otimes \nu) (x, y) \\ \qquad \leqslant \int_ {X \times Y} ^ {*} | k (x, y) | \varphi_ {\mathrm{B}} (x) \varphi_ {\mathrm{C}} (y) d (\mu \otimes \nu) (x, y) <   + \infty , \end{array}
+\]
+
+由此即得结论（INT, V, p. 41, §5, 第 1 目, prop. 1 与 def. 1）。
+
+命题 3. --- a) 设 \(k \in \mathcal{N}^{p,q}(X \times Y)\)。对 \(f \in \mathcal{L}^p(X)\) 与 \(g \in \mathcal{L}^q(Y)\)，函数
+
+\[
+(x, y) \mapsto k (x, y) f (x) g (y)
+\]
+
+是 \((\mu \otimes \nu)\) -可积的，并且存在唯一的映射 \(u_{k}\)（从 \(\mathrm{L}^{p}(\mathrm{X})\) 到 \(\mathrm{L}^{q'}(\mathrm{Y})\) 中），使得
+
+\[
+\langle g, u _ {k} (f) \rangle = \int_ {\mathrm{X} \times \mathrm{Y}} k (x, y) f (x) g (y) d (\mu \otimes \nu) (x, y)
+\]
+
+对一切 \(f \in \mathrm{L}^p(\mathrm{X})\) 与 \(g \in \mathrm{L}^q(\mathrm{Y})\) 成立。映射 \(u_k\) 是线性的且连续的，其范数 \(\leqslant \| k\|_{p,q}\)；
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(k \in \mathcal{N}^{p,q}(X \times Y)\)。我们有 \(u_k = 0\)，当且仅当 k 是局部 \((\mu \otimes \nu)\) -零测的；
+\item
+  把 \(u_{k}\) 与 k 相对应的映射是从赋半范空间 \(\mathcal{N}^{p,q}(\mathrm{X}\times\mathrm{Y})\) 到巴拿赫空间 \(\mathcal{L}(\mathrm{L}^{p}(\mathrm{X});\mathrm{L}^{q^{\prime}}(\mathrm{Y}))\) 中的连续线性映射，使得 \(\|u_{k}\|\leqslant\|k\|_{p,q}\) 对一切 \(k\in\mathcal{N}^{p,q}(\mathrm{X}\times\mathrm{Y})\) 成立。
+\end{enumerate}
+
+设 \(k \in \mathcal{N}^{p,q}(\mathrm{X} \times \mathrm{X})\)。按定义，从 \(\mathrm{X} \times \mathrm{Y}\) 到 \(\mathbf{C}\) 中的、由 \((x,y) \mapsto k(x,y)f(x)g(y)\) 定义的函数是 \((\mu \otimes \nu)\) -可积的（当 \(f \in \mathcal{L}^p(\mathrm{X})\) 且 \(g \in \mathcal{L}^q(\mathrm{Y})\) 时），而映射
+
+\[
+b _ {k} \colon (f, g) \mapsto \int_ {\mathrm{X} \times \mathrm{Y}} k (x, y) f (x) g (y) d (\mu \otimes \nu) (x, y)
+\]
+
+是从 \(\mathrm{L}^{p}(\mathrm{X})\times\mathrm{L}^{q}(\mathrm{Y})\) 到 C 中的连续双线性映射。因此，对每个 \(f\in\mathrm{L}^{p}(\mathrm{X})\)，存在唯一的 \(h\in\mathrm{L}^{q^{\prime}}(\mathrm{Y})\)，使得 \(b_{k}(f,g)=\langle g,h\rangle\) 对一切 \(g\in\mathrm{L}^{q}(\mathrm{Y})\) 成立；把它记作 \(u_{k}(f)=h\)。由 (2)，我们有 \(\|u_{k}(f)\|_{q^{\prime}}\leqslant\|k\|_{p,q}\|f\|_{p}\)；映射 \(u_{k}\) 是线性的、连续的，且范数 \(\leqslant\|k\|_{p,q}\)。此外，映射 \(k\mapsto u_{k}\) 是线性的，由此即得断言 a) 与 c)。
+
+我们来证明 \(b\) )。假设 \(k\) 是局部 \((\mu \otimes \nu)\) -零测的。设 \(f \in \mathcal{L}^p(\mathrm{X})\)，\(g \in \mathcal{L}^q(\mathrm{Y})\)；在 \(\mathrm{X} \times \mathrm{Y}\) 上由 \((x, y) \mapsto k(x, y)f(x)g(y)\) 定义的函数是 \((\mu \otimes \nu)\) -适度的。由于它是局部 \((\mu \otimes \nu)\) -零测的，故它是零测的（INT, V, p. 7, § 1, 第 2 目, cor. 1）。于是，我们有 \(\langle u_k(f), g \rangle = b_k(f, g) = 0\)。由此推出 \(u_k = 0\)。
+
+反之，设 \(k \in \mathcal{N}^{p,q}(X \times Y)\) 满足 \(u_k = 0\)。函数 k 是局部 \((\mu \otimes \nu)\) -可积的（引理 1）。对一切函数 \(f \in \mathcal{K}(X)\) 与 \(g \in \mathcal{K}(Y)\)，我们有
+
+\[
+\langle g, u _ {k} (f) \rangle = \int_ {\mathrm{X} \times \mathrm{Y}} f (x) g (y) k (x, y) d (\mu \otimes \nu) (x, y),
+\]
+
+因此 X × Y 上的测度 \(k \cdot (\mu \otimes \nu)\) 为零（参见 INT, III, p. 82, § 4, 第 1 目, Th. 1）。这就意味着 k 是局部 \((\mu \otimes \nu)\) -零测的（INT, V, p. 46, §5, 第 3 目, Cor. 2）。
+
+定义 1. --- 设 \(k \in \mathcal{N}^{p,q}(\mathrm{X} \times \mathrm{Y})\)。我们称映射 \(u_k\) 为以 \(k\) 为核、从 \(\mathrm{L}^p(\mathrm{X})\) 到 \(\mathrm{L}^{q'}(\mathrm{Y})\) 中的积分算子。
+
+对 \(k \in \mathcal{N}^{p,q}(\mathrm{X} \times \mathrm{Y})\) 与 \(f \in \mathcal{L}^p(\mathrm{X})\)，我们有时也用 \(u_k(f)\) 表示经 \(u_k\) 所得的、\(f\) 在 \(\mathrm{L}^p(\mathrm{X})\) 中的类的像。
+
+命题 4. --- 设 \(k \in \mathcal{N}^{p,q}(\mathrm{X} \times \mathrm{Y})\)，\(f \in \mathcal{L}^p(\mathrm{X})\)。在 \(\mathrm{X}\) 上由 \(x \mapsto k(x,y)f(x)\) 定义的映射是 \(\mu\) -可积的，对每个 \(y\)（它位于一个局部 \(\nu\) -零测集之外）成立，且 \(u_k(f)\) 与由
+
+\[
+y \mapsto \int_ {\mathrm{X}} k (x, y) f (x) d \mu (x)
+\]
+
+所定义的函数的类重合，该函数是局部 ν-几乎处处定义的。
+
+用 \(Y'\) 表示由那些 \(y \in Y\) 所成的集：对这些元素，映射 \(x \mapsto k(x, y)f(x)\) 不是 \(\mu\) -可积的。设 \(y \in Y\)，并设 C 是 y 的一个紧邻域，其特征函数记作 \(\varphi\)。把条件 (2) 应用于 f 与 \(\varphi\)，则函数 \((x, y) \mapsto k(x, y)f(x)\varphi(y)\) 关于测度 \(\mu \otimes \nu\) 在 X × Y 上可积。由勒贝格--富比尼定理（INT, V, p. 96, § 8, 第 4 目, th. 1, a)），函数 \(x \mapsto k(x, y)f(x)\varphi(y)\) 是 \(\mu\) -可积的，对位于一个 \(\nu\) -零测集 \(Y_{C}\) 之外的 y 成立。由于 \(Y' \cap C \subset Y_{C}\)，由此得出 \(Y'\) 在 Y 中是局部 \(\nu\) -零测的（INT, IV, p. 172, § 5, 第 2 目, def. 3）。
+
+用 h 表示在 Y 上局部 \(\nu\) -几乎处处由 \(y \mapsto \int k(x, y)f(x)d\mu\) 定义的映射。它是局部 \(\nu\) -可积的（INT, V, loc.
+
+cit.）。设 \(g \in \mathcal{K}(\mathrm{Y})\)。我们有
+
+\[
+\begin{array}{l} \langle g, u _ {k} (f) \rangle = \int_ {\mathrm{X} \times \mathrm{Y}} k (x, y) f (x) g (y) d (\mu \otimes \nu) (x, y) \\ \qquad = \int_ {\mathrm{Y}} \Bigl (\int_ {\mathrm{X}} k (x, y) f (x) g (y) d \mu (x) \Bigr) d \nu (y) \\ \qquad = \int_ {\mathrm{Y}} g (y) h (y) d \nu (y) \end{array}
+\]
+
+（INT, V, loc. cit.）。因此我们有 \(u_{k}(f) = h\)，这在局部 \(\nu\) -几乎处处成立（参见 INT, V, p. 46, § 5, 第 3 目, cor. 2）。
+
+命题 5. --- 空间 \(\mathcal{L}^{p'}(\mathrm{X}\times\mathrm{Y})\) 含于 \(\mathcal{N}^{p,p}(\mathrm{X}\times\mathrm{Y})\)。从 \(\mathcal{L}^{p'}(\mathrm{X}\times\mathrm{Y})\) 到 \(\mathcal{L}(\mathrm{L}^{p}(\mathrm{X});\mathrm{L}^{p'}(\mathrm{Y}))\) 中的、由 \(k\mapsto u_{k}\) 定义的线性映射，经过取商，诱导出从 \(\mathrm{L}^{p'}(\mathrm{X}\times\mathrm{Y})\) 到 \(\mathcal{L}(\mathrm{L}^{p}(\mathrm{X});\mathrm{L}^{p'}(\mathrm{Y}))\) 中的一个连续单射线性映射。
+
+设 \(k \in \mathcal{L}^{p'}(\mathrm{X} \times \mathrm{Y})\)。函数 \(k\) 是可测的（INT, IV, p. 84, § 5, 第 6 目, th. 5）。设 \(f \in \mathcal{L}^p(\mathrm{X})\)，\(g \in \mathcal{L}^p(\mathrm{Y})\)。函数 \(h \colon (x,y) \mapsto f(x)g(y)\) 属于 \(\mathcal{L}^p(\mathrm{X} \times \mathrm{Y})\)，且 \(\|h\|_p = \|f\|_p \|g\|_p\)（INT, V, p. 95, § 8, 第 3 目, cor. 2）。因此函数 \(hk\) 在 \(\mathrm{X} \times \mathrm{Y}\) 上可积，且我们有
+
+\[
+(\mu \otimes \nu) ^ {*} (| h k |) \leqslant \| k \| _ {p ^ {\prime}} \| h \| _ {p} = \| k \| _ {p ^ {\prime}} \| f \| _ {p} \| g \| _ {p}
+\]
+
+这是赫尔德不等式的推论（INT, IV, p. 208, § 6, 第 4 目, th. 2），由此证明了 \(k \in \mathcal{N}^{p,p}(\mathrm{X} \times \mathrm{Y})\)，且 \(\| k \|_{p,p} \leqslant \| k \|_{p'}\)。
+
+由于 \(p' \neq +\infty\)，每个函数 \(k \in \mathcal{L}^{p'}(\mathrm{X} \times \mathrm{Y})\) 都是适度的（INT, V, p. 9, § 1, 第 3 目, cor.），从而最后的断言由命题 3 的 b) 与 c) 得出。
+
+对任何函数 \(k\colon X \times Y \to \mathbf{C}\) 以及每个 \(y \in Y\)，我们用 \(k_y\) 表示从 X 到 \(\mathbf{C}\) 中的、由 \(k_y(x) = k(x, y)\) 给出的映射，并用 \(k_\circ\) 表示从 Y 到 \(\mathcal{F}(X; \mathbf{C})\) 中的、由 \(y \mapsto k_y\) 定义的映射。我们同样用这一记号表示从 Y 到 X 上 \(\mu\) -几乎处处定义的函数空间中的、使 \(y\) 对应于 \(k_y\) 的类的映射。
+
+对任何函数 \(k\)（从 \(\mathrm{X} \times \mathrm{Y}\) 到 \(\mathbf{C}\) 中），我们记
+
+\[
+\mathrm{N} _ {p ^ {\prime}, q ^ {\prime}} (k) = \left(\int_ {\mathrm{Y}} ^ {\bullet} \mathrm{N} _ {p ^ {\prime}} (k _ {y}) ^ {q ^ {\prime}} d \nu (y)\right) ^ {1 / q ^ {\prime}}.
+\]
+
+这是 \([0, +\infty]\) 中的一个元素。
+
+引理 2. --- 对每个 \(k \in \mathcal{L}^{p'}(\mathrm{X} \times \mathrm{Y})\)，我们有 \(\mathrm{N}_{p', p'}(k) = \| k \|_{p'}\)。
+
+设 \(k \in \mathcal{L}^{p'}(\mathrm{X} \times \mathrm{Y})\)。由 INT, V, p. 96, § 8, 第 4 目, th. 1, a)，集 \(Y'\)（由那些元素 \(y \in \mathrm{Y}\) 组成，对这些元素，函数 \(|k_y|^{p'}\) 不是 \(\mu\) -可积的）是 \(\nu\) -零测的；此外，由 \(y \mapsto \mu(|k_y|^{p'})\) 在 \(\mathrm{Y} - \mathrm{Y}'\) 上定义且在 \(\mathrm{Y}'\) 上等于零的函数是 \(\nu\) -可积的，并且满足
+
+\[
+\| k \| _ {p ^ {\prime}} ^ {p ^ {\prime}} = \int_ {\mathrm{X} \times \mathrm{Y}} | k (x, y) | ^ {p ^ {\prime}} d (\mu \otimes \nu) (x, y) = \int_ {\mathrm{Y}} \mu (| k _ {y} | ^ {p ^ {\prime}}) d \nu = \mathrm{N} _ {p ^ {\prime}, p ^ {\prime}} (k) ^ {p ^ {\prime}}.
+\]
+
+我们用 \(\mathcal{L}^{p',q'}(\mathrm{X},\mathrm{Y},\mu,\nu)\)，或简作 \(\mathcal{L}^{p',q'}(\mathrm{X},\mathrm{Y})\)，表示满足下列条件的、关于 \((\mu\otimes\nu)\) 可测的函数 \(k\)（从 \(\mathrm{X}\times\mathrm{Y}\) 到 \(\mathbf{C}\) 中）所成的复向量空间：对 \(\nu\) -几乎所有的 \(y\in\mathrm{Y}\)，映射 \(k_y\) 属于 \(\mathcal{L}^{p'}(\mathrm{X})\)，并且映射 \(k_\circ\) 属于 \(\mathcal{L}^{q'}_{\mathrm{L}^{p'}(\mathrm{X})}(\mathrm{Y},\nu)\)（INT, IV, p. 129, § 3, 第 4 目, def. 2）。我们在 \(\mathcal{L}^{p',q'}(\mathrm{X},\mathrm{Y})\) 上赋以半范数 \(k\mapsto\mathrm{N}_{p',q'}(k)\)；注意此时有 \(\mathrm{N}_{p',q'}(k)=\|k_\circ\|_{q'}\)，其中 \(k_\circ\) 被视为取值于巴拿赫空间 \(\mathrm{L}^{p'}(\mathrm{X})\) 中的映射。
+
+命题 6. --- a) 空间 \(\mathcal{L}^{p'}(\mathrm{X} \times \mathrm{Y})\) 含于 \(\mathcal{L}^{p',p'}(\mathrm{X},\mathrm{Y})\)，且对 \(k \in \mathcal{L}^{p'}(\mathrm{X} \times \mathrm{Y})\)，我们有 \(\mathrm{N}_{p',p'}(k) = \| k\|_{p'}\)；
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  空间 \(\mathcal{L}^{p',q'}(\mathrm{X},\mathrm{Y})\) 含于 \(\mathcal{N}^{p,q}(\mathrm{X}\times \mathrm{Y})\)，且对 \(k\in \mathcal{L}^{p',q'}(\mathrm{X},\mathrm{Y})\)，我们有 \(\| k\|_{p,q}\leqslant \mathrm{N}_{p',q'}(k)\)。
+\end{enumerate}
+
+我们来证明断言 \(a\) )。设 \(k \in \mathcal{L}^{p'}(\mathrm{X} \times \mathrm{Y})\)。由 INT, V, p. 96, § 8, 第 4 目, th. 1, \(a\) )，函数 \(k_y\) 属于 \(\mathcal{L}^{p'}(\mathrm{X})\)（对 \(\nu\) -几乎所有的 \(y \in \mathrm{Y}\)）。
+
+设 \(\varepsilon > 0\)。存在 \(h \in \mathcal{K}(\mathrm{X} \times \mathrm{Y})\)，使得 \(\|k - h\|_{p'} < \varepsilon\)。函数 \(h_{\circ}\) 是从 Y 到 \(\mathrm{L}^{p'}(\mathrm{X})\) 中的、具有紧支撑的连续函数，它满足
+
+\[
+\| k _ {\circ} - h _ {\circ} \| _ {p ^ {\prime}} = \mathrm{N} _ {p ^ {\prime}, p ^ {\prime}} (k - h) = \| k - h \| _ {p ^ {\prime}} <   \varepsilon
+\]
+
+这是引理 2 的结论。由此得出 \(k_{\circ}\) 属于 \(\mathcal{L}_{\mathrm{L}^{p^{\prime}}(\mathrm{X})}^{p^{\prime}}(\mathrm{Y},\nu)\)，也就是说，\(k\) 属于 \(\mathcal{L}^{p^{\prime},p^{\prime}}(\mathrm{X},\mathrm{Y})\)。于是引理 2 表明 \(\mathrm{N}_{p^{\prime},p^{\prime}}(k)=\|k\|_{p^{\prime}}\)。
+
+我们来证明断言 \(b\) )。设 \(k \in \mathcal{L}^{p', q'}(\mathrm{X}, \mathrm{Y})\)，并设 \(f \in \mathcal{L}^p(\mathrm{X})\)。对每个 \(y \in \mathrm{Y}\)，把赫尔德不等式（INT, IV, p. 208, § 6, 第 4 目, th. 2）应用于 \(k_y\)，便蕴含
+
+\[
+\int_ {X} ^ {*} | k (x, y) f (x) | d \mu (x) \leqslant \| k _ {y} \| _ {p ^ {\prime}} \| f \| _ {p}.
+\]
+
+设 \(g \in \mathcal{L}^{q'}(\mathrm{Y})\)。映射 \(f\) 与 \(g\) 都是适度的，因为 \(p\) 与 \(q'\) 是有限的。因此，映射 \((x,y) \mapsto f(x)g(y)\) 是 \((\mu \otimes \nu)\) -适度的（参见 INT, V, p. 92, § 8, 第 3 目, cor. 2），从而映射 \((x,y)\mapsto k(x,y)f(x)g(y)\) 是 \((\mu\otimes\nu)\) -适度的。根据 INT, V, p. 93, § 8, 第 3 目, prop. 7, a)，于是得出
+
+\[
+\begin{array}{l} \int_ {\mathrm{X} \times \mathrm{Y}} ^ {*} | k (x, y) f (x) g (y) | d (\mu \otimes \nu) \\ = \int_ {\mathrm{Y}} ^ {*} | g (y) | \Big (\int_ {\mathrm{X}} ^ {*} | k (x, y) f (x) | d \mu (x) \Big) d \nu (y) \\ \leqslant \| f \| _ {p} \int_ {\mathrm{Y}} ^ {*} \| k _ {y} \| _ {p ^ {\prime}} | g (y) | d \nu (y) \leqslant \mathrm{N} _ {p ^ {\prime}, q ^ {\prime}} (k) \| f \| _ {p} \| g \| _ {q}, \end{array}
+\]
+
+这里再次用到了赫尔德不等式。证明到此完成。
+
+命题 7. --- 设 \(k \in \mathcal{L}^{p',q'}(\mathrm{X},\mathrm{Y})\)。线性映射 \(u_k\)（它从 \(\mathrm{L}^p (\mathrm{X})\) 到 \(\mathrm{L}^{q'}(\mathrm{Y})\) 中）是紧的。
+
+首先假设 \(k\) 满足 \(k_{\circ} \in \mathcal{K}(\mathrm{Y}; \mathcal{L}^{p'}(\mathrm{X}))\)，并用 A 表示 \(k_{\circ}\) 的支撑。设 F 是 \(\mathcal{K}(\mathrm{Y}, \mathrm{A}; \mathcal{L}^{p'}(\mathrm{X}, \mu))\) 中由形如 \(y \mapsto f_2(y)f_1\) 的函数所生成的子空间，其中 \(f_2 \in \mathcal{K}(\mathrm{Y}, \mathrm{A})\)，\(f_1 \in \mathcal{L}^{p'}(\mathrm{X})\)。当 \(m \in \mathcal{K}(\mathrm{Y}; \mathcal{L}^{p'}(\mathrm{X}))\) 满足 \(m_{\circ} \in \mathrm{F}\) 时，线性映射 \(u_m\) 是有限秩的，因而是紧的。对 \(m_1\) 与 \(m_2\)（它们属于 \(\mathcal{K}(\mathrm{Y}, \mathrm{A}; \mathcal{L}^{p'}(\mathrm{X}))\)），我们还有
+
+\[
+\begin{array}{c} \| u _ {m _ {1}} - u _ {m _ {2}} \| \leqslant \| m _ {1} - m _ {2} \| _ {p ^ {\prime}, q ^ {\prime}} = \Big (\int_ {\mathrm{Y}} \| m _ {1, y} - m _ {2, y} \| _ {p ^ {\prime}} ^ {q ^ {\prime}} d \nu (y) \Big) ^ {1 / q ^ {\prime}} \\ \leqslant \nu (\mathrm{A}) ^ {1 / q ^ {\prime}} \sup _ {y \in \mathrm{Y}} \mathrm{N} _ {p ^ {\prime}} (m _ {1, y} - m _ {2, y}). \end{array}
+\]
+
+由于空间 F 在 \(\mathcal{K}(\mathrm{Y},\mathrm{A};\mathrm{L}^{p^{\prime}}(\mathrm{X}))\) 中对于 A 上的一致收敛拓扑是稠密的（INT, III, p. 41, § 1, 第 1 目, prop. 1 及 INT, III, p. 46, § 1, 第 2 目, prop. 5），由此得出结论：线性映射 \(u_{k}\) 是由有限秩线性映射组成的一个序列的极限。因此它是紧的（III, p. 4 的 cor. 1）。
+
+考察一般的情形。设 \(k \in \mathcal{L}^{p', q'}(\mathrm{X}, \mathrm{Y})\)。对每个 \(\varepsilon > 0\)，存在映射 \(k_{\varepsilon, \circ} \in \mathcal{K}(\mathrm{Y}; \mathcal{L}^{p'}(\mathrm{X}))\)，使得
+
+\[
+\left\| k _ {\circ} - k _ {\varepsilon , \circ} \right\| _ {q ^ {\prime}} <   \varepsilon .
+\]
+
+相应的函数 \(k_{\varepsilon}\) : X × Y → C 于是满足
+
+\[
+\| u _ {k} - u _ {k _ {\varepsilon}} \| \leqslant \| k - k _ {\varepsilon} \| _ {p, q} \leqslant \mathrm{N} _ {p ^ {\prime}, q ^ {\prime}} (k - k _ {\varepsilon}) = \| k _ {\circ} - k _ {\varepsilon , \circ} \| _ {q ^ {\prime}} <   \varepsilon .
+\]
+
+由于 \(u_{k_{\varepsilon}}\) 依前所述是紧的，映射 \(u_{k}\) 也是紧的（III, p. 4 的 prop. 2）。
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/part001_ec4b93bc.jpg}}
+
+取 \(p = 1\) 并设 \(q > 1\)。可能存在这样的映射 \(k \colon \mathrm{X} \times \mathrm{Y} \to \mathbf{C}\)：\(k_y \in \mathcal{L}^\infty(\mathrm{X})\) 对所有 \(y \in \mathrm{Y}\) 成立，并且积分
+
+\[
+\int_ {Y} ^ {*} \| k _ {y} \| _ {\infty} ^ {q ^ {\prime}} d \nu (y)
+\]
+
+是有限的（特别地，III, p. 27 的条件 (2) 成立），但线性映射 \(u_k\)（它从 \(L^1(X)\) 到 \(L^{q'}(X)\) 中）却不是紧的（III, p. 119 的习题 2）。
+
+特别地，由该命题可推出下面的推论：
+
+推论 1（希尔伯特--施密特）. --- 设 \(k \in \mathcal{L}^{2}(X \times Y)\)。线性映射 \(u_{k}\) 是从 \(L^{2}(X)\) 到 \(L^{2}(Y)\) 中的紧映射。
+
+由命题 5，有 \(k \in \mathcal{N}^{2,2}(\mathrm{X} \times \mathrm{Y})\)，故线性映射 \(u_k\) 有定义（命题 3）。有 \(k \in \mathcal{L}^{2,2}(\mathrm{X} \times \mathrm{Y})\)（命题 6, \(a\) )），因此 \(u_k\) 是紧的（命题 7）。
+
+注记. --- 在 p = q = 2 的情形，用纯量积来表达积分算子 \(u_{k}\) 的刻画通常更为方便：它是从 \(\mathrm{L}^{2}(\mathrm{X})\) 到 \(\mathrm{L}^{2}(\mathrm{Y})\) 中的唯一映射，使得
+
+\[
+\langle g \mid u _ {k} (f) \rangle = \int_ {\mathrm{X} \times \mathrm{Y}} k (x, y) f (x) \overline {{g (y)}} d (\mu \otimes \nu) (x, y)
+\]
+
+对一切 \(f \in \mathrm{L}^{2}(\mathrm{X})\) 与 \(g \in \mathrm{L}^{2}(\mathrm{Y})\) 成立。此外，\(u_{k}\) 的伴随是线性映射 \(u_{k^{*}}\)，其中 \(k^{*} \in \mathrm{L}^{2}(\mathrm{Y} \times \mathrm{X})\) 满足 \(k^{*}(y, x) = \overline{k(x, y)}\)（对几乎每个 \((y, x) \in \mathrm{Y} \times \mathrm{X}\)）。事实上，对一切 \(f \in \mathrm{L}^{2}(\mathrm{X})\) 与 \(g \in \mathrm{L}^{2}(\mathrm{Y})\)，我们有
+
+\[
+\langle g \mid u _ {k} (f) \rangle = \int_ {\mathrm{X} \times \mathrm{Y}} k (x, y) \overline {{g (y)}} f (x) d (\mu \otimes \nu) (x, y) = \langle u _ {k ^ {*}} (g) \mid f \rangle .
+\]
+
+推论 2. --- 设 G 是赋有哈尔测度 μ 的紧拓扑群。设 p 是实数，满足 1 \textless{} p \textless{} +∞，并设 q 是 p 的共轭指数。设 \(f \in \mathcal{L}^{q}(G)\)。对所有 (x,y) ∈ G × G，置 k(x,y) = f(x⁻¹y)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  我们有 \(k \in \mathcal{L}^{q,p}(\mathrm{G},\mathrm{G})\)；
+\item
+  对 \(\varphi \in \mathrm{L}^p (\mathrm{G})\)，卷积 \(\varphi *f\) 属于 \(\mathrm{L}^p (\mathrm{G})\)，且线性映射 \(v_{f}\colon \varphi \mapsto \varphi *f\)（它从 \(\mathrm{L}^p (\mathrm{G})\) 到其自身）是连续的。它与自同态 \(u_{k}\) 重合。特别地，线性映射 \(v_{f}\) 是紧的。
+\end{enumerate}
+
+由于 G 是紧的，函数 f 属于 \(\mathcal{L}^{1}(G)\)。因此线性映射 \(v_{f}\) 有定义且连续（依据 INT, VIII, p. 167, § 4, 第 5 目, prop. 13）。
+
+映射 \(k\) 是 \((\mu \otimes \mu)\) -可测的，且 \(\| k_y\| _q = \| f\| _q\) 对所有 \(y\in G\) 成立。由于测度 \(\mu\) 是有界的，由此得出
+
+\[
+\int_ {\mathrm{G}} \| k _ {y} \| _ {q} ^ {p} d \mu (y) = \mu (\mathrm{G}) \| f \| _ {q} ^ {p},
+\]
+
+因此 \(k \in \mathcal{L}^{q,p}(G, G)\)。于是线性映射 \(u_{k}\) 是从 \(\mathrm{L}^{p}(\mathrm{G})\) 到 \(\mathrm{L}^{p}(\mathrm{G})\) 中的紧线性映射（命题 7）。
+
+设 \(\varphi\in\mathcal{K}(G)\)。由 INT, VIII, p. 166, § 4, 第 5 目, prop. 11 以及 III, p. 29 的 prop. 4，我们于是有
+
+\[
+\begin{array}{c} v _ {f} (\varphi) (y) = \int_ {\mathrm{G}} \varphi (x) f (x ^ {- 1} y) d \mu (x) \\ = \int_ {\mathrm{G}} \varphi (x) k (x, y) d \mu (x) = u _ {k} (\varphi) (y) \end{array}
+\]
+
+对几乎每个 \(y \in G\) 成立。这就蕴含 \(v_{f} = u_{k}\)。
+
+\subsection{可微映射的限制}
+
+设 n 与 r 是正整数，设 U 是 \(R^{n}\) 的开子集，并设 F 是巴拿赫空间。用 \(\mathcal{C}^{r}(\mathrm{U};\mathrm{F})\) 表示从 U 到 F 中的 \(C^{r}\) 类映射所成的向量空间，赋以 \(C^{r}\) 紧收敛拓扑。回忆它是当 K 取遍 U 的紧子集全体时，在 K 上的 \(C^{r}\) 一致收敛拓扑诸拓扑的上确界（VAR, R2, 12.3.10, p. 56）。空间 \(\mathcal{C}^{0}(\mathrm{U};\mathrm{F})\) 就是从 U 到 F 中的连续映射所成的空间 \(\mathcal{C}(\mathrm{U};\mathrm{F})\)，赋以紧收敛拓扑。
+
+引理 3. --- 设 A 是由多重指标 \(\alpha \in \mathbf{N}^n\)（其中 \(|\alpha| \leqslant r\)）组成的集，并设 u 是线性映射 \(f \mapsto (\partial^\alpha f)_{\alpha \in \mathrm{A}}\)（它从 \(\mathcal{C}^r(\mathrm{U};\mathrm{F})\) 到 \(\mathcal{C}(\mathrm{U};\mathrm{F})^{\mathrm{A}}\) 中）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  映射 u 是单射、连续的、严格的，且它的像是闭的。
+\item
+  拓扑向量空间 \(\mathcal{C}^{r}(\mathrm{U};\mathrm{F})\) 是完备的。
+\end{enumerate}
+
+映射 \(u\) 是线性的且是单射。由 \(\mathcal{C}^r (\mathrm{U};\mathrm{F})\) 的拓扑的定义，它是连续的且是严格的。
+
+设 \((g_{\alpha})_{\alpha\in\mathrm{A}}\) 是 \(\mathcal{C}(\mathrm{U};\mathrm{F})^{\mathrm{A}}\) 中附着于 u 的像的一点。存在 \(\mathcal{C}^{r}(\mathrm{U};\mathrm{F})\) 上的一个滤子 F，使得 \(g_{\alpha}=\lim_{f,\mathcal{F}}\partial^{\alpha}f\) 在 \(\mathcal{C}(\mathrm{U};\mathrm{F})\) 中对一切 \(\alpha\in A\) 成立。设 m 是满足 \(0\leqslant m\leqslant r\) 的整数。对 m 用归纳法，由 FVR, II, p. 2 的 th. 1 可得，映射 \(g_{0}\) 是 \(C^{m}\) 类的，且 \(g_{\alpha}=\partial^{\alpha}g_{0}\) 对一切 \(\alpha\in\mathbf{N}^{n}\)（其中 \(|\alpha|\leqslant m\)）成立。于是 \(g_{0}\) 属于空间 \(\mathcal{C}^{r}(\mathrm{U};\mathrm{F})\)，且它在 u 下的像是 \((g_{\alpha})_{\alpha\in\mathrm{A}}\)。这就证明了 u 的像是闭的，从而建立了断言 a)。
+
+断言 \(a\)）蕴含空间 \(\mathcal{C}^{r}(\mathrm{U};\mathrm{F})\) 同构于它在 \(\mathcal{C}(\mathrm{U};\mathrm{F})^{\mathrm{A}}\) 中的像；由于这个像是闭的，且空间 \(\mathcal{C}(\mathrm{U};\mathrm{F})^{\mathrm{A}}\) 是完备的（TG, X, p. 9, th. 2 的 cor. 3 以及 TG, II, p. 17, prop. 10），所以空间 \(\mathcal{C}^{r}(\mathrm{U};\mathrm{F})\) 是完备的。
+
+命题 8. --- 假设 F 是有限维的。设 s 是满足 \(0 \leqslant s < r\) 的整数，并设 V 是 U 的相对紧开子集。线性映射 \(f \mapsto f|V\)（它从 \(\mathcal{C}^{r}(U;F)\) 到 \(\mathcal{C}^{s}(V;F)\) 中）是紧的。
+
+设 W 是由这样的函数 \(f \in \mathcal{C}^{r}(\mathrm{U};\mathrm{F})\) 组成的集：其 \(\leqslant r\) 阶偏导数在 \(\overline{V}\) 的每一点处取范数小于 1 的值。集 W 是空间 \(\mathcal{C}^{r}(\mathrm{U};\mathrm{F})\) 中 0 的邻域。设 \(\alpha\) 是满足 \(|\alpha| \leqslant s\) 的多重指标。考虑由形如 \((\partial^{\alpha}f)|\mathrm{V}\)（其中 f 属于 W）的函数组成的集 H。由中值定理（VAR, R, 2.2.3），集 H 是 \(\mathcal{C}(\mathrm{V};\mathrm{F})\) 的等度连续子集。此外，对每个 \(x \in V\)，H 在映射 \(g \mapsto g(x)\) 下的像是 F 中的有界子集，因而是相对紧的。由阿斯科利定理（TG, X, p. 18, cor. 2），集 H 在 \(\mathcal{C}(\mathrm{V};\mathrm{F})\) 中是相对紧的。这就证明了线性映射 \(f \mapsto (\partial^{\alpha}f)|\mathrm{V}\)（它从 \(\mathcal{C}^{r}(\mathrm{U};\mathrm{F})\) 到 \(\mathcal{C}(\mathrm{V};\mathrm{F})\) 中）是紧的。命题于是由引理 3 以及 III, p. 3 的注记 5 和 6 得出。
+
+\subsection{向量丛的可微截面的限制}
+
+设 r 是正整数，X 是 \(C^{r}\) 类的局部有限维可微流形，而 E 是一个向量丛（实的或复的），
+
+其基为 X 且是 \(C^{r}\) 类的。对 X 的每个开集 U，用 \(\mathcal{S}^{r}(\mathrm{U};\mathrm{E})\)（在 VAR, R1, 7.4, p. 74 中记作 \(\mathcal{S}_{\mathrm{E}}^{r}(\mathrm{U})\)）表示 E 在 U 上的 \(C^{r}\) 截面所成的向量空间，赋以 \(C^{r}\) 紧收敛拓扑。
+
+引理 4. --- 设 \(\mathcal{U}\) 是 X 的一个开覆盖。映射 \(u: f \mapsto (f|U)_{U \in \mathcal{U}}\)（它从 \(\mathcal{S}^{r}(X;E)\) 到 \(\prod_{U \in \mathcal{U}} \mathcal{S}^{r}(U;E)\) 中）是线性的、单射、连续的且是严格的。它的像是闭的。
+
+映射 \(u\) 是线性的、单射且连续的。依据 TG, IX, p. 43, prop. 1 与 p. 48, cor. 1，X 的每个紧子集都有有限覆盖 \((\mathrm{C}_i)_{i\in \mathrm{I}}\)，使得对每个 \(i\in \mathrm{I}\)，集 \(\mathrm{C}_i\) 是覆盖 \(\mathcal{U}\) 中某个开集的紧子集。由此得出线性映射 \(u\) 是严格的。最后，它的像是闭的，因为它由这样的族 \((f_{\mathrm{U}})_{\mathrm{U}\in \mathcal{U}}\) 组成：\(f_{\mathrm{U}}\) 与 \(f_{\mathrm{V}}\) 在 \(\mathrm{U}\cap \mathrm{V}\) 中重合（对 \(\mathcal{U}\) 中所有的 U 与 V）。
+
+命题 9. --- 空间 \(\mathcal{S}^r(\mathrm{X};\mathrm{E})\) 是完备的。
+
+首先假设存在整数 \(n \geqslant 0\) 与巴拿赫空间 F，使得 X 是 \(R^{n}\) 的开子集，且 E 是以 X 为基、以 F 为纤维的平凡向量丛 \(X \times F\)。在这种情形，拓扑向量空间 \(\mathcal{S}^{r}(X;E)\) 同构于 \(\mathcal{C}^{r}(X;F)\)，结论由 III, p. 34 的引理 3 得出。
+
+在一般情形，设 \(\mathcal{U}\) 是 X 的由坐标域组成的开覆盖，使得对每个 \(\mathrm{U} \in \mathcal{U}\)，E 在 U 上的限制是可平凡化的。由上面的引理，空间 \(\mathcal{S}^r(\mathrm{X};\mathrm{E})\) 同构于线性映射 \(f \mapsto (f|\mathrm{U})_{\mathrm{U} \in \mathcal{U}}\) 的像，而这个像在诸空间 \(\mathcal{S}^r(\mathrm{U};\mathrm{E})\)（其中 U 取遍 \(\mathcal{U}\)）的乘积中是闭的。由前面的情形，每个空间 \(\mathcal{S}^r(\mathrm{U};\mathrm{E})\) 都是完备的，因此它们的乘积是完备的（TG, II, p. 17, prop. 10）。从而 \(\mathcal{S}^r(\mathrm{X};\mathrm{E})\) 是完备的。
+
+注记. --- 设 \(\mathcal{U}\) 是 X 的由坐标域 \(c_{\mathrm{U}} = (\mathrm{U}, \varphi_{\mathrm{U}}, \mathbf{R}^{n_{\mathrm{U}}})\) 组成的开覆盖，使得对每个 \(U \in \mathcal{U}\)，E 在 U 上的限制是 \(F_{U}\) 型可平凡化的，其中 \(F_{U}\) 是巴拿赫空间。对每个 \(U \in \mathcal{U}\)，把 E 在 U 上的截面 f 与映射 \(f_{U}\)（它从 \(\varphi_{\mathrm{U}}(\mathrm{U})\) 到 \(F_{U}\) 中）等同起来。由 prop. 9 的证明可得，空间 \(\mathcal{S}^{r}(\mathrm{X};\mathrm{E})\) 的拓扑由半范数族 \(p_{U,C,\alpha}\) 定义，其中
+
+\[
+p _ {\mathrm{U,C}, \alpha} (f) = \sup _ {x \in \mathrm{C}} \| (\partial^ {\alpha} f _ {\mathrm{U}}) (x) \|,
+\]
+
+其中 U 取遍 \(\mathcal{U}\)，C 取遍 \(\varphi_{\mathrm{U}}(\mathrm{U})\) 的紧子集全体，而 \(\alpha \in \mathbf{N}^{n_{\mathrm{U}}}\) 取遍满足 \(|\alpha| \leqslant r\) 的多重指标全体。
+
+命题 10. --- 假设向量丛 E 是局部有限秩的。设 s 是满足 \(0 \leqslant s < r\) 的整数，并设 Y 是 X 的相对紧开子集。线性映射 \(f \mapsto f|Y\)（它从 \(\mathcal{S}^{r}(X;E)\) 到 \(\mathcal{S}^{s}(Y;E)\) 中）是紧的。
+
+首先假设存在整数 \(n \geqslant 0\) 与有限维巴拿赫空间 F，使得 X 是 \(R^{n}\) 的开子集，且 E 是以 X 为基、以 F 为纤维的平凡向量丛 \(X \times F\)。在这种情形，拓扑向量空间 \(\mathcal{S}^{r}(X;E)\) 与 \(\mathcal{S}^{s}(Y;E)\) 分别同构于 \(\mathcal{C}^{r}(X;F)\) 与 \(\mathcal{C}^{s}(Y;F)\)，而 prop. 10 是 prop. 8 的推论。
+
+转到一般情形。设 C 是 X 的包含 Y 的紧子集。对 C 的每一点 x，选取 x 在 X 中的一个开邻域 \(U(x)\)，它是一个坐标域，且向量丛 E 在其上是可平凡化的。此外，再选取 x 的一个相对紧开邻域 \(V(x)\)，它包含在 \(U(x)\) 中。由于集 C 是紧的，它被这样一个有限族 \((\mathrm{V}(x_{1}),\ldots,\mathrm{V}(x_{m}))\) 所覆盖。对每个 i，置 \(U_{i}=U(x_{i})\) 与 \(Y_{i}=V(x_{i})\cap Y\)。那么 \(Y_{i}\) 是 \(U_{i}\) 的相对紧开子集，且我们有 \(Y=Y_{1}\cup\cdots\cup Y_{m}\)。线性映射 \(f\mapsto f|U_{i}\)（从 \(\mathcal{S}^{r}(X;E)\) 到 \(\mathcal{S}^{r}(U_{i};E)\) 中）是连续的，而线性映射 \(g\mapsto g|Y_{i}\)（从 \(\mathcal{S}^{r}(U_{i};E)\) 到 \(\mathcal{S}^{s}(Y_{i};E)\) 中）由证明的第一部分是紧的。因此线性映射 \(f\mapsto f|Y_{i}\)（从 \(\mathcal{S}^{r}(X;E)\) 到 \(\mathcal{S}^{s}(Y_{i};E)\) 中）是紧的（III, p. 5 的 prop. 3）。把引理 4（应用于 Y 被诸开集 \(Y_{i}\) 所成的覆盖）与 III, p. 3 的注记 5 和 6 一并考虑，线性映射 \(f\mapsto f|Y\)（从 \(\mathcal{S}^{r}(X;E)\) 到 \(\mathcal{S}^{s}(Y;E)\) 中）是紧的，这就完成了证明。
+
+\subsection{向量丛的解析截面的限制}
+
+设 X 是局部有限维的复解析流形，E 是以 X 为基的解析向量丛（VAR, p. 35 与 VAR, p. 70）。用 \(\mathcal{S}^{\omega}(\mathrm{X};\mathrm{E})\) 表示 E 在 X 上的解析截面所成的向量空间，赋以紧收敛拓扑。
+
+引理 5. --- 设 \(X_{0}\) 是 X 的底实解析流形，而 \(E_{0}\) 是以 \(X_{0}\) 为基的、作为 E 的底的复向量丛。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  向量子空间 \(\mathcal{S}^{\omega}(\mathrm{X};\mathrm{E})\)（它包含于 \(\mathcal{S}^{0}(\mathrm{X}_{0};\mathrm{E}_{0})\) 中）是闭的，且从 \(\mathcal{S}^{\omega}(\mathrm{X};\mathrm{E})\) 到 \(\mathcal{S}^{0}(\mathrm{X}_{0};\mathrm{E}_{0})\) 中的单射是连续的且是严格的；
+\item
+  从 \(\mathcal{S}^{\omega}(\mathrm{X};\mathrm{E})\) 到 \(\mathcal{S}^{1}(\mathrm{X}_{0};\mathrm{E}_{0})\) 中的典范单射是连续的。
+\end{enumerate}
+
+首先假设存在整数 \(n \geqslant 0\) 与巴拿赫空间 F，使得 X 是 \(C^{n}\) 的开子集，且 E 是平凡向量丛 \(X \times F\)。在这种情形，拓扑向量空间 \(\mathcal{S}^{\omega}(X;E)\)、\(\mathcal{S}^{0}(X_{0};E_{0})\) 与 \(\mathcal{S}^{1}(X_{0};E_{0})\) 分别同构于 \(\mathcal{C}^{\omega}(X;F)\)、\(\mathcal{C}^{0}(X_{0};F)\) 与 \(\mathcal{C}^{1}(X_{0};F)\)，且空间 \(\mathcal{S}^{0}(X_{0};E_{0})\) 是可度量的（TG, X, p. 20, prop. 1 的 cor.）。引理于是由 VAR, 3.3.2, p. 28 得出。
+
+设 \(\mathfrak{F}\) 是 \(\mathcal{S}^{\omega}(\mathrm{X};\mathrm{E})\) 上的一个滤子，它在空间 \(\mathcal{S}^{0}(\mathrm{X}_{0};\mathrm{E}_{0})\) 中收敛于极限 \(f\)。我们必须证明 \(f\) 属于 \(\mathcal{S}^{\omega}(\mathrm{X};\mathrm{E})\)，且滤子 \(\mathfrak{F}\) 收敛于 \(f\)（在空间 \(\mathcal{S}^{1}(\mathrm{X}_{0};\mathrm{E}_{0})\) 中）。这个命题是局部性质的，因而由证明的第一部分得出。
+
+命题 11. --- 假设向量丛 E 是局部有限秩的。设 Y 是 X 的相对紧开子集。限制映射 \(f \mapsto f|Y\)（它从 \(\mathcal{S}^{\omega}(X;E)\) 到 \(\mathcal{S}^{\omega}(Y;E)\) 中）是紧的。
+
+用引理 5 的记号，我们有交换图
+
+\[
+\begin{array}{c c c} \mathcal {S} ^ {\omega} (\mathrm{X}; \mathrm{E}) & \stackrel {{i}} {{\longrightarrow}} & \mathcal {S} ^ {1} (\mathrm{X} _ {0}; \mathrm{E} _ {0}) \\ \Big \downarrow^ {u} & & \Big \downarrow^ {v} \\ \mathcal {S} ^ {\omega} (\mathrm{Y}; \mathrm{E}) & \stackrel {{j}} {{\longrightarrow}} & \mathcal {S} ^ {0} (\mathrm{Y} _ {0}; \mathrm{E} _ {0}) \end{array}\tag{3}
+\]
+
+其中 i 与 j 是典范单射，而 u 与 v 是限制映射。映射 i 是连续的（引理 5, b)），映射 v 是紧的（Prop. 10）。由于典范单射 j 是连续的、严格的且有闭像（引理 5, a)），映射 u 是紧的（III, p. 3 的注记 5）。
+
+推论. --- 设 X 是紧复解析流形，E 是 X 上的解析向量丛，且是局部有限秩的。向量空间 \(\mathcal{S}^{\omega}(X;E)\) 是有限维的。
+
+解析流形 X 是紧的，因而是局部有限维的。由 prop. 11，\(\mathcal{S}^{\omega}(\mathrm{X};\mathrm{E})\) 的恒等映射是紧线性映射。这蕴含空间 \(\mathcal{S}^{\omega}(\mathrm{X};\mathrm{E})\) 是有限维的（III, p. 2 的注记 3）。
+
+\section{弗雷德霍姆自同态与里斯自同态}
+
+\subsection{严格态射与有限秩线性映射}
+
+命题 1. --- 设 E 与 F 是局部凸空间，\(E_{1}\) 是 E 的有限余维闭子空间，而 u 是从 E 到 F 中的连续线性映射。要使 u 是具有闭像的严格态射，必须且只需 \(u|E_{1}\) 是这样的态射。
+
+首先假设线性映射 \(u|E_1\) 是单射。于是我们有 \(E_1 \cap \text{Ker}(u) = \{0\}\)，从而 \(\text{Ker}(u)\) 是有限维的。设 S 是 E 的一个向量子空间，它是 \(E_1 + \text{Ker}(u)\) 的补。空间 E 是 \(E_1\)、\(\text{Ker}(u)\) 与 S 的拓扑直和（EVT, I, p. 15, cor. 4 与 prop. 3）。如果 \(u\) 是具有闭像的严格态射，那么它通过限制定义了从 \(E_1 \oplus S\) 到 F 的一个闭向量子空间上的同构，从而更加必然地定义了从 \(E_1\) 到 F 的一个闭向量子空间上的同构。反之，假设 \(u\) 通过限制定义了从 \(E_1\) 到 \(u(E_1)\) 上的同构，且 \(u(E_1)\) 在 F 中是闭的。我们有 \(u(E) = u(E_1) \oplus u(S)\)。由此得出 \(u(E)\) 是 \(u(E_1)\) 与 \(u(S)\) 的拓扑直和，且在 F 中是闭的（loc. cit.）。由于 \(u(E_1)\) 是闭的，且我们有 \(u(E_1) \cap u(S) = \{0\}\)，空间 \(u(S)\) 是分离的，且 \(u\) 通过限制定义了从 S 到 \(u(S)\) 上的同构（EVT, I, p. 15, prop. 3 的 cor.），因而也定义了从 \(E_1 \oplus S\) 到 \(u(E)\) 上的同构。这就证明了 \(u\) 是具有闭像的严格态射。
+
+转到一般情形，置 \(N = E_{1} \cap \operatorname{Ker}(u)\) 与 G = E/N。局部凸空间 \(E_{1}/N\) 等同于 G 的一个有限余维闭向量子空间 \(G_{1}\)。用 \(v\colon G \to F\) 表示由 u 通过过渡到商而得到的连续线性映射。要使 \(u\)（相应地，\(u|E_{1}\)）是具有闭像的严格态射，必须且只需 \(v\)（相应地，\(v|G_{1}\)）是这样的态射。这就化归到已处理过的情形。
+
+推论 1. --- 假设 F 是分离的。设 \(v \in \mathcal{L}^{\mathrm{f}}(\mathrm{E};\mathrm{F})\)。如果 u 是从 E 到 F 中的具有闭像的严格态射，那么 \(u + v\) 也是。
+
+由于 F 是分离的，v 的核是 E 的闭向量子空间；它在 E 中有有限余维，且 \(u + v\) 与 \(u\) 在 \(\operatorname{Ker}(v)\) 上有相同的限制。推论于是由该命题得出。
+
+推论 2. --- 设 T 是 F 的分离的有限维向量子空间。用 \(\pi\colon\mathrm{F}\to\mathrm{F}/\mathrm{T}\) 表示典范满射。要使 u 是具有闭像的严格态射，必须且只需 \(\pi\circ u\) 是这样的态射。
+
+T 到自身的恒等映射延拓为连续映射 \(q \colon \mathrm{F} \to \mathrm{T}\)（EVT, II, p. 26, remark）。\(q\) 的核 S 是 T 的闭拓扑补。设 \(p \colon \mathrm{F} \to \mathrm{F}\) 是与分解 \(\mathrm{F} = \mathrm{T} \oplus \mathrm{S}\) 相伴的、以 S 为像的投影。要使 \(\pi \circ u\) 是具有闭像的严格态射，必须且只需 \(p \circ u\) 是这样的态射。此外，\(p \circ u\) 与 \(u\) 在 \(u^{-1}(\mathrm{S})\)（它是 E 中的有限余维闭向量子空间）上有相同的限制，断言于是由该命题得出。
+
+\subsection{弗雷德霍姆映射}
+
+设 E 与 F 是局部凸空间。在本节中，我们用 \(u \equiv v\) 表示模 \(\mathcal{L}^{\mathrm{f}}(\mathrm{E};\mathrm{F})\) 的同余关系，这里 u 与 v 是 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 的元素。
+
+如果 G 是局部凸空间，且 \(u'\) 与 \(v'\) 是 \(\mathcal{L}(\mathrm{F};\mathrm{G})\) 的元素，那么关系 \(u \equiv v\) 与 \(u' \equiv v'\) 蕴含关系 \(u' \circ u \equiv v' \circ v\)。
+
+我们称元素 \(w\)（属于 \(\mathcal{L}(\mathrm{F};\mathrm{E})\)）是元素 \(u\)（属于 \(\mathcal{L}(\mathrm{E};\mathrm{F})\)）的拟逆，如果有 \(w \circ u \equiv 1_{\mathrm{E}}\) 与 \(u \circ w \equiv 1_{\mathrm{F}}\)。
+
+假设 w 是 u 的拟逆。如果 \(u_{1}\) 是 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 的元素，且 \(w_{1}\) 是 \(\mathcal{L}(\mathrm{F};\mathrm{E})\) 的元素，使得 \(u_{1} \equiv u\) 且 \(w_{1} \equiv w\)，那么 \(w_{1}\) 是 \(u_{1}\) 的拟逆，因为 \(w \circ u \equiv w_{1} \circ u_{1}\) 且 \(u \circ w \equiv u_{1} \circ w_{1}\)。
+
+如果 w 与 \(w_{1}\) 都是 u 的拟逆，那么 \(w_{1} \equiv w\)，因为
+
+\[
+w _ {1} = 1 _ {\mathrm{E}} \circ w _ {1} \equiv w \circ u \circ w _ {1} \equiv w \circ 1 _ {\mathrm{F}} = w.
+\]
+
+定义 1. --- 设 E 与 F 是局部凸空间。我们称 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 中的一个元素 u 为弗雷德霍姆映射 \(^{(1)}\)，如果它拥有一个拟逆。从 E 到 E 中的弗雷德霍姆映射称为 E 的弗雷德霍姆自同态。
+
+我们将用 \(\mathcal{F}(\mathrm{E};\mathrm{F})\) 表示从 E 到 F 中的弗雷德霍姆映射全体所成的集，并用 \(\mathcal{F}(\mathrm{E})\) 表示 E 的弗雷德霍姆自同态全体所成的集。
+
+注记. --- 设 E、F 与 G 是局部凸空间，\(u: E \to F\) 与 \(v: F \to G\) 是连续线性映射。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  假设 u 是弗雷德霍姆映射，并用 \(u_{1}\) 表示 u 的一个拟逆。由于 u 是 \(u_{1}\) 的拟逆，映射 \(u_{1}\) 是弗雷德霍姆映射。
+\item
+  假设 u 与 v 是弗雷德霍姆映射，并设 \(u_{1}\)（相应地，\(v_{1}\)）是 u（相应地，v）的拟逆。那么 \(v \circ u\) 是从 E 到 G 中的弗雷德霍姆映射，且 \(u_{1} \circ v_{1}\) 是 \(v \circ u\) 的拟逆。事实上，我们计算出
+\end{enumerate}
+
+\[
+\left(u _ {1} \circ v _ {1}\right) \circ (v \circ u) = u _ {1} \circ \left(v _ {1} \circ v\right) \circ u \equiv u _ {1} \circ 1 _ {\mathrm{F}} \circ u = u _ {1} \circ u \equiv 1 _ {\mathrm{E}},
+\]
+
+\[
+(v \circ u) \circ (u _ {1} \circ v _ {1}) = v \circ (u \circ u _ {1}) \circ v _ {1} \equiv v \circ 1 _ {\mathrm{F}} \circ v _ {1} = v \circ v _ {1} \equiv 1 _ {\mathrm{G}}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  假设 u 与 \(v \circ u\) 是弗雷德霍姆映射，并设 \(w_{1}\) 是 \(v \circ u\) 的拟逆。那么 v 是弗雷德霍姆映射，且 \(u \circ w_{1}\) 是 v 的拟逆。
+\end{enumerate}
+
+事实上，由第一个注记，\(w_{1}\) 是弗雷德霍姆算子。设 \(u_{1}\) 是 u 的拟逆；由第二个注记，\(u \circ w_{1}\) 是弗雷德霍姆映射，且 \((v \circ u) \circ u_{1}\) 是一个拟逆。我们有 \(u \circ u_{1} \equiv 1_{F}\)，从而 \(v \circ u \circ u_{1} \equiv v\)；这就证明了断言。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  假设 v 与 \(v \circ u\) 是弗雷德霍姆映射，并设 \(w_{1}\) 是 \(v \circ u\) 的拟逆。那么 u 是弗雷德霍姆算子，且 \(w_{1} \circ v\) 是 u 的拟逆。
+\end{enumerate}
+
+证明与前一个注记的证明类似。
+
+引理 1. --- 设 E 与 F 是局部凸空间，u 是从 E 到 F 中的弗雷德霍姆映射。u 的核与余核都是有限维的。
+
+设 \(v \colon \mathrm{F} \to \mathrm{E}\) 是 \(u\) 的拟逆。\(u\) 的核包含于有限秩线性映射 \(1_{\mathrm{E}} - v \circ u\) 的像之中，因而是有限维的。\(u\) 的像包含有限秩线性映射 \(1_{\mathrm{F}} - u \circ v\) 的核，因而在 F 中有有限余维。
+
+命题 2. — 设 E 与 F 是分离的局部凸空间，并设 u 是 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 的一个元素。下列性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  映射 u 是弗雷德霍姆算子；
+\item
+  映射 \(u\) 是严格态射，它的核是有限维的，它的像是闭的且在 F 中有有限余维；
+\item
+  存在 E 的闭向量子空间 \(E_{1}\) 与 F 的闭向量子空间 \(F_{1}\)，两者都有有限余维，使得 u 通过过渡到子空间诱导了从 \(E_{1}\) 到 \(F_{1}\) 上的同构；
+\item
+   存在拓扑直和分解 \(E = E_{1} \oplus E_{2}\) 与 \(F = F_{1} \oplus F_{2}\)，使得 \(E_{2}\) 与 \(F_{2}\) 是有限维的，u 在 \(E_{2}\) 上为零，并通过过渡到子空间定义了从 \(E_{1}\) 到 \(F_{1}\) 上的同构。
+\item
+  \(\Longrightarrow\) (iii)：设 v 是 u 的拟逆，\(E_{1}\) 是 \(1_{E}-v\circ u\) 的核，而 \(F_{1}\) 是 \(1_{F}-u\circ v\) 的核。由于线性映射 \(1_{E}-v\circ u\) 与 \(1_{F}-u\circ v\) 是连续的且是有限秩的，\(E_{1}\) 与 \(F_{1}\) 分别是 E 与 F 的有限余维闭向量子空间。设 \(x\in E_{1}\)。我们有
+\end{enumerate}
+
+\[
+(1 _ {\mathrm{F}} - u \circ v) (u (x)) = u ((1 _ {\mathrm{E}} - v \circ u) (x)) = u (0) = 0,
+\]
+
+从而 \(u(x) \in \mathrm{F}_1\)。因此我们有 \(u(\mathrm{E}_1) \subset \mathrm{F}_1\)；同样我们有 \(v(\mathrm{F}_1) \subset \mathrm{E}_1\)。于是，连续线性映射 \(u_1: \mathrm{E}_1 \to \mathrm{F}_1\) 与 \(v_1: \mathrm{F}_1 \to \mathrm{E}_1\)（它们由 \(u\) 与 \(v\) 得到）是互逆的同构，因为 \(v \circ u\) 与 \(1_{\mathrm{E}}\)（相应地，\(u \circ v\) 与 \(1_{\mathrm{F}}\)）在 \(\mathrm{E}_1\) 上（相应地，在 \(\mathrm{F}_1\) 上）重合。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\item
+  \(\Longrightarrow\) (ii)：设 \(E_{1}\) 与 \(F_{1}\) 满足 (iii) 的假设。我们有 \(\mathrm{E}_{1}\cap\mathrm{Ker}(u)=\{0\}\) 与 \(\mathrm{F}_{1}\subset\mathrm{Im}(u)\)，因而 \(\mathrm{Ker}(u)\) 是有限维的，而 \(\mathrm{Im}(u)\) 是闭的且在 F 中有有限余维。由 III, p. 39 的 prop. 1 可得映射 u 是严格态射。
+\item
+   \(\Longrightarrow\) (iv)：假设条件 (ii) 满足。E 的闭向量子空间 \(E_{2} = \operatorname{Ker}(u)\) 是有限维的，且存在 E 的向量子空间 \(E_{1}\)，它在拓扑上与 \(E_{2}\) 互补（EVT, II, p. 27, cor. 2）。向量子空间 \(F_{1} = \operatorname{Im}(u)\) 是闭的且有有限余维，它在 F 中有一个拓扑补 \(F_{2}\)。由 III, p. 39 的 prop. 1，映射 \(u|E_{1}\) 是严格态射，因而 u 诱导了从 \(E_{1}\) 到 \(F_{1}\) 上的同构。
+\item
+   \(\Longrightarrow\) (i)：在 (iv) 的假设下，从 F 到 E 中的、与 \(u_1^{-1}\) 在 \(\mathrm{F}_1\) 上重合且在 \(\mathrm{F}_2\) 上为零的线性映射是 \(u\) 的拟逆。
+\end{enumerate}
+
+注记 5. --- 设 E、F 是分离的局部凸空间，而 \(u\colon\mathrm{E}\to\mathrm{F}\) 是弗雷德霍姆算子。如果 \(u\) 是双射，那么 \(u\) 是同构（事实上，由 Prop. 2, (ii)，\(u\) 是严格态射）。
+
+\subsection{弗雷德霍姆映射的指标}
+
+设 E、F 与 G 是局部凸空间。
+
+设 \(u \colon \mathrm{E} \to \mathrm{F}\) 是弗雷德霍姆算子。向量空间 \(\operatorname{Ker}(u)\) 与 \(\operatorname{Coker}(u)\) 是有限维的（III, p. 41 的引理 1）。回忆整数
+
+\[
+\dim \operatorname{Coker} (u) - \dim \operatorname{Ker} (u) = \operatorname{codim} _ {\mathrm{F}} \operatorname{Im} (u) - \dim \operatorname{Ker} (u) \tag {1}
+\]
+
+称为 u 的指标，并记作 ind(u)（A, V, p. 126）。
+
+如果 \(u \colon \mathrm{E} \to \mathrm{F}\) 与 \(v \colon \mathrm{F} \to \mathrm{G}\) 是弗雷德霍姆映射，那么 \(v \circ u\) 也是（III, p. 41, 注记 2），并且我们有（A, V, p. 127, 引理 2）
+
+\[
+\operatorname{ind} (v \circ u) = \operatorname{ind} (v) + \operatorname{ind} (u).\tag{2}
+\]
+
+假设 E 与 F 是分离的，并设 \(u\colon\mathrm{E}\to\mathrm{F}\) 是弗雷德霍姆算子；采用 III, p. 42 的 Prop. 2 的条件 (iv) 的记号。我们于是有 \(\mathrm{ind}(u)=\mathrm{dim}(\mathrm{F}_{2})-\mathrm{dim}(\mathrm{E}_{2})\)。给这些空间中每一个的对偶赋以弱拓扑（相应地，紧开拓扑、有界收敛拓扑）。那么 \(\mathrm{E}^{\prime}\) 等同于 \(\mathrm{E}_{1}^{\prime}\) 与 \(\mathrm{E}_{2}^{\prime}\) 的拓扑直和，\(\mathrm{F}^{\prime}\) 等同于 \(\mathrm{F}_{1}^{\prime}\) 与 \(\mathrm{F}_{2}^{\prime}\) 的拓扑直和，且 \(^{t}u\) 诱导了从 \(\mathrm{F}_{1}^{\prime}\) 到 \(\mathrm{E}_{1}^{\prime}\) 上的同构并在 \(\mathrm{F}_{2}^{\prime}\) 上为零。于是转置 \(^{t}u\colon\mathrm{F}^{\prime}\to\mathrm{E}^{\prime}\) 是弗雷德霍姆映射（loc. cit.）。 \(^{t}u\) 的核是 \(\mathrm{F}_{2}^{\prime}\)，它的维数等于 \(\mathrm{F}_{2}\) 的维数，也就是 \(u\) 的余核的维数。从而
+
+\[
+\operatorname{ind} (u) = \dim \operatorname{Ker} (^ {t} u) - \dim \operatorname{Ker} (u).\tag{3}
+\]
+
+此外，\(^{t}u\) 的像是 \(E_{1}^{\prime}\)，因而 \(^{t}u\) 的余核的维数等于 \(E_{2}^{\prime}\) 的维数，也就是 u 的核 \(E_{2}\) 的维数。由此我们推出
+
+\[
+\operatorname{ind} (^ {t} u) = - \operatorname{ind} (u).\tag{4}
+\]
+
+假设 E 与 F 是分离的，并设 \(u\colon\mathrm{E}\to\mathrm{F}\) 是指标为 0 的弗雷德霍姆算子。那么由 III, p. 42 的 prop. 2，\(u\) 是严格态射。由于 \(\dim\operatorname{Ker}(u)=\operatorname{codim}_{\mathrm{F}}\operatorname{Im}(u)\)，映射 \(u\) 只要是单射或满射就是同构。
+
+命题 3. --- 设 E 与 F 是局部凸空间，且 \(u \in \mathcal{L}(\mathrm{E};\mathrm{F})\)。设 \(\mathrm{E}_{1}\)（相应地，\(\mathrm{F}_{1}\)）是 E（相应地，F）的有限余维闭子空间。假设 u 把 \(\mathrm{E}_{1}\) 映到 \(\mathrm{F}_{1}\) 中，并用 \(u_{1} \in \mathcal{L}(\mathrm{E}_{1};\mathrm{F}_{1})\) 表示在 \(\mathrm{E}_{1}\) 上与 u 重合的映射。要使 u 是弗雷德霍姆算子，必须且只需 \(u_{1}\) 是。这时我们有
+
+\[
+\operatorname{ind} (u) - \operatorname{ind} \left(u _ {1}\right) = \operatorname{codim} _ {\mathrm{F}} \left(\mathrm{F} _ {1}\right) - \operatorname{codim} _ {\mathrm{E}} \left(\mathrm{E} _ {1}\right).\tag{5}
+\]
+
+设 \(i\colon \mathrm{E}_{1}\to \mathrm{E}\) 与 \(j\colon \mathrm{F}_{1}\to \mathrm{F}\) 是典范单射。它们是弗雷德霍姆映射，并且有
+
+\[
+\operatorname{ind} (i) = \operatorname{codim} _ {\mathrm{E}} (\mathrm{E} _ {1}), \quad \operatorname{ind} (j) = \operatorname{codim} _ {\mathrm{F}} (\mathrm{F} _ {1}).
+\]
+
+由于 \(j \circ u_{1} = u \circ i\)，可以看出 u 是弗雷德霍姆映射当且仅当 \(u_{1}\) 是（III, p. 41 的注记 3 和 4）。若是如此，我们有
+
+\[
+\operatorname{ind} (j) + \operatorname{ind} (u _ {1}) = \operatorname{ind} (j \circ u _ {1}) = \operatorname{ind} (u \circ i) = \operatorname{ind} (u) + \operatorname{ind} (i),
+\]
+
+由此得到公式 (5)。
+
+命题 4. --- 设 E 与 F 是分离的局部凸空间，\(u: \mathrm{E} \to \mathrm{F}\) 是弗雷德霍姆算子，而 \(\widehat{u}: \widehat{\mathrm{E}} \to \widehat{\mathrm{F}}\) 是 u 到完备化上的延拓。那么 \(\widehat{u}\) 是弗雷德霍姆算子，并且有 \(\operatorname{Ker}(\widehat{u}) = \operatorname{Ker}(u)\) 与 \(\operatorname{ind}(\widehat{u}) = \operatorname{ind}(u)\)。
+
+采用 III, p. 42 的 Prop. 2 的条件 (iv) 的记号。由于向量空间 \(E_{2}\) 与 \(F_{2}\) 是有限维的，它们是完备的。\(E_{1}\)（相应地，\(F_{1}\)）的完备化等同于 \(E_{1}\) 在 \(\widehat{E}\) 中的闭包（相应地，\(F_{1}\) 在 \(\widehat{F}\) 中的闭包），且 \(\widehat{E}\)（相应地，\(\widehat{F}\)）是 \(\widehat{E}_{1}\) 与 \(E_{2}\)（相应地，\(\widehat{F}_{1}\) 与 \(F_{2}\)）的拓扑直和。线性映射 \(\widehat{u}\) 通过限制定义了从 \(\widehat{E}_{1}\) 到 \(\widehat{F}_{1}\) 上的同构并在 \(E_{2}\) 上为零。命题于是由 loc. cit. 的蕴含关系 (iv)⇒(i) 得出。
+
+\subsection{里斯自同态}
+
+设 E 是向量空间，u 是 E 的自同态。
+
+E 的向量子空间的序列 \((\operatorname{Ker}(u^{n}))_{n\in\mathbf{N}}\) 是递增的；它们的并是 E 的一个在 u 下稳定的子空间，称为 u 的幂零空间。
+
+E 的向量子空间的序列 \((\mathrm{Im}(u^{n}))_{n\in\mathbf{N}}\) 是递减的；它们的交是 E 的一个在 u 下稳定的子空间，称为 u 的余幂零空间。
+
+引理 2. --- 设 E 是向量空间，u 是 E 的一个有指标的自同态（A, V, p. 126）。
+
+如果下列性质中有两条满足，那么第三条也满足：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  自同态 u 的指标为 0；
+\item
+  u 的幂零空间 N 是有限维的；
+\item
+  u 的余幂零空间 I 有有限余维。
+\end{enumerate}
+
+对每个整数 \(n \geqslant 0\)，自同态 \(u^{n}\) 有指标，等于 \(n \operatorname{ind}(u)\)（A, V, p. 127, 引理 2）。自然整数序列 \((\dim(\operatorname{Ker}(u^{n})))_{n \in \mathbf{N}}\) 是递增的；要使它是平稳的，必须且只需 u 的幂零空间是有限维的。自然整数序列 \((\operatorname{codim}_{\operatorname{E}}(\operatorname{Im}(u^{n})))_{n \in \mathbf{N}}\) 是递增的；要使它是平稳的，必须且只需 u 的余幂零空间是有限维的。假设条件 (i) 满足；关系式
+
+\[
+\dim (\operatorname{Ker} (u ^ {n})) - \operatorname{codim} _ {\mathrm{E}} (\operatorname{Im} (u ^ {n})) = \operatorname{ind} (u ^ {n}) = n \operatorname{ind} (u) = 0
+\]
+
+于是蕴含条件 (ii) 与 (iii) 等价。反之，如果条件 (ii) 与 (iii) 满足，这个公式蕴含序列 \((n\operatorname{ind}(u))_{n\in\mathbf{N}}\) 是平稳的，因此 u 的指标为零。
+
+引理 3. --- 设 E 是向量空间，u 是 E 的一个有指标的自同态。假设 u 的指标为零。设 N 是 u 的幂零空间，I 是它的余幂零空间。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  这时空间 E 是子空间 N 与 I 的直和（维尔--菲廷分解，参见 A, VIII, § 2, 第 2 目, p. 25）。
+\item
+  自同态 u 通过过渡到子空间，诱导了 N 的一个幂零自同态与 I 的一个自同构 \(u_{I}\)。
+\item
+  设 v 表示 E 的这样一个自同态：它在 N 上为零且在 I 上与 \(u_{I}^{-1}\) 重合。我们有 \(u \circ v = v \circ u\)，且自同态 \(1_{E} - u \circ v\) 是以 N 为像、以 I 为核的投影。
+\item
+  E 的每个与 u 交换的自同态都稳定 N 与 I，且与 v 交换。
+\end{enumerate}
+
+自同态 \(u\) 满足前一个引理的各条性质。
+
+设 \(n \in \mathbf{N}\) 使得 \(\operatorname{Ker}(u^{n}) = N\)。那么 \(\operatorname{Ker}(u^{m}) = \operatorname{Ker}(u^{n})\) 对每个整数 \(m \geqslant n\) 成立；由于 \(\operatorname{ind}(u^{m}) = m \operatorname{ind}(u) = 0\)，这就蕴含 \(\operatorname{Im}(u^{m}) = \operatorname{Im}(u^{n})\) 对 \(m \geqslant n\) 成立，因而 \(\operatorname{I} = \operatorname{Im}(u^{n})\)。由 A, VIII, p. 25, prop. 2 可得断言 a) 与 b) 满足。
+
+对每个 \(x \in N\)，我们有 \(v(x) = 0\) 与 \(u(x) \in N\)，因而 \(u(v(x)) = 0\) 与 \(v(u(x)) = 0\)。对每个 \(x \in I\)，我们有 \(u(v(x)) = v(u(x)) = x\)。这就蕴含 \(u \circ v = v \circ u\)，且 \(1_{E} - u \circ v\) 是以 N 为像、以 I 为核的投影。
+
+设 w 是 E 的与 u 交换的自同态。设 \(n \in \mathbf{N}\) 使得 \(N = \operatorname{Ker}(u^{n})\) 且 \(I = \operatorname{Im}(u^{n})\)。设 \(x \in N\)；我们有 \(u^{n}(w(x)) = w(u^{n}(x)) = 0\)，因而 \(w(x) \in N\)。设 \(x \in I\)；存在 \(y \in E\) 使得 \(x = u^{n}(y)\)；那么 \(w(x) = w(u^{n}(y)) = u^{n}(w(y)) \in I\)。这就证明了 w 稳定 N 与 I。
+
+最后证明 \(w\) 与 \(v\) 可交换。对每个 \(x\)（在 \(N\) 中），我们有 \(v(w(x)) = 0 = w(v(x))\)。设 \(x \in I\)；\(v(w(x))\) 与 \(w(v(x))\) 这两个 \(E\) 的元素都属于 \(I\)，且它们在 \(u\) 下的像都等于 \(w(x)\)，因而它们相等。由线性性，这就蕴含 \(v\) 与 \(w\) 交换。
+
+注记. --- 假设存在整数 \(n \geqslant 0\) 使得 \(\operatorname{Ker}(u^{n}) = \operatorname{Ker}(u^{n+1})\)（相应地，\(\operatorname{Im}(u^{n}) = \operatorname{Im}(u^{n+1})\)）；那么 \(\operatorname{Ker}(u^{m}) = \operatorname{Ker}(u^{n})\)（相应地，\(\operatorname{Im}(u^{m}) = \operatorname{Im}(u^{n})\)）对每个整数 \(m \geqslant n\) 成立。
+
+假设 \(u\) 的指标为零。对每个整数 \(n \geqslant 0\)，我们有
+
+\[
+n \operatorname{ind} (u) = \operatorname{ind} \left(u ^ {n}\right) = \operatorname{codim} _ {\mathrm{E}} \left(\operatorname{Im} \left(u ^ {n}\right)\right) - \dim \left(\operatorname{Ker} \left(u ^ {n}\right)\right).
+\]
+
+因此条件 \(\operatorname{Ker}(u^n) = \operatorname{Ker}(u^{n+1})\) 与 \(\operatorname{Im}(u^n) = \operatorname{Im}(u^{n+1})\) 等价。当它们满足时，向量空间 E 是 \(\operatorname{Ker}(u^n)\) 与 \(\operatorname{Im}(u^n)\) 的直和（A, VIII, p. 25, prop. 2），空间 \(\operatorname{Ker}(u^n)\) 是有限维的，且 \(u\) 通过过渡到子空间诱导了 \(\operatorname{Im}(u^n)\) 的一个自同构。
+
+定义 2. --- 设 E 是分离的局部凸空间。E 的里斯自同态指的是 E 的这样的弗雷德霍姆自同态：其幂零空间是有限维的且其余幂零空间有有限余维。
+
+命题 5. --- 设 E 是分离的局部凸空间。E 的每个里斯自同态的指标都为零。
+
+这由定义和引理 2 得出。
+
+例子. --- 1) E 的每个自同构都是 E 的里斯自同态。如果 E 是有限维的，\(\mathcal{L}(\mathrm{E})\) 的每个元素都是 E 的里斯自同态。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+   如果 \((\mathrm{E}_{i})_{i\in\mathrm{I}}\) 是分离局部凸空间的有限族，且对 I 中所有 i，\(u_{i}\) 是 \(\mathcal{L}(\mathrm{E}_{i})\) 的元素，那么自同态 \(u=\bigoplus_{i\in\mathrm{I}}u_{i}\)（它定义在局部凸空间 \(\bigoplus_{i\in\mathrm{I}}E_{i}\) 上）是里斯自同态当且仅当对所有 i，\(u_{i}\) 是。
+\item
+   设 E 是 R 上的分离局部凸空间，并设 \(\mathrm{E}_{(\mathbf{C})}\) 是它的复化。设 u 是 E 的自同态。要使 u 是里斯自同态，必须且只需它的复化 \(u_{(\mathbf{C})}\) 是 \(\mathrm{E}_{(\mathbf{C})}\) 的里斯自同态。
+\end{enumerate}
+
+命题 6. --- 设 E 是分离的局部凸空间，u 是 E 的里斯自同态。用 N 表示 u 的幂零空间，用 I 表示它的余幂零空间。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  E 的子空间 N 与 I 是闭的且在 u 下稳定，而空间 E 是它们的拓扑直和。
+\item
+  自同态 u 通过限制定义了 I 的一个自同构 \(u_{I}\)；
+\item
+   向量空间 N 是有限维的，且 u 通过限制定义了 N 的一个幂零自同态 \(u_{N}\)；
+\item
+  设 v 是 \(\mathcal{L}(\mathrm{E})\) 中这样的元素：它在 N 上为零且在 I 上与 \(u_{\mathrm{I}}^{-1}\) 重合。它是 E 的里斯自同态，且是与 u 交换的 u 的拟逆。E 的自同态 \(1_{\mathrm{E}} - u \circ v\) 是以 N 为像、以 I 为核的投影。\(\mathcal{L}(\mathrm{E})\) 中每个与 u 交换的元素都稳定 N 与 I，且与 v 交换。
+\end{enumerate}
+
+设 n 是自然数，使得 \(\operatorname{Ker}(u^{n}) = \operatorname{N}\) 且 \(\operatorname{Im}(u^{n}) = \operatorname{I}\)。由于 E 是分离的且 u 是连续的，\(\operatorname{N} = \operatorname{Ker}(u^{n})\) 在 E 中是闭的。由于 u 是弗雷德霍姆自同态，\(u^{n}\) 也是，且 \(\operatorname{I} = \operatorname{Im}(u^{n})\) 是闭的（III, p. 42, prop. 2）。由引理 2，空间 E 是 N 与 I 的直和，断言 a) 于是由 EVT, I, p. 15 的 prop. 3 得出。
+
+由于 I 是闭的、在 E 中有有限余维且在 u 下稳定，由 u 诱导的映射 \(u_{I}\colon I \to I\) 是弗雷德霍姆自同态（III, p. 44, prop. 3）；它还是双射，因而是 I 的自同构（III, p. 42, prop. 2）。这就证明了 b)，其余断言由引理 2 得出。
+
+自同态 \(v\)（它在命题的断言 \(d\)）中定义）是 \(u\) 的一个拟逆，称为 \(u\) 的典范拟逆。
+
+里斯自同态享有弗雷德霍姆映射的某些稳定性性质。
+
+命题 7. — 设 E 是分离的局部凸空间，u 是 E 的自同态。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+   设 \(E_{1}\) 是 E 的有限余维闭子空间，且在 u 下稳定。设 \(u_{1}\) 是 \(\mathcal{L}(E_{1})\) 中在 \(E_{1}\) 上与 u 重合的元素。那么 u 是里斯自同态当且仅当 \(u_{1}\) 是；
+\item
+   假设 u 是指标为 0 的弗雷德霍姆自同态。设 \(\widehat{\mathbf{E}}\) 是 E 的完备化，并设 \(\widehat{u} \in \mathcal{L}(\widehat{\mathbf{E}})\) 是 u 的连续延拓。那么 u 是里斯自同态当且仅当 \(\widehat{u}\) 是；
+\item
+ 给 E 的对偶 E' 赋以有界收敛拓扑、紧收敛拓扑或弱拓扑。如果 u 是 E 的里斯自同态，那么 \(^{t}\) u 是 E' 的里斯自同态。
+\end{enumerate}
+a) 要使 \(u\) 是指标为零的弗雷德霍姆自同态，必须且只需 \(u_1\) 是（III, p. 44, prop. 3）。另一方面，对每个 \(n \in \mathbf{N}\)，我们有 \(\mathrm{Ker}(u_1^n) = \mathrm{E}_1 \cap \mathrm{Ker}(u^n)\)，由此
+
+
+\[
+\dim \operatorname{Ker} (u _ {1} ^ {n}) \leqslant \dim \operatorname{Ker} (u ^ {n}) \leqslant \dim \operatorname{Ker} (u _ {1} ^ {n}) + \operatorname{codim} _ {\mathrm{E}} (\mathrm{E} _ {1}),
+\]
+
+因此序列 \((\dim\operatorname{Ker}(u^{n}))_{n\in\mathbf{N}}\) 有界当且仅当序列 \((\dim\operatorname{Ker}(u_{1}^{n}))_{n\in\mathbf{N}}\) 有界。于是，u 是 E 的里斯自同态当且仅当 \(u_{1}\) 是 \(E_{1}\) 的里斯自同态（引理 2）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  由 III, p. 44 的 prop. 4，对每个 \(n \in \mathbf{N}\)，映射 \(\widehat{u}^n\) 是 \(\widehat{\mathrm{E}}\) 的弗雷德霍姆自同态，满足 \(\operatorname{Ker}(\widehat{u}^n) = \operatorname{Ker}(u^n)\) 且 \(\operatorname{ind}(\widehat{u}^n) = \operatorname{ind}(u^n) = n\operatorname{ind}(u)\)。于是，\(u\) 是里斯自同态当且仅当 \(\widehat{u}\) 是里斯自同态。
+\item
+  转置 \({}^{t}u\) 是 E' 的指标为 0 的弗雷德霍姆自同态（III, p. 43, 第 3 目）。由于 \((^{t}u)^{n}\) 的核是 \(u^{n}\) 的像的正交补（EVT, IV, p. 27, prop. 2），序列 \((\mathrm{Ker}({}^{t}u)^{n})_{n}\) 是平稳的。这就证明了 \({}^{t}u\) 是 E' 的里斯自同态。
+\end{enumerate}
+
+命题 8. --- 设 E 是分离的局部凸空间，u 是 E 的自同态。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  u 是 E 的里斯自同态；
+\item
+  存在 u 的拟逆 v，它与 u 交换；
+\item
+  存在 E 的闭向量子空间 \(E_{1}\)，它有有限余维且在 u 下稳定，使得 u 诱导了 \(E_{1}\) 的一个自同构。
+\end{enumerate}
+
+蕴含关系 (i) \(\Longrightarrow\) (ii) 由 prop. 6, d) 得出。
+
+假设 \(u\) 有一个拟逆 \(v\)，它与 \(u\) 交换。设 \(\mathrm{E}_1\) 是 \(1_{\mathrm{E}} - u \circ v\) 的核；它是 E 的闭向量子空间，有有限余维，且在 \(u\) 与 \(v\) 下稳定。由于 \(u(v(x)) = v(u(x)) = x\) 对一切 \(x \in \mathrm{E}_1\) 成立，映射 \(u\) 与 \(v\) 诱导了 \(\mathrm{E}_1\) 的互逆的自同构。因此 (ii) 蕴含 (iii)。
+
+最后，蕴含关系 (iii) \(\Longrightarrow\) (i) 由 Prop. 7 的断言 \(a\)）以及自同构是里斯自同态这一事实得出。
+
+命题 9. --- 设 E 是分离的局部凸空间，u、v 是 \(\mathcal{L}(\mathrm{E})\) 中可交换的元素。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  自同态 u 与 v 都是里斯自同态。
+\item
+  自同态 \(u \circ v\) 是里斯自同态。
+\end{enumerate}
+
+假设 u 与 v 是里斯自同态；用 \(u'\) 与 \(v'\) 表示它们的典范拟逆。E 的自同态 u、v、\(u'\) 与 \(v'\) 两两交换（prop. 6, d)）。自同态 \(v' \circ u'\) 是 \(u \circ v\) 的拟逆且与 \(u \circ v\) 交换，因而 \(u \circ v\) 是里斯自同态（prop. 8）。
+
+反之，假设 \(u \circ v\) 是里斯自同态，并设 w 是它的典范拟逆。由于 u 与 \(u \circ v\) 交换，由 prop. 6, d)，自同态 u 与 w 交换。同样 v 与 w 交换。因此 E 的自同态 u、v 与 w 两两交换；由此得出 E 的自同态 \(v \circ w\) 是 u 的拟逆，而 \(w \circ u\) 是 v 的拟逆。由 prop. 8，u 与 v 是里斯自同态。
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/part001_6cebf9a3.jpg}}
+
+设 u 是 E 的里斯自同态。如果 v 是 E 的自同构，那么 E 的自同态 \(u \circ v\) 不一定是 E 的里斯自同态，即使 \(u \circ v - v \circ u\) 有有限秩也是如此。如果 h 是 E 的有限秩自同态，自同态 \(u + h\) 也不一定是里斯自同态（参见 III, p. 120, 习题 3）。
+
+命题 10. --- 设 E 与 F 是局部凸空间，\(p \in \mathcal{L}(\mathrm{E};\mathrm{F})\) 且 \(q \in \mathcal{L}(\mathrm{F};\mathrm{E})\)。置 \(u = 1_{\mathrm{E}} - q \circ p\) 与 \(v = 1_{\mathrm{F}} - p \circ q\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(n \in \mathbf{N}\)。映射 \(p\) 通过限制定义了从 \(\mathrm{Ker}(u^n)\) 到 \(\mathrm{Ker}(v^n)\) 上的拓扑向量空间同构，并通过过渡到商定义了从 Coker( \(u^n\) ) 到 Coker( \(v^n\) ) 上的拓扑向量空间同构；
+\item
+  如果 u 的像在 E 中是闭的，那么 v 的像在 F 中是闭的；
+\item
+   如果 \(\operatorname{Ker}(u)\) 在 E 中有一个拓扑补，那么 \(\operatorname{Ker}(v)\) 在 F 中也有一个。如果 \(\operatorname{Im}(u)\) 在 E 中有一个拓扑补，那么 \(\operatorname{Im}(v)\) 在 F 中也有一个；
+\item
+  如果 u 是严格态射，那么 v 是严格态射。
+\item
+  如果 u 是 E 的自同构，那么 v 是 F 的自同构。
+\item
+  如果 \(u\) 是 E 的弗雷德霍姆自同态，那么 \(v\) 是 F 的弗雷德霍姆自同态，且我们有 \(\operatorname{ind}(u) = \operatorname{ind}(v)\)；
+\item
+  假设 E 与 F 是分离的。如果 u 是 E 的里斯自同态，那么 v 是 F 的里斯自同态。
+\end{enumerate}
+
+我们首先注意公式
+
+\[
+q \circ v = u \circ q, \quad v \circ p = p \circ u.\tag{6}
+\]
+
+然后我们证明两个引理。
+
+引理 4. --- 设 \(n \in \mathbf{N}\)。置
+
+\[
+q _ {n} = \sum_ {i = 1} ^ {n} (- 1) ^ {i - 1} \binom {n} {i} q \circ (p \circ q) ^ {i - 1}.
+\]
+
+我们有 \(u^{n}=1_{E}-q_{n}\circ p\) 与 \(v^{n}=1_{F}-p\circ q_{n}\)。
+
+\((q\circ p)^{i} = q\circ (p\circ q)^{i - 1}\circ p\) 对每个整数 \(i\geqslant 1\) 成立。然后我们计算
+
+\[
+u ^ {n} = (1 _ {\mathrm{E}} - q \circ p) ^ {n} = 1 _ {\mathrm{E}} - \sum_ {i = 1} ^ {n} (- 1) ^ {i - 1} {\binom {n} {i}} (q \circ p) ^ {i} = 1 _ {\mathrm{E}} - q _ {n} \circ p
+\]
+
+\[
+v ^ {n} = (1 _ {\mathrm{F}} - p \circ q) ^ {n} = 1 _ {\mathrm{F}} - \sum_ {i = 1} ^ {n} (- 1) ^ {i - 1} \binom {n} {i} (p \circ q) ^ {i} = 1 _ {\mathrm{F}} - p \circ q _ {n},
+\]
+
+由此得到结论。
+
+引理 5. --- 设 \(u'\) 是 \(\mathcal{L}(\mathrm{E})\) 的一个元素。置 \(v' = 1_{\mathrm{F}} + p \circ u' \circ q\)。如果 \(u'\) 是 \(u\) 的逆，那么 \(v'\) 是 \(v\) 的逆。如果 \(u'\) 是 \(u\) 的拟逆，那么 \(v'\) 是 \(v\) 的拟逆。如果 \(u'\) 与 \(u\) 交换，那么 \(v'\) 与 \(v\) 交换。
+
+利用公式 (6)，我们计算
+
+\[
+v - v ^ {\prime} \circ v = - p \circ u ^ {\prime} \circ q \circ v = - p \circ u ^ {\prime} \circ u \circ q
+\]
+
+\[
+v - v \circ v ^ {\prime} = - v \circ p \circ u ^ {\prime} \circ q = - p \circ u \circ u ^ {\prime} \circ q,
+\]
+
+由此得
+
+\[
+1 _ {\mathrm{F}} - v ^ {\prime} \circ v = p \circ (1 _ {\mathrm{E}} - u ^ {\prime} \circ u) \circ q
+\]
+
+\[
+1 _ {\mathrm{F}} - v \circ v ^ {\prime} = p \circ (1 _ {\mathrm{E}} - u \circ u ^ {\prime}) \circ q,
+\]
+
+这就证明了引理。
+
+有了引理 4，只需证明断言 \(a\)）对 \(n = 1\) 成立。依据公式 (6)，映射 \(p\) 与 \(q\) 通过过渡到子空间定义了连续线性映射 \(p'\) ： \(\operatorname{Ker}(u) \to \operatorname{Ker}(v)\) 与 \(q'\) ： \(\operatorname{Ker}(v) \to \operatorname{Ker}(u)\)，并通过过渡到商定义了连续线性映射 \(p''\) ： \(\operatorname{Coker}(u) \to \operatorname{Coker}(v)\) 与 \(q''\) ： \(\operatorname{Coker}(v) \to \operatorname{Coker}(u)\)。
+
+由于 \(1_{\mathrm{E}} - u = q \circ p\) 且 \(1_{\mathrm{F}} - v = p \circ q\)，映射 \(p'\) 与 \(q'\) 一方面、\(p''\) 与 \(q''\) 另一方面，是互逆的同构。这就证明了 \(a\)）。
+
+要使一个连续线性映射的像是闭的，必须且只需这个映射的余核是分离空间。于是 b) 由 a) 得出。
+
+用 \(i\colon \operatorname{Ker}(u)\to \mathrm{E}\) 与 \(j\colon \operatorname{Ker}(v)\to \mathrm{F}\) 表示典范单射。假设 \(\operatorname{Ker}(u)\) 在 E 中有一个拓扑补，并设 \(r\colon \mathrm{E}\to \operatorname{Ker}(u)\) 是 \(i\) 的一个连续线性收缩。置 \(r' = p'\circ r\circ q\)。我们有 \(r'\in \mathcal{L}(\mathrm{F};\operatorname {Ker}(v))\) 且
+
+\[
+r ^ {\prime} \circ j = p ^ {\prime} \circ r \circ q \circ j = p ^ {\prime} \circ r \circ i \circ q ^ {\prime} = p ^ {\prime} \circ q ^ {\prime} = 1 _ {\operatorname{Ker} (v)},
+\]
+
+因而 \(r'\) 是 j 的一个连续线性收缩，且 \(\operatorname{Ker}(v)\) 在 F 中有一个拓扑补。这就证明了 c) 的第一个断言。第二个断言类似地证明，注意如果 \(s: \operatorname{Coker}(u) \to \operatorname{E}\) 是从 E 到 \(\operatorname{Coker}(u)\) 上的典范满射的一个连续线性截面，那么 \(p \circ s \circ q''\) 是从 F 到 \(\operatorname{Coker}(v)\) 上的典范满射的一个连续线性截面。
+
+用 \(\overline{u}\colon\mathrm{E}/\mathrm{Ker}(u)\to\mathrm{Im}(u)\) 与 \(\overline{v}\colon\mathrm{F}/\mathrm{Ker}(v)\to\mathrm{Im}(v)\) 表示由 u 与 v 得到的连续线性双射。由公式 (6)，映射 p 通过过渡到商定义了一个连续线性映射 \(p_{1}\colon\mathrm{E}/\mathrm{Ker}(u)\to\mathrm{F}/\mathrm{Ker}(v)\)，且 p、q 通过过渡到子空间定义了连续线性映射 \(p_{0}\colon\mathrm{Im}(u)\to\mathrm{Im}(v)\) 与 \(q_{0}\colon\mathrm{Im}(v)\to\mathrm{Im}(u)\)。
+
+用 \(t \colon \operatorname{Im}(v) \to \operatorname{F} / \operatorname{Ker}(v)\) 表示典范单射 \(\operatorname{Im}(v) \to \operatorname{F}\) 与典范满射 \(\operatorname{F} \to \operatorname{F} / \operatorname{Ker}(v)\) 的复合映射；它是连续的。我们有 \(\overline{v} \circ t = 1_{\operatorname{Im}(v)} - p_0 \circ q_0\) 与 \(\overline{v} \circ p_1 = p_0 \circ \overline{u}\)，由此
+
+\[
+\overline {{v}} \circ (t + p _ {1} \circ \overline {{u}} ^ {- 1} \circ q _ {0}) = \overline {{v}} \circ t + p _ {0} \circ q _ {0} = 1 _ {\mathrm{Im} (v)}.
+\]
+
+这证明了 \(t + p_{1} \circ \overline{u}^{-1} \circ q_{0}\) 是 \(\overline{v}\) 的逆双射。如果 u 是严格态射，那么映射 \(\overline{u}^{-1}\) 是连续的，\(\overline{v}^{-1}\) 亦然，这就证明 v 是严格态射。这就证明了 d)。
+
+由引理 5，如果 \(u\) 是 E 的自同构，那么 \(v\) 是 F 的自同构。类似地，如果 \(u\) 是 E 的弗雷德霍姆自同态，那么 \(v\) 是 F 的弗雷德霍姆自同态，且这时有 \(\operatorname{ind}(u) = \operatorname{ind}(v)\)，依据 \(a\)）。这就证明了 \(e\)）与 \(f\)）。最后，如果 E 与 F 是分离的且 \(u\) 是 E 的里斯自同态，那么由引理 5 与 Prop. 8 的条件 (ii)，\(v\) 是 F 的里斯自同态；这就是断言 \(g\)）。
+
+\subsection{弗雷歇空间之间的弗雷德霍姆映射与里斯映射}
+
+命题 11. --- 设 E 与 F 为弗雷歇空间。为使从 E 到 F 中的连续线性映射 u 是弗雷德霍姆映射，必须且只需它的核与余核都是有限维的。
+
+这由 III, p. 42 的 Prop. 2 的条件 (ii) 所给出的弗雷德霍姆映射的特征刻画以及下面的引理得出：
+
+引理 6. --- 设 E 与 F 为弗雷歇空间，且 \(u \in \mathcal{L}(\mathrm{E};\mathrm{F})\)。假设 \(u\) 的像在 F 中有有限余维。那么 \(u\) 的像在 F 中是闭的，且 \(u\) 是严格态射。
+
+设 G 是 F 的一个向量子空间，它是 \(\operatorname{Im}(u)\) 的补；子空间 G 是闭的（EVT, I, p. 14, cor. 1），因而商空间 F/G 是弗雷歇空间（TG, IX, p. 25, prop. 4）。设 \(\pi: F \to F/G\) 是典范满射。映射 \(\pi \circ u\) 是满射，因而是严格的（EVT, I, p. 19, cor. 3）。断言随即由 III, p. 40 的 cor. 2 得出。
+
+命题 12. --- 设 E 与 F 为弗雷歇空间。给它们的对偶 E' 与 F' 赋以弱拓扑、紧收敛拓扑或有界收敛拓扑。设 \(u \in \mathcal{L}(\mathrm{E};\mathrm{F})\)。为使 u 是从 E 到 F 的弗雷德霍姆映射，必须且只需 \({}^{t}u\) 是从 F' 到 E' 的弗雷德霍姆映射。
+
+该条件是必要的（III, p. 43, 第 3 目）。我们来证明它是充分的。如果 \(^{t}u\) 是弗雷德霍姆映射，那么它是严格态射（III, p. 42, prop. 2），因而 u 是有闭像的严格态射（EVT, IV, p. 28, th. 1 及 p. 29, cor. 3）。考虑到典范同构 Coker(\(^{t}u\)) → Ker(u)' 与 Ker(\(^{t}u\)) → Coker(u)'（EVT, IV, p. 27, prop. 2），向量空间 Ker(u) 与 Coker(u) 是有限维的，且 u 是弗雷德霍姆算子（III, p. 42 的 prop. 2）。
+
+命题 13. --- 设 E 为弗雷歇空间，且 \(u \in \mathcal{L}(\mathrm{E})\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  自同态 u 是里斯自同态，当且仅当它的幂零空间 N 是有限维的且它的余幂零空间 I 有有限余维；
+\item
+ 给 E' 赋以有界收敛拓扑、紧收敛拓扑或弱拓扑。如果 \(^{t}\) u 是 E' 的里斯自同态，那么 u 是 E 的里斯自同态。
+\end{enumerate}
+a) 假设幂零空间 N 是有限维的且余幂零空间 I 有有限余维。由于 \(\operatorname{Ker}(u) \subset \operatorname{N}\) 与 \(\operatorname{I} \subset \operatorname{Im}(u)\)，u 的核是有限维的，且 u 的像有有限余维。由定义与命题 11，映射 u 是里斯自同态。逆命题由定义得出。
+
+b) 由命题 12，该假设蕴含 \(u\) 是弗雷德霍姆自同态，其指标为 \(\text{ind}(^t u) = -\text{ind}(u) = 0\)（\(n^o 3\)，公式 (4)）。设 \(n \in \mathbf{N}\)。由于 \(u^n\) 的像是闭的且以 \(^t u^n\) 的核为其正交补（EVT, IV, p. 27, prop. 2），序列 \((\text{Im}(u^n))\) 是平稳的，因而 \(u\) 是里斯自同态。
+
+
+\subsection{里斯自同态的谱特征刻画}
+
+设 E 是复巴拿赫空间，u 是 E 的自同态。回忆我们用 \(\mathrm{Sp}(u)\) 表示 u 相对于含幺巴拿赫代数 \(\mathcal{L}(\mathrm{E})\) 的谱（参见 I, p. 127 的 § 7）。
+
+假设 0 是 \(\mathrm{Sp}(u)\) 的一个孤立点；回忆这时我们用 \(e_0(u)\) 表示与 \(u\) 以及开闭子集 \(\{0\}\)（它是 \(u\) 的谱的子集）相伴的谱投影（参见 I, p. 131 的第 3 目）。我们有 \(e_0(u) = f(u)\)，它对每个全纯函数芽 \(f\)（在 \(\mathrm{Sp}(u)\) 的邻域中定义、在 0 的一个邻域中等于 1 且在 \(\mathrm{Sp}(u) \setminus \{0\}\) 的一个邻域中为零）成立。
+
+通过过渡到子空间，自同态 \(u\) 在 \(e_0(u)\) 的像上诱导出一个拟幂零自同态（其谱约化为 \(\{0\}\)），并在 \(e_0(u)\) 的核上诱导出一个自同构（其谱为 \(\mathrm{Sp}(u) \setminus \{0\}\)）（loc. cit.）。
+
+命题 14. --- 设 E 是复巴拿赫空间。为使 \(\mathcal{L}(\mathrm{E})\) 的元素 u 是 E 的里斯自同态，必须且只需下列两个互斥条件之一被满足：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  E 的自同态 u 是 E 的自同构；
+\item
+  点 0 是 \(\operatorname{Sp}(u)\) 的孤立点，且投影 \(e_0(u)\) 有有限秩。
+\end{enumerate}
+
+当条件 (ii) 满足时，\(e_{0}(u)\) 的像是 u 的幂零空间，而 \(e_{0}(u)\) 的核是 u 的余幂零空间。
+
+E 的每个自同构都是 E 的里斯自同态（III, p. 47, 注记 1）。如果 u 满足条件 (ii)，\(e_{0}(u)\) 的核 F 是 E 的闭向量子空间，有有限余维，且在 u 下稳定。设 \(u_{F}\) 是由 u 导出的 F 的自同态。它的谱包含在 \(\mathbf{C}\setminus\{0\}\) 中（I, p. 131 的第 3 目），因而 \(u_{F}\) 是 F 的自同构。由此得出 u 是 E 的里斯自同态（III, p. 48, prop. 8）。
+
+反之，设 \(u\) 是 E 的里斯自同态。用 N 表示它的幂零空间，用 I 表示它的余幂零空间。由 III, p. 47 的 prop. 6，空间 E 是 N 与 I 的拓扑直和，且映射 \(u\) 通过过渡到子空间定义了 N 的一个幂零自同态 \(u_{\mathrm{N}}\) 与 I 的一个自同构 \(u_{\mathrm{I}}\)。特别地，我们有 \(\mathrm{Sp}(u_{\mathrm{N}}) \subset \{0\}\) 与 \(0 \not\in \mathrm{Sp}(u_{\mathrm{I}})\)。如果 N 是零空间，那么 I = E 且 \(u\) 是 E 的自同构。否则，0 是 \(\mathrm{Sp}(u)\) 的孤立点，且 \(e_0(u)\) 是以 N 为像、以 I 为核的投影（I, p. 129 的 prop. 2）；特别地，它有有限秩。
+
+注记. --- 设 E 是实巴拿赫空间，u 是 E 的自同态。假设 0 是 u 的复谱的一个孤立点，也就是说，是自同态 \(1 \otimes u\)（它作用于 E 的完备可赋范复化空间 \(\mathrm{E}_{(\mathbf{C})}\)）的谱的一个孤立点（I, p. 85, 第 13 目）。子集 \(\{0\}\)（它属于 \(u\) 的复谱）是开闭的，且在共轭下不变；用 \(e_0(u) \in \mathcal{L}(\mathrm{E})\) 表示与之相伴的谱投影（I, p. 85 的第 13 目）。命题 14 在此情形下作必要的修改后成立。
+
+\section{巴拿赫空间中的摄动}
+
+\subsection{直态射}
+
+定义 1. --- 设 E 是拓扑向量空间。E 的向量子空间称为直的，如果它有一个拓扑补。
+
+为使 E 的向量子空间 F 是直的，必须且只需在 \(\mathcal{L}(\mathrm{E})\) 中存在一个以 F 为像的投影。如果 \(p\) 是这样一个投影，E 是 F 与 \(p\) 的核的拓扑直和。\(1_{\mathrm{E}} - p\) 的核是 F；因此如果 E 是分离的，那么 F 是闭的。
+
+设 F 是 E 的直向量子空间，\(E_{1}\) 是 E 的包含 F 的向量子空间；那么 F 是 \(E_{1}\) 的直向量子空间。
+
+E 中每个有有限余维的闭向量子空间都是直和项（EVT, I, p. 15, prop. 3），而 E 的每个包含在 \{0\} 的闭包中的向量子空间 F 都是直的（事实上，存在一个以 F 为像的投影，且这样一个投影必然是连续的）。
+
+命题 1. --- 设 E 是局部凸空间。E 的每个有限维向量子空间都有补。
+
+设 F 是 E 的有限维向量子空间。用 S 表示 \(\{0\}\) 在 F 中的闭包的一个拓扑补（该闭包是 E 的直子空间）。空间 \(F_{2} = F \cap S\) 是分离的且有限维；因此存在整数 \(n \geqslant 0\) 使得 \(F_{2}\) 同构于 \(K^{n}\)（EVT, I, p. 14, th. 2）。于是存在一个连续线性映射 \(p: S \to F_{2}\)，它延拓 \(F_{2}\) 的恒等映射。p 的核是 \(F_{2}\) 在 S 中的拓扑补，也是 F 在 E 中的拓扑补。
+
+定义 2. --- 设 E 与 F 是局部凸空间，u 是从 E 到 F 中的连续线性映射。称 u 是直态射，如果 u 是严格态射，其核是 E 的直向量子空间且其像是 F 的直向量子空间。
+
+设 \(u \in \mathcal{L}(\mathrm{E};\mathrm{F})\)。为使 \(u\) 的核与像分别是 E 与 F 的直向量子空间，必须且只需存在分解为拓扑直和的 \(\mathrm{E} = \mathrm{E}_1 \oplus \mathrm{E}_2\) 与 \(\mathrm{F} = \mathrm{F}_1 \oplus \mathrm{F}_2\)，使得 \(u\) 由矩阵 \(\begin{pmatrix} u_1 & 0 \\ 0 & 0 \end{pmatrix}\) 表示，其中 \(u_1 \in \mathcal{L}(\mathrm{E}_1; \mathrm{F}_1)\) 是双射。由于这时 \(u\) 的核是 \(\mathrm{E}_2\)，从 \(\mathrm{E}_1\) 到 \(\mathrm{E}/\mathrm{E}_2\) 上的典范线性映射是同构，且 \(u\) 的像是 \(\mathrm{F}_1\)，可以看出 \(u\) 是严格态射当且仅当 \(u_1\) 是从 \(\mathrm{E}_1\) 到 \(\mathrm{F}_1\) 上的同构。用 \(v\) 表示 \(\mathcal{L}(\mathrm{F};\mathrm{E})\) 中由矩阵 \(\begin{pmatrix} u_1^{-1} & 0 \\ 0 & 0 \end{pmatrix}\) 表示的元素。那么线性映射 \(u \circ v\) 是 F 中以 \(\mathrm{F}_2\) 为核、以 \(\mathrm{F}_1\) 为像的投影，线性映射 \(v \circ u\) 是 E 中以 \(\mathrm{E}_2\) 为核、以 \(\mathrm{E}_1\) 为像的投影，且有 \(u \circ v \circ u = u\)。
+
+反之，我们有下面的结果：
+
+命题 2. --- 设 E 与 F 是局部凸空间，设 \(u \in \mathcal{L}(\mathrm{E};\mathrm{F})\) 与 \(v \in \mathcal{L}(\mathrm{F};\mathrm{E})\)。假设 \(u = u \circ v \circ u\)。那么 \(u\) 是直态射。此外，\(v \circ u\) 是 E 中以 \(\operatorname{Ker}(u)\) 为核的连续投影，而 \(u \circ v\) 是 F 中以 \(\operatorname{Im}(u)\) 为像的连续投影。
+
+置 \(p = v \circ u\) 与 \(q = u \circ v\)。我们有
+
+\[
+p ^ {2} = v \circ (u \circ v \circ u) = v \circ u = p, q ^ {2} = (u \circ v \circ u) \circ v = u \circ v = q,
+\]
+
+因而 p 与 q 是投影。它们是连续的。设 \(E_{1}\) 与 \(E_{2}\) 是 p 的像与核，设 \(F_{1}\) 与 \(F_{2}\) 是 q 的像与核。由于 \(u \circ v \circ u = u\)，我们有
+
+\[
+\operatorname{Ker} (u) \subset \operatorname{Ker} (v \circ u) \subset \operatorname{Ker} (u \circ v \circ u) = \operatorname{Ker} (u),
+\]
+
+因而 \(\operatorname{Ker}(u) = \operatorname{Ker}(v \circ u) = \operatorname{Ker}(p) = \operatorname{E}_{2}\)。类似地，由包含关系
+
+\[
+\operatorname{Im} (u) \supset \operatorname{Im} (u \circ v) \supset \operatorname{Im} (u \circ v \circ u) = \operatorname{Im} (u)
+\]
+
+得出 \(u\) 的像是 \(\mathrm{F}_{1}\)。空间 \(\mathrm{E}_{2}\) 与 \(\mathrm{F}_{1}\) 分别是 E 与 F 的直向量子空间。
+
+向量空间 E 是 \(E_{1}\) 与 \(E_{2}\) 的拓扑直和，且 u 通过限制定义了一个双射线性映射 \(u_{1}\)（它从 \(E_{1}\) 到 \(F_{1}\) 上）。对每个 \(x \in E_{1}\)，我们有 \(v(u(x)) = p(x) = x\)，且映射 \(u_{1}^{-1}\)（它从 \(F_{1}\) 到 \(E_{1}\) 上）在 \(F_{1}\) 上与 v 一致。因此，\(u_{1}\) 是从 \(E_{1}\) 到 \(F_{1}\) 上的同构，而 u 是从 E 到 F 中的严格态射。
+
+设 E 与 F 是局部凸空间，且 \(u \in \mathcal{L}(\mathrm{E};\mathrm{F})\)。为使 u 是单射（相应地，满射）的直态射，必须且只需存在一个 \(v\)（它在 \(\mathcal{L}(\mathrm{F};\mathrm{E})\) 中），使得 \(v \circ u = 1_{E}\)（相应地，\(u \circ v = 1_{F}\)）（参见 TG, III, p. 47 及 48）。
+
+命题 3. --- 设 E 与 F 是巴拿赫空间。下列集合都是巴拿赫空间 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 的开子集：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  从 E 到 F 上的同构组成的集 \(\mathcal{I}(\mathrm{E};\mathrm{F})\)；
+\item
+   从 E 到 F 中的单射直态射组成的集 \(\mathcal{M}\mathcal{D}(\mathrm{E};\mathrm{F})\)，且更精确地说，对 F 的每个闭向量子空间 \(F_{1}\)，集 \(\mathcal{M}_{\mathrm{F}_{1}}(\mathrm{E};\mathrm{F})\)（它由 \(\mathcal{M}\mathcal{D}(\mathrm{E};\mathrm{F})\) 中像为 \(F_{1}\) 的拓扑补的元素组成）；
+\item
+   从 E 到 F 中的满射直态射组成的集 \(\mathcal{E}\mathcal{D}(\mathrm{E};\mathrm{F})\)，且更精确地说，对 E 的每个闭向量子空间 \(\mathrm{E}_1\)，集 \(\mathcal{E}_{\mathrm{E}_1}(\mathrm{E};\mathrm{F})\)（它由 \(\mathcal{E}\mathcal{D}(\mathrm{E};\mathrm{F})\) 中核为 \(\mathrm{E}_1\) 的拓扑补的元素组成）。
+\end{enumerate}
+
+此外，映射 \(u \mapsto u^{-1}\)（它从 \(\mathcal{I}(\mathrm{E};\mathrm{F})\) 到 \(\mathcal{I}(\mathrm{F};\mathrm{E})\) 上）是解析的。
+
+依定义，\(\mathcal{I}(\mathrm{E};\mathrm{E})\) 是完备赋范代数 \(\mathcal{L}(\mathrm{E})\) 的可逆元素组成的集。由 TG, IX, p. 40, prop. 14，它是 \(\mathcal{L}(\mathrm{E})\) 的开子集。映射 \(u\mapsto u^{-1}\)（它从 \(\mathcal{I}(\mathrm{E};\mathrm{E})\) 到 \(\mathcal{I}(\mathrm{E};\mathrm{E})\) 中）是解析的（LIE, III, § 1, 第 1 目, 例子 2）。
+
+如果集 \(\mathcal{I}(\mathrm{E};\mathrm{F})\) 是空的，那么它是开的。否则，设 \(u_0\) 是从 E 到 F 上的一个同构。于是映射 \(v\mapsto u_0\circ v\) 是从 \(\mathcal{L}(\mathrm{E})\) 到 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 上的同构，它把 \(\mathcal{I}(\mathrm{E};\mathrm{E})\) 变换为 \(\mathcal{I}(\mathrm{E};\mathrm{F})\)。因此集 \(\mathcal{I}(\mathrm{E};\mathrm{F})\) 在 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 中是开的。此外，如果 \(u = u_0\circ v\) 是 \(\mathcal{I}(\mathrm{E};\mathrm{F})\) 的一个元素，我们有 \(u^{-1} = v^{-1}\circ u_0^{-1}\)，因而映射 \(u\mapsto u^{-1}\)（它从 \(\mathcal{I}(\mathrm{E};\mathrm{F})\) 到 \(\mathcal{I}(\mathrm{F};\mathrm{E})\) 上）是解析的。
+
+设 \(F_{1}\) 是 F 的闭向量子空间。对每个 \(u \in \mathcal{L}(E;F)\)，用 \(\overline{u}\) 表示 \(\mathcal{L}(E \times F_{1};F)\) 中由 \(\overline{u}(x,y) = u(x) + y\) 定义的元素。映射 \(u \mapsto \overline{u}\)（它从 \(\mathcal{L}(E;F)\) 到 \(\mathcal{L}(E \times F_{1};F)\) 中）是连续的，而 \(\mathcal{M}_{\mathrm{F}_{1}}(E;F)\) 是由 \(\mathcal{L}(E;F)\) 中使 \(\overline{u}\) 属于 \(\mathcal{I}(E \times F_{1};F)\) 的元素 u 组成的集。由于 \(\mathcal{I}(E \times F_{1};F)\) 在 \(\mathcal{L}(E \times F_{1};F)\) 中是开的
+
+由前所述，集 \(\mathcal{M}_{\mathrm{F}_1}(\mathrm{E};\mathrm{F})\) 在 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 中是开的。对 \(\mathcal{MD}(\mathrm{E};\mathrm{F})\) 同样如此，它是诸 \(\mathcal{M}_{\mathrm{F}_1}(\mathrm{E};\mathrm{F})\)（当 \(\mathrm{F}_1\) 取遍 F 的闭向量子空间组成的集时）的并。
+
+设 \(E_{1}\) 是 E 的闭向量子空间，p 是从 E 到商巴拿赫空间 \(E/E_{1}\) 上的典范映射。为使一个元素 \(u\)（它在 \(\mathcal{L}(E;F)\) 中）属于 \(\mathcal{E}_{\mathrm{E}_{1}}(\mathrm{E};\mathrm{F})\)，必须且只需映射 \((u,p)\)（它从 E 到 \(F\times E/E_{1}\) 中）属于 \(\mathcal{I}(E;F\times E/E_{1})\)。与前面一样，我们推出 \(\mathcal{E}_{\mathrm{E}_{1}}(\mathrm{E};\mathrm{F})\) 在 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 中是开的；对 \(\mathcal{E}\mathcal{D}(\mathrm{E};\mathrm{F})\) 同样如此，它是诸 \(\mathcal{E}_{\mathrm{E}_{1}}(\mathrm{E};\mathrm{F})\) 的并。
+
+\subsection{弗雷德霍姆映射的摄动}
+
+定理 1. --- 设 E 与 F 是巴拿赫空间。从 E 到 F 的弗雷德霍姆算子组成的集 \(\mathcal{F}(\mathrm{E};\mathrm{F})\) 在巴拿赫空间 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 中是开的，且映射 \(u\mapsto\mathrm{ind}(u)\)（它从 \(\mathcal{F}(\mathrm{E};\mathrm{F})\) 到 \(\mathbf{Z}\) 中）是局部常值的。
+
+该定理由下面更精确的命题得出：
+
+命题 4. --- 设 E 与 F 是巴拿赫空间，\(u_{0}\colon\mathrm{E}\to\mathrm{F}\) 是弗雷德霍姆算子，\(v_{0}\) 是 \(u_{0}\) 的一个拟逆。存在 \(u_{0}\) 在 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 中的一个开邻域 U 以及一个解析映射 \(\varphi\colon\mathrm{U}\to\mathcal{L}(\mathrm{F};\mathrm{E})\)，使得
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  我们有 \(\varphi(u_{0}) = v_{0}\)；
+\item
+  对每个 \(u\)（在 \(U\) 中），映射 \(\varphi(u)\) 是 \(u\) 的拟逆，特别地，\(u\) 是弗雷德霍姆映射；
+\item
+  对 U 中的每个 \(u\)，我们有 \(\operatorname{ind}(u) = \operatorname{ind}(u_0)\)。
+\end{enumerate}
+
+由 III, p. 42 的 prop. 2 的 (ii)，存在拓扑直和分解 \(\mathrm{E} = \mathrm{E}_1 \oplus \mathrm{E}_2\) 与 \(\mathrm{F} = \mathrm{F}_1 \oplus \mathrm{F}_2\)，且存在 \(\alpha_0 \in \mathcal{I}(\mathrm{E}_1; \mathrm{F}_1)\)，使得 \(\mathrm{E}_2\) 与 \(\mathrm{F}_2\) 是有限维的，而 \(u_0\) 相对于这些分解由矩阵 \(\left( \begin{array}{cc}\alpha_0 & 0\\ 0 & 0 \end{array} \right)\) 表示。
+
+设 U 是由这样的元素 \(u\)（它属于 \(\mathcal{L}(\mathrm{E};\mathrm{F})\)）组成的集：在矩阵表示 \(\left( \begin{array}{cc}\alpha & \beta \\ \gamma & \delta \end{array} \right)\)（即 \(u\) 相对于这些分解的矩阵表示）中，我们有 \(\alpha \in \mathcal{I}(\mathrm{E}_1;\mathrm{F}_1)\)。由于 \(\mathcal{I}(\mathrm{E}_1;\mathrm{F}_1)\) 在 \(\mathcal{L}(\mathrm{E}_1;\mathrm{F}_1)\) 中是开的
+
+（III, p. 57 的 prop. 3），U 是 \(u_0\) 在 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 中的开邻域。对 U 中的 \(u = \begin{pmatrix} \alpha & \beta \\ \gamma & \delta \end{pmatrix}\)，置
+
+\[
+\varphi (u) = v _ {0} + \left( \begin{array}{c c} \alpha^ {- 1} - \alpha_ {0} ^ {- 1} & 0 \\ 0 & 0 \end{array} \right).\tag{1}
+\]
+
+我们有 \(\varphi(u_{0}) = v_{0}\)，且映射 \(\varphi\) 是解析的（loc. cit.）。模有限秩连续线性映射，我们有同余关系
+
+\[
+u \equiv \left( \begin{array}{c c} \alpha & 0 \\ 0 & 0 \end{array} \right) , v _ {0} \equiv \left( \begin{array}{c c} \alpha_ {0} ^ {- 1} & 0 \\ 0 & 0 \end{array} \right) , \varphi (u) \equiv \left( \begin{array}{c c} \alpha^ {- 1} & 0 \\ 0 & 0 \end{array} \right).
+\]
+
+因此，\(\varphi(u)\) 是 \(u\) 的拟逆。U 的每个元素 \(u\) 通过限制定义了一个从 \(E _1\) 到 \(F _2\) 在 F 中的一个拓扑补上的同构。由 III, p. 44 的 prop. 3，我们因此有
+
+\[
+\begin{array}{c} \operatorname{ind} (u) = \operatorname{codim} _ {\mathrm{F}} (u (\mathrm{E} _ {1})) - \operatorname{codim} _ {\mathrm{E}} (\mathrm{E} _ {1}) \\ = \dim (\mathrm{F} _ {2}) - \dim (\mathrm{E} _ {2}) = \operatorname{ind} (u _ {0}), \end{array}
+\]
+
+证毕。

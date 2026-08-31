@@ -1,0 +1,1154 @@
+\subsection{幺半群的融合和}
+
+设 \((M_{i})_{i\in I}\) 表示一族幺半群，\(e_i\) 表示 \(\mathbf{M}_i\) 的单位元。给定一个幺半群 \(\mathbf{A}\) 以及一族同态 \(h_i\colon \mathbf{A}\to \mathbf{M}_i\) （\(i\in I\) ）。
+
+集合 S 即族 \((\mathbf{M}_{i})_{i\in\mathbb{I}}\) 的和，其元素为有序对 \((i,x)\) ，其中 \(i\in I\) 与 \(x\in M_{i}\) 。对每个三元组 \(\alpha=(i,x,x^{\prime})\) ，其中 \(i\in I\) ，\(x,x^{\prime}\) 在 \(M_{i}\) 中，记 \(u_{\alpha}=(i,xx^{\prime})\) 与 \(v_{\alpha}=(i,x).(i,x^{\prime})\) ；对每个三元组 \(\lambda=(i,j,a)\) （属于 \(I\times I\times A\) ），记 \(p_{\lambda}=(i,h_{i}(a))\) 与 \(q_{\lambda}=(j,h_{j}(a))\) ；对所有 \(i\in I\) ，记 \(\varepsilon_{i}=(i,e_{i})\) 。由 S 和关系子 \((u_{\alpha},v_{\alpha})\) ， \((p_{\lambda},q_{\lambda})\) 与 \((\varepsilon_{i},e)\) 所定义的幺半群 M 称为族 \((\mathbf{M}_{i})_{i\in\mathbb{I}}\) 关于 A 的融合和。设 \(\phi\) 表示 \(\mathrm{Mo}(\mathrm{S})\) 到 M 上的典范同态，并记 \(\phi_{i}(x)=\phi(i,x)\) ，其中 \((i,x)\in\mathrm{S}\) 。称 \(\phi_{i}\) 为 \(M_{i}\) 到 M 中的典范映射。对所有 \(a\in A\) ，元素 \(\phi(i,h_{i}(a))\) 不依赖于 i，记作 \(h(a).†\)
+
+由生成元和关系子定义的幺半群的泛性质（第 2 号）蕴含以下结果：
+
+命题 4. (a) 对所有 \(i \in \mathbf{I}\) ，映射 \(\phi_i\) 是 \(\mathbf{M}_i\) 到 \(\mathbf{M}\) 中的同态，且 \(\phi_i \circ h_i = h\) 对所有 \(i \in \mathbf{I}\) 成立。进一步， \(\mathbf{M}\) 由 \(\bigcup_{i \in \mathbf{I}} \phi_i(\mathbf{M}_i)\) 生成。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathbf{M}'\) 是一个幺半群，且 \(f': \mathbf{M}_i \to \mathbf{M}'\) （\(i \in \mathbf{I}\) ）为一族同态，使得 \(f_i \circ h_i\) 与 \(i \in \mathbf{I}\) 无关。存在且仅存在一个同态 \(f: \mathbf{M} \to \mathbf{M}'\) ，使得 \(f_i = f \circ \phi_i\) 对所有 \(i \in \mathbf{I}\) 成立。
+\end{enumerate}
+
+在下文中，我们将作如下假设：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\tightlist
+\item
+  对所有 \(i \in \mathbf{I}\) ，存在一个子集 \(\mathbf{P}_i\) ，它是 \(\mathbf{M}_i\) 的包含 \(e_i\) 的子集，使得映射 \((a, p) \mapsto h_i(a).p\) 从 \(\mathbf{A} \times \mathbf{P}_i\) 到 \(\mathbf{M}_i\) 是双射。
+\end{enumerate}
+
+这意味着诸同态 \(h_i\) 都是单射。设 \(x \in \mathbf{M}\) ；每个有限序列 \(\sigma = (a: i_1, \ldots, i_n; p_1, \ldots, p_n)\) ，其中 \(a \in \mathbf{A}\) , \(i_\alpha \in \mathbf{I}\) 且 \(p_\alpha \in \mathbf{P}_{i_\alpha}\) （\(1 \leqslant \alpha \leqslant n\) ），若满足
+
+\[
+x = h (a) \cdot \prod_ {\alpha = 1} ^ {n} \phi_ {i _ {\alpha}} (p _ {\alpha})\tag{3}
+\]
+
+便称为 \(x\) 的一个分解。整数 \(n \geqslant 0\) 称为分解 \(\sigma\) 的长度，记作 \(l(\sigma)\) ；序列 \((e)\) 是 \(M\) 的单位元的一个长度为 0 的分解。分解 \(\sigma\) 称为既约的，如果 \(i_{\alpha} \neq i_{\alpha + 1}\) 对 \(1 \leqslant \alpha < n\) 成立且 \(p_{\alpha} \neq e_{i_{\alpha}}\) 对 \(1 \leqslant \alpha \leqslant n\) 成立。
+
+命题 5. 在假设 (A) 下，每个元素 \(x\) （属于 \(\mathbf{M}\) ）都有唯一的既约分解 \(\sigma\) 。每个分解 \(\sigma' \neq \sigma\) ，只要它分解的是 \(x\) ，就满足 \(l(\sigma') > l(\sigma)\) 。
+
+\BourbakiRunInHeading{(A) 既约分解的唯一性：}
+
+设 \(\Sigma\) 表示由满足如下条件的序列 \(\sigma = (a; i_1, \ldots, i_n; p_1, \ldots, p_n)\) 组成的集合： \(n \geqslant 0\) , \(a \in \mathbf{A}\) , \(i_\alpha \in \mathbf{I}\) 且 \(p_\alpha \in \mathrm{P}_{i_\alpha} - \{e_{i_\alpha}\}\) （\(1 \leqslant \alpha \leqslant n\) ），并且 \(i_\alpha \neq i_{\alpha+1}\) （\(1 \leqslant \alpha < n\) ）。设 \(\Phi\) 表示由下式定义的 \(\Sigma\) 到 \(\mathbf{M}\) 中的映射：
+
+\[
+\Phi (a; i _ {1}, \dots , i _ {n}; p _ {1}, \dots , p _ {n}) = h (a). \prod_ {\alpha = 1} ^ {n} \phi_ {i _ {\alpha}} (p _ {\alpha}).\tag{4}
+\]
+
+\(x \in \mathbf{M}\) 的一个既约分解是某个元素 \(\sigma\) ，它属于 \(\Sigma\) 且满足 \(\Phi(\sigma) = x\) 。对所有 \(i \in \mathbf{I}\) ，设 \(\Sigma_i\) 为 \(\Sigma\) 的由序列 \((e; i_1, \ldots, i_n; p_1, \ldots, p_n)\) （其中 \(i \neq i_1\) ，当 \(n > 0\) ）组成的子集。设
+
+\[
+\sigma = (e; i _ {1}, \dots , i _ {n}; p _ {1}, \dots , p _ {n})
+\]
+
+为 \(\Sigma_{i}\) 中的序列，并设 \(\xi\) 在 \(\mathbf{M}_i\) 中；令 \(\xi = h_i(a).p\) ，其中 \(a\in \mathbf{A}\) , \(p\in \mathbf{P}_i\) ，且
+
+\[
+\Psi_ {i} (\xi , \sigma) = \left\{ \begin{array}{l l} (a; i _ {1}, \dots , i _ {n}; p _ {1}, \dots , p _ {n}) & \text { if } p = e _ {i} \\ (a; i, i _ {1}, \dots , i _ {n}; p, p _ {1}, \dots , p _ {n}) & \text { if } p \neq e _ {i}. \end{array} \right.\tag{5}
+\]
+
+显然 \(\Psi_{i}\) 是 \(\mathbf{M}_i\times \Sigma_i\) 到 \(\Sigma\) 上的双射。
+
+设 \(i \in I\) 与 \(x \in M_i\) ；由于 \(\Psi_i\) 是双射，一个映射 \(f_{i,x}\) （从 \(\Sigma\) 到自身）由下式定义：
+
+\[
+f _ {i, x} (\Psi_ {i} (\xi , \sigma)) = \Psi_ {i} (x \xi , \sigma) \quad (\xi \in \mathbf {M} _ {i}, \sigma \in \Sigma_ {i}).\tag{6}
+\]
+
+进一步，对于 \(a \in \mathbf{A}, f_a\) ，用它表示由下式定义的 \(\Sigma\) 到自身的映射：
+
+\[
+f _ {a} (a ^ {\prime}; i _ {1}, \dots , i _ {n}; p _ {1}, \dots , p _ {n}) = (a a ^ {\prime}; i _ {1}, \dots , i _ {n}; p _ {1}, \dots , p _ {n}).\tag{7}
+\]
+
+显然 \(f_{i, e_i}\) 是 \(\Sigma\) 的恒等映射，并且 \(f_{i, xx'} = f_{i, x} \circ f_{i, x'}\) 对 \(x, x'\) （在 \(M_i\) 中）成立，而 \(f_{i, h_i(a)} = f_a\) 对 \(a \in A\) 与 \(i \in I\) 成立。
+
+于是命题 4 可应用于下述情形： \(\mathbf{M}'\) 是 \(\Sigma\) 到自身的映射所成的幺半群，其合成律为 \((f, f') \mapsto f \circ f'\) ，而 \(f_{i}\) 是同态 \(x \mapsto f_{i,x}\) ，它把 \(\mathbf{M}_{i}\) 映入 \(\mathbf{M}'\) ；则存在一个同态 \(f\) ，它把 \(\mathbf{M}\) 映入 \(\mathbf{M}'\) ，使得 \(f_{i,x} = f(\phi_i(x))\) 对 \(i \in \mathbf{I}\) 与 \(x \in \mathbf{M}_i\) 成立。设
+
+\[
+\sigma = (a; i _ {1}, \dots , i _ {n}; p _ {1}, \dots , p _ {n})
+\]
+
+为 \(\Sigma\) 中的序列。公式 (5) 至 (7) 通过对 \(n\) 作归纳给出关系
+
+\[
+\begin{array}{l} \sigma = (f _ {a} \circ f _ {i _ {1}, p _ {1}} \circ \dots \circ f _ {i _ {n}, p _ {n}}) (e) \\ = f (h (a) \phi_ {i _ {1}} (p _ {1}) \dots \phi_ {i _ {n}} (p _ {n})) (e), \end{array}
+\]
+
+即 \(\sigma = f(\Phi(\sigma))(e)\) 。这就证明了 \(\Phi\) 是单射。
+
+\BourbakiRunInHeading{(B) 分解的存在性：}
+
+设 D 为 M 中容许有分解的元素所成的集合。则 \(e \in D\) ，且 M 由 \(\bigcup_{i \in I} \phi_i(M_i)\) 、从而由 \(h(A) \cup \bigcup_{i \in I} \phi_i(P_i)\) 生成。于是 \(D \cdot \phi_i(P_i) \subset D\) 对所有 \(i \in I\) 成立；因此要证明 D = M，只需证明关系式 \(D \cdot h(A) \subset D\) ，而这由下面更精确的引理得出：
+
+引理 1. 设 \(i_1, \ldots, i_n\) 属于 I，且 \(p_\alpha\) 在 \(\mathbf{P}_{i_\alpha}\) 中（\(1 \leqslant \alpha \leqslant n\) ）。对所有 \(a \in A\) ，存在 \(a' \in A\) 及一个序列 \((p'_\alpha)_{1 \leqslant \alpha \leqslant n}\) ，其中 \(p'_\alpha \in \mathbf{P}_{i_\alpha}\) ，使得
+
+\[
+\phi_ {i _ {1}} (p _ {1}) \dots \phi_ {i _ {n}} (p _ {n}) h (a) = h (a ^ {\prime}) \phi_ {i _ {1}} (p _ {1} ^ {\prime}) \dots \phi_ {i _ {n}} (p _ {n} ^ {\prime}).
+\]
+
+\(h(a) = \phi_{i_n}(h_{i_n}(a))\) ，并且存在 \(a_{n} \in \mathbf{A}\) 与 \(p_n' \in \mathbf{P}_{i_n}\) 满足
+
+\[
+p _ {n} \cdot h _ {i _ {n}} (a) = h _ {i _ {n}} (a _ {n}) \cdot p _ {n} ^ {\prime}.
+\]
+
+由此可得 \(\phi_{i_n}(p_n)h(a) = h(a_n)\phi_{i_n}(p_n')\) ，从而
+
+\[
+\phi_ {i _ {1}} (p _ {1}) \dots \phi_ {i _ {n - 1}} (p _ {n - 1}) \phi_ {i _ {n}} (p _ {n}) h (a) = \phi_ {i _ {1}} (p _ {1}) \dots \phi_ {i _ {n - 1}} (p _ {n - 1}) h (a _ {n}) \phi_ {i _ {n}} (p _ {n} ^ {\prime});
+\]
+
+引理由此通过对n的归纳得出。
+
+\BourbakiRunInHeading{(C) 证明结束：}
+
+设 \(x \in M\) ，n 为 x 的诸分解长度的最小值。我们将证明 x 的每个长度为 n 的分解 \(\sigma\) 都是既约的。这就确立了对 x 的既约分解的存在性；既约分解的唯一性进而蕴含 \(l(\sigma') > l(\sigma)\) 对 x 的每个分解 \(\sigma' \neq \sigma\) 成立。
+
+情形 \(n = 0\) 是平凡的，故设 \(n > 0\) 。设
+
+\[
+\sigma = (a; i _ {1}, \dots , i _ {n}; p _ {1}, \dots , p _ {n})
+\]
+
+为 \(x\) 的一个长度为 \(n\) 的分解。如果存在整数 \(\alpha\) 满足 \(1 \leqslant \alpha \leqslant n\) 且 \(p_{\alpha} = e_{i_{\alpha}}\) ，则序列
+
+\[
+(a; i _ {1}, \dots , i _ {\alpha - 1}, i _ {\alpha + 1}, \dots , i _ {n}; p _ {1}, \dots , p _ {\alpha - 1}, p _ {\alpha + 1}, \dots , p _ {n})
+\]
+
+将是 \(x\) 的一个长度为 \(n - 1\) 的分解，这是被排除的。假设存在整数 \(\alpha\) 满足 \(1 \leqslant \alpha < n\) 且 \(i_{\alpha} = i_{\alpha + 1}\) ，并设
+
+\[
+p _ {\alpha} p _ {\alpha + 1} = h _ {i _ {\alpha}} \left(a ^ {\prime}\right) \cdot p _ {\alpha} ^ {\prime}
+\]
+
+其中 \(a' \in \mathbf{A}\) , \(p_{\alpha}' \in \mathrm{P}_{t_{\alpha}}\) ；根据引理 1 ，存在元素 \(a'' \in \mathbf{A}\) ,
+
+\[
+p _ {1} ^ {\prime} \in \mathrm{P} _ {i _ {1}}, \dots , p _ {\alpha - 1} ^ {\prime} \in \mathrm{P} _ {i _ {\alpha - 1}}
+\]
+
+使得
+
+\[
+\phi_ {i _ {1}} (p _ {1}) \dots \phi_ {i _ {\alpha - 1}} (p _ {\alpha - 1}) h (a ^ {\prime}) = h (a ^ {\prime \prime}) \phi_ {i _ {1}} (p _ {1} ^ {\prime}) \dots \phi_ {i _ {\alpha - 1}} (p _ {\alpha - 1} ^ {\prime})
+\]
+
+且序列
+
+\[
+\left(a a ^ {\prime \prime}; i _ {1}, \dots , i _ {\alpha - 1}, i _ {\alpha}, i _ {\alpha + 2}, \dots , i _ {n}; p _ {1} ^ {\prime}, \dots , p _ {\alpha - 1} ^ {\prime}, p _ {\alpha} ^ {\prime}, p _ {\alpha + 2}, \dots , p _ {n}\right)
+\]
+
+是 \(x\) 的一个长度为 \(n - 1\) 的分解，这是一个矛盾。
+
+这样我们就证明了 \(\sigma\) 是既约的。
+
+推论。在假设 (A) 下，同态 \(\phi_i\) 与 \(h\) 都是单射。对 I 中 \(i \neq j\) ，有 \(\phi_i(M_i) \cap \phi_j(M_j) = h(A)\) 。
+
+首先 \(h\) 是单射的：如果 \(h(a) = h(a')\) ，则 (a) 与 \((a')\) 是 \(\mathbf{M}\) 中同一元素的两个既约分解，由此 \(a = a'\) 。设 \(i \in \mathbf{I}\) ；于是 \(h(\mathbf{A}) = \phi_i(h_i(\mathbf{A})) \subset \phi_i(\mathbf{M}_i)\) ；既约分解的唯一性蕴含
+
+\[
+h (\mathrm{A}) \cap \phi_ {i} (\mathrm{M} _ {i} - h _ {i} (\mathrm{A})) = \varnothing ,
+\]
+
+，从而 \(\phi_{i}(\mathbf{M}_{i} - h_{i}(\mathbf{A})) = \phi_{i}(\mathbf{M}_{i}) - h(\mathbf{A}).\)
+
+诸同态 \(\phi_{i}\) 的单射性以及关系
+
+\[
+\phi_ {i} (\mathbf {M} _ {i}) \cap \phi_ {j} (\mathbf {M} _ {j}) \subset h (\mathrm{A})
+\]
+
+对 \(i \neq j\) 成立这一点则是下述事实的推论：对 \(i, j\) 属于 \(I, x\) 属于 \(M_i = h_i(A)\) 与 \(y\) 属于 \(M_j = h_j(A)\) ，关系 \(\phi_i(x) = \phi_j(y)\) 蕴含 \(i = j\) 且 \(x = y\) 。设 \(x = h_i(a).p\) 与 \(y = h_j(b).q\) ，其中 \(a, b\) 在 \(A, p\) 在 \(P_i = \{e_i\}\) 中且 \(y\) 在 \(P_j = \{e_j\}\) 中。则 \(\phi_i(x) = h(a)\phi_i(p)\) 且 \(\phi_j(y) = h(b)\phi_j(q)\) ，因此 \((a; i; p)\) 与 \((b; j; q)\) 是 \(M\) 中同一元素的两个既约分解。由此可得 \(i = j, a = b\) 且 \(p = q\) ，从而 \(x = h_i(a)p = h_j(b)q = y\) 。
+
+当假设 (A) 成立时，我们将把每个幺半群 \(M_{i}\) 借助 \(\phi_{i}\) 与 M 的一个子幺半群等同起来；类似地，把 A 借助 h 与 M 的一个子幺半群等同起来。于是 M 由 \(\bigcup_{i\in I}M_{i}\) 生成，且 \(M_{i}\cap M_{j}=A\) 对 \(i\neq j\) 成立。
+
+M 的每个元素都可以唯一地写成 \(a.\prod_{\alpha=1}p_{\alpha}\) 的形式，其中 \(a\in A, p_{1}\in P_{i1}=\{e\},\ldots,p_{n}\in P_{in}=\{e\}\) 且 \(i_{\alpha}\neq i_{\alpha+1}\) 对 \(1\leqslant\alpha<n\) 成立。最后，若 \(M'\) 是一个幺半群，且 \((f_{i}:M_{i}\to M')\) （\(i\in I\) ）是一族同态，它们在 A 上的限制都是 A 到 \(M'\) 中的同一个同态，则存在且仅存在一个同态 \(f:M\to M'\) ，它诱导出 \(f_{i}\) （在 \(M_{i}\) 上），对所有 \(i\in I\) 。
+
+假设 (A) 在两种重要情形下成立：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  \(\mathbf{A} = \{e\}\) 。在这种情形，有一族幺半群 \((\mathbf{M}_i)_{i\in I}\) ，而 \(\mathbf{M}\) 称为该族的幺半和。每个 \(\mathbf{M}_i\) 与 \(\mathbf{M}\) 的一个子幺半群等同，且 \(\mathbf{M}\) 由 \(\bigcup_{i\in I}\mathbf{M}_i\) 生成；进一步，\(\mathbf{M}_i\cap \mathbf{M}_j = \{e\}\) 对 \(i\neq j\) 成立。 \(\mathbf{M}\) 的每个元素都可以唯一地写成 \(x_{1}\ldots x_{n}\) 的形式，其中
+\end{enumerate}
+
+\[
+x _ {1} \in \mathrm{M} _ {i _ {1}} - \{e \}, \dots , x _ {n} \in \mathrm{M} _ {i _ {n}} - \{e \}
+\]
+
+且 \(i_{\alpha} \neq i_{\alpha + 1}\) （\(1 \leqslant \alpha \leqslant n\) ）。最后，对每一族同态 \((f_i: \mathbf{M}_i \to \mathbf{M}')\) ，存在唯一的同态 \(f: \mathbf{M} \to \mathbf{M}'\) ，它在 \(\mathbf{M}_i\) 上的限制为 \(f_i\) ，对所有 \(i \in I\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  存在一族群 \((\mathbf{G}_i)_{i\in I}\) ，它们包含同一个群 A 作为子群，且 \(h_i\) 是 A 到 \(\mathbf{G}_i\) 中的单射。族 \((\mathbf{G}_i)_{i\in I}\) 由 A 融合后的和这时是一个群 G：幺半群 G 由 \(\bigcup_{i\in I}\phi_i(\mathbf{G}_i)\) 生成，且 \(\bigcup_{i\in I}\phi_i(\mathbf{G}_i)\) 的每个元素在 G 中都有逆元（参见 § 2，第 3 号，命题 4 的推论 1）；它记作 \(\star_{\mathrm{A}}\mathrm{G}_{i}\) ，也记作 \(\mathrm{G}_{1}*\mathrm{A}\mathrm{G}_{2}\) （当 \(\mathbf{I} = \{1,2\}\) ）。当 A 仅由单位元组成时，也称 G 是群族 \((\mathbf{G}_i)_{i\in I}\) 的自由积，记作 \(\star \mathbf{G}_i\) （或 \(\mathbf{G}_1*\mathbf{G}_2\) ，若 \(\mathbf{I} = \{1,2\}\) ）。†
+\end{enumerate}
+
+\subsection{对自由幺半群的应用}
+
+引理2. 设 \(\mathbf{M}\) 是族 \((M_x)_{x\in \mathbf{X}}\) 的幺半和，该族由 \(\mathbf{M}_x = \mathbf{N}\) （对所有 \(x\in \mathbf{X}\) ）定义，并设 \(\phi_{x}\) 是 \(\mathbf{M}_x\) 到 \(\mathbf{M}\) 中的典范同态。映射 \(x\mapsto \phi_x(1)\) （从 \(\mathbf{X}\) 到 \(\mathbf{M}\) ）可扩张为一个同构 \(h\) （从 \(\operatorname {Mo}(\mathbf{X})\) 到 \(\mathbf{M}\) 上）。
+
+设 \(h\) 是 \(\operatorname{Mo}(\mathbf{X})\) 到 \(\mathbf{M}\) 中的、以 \(h(x) = \phi_x(1)\) 为特征的同态。对每个整数 \(n \geqslant 0\) ，有 \(\phi_x(n) = \phi_x(1)^n = h(x)^n\) ，而且由于 \(\mathbf{M}\) 由 \(\bigcup_{x \in \mathbf{X}} \phi_x(\mathbf{N})\) 生成，它也由 \(h(\mathbf{X})\) 生成。因此 \(h\) 是满射。此外，对所有 \(x\) （属于 \(\mathbf{X}\) ），映射 \(n \mapsto x^n\) 是 \(\mathbf{N} = \mathbf{M}_x\) 到 \(\operatorname{Mo}(\mathbf{X})\) 中的同态；因此存在（第 3 号，命题 4）一个同态 \(h'\) ，它把 \(\mathbf{M}\) 映入 \(\operatorname{Mo}(\mathbf{X})\) ，使得 \(h'(\phi_x(n)) = x^n\) 对 \(x \in \mathbf{X}\) 和 \(n \in \mathbf{N}\) 成立；特别地， \(h'(h(x)) = x\) 对 \(x \in \mathbf{X}\) 成立，因此 \(h' \circ h\) 是 \(\operatorname{Mo}(\mathbf{X})\) 的恒等同态。于是 \(h\) 是单射。这样就证明了 \(h\) 是双射。
+
+命题6. 设 \(w\) 是 \(\mathbf{Mo}(\mathbf{X})\) 的一个元素。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  存在一个整数 \(n \geqslant 0\) 、元素 \(x_{\alpha}\) （属于 \(\mathbf{X}\) ）以及整数 \(m(\alpha) > 0\) （对于
+\end{enumerate}
+
+\(1 \leqslant \alpha \leqslant n\) ），使得 \(x_{\alpha} \neq x_{\alpha + 1}\) 对 \(1 \leqslant \alpha < n\) 成立，且 \(w = \prod_{\alpha = 1}^{n} x_{\alpha}^{m(\alpha)}\) 。序列 \((x_{\alpha}, m(\alpha))_{1 \leqslant \alpha \leqslant n}\) 由这些条件唯一确定。
+
+\[
+x _ {\beta} ^ {\prime}
+\]
+
+\[
+m ^ {\prime} (\beta)
+\]
+
+\[
+1 \leqslant \beta \leqslant p
+\]
+
+(b) \(w = \prod_{\beta=1}^{p} x'^{m'(\beta)}.\) 那么 \(p \geqslant n\) 。若 \(p = n\) ，则 \(x_{\beta}' = x_{\beta}\) 且 \(m'(\beta) = m(\beta)\) 对 \(1 \leqslant \beta \leqslant p\) 成立。
+
+在引理2的记号下， \(\bar{h}^{1}(\phi_x(n)) = x^n\) 对 \(x \in \mathbf{X}\) 和 \(n \in \mathbf{N}\) 成立。命题 6 随后由第 3 号命题 5 得出。
+
+\subsection{自由群}
+
+设 \(G_x = Z\) ，对所有 \(x \in X\) 。族 \((G_x)_{x \in X}\) 的自由积称为在 \(X\) 上构造的自由群，记作 \(F(X)\) 。设 \(\phi_x\) 是 \(G_x = Z\) 到 \(F(X)\) 中的典范同态。根据第 3 号命题 5 的推论，映射 \(x \mapsto \phi_x(1)\) （从 \(X\) 到 \(F(X)\) ）是单射；我们将把 \(X\) 与它在该映射下在 \(F(X)\) 中的像等同起来。于是 \(X\) 生成 \(F(X)\) 且 \(e \notin X\) 。
+
+应用第3号命题5，我们得到以下结果：
+
+命题7. 设 \(g\) 是自由群 \(F(X)\) 的一个元素。存在一个整数 \(n \geqslant 0\) 以及一个序列 \((x_{\alpha}, m(\alpha))_{1 \leqslant \alpha \leqslant n}\) ，它由关系 \(x_{\alpha} \in X\) ,
+
+\[
+g = \prod_ {\alpha = 1} ^ {n} x _ {\alpha} ^ {m (\alpha)}
+\]
+
+唯一确定。自由群 \(F(X)\) 具有如下泛性质：
+
+命题8. 设G是一个群，f是将X映入G的一个映射。存在且仅存在一个同态 \(\bar{f}\) 将F(X)映入G，且扩展 \(f\) .
+
+唯一性 \(\bar{f}\) 由下述事实得出：群 \(\mathrm{F}(\mathbf{X})\) 由 \(\mathbf{X}\) 生成。对所有 \(x\) （属于 \(\mathbf{X}\) ），设 \(f_x\) 是同态 \(n \mapsto f(x)^n\) ，它把 \(\mathbf{Z}\) 映入 \(\mathbf{G}\) 。根据第 3 号命题 4，存在一个同态 \(\bar{f}\) ，它把 \(\mathrm{F}(\mathbf{X})\) 映入 \(\mathbf{G}\) ，使得 \(\bar{f}(x^n) = f_x(n)\) 对 \(x \in \mathbf{X}\) 和 \(n \in \mathbf{Z}\) 成立；特别地， \(\bar{f}(x) = f_x(1) = f(x)\) 对所有 \(x \in \mathbf{X}\) 成立，因此 \(\bar{f}\) 扩张 \(f\) 。
+
+设 \(u: X \to Y\) 是一个映射。根据命题 8，存在且仅存在一个从 \(F(X)\) 到 \(F(Y)\) 的同态，它与 \(u\) 在 \(X\) 上一致；把它记作 \(F(u)\) 。如同广群的情形（第 1 号）一样，公式
+
+\[
+\mathbf {F} (v \circ u) = \mathbf {F} (v) \circ \mathbf {F} (u)
+\]
+
+对每个映射 \(v: \mathbf{Y} \to \mathbf{Z}\) 成立，并且证明了 \(\mathrm{F}(u)\) 在 \(u\) 为单射（相应地为满射、双射）时也为单射（相应地为满射、双射）。对每个子集 \(S\) （属于 \(X\) ）， \(F(S)\) 将与 \(F(X)\) 中由 \(S\) 生成的子群等同起来。
+
+设 I 为一个集合。在某些情形下，不把 I 中的 i 与其典范像 \(\phi_i(1)\) （在自由群 \(\mathbf{F}(\mathbf{I})\) 中）等同起来是有意义的；后者将记作 \(\mathbf{T}_i\) （或 \(\mathbf{T}_i', \mathbf{X}_i, \ldots\) ，视情况而定），并称为指标 \(i\) 的不定元。自由群 \(\mathbf{F}(\mathbf{I})\) 随后记作 \(\mathbf{F}((\mathbf{T}_i)_{i \in 1})\) 或 \(\mathbf{F}(\mathbf{T}_1, \ldots, \mathbf{T}_n)\) （若 \(\mathbf{I} = \{1, 2, \ldots, n\}\) ）。
+
+设 G 为一个群，且 \(\mathbf{t} = (t_{i})_{i \in \mathbf{I}}\) 是 G 的一个元素族。根据命题 8，存在一个同态 \(f_{t}\) ，它把 \(\mathrm{F}((\mathrm{T}_{i})_{i \in \mathbf{I}})\) 映入 G，其特征是 \(f_{\mathbf{t}}(\mathrm{T}_{i}) = t_{i}\) 对所有 \(i \in I\) 成立。 \(\mathrm{F}((\mathrm{T}_{i})_{i \in \mathbf{I}})\) 中的元素 w 在 \(f_{t}\) 下的像将记作 \(w(\mathbf{t})\) 或 \(w(t_{1}, \ldots, t_{n})\) （若 \(I = \{1, 2, \ldots, n\}\) ）；称 \(w(\mathbf{t})\) 是在 w 中以替换 \(T_{i} \mapsto t_{i}\) 所得的结果。特别地，若取 \(\mathrm{G} = \mathrm{F}((\mathrm{T}_{i})_{i \in \mathbf{I}})\) 且 \((t_{i}) = (\mathrm{T}_{i}) = \mathbf{T}\) ，则 \(f_{T}\) 是 G 的恒等同态，从而 \(w(\mathbf{T}) = w\) ；对 \(I = \{1, 2, \ldots, n\}\) ，则 \(w(\mathrm{T}_{1}, \ldots, \mathrm{T}_{n}) = w\) 。
+
+设 G 与 G' 为两个群，u 为 G 到 G' 中的一个同态，且 \(\mathbf{t} = (t_{1}, \ldots, t_{n})\) 为 G 中元素的一个有限序列。设 \(\mathbf{t}' = (u(t_{1}), \ldots, u(t_{n}))\) ；同态 \(u \circ f_{t}\) （从 \(\mathrm{F}(\mathrm{T}_{1}, \ldots, \mathrm{T}_{n})\) 到 G' 中）把 \(T_{i}\) 映到 \(u(t_{i})\) （对 \(1 \leqslant i \leqslant n\) ），因此等于 \(f_{t'}\) ；对 \(\mathrm{F}(\mathrm{T}_{1}, \ldots, \mathrm{T}_{n})\) 中的 w，则
+
+\[
+u (w (t _ {1}, \dots , t _ {n})) = w (u (t _ {1}), \dots , u (t _ {n})).\tag{8}
+\]
+
+设给定了 \(w\) （在 \(F(T_1, \ldots, T_n)\) 中）以及元素 \(v_1, \ldots, v_n\) （在自由群 \(F(T_1', \ldots, T_m')\) 中）。替换 \(T_i \mapsto v_i\) 定义了元素 \(w' = w(v_1, \ldots, v_n)\) （属于 \(F(T_1', \ldots, T_m')\) ）。设 \(G\) 为一个群， \(t_1, \ldots, t_m\) 为 \(G\) 的元素，而 \(u\) 为 \(F(T_1', \ldots, T_m')\) 到 \(G\) 中的同态，其特征是 \(u(T_j') = t_j\) 对 \(1 \leqslant j \leqslant m\) 成立。则 \(u(v_i) = v_i(t_1, \ldots, t_m)\) 且 \(u(w') = w(t_1, \ldots, t_m)\) ；公式 (8) 由此蕴含
+
+\[
+w ^ {\prime} (t _ {1}, \dots , t _ {m}) = w (v _ {1} (t _ {1}, \dots , t _ {m}), \dots , v _ {n} (t _ {1}, \dots , t _ {m})).\tag{9}
+\]
+
+这证明了“函数记号” \(w(t_{1},\ldots,t_{n})\) 的合理性。读者需自行将公式 (8) 和 (9) 推广到任意指标集的情形。
+
+\subsection{群的表现}
+
+设 G 为一个群，且 \(\mathbf{t} = (t_{i})_{i \in I}\) 是 G 的一个元素族。设 \(f_{t}\) 为自由群 F(I) 到 G 的、把 i 映到 \(t_{i}\) 的唯一同态。 \(f_{t}\) 的像是由元素 \(t_{i}\) 生成的 G 的子群。 \(f_{t}\) 的核的元素称为族 t 的关系子。若 \(f_{t}\) 是满射（相应地单射、双射），则称 t 为生成族（相应地自由族、基本族）。
+
+设 G 为一个群。G 的一个表现是一个有序对 \((\mathbf{t}, \mathbf{r})\) ，它由一个生成族 \(\mathbf{t} = (t_{i})_{i \in I}\) 和一个关系子族 \(\mathbf{r} = (r_{j})_{j \in J}\) 组成，使得 \(N_{t}\) （即 \(f_{t}\) 的核）由元素 \(gr_{j}g^{-1}\) （对 \(g \in \mathrm{F}(\mathrm{I})\) 和 \(j \in J\) ）生成。这等价于说 \(N_{t}\) 是由 \(r_{j}\) （对 \(j \in J\) ）生成的 F(I) 的正规子群（换言之，是 F(I) 中包含元素 \(r_{j}\) ( \(j \in J\) ) 的最小正规子群；参见 § 4，第 4 号）。以语言上的滥用，称生成元 \(t_{i}\) 和关系 \(r_{j}(\mathbf{t}) = e\) 构成群 G 的一个表现。
+
+设 I 为一个集合，且 \(\mathbf{r} = (r_j)_{j \ensuremath{\in} J}\) 为自由群 F(I) 的一族元素。设 N(r) 为由 \(r_j\) （对 \(j \ensuremath{\in} J\) ）生成的 F(I) 的正规子群。设 F(I, r) = F(I)/N(r)，并记 \(\tau_i\) 为 \(i\) 模 N(r) 的类。有序对 \((\tau, \mathbf{r})\) （其中 \(\tau = (\tau_i)_{i \ensuremath{\in} I}\) ）是群 F(I, r) 的一个表现；若 G 是一个群且 (t, r) 是 G 的一个表现，其中 t = (t\_i)\_\{i \ensuremath{\in} I\}，则存在唯一的同构 \(u\) ，它把 F(I, r) 映到 G 上，使得 \(u(\tau_i) = t_i\) 对所有 \(i \ensuremath{\in} I\) 成立。称群 F(I, r) 由生成元 \(\tau_i\) 和关系子 \(r_j\) 定义，或者以语言上的滥用，称它由生成元 \(\tau_i\) 和关系 \(r_j(\tau) = e\) 定义。当 I = {[}1, n{]} 且 J = {[}1, m{]}时，称 F(I, r) 由该表现定义
+
+\[
+\langle \tau_ {1}, \dots , \tau_ {n}; r _ {1}, \dots , r _ {m} \rangle .
+\]
+
+若 \(r_j = u_j^{-1}v_j\) ，其中 \(u_j\) 和 \(v_j\) 属于 \(\mathrm{F(I)}\) ，则该表现同样用符号
+
+\[
+\langle \tau_ {1}, \dots , \tau_ {n}; u _ {1} = v _ {1}, \dots , u _ {m} = v _ {m} \rangle .
+\]
+
+例子。(1) 由表现 \(\langle \tau; \tau^q = e \rangle\) 定义的群是 \(q\) 阶循环群。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  由表现 \(\langle x, y; xy = yx \rangle\) 定义的群同构于 \(\mathbf{Z} \times \mathbf{Z}\) 。
+\end{enumerate}
+
+命题 9. 设 G 是一个群， \(\mathbf{t} = (t_i)_{i \in I}\) 是 G 的一个生成族， \(\mathbf{r} = (r_j)_{j \in J}\) 是 \(\mathbf{t}\) 的一个关系子族。以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  有序对 \((\mathbf{t},\mathbf{r})\) 是 G 的一个表现。
+\item
+  设 \(\mathbf{G}'\) 为一个群，且 \(\mathbf{t}' = (t_i')_{i \in \mathbf{I}}\) 为 \(\mathbf{G}'\) 的一个元素族。若 \(r_j(\mathbf{t}') = e\) 对所有 \(j \in \mathbf{J}\) 成立，则存在一个同态 \(u\) ，它把 \(\mathbf{G}\) 映入 \(\mathbf{G}'\) ，使得 \(u(t_i) = t_i'\) 对所有 \(i \in \mathbf{I}\) 成立。
+\item
+  设 \(\overline{\mathbf{G}}\) 为一个群，且 \(\overline{\mathbf{t}} = (\bar{t}_i)_{i\in \mathbf{I}}\) 为 \(\overline{\mathbf{G}}\) 的一个生成族，满足 \(r_j(\overline{\mathbf{t}}) = e\) 对所有 \(j\in \mathbf{J}\) 成立。每一个把 \(\overline{\mathbf{G}}\) 映入 \(\mathbf{G}\) 、且把 \(\bar{t}_i\) 映到 \(t_i\) （对所有 \(i\in \mathbf{I}\) ）的同态都是同构。
+\end{enumerate}
+
+设 \(f\) 表示 \(\mathbf{F}(\mathbf{I})\) 到 \(\mathbf{G}\) 中的、把 \(i\) 映到 \(t_i\) （对所有 \(i \in \mathbf{I}\) ）的同态，并设 \(\mathbf{N}\) 为 \(f\) 的核。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  \(\Rightarrow\) (b)：假设 \((\mathbf{t},\mathbf{r})\) 是 G 的一个表现，且令 \(\mathbf{t}' = (t_i')_{i\in I}\) 是某个群 \(\mathbf{G}'\) 的元素的一个族，满足 \(r_j(\mathbf{t}') = e\) 对所有 \(j\in J\) 成立。设 \(f'\) 是 F(I) 到 \(\mathbf{G}'\) 中的、以 \(f'(i) = t_i'\) （对所有 \(i\in I\) ）为特征的同态。根据假设， \(f'(r_j) = e\) 对所有 \(j\in J\) 成立，且由于 N 由元素 \(gr_jg^{-1}\) （对 \(j\in J\) 和 \(g\in \mathrm{F}(\mathrm{I}),f'(\mathrm{N}) = \{e\}\) ）生成。由于同态 \(f\colon \mathrm{F}(\mathrm{I})\to \mathrm{G}\) 是满射且核为 N，因此存在一个同态 \(u\colon \mathrm{G}\to \mathrm{G}'\) ，使得 \(f' = u\circ f\) 。于是 \(u(t_i) = u(f(i)) = f'(i) = t_i'\) 。
+\item
+  \(\Rightarrow\) (c)：假设条件 (b) 成立。设 \(\mathbf{t} = (t_i)_{i\in I}\) 是群 G 的一个生成族，满足 \(r_j(\mathbf{t}) = e\) 对所有 \(j\in J\) 成立，并设 \(v\) 是 \(\overline{\mathbf{G}}\) 到 G 中的同态，满足 \(v(t_i) = t_i\) 对所有 \(i\in I\) 成立。由于族 \((t_i)_{i\in I}\) 生成 G，同态 \(v\) 是满射的。根据性质 (b)，存在一个同态 \(u\colon G\to \overline{\mathbf{G}}\) ，使得 \(u(t_i) = \bar{t}_i\) 对所有 \(i\in I\) 成立。则 \(u(v(\bar{t}_i)) = \bar{t}_i\) 对所有 \(i\in I\) 成立，因此 \(u \circ v\) 是 \(\overline{G}\) 上的恒等映射，这证明了 \(v\) 是单射。于是 \(v\) 是一个同构，且条件 (c) 成立。
+\item
+  \(\Rightarrow\) (a)：假设条件 (c) 成立。设 \(t_i'\) 为 \(i\) 在 \(\mathbf{F}(\mathbf{I},\mathbf{r})\) 中的典范像，并设 \(\mathbf{t}' = (t_i')_{i\in \mathbf{I}}\) ；于是 \(r_j(\mathbf{t}') = e\) 对所有 \(j\in \mathbf{J}\) 成立。由于 \(r_j(\mathbf{t}) = e\) 对所有 \(j\in \mathbf{J}\) 成立，存在且仅存在一个同态 \(v\) ，它把 \(\mathbf{F}(\mathbf{I},\mathbf{r})\) 映入 \(\mathbf{G}\) ，使得 \(v(\bar{t}_i) = t_i\) 对所有 \(i\in \mathbf{I}\) 成立。根据 (c)， \(v\) 是 \(\mathbf{F}(\mathbf{I},\mathbf{r})\) 到 \(\mathbf{G}\) 上的一个同构，它把表现 \((\mathbf{t}',\mathbf{r})\) （\(\mathbf{F}(\mathbf{I},\mathbf{r})\) 的）变为表现 \((\mathbf{t},\mathbf{r})\) （\(\mathbf{G}\) 的）。
+\end{enumerate}
+
+\subsection{自由交换群与自由交换幺半群}
+
+集合 \(\mathbf{Z}^{\mathbf{x}}\) （由所有 \(\mathbf{X}\) 到 \(\mathbf{Z}\) 中的映射组成）在由 \((\alpha + \beta)(x) = \alpha(x) + \beta(x)(\alpha, \beta \in \mathbf{Z}^{\mathbf{x}}, x \in \mathbf{X})\) 定义的合成律下构成一个交换群； \(\mathbf{Z}^{\mathbf{x}}\) 的元素有时称为重指标。单位元记作 0，它是恒取值 0 的常值映射。对 \(\alpha \in \mathbf{Z}^{\mathbf{x}}\) ，集合 \(S_{\alpha}\) ，由 \(x \in \mathbf{X}\) （使得 \(\alpha(x) \neq 0\) ）组成，称为 \(\alpha\) 的支集；于是 \(S_0 = \varnothing\) 且 \(S_{\alpha + \beta} \subset S_{\alpha} \cup S_{\beta}\) 对 \(\alpha, \beta\) （在 \(\mathbf{Z}^{\mathbf{x}}\) 中）成立。因此，集合 \(\mathbf{Z}^{(\mathbf{x})}\) （由具有有限支集的映射 \(\alpha: \mathbf{X} \to \mathbf{Z}\) 组成）是 \(\mathbf{Z}^{\mathbf{x}}\) 的一个子群，称为在 \(\mathbf{X}\) 上构造的自由交换群。
+
+对所有 \(x \in \mathbf{X}\) ，设 \(\delta_x\) 表示 \(\mathbf{Z}^{(\mathbf{x})}\) 中由下式定义的元素：
+
+\[
+\delta_ {x} (y) = \left\{ \begin{array}{l l} 1 & \text { if } y = x \\ 0 & \text { if } y \neq x. \end{array} \right.\tag{10}
+\]
+
+此外，对 \(\alpha \in \mathbf{Z}^{(\mathbf{x})}\) ，整数 \(|\alpha|\) ，即 \(\alpha\) 的长度，由公式定义
+
+\[
+| \alpha | = \sum_ {x \in X} \alpha (x).\tag{11}
+\]
+
+以下关系立即成立：
+
+\[
+\alpha = \sum_ {x \in \mathbf {X}} \alpha (x) \cdot \delta_ {x}\tag{12}
+\]
+
+\[
+\left| \delta_ {x} \right| = 1, \quad \left| 0 \right| = 0\tag{13}
+\]
+
+\[
+| \alpha + \beta | = | \alpha | + | \beta |\tag{14}
+\]
+
+对 \(\alpha, \beta\) （在 \(\mathbf{Z}^{(\mathbf{X})}\) 中）和 \(x\) （在 \(\mathbf{X}\) 中）成立。
+
+序关系 \(\alpha \leqslant \beta\) 在 \(\mathbf{Z}^{(\mathbf{x})}\) 中由条件 \(\alpha(x) \leqslant \beta(x)\) （对所有 \(x \in \mathbf{X}\) ）定义。关系 \(\alpha \leqslant \beta\) 和 \(\alpha' \leqslant \beta'\) 蕴含 \(\alpha + \alpha' \leqslant \beta + \beta'\) , \(|\alpha| \leqslant |\beta|\) 和 \(-\alpha \geqslant -\beta\) ；进一步，关系 \(\alpha \leqslant \beta\) 等价于 \(\beta - \alpha \geqslant 0\) 。由满足 \(\alpha \geqslant 0\) 的元素（在 \(\mathbf{Z}^{(\mathbf{x})}\) 中）组成的集合记作 \(\mathbf{N}^{(\mathbf{x})}\) ；它是 X 到 N 的具有有限支集的映射组成的集合，并且是 \(\mathbf{Z}^{(\mathbf{x})}\) 的一个子幺半群，称为在 X 上构造的自由交换幺半群。长度为 1 的元素是 \(\mathbf{N}^{(\mathbf{x})} = \{0\}\) 中的极小元素，并且构成 \(\delta_x\) ( \(x \in \mathbf{X}\) ) 的集合。
+
+幺半群 \(\mathbf{N}^{(\mathbf{x})}\) 和群 \(\mathbf{Z}^{(\mathbf{x})}\) 具有以下泛性质。
+
+命题10. 设 M 为交换幺半群（相应地，群），f 为 X 到 M 的映射。存在且仅存在一个从 \(\mathbf{N}^{(\mathbf{x})}\) （相应地 \(\mathbf{Z}^{(\mathbf{x})}\) ）到 M 中的同态，使得 \(g(\delta_x) = f(x)\) 对所有 \(x \in \mathbf{X}\) 成立。若 \(\mathbf{M}\) 以加法记写，则 \(g(\alpha) = \sum_{x \in \mathbf{X}} \alpha(x) \cdot f(x)\) 对所有 \(\alpha\) （在 \(\mathbf{N}^{(\mathbf{x})}\) （相应地 \(\mathbf{Z}^{(\mathbf{x})}\) ）中）成立。
+
+设 \(g\) 是 \(\mathbf{N}^{(\mathbf{X})}\) （相应地 \(\mathbf{Z}^{(\mathbf{X})}\) ）到 \(\mathbf{M}\) 中的同态，使得 \(g(\delta_x) = f(x)\) 对所有 \(x \in \mathbf{X}\) 成立。对所有 \(\alpha\) （在 \(\mathbf{N}^{(\mathbf{X})}\) （相应地 \(\mathbf{Z}^{(\mathbf{X})}\) ）中），由 (12) 可得
+
+\[
+g (\alpha) = \sum_ {x \in \mathbf {X}} \alpha (x). g (\delta_ {x}) = \sum_ {x \in \mathbf {X}} \alpha (x). f (x),
+\]
+
+由此得出g的唯一性。
+
+对所有 \(\alpha\) （在 \(\mathbf{N}^{(\mathbf{x})}\) （相应地 \(\mathbf{Z}^{(\mathbf{x})}\) ）中），我们写 \(g(\alpha) = \sum_{x\in \mathbf{X}}\alpha (x).f(x)\) 。那么显然 \(g(0) = 0\) ；对 \(\alpha, \beta\) （在 \(\mathbf{N}^{(\mathbf{x})}\) （相应地 \(\mathbf{Z}^{(\mathbf{x})}\) ）中），
+
+\[
+\begin{array}{r l} g (\alpha + \beta) & = \sum_ {x \in \mathbf {X}} (\alpha (x) + \beta (x)). f (x) \\ & = \sum_ {x \in \mathbf {X}} [ \alpha (x). f (x) + \beta (x). f (x) ] \\ & = \sum_ {x \in \mathbf {X}} \alpha (x). f (x) + \sum_ {x \in \mathbf {X}} \beta (x). f (x) \\ & = g (\alpha) + g (\beta) \end{array}
+\]
+
+，因此 \(g\) 是 \(\mathbf{N}^{(\mathbf{x})}\) （相应地 \(\mathbf{Z}^{(\mathbf{x})}\) ）到 \(\mathbf{M}\) 中的同态。此外，对 \(y\) （属于 \(\mathbf{X}\) ），
+
+\[
+g (\delta_ {y}) = \sum_ {x \in \mathbf {X}} \delta_ {y} (x) \cdot f (x);
+\]
+
+现在 \(\delta_y(x).f(x) = 0\) 对 \(x\neq y\) 成立，而 \(\delta_y(y).f(y) = f(y)\) ，因此 \(g(\delta_y) = f(y)\) 。
+
+设 \(u: X \to Y\) 是一个映射。根据命题 10，存在且仅存在一个从 \(\mathbf{Z}^{(X)}\) 到 \(\mathbf{Z}^{(Y)}\) 中的同态，它把 \(\delta_x\) 映到 \(\delta_{u(x)}\) （对所有 \(x \in X\) ）。它记作 \(\mathbf{Z}^{(w)}\) ；立即可见它把 \(\alpha \in \mathbf{Z}^{(X)}\) 映到元素 \(\beta \in \mathbf{Z}^{(Y)}\) ，后者由下式定义：
+
+\[
+\beta (y) = \sum_ {x \in u ^ {- 1} (y)} \alpha (x).\tag{15}
+\]
+
+如同广群的情形（第 1 号），公式 \(\mathbf{Z}^{(v\circ u)} = \mathbf{Z}^{(v)}\circ \mathbf{Z}^{(y)}\) 对每个映射 \(v\colon \mathbf{Y}\to \mathbf{Z}\) 成立；还可证明 \(\mathbf{Z}^{(u)}\) 在 \(u\) 为单射（相应地满射、双射）时是单射（相应地满射、双射）。
+
+设 \(S\) 是 \(X\) 的一个子集；若 \(i\) 是 \(S\) 到 \(X\) 中的单射，则映射 \(f = \mathbf{Z}^{(i)}\) 是 \(\mathbf{Z}^{(S)}\) 到子群 \(H\) （\(\mathbf{Z}^{(X)}\) 中由元素 \(\delta_s\) （对 \(s \in S\) ）生成的）上的同构。由 (15)，
+
+\[
+(f (\alpha)) (x) = \left\{ \begin{array}{l l} \alpha (x) & \text { if } x \in S \\ 0 & \text { if } x \in X - S \end{array} \right.
+\]
+
+因此 H 是 \(\mathbf{Z}^{(\mathbf{x})}\) 中支集包含于 S 中的元素组成的集合。此后， \(\mathbf{Z}^{(\mathbf{s})}\) 将借助 f 与 H 等同。
+
+公式 (15) 表明， \(\mathbf{Z}^{(u)}\) 在 \(\mathbf{N}^{(\mathbf{X})}\) 上的限制诱导一个同态 \(\mathbf{N}^{(u)}\) （从 \(\mathbf{N}^{(\mathbf{X})}\) 到 \(\mathbf{N}^{(\mathbf{Y})}\) 中）。则 \(\mathbf{N}^{(v\circ u)} = \mathbf{N}^{(v)}\circ \mathbf{N}^{(u)}\) 对每个映射 \(v\colon \mathbf{Y}\to \mathbf{Z}\) 成立；进一步， \(\mathbf{N}^{(u)}\) 在 \(u\) 为单射（相应地满射、双射）时是单射（相应地满射、双射）。如果 \(S\) 是 \(\mathbf{X}\) 的一个子集，
+
+\[
+\mathbf {N} ^ {(\mathbf {S})} = \mathbf {Z} ^ {(\mathbf {S})} \cap \mathbf {N} ^ {(\mathbf {X})}.
+\]
+
+注：设 M 为严格正整数的乘法幺半群，P 为素数集合（§ 4，第 10 号，定义 15）。由命题 10，存在一个同态 u ，它把 \(\mathbf{N}^{(\mathfrak{P})}\) 映入 M，其特征是 \(u(\delta_{p}) = p\) （对每个素数 p）。则 \(u(\alpha) = \prod_{p \in \mathfrak{P}} p^{\alpha(p)}\) 对 \(\alpha\) （属于 \(\mathbf{N}^{(\mathfrak{P})}\) ）成立，且 § 4 第 10 号的定理 7 表明 u 是 \(\mathbf{N}^{(\mathfrak{P})}\) 到 H 上的一个同构。
+
+\subsection{指数记法}
+
+设 M 为一个幺半群，以乘法记写，且 \(\mathbf{u} = (u_{x})_{x \in \mathbf{X}}\) 是 M 的一个元素族，两两交换。设 \(\alpha\) 属于 \(\mathbf{N}^{(\mathbf{X})}\) ；元素 \(u_{x}^{\alpha(x)}\) 和 \(u_{y}^{\alpha(y)}\) （M 中的）在 x, y 属于 X 时交换，并且存在 X 的一个有限子集 S，使得 \(u_{x}^{\alpha(x)} = 1\) 对 x 属于 X - S 成立。因此我们可以写出：
+
+\[
+\mathbf {u} ^ {\alpha} = \prod_ {x \in \mathrm{X}} u _ {x} ^ {\alpha (x)}.\tag{16}
+\]
+
+设 \(\mathbf{M}'\) 为 \(\mathbf{M}\) 的由族 \((u_x)_{x\in \mathbf{X}}\) 生成的子幺半群；它是交换的（§ 1，第 5 号，命题 4 的推论 2）。因此存在（第 7 号，命题 10）一个唯一的同态 \(f\) ，它把 \(\mathbf{N}^{(\mathbf{X})}\) 映入 \(\mathbf{M}'\) ，使得 \(f(\delta_x) = u_x\) 对所有 \(x\in \mathbf{X}\) 成立，且 \(f(\alpha) = \mathbf{u}^{\alpha}\) 对所有 \(\alpha\) （属于 \(\mathbf{N}^{(\mathbf{X})}\) ）成立。我们推导出以下公式
+
+\[
+\mathbf {u} ^ {\alpha + \beta} = \mathbf {u} ^ {\alpha}. \mathbf {u} ^ {\beta}\tag{17}
+\]
+
+\[
+\mathbf {u} ^ {0} = 1\tag{18}
+\]
+
+\[
+\mathbf {u} ^ {\delta_ {x}} = u _ {x}\tag{19}
+\]
+
+对 \(\alpha, \beta\) （在 \(\mathbf{N}^{(\mathbf{x})}\) 中）和 \(x\) （在 \(\mathbf{X}\) 中）成立。
+
+设 \(\mathbf{v} = (v_x)_{x \in \mathbf{X}}\) 是 \(\mathbf{M}\) 的另一个元素族；假设 \(v_x v_y = v_y v_x\) 和 \(u_x v_y = v_y u_x\) 对 \(x, y\) （属于 \(\mathbf{X}\) ）成立。那么存在（§ 1，第 5 号，命题 4 的推论 2）一个交换子幺半群 \(\mathbf{L}\) （\(\mathbf{M}\) 的），使得 \(u_x \in \mathbf{L}\) 和 \(v_x \in \mathbf{L}\) 对所有 \(x \in \mathbf{X}\) 成立。映射 \(\alpha \mapsto u^\alpha . v^\alpha\) （从 \(\mathbf{N}^{(\mathbf{X})}\) 到 \(\mathbf{L}\) 中）则是一个同态（§ 1，第 5 号，命题 5），它把 \(\delta_x\) 映到 \(u_x . v_x\) 。因此我们有公式
+
+\[
+\mathbf {u} ^ {\alpha}. \mathbf {v} ^ {\alpha} = (\mathbf {u}. \mathbf {v}) ^ {\alpha},\tag{20}
+\]
+
+（其中 \(\mathbf{u}.\mathbf{v}\) 是族 \((u_x.v_x)_{x\in \mathbf{X}}\)
+
+当 M 是交换的时， \(u^{\alpha}\) 可对 M 的元素的每个族 u 定义，且公式 (15) 至 (20) 无条件成立。
+
+\subsection{各种自由对象之间的关系}
+
+由于自由幺半群 \(\mathrm{Mo}(\mathbf{X})\) 是一个广群，第 1 号中的命题 1 表明存在一个同态 \(\lambda: \mathrm{M}(\mathbf{X}) \to \mathrm{Mo}(\mathbf{X})\) ，它在 \(\mathbf{X}\) 上的限制是恒等映射。类似地，由于自由群 \(\mathrm{F}(\mathbf{X})\) 是幺半群， \(\mathbf{X}\) 的恒等映射可扩张为同态 \(\mu: \mathrm{Mo}(\mathbf{X}) \to \mathrm{F}(\mathbf{X})\) （第 2 号，命题 3）。由第 4 号命题 6 及第 5 号命题 7， \(\mu\) 是单射的。类似地，第 7 号的命题 10 和第 5 号的命题 8 表明存在同态 \(\nu: \mathrm{Mo}(\mathbf{X}) \to \mathbf{N}^{(\mathbf{X})}\) 和 \(\pi: \mathrm{F}(\mathbf{X}) \to \mathbf{Z}^{(\mathbf{X})}\) ，其特征是 \(\nu(x) = \delta_x\) 和 \(\pi(x) = \delta_x\) 对所有 \(x \in \mathbf{X}\) 成立。若 \(\iota\) 是 \(\mathbf{N}^{(\mathbf{X})}\) 到 \(\mathbf{Z}^{(\mathbf{X})}\) 中的单射，则这两个同态 \(\iota \circ \nu\) 和 \(\pi \circ \mu\) （都把 \(\mathrm{Mo}(\mathbf{X})\) 映入 \(\mathbf{Z}^{(\mathbf{X})}\) ）在 \(\mathbf{X}\) 上重合，因此 \(\iota \circ \nu = \pi \circ \mu\) 。这种情况可以用下面的交换图来概括：
+
+\[
+\begin{array}{c} \mathrm{M} (\mathrm{X}) \xrightarrow {\lambda} \mathrm{Mo} (\mathrm{X}) \xrightarrow {\nu} \mathbf {N} ^ {(\mathrm{X})} \\ \mu \Biggl \downarrow \\ \mathrm{F} (\mathrm{X}) \xrightarrow {\pi} \mathbf {Z} ^ {(\mathrm{X})}. \end{array}
+\]
+
+同态 \(\lambda\) , \(\mu\) , \(\nu\) 和 \(\pi\) 将被称为典范的。
+
+设 \(w\) 的序列 \(\mathbf{M}(\mathbf{X})\) ；通过对 \(l(w)\) 进行归纳可以立即证明，单词 \(\lambda(w)\) 的长度等于 \(w\) 的长度。此外，
+
+\[
+\nu (x _ {1} \dots x _ {n}) = \sum_ {i = 1} ^ {n} \delta_ {x _ {i}}\tag{21}
+\]
+
+对于 \(x_1, \ldots, x_n\) 在X中，因此根据(13)和(14)， \(|\nu(x_1 \ldots x_n)| = n\) 。换句话说，
+
+\[
+\left| \nu (u) \right| = l (u) \quad (u \in \operatorname{Mo} (\mathbf {X})).\tag{22}
+\]
+
+命题11. 典范同态 \(\nu\) 于 \(\operatorname{Mo}(\mathbf{X})\) 到 \(\mathbf{N}^{(\mathbf{X})}\) 是满射。设 \(w = x_1 \ldots x_n\) 和 \(w' = x_1' \ldots x_m'\) 是 \(\operatorname{Mo}(\mathbf{X})\) 的两个元素；为了使 \(\nu(w) = \nu(w')\) ，必要且充分的条件是 \(m = n\) 并且存在一个置换 \(\sigma \in \mathfrak{S}_n\) 使得 \(x_i' = x_{\sigma(i)}\) 对于 \(1 \leqslant i \leqslant n\) .
+
+\(\nu\) 的像是 \(\mathbf{N}^{(\mathbf{x})}\) 的一个子幺半群 I，它包含元素 \(\delta_x\) （对 \(x \in \mathbf{X}\) ）。公式 (12)（第 7 号）表明， \(\mathbf{N}^{(\mathbf{x})}\) 由族 \((\delta_x)_{x \in \mathbf{X}}\) 生成，其中 \(\mathbf{I} = \mathbf{N}^{(\mathbf{x})}\) 。因此 \(\nu\) 是满射。
+
+若 \(m = n\) 且 \(x_{i}^{\prime} = x_{\sigma (i)}\) （对 \(\mathrm{l}\leqslant i\leqslant n\) ），则
+
+\[
+\nu (w ^ {\prime}) = \sum_ {i = 1} ^ {n} \delta_ {x _ {i} ^ {\prime}} = \sum_ {i = 1} ^ {n} \delta_ {x _ {\sigma (i)}} = \sum_ {i = 1} ^ {n} \delta_ {x _ {i}} = \nu (w)
+\]
+
+由公式 (21) 和交换性定理（§ 1，第 5 号，定理 2）得出。
+
+反之，假设 \(\nu(w)\) 和 \(\nu(w')\) 等于同一个元素 \(\alpha\) （属于 \(\mathbf{N}^{(\mathbf{x})}\) ）；由公式 (22)， \(n = |\alpha| = m\) 。对所有 \(x \in \mathbf{X}\) ，设 \(\mathrm{I}_x\) （相应地 \(\mathrm{I}'_x\) ）为整数 \(i\) 组成的集合，满足 \(1 \leqslant i \leqslant n\) 且 \(x_i = x\) （相应地 \(x_i' = x\) ）。因此 \((\mathrm{I}_x)_{x \in \mathbf{X}}\) 和 \((\mathrm{I}'_x)_{x \in \mathbf{X}}\) 是区间 \([1, n]\) （\(\mathbf{N}\) 中的）的分割；进一步，公式 \(\alpha = \sum_{i=1}^{n} \delta_{x_i}\) 表明 \(\alpha(x)\) 是 \(I_x\) 的基数；类似地，公式 \(\alpha = \sum_{i=1}^{\infty} \delta_{x'_i}\) 表明 \(\alpha(x)\) 是 \(\mathbf{I}_x'\) 的基数。因此存在一个置换 \(\sigma\) （\([1, n]\) 的），使得 \(\sigma(\mathbf{I}_x') = \mathbf{I}_x\) 对所有 \(x \in \mathbf{X}\) 成立，即 \(x'_i = x_{\sigma(i)}\) 对 \(i = 1, \ldots, n\) 成立。
+
+注记。设 S 是 X 的一个子集。回顾我们已将 M(S) 与 M(X) 的一个子广群等同，将 Mo(S) 与 Mo(X) 的一个子幺半群等同，并且将 \(\mathbf{N}^{(S)}\) 与 \(\mathbf{N}^{(X)}\) 的一个子幺半群等同。则
+
+\[
+\mathbf {M} (\mathrm{S}) = \lambda^ {- 1} (\mathbf {M o} (\mathrm{S})).\tag{23}
+\]
+
+显然 \(\lambda (\mathbf{M}(\mathbf{S}))\subset \mathbf{Mo}(\mathbf{S})\) 。设 \(w\in \lambda^{-1}(\mathbf{Mo}(\mathbf{S}))\) ；我们通过对 \(l(w)\) 作归纳来证明 \(w\in \mathbf{M}(\mathbf{S})\) 。当 \(l(w) = 1\) 时这是显然的。若 \(l(w) > 1\) ，我们可以写成 \(w = w_{1}w_{2}\) ，其中 \(w_{1},w_{2}\in \mathbf{M}(\mathbf{X}), l(w_{1}) <   l(w),l(w_{2}) <   l(w)\) 。则 \(\lambda (w_1)\lambda (w_2)\in \mathbf{Mo}(\mathbf{S})\) ，因此 \(\lambda (w_1)\in \mathbf{Mo}(\mathbf{S})\) 且 \(\lambda (w_2)\in \mathbf{Mo}(\mathbf{S})\) ，从而由归纳假设 \(w_{1}\in \mathbf{M}(\mathbf{S})\) 且 \(w_{2}\in \mathbf{M}(\mathbf{S})\) ，最后 \(w\in \mathbf{M}(\mathbf{S})\) 。
+
+此外
+
+\[
+\mathbf {M o} (\mathrm{S}) = \nu^ {- 1} (\mathbf {N} ^ {(\mathrm{S})}).\tag{24}
+\]
+
+这由公式（21）直接得出。
+
+进一步， \(\mathbf{N}^{(\mathbf{S})}\) 是 \(\mathbf{N}^{(\mathbf{X})}\) 中支集包含于 S 的元素组成的集合；若 \((\mathrm{S}_i)_{i\in I}\) 是 X 的一个子集族，其交为 S，则 \(\mathbf{N}^{(\mathbf{S})} = \bigcap_{i\in I}\mathbf{N}^{(\mathbf{S}_i)}\) 且公式 (23) 和 (24) 蕴含
+
+\[
+\mathbf {M} (\mathrm{S}) = \bigcap_ {i \in \mathrm{I}} \mathbf {M} (\mathrm{S} _ {i}), \quad \mathbf {M o} (\mathrm{S}) = \bigcap_ {i \in \mathrm{I}} \mathbf {M o} (\mathrm{S} _ {i}).\tag{25}
+\]
+
+\section{环}
+
+\subsection{环}
+
+定义 1. 环是一个集合 A，带有两个合成律，分别称为加法和乘法，满足以下公理：
+
+（AN I）在加法下，A 是一个交换群。
+
+（AN II）乘法是结合的且具有单位元。
+
+（AN III）乘法对加法满足分配律。
+
+环 A 称为交换环，如果其乘法是交换的。
+
+在下文中， \((x,y)\mapsto x+y\) 表示加法， \((x,y)\mapsto xy\) 表示乘法；0 表示加法的单位元，1 表示乘法的单位元。最后，-x 表示 x 在加法下的负元。因此环的公理由以下恒等式表达：
+
+\[
+x + (y + z) = (x + y) + z \quad (\text { associativity   of   addition })\tag{1}
+\]
+
+\[
+x + y = y + x \quad (\text { commutativity   of   addition })\tag{2}
+\]
+
+\[
+0 + x = x + 0 = x \quad (\text { zero })\tag{3}
+\]
+
+\[
+x + (- x) = (- x) + x = 0 \quad (\text { negative })\tag{4}
+\]
+
+\[
+x (y z) = (x y) z \quad (\text { associativity   of   multiplication })\tag{5}
+\]
+
+\[
+x. 1 = 1. x = x \quad (\text { unit   element })\tag{6}
+\]
+
+\[
+\left. \begin{array}{l} (x + y). z = x z + y z \\ x. (y + z) = x y + x z \end{array} \right\} (\text {distributivity})\tag{7, 8}
+\]
+
+最后，环 A 是交换的，如果 \(xy = yx\) 对 \(x, y\) （在 A 中）成立。
+
+仅就加法而言，A 是一个交换群，称为 A 的加法群。对所有 \(x \in A\) ，我们定义左位似 \(\gamma_{x}\) 和右位似 \(\delta_{x}\) 为 \(\gamma_{x}(y) = xy\) , \(\delta_{x}(y) = yx\) 。由公式 (7) 和 (8)， \(\gamma_{x}\) 和 \(\delta_{x}\) 是 A 的加法群的自同态，因此把零映到零，把负元映到负元。因此
+
+\[
+x. 0 = 0. x = 0\tag{9}
+\]
+
+\[
+x. (- y) = (- x). y = - x y;\tag{10}
+\]
+
+由此得出 \((-x)(-y) = -((-x).y) = -(-xy)\) ，从而
+
+\[
+(- x) (- y) = x y.\tag{11}
+\]
+
+公式 (10) 和 (11) 构成符号法则。由此得出
+
+\[
+- x = (- 1) x = x (- 1)
+\]
+
+和 \((-1)(-1) = 1\) 。
+
+由 (11) 通过对 \(n\) 进行归纳可得
+
+\[
+(- x) ^ {n} = \left\{ \begin{array}{l l} x ^ {n} & \text { if   } n \text {   is   even } \\ - x ^ {n} & \text { if   } n \text {   is   odd. } \end{array} \right.\tag{12}
+\]
+
+当我们谈到环 A 中的可消元、可逆元、可置换元、中心元、中心化子或中心时，所有这些概念均指 A 的乘法。若 \(x, y \in A\) 且 y 是可逆的，则 A 的元素 \(xy^{-1}\) 当 A 是交换环时也记作 x/y。A 的可逆元素集在乘法下是稳定的。在乘法诱导的运算下，它构成一个群，称为 A 的乘法群，有时记为 A*。
+
+设 \(x, y\) 属于 A 。 \(x\) 称为 \(y\) 的左（相应地，右）倍元，如果存在 \(y' \in \mathbf{A}\) 使得 \(x = y'y\) （相应地 \(x = yy'\) ）；也常说 \(y\) 是 x 的右（相应地，
+
+左）因子。当 A 是交换的时，无需区分“左”和“右”。
+
+按照上述术语，每个元素 \(y \in A\) 都将被视为 0 的右因子和左因子；但以语言上的滥用，术语“0 的右（相应地，左）因子”通常保留给这样的元素 y：存在 \(x \neq 0\) （在 A 中）满足关系 xy = 0（相应地，yx = 0）。换言之，右（相应地，左）零因子正是右（相应地，左）不可消去的元素。
+
+设 \(x \in A\) 。 \(x\) 称为幂零的，如果存在整数 \(n > 0\) 使得 \(x^n = 0\) 。元素 \(1 - x\) 此时可逆，其逆等于
+
+\[
+1 + x + x ^ {2} + \dots + x ^ {n - 1}.
+\]
+
+由于 A 在加法下构成交换群，元素 \(nx\) 对于 \(n \in \mathbf{Z}\) 和 \(x \in \mathbf{A}\) 已有定义（§ 2，第 8 号）。由于 \(\gamma_x\) 和 \(\delta_x\) 是加法群 \(\mathbf{A}\) 的自同态， \(\gamma_x(ny) = n\gamma_x(y)\) 和 \(\delta_y(nx) = n\delta_y(x)\) ，因此
+
+\[
+x. (n y) = (n x). y = n. (x y).
+\]
+
+特别地， \(nx = (n.1)x\) 。
+
+一个集合 A，带有加法和乘法，满足环的公理，但除去保证乘法单位元存在的公理，称为伪环。
+
+\subsection{分配律的推论}
+
+乘法对加法的分配律使我们能够应用 §3 第 4 号的命题 1，它给出
+
+\[
+\prod_ {i = 1} ^ {n} \left(\sum_ {\lambda \in L _ {i}} x _ {i, \lambda}\right) = \sum_ {\alpha_ {1}, \dots , \alpha_ {n}} \prod_ {i = 1} ^ {n} x _ {i, \alpha_ {i}}\tag{13}
+\]
+
+其中和式遍及所有属于 \((\alpha_{1},\ldots,\alpha_{n})\) 的序列 \(L_{1}\times\cdots\times L_{n}\) ，并且对于 \(i=1,\ldots,n\) ，环 A 的元素族 \((x_{i,\lambda})_{\lambda\in L^{i}}\) 具有有限支撑。
+
+命题 1. 设 A 为交换环， \((x_{\lambda})_{\lambda \in L}\) 为 A 中元素的有限族。对于每个正整数族 \(\beta = (\beta_{\lambda})_{\lambda \in L}\) ，设 \(|\beta| = \sum_{\lambda \in L} \beta_{\lambda}\) 。则
+
+\[
+\left(\sum_ {\lambda \in L} x _ {\lambda}\right) ^ {n} = \sum_ {| \beta | = n} \frac {n !}{\prod_ {\lambda \in L} \beta_ {\lambda} !} \prod_ {\lambda \in L} x _ {\lambda} ^ {\beta_ {\lambda}}.\tag{14}
+\]
+
+我们应用公式 (13)，其中 \(\mathbf{L}_i = \mathbf{L}\) 和 \(x_{i,\lambda} = x_{\lambda}\) 对于 \(1 \leqslant i \leqslant n\) 。则
+
+\[
+\left(\sum_ {\lambda \in L} x _ {\lambda}\right) ^ {n} = \sum_ {\alpha_ {1}, \dots , \alpha_ {n}} x _ {\alpha_ {1}} \dots x _ {\alpha_ {n}},\tag{15}
+\]
+
+和式遍及所有序列 \(\alpha = (\alpha_{1},\ldots ,\alpha_{n})\in \mathbf{L}^{n}\) 。
+
+设 \(\alpha\) 属于 \(\mathbf{L}^n\) ；对所有 \(\lambda \in \mathbf{L}\) ，设 \(\mathrm{U}_{\lambda}^{\alpha}\) 表示整数 \(i\) 组成的集合，满足 \(1 \leqslant i \leqslant n\) 且 \(\alpha_i = \lambda\) ，并设 \(\Phi(\alpha) = (\mathrm{U}_{\lambda}^{\alpha})_{\lambda \in \mathbf{L}}\) 。立即可见 \(\Phi\) 是 \(\mathbf{L}^n\) 到 \(\{1, 2, \ldots, n\}\) 的以 \(\mathbf{L}\) 为指标集的分拆组成的集合上的一个双射。对所有 \(\beta \in \mathbf{N}^{\mathbf{L}}\) （满足 \(|\beta| = n\) ），设 \(\mathbf{L}_{\beta}^n\) 表示由 \(\alpha \in \mathbf{L}^n\) （满足 \(\operatorname{Card} \mathrm{U}_{\beta}^{\alpha} = \beta_{\lambda}\) 对所有 \(\lambda \in \mathbf{L}\) 成立）组成的集合。由此可知族 \((\mathbf{L}_{\beta}^n)_{\beta | = n}\) 是 \(\mathbf{L}^n\) 的一个分拆，并且
+
+\[
+\operatorname{Card} \mathrm{L} _ {\beta} ^ {n} = \frac {n !}{\prod_ {\lambda \in \mathrm{L}} \beta_ {\lambda} !}
+\]
+
+（§ 5，第 5 号）。
+
+最后，对 \(\alpha \in \mathbf{L}_{\beta}^{n}\) ，
+
+\[
+x _ {\alpha_ {1}} \dots x _ {\alpha_ {n}} = \prod_ {\lambda \in L} \prod_ {i \in U _ {\lambda} ^ {\alpha}} x _ {\alpha_ {i}} = \prod_ {\lambda \in L} \prod_ {i \in U _ {\lambda} ^ {\alpha}} x _ {\lambda} = \prod_ {\lambda \in L} x _ {\lambda},
+\]
+
+从而
+
+\[
+\begin{array}{r l} \sum_ {(\alpha_ {1}, \dots , \alpha_ {n})} x _ {\alpha_ {1}} \dots x _ {\alpha_ {n}} & = \sum_ {| \beta | = n} \sum_ {\alpha \in L _ {\beta} ^ {n}} x _ {\alpha_ {1}} \dots x _ {\alpha_ {n}} \\ & = \sum_ {| \beta | = n} \sum_ {\alpha \in L _ {\beta} ^ {n}} \prod_ {\lambda \in L _ {\lambda}} x _ {\lambda} ^ {\beta_ {\lambda}} \\ & = \sum_ {| \beta | = n} \frac {n !}{\prod_ {\lambda \in L} \beta_ {\lambda} !} x _ {\lambda} ^ {\beta_ {\lambda}} \end{array}
+\]
+
+从而公式 (14) 由 (15) 得出。
+
+推论 1（二项式公式）。设 \(x\) 和 \(y\) 为交换环 A 的两个元素。则：
+
+\[
+(x + y) ^ {n} = \sum_ {p = 0} ^ {n} \binom {n} {p} x ^ {p} y ^ {n - p}.
+\]
+
+将公式 (14) 应用于 \(\mathbf{L} = \{1,2\}\) , \(x_{1} = x\) 和 \(x_{2} = y\) 给出
+
+\[
+(x + y) ^ {n} = \sum_ {p + q = n} \frac {n !}{p ! q !} x ^ {p} y ^ {q},
+\]
+
+其中和式遍及正整数有序对 \(p, q\) （满足 \(p + q = n\) ）。二项式公式由此直接得出（集合论，III，§ 5，第 8 号）。
+
+推论 2. 设 A 为交换环，X 为一个集合， \(\mathbf{u} = (u_x)_{x \in \mathbb{X}}\) 和 \(\mathbf{v} = (v_x)_{x \in \mathbb{X}}\) 为 A 中元素的两个族。设 \(\mathbf{u} + \mathbf{v}\) 表示族 \((u_x + v_x)_{x \in \mathbb{X}}\) 。对所有 \(\lambda \in \mathbf{N}^{(\mathbb{X})}\) ，我们记 \(\lambda! = \prod_{x \in \mathbb{X}} \lambda(x)!\) 。则对所有 \(\alpha \in \mathbf{N}^{(\mathbb{X})}\) ，在 § 7 第 8 号的记号下，
+
+\[
+(\mathbf {u} + \mathbf {v}) ^ {\alpha} = \sum_ {\beta + \gamma = \alpha} \frac {\alpha !}{\beta ! \gamma !} \mathbf {u} ^ {\beta} \mathbf {v} ^ {\gamma}.
+\]
+
+对于 \(x\in \mathbf{X}\)
+
+\[
+(u _ {x} + v _ {x}) ^ {\alpha (x)} = \sum_ {m + n = \alpha (x)} \frac {\alpha (x) !}{m ! n !} u _ {x} ^ {m} v _ {x} ^ {n}
+\]
+
+由推论 1 得。将这些方程对 \(x \in \mathbf{X}\) 取乘积，并利用 (13)，即得推论。
+
+命题 2. 设 A 是一个环， \(x_{1}, \ldots, x_{n}\) 是 A 的元素，且 I = \{1, 2, \ldots, n\}。对 H ⊂ I，我们记 \(x_{\mathrm{H}} = \sum_{i \in \mathrm{H}} x_{i}\) 。则
+
+\[
+(- 1) ^ {n} \sum_ {\sigma \in \mathfrak {S} _ {n}} x _ {\sigma (1)} \dots x _ {\sigma (n)} = \sum_ {H \subset I} (- 1) ^ {\operatorname{Card} H} (x _ {H}) ^ {n}.\tag{16}
+\]
+
+特别地，若 A 是交换的，
+
+\[
+(- 1) ^ {n} n! x _ {1} x _ {2} \dots x _ {n} = \sum_ {\mathrm{H} \in \mathrm{I}} (- 1) ^ {\text { Card   H }} (x _ {\mathrm{H}}) ^ {n}.
+\]
+
+设 C 为 I 到 \(\{0,1\}\) 中的映射组成的集合。若把每个 \(H \subset I\) 映到它的特征函数，则得到 \(\mathfrak{P}(I)\) 到 C 上的一个双射。因此 (16) 的右边等于：
+
+\[
+\begin{array}{r l} \sum_ {a \in \mathbb {C}} (- 1) ^ {a (1) + \dots + a (n)} & \left(\sum_ {i \in \mathbb {I}} a (i) x _ {i}\right) ^ {n} \\ & = \sum_ {a \in \mathbb {C}} (- 1) ^ {a (1) + \dots + a (n)} \sum_ {(i _ {1}, \ldots , i _ {n}) \in \mathbb {I} ^ {n}} a (i _ {1}) \ldots a (i _ {n}) x _ {i _ {1}} \ldots x _ {i _ {n}} \\ & = \sum_ {(i _ {1}, \ldots , i _ {n}) \in \mathbb {I} ^ {n}} c _ {i _ {1} \ldots i _ {n}} x _ {i _ {1}} \ldots x _ {i _ {n}} \end{array}
+\]
+
+其中
+
+\[
+c _ {i _ {1} \dots i _ {n}} = \sum_ {a \in \mathbb {C}} (- 1) ^ {a (1) + \dots + a (n)} a (i _ {1}) \dots a (i _ {n}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  假设 \((i_{1},\ldots,i_{n})\) 不是 I 的一个排列。存在一个 \(j\in I\) ，它不同于 \(i_{1},\ldots,i_{n}\) 。设 \(C'\) 为由 \(a\in C\) （满足 \(a(j)=0\) ）组成的集合。对所有 \(a\in C'\) ，设 \(a^{*}\) 为 a 与 \(\{j\}\) 的特征函数之和。则 \(a^{*}(1)+\cdots+a^{*}(n)=a(1)+\cdots+a(n)+1\) ，因此
+\end{enumerate}
+
+\[
+\begin{array}{l} c _ {i _ {1} \dots i _ {n}} = \sum_ {a \in C ^ {\prime}} (- 1) ^ {a (1) + \dots + a (n)} a (i _ {1}) \dots a (i _ {n}) + (- 1) ^ {a ^ {*} (1) + \dots + a ^ {*} (n)} a ^ {*} (i _ {1}) \dots a ^ {*} (i _ {n}) \\ = \sum_ {a \in C ^ {\prime}} ((- 1) ^ {a (1) + \dots + (n)} + (- 1) ^ {a (1) + \dots + a (n) + 1}) a (i _ {1}) \dots a (i _ {n}) = 0. \end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  假设存在 \(\sigma \in \mathfrak{S}_n\) ，使得 \(i_1 = \sigma(1), \ldots, i_n = \sigma(n)\) 。则 \(a(i_1) \ldots a(i_n) = 0\) ，除非 \(a\) 仅取值 1。因此 \(c_{i_1 \ldots i_n} = (-1)^n\) 。
+\end{enumerate}
+
+\subsection{环的示例}
+
+I. 零环。设 A 为一个环。在 A 中 0 = 1 的必要且充分条件是 A 由单个元素组成。该条件显然充分。另一方面，若 0 = 1，则对所有 \(x \in A\) ，x = x.1 = x.0 = 0。这样的环称为零环。
+
+\begin{enumerate}
+\def\labelenumi{\Roman{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  有理整数环。利用 § 2 第 5 号中定义的加法，以及 § 2 第 6 号中定义的乘法，Z 是一个交换环。记号 0、1、-x 与先前引入的记号一致。
+\end{enumerate}
+
+*III. 实值函数环。设 I 为实数集 R 中的一个区间，并设 A 为定义在 I 上且取实值的连续函数所构成的集合。两个函数 f 和 g 的和 \(f + g\) 与乘积 f·g 定义为
+
+\[
+(f + g) (t) = f (t) + g (t), \quad (f g) (t) = f (t) g (t) \quad (t \in \mathbf {I}).
+\]
+
+由此得到一个交换环，其单位元为常数 1。*
+
+*IV. 卷积伪环。设 E 为 R 上在某个有界区间之外为零的实值连续函数的集合。两个函数的和按 III 中那样定义，但乘积现在定义为
+
+\[
+(f g) (t) = \int_ {- \infty} ^ {\infty} f (s) g (t - s) d s
+\]
+
+（“卷积乘积”）。由此得到一个交换伪环，它不是环（参见《积分》VIII，§ 4）。*
+
+V. 环 A 的反环。设 A 为一个环。带有与 A 相同的加法以及乘法 \((x,y)\mapsto yx\) 的集合 A 通常记作 \(A^{0}\) 。它是一个环（称为 A 的反环），与 A 具有相同的零元和单位元，并且当且仅当 A 为交换环时它与 A 相同。
+
+\begin{enumerate}
+\def\labelenumi{\Roman{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  交换群的自同态环。设 G 是一个写成加法形式的交换群。设 E 表示 G 的自同态组成的集合。给定 E 中的 f 和 g，映射 \(f + g\) 和 fg （从 G 到 G 中）定义为
+\end{enumerate}
+
+\[
+(f + g) (x) = f (x) + g (x), \quad (f g) (x) = f (g (x)) \quad (x \in \mathbf {G}).
+\]
+
+由 § 1 第 5 号的命题 5， \(f + g\) 是 G 的一个自同态，显然 \(fg = f \circ g\) 也是 G 的自同态。根据 § 4 第 8 号，E 在加法下构成一个（交换）群。乘法显然满足结合律且具有单位元 \(\operatorname{Id}_{\mathbf{G}}\) 。此外，对 E 中的 \(f, g\) 和 \(h\) ，设 \(\phi = f \cdot (g + h)\) ；对所有 \(x \in \mathbf{G}\) ，
+
+\[
+\phi (x) = f ((g + h) (x)) = f (g (x) + h (x)) = f (g (x)) + f (h (x))
+\]
+
+因为 \(f\) 是 \(\mathbf{G}\) 的自同态；因此 \(\phi = fg + fh\) ，并且显然
+
+\[
+(g + h) f = g f + h f.
+\]
+
+因此 E 是一个（一般不交换的）环，称为 G 的自同态环。
+
+\begin{enumerate}
+\def\labelenumi{\Roman{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  零平方伪环。称伪环 A 为零平方的，如果对所有 \(x, y \in A\) 都有 xy = 0。设 G 是一个交换群。若给集合 G 赋予群 G 的加法以及乘法 \((x, y) \mapsto 0\) ，则得到一个零平方的伪环。它仅在 \(G = \{0\}\) 时是环，此时它是零环。
+\end{enumerate}
+
+\subsection{环同态}
+
+定义 2. 设 A 和 B 是两个环。从 A 到 B 的一个态射，或同态，是满足以下关系的从 A 到 B 的任意映射 f：
+
+\[
+f (x + y) = f (x) + f (y), \quad f (x y) = f (x). f (y), \quad f (1) = 1,\tag{17}
+\]
+
+对所有 \(x, y\) （在 A 中）成立。
+
+两个环同态的复合是一个环同态。设 A 和 B 是两个环，f 是 A 到 B 的一个映射；要使 f 成为同构，必要且充分的是它为一个双射同态；在这种情况下， \(\overline{f}^{1}\) 是 B 到 A 的一个同态。环 A 到自身的同态称为 A 的自同态。
+
+设 \(f: A \to B\) 是一个环同态。映射 \(f\) 是 \(A\) 的加法群到 \(B\) 的加法群的一个同态；特别地， \(f(0) = 0\) 和 \(f(-x) = -f(x)\) 对所有 \(x \in A\) 成立。\(f\) 把 \(A\) 的可逆元素映为 \(B\) 的可逆元素，并且 \(f\) 诱导出 \(A\) 的乘法群到 \(B\) 的乘法群中的一个同态。
+
+例子。(1) 设 A 是一个环。立即可以看出，映射 \(n \mapsto n\) . 1 （从 Z 到 A 中）是 Z 到 A 的唯一同态。特别地，Z 的恒等映射是环 Z 的唯一自同态。
+
+特别地，取 A 为加法群 Z 的自同态环（第 3 号，例 VI）。映射 \(n \mapsto n\) . 1 （从 Z 到 A 中）正是由于 Z 中乘法的构造（§ 2，第 6 号）而是 Z 到 A 上的一个同构。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(a\) 是环 \(A\) 的一个可逆元素。映射 \(x \mapsto axa^{-1}\) 是 \(A\) 的一个自同态，因为
+\end{enumerate}
+
+\[
+\begin{array}{r l} a (x + y) a ^ {- 1} & = a x a ^ {- 1} + a y a ^ {- 1}, \\ a (x y) a ^ {- 1} & = (a x a ^ {- 1}) (a y a ^ {- 1}). \end{array}
+\]
+
+它是双射的，因为关系 \(x' = axa^{-1}\) 等价于 \(x = a^{-1}x'a\) 。因此它是环 A 的一个自同构，称为与 a 相伴的内自同构。
+
+\subsection{子环}
+
+定义 3. 设 A 是一个环。A 的子环是 A 的任意子集 B，它在加法下是 A 的子群，在乘法下稳定，并且包含 A 的单位元。
+
+上述条件可以写成如下形式
+
+\[
+0 \in \mathbf {B}, \quad \mathbf {B} + \mathbf {B} \subset \mathbf {B}, \quad - \mathbf {B} \subset \mathbf {B}, \quad \mathbf {B}. \mathbf {B} \subset \mathbf {B}, \quad 1 \in \mathbf {B}.
+\]
+
+若 B 是 A 的子环，则给它赋予由 A 上的加法和乘法诱导的运算，这使它成为一个环。从 B 到 A 的典范单射是一个环同态。
+
+例子。(1) 加法群 \(\mathbf{Z}\) 的每个包含 1 的子群都等于 \(\mathbf{Z}\) 。因此 \(\mathbf{Z}\) 是 \(\mathbf{Z}\) 的唯一子环。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 A 为一个环，且 \((A_{t})_{t\in I}\) 为 A 的一族子环；显然 \(\bigcap_{i\in I}A_{i}\) 是 A 的子环。特别地，A 的包含 A 的子集 X 的所有子环的交集是一个子环，称为由 X 生成的 A 的子环。
+\item
+  设 X 是环 A 的一个子集。X 在 A 中的中心化子是 A 的一个子环。特别地，A 的中心是 A 的一个子环。
+\item
+  设 G 是一个带算子的交换群；设 \(\Omega\) 表示算子集， \(\alpha \mapsto f_{\alpha}\) 表示 \(\Omega\) 在 G 上的作用。设 E 是不带算子的群 G 的自同态环，F 是带算子的群 G 的自同态组成的集合。根据定义，F 由 G 的自同态 \(\phi\) （满足 \(\phi \cdot f_{\alpha} = f_{\alpha} \cdot \phi\) ，对所有 \(\alpha \in \Omega\) ）组成。因此 F 是环 E 的一个子环。F 称为带算子的群 G 的自同态环（参见 II，§ 1，第 2 号）。设 \(F_{1}\) 是由 \(f_{\alpha}\) 生成的 E 的子环。则 F 是 \(F_{1}\) 在 E 中的中心化子。
+\end{enumerate}
+
+\subsection{理想}
+
+定义 4. 设 A 是一个环。A 的一个子集 \(\mathfrak{a}\) 称为 A 的左（相应地，右）理想，如果它是 A 的加法群的子群，并且关系 \(a \in \mathbf{A}\) ， \(x \in \mathfrak{a}\) 蕴含 \(ax \in \mathfrak{a}\) （相应地， \(xa \in \mathfrak{a}\)）。\(\mathfrak{a}\) 称为 A 的双侧理想，如果它既是 A 的左理想又是 A 的右理想。
+
+左理想的定义可以用以下关系表示
+
+\[
+0 \in a, \quad a + a \subset a, \quad A. a \subset a
+\]
+
+关系 \(-a \subset a\) 由公式 \((-1).x = -x\) 和 \(A.a \subset a\) 得出。对所有 \(x \in A\) ，设 \(\gamma_x\) 为映射 \(a \mapsto xa\) （从 \(A\) 到 \(A\) 中）；作用 \(x \mapsto \gamma_x\) 给加法群 \(A^+\) （\(A\) 的）赋予一个以 \(A\) 为算子集的带算子群的结构。A 的左理想正是 \(A\) 的加法群 \(A^+\) 中在该作用下稳定的子群。
+
+环 A 中的左理想恰好就是相反环 \(A^{0}\) 的右理想。在交换环中，这三种理想是相同的；它们简称为理想。
+
+例子。(1) 设 A 是一个环。集合 A 是 A 的一个双边理想；由 0 组成的集合也是，它被称为零理想，有时记为 0 或 (0)，而非 \{0\}。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  对每个元素 \(a\) （\(\mathbf{A}\) 的），集合 \(\mathbf{A}.a\) （即 \(a\) 的左倍数组成的集合）是一个左理想；类似地，集合 \(a.\mathbf{A}\) 是一个右理想。当 \(a\) 属于 \(\mathbf{A}\) 的中心时， \(\mathbf{A}.a = a.\mathbf{A}\) ；这个理想称为由 \(a\) 生成的主理想，记作 (a)。(a) = A 当且仅当 \(a\) 是可逆的。
+\item
+  设 M 是 A 的一个子集。由元素 \(x \in A\) （满足对所有 \(y \in M\) 有 xy = 0）组成的集合是 A 的一个左理想，称为 M 的左零化子。M 的右零化子类似地定义。
+\item
+  A 的左（相应地，右，双侧）理想的交仍是左（相应地，右，双侧）理想。因此，给定 A 的子集 X，存在包含 X 的最小左（相应地，右，双侧）理想；它被称为由 X 生成的左（相应地，右，双侧）理想。
+\end{enumerate}
+
+设 \(\mathfrak{a}\) 为 \(\mathbf{A}\) 的一个左理想。条件 \(1 \notin \mathfrak{a}, \mathfrak{a} \neq \mathbf{A}\) 显然是等价的。
+
+定义 5. 设 A 是一个环。以语言上的滥用，称一个左理想 a 为极大的，如果它是不同于 A 的左理想组成的集合中的一个极大元。
+
+换句话说，a 是极大的，如果 \(a \neq A\) 且 A 中包含 a 的仅有的左理想是 a 和 A。
+
+定理 1（Krull）。设 A 是一个环，a 是 A 的一个不同于 A 的左理想。则存在 A 的一个包含 a 的极大理想 m。
+
+把 A 视为以左乘法作用于 A 的加法群 \(A^{+}\) 。于是 A 的左理想就是 \(A^{+}\) 的稳定子群。因此，该定理由将 § 4 第 3 号的命题 3 应用于子集 \(P = \{1\}\) （\(A^{+}\) 的）而得出。
+
+命题 3. 设 A 是一个环， \((x_{\lambda})_{\lambda \in L}\) 是 A 中元素的一个族，且 a（相应地 b）为和 \(\sum_{\lambda \in L} a_{\lambda} x_{\lambda}\) （其中 \((a_{\lambda})_{\lambda \in L}\) 是 A 中元素的一个有限支撑族）（相应地，和 \(\sum_{\lambda \in L} a_{\lambda} x_{\lambda} b_{\lambda}\) ，其中 \((a_{\lambda})_{\lambda \in L}, (b_{\lambda})_{\lambda \in L}\) 是 A 中元素的有限支撑族）组成的集合。则 a（相应地 b）是由元素 \(x_{\lambda}\) 生成的 A 的左（相应地，双边）理想。
+
+公式
+
+\[
+0 = \sum_ {\lambda \in L} 0. x _ {\lambda}\tag{18}
+\]
+
+\[
+\sum_ {\lambda \in L} a _ {\lambda} x _ {\lambda} + \sum_ {\lambda \in L} a _ {\lambda} ^ {\prime} x _ {\lambda} = \sum_ {\lambda \in L} (a _ {\lambda} + a _ {\lambda} ^ {\prime}) x _ {\lambda}\tag{19}
+\]
+
+\[
+a. \sum_ {\lambda \in L} a _ {\lambda} x _ {\lambda} = \sum_ {\lambda \in L} (a a _ {\lambda}) x _ {\lambda}\tag{20}
+\]
+
+证明 \(\mathfrak{a}\) 是一个左理想。设 \(\mathfrak{a}'\) 是一个左理想，使得 \(x_{\lambda} \in \mathfrak{a}'\) 对所有 \(\lambda \in \mathbf{L}\) 成立，并设 \((a_{\lambda})_{\lambda \in L}\) 是 A 中的一个有限支撑族。则 \(a_{\lambda}x_{\lambda}\in \mathfrak{a}'\) 对所有 \(\lambda \in L\) 成立，因此 \(\sum_{\lambda \in L}a_{\lambda}x_{\lambda}\in \mathfrak{a}'\) ；从而 \(\mathfrak{a}\subset \mathfrak{a}'\) 。因此 \(\mathfrak{a}\) 是由 \(x_{\lambda}\) 生成的 A 的左理想。对 \(\mathfrak{b}\) 的论证是类似的。
+
+命题 4. 设 A 是一个环，且 \((\mathfrak{a}_{\lambda})_{\lambda \in L}\) 是 A 的一族左理想。由 \(\bigcup_{\lambda \in L} \mathfrak{a}_{\lambda}\) 生成的左理想由形如 \(\sum_{\lambda \in L} y_{\lambda}\) 的和组成，其中 \((y_{\lambda})_{\lambda \in L}\) 是一个有限支撑族，满足 \(y_{\lambda} \in \mathfrak{a}_{\lambda}\) 对所有 \(\lambda \in L\) 成立。
+
+设 \(\mathfrak{a}\) 为由和 \(\sum_{\lambda \in \mathbf{L}} y_{\lambda}\) （满足 \(y_{\lambda} \in \mathfrak{a}_{\lambda}\) ，对所有 \(\lambda \in \mathbf{L}\) ）组成的集合。公式 \(\sum_{\lambda \in \mathbf{L}} x_{\lambda} + \sum_{\lambda \in \mathbf{L}} y_{\lambda} = \sum_{\lambda \in \mathbf{L}} (x_{\lambda} + y_{\lambda})\) 和 \(a\) . \(\sum_{\lambda \in \mathbf{L}} x_{\lambda} = \sum_{\lambda \in \mathbf{L}} ax_{\lambda}\) 表明 \(\mathfrak{a}\) 是 \(\mathbf{A}\) 的一个左理想。设 \(\lambda \in \mathbf{L}\) 且 \(x \in \mathfrak{a}_{\lambda}\) ；写 \(y_{\lambda} = x\) 及 \(y_{\mu} = 0\) （对 \(\mu \neq \lambda\) ）；则 \(x = \sum_{\lambda \in \mathbf{L}} y_{\lambda}\) ，从而 \(x \in \mathfrak{a}\) ，最终 \(\mathfrak{a}_{\lambda} \subset \mathfrak{a}\) 。若左理想 \(\mathfrak{a}'\) 包含 \(\mathfrak{a}_{\lambda}\) （对所有 \(\lambda \in \mathbf{L}\) ），则它显然包含 \(\mathfrak{a}\) ，因此 \(\mathfrak{a}\) 由 \(\bigcup_{\lambda \in \mathbf{L}} \mathfrak{a}_{\lambda}\) 生成。
+
+理想 \(\mathfrak{a}\) （由 \(\bigcup_{\lambda \in L} \mathfrak{a}_{\lambda}\) 生成）称为左理想 \(\mathfrak{a}_{\lambda}\) 的和，记作 \(\sum_{\lambda \in L} \mathfrak{a}_{\lambda}\) （参见 II，§ 1，第 7 号）。特别地，两个左理想的和 \(\mathfrak{a}_{1} + \mathfrak{a}_{2}\) 由形如 \(a_{1} + a_{2}\) 的和组成，其中 \(a_{1} \in \mathfrak{a}_{1}\) 且 \(a_{2} \in \mathfrak{a}_{2}\) 。
+
+\subsection{商环}
+
+设 A 是一个环。若 a 是 A 的一个双边理想，则称 A 中两个元素 x 和 y 模 a 同余，记作 \(x \equiv y \pmod{a}\) 或 \(x \equiv y(a)\) ，如果 \(x - y \in a\) 。这是 A 上的一个等价关系。关系 \(x \equiv y(a)\) 和 \(x' \equiv y'(a)\) 蕴含 \(x + x' \equiv y + y'(a)\) ， \(xx' \equiv xy'(a)\) （因为 a 是左理想）且 \(xy' \equiv yy'(a)\) （因为 a 是右理想），从而 \(xx' \equiv yy'(a)\) 。反之，若 R 是 A 上与加法和乘法相容的等价关系，则由满足 \(x \equiv 0 \mod R\) 的 x 组成的集合 a 是一个双边理想，且 \(x \equiv y \mod R\) 等价于 \(x \equiv y \mod a\) 。
+
+设 A 是一个环，a 是 A 的一个双边理想。A/a 表示 A 关于等价关系 \(x \equiv y(a)\) 的商集，其加法和乘法是 A 上相应运算的商（§ 1，第 6 号，定义 11）。我们证明 A/a 是一个环：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  在加法下，A/a 是 A 的加法群关于子群 a 的商交换群。
+\item
+  在乘法运算下，A/a 是一个幺半群（§ 2，第 1 号）。
+\item
+  设 \(\xi, \eta, \zeta\) 位于 A/a 中，并令 \(\pi: \mathbf{A} \to \mathbf{A}/\mathfrak{a}\) 为典范映射；我们选取元素 \(x, y, z\) （A 中的），使得 \(\pi(x) = \xi, \pi(y) = \eta\) 和 \(\pi(z) = \zeta\) 。则
+\end{enumerate}
+
+\[
+\begin{array}{r l} \xi (\eta + \zeta) & = \pi (x) \pi (y + z) = \pi (x (y + z)) = \pi (x y + x z) \\ & = \pi (x) \pi (y) + \pi (x) \pi (z) = \xi \eta + \xi \zeta \end{array}
+\]
+
+以及关系 \((\xi + \eta)\zeta = \xi \zeta + \eta \zeta\) 类似地可证得。
+
+定义 6. 设 A 为一个环，a 为 A 的一个双边理想。A 关于 a 的商环，记作 A/a，是 A 关于等价关系 \(x \equiv y(a)\) 的商集，其加法和乘法是 A 上相应运算的商。
+
+环 A/\{0\} 同构于 A，且 A/A 是零环。
+
+定理 2. 设 A 是一个环，且 a 是 A 的一个双边理想。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  典范映射 \(\pi\) （从 A 到 A/a 上）是一个环同态。
+\item
+  设 \(\mathbf{B}\) 是一个环，且 \(f\) 是 \(\mathbf{A}\) 到 \(\mathbf{B}\) 中的一个同态。若 \(f(\mathfrak{a}) = \{0\}\) ，则存在且仅存在一个同态 \(\bar{f}\) （从 \(\mathbf{A} / \mathfrak{a}\) 到 \(\mathbf{B}\) 中），使得 \(f = \bar{f} \circ \pi\) 。
+\end{enumerate}
+
+根据构造， \(\pi(x + y) = \pi(x) + \pi(y)\) 和 \(\pi(xy) = \pi(x)\pi(y)\) 对 \(x, y\) （在 A 中）成立；且 \(\pi(1)\) 是 A/a 的单位元 \(\varepsilon\) ，从而得出 (a)。
+
+设 \(\mathbf{A}^{+}\) 是 \(\mathbf{A}\) 的加法群，而 \(\mathbf{B}^{+}\) 是 \(\mathbf{B}\) 的加法群；由于 \(f\) 是 \(\mathbf{A}^{+}\) 到 \(\mathbf{B}^{+}\) 中的、在子群 \(a\) （\(\mathbf{A}^{+}\) 的）上为零的同态，故存在（§ 4，第 4 号，命题 5）一个且仅一个同态 \(\bar{f}\) （从 \(\mathbf{A}^{+}/a\) 到 \(\mathbf{B}^{+}\) 中），使得 \(f = \bar{f} \circ \pi\) 。设 \(\xi, \eta\) 在 \(\mathbf{A}/a\) 中；选取 \(x, y\) （\(\mathbf{A}\) 中的），使得 \(\pi(x) = \xi\) 和 \(\pi(y) = \eta\) ；于是 \(\xi \eta = \pi(xy)\) ，因此
+
+\[
+\bar {f} (\xi \eta) = \bar {f} (\pi (x y)) = f (x y) = f (x). f (y) = \bar {f} (\xi). \bar {f} (\eta)
+\]
+
+和 \(\bar{f}(\varepsilon) = f(\pi(1)) = f(1)\) ，因此 \(\bar{f}\) 是一个环同态。
+
+定理 3. 设 A 和 B 为环，f 为 A 到 B 中的一个同态。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  f 的核 \(\mathfrak{a}\) 是 \(\mathbf{B}\) 的一个双边理想。
+\item
+  像 \(\mathbf{B}' = f(\mathbf{B})\) 是 \(\mathbf{B}\) 的一个子环。
+\item
+  设 \(\pi: \mathbf{A} \to \mathbf{A} / \mathfrak{a}\) 和 \(i: \mathbf{B}' \to \mathbf{B}\) 为典范态射。存在且仅存在一个态射 \(\bar{f}\) （从 \(\mathbf{A} / \mathfrak{a}\) 到 \(\mathbf{B}'\) 中），使得 \(f = i_{\circ} \bar{f} \circ \pi\) 且 \(\bar{f}\) 是一个同构。
+\end{enumerate}
+
+由于 \(f\) 是 \(\mathbf{A}\) 的加法群到 \(\mathbf{B}\) 的加法群中的态射， \(\mathfrak{a}\) 是 \(\mathbf{A}\) 的一个子群。若 \(x \in \mathfrak{a}\) 且 \(a \in \mathbf{A}\) ，则 \(f(ax) = f(a)f(x) = 0\) ，因此 \(ax \in \mathfrak{a}\) ，类似地 \(xa \in \mathfrak{a}\) ；因此 \(\mathfrak{a}\) 是 \(\mathbf{A}\) 的一个双边理想。断言 (b) 是显然的。由于 \(f\) 在 \(\mathfrak{a}\) 上为零，存在一个态射 \(\bar{f}\) （从 \(\mathbf{A} / \mathfrak{a}\) 到 \(\mathbf{B}'\) 中），使得 \(f = i \circ \bar{f} \circ \pi\) （定理 2）。 \(\bar{f}\) 的唯一性以及 \(\bar{f}\) 是一个同构这一事实由集合论，II，§ 6，第 4 号得出。
+
+\subsection{商环中的子环与理想}
+
+命题 5. 设 A 与 A' 为两个环，f 为 A 到 A' 中的一个同态，且 a 为 f 的核。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  设 \(\mathbf{B}'\) 是 \(\mathbf{A}'\) 的一个子环。则 \(\mathbf{B} = f(\mathbf{B}')\) 是 \(\mathbf{A}\) 的一个包含 \(\mathfrak{a}\) 的子环。若 \(f\) 是满射，则 \(f(\mathbf{B}) = \mathbf{B}'\) 且 \(f \mid \mathbf{B}\) 在过渡到商时定义了 \(\mathbf{B}/\mathfrak{a}\) 到 \(\mathbf{B}'\) 上的一个同构。
+\item
+  设 \(\mathfrak{b}'\) 是环 \(\mathbf{A}'\) 的一个左（相应地，右，双边）理想。则 \(\mathfrak{b} = f(\mathfrak{b}')\) 是 \(\mathbf{A}\) 的一个包含 \(\mathfrak{a}\) 的左（相应地，右，双边）理想。
+\item
+  若 \(\mathfrak{b}'\) 是 \(\mathbf{A}'\) 的一个双边理想，则典范态射 \(\mathbf{A}' \to \mathbf{A}' / \mathfrak{b}'\) 与 \(f: \mathbf{A} \to \mathbf{A}'\) 的复合映射在过渡到商时定义了一个单射态射 \(\bar{f}\) （从 \(\mathbf{A} / \mathfrak{b}\) 到 \(\mathbf{A}' / \mathfrak{b}'\) 中）。若 \(f\) 是满射的，则 \(\bar{f}\) 是 \(\mathbf{A} / \mathfrak{b}\) 到 \(\mathbf{A}' / \mathfrak{b}'\) 上的一个同构。
+\item
+  假设 \(f\) 是满射。设 \(\Phi\) 为 A 的包含 a 的子环（相应地，左理想、右理想、双边理想）组成的集合。设 \(\Phi'\) 为 \(A'\) 的子环（相应地，左理想、右理想、双边理想）组成的集合。映射 \(B \to f(B)\) 和 \(B' \mapsto f'(B')\) 是 \(\Phi\) 到 \(\Phi'\) 上以及 \(\Phi'\) 到 \(\Phi\) 上的互逆双射。
+\end{enumerate}
+
+(a) 和 (b) 是显然的，但 (a) 的最后一个断言除外，它由第 7 号定理 3 得出。
+
+(c) 中考虑的复合态射 \(g: \mathbf{A} \to \mathbf{A}' \to \mathbf{A}' / \mathfrak{b}'\) 以 \(\mathfrak{b}\) 为核，因此 \(\bar{f}\) 是 \(\mathbf{A} / \mathfrak{b}\) 到 \(\mathbf{A}' / \mathfrak{b}'\) 中的一个单射态射（§ 8，第 7 号，定理 3）。若 \(f\) 是满射的，则 \(g\) 是满射，因此 \(\bar{f}\) 是满射。
+
+假设 \(f\) 是满射。根据上述内容，映射 \(\theta: \mathbf{B}' \mapsto f(\mathbf{B}')\) 是 \(\Phi'\) 到 \(\Phi\) 中的一个映射。显然映射 \(\eta: \mathbf{B} \mapsto f(\mathbf{B})\) 是 \(\Phi\) 到 \(\Phi'\) 中的一个映射。则 \(\theta \circ \eta = \operatorname{Id}_{\Phi}, \eta \circ \theta = \operatorname{Id}_{\Phi'}\) ，由此得出 (d)。
+
+注记。在上述记号中， \(\theta\) 和 \(\eta\) 是有序集同构（ \(\Phi\) 和 \(\Phi'\) 按包含关系排序）。
+
+推论。设 A 是一个环，a 是 A 的一个双边理想。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  A/a 的每一个左（相应地，右、双边）理想都可以唯一地写成 b/a 的形式，其中 b 是 A 的包含 a 的左（相应地，右、双边）理想。
+\item
+  若 \(\mathfrak{b}\) 是双侧的，复合同态 \(\mathbf{A} \to \mathbf{A} / \mathfrak{a} \to (\mathbf{A} / \mathfrak{a}) / (\mathfrak{b} / \mathfrak{a})\) 在过渡到商时定义了一个从 \(\mathbf{A} / \mathfrak{b}\) 到 \((\mathbf{A} / \mathfrak{a}) / (\mathfrak{b} / \mathfrak{a})\) 上的同构。
+\end{enumerate}
+
+只需将命题 5 应用于 A 到 A/a 上的典范态射即可。
+
+\subsection{理想的乘法}
+
+设 A 是一个环，a 和 b 是 A 的双边理想。形如 \(x_{1}y_{1} + \cdots + x_{n}y_{n}\) （其中 \(n \geqslant 0\) ， \(x_{i} \in a\) 和 \(y_{i} \in b\) ，对 \(1 \leqslant i \leqslant n\) ）的元素组成的集合显然是 A 的一个双边理想，记为 ab，称为双边理想 a 和 b 的乘积。在此乘法下，A 的双边理想的集合是一个幺半群，其单位元为双边理想 A。若 a, b, c 是 A 的双边理想，则 \(a(b + c) = ab + ac\) , \((b + c)a = ba + ca\) 。若 A 是交换的，则理想的乘法是交换的。
+
+\(\mathsf{ab}\subset \mathsf{aA}\subset \mathsf{a}\) 和 \(\mathsf{ab}\subset \mathsf{Ab}\subset \mathsf{b}\) ，因此
+
+\[
+a b \subset a \cap b.\tag{21}
+\]
+
+命题 6. 设 \(a, b_{1}, \ldots, b_{n}\) 是 A 的双边理想。若 \(A = a + b_{i}\) 对所有 \(i\) 成立，则 \(A = a + b_{1}b_{2} \ldots b_{n} = a + (b_{1} \cap b_{2} \cap \cdots \cap b_{n})\) 。
+
+由 (21) 可知只需证明 \(\mathbf{A} = \mathfrak{a} + \mathfrak{b}_1\mathfrak{b}_2\ldots \mathfrak{b}_n\) 。由归纳法，只需考虑 \(n = 2\) 的情形。由假设，存在 \(a, a' \in \mathfrak{a}, b_1 \in \mathfrak{b}_1, b_2 \in \mathfrak{b}_2\) ，使得 \(1 = a + b_1 = a' + b_2\) 。则
+
+\[
+1 = a ^ {\prime} + (a + b _ {1}) b _ {2} = \left(a ^ {\prime} + a b _ {2}\right) + b _ {1} b _ {2} \in \mathfrak {a} + \mathfrak {b} _ {1} \mathfrak {b} _ {2},
+\]
+
+从而 \(\mathbf{A} = \mathfrak{a} + \mathfrak{b}_1\mathfrak{b}_2\) 。
+
+命题 7. 设 \(\mathfrak{b}_1, \ldots, \mathfrak{b}_n\) 是 A 的双边理想，满足 \(\mathfrak{b}_i + \mathfrak{b}_j = \mathbf{A}\) （对 \(i \neq j\) ）。则 \(\mathfrak{b}_1 \cap \mathfrak{b}_2 \cap \dots \cap \mathfrak{b}_n = \sum_{\sigma \in \mathfrak{E}_n} \mathfrak{b}_{\sigma(1)} \mathfrak{b}_{\sigma(2)} \ldots \mathfrak{b}_{\sigma(n)}\) 。特别地，若 A 是交换的，则 \(\mathfrak{b}_1 \cap \mathfrak{b}_2 \cap \dots \cap \mathfrak{b}_n = \mathfrak{b}_1 \mathfrak{b}_2 \ldots \mathfrak{b}_n\) （参见习题 2）。
+
+首先假设 \(n = 2\) 。存在 \(a_1 \in \mathfrak{b}_1\) ， \(a_2 \in \mathfrak{b}_2\) ，使得 \(a_1 + a_2 = 1\) 。若 \(x \in \mathfrak{b}_1 \cap \mathfrak{b}_2\) ，则 \(x = x(a_1 + a_2) = xa_1 + xa_2 \in \mathfrak{b}_2\mathfrak{b}_1 + \mathfrak{b}_1\mathfrak{b}_2\) 。因此 \(\mathfrak{b}_1 \cap \mathfrak{b}_2 = \mathfrak{b}_1\mathfrak{b}_2 + \mathfrak{b}_2\mathfrak{b}_1\) 。
+
+现在假设命题的等式对所有整数 \(<n\) 均已成立。由命题 6， \(\mathfrak{b}_{n} + (\mathfrak{b}_{1}\mathfrak{b}_{2}\ldots \mathfrak{b}_{n - 1}) = A\) ，因此
+
+\[
+\begin{array}{l} \mathfrak {b} _ {1} \cap \mathfrak {b} _ {2} \cap \dots \cap \mathfrak {b} _ {n} = (\mathfrak {b} _ {1} \cap \mathfrak {b} _ {2} \cap \dots \cap \mathfrak {b} _ {n - 1}) \mathfrak {b} _ {n} + \mathfrak {b} _ {n} (\mathfrak {b} _ {1} \cap \mathfrak {b} _ {2} \cap \dots \cap \mathfrak {b} _ {n - 1}) \\ = \Big (\sum_ {\sigma \in \mathfrak {E} _ {n - 1}} \mathfrak {b} _ {\sigma (1)} \mathfrak {b} _ {\sigma (2)} \dots \mathfrak {b} _ {\sigma (n - 1)} \Big) \mathfrak {b} _ {n} \\ \qquad + \mathfrak {b} _ {n} \Big (\sum_ {\sigma \in \mathfrak {E} _ {n - 1}} \mathfrak {b} _ {\sigma (1)} \mathfrak {b} _ {\sigma (2)} \dots \mathfrak {b} _ {\sigma (n - 1)} \Big) \\ \subset \sum_ {\tau \in \mathfrak {E} _ {n}} \mathfrak {b} _ {\tau (1)} \mathfrak {b} _ {\tau (2)} \dots \mathfrak {b} _ {\tau (n)} \subset \mathfrak {b} _ {1} \cap \mathfrak {b} _ {2} \cap \dots \cap \mathfrak {b} _ {n}. \end{array}
+\]
+
+\subsection{环的乘积}
+
+设 \((\mathbf{A}_i)_{i\in I}\) 是一个环族。设 A 为乘积集 \(\prod_{i\in I} \mathbf{A}_i\) 。在 A 上，加法和乘法由以下公式定义
+
+\[
+(x _ {i}) + (y _ {i}) = (x _ {i} + y _ {i}), \quad (x _ {i}) (y _ {i}) = (x _ {i} y _ {i}).\tag{22}
+\]
+
+容易验证 A 是一个环，称为环 \(A_{i}\) 的乘积，其零元为元素 \(0 = (0_{i})_{i \in I}\) （其中 \(0_{i}\) 是 \(A_{i}\) 的零元），单位元为 \(1 = (1_{i})_{i \in I}\) （其中 \(1_{i}\) 是 \(A_{i}\) 的单位元）。若 \(A_{i}\) 都是交换的，则 A 也是。若 \(C_{i}\) 是 \(A_{i}\) 的中心，则 A 的中心为 \(\prod_{i \in I} C_{i}\) 。
+
+对所有 \(i \in \mathbf{I}\) ，投影 \(\mathbf{pr}_i\) （从 \(\mathbf{A}\) 到 \(\mathbf{A}_i\) 上）是一个环同态。若 \(\mathbf{B}\) 是一个环且 \(f_i \colon \mathbf{B} \to \mathbf{A}_i\) 是一个同态族，则存在唯一的同态 \(f \colon \mathbf{B} \to \mathbf{A}\) ，使得 \(f_i = \mathbf{pr}_i \circ f\) 对所有 \(i \in \mathbf{I}\) 成立；它由 \(f(b) = (f_i(b))_{i \in \mathbf{I}}\) 给出。
+
+对所有 \(i \in I\) ，设 \(a_i\) 是 \(A_i\) 的一个左理想。则 \(a = \prod_{i \in I} a_i\) 是 \(A\) 的一个左理想。对右理想、双边理想和子环也有类似的结果。
+
+假设 \(a_{i}\) 对所有 \(i \in I\) 都是双边理想，并设 \(f_{i}\) 表示 \(A_{i}\) 到 \(A_{i}/a_{i}\) 上的典范映射。则映射 \(f: (x_{i})_{i \in I} \mapsto (f_{i}(x_{i}))_{i \in I}\) （从 \(\prod_{i \in I} A_{i}\) 到 \(\prod_{i \in I} (A_{i}/a_{i})\) 上）是一个环同态，其核为 \(\prod_{i \in I} a_{i}\) ，从而在过渡到商时定义了 \(\left( \prod_{i \in I} A_{i} \right) / \left( \prod_{i \in I} a_{i} \right)\) 到 \(\prod_{i \in I} (A_{i}/a_{i})\) 上的一个同构。
+
+设 \((\mathbf{I}_{\lambda})_{\lambda \in \mathbb{L}}\) 为 I 的一个分拆。 \(\prod_{i\in I}\mathbf{A}_i\) 到 \(\prod_{\lambda \in L}\left(\prod_{i\in \mathbf{I}_{\lambda}}\mathbf{A}_i\right)\) 上的典范双射是一个环同构，在此同构下这两个环被视为等同。设 \(J\subset I\) 。设 \(e_J\) 表示 A 中的元素 \((x_i)_{i\in I}\) （由 \(x_{i} = 1_{i}\) 对 \(i\in J\) ， \(x_{i} = 0_{i}\) 对 \(i\in I - J\) 定义）。则 \(e_J\) 是 A 的一个中心幂等元（§ 1，第 4 号）。以下公式立即得出：
+
+\[
+\begin{array}{r l} e _ {\mathrm{I}} = 1; \\ e _ {\varnothing} = 0; \\ e _ {\mathrm{J} \cap \mathrm{K}} = e _ {\mathrm{J}} e _ {\mathrm{K}} & \text { for   } \mathrm{J} \subset \mathrm{I}, \mathrm{K} \subset \mathrm{I}; \\ e _ {\mathrm{J} \cup \mathrm{K}} = e _ {\mathrm{J}} + e _ {\mathrm{K}} & \text { for   } \mathrm{J} \subset \mathrm{I}, \mathrm{K} \subset \mathrm{I}, \mathrm{J} \cap \mathrm{K} = \varnothing ; \\ \sum_ {\lambda} e _ {\mathrm{J} \lambda} = 1 & \text { if   } (\mathrm{J} _ {\lambda}) \text {   is   a   finite   partition   of   I }. \end{array}
+\]
+
+设 \(\mathbf{A}_{\mathbf{J}} = \prod_{i\in J}\mathbf{A}_i\) 。设 \(\eta_{j}\) 为 A 到 \(\mathbf{A}_{\mathbf{J}}\) 上的典范投影。对 \(x = (x_{i})_{i\in J}\in \mathbf{A}_{\mathbf{J}}\) ，设 \(\varepsilon_{J}(x)\) 为 A 中的元素 \((y_{i})_{i\in I}\) （由 \(y_{i} = x_{i}\) 对 \(i\in J, y_{i} = 0_{i}\) 对 \(i\in I - J\) 定义）。则 \(\eta_{j}\) 是 A 到 \(\mathbf{A}_{\mathbf{J}},\varepsilon_{j}\) 是 \(\mathbf{A}_{\mathbf{J}}\) 的加法群到 A 上的一个单射同态，且在图
+
+\[
+\mathrm{A} _ {\mathrm{J}} \xrightarrow {\varepsilon_ {\mathrm{J}}} \mathrm{A} \xrightarrow {\eta_ {\mathrm{I} - \mathrm{J}}} \mathrm{A} _ {\mathrm{I} - \mathrm{J}}
+\]
+
+核 \(a_{J}\) （\(\eta_{I-J}\) 的）等于 \(\varepsilon_{J}\) 的像。则 \(\varepsilon_{J}(xx') = \varepsilon_{J}(x)\varepsilon_{J}(x')\) 对所有 \(x, x' \in A_{J}\) 成立；但 \(\varepsilon_{J}\) 一般不是环同态，因为 \(\varepsilon_{J}(1) = e_{J}\) 。显然 \(a_{J} = e_{J}A = Ae_{J}\) 。
+
+设 \(e_{\{i\}} = e_i\) 且 \(a_i = a_{\{i\}} = e_i A = Ae_i\) （对所有 \(i \in I\) ）。则 \(e_i^2 = e_i\) ，
+
+\[
+e _ {i} e _ {j} = e _ {j} e _ {i} = 0
+\]
+
+对 \(i \neq j\) 。若 I 是有限的，则 \(\sum_{i \in I} e_i = 1\) ，加法群 A 是双边理想 \(a_i\) 的直和，且若 \(x \in A\) ，则它在 \(a_i\) 中的分量是 \(xe_i\) 。以下命题立即由此推出。
+
+命题 8. 假设 I 是有限的。若 b 是 A 的一个左理想或右理想，则 b 是诸 b ∩ a 的直和。
+
+\subsection{环的直分解}
+
+设 A 为一个环，且 \((b_{i})_{i\in I}\) 为 A 的一族双边理想。我们将称同态
+
+\[
+x \mapsto (\phi_ {i} (x)) _ {i \in I},
+\]
+
+其中 \(\phi_{i}\) 是 A 到 \(\mathbf{A} / \mathfrak{b}_i\) 上的典范同态，即 A 到 \(\prod_{i\in I}(\mathbf{A} / \mathfrak{b}_i)\) 中的典范同态。
+
+命题 9. 设 A 是一个环，且 \((\mathfrak{b}_1, \ldots, \mathfrak{b}_n)\) 是 A 的双边理想，满足 \(\mathfrak{b}_i + \mathfrak{b}_j = \mathbf{A}\) （对 \(i \neq j\) ）。A 到 \(\prod_{i=1}^{n} (\mathbf{A} / \mathfrak{b}_i)\) 中的典范同态是满射的，其核为 \(\bigcap_{i=1}^{n} \mathfrak{b}_i = \sum_{\sigma \in \mathfrak{E}_n} \mathfrak{b}_{\sigma(1)} \mathfrak{b}_{\sigma(2)} \ldots \mathfrak{b}_{\sigma(n)}\) 。
+
+显然该核为 \(\bigcap_{i=1}^{n} \mathfrak{b}_i\) 。为证明满射性，需要证明：对每一族 \((x_i)_{1 \leqslant i \leqslant n}\) （由 A 的元素组成），存在 \(x \in \mathbf{A}\) ，使得 \(x \equiv x_i (\mathfrak{b}_i)\) 对所有 \(1 \leqslant i \leqslant n\) 成立。我们对 I 的基数 \(n\) 作归纳来证明这一断言， \(n \leqslant 1\) 的情形是平凡的。根据归纳假设，存在 \(y \in \mathbf{A}\) ，使得 \(y \equiv x_i (\mathfrak{b}_i)\) （对 \(1 \leqslant i \leqslant n-1\) ）。我们寻找一个 \(x\) ，其
+
+形式 \(y + z\) （其中 \(z \in \mathbf{A}\) ）。必然地， \(z \equiv 0(\mathfrak{b}_i)\) （对 \(i < n\) ），即 \(z \in \mathfrak{b} = \bigcap_{i=1}^{\infty} \mathfrak{b}_i\) ，而另一方面 \(z \equiv x_n - y(\mathfrak{b}_n)\) 。现在由第 9 号命题 6 有 \(\mathfrak{b}_n + \mathfrak{b} = A\) ，由此可知 \(z\) 存在。最后，核的第二种表达式由第 9 号命题 7 得出。
+
+定义 7. 设 A 为一个环。由 A 的双边理想组成的有限族 \((\mathfrak{b}_i)_{i\in I}\) ，如果 A 到 \(\prod_{i\in I}(\mathbf{A} / \mathfrak{b}_i)\) 中的典范同态是一个同构，就称为 A 的一个直分解。
+
+命题 10. 设 A 为一个环，A' 为其中心，且 \((\mathfrak{b}_{i})_{i\in I}\) 为 A 的一个有限双边理想族。以下条件是等价的：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  族 \((\mathfrak{b}_i)_{i\in I}\) 是 A 的一个直分解；
+\item
+  存在一个族 \((e_i)_{i\in I}\) （由 \(\mathbf{A}'\) 的幂等元组成），使得 \(e_i e_j = 0\) （对 \(i\neq j\) ）， \(1 = \sum_{i\in I}e_i\) 且 \(\mathfrak{b}_i = \mathbf{A}(1 - e_i)\) （对 \(i\in I\) ）；
+\item
+  \(\mathfrak{b}_i + \mathfrak{b}_j = \mathbf{A}\) （对 \(i \neq j\) ）且 \(\bigcap_{i \in I} \mathfrak{b}_i = \{0\}\) ；
+\item
+  \(\mathfrak{b}_i + \mathfrak{b}_j = \mathbf{A}\) （对 \(i \neq j\) ）且 \(\prod_{i \in I} \mathfrak{b}_i = \{0\}\) （对 \(\mathbf{I}\) 上的每一个全序）；
+\item
+  存在一个直分解 \((\mathfrak{b}_i')_{i\in \mathbf{I}}\) （\(\mathbf{A}'\) 的），使得 \(\mathfrak{b}_i = \mathbf{Ab}_i'\) （对 \(i\in \mathbf{I}\) ）。
+\end{enumerate}
+
+(a) \(\Rightarrow\) (b)。若条件 (a) 成立，则 A 可与环 \(\prod_{i\in I}(\mathbf{A} / b_i)\)
+
+以及 \(b_{i}\) 与 \(pr_{i}\) 的核等同。具有 (b) 中性质的 \(e_{i}\) 的存在性则由第 10 号得出。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \(\Rightarrow\) (d). 假设 \(e_i\) 存在且具有性质 (b)。对 \(i \neq j\) ， \(1 - e_i \in \mathfrak{b}_i\) ， \(e_i = e_i(1 - e_j) \in \mathfrak{b}_j\) ，因此 \(1 \in \mathfrak{b}_i + \mathfrak{b}_j\) 且 \(\mathbf{A} = \mathfrak{b}_i + \mathfrak{b}_j\) 。另一方面，若给 I 赋予一个全序且 \((x_i)_{i \in I}\) 是 A 中元素的一个族，则由于 \(e_i\) 是中心的，
+\end{enumerate}
+
+\[
+\prod_ {i \in \mathrm{I}} x _ {i} (1 - e _ {i}) = \Bigl (\prod_ {i \in \mathrm{I}} x _ {i} \Bigr) \Bigl (\prod_ {i \in \mathrm{I}} (1 - e _ {i}) \Bigr) = \Bigl (\prod_ {i \in \mathrm{I}} x _ {i} \Bigr) \Bigl (1 - \prod_ {i \in \mathrm{I}} e _ {i} \Bigr) = 0
+\]
+
+因此 \(\prod_{i\in I}b_i = \{0\}\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  \(\Rightarrow\) (c)。这由第 9 号命题 7 得出。
+\end{enumerate}
+
+(c) \(\Rightarrow\) (a)。这由命题 9 得出。
+
+因此条件 (a)、(b)、(c) 和 (d) 是等价的。假设它们成立。由 \((\mathbf{b}) \Rightarrow (\mathbf{a})\) ，族 \(\mathfrak{b}_i' = \mathbf{A}'(1 - e_i)\) 是 \(\mathbf{A}'\) 的一个直分解。则 \(\mathfrak{b}_i = \mathbf{A}(1 - e_i) = \mathbf{Ab}_i'\) 对所有 \(i \in \mathbf{I}\) 成立。因此条件 (e) 成立。
+
+最后，假设条件 (e) 成立。由 (a) \(\Rightarrow\) (b)，存在一个族 \((e_i)_{i\in I}\) （由 \(A'\) 的幂等元组成），使得 \(e_i e_j = 0\) （对 \(i \neq j\) ）， \(1 = \sum_{i\in I} e_i\) 且 \(\mathfrak{b}_i' = A'(1 - e_i)\) （对 \(i \in I\) ）。则 \(\mathfrak{b}_i = Abi' = A(1 - e_i)\) （对 \(i \in I\) ），因此条件 (b) 成立。
+
+注。设 A 是一个环。设 \((a_{i})_{i\in I}\) 是 A 的加法群 \(A^{+}\) 的一个有限子群族，使得 \(A^{+}\) 是诸 \(a_{i}\) 的直和。假设 \(a_{i}a_{i}\subset ai\) （对 \(i\in I\) ）且 \(a_{i}a_{j} = \{0\}\) （对 \(i\neq j\) ）。则 \(a_{i}\) 对所有 \(i\in I\) 是 A 的双边理想。以由 A 上的加法和乘法诱导的运算， \(a_{i}\) 是一个环，其单位元是 \(1\in A\) 在 \(a_{i}\) 中的分量。若 \(b_{i} = \sum_{j\neq i}a_{j}\) ，显然诸 \(b_{i}\) 满足命题 10 的条件 (c)，因此 \((b_{i})_{i\in I}\) 是 A 的一个直分解，称其由 \((a_{i})_{i\in I}\) 所定义。
+
+\BourbakiRunInHeading{例：Z的理想与商环}
+
+\(\mathbf{Z}\) 的一个理想是 \(\mathbf{Z}\) 的加法子群，因此具有形式 \(n\) . \(\mathbf{Z}\) （其中 \(n \geqslant 0\) ）；反之，对每个整数 \(n \geqslant 0\) ，集合 \(n\) . \(\mathbf{Z}\) 是一个理想，即主理想 \((n)\) 。因此 \(\mathbf{Z}\) 的每个理想都是主理想，且可唯一地表示为 \(n\mathbf{Z}\) （其中 \(n \geqslant 0\) ）的形式。理想 (1) 等于 \(\mathbf{Z}\) ，理想 (0) 由 0 组成，因而不同于 \(\mathbf{Z}\) 和 \(\{0\}\) 的理想具有形式 \(n\mathbf{Z}\) （其中 \(n > 1\) ）。若 \(m \geqslant 1\) 且 \(n \geqslant 1\) ，则 \(m\mathbf{Z} \supset n\mathbf{Z}\) 当且仅当 \(n \in m\) . \(\mathbf{Z}\) ，即 \(m\) 整除 \(n\) 。因此，理想 \(n\mathbf{Z}\) 为极大的必要且充分条件是：不存在整数 \(m > 1\) （异于 \(n\) 且整除 \(n\) ）；换言之， \(\mathbf{Z}\) 的极大理想正是形如 \(p\mathbf{Z}\) 的理想，其中 \(p\) 是一个素数（§ 4，第 10 号，定义 16）。
+
+设 \(m\) 和 \(n\) 是两个整数 \(\geqslant 1\) 。理想 \(m\mathbf{Z} + n\mathbf{Z}\) 是主理想，因此存在一个整数 \(d \geqslant 1\) ，以 \(d\mathbf{Z} = m\mathbf{Z} + n\mathbf{Z}\) 为特征；对每个整数 \(r \geqslant 1\) ，关系“r 整除 d”等价于 \(rZ \supset dZ\) ，从而等价于“ \(rZ \supset mZ\) 且 \(rZ \supset nZ\) ”，即“r 整除 m 和 n”。由此看出，m 和 n 的公因数正是 d 的因数，且 d 是 m 和 n 公有的因数中 \(\geqslant 1\) 者里最大的；d 称为 m 和 n 的最大公因数（缩写为 g.c.d.）。由于 \(dZ = mZ + nZ\) ，存在两个整数 x 和 y，使得 \(d = mx + ny\) 。若 m 和 n 的最大公因数等于 1，则称 m 和 n 互素。这相当于假设存在整数 x 和 y，使得 \(mx + ny = 1\) 。
+
+理想 mZ 与 nZ 的交集非零，因为它包含 mn，因此具有 rZ 的形式，其中 \(r \geqslant 1\) 。如上论证可以看出，r 的倍数正是 m 与 n 的公倍数，且 r 是 m 与 n 的公倍数中 \(\geqslant 1\) 的整数里最小的一个；它称为 m 与 n 的最小公倍数（缩写为 l.c.m.）。
+
+理想 \(m\mathbf{Z}\) 和 \(n\mathbf{Z}\) 的乘积是由形如 \(\sum_{i=1}^{r} mx_i ny_i = mn\left(\sum_{i=1}^{r} x_i y_i\right)\) （对 \(x_1, \ldots, y_r \in \mathbf{Z}\) ）的和组成的集合，因此等于 \(mn\mathbf{Z}\) 。
+
+对每个整数 \(n \geqslant 1\) ，商环 Z/nZ 称为模 n 的整数环；它有 n 个元素，即整数 0, 1, 2, \(\ldots\) , n - 1 模 n 的类。当 n = 1 时，我们得到零环。
+
+命题 11. 设 \(n_1, \ldots, n_d\) 是两两互素的整数 \(\geqslant 1\) ，且 \(n = n_1 \ldots n_r\) 。 \(\mathbf{Z}\) 到乘积环 \(\prod_{i=1}^{r} \mathbf{Z} / n_i \mathbf{Z}\) 中的典范同态是满射的，其核为 \(n\mathbf{Z}\) ，并定义了 \(\mathbf{Z} / n\mathbf{Z}\) 到 \(\prod_{i=1}^{r} \mathbf{Z} / n_i \mathbf{Z}\) 上的一个环同构。
+
+设 \(a_{i} = n_{i}\mathbf{Z}\) （对 \(i = 1, \ldots, r\) ）。根据假设， \(a_{i} + a_{j} = \mathbf{Z}\) （对 \(i \neq j\) ）。于是该命题由命题 9 得出。
+
+上述结果，连同关于素因数分解的那些结果，将在第七章，§ 1 中加以推广，该节专门研究主理想整环；并在《交换代数》第七章，§ 3 中加以推广，该节专门研究阶乘整环。

@@ -1,0 +1,1584 @@
+\exercisesection{复合积}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  设 \(k\) 是一个交换环，A 是一个带单位的结合 \(k\) -代数，M 是一个 (A, A)-双模。A 被 M 的一个扩张是如下数据：一个带单位的结合 \(k\) -代数 B 以及一个 \(k\) -模的正合列
+\end{enumerate}
+
+\[
+(\mathcal {E}): 0 \rightarrow \mathrm{M} \stackrel {{i}} {{\rightarrow}} \mathrm{B} \stackrel {{p}} {{\rightarrow}} \mathrm{A} \rightarrow 0,
+\]
+
+其中 p 是一个代数同态，并且
+
+\[
+i (p (b) m) = b i (m) \quad \text { and } \quad i (m p (b)) = i (m) b \quad \text { for } \quad b \in \mathbf {B}, \quad m \in \mathbf {M}.
+\]
+
+两个扩张 \(0 \to M \xrightarrow{i} B \xrightarrow{p} A \to 0\) \(0 \to M \xrightarrow{i'} B' \xrightarrow{p'} A \to 0\) 如果存在一个代数同态，则称它们是等价的 \(u: B \to B'\) 使得 \(p' \circ u = p\) \(u \circ i = i'\) ；同态 \(u\) 则它是双射的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  我们假设一个 \(k\) -模的正合列 \(0 \to \mathbf{M} \xrightarrow{i} \mathbf{B} \xrightarrow{p} \mathbf{A} \to 0\) 是分裂的；令 \(s: \mathbf{A} \to \mathbf{B}\) 为一个 \(k\) -线性映射，它是 \(p\) 的一个截面。证明存在一个元素 \(f \in \mathbf{C}^2(\mathbf{A}, \mathbf{M})\) （X，第 195 页，习题 26，b））使得 \(s(a) s(a') - s(aa') = i(f(a, a'))\) （当 \(a, a' \in \mathbf{A}\) 时）。证明 \(f\) 是一个 2-上循环，且其类在 \(\mathbf{H}^2(\mathbf{A}, \mathbf{M})\) 中与 \(s\) 的选择无关；我们将其记为 \(c(\mathcal{E})\) 。
+\item
+  设 \(\mathrm{Ex}_{k}(\mathbf{A},\mathbf{M})\) 为 A 被 M 的扩张的等价类组成的集合，这些扩张作为 k-模的扩张是平凡的。证明 c 定义了从 \(\mathrm{Ex}_{k}(\mathbf{A},\mathbf{M})\) 到 \(\mathrm{H}^{2}(\mathbf{A},\mathbf{M})\) 上的一个双射。
+\item
+  设 \(\mathcal{E}:0\to\mathbf{M}\stackrel{i}{\to}\mathbf{B}\stackrel{p}{\to}\mathbf{A}\to0\) 与 \(\mathcal{E}':0\to\mathbf{M}\stackrel{i'}{\to}\mathbf{B}\stackrel{p'}{\to}\mathbf{A}\to0\) 为 A 被 M 的两个扩张。我们用 C 表示 \(\mathbf{B}\times\mathbf{B}'\) 的由元素 \((b,b')\) 组成的子代数，这些元素满足 \(p(b)=p'(b')\) ；用 c 表示 C 的由元素 \((i(m),-i'(m))\) （\(m\in\mathbf{M}\)）组成的理想，用 \(\mathbf{B}''\) 表示代数 C/c，用 \(\pi:\mathbf{C}\to\mathbf{B}''\) 表示商同态。设 \(i'':\mathbf{M}\to\mathbf{B}''\) 与 \(p'':\mathbf{B}''\to\mathbf{A}\) 为满足 \(i''(m)=\pi((m,0))\) （\(m\in\mathbf{M}\)）与 \(p''\pi((b,b'))=p(b)\) （\(b\in\mathbf{B},b'\in\mathbf{B}'\)）的同态。证明序列 \(0\to\mathbf{M}\to\mathbf{B}''\to\mathbf{A}\to0\) 是 A 被 M 的一个扩张，称为 ( \(\mathcal{E}\) ) 与 ( \(\mathcal{E}'\) ) 的和扩张，并且这在 A 被 M 的扩张的等价类集合上定义了一个交换群法则。特别地，集合 \(\mathrm{Ex}_{k}(\mathbf{A},\mathbf{M})\) 由此被赋予一个群结构，且映射 \(c\) 是一个群同构。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  假设 \(k\) -代数 A 具有一个增广 \(\pi:\mathbf{A}\to k\) （X，第 196 页，习题 27），并且
+\item
+  假设 \(k\) -代数 \(\mathbf{A}\) 允许一个增广 \(\pi : \mathbf{A} \to k\) （X，第 196 页，习题 27），而且此外， \(\mathbf{A}\) 是一个投射 \(k\) -模。我们用 I 表示 \(\pi\) 的核。设 \(\mathbf{M}\) 为一个左 \(\mathbf{A}\) -模。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \((\mathcal{E}):0\to M_{(\pi)}\stackrel{i}{\to}\mathbf{B}\stackrel{p}{\to}\mathbf{A}\to 0\) 为 \(\mathbf{A}\) 被 \((\mathbf{A},\mathbf{A})\) -双模 \(M_{(\pi)}\) 的一个扩张（X，第 196 页，习题 27）；我们用 \(\overline{\mathbf{B}}\) 表示 \(\mathbf{B}\) 的由元素 \(b\in \mathbf{B}\) 组成的理想，这些元素满足 \(p(b)\in I\) 。我们有 \(i(m)b = 0\) ，对 \(m\in \mathbf{M}\) 与 \(b\in \overline{\mathbf{B}}\) ；于是 \(\overline{\mathbf{B}}\) 具有一个左 \(\mathbf{A}\) -模结构，使得 \(p(\beta)b = \beta b\) 对 \(\beta \in \mathbf{B}\) , \(b\in \overline{\mathbf{B}}\) 成立。证明存在一个 \(\mathbf{A}\) -模的正合列 \(0\to \mathrm{M}\to \overline{\mathrm{B}}\to I\to 0\) ；我们用 \(\theta (\mathcal{E})\) 表示该正合列在 \(\operatorname {Ext}_{\mathbf{A}}^{1}(I,\mathbf{M})\) 中的类。
+\item
+  证明 \(\theta\) 定义了一个从 \(\mathrm{Ex}_{k}(\mathbf{A},\mathbf{M}_{(\pi)})\) 到 \(\mathrm{Ext}_{\mathbf{A}}^{1}(I,\mathbf{M})\) 的映射。证明图表的交换性：
+\end{enumerate}
+
+\[
+\begin{array}{c c c} \operatorname{Ex} _ {k} (\mathbf {A}, \mathbf {M} _ {(\pi)}) & \stackrel {{\theta}} {{\longrightarrow}} & \operatorname{Ext} _ {\mathbf {A}} ^ {1} (I, \mathbf {M}) \\ \downarrow^ {c} & & \downarrow^ {- \delta} \\ \mathbf {H} ^ {2} (\mathbf {A}, \mathbf {M} _ {(\pi)}) & \stackrel {{\varphi}} {{\longrightarrow}} & \operatorname{Ext} _ {\mathbf {A}} ^ {2} (k, \mathbf {M}) \end{array}
+\]
+
+其中 δ 是由正合列 \(0 \rightarrow I \rightarrow A \xrightarrow{\pi} k \rightarrow 0\) 推出的连接同态，而 φ 是借助标准分解进行计算而得到的同构（X，第 196 页，习题 27，b））。由此推出 θ 是群的同构。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 G 为一个群，A 为代数 \(\mathbf{Z}^{(\mathrm{G})}, j: \mathrm{G} \to \mathrm{A}\) ，j 为典范单射。我们以由 \(\pi: A \to Z\) （\(\pi(e_g) = 1\) 对所有 \(g \in G\) ）定义的增广来赋予 A。设 M 为一个左 A-模。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(0 \to M_{(\pi)} \xrightarrow{i} B \xrightarrow{p} A \to 0\) 为 \(A\) 被 \((A, A)\) -双模 \(M_{(\pi)}\) 的一个扩张（X，第 196 页，习题 27）。我们用 \(\Gamma\) 表示 \(B\) 中由元素 \(b\) （属于 \(B\) 且满足 \(p(b) \in j(G)\) ）组成的子集。证明 \(\Gamma\) 赋予由 \(B\) 的乘法诱导的乘法后，是一个群，即 \(G\) 被 \(G\) -模 \(M\) 的一个扩张。
+\item
+前面的构造定义了一个从 \(\mathrm{Ex}_{\mathbf{Z}}(\mathbf{A},\mathbf{M}_{(\pi)})\) 到 \(\mathrm{Ex}(\mathbf{G},\mathbf{M})\) 的映射（VIII，§ 13）。证明图表
+\end{enumerate}
+
+\[
+\begin{array}{c} \operatorname{Ex} _ {\mathbf {Z}} (\mathbf {A}, \mathbf {M} _ {(\pi)}) \to \operatorname{Ex} (\mathbf {G}, \mathbf {M}) \\ \downarrow^ {c} \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \downarrow \\ \mathbf {H} ^ {2} (\mathbf {A}, \mathbf {M} _ {(\pi)}) \xrightarrow {\varphi^ {2}} \mathbf {H} ^ {2} (\mathbf {G}, \mathbf {M}) \end{array}
+\]
+
+是交换的。
+
+* 4) 设 g 为一个李 k-代数，M 为一个 g-模。g 被 M 的扩张是 k-模的一个正合列 \(0 \rightarrow M \xrightarrow{i} h \xrightarrow{p} g \rightarrow 0\) ，其中 h 是李 k-代数，p 是李代数同态，且 \(i(p(H)m) = [H, i(m)]\) 对 \(H \in h, m \in M\) 成立。两个扩张
+
+\[
+0 \rightarrow \mathrm{M} \stackrel {i} {\rightarrow} \mathfrak {h} \stackrel {p} {\rightarrow} \mathfrak {g} \rightarrow 0, 0 \rightarrow \mathrm{M} \stackrel {i ^ {\prime}} {\rightarrow} \mathfrak {h} ^ {\prime} \stackrel {p ^ {\prime}} {\rightarrow} \mathfrak {g} \rightarrow 0
+\]
+
+被称为等价的，如果存在一个同态 \(u: \mathfrak{h} \to \mathfrak{h}'\) 使得 \(p' \circ u = p\) , \(u \circ i = i'\) 。我们用 Liex (g, M) 表示 g 被 M 扩张的等价类集合。我们假设 g 是一个自由 k-模。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \((\mathcal{E}):0\to \mathrm{M}\stackrel {i}{\to}\mathfrak{h}\stackrel {p}{\to}\mathfrak{g}\to 0\) 为 \(\mathfrak{g}\) 被 \(\mathbf{M}\) 的一个扩张；我们选择一个 \(k\) -线性截面 \(s:\mathfrak{g}\to \mathfrak{h}\) （相对于 \(p\) ）。我们用下式定义一个元素 \(f\in C^2 (\mathfrak{g},\mathbf{M})\) （X，第 196 页，习题 28，b））：
+\end{enumerate}
+
+\[
+i (f (x, y)) = [ s (x), s (y) ] - s ([ x , y ]) \quad \text { for } \quad x  ,   y \in \mathfrak {g}  .
+\]
+
+证明 \(f\) 是一个 2-上循环，且它在 \(\mathbf{H}^{2}(\mathfrak{g},\mathbf{M})\) 中的类不依赖于 \(s\) 的选择；我们将其记作 \(\theta(\mathcal{E})\) 。b) 证明 \(\theta\) 定义了从 Liex \((\mathfrak{g},\mathbf{M})\) 到 \(\mathbf{H}^{2}(\mathfrak{g},\mathbf{M})\) 上的一个双射。直接描述 Liex \((\mathfrak{g},\mathbf{M})\) 上经由 \(\gamma\) 转移而得到的群结构。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 U 为 g 的包络代数， \(M_{(\pi)}\) 为借助增广 \(\pi: U \to k\) 与 M 相关联的 (U, U)-双模（X，第 196 页，习题 27）。设 \(0 \to M_{(\pi)} \to B \xrightarrow{p} U \to 0\) 为 U 被 \(M_{(\pi)}\) 的一个扩张（习题 1）；我们用 b 表示 B 中满足 \(p(b) \in j(g)\) 的元素 b 的集合。
+\end{enumerate}
+
+的元素b的集合。证明b是一个李k-代数，是g通过M的一个扩张。此构造定义了一个映射 \(\lambda: \mathrm{Ex}_{k}(\mathrm{U}, \mathrm{M}_{(\pi)}) \to \mathrm{Liex}(\mathfrak{g}, \mathrm{M})\) 。证明该图表
+
+\[
+\begin{array}{c c c} \operatorname{Ex} _ {k} (\mathrm{U}, \mathrm{M} _ {(\pi)}) & \xrightarrow {\lambda} & \text { Liex(g,M) } \\ \downarrow^ {c} & & \downarrow^ {\gamma} \\ \mathrm{H} ^ {2} (\mathrm{U}, \mathrm{M} _ {(\pi)}) & \xrightarrow {\varphi^ {2}} & \mathrm{H} ^ {2} (\mathrm{g,M}) \end{array}
+\]
+
+（其中 \(\varphi^2\) 是 X 第 196 页习题 27 所定义的同构）是交换的。由此推出 \(\lambda\) 是一个同构。*
+
+¶ 5) 设G、F为两个群。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对于每个扩张 \(\mathcal{E}: F \to E \to G\) （即 \(G\) 被 \(F\) 的扩张）(I，第 62 页)， \(E\) 借助内自同构对 \(F\) 的作用定义了一个同态 \(E \to \text{Aut}(F)\) ，从而通过取商得到一个群同态 \(\theta: G \to \text{Aut}(F)/\text{Int}(F)\) ，称为与扩张 \(\mathcal{E}\) 相伴的同态。 \(G\) 被 \(F\) 的两个同构的扩张具有相同的相伴同态。
+\item
+  反之，我们考虑一个群同态 \(\theta: G \to \text{Aut} (F)/\text{Int} (F)\) 。设
+\end{enumerate}
+
+\[
+p: \operatorname{Aut} (\mathbf {F}) \rightarrow \operatorname{Aut} (\mathbf {F}) / \operatorname{Int} (\mathbf {F})
+\]
+
+商映射。我们选择一个从 G 到 Aut(F) 的映射 \(\sigma\) ，使得 \(p \circ \sigma = \theta\) ，以及一个映射 \(f\) ，从 G \(\times\) G 到 F，使得 \(\sigma(x)\, \sigma(y)\, (\sigma(xy))^{-1} = \text{Int}(f(x,y))\) 对 \(x,y \in G\) 成立；令 \(c(x,y,z) = \sigma(x)\, (f(y,z)).f(x,yz).(f(xy,z))^{-1}.(f(x,y))^{-1}\) 。证明 \(c(x,y,z)\) 属于 F 的中心 Z。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  我们通过令 \(g . z = \sigma(g) (z)\) （\(g \in G, z \in Z\) ）而将 Z 视为 G-模；此定义与 \(\sigma\) 的选择无关。映射 c 定义了 \(C^{3}(G, Z)\) 的一个元素；证明 c 是一个 3-上循环，且它在 \(H^{3}(G, Z)\) 中的类与 \(\sigma\) 以及 f 的选择无关。我们将其记作 \(\omega(G, F, \theta)\) 。d) 证明 \(\omega(G, F, \theta)\) 的消失是存在 G 被 F 的扩张且其相伴同态为 \(\theta\) 的充分必要条件。若 \(\omega(G, F, \theta) = 0\) ，证明可以选择 f 使得上循环 c 为零，然后在 \(G \times F\) 上定义一个群法则。
+\item
+  假设 \(\omega(G, F, \theta) = 0\) 。证明 \(G\) 被 \(F\) 的、相伴同态为 \(\theta\) 的扩张的同构类集合是群 H \(^{2}\) (G, Z) 作用下的一个主齐性集合。
+\item
+  设 H 为一个群，M 为一个 \(\mathbf{Z}^{(H)}\) -模， \(x\) 为 \(\mathrm{H}^3 (\mathrm{H},\mathrm{M})\) 的一个元素。证明存在一个以 M 为中心的群 E 以及一个同态 \(\varphi :\mathrm{H}\to \mathrm{Aut}(\mathrm{E}) / \mathrm{Int}(\mathrm{E})\) ，它在 M 上诱导出给定的 H-模结构，使得 \(\omega (\mathrm{H},\mathrm{E},\varphi) = x\) （取 \(\mathbf{E} = \mathbf{M}\times \mathbf{L}\) ，其中 L 是以 \(\mathrm{H}\times \mathrm{H}\) 为生成集的自由群）.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  设 M 为一个右 A-模，N 为一个左 A-模。对 \(n \geqslant 0\) ，我们用 \(\mathcal{T}_{n}(M, N)\) 表示三元组 \((P, p, q)\) 的集合，其中 P 是由有限生成自由 A-模构成的复形，使得 \(P_{r} = 0\) 对 \(r < 0\) 与 \(r > n\) 成立，且 \(p: P \to N\) 与 \(q: P^{*} \to M(n)\) 是 A-复形的态射（我们用 \(P^{*}\) 表示 Homgr 复形 \(_{A}\) \((P, A)\) ）。两个元素 \((P, p, q)\) 与 \((P', p', q')\) （属于 \(\mathcal{T}_{n}(M, N)\) ）称为相连的，如果存在态射 \(u: P \to P'\) 使得 \(p = p' \circ u\) 与 \(q' = q \circ 'u\) ；我们用 \(T_{n}(M, N)\) 表示 \(\mathcal{T}_{n}(M, N)\) 对于使两个相关元素等价的最细等价关系所作的商（参见 II，第 52 页，习题 9）。a) 证明 \(T_{n}(M, N)\) 与 Tor \(_{n}^{A}\) \((M, N)\) 等同。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \((\mathcal{E}):0\to \mathrm{M}^{\prime}\stackrel {i}{\to}\mathrm{M}\stackrel {\pi}{\to}\mathrm{M}^{\prime \prime}\to 0\) 为右 A-模的一个正合列。描述连接同态 \(\partial :\mathbf{T}_n(\mathbf{M}'',\mathbf{N})\to \mathbf{T}_{n - 1}(\mathbf{M}',\mathbf{N})\) ，它由 \(\partial (\mathcal{E},\mathbf{N})\) 利用之前的等同关系而得到。
+\end{enumerate}
+
+\((\mathrm{If}(\mathbf{P},p,q)\in\mathcal{T}_{n}(\mathbf{M}^{\prime\prime},\mathbf{N}),\text{证明我们有}\partial(\mathbf{P},p,q)=(\overline{\mathbf{P}},\overline{p},\overline{q}),\text{其中}\overline{\mathbf{P}}\text{ 是将 } \mathbf{P}_{n}\text{ 替换为 0 后得到的 } \mathbf{P},\overline{p}\text{ 是由 } p\text{ 导出的态射，而 }(\overline{q})^{n-1}: \mathbf{P}_{n-1}^{*}\to\mathbf{M}^{\prime}\text{ 等于 }u^{n-1},u\text{ 是从 } \mathbf{P}^{*}\text{ 到复形 (Con (i)) (n) 中的态射，使得 }\pi\circ u^{n}=q^{n}.)\)
+
+¶ 7) 设 A' 是一个（结合且含幺的）k-代数，且 B = A ⊗k A'。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 M 为左 A-模，Q 为右 A-模，M' 为左 A'-模，Q' 为右 A'-模。设 (P, p)（相应地，(P', p')，(R, r)）为 A-模 M（相应地，A'-模 M'，B-模 M ⊗\_k M'）的一个投射分解。证明存在一个 B-复形的态射
+\end{enumerate}
+
+\[
+u: \mathbf {P} \otimes_ {k} \mathbf {P} ^ {\prime} \rightarrow \mathbf {R},
+\]
+
+在同伦意义下唯一，使得 \(r \circ u = p \otimes p'\) 。利用 \(u\) ，定义一个零次的分次 \(k\) -同态
+
+\[
+\top : \operatorname{Tor} ^ {\mathbf {A}} (\mathrm{Q}, \mathrm{M}) \otimes_ {k} \operatorname{Tor} ^ {\mathbf {A} ^ {\prime}} (\mathrm{Q} ^ {\prime}, \mathrm{M} ^ {\prime}) \rightarrow \operatorname{Tor} ^ {\mathbf {B}} (\mathrm{Q} \otimes_ {k} \mathrm{Q} ^ {\prime}, \mathrm{M} \otimes_ {k} \mathrm{M} ^ {\prime}).
+\]
+
+证明 \(\top\) 不依赖于分解 P、P'、R 以及态射 \(u\) 的选择。如果 \(a \in \operatorname{Tor}^{\mathbf{A}}(\mathbf{Q}, \mathbf{M})\) 且 \(a' \in \operatorname{Tor}^{\mathbf{A}'}(\mathbf{Q}', \mathbf{M}')\) ，我们置 \(\top(a \otimes a') = a \top a'\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们进一步假设 \(k\) -模 \(\mathbf{A}\) 与 \(\mathbf{A}'\) 是投射的，并且有 \(\operatorname{Tor}_n^k (\mathbf{M},\mathbf{M}') = 0\) （其中 \(n > 0\) ）。证明此时 \(\mathbf{P} \otimes_k \mathbf{P}'\) 是 \(\mathbf{B}\) -模 \(\mathbf{M} \otimes_k \mathbf{M}'\) 的一个投射分解；由此推出，对每个 \(\mathbf{A}\) -模 \(\mathbf{N}\) 与每个 \(\mathbf{A}'\) -模 \(\mathbf{N}'\) ，存在一个零次的分次 \(k\) -同态
+\end{enumerate}
+
+\[
+\vee : \operatorname{Ext} _ {\mathbf {A}} (\mathbf {M}, \mathbf {N}) \otimes_ {k} \operatorname{Ext} _ {\mathbf {A} ^ {\prime}} (\mathbf {M} ^ {\prime}, \mathbf {N} ^ {\prime}) \rightarrow \operatorname{Ext} _ {\mathbf {B}} (\mathbf {M} \otimes_ {k} \mathbf {M} ^ {\prime}, \mathbf {N} \otimes_ {k} \mathbf {N} ^ {\prime}).
+\]
+
+证明 \(\vee\) 与分解 \(\mathbf{P}\) 和 \(\mathbf{P}'\) 的选择无关。如果 \(b \in \operatorname{Ext}_{\mathbf{A}}(\mathbf{M}, \mathbf{N})\) 且 \(b' \in \operatorname{Ext}_{\mathbf{A}'}(\mathbf{M}', \mathbf{N}')\) ，我们记 \(\vee (b \otimes b') = b \vee b'\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 A'' 是第三个 k-代数（结合的且有单位元），M'' 和 N'' 是左 A''-模，Q'' 是右 A''-模。我们将 k-代数 A ⊗\_k (A' ⊗\_k A'') 与 (A ⊗\_k A') ⊗\_k A'' 等同起来，同样将 k-模 M ⊗\_k (M' ⊗\_k M'') 与 (M ⊗\_k M') ⊗\_k M''，N ⊗\_k (N' ⊗\_k N'') 与 (N ⊗\_k N') ⊗\_k N''，Q ⊗\_k (Q' ⊗\_k Q'') 与 (Q ⊗\_k Q') ⊗\_k Q'' 等同起来。证明这些公式
+\end{enumerate}
+
+\[
+\begin{array}{l l} a \top (a ^ {\prime} \top a ^ {\prime \prime}) = (a \top a ^ {\prime}) \top a ^ {\prime \prime} & \text {for} \quad a \in \operatorname{Tor} ^ {\mathbf {A}} (\mathrm{Q}, \mathrm{M}), \quad a ^ {\prime} \in \operatorname{Tor} ^ {\mathbf {A} ^ {\prime}} (\mathrm{Q} ^ {\prime}, \mathrm{M} ^ {\prime}), \\ & \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad a ^ {\prime \prime} \in \operatorname{Tor} ^ {\mathbf {A} ^ {\prime \prime}} (\mathrm{Q} ^ {\prime \prime}, \mathrm{M} ^ {\prime \prime}) \end{array}
+\]
+
+\[
+\begin{array}{r l} b \vee (b ^ {\prime} \vee b ^ {\prime \prime}) = (b \vee b ^ {\prime}) \vee b ^ {\prime \prime} & \text {for} \quad b \in \operatorname{Ext} _ {\mathbf {A}} (\mathbf {M}, \mathbf {N}), \quad b ^ {\prime} \in \operatorname{Ext} _ {\mathbf {A}} (\mathbf {M} ^ {\prime}, \mathbf {N} ^ {\prime}), \\ & \qquad \qquad \qquad \qquad \qquad \qquad b ^ {\prime \prime} \in \operatorname{Ext} _ {\mathbf {A} ^ {\prime \prime}} (\mathbf {M} ^ {\prime \prime}, \mathbf {N} ^ {\prime \prime}). \end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 \(\sigma : \mathrm{Tor}^{\mathbf{A} \otimes_{\mathbf{k}} \mathbf{A}'}(\mathbf{Q} \otimes_{\mathbf{k}} \mathbf{Q}', \mathbf{M} \otimes_{\mathbf{k}} \mathbf{M}') \to \mathrm{Tor}^{\mathbf{A}' \otimes_{\mathbf{k}} \mathbf{A}}(\mathbf{Q}' \otimes_{\mathbf{k}} \mathbf{Q}, \mathbf{M}' \otimes_{\mathbf{k}} \mathbf{M})\) 与
+\end{enumerate}
+
+\[
+\tau : \operatorname{Ext} _ {\mathbf {A} \otimes_ {k} \mathbf {A} ^ {\prime}} (\mathrm{M} \otimes_ {k} \mathrm{M} ^ {\prime}, \mathrm{N} \otimes_ {k} \mathrm{N} ^ {\prime}) \rightarrow \operatorname{Ext} _ {\mathbf {A} ^ {\prime} \otimes_ {k} \mathbf {A}} (\mathrm{M} ^ {\prime} \otimes_ {k} \mathrm{M}, \mathrm{N} ^ {\prime} \otimes_ {k} \mathrm{N})
+\]
+
+为由交换同构推出的同构
+
+\[
+\mathrm{A} \otimes_ {k} \mathrm{A} ^ {\prime} \rightarrow \mathrm{A} ^ {\prime} \otimes_ {k} \mathrm{A}, \quad \mathrm{M} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{M} ^ {\prime} \otimes_ {k} \mathrm{M}, \quad \mathrm{N} \otimes_ {k} \mathrm{N} ^ {\prime} \rightarrow \mathrm{N} ^ {\prime} \otimes_ {k} \mathrm{N}, \quad \mathrm{Q} \otimes_ {k} \mathrm{Q} ^ {\prime} \rightarrow \mathrm{Q} ^ {\prime} \otimes_ {k} \mathrm{Q}.
+\]
+
+证明这些公式。
+
+\[
+\begin{array}{l l} \sigma (a \top a ^ {\prime}) = (- 1) ^ {p q} a ^ {\prime} \top a & \text { for } \quad a \in \operatorname{Tor} _ {p} ^ {A} (Q, M), \quad a ^ {\prime} \in \operatorname{Tor} _ {q} ^ {A ^ {\prime}} (Q ^ {\prime}, M ^ {\prime}) \\ \tau (b \vee b ^ {\prime}) = (- 1) ^ {p q} b ^ {\prime} \vee b & \text { for } \quad b \in \operatorname{Ext} _ {A} ^ {p} (M, N), \quad b ^ {\prime} \in \operatorname{Ext} _ {A ^ {\prime}} ^ {q} (M ^ {\prime}, N ^ {\prime}). \end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 \((\mathcal{E}):0\to \mathbf{M}_2\to \mathbf{M}_1\to \mathbf{M}_0\to 0\) 是 A-模的一个正合列，使得序列
+\end{enumerate}
+
+\[
+(\mathcal {E} \otimes \mathrm{M} ^ {\prime}): 0 \rightarrow \mathrm{M} _ {2} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{M} _ {1} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{M} _ {0} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow 0
+\]
+
+是正合的。设 δ（相应地，Δ）表示连接同态 δ(Q, ℰ)（相应地，δ(Q ⊗ₖ Q′, ℰ ⊗ M′)）。证明对于 a ∈ Tor\^{}A(Q, M₀)，a′ ∈ Tor\^{}A(Q', M')，有 (δa) ⊤ a′ = Δ(a ⊗ a′)。对乘积 ∨ 证明类似的公式。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  如果 k 是一个域，证明 \(\top\) 是分次 k-模之间的同构；此外，若 A 和 A' 是左诺特的，且 A-模 M 与 A'-模 M' 是有限生成的，则对 ∨ 也有同样的结论。g) 若将模 \(\operatorname{Tor}_{n}^{\mathbf{A}}(\mathbf{Q},\mathbf{M})\) 与习题 6 中定义的集合 \(\operatorname{T}_{n}(\mathbf{Q},\mathbf{M})\) 等同起来，证明公式 \((\mathbf{P},p,q)\top(\mathbf{P}',p',q')=(\mathbf{P}\otimes_{k}\mathbf{P}',p\otimes p',q\otimes q')\) 。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  我们沿用习题 7 的记号；我们假设 \(k\) -模 A 与 A' 是投射的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  我们假设有 \(\mathrm{Tor}_{i}^{k}(\mathbf{M},\mathbf{M}^{\prime}) = 0\) （其中 \(i > 0\) ）。证明映射 \(b\mapsto b\vee 1_{\mathbf{M}'}\) 定义了一个零次的分次 \(k\) -同态，从 \(\operatorname{Ext}_{\mathbf{A}}(\mathbf{M},\mathbf{N})\) 到 \(\operatorname{Ext}_{\mathbf{B}}(\mathbf{M}\otimes_{k}\mathbf{M}',\mathbf{N}\otimes_{k}\mathbf{M}')\) ，它在零次诱导出典范同态 \(b\mapsto b\otimes 1_{\mathbf{M}'}\) 。
+\item
+  我们假设 k-模 M' 是平坦的。设
+\end{enumerate}
+
+\[
+0 \rightarrow \mathrm{N} \rightarrow \mathrm{R} _ {n} \rightarrow \dots \rightarrow \mathrm{R} _ {1} \rightarrow \mathrm{M} \rightarrow 0
+\]
+
+是 A-模的一个正合列，其类为 \(b \in \operatorname{Ext}_{\mathbf{A}}^{n}(\mathbf{M}, \mathbf{N})\) 。证明 B-模的正合列
+
+\[
+0 \rightarrow \mathrm{N} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{R} _ {n} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \dots \rightarrow \mathrm{R} _ {1} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{M} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow 0
+\]
+
+具有类 \(b \vee 1_{\mathbf{M}'}\) （在 \(\operatorname{Ext}_{\mathbf{B}}^{n}(\mathbf{M} \otimes_{k} \mathbf{M}', \mathbf{N} \otimes_{k} \mathbf{N}')\) 中）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  我们假设 k-模 M、M'、N、N' 都是平坦的。证明我们有：
+\end{enumerate}
+
+\[
+b \vee b ^ {\prime} = (b \vee 1 _ {N ^ {\prime}}) \circ (1 _ {M} \vee b ^ {\prime}) = (- 1) ^ {p q} (1 _ {N} \vee b ^ {\prime}) \circ (b \vee 1 _ {M ^ {\prime}})
+\]
+
+对于 \(b \in \operatorname{Ext}_{\mathbf{A}}^{p}(\mathbf{M}, \mathbf{N})\) ， \(b' \in \operatorname{Ext}_{\mathbf{A}'}^{q}(\mathbf{M}', \mathbf{N}')\) 。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  我们假设环 A 是交换的。设 B、C 为两个结合的、含单位元的 A-代数；我们用 \(m_{\mathbf{B}}: \mathbf{B} \otimes_{\mathbf{A}} \mathbf{B} \to \mathbf{B}\) 表示 B 的乘法，用 \(m_{\mathbf{C}}\) 表示 C 的乘法。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明同态
+\end{enumerate}
+
+\[
+\operatorname{Tor} \left(m _ {\mathrm{B}}, m _ {\mathrm{C}}\right) \circ \top : \operatorname{Tor} ^ {\mathrm{A}} (\mathrm{B}, \mathrm{C}) \otimes_ {\mathrm{A}} \operatorname{Tor} ^ {\mathrm{A}} (\mathrm{B}, \mathrm{C}) \rightarrow \operatorname{Tor} ^ {\mathrm{A}} (\mathrm{B}, \mathrm{C})
+\]
+
+（参见习题 7）在 Tor \(^{A}\) (B, C) 上定义一个分次 A-代数的结构，结合且有单位。b) 设 S 是一个微分分次 A-代数，并且 \(p : S_{0} \to B\) 是 A-代数的一个同态，使得 (S, p) 是 B 的一个自由分解（参见 X，第 183 页，习题 18）。证明这个同构
+
+\[
+\psi (\mathbf {S}, \mathbf {C}): \operatorname{Tor} ^ {\mathbf {A}} (\mathbf {B}, \mathbf {C}) \rightarrow \mathbf {H} (\mathbf {S} \otimes_ {\mathbf {A}} \mathbf {C})
+\]
+
+是 A-代数的同构，如果把 H(S ⊗A C) 赋予由 S ⊗A C 的微分分次代数结构导出的代数结构（X，第 183 页，习题 18，b) 和 c)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  若 A-代数 B 和 C 是交换的，证明分次代数 Tor \(^{A}\) (B, C) 是交错的（参见 X，第 183 页，习题 19）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  设 B 是一个 k-双代数（III，第 148 页），我们经由余单位 \(\beta: \mathbf{B} \to k\) 将其视为一个增广 k-代数（X，第 196 页，习题 27）；我们假设 \(k\) -模 B 是投射的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 M、N 为两个左 B-模。习题 7 中的同态 ∨ 等同于一个次数为零的分次同态
+\end{enumerate}
+
+\[
+\mathrm{H} ^ {\bullet} (\mathbf {B}, \gamma ; \mathbf {M}) \otimes_ {k} \mathrm{H} ^ {\bullet} (\mathbf {B}, \gamma ; \mathbf {N}) \rightarrow \mathrm{H} ^ {\bullet} (\mathbf {B} \otimes_ {k} \mathbf {B}, \gamma \otimes \gamma ; \mathbf {M} \otimes_ {k} \mathbf {N});
+\]
+
+通过与由余乘法诱导的同态复合，由此推出一个次数为零的分次同态 \(\cup: H'(B, \gamma; M) \otimes_k H'(B, \gamma; N) \to H'(B, \gamma; M \otimes_k N)\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 C 为结合含幺 k-代数，我们赋予其由 γ 导出的 B-模结构。证明同态 ∪ 在 H'(B, γ ; C) 上定义了结合含幺分次 k-代数的结构；若 C 交换且双代数 B 余交换，则代数 H'(B, γ ; C) 是反交换的。
+\item
+  我们取 C = k。证明乘积 ∪ 与 \(\operatorname{Ext}_{\mathbf{B}}(k, k)\) 上的复合乘积一致。d) 设 G 是一个群，M 和 N 是两个 \(\mathbf{Z}^{(\mathbf{G})}\) -模。我们赋予 M ⊗\_z N 一个 \(\mathbf{Z}^{(\mathbf{G})}\) -模结构，它由 \(g(x \otimes y) = gx \otimes gy\) （\(g \in G\) ， \(x \in M\) ， \(y \in N\) ）所定义。证明映射
+\end{enumerate}
+
+\[
+\cup : \mathrm{H} ^ {\bullet} (\mathrm{G}, \mathrm{M}) \otimes_ {\mathbf {z}} \mathrm{H} ^ {\bullet} (\mathrm{G}, \mathrm{N}) \rightarrow \mathrm{H} ^ {\bullet} (\mathrm{G}, \mathrm{M} \otimes_ {\mathbf {z}} \mathrm{N})
+\]
+
+是由次数为零的分次同态在同调上诱导的同态
+
+\[
+u: \mathrm{C} ^ {*} (\mathrm{G}, \mathrm{M}) \otimes_ {\mathbf {z}} \mathrm{C} ^ {*} (\mathrm{G}, \mathrm{N}) \rightarrow \mathrm{C} ^ {*} (\mathrm{G}, \mathrm{M} \otimes_ {\mathbf {z}} \mathrm{N})
+\]
+
+这个同态由 \(u(f \otimes h)(g_1, \ldots, g_{p+q}) = f(g_1, \ldots, g_p) \otimes g_1 \ldots g_p h(g_{p+1}, \ldots, g_{p+q})\) 定义，其中
+
+\[
+f \in \mathbf {C} ^ {p} (\mathbf {G}, \mathbf {M}), \quad h \in \mathbf {C} ^ {q} (\mathbf {G}, \mathbf {N}), \quad g _ {1} \dots g _ {p + q} \in \mathbf {G}.
+\]
+
+（利用第 185 页习题 5。）
+
+¶ 11) 假设双代数 B 允许一个逆 i（参见 III，第 198 页，习题 4）。设 M 和 N 为 B-模。k-模 M ⊗k N（相应地，Homk(M, N)）具有 B ⊗k B-模（相应地，B ⊗k B°-模）的自然结构；我们用由同态 c（相应地，(1B ⊗ i) ∘ c）导出的 B-模结构赋予它。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明同态 u（习题 10）定义了一个次数为零的分次同态
+\end{enumerate}
+
+\[
+\cup : \mathrm{H} ^ {*} (\mathbf {B}, \gamma ; \operatorname{Hom} _ {k} (\mathbf {M}, \mathbf {N})) \otimes_ {k} \mathrm{H} ^ {*} (\mathbf {B}, \gamma ; \mathbf {M}) \rightarrow \mathrm{H} ^ {*} (\mathbf {B}, \gamma ; \mathbf {N}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(0 \to M \to R_n \to \cdots \to R_1 \to k \to 0\) 是 B-模的一个正合列，其中 \(R_i\) 是投射的（\(1 \leqslant i \leqslant n\)）；设 \(\theta\) 为其在 \(\operatorname{Ext}_B^n(k, M) = H^n(B, \gamma; M)\) 中的类。证明对于 \(p \geqslant 1\) ，映射 \(x \mapsto x \cup \theta\) 是一个 \(k\) -同构，从 \(H^p(B, \gamma; \operatorname{Hom}_k(M, N))\) 到 \(H^{p+n}(B, \gamma; N)\) 上。
+\end{enumerate}
+
+（证明这个映射经由
+
+\[
+\mathrm{H} ^ {p} (\mathrm{B}, \gamma ; \operatorname{Hom} _ {k} (\mathrm{M}, \mathrm{N})) \rightarrow \operatorname{Ext} _ {\mathrm{B}} ^ {p} (\mathrm{M}, \mathrm{N}) \xrightarrow {\theta} \operatorname{Ext} _ {\mathrm{B}} ^ {p + n} (k, \mathrm{N}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 G 为一个群，N 为一个 \(\mathbf{Z}^{(G)}\) -模。设 F 为一个自由群， \(p: F \to G\) 一个满同态，R = Ker( \(p\) ), \(\overline{R} = R/(R, R)\) , \(\overline{F} = F/(R, R)\) 。该扩张 \(\overline{R} \to \overline{F} \to G\) 定义了一个类 \(\varepsilon \in H^2(G, \overline{R})\) ；证明映射 \(x \mapsto x \cup \varepsilon\) 从 \(H^p(G, \operatorname{Hom}_{\mathbf{Z}}(\overline{R}, N))\) 到 \(H^{p+2}(G, N)\) 是一个同构（\(p \geqslant 1\) ；利用习题 3，d)，第 179 页）。
+\end{enumerate}
+
+\exercisesection{同调维数}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  设 \(u: \mathbf{A} \to \mathbf{B}\) 是一个环同态，M 是一个 B-模。证明不等式
+\end{enumerate}
+
+\[
+\mathrm{dp} _ {\mathbf {A}} (\mathbf {M}) \leqslant \mathrm{dp} _ {\mathbf {B}} (\mathbf {M}) + \mathrm{dp} _ {\mathbf {A}} (\mathbf {B} _ {s}).
+\]
+
+（通过对 dpB(M) 归纳推理，或利用第 188 页习题 6 的谱序列。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  假设环 A 是诺特的；设 M 是一个有限生成的 A-模，其投射维数为 n。证明 k-模 Ext \(_{A}^{n}\) (M, A) 是非零的。
+\item
+  设 \(n\) 为一个整数 \(\geqslant 1\) 。证明 \(\mathrm{dh}(\mathbf{M}_n(\mathbf{A})) = \mathrm{dh}(\mathbf{A})\) （参见 VIII，§ 4）。
+\item
+  设 M 是一个 A-模。我们称 M 的内射维数（记为 \(\mathrm{di}_{\mathbf{A}}(\mathbf{M})\) ）为 M 的内射分解的长度在 \(\overline{\mathbf{Z}}\) 中的下确界。
+\end{enumerate}
+
+如果 n 是一个整数 \(\geqslant\) 0，证明以下条件是等价的：
+
+\(\alpha)\mathrm{di}_{\mathbf{A}}(\mathbf{M})\leqslant n;\)
+
+β) \(\operatorname{Ext}_{\mathbf{A}}^{r}(\mathbf{N},\mathbf{M}) = 0\) 对每个 A-模 N 及每个整数 \(r > n\) ；
+
+\(\gamma)\ \mathrm{Ext}_{\mathbf{A}}^{n+1}(\mathbf{N},\mathbf{M}) = 0\) 对于每个 A-模 \(\mathbf{N}\) ；
+
+δ) \(\operatorname{Ext}_{\mathbf{A}}^{n+1}(\mathbf{N},\mathbf{M})=0\) 对于每个循环 A-模 N；
+
+ε) 对于每个正合列 0 → M → I⁰ → \(\cdots\) → Iⁿ⁻¹ → N → 0，其中诸 Iᵏ 都是内射的，N 是内射的。 5) 设 (Mᵢ)ᵢ∈F 是一族 A-模。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 \(\mathrm{di}_{\mathbf{A}}(\prod \mathbf{M}_i) = \sup \mathrm{di}_{\mathbf{A}}(\mathbf{M}_i)\) 。
+\item
+  若 A 是诺特的，证明 \(\mathrm{di}_{\mathbf{A}}(\bigoplus \mathbf{M}_i) = \sup \mathrm{di}_{\mathbf{A}}(\mathbf{M}_i)\) 。
+\item
+  若 \(\mathrm{di}_{\mathbf{A}}(\bigoplus_{i\in E}\mathbf{M}_{i}) = \sup_{i\notin E}\mathrm{di}_{\mathbf{A}}(\mathbf{M}_{i})\) 对每个 A-模族 \((\mathbf{M}_i)_{i\in E}\) 成立，则 A 是诺特的（利用第 170 页习题 21）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\item
+  设 I 为 A 的左理想组成的集合。证明 \(\mathrm{dh}(\mathbf{A}) = \sup \mathrm{dp}_{\mathbf{A}}(\mathbf{A}/\mathfrak{a})\) 。
+\item
+  设 M 为一个 A-模。我们称 M 的平坦维数（记为 \(dpl_{A}\) (M)）为 M 的平坦分解的长度在 \(\overline{Z}\) 中的下确界。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  如果 n 是一个整数 \(\geqslant 0\) ，证明以下条件是等价的：
+\end{enumerate}
+
+\(\alpha)\mathrm{dpl}_{\mathbf{A}}(\mathbf{M})\leqslant n.\)
+
+\(\beta)\ \mathrm{Tor}_{r}^{\mathbf{A}}(\mathbf{N},\mathbf{M})=0\ \text{对每个右 A-模 N 及每个整数 }r>n.\)
+
+\(\gamma)\ \mathrm{Tor}_{n+1}^{\mathbf{A}}(\mathbf{N},\mathbf{M})=0\) 对每个右 A-模 N。
+
+\(\delta)\ \mathrm{Tor}_{n+1}^{\mathbf{A}}(\mathbf{N},\mathbf{M})=0\) 对每个单生成右 A-模 N。
+
+ε) 对每个正合列 \(0 \rightarrow K \rightarrow P_{n-1} \rightarrow \cdots \rightarrow P_{0} \rightarrow M \rightarrow 0\) ，其中诸 \(P_{k}\) 是平坦的，则 K 是平坦的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  证明有 \(\mathrm{dpl}_{\mathbf{A}}(\mathbf{M}) \leqslant \mathrm{dp}_{\mathbf{A}}(\mathbf{M})\) ；若 A 是诺特环且 M 是有限生成的，则等号成立。
+\item
+  设 \((\mathbf{N}_{\alpha})_{\alpha \in I}\) 为 A-模的一个归纳系统，N 为其归纳极限。证明不等式
+\end{enumerate}
+
+\[
+\mathrm{dpl} _ {A} (N) \leqslant \sup _ {\alpha \in I} \mathrm{dpl} _ {A} (N _ {\alpha}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  我们称 A 的 tor 维数（记为 td(A)）为在 \(\overline{\mathbf{Z}}\) 中、由满足下述条件的整数 \(n\) 组成的集合的上确界：存在一个左 A-模 N 和一个右 A-模 M，使得 \(\operatorname{Tor}_{n}^{\mathbf{A}}(\mathbf{M},\mathbf{N})\neq0\) 。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(n\) 为一个整数 \(\geqslant 0\) 。证明以下条件是等价的：
+\end{enumerate}
+
+\(\alpha)\ \mathrm{td}(\mathbf{A}) \leqslant n.\)
+
+β) 对于每个 A-模 M，我们有 \(\mathrm{dpl}_{\mathbf{A}}(\mathbf{M}) \leqslant n\) （习题 7）。
+
+\(\gamma)\) 对于每个单生成 A-模 M，我们有 \(\mathrm{dpl}_{\mathbf{A}}(\mathbf{M}) \leqslant n\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  证明我们有 td(A) = td(A°) 且 td(A) ≤ dh(A)；若 A 是左诺特的，则等号成立。
+\end{enumerate}
+
+¶ 9) a) 证明以下条件是等价的：
+
+α) A 的每个有限生成（左）理想都是投射 A-模。
+
+β) 投射 A-模的每个有限生成子模都是投射的。
+
+\(\gamma)\) 我们有 td(A) \(\leqslant\) 1（习题8），且环A是凝聚的（X，第181页，习题11）。
+
+δ) 对任意集合 I，A¹ 的每个子模都是平坦的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设环 A 满足 a) 中的等价条件。证明：每个投射 A-模都同构于 A 的有限生成理想的直和。（先处理有限生成模的情形；然后对具有可数生成元族的模用归纳法处理，注意到投射 A-模 P 的每个元素都包含在 P 的一个有限生成直和项中。最后从 Kaplansky 定理（II，第 183 页，习题 2）推出一般情形。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  假设 \(\mathbf{A}\) 是整环；设 \(\mathbf{K}\) 为其分式域。我们说一个理想 \(\mathfrak{a}\) （\(\mathbf{A}\) 的）是 \(invertible\) （可逆的），如果存在元素 \(x_{1},\ldots ,x_{n}\) （\(\mathbf{K}\) 中的），使得 \(x_{i}\mathfrak{a}\subset \mathbf{A}\) （\(1\leqslant i\leqslant n\) ）且 \(\sum x_i\mathfrak{a} = \mathbf{A}\) 。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明每个可逆理想都是有限生成的。
+\item
+  证明 A 的非零理想是投射 A-模当且仅当它是可逆的。
+\item
+  设 a 是 A 的一个可逆理想，D 是一个可除 A-模。证明 \(\operatorname{Ext}_A^i(A/a, D) = 0\) （\(i \geqslant 1\) ）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    假设环 A 是一个整环。证明习题 9 的条件 \(\alpha\) 到 \(\delta\) 仍然等价于以下条件：
+  \end{enumerate}
+\end{enumerate}
+
+ε) 每个有限生成的挠自由 A-模都是投射的。
+
+ζ) 每个无挠 A-模都是平坦的。
+
+η) 平坦 A-模的每个子模都是平坦的。
+
+（利用第 169 页习题 13。）
+
+满足这些条件的整环称为普吕弗环。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 B 是一个整环，它是一个递增滤过的普吕弗子环族的并。证明 B 是普吕弗的。
+\end{enumerate}
+
+* c) 证明代数整数环是普吕弗环。 *
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  假设环A是整环。证明以下条件是等价的：
+\end{enumerate}
+
+\(\alpha)\ \mathrm{dh}(\mathbf{A}) \leqslant 1.\)
+
+β) 每个可除A-模都是内射的。
+
+γ) 环 A 是普吕弗环（习题 11）且是诺特环。
+
+（为证明 α) 蕴含 β)，使用习题 10。）
+
+于是我们称 A 为戴德金环。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  假设A是左且右诺特的。证明以下条件是等价的：
+\end{enumerate}
+
+\(\alpha)\ \mathrm{dh}(\mathbf{A}) \leqslant 2.\)
+
+β) 对于所有整数 \(p, q\) 以及每个 A-线性映射 \(u: \mathbf{A}^p \to \mathbf{A}^q\) ， \(u\) 的核是投射 A-模。
+
+γ) 每个有限生成A-模的对偶都是投射的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  设 x 是 A 中的一个左可消的元素。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明该理想 \(x\mathbf{A}\) 是双侧的，当且仅当存在 \(\sigma\) ——环 \(\mathbf{A}\) 的一个自同态——使得 \(ax = x\sigma(a)\) 对所有 \(a \in \mathbf{A}\) 。
+\item
+  我们现在假设 a) 的条件成立。设 M 是一个 A-模，使得 xM = 0。证明等式 dp\_A(M) = dp\_{A/xA}(M) + 1（可以利用第 188 页习题 6，d) 的谱序列）。
+\item
+  我们假设 \(x\) 属于 \(\mathbf{A}\) 的根，并且 \(\mathbf{A}\) 是诺特的。设 \(\mathbf{N}\) 是一个有限生成的 \(\mathbf{A}\) -模，使得比为 \(x\) 的位似变换在 \(\mathbf{N}\) 上是单射的。证明我们有 \(\mathrm{dp}_{\mathbf{A}}(\mathbf{N}) = \mathrm{dp}_{\mathbf{A}/\mathbf{A}x}(\mathbf{N}/x\mathbf{N})\) 。d) 在 \(c\) ) 的条件下，证明有 \(\mathrm{dh}(\mathbf{A}) = \mathrm{dh}(\mathbf{A}/\mathbf{A}x) + 1\) 。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  设 σ 是环 A 的一个自同构。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  我们用 \(\mathbf{A}_{\sigma}[\mathbf{X}]\) 表示在 VIII，§ 1，第 3 号中定义的环。证明
+\end{enumerate}
+
+\[
+\mathrm{dh} (\mathbf {A} _ {\sigma} [ \mathbf {X} ]) = \mathrm{dh} (\mathbf {A}) + 1.
+\]
+
+（不等式 dh(A \(_{\sigma}\) {[}X{]}) \(\geqslant\) dh(A) + 1 由习题 14， \(b\) ) 得出；对于相反的不等式，可借鉴 X，第 142 页，引理 3， \(a\) 的证明。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们用 \(\mathbf{A}_{\sigma}[[\mathbf{X}]]\) 表示在 IV，§ 4，习题 8 中定义的环。证明：若 A 是诺特环，则我们有 \(\mathrm{dh}(\mathbf{A}_{\sigma}[[\mathbf{X}]))=\mathrm{dh}(\mathbf{A})+1\) （利用习题 14）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  设 A 是一个右诺特且左诺特的局部环，m 为其极大理想；我们用 \(k_{s}\) （相应地， \(k_{d}\) ）表示左（相应地，右）A-模 A/m。设 M 是一个 Tor \(_{n+1}^{A}\) 有限生成左模，并设 n 为一个整数。a) 证明 dp \(_{A}\) (M) \(\leqslant\) n 当且仅当 Tor \(_{n+1}^{A}\) ( \(k_{d}\) , M) = 0（利用第 185 页习题 4）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  证明有 \(\mathrm{dh(A)} = \mathrm{dp}_{\mathbf{A}}(k_s)\) ；要使 \(\mathrm{dh(A)} \leqslant n\) 成立，其充分必要条件是有
+\end{enumerate}
+
+\[
+\operatorname{Tor} _ {n + 1} ^ {\mathbf {A}} \left(k _ {d}, k _ {s}\right) = 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(x\) 是 \(\mathbf{A}\) 的中心的一个元素，属于 \(m\) ，使得比值为 \(x\) 的位似映射在 \(M\) 中是单射的。证明我们有 \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M}/x\mathrm{M}) = \mathrm{dp}_{\mathrm{A}}(\mathrm{M}) + 1\) （另参见习题 14）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  设 M 是一个 A-模，I 是一个良序集， \((\mathbf{M}_{\alpha})_{\alpha \in I}\) 是 M 的子模的一个递增族，使得 \(M = \bigcup M_{\alpha}\) 。我们设 \(M_{\alpha}^{\prime} = \bigcup M_{\beta}\) （\(\alpha \in I\) ）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明不等式 dpA(M) ≤ sup dpA(Mα/Mα')。
+\item
+  假设存在一个整数 \(n\) 使得 \(\mathrm{dp}_{\mathbf{A}}(\mathbf{M}_{\alpha}') \leqslant n\) 对所有 \(\alpha \in I\) 成立。证明我们有
+\end{enumerate}
+
+\[
+\mathrm{dp} _ {\mathbf {A}} (\mathbf {M}) \leqslant n + 1.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \((\mathbf{M}_{\alpha})_{\alpha \in I}\) 是相对于可数集 I 的 A-模的一个归纳系统，M 为其极限， \(n\) 为一个整数 \(\geqslant 0\) 。证明如果 \(\mathrm{dp}_{\mathbf{A}}(\mathbf{M}_{\alpha}) \leqslant n\) 对所有 \(\alpha \in I\) 成立，则 \(\mathrm{dp}_{\mathbf{A}}(\mathbf{M}) \leqslant n + 1\) （化归到 \(n = 0\) 且 \(I = N\) 的情形，然后写出正合列 \(0 \to \bigoplus_{n} \mathbf{M}_{n} \to \bigoplus_{n} \mathbf{M}_{n} \to \mathbf{M} \to 0\) ）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 P 是一个平坦 A-模，它具有一个表示 \(\mathbf{A}^{(\mathbb{S})}\to\mathbf{A}^{(\mathbb{T})}\to\mathbf{P}\to0\) ，其中集合 S 是可数的。由 a) 推出 dp \(_{\mathbb{A}}(\mathbb{P})\leqslant1\) 。
+\item
+  假设环 A 的每个左理想都由一个可数元素集合生成。证明：对于由可数族元素生成的每个 A-模 M，有 dpA(M) ≤ dplA(M) + 1。由此推出不等式 dh(A) ≤ td(A) + 1 以及 \textbar dh(A) - dh(A°)\textbar{} ≤ 1。（利用第 181 页习题 12、第 202 页习题 8，以及 b）。）
+\end{enumerate}
+
+¶ 19) a) 设 n 为整数 ≥ 0，设 (Mα)α ∈ I 是 A-模的一个归纳系，并设 M 为其归纳极限。假设 Card (I) ≤ Nn（E，III，第 87 页，习题 10），且存在整数 r 使得对每个 α ∈ I 有 dpA(Mα) ≤ r。证明 dpA(M) ≤ r + n + 1（通过对 n 归纳论证，利用习题 18，a) 和习题 17）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们假设 A 的每个左理想都由一个基数为 \(\leqslant \aleph_{n}\) 的元素族生成。证明我们有 dp \(_{A}\) (M) \(\leqslant\) dpl \(_{A}\) (M) + n + 1，对每个由基数为 \(\leqslant \aleph_{n}\) 的元素族生成的 A-模 M 成立。由此推出不等式
+\end{enumerate}
+
+\[
+\mathrm{dh} (\mathbf {A}) \leqslant \mathrm{td} (\mathbf {A}) + n + 1 \quad \text { and } \quad | \mathrm{dh} (\mathbf {A}) - \mathrm{dh} (\dot {\mathbf {A}} ^ {\circ}) | \leqslant n + 1.
+\]
+
+¶ 20) 设 R 为主理想环，K 为其分式域。我们用 B 表示 M₂(K) 中由形如 \(\begin{pmatrix} a & 0 \\ x & y \end{pmatrix}\) （\(a \in \mathbb{R}, x, y \in \mathbb{K}\) ）的矩阵组成的子环。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明B是左诺特的，但不是右诺特的。
+\item
+  证明 \(\mathrm{dh(B)} = 1\) 且 \(\mathrm{dh(B^{\circ})} = 2\) 。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  设 r 为 A 的根。证明以下条件等价：
+\end{enumerate}
+
+α) A/r 是半单的，并且对 r 中元素的每一个序列 \((a_{n})_{n\geq1}\) ，存在一个整数 n 使得 \(a_{1}\ldots a_{n}=0\) 。
+
+β) 每个A-模都有投射覆盖。
+
+\(\gamma)\) 对于每个 A-模 M，我们有 \(\mathrm{dpl}_{\mathbf{A}}(\mathbf{M}) = \mathrm{dp}_{\mathbf{A}}(\mathbf{M})(\mathbf{X}, p. 202, \text{exercise } 7)\) 。
+
+δ) 对 A-模的每一个归纳系统 \((\mathbf{M}_{\alpha}, f_{\beta\alpha})_{\alpha \in I}\) ，我们有：
+
+\[
+\mathrm{dp} _ {\mathrm{A}} (\varinjlim \mathrm{M} _ {\alpha}) \leqslant \sup _ {\alpha \in I} \mathrm{dp} _ {\mathrm{A}} (\mathrm{M} _ {\alpha}).
+\]
+
+ε) 每个平坦的A-模都是投射的。
+
+φ) A 的单生成右理想的每个递减序列都是平稳的。
+
+(对于 \(\alpha\) ）与 \(\beta\) ）的等价性，参见 VIII，§ 8，习题 26。为证明 \(\beta\) ）蕴含 \(\gamma\) ），注意 M 具有一个极小投射分解 P，且 \(P_n/rP_n\) 同构于 Tor \(_n^A\) (A/r, M)。为证明 \(\varepsilon) \Rightarrow \varphi\) ），设 \((l_n)_{n \geq 1}\) 是单生成右理想的一个递减序列，使得
+
+\[
+\mathrm{I} _ {n} = a _ {1} \dots a _ {n} \mathrm{A}, \quad \text { with } \quad a _ {i} \in \mathrm{A}.
+\]
+
+在自由模 \(\mathbf{A}^{(\mathbf{N})}\) 中，考虑子模 \(\mathbf{N}_p\) ，它由 \(e_1 - a_1 e_2, \ldots, e_p - a_p e_{p+1}\) 生成。从 \(\varepsilon\) ）推出 \(\mathbf{N} = \bigcup \mathbf{N}_p\) 是 \(\mathbf{A}^{(\mathbf{N})}\) 中的直和项；由此得出结论： \(\mathrm{l}_{n+1} = \mathrm{l}_n\) （当 \(n\) 足够大时）。
+
+对于蕴含关系 \(\varphi) \Rightarrow \alpha)\) ，使用 VIII，§ 9，习题 12。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  证明以下条件是等价的：
+\end{enumerate}
+
+(α) 每个具有有限投射维数的有限表示 A-模都是投射的。
+
+(β) 每个单射 A-同态 \(A^{p} \rightarrow A^{q}\) 都有一个收缩。
+
+(γ) 对每一个不同于 A 的有限生成右理想 a，存在 A 中一个非零元素 x，使得 xa = 0。
+
+(δ) 每个有限表示的单右 A-模都同构于 A 的一个（极小）右理想。
+
+（注意到条件 \(\gamma\) ) 等价于条件 \(\beta\) ），当 \(p = 1\) 时。）
+
+¶ 23) 证明以下条件等价：
+
+(α) 每个具有有限投射维数的 A-模都是投射的。
+
+(β) 环 A 满足习题 21 的等价条件，并且对于每个不同于 A 的有限生成右理想 a，存在 A 的一个元素 \(x \neq 0\) 使得 \(xa = 0\) 。
+
+(γ) 环 A 满足习题 21 中的等价条件，且每个单 A-模都是某个内射 A-模的商。
+
+（证明 \(\alpha\) ) 蕴含 A 的单生成右理想的每个递减序列都是平稳的，这可通过改编习题 21 的证明得到。然后由习题 22 推出 \(\alpha\) ）与 \(\beta\) ）的等价性。为看出 \(\alpha\) ）蕴含 \(\gamma\) ），考虑单模 M 的一个投射覆盖 P、一个包含 P 的内射模 I，以及 I 的一个投射覆盖 Q；定义一个从 Q 到 P 的 A-同态，并由此推出一个从 I 到 M 的满射。为证明 \(\gamma\) ）蕴含 \(\alpha\) )，证明一个满足 dp \(_{A}\) (M) \(\leqslant\) 1 的 A-模 M 是投射的，这通过考虑一个投射覆盖 \(p: P \to M\) 以及一个从 Ker \(p\) 到单模上的满射来完成。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{23}
+\tightlist
+\item
+  我们用 dhf(A)（相应地，dif(A)、tdf(A)）表示使该维数有限的 A-模的投射（相应地，内射、平坦）维数的上确界。若 A 具有有限同调维数，则 dhf(A) = dif(A) = dh(A) 且 tdf(A) = td(A)。若 td(A) \textless{} ∞，我们有 tdf(A) = td(A)。 a) 证明 tdf(A) ≤ dif(A°)；若 A 是左诺特的，则等号成立（利用 X，第 189 页，习题 3）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  假设 A 是左诺特的。证明我们有 dhf(A) ≤ di\_A(A\_s)。若 di\_A(A\_s) 与 dif(A) 都是有限的，证明它们相等（利用第 202 页习题 2）。
+\item
+  设 G 是一个不等于单位元的有限群，并设 A 为环 \(\mathbf{Z}^{(G)}\) 。证明我们有
+\end{enumerate}
+
+\[
+\mathrm{dh} (\mathbf {A}) = + \infty , \mathrm{dhf} (\mathbf {A}) = \mathrm{dif} (\mathbf {A}) = \mathrm{tdf} (\mathbf {A}) = 1, \mathrm{di} _ {\mathbf {A}} (\mathbf {A} _ {s}) = + \infty
+\]
+
+（参见第 193 页习题 20）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  假设环 A 是自内射的（参见 X，第 171 页，习题 26），且不是半单的。证明每个非投射 A-模都有无限投射维数和无限内射维数。由此推出 dh(A) = +∞，dhf(A) = dif(A) = tdf(A) = di\_A(A\_s) = 0。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{24}
+\tightlist
+\item
+  我们用 \(\mathbf{A}^e\) 表示 \(k\) -代数 \(\mathbf{A} \otimes_k \mathbf{A}^*\) ，并且我们把 \(\mathbf{A}\) 视为一个左 \(\mathbf{A}^e\) -模。我们设
+\end{enumerate}
+
+\[
+\mathrm{da} _ {k} (\mathrm{A}) = \mathrm{dp} _ {\mathrm{A} ^ {e}} (\mathrm{A}).
+\]
+
+如果 n 是一个整数 \(\geqslant0\) ，则不等式 \(\mathrm{da}_{k}(\mathrm{A})\leqslant n\) 等价于 \(\mathrm{H}^{n+1}(\mathrm{A},\mathrm{M})\) 的消没（对每个 (A, A)-双模 M）（X，第 195 页，习题 26）。我们有 \(\mathrm{da}_{k}(\mathrm{A})=\mathrm{da}_{k}(\mathrm{A}^{\circ})\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明有 \(\mathrm{da}_k(\mathbf{M}_n(k)) = 0\) 且 \(\mathrm{da}_k(k[\mathbf{X}_1, \ldots, \mathbf{X}_n]) = n\) （对所有 \(n \geqslant 0\) ）。
+\item
+  若 \(k\) 是一个域，则 \(\mathrm{da}_{k}(\mathbf{A}) = 0\) 当且仅当 \(k\) -代数 \(\mathbf{A}\) 是绝对半单的（参见 VIII，§ 11，n° 3，定理 2）。
+\item
+  设 M 是一个自由 \(k\) -模。证明我们有 \(\mathrm{da}_{k}(\mathbf{T}_{k}(\mathbf{M})) = 1\) （若 \((e_{i})_{i \in I}\) 是 M 的一组基，证明元素 \((e_{i} \otimes 1 - 1 \otimes e_{i})\) 构成 \(\mathbf{A}^{e}\) 的左理想的一组基，该左理想是乘法 \(\mathbf{A} \otimes_{k} \mathbf{A}^{-} \to \mathbf{A}\) 的核，其中 \(\mathbf{A} = \mathbf{T}_{k}(\mathbf{M})\) ）。
+\item
+  现在我们假设 \(k\) -模 A 是投射的。设 \(\rho: k \to k'\) 是交换环的一个同态；证明有 \(\mathrm{da}_k(\mathbf{A} \otimes_k k') \leqslant \mathrm{da}_k(\mathbf{A})\) 。若 \(\rho\) 是单射且 \(\rho(k)\) 是 \(k\) -模 \(k'\) 的一个直和项，则有等式（利用 X，第 195 页，习题 26，c)）。
+\item
+  设 B 是第二个 k-代数（结合的且有单位元），在 k 上投射。证明：
+\end{enumerate}
+
+\[
+\mathrm{da} _ {k} (\mathbf {A} \otimes_ {k} \mathbf {B}) \leqslant \mathrm{da} _ {k} (\mathbf {A}) + \mathrm{da} _ {k} (\mathbf {B}).
+\]
+
+此外，若 k 是一个域，且 A 和 B 在 k 上是有限维的，则等号成立（利用 X，第 195 页，习题 26，d)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  假设 k 是一个域。证明不等式 \(\mathrm{dh}(\mathbf{A}) \leqslant \mathrm{da}_{k}(\mathbf{A})\) 与 \(\mathrm{dh}(\mathbf{A}^{\circ}) \leqslant \mathrm{da}_{k}(\mathbf{A})\) （参见 X，第 196 页，习题 26，e)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{25}
+\tightlist
+\item
+  设 A 为一个增广 \(k\) -代数（X，第 196 页，习题 27）；假设存在一个同态 \(\rho: \mathrm{A} \to \mathrm{A}^e\) ，它满足 X，第 196 页，习题 27，c) 的条件。证明 \(\mathrm{da}_k(\mathbf{A}) = \mathrm{dp}_\mathbf{A}(k)\) ；此外若 \(k\) 是一个域，则 \(\mathrm{da}_k(\mathbf{A}) = \mathrm{dp}_\mathbf{A}(k) = \mathrm{dh}(\mathbf{A}) = \mathrm{dh}(\mathbf{A}^\circ)\) 。（利用第 196 页习题 27 的 b) 和 c)，以及第 196 页习题 26 的 e)。）特别地，若 V 是一个非零 \(k\) -向量空间，我们有 \(\mathrm{dh}\,\mathbf{T}_k(\mathbf{V}) = 1\) 。
+\end{enumerate}
+
+* 27) 我们假设 \(k\) 是一个域。设 \(g\) 是域 \(k\) 上的一个李代数，维数为 \(n\) ，U 为其包络代数。证明 \(dhU = n\) 。（利用第 196 页习题 26、习题 27，d)，以及第 197 页习题 28，c)。）*
+
+¶ 28) 设 G 是一个群。称 G 的上同调维数，记作 dc(G)，为 \(\mathbf{Z}^{(G)}\) -模 Z 的投射维数。若 \(n\) 是一个整数，则我们有 dc(G) \(\leqslant n\) 当且仅当 H \(^{q}\) (G, M)=0 （对每个 \(\mathbf{Z}^{(G)}\) -模 M 和每个 \(q > n\) ）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明有 \(\mathrm{da}_{\mathbf{Z}}(\mathbf{Z}^{(G)}) = \mathrm{dc}(G)\) （利用第 196 页习题 26 和习题 27，d)）。
+\item
+  若 G 是一个不约化为单位元的自由群，则 dc(G) = 1。
+\item
+  设 H 是 G 的子群；证明不等式 dc(H) ≤ dc(G)。若 dc(G) \textless{} ∞ 且 H 在 G 中具有有限指数，证明 dc(H) = dc(G)（证明当 q = dc(G) 时，第 191 页习题 14 中的同态
+\end{enumerate}
+
+\[
+t ^ {q}: \mathrm{H} ^ {q} (\mathrm{H}, \mathrm{M}) \rightarrow \mathrm{H} ^ {q} (\mathrm{G}, \mathrm{M})
+\]
+
+是满射）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  证明一个不约化为单位元的有限群的上同调维数是无穷。由此推出，若 dc(G) \textless{} ∞，则 G 中除单位元外的每个元素都有无穷阶（此时称 G 是无挠的）。
+\item
+  若 G 是无挠的且 H 是 G 中有限指数的子群，证明 dc(H) = dc(G)。（若 (P, p) 是 \(\mathbf{Z}^{(H)}\) -模 Z 的一个投射分解，且若 (G : H) = n，则在分次 \(\mathbf{Z}^{(H)}\) -模 \(\mathbf{T}_{\mathbf{Z}}^{n}(\mathbf{P})\) 上定义一个 \(\mathbf{Z}^{(G)}\) -复形结构，使得 \((\mathbf{T}_{\mathbf{Z}}^{n}(\mathbf{P}), p^{\otimes n})\) 是 \(\mathbf{Z}^{(G)}\) -模 Z 的一个投射分解。）
+\item
+  若 H 是 G 的正规子群，证明我们有
+\end{enumerate}
+
+\[
+\mathrm{dc} (\mathbf {G}) \leqslant \mathrm{dc} (\mathbf {H}) + \mathrm{dc} (\mathbf {G} / \mathbf {H}).
+\]
+
+\exercisesection{科斯居尔复形}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  设 A 是一个环，L 是一个 A-模，且 K 是复形 \(\mathbf{S}(\mathbf{L})\otimes_{\mathbf{A}}\symbf{\Lambda}(\mathbf{L})\) （X，第 151 页，例 1）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明存在 K 的一个 A-线性自同态 s，分次的且次数为零，使得
+\end{enumerate}
+
+\[
+d s (x) + s d (x) = (p + q) x
+\]
+
+对于所有整数 \(p, q \geqslant 0\) 以及每个 \(x \in \mathbf{S}^p L \otimes_{\mathbf{A}} \Lambda^q L\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  假设 A 是一个 Q-代数。证明 K 定义了 A-模 A 的一个分解。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 A 为一个环， \(u: \mathbf{L} \to \mathbf{M}\) 是 A-模的一个同态。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  我们用 \(\varepsilon\) 表示 \(\mathbf{Z}^2\) 上的由 \(\varepsilon(\alpha, \beta) = \alpha_2 \beta_2\) （\(\alpha, \beta \in \mathbf{Z}^2\) ， \(\alpha = (\alpha_1, \alpha_2)\) ， \(\beta = (\beta_1, \beta_2)\) ）所定义的交换因子。证明存在唯一的 (A, \(\varepsilon\) )-导子（III，第 118 页） \(d\) ，它是双分次代数 \(\mathbf{S}(M) \otimes_A \symbf{\Lambda}(L)\) 的次数为 \((1, -1)\) 的导子，使得有 \(d(1 \otimes x) = u(x) \otimes 1\) （\(x \in L\) ）。证明 \(d \circ d = 0\) ，从而 \(\mathbf{S}(M) \otimes_A \symbf{\Lambda}(L)\) ——配备由 \(\symbf{\Lambda}(L)\) 的分次诱导的分次以及微分 \(d\) ——定义了一个复形 \(\mathbf{K}(u)\) 。
+\item
+  如果 M = L 且 u = \(ld_{L}\) ，证明 \(\mathbf{K}(u)\) 等于在第 151 页第 3 号中定义的复形。
+\item
+  设 \(\mathbf{B} = \mathbf{S}_{\mathbf{A}}(\mathbf{M})\) ，并设 \(\overline{u}: \mathbf{B} \otimes_{\mathbf{A}} \mathbf{L} \to \mathbf{B}\) 是由 \(u\) 导出的 B-同态。证明 \(\mathbf{K}(u)\) 典范地等同于复形 \(\mathbf{K}^{\mathbf{B}}(\overline{u})\) 。
+\item
+  设 \(u': L' \to M'\) 是第二个 A-同态。证明复形 \(K(u \oplus u')\) 与 \(K(u) \otimes_{A} K(u')\) 是同构的。
+\item
+  设 \(f: \mathbf{L} \to \mathbf{L}'\) 和 \(g: \mathbf{M} \to \mathbf{M}'\) 是两个 A-同态，使得 \(g \circ u = u' \circ f\) 。证明同态 \(\mathbf{S}(g) \otimes \symbf{\Lambda}(f)\) 是一个从 \(\mathbf{K}(u)\) 到 \(\mathbf{K}(u')\) 的复形态射。特别地，若 \(v: \mathbf{M} \to \mathbf{P}\) 是一个 A-同态，使得 \(v \circ u = 0\) ，我们得到一个复形态射 \(h: \mathbf{K}(u) \to \mathbf{S}_{\mathbf{A}}(\mathbf{P})\) 。
+\item
+  我们假设序列 \(0 \rightarrow L \xrightarrow{u} M \xrightarrow{v} P \rightarrow 0\) 是平坦 A-模的一个正合列。证明 h 是同构（化归到 L、M、P 为有限生成自由模的情形，并利用 d)）。由此推出，对每个 \(n \geqslant 1\) ，我们有正合列
+\end{enumerate}
+
+\[
+0 \rightarrow \Lambda^ {n} L \rightarrow M \otimes_ {A} \Lambda^ {n - 1} L \rightarrow \dots \rightarrow S ^ {n - 1} M \otimes_ {A} L \rightarrow S ^ {n} M \rightarrow S ^ {n} P \rightarrow 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(n\) 为整数， \(k\) 为环， \(A = k[X_1, \ldots, X_n]\) 。证明对于每个 A-模 M，存在一个分次 A-模的同构
+\end{enumerate}
+
+\[
+\delta_ {\mathbf {M}}: \operatorname{Tor} ^ {\mathbf {A}} (k, \mathbf {M}) \rightarrow \operatorname{Ext} _ {\mathbf {A}} (k, \mathbf {M}) (- n)
+\]
+
+使得对每个 A-模同态 \(u: M \to N\) ，有 Ext \((1_k, u) \circ \delta_M = \delta_N \circ \text{Tor } (1_k, u)\) 。 4) 设 A 是一个环，L 是一个 A-模， \(u: L \to A\) 是一个线性形式。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明复形 \(\mathbf{K}(u)\) ，赋予 \(\symbf{\Lambda}(\mathrm{L})\) 的代数结构，是一个分次微分 A-代数（X，第 183 页，习题 18）。
+\item
+  设 B 是一个微分分次 A-代数，使得 \(B_{0} = A\) ，并设 \(f : L \to B_{1}\) 是一个 A-同态，使得 \(d_{1} \circ f = u\) 。证明存在唯一的分次微分 A-代数态射 \(F : \mathbf{K}(u) \to \mathbf{B}\) ，使得 \(F_{0} = 1_{A}\) 且 \(F_{1} = f\) 。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\item
+  设 A 是一个环，M 是一个 A-模， \(x = (x_1, \ldots, x_n)\) 是 A 中的一个元素序列， \(k = (k_1, \ldots, k_n) \in \mathbf{N}^n\) ， \(x^k = (x_1^{k_1}, \ldots, x_{n}^{k_n})\) 。证明序列 \(x^k\) 是 M-正则的当且仅当序列 \(x\) 是；在此情形，A-模 \(\mathrm{M}/(x^k)\) 具有一个合成列，其商都同构于 \(\mathrm{M}/(x)\) 。（对 \(n\) 归纳论证。）
+\item
+  设 A 为一个环， \(x = (x_1, \ldots, x_n)\) 是 A 中的一个元素序列， \(x\) 是理想 \(\sum_{i} x_i\) A。设
+\end{enumerate}
+
+\[
+0 \rightarrow \mathbf {M} ^ {\prime} \stackrel {i} {\rightarrow} \mathbf {M} \rightarrow \mathbf {M} ^ {\prime \prime} \rightarrow 0
+\]
+
+是 A-模的一个正合列。假设序列 x 对 M 是完全切割的，且 A-模 \(\mathrm{M}''/(x_{1}\mathrm{M}''+\cdots+x_{i-1}\mathrm{M}'')\) 关于 x-进拓扑是分离的（\(1\leqslant i\leqslant n\) ）。证明以下条件等价：
+
+α) 序列 x 对 M'' 是完全切割的。
+
+β) 同态 \(\bigoplus_{r} (\mathfrak{x}^{r} \, \mathrm{M}^{\prime}/\mathfrak{x}^{r+1} \, \mathrm{M}') \to \bigoplus_{r} (\mathfrak{x}^{r} \, \mathrm{M}/\mathfrak{x}^{r+1} \, \mathrm{M})\) （它由 \(i\) 诱导）是单射。
+
+\(\gamma)\) 同态 \(\mathbf{M}' / \mathfrak{x}\mathbf{M}' \to \mathbf{M} / \mathfrak{x}\mathbf{M}\) （它由 \(i\) 诱导）是单射。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  设 A 是一个环，M 是一个 A-模， \(x = (x_1, \ldots, x_n)\) 是 A 的元素的一个序列。
+\end{enumerate}
+
+\[
+(X, p p. 1 7 5 - 1 7 7,
+\]
+
+\[
+\mathrm{E} _ {p q} ^ {2} = \operatorname{Tor} _ {p} ^ {\mathrm{A}} \left(\mathrm{H} _ {q} (\boldsymbol {x}, \mathrm{A}) \right.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(p\) 为一个整数 \(\leqslant n\) ；令 \(x' = (x_1, \ldots, x_p)\) 和 \(x'' = (x_{p+1}, \ldots, x_n)\) 。证明存在一个谱序列 E，使得 'E \(_{pa}^{2}\) = H \(_{p}\) x'`, H \(_{a}\) (x', M))，收敛到 H。(x, M)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  设 A 是一个环，M 是一个 A-模， \(\boldsymbol{x}' = (x_1, \ldots, x_p)\) 和 \(\boldsymbol{x}'' = (x_{p+1}, \ldots, x_n)\) 是 A 的元素的两个序列；我们用 \(\boldsymbol{x}\) 表示序列 \((x_1, \ldots, x_n)\) ，用 \(\boldsymbol{M}'\) 表示 A-模 \(\mathrm{M}/(\boldsymbol{x}')\) M。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  若 \(x'\) 对 M 是完全切割的，且 \(x''\) 对 M' 是完全切割的，证明 x 对 M 是完全切割的。
+\item
+  若序列 \(x\) 和 \(x'\) 对 M 是完全切割的，证明序列 \(x''\) 对 M' 是完全切割的。
+\item
+  给出一个 A-正则序列 \((x, y)\) 的例子，它包含在 A 的根中，使得 x 对 A/yA 是完全切割的，但 y 对 A 不是完全切割的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  设 A 是一个环，M 是一个 A-模，k 是一个整数 \(\geqslant\) 1。称 A 的元素族 x 对 M 是 k-切割的，如果有 \(H_{i}(x, M) = 0\) （\(1 \leqslant i \leqslant k\) ）。因此，族 x 是完全切割的当且仅当它对每个 \(k \geqslant 1\) 都是 k-切割的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(0 \to M' \to M \to M'' \to 0\) 是 A-模的一个正合列。证明：如果族 \(x\) 是 \(k\) -切割的（对 \(M'\) 和 \(M''\) ），那么它对 \(M\) 也是。
+\item
+  如果 x 对 M 是 k-切割的，且 N 是一个平坦 A-模，则 x 对 M \(\otimes_{A} N\) 是 k-切割的。
+\item
+  设 \(a_{1},\ldots,a_{n}\) 为整数 \(\geqslant 1\) 。证明序列 \((x_{1},\ldots,x_{n})\) 对 M 是 \(k\) -切割的，当且仅当序列 \((x_{1}^{a_{1}},\ldots,x_{n}^{a_{n}})\) 也具有同样的性质。
+\item
+  对于每一对整数 k, n，满足 \(1 \leqslant k < n\) ，给出一个环 A、一个 A-模 M 以及一个由 A 中元素构成的序列 \((x_{1}, \ldots, x_{n})\) 的例子，该序列对 M 是 k-切割的，但不是 \((k + 1)\) -切割的（利用 X，第 159 页，注记 4）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  设 A 是一个环，M 是一个 A-模， \(\boldsymbol{x} = (x_{1}, \ldots, x_{n})\) 是 A 中元素的一个序列，p 为整数 \(\leqslant n\) 。我们记 \(\boldsymbol{x}' = (x_{1}, \ldots, x_{p})\) ， \(\boldsymbol{x}'' = (x_{p+1}, \ldots, x_{n})\) ， \(\mathrm{M}' = \mathrm{M}/(\boldsymbol{x}')\) M。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(k, k'\) 是两个整数，使得 \(k \leqslant k'\) 。假设序列 \(x'\) 对 M 是 \(k'\) -切割的（习题 9）。证明序列 \(x\) 对 M 是 \(k\) -切割的当且仅当序列 \(x''\) 对 M' 是 \(k\) -切割的。
+\item
+  证明如果序列 x 对 M 是 1-切割的，则序列 \(x''\) 对 \(M'\) 是 1-切割的。
+\end{enumerate}
+
+¶ 11) 设 A 是一个诺特局部环，m 是其极大理想，k = A/m。设 M 是一个非零有限生成 A-模。M 的深度，记为 prof (M)，定义为使得存在一个由 m 中元素组成的、对 M 完全切割的序列 \((x_{1}, \ldots, x_{n})\) 的整数 n 的上确界。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 prof (M) = 0 当且仅当 m 与 M 相伴（X，第 172 页，习题 28），换句话说，如果 M 包含一个同构于 k 的子模（注意：包含在素理想并集中的理想必然包含在其中一个素理想中）。
+\item
+  证明 prof(M) 是使得 Ext \(_{A}^{n}\) (k, M) 非零的那些整数 n 的下确界（对 n 归纳论证）。如果 prof(M) = n，那么 m 中元素的每个对 M 完全切割的序列 (x \(_{1}\) , \ldots，x \(_{p}\) )（p ≤ n）都可以扩充为 m 中对 M 完全切割的序列（x \(_{1}\) , \ldots，x \(_{n}\) ）。 c) 如果 (x \(_{1}\) , \ldots，x \(_{k}\) ) 是 m 中元素的、对 M 完全切割的序列，证明
+\end{enumerate}
+
+\[
+\operatorname{prof} \left(\mathbf {M} / (x _ {1} \mathbf {M} + \dots + x _ {k} \mathbf {M})\right) = \operatorname{prof} (\mathbf {M}) - k.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  假设 M 具有有限投射维数。证明等式 dpA(M) + prof(M) = prof(A)（通过对 dpA(M) 归纳论证）。
+\item
+  证明prof(A)是所有有限生成且具有有限投射维数的A-模的投射维数的上确界。
+\end{enumerate}
+
+¶ 12) 设 A 为诺特局部环，m 为其极大理想。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明如果 \(0 < \mathrm{dh}(\mathbf{A}) < \infty\) ，则在 \(\mathfrak{m} - \mathfrak{m}^2\) 中存在一个非零因子元素（如习题 11，a) 中那样证明，否则 \(\mathfrak{m}\) 将与 \(\mathbf{A}\) 相伴，由此得到一个正合列
+\end{enumerate}
+
+\[
+0 \to k \to \mathbf {A} \to \mathbf {N} \to 0;
+\]
+
+利用习题 16（第 203 页）得出矛盾。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  对任意整数 n，证明 dh(A) = n 当且仅当存在一个对 A 完全切割的、生成 m 的序列 \((x_{1}, \ldots, x_{n})\) （对 n 归纳论证，利用 a) 以及习题 14，第 203 页）。
+\end{enumerate}
+
+一个局部环被称为正则的，如果它是诺特的并且具有有限的同调维数。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  设 A 为正则局部环（习题 14），其同调维数为 n；记其极大理想为 m，并令 k = A/m。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明有 \(\dim_k(m/m^2) = n\) .
+\item
+  证明 \(k\) -代数 \(\bigoplus_{r\geqslant 0}(m^{r} / m^{r + 1})\) 同构于一个多项式代数，其中不定元个数为 \(n\) 。
+\item
+  若 \(n = 0\) ，A 是一个域。若 \(n = 1\) ，证明 A 是一个主理想环*，因此是一个离散赋值环*（通过观察 \(m \cap m^n = \bigcap m^n\) ，从而 \(\bigcap m^n = 0\) ，来证明 A 是一个整环）。
+\item
+  证明环 A{[}{[}T{]}{]} 是正则的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\item
+  设 A 是一个环，a 是 A 的一个理想。考虑分次交错 (A/a)-代数 \(\mathrm{Tor}^{\mathbf{A}}(\mathbf{A}/\mathbf{a}, \mathbf{A}/\mathbf{a})\) （参见 X，第 201 页，习题 9）以及分次 (A/a)-代数同态 \(\theta: \Lambda_{\mathbf{A}/\mathbf{a}}(\mathbf{a}/\mathbf{a}^{2}) \to \mathrm{Tor}^{\mathbf{A}}(\mathbf{A}/\mathbf{a}, \mathbf{A}/\mathbf{a})\) ——它由同构 \(a/a^{2} \to \mathrm{Tor}_{1}^{\mathbf{A}}(\mathbf{A}/\mathbf{a}, \mathbf{A}/\mathbf{a})\) （X，第 73 页）导出。证明若理想 a 由 A 中的一个完全切割序列生成，则 \(\theta\) 是一个同构。
+\item
+  设 A 是一个诺特环，a 是包含在 A 的根中的一个理想。假设 (A/a)-模 \(a/a^{2}\) 是自由的，并且同态 \(\theta_{2}: \Lambda_{A/a}^{2}(a/a^{2}) \to \operatorname{Tor}_{2}^{\mathbf{A}}(\mathbf{A}/\mathbf{a}, \mathbf{A}/\mathbf{a})\) （习题 14）是满射的。证明 a 由 A 中的一个完全切割序列生成。（若 x 是 a 的一个极小生成元族，借助习题 7（或直接）证明 Coker ( \(\theta_{2}\) ) 同构于
+\end{enumerate}
+
+\[
+\mathrm{H} _ {1} (\boldsymbol {x}, \mathbf {A}) \otimes_ {\mathbf {A}} \mathbf {A} / \mathfrak {a}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  设 A 是一个局部诺特环，m 为其极大理想，k = A/m。证明分次 k-代数同态 \(\theta : \symbf{\Lambda}_{k}(\mathfrak{m}/\mathfrak{m}^{2}) \to \operatorname{Tor}^{\mathbf{A}}(k, k)\) 是单射的：若 \(\theta_{2}\) 是双射的，则环 A 是正则的（习题 12）。
+\end{enumerate}
+
+（若 x 是 m 的一个极小生成元系，证明复形 K(x, A) 满足第 182 页习题 14 的条件；利用习题 4 和 15。）
+
+¶ 17) 设 A 是一个环，使得 A-模 \(A_{s}\) 具有有限内射维数（X，第 202 页，习题 4；正则局部环（习题 12）满足此性质）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 x 是 A 的一个非零因子且不可逆的元素。证明有
+\end{enumerate}
+
+\[
+\mathrm{di} _ {\mathbf {A} / \mathbf {A} x} (\mathbf {A} / \mathbf {A} x) = \mathrm{di} _ {\mathbf {A}} (\mathbf {A}) - 1.
+\]
+
+（设 0 → A → I⁰ → I¹ → \ldots{} 是 A 的一个极小内射分解（X，第 182 页，习题 13）；证明复形 Homₐ(A/AX, I¹) → Homₐ(A/AX, I²) → \ldots{} 定义了 (A/AX)-模 A/AX 的一个极小内射分解。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  我们此后假设环 A 是局部诺特的。证明等式 di(A) = prof(A)（习题 11；对 di(A) 归纳推理）。
+\item
+  设 \((x_{1},\ldots ,x_{n})\) 是 A 的一个完全切割序列，包含在 A 的极大理想中，且 \(n = \mathrm{di}(\mathbf{A})\) 。证明环 A 是自内射的（X，第 171 页，习题 26）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  设 A 是一个诺特环，C 是 A-模类的一个稳定集合（X，第 40 页）， \(x = (x_{1}, \ldots, x_{n})\)
+\end{enumerate}
+
+是 A 中元素的一个序列，x 是由 x 生成的理想。我们用 \(\mathcal{C}_{x}\) 表示 \(\mathcal{C}\) 中被 x 零化的元素的集合。设 M 是一个有限生成的 A-模。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明对每个 \(i \geqslant 0\) ，存在一个元素 \(\mathbf{M}_{i}\) （属于 \(\mathcal{C}_{x}\) ），使得有
+\end{enumerate}
+
+\[
+\sum_ {k \geqslant 0} (- 1) ^ {k} \left[ \mathrm{H} _ {i + k} (\mathbf {x}, \mathrm{M}) \right] = [ \mathrm{M} _ {i} ]
+\]
+
+在 \(\mathbf{K}(\mathcal{C}_{\pmb{x}})\) 中（对 \(n\) 归纳推理，利用第 157 页命题 4；在 \(n = 1\) 的情形，考虑自同态 \((x_{1})_{\mathbb{M}}\) 的逐次幂）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们假设 \(\mathbf{A} / x\) 具有有限长度。证明存在正整数 \(m_{i}\) （\(i \geqslant 0\) ），使得长度 \(\mathrm{H}_{i}(x, \mathbf{M}) = m_{i} + m_{i+1}\) 。
+\end{enumerate}
+
+\specialchapter{记号索引}
+
+\[
+(\mathbf {C}, d): \mathbf {p}. 2 3.
+\]
+
+\[
+\mathrm{C} _ {n}, \mathrm{C} ^ {n}: \mathrm{p}. 2 4.
+\]
+
+\[
+\mathbf {Z} (\mathbf {C}, d), \mathbf {Z} _ {n} (\mathbf {C}, d), \mathbf {B} (\mathbf {C}, d), \mathbf {B} _ {n} (\mathbf {C}, d), \mathbf {H} (\mathbf {C}),
+\]
+
+\[
+\mathrm{H} _ {n} (\mathrm{C}, d), \mathrm{H} ^ {n} (\mathrm{C}, d): \mathrm{p}. 2 5.
+\]
+
+\[
+\mathbf {H} (u), \mathbf {Z} (u), \mathbf {B} (u): \mathrm{p.26}.
+\]
+
+\[
+\mathbf {C} (p): \mathrm{p.26}.
+\]
+
+\[
+\mathbf {A} (\varepsilon): \mathbf {p}. 2 7.
+\]
+
+\[
+\partial_ {u, v}, \partial : \mathbf {p}. 2 9.
+\]
+
+\[
+\operatorname{Con} (u), \operatorname{Cyl} (u): \mathrm{p.36}.
+\]
+
+\[
+\mathbf {K} (\mathcal {C}), [ \mathrm{M} ] _ {\mathcal {C}}, [ \mathrm{M} ]: \text { p. } 4 0.
+\]
+
+\[
+\chi_ {\varphi} (\mathbf {M}), \chi (\mathbf {M}): \mathrm{p.~41}.
+\]
+
+\[
+\Omega_ {\mathrm{A} / k} ^ {p}: \mathrm{p.~43.}
+\]
+
+\[
+\nabla : \mathrm{p}. 4 5.
+\]
+
+\[
+\mathbf {L} (\mathbf {M}), \mathbf {L} (f): \mathrm{p.} 5 0.
+\]
+
+\[
+\mathrm{I} (\mathbf {M}), \mathrm{I} (f): \mathrm{p}. 5 2.
+\]
+
+\[
+\mathbf {B} (\mathbf {A}, \mathbf {M}): \mathrm{p.} 5 7.
+\]
+
+\[
+\mathbf {C} \otimes_ {\mathbf {A}} \mathbf {C} ^ {\prime}: \mathrm{p.~61}.
+\]
+
+\[
+\begin{array}{l}\gamma (\mathbf {C}, \mathbf {C} ^ {\prime}): \mathbf {H} (\mathbf {C}) \otimes_ {\mathbf {A}} \mathbf {H} (\mathbf {C} ^ {\prime}) \rightarrow \mathbf {H} (\mathbf {C} \otimes_ {\mathbf {A}} \mathbf {C} ^ {\prime}):\\\text { p.62. }\end{array}
+\]
+
+\[
+\sigma (\mathbf {C}, \mathbf {C} ^ {\prime}): \mathrm{p.~62.}
+\]
+
+\[
+\operatorname{Tor} _ {n} ^ {\mathbf {A}} (\mathbf {M}, \mathbf {N}): \mathrm{p.~67}.
+\]
+
+\[
+\operatorname{Tor} ^ {\mathbf {A}} (f, g): \mathrm{p.~68}.
+\]
+
+\[
+\psi_ {\mathbf {M}} (\mathbf {N}), \overline {{\psi}} _ {\mathbf {N}} (\mathbf {M}): \mathrm{p.~69}.
+\]
+
+\[
+\sigma_ {\mathbf {M}, \mathbf {N}}: \mathbf {p}. 7 1.
+\]
+
+\[
+\operatorname{Homgr} _ {\mathbf {A}} (\mathbf {C}, \mathbf {C} ^ {\prime}): \text { p. } 8 1.
+\]
+
+\[
+\lambda (\mathbf {C}, \mathbf {C} ^ {\prime}): \mathrm{p.} 8 2.
+\]
+
+\[
+\operatorname{Ext} _ {\mathbf {A}} (\mathbf {M}, \mathbf {N}), \operatorname{Ext} _ {\mathbf {A}} ^ {n} (\mathbf {M}, \mathbf {N}): p. 8 6.
+\]
+
+\[
+\varphi_ {\mathbf {M}} (\mathbf {N}), \overline {{\varphi}} _ {\mathbf {N}} (\mathbf {M}): \mathrm{p.} 8 8.
+\]
+
+\[
+\delta (\mathbf {M}, \mathcal {E}): \mathrm{p.} 9 0.
+\]
+
+\[
+\delta (\mathcal {F}, \mathrm{N}): \mathrm{p.} 9 2.
+\]
+
+\[
+\psi (\mathrm{S}, \mathrm{R}), \varphi (\mathrm{R}, \mathrm{E}): \mathrm{p}. 1 0 0.
+\]
+
+\[
+\psi^ {\prime} \left(\mathrm{S} _ {1}, \mathrm{R} _ {1}\right), \varphi^ {\prime} \left(\mathrm{R} _ {1}, \mathrm{E} _ {1}\right): \mathrm{p}. 1 0 2.
+\]
+
+\[
+\mathrm{H} ^ {n} (\mathrm{G}, \mathrm{M}), \mathrm{H} _ {n} (\mathrm{G}, \mathrm{M}): \mathrm{p}. 1 1 1.
+\]
+
+\[
+a _ {\mathbf {M}, \mathbf {N}}: \mathrm{p.} 1 1 3.
+\]
+
+\[
+c _ {\mathbf {M}, \mathbf {N}, \mathbf {P}}, u \circ v: \mathrm{p}. 1 1 4.
+\]
+
+\[
+\delta^ {m} (\mathbf {P}, \mathcal {S}), \delta^ {m} (\mathcal {S}, \mathbf {P}), \partial^ {m} (\mathbf {P}, \mathcal {S}), \partial^ {m} (\mathcal {S} _ {1}, \mathbf {M})
+\]
+
+\[
+1 2 7, 1 3 1, 1 3 2.
+\]
+
+\[
+c _ {\mathbf {P}, \mathbf {Q}; \mathbf {M}}: \mathbf {p}. 1 2 8.
+\]
+
+\[
+c _ {\mathbf {P}; \mathbf {M}, \mathbf {N}}: \mathfrak {p}. 1 2 9.
+\]
+
+\[
+\mathrm{dp} _ {\mathbf {A}} (\mathbf {M}): \mathrm{p}. 1 3 4.
+\]
+
+\[
+\mathrm{dh} (\mathrm{A}): \mathrm{p}. 1 3 8.
+\]
+
+\[
+\mathbf {K} (u), \mathbf {K} _ {\cdot} (u, \mathbf {C}), \mathbf {K} ^ {\prime} (u, \mathbf {C}): \mathrm{p.~147.}
+\]
+
+\[
+b \vee b ^ {\prime}, a \top a ^ {\prime}: \mathrm{p.} 2 0 0, \text {   exerc.   } 7.
+\]
+
+\[
+\mathrm{di} _ {\mathbf {A}} (\mathbf {M}): \mathbf {p}. 2 0 2, \text {   exerc.   } 4.
+\]
+
+\[
+\mathrm{dpl} _ {\mathbf {A}} (\mathbf {M}): \text { p. } 2 0 2, \text { exerc. } 7.
+\]
+
+\[
+\operatorname{td} (\mathbf {A}): \mathrm{p.202,exerc.8.}
+\]
+
+\[
+\mathrm{da} _ {k} (\mathrm{A}): \mathrm{p.205,exerc.25.}
+\]
+
+\[
+\operatorname{dc} (\mathbf {G}): \mathrm{p.206,exerc.28.}
+\]
+
+\specialchapter{术语索引}
+
+绝对平坦（环——）：第 169 页，习题 16。在 n 次零调（复形——）：第 26 页。x-进（拓扑——）：第 159 页。增广代数：第 196 页，习题 27。微分分次代数：第 183 页，习题 18。上升（次数——）：第 23 页。相伴（类——）于正合列：第 117 页。代数的增广：第 196 页，习题 27。自内射（环）：第 171 页，习题 26。双复形：第 174 页，习题 11。上有界、下有界：第 24 页。典范（内射分解——）：第 52 页。典范（自由分解——）：第 50 页。欧拉-庞加莱特征：第 40 页。胞腔（复形——）：第 32 页。戈洛德-沙法列维奇（——定理）：第 192 页，习题 16。五（——引理）：第 7 页。万有系数（——公式）：第 78、99 页。余生成（模——）：第 18 页。左凝聚、右凝聚（环——）：第 181 页，习题 11。凝聚、伪凝聚（模——）：第 181 页，习题 10。群的上同调：第 111 页。上同调（维数——）：第 206 页，习题 28。上同调的：第 194 页，习题 23。余诱导（模——）：第 190 页，习题 12。交换（——同构）：第 71 页。完全切割（族——）：第 157 页。复形：第 23 页。科斯居尔复形：第 147、154 页。复合（——积）：第 113 页。复形态射的锥：第 36 页。锥形（单纯形概形——）：第 177 页，习题 19。联络：第 45 页。收敛（谱序列——）：第 175 页，习题 14。余正则（序列——）：第 159 页。复形态射的柱：第 36 页。戴德金（——环）：第 141、203 页，习题 12。德拉姆（——复形）：第 43 页。下降（次数——）：第 23 页。交换图：第 1 页。微分：第 24 页。微分（代数——）：第 183 页，习题 18。
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{外微分：第 44 页。}
+\NormalTok{上同调维数：第 206 页，习题 28。}
+\NormalTok{同调维数：第 138 页。}
+\NormalTok{内射维数：第 202 页，习题 4。}
+\NormalTok{平坦维数：第 202 页，习题 7。}
+\NormalTok{投射维数：第 134 页。}
+\NormalTok{可除（模——）：第 17 页。}
+\NormalTok{对偶化（模——）：第 172 页，习题 30。}
+
+\NormalTok{可除（模——）：第 17 页。}
+\NormalTok{欧拉{-}庞加莱（\textquotesingle{}——的特征）：第 40 页。}
+\NormalTok{扩张（——模\textquotesingle{}）：第 81、86 页。}
+\NormalTok{一个代数的扩张\textquotesingle{}：第 197 页，习题 1。}
+\NormalTok{一个李代数的扩张\textquotesingle{}：第 198 页，习题 4。}
+
+\NormalTok{忠实平坦（模——）：第 169 页，习题 9。}
+\NormalTok{微分形式：第 44 页。}
+
+\NormalTok{戈尔迪（——的定理）：第 171 页，习题 25。}
+\NormalTok{戈洛德{-}沙法列维奇（——的定理）：第 192 页，习题 16。}
+
+\NormalTok{希尔伯特（——的合冲定理）：第 146 页。}
+\NormalTok{同调（类\textquotesingle{}——，模\textquotesingle{}——）：第 25 页。}
+\NormalTok{同调（\textquotesingle{}的正合列）：第 30 页。}
+\NormalTok{群同调：第 111 页。}
+\NormalTok{同调（维数——）：第 138 页。}
+\NormalTok{同调关系：第 26 页。}
+\NormalTok{同调的（循环——）：第 25 页。}
+\NormalTok{同态（复形\textquotesingle{}——）：第 81 页。}
+\NormalTok{同伦于零（复形——）：第 34 页。}
+\NormalTok{同伦（态射——）：第 32 页。}
+\NormalTok{同伦的（单纯地——）：第 177 页，习题 19。}
+\NormalTok{同伦：第 32 页。}
+\NormalTok{同伦等价：第 33 页。}
+
+\NormalTok{诱导（模——）：第 190 页，习题 12。}
+\NormalTok{内射（模——）：第 15 页。}
+\NormalTok{内射（维数——）：第 202 页，习题 4。}
+\NormalTok{迭代（连接同态——）：第 127、131、132 页。}
+
+\NormalTok{科斯居尔（——的复形）：第 147、154 页。}
+\NormalTok{Künneth（——公式）：第 79 页。}
+
+\NormalTok{连接（——同态）：第 29 页。}
+\NormalTok{连接（——同态）的扩张模：第 90、92 页。}
+\NormalTok{连接（——同态）的挠积：第 72 页。}
+\NormalTok{复形的\textquotesingle{}长度：第 24 页。}
+\NormalTok{长度（\textquotesingle{}一个表示的）：第 180 页，习题 6。}
+
+\NormalTok{极小（内射分解——）：第 182 页，习题 13。}
+\NormalTok{极小（投射分解——）：第 54 页。}
+\NormalTok{复形态射：第 25 页。}
+
+\NormalTok{右边为零，左边为零：第 24 页。}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{平坦（绝对——）：第 169 页，习题 16。}
+\NormalTok{平坦（忠实——）：第 169 页，习题 9。}
+\NormalTok{平坦（维数——）：第 202 页，习题 7。}
+\NormalTok{平坦（模——）：第 8 页。}
+\NormalTok{庞加莱（特征\textquotesingle{}欧拉{-}——）：第 40 页。}
+\NormalTok{庞加莱多项式：第 41 页。}
+\NormalTok{前复形：第 174 页，习题 13。}
+\NormalTok{表示，有限表示：第 10 页。}
+\NormalTok{长度为 n 的表示：第 180 页，习题 6。}
+\NormalTok{复合积：第 113 页，}
+\NormalTok{挠积：第 61、67 页。}
+\NormalTok{投射（维数——）：第 134 页。}
+\NormalTok{普吕弗（环——）：第 203 页，习题 11。}
+\NormalTok{伪{-}凝聚（模——）：第 181 页，习题 10。}
+
+\NormalTok{正则（局部环——）：第 208 页，习题 12。}
+\NormalTok{正则（序列——）：第 158 页。}
+\NormalTok{正则（谱序列——）：第 175 页，习题 14。}
+\NormalTok{相对投射、相对内射：第 170 页，习题 19。}
+\NormalTok{分解：第 48 页。}
+\NormalTok{典范内射分解：第 52 页。}
+\NormalTok{典范自由分解：第 50 页。}
+\NormalTok{分次分解：第 56 页。}
+\NormalTok{极小投射分解：第 54 页。}
+\NormalTok{一个复形的\textquotesingle{}投射、内射分解：第 183 页，习题 17。}
+
+\NormalTok{单纯形概形：第 177 页，习题 19。}
+\NormalTok{分裂（完全——）：第 35 页。}
+\NormalTok{分裂：第 35 页。}
+\NormalTok{切割（完全——）：第 157 页。}
+\NormalTok{蛇（——图）：第 3 页。}
+\NormalTok{单纯形：第 178 页，习题 19。}
+\NormalTok{单纯（——概形）：第 177 页，习题 19。}
+\NormalTok{单纯同伦：第 177 页，习题 19。}
+\NormalTok{奇异（——同调）：第 31 页。}
+\NormalTok{谱（——序列）：第 175 页，习题 14。}
+\NormalTok{标准（——分解）：第 57 页。}
+\NormalTok{平稳（——谱序列）：第 175 页，习题 14。}
+\NormalTok{同调的\textquotesingle{}正合列：第 30 页。}
+\NormalTok{谱序列：第 175 页，习题 14。}
+\NormalTok{合冲（——定理）：第 146 页。}
+
+\NormalTok{两个复形的张量（——积）：第 61 页。}
+\NormalTok{挠（——积）：第 61、67 页。}
+\NormalTok{Tor{-}维数：第 202 页，习题 8。}
+\NormalTok{x{-}进拓扑：第 159 页。}
+\NormalTok{（p{-}次）平移：第 27 页。}
+\NormalTok{转移：第 191 页，习题 14。}
+\NormalTok{平凡（上同调——）：第 192 页，习题 18。}
+
+\NormalTok{万有（——系数）：第 78、99 页。}
+\end{Highlighting}
+\end{Shaded}

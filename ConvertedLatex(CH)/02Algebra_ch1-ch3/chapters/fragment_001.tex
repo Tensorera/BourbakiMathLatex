@@ -1,0 +1,967 @@
+\chapter{代数结构}
+
+\section{合成律；结合性；交换性}
+
+\subsection{合成律}
+
+定义 1. 设 E 是一个集合。从 E × E 到 E 的一个映射 f 称为 E 上的一个合成律。f 在有序对 (x, y) \ensuremath{\in} E × E 处的值 f(x, y) 称为 x 与 y 在该律下的合成。带有一个合成律的集合称为广群。
+
+x 与 y 的合成通常按确定的顺序写出 x 和 y，并用该律的一个特征符号将它们隔开来表示（这个符号可以约定省略）。最常用的符号是 + 和 ·，通常的约定是后者在需要时可以省略；用这些符号时，x 与 y 的合成分别写成 \(x + y\) 和 x·y 或 xy。用符号 + 表示的律通常称为加法（其合成 \(x + y\) 称为 x 与 y 的和），并说它是加法记法；用符号 · 表示的律通常称为乘法（其合成 x·y = xy 称为 x 与 y 的积），并说它是乘法记法。在本章第1至3节的一般论述中，我们通常用符号 \(\top\) 和 \(\bot\) 来表示任意的合成律。
+
+作为一种语言的滥用，从 \(E \times E\) 的某个子集到 E 的映射有时也称为 E 上并非处处有定义的合成律。
+
+例. (1) 映射 \((\mathbf{X},\mathbf{Y})\mapsto \mathbf{X}\cup \mathbf{Y}\) 和 \((\mathbf{X},\mathbf{Y})\mapsto \mathbf{X}\cap \mathbf{Y}\) 是集合 E 的子集集合上的合成律。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  在自然数集 \(\mathbf{N}\) 上，加法、乘法和乘方都是合成律（在这些律下 \(x \in \mathbf{N}\) 和 \(y \in \mathbf{N}\) 的合成分别记为 \(x + y\) , \(xy\) 或 \(x.y\) 和 \(x^y\) ）（《集合论》第三章第3节第4号）。
+\item
+  设 E 是一个集合；映射 \((\mathbf{X}, \mathbf{Y}) \mapsto \mathbf{X} \circ \mathbf{Y}\) 是 \(E \times E\) 的子集集合上的一个合成律（《集合论》第二章第3节第3号定义6）；映射 \((f, g) \mapsto f \circ g\) 是从 E 到 E 的映射集合上的一个合成律（《集合论》第二章第5节第2号）。
+\item
+  设 E 是一个格（集合论，III，§ 1，第 11 号）；若 \(\sup(x, y)\) 表示集合 \(\{x, y\}\) 的最小上界，则映射 \((x, y) \mapsto \sup(x, y)\) 是 E 上的一个合成律。对于最大下界 \(\inf(x, y)\) 也有类似结论。上面的例1是此情形的一个特例，其中 \(\mathfrak{P}(E)\) 按包含关系排序。
+\item
+  设 \((\mathbf{E}_i)_{i\in I}\) 为一族广群。令 \(\mathsf{T}_i\) 表示 \(\mathbf{E}_i\) 上的合成律。映射
+\end{enumerate}
+
+\[
+((x _ {i}), (y _ {i})) \mapsto ((x _ {i} \top_ {i} y _ {i}))
+\]
+
+是乘积 \(E = \prod_{i \in I} E_i\) 上的一个合成律，称为诸律 \(T_i\) 的乘积。带有该律的集合 E 称为诸广群 \(E_i\) 的乘积广群。特别地，如果所有广群 \(E_i\) 都等于同一个广群 M，则得到由 I 到 M 的映射构成的广群。
+
+设 \((x,y)\mapsto x\top y\) 为集合 E 上的一个合成律。给定 E 的任意两个子集 X、Y，X \(\top\) Y（若此记号不致引起混淆†）表示 E 中诸元素 \(x\top y\) 所成的集合，其中 \(x\in X\) , \(y\in Y\) （换言之，即 X \(\times\) Y 在映射 \((x,y)\mapsto x\top y\) 下的像）。
+
+若 \(a \in \mathbf{E}\) ，我们通常记 \(a \top \mathbf{Y}\) 以代替 \(\{a\} \top \mathbf{Y}\) ，并记 \(\mathbf{X} \top a\) 以代替 \(\mathbf{X} \top \{a\}\) 。映射 \((\mathbf{X}, \mathbf{Y}) \mapsto \mathbf{X} \top \mathbf{Y}\) 是 \(\mathbf{E}\) 的子集所成集合上的一个合成律。
+
+定义2. 设 E 为一个广群，\(\top\) 表示其合成律。E 上的合成律 \((x, y) \mapsto y \top x\) 称为上述合成律的反合成律。带有该律的集合 E 称为 E 的反广群。
+
+设E和E'是两个广群；我们用同一个符号 T 表示它们的律。按照一般定义（《集合论》第四章第1节第5段），一个从E到E'上的双射映射f，使得
+
+\[
+f (x \top y) = f (x) \top f (y)\tag{1}
+\]
+
+对每个有序对 \((x, y) \in \mathbf{E} \times \mathbf{E}\) 成立，这样的映射称为 \(\mathbf{E}\) 到 \(\mathbf{E}'\) 上的一个同构。若存在 \(\mathbf{E}\) 到 \(\mathbf{E}'\) 上的一个同构，则称 \(\mathbf{E}\) 与 \(\mathbf{E}'\) 同构。
+
+更一般地：
+
+定义3. 一个映射 \(f\) （把 \(\mathbf{E}\) 映入 \(\mathbf{E}'\) ），若关系式(1)对每个有序对 \((x, y) \in \mathbf{E} \times \mathbf{E}\) 成立，则称为 \(\mathbf{E}\) 到 \(\mathbf{E}'\) 的同态或态射；若 \(\mathbf{E} = \mathbf{E}'\) , \(f\) 称为 \(\mathbf{E}\) 的自同态.
+
+广群 E 的恒等映射是一个同态，两个同态的复合也是一个同态。
+
+映射 \(f\) （从 \(E\) 到 \(E'\) ）成为同构的充要条件是：它是一个双射同态，且此时 \(\overline{f}^{-1}\) 是 \(E'\) 到 \(E\) 的一个同构.
+
+\subsection{有序元素序列的复合}
+
+回忆一下，集合 E 的元素族是从一个集合 I（称为指标集）到 E 的映射 \(t \mapsto x_{t}\) ；族 \((x_{t})_{t \in I}\) 若其指标集是有限的，则称为有限族。
+
+一个有限族 \((x_{t})_{t\in I}\) 若其指标集 I 是全序的，则称为 E 的有序元素序列。
+
+特别地，每个有限序列 \((x_{i})_{i\in\mathbb{H}}\) ，其中 H 是自然数集 N 的一个有限子集，若 H 被赋予由自然数之间的关系 \(m \leqslant n\) 所诱导的序关系，则可将其视为一个有序序列。
+
+两个有序序列 \((x_{i})_{i\in\mathbf{I}}\) 和 \((y_{k})_{k\in\mathbf{K}}\) 称为相似的，如果存在一个从 I 到 K 的有序集合同构 \(\phi\) ，使得 \(y_{\phi(i)} = x_{i}\) 对所有 \(i \in I\) 成立.
+
+每个有序序列 \((x_{\alpha})_{\alpha \in \mathbf{A}}\) 都相似于某个适当的有限序列。因为存在一个从 \(\mathbf{A}\) 到区间 \([0, n]\) （在 \(\mathbf{N}\) 中）上的递增双射.
+
+定义4. 设 \((x_{\alpha})_{\alpha \in \mathbf{A}}\) 为广群 \(\mathbf{E}\) 中元素的一个有序序列，其指标集 \(\mathbf{A}\) 非空。在律 \(\top\) 下的有序序列 \((x_{\alpha})_{\alpha \in \mathbf{A}}\) 的合成，记作 \(\bigcap_{\alpha \in \mathbf{A}} x_{\alpha}\) ，是 \(\mathbf{E}\) 的元素，通过对 \(\mathbf{A}\) 中元素个数进行归纳定义如下：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  若 \(\mathbf{A} = \{\beta\}\) ，则 \(\bigcap_{\alpha \in \mathbf{A}} x_{\alpha} = x_{\beta}\) ;
+\item
+  若 A 有 \(p > 1\) 个元素， \(\beta\) 是 A 的最小元素，且 \(A' = A - \{\beta\}\) ，则 \(\bigcap_{\alpha \in A} x_{\alpha} = x_{\beta} \top \left( \bigcap_{\alpha \in A} x_{\alpha} \right)\) .
+\end{enumerate}
+
+由此立即得出（通过对指标集中元素个数进行归纳）两个相似有序序列的复合相等；特别地，任何有序序列的复合等于某个有限序列的复合。若 \(\mathbf{A} = \{\lambda, \mu, \nu\}\) 有三个元素（ \(\lambda < \mu < \nu\) ），则复合 \(\bigcap_{\alpha \in \mathbf{A}} x_{\alpha}\) 是 \(x_{\lambda} \top (x_{\mu} \top x_{\nu})\) .
+
+注：注意，有序序列合成的定义存在一定的任意性；我们引入的归纳是“从右到左”进行的。如果我们“从左到右”进行，上述有序序列 \((x_{\lambda}, x_{\mu}, x_{\nu})\) 的合成将是 \((x_{\lambda} \top x_{\mu}) \top x_{\nu}\) .
+
+\[
+\left(x _ {\alpha}\right) _ {\alpha \in A}
+\]
+
+\[
+\begin{array}{c} \underline {{\mathsf {I}}} \\ \alpha \in \mathbf {A} \end{array}
+\]
+
+记作 \(\sum_{\alpha \in \mathbf{A}} x_{\alpha}\) ，称为有序序列 \((x_{\alpha})_{\alpha \in \mathbf{A}}\) 的和（ \(x_{\alpha}\) 称为和的各项）；对于以乘法记法书写的律，通常记作 \(\prod_{\alpha \in A} x_{\alpha}\) ，称为有序序列 \((x_{\alpha})\) 的积（ \(x_{\alpha}\) 称为积的因子）。†
+
+当索引集（及其顺序）不会引起混淆时，在有序序列的合成记号中通常可以省略它，例如对于以加法记法书写的律，我们可写成 \(\sum_{\alpha} x_{\alpha}\) 而不是 \(\sum_{\alpha \in A} x_{\alpha}\) ；其他记号同理。
+
+对于用 \(\top\) 表示的律，序列 \((x_{i})\) （其指标集为非空区间 \((p,q)\) ，在 \(\mathbf{N}\) 中）的合成记作 \(\bigcap_{p\leqslant i\leqslant q}x_{i}\) 或 \(\bigcap_{i = p}^{q}x_{i}\) ；对用其他符号表示的律亦然。
+
+设 E 和 F 是两个广群，其合成律记为 T，f 是 E 到 F 的一个同态。对于每个有序序列 \((x_{\alpha})_{\alpha \in \mathbf{A}}\) （元素属于 E ），有
+
+\[
+f \left(\underset {\alpha \in A} {T}\right) = \underset {\alpha \in A} {T} f (x _ {\alpha}).\tag{2}
+\]
+
+\subsection{结合律}
+
+定义5. 合成律 \((x,y)\mapsto x\top y\) （定义在集合 \(\mathbf{E}\) 上）称为结合的，如果对于所有元素 \(x,y,z\) （在 \(\mathbf{E}\) 中），
+
+\[
+(x \top y) \top z = x \top (y \top z).
+\]
+
+合成律为结合律的广群称为结合广群。
+
+结合律的反合成律也是结合的。
+
+例子。(1) 自然数的加法和乘法是 \(\mathbf{N}\) 上的结合合成律（集合论，III，§ 3，第 3 号，命题 5 的推论）
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  第1号中例(1)、(3)和(4)所引用的律都是结合律。
+\end{enumerate}
+
+定理1（结合性定理）。设 E 为一个结合广群，其律记为 \(\top\) 。设 A 是一个全序非空有限集，它是非空子集的一个有序序列 \((\mathbf{B}_l)_{i \in I}\) 的并集，使得关系 \(\alpha \in \mathbf{B}_i\) , \(\beta \in \mathbf{B}_j\) , \(i < j\) 蕴含 \(\alpha < \beta\) ；设 \((x_\alpha)_{\alpha \in A}\) 为以 A 为指标集的 E 中元素的一个有序序列。则
+
+\[
+\bigcap_ {\alpha \in A} x _ {\alpha} = \bigcap_ {i \in I} \left(\bigcap_ {\alpha \in B _ {i}} x _ {\alpha}\right)\tag{3}
+\]
+
+† 使用这一术语及记号 \(\prod_{\alpha \in \mathbf{A}} x_{\alpha}\) ，若存在与在集合论（集合论，II，§ 5，第 3 号）中定义的诸集合 \(x_{\alpha}\) 的乘积混淆的风险，则必须避免。然而，如果 \(x_{\alpha}\) 是基数且加法（相应地，乘法）是基数和（相应地，基数积），则在上述记号中记作 \(\sum_{\alpha \in \mathbf{A}} x_{\alpha}\) （相应地 \(\prod_{\alpha \in \mathbf{A}} x_{\alpha}\) ）的基数，是族 \((x_{\alpha})_{\alpha \in \mathbf{A}}\) 的基数和（相应地，基数积）（集合论，III，§ 3，第 3 号）。
+
+我们通过对 A 的基数 n 进行归纳来证明该定理。设 p 为 I 的基数，h 为其最小元素；设 \(J = I - \{h\}\) 。若 n = 1，由于 \(B_{i}\) 非空，必然有 p = 1，定理显然成立。否则，假设定理对至多含 n - 1 个元素的指标集成立，我们区分两种情况：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  \(B_{h}\) 只有一个元素 \(\beta\) 。设 \(C = \bigcup_{i \in J} B_{i}\) 。(3)的左边根据定义等于 \(x_{\beta} \top \left( \bigcap_{\alpha \in C} x_{\alpha} \right)\) ；右边根据定义等于
+\end{enumerate}
+
+\[
+x _ {\beta} \top \left(\underset {i \in J} {\mathsf {T}} \left(\underset {\alpha \in B _ {i}} {\mathsf {T}} x _ {\alpha}\right)\right);
+\]
+
+结果由定理对 C 和 \((\mathbf{B}_{i})_{i\in J}\) 成立这一假设推出.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  否则，设 \(\beta\) 为 A 的最小元素（因此也是 \(\mathbf{B}_h\) 的最小元素）；设 \(\mathbf{A}' = \mathbf{A} - \{\beta\}\) ，并设 \(\mathbf{B}_i' = \mathbf{A}' \cap \mathbf{B}_i\) （对于 \(i \in \mathbf{I}\) ）；于是 \(\mathbf{B}_i' = \mathbf{B}_i\) （对于 \(i \in \mathbf{J}\) ）。集合 \(\mathbf{A}'\) 有 \(n - 1\) 个元素，且定理的条件对 \(\mathbf{A}'\) 及其子集 \(\mathbf{B}_i'\) 成立；因此根据归纳假设：
+\end{enumerate}
+
+\[
+\underset {\alpha \in A ^ {\prime}} {T} x _ {\alpha} = \left(\underset {\alpha \in B ^ {\prime} h} {T} x _ {\alpha}\right) \top \left(\underset {i \in J} {T} \left(\underset {\alpha \in B _ {i}} {T} x _ {\alpha}\right)\right).
+\]
+
+将 \(x_{\beta}\) 与两边作合成，则左边根据定义有 \(\bigcap_{\alpha \in A} x_{\alpha}\) ，而右边利用结合律，得
+
+\[
+\left(x _ {\beta} \top \left(\underset {\alpha \in B ^ {\prime} h} {\top} x _ {\alpha}\right)\right) \top \left(\underset {i \in J} {\top} \left(\underset {\alpha \in B _ {i}} {\top} x _ {\alpha}\right)\right)
+\]
+
+根据定义3，这等于公式(3)的右侧。
+
+对于记为 \(\top\) 的结合律，合成 \(\bigcap_{p\leqslant i\leqslant q}x_i\) （序列 \((x_i)_{i\in [p,q]}\) 的合成）也记作（因为不会引起混淆）
+
+\[
+x _ {p} \top \dots \top x _ {q}.
+\]
+
+定理1的一个特例是公式
+
+\[
+x _ {0} \top x _ {1} \top \dots \top x _ {n} = (x _ {0} \top x _ {1} \top \dots \top x _ {n - 1}) \top x _ {n}.
+\]
+
+考虑一个由 n 项组成的有序序列，其所有项都等于同一个元素 \(x \in E\) 。该序列的合成记作 \(\top^{n} x\) （对于记为 \(\top, \bot^{n} x\) 的律，对于记为 \(\bot\) 的律）。对于以乘法形式书写的律，该合成记作 \(x^{n}\) ，称为 x 的 n 次幂。对于以加法记号书写的律，该合成通常记作 nx。将结合性定理应用于所有项均相等的有序序列，得到等式
+
+\[
+\begin{array}{c} n _ {1} + n _ {2} + \dots + n _ {p} \\ \top \end{array} x = \binom {n _ {1}} {\top} x) \top \binom {n _ {2}} {\top} x) \top \dots \top \binom {n _ {p}} {\top} x).
+\]
+
+特别是，如果 \(p = 2\) ,
+
+\[
+{ } ^ { m + n } \top x = \left( \begin{array} { c } m \\ \top x \end{array} \right) \top \left( \begin{array} { c } n \\ \top x \end{array} \right)\tag{4}
+\]
+
+的直和，且若 \(n_1 = n_2 = \cdots = n_p = m,\)
+
+\[
+\frac {p m}{T} x = \frac {p}{T} \left(\frac {m}{T} x\right).\tag{5}
+\]
+
+如果 X 是 E 的子集，我们有时按照上述记号，用 \(\overset{p}{\top}X\) 表示集合 \(X_{1}\top X_{2}\top\cdots\top X_{p}\) ，其中
+
+\[
+\mathbf {X} _ {1} = \mathbf {X} _ {2} = \dots = \mathbf {X} _ {p} = \mathbf {X};
+\]
+
+它即所有合成 \(x_{1} \top x_{2} \top \cdots \top x_{p}\) （其中 \(x_{1} \in X, x_{2} \in X, \ldots, x_{p} \in X\) ）所成的集合.
+
+重要的是不要将此集合与诸 \(\top x\) （其中 x 遍历 X）所成的集合混淆。
+
+\subsection{稳定子集。诱导律}
+
+定义6. 集合 E 的子集 A 称为在 E 上的合成律 \(\top\) 下稳定，如果 A 中两个元素的合成属于 A。此时映射 \((x,y)\mapsto x\top y\) （从 \(\mathbf{A}\times \mathbf{A}\) 到 A ）称为由律 \(\top\) 在 A 上诱导的律。带有由 \(\top\) 诱导的律的集合 A 称为 E 的子广群。
+
+换言之，为使 A 在律 \(\top\) 下稳定，其充要条件是 \(A \top A \subset A\) 。E 的稳定子集与相应的子广群通常被视为同一事物。
+
+E 的稳定子集的任一族的交集是稳定的；特别地，存在 E 的包含给定子集 X 的最小稳定子集 A；称 A 由 X 生成，而 X 称为 A 的生成系或生成集。相应的子广群也称为由 X 生成的。
+
+命题1. 设E和F是两个广群，且f是E到F的一个同态。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  在 \(f\) 下， \(\mathbf{E}\) 的稳定子集的像是 \(\mathbf{F}\) 的稳定子集.
+\item
+  在 \(f\) 下， \(\mathbf{F}\) 的稳定子集的逆像是 \(\mathbf{E}\) 的稳定子集.
+\item
+  设 \(\mathbf{X}\) 为 \(\mathbf{E}\) 的一个子集。在 \(f\) 下， \(\mathbf{E}\) 中由 \(\mathbf{X}\) 生成的稳定子集的像是 \(\mathbf{F}\) 中由 \(f(\mathbf{X})\) 生成的稳定子集.
+\item
+  若 \(g\) 是第二个同态，从 \(\mathbf{E}\) 到 \(\mathbf{F}\) ，则诸元素 \(x\) （属于 \(\mathbf{E}\) ，且使得 \(f(x) = g(x)\) ）所成的集合是 \(\mathbf{E}\) 的一个稳定子集.
+\end{enumerate}
+
+\subsection{可交换元素。交换律}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 \((x, y) \mapsto x \top y\) 是 E 上的一个交换律；该律
+\end{enumerate}
+
+\[
+(\mathbf {X}, \mathbf {Y}) \mapsto \mathbf {X} \top \mathbf {Y}
+\]
+
+在 E 的子集之间是交换的。
+
+定义 9. 设 E 是一个广群，X 是 E 的一个子集。E 中与 X 的每个元素都可交换的元素所组成的集合称为 X 的中心化子。
+
+设 X 和 Y 是 E 的两个子集，X' 和 Y' 分别是它们的中心化子。若 X ⊂ Y，则 Y' ⊂ X'。
+
+设 \((\mathbf{X}_i)_{i\in I}\) 是 \(E\) 的一个子集族，且对所有 \(i\in I\) ，设 \(\mathbf{X}_i'\) 为 \(\mathbf{X}_i\) 的中心化子。 \(\bigcup_{i\in I}\mathbf{X}_i\) 的中心化子是 \(\bigcap_{i\in I}\mathbf{X}_i'\) .
+
+设X是E的子集， \(X'\) 为X的中心化子。 \(X''\) （ \(X'\) 的中心化子）称为X的双中心化子。则 \(X \subset X''\) 。 \(X'''\) （ \(X''\) 的中心化子）等于 \(X'\) 。因为 \(X'\) 包含于它的双中心化子 \(X'''\) 中，且关系 \(X \subset X''\) 蕴含 \(X''' \subset X'\) .
+
+命题3. 设E是一个结合广群，其律记为 \(\top\) 。如果一个元素 \(x\) （属于 E ）与元素 \(y\) 和 \(z\) （都属于 E ）可交换，则它与 \(y \top z\) 可交换.
+
+对于
+
+\[
+\begin{array}{r l} x \top (y \top z) = (x \top y) \top z & = (y \top x) \top z \\ & = y \top (x \top z) = y \top (z \top x) = (y \top z) \top x. \end{array}
+\]
+
+推论。设E是一个结合广群。E的任意子集的中心化子是E的一个稳定子集。
+
+定义10. 一个广群E的中心化子称为E的中心。E的中心中的元素称为E的中心元素。
+
+如果E是一个结合广群，则根据命题3的推论，其中心是一个稳定子集，且在其中心上诱导的律是交换的。
+
+命题4。设E为一个结合广群，X和Y为E的两个子集。如果X中的每个元素都与Y中的每个元素交换，那么由X生成的稳定子集中的每个元素都与由Y生成的稳定子集中的每个元素交换。
+
+设 \(X'\) 和 \(X''\) 分别为X的中心化子和双中心化子。它们是E的稳定子集。现在 \(X \subset X''\) 且 \(Y \subset X'\) ，因此 \(X''\) （相应地， \(X'\) ）包含由 X（相应地，Y）生成的 E 的稳定子集。由于 \(X''\) 的每个元素与 \(X'\) 的每个元素可交换，命题得证。
+
+推论1. 若 \(x\) 和 \(y\) 在结合律 \(\top\) 下可交换，则 \(\top^m x\) 和 \(\top^n y\) 对所有整数 \(m > 0\) 和 \(n > 0\) 亦然；特别地， \(\top^m x\) 和 \(\top^n x\) 对所有 \(x\) 和所有整数 \(m > 0\) 和 \(n > 0\) 都可交换.
+
+推论2. 若子集X中任意两个元素在结合律T下可交换，则T在由X生成的稳定子集上诱导的律满足结合律与交换律。
+
+定理2（交换性定理）。设 \(\top\) 是 E 上的一个结合合成律；设 \((x_{\alpha})_{\alpha \in A}\) 是 E 的元素的一个非空有限族，其元素两两可交换；设B和C是两个以A为底集的全序集。则 \(\bigcap_{\alpha \in B} x_{\alpha} = \bigcap_{\alpha \in C} x_{\alpha}\) .
+
+由于当A只有一个元素时定理成立，我们对A中元素个数p进行归纳论证。设p为整数 \textgreater1，并假设当Card A \textless{} p.～我们证明当Card A = p时成立。可以假设 A 是 N 中的区间 \([0, p - 1]\) ；有序序列 \((x_{\alpha})_{\alpha \in \mathbf{A}}\) （由 \(\mathbf{A}\) 上的自然序关系定义）的合成是 \(\prod_{i = 0}^{p - 1}x_i\) .
+
+设 A 被赋予另一个全序，并设 h 是该序下 A 的最小元素，且 \(A'\) 为 A 的其余元素所成的集合（按诱导序全序）。首先假设 0 \textless{} h \textless{} p - 1 ，令 \(P = \{0, 1, \ldots, h - 1\}\) 和 \(Q = \{h + 1, \ldots, p - 1\}\) ；定理对 \(A'\) 已假设成立，应用结合性定理，我们得到（因为 \(A' = P \cup Q\) )
+
+\[
+\bigcap_ {\alpha \in \mathbf {A} ^ {\prime}} x _ {\alpha} = \left(\prod_ {i = 0} ^ {h - 1} x _ {i}\right) \top \left(\prod_ {i = h + 1} ^ {p - 1} x _ {i}\right)
+\]
+
+由此，将 \(x_{h}\) 与两边复合，并反复应用 T 的交换律和结合律：
+
+\[
+\begin{array}{r l} \underset {\alpha \in \mathbf {A}} {\top} x _ {\alpha} & = x _ {h} \top \left(\underset {\alpha \in \mathbf {A} ^ {\prime}} {\top} x _ {\alpha}\right) = x _ {h} \top \left(\underset {i = 0} {\overset {h - 1} {\top}} x _ {i}\right) \top \left(\underset {i = h + 1} {\overset {p - 1} {\top}} x _ {i}\right) \\ & = \left(\underset {i = 0} {\overset {h - 1} {\top}} x _ {i}\right) \top x _ {h} \top \left(\underset {i = h + 1} {\overset {p - 1} {\top}} x _ {i}\right) = \underset {i = 0} {\overset {p - 1} {\top}} x _ {i}, \end{array}
+\]
+
+这便证明了该情形下的定理。若 h = 0 或 h = p - 1，同样的结论成立，但更为简单，因为由 P 产生的项或由 Q 产生的项不会出现在公式中。
+
+在集合 E 上的一个交换结合律下，有限族 \((x_{\alpha})_{\alpha \in A}\) （由 E 的元素组成）的合成按定义是：将 A 以一切可能的方式全序化后所得的所有有序序列的合成的公共值。这个合成在由 T 表示的律下仍记作 \(\bigcap_{\alpha \in A} x_{\alpha}\) ；其他记号也类似。
+
+定理 3. 设 \(\top\) 是 E 上的一个结合律，且 \((x_{\alpha})_{\alpha \in \mathbf{A}}\) 为 E 的元素的一个非空有限族，其元素两两可交换。若 A 是非空子集 \((\mathbf{B}_i)_{i\in I}\) （两两不相交）的并集，则
+
+\[
+\bigcap_ {\alpha \in A} x _ {\alpha} = \bigcap_ {i \in I} \left(\bigcap_ {\alpha \in B _ {i}} x _ {\alpha}\right).\tag{6}
+\]
+
+这由定理2推出，若 A 和 I 已全序化，使得诸 \(B_{i}\) 满足定理1的条件。
+
+我们特别指出该定理的两个重要特例：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  若 \((x_{\alpha\beta})_{(\alpha,\beta)\in\mathbf{A}\times\mathbf{B}}\) 是结合广群中可交换元素的一个有限族，其指标集是两个非空有限集 A、B 的乘积（一个“双重族”），则
+\end{enumerate}
+
+\[
+\underset {(\alpha , \beta) \in A \times B} {\top} x _ {\alpha \beta} = \underset {\alpha \in A} {\top} \left(\underset {\beta \in B} {\top} x _ {\alpha \beta}\right) = \underset {\beta \in B} {\top} \left(\underset {\alpha \in A} {\top} x _ {\alpha \beta}\right)\tag{7}
+\]
+
+这由定理3推出：一方面把 \(\mathbf{A} \times \mathbf{B}\) 看作诸集合 \(\{\alpha\} \times \mathbf{B}\) 的并集，另一方面看作诸集合 \(\mathbf{A} \times \{\beta\}\) 的并集。
+
+例如，若B有n个元素，且对每个 \(\alpha \in A\) 所有 \(x_{\alpha\beta}\) 具有相同的值 \(x_{\alpha}\) ，则
+
+\[
+\bigcap_ {\alpha \in \mathbf {A}} \left(\frac {n}{T} x _ {\alpha}\right) = \frac {n}{T} \left(\bigcap_ {\alpha \in \mathbf {A}} x _ {\alpha}\right).\tag{8}
+\]
+
+如果B有两个元素，我们得到以下结果：设 \((x_{\alpha})_{\alpha \in A}, (y_{\alpha})_{\alpha \in A}\) 为E的两个非空元素族。如果这些 \(x_{\alpha}\) 和 \(y_{\beta}\) 两两可交换，则
+
+\[
+\underset {\alpha \in \mathbf {A}} {\top} x _ {\alpha} \top y _ {\alpha} = \left(\underset {\alpha \in \mathbf {A}} {\top} x _ {\alpha}\right) \top \left(\underset {\alpha \in \mathbf {A}} {\top} y _ {\alpha}\right).\tag{9}
+\]
+
+由于公式(7)，双序列 \((x_{ij})\) （其指标集为两个区间 \(\{p, q\}\) 与 \(\{r, s\}\) （在 \(\mathbf{N}\) 中）的乘积）的合成，对于以加法记法书写的交换结合律，通常记为
+
+\[
+\sum_ {i = p} ^ {q} \sum_ {j = r} ^ {s} x _ {i j} \quad \text { or } \quad \sum_ {j = r} ^ {s} \sum_ {i = p} ^ {q} x _ {i j}
+\]
+
+对于用其他符号表示的律亦然。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(n\) 为整数 \(>0\) ，并设 \(A\) 为整数有序对 \((i,j)\) （满足 \(0 \leqslant i \leqslant n, 0 \leqslant j \leqslant n\) 和 \(i < j\) ）所成的集合；族 \((x_{ij})_{(i,j) \in A}\) 的合成（在交换结合律下）也记为 \(\bigcap_{0 \leqslant i < j \leqslant n} x_{ij}\) （或简记为 \(\bigcap_{i < j} x_{ij}\) （若无混淆之虞）；此处定理3给出公式
+\end{enumerate}
+
+\[
+\underset {0 \leqslant i <   j \leqslant n} {\mathsf {T}} x _ {i j} = \underset {i = 0} {\overset {n - 1} {\mathsf {T}}} \left(\underset {j = i + 1} {\overset {n} {\mathsf {T}}} x _ {i j}\right) = \underset {j = 1} {\overset {n} {\mathsf {T}}} \left(\underset {i = 0} {\overset {j - 1} {\mathsf {T}}} x _ {i j}\right).\tag{10}
+\]
+
+对于指标集为多于两个集合之积的族，存在与(7)类似的公式；对于指标集为集合 \(S_{p}\) （由严格递增序列 \((i_{k})_{1\leqslant k\leqslant p}\) （p 个整数，满足 \(0\leqslant i_{k}\leqslant n\) ( \(p\leqslant n+1\) )）所组成）的族，存在与(10)类似的公式：在后一种情形下，族 \((x_{i_{1}i_{2}\ldots i_{p}})(i_{1},\ldots,i_{p})\in\mathbb{S}_{p}\) 的合成记为
+
+\[
+\underset {0 \leqslant i _ {1} <   i _ {2} <   \dots <   i _ {p} <   n} {\mathsf {T}} x _ {i _ {1} i _ {2} \ldots i _ {p}}, \quad \text {or simply} \quad \underset {i _ {1} <   i _ {2} <   \dots <   i _ {p}} {\mathsf {T}} x _ {i _ {1} i _ {2} \ldots i _ {p}}.
+\]
+
+命题5. 设 E 和 F 为两个广群，其律都记为 \(\top\) ，并设 \(f\) 和 \(g\) 为从 E 到 F 的同态。设 \(f \top g\) 为映射 \(x \mapsto f(x) \top g(x)\) （从 E 到 F ）。若 F 是结合的且交换的，则 \(f \top g\) 是一个同态。
+
+对所有元素 \(x\) 和 \(y\) （属于 \(\mathbf{E}\) ）：
+
+\[
+\begin{array}{r l} (f \top g) (x \top y) & = f (x \top y) \top g (x \top y) = f (x) \top f (y) \top g (x) \top g (y) \\ & = f (x) \top g (x) \top f (y) \top g (y) = ((f \top g) (x)) \top ((f \top g) (y)). \end{array}
+\]
+
+\subsection{商律}
+
+定义11. 设E为一个集合。一个合成律 \(\top\) 与E上的一个等价关系R称为相容的，如果关系 \(x \equiv x'\) （模R）和 \(y \equiv y'\) （模R）（对于 \(x, x', y, y' \in \mathbf{E}\) ）蕴含 \(x \top y \equiv x' \top y'\) （模R）；商集E/R上的合成律将 \(x\) 和 \(y\) 的等价类映至 \(x \top y\) 的等价类，称为律 \(\top\) 关于R的商律。带有商律的集合E/R称为E关于R的商广群。
+
+要说明 E 上的等价关系 R 与 E 上的内部合成律 \(f: E \times E \to E\) 相容，指的是映射 f 与乘积等价关系 \(R \times R\) （在 \(E \times E\) 上）以及等价关系 R（在 E 上）相容（在集合论，II，§6，第5号的意义下）。（集合论，II，§6，第8号）。这也就意味着 R 的图是 \(E \times E\) 的一个子广群.
+
+如果律 \(\top\) 是结合的（相应地，交换的），那么商律也是结合的（相应地，交换的）（更简洁地说，我们称结合性或交换性在过渡到商时得以保持）。
+
+从广群 E 到商广群 E/R 的典范映射是一个同态。
+
+对于从 E/R 到广群 F 的映射 g，要使 g 成为同态，其充要条件是 g 与从 E 到 E/R 的典范映射的复合是一个同态。
+
+以下两个命题由定义直接可得：
+
+命题6. 设 E 和 F 是两个广群，f 是 E 到 F 的一个同态。设 R\{x,y\} 表示关系 \(f(x)=f(y)\) （在 E 的元素 x, y 之间）。则 R 是 E 上的一个等价关系，与 E 上的律相容，并且由 f 通过取商导出的从 E/R 到 f(E) 的映射是商广群 E/R 到 F 的子广群 f(E) 上的一个同构。
+
+命题7. 设 E 是一个广群，R 是 E 上与 E 上的律相容的一个等价关系。对于 E/R 上的一个等价关系 S，它与商律相容的充要条件是 S 具有 T/R 的形式，其中 T 是 E 上的一个由 R 蕴含且与 E 上的律相容的等价关系。此时，从 E/T 到 (E/R)/(T/R) 的典范映射（集合论，II，§6，第7号）是一个广群同构。
+
+命题8. 设E是一个广群，A是E的一个稳定子集，R是E上与E的律相容的一个等价关系。A关于R的饱和B（集合
+
+理论，II，§6，第5号）是一个稳定子集。等价关系 \(\mathbf{R}_{\mathbf{A}}\) 和 \(\mathbf{R}_{\mathbf{B}}\) （分别由 \(\mathbf{R}\) 在 \(\mathbf{A}\) 和 \(\mathbf{B}\) 上诱导）与诱导律相容，且由典范嵌入 \(\mathbf{A}\) 到 \(\mathbf{B}\) 通过取商得到的映射是 \(\mathbf{A} / \mathbf{R}_{\mathbf{A}}\) 到 \(\mathbf{B} / \mathbf{R}_{\mathbf{B}}\) 的一个广群同构.
+
+设 \(\top\) 表示 E 上的律。如果 \(x\) 和 \(y\) 是 B 的两个元素，则存在两个元素 \(x'\) 和 \(y'\) （属于 A ）使得 \(x \equiv x' \pmod{R}\) 和 \(y \equiv y' \pmod{R}\) ；于是 \(x \top y \equiv x' \top y' \pmod{R}\) 且 \(x' \top y' \in A\) ，从而 \(x \top y \in B\) 。因此，B 是 E 的一个稳定子集，其余断言是显然的。
+
+设 M 是一个广群，且 \(((u_{\alpha}, v_{\alpha}))_{\alpha \in I}\) 为 \(M \times M\) 的元素的一个族。考虑 M 上所有与 M 上的律相容且满足 \(u_{\alpha} \equiv v_{\alpha} \pmod{S}\) （对所有 \(\alpha \in I\) ）的等价关系 S。这些关系的图的交集是一个等价关系 R 的图，该关系与 M 上的律相容且满足 \(u_{\alpha} \equiv v_{\alpha} \pmod{R}\) 。因此，R 是具有这两个性质的最细（集合论，III，§1，第3和7节）等价关系。它称为与 M 上的律相容且由 \((u_{\alpha}, v_{\alpha})\) 所生成的等价关系.
+
+命题9. 保持上述记号，设 \(f\) 是 \(\mathbf{M}\) 到一个广群的同态，使得 \(f(u_{\alpha}) = f(v_{\alpha})\) 对所有 \(\alpha \in \mathbf{I}\) 成立。则 \(f\) 与 \(\mathbf{R}\) 相容.
+
+设 T 为与 f 相关联的等价关系。则 \(u_{\alpha} \equiv v_{\alpha} \pmod{T}\) 对所有 \(\alpha \in I\) 成立，且 T 与 M 上的律相容，因此 T 比 R 更粗；这就证明了该命题。
+
+\section{单位元；可消去元素；可逆元素}
+
+\subsection{单位元}
+
+定义1. 在一个合成律 \(\top\) （定义在集合 \(\mathbf{E}\) 上）下，一个元素 \(e\) （属于 \(\mathbf{E}\) ）称为单位元，如果对于所有 \(x \in \mathbf{E}\) , \(e \top x = x \top e = x\) .
+
+在给定的律 \(\top\) 下至多存在一个单位元，因为如果 \(e\) 和 \(e'\) 都是单位元，则 \(e = e \top e' = e'\) 。单位元与每个元素都可交换：它是一个中心元素。
+
+定义2. 具有单位元的广群称为含幺广群。若 E、E' 是含幺广群，把广群 E 映入广群 E' 且将 E 的单位元映到 E' 的单位元的同态称为 E 到 E' 的保单位同态（或态射）。结合的含幺广群称为幺半群。
+
+若E、E'是幺半群，则从E到E'的保单位态射称为幺半群同态或幺半群态射。
+
+示例。(1) 在自然数的集合 \(\mathbf{N}\) 中，0 是加法的单位元，1 是乘法的单位元。这两条律各自给出 \(\mathbf{N}\) 一个交换幺半群结构（集合论，III，§3，第3号）。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  在集合 E 的子集族中， \(\varnothing\) 在律 \(\cup\) 下是单位元，而 E 在律 \(\cap\) 下是单位元。更一般地，在一个格中，最小元素（若存在）在上确界的律下是单位元；反之，若在该律下存在单位元，则它是集合的最小元素。对最大元素与下确界的律亦有类似结论。
+\item
+  集合 \(\mathbf{N}\) 在律 \((x, y) \mapsto x^y\) 下没有单位元。在律 \((\mathbf{X}, \mathbf{Y}) \mapsto \mathbf{X} \circ \mathbf{Y}\) （在 \(\mathbf{E} \times \mathbf{E}\) 的子集之间）下，对角映射 \(\Delta\) 是单位元。在律 \((f, g) \mapsto f \circ g\) （在 \(\mathbf{E}\) 到 \(\mathbf{E}\) 的映射之间）下， \(\mathbf{E}\) 到 \(\mathbf{E}\) 上的恒等映射是单位元。
+\item
+  设 E 是一个广群，R 是 E 上与 E 上的律相容的一个等价关系（§ 1，第 6 号）。若 e 是 E 的一个单位元，则 e 在 E/R 中的典范像就是广群 E/R 的一个单位元。
+\end{enumerate}
+
+含幺广群的单位元是一个保单位同态；两个保单位同态的复合也是一个保单位同态。一个映射成为含幺广群同构的充要条件是它是一个双射的保单位同态，并且此时逆映射也是一个保单位同态。设 E 和 E' 为含幺广群， \(e'\) 为 \(E'\) 的单位元；将 E 映到 \(E'\) 的常值映射（它把 E 映到 \(e'\) ）是一个保单位同态，称为平凡同态。
+
+一族含幺广群（相应地，幺半群）的积是含幺广群（相应地，幺半群）。
+
+每个含幺广群（相应地，幺半群）的商广群都是含幺广群（相应地，幺半群）。
+
+设 E 是一个含幺广群，e 为其单位元。E 的一个子广群 A 若满足 \(e \in A\) 则称为 E 的含幺子广群。显然，e 是广群 A 的单位元。E 的含幺子广群的任意交集仍是 E 的含幺子广群。若 X 是 E 的子集，则存在包含 X 的 E 的最小含幺子广群；它称为由 X 生成的 E 的含幺子广群；当 X 为空时它等于 \(\{e\}\) 。若 E 是一个幺半群，则 E 的含幺子广群称为 E 的子幺半群。
+
+如果 F 是一个没有单位元的广群，F 的子广群可能具有单位元。例如，如果 F 是结合的，且 h 是 F 的幂等元（I，§ 1，第 4 号），则集合 \(h \top x \top h\) ，其中 x 遍历 F，是 F 的一个以 h 为单位元的子广群。
+
+若 E 是带单位元 e 的广群，则 E 的一个子广群 A 即使满足 \(e \notin A\) 也可能仍具有单位元。
+
+定义3. 设 E 为一个含幺广群。E 的单位元称为 E 的元素的空族的合成。
+
+若 \((x_{\alpha})_{\alpha \in \varnothing}\) 是 E 的元素组成的空族，其合成 \(e\) 也记作 \(\bigcap_{\alpha \in \varnothing} x_{\alpha}\) 。例如，我们写
+
+\[
+\bigcap_ {q \leqslant i \leqslant p} x _ {i} = e
+\]
+
+当 \(p < q\) ( \(p, q \in \mathbf{N}\) ) 时。类似地，我们写 \(\top^0 x = e\) （对任意的 \(x\) ）。有了这些定义，即使略去集合 \(\mathbf{A}\) 和 \(\mathbf{B}_i\) 非空这一假设，§1 中的定理1和定理3仍然成立。类似地，公式 \(\top^{m+n} x = \left( \frac{m}{\top} x \right)^{\top} \left( \frac{n}{\top} x \right)\) 和 \(\top^{mn} x = \frac{m}{\top} \left( \frac{n}{\top} x \right)\) 对 \(m \geqslant 0, n \geqslant 0\) 成立.
+
+设 E 是一个含幺广群，其律记为 \(\top\) ， \(e\) 为其单位元。E 的元素的一族 \((x_{i})_{i\in I}\) 的支集是指标 \(i\in I\) 中使 \(x_{i}\neq e\) 者所成的集合。设 \((x_{i})_{i\in I}\) 为 E 中具有有限支集的一族元素。我们将在以下两种情形中定义合成 \(\bigcap_{i\in I}x_{i}\) ：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  集合 I 是全序的；
+\item
+  E 是结合的，且 \(x_{i}\) 是两两可交换的。
+\end{enumerate}
+
+在这两种情形下，令 S 为族 \((x_{i})\) 的支集。若 J 是 I 的包含 S 的有限子集，则 \(\bigcap_{i\in J}x_{i} = \bigcap_{i\in S}x_{i}\) ，这可通过对 J 中元素个数进行归纳看出：在情形 (a) 中应用 §1 的定理 1，在情形 (b) 中应用 §1 的定理 3。设 \(\bigcap_{i\in I}x_{i}\) 表示所有包含 S 的 I 的有限子集 J 的合成 \(\bigcap_{i\in J}x_{i}\) 的公共值。当 I 是区间 \(\{p,\rightarrow\{\text{的 }N\}\) 时，我们也记作 \(\bigcap_{i=p}^{\infty}x_{i}\) .
+
+有了这些定义和记号，§1中的定理1和定理3以及定理3后的注记可以推广到具有有限支集的族。
+
+以加法记法书写的律的单位元通常记作 0，称为零元或零元素（有时也称为原点）。在以乘法记法书写的律下，它通常记作 1，称为单位元（或单位）。
+
+\subsection{可消去元素}
+
+定义 4. 给定集合 E 上的一个合成律 \(\top\) ，映射 \(x \mapsto a \top x\) （相应地 \(x \mapsto x \top a\) ）（将 E 映入自身）称为由元素 \(a \in E\) 所作的左平移（相应地，右平移）。
+
+在过渡到反合成律时，左平移变为右平移，反之亦然。
+
+设 \(\pmb{\gamma}_{a},\pmb{\delta}_{a}\) （或 \(\pmb {\gamma}(a),\pmb {\delta}(a)\) ）分别表示由 \(a\in \mathbf{E}\) 所作的左平移和右平移；于是
+
+\[
+\boldsymbol {\gamma} _ {a} (x) = a \top x, \quad \boldsymbol {\delta} _ {a} (x) = x \top a.
+\]
+
+命题 1. 若律 \(\top\) 是结合的，则对所有 \(x \in E\) 和 \(y \in E\)
+
+\[
+\gamma_ {x \top y} = \gamma_ {x} \circ \gamma_ {y}, \quad \delta_ {x \top y} = \delta_ {y} \circ \delta_ {x}.
+\]
+
+对于所有 \(z \in \mathbf{E}\) :
+
+\[
+\boldsymbol {\Upsilon} _ {x \top y} (z) = (x \top y) \top z = x \top (y \top z) = \boldsymbol {\Upsilon} _ {x} (\boldsymbol {\Upsilon} _ {y} (z))
+\]
+
+\[
+\boldsymbol {\delta} _ {x \top y} (z) = z \top (x \top y) = (z \top x) \top y = \boldsymbol {\delta} _ {y} (\boldsymbol {\delta} _ {x} (z))
+\]
+
+换言之，映射 \(x \mapsto \gamma_x\) 是广群 E 到映射集合 \(\mathbf{E}^{\mathbb{E}}\) （ E 到自身的映射所成的集合，带律 \((f, g) \mapsto f \circ g\) ）的一个同态；映射 \(x \mapsto \delta_x\) 是 E 到带反合成律的集合 \(\mathbf{E}^{\mathbb{E}}\) 的一个同态。若 E 是幺半群，这些同态是保单位的。
+
+定义5. 广群 E 的元素 a 称为左（相应地，右）可消去的（或正则的），如果由 a 所作的左（相应地，右）平移是单射的。既左可消去又右可消去的元素称为可消去的（或正则的）元素。
+
+换句话说， \(a\) 在律 \(\top\) 下可消去的充要条件是：关系式 \(a \top x = a \top y\) , \(x \top a = y \top a\) 中的每一个都蕴含 \(x = y\) （即称“a 可以从这些等式中消去”）。若存在单位元 \(e\) （在律 \(\top\) 下），则它在该律下可消去：此时平移 \(\gamma_e\) 和 \(\delta_e\) 就是 E 到自身的恒等映射。
+
+例子。(1) 每个自然数在加法下可消去；每个自然数 \(\neq 0\) 在乘法下可消去。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在一个格中，在上确界的律下除单位元（最小元）（若存在）外不存在可消去元；对下确界的律同理。特别地，在集合 E 的子集所成的集合中， \(\varnothing\) 是律 \(\cup\) 下唯一可消去的元素，而 E 是律 \(\cap\) 下唯一可消去的元素.
+\end{enumerate}
+
+命题2. 结合广群的可消去（相应地，左可消去，相应地，右可消去）元素之集构成一个子广群。
+
+若 \(\gamma_{x}\) 和 \(\gamma_{y}\) 是单射，则 \(\gamma_{x\top y} = \gamma_{x}\circ \gamma_{y}\) 也是单射（命题1）。对 \(\delta_{x\top y}\) 类似.
+
+\subsection{可逆元素}
+
+定义6. 设 E 是一个含幺广群， \(\top\) 为其合成律， \(e\) 为其单位元， \(x\) 和 \(x'\) 为 E 的两个元素。 \(x'\) 称为 \(x\) 的左逆（相应地，右逆，相应地，逆），如果 \(x' \top x = e\) （相应地 \(x \top x' = e\) ，相应地， \(x' \top x = x \top x' = e\) ).
+
+E 的元素 x 称为左可逆（相应地，右可逆，相应地，可逆）的，如果它有左逆元（相应地，右逆元，相应地，逆元）。
+
+一个所有元素都可逆的幺半群称为群。
+
+“对称的”和“可对称化的”有时分别用来代替“逆”和“可逆”。当 E 上的律用加法记法书写时，我们通常说负元而不说逆元。
+
+示例。(1) 单位元是其自身的逆元。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在 E 到 E 的映射集合中，元素 \(f\) 是左可逆的（相应地，右可逆的），如果 \(f\) 是满射（相应地，单射）。左逆（相应地，右逆）就是与 \(f\) 相关联的收缩（相应地，截面）（集合论，II，§3，第8号，定义11）。 \(f\) 可逆的充要条件是 \(f\) 是一个双射。其唯一的逆就是 \(f\) 的逆双射.
+\end{enumerate}
+
+设 E 和 F 是两个含幺广群，f 是 E 到 F 的一个保单位同态。如果 \(x'\) 是 x 在 E 中的逆元，则 \(f(x')\) 是 \(f(x)\) 在 F 中的逆元。因此，若 x 是 E 的一个可逆元素，则 \(f(x)\) 是 F 的一个可逆元素。
+
+特别地，若 R 是与含幺广群 E 上的律相容的等价关系，则 E 的可逆元素在 E/R 中的典范像也是可逆的。
+
+命题3. 设 E 为一个幺半群，且 x 为 E 中的一个元素。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(x\) 左（相应地，右）可逆的充要条件是由 \(x\) 所作的右（相应地，左）平移是满射。
+\item
+  \(x\) 可逆的充要条件是它既左可逆又右可逆。在这种情况下， \(x\) 有唯一的逆元，它同时也是其唯一的左（相应地，右）逆元。
+\end{enumerate}
+
+若 \(x'\) 是 \(x\) 的左逆，那么（命题1）
+
+\[
+\boldsymbol {\delta} _ {x} \circ \boldsymbol {\delta} _ {x ^ {\prime}} = \boldsymbol {\delta} _ {x ^ {\prime} \top x} = \boldsymbol {\delta} _ {e} = \mathrm{Id} _ {\mathrm{E}}
+\]
+
+且 \(\pmb{\delta}_{x}\) 是满射的。反之，如果 \(\pmb{\delta}_{x}\) 是满射的，则存在 E 的一个元素 \(x^{\prime}\) 使得 \(\pmb{\delta}_{x}(x^{\prime}) = e\) ，且 \(x^{\prime}\) 是 \(x\) 的左逆。(i) 的其他断言类似可得。
+
+若 \(x'\) （相应地 \(x''\) ）是 \(x\) 的左（相应地，右）逆，则
+
+\[
+x ^ {\prime} = x ^ {\prime} \top e = x ^ {\prime} \top (x \top x ^ {\prime \prime}) = (x ^ {\prime} \top x) \top x ^ {\prime \prime} = e \top x ^ {\prime \prime} = x ^ {\prime \prime},
+\]
+
+由此得（ii）。
+
+注。设 E 为一个幺半群，x 为 E 中的一个元素。若 x 左可逆，则 x 左可消；因为，若 \(x'\) 是 x 的左逆元，则
+
+\[
+\gamma_ {x ^ {\prime}} \circ \gamma_ {x} = \gamma_ {x ^ {\prime} \top x} = \gamma_ {e} = \mathrm{Id} _ {\mathrm{E}}
+\]
+
+且 \(\pmb{\gamma}_{x}\) 是单射的。特别地，如果 \(x\) 是左可逆的，则由 \(x\) 所作的左平移和右平移都是双射。反之，假设 \(\pmb{\gamma}_{x}\) 是双射；则存在 \(x' \in E\) 使得 \(xx' = \pmb{\gamma}_{x}(x') = e\) ；于是 \(\pmb{\gamma}_{x}(x' x) = (xx') x = x = \pmb{\gamma}_{x}(e)\) ，因此 \(x' x = e\) ，从而 \(x\) 是可逆的。类似地可以看出，如果 \(\delta_{x}\) 是双射，则 \(x\) 是可逆的。
+
+命题4. 设 E 是一个幺半群，x 和 y 是 E 的可逆元素，其逆元分别为 \(x'\) 和 \(y'\) 。则 \(y' \top x'\) 是 \(x \top y\) 的逆.
+
+这由以下关系得出
+
+\[
+\left(y ^ {\prime} \top x ^ {\prime}\right) \top (x \top y) = y ^ {\prime} \top \left(x ^ {\prime} \top x\right) \top y = y ^ {\prime} \top y = e
+\]
+
+以及对 \((x\top y)\top (y^{\prime}\top x^{\prime})\) 的类似计算
+
+推论1. 设 E 为一个幺半群；若每个元素 \(x_{\alpha}\) （属于 E 的元素的一个有序序列 \((x_{\alpha})_{\alpha \in A}\) ）都有逆元 \(x_{\alpha}'\) ，则合成 \(\bigcap_{\alpha \in A} x_{\alpha}\) 有逆元 \(\bigcap_{\alpha \in A'} x_{\alpha}'\) ，其中 \(A'\) 是由 A 通过将其上的序替换为相反序而得到的全序集。
+
+本推论可由命题4通过对A中元素个数进行归纳得出。
+
+特别地，如果 \(x\) 和 \(x'\) 互为逆元，则 \(\frac{\pi}{\top} x\) 和 \(\frac{\pi}{\top} x'\) 对每个整数 \(n \geqslant 0\) 都互为逆元.
+
+推论2. 在幺半群中，可逆元素的集合是稳定的。
+
+命题5. 若在幺半群中 \(x\) 和 \(x'\) 互为逆元，且 \(x\) 与 \(y\) 可交换，则 \(x'\) 亦然。
+
+由 \(x \top y = y \top x\) ，我们推出 \(x' \top (x \top y) \top x' = x' \top (y \top x) \top x'\) ，因此 \((x' \top x) \top (y \top x') = (x' \top y) \top (x \top x')\) ，即 \(y \top x' = x' \top y\) .
+
+推论1. 设E为幺半群，X为E的子集，X'为X的中心化子。X'中每个可逆元素的逆元都属于X'。
+
+推论2. 在幺半群中，中心可逆元素的逆元是中心元素。
+
+\subsection{交换幺半群的分式幺半群}
+
+在本号中，e 将表示幺半群的单位元，而 \(x^{*}\) 表示 E 的可逆元素 x 的逆。
+
+设 E 是一个交换幺半群，S 是 E 的一个子集，S' 是由 S 生成的 E 的子幺半群。
+
+引理1. 在 \(\mathbf{E} \times \mathbf{S}'\) 中，由以下方式定义的关系 \(\mathbf{R}_{\xi}^{x}, y_{\xi}^{x}\) ：
+
+“存在 \(a, b \in E\) 和 \(p, q, s \in S'\) ，使得 \(x = (a, p)\) , \(y = (b, q)\) 且 \(aqs = bps\) ''
+
+是一个与乘积幺半群 \(\mathbf{E} \times \mathbf{S}'\) 上的律相容的等价关系.
+
+显然 R 是自反的且对称的。设 \(x = (a, p)\) , \(y = (b, q)\) 和 \(z = (c, r)\) 为 \(E \times S'\) 的元素，使得 \(R\xi x, y\xi\) 和 \(R\xi y, z\xi\) 成立。则存在 \(S'\) 的两个元素 s 和 t，使得
+
+\[
+a q s = b p s, \quad b r t = c q t,
+\]
+
+由此可得
+
+\[
+a r (s t q) = b p s r t = c p (s t q)
+\]
+
+且因此 \(\mathbf{R}\{x, z\}\) 成立，因为 \(stq\) 属于 \(\mathbf{S}'\) 。关系 \(\mathbf{R}\) 因此是传递的。
+
+此外，令 \(x = (a, p), y = (b, q), x' = (a', p')\) ，且 \(y' = (b', q')\) 为 \(E \times S'\) 的元素，使得 \(R\xi x, y\xi\) 和 \(R\xi x', y\xi\) 成立。存在 \(s\) 和 \(s'\) （在 \(S'\) 中），使得
+
+\[
+a q s = b p s, \quad a ^ {\prime} q ^ {\prime} s ^ {\prime} = b ^ {\prime} p ^ {\prime} s ^ {\prime},
+\]
+
+由此可得 \((aa')(qq')(ss') = (bb')(pp')(ss')\) ，因此 \(\mathbf{R}\{\chi x', yy'\}\) 成立（对于 \(ss' \in S'\) ）。等价关系 \(\mathbf{R}\) 因此与 \(\mathbf{E} \times \mathbf{S}'\) 上的合成律相容.
+
+商广群 \((\mathbf{E} \times \mathbf{S}')/\mathbf{R}\) 是一个交换幺半群。
+
+定义7. 设 E 为交换幺半群，S 为 E 的子集，S' 为 E 中由 S 生成的子幺半群。商幺半群 (E × S')/R（其中等价关系 R 如引理1所述）记为 E \(_{S}\) ，称为 E 的与 S 相伴的分式幺半群†（或分母在 S 中的分式幺半群）。
+
+对于 \(a \in \mathbf{E}\) 和 \(p \in \mathbf{S}'\) ， \((a, p)\) 模 \(\mathbf{R}\) 的类通常记作 \(a/p\) ，称为分子为 \(a\) 、分母为 \(p\) 的分式。于是根据定义 \((a/p)\) . \((a'/p') = aa'/pp'\) 。分式 \(a/p\) 和 \(a'/p'\) 相等，当且仅当存在 \(s\) （在 \(\mathbf{S}'\) 中）使得 \(spa' = sp'a\) ；若如此，则存在 \(\sigma\) 和 \(\sigma'\) （在 \(\mathbf{S}'\) 中）使得 \(a\sigma = a'\sigma'\) 和 \(p\sigma = p'\sigma'\) 。特别地， \(a/p = sa/sp\) （对于 \(a \in \mathbf{E}\) 和 \(s, p\) （在 \(\mathbf{S}'\) 中））。 \(E_S\) 的单位元是分式 \(e/e\) .
+
+设 \(a / e = \varepsilon(a)\) （对所有 \(a \in E\) ）。上述表明 \(\varepsilon\) 是 \(E\) 到 \(E_S\) 的一个同态，称为典范同态。对所有 \(p \in S'\) , \((p / e) \cdot (e / p) = e / e\) ，因此 \(e / p\) 是 \(\varepsilon(p) = p / e\) 的逆；于是 \(\varepsilon(S')\) 的每个元素都是可逆的。于是 \(a / p = (a / e) \cdot (e / p)\) ，由此
+
+\[
+a / p = \varepsilon (a) \varepsilon (p) ^ {*}\tag{1}
+\]
+
+对于 \(a \in \mathbf{E}\) 和 \(p \in \mathbf{S}'\) ，幺半群 \(\mathbf{E}_{\mathbf{S}}\) 因此由 \(\varepsilon(\mathbf{E}) \cup \varepsilon(\mathbf{S})^*\) 生成.
+
+命题6. 记号与定义7相同， \(\varepsilon\) 表示 E 到 \(\mathbf{E}_{\mathrm{S}}\) 的典范同态。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  设 \(a\) 和 \(b\) （属于 \(\mathbf{E}\) ）；要使 \(\varepsilon(a) = \varepsilon(b)\) ，其充要条件是存在 \(s \in \mathbf{S}'\) 使得 \(sa = sb\) .
+\item
+  \(\varepsilon\) 为单射的充要条件是 S 中的每个元素都是可消去的。
+\item
+  \(\varepsilon\) 为双射的充要条件是 \(S\) 的每个元素都可逆。
+\end{enumerate}
+
+断言(i)是显然的，并且表明 \(\varepsilon\) 是单射，当且仅当 \(S'\) 的每个元素都是可消去的；但由于 \(E\) 的可消去元素所成之集是 \(E\) 的一个子幺半群（第2号，命题2），这等同于说 \(S\) 的每个元素都是可消去的。
+
+若 \(\varepsilon\) 是双射的，则 S 的每个元素都是可逆的，因为 \(\varepsilon(S)\) 由 \(E_{S}\) 的可逆元素组成。反之，假设 S 的每个元素都可逆；那么 \(S'\) 的每个元素都可逆（第3号，命题4的推论2），因此可消去。于是由(ii)知 \(\varepsilon\) 是单射，且由(1)有 \(a/p = \varepsilon(a.p^{*})\) ，因此 \(\varepsilon\) 是满射。
+
+定理1. 设 E 为交换幺半群，S 为 E 的子集， \(E_{S}\) 为与 S 相伴的分式幺半群， \(\varepsilon: E \to E_{S}\) 为典范同态。进一步设 f 为 E 到幺半群 F（不一定是交换的）的一个同态，使得 \(f(S)\) 的每个元素在 F 中可逆。则存在且仅存在一个同态 \(\bar{f}\) （从 \(E_{S}\) 到 F），使得 \(f = \bar{f} \circ \varepsilon\) .
+
+若 \(\bar{f}\) 是 \(\mathbf{E}_{\mathbf{S}}\) 到 \(\mathbf{F}\) 的一个同态，使得 \(f = \bar{f} \circ \varepsilon\) ，则
+
+\[
+\bar {f} (a | p) = \bar {f} (\varepsilon (a) \varepsilon (p) ^ {*}) = \bar {f} (\varepsilon (a)) \bar {f} (\varepsilon (p)) ^ {*} = f (a) f (p) ^ {*}
+\]
+
+对所有 \(a \in \mathbf{E}\) 和 \(p \in \mathbf{S}'\) 成立，由此得到 \(\bar{f}\) 的唯一性.
+
+设 \(g\) 是 \(\mathbf{E} \times \mathbf{S}'\) 到 \(\mathbf{F}\) 的映射，定义为 \(g(a, p) = f(a).f(p)^*\) 。我们证明 \(g\) 是 \(\mathbf{E} \times \mathbf{S}'\) 到 \(\mathbf{F}\) 的一个同态。首先，
+
+\[
+g (e, e) = f (e) f (e) ^ {*} = e.
+\]
+
+设 \((a, p)\) 和 \((a', p')\) 为 \(\mathbf{E} \times \mathbf{S}'\) 的两个元素；由于 \(a'\) 和 \(p\) 在 \(\mathbf{E}\) 中交换， \(f(a')\) 和 \(f(p)\) 在 \(\mathbf{F}\) 中交换，因此 \(f(a')f(p)^* = f(p)^*f(a')\) （依据第3号，命题5）。此外 \(f(p p')^* = f(p' p)^* = (f(p')f(p))^* = f(p)^*f(p')^*\) （依据第3号，命题4），因此
+
+\[
+\begin{array}{l} g (a a ^ {\prime}, p p ^ {\prime}) = f (a a ^ {\prime}) f (p p ^ {\prime}) ^ {*} = f (a) f (a ^ {\prime}) f (p) ^ {*} f (p ^ {\prime}) ^ {*} = f (a) f (p) ^ {*} f (a ^ {\prime}) f (p ^ {\prime}) ^ {*} \\ = g (a, p) g (a ^ {\prime}, p ^ {\prime}). \end{array}
+\]
+
+我们证明 \(g\) 与等价关系 \(\mathbf{R}\) （在 \(\mathbf{E} \times \mathbf{S}'\) 上）相容：如果 \((a, p)\) 和 \((a', p')\) 模 \(\mathbf{R}\) 同余，则存在 \(s \in \mathbf{S}'\) 使得 \(spa' = sap'\) ，因此 \(f(s)f(p)f(a') = f(s)f(a)f(p')\) 。由于 \(f(s)\) 是可逆的，由此可得 \(f(p)f(a') = f(a)f(p')\) ，然后左乘 \(f(p)^*\) 且右乘 \(f(p')^*\)
+
+\[
+g (a ^ {\prime}, p ^ {\prime}) = f (a ^ {\prime}) f (p ^ {\prime}) ^ {*} = f (p) ^ {*} f (a) = f (a) f (p) ^ {*} = g (a, p).
+\]
+
+因此存在一个同态 \(\bar{f}\) （从 \(\mathbf{E}_{\mathbf{S}}\) 到 \(\mathbf{F}\) ），使得 \(\bar{f}(a/p) = g(a,p)\) ，于是 \(\bar{f}(\varepsilon(a)) = \bar{f}(a/e) = f(a)f(e)^* = f(a)\) 。因此 \(\bar{f} \circ \varepsilon = f\) .
+
+推论. 设 E 和 F 是两个交换幺半群，S 和 T 分别是 E 和 F 的子集，f 是从 E 到 F 的同态，使得 \(f(\mathrm{S}) \subset \mathrm{T}\) ， \(\varepsilon: E \to E_{S}\) , \(\eta: F \to F_{T}\) 为典范同态。存在且仅存在一个同态 \(g: E_{S} \to F_{T}\) ，使得 \(g \circ \varepsilon = \eta \circ f\) .
+
+同态 \(\eta \circ f\) （从 \(E\) 到 \(F_{T}\) ）将 \(S\) 的每个元素映射到 \(F_{T}\) 的一个可逆元素。
+
+注。(1) 定理1也可以表述为： \((\mathbf{E}_{\mathbf{S}},\varepsilon)\) 是 \(\mathbf{E}\) 的泛映射问题的解，该问题相对于幺半群、幺半群同态以及 \(\mathbf{E}\) 到幺半群的同态（它们将 \(\mathbf{S}\) 的元素映为可逆元素）（集合论，IV，§ 3，第 1 号）。由此得出（同上），该问题的每一个其他解都以唯一方式同构于 \((\mathbf{E}_{\mathbf{S}},\varepsilon)\) .
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  为使上述泛映射问题有解，不必假定幺半群 E 是交换的，这由集合论，IV，§3，第2号（参见习题17）可知。
+\end{enumerate}
+
+我们提及分式幺半群的两个重要特例。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  设 \(\overline{\mathbf{E}} = \mathbf{E}_{\mathbb{E}}\) 。由于幺半群 \(\overline{\mathbf{E}}\) 由集合 \(\varepsilon(\mathbf{E}) \cup \varepsilon(\mathbf{E})^*\) （由可逆元素组成）生成， \(\overline{\mathbf{E}}\) 的每个元素都是可逆的（第3号，命题4的推论2）。换言之， \(\overline{\mathbf{E}}\) 是一个交换群。此外，根据定理1，每个同态 \(f\) （从 \(\mathbf{E}\) 到群 \(\mathbf{G}\) ）都可以唯一地分解为 \(f = \bar{f} \circ \varepsilon\) 的形式，其中 \(\bar{f}: \overline{\mathbf{E}} \to \mathbf{G}\) 是一个同态。 \(\overline{\mathbf{E}}\) 称为 \(\mathbf{E}\) 的分式群（在加法记号下称为 \(\mathbf{E}\) 的差群）。
+\item
+  设 \(\Phi = \mathrm{E}_{\Sigma}\) ，其中 \(\Sigma\) 由 \(\mathbf{E}\) 的可消去元素组成。根据命题6(ii)， \(\mathbf{E}\) 到 \(\Phi\) 的典范同态是单射的；将 \(\mathbf{E}\) 与它在 \(\Phi\) 中的像等同起来是有益的。于是 \(\mathbf{E}\) 是 \(\Phi\) 的一个子幺半群， \(\mathbf{E}\) 的每个可消去元在 \(\Phi\) 中都有逆元，且 \(\Phi\) 的每个元素都具有形式 \(a/p = a.p^{*}\) （其中 \(a \in \mathbf{E}\) 和 \(p \in \Sigma\) ）；于是 \(a/p = a'/p'\) 当且仅当 \(ap' = pa'\) 。容易看出， \(\Phi\) 的可逆元素是分式 \(a/p\) （其中 \(a\) 和 \(p\) 都可消去），且 \(p/a\) 是 \(a/p\) 的逆.
+\end{enumerate}
+
+现在设 S 是 E 的一组可消去元素，S' 是由 S 生成的 E 的子幺半群。若 \(a/p\) 和 \(a'/p'\) 是 \(\mathbf{E}_{\mathbf{S}}\) 的两个元素，则 \(a/p = a'/p'\) 当且仅当 \(ap' = pa'\) （因为 \(sap' = spa'\) 蕴含 \(ap' = pa'\) ，对所有 \(s \in \mathbf{S}'\) ）。 \(\mathbf{E}_{\mathbf{S}}\) 因此可以与 \(\Phi\) 的由 \(\mathbf{E} \cup \mathbf{S}^*\) 生成的子幺半群等同。
+
+如果 E 的每个元素都是可消去的，则 \(\Phi = \bar{E}\) 且 E 是交换群 \(\Phi\) 的一个子幺半群。反之，若 E 同构于某个群的子幺半群，则 E 的每个元素都是可消去的。
+
+\subsection{应用：I. 有理整数}
+
+考虑自然数集的交换幺半群 \(\mathbf{N}\) ，其合成律为加法； \(\mathbf{N}\) 的所有元素在此律下都是可消去的（集合论，III，§5，第2号，推论3）。 \(\mathbf{N}\) 的差群记为 \(\mathbf{Z}\) ，其元素称为有理整数；其律称为有理整数加法，也记作 \(+\) 。从 \(\mathbf{N}\) 到 \(\mathbf{Z}\) 的典范同态是单射的，我们将把 \(\mathbf{N}\) 与它在 \(\mathbf{Z}\) 中的像等同。 \(\mathbf{Z}\) 的元素根据定义是由 \(\mathbf{N} \times \mathbf{N}\) 中 \((m_1, n_1)\) 和 \((m_2, n_2)\) 之间写作 \(m_1 + n_2 = m_2 + n_1\) 的关系所确定的等价类；一个元素 \(m\) （ \(\mathbf{N}\) 的）与由元素 \((m + n, n)\) （其中 \(n \in N\) ）组成的类等同；它在 Z 中的负元是元素 \((n, m + n)\) 的类。每个元素 \((p, q)\) （ \(N \times N\) 的）都可以写成 \((m + n, n)\) 的形式（若 \(p \geqslant q\) ），或 \((n, m + n)\) 的形式（若 \(p \leqslant q\) ）；由此可知，Z 是 N 与 N 中元素的负元所成集合的并集。单位元 0 是 N 中唯一一个其负元也属于 N 的元素。
+
+对于每个自然数 m，-m 表示 m 的负有理整数，且 -N 表示所有元素 -m（其中 \(m \in N\) ）所成的集合。则
+
+\[
+\mathbf {Z} = \mathbf {N} \cup (- \mathbf {N}) \quad \text { and } \quad \mathbf {N} \cap (- \mathbf {N}) = \{0 \}.
+\]
+
+对于 \(m \in \mathbf{N}\) , \(m = -m\) 当且仅当 \(m = 0\) .
+
+设 \(m\) 和 \(n\) 是两个自然数；
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  若 \(m \geqslant n\) ，则 \(m + (-n) = p\) ，其中 \(p\) 是 \(\mathbf{N}\) 中使得 \(m = n + p\) 的元素;
+\item
+  若 \(m \leqslant n\) ，则 \(m + (-n) = -p\) ，其中 \(p\) 是 \(\mathbf{N}\) 中使得 \(m + p = n\) 的元素;
+\end{enumerate}
+
+\[
+(c) (- m) + (- n) = - (m + n).
+\]
+
+性质(b)和(c)由第3号命题4推出；由于 \(\mathbf{Z} = \mathbf{N} \cup (-\mathbf{N})\) ， \(\mathbf{N}\) 中的加法连同性质(a)、(b)和(c)完全描述了 \(\mathbf{Z}\) 中的加法.
+
+更一般地，-x 用来表示任意有理整数 x 的负元；合成 \(x + (-y)\) 简写为 x - y（参见第8号）。
+
+自然数之间的序关系 \(\leqslant\) 由以下性质刻画： \(m \leqslant n\) 当且仅当存在整数 \(p \in N\) 使得 \(m + p = n\) （集合论，III，§3，第6号，命题13及§5，第2号，命题2）。有理整数 x 与 y 之间的关系 \(y - x \in N\) 是 Z 上的一个全序关系，它延拓了 N 上的序关系 \(\leqslant\) 。事实上，对所有 \(x \in Z\) , \(x - x = 0 \in N\) ；若 \(y - x \in N\) 和 \(z - y \in N\) ，则
+
+\[
+z - x = (z - y) + (y - x) \in \mathbf {N},
+\]
+
+因为 \(\mathbf{N}\) 在加法下是稳定的；若 \(y - x \in \mathbf{N}\) 和 \(x - y \in \mathbf{N}\) ，则 \(y - x = 0\) ，因为 \(0\) 是 \(\mathbf{N}\) 中唯一其负元属于 \(\mathbf{N}\) 的元素；对任意有理整数 \(x\) 和 \(y, y - x \in \mathbf{N}\) 或 \(x - y \in \mathbf{N}\) ，因为 \(\mathbf{Z} = \mathbf{N} \cup (-\mathbf{N})\) ；最后，若 \(x\) 和 \(y\) 是自然数，则 \(y - x \in \mathbf{N}\) 当且仅当存在 \(p \in \mathbf{N}\) 使得 \(x + p = y\) 。此序关系也记作 \(\leqslant\) .
+
+今后，当 Z 被视为有序集时，除非另有说明，它总是采用刚刚定义的序，自然数与整数 \(\geqslant 0\) 视为同一；它们也被称为正整数；整数 \(\leqslant 0\) ，即正整数的负元，被称为负整数；整数 \textgreater{} 0（相应地 \textless{} 0）被称为严格正的（相应地严格负的）；整数 \textgreater{} 0 所成的集合有时记为N*。
+
+设 \(x, y\) 和 \(z\) 是三个有理整数；则 \(x \leqslant y\) 当且仅当 \(x + z \leqslant y + z\) 。因为 \(x - y = (x + z) - (y + z)\) 。这一性质通过说 Z 上的序关系在平移下不变来表达。
+
+\subsection{应用：II. 有理整数的乘法}
+
+引理2. 设 \(\mathbf{E}\) 是一个幺半群，并且 \(x\) 是 \(\mathbf{E}\) 的一个元素.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  存在唯一的同态 \(f\) （从 \(\mathbf{N}\) 到 \(\mathbf{E}\) ）使得 \(f(1) = x\) 和 \(f(n) = \frac{n}{T} x\) （对所有 \(n \in \mathbf{N}\) ）.
+\item
+  若 \(x\) 是可逆的，存在唯一的同态 \(g\) （从 \(\mathbf{Z}\) 到 \(\mathbf{E}\) ）使得 \(g(1) = x\) 且 \(g\) 与 \(f\) 在 \(\mathbf{N}\) 上一致.
+\end{enumerate}
+
+记 \(f(n) = \top^n x\) （对所有 \(n \in \mathbf{N}\) ），则公式
+
+\[
+\overset {0} {\top} x = e \quad \text { and } \quad \left(\overset {m} {\top} x\right) \top \left(\overset {n} {\top} x\right) = \overset {m + n} {\top} x
+\]
+
+（第1号）表达了这样一个事实： \(f\) 是 \(\mathbf{N}\) 到 \(\mathbf{E}\) 的一个同态，且显然 \(f(1) = x\) 。若 \(f'\) 是 \(\mathbf{N}\) 到 \(\mathbf{E}\) 的一个同态，使得 \(f'(1) = x\) ，则 \(f = f'\) （根据第1节第4号命题1（iv））。
+
+现在假设 \(x\) 是可逆的。根据第3号命题4的推论2， \(f(n) = \overset{n}{\top} x\) 对每个整数 \(n \geqslant 0\) 都是可逆的。根据构造， \(\mathbf{Z}\) 是 \(\mathbf{N}\) 的差群，因此（第4号定理1） \(f\) 唯一地延拓为一个同态 \(g\) （从 \(\mathbf{Z}\) 到 \(\mathbf{E}\) ）。若 \(g'\) 是 \(\mathbf{Z}\) 到 \(\mathbf{E}\) 的一个同态且 \(g'(1) = x\) ，则限制 \(f'\) （即 \(g'\) 到 \(\mathbf{N}\) 上的限制）是 \(\mathbf{N}\) 到 \(\mathbf{E}\) 的一个同态且 \(f'(1) = x\) 。因此 \(f' = f\) ，从而 \(g' = g\) .
+
+我们将引理2应用于幺半群 E 为 Z 的情形；因此对每个整数 \(m \in Z\) 存在 Z 的一个自同态 \(f_{m}\) ，其特征是 \(f_{m}(1) = m\) 。若 m 属于 N，则映射 \(n \mapsto mn\) （从 N 到 N）是广群 N 的一个自同态（集合论，III，§3，第3号，命题5的推论）；因此 \(f_{m}(n) = mn\) （对所有 m, n \ensuremath{\in} N）。
+
+\(\mathbf{N}\) 上的乘法因此可以扩张为 \(\mathbf{Z}\) 上的乘法，由公式 \(mn = f_m(n)\) （对于 \(m, n\) ，在 \(\mathbf{Z}\) 中）。我们将建立以下公式：
+
+\[
+x y = y x\tag{2}
+\]
+
+\[
+(x y) z = x (y z)\tag{3}
+\]
+
+\[
+x (y + z) = x y + x z\tag{4}
+\]
+
+\[
+(x + y) z = x z + y z\tag{5}
+\]
+
+\[
+0. x = x. 0 = 0\tag{6}
+\]
+
+\[
+1. x = x. 1 = x\tag{7}
+\]
+
+\[
+(- 1). x = x. (- 1) = - x\tag{8}
+\]
+
+对于 \(x, y, z\) （在 \(\mathbf{Z}\) 中）。（*换句话说， \(\mathbf{Z}\) 是一个交换环。*）公式 \(x(y + z) = xy + xz\) 和 \(x.0 = 0\) 表达了这一事实： \(f_x\) 是加法幺半群 \(\mathbf{Z}\) 的一个自同态，且 \(f_{x}(1) = x\) 可以写成 \(x.1 = x\) 。自同态 \(f_{x} \circ f_{y}\) （在 \(\mathbf{Z}\) 中）将 1 映到 \(xy\) ，故等于 \(f_{xy}\) ，由此得(3)。现在 \(f_{x}(-y) = -f_{x}(y)\) ，即 \(x(-y) = -xy\) ；类似地，自同态 \(y \mapsto -xy\) （在 \(\mathbf{Z}\) 中）将 1 映到 \(-x\) ，因此 \((-x).y = -xy\) ，从而
+
+\[
+(- x) (- y) = - (x (- y)) = - (- x y) = x y.
+\]
+
+对于 \(m, n\) （在 \(\mathbf{N}\) 中）, \(mn = nm\) （集合论，III，§3，第3号，命题5的推论），由此 \((-m).n = n(-m)\) 和 \((-m)(-n) = (-n)(-m)\) ；由于 \(\mathbf{Z} = \mathbf{N} \cup (-\mathbf{N})\) , \(xy = yx\) （对于 \(x, y\) ，在 \(\mathbf{Z}\) 中）；而由这个公式可知(5)由(4)推出，从而完成了公式(6)至(8)的证明。
+
+\subsection{应用：III. 广义幂}
+
+设 E 为具有单位元 e 且合成律记为 T 的幺半群。若 x 在 E 中可逆，令 \(g_{x}\) 为将 1 映到 x 的 Z 到 E 的同态。令 \(g_{x}(n) = \frac{n}{T} x\) （对所有 \(n \in Z\) ）；由引理2，此记号在 \(n \in N\) 时与先前引入的记号相容。则
+
+\[
+{ } ^ { m + n } \top x = \left( \begin{array} { c } m \\ T \end{array} x \right) \top \left( \begin{array} { c } n \\ T \end{array} x \right)\tag{9}
+\]
+
+\[
+\frac {0}{T} x = e\tag{10}
+\]
+
+\[
+\frac {1}{T} x = x\tag{11}
+\]
+
+对于可逆的 \(x\) （在 \(\mathbf{E}\) 中）和 \(m, n\) （在 \(\mathbf{Z}\) 中）。进一步，若 \(y = \frac{m}{T} x\) ，则映射 \(n \mapsto g_x(mn)\) （从 \(\mathbf{Z}\) 到 \(\mathbf{E}\) ）是将 1 映到 \(y\) 的一个同态，因此 \(g_x(mn) = g_y(n)\) ，即
+
+\[
+\frac {m n}{T} x = \frac {n}{T} \left(\frac {m}{T} x\right).\tag{12}
+\]
+
+由于 \(-1\) 是 \(1\) 在 \(\mathbf{Z}\) 中的负元， \(\overline{\top}^{-1}x\) 是 \(x = \frac{1}{\top} x\) 在 E 中的逆元。若在(9)中记 \(n = -m\) ，则可见 \(\overline{\top}^{-m}x\) 是 \(\overline{\top}^{m}x\) 的逆元.
+
+\subsection{记号}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  作为一般规则，交换幺半群的律用加法记法书写。此时约定 -x 表示 x 的负元。记号 \(x + (-y)\) 缩写为 x - y，类似地
+\end{enumerate}
+
+\[
+x + y - z, \quad x - y - z, \quad x - y + z - t, \quad \text { etc. } \dots
+\]
+
+分别表示
+
+\[
+x + y + (- z), \quad x + (- y) + (- z), \quad x + (- y) + z + (- t), \quad \text { etc. } \dots
+\]
+
+对于 \(n \in \mathbf{Z}\) ，记号 \(\top^n x\) 换为 \(nx\) 。公式（9）至（12）于是变为
+
+\[
+(m + n). x = m. x + n. x\tag{13}
+\]
+
+\[
+0. x = 0\tag{14}
+\]
+
+\[
+1. x = x\tag{15}
+\]
+
+\[
+m. (n. x) = (m n). x\tag{16}
+\]
+
+其中 m 和 n 属于 N，甚至属于 Z（如果 x 有负元）。同样在后一种情形下，关系式 \((-1)\) 。x = -x 成立。我们还注意到公式
+
+\[
+n. (x + y) = n. x + n. y.\tag{17}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathbf{E}\) 是以乘法记法书写的幺半群。对于 \(n \in \mathbf{Z}\) ，记号 \(\frac{n}{T} x\) 换为 \(x^n\) 。我们有关系式
+\end{enumerate}
+
+\[
+\begin{array}{r l} x ^ {m + n} & = x ^ {m}. x ^ {n} \\ x ^ {0} & = 1 \\ x ^ {1} & = x \\ (x ^ {m}) ^ {n} & = x ^ {m n} \end{array}
+\]
+
+以及 \((xy)^n = x^n y^n\) （若 \(x\) 和 \(y\) 可交换）。
+
+当 \(x\) 有逆元时，这恰好是 \(x^{-1}\) 。记号 \(\frac{1}{x}\) 也用来代替 \(x^{-1}\) 。最后，当幺半群 \(E\) 是交换的， \(\frac{x}{y}\) 或 \(x / y\) 也用来表示 \(xy^{-1}\) .
+
+\section{作用}
+
+\subsection{作用}
+
+定义1. 设 \(\Omega\) 和 \(\mathbf{E}\) 是两个集合。从 \(\Omega\) 到集合 \(\mathbf{E}^{\mathbf{E}}\) （ \(\mathbf{E}\) 到自身的映射所成的集合）的映射称为 \(\Omega\) 在 \(\mathbf{E}\) 上的一个作用.
+
+设 \(\alpha \mapsto f_{\alpha}\) 是 \(\Omega\) 在 E 上的一个作用。映射 \((\alpha, x) \mapsto f_{\alpha}(x)\) （相应地 \((x, \alpha) \mapsto f_{\alpha}(x)\) ）称为与给定的 \(\Omega\) 在 E 上的作用相关联的 \(\Omega\) 在 E† 上的左（相应地，右）作用律。给定一个映射 \(g\) （从 \(\Omega \times E\) （相应地，E × \(\Omega\) ）到 E 中），存在且仅存在一个作用 \(\alpha \mapsto f_{\alpha}\) （ \(\Omega\) 在 E 上的），使得相关联的左（相应地，右）作用律为 \(g\) （集合论，II，§ 5，第 2 号，命题 3）。
+
+在本章中，为简便起见，我们将说“作用律”
+
+而不是“左作用律”。元素 \(f_{\alpha}(x)\) （E 的元素，对于 \(\alpha \in \Omega\) 和 \(x \in E\) ）有时称为 x 在 \(\alpha\) 下的变换，或 \(\alpha\) 与 x 的合成。它通常用左（相应地，右）乘法记号 \(\alpha.x\) （相应地 \(x.\alpha\) ）表示，点可以省略； \(\alpha\) 与 x 的合成此时称为 \(\alpha\) 与 x（相应地，x 与 \(\alpha\) ）的乘积。指数记号 \(x^{\alpha}\) 也被使用。在以下各段的论证中，我们通常使用记号 \(\alpha \perp x\) 。 \(\Omega\) 的元素常被称为算子。
+
+例。(1) 设 E 是一个以乘法记法书写的结合广群。将严格正整数 n 与 E 到自身的映射 \(x \mapsto x^{n}\) 相关联的映射是 \(N^{*}\) 在 E 上的一个作用。如果 E 是一个群，那么将有理整数 a 与 E 到 E 的映射 \(x \mapsto x^{a}\) 相关联的映射是 Z 在 E 上的一个作用。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(\mathbf{E}\) 是一个律记为 \(\top\) 的广群。将 \(x \in \mathbf{E}\) 与映射 \(\mathbf{A} \mapsto x \top \mathbf{A}\) （ \(\mathbf{E}\) 的子集所成的集合到自身的映射）相关联的映射是 \(\mathbf{E}\) 在 \(\mathfrak{P}(\mathbf{E})\) 上的一个作用.
+\item
+  设 E 是一个集合。 \(E^{E}\) 的恒等映射是 \(E^{E}\) 在 E 上的一个作用，称为典范作用。相应的作用律是映射 \((f, x) \mapsto f(x)\) （从 \(E^{E} \times E\) 到 E 中）。
+\item
+  设 \((\Omega_{i})_{i\in I}\) 是一个集合族。对于所有 \(i\in I\) ，设 \(f_{i}\colon \Omega_{i}\to E^{\mathbb{E}}\) 是 \(\Omega_{i}\) 在 E 上的一个作用。设 \(\Omega\) 为诸 \(\Omega_{i}\) 的和（集合论，II，§4，第8号）。映射 \(f\) （从 \(\Omega\) 到 \(E^{\mathbb{E}}\) 上，扩张了诸 \(f_{i}\) ）是 \(\Omega\) 在 E 上的一个作用。这使我们能够将对一族作用的研究简化为对单个作用的研究。
+\item
+  给定 \(\Omega\) 在 \(\mathbf{E}\) 上的一个作用，其律记为 \(\bot\) ，一个子集 \(\Xi\) （ \(\Omega\) 的）和一个子集 \(\mathbf{X}\) （ \(\mathbf{E}\) 的）, \(\Xi \perp \mathbf{X}\) 表示 \(\alpha \perp x\) （其中 \(\alpha \in \Xi\) 和 \(x \in \mathbf{X}\) ）所成的集合；当 \(\Xi\) 由单个元素 \(\alpha\) 组成时，我们通常写 \(\alpha \perp \mathbf{X}\) 而不写 \(\{\alpha\} \perp \mathbf{X}\) 。将 \(\alpha \in \Omega\) 与映射 \(\mathbf{X} \mapsto \alpha \perp \mathbf{X}\) 相关联的映射是 \(\Omega\) 在 \(\mathfrak{P}(\mathbf{E})\) 上的一个作用，称为由给定作用通过扩张到子集集合而导出的作用。
+\item
+  设 \(\alpha \mapsto f_{\alpha}\) 是 \(\Omega\) 在 \(\mathbf{E}\) 上的一个作用。设 \(g\) 是 \(\Omega'\) 到 \(\Omega\) 的一个映射。则映射 \(\beta \mapsto f_{g(\beta)}\) 是 \(\Omega'\) 在 \(\mathbf{E}\) 上的一个作用.
+\item
+  设 \(f: \mathbf{E} \times \mathbf{E} \to \mathbf{E}\) 是集合 \(\mathbf{E}\) 上的一个合成律。映射 \(\gamma: x \mapsto \gamma_x\) （相应地 \(\delta: x \mapsto \delta_x\) ）（§ 2，第 2 号）将元素 \(x \in \mathbf{E}\) 与由 \(x\) 所作的左（相应地，右）平移相关联，它是 \(\mathbf{E}\) 在自身上的一个作用；它称为由给定律导出的 \(\mathbf{E}\) 在自身上的左（相应地，右）作用。当 \(f\) 是交换的时，这两个作用重合。
+\end{enumerate}
+
+与 \(\gamma\) 相关联的左（相应地，右）作用律是 f（相应地，f 的反合成律）。与 \(\delta\) 相关联的右（相应地，左）作用律是 f（相应地，f 的反合成律）。
+
+设 \(\Omega, \mathbf{E}, \mathbf{F}\) 是集合， \(\alpha \mapsto f_{\alpha}\) 是 \(\Omega\) 在 \(\mathbf{E}\) 上的一个作用， \(\alpha \mapsto g_{\alpha}\) 是 \(\Omega\) 在 \(\mathbf{F}\) 上的一个作用。 \(\Omega\) -态射（ \(\mathbf{E}\) 到 \(\mathbf{F}\) 的），即 \(\mathbf{E}\) 到 \(\mathbf{F}\) 的与 \(\Omega\) 的作用相容的映射，是一个映射 \(h\) （从 \(\mathbf{E}\) 到 \(\mathbf{F}\) ），使得
+
+\[
+g _ {\alpha} (h (x)) = h \left(f _ {\alpha} (x)\right)
+\]
+
+对所有 \(\alpha \in \Omega\) 和 \(x \in E\) 成立。两个 \(\Omega\) -态射的复合是一个 \(\Omega\) -态射。
+
+设 \(\Omega, \Xi, E, F\) 是集合， \(\alpha \mapsto f_{\alpha}\) 是 \(\Omega\) 在 \(E\) 上的一个作用， \(\beta \mapsto g_{\beta}\) 是 \(\Xi\) 在 \(F\) 上的一个作用， \(\phi\) 是 \(\Omega\) 到 \(\Omega'\) 的一个映射。一个 \(\phi\) -态射（ \(E\) 到 \(F\) 的）是一个映射 \(h\) （从 \(E\) 到 \(F\) ），使得
+
+\[
+g _ {\phi (\alpha)} (h (x)) = h (f _ {\alpha} (x))
+\]
+
+对所有 \(\alpha \in \Omega\) 和 \(x \in \mathbf{E}\) 成立 .
+
+\subsection{在作用下稳定的子集。诱导作用}
+
+定义2. 一个子集 \(\mathbf{A}\) （属于一个集合 \(\mathbf{E}\) ）称为在某个作用 \(\alpha \mapsto f_{\alpha}\) （ \(\Omega\) 在 \(\mathbf{E}\) 上的作用）下稳定，若 \(f_{\alpha}(\mathbf{A}) \subset \mathbf{A}\) （对所有 \(\alpha \in \Omega\) ）。一个元素 \(x\) （属于 \(\mathbf{E}\) ）称为在元素 \(\alpha\) （属于 \(\Omega\) ）下不变，若 \(f_{\alpha}(x) = x\) .
+
+在给定作用下，E 的稳定子集族的交集是稳定的。因此，存在包含 E 的给定子集 X 的最小稳定子集；称它为由 X 生成；它由形如 \((f_{\alpha_{1}} \circ f_{\alpha_{2}} \circ \cdots \circ f_{\alpha_{n}})(x)\) 的元素（其中 \(x \in X, n \geqslant 0, \alpha_{1} \in \Omega\) 对所有 i 成立）组成。
+
+注。设 E 是一个律记为 \(\top\) 的广群。应当指出，E 的子集 A 在 E 对自身的左作用下稳定，并不一定在 E 对自身的右作用下稳定；E 的在自身左（相应地，右）作用下稳定的子集 A 在 E 的律下稳定，但反之一般不成立。更确切地说，A 在 E 的律下稳定当且仅当 \(A \top A \subset A\) ，而 A 在 E 对自身的左（相应地，右）作用下稳定当且仅当 \(E \top A \subset A\) （相应地 \(A \top E \subset A\) ).
+
+示例。取广群 E 为带乘法的集合 N。集合 \(\{1\}\) 在 N 的内部律下是稳定的，但在 N 对自身的作用下由 \(\{1\}\) 生成的稳定子集是整个 N。
+
+定义3. 设 \(\alpha \mapsto f_{\alpha}\) 是 \(\Omega\) 在 E 上的一个作用，且 A 是 E 的一个稳定子集。将元素 \(\alpha \in \Omega\) 与 \(f_{\alpha}\) 在 A 上的限制（视为 A 到自身的映射）相关联的映射是 \(\Omega\) 在 A 上的一个作用，称为由给定作用诱导的作用。
+
+\subsection{商作用}
+
+定义4. 设 \(\alpha \mapsto f_{\alpha}\) 是集合 \(\Omega\) 在集合 \(\mathbf{E}\) 上的一个作用。一个等价关系 \(\mathbf{R}\) （在 \(\mathbf{E}\) 上）称为与给定作用相容，如果对所有元素 \(x\) 和 \(y\) （属于 \(\mathbf{E}\) ，使得 \(x \equiv y \pmod{\mathbf{R}}\) ）以及所有 \(\alpha \in \Omega\) , \(f_{\alpha}(x) \equiv f_{\alpha}(y) \pmod{\mathbf{R}}\) 。将元素 \(\alpha \in \Omega\) 与 \(\mathbf{E} / \mathbf{R}\) 到自身的、由 \(f_{\alpha}\) 通过取商导出的映射相关联的映射是 \(\Omega\) 在 \(\mathbf{E} / \mathbf{R}\) 上的一个作用，称为 \(\Omega\) 在 \(\mathbf{E}\) 上的作用的商.
+
+设 E 是一个广群，R 是 E 上的一个等价关系。若 R 与由 E 上的律导出的 E 在自身上的左（相应地，
+
+（右）作用相容，则称 R 与 E 上的律左（相应地，右）相容。R 与 E 上的律相容当且仅当它与 E 上的律既左相容又右相容。
+
+我们将 §1 第 6 号中命题 6、7 和 8 的类似陈述与证明留给读者。

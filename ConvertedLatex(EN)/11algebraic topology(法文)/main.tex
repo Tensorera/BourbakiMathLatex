@@ -1,0 +1,264 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{DejaVu Sans Mono}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{newunicodechar}
+% unicode-math re-codes some math-active characters at begin-document,
+% so every mapping is (re)asserted afterwards; see hierarchy note.
+\AtBeginDocument{%
+\newunicodechar{∅}{\ensuremath{\varnothing}}
+\newunicodechar{ℰ}{\ensuremath{\mathcal{E}}}
+\newunicodechar{ℜ}{\ensuremath{\mathfrak{R}}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∉}{\ensuremath{\notin}}
+\newunicodechar{∘}{\ensuremath{\circ}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{∨}{\ensuremath{\vee}}
+\newunicodechar{∪}{\ensuremath{\cup}}
+\newunicodechar{∩}{\ensuremath{\cap}}
+\newunicodechar{⊕}{\ensuremath{\oplus}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+\newunicodechar{⊂}{\ensuremath{\subset}}
+\newunicodechar{⊃}{\ensuremath{\supset}}
+\newunicodechar{⊆}{\ensuremath{\subseteq}}
+\newunicodechar{∧}{\ensuremath{\wedge}}
+\newunicodechar{⊤}{\ensuremath{\top}}
+\newunicodechar{∖}{\ensuremath{\setminus}}
+\newunicodechar{⋅}{\ensuremath{\cdot}}
+\newunicodechar{∼}{\ensuremath{\sim}}
+\newunicodechar{≃}{\ensuremath{\simeq}}
+\newunicodechar{≅}{\ensuremath{\cong}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≤}{\ensuremath{\leqslant}}
+\newunicodechar{≥}{\ensuremath{\geqslant}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≡}{\ensuremath{\equiv}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∂}{\ensuremath{\partial}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{φ}{\ensuremath{\varphi}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{ω}{\ensuremath{\omega}}
+\newunicodechar{Γ}{\ensuremath{\Gamma}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{Θ}{\ensuremath{\Theta}}
+\newunicodechar{Λ}{\ensuremath{\Lambda}}
+\newunicodechar{ξ}{\ensuremath{\xi}}
+\newunicodechar{Π}{\ensuremath{\Pi}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{Φ}{\ensuremath{\Phi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{ϖ}{\ensuremath{\varpi}}
+\newunicodechar{ι}{\ensuremath{\iota}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{ϱ}{\ensuremath{\varrho}}
+\newunicodechar{ς}{\ensuremath{\varsigma}}
+\newunicodechar{ϕ}{\ensuremath{\phi}}
+\newunicodechar{ϑ}{\ensuremath{\vartheta}}
+\newunicodechar{υ}{\ensuremath{\upsilon}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+\newunicodechar{ζ}{\ensuremath{\zeta}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{←}{\ensuremath{\gets}}
+\newunicodechar{⟵}{\ensuremath{\longleftarrow}}
+\newunicodechar{⟶}{\ensuremath{\longrightarrow}}
+\newunicodechar{⟷}{\ensuremath{\longleftrightarrow}}
+\newunicodechar{↪}{\ensuremath{\hookrightarrow}}
+\newunicodechar{↑}{\ensuremath{\uparrow}}
+\newunicodechar{↓}{\ensuremath{\downarrow}}
+\newunicodechar{∀}{\ensuremath{\forall}}
+\newunicodechar{∃}{\ensuremath{\exists}}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{⊥}{\ensuremath{\perp}}
+\newunicodechar{∠}{\ensuremath{\angle}}
+\newunicodechar{′}{\ensuremath{\prime}}
+\newunicodechar{″}{\ensuremath{\prime\prime}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{₀}{\textsubscript{0}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{ₙ}{\textsubscript{n}}
+\newunicodechar{ₓ}{\textsubscript{x}}
+\newunicodechar{ᵢ}{\textsubscript{i}}
+\newunicodechar{ᵤ}{\textsubscript{u}}
+\newunicodechar{ʼ}{'}
+}% end of \AtBeginDocument unicode mappings
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array}
+\usepackage{xcolor,framed,fancyvrb}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks,unicode,pdfusetitle,bookmarksnumbered]{hyperref}
+\usepackage[open,openlevel=2]{bookmark}
+\doublespacing
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\setlist{itemsep=0.25\baselineskip,topsep=0.25\baselineskip}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\G}{\textbackslash}
+\newcommand{\specialchapter}[1]{%
+  \chapter*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}%
+}
+\newcommand{\exerciseshdr}[1]{%
+  \section*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}%
+}
+\newcounter{exercisegroup}[chapter]
+\newcommand{\exercisegroup}{%
+  \refstepcounter{exercisegroup}%
+  \subsection*{\S~\theexercisegroup}%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\S~\theexercisegroup}%
+}
+\newcounter{subitem}[subsection]
+\newcommand{\subitemhead}[1]{%
+  \refstepcounter{subitem}%
+  \subsubsection*{\thesubitem)~#1}%
+}
+\newcounter{caseitem}[subsection]
+\newcommand{\casehead}[1]{%
+  \refstepcounter{caseitem}%
+  \subsubsection*{\Alph{caseitem})~#1}%
+}
+\newcommand{\indexletter}[1]{%
+  \par\bigskip\noindent\textbf{\large #1}\par\medskip
+}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newenvironment{Highlighting}[1][]{}{}
+\newcommand{\NormalTok}[1]{#1\par}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.8\textheight 0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\graphicspath{{images/}}
+\emergencystretch=3em
+\pagestyle{plain}
+\title{Algebraic Topology}
+\author{Nicolas Bourbaki}
+\date{}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\clearpage
+\frontmatter
+\tableofcontents
+% front matter, relocated verbatim from the head of fragment_001
+\specialchapter{Introduction}
+
+Algebraic topology aims to study topological spaces by functorially associating to them various algebraic structures (modules, groupoids, etc.) whose properties reflect those of the spaces under consideration.
+
+Chapters I through IV of this Book concern the theory of coverings and of the Poincaré group; they lead to a general formulation of the van Kampen theorem. The following chapters will treat homology and cohomology, higher homotopy groups, and cell complexes.
+
+The notion of a covering is the subject of Chapter I. Although this notion concerns certain continuous maps \(p: E \rightarrow B\) where E and B are topological spaces, the adopted terminology regards E as the covering, B as its base, and the map p is most often implicit. We are thus led to study in general the structure of a B-space ( \(§1\) ). Étale B-spaces are defined in \(§2\) , but it is often useful to study them from the equivalent viewpoint of sheaves on B ( \(§3\) ). The notion of a locally trivial fiber space is introduced in \(§4\) ; these are the B-spaces locally isomorphic to a product \(B \times F\) , where the fiber F is a topological space. Coverings are those whose fiber is a discrete topological space. In \(§5\) we define the notion of a Galois covering and prove that if the base B is nonempty, connected, and locally connected, every covering can be associated with a Galois covering. Simply connected spaces are defined in \(§6\) : they are those for which every covering is trivializable; an interval of R, a convex subset of numerical space \(R^{n}\) , and the sphere \(S_{n}\) of dimension \(n \geqslant 2\) are simply connected spaces, but not the circle \(S_{1}\) .
+
+The algebraic notion of a groupoid is defined in Chapter II; it generalizes that of a group and had been introduced by H. BRANDT in his study of invertible fractional ideals of quaternion algebras. The notions of quiver, graph, and category are defined in §1, §2, and §3 of Chapter II; a groupoid is a category in which every arrow is invertible. The results of §4 and §5 will make it possible to deduce, from the van Kampen theorem formulated in terms of groupoids, explicit presentations of the Poincaré groups in various situations.
+
+The classification of coverings of a given topological space B is carried out by introducing, in Chapter III, §3, its Poincaré groupoid \(\varpi(\mathrm{B})\) , which is defined in terms of equivalence classes of paths in B modulo the strict homotopy relation. When b is a point of B, the Poincaré group \(\pi_{1}(\mathrm{B},b)\) appears as the isotropy group at b of the groupoid \(\varpi(\mathrm{B})\) . The notion of homotopy is introduced in §1; in particular, the important extension property of homotopies is studied there. §2 is devoted to the notion of a path in a topological space and to the notions of path-connected space and locally path-connected space. A theorem on the lifting of paths is also established.
+
+The link between homotopy and covering spaces is studied in Sections 4 and 5. If E is a covering space of a topological space B and if \(b \in \mathbf{B}\) , the fiber \(\mathrm{E}_b\) is equipped with a natural action of the group \(\pi_1(\mathrm{B}, b)\) ; this construction gives rise to a functor from the category of coverings of B to that of sets equipped with an action of \(\pi_1(\mathrm{B}, b)\) . When B is a connected and locally path-connected topological space, this functor is fully faithful; its image consists of the actions of the group \(\pi_1(\mathrm{B}, b)\) on a discrete set that are continuous for a certain topology, called "admissible," on the group \(\pi_1(\mathrm{B}, b)\) .
+
+Chapter IV is devoted to deloopable spaces; these are locally path-connected topological spaces for which the admissible topology of the Poincaré groups is the discrete topology. For these spaces, the correspondence between coverings and actions of the Poincaré group is thus perfect: the functor described above provides an equivalence of categories between the category of coverings of B and that of sets equipped with an action of the group \(\pi_{1}(B,b)\) .
+
+The topological space B is said to be simply path-connected if it is path-connected and if the group \(\pi_1(B, b)\) is trivial for every point \(b\) of B. It is shown that a nonempty deloopable space has a universal covering that is simply path-connected and Galois. It is also proved that the Poincaré group of a compact deloopable topological space is finitely presented (§2); without the hypothesis that the space is deloopable, this Poincaré group can have the cardinality of the continuum (SHELAH's theorem). It is shown in §3 that the Poincaré group at the identity element of a connected topological group is abelian and (in the deloopable case) that its universal covering has a natural structure of a topological group.
+
+When \(f \colon Y \to X\) is a continuous map and E is a Y-space, §4 describes in terms of descent data the possible X-spaces from which E arises by base change. We thus translate into the framework of general topology a procedure used systematically by A. GROTHENDIECK in algebraic geometry. Conditions are also given guaranteeing that a covering of Y comes from a covering of X. Under certain hypotheses on \(f\) , this makes it possible to prove the general formulation of the van Kampen theorem: the Poincaré groupoid of X is isomorphic to a certain groupoid (coequalizer, Chapter II, §5) constructed using the Poincaré groupoid of Y and that of the fibered square \(Y \times_X Y\) .
+
+For applications, however, it is necessary to deduce from this a presentation of the Poincaré group of X at a point. In §5, the general calculations of Chapter II are thus applied to obtain such presentations in numerous examples. In particular, the Poincaré group of X is calculated there when one is given a covering of X by a family of open, path-connected subsets. As R. BROWN in particular has shown, the groupoid point of view makes it possible to make no hypothesis on the connectedness of the pairwise intersections of these subsets. Under certain deloopability conditions, the case of locally finite coverings of X by closed subsets is also treated. The Poincaré group of the quotient of a deloopable space by a proper, free action of a discrete group is also calculated there. Finally, the original van Kampen theorem is made explicit there, under somewhat different hypotheses.
+
+Finally, in §6 the notion of a classifying space for a topological group G is studied: when one has such a space \(B_{G}\) , the study of isomorphism classes of principal fiber bundles with group G and paracompact base B is translated into a problem of studying homotopy classes of maps from B into \(B_{G}\) . When G is discrete, a classifying space is constructed which is a metrizable space.
+
+The results of Chapters I to IV depend on the first four Books (E, A, TG, FVR); certain examples and remarks also use results from EVT, VAR, LIE III and LIE IV.
+
+It was initially planned that this Book would form the subject of Chapter XI of the Book of General Topology. In the preceding Books, the references to TG, XI, must therefore be modified as follows:
+
+LIE, III, §1, no. 9, p. 114, note 1. Read "Cf. TA, IV, p. 379, prop. 6."
+
+LIE, III, §6, p. 192, note 1. Read "Recall (TA, I, p. 124, def. 3) that a space is said to be simply connected if each of its coverings is trivializable; a simply connected space is connected. Recall also (TA, I, p. 100, cor. 3) that if G₁, G₂ are connected topological groups, if φ is a continuous open homomorphism of G₁ onto G₂ with discrete kernel, and if G₂ is simply connected, then φ is a homeomorphism."
+
+LIE, III, §6, no. 7, p. 206, line 11. Instead of "according to TG, XI", read "according to TA, IV, p. 379, prop. 6".
+
+LIE, VII, p. 66, appendix II, exercise 1. Instead of "TG, XI", read "TA, I, p. 69, def. 2".
+
+LIE, IX, §2, no. 4, p. 12, line -9. Instead of "TG, XI, to appear", read "TA, VII, to appear".
+
+LIE, IX, §3, no. 6, p. 22. Instead of "TG, XI, to appear", read "TA, I, p. 127, example 3".
+
+LIE, IX, §4, no. 2, p. 27, line 11. Instead of "TG, XI, to appear", read "TA, VII, to appear".
+
+LIE, IX, §4, no. 6, p. 34, line -6. Instead of "TG, XI, to appear", read "TA, VII, to appear".
+
+LIE, IX, §4, no. 9, p. 39, line 13. Instead of "TG, XI, to appear", read "according to TA, IV, p. 379, prop. 6".
+
+LIE, IX, §5, no. 4, p. 51, line -13. Instead of "TG, XI, to appear", read "according to TA, IV, p. 358, example".
+
+LIE, IX, §5, no. 4, p. 51, line -4. Instead of "cf. TG, XI, to appear", read "TA, I, p. 106, example 4 and p. 111, prop. 10".
+
+LIE, IX, §9, no. 1, p. 89, line 9. Instead of "according to TG, XI", read "according to TA, I, p. 37, th. 2".
+
+LIE, IX, p. 112, exercise 8. Instead of "TG, XI", read "TA, VII".
+
+LIE, IX, p. 118, exercise 2. Instead of "TG, XI", read "TA, III, p. 229, def. 1".
+
+\specialchapter{Bibliography}
+
+BRANDT (H.), "Über eine Verallgemeinerung des Gruppenbegriffes", Mathematische Annalen (1926), vol. 96, p. 360--366.
+
+BROWN (R.), "Groupoids and van Kampen's theorem", Proceedings of the London Mathematical Society (3) (1967), vol. 17, p. 385--401.
+
+GROTHENDIECK (A.), Revêtements étales et groupe fondamental (SGA 1), Documents mathématiques, vol. 3, Société mathématique de France, 2003.
+
+VAN KAMPEN (E. R.), "On the connection between the fundamental groups of some related spaces", American Journal of Mathematics (1933), vol. 55, no. 1, p. 261--267.
+
+\mainmatter
+\input{chapters/fragment_001}
+\input{chapters/fragment_002}
+\input{chapters/fragment_003}
+\input{chapters/fragment_004}
+\input{chapters/fragment_005}
+\input{chapters/fragment_006}
+\input{chapters/fragment_007}
+\input{chapters/fragment_008}
+\input{chapters/fragment_009}
+\input{chapters/fragment_010}
+\input{chapters/fragment_011}
+\input{chapters/fragment_012}
+\input{chapters/fragment_013}
+\input{chapters/fragment_014}
+\input{chapters/fragment_015}
+\input{chapters/fragment_016}
+\input{chapters/fragment_017}
+\end{document}

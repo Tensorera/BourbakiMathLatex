@@ -1,0 +1,286 @@
+\documentclass[UTF8,fontset=fandol,12pt,a4paper,oneside]{ctexbook}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont[BoldFont=FandolSong-Bold.otf, ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf}
+\setCJKsansfont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
+\setCJKmonofont[BoldFont=FandolHei-Bold.otf]{FandolHei-Regular.otf}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{newunicodechar}
+\newunicodechar{∅}{\ensuremath{\varnothing}}
+\newunicodechar{ℰ}{\ensuremath{\mathcal{E}}}
+\newunicodechar{ℜ}{\ensuremath{\mathfrak{R}}}
+\newunicodechar{⋯}{\ensuremath{\cdots}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∘}{\ensuremath{\circ}}
+\newunicodechar{∧}{\ensuremath{\wedge}}
+\newunicodechar{∪}{\ensuremath{\cup}}
+\newunicodechar{⊂}{\ensuremath{\subset}}
+\newunicodechar{⊃}{\ensuremath{\supset}}
+\newunicodechar{⊆}{\ensuremath{\subseteq}}
+\newunicodechar{⊕}{\ensuremath{\oplus}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array}
+\usepackage{xcolor,framed,fancyvrb}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks,unicode,pdfusetitle,bookmarksnumbered]{hyperref}
+\usepackage[open,openlevel=2]{bookmark}
+\pdfstringdefDisableCommands{\def\,{}}
+% ---- structural macros ---------------------------------------------------
+\newcommand{\specialchapter}[1]{%
+  \chapter*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}%
+}
+\newcounter{exgroup}
+\newcommand{\exercisesfor}[1]{%
+  \setcounter{exgroup}{#1}%
+  \section*{\S\,\theexgroup}%
+}
+\newcommand{\exercisesforappendix}{\section*{附录}}
+\newcommand{\appendixsection}[1]{%
+  \section*{附录：#1}%
+  \phantomsection
+  \addcontentsline{toc}{section}{附录：#1}%
+}
+\newcounter{hnpart}
+\newcommand{\hnsection}[1]{%
+  \stepcounter{hnpart}%
+  \section*{\Roman{hnpart}.\ #1}%
+}
+\newcommand{\summarychapter}[3]{%
+  \chapter*{#2}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}%
+  \begin{center}\large #3\end{center}%
+}
+% --------------------------------------------------------------------------
+\doublespacing
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\S\,\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\setlist{itemsep=0.25\baselineskip,topsep=0.25\baselineskip}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newenvironment{Highlighting}[1][]{}{}
+\newcommand{\NormalTok}[1]{#1\par}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.8\textheight 0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\graphicspath{{images/}}
+\emergencystretch=3em
+\pagestyle{plain}
+\title{李群与李代数（第1–3章）}
+\author{尼古拉·布尔巴基}
+\date{}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\clearpage
+\frontmatter
+\tableofcontents
+
+% ---- front matter (from the OCR volume head) ----
+\specialchapter{致读者}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  这套卷册从数学的基础开始论述，并给出完整的证明；卷册目录见第 ix、x 页。原则上，读者无需具备特别的数学知识，只需对数学推理有一定熟悉程度，并具有一定的抽象思维能力。不过，本书系尤其面向那些至少熟悉大学数学课程第一、二学年内容的人。
+\item
+  我们选择的论述方法是公理化且抽象的，通常按照从一般到特殊的顺序展开。这一选择由本专著的主要目的所决定，即为整个现代数学体系提供坚实基础。为此，熟悉相当多的非常一般的思想和原则是不可或缺的。此外，证明的要求对论题施加了严格确定的次序。因此，除非读者已经具备较为广博的数学知识，否则某些论述的用处不会立即显现；在这种情况下，他必须耐心等待适当时机再作判断。
+\item
+  为了减轻这一缺点，我们经常在正文中插入一些例子，涉及读者可能已经知道、但本书系尚未讨论的事实。这些例子总是置于两个星号之间：*\ldots*。大多数读者无疑会发现，这些例子有助于理解正文，即使初次阅读也不愿将它们略去。当然，纯粹从逻辑观点看，略去这些例子并无不利之处。
+\item
+  本书系分为若干卷册（这里称为“书”）。前六部书有编号；一般而言，正文中的每个陈述只把前面卷册中已经讨论过的结果视为已知。这条规则在每部书内部都成立，但为便于论述，这些书不再按连续次序编排。在每部书（或每章）的开头，读者都会看到它与其他各书之间逻辑关系的准确说明，从而可以自行确认其中不存在任何恶性循环。
+\item
+  每章的逻辑框架由该章的定义、公理和定理组成。这些是今后使用时主要需要记住的部分。较不重要的结果以及容易由定理推出的结果，标作“命题”“引理”“推论”“注记”等。初读时可以略去的内容用小号字体印刷。特别重要的定理有时会以“评注”的名义附加说明。
+\end{enumerate}
+
+为了避免繁琐的重复，有时引入只在某一章或某章的某一节中有效的记号或缩写是很方便的（例如，在只讨论交换环的一章中，“环”一词始终表示“交换环”）。这种约定总会明确说明，通常是在它出现的那一章开头说明。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  正文中的某些段落旨在预先提醒读者注意严重错误。这些段落在页边以如下符号标示
+\end{enumerate}
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/part001_cf93b7dd.jpg}}
+
+（“危险弯道”）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\item
+  习题既帮助读者确认自己已经理解正文，也使他注意到一些虽未列入正文、但仍然有趣的结果。最难的习题标有符号 \(\P\) 。
+\item
+  总的来说，我们遵循通常接受的术语，只有在看起来有充分理由偏离时才例外。
+\item
+  我们特别努力始终使用严格正确的语言，同时不牺牲简明性。在可能的范围内，我们在正文中指出语言使用上的不当之处；没有这些提醒，任何数学文本都有陷入迂腐、乃至变得不可读的风险。
+\item
+  由于正文原则上是对某一理论的系统阐述，通常不包含文献引用。参考文献集中列在历史注记中，通常置于每章末尾。这些注记还会在适当之处指出该理论尚未解决的问题。
+\end{enumerate}
+
+每篇历史注记之后的参考文献通常只包含对所讨论理论的发展最为重要的书籍和原始论文。它并不声称完备；尤其是只用于确定优先权问题的文献几乎总被省略。
+
+至于习题，我们通常认为没有必要说明其来源，因为它们取自许多不同的来源（原始论文、教材、习题集）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  对本书系某一部分的引用按如下方式给出：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  如果引用的是同一节中给出的定理、公理或定义，则以其编号引用。
+\item
+  如果它们出现在同一章的另一节中，则引用中还要给出该节。
+\item
+  如果它们出现在同一部书的另一章中，则给出章节和节。
+\item
+  如果它们出现在另一部书中，则首先以书名引用该书。
+\end{enumerate}
+
+结果摘要以字母 R 引用；因此，Set Theory, R 表示“集合论结果摘要”。
+
+\specialchapter{数学要义丛书目录}
+
+\textbf{I. 集合论}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  形式数学的描述。2. 集合论。3. 有序集；基数；自然数。4. 结构。
+\end{enumerate}
+
+\textbf{II. 代数}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  代数结构。2. 线性代数。3. 张量代数、外代数、对称代数。4. 多项式与有理分式。5. 域。6. 有序群与有序域。7. 主理想环上的模。8. 半单模与半单环。9. 半双线性形式与二次型。
+\end{enumerate}
+
+\textbf{III. 一般拓扑学}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  拓扑结构。2. 一致结构。3. 拓扑群。4. 实数。5. 一参数群。6. 实数空间、仿射空间与射影空间。7. 加法群 \(\mathbf{R}^{\mathrm{s}}\) 。8. 复数。9. 一般拓扑学中实数的使用。10. 函数空间。
+\end{enumerate}
+
+\textbf{IV. 实变函数}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  导数。2. 原函数与积分。3. 初等函数。4. 微分方程。5. 函数的局部研究。6. 广义泰勒展开。Euler-Maclaurin 求和公式。7. 伽马函数。词典。
+\end{enumerate}
+
+\textbf{V. 拓扑向量空间}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  赋值域上的拓扑向量空间。
+\item
+  凸集与局部凸空间。
+\item
+  连续线性映射空间。
+\item
+  拓扑向量空间中的对偶性。
+\item
+  Hilbert 空间：初等理论。词典。
+\end{enumerate}
+
+\textbf{VI. 积分}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  凸性不等式。2. Riesz 空间。3. 局部紧空间上的测度。4. 测度的延拓。L' 空间。5. 测度积分。6. 向量值积分。7. Haar 测度。8. 卷积与表示。9. Hausdorff 拓扑空间上的积分。
+\end{enumerate}
+
+
+\textbf{李群与李代数}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  李代数。2. 自由李代数。3. 李群。4. Coxeter 群与 Tits 系统。5. 由反射生成的群。6. 根系。
+\end{enumerate}
+
+\textbf{交换代数}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  平坦模。2. 局部化。3. 分次、滤子与拓扑。4. 关联素理想与主分解。5. 整数。6. 赋值。7. 除子。
+\end{enumerate}
+
+\textbf{谱理论}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  范数代数。2. 局部紧群。
+\end{enumerate}
+
+\textbf{可微流形与解析流形}
+
+结果摘要。
+
+\mainmatter
+
+\input{chapters/fragment_001}
+\input{chapters/fragment_002}
+\input{chapters/fragment_003}
+\input{chapters/fragment_004}
+\input{chapters/fragment_005}
+\input{chapters/fragment_006}
+\input{chapters/fragment_007}
+\input{chapters/fragment_008}
+\input{chapters/fragment_009}
+\input{chapters/fragment_010}
+\input{chapters/fragment_011}
+\input{chapters/fragment_012}
+\input{chapters/fragment_013}
+\input{chapters/fragment_014}
+\input{chapters/fragment_015}
+\input{chapters/fragment_016}
+\input{chapters/fragment_017}
+\end{document}

@@ -1,0 +1,887 @@
+\subsection{正算子谱的变分原理}
+
+本条中，E 是一个非零复希尔伯特空间。
+
+命题 15. --- 设 u 是 E 上的自伴部分算子。假设 u 以 \(c \in \mathbf{R}\) 为下界（IV，第 237 页定义 7）。有
+
+\[
+\inf (\mathrm{Sp} (u)) = \inf _ {x \in \mathrm{dom} (u) - \{0 \}} \frac {\langle x \mid u (x) \rangle}{\| x \| ^ {2}} \in [ c, + \infty [.
+\]
+
+令 m 为待证等式的右端。设 \(x \in E\)，并令 \(\mu_{x}\) 为 x 关于 u 的谱测度。则有
+
+\[
+\begin{array}{r l} \langle x \mid u (x) \rangle & = \int_ {\mathrm{Sp} (u)} t d \mu_ {x} (t) \\ & \geqslant \inf (\mathrm{Sp} (u)) \int_ {\mathrm{Sp} (u)} d \mu_ {x} (t) = \inf (\mathrm{Sp} (u)) \| x \| ^ {2}, \end{array}
+\]
+
+（公式 (6)，第 271 页），故 \(\inf(\mathrm{Sp}(u)) \leqslant m\)。反之，部分算子 \(u - m\) 是正的，因此 \(\inf(\mathrm{Sp}(u)) - m = \inf(\mathrm{Sp}(u - m \cdot 1_{\mathrm{E}})) \geqslant 0\)（IV，第 248 页命题 17）。
+
+I 第 139 页的命题 9 对应于本命题在 u 是 \(\mathcal{L}(\mathrm{E})\) 的埃尔米特元素时的特殊情形，此时 u 必然下有界。在此情形下，我们还有
+
+\[
+\sup (\operatorname{Sp} (u)) = \sup _ {x \in \operatorname{dom} (u) - \{0 \}} \frac {\langle x \mid u (x) \rangle}{\| x \| ^ {2}}
+\]
+
+（同上）；若 u 不属于 \(\mathcal{L}(\mathrm{E})\)，则此上确界为 \(+\infty\)。
+
+定义 10. --- 设 u 是 E 上的正规部分算子。若复数 \(\lambda \in \mathrm{Sp}(u)\) 属于 \(u\) 的敏感谱，当且仅当 \(\lambda\) 是 \(\mathrm{Sp}(u)\) 的孤立点且 \(\lambda\) 是有限重数的特征值。
+
+记 \(\mathrm{Sp}_{\mathrm{s}}(u)\) 为 u 的敏感谱。它在 \(\mathrm{Sp}(u)\) 中的补集称为 u 的本质谱，记作 \(\mathrm{Sp}_{\mathrm{e}}(u)\)。
+
+E 上正规部分算子 u 的本质谱在 C 中是闭的，因为 \(\mathrm{Sp}(u)\) 在 C 中是闭的，而本质谱的补集在 \(\mathrm{Sp}(u)\) 中是开的。u 的敏感谱不一定在 C 中闭（IV，第 369 页习题 36）。
+
+引理 9. --- 设 E 是复希尔伯特空间，u 是 E 上的正规部分算子。设 \(\lambda \in \mathrm{Sp}(u)\)。有 \(\lambda \in \mathrm{Sp}_{\mathrm{s}}(u)\) 当且仅当存在 C 中 \(\lambda\) 的一个开邻域 V，使得由 V 定义的 u 的谱投影 \(p_{\mathrm{V}}\) 具有有限秩。
+
+设 \(\lambda \in \mathrm{Sp}_{\mathrm{s}}(u)\)。存在一个开邻域 \(V\)，它是 \(\lambda\) 在 \(\mathbf{C}\) 中的开邻域，使得 \(\mathrm{Sp}(u) \cap V = \{\lambda\}\)；于是谱投影 \(p_V = p_{\{\lambda\}}\) 具有有限秩（IV，第 278 页命题 9 的推论）。
+
+反之，假设存在 \(\lambda\) 的一个开邻域 V，使得谱投影 \(p_{V}\) 具有有限秩 \(n \in N\)。根据 IV 第 279 页命题 10 的推论，交集 \(V \cap \mathrm{Sp}(u)\) 至多含有 n 个元素，因而 \(\lambda\) 是 \(\mathrm{Sp}(u)\) 的孤立点。因此，根据 IV 第 278 页命题 9 的推论，它是 u 的一个谱重数至多为 n 的特征值。
+
+在本条的其余部分，我们假设 E 是无限维的；当 E 有限维时，下面结果的类似结论由 IV 第 153 页第 4 号推出。
+
+设 u 是 E 上下有界的自伴算子。令 c 为 u 的一个下界；u 的谱包含于 \([c, +\infty[\)（命题 15）。假设 u 的本质谱非空。记 \(\varrho_{e}\) 为 u 的本质谱的下界，于是 \(\varrho_{e} \geqslant c\)，且 \(\varrho_{e}\) 是算子 \(u\) 的谱中的一个元素。记 \(\mathrm{Sp}_{\mathrm{h}}(u) = \mathrm{Sp}(u) \cap [\varrho_{\mathrm{e}}, +\infty[\)；它是 \(\mathrm{Sp}(u)\) 的闭子集，因而也是 \(\mathbf{C}\) 的闭子集，并满足 \(\inf (\mathrm{Sp}_{\mathrm{h}}(u)) = \varrho_{\mathrm{e}}\)；称其为算子 \(u\) 的谱的上端。若算子 \(u\) 的本质谱为空，则记 \(\mathrm{Sp}_{\mathrm{h}}(u) = \varnothing\) 且 \(\varrho_{\mathrm{e}} = +\infty\)。
+
+交集 \(\mathrm{Sp}_{\mathrm{b}}(u) = \mathrm{Sp}(u) \cap [0, \varrho_{\mathrm{e}}[\) 包含于算子 \(u\) 的敏感谱中，因而其元素都是有限重数的孤立特征值；称其为算子 \(u\) 的谱的下端。令 \(\mathrm{E}_{\mathrm{b}}\) 为由对应于特征值 \(\lambda \in \mathrm{Sp}_{\mathrm{b}}(u)\) 的特征空间生成的 E 的闭子空间。根据 IV 第 278 页命题 9 的推论和第 278 页命题 8，空间 \(\mathrm{E}_{\mathrm{b}}\) 是谱投影 \(p_{\mathrm{Sp}_{\mathrm{b}}(u)}\)（由 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 定义）的像。由于 \(\mathrm{Sp}(u)\) 是 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 与 \(\mathrm{Sp}_{\mathrm{h}}(u)\) 的不交并，\(\mathrm{E}_{\mathrm{h}}\) 是 \(\mathrm{E}_{\mathrm{b}}\) 的正交补，也是谱投影 \(p_{\mathrm{Sp}_{\mathrm{h}}(u)}\)（由 \(\mathrm{Sp}_{\mathrm{h}}(u)\) 定义）的像。若 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 有限，则空间 \(\mathrm{E}_{\mathrm{b}}\) 是有限维的；由于假设 E 是无限维的，此时空间 \(\mathrm{E}_{\mathrm{h}}\) 非零。
+
+引理 10. --- 有
+
+\[
+\langle x \mid u (x) \rangle \geqslant \varrho_ {\mathrm{e}} \| x \| ^ {2}.\tag{18}
+\]
+
+对所有 \(x \in \mathrm{E}_{\mathrm{h}} \cap \operatorname{dom}(u)\)。
+
+若 \(x \in \mathrm{E}_{\mathrm{h}} \cap \mathrm{dom}(u)\)，则 x 的谱测度 \(\mu_{x}\)（即 \(x\) 关于 \(u\) 的谱测度）的支撑包含于区间 \([\varrho_{\mathrm{e}}, +\infty[\)（IV 第 278 页命题 9 \(a\)），故
+
+\[
+\langle x \mid u (x) \rangle = \int_ {\mathbf {R}} t d \mu_ {x} (t) \geqslant \varrho_ {\mathrm{e}} \| x \| ^ {2}.
+\]
+
+引理 11. --- 假设 \(E_{b}\) 是有限维的。则对每个实数 \(\varepsilon > 0\)，由区间 \([\varrho_{e}, \varrho_{e} + \varepsilon]\) 定义的 u 的谱投影的像都是无限维的。
+
+若 \(E_{b}\) 是有限维的，则 u 的本质谱非空，从而 \(\varrho_{e}\) 有限且属于 \(\mathrm{Sp}_{\mathrm{e}}(u)\)。此外，下谱 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 有限，故存在 \(\delta > 0\)，使得 \([\varrho_{e} - \delta, \varrho_{e} + \delta] \cap \mathrm{Sp}(u) \subset [\varrho_{e}, \varrho_{e} + \delta]\)。断言于是由引理 9 得出。
+
+命题 16. --- 集合 \(\mathrm{Sp}_{\mathrm{b}}(u) \subset [c, \varrho_{\mathrm{e}}[\) 是可数的、离散的，并且在 \([0, \varrho_{\mathrm{e}}[\) 中闭。它是正实数严格递增序列 \((\nu_{k})_{0 \leqslant k < \mathrm{Card}(\mathrm{Sp}_{\mathrm{b}}(u))}\) 的值集；若 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 无限，则序列 \((\nu_{k})\) 收敛到 \(\varrho_{\mathrm{e}}\)。
+
+令 \(\mathrm{T} = \mathrm{Sp}_{\mathrm{b}}(u) \cap [0, \varrho_{\mathrm{e}}[\)。按定义，它是 \([c, \varrho_{\mathrm{e}}[\) 的闭离散子集。对每个整数 \(i \geqslant 1\)，集合 \(\mathrm{Sp}_{\mathrm{b}}(u) \cap [c, \varrho_{\mathrm{e}} - 1/i]\) 是紧的且离散的，因而是有限的。由于 T 是这些集合（\(i \geqslant 1\)）的并，集合 T 是可数的。
+
+若 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 有限，证明即告完成。若 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 无限，则将 III 第 90 页引理 2 应用于 T 在映射 \(\lambda \mapsto \varrho_{e} - \lambda\) 下的像 S，即可得出结论。
+
+对每个整数 \(k\)，满足 \(0 \leqslant k < \text{Card}(\text{Sp}_b(u))\)，记 \(n_k \geqslant 1\) 为 u 的特征值 \(\nu_k\)（算子 \(u\)）的重数。记 \(\overline{\mathbf{N}} = \mathbf{N} \cup \{+\infty\} \subset \overline{\mathbf{R}}\)。令 \(\mathbf{M} \in \overline{\mathbf{N}}\) 为重数 \(n_k\) 之和。这是 \(\mathbf{E}_b\) 的希尔伯特维数；若约定无限希尔伯特维数的空间的维数为 \(+\infty \in \overline{\mathbf{N}}\)，则上述说法成立。
+
+对满足 \(0 \leqslant n < M\) 的每个整数 n，定义 \(\lambda_{n}(u) = \nu_{k}\)，其中 \(k \geqslant 0\) 是满足下式的唯一整数：
+
+\[
+n _ {0} + \dots + n _ {k - 1} \leqslant n <   n _ {0} + \dots + n _ {k}.
+\]
+
+若 \(n \in \mathbf{N}\) 满足 \(n \geqslant \mathrm{M}\)，则置 \(\lambda_n(u) = \varrho_{\mathrm{e}}\)。此情形只会在 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 有限时发生；由于假设 E 是无限维的，此时 \(\varrho_{\mathrm{e}}\) 有限。
+
+按构造，序列 \((\lambda_{n}(u))_{n\in\mathbf{N}}\) 是递增的；对每个元素 \(\lambda\)（属于 \(\mathrm{Sp}_{\mathrm{b}}(u)\)），满足 \(\lambda_{n}(u)=\lambda\) 的整数 n 的个数等于 \(\lambda\) 作为 u 的特征值的重数。当且仅当 u 的本质谱为空时，序列 \((\lambda_{n}(u))_{n\in\mathbf{N}}\) 趋于 \(+\infty\)。
+
+对每个 \(n \in N\)，记 \(F_{n}\)（分别为 \(F_{n}^{u}\)）为所有维数为 n 的向量子空间 \(F \subset E\) 的集合（分别为所有维数为 n 的向量子空间 \(F \subset \text{dom}(u)\) 的集合）。
+
+设 \(n \in \mathbf{N}\) 满足 \(n < \mathrm{M}\)，且 \(\mathrm{F} \in \mathcal{F}_n^u\)。称 \(\mathrm{F}\) 适应于 \(u\)，如果 \(\mathrm{F}\) 有一个标准正交基 \((f_i)_{0 \leqslant i \leqslant n-1}\)，满足 \(u(f_i) = \lambda_i(u)f_i\)（\(0 \leqslant i \leqslant n-1\)）。
+
+设 \(F \in F_{n}^{u}\) 适应于 u。空间 F 包含于 \(E_{b}\)；它由对应于满足 \(\lambda \leqslant \lambda_{n-1}(u)\) 的特征值的 u 的特征向量生成，并包含对应于满足 \(\lambda < \lambda_{n-1}(u)\) 的特征值的特征空间。此外，对 \(\mathrm{Sp}(u)\) 的每个普遍可测子集 A，空间 F 在由 A 定义的谱投影 \(p_{A}\) 下稳定（IV，第 278 页命题 9，c）。
+
+引理 12. --- 设 \(F \in F_{n}^{u}\) 是适应于 u 的子空间。属于空间 \(F^{\circ} \cap E_{b}\) 的 u 的每个特征向量，其特征值都 \(\geqslant \lambda_{n}(u)\)。
+
+令 \(\ell\) 满足 \(\lambda_{n-1}(u) = \nu_{\ell}\)。设 \(x \in \mathrm{F}^{\circ} \cap \mathrm{E}_{\mathrm{b}}\) 是 \(u\) 关于特征值 \(\lambda\) 的一个特征向量，并令 \(k < \operatorname{Card}(\operatorname{Sp}_{\mathrm{b}}(u))\) 满足 \(\lambda = \nu_{k}\)。
+
+不可能有 \(k < \ell\)，因为 \(\nu_k < \nu_\ell\)，此时空间 F 将包含特征值 \(\nu_k\) 对应的特征空间，这与 \(x\) 正交于 F 矛盾。若 \(k = \ell\)，则 \(x\) 是特征值 \(\lambda_{n-1}(u)\) 的特征向量；由于 \(x \in \mathrm{F}^\circ\)，重数 \(n_k\) 严格大于满足 \(i < n\) 且 \(\lambda_i(u) = \nu_k\) 的整数 i 的个数，从而 \(\lambda_n(u) = \lambda_{n-1}(u)\)。最后，若 \(k > \ell\)，则 \(\lambda = \nu_k > \nu_\ell = \lambda_{n-1}(u)\)，故 \(\lambda \geqslant \lambda_n(u)\)。
+
+对 E 的每个子空间 F，记
+
+\[
+\widetilde{r}_{\mathrm{F}}(u) = \inf_{\substack{x\in \operatorname{dom}(u)\cap \mathrm{F}^{\circ}\\ x\neq 0}}\frac{\langle x\mid u(x)\rangle}{\|x\|^{2}},
+\]
+
+\[
+\widetilde{\mathrm{R}}_{\mathrm{F}}(u) = \sup_{\substack{x\in \operatorname{dom}(u)\cap \mathrm{F}\\ x\neq 0}}\frac{\langle x\mid u(x)\rangle}{\|x\|^ {2}}.
+\]
+
+命题 17. --- a) 对每个整数 \(n \in \mathbf{N}\)，有
+
+\[
+\lambda_ {n} (u) = \sup _ {\mathrm{F} \in \mathcal {F} _ {n}} \widetilde {r} _ {\mathrm{F}} (u) = \inf _ {\mathrm{F} \in \mathcal {F} _ {n + 1} ^ {u}} \widetilde {\mathrm{R}} _ {\mathrm{F}} (u);
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  对每个整数 \(n < \mathrm{M}\)，以及每个子空间 \(\mathrm{F} \in \mathcal{F}_n^u\)，若其适应于 \(u\)，则有 \(\lambda_n(u) = \widetilde{r}_{\mathrm{F}}(u)\)；
+\item
+  对每个整数 \(n < \mathrm{M}\)，以及每个子空间 \(\mathrm{F} \in \mathcal{F}_{n+1}^{u}\)，若其适应于 \(u\)，则有 \(\lambda_{n}(u) = \widetilde{\mathrm{R}}_{\mathrm{F}}(u)\)。
+\end{enumerate}
+
+存在一个标准正交基 \((e_{n})_{0\leqslant n<M}\)，它是空间 \(E_{b}\) 的基，使得 \(e_{n}\in\operatorname{dom}(u)\)，且 \(u(e_{n})=\lambda_{n}(u)e_{n}\) 对每个满足 \(0\leqslant n<M\) 的 n 都成立。因此，对每个 \(x\in E_{b}\cap\operatorname{dom}(u)\)，有
+
+\[
+\langle x \mid u (x) \rangle = \sum_ {0 \leqslant n <   M} \lambda_ {n} (u) | \langle e _ {n} \mid x \rangle | ^ {2}.
+\]
+
+ 对每个整数 \(n\)，满足 \(1 \leqslant n < M + 1\)，令 \(F_n\) 为维数为 \(n\) 的 \(E_b\) 中由 \((e_0, \ldots, e_{n-1})\) 生成的子空间。我们有 \(F_n \subset \text{dom}(u)\)，且 \(F_n\) 适应于 \(u\)。
+
+设 \(n \in \mathbf{N}\) 且 \(\mathrm{F} \in \mathcal{F}_n\)。我们来证明 \(\widetilde{r}_{\mathrm{F}}(u) \leqslant \lambda_n(u)\)，从而有
+
+\[
+\sup _ {\mathrm{F} \in \mathcal {F} _ {n}} \widetilde {r} _ {\mathrm{F}} (u) \leqslant \lambda_ {n} (u).\tag{19}
+\]
+
+若 \(0 \leqslant n < M\)，特别是当 M 无限时，E 到 F 的正交投影在 \(\mathrm{F}_{n+1}\) 上的限制不是单射，故存在向量 \(x \neq 0\)，属于 \(F_{n+1}\) 且与 F 正交。由于
+
+\[
+\langle x \mid u (x) \rangle = \sum_ {0 \leqslant i \leqslant n} \lambda_ {i} (u) | \langle e _ {i} \mid x \rangle | ^ {2} = \lambda_ {n} (u) | \langle e _ {n} \mid x \rangle | ^ {2} \leqslant \lambda_ {n} (u) \| x \| ^ {2},
+\]
+
+我们有 \(\widetilde{r}_{\mathrm{F}}(u) \leqslant \lambda_n(u)\)。
+
+若 \(M \in N\) 且 \(n \geqslant M\)，则对每个实数 \(\varepsilon > 0\)，存在 \(\text{dom}(u)\) 中范数为 1、与 F 正交的 x，使其谱测度 \(\mu_{x}\) 的支撑包含于 \([\varrho_{e}, \varrho_{e} + \varepsilon]\)（IV 第 278 页引理 11 和命题 9，a），于是
+
+\[
+\widetilde {r} _ {\mathrm{F}} (u) \leqslant \langle x \mid u (x) \rangle = \int_ {\operatorname{Sp} (u)} t d \mu_ {x} (t) \leqslant \varrho_ {\mathrm{e}} + \varepsilon = \lambda_ {n} (u) + \varepsilon
+\]
+
+按定义。由于 \(\varepsilon > 0\) 任意，因而 \(\widetilde{r}_{\mathrm{F}}(u) \leqslant \lambda_n(u)\)。不等式 (19) 得证。
+
+设 \(n \in \mathbf{N}\) 且 \(\mathrm{F} \in \mathcal{F}_{n+1}^{u}\)。我们来证明 \(\widetilde{\mathrm{R}}_{\mathrm{F}}(u) \geqslant \lambda_{n}(u)\)，从而有
+
+\[
+\inf _ {\mathrm{F} \in \mathcal {F} _ {n + 1} ^ {u}} \widetilde {\mathrm{R}} _ {\mathrm{F}} (u) \geqslant \lambda_ {n} (u).\tag{20}
+\]
+
+若 \(0 \leqslant n < M\)，注意到正交投影到 \(\mathrm{F}_n\) 在 F 上的限制不是单射，故存在向量 \(x \neq 0\)，属于 F 且与 \(\mathrm{F}_n\) 正交。置 \(x_{\mathrm{b}} = p_{\mathrm{Sp}_{\mathrm{b}}(u)}(x)\) 且 \(x_{\mathrm{h}} = p_{\mathrm{Sp}_{\mathrm{h}}(u)}(x)\)。于是 \(x = x_{\mathrm{b}} + x_{\mathrm{h}}\)。元素 \(x_{\mathrm{b}}\) 和 \(x_{\mathrm{h}}\) 属于 \(u\) 的定义域（IV 第 278 页命题 9，c），并且都与 \(\mathrm{F}_n\) 正交。我们有下界
+
+\[
+\langle x _ {\mathrm{b}} \mid u (x _ {\mathrm{b}}) \rangle = \sum_ {i \geqslant n} \lambda_ {i} (u) | \langle e _ {i} \mid x _ {\mathrm{b}} \rangle | ^ {2} \geqslant \lambda_ {n} (u) \| x _ {\mathrm{b}} \| ^ {2},
+\]
+
+且 \(\langle x_{\mathrm{h}}|u(x_{\mathrm{h}})\rangle \geqslant \varrho_{\mathrm{e}}\| x_{\mathrm{h}}\|^2\)（公式 (18)），于是
+
+\[
+\begin{array}{r l} & {\langle x \mid u (x) \rangle = \langle x _ {\mathrm{b}} \mid u (x _ {\mathrm{b}}) \rangle + \langle x _ {\mathrm{h}} \mid u (x _ {\mathrm{h}}) \rangle} \\ & {\qquad \geqslant \lambda_ {n} (u) \| x _ {\mathrm{b}} \| ^ {2} + \varrho_ {\mathrm{e}} \| x _ {\mathrm{h}} \| ^ {2} \geqslant \lambda_ {n} (u) \| x \| ^ {2}.} \end{array}
+\]
+
+若 M 有限且 \(n \geqslant M\)，则存在 F 中的 \(x \neq 0\)，与 \(E_{b}\) 正交，从而 \(x \in E_{h}\)，并且
+
+\[
+\langle x \mid u (x) \rangle \geqslant \varrho_ {\mathrm{e}} \| x \| ^ {2} = \lambda_ {n} (u) \| x \| ^ {2}
+\]
+
+由 (18) 可知。不等式 (20) 得证。
+
+现在证明断言 \(b\)）和 \(c\)），它们说明当 \(n < M\) 时不等式 (19) 和 (20) 都是等式。
+
+证明断言 \(b\)。设 \(\mathrm{F} \in \mathcal{F}_n^u\) 是适应于 \(u\) 的空间。我们有希尔伯特直和
+
+\[
+\mathrm{F}^{\circ} = \mathrm{E}_{\mathrm{h}}\oplus \bigoplus_{\substack{\lambda \in \operatorname{Sp}_{\mathrm{b}}(u)\\ \lambda >\lambda_{n - 1}(u)}}\operatorname{Ker}(u - \lambda \cdot 1_{\mathrm{E}})\oplus (\mathrm{F}^{\circ}\cap \operatorname{Ker}(u - \lambda_{n - 1}(u)\cdot 1_{\mathrm{E}})).
+\]
+
+设 \(x \in \mathrm{F}^{\circ} - \{0\}\)。写成 \(x = x_{\mathrm{h}} + y + z\)，其中 \(x_{\mathrm{h}} \in \mathrm{E}_{\mathrm{h}}\)，而 \(y\)（分别为 \(z\)）属于上述分解中的第二（分别为第三）个空间。再次利用 (18) 以及每个满足 \(\lambda > \lambda_{n-1}(u)\) 的特征值（关于算子 \(u\)）都 \(\geqslant \lambda_n(u)\) 这一事实，得到
+
+\[
+\begin{array}{r l} & {\langle x \mid u (x) \rangle = \langle x _ {\mathrm{h}} \mid u (x _ {\mathrm{h}}) \rangle + \langle y \mid u (y) \rangle + \langle z \mid u (z) \rangle} \\ & {\qquad \geqslant \varrho_ {\mathrm{e}} \| x _ {\mathrm{h}} \| ^ {2} + \lambda_ {n} (u) \| y \| ^ {2} + \lambda_ {n - 1} (u) \| z \| ^ {2}.} \end{array}
+\]
+
+若 \(z \neq 0\)，则由引理 12 有 \(\lambda_n(u) = \lambda_{n-1}(u)\)。因此得到 \(\langle x | u(x) \rangle \geqslant \lambda_n(u) \| x \|^2\)，从而 \(\widetilde{r}_{\mathrm{F}}(u) \geqslant \lambda_n(u)\)。结合 (19)，这就证明了断言 \(b\)）。
+
+证明断言 \(c\)。设 \(\mathrm{F} \in \mathcal{F}_{n+1}^{u}\) 是适应于 \(u\) 的子空间。设 \((f_{i})_{0 \leqslant i \leqslant n}\) 是 \(\mathrm{F}\) 的一个标准正交基，满足 \(u(f_{i}) = \lambda_{i}(u)f_{i}\)（\(0 \leqslant i \leqslant n\)）。对每个 \(x \in \mathrm{F}\)，有
+
+\[
+\langle x \mid u (x) \rangle = \sum_ {0 \leqslant i \leqslant n} \lambda_ {i} (u) | \langle f _ {i} \mid x \rangle | ^ {2} \leqslant \lambda_ {n} (u) \| x \| ^ {2},
+\]
+
+当 \(x = f_{n}\) 时取等号，故 \(\widetilde{\mathrm{R}}_{\mathrm{F}}(u) = \lambda_{n}(u)\)。
+
+最后证明当 \(n \geqslant M\) 时 (19) 和 (20) 是等式。在此情形下，M 有限，故 \(E_{b}\) 包含于 u 的定义域；此外，按定义有 \(\lambda_{n}(u) = \varrho_{\mathrm{e}}\)。
+
+ 存在 \(F \in F_{n}\)，包含 \(E_{b}\)。因此，每个元素 \(x \neq 0\)（属于 \(\text{dom}(u)\) 且与 F 正交）都与 \(E_{b}\) 正交，并满足
+
+\[
+\frac {\langle x \mid u (x) \rangle}{\| x \| ^ {2}} \geqslant \varrho_ {\mathrm{e}}
+\]
+
+（公式 (18)），故 \(\widetilde{r}_{\mathrm{F}}(u) \geqslant \varrho_{\mathrm{e}} = \lambda_n(u)\)，从而
+
+\[
+\sup _ {\mathrm{F} \in \mathcal {F} _ {n}} \widetilde {r} _ {\mathrm{F}} (u) \geqslant \lambda_ {n} (u).
+\]
+
+令 \(\varepsilon > 0\)。由于 \(\mathrm{E_b}\) 有限维，根据引理 11，存在 E 中的标准正交族 \((x_i)_{i \in \mathrm{I}}\)，使得由 \(\mathrm{E_b}\) 和 \((x_i)_{i \in \mathrm{I}}\) 生成的子空间 F 具有维数 \(n + 1\)，包含于 \(\operatorname{dom}(u)\)，并且满足 \(\langle x_{i} \mid u(x_{i})\rangle \leqslant \varrho_{\mathrm{e}} + \varepsilon\)（对所有 \(i \in I\)）。于是 \(\widetilde{\mathrm{R}}_{\mathrm{F}}(u) \leqslant \varrho_{\mathrm{e}} + \varepsilon\)。由于 \(\varepsilon > 0\) 任意，我们得到
+
+\[
+\inf _ {\mathrm{F} \in \mathcal {F} _ {n + 1} ^ {u}} \widetilde {\mathrm{R}} _ {\mathrm{F}} (u) \leqslant \varrho_ {\mathrm{e}} = \lambda_ {n} (u).
+\]
+
+命题得证。
+
+\subsection{紧扰动与本质谱}
+
+本条中，E 是一个无限维复希尔伯特空间。
+
+引理 13. --- 设 I 是 E 中的标准正交族。沿 I 的有限子集补集滤子，族 I 弱收敛于 0。
+
+设 \(x \in E\)。根据 Bessel 不等式（EVT，第 V 卷，第 21 页，命题 4）和 TG，第 IV 卷，第 37 页定理 1，族 \((|\langle e_{i} | x\rangle|^{2})_{i\in I}\) 可求和，故 \(\langle e_{i} | x\rangle\) 沿 I 的有限子集补集滤子趋于 0（TG，第 III 卷，第 38 页，命题 1）。
+
+命题 18. --- 设 \(u\) 是 E 上的自伴部分算子，\(\lambda\) 是实数。有 \(\lambda \in \mathrm{Sp}_{\mathrm{e}}(u)\) 当且仅当 E 中存在一个标准正交序列 \((x_{n})_{n \in \mathbf{N}}\)，使得 \(u(x_{n}) - \lambda x_{n}\) 在 E 中趋于 0。
+
+首先假设 \(\lambda \in \mathrm{Sp}_{\mathrm{e}}(u)\)。若 \(u\) 关于 \(\{\lambda\}\) 的谱投影具有无限秩，则其像中的每个标准正交序列 \((x_{n})\) 都满足要求（参见 IV 第 278 页命题 9 的推论）。以下假设情形并非如此。
+
+对每个 \(k \in \mathbf{N}\)，令 \(\mathrm{J}_k\) 为满足下式的 \(t \in [\lambda - 1, \lambda + 1]\) 的集合：
+
+\[
+{\frac {1}{k + 2}} <   | t - \lambda | \leqslant {\frac {1}{k + 1}}.
+\]
+
+集合 \(J_{k}\) 两两不交。此外，对每个整数 \(K \in N\)，集合族 \((\mathrm{J}_{k})_{k \geqslant K}\) 构成集合
+
+\[
+\mathrm{I} _ {\mathrm{K}} = [ \lambda - 1 / (\mathrm{K} + 1), \lambda + 1 / (\mathrm{K} + 1) ] - \{0 \}.
+\]
+
+ 由于算子 \(u\) 关于 \(\mathrm{I_K} \cup \{0\}\) 的谱投影具有无限秩（IV 第 297 页引理 9），而 u 关于 \(\{\lambda\}\) 的谱投影按假设具有有限秩，根据 IV 第 278 页命题 8，存在严格递增的序列 \((k_n)_{n \in \mathbf{N}}\)（在 \(\mathbf{N}\) 中），使得谱投影 \(p_{n}\)（u 关于 \(J_{k_{n}}\) 的）非零。令 \(x_{n}\) 为 \(p_{n}\) 的像中范数为 1 的向量。序列 \((x_{n})\) 是标准正交的，因为 \(p_{n}\) 的像与 \(p_{m}\) 的像对于 N 中所有 \(n \neq m\) 都正交。
+
+设 \(n \in N\)。记 \(\mu_{n}\) 为 \(x_{n}\) 关于 u 的谱测度；其支撑包含于 \(J_{k_{n}}\)（IV 第 278 页命题 9）。由此
+
+\[
+\| u (x _ {n}) - \lambda x _ {n} \| ^ {2} = \int_ {\mathbf {C}} | t - \lambda | ^ {2} d \mu_ {n} (t) \leqslant \frac {1}{k _ {n} ^ {2}},
+\]
+
+因此序列 \((x_{n})_{n\in\mathbf{N}}\) 具有所要求的性质。
+
+反之，假设 E 中存在标准正交序列 \((x_{n})_{n\in \mathbf{N}}\)，使得 \(u(x_{n}) - \lambda x_{n}\to 0\)。记 \(\mu_{n}\) 为 \(x_{n}\) 关于 \(u\) 的谱测度。
+
+令 \(\varepsilon > 0\)。记 \(p_{\varepsilon}\) 为 \(u\) 关于开区间 \(\mathrm{I}_{\varepsilon} = ]\lambda - \varepsilon, \lambda + \varepsilon[\) 的谱投影。对每个 \(n \in \mathbf{N}\)，有
+
+\[
+\begin{array}{r l} & 1 = \| x _ {n} \| ^ {2} = \mu_ {n} (\mathrm{I} _ {\varepsilon}) + \mu_ {n} (\mathbf {R} - \mathrm{I} _ {\varepsilon}) \\ & \qquad \leqslant \mu_ {n} (\mathrm{I} _ {\varepsilon}) + \frac {1}{\varepsilon^ {2}} \int_ {\mathbf {R} - \mathrm{I} _ {\varepsilon}} | t - \lambda | ^ {2} d \mu_ {n} (t) \\ & \qquad = \| p _ {\varepsilon} (x _ {n}) \| ^ {2} + \frac {1}{\varepsilon^ {2}} \| u (x _ {n}) - \lambda x _ {n} \| ^ {2}. \end{array}
+\]
+
+因此，关于序列 \((x_{n})\) 的假设说明 \(p_{\varepsilon}(x_{n})\) 的范数不可能趋于 0。由于标准正交序列 \((x_{n})\) 在 E 中弱收敛于 0（引理 13），投影 \(p_{\varepsilon}\) 不可能是紧的（III 第 6 页命题 6 的推论），因而具有无限秩。由于这对每个 \(\varepsilon > 0\) 都成立，IV 第 297 页引理 9 使我们可以得出 \(\lambda \in \mathrm{Sp}_{\mathrm{e}}(u)\)。
+
+下面的定理是 III 第 93 页定理 3 对自伴部分算子的对应结果。
+
+定理 4. --- 设 u 是 E 上的自伴部分算子。u 的本质谱是集合 Sp(u + v) 的交，其中 v 遍历 E 的紧埃尔米特自同态的集合。
+
+对 E 的每个埃尔米特自同态 v，部分算子 \(u + v\) 都是自伴的，因为 \((u + v)^{*} = u^{*} + v^{*}\)（参见 IV，第 236 页）。
+
+证明若 \(v\) 是紧的，则 \(\mathrm{Sp_e}(u) \subset \mathrm{Sp_e}(u + v)\)。设 \(\lambda \in \mathrm{Sp_e}(u)\)，并令 \((x_n)_{n \in \mathbf{N}}\) 为 E 中满足 \(u(x_n) - \lambda x_n\) 趋于 0 的标准正交序列（命题 18）。序列 \((x_n)\) 在 E 中弱收敛于 0（引理 13）；由于自同态 \(v\) 是紧的，序列 \((v(x_n))_{n \in \mathbf{N}}\) 在 E 中趋于 0（III 第 6 页命题 6 的推论）。因此，序列 \((u+v)(x_{n})-\lambda x_{n}\) 在 E 中趋于 0，命题 18 蕴含 \(\lambda\in\mathrm{Sp}_{\mathrm{e}}(u+v)\)。
+
+因此，算子 \(u\) 的本质谱包含于 \(\mathrm{Sp}(u + v)\) 的交，其中 \(v \in \mathcal{L}^{\mathrm{c}}(\mathrm{E})\) 遍历埃尔米特元素。
+
+反之，设 \(\lambda \in \mathrm{Sp}_{\mathrm{s}}(u)\)。记 \(\mathrm{E}_{\lambda}\) 为算子 \(u\) 关于 \(\lambda\) 的特征空间，记 \(p_{\lambda}\) 为像为 \(\mathrm{E}_{\lambda}\) 的正交投影；它是算子 \(u\) 关于 \(\{\lambda\}\) 的谱投影（IV 第 278 页命题 9 的推论）。根据敏感谱的定义，投影 \(p_{\lambda}\) 具有有限秩，因而是紧的。置 \(w = u + p_{\lambda}\)；它是自伴部分算子。为完成证明，我们验证 \(\lambda\) 属于 \(w\) 的预解集。
+
+有 \(\mathrm{E}_{\lambda} \subset \operatorname{dom}(u)\)，且空间 \(\mathrm{E}_{\lambda}\) 和 \(\operatorname{dom}(u) \cap \mathrm{E}_{\lambda}^{\circ}\) 在 \(u\) 下稳定（IV 第 278 页命题 9）。
+
+设 \(x \in \text{dom}(u)\)。写成 \(x = p_{\lambda}(x) + y\)，其中 \(y \in \text{dom}(u) \cap \text{E}_{\lambda}^{\circ}\)。由上文可得
+
+\[
+\left\| w (x) - \lambda x \right\| ^ {2} = \left\| p _ {\lambda} (x) \right\| ^ {2} + \left\| w (y) - \lambda y \right\| ^ {2}.\tag{21}
+\]
+
+令 V 为不与 u 的谱相交的 \(\lambda\) 的一个开邻域，并令 c > 0，使得以 \(\lambda\) 为中心、半径为 c 的圆盘包含于 V。令 \(\mu_{y}\) 为 y 关于 u 的谱测度。由于 y 与 \(E_{\lambda}\) 正交，\(\mu_{y}\) 的支撑不与 V 相交（同上）。于是有
+
+\[
+\| w (y) - \lambda y \| ^ {2} = \| u (y) - \lambda y \| ^ {2} = \int_ {\mathbf {C}} | t - \lambda | ^ {2} d \mu_ {y} (t) \geqslant c ^ {2} \| y \| ^ {2}.\tag{22}
+\]
+
+由 (21) 和 (22)，我们得到 \(\|w(x)-\lambda x\|^{2}\geqslant\inf(c^{2},1)\|x\|^{2}\)，因为 w 是自伴的且 \(\lambda\in R\)。结论于是由 IV 第 248 页引理 5 得出。
+
+推论。 --- 设 \(u\) 是 E 上的自伴部分算子，\(v\) 是 E 的紧埃尔米特自同态。有 \(\mathrm{Sp}_{\mathrm{e}}(u + v) = \mathrm{Sp}_{\mathrm{e}}(u)\)。
+
+这立即由定理得出。
+
+\subsection{扰动}
+
+本条中，E 是一个复希尔伯特空间。
+
+若 \(u\) 是 E 上的自伴部分算子且 \(v \in \mathcal{L}(\mathrm{E})\) 是埃尔米特自同态，则 \(u + v\) 是自伴的（参见 IV，第 236 页）。当 \(v\) 是对称部分算子时，一般并非如此（IV，第 347 页习题 9）。然而，我们将在本条中得到这类的正面结果。
+
+定义 11. --- 设 u 是 E 上的部分算子。如果 dom(u) ⊂ dom(v)，且 v 通过限制到该子空间定义了从 \(E_{u}\) 到 E 的连续线性映射，则称 E 上的部分算子 v 相对于 u 有界。
+
+设 u 是 E 上的部分算子，v 是相对于 u 有界的部分算子。存在实数 m，使得
+
+\[
+\| v (x) \| \leqslant m (\| x \| + \| u (x) \|)
+\]
+
+对所有 \(x \in \text{dom}(u)\) 都成立。v 关于 u 的相对范数记为 \(\|v\|_{u}\)，它是满足以下条件的实数 \(a \geqslant 0\) 的下界：存在实数 b，使得
+
+\[
+\| v (x) \| \leqslant a \| u (x) \| + b \| x \|
+\]
+
+对所有 \(x \in \text{dom}(u)\) 都成立。因此，v 的相对范数小于 v 限制到空间 \(E_{u}\) 上所得映射的范数。
+
+注。 --- 设 u 是 E 上的部分算子。每个自同态 \(v \in \mathcal{L}(\mathrm{E})\) 都相对于 u 有界，且其相对范数为零，因为有 \(\|v(x)\| \leqslant \|v\|\|x\|\) 对所有 \(x \in \operatorname{dom}(u)\) 都成立，这使我们可以在上面的不等式中取 a = 0。
+
+定理 5（加藤–雷利希）。— 设 u 是 E 上的自伴部分算子，v 是相对于 u 有界的对称部分算子。若相对范数 \(\|v\|_{u}\) 为 \(< 1\)，则定义域为 dom(u) 的部分算子 \(u + v\) 是自伴的。
+
+由于 \(\| v \|_u < 1\)，按定义存在正实数 \(a\) 和 \(b\)，使得 \(a < 1\)，且 \(\| v(x) \| \leqslant a \| u(x) \| + b \| x \|\) 对所有 \(x \in \text{dom}(u)\) 都成立。
+
+令 \(t \in R^{*}\)。置 \(w_{t} = v \circ \mathrm{R}(u, it)\)。有 \(\operatorname{dom}(w_{t}) = E\)，因为 \(\mathrm{R}(u, it)\) 的像包含于 u 的定义域，而按假设 u 的定义域包含于 v 的定义域。设 \(x \in \operatorname{dom}(u)\)。由于 u 是自伴的，有
+
+\[
+\begin{array}{c} \| (i t - u) x \| ^ {2} = \| i t x \| ^ {2} + \| u (x) \| ^ {2} - i t \langle x | u (x) \rangle + i t \langle u (x) | x \rangle \\ = | t | ^ {2} \| x \| ^ {2} + \| u (x) \| ^ {2}, \end{array}
+\]
+
+从而有不等式 \(\|u(x)\|\leqslant\|(it-u)x\|\) 和 \(\|x\|\leqslant|t|^{-1}\|(it-u)x\|\)。于是得到
+
+\[
+\| v (x) \| \leqslant (a + b | t | ^ {- 1}) \| (i t - u) x \|.
+\]
+
+特别地，取 \(x = \mathrm{R}(u, it)y\)，其中 \(y \in \mathrm{E}\)；得到
+
+\[
+\| w _ {t} (y) \| \leqslant (a + b | t | ^ {- 1}) \| y \|.
+\]
+
+由此得到 \(w_{t}\in\mathcal{L}(\mathrm{E})\)，且 \(\|w_{t}\|\leqslant a+|t|^{-1}b\)。
+
+由于 \(a < 1\)，存在 \(t \in \mathbf{R}_{+}^{*}\)，使得 \(a + b|t|^{-1} < 1\)。于是 \(\|w_{t}\| < 1\) 且 \(\|w_{-t}\| < 1\)；因此 E 的自同态 \(1_{\mathrm{E}} - w_{t}\) 和 \(1_{\mathrm{E}} - w_{-t}\) 都可逆（I，第 22 页命题 2）。由于有公式 \((1_{\mathrm{E}} - w_{t}) \circ (it - u) = it - (u + v)\)，这说明 \(u + v - it\) 是满射；同样，部分算子 \(u + v + it\) 是满射。因此 \(u + v\) 是自伴的（IV，第 240 页命题 11）。
+
+\subsection{具有紧预解式的算子}
+
+本条中，E 表示一个无限维复希尔伯特空间。
+
+命题 19. --- 设 u 是 E 上的自伴部分算子。以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  存在 E 的一个标准正交基 \(\mathrm{B} = (e_{j})_{j \in \mathrm{J}}\)，使得 u 在基 B 中是对角的，并且 u 的特征值族的绝对值沿 J 的有限子集补集滤子趋于无穷；
+\item
+  对每个 \(\lambda\)（属于 \(u\) 的预解集），预解式 \(\mathrm{R}(u,\lambda)\) 都是紧的；
+\item
+  存在复数 \(\lambda\) 属于 \(u\) 的预解集，使得预解式 \(\mathrm{R}(u,\lambda)\) 是紧的；
+\item
+  u 的谱与 u 的敏感谱重合。
+\end{enumerate}
+
+假设 (i) 成立，并令 \((\lambda_{j})_{j\in\mathrm{J}}\) 为 u 的特征值族。令 \(\mu\) 为 J 上的计数测度。u 的谱是该族的 \(\mu\)-本质像（IV，第 252 页命题 22），即该族 \((\lambda_{j})\) 的值集。对每个 \(\lambda\notin\mathrm{Sp}(u)\)，预解式 \(\mathrm{R}(u,\lambda)\) 在基 B 中是对角的，其特征值族为 \(((\lambda-\lambda_{j})^{-1})_{j\in\mathrm{J}}\)（同上）。由于该族趋于 0，自同态 \(\mathrm{R}(u,\lambda)\) 是紧的（IV，第 148 页命题 2(iii)）。这证明了 (i) 蕴含 (ii)。
+
+由于 \(u\) 的预解集非空（参见 IV，第 248 页命题 17），根据 IV 第 245 页公式 (8) 和 III 第 5 页命题 3，性质 (ii) 与 (iii) 等价。
+
+由于 \(\mathrm{R}(u,\lambda)\) 在 \(\lambda\notin\mathrm{Sp}(u)\) 时是正规的（IV，第 247 页命题 16），根据 IV 第 247 页命题 15 和 III 第 90 页命题 5，条件 (iii) 蕴含 (iv)。
+
+最后证明 (iv) 蕴含 (i)。令 \(\mathcal{O}\) 为由 \(u\) 的特征向量组成的 E 的标准正交子集的集合。按包含关系排序的集合 \(\mathcal{O}\) 具有有限特征（E，III，第 34 页，定义 2），因为 O 属于 \(\mathcal{O}\) 当且仅当由 O 中至多两个元素组成的集合属于 \(\mathcal{O}\)。根据 E，III，第 35 页定理 1，存在极大元 O，且 O 属于 \(\mathcal{O}\)。令 F 为由 O 生成的 E 的闭子空间。对 \(e \in O\)，存在唯一的 \(\lambda(e) \in \mathbf{R}\)，使得 \(u(e) = \lambda(e)e\)（IV，第 248 页命题 17）。
+
+ 映射 \(\lambda\) 从 O 到 \(\mathbf{R}\) 的值集与算子 \(u\) 的谱重合。事实上，一方面该集合包含于算子 \(u\) 的谱；另一方面，若存在 \(\lambda_0 \in \mathrm{Sp}(u)\) 不是 \(\lambda\) 的值，则根据假设 \(\lambda_0\) 是算子 \(u\) 的特征值。存在一个范数为 1 的向量 \(e \in \mathrm{dom}(u)\)，使得 \(u(e) = \lambda_0 e\) 且 \(e \notin \mathrm{O}\)；子集 \(\mathrm{O} \cup \{e\}\) 是标准正交的（因为算子 \(u\) 的对应于不同特征值的特征空间彼此正交，这是 IV 第 248 页命题 17 的推论中的断言 \(b\)），故它属于 \(\mathcal{O}\)，这与 O 的极大性矛盾。
+
+假设 \(F \neq E\)。则 \(F^{\circ}\) 非零。E 的自同态 \(\mathrm{R}(u,i)\) 是正规的（IV，第 247 页命题 16）。它使 E 的子空间 \(F^{\circ}\) 稳定（I，第 135 页引理 4）。令 v 为 \(F^{\circ}\) 的自同态，由 \(\mathrm{R}(u,i)\) 限制到子空间得到。它是 \(F^{\circ}\) 的连续正规自同态（同上），且其谱包含于 \(\mathrm{R}(u,i)\) 的谱中。由于 \(F^{\circ}\) 非零，v 的谱非空（I，第 26 页推论 1）。此外，v 的谱不只含 0，因为正规自同态 v 非零（I，第 110 页例 1）。取 \(s \in \mathrm{Sp}(v) - \{0\}\)。由于 s 属于 \(\mathrm{R}(u,i)\) 的谱，存在 \(e \in O\)，使得 \(s = (i - \lambda(e))^{-1}\)，且 s 是 \(\mathrm{R}(u,i)\) 的特征值（IV，第 247 页命题 15，a）。由于 s 非零，根据假设它是 \(\mathrm{Sp}(\mathrm{R}(u,i))\) 的孤立点，因而也是 \(\mathrm{Sp}(v)\) 的孤立点。因此，s 是 v 的特征值（I，第 134 页命题 5，c）。令 \(e \in F^{\circ}\) 为 v 的范数为 1 的特征向量；它也是 u 的特征向量（IV，第 247 页命题 15，b），而集合 \(O \cup \{e\}\) 与 O 在 O 中极大这一事实矛盾。因此 F = E。
+
+因此，O 中元素组成的族是 E 的一个由 u 的特征向量组成的标准正交基。u 的谱在 R 中是闭的，敏感谱是离散的；由于这两个集合重合，对每个 R > 0，满足 \(\lambda \in \mathrm{Sp}(u)\) 且 \(|\lambda| \leqslant R\) 的元素集合是紧的，因而是有限的。因此，u 的特征值绝对值族沿 O 的有限子集补集滤子趋于无穷。故 (iv) 蕴含 (i)。
+
+定义 12. --- 设 u 是 E 上的自伴部分算子。如果命题 19 的等价条件成立，则称 u 具有紧预解式。
+
+命题 20. --- 设 u 是 E 上的自伴部分算子。u 具有紧预解式，当且仅当希尔伯特空间 \(E_{u}\) 到 E 的典范嵌入 j 是紧的。
+
+假设 u 具有紧预解式。存在 \(\lambda \notin \operatorname{Sp}(u)\)，使得 \(\mathrm{R}(u, \lambda)\) 是紧的（命题 19(iii)）。令 B 为希尔伯特空间 \(E_{u}\) 的单位球。由于 u 是从 \(E_{u}\) 到 E 的连续线性映射，E 的子集 \(\mathrm{B}' = (\lambda 1_{\mathrm{E}} - u)(\mathrm{B})\) 有界。由于 \(\mathrm{R}(u, \lambda)\) 是紧的，子集 \(\mathrm{B} = \mathrm{R}(u, \lambda)(\mathrm{B}')\) 在 E 中相对紧（III，第 2 页注 1）。这证明了 j 是紧的。
+
+ 反之，假设线性映射 \(j\) 是紧的。复数 \(i\) 属于 \(u\) 的预解集（IV，第 248 页命题 17）。有 \(u \circ \mathrm{R}(u, i) = -1_{\mathrm{E}} + i\mathrm{R}(u, i)\)。令 B 为 E 的单位球。对每个 \(x \in \mathrm{B}\)，有
+
+\[
+\| u \circ \mathrm{R} (u, i) (x) \| = \| - x + i \mathrm{R} (u, i) (x) \| \leqslant 1 + \| \mathrm{R} (u, i) \|,
+\]
+
+从而
+
+\[
+\begin{array}{r l} & {\| \mathrm{R} (u, i) x \| _ {u} ^ {2} = \| \mathrm{R} (u, i) x \| ^ {2} + \| u \circ \mathrm{R} (u, i) x \| ^ {2}} \\ & {\qquad \leqslant \| \mathrm{R} (u, i) \| ^ {2} + (1 + \| \mathrm{R} (u, i) \|) ^ {2}.} \end{array}
+\]
+
+因此，B 在 \(R(u,i)\) 下的像 C 在 \(E_{u}\) 中有界。由于按假设 j 是紧的，集合 \(C = j(C)\) 在 E 中相对紧（III，同上）。所以预解式 \(R(u,i)\) 是紧的，且 u 具有紧预解式（命题 19(iii)）。
+
+推论。 --- 设 q 是 E 上的闭正部分形式，u 是表示 q 的正自伴算子。以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  部分算子 u 具有紧预解式；
+\item
+  E 的正自同态 \(\sqrt{(1_{\mathrm{E}} + u)^{-1}} = (1_{\mathrm{E}} + u)^{-1 / 2}\) 是紧的；
+\item
+  希尔伯特空间 \(E_{q}\) 到 E 的典范嵌入 j（IV，第 292 页定义 9）是紧的。
+\end{enumerate}
+
+由于 u 是正的，实数 -1 属于 u 的预解集（IV，第 248 页命题 17），故正自同态 \(v = \sqrt{(1_{\mathrm{E}} + u)^{-1}}\) 有定义，并且根据函数演算有 \(v = (1_{\mathrm{E}} + u)^{-1/2}\)。
+
+自同态 \(v\) 是紧的，当且仅当 \(v^2 = (1_{\mathrm{E}} + u)^{-1}\) 是紧的（III，第 91 页命题 6），也就是当且仅当算子 \(u\) 具有紧预解式（命题 19(iii)）。这证明了条件 (i) 和 (ii) 等价。
+
+假设自同态 \(v\) 是紧的。令 B 为希尔伯特空间 \(\mathrm{E}_q\) 的单位球。由于 \((1_{\mathrm{E}} + u)^{1/2}\) 是从 \(\mathrm{E}_q\) 到 E 的连续线性映射（IV，第 294 页定理 3 的推论），E 的子集 \(\mathrm{B}' = (1_{\mathrm{E}} + u)^{1/2}(\mathrm{B})\) 有界，故子集 \(j(\mathrm{B}) = \mathrm{B} = v(\mathrm{B}')\) 在 E 中相对紧（III，第 2 页注 1）。这证明了 \(j\) 是紧的。因此 (ii) 蕴含 (iii)。
+
+线性映射 \(\widetilde{v}\colon x\mapsto(1_{\mathrm{E}}+u)^{-1/2}(x)\) 从 E 到 \(\mathrm{E}_{q}\) 定义良好且为等距映射（IV 第 294 页定理 3 的推论）。由于 \(v=j\circ\widetilde{v}\)，条件 (iii) 蕴含 (ii)（III，第 5 页命题 3）。
+
+例。 --- 设 \(n \in N\)。令 U 为 \(R^{n}\) 的一个开子集。赋予 U 以勒贝格测度，记为 \(\mu\)。令 \(\Delta\) 为 U 上的数量微分算子 \(-\sum_{i=1}^{n}\partial_{i}^{2}\)。部分算子 \(\Delta_{-}\) 的定义域为 \(\mathcal{D}(U)\)，由 \(\varphi \mapsto \Delta(\varphi)\) 定义；它是可闭的（IV，第 242 页命题 13）且是对称的（IV，第 243 页）。它是正的，因为对每个 \(\varphi \in \mathcal{D}(U)\)，有
+
+\[
+\begin{array}{r l} & {\langle \varphi | \Delta_ {-} (\varphi) \rangle = \int_ {\mathrm{U}} \overline {{\varphi}} \Delta (\varphi) d \mu = - \sum_ {i = 1} ^ {n} \int_ {\mathrm{U}} \overline {{\varphi}} \partial_ {i} ^ {2} \varphi d \mu} \\ & {\qquad = \sum_ {i = 1} ^ {n} \int_ {\mathrm{U}} \overline {{\partial_ {i} \varphi}} \partial_ {i} \varphi d \mu = \int_ {\mathrm{U}} \sum_ {i = 1} ^ {n} | \partial_ {i} \varphi | ^ {2} d \mu \geqslant 0.} \end{array}
+\]
+
+记 \(\Delta_{D}\) 为正对称部分算子 \(\Delta_{-}\) 的弗里德里希斯扩张（IV，第 295 页，例）；它是 U 上的拉普拉斯算子，称为 U 上的狄利克雷拉普拉斯算子。
+
+令 q 为与 \(\Delta_{D}\) 相关的正部分形式。q 的定义域是 \(\mathcal{D}(U)\) 关于正定埃尔米特形式的希尔伯特空间完备化
+
+该形式定义为
+
+\[
+(\varphi_ {1}, \varphi_ {2}) \mapsto \int_ {\mathrm{U}} \overline {{\varphi}} _ {1} \varphi_ {2} + \sum_ {i = 1} ^ {n} \int_ {\mathrm{U}} \overline {{\partial_ {i} \varphi_ {1}}} \partial_ {i} \varphi_ {2}
+\]
+
+对所有 \((\varphi_{1},\varphi_{2})\in\mathcal{D}(\mathrm{U})\times\mathcal{D}(\mathrm{U})\) 都成立。换言之，\(q\) 的定义域是索伯列夫空间 \(\mathrm{H}_{0}^{1}(\mathrm{U})\)（IV 第 221 页第 14 号）。
+
+*假设 U 有界。典范嵌入 \(\mathrm{H}_0^1 (\mathrm{U})\) 到 \(\mathrm{L}^2 (\mathrm{U})\) 是紧的；因此 U 上的狄利克雷拉普拉斯算子是具有紧预解式的算子（命题 20 的推论）。由于希尔伯特空间 \(\mathrm{H}_0^1 (\mathrm{U})\) 是可数型的（IV，第 222 页命题 20），且 \(\Delta_{\mathrm{D}}\) 的像是无限维的，存在一个递增的实数序列 \((\lambda_n)_{n\geqslant 0}\)，其趋于 \(+\infty\)，以及一个标准正交基 \((f_n)_{n\in \mathbf{N}}\)，它是 \(\mathrm{L}^2 (\mathrm{U})\) 的基，其元素属于 \(\Delta_{\mathrm{D}}\) 的定义域，并满足 \(\Delta_{\mathrm{D}}(f_n) = \lambda_n f_n\) 对所有 \(n\in \mathbf{N}\) 都成立。可以证明（“外尔定律”），当 T 趋于 \(+\infty\) 时，有
+
+\[
+\sum_{\substack{n\in \mathbf{N}\\ \lambda_{n}\leqslant \mathrm{T}}}1\sim \frac{c_{n}}{(2\pi)^{n}} m\mathrm{T}^{n / 2}
+\]
+
+其中 \(c_{n} = \pi^{n/2}/\Gamma(1 + n/2)\) 是 \(R^{n}\) 中单位球的体积（INT，第 V 卷，第 101 页，第 8 节第 7 号），而 \(m > 0\) 是 U 的勒贝格测度。*
+
+\specialchapter{习题}
+
+\exercisesection{}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  设 \(E = \ell_{\mathbf{C}}^{2}(\mathbf{N})\)，令 \(u \in \mathcal{L}(\mathrm{E})\) 为满足 \(u(x_{0}, \ldots, x_{n}, \ldots) = (0, x_{0}, \ldots, x_{n}, \ldots)\) 的自同态，其中该关系对 E 中所有 \((x_{n})_{n \in \mathbf{N}}\) 都成立。令 \((e_{n})\) 为 E 的标准正交基。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个 \(v \in \mathcal{L}(\mathrm{E})\) 满足 \(\|v\| < 1/2\)，向量 \(e_{0}\) 不在 \(u + v\) 的像的闭包中。
+\item
+  \(\mathcal{L}(\mathrm{E})\) 中以 u 为中心、半径为 1/2 的开球不包含 E 的任何可对角化自同态。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 E 是复希尔伯特空间。直接证明 E 的自同态 \(u\) 是弗雷德霍姆自同态，当且仅当 \(\pi(u)\) 在 \(\mathcal{C}alk(E)\) 中可逆（阿特金森定理）。（使用紧算子的谱性质，参见 IV 第 146 页第 1 节。）
+\item
+  设 E 是复希尔伯特空间，\(\mathrm{B}=(e_{i})_{i\in\mathrm{I}}\) 是 E 的标准正交基。对每个 \(i\in I\)，记 \(p_{i}\) 为像为 \(Ce_{i}\) 的正交投影。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 K 是 E 的相对紧子集。对每个 \(\varepsilon > 0\)，存在 I 的有限子集 J，使得对每个 \(x \in \mathbf{K}\)，都有 \(\|x - \sum_{i \in \mathbf{J}} p_j(x)\| \leqslant \varepsilon\)。
+\item
+  设 \(u \in \mathcal{D}_{\mathrm{B}}(\mathrm{E})\)，并记其特征值族为 \(\lambda = (\lambda_{i})_{i \in \mathrm{I}}\)。族 \((\lambda_{i} p_{i})\) 在赋予相对紧收敛拓扑的 \(\mathcal{L}(\mathrm{E})\) 中可求和，且其和等于 u（参见 IV 第 147 页命题 1）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\item
+  设 E 是无限维复希尔伯特空间。存在 E 的不是有限迹的紧自同态。
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+  设 \(E = L^{2}([0,1], \mu)\)，其中 \(\mu\) 是勒贝格测度。代数 \(L^{\infty}([0,1], \mu)\) 在如下映射下的像 A 是 \(\mathcal{L}(E)\) 的极大交换子代数：该映射把 f 对应到乘以 f 的自同态；A 不具有某个 E 的标准正交基 B 所对应的 \(\mathcal{D}_{\mathrm{B}}(\mathrm{E})\) 形式。（验证代数 A 不含极小投影。）
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 E 是无限维希尔伯特空间。存在 \(\mathcal{L}(\mathrm{E})\) 的极大交换子代数，它不是对于 E 的某个标准正交基 B 而具有 \(\mathcal{D}_{\mathrm{B}}(\mathrm{E})\) 的形式。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  设 E 是复希尔伯特空间。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 u 是 E 的紧正规自同态。E 的每个在 u 下不变的闭子空间也在 \(u^{*}\) 下不变。
+\item
+  若 E 无限维，则存在 E 的正规自同态 u 和闭子空间 \(F \subset E\)，使得：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  有 \(u(\mathrm{F}) \subset \mathrm{F}\)；
+\item
+  空间 F 不是 \(u^{*}\)-不变的；
+\item
+  空间 F° 不是在 u 下不变的；
+\item
+  由 \(u\) 通过限制到子空间在 F 上诱导的自同态不是正规的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  本习题的目标是给出 IV 第 149 页定理 1 的一个更直接的证明。设 E 是无限维复希尔伯特空间，u 是 E 的紧正规自同态。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明，对每个非零复数 \(\lambda\)，特征空间 \(\operatorname{Ker}(u - \lambda 1_{\mathrm{E}})\) 是有限维的。
+\item
+  假设 \(u\) 是埃尔米特的。证明 E 中存在 \(x_0 \neq 0\)，使得
+\end{enumerate}
+
+\[
+\frac {\| u (x _ {0}) \| ^ {2}}{\| x _ {0} \| ^ {2}} = \sup _ {x \in \mathrm{E} - \{0 \}} \frac {\| u (x) \| ^ {2}}{\| x \| ^ {2}}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  证明 \(x_{0}\) 是 \(u\) 关于某个特征值 \(\lambda\) 的特征向量，且 \(|\lambda| = \|u\|\)。
+\item
+  证明存在一个可数集 I、E 中的标准正交族 \((e_{i})_{i\in\mathrm{I}}\) 以及实数族 \((\lambda_{i})_{i\in\mathrm{I}}\)，使得
+\end{enumerate}
+
+\[
+u (x) = \sum_ {i \in I} \lambda_ {i} \langle e _ {i} | x \rangle e _ {i}
+\]
+
+对所有 \(x \in E\) 都成立。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  将结论推广到 u 紧且正规的情形。（写成 \(u = u_{1} + iu_{2}\)，其中 \(u_{1}\) 和 \(u_{2}\) 是紧的埃尔米特自同态且彼此可交换。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  我们赋予群 R/Z 以其归一化的哈尔测度 \(\mu\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(h \in \mathcal{L}^{2}(\mathbf{R}/\mathbf{Z})\)。对 \(f \in \mathcal{L}^{2}(\mathbf{R}/\mathbf{Z})\)，按下式在 R/Z 上定义函数 \(\mathrm{C}_{h}(f)\)：
+\end{enumerate}
+
+\[
+\mathrm{C} _ {h} (f) (x) = \int_ {\mathbf {R} / \mathbf {Z}} f (t) h (x - t) d \mu (t).
+\]
+
+映射 \(f \mapsto \mathrm{C}_h(f)\) 是 \(\mathcal{L}^2(\mathbf{R}/\mathbf{Z})\) 的连续自同态，并通过取商定义 \(\mathrm{L}^2(\mathbf{R}/\mathbf{Z})\) 的紧正规自同态。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  确定 \(C_{h}\) 的谱以及该谱中各元素的谱重数。（将 h 展开为傅里叶级数。）
+\item
+  存在 \(h \in \mathcal{C}(\mathbf{R}/\mathbf{Z})\)，使得 \(C_{h}\) 不是有限迹的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  记 E 为复希尔伯特空间 \(L^{2}([0,1])\)，其元素是在 \([0,1]\) 上关于勒贝格测度 \(\mu\) 平方可积的函数。
+\end{enumerate}
+
+令 \(u_{0} \in \mathcal{L}(E)\) 为 E 上满足下述条件的沃尔泰拉自同态：
+
+\[
+u _ {0} (f) (x) = \int_ {[ 0, x ]} f (t) d \mu (t)
+\]
+
+对所有 \(f \in \mathrm{L}^2([0,1])\) 以及几乎所有 \(x \in [0,1]\) 都成立。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  自同态 \(u_{0}\) 是紧的且 \(\operatorname{Sp}(u_{0})=\{0\}\)。
+\item
+  自同态 \(u_0^* u_0\) 具有有限迹；计算其迹并由此求出级数
+\end{enumerate}
+
+\[
+\sum_ {n = 1} ^ {+ \infty} \frac {1}{n ^ {2}}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  令 \(v_{0}\) 为 E 上由下式定义的秩 1 自同态
+\end{enumerate}
+
+\[
+v _ {0} (f) = \left(\int_ {0} ^ {1} f (t) d \mu (t)\right) \cdot 1,
+\]
+
+其中 1 表示常值函数 1 的等价类。令 \(u = u_0 - v_0\)。证明 \(u\) 是希尔伯特–施密特算子，并计算满足下式的核 N：
+
+\[
+u (f) (x) = \int_ {0} ^ {1} \mathrm{N} (x, y) f (y) d \mu (y)
+\]
+
+对 \(f \in \mathrm{E}\) 和几乎所有 \(x \in [0,1]\) 都成立。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  确定 u 的特征值及其谱重数。（计算 \(u(e_{n})\)，其中 \(e_{n}(t) = e^{2i\pi nt}\) 对所有 \(n \in Z\) 都成立。）
+\item
+  计算 \(u^{*}u\) 的迹，并再次求出通项为 \(1/n^{2}\)（\(n \geqslant 1\)）的级数的值。
+\item
+  将这些论证推广，证明若 \(k \geqslant 1\) 是严格正整数，则
+\end{enumerate}
+
+\[
+\sum_ {n = 1} ^ {+ \infty} \frac {1}{n ^ {2 k}} \in \pi^ {2 k} {\bf Q} ^ {*}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  设 E 是复希尔伯特空间。令 A 为 \(\mathcal{L}(\mathrm{E})\) 的星子代数。假设 A 在 E 中的表示是不可约的，且 A 含有非零紧自同态。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  星子代数 A 含有非零有限秩投影。（证明 A 含有非零紧埃尔米特自同态，并应用函数演算。）
+\item
+  星子代数 A 含有秩 1 投影。（若 \(p \in \mathrm{A}\) 是最小秩的非零投影，证明代数 \(p\mathrm{A}p\) 包含于 \(\mathbf{C}p\)。）
+\item
+  从而 A 含有 \(\mathcal{L}^{\mathrm{c}}(\mathrm{E})\)。
+\item
+  反之，\(\mathcal{L}(\mathrm{E})\) 的每个含有 \(\mathcal{L}^{\mathrm{c}}(\mathrm{E})\) 的星子代数都是不可约的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  设 E 是复希尔伯特空间。令 \(A \subset \mathcal{L}(\mathrm{E})\) 为紧自同态的集合，使其满足 \(u \circ v = v \circ u\)：A 中每一对元素 \((u, v)\) 都满足此关系，且 \(u^{*} \in A\) 对所有 \(u \in A\) 成立。
+\end{enumerate}
+
+存在一个可数标准正交族 \((e_i)_{i\in \mathrm{I}}\) 以及一个映射族 \((\Lambda_i)_{i\in \mathrm{I}}\)，其元素都是 \(\mathrm{A}\to \mathbf{C}\) 的映射，使得
+
+\[
+u (x) = \sum_ {i \in \mathrm{I}} \Lambda_ {i} (u) \langle e _ {i} | x \rangle e _ {i}
+\]
+
+对 A 中的每个元素 u 和 E 中的每个 x 都有。若 A 是 \(\mathcal{L}(\mathrm{E})\) 的含单位元子代数，则 \(\Lambda_{i}\) 对每个 \(i \in I\) 都是 A 的一个特征。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  若 E 是复希尔伯特空间且 u 是 E 的紧正规自同态，证明 u 有循环向量（参见 IV 第 191 页定义 3）当且仅当满足以下条件：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  u 的核为 0；
+\item
+  u 的每个非零特征值的谱重数都等于 1。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  设 E 是可数型复希尔伯特空间，\((e_{n})_{n\in\mathbf{N}}\) 是 E 的标准正交基，u 是 E 的自同态。证明 u 紧，当且仅当
+\end{enumerate}
+
+\[
+\lim _ {n \to + \infty} \sup _ {x \in \{e _ {0}, \dots , e _ {n - 1} \} ^ {\circ} - \{0 \}} \frac {\| u (x) \| ^ {2}}{\| x \| ^ {2}} = 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\item
+  令 \(\mathrm{X} = [0,1]\) 赋以勒贝格测度，并令 \(\mathrm{N}\colon \mathrm{X}\times \mathrm{X}\to \mathbf{R}_{+}\) 满足 \(\mathrm{N}(x,y) = |x - y|\)。自同态 \(u_{\mathrm{N}}\)（作用于 \(\mathrm{L}^2 (\mathrm{X})\)）不是正的。
+\item
+  设 X 是局部紧拓扑空间，\(\mu\) 是 X 上的正有界测度且支撑为 X，并令 \(N \in \mathcal{C}_{b}(X \times X)\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  存在一个自同态 \(u\)，其作用于 \(\mathcal{C}_b(\mathrm{X})\)，使得
+\end{enumerate}
+
+\[
+u (f) (y) = \int_ {\mathrm{X}} \mathrm{N} (x, y) f (x) d \mu (x)
+\]
+
+对每个函数 \(f \in \mathcal{C}_b(\mathrm{X})\) 和每个 \(y \in \mathrm{X}\) 都成立。下文假设 \(u\) 是紧的；例如当空间 \(\mathrm{X}\) 紧时就是如此。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  \(u_{\mathrm{N}}\) 的像包含于 \(\mathcal{C}_b(\mathrm{X})\) 中，且 \(u_{\mathrm{N}}\) 定义了从 \(\mathrm{L}_{\mathbf{C}}^{2}(\mathrm{X})\) 到 \(\mathcal{C}_b(\mathrm{X})\) 的连续线性映射。
+\item
+  设 \(f \in \mathrm{L}_{\mathbf{C}}^{2}(\mathrm{X})\) 且 \(\lambda \in \mathbf{C}^*\)，满足 \(u_{\mathrm{N}}(f) = \lambda f\)。则 \(f \in \mathcal{C}_b(\mathrm{X})\)。
+\end{enumerate}
+
+\(d)\) 存在一个可数族 \((f_i)_{i\in I}\)，其元素属于 \(\mathcal{C}_b(\mathrm{X})\)，以及一个非零实数族 \((\lambda_i)_{i\in I}\)，使得对所有 \(f\in \mathrm{L}_{\mathbf{C}}^2 (\mathrm{X})\)，有
+
+\[
+u (f) = \sum_ {i \in I} \lambda_ {i} \langle f _ {i} | f \rangle f _ {i}
+\]
+
+在 \(\mathcal{C}_b(\mathrm{X})\) 中。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  假设 \(u_{\mathrm{N}}\) 是 \(\mathrm{L}_{\mathbf{C}}^{2}(\mathrm{X})\) 的正自同态。对每个 \(i \in \mathrm{I}\)，记 \(h_i \in \mathcal{C}_b(\mathrm{X} \times \mathrm{X})\) 为由 \(h_i(x,y) = \overline{f_i(x)} f_i(y)\) 定义的函数。则
+\end{enumerate}
+
+\[
+N = \sum_ {i \in I} \lambda_ {i} h _ {i}
+\]
+
+在赋予紧收敛拓扑的 \(\mathcal{C}(\mathrm{X}\times\mathrm{X})\) 中。（使用迪尼定理（TG，第 X 卷，第 34 页，定理 1）证明该级数收敛，然后证明等式。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  令 \(\mathrm{X} = [0,1]\) 赋以勒贝格测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对序列 \((f_n)_{n\in \mathbf{N}}\)（其元素是 X 上的连续函数，且在 \(\mathrm{L}_{\mathbf{C}}^2 (\mathrm{X})\) 中标准正交），存在核 \(k\in \mathcal{C}(\mathrm{X}\times \mathrm{X})\)，使得
+\item
+  自同态 \(u_{k}\)（作用于 \(\mathrm{L}_{\mathbf{C}}^{2}(\mathrm{X})\)）是正的；
+\item
+  对每个 \(n \in \mathbf{N}\)，函数 \(f_n\) 是 \(u_k\) 的特征函数，其特征值非零；
+\item
+  族 \((f_n)\) 是自同态 \(u_k\) 的像的一个基。
+\item
+  存在核 \(k \in \mathcal{C}(\mathrm{X} \times \mathrm{X})\) 以及特征函数标准正交族 \((f_n)\)，这些是自同态 \(u_k\)（作用于 \(\mathrm{L}_{\mathbf{C}}^2(\mathrm{X})\)）的有界特征函数，使得序列 \((\|f_n\|_\infty)\) 无界。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\item
+  设 E、F 是希尔伯特空间。双线性映射 \((u,v)\mapsto\) \(\mathrm{Tr}(uv)\) 从巴拿赫空间 \(\mathcal{L}_1(\mathrm{E};\mathrm{F})'\) 到 \(\mathcal{L}(\mathrm{F};\mathrm{E})\) 定义了一个等距同构。
+\item
+  设 E 是复希尔伯特空间，令 \(I_{E}\) 为 IV 第 151 页第 3 号中定义的集合。
+\end{enumerate}
+
+令 \(n \in I_{E}\)。令 F 为复希尔伯特空间。映射 \(u \mapsto \lambda_{n}(|u|)\) 从 \(\mathcal{L}^{c}(E;F)\) 到 \(R_{+}\) 是连续的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{18}
+\item
+  保持 IV 第 161 页引理 5 的记号。证明若 \(f\) 的像包含于 \(\mathbf{R}\)，且 \(f\) 严格凸、\(\varrho_n > 0\)，则不等式 (6) 中取等号，当且仅当 \(a_i = b_i\) 对 \(0 \leqslant i \leqslant n\) 成立。
+\item
+  设 E 是预希尔伯特空间，F 是巴拿赫空间，且 \(u: E \to F\) 是线性映射。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 u 是紧线性映射，当且仅当 \(\|u(e_{n})\|\to0\) 对 E 中的每个标准正交序列 \((e_{n})\) 都成立。（为证明充分性，使用 TG，第 IX 卷，第 20 页命题 14。）
+\item
+  假设 E 是可数型希尔伯特空间且 F=E。存在 E 的一个标准正交基 \((e_{n})_{n\in\mathbf{N}}\)，使 \(\|u(e_{n})\|\to0\)，其充要条件是 u 不是弗雷德霍姆自同态。
+\item
+  假设 E 是希尔伯特空间且 F=E。若 \(\langle u(e_{n}) | e_{n} \rangle \to 0\) 对 E 的每个标准正交序列 \((e_{n})\) 都成立，则 u 是紧线性映射。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  设 E 是可数型希尔伯特空间。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 A 是 E 中一个沿有限集补集滤子弱收敛于 0 的无限单位向量集。证明存在一个取值于 A 的序列 \((x_{n})_{n\geqslant1}\) 和 E 中的标准正交序列 \((e_{n})_{n\geqslant1}\)，使得 \(\|x_{n}-e_{n}\|\leqslant1/n\) 对所有 \(n\geqslant1\) 都成立。
+\item
+  设 u 是从 E 到 E 的线性映射，不必连续。假设对 E 中每个标准正交序列 \((e_{n})\)，序列 \((u(e_{n}))\) 都弱收敛于 0。证明 u 连续且紧。
+\item
+  设 u 是 E 的自同态。存在 E 的一个标准正交基 \((e_{n})_{n\in\mathbf{N}}\)，使序列 \((u(e_{n}))_{n\in\mathbf{N}}\) 弱收敛于 0，当且仅当不存在 E 的自同态 v，使得 \(v\circ u-1_{E}\) 是紧的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  设 E 是复希尔伯特空间。令 u 和 v 为 E 的正自同态。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  对每个满足 \(0 < p < 1\) 的实数 p 以及每个 \(x \in R_{+}\)，有
+\end{enumerate}
+
+\[
+x ^ {p} = \frac {\sin (p \pi)}{\pi} \int_ {0} ^ {+ \infty} t ^ {p} \left(\frac {1}{t} - \frac {1}{t + x}\right) d t.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  假设 \(u \leqslant v\)。对每个实数 \(p\)，满足 \(0 < p < 1\)，有 \(u^p \leqslant v^p\)。（使用 I 第 119 页引理 14 的 b) 和上一问。）\\
+\item
+  令 \(n \in \mathbf{N}\)。置 \(a = v^{n/2} \circ u^n \circ v^{n/2}\)，且 \(b = (v^{1/2} \circ u \circ v^{1/2})^n\)。若 \(a \leqslant 1_{\mathrm{E}}\)，则 \(b \leqslant 1_{\mathrm{E}}\)。
+\item
+  假设 u 和 v 具有有限迹。对每个整数 \(n \in N\)，有
+\end{enumerate}
+
+\[
+\operatorname{Tr} \left(\left(v ^ {1 / 2} \circ u \circ v ^ {1 / 2}\right) ^ {n}\right) \leqslant \operatorname{Tr} \left(v ^ {n / 2} \circ u ^ {n} \circ v ^ {n / 2}\right).
+\]
+
+（令 \(a\) 和 \(b\) 如问题 \(c\) 所定义；利用 IV 第 161 页引理 5，把问题归结为证明 \(\widehat{\Lambda}^{n}b\) 的最大特征值小于 \(\widehat{\Lambda}^{n}a\) 的最大特征值；以 \(\widehat{\Lambda}^{n}\mathrm{E}\) 替代 E，并以 \(u\)、\(v\) 分别替换为 \(\widehat{\Lambda}^{n}u\)、\(\widehat{\Lambda}^{n}v\)，然后应用上一问。）

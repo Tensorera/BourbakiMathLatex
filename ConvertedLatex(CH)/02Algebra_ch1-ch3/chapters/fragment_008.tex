@@ -1,0 +1,1049 @@
+\subsection{模；向量空间；线性组合}
+
+定义 1. 给定一个环 A，A 上的左模（或左 A-模）是指一个集合 E，连同通过给出以下内容而定义的代数结构：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  E 上的一个交换群律（以下均按加法记法书写）；
+\item
+  一个作用律 \((\alpha, x) \mapsto \alpha \tau x\) ，其算子域为环 A，且满足下列公理：
+\end{enumerate}
+
+\((\mathbf{M}_{\mathbf{I}})\alpha \tau (x + y) = (\alpha \tau x) + (\alpha \tau y)\) 对所有 \(\alpha \in \mathbf{A}, x \in \mathbf{E}, y \in \mathbf{E}\) ；
+
+\((M_{\mathrm{II}}) (\alpha + \beta) \tau x = (\alpha \tau x) + (\beta \tau x) \text{ 对所有 } \alpha \in A, \beta \in A, x \in E;\)
+
+\((M_{\mathrm{III}})\alpha \tau (\beta \tau x) = (\alpha \beta)\tau x\) 对所有 \(\alpha \in A,\beta \in A,x\in E;\)
+
+\((M_{\mathrm{IV}}) \ 1 \tau x = x \ for \ all \ x \in E.\)
+
+公理（M \(_{I}\) ）意味着左 A-模 E 的外合成律关于 E 上的加法是分配的；因此，模是一个带算子的交换群。
+
+如果在定义1中，公理 \((\mathbf{M}_{\mathrm{III}})\) 被替换为
+
+\[
+\left(\mathrm{M} _ {\mathrm{III}} ^ {\prime}\right) \alpha \tau (\beta \tau x) = (\beta \alpha) \tau x for all \alpha \in \mathrm{A}, \beta \in \mathrm{A}, x \in \mathrm{E},
+\]
+
+E 连同如此定义的代数结构是 A 上的右模或右 A-模。
+
+当谈到 A-模（左模或右模）时，环 A 的元素常称为标量。
+
+通常，左 A-模（相应地，右 A-模）的外合成律按乘法记法书写，算子写在左边（相应地，右边）；此时条件 \((\mathbf{M}_{\mathrm{III}})\) 写作 \(\alpha(\beta x) = (\alpha\beta)x\) ，条件 \((\mathbf{M}_{\mathrm{III}}^{\prime})\) 写作 \((x\beta)\alpha = x(\beta\alpha)\) 。
+
+若 \(A^{0}\) 表示 A 的反环（I，§8，第 3 号），则环 A 上的每个右模 E 都是环 \(A^{0}\) 上的左模。由此可知，模的性质的阐述可以系统地只限于左模或只限于右模来进行；在 §§1 与 §§2 中，我们一般对左模给出这种阐述，而当我们说到一个模（不指明是哪一类）时，指的是外合成律按乘法记法书写的左模。当环 A 交换时，关于 A 的右模与左模的概念是相同的。
+
+对于所有 \(\alpha \in \mathbf{A}\) ，映射 \(x \mapsto \alpha x\) 将 A-模 \(\mathbf{E}\) 映入自身，称为以 \(\alpha\) 为位似比的 \(\mathbf{E}\) 的位似（I，§4，第 2 号）；由 \((\mathbf{M}_{\mathbf{I}})\) ，位似是 \(\mathbf{E}\) 的交换群结构（不带算子）的自同态，但一般不是 \(\mathbf{E}\) 上模结构的自同态（I，§4，第 2 号；参见 II，§1，第 2 号和第 13 号）。因此 \(\alpha 0 = 0\) 且 \(\alpha(-x) = -(\alpha x)\) ；若 \(\alpha\) 是 \(\mathbf{A}\) 的一个可逆元素，则位似 \(x \mapsto \alpha x\) 是 \(\mathbf{E}\) 的交换群结构（不带算子）的自同构 ，因为由关系 \(y = \alpha x\) 并根据 \((\mathbf{M}_{\mathbf{IV}})\) 可得 \(x = \alpha^{-1}(\alpha x) = \alpha^{-1}y\) 。
+
+类似地，根据 \((\mathbf{M}_{\mathrm{II}})\) ，对所有 \(x \in E\) ，映射 \(\alpha \mapsto \alpha x\) 是加法群 A 到交换群（不带算子）E 的同态；因此 0x = 0 且 \((- \alpha)x = -(\alpha x)\) ；此外，由 \((\mathbf{M}_{\mathrm{IV}})\) ，对每个整数 \(n \in Z\) ，有 \(n.x = (n.1)x\) 。
+
+当环 A 仅由元素 0 组成时，每个 A-模 E 也仅由元素 0 组成，因为此时 A 中 \(1 = 0\) ，从而对所有 \(x \in \mathbf{E}\) ，有 \(x = 1.x = 0.x = 0\) 。
+
+例。(1) 设 \(\phi\) 是环 A 到环 B 的一个同态；映射 \((a, x) \mapsto \phi(a)x\) （相应地 \((a, x) \mapsto x\phi(a)\) ）将 A × B 映入 B，在 B 上定义了一个左（相应地，右）A-模结构。特别地，若取 \(\phi\) 为 A 上的恒等映射，则在 A 上得到一个典范的左（相应地，右）A-模结构；为避免混淆，具有此结构的集合 A 记作 A \(_s\) （相应地，A \(_d\) ）。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  在交换群 G（按加法记法书写）上，由外合成律 \((n, x) \mapsto n.x\) （I，§3，第 1 号）定义的带算子群结构是有理整数环 Z 上的模结构。
+\item
+  设 E 为按加法记法书写的交换群， \(\mathcal{E}\) 为 E 的自同态环（I，§8，第 3 号：回顾，两个自同态的乘积 fg 按定义是复合自同态 \(f \circ g\) ）。外合成律 \((f, x) \mapsto f(x)\) （介于算子 \(f \in \mathcal{E}\) 与元素 \(x \in E\) 之间）在 E 上定义了一个典范的左 \(\mathcal{E}\)-模结构。
+\end{enumerate}
+
+现在考虑一个环 A，并假设在 E 上给定了一个左（相应地，右）A-模结构；对所有 \(\alpha \in \mathbf{A}\) ，位似 \(h_{\alpha}: x \mapsto \alpha x\) （相应地 \(x \mapsto x\alpha\) ）属于 \(\mathcal{E}\) ；映射 \(\phi: \alpha \mapsto h_{\alpha}\) 是环 A（相应地，反环 \(\mathbf{A}^0\) ）到环 \(\mathcal{E}\) 的同态，且根据定义 \(\alpha x = (\phi(\alpha))(x)\) （相应地 \(x\alpha = (\phi(\alpha))(x)\) ）。反之，给定环同态 \(\phi: \mathbf{A} \to \mathcal{E}\) （相应地 \(\phi: \mathbf{A}^0 \to \mathcal{E}\) ），由上述公式便在 E 上定义了一个左（相应地，右）A-模结构。换言之，在加法群 E 上（其加法律为给定的群律）给定一个左（相应地，右）A-模结构，等价于给定一个环同态 \(\mathbf{A} \to \mathcal{E}\) （相应地 \(\mathbf{A}^0 \to \mathcal{E}\) ）。
+
+定义 2. 域 K 上的左（相应地，右）向量空间是指一个左（相应地，右）K-模。
+
+向量空间的元素有时称为向量。
+
+例。(4) 一个域关于其任意子域既是左向量空间又是右向量空间。
+
+*(5) 三维实数空间 \(\mathbf{R}^3\) 是关于实数域 \(\mathbf{R}\) 的向量空间，乘积 \(tx\) （ \(t\) 为实数， \(x\) 为坐标 \(x_1, x_2, x_3\) 的点）是坐标为 \(tx_1, tx_2, tx_3\) 的点。类似地，定义在任意集合 \(\mathbf{F}\) 上的实值函数的集合是关于 \(\mathbf{R}\) 的向量空间，乘积 \(tf\) （ \(t\) 为实数， \(f\) 为函数）是实值函数 \(x \mapsto tf(x)\) 。*
+
+对 A-模 E 的元素的两个有限支集族 \((x_{i})_{i\in I}, (y_{i})_{i\in I}\) （I，§2，第 1 号），下列等式成立：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\sum_ {i \in I} (x _ {i} + y _ {i}) = \sum_ {i \in I} x _ {i} + \sum_ {i \in I} y _ {i}\tag{2}
+\]
+
+\[
+\alpha . \sum_ {i \in I} x _ {i} = \sum_ {i \in I} (\alpha x _ {i}) \quad \text { for   all } \alpha \in A;
+\]
+
+通过取 I 的一个包含 \((x_{i})\) 与 \((y_{i})\) 的支集的有限子集 H，这些等式立即化为关于有限和的相应等式。
+
+定义 3. 称元素 \(x\) （A-模 \(\mathbf{E}\) 的元素）为系数在 \(\mathbf{A}\) 中的、元素族 \((a_{i})_{i\in I}\) （其元素属于 \(\mathbf{E}\) ）的线性组合，如果存在一个族 \((\lambda_{i})_{i\in I}\) ，其元素属于 \(\mathbf{A}\) ，具有有限支集，使得 \(x = \sum_{i\in I}\lambda_{i}a_{i}\) 。
+
+一般地，满足此条件的族 \((\lambda_{i})\) 可以有若干个不同的（参见第 11 号）。
+
+注意，0 是 E 的元素的空族的唯一线性组合（按 I，§2，第 1 号的约定）。
+
+\subsection{线性映射}
+
+定义 4. 设 E 和 F 是关于同一环 A 的两个（左）模。E 到 F 的线性映射（或 A-线性映射，或同态，或 A-同态）是指满足下列条件的任意映射 \(u: \mathbf{E} \to \mathbf{F}\) ：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+u (x + y) = u (x) + u (y) \quad for x \in \mathrm{E}, y \in \mathrm{E};\tag{4G}
+\]
+
+\[
+u (\lambda . x) = \lambda . u (x) \quad for \lambda \in \mathrm{A}, x \in \mathrm{E}.
+\]
+
+如果 E 和 F 是两个右 A-模，则线性映射 \(u: \mathbf{E} \to \mathbf{F}\) 是指满足 (3) 和
+
+\[
+u (x . \lambda) = u (x). \lambda \quad \text { for } \lambda \in \mathrm{A}, x \in \mathrm{E}.\tag{4D}
+\]
+
+注记。当 E 和 F 是两个交换群并被视为环 Z 上的模（第 1 号）时，群 E（不带算子）到群 F（不带算子）的每个同态 u 也是 E 到 F 的线性映射，因为对整数 n \textgreater0 ，关系式 \(u(n.x) = n.u(x)\) 由 \(u(x + y) = u(x) + u(y)\) 对 n 作归纳得出，而对 n = -m \textless{} 0 ，
+
+\[
+u (n. x) = u (- (m. x)) = - u (m. x) = - (m. u (x)) = n. u (x).
+\]
+
+例。(1) 设 E 是一个 A-模，a 是 E 的一个元素；映射 \(\lambda\mapsto\lambda a\) （A-模 \(A_{s}\) 到 E 的映射）是一个线性映射 \(\theta_{a}\) ，使得 \(\theta_{a}(1)=a\) 。
+
+*(2) 设 I 是实数直线 R 的一个开区间，E 是 I 上可微实值函数构成的向量空间，F 是定义在 I 上的所有实值函数构成的向量空间。映射 \(x \mapsto x'\) 将每个可微函数 x 与其导数相关联，是从 E 到 F 的线性映射。*
+
+注意，A-模 E 上的位似 \(x \mapsto \alpha x\) 不一定是线性映射：换言之，关系 \(\alpha(\lambda x) = \lambda(\alpha x)\) 不一定对所有 \(\lambda \in A\) 和 \(x \in E\) 成立。然而当 \(\alpha\) 属于 A 的中心时该关系成立；此时 \(x \mapsto \alpha x\) 称为中心位似（参见第 13 号）。
+
+若 \(u: \mathbf{E} \to \mathbf{F}\) 是线性映射，则对每个族 \((x_{i})_{i \in I}\) （元素取自 \(\mathbf{E}\) ）与每个族 \((\lambda_{i})_{i \in I}\) （元素取自 \(\mathbf{A}\) ），只要族 \((\lambda_{i}x_{i})_{i \in I}\) 的支集有限，便有
+
+\[
+u \left(\sum_ {i \in I} \lambda_ {i} x _ {i}\right) = \sum_ {i \in I} \lambda_ {i} u (x _ {i})\tag{5}
+\]
+
+这由 (3) 和 (4G) 对族 \((\lambda_{i}x_{i})\) 的支集的基数作归纳立即得出。
+
+命题 1. 设 E、F、G 为三个 A-模，u 为 E 到 F 的线性映射，v 为 F 到 G 的线性映射。则复合映射 \(v \circ u\) 是线性的。
+
+命题 2. 设 E、F 为两个 A-模。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  若 \(u: \mathbf{E} \to \mathbf{F}\) 和 \(v: \mathbf{F} \to \mathbf{E}\) 是两个线性映射，使得 \(v \circ u\) 是 \(\mathbf{E}\) 上的恒等映射且 \(u \circ v\) 是 \(\mathbf{F}\) 上的恒等映射，则 \(u\) 是 \(\mathbf{E}\) 到 \(\mathbf{F}\) 上的同构，而 \(v\) 是其逆同构。
+\item
+  每个双射线性映射 \(u: \mathbf{E} \to \mathbf{F}\) 都是 \(\mathbf{E}\) 到 \(\mathbf{F}\) 上的同构。
+\end{enumerate}
+
+这些命题直接由定义 4 得出。
+
+命题 1 和命题 2 表明，线性映射可以取作 A-模结构物种的态射（集合论，IV，§2，第 1 号）；今后我们总假定已作好态射的这一选取。
+
+给定两个左（相应地，右）A-模 E 和 F，用 \(\text{Hom}(E, F)\) 或 \(\text{Hom}_{A}(E, F)\) 表示 E 到 F 的线性映射的集合。
+
+集合 \(\operatorname{Hom}(\mathbf{E},\mathbf{F})\) 是乘积交换群 \(\mathbf{F}^{\mathbf{E}}\) （由 \(\mathbf{E}\) 到 \(\mathbf{F}\) 的全体映射组成）的一个子群，因而是一个交换群（I，§4，第 8 号）；回顾，对于两个元素 \(u\) , \(v\) （属于 \(\mathbf{F}^{\mathbf{E}}\) ）以及所有 \(x\in\mathbf{E}\) ，
+
+\[
+(u + v) (x) = u (x) + v (x), \quad (- u) (x) = - u (x)
+\]
+
+由此立即得出，若 u 和 v 是线性的，则 \(u + v\) 和 -u 也是线性的。若 G 是第三个左（相应地，右）A-模， \(f, f_{1}, f_{2}\) 是 Hom(E, F) 的元素，而 g, \(g_{1}, g_{2}\) 是 Hom(F, G) 的元素，则下列关系式可立即验证：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+g \circ (f _ {1} + f _ {2}) = g \circ f _ {1} + g \circ f _ {2}\tag{7}
+\]
+
+\[
+\left(g _ {1} + g _ {2}\right) \circ f = g _ {1} \circ f + g _ {2} \circ f\tag{8}
+\]
+
+\[
+g \circ (- f) = (- g) \circ f = - (g \circ f).
+\]
+
+特别地，合成律 \((f,g)\mapsto f\circ g\) （ \(\operatorname{Hom}(\mathbf{E},\mathbf{E})\) 上的）与上述加法群结构一起在 \(\operatorname{Hom}(\mathbf{E},\mathbf{E})\) 上定义了一个环结构，其单位元记作 \(1_{E}\) 或 \(Id_{E}\) ，即 E 上的恒等映射；E 到自身的线性映射也称为 A-模 E 的自同态，而环 \(\operatorname{Hom}(\mathbf{E},\mathbf{E})\) 也记作 \(\operatorname{End}(\mathbf{E})\) 或 \(\operatorname{End}_{\mathbf{A}}(\mathbf{E})\) 。A-模 E 的自同构正是 \(\operatorname{End}(\mathbf{E})\) 中的可逆元（命题 2）；它们构成一个乘法群，记作 \(\operatorname{Aut}(\mathbf{E})\) 或 \(\mathbf{GL}(\mathbf{E})\) ，也称为关于 E 的线性群。
+
+由 (6) 和 (7) 可知，对两个 A-模 E, F，Hom(E, F) 具有环 Hom(F, F) 上左模结构与环 Hom(E, E) 上右模结构的典范结构。
+
+设 E, F, E', F' 为四个（左）A-模， \(u: E' \to E\) 和 \(v: F \to F'\) 为 A-线性映射。若将每个元素 \(f \in \text{Hom}(E, F)\) 对应于元素 \(v \circ f \circ u \in \text{Hom}(E', F')\) ，则定义了一个映射
+
+\[
+\operatorname{Hom} (\mathbf {E}, \mathbf {F}) \rightarrow \operatorname{Hom} (\mathbf {E} ^ {\prime}, \mathbf {F} ^ {\prime})
+\]
+
+，它是 \(\mathbf{Z}\) -线性的，记作 \(\operatorname{Hom}(u,v)\) 或 \(\operatorname{Hom}_{\mathbf{A}}(u,v)\) 。若 \(u, u_1, u_2\) 属于 \(\operatorname{Hom}(\mathbf{E}', \mathbf{E})\) ，而 \(v, v_1, v_2\) 属于 \(\operatorname{Hom}(\mathbf{F}, \mathbf{F}')\) ，则
+
+\[
+\left\{ \begin{array}{l} \operatorname{Hom} (u _ {1} + u _ {2}, v) = \operatorname{Hom} (u _ {1}, v) + \operatorname{Hom} (u _ {2}, v) \\ \operatorname{Hom} (u, v _ {1} + v _ {2}) = \operatorname{Hom} (u, v _ {1}) + \operatorname{Hom} (u, v _ {2}) \end{array} \right.\tag{9}
+\]
+
+设 \(\mathbf{E}^{\prime \prime},\mathbf{F}^{\prime \prime}\) 是两个 A-模， \(u^{\prime}:\mathbf{E}^{\prime \prime}\to \mathbf{E}^{\prime}\) 和 \(v^{\prime}:\mathbf{F}^{\prime}\rightarrow \mathbf{F}^{\prime \prime}\) 是线性映射。则
+
+\[
+\operatorname{Hom} \left(u \circ u ^ {\prime}, v ^ {\prime} \circ v\right) = \operatorname{Hom} \left(u ^ {\prime}, v ^ {\prime}\right) \circ \operatorname{Hom} (u, v).\tag{10}
+\]
+
+若 \(u\) 是 \(\mathbf{E}'\) 到 \(\mathbf{E}\) 上的同构，而 \(v\) 是 \(\mathbf{F}\) 到 \(\mathbf{F}'\) 上的同构，则 \(\operatorname{Hom}(u, v)\) 是 \(\operatorname{Hom}(\mathbf{E}, \mathbf{F})\) 到 \(\operatorname{Hom}(\mathbf{E}', \mathbf{F}')\) 上的同构，由 (10)，其逆同构是 \(\operatorname{Hom}(u^{-1}, v^{-1})\) 。
+
+若 \(h\) （相应地 \(k\) ）是 \(\mathbf{E}\) （相应地 \(\mathbf{F}\) ）的一个自同态，则 \(\operatorname{Hom}(h, 1_{\mathbf{F}})\) （相应地 \(\operatorname{Hom}(1_{\mathbf{E}}, k)\) ）就是位似比为 \(h\) （相应地 \(k\) ）的位似，这里所说的位似是关于上文定义的环 \(\operatorname{End}(\mathbf{E})\) （相应地 \(\operatorname{End}(\mathbf{F})\) ）上右（相应地，左）模结构而言的。
+
+\subsection{子模；商模}
+
+设 E 是一个 A-模，M 是 E 的一个子集；要使 E 上的 A-模结构在 M 上诱导出一个 A-模结构，必须且只需 M 是 E 的一个稳定子群（I，§4，第 3 号），因为若如此，则在 M 上诱导出的带算子群结构显然满足公理 (M \(_{II}\) )、(M \(_{III}\) ) 和 (M \(_{IV}\) )；带此结构的 M（或者，滥用说法，集合 M 本身）称为 E 的一个子模；典范单射 M → E 是线性映射。当 E 是向量空间时，其子模称为向量子空间（若不致引起混淆，简称子空间）。
+
+例。(1) 在任意模 E 中，由 0 组成的集合是一个子模（零子模，常滥用记号记作 0）。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(\mathbf{A}\) 是一个环。 \(\mathbf{A}_s\) （相应地 \(\mathbf{A}_d\) ）的子模恰好就是环 \(\mathbf{A}\) 的左理想（相应地，右理想）。
+\item
+  设 E 是一个 A-模，x 是 E 的一个元素，而 a 是 A 的一个左理想。形如 \(\alpha x\) 的元素（其中 \(\alpha\) 遍历 a）组成的集合是 E 的一个子模，记作 ax。
+\item
+  在将交换群 G 视为 Z-模（第 1 号）时，G 的每个子群也都是子模。
+\end{enumerate}
+
+*(5) 设 I 是实直线 \(\mathbf{R}\) 上的一个开区间；在 I 上有定义且连续的实值函数组成的集合 C 是由 I 上有定义的所有实值函数组成的向量空间 \(\mathbf{R}^{\mathrm{I}}\) 的一个向量子空间。类似地，I 上可微函数的集合 D 是 \(\mathbf{C}\) 的一个向量子空间。*
+
+设 E 是一个 A-模。与 E 上的模结构相容（I，§1，第 6 号）的每个等价关系都具有形式 \(x - y \in \mathbf{M}\) ，其中 M 是 E 的一个稳定子群（I，§4，第 4 号），即 E 的一个子模。可以立即验证，商群 E/M（I，§4，第 4 号）上的带算子群结构是一个 A-模结构，在此结构下，典范映射 E → E/M 是线性的；带此结构的 E/M 称为 E 关于子模 M 的商模。向量空间 E 的商模称为 E 的商向量空间（或简称商空间）。
+
+例（6）。环 A 中的每个左理想 a 都定义了商模 \(A_{s}/a\) （左 A-模 \(A_{s}\) 的商模）；滥用记号，这个商模常记作 A/a。
+
+设 E, F 为两个 A-模。由带算子群的一般性质（I，§4，第 5 号）（或直接由定义）可知，若 \(u: \mathbf{E} \to \mathbf{F}\) 是线性映射，则 E 的任意子模在 \(u\) 下的像是 F 的一个子模，而 F 的任意子模在 \(u\) 下的原像是
+
+E 的一个子模。特别地，核 \(N = u^{-1}(0)\) 是 E 的一个子模，而 E 在 u 下的像 \(u(\mathbf{E})\) 是 F 的一个子模（I，§4，第 6 号，命题 7）；滥用说法， \(u(\mathbf{E})\) 称为 u 的像。商模 E/N 也称为 u 的余像，而商模 \(F/u(\mathbf{E})\) 称为 u 的余核。在 u 的典范分解（I，§4，第 5 号）
+
+\[
+u: \mathrm{E} \xrightarrow {p} \mathrm{E} / \mathrm{N} \xrightarrow {v} u (\mathrm{E}) \xrightarrow {i} \mathrm{F}\tag{11}
+\]
+
+v 是 u 的余像到 u 的像上的同构（第 2 号，命题 2）。u 是单射的必要且充分条件是其核为零；u 是满射的必要且充分条件是其余核为零。
+
+u 的核、像、余像和余核分别记作 Ker u、Im u、Coim u、Coker u。
+
+注记。设 M 是 A-模 E 的一个子模， \(\phi: \mathrm{E} \to \mathrm{E} / \mathrm{M}\) 是典范同态。要使 A-线性映射 \(u: \mathrm{E} \to \mathrm{F}\) 具有形式 \(v \circ \phi\) ，其中 \(v\) 是 \(\mathrm{E} / \mathrm{M}\) 到 \(\mathbf{F}\) 中的线性映射，必须且只需 \(\mathrm{M} \subset \operatorname{Ker}(u)\) ；因为，若此条件成立，则关系 \(x - y \in \mathbf{M}\) 蕴含 \(u(x) = u(y)\) ，从而 \(u\) 与该等价关系相容，并且显然映射 \(v: \mathrm{E} / \mathrm{M} \to \mathrm{F}\) （由 \(u\) 通过取商得到的映射）是线性的。
+
+\subsection{正合列}
+
+定义 5. 设 F, G, H 为三个 A-模；设 f 是 F 到 G 中的同态，g 是 G 到 H 中的同态。有序对 \((f, g)\) 称为正合列，如果
+
+\[
+\bar {g} ^ {- 1} (0) = f (\mathbf {F})
+\]
+
+换言之，即 g 的核等于 f 的像。
+
+该图表
+
+\[
+\mathrm{F} \xrightarrow {f} \mathrm{G} \xrightarrow {g} \mathrm{H}\tag{12}
+\]
+
+也称为正合列。
+
+我们类似地考虑由四个 A-模和三个同态构成的图表：
+
+\[
+\mathrm{E} \xrightarrow {f} \mathrm{F} \xrightarrow {g} \mathrm{G} \xrightarrow {h} \mathrm{H}.\tag{13}
+\]
+
+若图表 \(E \xrightarrow{f} F \xrightarrow{g} G\) 是正合的，则称此图表在 F 处正合；若 \(F \xrightarrow{g} G \xrightarrow{h} H\) 是正合的，则称它在 G 处正合。若图表 (13) 在 F 处和 G 处都正合，则简称它是正合的，或称为正合列。具有任意多个项的正合列可类似地定义。
+
+注记。(1) 若有序对 \((f, g)\) 是一个正合列，则 \(g \circ f = 0\) ；但这一性质当然并不刻画正合列，因为它只表明 f 的像包含在 g 的核中。
+
+在下面的陈述中，E, F, G 表示 A-模，0 表示约化为其单位元的 A-模；箭头表示 A-模同态。由于从模 0 到模 E（相应地，从 E 到 0）只有一个同态，故在出现这些同态的正合列中无需给它们命名。
+
+命题 3. (a) 要使
+
+\[
+0 \longrightarrow \mathbf {E} \stackrel {f} {\longrightarrow} \mathbf {F}
+\]
+
+成为正合列，必须且只需 f 是单射。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  要使
+\end{enumerate}
+
+\[
+\mathbf {E} \xrightarrow {f} \mathbf {F} \longrightarrow 0
+\]
+
+成为正合列，必须且只需 \(f\) 是满射。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  要使
+\end{enumerate}
+
+\[
+0 \longrightarrow \mathrm{E} \stackrel {f} {\longrightarrow} \mathrm{F} \longrightarrow 0
+\]
+
+成为正合列，必须且只需 \(f\) 是双射（换言之（第 2 号，命题 2），即 \(f\) 是 \(\mathbf{E}\) 到 \(\mathbf{F}\) 上的同构）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  若 \(\mathbf{F}\) 是 \(\mathbf{E}\) 的一个子模， \(i: \mathbf{F} \to \mathbf{E}\) 是典范单射， \(p: \mathbf{E} \to \mathbf{E} / \mathbf{F}\) 是典范同态，则图表
+\end{enumerate}
+
+\[
+0 \longrightarrow \mathrm{F} \stackrel {i} {\longrightarrow} \mathrm{E} \stackrel {p} {\longrightarrow} \mathrm{E} / \mathrm{F} \longrightarrow 0\tag{14}
+\]
+
+是一个正合列。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  若 \(f: \mathbf{E} \to \mathbf{F}\) 是一个同态，则图表
+\end{enumerate}
+
+\[
+0 \longrightarrow f ^ {- 1} (0) \stackrel {i} {\longrightarrow} \mathrm{E} \stackrel {f} {\longrightarrow} \mathrm{F} \stackrel {p} {\longrightarrow} \mathrm{F} / f (\mathrm{E}) \rightarrow 0
+\]
+
+（其中 i 是典范单射，p 是典范满射）是一个正合列。
+
+该命题直接由定义及第 2 号的命题 2 得出。
+
+注记。(2) 说存在一个正合序列
+
+\[
+0 \longrightarrow \mathrm{E} \stackrel {f} {\longrightarrow} \mathrm{F} \stackrel {g} {\longrightarrow} \mathrm{G} \longrightarrow 0
+\]
+
+意味着 \(f\) 是单射， \(g\) 是满射，并且与 \(g\) 相伴的典范双射是 \(\mathrm{F} / f(\mathbf{E})\) 到 \(\mathbf{G}\) 上的一个同构。也称三元组 \((\mathbf{F}, f, g)\) 是模 \(\mathbf{G}\) 借助模 \(\mathbf{E}\) 的扩张（I，§6，第 7 号）。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  若存在一个 4 项的正合列
+\end{enumerate}
+
+\[
+\mathrm{E} \xrightarrow {f} \mathrm{F} \xrightarrow {g} \mathrm{G} \xrightarrow {h} \mathrm{H}
+\]
+
+则 \(f\) 的余核是 \(\mathrm{F} / f(\mathrm{E}) = \mathrm{F} / g^{-1}(0)\) ，而 \(h\) 的核是 \(g(\mathrm{F})\) ；因此与 \(g\) 相伴的典范双射是一个同构
+
+\[
+\operatorname{Coker} f \cong \operatorname{Ker} h.
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  考虑一个 A-模同态的有序对
+\end{enumerate}
+
+\[
+\mathrm{E} \xrightarrow {f} \mathrm{F} \xrightarrow {g} \mathrm{G}.\tag{15}
+\]
+
+要使图表 (15) 成为正合列，必须且只需存在两个 A-模 S, T 以及同态 \(a:E\to S\) , \(b:S\to F\) , \(c:F\to T\) , \(d:T\to G\) ，使得下列三个序列
+
+\[
+\left\{ \begin{array}{c} \mathrm{E} \xrightarrow {a} \mathrm{S} \longrightarrow 0 \\ 0 \longrightarrow \mathrm{S} \xrightarrow {b} \mathrm{F} \xrightarrow {c} \mathrm{T} \longrightarrow 0 \\ 0 \longrightarrow \mathrm{T} \xrightarrow {d} \mathrm{G} \end{array} \right.\tag{16}
+\]
+
+都是正合的，并且 \(f = b \circ a\) ， \(g = d \circ c\) 。
+
+若 (15) 是正合列，则取 \(\mathbf{S} = f(\mathbf{E}) = \overline{g}^{-1}(0)\) 与 \(\mathbf{T} = g(\mathbf{F})\) ，其中 \(b\) 和 \(d\) 是典范单射，而 \(a\) （相应地 \(c\) ）是与 \(f\) （相应地 \(g\) ）有相同图像的同态。反之，若 \(\mathbf{S}, \mathbf{T}, a, b, c, d\) 满足上述条件，则 \(f(\mathbf{E}) = b(a(\mathbf{E})) = b(\mathbf{S})\) ， \(g^{-1}(0) = c^{-1}(d^{-1}(0)) = c^{-1}(0)\) ，因此 (16) 的正合性表明 \(f(\mathbf{E}) = \overline{g}^{-1}(0)\) 。
+
+在正合列中，当用显式字母表示同态对论证并非必要时，往往可以省略这些字母。
+
+注记。(5) 正合列的定义可立即推广到未必交换的群；此时当然采用乘法记号，并在公式中将 0 换成 1（若不致引起混淆）。命题 3 的 (a)、(b)、(c) 仍然成立，当 F 是 E 的正规子群时 (d) 也成立。注记 2 和命题 3 (e) 在 \(f(\mathrm{E})\) 是 F 的正规子群的条件下成立；注记 3 和注记 4 无需修改即有效。
+
+\subsection{模的积}
+
+设 \((\mathbf{E}_i)_{i\in I}\) 是同一环 A 上的一族模。可以立即验证， \(\mathbf{E}_i\) 上的模结构（I，§4，第 8 号）的乘积是乘积集合 \(\mathbf{E} = \prod_{i\in I}\mathbf{E}_i\) 上的一个 A-模结构。带此结构的集合 E 称为诸模 \(\mathbf{E}_i\) 的积模；若 \(x = (x_i)\) , \(y = (y_i)\) 是 E 的两个元素，则
+
+\[
+\left\{ \begin{array}{l l} x + y = (x _ {i} + y _ {i}) \\ \lambda . x = (\lambda x _ {i}) & \text { for   all } \lambda \in \mathbf {A}. \end{array} \right.\tag{17}
+\]
+
+公式 (17) 表明投影 \(pr_{i}:E\to E_{i}\) 是线性映射；这些映射显然是满射。
+
+回顾，若指标集 I 为空，则乘积集合 \(\prod_{i\in I}E_{i}\) 仅由一个元素组成；此集合上的积模结构即是使这个唯一元素为 0 的那个结构。
+
+命题 4. 设 \(\mathbf{E} = \prod_{i\in I}\mathbf{E}_i\) 是 A-模族 \((\mathbf{E}_i)_{i\in I}\) 的积。对每个 A-模 \(\mathbf{F}\) 与每族线性映射 \(f_i:\mathbf{F}\to \mathbf{E}_i\) ，存在且仅存在一个映射 \(f\) （ \(\mathbf{F}\) 到 \(\mathbf{E}\) 中的映射），使得 \(\mathbf{pr}_i\circ f = f_i\) 对所有 \(i\in I\) 成立，且这个映射是线性的。
+
+这直接由定义得出。
+
+模的积是“结合的”：若 \((J_{\lambda})_{\lambda \in L}\) 是 I 的一个划分，则典范映射
+
+\[
+\prod_ {i \in I} E _ {i} \rightarrow \prod_ {\lambda \in L} \left(\prod_ {i \in J _ {\lambda}} E _ {i}\right)
+\]
+
+是一个同构。
+
+命题 5. (i) 设 \((\mathbf{E}_t)_{i \in I}\) , \((\mathbf{F}_t)_{i \in I}\) 是具有同一指标集 I 的两个 A-模族；对每族线性映射 \(f_i: \mathbf{E}_t \to \mathbf{F}_t\) ( \(i \in I\) )，映射 \(f: (x_i) \to (f_i(x_i))\) （ \(\prod_t \mathbf{E}_t\) 到 \(\prod_t \mathbf{F}_t\) 中的映射，有时记作 \(\prod_t f_i\) ）是线性的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \((\mathbf{G}_{\iota})_{\iota \in \mathbf{I}}\) 是以 I 为指标集的第三族 A-模，并且对所有 \(t \in I, \text{ 设 } g_t: F_t \to G_t \text{ 是一个线性映射；设 } g = \prod_t g_t. \text{ 对每个序列 } E_t \xrightarrow{f_t} F_t \xrightarrow{g_t} G_t \text{ 为正合，当且仅当序列}\)
+\end{enumerate}
+
+\[
+\prod_ {i} \mathrm{E} _ {i} \xrightarrow {f} \prod_ {i} \mathrm{F} _ {i} \xrightarrow {g} \prod_ {i} \mathrm{G} _ {i}
+\]
+
+是正合的。
+
+断言 (i) 直接由定义得出。另一方面，说 \(y = (y_{i})\) 属于 \(\operatorname{Ker}(g)\) ，就是说 \(g_{i}(y_{i}) = 0\) 对所有 \(i \in I\) 成立，从而就是说 \(y_{i} \in \operatorname{Ker}(g_{i})\) 对所有 \(i \in I\) 成立；类似地，说 \(y\) 属于 \(\operatorname{Im}(f)\) ，就是说存在 \(x = (x_{i}) \in \prod_{i} E_{i}\) 使得 \(y = f(x)\) ，这等价于说 \(y_{i} = f_{i}(x_{i})\) 对所有 \(i \in I\) 成立，或者也说 \(y_{i} \in \operatorname{Im}(f_{i})\) 对所有 \(i \in I\) 成立；由此得 (ii)。
+
+推论。在命题 5 (i) 的条件下，
+
+\[
+\operatorname{Ker} (f) = \prod_ {i \in I} \operatorname{Ker} (f _ {i}), \quad \operatorname{Im} (f) = \prod_ {i \in I} \operatorname{Im} (f _ {i})\tag{18}
+\]
+
+并且存在典范同构
+
+\[
+\operatorname{Coim} (f) \cong \prod_ {i \in I} \operatorname{Coim} (f _ {i}), \quad \operatorname{Coker} (f) = \prod_ {i \in I} \operatorname{Coker} (f _ {i})
+\]
+
+它们分别是这样得到的：把元素 \(x = (x_{i})\) （属于 \(\prod_{i} E_{i}\) ，模 \(\operatorname{Ker}(f)\) ）的类（相应地，元素 \(y = (y_{i})\) （属于 \(\prod_{i} F_{i}\) ，模 \(\operatorname{Im}(f)\) ）的类）对应到诸 \(x_{i}\) 模 \(\operatorname{Ker}(f_{i})\) 的类组成的族（相应地，诸 \(y_{i}\) 模 \(\operatorname{Im}(f)\) 的类组成的族）。
+
+特别地，要使 \(f\) 是单射（相应地，满射、双射、零映射），必须且只需对所有 \(\iota \in I\) ， \(f_{\iota}\) 都是单射（相应地，满射、双射、零映射）。
+
+若对所有 \(\iota \in I\) ，我们考虑一个子模 \(F_{\iota}\) （ \(E_{\iota}\) 的子模），则模 \(\prod_{\iota \in I} F_{\iota}\) 是 \(\prod_{\iota \in I} E_{\iota}\) 的一个子模，并且根据命题 5 的推论，存在典范同构
+
+\[
+\prod_ {i \in I} \left(E _ {i} / F _ {i}\right)\cong \left(\prod_ {i \in I} E _ {i}\right) / \left(\prod_ {i \in I} F _ {i}\right).\tag{19}
+\]
+
+模的积的一个重要例子是所有因子模都等于同一个模 F 的情形；它们的积 \(F^{I}\) 此时正是 I 到 F 的映射的集合。对角映射 \(F \rightarrow F^{I}\) 把 \(x \in F\) 映到 I 上等于 x 的常值函数，它是线性的。若 \((\mathbf{E}_{t})_{t \in I}\) 是一族 A-模，且对所有 \(\iota \in I\) ， \(f_{\iota}: F \to E_{\iota}\) 是线性映射，则线性映射 \(x \mapsto (f_{\iota}(x))\) （ \(F\) 到 \(\prod_{\iota \in I} E_{\iota}\) 中的映射）是映射 \((x_{\iota}) \mapsto (f_{\iota}(x_{\iota}))\) （ \(F^{\mathrm{I}}\) 到 \(\prod_{\iota \in I} E_{\iota}\) ）与对角映射 \(F \to F^{\mathrm{I}}\) 的复合。
+
+\subsection{模的直和}
+
+设 \((\mathbf{E}_t)_{t \in I}\) 是一族 A-模， \(\mathbf{F} = \prod_{i \in I} \mathbf{E}_i\) 是它们的积。集合 \(\mathbf{E}\) 由 \(x \in F\) 中使 \(\operatorname{pr}_t x = 0\) 除有限个指标外均成立的元素组成，它显然是 \(\mathbf{F}\) 的一个子模，称为模族 \((\mathbf{E}_t)\) 的外直和（或简称直和），记作 \(\bigoplus_{i \in I} \mathbf{E}_i\) （I，§4，第 9 号）。当 I 有限时，有 \(\bigoplus_{i \in I} \mathbf{E}_i = \prod_{i \in I} \mathbf{E}_t\) ；若 \(\mathbf{I} = [p, q]\) （ \(\mathbf{Z}\) 的区间），我们也记
+
+\[
+\bigoplus_ {i \in I} \mathbf {E} _ {i} = \mathbf {E} _ {p} \oplus \mathbf {E} _ {p + 1} \oplus \dots \oplus \mathbf {E} _ {q}.
+\]
+
+对所有 \(\kappa \in I\) ，设 \(j_{\kappa}\) 是映射 \(\mathbf{E}_{\kappa} \to F\) ，它把每个 \(x_{\kappa} \in \mathbf{E}_{\kappa}\) 对应到 \(F\) 中满足 \(\operatorname{pr}_{\iota}(j_{\kappa}(x_{\kappa})) = 0\) （对 \(\iota \neq \kappa\) ）以及 \(\operatorname{pr}_{\kappa}(j_{\kappa}(x_{\kappa})) = x_{\kappa}\) 的元素；立即可以看出， \(j_{\kappa}\) 是 \(\mathbf{E}_{\kappa}\) 到直和 \(E\) （诸 \(\mathbf{E}_{\iota}\) 的直和）中的单射线性映射，我们称之为典范单射；子模 \(j_{\kappa}(\mathbf{E}_{\kappa})\) （属于 \(E\) ，且同构于 \(\mathbf{E}_{\kappa}\) ）称为 \(E\) 的指标为 \(\kappa\) 的分量子模。通常将它与 \(\mathbf{E}_{\kappa}\) 等同（借助 \(j_{\kappa}\) ）。
+
+因此，对所有 \(x \in \mathbf{E} = \bigoplus_{i \in I} \mathbf{E}_i\) ，我们有
+
+\[
+x = \sum_ {i \in I} j _ {i} (\mathrm{pr} _ {i} x).\tag{20}
+\]
+
+命题 6. 设 \((\mathbf{E}_t)_{t \in I}\) 是一族 A-模，M 是一个 A-模，并且对所有 \(t \in I\) ，设 \(f_t: \mathbf{E}_t \to \mathbf{M}\) 是线性映射。则存在且仅存在一个线性映射 \(g: \bigoplus_{t \in I} \mathbf{E}_t \to \mathbf{M}\) ，使得对所有 \(t \in I\) ：
+
+\[
+g \circ j _ {i} = f _ {i}.\tag{21}
+\]
+
+根据 (20)，若 \(g\) 存在，则必然对所有 \(x \in \bigoplus_{\iota \in I} \mathbf{E}_{\iota}\) 有
+
+\[
+g (x) = \sum_ {i} g (j _ {i} (\mathrm{pr} _ {i} (x))) = \sum_ {i} f _ {i} (\mathrm{pr} _ {i} (x)),
+\]
+
+由此得到 \(g\) 的唯一性。反之，令 \(g(x) = \sum_{i} f_i(\mathrm{pr}_i(x))\) （对所有 \(x \in \bigoplus_{i \in I} E_i\) ），可以立即验证这样就定义了一个满足命题条件的线性映射。
+
+当不致引起混淆时，我们记 \(g = \sum_{i \in I} f_i\) （当族 \((f_i)\) 不是有限支集时，这与 I，§2，第 1 号的约定相反）。
+
+特别地，若 J 是 I 的任意子集，则典范单射 \(j_{i}\) （ \(i \in J\) ）定义了一个典范线性映射 \(j_{J}: \bigoplus_{i \in J} E_{i} \to \bigoplus_{i \in I} E_{i}\) ，它把每个 \((x_{i})_{i \in I}\) 对应到满足下列条件的元素 \((x_{i}')_{i \in I}\) ： \(x_{i}' = x_{i}\) （对 \(i \in J\) ）， \(x_{i}' = 0\) （对 \(i \notin J\) ）；这个映射显然是单射。此外，若 \((J_{\lambda})_{\lambda \in L}\) 是 I 的一个划分，则映射 \(i: \bigoplus_{\lambda \in L} \left( \bigoplus_{i \in J_{\lambda}} E_{i} \right) \to \bigoplus_{i \in I} E_{i}\) （由命题 6，它对应于族 \((j_{J_{\lambda}})\) ）是一个同构，称为典范同构（直和的“结合性”）。
+
+推论 1. 设 \((\mathbf{E}_{\iota})_{\iota \in I}, (\mathbf{F}_{\lambda})_{\lambda \in L}\) 是两个 A-模族。映射
+
+\[
+\operatorname{Hom} _ {\mathbf {A}} \left(\bigoplus_ {t \in I} \mathrm{E} _ {t}, \prod_ {\lambda \in L} \mathrm{F} _ {\lambda}\right)\rightarrow \prod_ {(t, \lambda) \in I \times L} \operatorname{Hom} _ {\mathbf {A}} \left(\mathrm{E} _ {t}, \mathrm{F} _ {\lambda}\right)\tag{22}
+\]
+
+它把每个 \(g \in \mathrm{Hom}_{\mathbf{A}} \left( \bigoplus_{t \in I} \mathbf{E}_t, \prod_{\lambda \in L} \mathbf{F}_\lambda \right)\) 对应到族 \((\mathbf{pr}_\lambda \circ g \circ j_t)\) ，这是一个 Z-模同构（称为典范同构）。
+
+这由命题 6 和第 5 号的命题 4 得出。
+
+推论 2. 设 \((\mathbf{E}_t)_{t \in I}\) 是一族 A-模， \(F\) 是一个 A-模，并且对每个 \(t \in I\) ，设 \(f_t: \mathbf{E}_t \to F\) 是线性映射。要使 \(f = \sum_{t \in I} f_t\) 是 \(\mathbf{E} = \bigoplus_{t \in I} \mathbf{E}_t\) 到 \(F\) 上的同构，必须且只需对每个 \(t \in I\) 存在具有下列性质的线性映射 \(g_t: \mathbf{F} \to \mathbf{E}_t\) ：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  \(g_{i} \circ f_{i} = 1_{E_{i}}\) 对所有 \(i \in I\) 成立。
+\item
+  \(g_{\iota} \circ f_{\kappa} = 0\) 对 \(\iota \neq \kappa\) 。
+\item
+  对所有 \(y \in \mathbf{F}\) ，族 \((g_{\iota}(y))\) 具有有限支集，且
+\end{enumerate}
+
+\[
+y = \sum_ {i \in I} f _ {i} (g _ {i} (y)).\tag{23}
+\]
+
+注意，若 I 有限，则最后一个条件也可写为
+
+\[
+\sum_ {i \in I} f _ {i} \circ g _ {i} = 1 _ {\mathbf {F}}.\tag{24}
+\]
+
+显然这些条件是必要的，因为它们被 \(g_{\iota} = \mathrm{pr}_{\iota} \circ f\) 满足。反之，若它们成立，则对所有 \(y \in \mathbf{F}\) ， \(g(y) = \sum_{\iota} j_{\iota}(g_{\iota}(y))\) 有定义，并且立即可以看出 \(g\) 是 \(\mathbf{F}\) 到 \(\mathbf{E}\) 中的线性映射。对所有 \(y \in \mathbf{F}\) ，根据假设有 \(f(g(y)) = \sum_{\iota \in \mathbf{I}} f_{\iota}(g_{\iota}(y)) = y\) 。另一方面，对所有 \(x \in \mathbf{E}\) ，根据假设有 \(g_{\kappa}(f(x)) = g_{\kappa}\left(\sum_{\iota} f_{\iota}(\mathrm{pr}_{\iota}(x))\right) = g_{\kappa}(f_{\kappa}(\mathrm{pr}_{\kappa}(x))) = \mathrm{pr}_{\kappa}(x)\) ；
+
+因此 \(g(f(x)) = \sum_{i} j_i(g_i(f(x))) = \sum_{i} j_i(\mathrm{pr}_i(x)) = x\) ，这就证明了该推论。
+
+命题 7. (i) 设 \((\mathbf{E}_t)_{t \in I}\) , \((\mathbf{F}_t)_{t \in I}\) 是具有同一指标集 I 的两个 A-模族；对每族线性映射 \(f_t: \mathbf{E}_t \to \mathbf{F}_t\) ( \(t \in I\) )，在 \(\bigoplus_{t \in I} \mathbf{E}_t\) 上，线性映射 \((x_t) \mapsto (f_t(x_t))\) 的限制是一个线性映射 \(f: \bigoplus_{t \in I} \mathbf{E}_t \to \bigoplus_{t \in I} \mathbf{F}_t\) ，记作 \(\bigoplus_{t \in I} f_t\) 或 \(\bigoplus_{t} f_t\) （其中 \(f = f_p \oplus f_{p+1} \oplus \cdots \oplus f_q\) ，若 \(\mathbf{I} = [p, q]\) 是 \(\mathbf{Z}\) 的区间）.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \((\mathbf{G}_{\iota})_{\iota \in \mathbf{I}}\) 是以 \(\mathbf{I}\) 为指标集的第三族 A-模，并且对所有 \(\iota \in \mathbf{I}\) ，设 \(g_{\iota}: F_{\iota} \to G_{\iota}\) 是线性映射；我们记 \(g = \bigoplus_{\iota} g_{\iota}\) 。要使每个序列 \(\mathbf{E}_{\iota} \xrightarrow{f_{\iota}} F_{\iota} \xrightarrow{g_{\iota}} G_{\iota}\) 都正合，必须且只需序列
+\end{enumerate}
+
+\[
+\bigoplus_ {i} \mathrm{E} _ {i} \xrightarrow {f} \bigoplus_ {i} \mathrm{F} _ {i} \xrightarrow {g} \bigoplus_ {i} \mathrm{G} _ {i}
+\]
+
+是正合的。
+
+显然，对所有 \((x_{i})\in \bigoplus_{i}\mathbf{E}_{i}\) ，族 \((f_{i}(x_{i}))\) 具有有限支集，由此得 (i)。另一方面，说元素 \(y = (y_{i})\) （ \(\bigoplus_{i}\mathbf{F}_{i}\) 中的元素）属于 \(\operatorname {Ker}(g)\) ，就是说 \(y_{i}\in \operatorname {Ker}(g_{i})\) 对所有 \(i \in I\) 成立（第 5 号，命题 5）；类似地，若 \(y_{i}\in \operatorname {Im}(f_{i})\) 对所有 \(\iota \in I\) 成立，则对每个 \(\iota \in I\) 存在 \(x_{i}\in \mathbf{E}_{i}\) 使得 \(y_{i} = f_{i}(x_{i})\) ，并且当 \(y_{i} = 0\) 时可以假设 \(x_{i} = 0\) ；因此 \(y\in \operatorname {Im}(f)\) ，而逆命题是显然的。
+
+推论 1. 在命题 7 (i) 的条件下，
+
+\[
+\operatorname{Ker} (f) = \bigoplus_ {i \in I} \operatorname{Ker} (f _ {i}), \quad \operatorname{Im} (f) = \bigoplus_ {i \in I} \operatorname{Im} (f _ {i})\tag{25}
+\]
+
+并且存在典范同构
+
+\[
+\operatorname{Coim} (f) \cong \bigoplus_ {i \in I} \operatorname{Coim} (f _ {i}), \quad \operatorname{Coker} (f) \cong \bigoplus_ {i \in I} \operatorname{Coker} (f _ {i})
+\]
+
+其定义方式与第 5 号命题 5 的推论中相同。特别地，要使 \(f\) 是单射（相应地，满射、双射、零映射），必须且只需每个 \(f_i\) 都是单射（相应地，满射、双射、零映射）。
+
+若对所有 \(t \in I\) ，我们考虑一个子模 \(F_t\) （ \(E_t\) 的子模），则模 \(\bigoplus_{t \in I} F_t\) 是 \(\bigoplus_{t \in I} E_t\) 的一个子模，并且根据命题 7 的推论 1，存在典范同构
+
+\[
+\bigoplus_ {i \in I} \left(\mathrm{E} _ {i} / \mathrm{F} _ {i}\right)\cong \left(\bigoplus_ {i \in I} \mathrm{E} _ {i}\right) / \left(\bigoplus_ {i \in I} \mathrm{F} _ {i}\right).\tag{26}
+\]
+
+推论 2. 设 \((\mathbf{E}_t)_{i \in I}, (\mathbf{E}_t')_{i \in I}, (\mathbf{F}_\lambda)_{\lambda \in L}, (\mathbf{F}_\lambda')_{\lambda \in L}\) 是四个 A-模族，并且对每个 \(i \in I\) （相应地，每个 \(\lambda \in L\) ）， \(u_i: \mathbf{E}_i' \to \mathbf{E}_i\) （相应地 \(v_\lambda: \mathbf{F}_\lambda \to \mathbf{F}_\lambda'\) ）是线性映射。则图表
+
+\[
+\begin{array}{c} \operatorname{Hom} \left(\bigoplus_ {t \in I} E _ {t} ^ {\prime}, \prod_ {\lambda \in L} F _ {\lambda} ^ {\prime}\right) \xrightarrow {\phi^ {\prime}} \prod_ {(t, \lambda) \in I \times L} \operatorname{Hom} (E _ {t} ^ {\prime}, F _ {\lambda} ^ {\prime}) \\ \operatorname{Hom} \left(\bigoplus_ {t} u _ {t}, \prod_ {\lambda} v _ {\lambda}\right) \Bigg | ^ {\uparrow} \\ \operatorname{Hom} \left(\bigoplus_ {t \in I} E, \prod_ {\lambda \in L} F _ {\lambda}\right) \xrightarrow [ \phi ]{\quad} \prod_ {(t, \lambda) \in I \times L} \operatorname{Hom} (E _ {t}, F _ {\lambda}) \end{array}
+\]
+
+（其中 \(\phi\) 和 \(\phi'\) 是命题 6 的推论 1 中定义的典范同构）是交换的。
+
+验证由定义立即得出。
+
+当所有 \(E_{t}\) 都等于同一个 A-模 E 时，直和 \(\bigoplus_{i\in I}E_{i}\) 也记作 \(\mathrm{E}^{(I)}\) ：其元素是 I 到 E 中的具有有限支集的映射。若对所有 \(t,f_{t}\) 都取为恒等映射 \(E\to E\) ，则由命题 6 得到一个线性映射 \(\mathrm{E}^{(I)}\to\mathrm{E}\) ，称为余对角映射，它把 E 中元素的每个有限支集族 \((x_{t})_{t\in I}\) 对应到其和 \(\sum_{i\in I}x_{i}\) 。
+
+注记。回顾，直和的定义可立即推广到一族未必交换的群 \((\mathrm{E}_{\iota})_{\iota\in\mathbb{I}}\) ，当然以乘法记号代替加法记号；此时我们说“限制积”或“限制和”以代替“直和”（I，§4，第 9 号）。
+
+注意，E 是乘积 \(F = \prod_{i \in I} E_{i}\) 的一个正规子群，并且每个 \(j_{\kappa}(E_{\kappa})\) 都是 F 的正规子群；此外，对两个不同的指标 \(\lambda, \mu\) ， \(j_{\lambda}(E_{\lambda})\) 的每个元素与 \(j_{\mu}(E_{\mu})\) 的每个元素可交换。命题 6 可推广到一般的情形，但需假设：对两个不同的指标 \(\lambda, \mu\) ， \(f_{\lambda}(E_{\lambda})\) 的每个元素在 M 中与 \(f_{\mu}(E_{\mu})\) 的每个元素可交换（I，§4，第 9 号，命题 12）。限制和的“结合性”性质由此立即得出。命题 7 及其推论 1 和 2 无需修改即成立。
+
+\subsection{子模的交与和}
+
+对每个族 \((\mathbf{M}_{\iota})_{\iota \in I}\) （A-模 \(\mathbf{E}\) 的子模的族），交 \(\bigcap_{\iota \in I} \mathbf{E}_{\iota}\) 是 \(\mathbf{E}\) 的一个子模。若对每个 \(\iota \in I\) ， \(\phi_{\iota}\) 表示典范同态 \(\mathbf{E} \to \mathbf{E} / \mathbf{M}_{\iota}\) ，则 \(\bigcap_{\iota \in I} \mathbf{M}_{\iota}\) 是同态 \(\phi: x \mapsto (\phi_{\iota}(x))\) （ \(\mathbf{E}\) 到 \(\prod_{\iota \in I} (\mathbf{E} / \mathbf{M}_{\iota})\) 中的同态）的核，换言之，存在正合列
+
+\[
+0 \longrightarrow \bigcap_ {i \in I} M _ {i} \longrightarrow E \stackrel {\phi} {\longrightarrow} \prod_ {i \in I} (E / M _ {i}).\tag{27}
+\]
+
+线性映射 \(\phi\) 以及映射
+
+\[
+\mathrm{E} / \left(\bigcap_ {i \in I} \mathrm{M} _ {i}\right)\rightarrow \prod_ {i \in I} (\mathrm{E} / \mathrm{M} _ {i})
+\]
+
+（它是通过取商得到的）都称为典范映射。
+
+特别地：
+
+命题 8. 若子模族 \((\mathbf{M}_i)_{i\in I}\) （ \(\mathbf{E}\) 的子模族）的交约化为 0 ，则 \(\mathbf{E}\) 典范同构于 \(\prod_{i\in I}(\mathbf{E}/\mathbf{M}_i)\) 的一个子模。
+
+给定 A-模 E 的一个子集 X，包含 X 的 E 的诸子模的交 F 称为由 X 生成的子模，而 X 称为 F 的生成集（或生成系）（I，§4，第 3 号）；对 E 的元素的一个族 \((a_{i})_{i\in I}\) ，由诸 \(a_{i}\) 组成的集合所生成的子模称为由族 \((a_{i})\) 生成的子模。
+
+一个 A-模称为有限生成的，如果它有一个有限的生成集。
+
+命题 9. 由 A-模 E 的元素族 \((a_{i})_{i\in I}\) 生成的子模是族 \((a_{i})\) 的线性组合的集合。
+
+E 的包含所有 \(a_{i}\) 的每个子模也包含诸 \(a_{i}\) 的线性组合。反之，第 1 号的公式 (1) 和 (2) 证明诸 \(a_{i}\) 的线性组合的集合是 E 的一个子模，它显然包含所有 \(a_{i}\) ，因而是包含它们的最小子模。
+
+推论 1. 设 \(u: \mathbf{E} \to \mathbf{F}\) 是线性映射， \(\mathbf{S}\) 是 \(\mathbf{E}\) 的一个子集，而 \(\mathbf{M}\) 是 \(\mathbf{E}\) 中由 \(\mathbf{S}\) 生成的子模。则 \(u(\mathbf{M})\) 是 \(\mathbf{F}\) 中由 \(u(\mathbf{S})\) 生成的子模。
+
+特别地，E 的任何有限生成子模在 u 下的像是 F 的一个有限生成子模。
+
+注记。若 \(u(x) = 0\) （对所有 \(x \in S\) ），则也有 \(u(x) = 0\) （对所有 \(x \in M\) ）。我们有时把这一结果称为“线性恒等式的延拓原理”或“线性延拓原理”。
+
+特别地，要验证线性映射 \(u:E\to F\) 具有形式 \(v\circ\phi\) ，其中 \(v:E/M\to F\) 是线性的而 \(\phi:E\to E/M\) 是典范投影，只需验证 \(u(S)=0\) 。
+
+推论 2. 设 \((\mathbf{M}_{t})_{t\in I}\) 是模 \(\mathbf{E}\) 的一个子模族；由该族的并生成的子模与形如 \(\sum_{i\in I}x_i\) 的和的集合恒同，其中 \((x_{i})_{i\in I}\) 取遍 \(\mathbf{E}\) 中元素的具有有限支集且满足 \(x_{i}\in \mathbf{M}_{i}\) （对所有 \(i\in I\) ）的族。
+
+显然， \(\bigcup_{i\in I}M_i\) 中元素的每个线性组合都具有上述形式：逆命题是显然的。
+
+由 E 的子模族 \((\mathbf{M}_{\iota})_{\iota\in I}\) 的并生成的 E 的子模称为该族 \((\mathbf{M}_{\iota})\) 的和，记作 \(\sum_{\iota\in I}\mathbf{M}_{\iota}\) 。若对所有 \(\iota\in I\) ， \(h_{\iota}\) 是典范单射 \(M_{\iota}\to E\) ，而 \(h:(x_{\iota})\mapsto\sum_{\iota}h_{\iota}(x_{\iota})\) 是 \(\bigoplus_{\iota\in I}M_{\iota}\) 到 E 中的、对应于族 \((h_{\iota})\) 的线性映射（第 6 号，命题 6），则 \(\sum_{\iota\in I}M_{\iota}\) 是 h 的像；换言之，存在正合列
+
+\[
+\bigoplus_ {i \in I} M _ {i} \xrightarrow {h} E \longrightarrow E / \left(\sum_ {i \in I} M _ {i}\right) \longrightarrow 0.\tag{28}
+\]
+
+推论 3. 若 \((\mathbf{M}_{\lambda})_{\lambda \in L}\) 是 A-模 \(\mathbf{E}\) 的子模的一个右定向族，则和 \(\sum_{\lambda \in L} \mathbf{M}_{\lambda}\) 与并 \(\bigcup_{\lambda \in L} \mathbf{M}_{\lambda}\) 恒同。
+
+\(\bigcup_{\lambda \in L} M_{\lambda} \subset \sum_{\lambda \in L} M_{\lambda}\) 无需假设总成立；另一方面，对每个有限子族 \((M_{\lambda})_{\lambda \in J}\) （族 \((M_{\lambda})_{\lambda \in L}\) 的），根据假设存在 \(\mu \in L\) 使得 \(M_{\lambda} \subset M_{\mu}\) （对所有 \(\lambda \in J\) ），从而 \(\sum_{\lambda \in L} M_{\lambda} \subset M_{\mu}\) ，于是由推论 2 得 \(\sum_{\lambda \in L} M_{\lambda} \subset \bigcup_{\lambda \in L} M_{\lambda}\) 。
+
+推论 4. 设 \(0 \to \mathbf{E} \xrightarrow{f} \mathbf{F} \xrightarrow{g} \mathbf{G} \to 0\) 是 A-模的一个正合列，S 是 E 的生成系，T 是 G 的生成系。若 \(\mathbf{T}'\) 是 F 的一个子集，使得 \(g(\mathbf{T}') = \mathbf{T}, \mathbf{T}' \cup f(\mathbf{S})\) 是 F 的一个生成系。
+
+子模 \(\mathbf{F}'\) （ \(\mathbf{F}\) 中由 \(\mathbf{T}' \cup f(\mathbf{S})\) 生成的子模）包含 \(f(\mathbf{E})\) ，并且由于 \(g(\mathbf{F}')\) 包含 \(\mathbf{T}, g(\mathbf{F}') = \mathbf{G}\) ；因此 \(\mathbf{F}' = \mathbf{F}\) 。
+
+推论 5. 在 A-模的正合列 \(0 \to \mathbf{E} \to \mathbf{F} \to \mathbf{G} \to 0\) 中，若 E 和 G 都是有限生成的，则 F 也是有限生成的。
+
+命题 10. 设 M, N 是 A-模 E 的两个子模。则存在两个正合列
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{28}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+0 \longrightarrow \mathrm{M} \cap \mathrm{N} \stackrel {u} {\longrightarrow} \mathrm{M} \oplus \mathrm{N} \stackrel {i - j} {\longrightarrow} \mathrm{M} + \mathrm{N} \longrightarrow 0\tag{30}
+\]
+
+\[
+0 \longrightarrow \mathrm{E} / (\mathrm{M} \cap \mathrm{N}) \stackrel {v} {\longrightarrow} (\mathrm{E} / \mathrm{M}) \oplus (\mathrm{E} / \mathrm{N}) \stackrel {p - q} {\longrightarrow} \mathrm{E} / (\mathrm{M} + \mathrm{N}) \longrightarrow 0
+\]
+
+其中 \(i:\mathbf{M}\to \mathbf{M} + \mathbf{N},j:\mathbf{N}\rightarrow \mathbf{M} + \mathbf{N}\) 是典范单射，
+
+\[
+p: \mathrm{E} / \mathrm{M} \rightarrow \mathrm{E} / (\mathrm{M} + \mathrm{N}) \quad and \quad q: \mathrm{E} / \mathrm{N} \rightarrow \mathrm{E} / (\mathrm{M} + \mathrm{N})
+\]
+
+是典范满射，而同态 u 和 v 定义如下：
+
+若 \(f: \mathbf{M} \cap \mathbf{N} \to \mathbf{M} \to \mathbf{M} \oplus \mathbf{N}\) 和 \(g: \mathbf{M} \cap \mathbf{N} \to \mathbf{N} \to \mathbf{M} \oplus \mathbf{N}\) 是典范单射，则 \(u = f + g\) ，而若 \(r: \mathbf{E}/(\mathbf{M} \cap \mathbf{N}) \to \mathbf{E}/\mathbf{M} \to (\mathbf{E}/\mathbf{M}) \oplus (\mathbf{E}/\mathbf{N})\) 和
+
+\[
+s: \mathbf {E} / (\mathbf {M} \cap \mathbf {N}) \rightarrow \mathbf {E} / \mathbf {N} \rightarrow (\mathbf {E} / \mathbf {M}) \oplus (\mathbf {E} / \mathbf {N})
+\]
+
+是典范映射，则 \(v = r + s\) 。
+
+我们证明 (29) 的正合性：显然 \(i-j\) 是满射且 \(u\) 是单射。另一方面，说 \((i-j)(x,y)=0\) （其中 \(x\in\mathbf{M}\) ， \(y\in\mathbf{N}\) ），就是说 \(i(x)-j(y)=0\) ，从而 \(i(x)=j(y)=z\in\mathbf{M}\cap\mathbf{N}\) ，于是按定义有 \(x=f(z)\) ， \(y=g(z)\) ，这就证明了 \(\operatorname{Ker}(i-j)=\operatorname{Im}u\) 。
+
+我们证明 (30) 的正合性：显然 \(p - q\) 是满射。另一方面，说 \(v(t) = 0\) （对 \(t \in \mathbf{E} / (\mathbf{M} \cap \mathbf{N})\) ），就是说 \(r(t) = s(t) = 0\) ，从而 \(t\) 是模 ( \(\mathbf{M} \cap \mathbf{N}\) ) 的、某个元素 \(z \in \mathbf{E}\) 的类，该元素模 \(\mathbf{M}\) 和模 \(\mathbf{N}\) 的类均为零，这蕴含 \(z \in \mathbf{M} \cap \mathbf{N}\) ，故 \(t = 0\) 。最后，说 \((p - q)(x, y) = 0\) （其中 \(x \in \mathbf{E} / \mathbf{M}\) ， \(y \in \mathbf{E} / \mathbf{N}\) ），就是说 \(p(x) = q(y)\) ，或者说存在两个元素 \(z'\) , \(z''\) （属于 \(\mathbf{E}\) ），它们模 \(\mathbf{M}\) 和模 \(\mathbf{N}\) 的类分别是 \(x\) 和 \(y\) ，并且满足 \(z' - z'' \in \mathbf{M} + \mathbf{N}\) 。于是存在 \(t' \in \mathbf{M}\) , \(t'' \in \mathbf{N}\) 使得 \(z' - z'' = t' - t''\) ，由此
+
+\[
+z ^ {\prime} - t ^ {\prime} = z ^ {\prime \prime} - t ^ {\prime \prime} = z.
+\]
+
+设 \(w\) 为 \(z; r(w)\) 模 (M ∩ N) 的类；它是 \(z\) 模 M 的类，从而也是 \(z'\) 的类，即 \(x\) ；类似地 \(s(w) = y\) ，这就完成了 \(\operatorname{Ker}(p - q) = \operatorname{Im} v\) 的证明。
+
+\subsection{子模的直和}
+
+定义 6. 称 A-模 E 是它的子模的一个族 \((\mathbf{M}_{\iota})_{\iota \in I}\) 的直和，如果典范映射 \(\bigoplus_{\iota \in I} \mathbf{M}_{\iota} \to \mathbf{E}\) （第 6 号）是同构。
+
+这等价于说，每个 \(x \in \mathbf{E}\) 都可以以唯一的方式写成形式 \(x = \sum_{i \in I} x_i\) ，其中 \(x_i \in \mathbf{E}_i\) 对所有 \(i \in I\) 成立；元素 \(x_i\) （这样与 \(x\) 对应的元素）称为 \(x\) 在 \(\mathbf{E}_i\) 中的分量；映射 \(x \mapsto x_i\) 是线性的。
+
+注记。(1) 设 \((\mathbf{M}_{\iota})_{\iota \in \mathbf{I}}, (\mathbf{N}_{\iota})_{\iota \in \mathbf{I}}\) 是模 \(\mathbf{E}\) 的两个子模族，具有同一指标集；假设 \(\mathbf{E}\) 既是族 \((\mathbf{M}_{\iota})\) 的直和又是族 \((\mathbf{N}_{\iota})\) 的直和，且 \(\mathbf{N}_{\iota} \subset \mathbf{M}_{\iota}\) （对所有 \(\iota \in \mathbf{I}\) ）。则 \(\mathbf{N}_{\iota} = \mathbf{M}_{\iota}\) 对所有 \(\iota \in \mathbf{I}\) 成立，这由第 6 号命题 7 的推论 1 应用于典范单射 \(f_{\iota}: \mathbf{N}_{\iota} \to \mathbf{M}_{\iota}\) 立即得出。
+
+命题 11. 设 \((\mathbf{M}_{i})_{i\in I}\) 是 A-模 E 的一族子模。下列性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  子模 \(\sum_{i\in I}\mathbf{M}_i\) 是族 \((\mathbf{M}_i)_{i\in I}\) 的直和。
+\item
+  关系 \(\sum_{i\in I}x_i = 0\) （其中 \(x_{i}\in \mathbf{M}_{i}\) 对所有 \(i\in I\) 成立）蕴含 \(x_{i} = 0\) 对所有 \(i\in I\) 成立
+\item
+  对所有 \(\kappa \in \mathbf{I}\) ， \(\mathbf{M}_{\kappa}\) 与 \(\sum_{i \neq \kappa} \mathbf{M}_i\) 的交约化为 0。
+\end{enumerate}
+
+(a) 与 (b) 等价是直接的，因为关系 \(\sum_{i} x_{i} = \sum_{i} y_{i}\) 等价于 \(\sum_{i} (x_{i} - y_{i}) = 0\) 。另一方面，根据定义 6，由 \(\bigoplus_{i \in I} M_{i}\) 的元素作为元素 \(x_{i} \in M_{i}\) 的直和的表达式的唯一性，(a) 蕴含 (c)。最后，关系 \(\sum_{i} x_{i} = 0\) （其中 \(x_{i} \in M_{i}\) 对所有 \(i\) 成立）可以写成：对所有 \(\kappa \in I\) ， \(x_{\kappa} = \sum_{i \neq \kappa} (-x_{i})\) ；于是条件 (c) 蕴含 \(x_{\kappa} = 0\) 对所有 \(\kappa \in I\) 成立，从而 (c) 蕴含 (b)。
+
+定义 7. 自同态 \(e\) （A-模 \(\mathbf{E}\) 上的自同态）称为投影算子，如果 \(e \circ e = e\) （换言之，如果 \(e\) 是环 \(\operatorname{End}(\mathbf{E})\) 中的幂等元）。在 \(\operatorname{End}(\mathbf{E})\) 中，投影算子的一族 \((e_{\lambda})_{\lambda \in L}\) 称为正交的，如果 \(e_{\lambda} \circ e_{\mu} = 0\) （对 \(\lambda \neq \mu\) ）。
+
+命题 12. 设 E 是一个 A-模。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  若 \(\mathbf{E}\) 是子模族 \((\mathbf{M}_{\lambda})_{\lambda \in \mathbf{L}}\) 的直和，且对所有 \(x \in \mathbf{E}\) ， \(e_{\lambda}(x)\) 是 \(x\) 在 \(\mathbf{M}_{\lambda}\) 中的分量，则 \((e_{\lambda})\) 是一个正交投影算子族，使得 \(x = \sum_{\lambda \in \mathbf{L}} e_{\lambda}(x)\) 对所有 \(x \in \mathbf{E}\) 成立。
+\item
+  反之，若 \((e_{\lambda})_{\lambda \in \mathbf{L}}\) 是 \(\operatorname{End}(\mathbf{E})\) 中的一个正交投影算子族，使得 \(x = \sum_{\lambda \in \mathbf{L}} e_{\lambda}(x)\) 对所有 \(x \in \mathbf{E}\) 成立，则 \(\mathbf{E}\) 是子模族 \(\mathbf{M}_{\lambda} = e_{\lambda}(\mathbf{E})\) 的直和。
+\end{enumerate}
+
+性质 (i) 由定义得出，而 (ii) 是第 6 号命题 6 的推论 2 应用于典范单射 \(\mathbf{M}_{\lambda} \to \mathbf{E}\) 和映射 \(e_{\lambda}: \mathbf{E} \to \mathbf{M}_{\lambda}\) 的一个特殊情形。
+
+注意，当 \(\mathbf{L}\) 有限时，条件 \(x = \sum_{\lambda \in \mathbf{L}} e_{\lambda}(x)\) （对所有 \(x \in \mathbf{E}\) ）在 \(\operatorname{End}(\mathbf{E})\) 中也可以写成
+
+\[
+1 _ {\mathbf {E}} = \sum_ {\lambda \in L} e _ {\lambda}.\tag{31}
+\]
+
+推论。设 \(e\) 是 \(\mathbf{E}\) 的一个投影算子，则 \(\mathbf{E}\) 是像 \(\mathbf{M} = e(\mathbf{E})\) 与核 \(\mathbf{N} = e^{-1}(0)\) （即 \(e\) 的像与核）的直和；对所有 \(x = x_1 + x_2 \in \mathbf{E}\) （其中 \(x_1 \in \mathbf{M}\) ， \(x_2 \in \mathbf{N}\) ），有 \(x_1 = e(x)\) ；1 - \(e\) 是 \(\mathbf{E}\) 的一个投影算子，其像为 \(\mathbf{N}\) ，核为 \(\mathbf{M}\) 。
+
+\((1 - e)^2 = 1 - 2e + e^2 = 1 - e\) 在 \(\operatorname{End}(\mathbf{E})\) 中成立，因此 \(1 - e\) 是投影算子；又由于 \(e(1 - e) = (1 - e)e = e - e^2 = 0\) ，根据命题 12， \(\mathbf{E}\) 是像 \(\mathbf{M}\) 和 \(\mathbf{N}\) （分别为 \(e\) 与 \(1 - e\) 的像）的直和。最后，对所有 \(x \in \mathbf{E}\) ，关系 \(x \in \mathbf{M}\) 等价于 \(x = e(x)\) ；因为 \(x = e(x)\) 按定义蕴含 \(x \in \mathbf{M}\) ，而反之，若 \(x = e(x')\) （其中 \(x' \in \mathbf{E}\) ），则 \(e(x) = e^2(x') = e(x') = x\) ；
+
+这就表明 M 是 1 - e 的核；交换 e 与 1 - e 的角色，类似地可以看出 N 是 e 的核。
+
+注记。(2) 设 E, F 是两个 A-模，使得 E 是子模的一个有限族 \((\mathbf{M}_{i})_{1\leqslant i\leqslant m}\) 的直和，而 F 是子模的一个有限族 \((\mathbf{N}_{j})_{1\leqslant j\leqslant n}\) 的直和。已知（第 6 号，命题 6 的推论 1） \(\operatorname{Hom}_{\mathbf{A}}(\mathbf{E},\mathbf{F})\) 典范地等同于乘积 \(\prod_{i,j}\operatorname{Hom}_{\mathbf{A}}(\mathbf{M}_{i},\mathbf{N}_{j})\) ；确切地说，对每个族 \((u_{ji})\) （其中 \(u_{ji}\in\operatorname{Hom}_{\mathbf{A}}(\mathbf{M}_{i},\mathbf{N}_{j})\) ），对应着按下述方式定义的线性映射 \(u:E\to F\) 。只需定义 u 在每个 \(M_{i}\) 上的限制，并且对每个 \(x_{i}\in M_{i}\) ，
+
+\[
+u (x _ {i}) = \sum_ {j = 1} ^ {n} u _ {j i} (x _ {i}).
+\]
+
+现在设 \(\mathbf{G}\) 是第三个 A-模，是子模的一个有限族 \((\mathbf{P}_k)_{1 \leqslant k \leqslant p}\) 的直和；设 \(v\) 是 \(\mathbf{F}\) 到 \(\mathbf{G}\) 中的线性映射，并设 \((v_{kj}) \in \prod_{j,k} \operatorname{Hom}_{\mathbf{A}}(\mathbf{N}_j, \mathbf{P}_k)\) 是典范地对应于它的族。对所有 \(x_i \in \mathbf{M}_i\) ，
+
+\[
+v (u (x _ {i})) = \sum_ {j = 1} ^ {n} v (u _ {j i} (x _ {i})) = \sum_ {k = 1} ^ {p} \sum_ {j = 1} ^ {n} v _ {k j} (u _ {j i} (x _ {i})).
+\]
+
+由此可见，若我们写
+
+\[
+w _ {k i} = \sum_ {j = 1} ^ {n} v _ {k j} \circ u _ {j i} \in \operatorname{Hom} _ {\mathbf {A}} (\mathrm{M} _ {i}, \mathrm{P} _ {k})\tag{32}
+\]
+
+族 \((w_{ki})\) 典范地对应于复合线性映射 \(w = v \circ u\) （从 \(\mathbf{E}\) 到 \(\mathbf{G}\) ）（参见 §10，第 5 号）。
+
+\subsection{互补子模}
+
+定义 8. 在 A-模 E 中，称两个子模 \(M_{1}\) , \(M_{2}\) 是互补的，如果 E 是 \(M_{1}\) 与 \(M_{2}\) 的直和。
+
+第 8 号的命题 11 表明，要使 \(\mathbf{M}_1\) 与 \(\mathbf{M}_2\) 互补，必须且只需 \(\mathbf{M}_1 + \mathbf{M}_2 = \mathbf{E}\) 且 \(\mathbf{M}_1 \cap \mathbf{M}_2 = \{0\}\) （参见 I，§4，第 9 号，命题 15）。
+
+命题 13. 设 \(\mathbf{M}_1, \mathbf{M}_2\) 是 A-模 E 中的两个互补子模。在 \(\mathbf{M}_1\) 上，典范映射 \(\mathbf{E} \to \mathbf{E} / \mathbf{M}_2\) 的限制是 \(\mathbf{M}_1\) 到 \(\mathbf{E} / \mathbf{M}_2\) 上的同构。
+
+这个线性映射是满射，因为 \(M_{1} + M_{2} = E\) ；它也是单射，因为它的核是 \(M_{1}\) 与 \(M_{2}\) （ \(E \rightarrow E/M_{2}\) 的核）的交，从而约化为 \(\{0\}\) 。
+
+推论。若 \(M_{2}\) 和 \(M_{2}^{\prime}\) 是 E 的同一子模 \(M_{1}\) 的两个补，则由有序对 \((x, x^{\prime}) \in \mathbf{M}_{2} \times \mathbf{M}_{2}^{\prime}\) （满足 \(x - x^{\prime} \in M_{1}\) ）组成的集合是 \(M_{2}\) 到 \(M_{2}^{\prime}\) 上的一个同构的图像。
+
+立即可以看出，它是复合同构 \(M_{2} \rightarrow E/M_{1} \rightarrow M_{2}'\) 的图像。
+
+定义 9. A-模 E 的一个子模 M 称为 E 的直因子，如果它在 E 中有一个互补子模。
+
+此时，E/M 同构于 M 的一个补（命题 13）。
+
+一个子模不一定有补（习题 11）。当一个子模是直因子时，它一般有若干个不同的补；但这些补彼此典范同构（命题 13 的推论）。
+
+命题 14. 要使模 E 的子模 M 是直因子，必须且只需存在 E 的一个投影算子其像为 M，或存在 E 的一个投影算子其核为 M。
+
+这由第 8 号的命题 12 及其推论立即得出。
+
+命题 15. 给定 A-模的一个正合列
+
+\[
+0 \longrightarrow \mathrm{E} \stackrel {f} {\longrightarrow} \mathrm{F} \stackrel {g} {\longrightarrow} \mathrm{G} \longrightarrow 0\tag{33}
+\]
+
+下列命题等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  子模 \(f(\mathbf{E})\) 在 \(\mathbf{F}\) 中是直因子。
+\item
+  存在线性收缩 \(r: \mathbf{F} \to \mathbf{E}\) 与 \(f\) 相伴（集合论，II，§3，第 8 号，定义 11）。
+\item
+  存在线性截面 \(s: \mathbf{G} \to \mathbf{F}\) 与 \(g\) 相伴（集合论，II，§3，第 8 号，定义 11）。
+\end{enumerate}
+
+此时， \(f + s: \mathbf{E} \oplus \mathbf{G} \to \mathbf{F}\) 是同构。
+
+若存在投影算子 \(e\) 属于 \(\operatorname{End}(\mathbf{F})\) ，使得 \(e(\mathbf{F}) = f(\mathbf{E})\) ，则同态 \(f^{-1} \circ e: \mathbf{F} \to \mathbf{E}\) 是与 \(f\) 相伴的线性收缩；反之，若存在这样的收缩 \(r\) ，则立即可以看出 \(f \circ r\) 是 \(\mathbf{F}\) 中的一个投影算子，其像为 \(f(\mathbf{E})\) ，故 (a) 与 (b) 等价（命题 14）。若 \(f(\mathbf{E})\) 有一个补 \(\mathbf{E}'\) （在 \(\mathbf{F}\) 中），且 \(j: \mathbf{E}' \to \mathbf{F}\) 是典范单射，则 \(g \circ j\) 是 \(\mathbf{E}'\) 到 \(\mathbf{G}\) 上的同构，其逆同构（视为 \(\mathbf{G}\) 到 \(\mathbf{F}\) 中的映射）是与 \(g\) 相伴的线性截面。反之，若这样的截面 \(s\) 存在，则 \(s \circ g\) 是 \(\mathbf{F}\) 中的一个投影算子，其核为 \(f(\mathbf{E})\) ，故 (a) 与 (c) 等价（命题 14）。此外， \(s\) 是 \(\mathbf{G}\) 到 \(s(\mathbf{G})\) 上的双射，且由于 \(s(\mathbf{G})\) 与 \(f(\mathbf{E}), f + s\) 互补，后者是同构。
+
+注意，给定 r（相应地，s）等价于给定 \(f(\mathrm{E})\) 在 F 中的一个补，即 r 的核（相应地，s 的像）。
+
+当正合列 (33) 满足命题 15 的条件时，称它分裂，或称 \((\mathbf{F}, f, g)\) 是 \(\mathbf{G}\) 借助 \(\mathbf{E}\) 的平凡扩张（I，§6，第 1 号）。
+
+推论 1. 设 \(u: \mathbf{E} \to \mathbf{F}\) 是线性映射。要存在线性映射 \(v: \mathbf{F} \to \mathbf{E}\) 使得 \(u \circ v = 1_{\mathbf{F}}\) （此时称 \(u\) 是右可逆的，而 \(v\) 称为 \(u\) 的右逆），必须且只需 \(u\) 是满射且其核是 \(\mathbf{E}\) 中的直因子。此时子模 \(\operatorname{Im}(v)\) （ \(\mathbf{E}\) 的子模）是 \(\operatorname{Ker}(u)\) 的一个补。
+
+显然必须 \(u\) 是满射；而此时 \(v\) 是与 \(u\) 相伴的截面，结论由命题 15 得出。
+
+推论 2. 设 \(u: \mathbf{E} \to \mathbf{F}\) 是线性映射。要存在线性映射 \(v: \mathbf{F} \to \mathbf{E}\) 使得 \(v \circ u = 1_{\mathbf{E}}\) （此时称 \(u\) 是左可逆的，而 \(v\) 称为 \(u\) 的左逆），必须且只需 \(u\) 是单射且其像是 \(\mathbf{F}\) 中的直因子。此时子模 \(\operatorname{Ker}(v)\) （ \(\mathbf{F}\) 的子模）是 \(\operatorname{Im}(u)\) 的一个补。
+
+显然必须 u 是单射；而此时 v 是与 u 相伴的收缩，结论也由命题 15 得出。
+
+注记。(1) 设 M, N 是 A-模 E 中的两个互补子模，p, q 分别是 E 到 M 上和到 N 上的、对应于 E 分解为 M 与 N 的直和的投影算子。已知（第 6 号，命题 6 的推论 1），对每个 A-模 F，映射 \((u, v) \mapsto u \circ p + v \circ q\) 是
+
+\[
+\operatorname{Hom} _ {\mathbf {A}} (\mathbf {M}, \mathbf {F}) \oplus \operatorname{Hom} _ {\mathbf {A}} (\mathbf {N}, \mathbf {F})
+\]
+
+到 \(\operatorname{Hom}_{\mathbf{A}}(\mathbf{E},\mathbf{F})\) 上的同构。 \(\operatorname{Hom}_{\mathbf{A}}(\mathbf{M},\mathbf{F})\) 在这个同构下的像是线性映射 \(w:\mathrm{E}\to \mathrm{F}\) （满足 \(w(x) = 0\) ，对所有 \(x\in N\) ）的集合。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  若 M, N 是 E 的两个子模，使得 \(M \cap N\) 是 M 与 N 的直因子，则 \(M \cap N\) 也是 \(M + N\) 的直因子：若 P（相应地，Q）是 \(M \cap N\) 在 M（相应地，N）中的一个补，则 \(M + N\) 是 \(M \cap N\) 、P 与 Q 的直和，这可以立即验证。
+\end{enumerate}
+
+\subsection{有限长度模}
+
+回顾（I，§ 4，第 4 号，定义 7），一个 A-模 M 称为单模，如果它不约化为 0 且它不包含异于 M 和 \{0\} 的子模。一个 A-模 M 称为有限长度的，如果它有一个若尔当–赫尔德列 \((\mathbf{M}_t)_{0 \leqslant t \leqslant n}\) ，该列的商的个数 \(n\) （它不依赖于所考虑的 M 的若尔当–赫尔德列）称为 M 的长度（I，§4，第 7 号，定义 11）；我们将用 long(M) 或 long\_A(M) 表示它。一个约化为 0 的 A-模长度为 0；若 M 是一个非零的有限长度 A-模，则 long(M) \textgreater{} 0。
+
+命题 16. 设 M 是一个 A-模，而 N 是 M 的一个子模；要使 M 具有有限长度，必须且只需 N 和 M/N 也具有有限长度，且此时
+
+\[
+\operatorname{long} (\mathbf {N}) + \operatorname{long} (\mathbf {M} / \mathbf {N}) = \operatorname{long} (\mathbf {M}).\tag{34}
+\]
+
+证明已在 I，§4，第 7 号，命题 10 中给出。
+
+推论 1. 设 M 是一个有限长度的 A-模；对于 M 的子模 N，要使 N 等于 M，必须且只需 long(N) = long(M)。
+
+推论 2. 设 \(u: \mathbf{M} \to \mathbf{N}\) 是一个 A-模同态。若 \(\mathbf{M}\) 或 \(\mathbf{N}\) 是有限长度的，则 \(\operatorname{Im}(u)\) 也是。若 \(\mathbf{M}\) 是有限长度的，则 \(\operatorname{Ker}(u)\) 也是，且
+
+\[
+\operatorname{long} (\operatorname{Im} (u)) + \operatorname{long} (\operatorname{Ker} (u)) = \operatorname{long} (\mathbf {M}).\tag{35}
+\]
+
+若 \(\mathbf{N}\) 是有限长度的，则 \(\operatorname{Coker}(u)\) 也是，且
+
+\[
+\operatorname{long} (\operatorname{Im} (u)) + \operatorname{long} (\operatorname{Coker} (u)) = \operatorname{long} (\mathbf {N}).\tag{36}
+\]
+
+推论 3. 设 \((\mathbf{M}_i)_{0\leqslant i\leqslant n}\) 是一个由有限长度的 A-模组成的有限族。若存在一个线性映射的正合列
+
+\[
+0 \longrightarrow \mathrm{M} _ {0} \stackrel {u _ {0}} {\longrightarrow} \mathrm{M} _ {1} \stackrel {u _ {1}} {\longrightarrow} \mathrm{M} _ {2} \longrightarrow \dots \longrightarrow \mathrm{M} _ {n - 1} \stackrel {u _ {n - 1}} {\longrightarrow} \mathrm{M} _ {n} \longrightarrow 0\tag{37}
+\]
+
+那么
+
+\[
+\sum_ {k = 0} ^ {n} (- 1) ^ {k} \operatorname{long} (\mathbf {M} _ {k}) = 0.\tag{38}
+\]
+
+该推论对 \(n = 1\) 是显然的，而对 \(n = 2\) 正是命题 16；我们对 \(n\) 作归纳。若 \(\mathbf{M}_{n-1}' = \operatorname{Im}(u_{n-2})\) ，则根据归纳假设，
+
+\[
+\sum_ {k = 0} ^ {n - 2} (- 1) ^ {k} \operatorname{long} (\mathbf {M} _ {k}) + (- 1) ^ {n - 1} \operatorname{long} (\mathbf {M} _ {n - 1} ^ {\prime}) = 0.
+\]
+
+另一方面，正合列 \(0 \to \mathbf{M}_{n-1}' \to \mathbf{M}_{n-1} \to \mathbf{M}_n \to 0\) 给出
+
+\[
+\operatorname{long} \left(\mathbf {M} _ {n - 1} ^ {\prime}\right) + \operatorname{long} \left(\mathbf {M} _ {n}\right) = \operatorname{long} \left(\mathbf {M} _ {n - 1}\right),
+\]
+
+由此得到关系式 (38)。
+
+推论 4. 设 M 和 N 是 A-模 E 的两个有限长度子模；则 M + N 是有限长度的，且
+
+\[
+\operatorname{long} (\mathbf {M} + \mathbf {N}) + \operatorname{long} (\mathbf {M} \cap \mathbf {N}) = \operatorname{long} (\mathbf {M}) + \operatorname{long} (\mathbf {N}).\tag{39}
+\]
+
+只需对正合列 (29)（第 7 号）应用推论 3 即可。
+
+\[
+0 \rightarrow \mathbf {M} \cap \mathbf {N} \rightarrow \mathbf {M} \oplus \mathbf {N} \rightarrow \mathbf {M} + \mathbf {N} \rightarrow 0
+\]
+
+利用 \(\operatorname{long}(\mathbf{M} \oplus \mathbf{N}) = \operatorname{long}(\mathbf{M}) + \operatorname{long}(\mathbf{N})\) 这一事实（由 (34) 式）。
+
+推论 5. 设 M 是一个 A-模，它是一个有限长度子模族 (N \(_{t}\) ) 的和。则 M 是有限长度的，且
+
+\[
+\operatorname{long} (\mathbf {M}) \leqslant \sum_ {i} \operatorname{long} \left(\mathrm{N} _ {i}\right).\tag{40}
+\]
+
+此外，要使 (40) 式两边相等，必须且只需 M 是诸 \(N_{t}\) 的直和。
+
+已经看到（第 7 号，公式 (28)）存在一个典范满射线性映射 \(h \colon \bigoplus_{i} N_{i} \to M\) ；因此推论由 (35) 得出。
+
+推论 6. 设 M 和 N 是 A-模 E 的两个子模，使得 E/M 和 E/N 是有限长度的模；则 E/(M ∩ N) 是有限长度的，且
+
+\[
+\text { long } (\mathbf {E} / (\mathbf {M} \cap \mathbf {N})) + \text { long } (\mathbf {E} / (\mathbf {M} + \mathbf {N})) = \text { long } (\mathbf {E} / \mathbf {M}) + \text { long } (\mathbf {E} / \mathbf {N}). \tag {41}
+\]
+
+只需对正合列 (30) 应用推论 3 即可。
+
+\[
+0 \rightarrow \mathrm{E} / (\mathrm{M} \cap \mathrm{N}) \rightarrow (\mathrm{E} / \mathrm{M}) \oplus (\mathrm{E} / \mathrm{N}) \rightarrow \mathrm{E} / (\mathrm{M} + \mathrm{N}) \rightarrow 0
+\]
+
+利用以下事实
+
+\[
+\operatorname{long} ((\mathbf {E} / \mathbf {M}) \oplus (\mathbf {E} / \mathbf {N})) = \operatorname{long} (\mathbf {E} / \mathbf {M}) + \operatorname{long} (\mathbf {E} / \mathbf {N}).
+\]
+
+推论 7. 设 \((\mathbf{M}_i)\) 是 A-模 \(\mathbf{E}\) 的子模的一个有限族，使得诸 \(\mathbf{E} / \mathbf{M}_i\) 都是有限长度的模。则 \(\mathbf{E} / (\bigcap_{i} \mathbf{M}_i)\) 是有限长度的，且
+
+\[
+\operatorname{long} \left(\mathrm{E} / \left(\bigcap_ {i} \mathrm{M} _ {i}\right)\right) \leqslant \sum_ {i} \operatorname{long} (\mathrm{E} / \mathrm{M} _ {i}).\tag{42}
+\]
+
+已知（公式 (27)）存在一个典范单射线性映射 \(\mathbf{E} / \left(\bigcap_{i}\mathbf{M}_{i}\right)\to \prod_{i}(\mathbf{E} / \mathbf{M}_{i})\)
+
+注记。除第 7 号命题 9 外，第 2 至第 10 号的所有结果对任意带算子的交换群均成立，只需将陈述中的子模（相应地，商模）替换为稳定子群（相应地，由稳定子群得到的商群）；我们还约定将带算子的群的同态称为“线性映射”。第 7 号命题 9 的推论对带算子的交换群也成立：这对推论 4 和推论 5 是显然的，对推论 2 亦然，因为 \(\alpha\left(\sum_{i\in I}x_i\right)=\sum_{i\in I}\alpha x_i\) 对每个算子 \(\alpha\) 成立，而推论 3 由它得出。至于推论 1，只需注意若 N 是 F 的一个包含 \(u(S)\) 的稳定子群，则 \(\bar{u}^{-1}(N)\) 是 E 的一个包含 S 的稳定子群，因此 \(\bar{u}^{-1}(N)\) 包含 M，从而 \(u(M)\subset N\) 。
+
+\subsection{自由族，基}
+
+设 A 为一个环，T 为一个集合，并考虑 A-模 \(\mathbf{A}_{s}^{\mathrm{(T)}}\) 。根据定义，它是一族 A-模 \((\mathbf{M}_{t})_{t\in\mathbb{T}}\) （这些 A-模都等于 \(A_{s}\) ）的外直和，且对所有 \(t\in T\) 存在典范单射 \(j_{t}:A_{s}\to A_{s}^{\mathrm{(T)}}\) （第 6 号）。我们记 \(j_{t}(1) = e_{t}\) ，使得 \(e_{t} = (\delta_{tt'})_{t' \in \mathbb{T}}\) ，其中 \(\delta_{tt'}\) 当 \(t' \neq t\) 时等于 0，当 \(t' = t\) 时等于 1（“克罗内克符号”； \((t, t') \mapsto \delta_{tt'}\) 恰为 \(T \times T\) 的对角线的特征函数）；于是每个 \(x = (\xi_{t})_{t \in T} \in A_{s}^{(T)}\) 可唯一地写成： \(x = \sum_{t \in T} \xi_{t} e_{t}\) 。映射 \(\phi: t \mapsto e_{t}\) （ \(T\) 到 \(A_{s}^{(T)}\) 中的映射）称为典范映射；若 \(A\) 非零，则它是单射。我们将看到，有序对 \((A_{s}^{(T)}, \phi)\) 是某个泛映射问题的一个解（集合论，IV，§3，第 1 号）。
+
+命题 17. 对每个 A-模 E 和每个映射 \(f: \mathbf{T} \to \mathbf{E}\) ，存在且仅存在一个 A-线性映射 \(g: \mathbf{A}_{s}^{(\mathrm{T})} \to \mathbf{E}\) ，使得 \(f = g \circ \phi\) 。
+
+条件 \(f = g \circ \phi\) 表示 \(g(e_t) = f(t)\) 对所有 \(t \in \mathbf{T}\) 成立，这等价于 \(g(\xi e_t) = \xi f(t)\) 对所有 \(\xi \in \mathbf{A}\) 和所有 \(t \in \mathbf{T}\) 成立，并且也表示 \(g \circ j_t\) 是线性映射 \(\xi \mapsto \xi f(t)\) （ \(\mathbf{A}_s\) 到 \(\mathbf{E}\) 中的映射）对所有 \(t \in \mathbf{T}\) 成立；因此该命题是第 6 号命题 6 的一个特例。
+
+线性映射 g 称为由 E 中元素的族 \((f(t))_{t\in\mathbb{T}}\) 所确定；根据定义
+
+\[
+g \left(\sum_ {t \in \mathrm{T}} \xi_ {t} e _ {t}\right) = \sum_ {t \in \mathrm{T}} \xi_ {t} f (t).\tag{43}
+\]
+
+核 \(\mathbf{R}\) （即 \(g\) 的核）是 \((\xi_t) \in \mathbf{A}_s^{(\mathrm{T})}\) （满足 \(\sum_{t} \xi_t f(t) = 0\) 者）组成的集合；有时称模 \(\mathbf{R}\) 为族 \((f(t))_{t \in \mathbb{T}}\) 的诸元素之间线性关系构成的模。正合列
+
+\[
+0 \longrightarrow \mathrm{R} \longrightarrow \mathrm{A} _ {s} ^ {(\mathrm{T})} \stackrel {\mathbf {g}} {\longrightarrow} \mathrm{E}\tag{44}
+\]
+
+称为由族 \((f(t))_{t\in\mathbb{T}}\) 所确定。
+
+推论 1. 设 T、T' 为两个集合，g: T → T' 为一个映射。则存在且仅存在一个 A-线性映射 f: A \(^{(T)}\) → A \(^{(T')}\) ，使得下图交换
+
+\[
+\begin{array}{c c c} \mathrm{T} & \stackrel {{g}} {{\longrightarrow}} & \mathrm{T} ^ {\prime} \\ \phi \Big \downarrow & & \Big \downarrow \phi^ {\prime} \\ \mathrm{A} ^ {(\mathrm{T})} & \stackrel {{f}} {{\longrightarrow}} & \mathrm{A} ^ {(\mathrm{T} ^ {\prime})} \end{array}
+\]
+
+其中 \(\phi\) 和 \(\phi'\) 是典范映射。
+
+只需将命题 17 应用于复合映射 \(\mathbf{T} \xrightarrow{\pmb{g}} \mathbf{T}' \xrightarrow{\phi'} \mathbf{A}^{(\mathbf{T}')}\) 。
+
+推论 2. 要族 \((a_{t})_{t\in \mathbb{T}}\) （ A-模 \(\mathbf{E}\) 中元素的一个族）是 \(\mathbf{E}\) 的一个生成系，必须且只需该族所确定的线性映射 \(\mathbf{A}_{s}^{(T)}\to \mathbf{E}\) 是满射。
+
+这只是第 7 号命题 9 的另一种表述方式。
+
+定义 10. 族 \((a_{t})_{t\in \mathbf{T}}\) （ A-模 \(\mathbf{E}\) 中元素的一个族）称为自由族（相应地，称为 \(\mathbf{E}\) 的一组基），如果该族所确定的线性映射 \(\mathbf{A}_{s}^{(\mathbf{T})}\to \mathbf{E}\) 是单射（相应地，是双射）。若一个模具有一组基，则称它为自由模。
+
+特别地，如果交换群 G （以加法记号书写）是一个自由 Z-模，就称它是自由的（参见 I，§7，第 7 号）。
+
+定义 10 连同命题 17 的推论 2 表明，A-模 E 的一组基是 E 的一个自由生成族。因此，E 中元素的一个自由族就是它所生成的子模的一组基。
+
+根据定义，A-模 \(\mathbf{A}_s^{(\mathrm{T})}\) 是自由的，且族 \((e_t)_{t\in \mathbb{T}}\) 是该 A-模的一组基（称为典范基）。当 \(\mathbf{A}\neq \{0\}\) 时， \(\mathbf{T}\) 常与 \(e_t\) 的集合（经由典范双射 \(t\mapsto e_t\) ）恒同；这相当于把 \(\sum_{t\in \mathbb{T}}\xi_t.t\)
+
+（而不是 \(\sum_{t\in T}\xi_{t}a_{t}\) ）写出来表示 \(A_{s}^{(T)}\) 的元素。当采用这一约定时， \(A_{s}^{(T)}\) 的元素称为 T 的元素的（系数在 A 中的）形式线性组合。
+
+定义 10 和命题 17 立即给出以下结果：
+
+推论 3. 设 E 是一个自由 A-模， \((a_{t})_{t\in \mathbb{T}}\) 是 E 的一组基，F 是一个 A-模，且 \((b_{t})_{t\in \mathbb{T}}\) 是 F 中元素的一个族。则存在且仅存在一个线性映射 \(f:\mathbf{E}\to \mathbf{F}\) ，使得
+
+\[
+f (a _ {t}) = b _ {t} \text {   for   all   } t \in \mathrm{T}.\tag{45}
+\]
+
+要 \(f\) 是单射（相应地，满射），必须且只需 \((b_t)\) 是 \(\mathbf{F}\) 中的一个自由族（相应地，是 \(\mathbf{F}\) 的一个生成系）。
+
+当族 \((a_{t})_{t\in \mathbb{T}}\) 不是自由族时，称它为相关的。定义 10 也可以表述如下：称族 \((a_{t})_{t\in \mathbb{T}}\) 是自由的，意思是关系式 \(\sum_{t\in \mathbb{T}}\lambda_t a_t = 0\) （其中族 \((\lambda_t)\) 的支撑有限）蕴含 \(\lambda_{t} = 0\) 对所有 \(t\in \mathbb{T}\) 成立；称 \((a_{t})_{t\in \mathbb{T}}\) 是 E 的一组基，意思是每个 \(x\in \mathbb{E}\) 都能以一种且仅一种方式写成 \(x = \sum_{t\in \mathbb{T}}\xi_t a_t\) 的形式；这时，对所有 \(t\in \mathbb{T}\) ，称 \(\xi_{t}\) 为 \(x\) 的下标为 \(t\) 的分量（或坐标）（在基 \((a_{t})\) 下）；映射 \(x\to \xi_t\) （从 E 到 \(\mathbf{A}_s\) 的映射）是线性的。
+
+假设 \(\mathbf{A} \neq \{0\}\) ；于是在 A-模 \(\mathbf{E}\) 中，自由族 \((a_t)_{t \in \mathbb{T}}\) 的指标不同的两个元素本身也不相同：因为若 \(a_{t'} = a_{t''}\) （其中 \(t' \neq t''\) ），则 \(\sum_{t \in \mathbb{T}} \lambda_t a_t = 0\) ，其中 \(\lambda_{t'} = 1\) ， \(\lambda_{t''} = -1\) ，且 \(\lambda_t = 0\) 对 \(\mathbb{T}\) 中异于 \(t'\) 与 \(t''\) 的元素成立。子集 \(\mathbb{S}\) （ \(\mathbb{E}\) 的一个子集）称为自由子集（相应地， \(\mathbb{E}\) 的一个基），如果由 \(\mathbb{S}\) 到其自身的恒同映射所定义的族是自由的（相应地，是 \(\mathbb{E}\) 的一个基）；这时，由指标集到 \(\mathbb{S}\) 上的一个双射映射所定义的每个族都是自由的（相应地，是一个基）。 \(\mathbb{E}\) 的一个自由子集的元素也称为线性无关的。
+
+如果 E 的一个子集不是自由子集，则称它为相关的，或称其为一个相关系，它的元素称为线性相关的。
+
+自由子集的每个子集都是自由的；特别地，空子集是自由的，并且是 E 的子模 \(\{0\}\) 的一个基。
+
+命题 18. 族 \((a_{t})_{t\in \mathbb{T}}\) （模 \(\mathbf{E}\) 的一个族）是自由的，必须且只需 \((a_{t})_{t\in \mathbb{T}}\) 的每个有限子族都是自由的。
+
+这直接从定义得出。
+
+命题 18 表明，E 的自由子集的集合按包含关系排序是归纳的（集合论，III，§2，第 4 号）；由于它非空（因为 \(\varnothing\) 属于它），根据佐恩引理它有一个极大元素 \((a_{i})_{i\in I}\) 。由此可得（若 \(\mathbf{A}\neq \{0\}\) ）：对所有 \(x\in \mathbf{E}\) ，存在 A 的一个元素 \(\mu \neq 0\) 以及 A 的元素的一个族 \((\xi_{i})\) ，使得 \(\mu x = \sum_{i}\xi_{i}a_{i}\) （参见 §7，第 1 号）。
+
+命题 19. 设 E 是一个 A-模，且是子模的一个族 \((\mathbf{M}_{\lambda})_{\lambda \in L}\) 的直和。如果对每个 \(\lambda \in L\) ， \(S_{\lambda}\) 是 \(M_{\lambda}\) 的一个自由子集（相应地，生成集、基），则 \(S = \bigcup_{\lambda \in L} S_{\lambda}\) 是 E 的一个自由子集（相应地，生成集、基）。
+
+该命题由定义以及关系式 \(\mathbf{A}_{s}^{(\mathbf{S})} = \bigoplus_{\lambda \in \mathbf{L}} \mathbf{A}_{s}^{(\mathbf{S}_{\lambda})}\) （直和的结合律，参见第 6 号）得出。
+
+注记。(1) 根据定义 10，若 \(\mathbf{A} \neq \{0\}\) 且 \((a_{t})_{t \in I}\) 是一个自由族，则任何元素 \(a_{k}\) 都不可能等于那些 \(a_{t}\) （其指标 \(t \neq k\) ）的线性组合。但反过来，满足此条件的一个族 \((a_{t})\) 未必是自由族。例如，设 \(\mathbf{A}\) 是一个整环， \(a, b\) 是两个不同的非零元素；在 \(\mathbf{A}\) （视为 A-模）中， \(a\) 和 \(b\) 构成一个相关系，因为 \((-b)a + ab = 0\) 。但一般而言，不存在元素 \(x \in \mathbf{A}\) 使得 \(a = xb\) 或 \(b = xa\) （然而可参见 §7，第 1 号的注记）。
+
+模 E 的一个元素 x 称为自由的，如果 \(\{x\}\) 是一个自由子集，也就是说，如果关系式 \(\alpha x = 0\) 蕴含 \(\alpha = 0\) 。自由子集的每个元素都是自由的，特别地，当 \(A \neq \{0\}\) 时，0 不可能属于任何自由子集。
+
+注记。(2) 一个自由模可以含有 \(\neq0\) 的非自由元素：例如，A-模 \(A_{s}\) 是自由的，但 A 中的右零因子不是 \(A_{s}\) 的自由元素。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\item
+  在加法群 \(\mathbf{Z} / (n)\) （ \(n\) 为一个整数 \(\geqslant 2\) ，且被视为一个 \(\mathbf{Z}\) -模）中，没有元素是自由的，从而更不用说 \(\mathbf{Z} / (n)\) 不是自由模。
+\item
+  可能发生这样的情形：一个 A-模的每个元素 \(\neq0\) 都是自由的，而该模本身却不是自由的。例如，有理数域 Q 作为 Z-模就具有这一性质，因为 Q 的两个元素 \(\neq0\) 总是构成一个相关系，因此 \(\mathbf{Q}\) 的基只能含一个元素 \(a\) ；但 \(\mathbf{Q}\) 的元素并非都具有 \(na\) （ \(n \in \mathbf{Z}\) ）的形式（参见 VII，§3）。
+\end{enumerate}
+
+命题 20. 每个 A-模 E 都同构于一个自由 A-模的商模。
+
+如果 T 是 E 的一个生成集，则存在一个满射线性映射 \(\mathbf{A}_{s}^{(\mathrm{T})}\to\mathbf{E}\) （命题 17 的推论 2），且若 R 是这个映射的核，则 E 同构于 \(\mathbf{A}_{s}^{(\mathrm{T})}/\mathbf{R}\) 。
+
+特别地，我们可以取 \(\mathbf{T} = \mathbf{E}\) ；这时存在一个满射线性映射 \(\mathbf{A}_s^{(\mathbf{E})} \to \mathbf{E}\) ，称为典范映射。
+
+特别地，说一个 A-模 E 是有限生成的（第 7 号），意味着它同构于一个具有有限基的自由 A-模的商模，或者等价地，存在如下形式的正合列
+
+\[
+\mathrm{A} _ {s} ^ {n} \rightarrow \mathrm{E} \rightarrow 0 (n \text {   an   integer   } > 0).
+\]
+
+注意，如果 \(A \neq \{0\}\) ，有限生成的自由模 E 的每个基都必然是有限的，因为若 S 是一个有限生成系而 B 是 E 的一个基，则 S 的每个元素都是 B 中有限个元素的线性组合，且若 \(B'\) 是 B 中所有以这种方式出现在 S 的元素的表达式中的元素组成的集合，则 \(B'\) 是有限的，而每个 \(x \in E\) 都是 \(B'\) 中元素的线性组合，因此 \(B' = B\) 。
+
+命题 21. A-模的每个正合列
+
+\[
+0 \longrightarrow \mathrm{G} \stackrel {g} {\longrightarrow} \mathrm{E} \stackrel {f} {\longrightarrow} \mathrm{F} \longrightarrow 0
+\]
+
+其中 \(\mathbf{F}\) 是一个自由 A-模，是分裂的（第 9 号）。确切地说，如果 \((b_{\lambda})_{\lambda \in \mathbf{L}}\) 是 \(\mathbf{F}\) 的一组基，且对每个 \(\lambda \in \mathbf{L}\) ， \(a_{\lambda}\) 是 \(\mathbf{E}\) 的一个元素，使得 \(f(a_{\lambda}) = b_{\lambda}\) ，则族 \((a_{\lambda})_{\lambda \in \mathbf{L}}\) 是自由的，并生成与 \(g(\mathbf{G})\) 互补的子模。
+
+存在且仅存在一个线性映射 \(h: \mathbf{F} \to \mathbf{E}\) ，使得 \(h(b_{\lambda}) = a_{\lambda}\) 对所有 \(\lambda \in \mathbf{L}\) 成立（命题 17 的推论 3）。由于 \(h\) 是与 \(f\) 相伴的线性截面，该命题由 I，§4，第 9 号的命题 15 得出。
+
+注记。(5) 设 \((a_{i})_{1\leqslant i\leqslant n}\) 是 A-模 E 的一组基，且设 \((b_{i})_{1\leqslant i\leqslant n}\) 是 E 中由下列关系式给出的一个元素族：
+
+\[
+b _ {i} = \lambda_ {1 i} a _ {1} + \dots + \lambda_ {i i} a _ {i} (1 \leqslant i \leqslant n)\tag{46}
+\]
+
+其中 \(\lambda_{ii}\) 在 A 中可逆；则 \((b_i)_{1\leqslant i\leqslant n}\) 是 E 的一组基。只需对 \(n\) 作归纳论证，因为该命题对 \(n = 1\) 是显然的。若 \(\mathbf{E}'\) 是 E 的由族 \((a_i)_{1\leqslant i\leqslant n - 1}\) 生成的子模，则由归纳假设可得 \((b_i)_{1\leqslant i\leqslant n - 1}\) 是 \(\mathbf{E}'\) 的一组基；另一方面，由 (46) 可得，如果 \(\mu b_n\in \mathbf{E}'\) （其中 \(\mu \in \mathbf{A}\) ），那么也有 \(\mu \lambda_{nn}a_n\in \mathbf{E}'\) ，从而 \(\mu = 0\) ，因为 \(\lambda_{nn}\) 是可逆的。因此族 \((b_i)_{1\leqslant i\leqslant n}\) 是自由的，并且由于
+
+\[
+a _ {n} = - \lambda_ {n n} ^ {- 1} \lambda_ {1 n} a _ {1} - \dots - \lambda_ {n n} ^ {- 1} \lambda_ {n - 1, n} a _ {n - 1} + \lambda_ {n n} ^ {- 1} b _ {n}
+\]
+
+由此可以看出 \((b_{i})_{1\leqslant i\leqslant n}\) 是 E 的一个生成系，这就完成了证明。这一结果容易推广到指标集 I 为良序集的族 \((a_{i})_{i\in I}\) 。

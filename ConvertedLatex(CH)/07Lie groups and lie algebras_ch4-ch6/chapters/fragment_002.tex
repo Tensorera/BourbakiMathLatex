@@ -1,0 +1,1283 @@
+\appendixitem{森林与树}
+
+设 \(\Gamma = (\mathrm{A},\mathrm{S})\) 为一个图。\(\Gamma\) 的一个回路是一个序列
+
+\[
+(x _ {1}, \ldots , x _ {n})
+\]
+
+其中 \(\Gamma\) 的各顶点互不相同，并且满足 \(n \geqslant 3\)、\(x_{i}\) 与 \(x_{i+1}\) 相连（\(1 \leqslant i < n\)），且 \(x_{n}\) 与 \(x_{1}\) 相连。若 \(\Gamma\) 中没有回路，则称 \(\Gamma\) 为森林；于是 \(\Gamma\) 的每个子图也都是森林。连通的森林称为树；因此森林的连通分支都是树。
+
+命题 2. 设 \(\Gamma = (\mathrm{A},\mathrm{S})\) 是只有有限个顶点的森林。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  若 \(\Gamma\) 至少有一个顶点，则它有一个端点。
+\item
+  若 \(\Gamma\) 至少有两个顶点，则其顶点集可以划分为两个非空子集 \((\mathbf{S}', \mathbf{S}'')\)，使得同属 \(\mathbf{S}'\) 或同属 \(\mathbf{S}''\) 的两个不同顶点从不相连。
+\end{enumerate}
+
+设 \(\Gamma\) 至少有一个顶点，并令 \((x_{0},\ldots,x_{n})\) 为 \(\Gamma\) 中长度最大的单射路径。顶点 \(x_{0}\) 不可能与一个异于 \(x_{0},x_{1},\ldots,x_{n}\) 的顶点 y 相连，因为否则 \(\Gamma\) 中将存在长度为 \(n+1\) 的单射路径，即 \((y,x_{0},\ldots,x_{n})\)。顶点 \(x_{0}\) 不与任何顶点 \(x_{i}\)（满足 \(2\leqslant i\leqslant n\)）相连，因为否则 \((x_{0},x_{1},\ldots,x_{i})\) 将是森林 \(\Gamma\) 中的回路。因此，\(x_{0}\) 是端点。
+
+我们按顶点数 \(m\) 的 \(\Gamma\) 对 (ii) 作归纳证明，\(m = 2\) 的情形是显然的。于是设 \(m \geqslant 3\)，并且断言 (ii) 对有 \(m - 1\) 个顶点的图已经得到证明。令 \(a\) 为 \(\Gamma\) 的一个端点（参见 (i)）。我们将归纳假设应用于 \(\Gamma\) 的全子图，该子图的顶点是满足 \(x \neq a\) 的、属于 \(\Gamma\) 的顶点。因此，存在两个不相交的非空子集 \(S_1'\) 和 \(S_1''\)（它们属于 \(S\)），满足 \(S_1' \cup S_1'' = S - \{a\}\)，并且 \(S_1'\) 中（分别，\(S_1''\) 中）的两个不同顶点从不相连。由于 \(a\) 至多与 \(\Gamma\) 的一个顶点相连，我们不妨设它不与 \(S_1'\) 中任何顶点相连。于是划分 \((S_1', S_1'' \cup \{a\})\) 具有所需性质。证毕。
+
+对于任意整数 \(n \geqslant 1\)，以 \(A_{n}\) 表示如下图：其顶点是整数 \(1, 2, \ldots, n\)，其边是形如 \(\{i, j\}\) 的对，其中 \(i - j = \pm 1\)：
+
+1
+
+2
+
+3
+
+n---1
+
+n
+
+○
+
+○
+
+○
+
+\ldots\ldots{}
+
+○
+
+若图 \(\Gamma\) 被称为长度为 \(m \geqslant 0\) 的链，当且仅当它同构于 \(A_{m+1}\)。这等价于：\(\Gamma\) 中存在包含所有顶点的单射路径 \((x_{0}, \ldots, x_{m})\)，且顶点 \(x_{i}\) 与 \(x_{j}\) 不相连（若 \(|i-j| > 1\)）。
+
+命题 3. 一个图是链，当且仅当它的顶点数有限且非零，并且它是一棵没有分叉点的树。
+
+设图 \(\Gamma\) 是具有命题 3 之前所列性质的链 \((x_0, \ldots, x_m)\)。显然，\(\Gamma\) 的任一顶点至多与两个顶点相连。若 \(i < j\)，则路径 \((x_i, \ldots, x_j)\) 是从路径 \((x_0, \ldots, x_m)\) 中取出的，并将 \(x_i\) 与 \(x_j\) 相连；因此，\(\Gamma\) 是连通的。最后，设 \((x_{p_1}, \ldots, x_{p_n})\) 是 \(\Gamma\) 中的一个回路，并令 \(p_k\) 为互不相同的整数 \(p_1, \ldots, p_n\) 中最小者。存在不同的指标 \(i\) 和 \(j\)，使得 \(x_{p_k}\) 分别与 \(x_{p_i}\) 和 \(x_{p_j}\) 相连：这由回路的定义可知。由于 \(p_k < p_i\) 且 \(p_k < p_j\)，必有 \(p_i = p_j = p_k + 1\)，这与 \(p_1, \ldots, p_n\) 互不相同矛盾。因此，\(\Gamma\) 中没有回路。
+
+反之，设 \(\Gamma\) 是一棵没有分叉点且顶点数有限非零的树，并令 \((x_0, \ldots, x_m)\) 为 \(\Gamma\) 中长度最大的单射路径。以 T 表示除 \(x_0, \ldots, x_m\) 外的顶点集。顶点 \(b \in T\) 不可能与任何顶点 \(x_i\) 相连，因为那样我们将有以下情形之一：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(i = 0\)，但此时 \((b, x_0, \ldots, x_m)\) 将是长度为 \(m + 1\) 且位于 \(\Gamma\) 中的单射路径；或
+\item
+  \(i = m\)，但此时 \((x_0, \ldots, x_m, b)\) 将是长度为 \(m + 1\) 且位于 \(\Gamma\) 中的单射路径；或
+\item
+  \(0 < i < m\)，但此时 \(x_{i}\) 将与三个不同的顶点 \(x_{i-1}\)、\(x_{i+1}\) 和 \(b\) 相连。
+\end{enumerate}
+
+由于 \(\Gamma\) 是连通的，由命题 1 的推论 1，\(T\) 为空。此外，若存在 \(i,j\) 满足 \(j - i > 1\) 且 \(x_{i}, x_{j}\) 相连，则将有回路 \((x_{i}, x_{i+1}, \ldots, x_{j})\) 位于 \(\Gamma\) 中。因此，\(\Gamma\) 是链。证毕。
+
+\exercisesection{§ 1 的习题}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 (W, S) 为 Coxeter 系统，并设 \(s_{1}, \ldots, s_{r}\) 是 S 的元素。置 \(w = s_{1} \ldots s_{r}\)。证明：若 \(l_{\mathbb{S}}(w) < r\)，则存在两个整数 p、q，满足 \(1 \leqslant p < q \leqslant r\)，使得 \(w = s_{1} \ldots s_{p-1}s_{p+1} \ldots s_{q-1}s_{q+1} \ldots s_{r}\)。证明存在严格递增的整数序列 \(j(1), \ldots, j(k)\)，其各项介于 1 与 r 之间，使得 \((s_{j(1)}, \ldots, s_{j(k)})\) 是 w 的一个约化分解。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \((\mathbf{W},\mathbf{S})\) 为 Coxeter 系统，且 \(X,Y,Z\) 为 \(S\) 的三个子集。证明
+\end{enumerate}
+
+\[
+W _ {X} \cap (W _ {Y}. W _ {Z}) = (W _ {X} \cap W _ {Y}). (W _ {X} \cap W _ {Z})
+\]
+
+（证明每个元素 \(w \in W_{Y}.W_{Z}\) 都有一个约化分解
+
+\[
+(s _ {1}, \ldots , s _ {h}, t _ {1}, \ldots , t _ {k})
+\]
+
+其中 \(s_i \in Y\)、\(t_j \in Z\)，并使用第 8 项命题 7 的推论 1）。
+
+证明
+
+\[
+W _ {X}. \left(W _ {Y} \cap W _ {Z}\right) = \left(W _ {X}. W _ {Y}\right) \cap \left(W _ {X}. W _ {Z}\right).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \((W,S)\) 为 Coxeter 系统，X 为 S 的一个子集。证明：\(W_{X}\) 在 W 中正规，当且仅当 X 的每个元素都与 S-X 的每个元素交换。
+\item
+  设 \((\mathbf{W},\mathbf{S})\) 为 Coxeter 系统，\(\mathbf{X},\mathbf{Y}\) 为 \(\mathbf{S}\) 的两个子集。令 \(a\in W\)。证明存在唯一的最短元素 \(w\in W_X a W_Y\)，并且每个元素
+\end{enumerate}
+
+\[
+w ^ {\prime} \in W _ {X} a W _ {Y}
+\]
+
+可以写成 \(w' = xwy\) 的形式，其中 \(x \in W_X, y \in W_Y\)，且 \(l(w') = l(x) + l(w) + l(y)\)（取 \(W_X aW_Y\) 中的最短元素并使用习题 1）。称元素 \(w \in W\) 为 \((X,Y)\)-约化的，如果它是双陪集 \(W_X aW_Y\) 中的最短元素。
+
+证明：若 \(w\) 是 \((X, \emptyset)\)-约化的，则有 \(l(xw) = l(x) + l(w)\) 对所有 \(x \in W_X\) 成立，并且 \(W\) 的每个元素都能唯一地写成 \(xw\) 的形式，其中 \(x \in W_{X}\)，而 w 是 \((X, \varnothing)\)-约化的。证明元素 \(w \in W\) 是 \((X, \varnothing)\)-约化的，当且仅当 \(l(xw) > l(w)\) 对所有 \(x \in X\) 成立（将 w 写成 \(yw'\) 的形式，其中 \(y \in W_{X}\)，而 \(w'\) 是 \((X, \varnothing)\)-约化的）。
+
+证明 \(w \in W\) 是 \((X, Y)\)-约化的，当且仅当 w 同时是 \((X, \varnothing)\)-约化的和 \((\varnothing, Y)\)-约化的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\item
+  设 \(n\) 为一个整数 \(\geqslant 2\)。对于任意整数 \(i\) 满足 \(1 \leqslant i \leqslant n - 1\)，以 \(s_i\) 表示 \(i\) 与 \(i + 1\) 在集合 \(\{1, 2, \ldots, n\}\) 中的换位，以 \(H_i\) 表示 \(w \in \mathfrak{S}_n\) 且满足 \(w^{-1}(i) < w^{-1}(i + 1)\) 的 w 的集合；置 \(S = \{s_1, \ldots, s_{n-1}\}\)。证明 \((\mathfrak{S}_n, S)\) 是 Coxeter 系统，并且 \(H_i\) 是 \(w \in \mathfrak{S}_n\) 中满足 \(l(w) < l(s_i w)\) 的那些 w 的集合（使用第 7 项命题 6）。
+\item
+  设 X 是一个非空集合，W 是 X 上的一组置换。给定 X 上等价关系的集合 R、元素 \(x_{0} \in X\) 以及从 R 到 W 的映射 \(\varphi : H \mapsto s_{H}\)。以 \(R_{0}\) 表示满足如下条件的 \(H \in R\) 的集合：\(s_{\mathrm{H}}(x_{0}) \equiv x_{0} \mod \mathrm{H}'\) 对 R 中所有 \(H' \neq H\) 均成立；以 \(S_{0}\) 表示这些 \(s_{H}\)（其中 H 属于 \(R_{0}\)）所成的集合。作如下假设：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对任意 \(\mathbf{H} \in \Re\)，模 \(\mathbf{H}\) 有两个等价类被 \(s_{\mathrm{H}}\) 置换，且 \(s_{\mathrm{H}}^{2} = 1\)。
+\item
+  对所有 \(\mathbf{H} \in \Re\) 和所有 \(w \in \mathbf{W}\)，\(w(\mathbf{H})\) 是 \(\mathbf{H}\) 在 \(w\) 下的变换，属于 \(\Re\) 的等价关系，且 \(s_{w(\mathbf{H})} = ws_{\mathbf{H}}w^{-1}\)。
+\item
+  对任意 \(w \neq 1\)（在 \(W\) 中），\(H \in \Re\) 中使 \(w(x_0) \not\equiv x_0 \mod H\) 的那些 H 所成的集合是有限的，并且与 \(\Re_0\) 相交。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 \((\mathbf{W},\mathbf{S}_0)\) 是 Coxeter 系统（使用第 7 项命题 6）。
+\item
+  证明长度 \(l_{S_0}(w)\) 等于满足下式的 \(H \in \mathfrak{R}\) 的元素个数：
+\end{enumerate}
+
+\[
+w (x _ {0}) \not \equiv x _ {0} \bmod . H.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 E 是一个有限集，X 是 X 上全序关系的集合。以 W 表示 E 的置换群，它以显然的方式作用于 E。设 i、j 是 E 的不同元素；如果 X 的两个元素 R、R' 模 \(H_{ij}\) 等价，即满足 \(\mathrm{R}(i,j)\) 与 \(\mathrm{R}'(i,j)\)，或者满足 \(\mathrm{R}(j,i)\) 与 \(\mathrm{R}'(j,i)\)，则称它们等价；以 \(s_{ij}\) 表示 i 与 j 的换位。令 R 为形如 \(H_{ij}\) 的等价关系的集合，并令 \(\varphi\) 为从 R 到 W 的映射，由 \(\varphi(\mathrm{H}_{ij}) = s_{ij}\) 定义；最后令 \(x_{0}\) 为 X 的任意元素。证明如此定义的对象满足假设 (i) 至 (iii)，并重新得到习题 4 的结果。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\item
+  设 E 是含有 6 个元素的集合，F 是 E 上域 \(F_{5}\) 的射影直线结构的集合。以 \(S_{E}\) 表示 E 的置换群；对任意 \(\sigma \in S_{E}\)，以 \(\tilde{\sigma}\) 表示 \(\sigma\) 通过结构传递在 F 上诱导的置换。证明存在从 E 到 F 的双射 u，并且映射 \(\sigma \mapsto u^{-1}\tilde{\sigma}u\) 是 \(S_{E}\) 的外自同构（若 s 是换位，则 \(u^{-1}\tilde{s}u\) 有三个二元轨道）。
+\item
+  构造一个群 W 及其两个子集 S、S'，使得 (W, S) 与 (W, S') 是同构的 Coxeter 系统，但不存在将 S 变为 S' 的 W 的内自同构（使用习题 4 和习题 6）。
+\item
+  构造一个群 W 及其两个子集 S、S'，使得 (W, S) 与 (W, S') 是不同构的 Coxeter 系统，其中一个不可约而另一个可约（令 W 为由 \(\{s, s'\}\) 生成的 12 阶二面体群，其中 s 和 \(s'\) 的阶为 2 且 \(s \neq s'\)，并置 \(S = \{s, s'\}\)、\(S' = \{(ss')^3, s', s'(ss')^2\}\)）。
+\item
+  设 (W, S) 是矩阵 \((m(s, s'))\) 给出的 Coxeter 系统，并令 \(W^{+}\) 为由 W 中长度为偶数的元素组成的子群。令 \(s_{0} \in S\)。置 \(g_{s} = ss_{0}\)。证明族 \((g_{s})_{s \in S - \{s_{0}\}}\)，以及关系 \(g_{s}^{m(s, s_{0})} = 1\)（当 \(m(s, s_{0}) \neq \infty\)）和关系 \((g_{s} g_{s'}^{-1})^{m(s, s')} = 1\)（当 \(s, s' \in S - \{s_{0}\}\) 且 \(m(s, s') \neq \infty\)），构成 \(W^{+}\) 的一个表示。（令 \(H^{+}\) 为上述表示定义的群。证明存在一个平方为恒等的自同构 \(\alpha\)，其定义在 \(H^{+}\) 上，将 \(g_{s}\) 变为 \(g_{s}^{-1}\)（对所有 \(s \in S - \{s_{0}\}\)）。若 \(H_{\alpha}\) 是 \(\{1, -1\}\) 与 \(H^{+}\) 关于 \(\alpha\) 的半直积，定义互为逆的同态 \(H_{\alpha} \to W\) 和 \(W \to H_{\alpha}\)。）证明：若 S 的元素彼此共轭（参见命题 3），则群 \(W^{+}\) 是 W 的换位子群（注意此时元素 \(g_{s}\) 都是换位子）。
+\item
+  令 \(\mathfrak{U}_n\) 为由置换 \(w \in \mathfrak{S}_n\) 中符号等于 \(+1\) 的那些置换组成的交错群。证明 \(\mathfrak{U}_n\) 是 \(\mathfrak{S}_n\) 的换位子群（使用习题 4 和 9）。对于任意整数 \(i\) 满足 \(1 \leqslant i \leqslant n - 2\)，置 \(u_i = s_i s_{i+1}\)（沿用习题 4 的记号）。证明族 \((u_i)\)，以及关系 \(u_1^3 = 1\)、\(u_i^2 = 1\)（当 \(i \geqslant 2\) 时）、\((u_i u_{i+1})^3 = 1\)（当 \(1 \leqslant i \leqslant n - 3\) 时）和 \(u_i u_j = u_j u_i\)（当 \(1 \leqslant i \leqslant n - 4\) 且 \(i + 2 \leqslant j \leqslant n - 2\) 时）构成群 \(\mathfrak{U}_n\) 的一个表示（使用习题 9）。
+\end{enumerate}
+
+*11) 令 \((\mathbf{W},\mathbf{S})\) 为 Coxeter 系统。令 \(\Gamma_{\infty}\) 为顶点集是 \(\mathbf{S}\) 的图；两个顶点 \(s,s'\) 以一条边相连，当且仅当 \(m(s,s')\neq \infty\)。令 \(\mathrm{S}_{\alpha}\) 为 \(\Gamma_{\infty}\) 的连通分支。证明 \(\mathbf{W}\) 可以认作各 \(\mathrm{W}_{\mathrm{S}_{\alpha}}\) 的自由积。特别地，每个元素 \(w\in \mathbf{W}\) 都能唯一地写成乘积 \(w_{1}\ldots w_{h}\)，其中 \(w_{i}\neq 1\)，\(w_{i}\) 属于 \(\mathrm{W}_{\mathrm{S}_{\alpha_i}}\)，且有 \(\alpha_{i}\neq \alpha_{i + 1}\)（\(1\leqslant i\leqslant h - 1\)）；证明 \(w\) 的长度等于各 \(w_i\) 的长度之和。*
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  设 \((\mathbf{W},\mathbf{S})\) 为 Coxeter 系统，满足 \(m(s,s')\) 在 \(s\neq s'\) 时为偶数，并令 \(\mathbf{X}\) 为 \(\mathbf{S}\) 的一个子集。证明存在唯一的同态 \(f_{\mathbf{X}}\)，从 \(\mathbf{W}\) 到 \(\mathbf{W}_{\mathbf{X}}\)，满足 \(f_{\mathbf{X}}(s) = s\)（当 \(s\in \mathbf{X}\)）且 \(f_{\mathbf{X}}(s) = 1\)（当 \(s\in \mathbf{S} - \mathbf{X}\)）。推出 \(\mathbf{W}\) 是 \(\mathbf{W}_{\mathbf{X}}\) 与 \(f_{\mathbf{X}}\) 的核的半直积。证明：若 \(\mathbf{X}\subset \mathbf{Y}\subset \mathbf{S}\)，则存在唯一的同态 \(f_{\mathbf{X},\mathbf{Y}}\)，从 \(\mathbf{W}_{\mathbf{Y}}\) 到 \(\mathbf{W}_{\mathbf{X}}\)，满足 \(f_{\mathbf{X}} = F_{\mathbf{X},\mathbf{Y}}\circ f_{\mathbf{Y}}\)，并且 \(\mathbf{W}\) 可以认作由 X 遍历 S 的有限子集所得到的滤过集上的 \(W_{X}\) 的射影系统的一个子群。
+\end{enumerate}
+
+¶ 13) 设 \((W, S)\) 为 Coxeter 系统。对 \(s, s' \in S\)，按以下规则定义序列 \(\mathbf{a}(s, s')\)：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  若 \(ss'\) 的阶为无穷，则 \(\mathbf{a}(s, s')\) 是空序列；
+\item
+  若 \(ss'\) 的阶为有限数 m，则序列 \(\mathbf{a}(s, s')\) 的长度为 m，且其偶数编号项（分别为奇数编号项）等于 \(s'\)（分别为 s）。
+\end{enumerate}
+
+以 \(a(s, s')\) 表示序列 \(\mathbf{a}(s, s')\) 的乘积。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明生成集 S 以及关系 \(s^{2}=1\) 和 \(\mathbf{a}(s,s')=\mathbf{a}(s',s)\) 构成群 W 的一个表示。
+\item
+  令 \(q\) 为一个整数 \(\geqslant 1\)。令 \(\Sigma_q\) 为由 \(q\) 个 \(S\) 的元素组成的序列的集合，并令 \(R_q\) 为 \(\Sigma_q\) 上的最小等价关系，使得形如 \((A, \mathbf{a}(s, s'), B)\) 和 \((A, \mathbf{a}(s', s), B)\) 的序列（其中 \(s, s' \in S\)，且 \(A\) 和 \(B\) 是由 \(S\) 的元素组成的序列）等价。令 \(\Sigma_q^r\) 为序列 \(\mathbf{s} = (s_1, \ldots, s_q)\) 的集合，其中 \(w(\mathbf{s}) = s_1 \ldots s_q\) 的长度为 \(q\)。证明序列 \(\mathbf{s}, \mathbf{s}' \in \Sigma_q^r\) 模 \(R_q\) 等价，当且仅当 \(w(\mathbf{s}) = w(\mathbf{s}')\)（按 \(q\) 归纳，并应用第 5 项命题 5）。
+\item
+  证明序列 \(\mathbf{s} \in \Sigma_q\) 不属于 \(\Sigma_q^r\)，当且仅当 \(\mathbf{s}\) 模 \(R_q\) 等价于一个含有两个相邻相等项的序列。（按 \(q\) 归纳，并归结为序列 \((s_1, \ldots, s_q)\) 的情形：它不属于 \(\Sigma_q^r\)，但 \((s_1, \ldots, s_{q-1})\) 和 \((s_2, \ldots, s_q)\) 属于 \(\Sigma_{q-1}^r\)；使用习题 1 证明 \(s_1 \ldots s_{q-1} = s_2 \ldots s_q\)，再应用 b)。
+\end{enumerate}
+
+*14) 设 \((\mathbf{W},\mathbf{S})\) 为 Coxeter 系统，\((\Gamma ,f)\) 为其 Coxeter 图。令 \(k\) 为一个整数 \(\geqslant 3\)。若 \(a\) 是 \(\Gamma\) 的一条边，则置 \(f_{k}(a) = f(a)\)（当 \(f(a)\neq \infty\) 时），并置 \(f_{k}(a) = k\)（当 \(f(a) = \infty\) 时）。令 \((\mathrm{W}_k,\mathrm{S})\) 为 Coxeter 图等于 \((\Gamma ,f_k)\) 的 Coxeter 系统（第 V 章，§4，第 3 项命题 4 的推论）。证明存在唯一的同态 \(\varphi_{k}\)，从 W 到 \(\mathbf{W}_k\)，在 S 上诱导恒等映射。证明若 \(k\) 整除 \(k^{\prime}\)，则存在唯一的同态 \(\varphi_{k,k^{\prime}}\)，从 \(\mathbf{W}_{k^{\prime}}\) 到 \(\mathbf{W}_k\)，满足 \(\varphi_{k} = \varphi_{k,k^{\prime}}\circ \varphi_{k^{\prime}}\)。证明同态 \((\varphi_{k})\) 从 W 到 \(\mathbf{W}_k\) 的射影极限是单射（使用习题 13）\(c)\)，但一般不是满射（例如在无限二面体群的情形）。*
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  设 A 是一个集合，C 是 \(\mathfrak{P}(A)\) 的一个子集。C 的元素称为 A 的室，室 C 的子集 F 称为一个面，并将 F 在 C 中的余维定义为 C-F 的基数。若面 F 在 C 中的余维为 1，则称 F 为 C 的一个面板。若两个室 C、C' 有公共面板 F，则称它们相邻：此时或者 \(C = C'\)，或者 \(F = C \cap C'\)。长度为 n 的廊是序列 \(\Gamma = (C_0, C_1, \ldots, C_n)\)，由 \(n + 1\) 个室组成，并满足 \(C_i\) 与 \(C_{i+1}\) 相邻（\(0 \leqslant i \leqslant n - 1\)）。于是称 \(C_0\) 与 \(C_n\) 为 \(\Gamma\) 的端点。廊 \(\Gamma\) 称为单射的，当 \(C_i \neq C_{i+1}\)（\(0 \leqslant i \leqslant n - 1\)）时；若不存在具有相同端点且长度 \textless{} n 的廊，则称其为最短的。
+\end{enumerate}
+
+若 A 的每个元素至少属于一个室，且任意两个室都是某个廊的端点，则称 A（连同 C）为一个建筑。两个室 C 与 \(C'\) 之间的距离，是长度 \(d(\mathrm{C},\mathrm{C}')\) 的、端点为 C 与 \(C'\) 的最短廊。
+
+A 的一个子建筑是 A 的子集 D，使得 D 连同 \(\mathfrak{C}\cap\mathfrak{P}(D)\) 构成一个建筑。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：若 A 是一个建筑，则一个面在包含它的每个室中的余维相同；因此，我们可以不指明特定的室而谈论 A 的面的余维和面板。建筑 B 到 A 的态射是从 B 到 A 的映射 f，使得 f 在 B 的每个室 C 上的限制是从 C 到 A 的一个室 \(f(\mathrm{C})\) 的双射。证明 B 的一个面在 f 下的像仍是具有相同余维的面。
+\item
+  若每个面板恰好包含于两个室中，则称建筑 A 为一个公寓。证明：若 A 是一个公寓，则 A 的每个保持 C 不变的自同构（即 A 的每个保持 C 的置换）若固定一个室的所有点，就必为恒等映射。更一般地，设 \(\varphi\) 是 A 的一个自同态，C 是 A 的一个室，且 \(\varphi(a)=a\) 对所有 \(a\in C\) 成立。令 \((\mathrm{C},\mathrm{C}_{1},\ldots,\mathrm{C}_{n})\) 为 A 的一个廊。证明：廊 \((\mathrm{C},\varphi(\mathrm{C}_{1}),\ldots,\varphi(\mathrm{C}_{n}))\) 要么不是单射的，要么 \(\varphi(a)=a\) 对所有属于各 \(C_{i}\) 的并集的 a 都成立。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  设 \((W,S)\) 为 Coxeter 系统。对 \(s \in S\)，以 \(W^{(s)}\) 表示 W 的子群 \(W_{S-\{s\}}\)，以 A 表示形如 \(wW^{(s)}\)（其中 \(w \in W\) 且 \(s \in S\)）的 W 的子集所成的集合，并以 C 表示形如 \(C_w = \{wW^{(s)} \mid s \in S\}\)（其中 \(w \in W\)）的 A 的子集所成的集合；我们称这些子集为 A 的室（习题 15）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明映射 \(w \mapsto \mathbf{C}_w\) 是从 W 到 \(\mathfrak{C}\) 的双射。
+\item
+  证明两个不同的室 \(C_{w}\) 与 \(C_{w'}\) 相邻，当且仅当存在 \(s \in S\) 使得 \(w' = ws\)。推出 A（连同 C）是一个公寓（习题 15），我们称其为 (W, S) 的公寓。证明端点为 \(C_{w}\) 与 \(C_{w'}\) 的最短廊的长度等于 \(l_{S}(w^{-1}w')\)。
+\item
+  令 \(\mathfrak{F}\) 为 A 的面的集合，并令 \(F \in \mathfrak{F}\)。证明存在 S 的唯一子集 X 和 W 的一个元素 \(w \in W\)，使得 \(wW_X = \bigcap_{i \in F} i\)。于是称 F 为 X 型。证明 F 的余维等于 X 的基数。证明映射 \(j: F \mapsto \bigcap_{i \in F} i\) 是从 \(\mathfrak{F}\) 到形如 \(wW_X\)（其中 \(w \in W\)、\(X \subset S\)）的 W 的子集的严格递减双射（关于包含关系）。证明：对满足 \(X \subset Y \subset S\) 的每个 Y，每个 X 型面都包含唯一的 Y 型面。
+\item
+  令 W 通过左平移作用于 A，并置 \(C = C_{e}\)。证明 W 在 C 上单纯传递地作用 \(^{8}\)。令 \(C_{1}, \ldots, C_{n}\) 为 A 的室。证明以下条件等价：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  序列 \(\Gamma = (\mathrm{C}_0 = \mathrm{C},\mathrm{C}_1,\dots ,\mathrm{C}_n)\) 是一个单射廊；
+\item
+  存在由 S 的元素组成的序列 \(\mathbf{s} = (s_1, \ldots, s_n)\)，使得 \(\mathrm{C}_j = t_j(\mathrm{C}_{j-1})\) 对 \(1 \leqslant j \leqslant n\) 成立，其中 \(t_j\) 是第 4 项公式 (11) 中定义的 \(\Phi(\mathbf{s})\) 的元素。
+\end{enumerate}
+
+证明：若这些条件满足，则序列 s 是唯一的，且 \(C_{n} = s_{1} \ldots s_{n}(C)\)。证明廊 \(\Gamma\) 是最短的，当且仅当序列 \(\mathbf{s}(\Gamma) = \mathbf{s}\) 是 \(w = s_{1} \ldots s_{n}\) 的一个约化分解。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  令 T 为 S 的共轭元的并集。对 \(t \in T\)，A 中在 t 下不变的点集 \(L_{t}\) 称为 t 所定义的墙。证明 \(L_{t}\) 是面板的并集，并且面板 F 包含于 \(L_{t}\) 当且仅当 \(j(\mathrm{F})\) 形如 \(wW_{\{s\}}\)，其中 \(t = wsw^{-1}\)。推出：对任意面板 F，存在唯一的元素 \(t = t(\mathrm{F}) \in \mathrm{T}\) 使得 \(F \subset L_{t}: L_{t}\) 称为 F 的支撑墙。
+\end{enumerate}
+
+证明：若 \(w(\mathrm{L}_t) = \mathrm{L}_t\)（其中 \(w \in \mathrm{W}\)），则 \(w = 1\) 或 \(w = t\)。
+
+\(f)\) 令 \(w', w'' \in W\)。置 \(C' = w'(C), C'' = w''(C)\)，并令 \(\Gamma = (C_0 = C', C_1, \ldots, C_n = C'')\) 为端点为 \(C'\) 和 \(C''\) 的单射廊。令 \(t_j\) 为 \(T\) 中定义面板 \(C_j \cap C_{j-1}\) 的支撑墙的元素（当 \(1 \leqslant j \leqslant n\) 时）。证明序列 \(\Psi(T) = (w'^{-1} t_j w')_{1 \leqslant j \leqslant n}\) 与序列 \(\Phi(s(w'^{-1}(\Gamma))\) 重合。对 \(t \in T\)，令 \(n(\Gamma, t)\) 为 \(w'^{-1} tw'\) 在 \(\Psi(\Gamma)\) 中出现的次数。由第 4 项引理 1 推出，数 \((-1)^{n(\Gamma, t)}\) 只依赖于 \(C'\) 和 \(C''\)，而不依赖于 \(\Gamma\)：记其为 \(\eta(C', C'', t)\)。证明关系 \(\eta(C', C'', t) = 1\) 是 \(C'\) 与 \(C''\) 之间的一个等价关系，并且有两个被 \(t\) 置换的等价类。以 \(\mathfrak{C}^+(t)\) 表示包含 \(C\) 的等价类，以 \(\mathfrak{C}^-(t)\) 表示另一个等价类。
+
+证明：对 \(w \in \mathbf{W}\) 和 \(s \in S\)，室 \(w(\mathbf{C})\) 属于 \(\mathfrak{C}^+(s)\)，当且仅当 \(l(sw) > l(w)\)。
+
+\(g)\) 令 \(\mathrm{A}^{+}(t)\)（分别为 \(\mathrm{A}^{-}(t)\)）为属于 \(\mathfrak{C}^{+}(t)\)（分别为 \(\mathfrak{C}^{-}(t)\)）的室的并集（其中 \(t \in \mathrm{T}\)）。证明 \(\mathrm{A}^{+}(t) \cap \mathrm{A}^{-}(t) = \mathrm{L}_{t}\)。（为证明 \(\mathrm{A}^{+}(t) \cap \mathrm{A}^{-}(t) \subset \mathrm{L}_{t}\)，归结到 \(t \in \mathrm{S}\) 的情形。若 \(a \in \mathrm{A}^{+}(t) \cap \mathrm{A}^{-}(t)\)，置 \(a = w\mathrm{W}^{(s)}\)，其中 \(s \in \mathrm{S}\)，且 \(w\) 是 \((\varnothing, \mathrm{S} - \{s\})\)-约化的（习题 3）。若 \(w(\mathrm{C}) \in \mathfrak{C}^{-}(t)\)，则 \(l(tw) < l(w)\)，且 \(w = ts_{1}, \ldots, s_{q}\)，其中 \(s_{j} \in \mathrm{S}\) 且 \(l(w) = q + 1\)。由于 \(a \in \mathrm{A}^{-}(t)\)，存在 \(x \in \mathrm{W}^{(s)}\)，使得 \(wx(\mathrm{C}) \in \mathfrak{C}^{+}(t)\)。于是
+
+\[
+l (t w x) = 1 + l (w x) = 1 + l (w) + l (x),
+\]
+
+但由于 \(twx = s_1 \ldots s_q x\)，这是矛盾。因此，\(w(\mathbf{C}) \in \mathfrak{C}^+(t)\) 且 \(l(tw) = 1 + l(w)\)。若 \(x \in \mathrm{W}^{(s)}\) 满足 \(l(twx) < l(wx)\)，则由习题 1 推出 \(twx = wx'\)，其中 \(x' \in \mathrm{W}^{(s)}\)，从而 \(ta = a\) 且 \(a \in \mathrm{L}_t\)。
+
+子集 \(\mathbf{A}^{+}(t)\) 和 \(\mathbf{A}^{-}(t)\) 称为由墙 \(L_{t}\) 确定的 A 的两个半部。若 A 的两个点属于（分别不同时属于）两个半部之一，则称它们位于 \(L_{t}\) 的同侧（分别严格位于两侧）。任一面都包含于由 \(L_{t}\) 确定的某个半部中。若两个面包含于不同的半部中，则称它们位于 \(L_{t}\) 的两侧，或称被 \(L_{t}\) 分隔。
+
+\(h\)）令 \(w \in \mathbf{W}\)。证明 \(l(w)\) 等于分隔 \(\mathbf{C}\) 与 \(w(\mathbf{C})\) 的墙的数目。
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\tightlist
+\item
+  证明映射 \(\varphi\) 将半部 \(A^{+}(t)\)（分别将 \(A^{-}(t)\)）映到 \((1,t)\)（分别映到 \((-1,t)\)），是从半部集合 \(\mathfrak{M}\) 的 \(A\) 到集合 \(R = \{1, - 1\} \times T\) 的双射（参见第 4 项）。沿用第 4 项引理 1 的记号，证明 \(\varphi(w(M)) = U_w(\varphi(M))\) 对所有 \(w\in W\) 和 \(M\in \mathfrak{M}\) 成立。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\item
+  沿用习题 16 的记号，并假设 W 有限。令 H 为 A 的墙的集合。对任意 \(H \in H\)，将 A 中由 H 确定且包含 C 的半部 \(H^{+}\) 与之关联。证明可以对 H 的元素编号，使映射 \(j \mapsto \bigcap_{i \leqslant j} H_{i}^{+}\) 在区间 {[}1, \(\operatorname{Card}(\mathfrak{H})\) {]} 上严格递减。（考虑族 \(\mathfrak{F}\)，它由集合 \(\mathrm{H}^{+}\) 的交按包含关系排序而成，并考虑 \((\mathrm{F}_{0},\ldots,\mathrm{F}_{q})\) 这一 \(\mathfrak{F}\) 中长度最大的严格递减序列。对任意 \(\mathrm{H}\in\mathfrak{H}\)，存在 \(i\)，使得 \(\mathrm{H}^{+}\supset\mathrm{F}_{j}\)（当 \(j\geqslant i\) 时）且 \(\mathrm{H}^{+}\not\supset\mathrm{F}_{i-1}\)：证明 \(\mathrm{F}_{i}=\mathrm{H}^{+}\cap\mathrm{F}_{i-1}\)。）
+\item
+  设 A 是一个公寓（习题 15）。A 的一个折叠是 A 的一个自同态 \(\pi\)，满足 \(\pi^{2} = \pi\)，并且 A 的每个室都是 \(\pi\) 下 0 个或 2 个室的像。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(\pi\) 是 A 的一个折叠，C 是 A 的一个室，且 \(\pi(C) = C\)。对 C 的任意相邻室 \(C'\)，或者 \(\pi(C') = C'\)，或者 \(\pi(C') = C\)；若 \(a \in C\)，则有 \(\pi(a) = a\)。证明：若 \((C_0 = C, C_1, \ldots, C_n)\) 是一个廊，则要么 \(\pi(C_i) = C_i\) 对所有 \(i\) 都成立，要么 \((C_0, \pi(C_1), \ldots, \pi(C_n))\) 不是最短的（事实上有两个相邻且相等的室）。推出：端点在 \(\pi\) 下不变的任意最短廊都在 \(\pi\) 下不变。若 \((C = C_0, C_1, \ldots, C_n)\) 是最短廊且 \(\pi(C_n) \neq C_n\)，则存在一个指标 \(i\)，满足 \(0 \leqslant i < n\)，使得 \(\pi(C_j) = C_j\) 对 \(0 \leqslant j \leqslant i\) 成立，而 \(\pi(C_j) \neq C_j\) 对 \(i < j \leqslant n\) 成立。
+\item
+  设 \(C_{1}\) 和 \(C_{2}\) 是两个不同的相邻室，\(\pi, \pi'\) 是 A 的两个折叠。假设 \(\pi(C_{0}) = C_{1}\) 且 \(\pi'(C_{1}) = C_{0}\)。令 C 为一个室，并考虑以下三个条件：
+\end{enumerate}
+
+\[
+\pi (\mathrm{C}) = \mathrm{C};\tag{1}
+\]
+
+\[
+d (\mathrm{C}, \mathrm{C} _ {1}) <   d (\mathrm{C}, \mathrm{C} _ {2});\tag{2}
+\]
+
+\[
+\pi^ {\prime} (\mathrm{C}) \neq \mathrm{C}.\tag{3}
+\]
+
+证明 (1) \(\Longrightarrow\) (2) \(\Longrightarrow\) (3)，并推出这三个条件等价。证明 \(\pi\)（分别为 \(\pi'\)）是将 \(C_2\)（分别
+
+\(C_{1}\) 映到 \(C_{1}\)（分别为 \(C_{2}\)）的 A 的唯一折叠（假设 (2) 满足，并令 \((C_{1}, C_{2}', \ldots, C_{n}' = C)\) 为一个最短廊：证明 \(\pi'(C_{j+1}')\) 是异于 \(\pi'(C_{j}')\) 且包含面板 \(\pi'(C_{j}' \cap C_{j+1}')\) 的唯一室。证明 \(\pi(\mathfrak{C})\) 和 \(\pi'(\mathfrak{T})\) 构成 A 的室集 T 的一个划分，并且 \(\pi(a) = \pi'(a) = a\) 对所有 \(a \in \pi(A) \cap \pi'(A)\) 成立。证明从 A 到自身的映射与 \(\pi'\) 在 \(\pi(A)\) 上重合，并与 \(\pi\) 在 \(\pi'(A)\) 上重合，是 A 的一个对合自同构。称其为关于面板 \(C_{1} \cap C_{2}\) 的反射。证明它是 A 中固定 \(C_{1} \cap C_{2}\) 的所有点的唯一非平凡自同构（使用习题 15 b)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 A 是 Coxeter 系统 (W,S) 所关联的公寓，并沿用习题 16 的记号。设 \(C_{1}\) 和 \(C_{2}\) 是两个相邻室，令 t 为 T 中满足墙 \(L_{t}\) 是 \(C_{1} \cap C_{2}\) 的支撑墙的元素。令 \(M_{j}\) 为由 \(L_{t}\) 确定且包含 \(C_{j}\) 的 A 的半部（j = 1,2）。证明映射 \(\pi\) 由 \(\pi(a) = a\)（当 \(a \in M_{1}\)）和 \(\pi(a) = t(a)\)（当 \(a \in M_{2}\)）定义，是 A 的一个折叠，满足 \(\pi(C_{2}) = C_{1}\)，并且关于面板 \(C_{1} \cap C_{2}\) 的反射是映射 \(a \mapsto t(a)\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  设 A 为一个公寓。假设对任意两个不同的相邻室 \(C_{1}\) 和 \(C_{2}\)，A 都存在一个折叠（习题 18）将 \(C_{1}\) 映到 \(C_{2}\)。令 C 为 A 的一个室，\((\mathrm{C}_{i})_{i\in I}\) 为与 C 相邻且异于 C 的室族。以 \(s_{i}\) 表示关于面板 \(C\cap C_{i}\) 的反射（习题 18 b)）。置 \(S=\{s_{i}\mid i\in I\}\)，并以 W 表示由 \(s_{i}\) 生成的 A 的自同构群。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：对任意室 \(C'\)，存在 \(w \in W\) 使得 \(C' = w(C)\)（对 \(d(C, C')\) 作归纳）。
+\item
+  证明 (W,S) 是一个 Coxeter 系统（对 \(i\in I\)，置
+\end{enumerate}
+
+\[
+\mathrm{P} _ {s _ {i}} = \left\{w \in \mathrm{W} \mid w (\mathrm{C}) \subset \pi_ {i} (\mathrm{A}) \right\},
+\]
+
+其中 \(\pi_{i}\) 是将 \(C_{i}\) 映到 C 的折叠，并证明命题 6 的假设得到满足：为证明条件 (C')，注意若 \(w \in P_{s_{i}}\) 且 \(ws_{j} \notin P_{s_{i}}\)，则
+
+\[
+w (\mathrm{C}) \cap w s _ {j} (\mathrm{C}) \subset \pi_ {i} (\mathrm{A}) \cap s _ {i} \pi_ {i} (\mathrm{A}).
+\]
+
+由于 \(w(\mathbf{C})\) 与 \(ws_{j}(\mathbf{C})\) 相邻，故有 \(s_i = ws_jw^{-1}\)（习题 18 b)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  设 F 是室 C 的一个面。证明 F 在 W 中的稳定子群 \(W_{F}\) 由 \(s_{i} \in S\)（满足 \(F \subset C \cap C_{i}\)）生成（令 \(w \in W_{F}\) 满足 \(l_{S}(w) > 1\)，并令 \(i \in I\) 使得 \(w = s_{i}w'\)，其中 \(l(w') = l(w) - 1\)；由命题 6，\(w' \in P_{s_{i}}\)，因而 \(w(\mathrm{C}) \subset s_{i}\pi_{i}(\mathrm{A})\)，\(F \subset \pi_{i}(\mathrm{A}) \cap s_{i}\pi_{i}(\mathrm{A})\)，且 \(s_{i} \in W_{F}\)）。特别地，\(w(\mathrm{C}) = \mathrm{C}\)，当且仅当 w = 1。
+\item
+  证明映射 \(a \mapsto W_{\{a\}}\) 是从公寓 A 到与 (W, S) 相关的公寓（习题 16）的同构，并且与 W 的作用相容。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  设 A 为一个建筑，S 为一个集合。若给定从 A 到 S 的映射 f，使得对 A 的任意室 C，f 在 C 上的限制是从 C 到 S 的双射，则称 A 由 S 编号。若 F 是 A 的一个面，则称 \(f(F)\) 为 F 的类型。设 A 是一个有编号的建筑。若自同态 \(\varphi\) 满足 a 与 \(\varphi(a)\) 对所有 \(a \in A\) 具有相同的类型，则称其为允许的自同态。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(\varphi\) 是 A 的一个自同态。证明：若 A 存在一个室 C，使得 a 与 \(\varphi(a)\) 对所有 \(a \in C\) 具有相同的类型，则 \(\varphi\) 是允许的。证明：若 A 是一个公寓且 \(\pi\) 是 A 的一个折叠（习题 18），则 \(\pi\) 是允许的自同态。
+\item
+  若 A 的子集 D 满足：对所有 \(a \in A - D\)，都存在 A 的允许自同态 \(\varphi\)，使得 \(\varphi(x) = x\) 对所有 \(x \in D\) 成立，且 \(\varphi(a) \neq a\)，则称 D 为凸的。证明任意凸集的交仍为凸集，并且对 A 的任意子集 D，存在包含 D 的最小凸子集：称其为 D 的凸包，记为 \(\Gamma(D)\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  设 \((W,S)\) 为 Coxeter 系统，A 为其相关公寓（参见习题 16，沿用其中的记号）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 A 存在唯一的编号（称为典范编号），使面 F 的类型正是习题 16 c) 中定义的类型。今后总假定 A 配备此编号。
+\item
+  证明 \(\mathbf{A}\) 的允许自同构正是 \(\mathbf{W}\) 的作用。
+\item
+  设 D 是 A 的包含至少一个室的子集。证明以下条件等价：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  D 是包含 D 的 A 的各半部（习题 16 g)）的交；
+\item
+  D 是凸的；
+\item
+  每当两个面 \(F_{1}\) 和 \(F_{2}\) 包含于 D 中时，\(F_{1} \cup F_{2}\) 的凸包包含于 D 中；
+\item
+  每当一个室 \(\mathbf{C}_1\) 和一个面 \(\mathbf{F}\) 包含于 \(\mathrm{D}\) 中，且 \((C_1, \ldots, C_n)\) 是满足 \(\mathbf{F} \subset \mathbf{C}_n\) 的最短廊时，有 \(C_i \subset D\) 对 \(1 \leqslant i \leqslant n\) 成立。
+\end{enumerate}
+
+（为证明 (iii) \(\Longrightarrow\) (iv)，使用习题 15 \(b\)）。为证明 (iv) \(\Longrightarrow\) (i)，用反证法。令 \(D'\) 为包含 D 的 A 的各半部的交；令 \(a \in D' - D\)，令 \(C_0\) 为包含于 D 的一个室，并令 \((C_0, C_1, \ldots, C_n)\) 为满足 \(a \in C_n\) 的最短廊。于是 \(C_j \subset D'\) 对所有 \(j\) 成立。证明存在一个整数 \(j\)，满足 \(0 \leqslant j < n\)，使得 \(C_j \subset D\) 且 \(C_{j+1} \not\subset D\)。令 M（分别为 \(M'\)）为由面板 \(C_j \cap C_{j+1}\) 的支撑墙确定且包含 \(C_j\)（分别包含 \(C_{j+1}\)）的 A 的半部。证明 D \(\not\subset M\)。令 \(b \in D \cap (A - M)\)，并令 \(\Gamma = (C_j, C_1', \ldots, C_p')\) 为满足 \(b \in C_p'\) 的最短廊。于是 \(C_k' \subset D\) 对 \(1 \leqslant k \leqslant p\) 成立，且 \(C_p' \subset M'\)。令 \(\pi\) 为像为 \(M'\) 的 A 的折叠（习题 18 \(c\)）：于是 \(\pi(C_j) = C_{j+1}\)，且廊 \(\pi(\Gamma)\) 不是单射的（习题 18 \(a\)）。若 \(\Gamma' = (C_{j+1}, C_2', \ldots, C_{p-2}', C_p')\)
+
+是从 \(\pi(\Gamma)\) 中删去两个相邻相等室之一所得的廊，则廊 \((\mathrm{C}_{j}, \mathrm{C}_{j+1}, \mathrm{C}_{2}', \ldots, \mathrm{C}_{p-2}', \mathrm{C}_{p}')\) 由 \(\Gamma\) 的定义是最短的。由 (iv) 推出 \(\mathrm{C}_{j+1} \subset \mathrm{D}\)。矛盾。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  沿用习题 16 和 21 的记号。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(t \in \mathbf{T}\)，\(w \in \mathbf{W}\)。证明室 \(\mathbf{C}\) 与 \(w(\mathbf{C})\) 被墙 \(\mathbf{L}_t\) 分隔，当且仅当 \(l(tw) < l(w)\)（使用由半部 \(\mathbf{A}^+(t)\) 确定的折叠）。
+\item
+  设 \(w_0 \in W\)。证明以下条件等价：
+\end{enumerate}
+
+\[
+l (w w _ {0}) = l (w _ {0}) - l (w) \quad \text {   for   all   } w \in \mathrm{W};\tag{i}
+\]
+
+\[
+l (t w _ {0}) <   l (w _ {0}) \quad \text {   for   all   } t \in \mathrm{T};\tag{ii}
+\]
+
+当 \(t \in \mathrm{T}\) 时，室 \(\mathrm{C}\) 与 \(w_0(\mathrm{C})\) 被墙 \(\mathbf{L}_t\) 分隔 (iii)
+
+（使用习题 16 h) 证明 (iii) \(\Longrightarrow\) (i)。）
+
+证明这样的元素 \(w_{0}\) 唯一，并且它存在当且仅当 W 是有限的。此时它是 W 中长度最大的元素，并由下式刻画：
+
+\[
+l (s w _ {0}) <   l (w _ {0}) \quad \text {   for   all   } s \in S.\tag{iv}
+\]
+
+此外，\(w_0^2 = 1\)、\(w_0Sw_0 = S\)，且 \(l(w_0) = \mathrm{Card}(T)\)。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  假设 W 是有限的。证明：对任意室 \(C_{0}\)，存在唯一的室 \(-C_{0}\)，使得 \(C_{0} \cup (-C_{0})\) 不包含于 A 的任何半部。证明存在 A 的唯一对合自同构 \(\varphi\)，使得 \(\varphi(C_{0}) = -C_{0}\)（对任意室 \(C_{0}\)），且对 A 的任意墙 L 有 \(\varphi(L) = L\)。置 \(\varphi(a) = -a\)（对 \(a \in A\)）。若 F 是一个面，则称面 \(-F = \varphi(F)\) 与 F 对置。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  令 \(C_{0}\) 为 A 的一个室，F 为 \(C_{0}\) 的一个划分。证明 \(C_{0} \cup (-F)\) 的凸包是由墙 L 确定且包含 \(C_{0}\) 的 A 的半部，其中 L 是 F 的支撑墙。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{22}
+\item
+  沿用习题 16 的记号。令 \(\operatorname{Aut}(A)\) 为公寓 \(A\) 的自同构群。证明：若 \(\varphi \in \operatorname{Aut}(A)\)，则 \(\varphi\) 置换 \(A\) 的墙，并且 \(\varphi t\varphi^{-1} \in T\) 对所有 \(t \in T\) 成立（使用习题 18）。推出 \(W\)（视为 \(\operatorname{Aut}(A)\) 的一个子群）是正规子群，且 \(\operatorname{Aut}(A)\) 是自同构子群 \(E\)（保持室 \(C\)）与 \(W\) 的半直积。证明 \(\operatorname{Aut}(A)\) 在 \(W\) 上的作用给出从 \(E\) 到 Coxeter 系统 \((W, S)\) 的自同构群的同构，或者给出该 Coxeter 图 \((W, S)\) 的自同构群的同构（另参见习题 19）。
+\item
+  结构建筑是指配备了一个子建筑集合 U 的建筑 I，且该集合满足以下条件：
+\end{enumerate}
+
+(SB 1) 子建筑 \(A \in \mathfrak{U}\) 是公寓。
+
+(SB 2) I 的任意两个室都包含于 U 的至少一个元素中。(SB 3) 每当 \(A_{1}, A_{2} \in U\) 且 \(A_{1} \cap A_{2}\) 包含一个室时，就存在从 \(A_{1}\) 到 \(A_{2}\) 的同构，固定 \(A_{1} \cap A_{2}\) 的各点。
+
+设 \((\mathbf{I},\mathfrak{U})\) 为一个结构建筑。\(\mathfrak{U}\) 的元素称为 \((\mathbf{I},\mathfrak{U})\) 的公寓，或简称为 \(\mathbf{I}\) 的公寓。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 I 的任意两个公寓同构。令 C 为 I 的一个室，A 为包含 C 的 I 的一个公寓。证明存在唯一的 I 的自同态 \(\rho\)（称为以 C 为中心从 I 到 A 的收缩），使得 \(\rho(a)=a\) 对所有 \(a\in A\) 成立，并且对任意包含 C 的公寓 \(A'\)，\(\rho\) 在 \(A'\) 上的限制是从 \(A'\) 到 A 的同构（注意，由 (SB 2) 和习题 15 b)，对任意包含 C 的公寓 \(A'\)，存在唯一的同构 \(\rho_{A'}\) 的 \(A'\)（固定 C 的所有点））。证明 \(\rho^{2}=\rho\)，且 \(\rho^{-1}(C)=C\)。
+\item
+  设 A 为 I 的一个公寓，\(C_{0}\) 为一个室，F 为包含于 A 中的一个面。令 \((C_{0}, C_{1}, \ldots, C_{n})\) 为满足 \(F \subset C_{n}\) 的最短廊。证明 \(C_{i} \subset A\) 对 \(1 \leqslant i \leqslant n\) 成立（用反证法：若 \(C_{i} \subset A\) 而 \(C_{i+1} \notin A\)，则考虑以异于 \(C_{i}\) 且包含 \(C_{i} \cap C_{i+1}\) 的 A 的室为中心从 I 到 A 的收缩）。
+\item
+  设 A 为 I 的一个公寓，C 为 A 的一个室，F 为 C 的一个面板，C' 为 I 的一个室，\(\Gamma = (C_0, \ldots, C_n = C')\) 为满足 \(F \subset C_0\) 的最短廊。证明以 C 为中心从 I 到 A 的收缩 \(\rho\) 将 \(\Gamma\) 变为一个廊
+\end{enumerate}
+
+\[
+\left(\mathrm{C} _ {0} ^ {\prime}, \dots , \mathrm{C} _ {n} ^ {\prime} = \rho (\mathrm{C} ^ {\prime})\right)
+\]
+
+该廊满足 \(F \subset C_{0}^{\prime}\) 且长度最短（考虑公寓 \(A^{\prime}\)，它包含 \(C^{\prime}\) 和 F，并应用 b) 以及 \(\rho\) 在 \(A^{\prime}\) 上的限制是同构这一事实）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 A 为一个公寓，\(C_{1}\) 和 \(C_{2}\) 为包含于 A 中的两个不同相邻室，\(C'\) 为包含 \(C_{1} \cap C_{2}\) 且异于 \(C_{1}\) 和 \(C_{2}\) 的一个室，\(A_{i}'\) 为包含 \(C_{i}\) 和 \(C'\) 的一个公寓（i = 1, 2）。令 \(\varphi_{i}\)（分别为 \(\psi_{i}\)）为从 I 到 A（分别到 \(A_{i}'\)）且中心为 \(C_{i}\)（分别为 \(C'\)）的收缩，并令 \(\rho_{i}\) 为 \(\varphi_{i} \circ \psi_{i}\) 在 A 上的限制。令 C 为 A 的一个室；证明：若
+\end{enumerate}
+
+\[
+d (\mathrm{C}, \mathrm{C} _ {1}) \leqslant d (\mathrm{C}, \mathrm{C} _ {2}),
+\]
+
+则 \(\rho_{1}(a) = a\) 对所有 \(a \in \mathbb{C}\) 成立，并且 \(d(\mathbb{C}, \mathbb{C}_{1}) < d(\mathbb{C}, \mathbb{C}_{2})\)（考虑最短廊 \(\Gamma\)，其端点为 \(\mathbb{C}\) 和 \(\mathbb{C}_{1}\)，并应用 \(c\)）以证明 \(\rho_{1}(\Gamma)\) 是最短的；然后使用习题 15 b)）。证明：若 \(d(\mathbb{C}, \mathbb{C}_{2}) < d(\mathbb{C}, \mathbb{C}_{1})\)，则 \(\rho_{1}(\mathbb{C}) \neq \mathbb{C}\) 且 \(\rho_{1}^{2}(\mathbb{C}) = \rho_{1}(\mathbb{C})\)（考虑最短廊 \(\Gamma\)，其端点为 \(\mathbb{C}\) 和 \(\mathbb{C}_{2}\)，并使用 \(c\)）以证明 \(\rho_{1}(\Gamma)\) 是一个长度最短的廊，其一个端点等于 \(\rho_{1}(\mathbb{C})\)，另一个端点包含 \(\mathbb{C}_{1} \cap \mathbb{C}_{2}\)；推出 \(d(\mathbb{C}_{1}, \rho_{1}(\mathbb{C}_{1})) \leqslant d(\mathbb{C}_{2}, \rho_{1}(\mathbb{C}_{1}))\)。
+
+证明 \(\rho_{i}\) 是 A 的一个折叠（习题 19）（证明 \(A = \rho_{1}(A) \cup \rho_{2}(A)\)，并定义 A 的对合自同构 \(\sigma\)：置 \(\sigma(a) = \rho_{2}(a)\) 当 \(a \in \rho_{1}(A)\) 时，置 \(\sigma(a) = \rho_{1}(a)\) 当 \(a \in \rho_{2}(A)\) 时；证明：若 C 是包含于 \(\rho_{1}(A)\) 的一个室，则 \(\rho_{1}^{-1}(C) = \{C, \rho_{2}(C)\}\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 I 为一个宽敞的结构建筑，也就是说，每个面板至少包含于三个室中。证明存在一个在同构意义下唯一的 Coxeter 系统 (W,S)，使得 I 的公寓同构于与 (W,S) 相关的公寓 \(A_{0}\)（使用 d) 和习题 19）。令 A 为 I 的一个公寓，\(\varphi\) 为从 \(A_{0}\) 到 A 的同构。证明 I 存在唯一的、取值于 S 的编号，使得 \(\varphi(a)\) 与 a 的类型相同，对所有 \(a \in A_{0}\)（取 A 的一个室 C，并使用 b) 证明：若 \(A'\) 和 \(A''\) 是包含 C 的 I 的两个公寓，则 \(A'\) 和 \(A''\) 上将 C 上确定的编号延拓所得的编号在 \(A' \cap A''\) 上一致）。
+\end{enumerate}
+
+我们称如此得到的 Coxeter 系统 (W,S) 和编号适配于 I。
+
+证明 a) 中引入的收缩是允许的自同态。证明包含于 I 的一个公寓 A 中的 I 的子集在 I 中凸，当且仅当它在 A 中凸（习题 20）。
+
+\(f\)）沿用 \(e\)）的记号，并令 \(\mathfrak{A}\) 为从 \(\mathbf{A}_0\) 到 I 的各个公寓的允许同构的集合。证明：若 \(\varphi, \psi \in \mathfrak{A}\)，且 C 是一个室、F 是 I 的一个面，并且二者包含于 \(\varphi(\mathbf{A}_0) \cap \psi(\mathbf{A}_0)\)，则存在 \(w \in W\)，使得 \(\psi^{-1}(C) = w\varphi^{-1}(C)\) 且 \(\psi^{-1}(F) = w\varphi^{-1}(F)\)（考虑同构 \(\lambda\)，它从 \(\varphi(\mathbf{A}_0)\) 到 \(\psi(\mathbf{A}_0)\)，固定 \(\varphi(\mathbf{A}_0) \cap \psi(\mathbf{A}_0)\) 的各点，并将习题 21 \(b\)）应用于自同构 \(\psi^{-1} \circ \lambda \circ \varphi^{-1}\) 的 \(\mathbf{A}_0\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{24}
+\tightlist
+\item
+  设 I 是一个集合，令 \(\mathfrak{F}\) 为 I 的有限子集的集合。对任意 \(A \in \mathfrak{F}\)，置 \(\varepsilon(A) = (-1)^{\operatorname{Card}(A)}\)。设 \(G\) 是一个以加法记的阿贝尔群，并令 \(\varphi\) 与 \(\psi\) 为从 \(\mathfrak{F}\) 到 \(G\) 的两个映射。证明以下性质等价：
+\end{enumerate}
+
+\[
+\varphi (\mathrm{A}) = \sum_ {\mathrm{B} \subset \mathrm{A}} \psi (\mathrm{B}) \quad \text {   for   all   } \mathrm{A} \in \mathfrak {F};\tag{i}
+\]
+
+\[
+\psi (A) = \sum_ {B \subset A} \varepsilon (A - B) \varphi (B) \quad \text {   for   all   } A \in \mathfrak {F}.\tag{ii}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{25}
+\tightlist
+\item
+  设 \((W, S)\) 为 Coxeter 系统，且 S 有限。对 W 的任意子集 H，以 \(\mathrm{H}(t)\) 表示由下式定义的整系数形式幂级数
+\end{enumerate}
+
+\[
+\mathrm{H} (t) = \sum_ {w \in \mathrm{H}} t ^ {l (w)}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  假设 \(\operatorname{Card}(S) = 2\)。证明
+\end{enumerate}
+
+\[
+\mathrm{W} (t) = \left(1 + t - t ^ {m} - t ^ {m + 1}\right) / (1 - t) \quad \text { if   } \mathrm{W} \text {   is   of   finite   order   } 2 m,
+\]
+
+\[
+\mathrm{W} (t) = (1 + t) / (1 - t) \quad \text { if   } \mathrm{W} \text {   is   infinite. }
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  假设 W 是有限的。令 \(w_0\) 为 W 中长度最大的元素（习题 22），并令 \(m = l(w_0)\)。证明
+\end{enumerate}
+
+\[
+\mathrm{W} (t) = t ^ {m} \mathrm{W} (t ^ {- 1})
+\]
+
+（使用习题 22）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 X 是 S 的一个子集。以 \(A_{X}\) 表示 W 的 \((X,\varnothing)\) -约化元素的集合（习题 3），以 \(W_{X}\) 表示由 X 生成的 W 的子群。我们知道（习题 3），元素 \(w \in W\) 属于 \(A_{X}\)，当且仅当 \(l(xw) = l(w) + 1\) 对所有 \(x \in X\) 成立；W 的每个元素 \(w \in W\) 都能唯一地写成 w = uv 的形式，其中 \(u \in W_{X}\)、\(v \in A_{X}\)，且此时 \(l(w) = l(u) + l(v)\)。推出公式
+\end{enumerate}
+
+\[
+\mathrm{W} (t) = \mathrm{W} _ {\mathrm{X}} (t). \mathrm{A} _ {\mathrm{X}} (t).
+\]
+
+\(d\)）沿用上述记号，以 \(B_{X}\) 表示这样的 \(w\in A_X\)，使得 \(l(sw) = l(w) - 1\) 对所有 \(s\in S - X\) 成立。证明
+
+\[
+A _ {X} (t) = \sum_ {X \subset Y \subset S} B _ {Y} (t).
+\]
+
+推出
+
+\[
+\mathrm{B} _ {\mathrm{X}} (t) = \sum_ {\mathrm{X} \subset \mathrm{Y} \subset \mathrm{S}} \varepsilon (\mathrm{Y} - \mathrm{X}) \mathrm{A} _ {\mathrm{Y}} (t) \quad \text { with } \quad \varepsilon (\mathrm{Z}) = (- 1) ^ {\operatorname{Card} (\mathrm{Z})}
+\]
+
+（使用习题 25）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  假设 W 是有限的，并按 b) 定义 m 和 \(w_{0}\)。证明 \(B_{\varnothing} = \{w_{0}\}\)，且
+\end{enumerate}
+
+\[
+t ^ {m} = \sum_ {\mathrm{Y} \subset \mathrm{S}} \varepsilon (\mathrm{Y}) \frac {\mathrm{W} (t)}{\mathrm{W} _ {\mathrm{Y}} (t)}
+\]
+
+（使用 c) 和 d)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  假设 W 是无限的。证明 \(B_{\varnothing} = \varnothing\)，且
+\end{enumerate}
+
+\[
+0 = \sum_ {Y \subset S} \frac {\varepsilon (Y)}{W _ {Y} (t)}.
+\]
+
+\(g\)）证明形式幂级数 \(W(t)\) 是 \(t\) 的有理函数（使用 \(f\)）并对 \(\operatorname{Card}(\mathbf{S})\) 作归纳。证明此有理函数在 \(t\) 为单位根时恒为零，并且 \(1 / W(\infty)\) 是整数。证明 \(\frac{1}{W(t^{-1})} \in \mathbf{Z}[[t]]\)。
+
+\exercisesection{§ 2 的习题}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  设 G 是一个群，B 和 N 是 G 的两个子群，S 是 \(W = N/(B \cap N)\) 的一个子集。对所有 \(w \in W\)，置 \(C(w) = BwB\)。假设第 1 项定义 1 的条件 (T1) 和 (T2) 得到满足，并且对任意 \(s \in S\) 和 \(w \in W\)，两个关系 \(C(s).C(w) = C(sw)\) 与 \(C(s).C(sw) = C(w)\) 至少有一个成立，且 \(B \cup C(s)\) 对所有 \(s \in S\) 都是 G 的子群。证明条件 (T3) 得到满足。此外，若 B 在 \(B \cup C(s)\) 中的指数为 \(\geqslant 3\)，则 (G, B, N, S) 是 Tits 系统。
+\item
+  设 G 是一个群，B 和 N 是 G 的两个子群，S 是 \(W = N/(B \cap N)\) 的一个子集。令 Z 为包含于 B 中的 G 的正规子群。令 \(B'\) 和 \(N'\) 为 B、N 在 \(G' = G/Z\) 中的自然像。证明从 N 到 \(N'\) 的自然映射定义了从 W 到 \(W' = N'/(B' \cap N')\) 的同构。令 \(S'\) 为 S 在此同构下的像。证明 \((G', B', N', S')\) 是 Tits 系统，当且仅当 \((G, B, N, S)\) 是 Tits 系统。
+\item
+  设 G 是一个群，B 是 G 的一个子群，\((\mathrm{C}(w))_{w\in\mathbb{W}}\) 是 G 关于 B 的双陪集族。若存在 W 的一个子集 S，使以下条件得到满足，则称 B 为 G 的 Tits 子群：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  \(C(s)\)（其中 \(s \in S\)）的并集生成 \(G\)；
+\item
+  对所有 \(s \in S\)，集合 \(B \cup C(s)\) 是 \(G\) 的子群，且 \(B\) 在 \(B \cup C(s)\) 中的指数为 \(\geqslant 3\)；
+\item
+  对所有 \(s \in S\) 和所有 \(w \in W\)，存在元素 \(w' \in W\)，使得 \(C(s).C(w) \subset C(w) \cup C(w')\)。
+\end{enumerate}
+
+从现在起，假设 B 是 G 的 Tits 子群，并给定 W 的一个满足条件 (1)、(2) 和 (3) 的子集 S。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 \(C(s)^{-1} = C(s)\) 以及 \(C(s).C(s) = B \cup C(s)\) 对所有 \(s \in S\) 成立。证明对所有 \(s \in S\) 和所有 \(w \in W\)，存在元素 \(w'' \in W\)，使得 \(C(w).C(s) \subset C(w) \cup C(w'')\)。
+\item
+  若 \(w \in \mathbf{W}\)，则 \(w\) 的长度（记为 \(l(w)\)）是最小的整数 \(n \geqslant 0\)，使得存在 \(s_1, \ldots, s_n \in \mathbf{S}\) 满足 \(\mathrm{C}(w) \subset \mathrm{C}(s_1) \ldots \mathrm{C}(s_n)\)。证明 \(l(w)\) 对所有 \(w \in \mathbf{W}\) 都是有限的。
+\end{enumerate}
+
+  设 \(u, v \in W\) 满足 \(l(u) < l(v)\)，并令 \(s \in S\)。证明：若 \(C(v) \subset C(u).C(s)\)（分别，\(C(v) \subset C(s).C(u)\)），则 \(C(v) = C(u).C(s)\)（分别，\(C(v) = C(s).C(u)\)）（按 \(u\) 的长度作归纳。若 \(C(v) \neq C(u).C(s)\)，则 \(C(u).C(s) = C(u) \cup C(v)\)。利用归纳假设，证明存在 \(t \in S\) 和 \(w \in W\)，使得
+
+\[
+\mathrm{C} (u) = \mathrm{C} (t). \mathrm{C} (w) \quad \text { with } \quad l (w) = l (u) - 1.
+\]
+
+由关系 \(\mathrm{C}(v) \subset \mathrm{C}(u).\mathrm{C}(s) = \mathrm{C}(t).\mathrm{C}(w).\mathrm{C}(s)\) 以及 \(\mathrm{C}(t).\mathrm{C}(w) = \mathrm{C}(u) \neq \mathrm{C}(v)\)，推出存在元素 \(w' \neq w\)，使得
+
+\(C(w') \subset C(w).C(s)\) 且 \(C(v) \subset C(t).C(w')\)，从而 \(l(w') \geqslant l(v) - 1 > l(u) - 1 = l(w)\)。归纳假设现在推出
+
+\[
+\mathrm{C} (w ^ {\prime}) = \mathrm{C} (w). \mathrm{C} (s).
+\]
+
+此外，
+
+\[
+\begin{array}{c} \mathrm{C} (t). \mathrm{C} (u). \mathrm{C} (s) = \mathrm{C} (t). \mathrm{C} (t). \mathrm{C} (w). \mathrm{C} (s) = \mathrm{C} (t). \mathrm{C} (w). \mathrm{C} (s) \cup \mathrm{C} (w). \mathrm{C} (s) \\ = \mathrm{C} (u). \mathrm{C} (s) \cup \mathrm{C} (w ^ {\prime}) = \mathrm{C} (u) \cup \mathrm{C} (v) \cup \mathrm{C} (w ^ {\prime}) \end{array}
+\]
+
+又有
+
+\[
+\mathrm{C} (t). \mathrm{C} (u). \mathrm{C} (s) = \mathrm{C} (t). (\mathrm{C} (u) \cup \mathrm{C} (v)) \supset \mathrm{C} (t). \mathrm{C} (t). \mathrm{C} (w) \supset \mathrm{C} (w),
+\]
+
+由于 \(w \neq u, v, w'\)，这就矛盾了。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  证明：对所有 \(w \in \mathbf{W}\) 和所有 \(s \in S\)，存在唯一元素，记为 \(s.w\)（分别为 \(w * s\)），异于 \(w\)，并满足
+\end{enumerate}
+
+\[
+\begin{array}{c} \mathrm{C} (s. w) \subset \mathrm{C} (s). \mathrm{C} (w) \subset \mathrm{C} (w) \cup \mathrm{C} (s. w) \\ (\text {resp.} \mathrm{C} (w * s) \subset \mathrm{C} (w). \mathrm{C} (s) \subset \mathrm{C} (w) \cup \mathrm{C} (w * s)). \end{array}
+\]
+
+（按 \(l(w)\) 归纳证明 \(C(s).C(w) \neq C(w)\)。为此，写成
+
+\[
+\mathrm{C} (w) = \mathrm{C} (u). \mathrm{C} (t)
+\]
+
+其中 \(t \in S\)、\(u \in W\)，且 \(l(w) = l(u) + 1\)。若 \(C(s).C(w) = C(w)\)，则
+
+\[
+\mathrm{C} (s). \mathrm{C} (u). \mathrm{C} (t) = \mathrm{C} (u). \mathrm{C} (t)
+\]
+
+在右边乘以 \(\mathrm{C}(t)\)，得到 \(\mathrm{C}(u) \cup \mathrm{C}(w) = \mathrm{C}(s).\mathrm{C}(u) \cup \mathrm{C}(w)\)。由于归纳假设给出 \(\mathrm{C}(u) \neq \mathrm{C}(s).\mathrm{C}(u)\)，由 b) 得
+
+\[
+\mathrm{C} (s). \mathrm{C} (u) = \mathrm{C} (w),
+\]
+
+从而
+
+\[
+\mathrm{C} (u) \subset \mathrm{C} (s). \mathrm{C} (s). \mathrm{C} (u) = \mathrm{C} (s). \mathrm{C} (w) = \mathrm{C} (w),
+\]
+
+这是荒谬的）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  设 \(s \in S\)。证明映射 \(p_s: w \mapsto s.w\)（分别为 \(q_s: w \mapsto w * s\)）是 \(W\) 的一个置换，并且 \(p_s^2 = \operatorname{Id}(\operatorname{resp.} q_s^2 = \operatorname{Id})\)。证明 \(p_s \circ q_t = q_t \circ p_s\) 对所有 \(s, t \in S\) 成立（研究 \(C(s).C(w).C(t)\)（其中 \(w \in W\)）的乘积，并证明 \((s.w) * t \in \{w, s.w, w * t, s.(w * t)\}\)；证明 \((s.w) * t \notin \{s.w, w * t\}\)，并证明若 \((s.w) * t = w\)，则 \(s.w = w * t\) 且 \(w = s.(w * t)\)）。
+\item
+  证明由 \(p_{s}\)（分别为 \(q_{s}\)）在 \(s \in S\) 中生成的置换群 P（分别为 Q）在 W 上单纯传递地作用（为证明 P 是传递的，使用 (2) 并按第 1 项引理 1 的方法论证；为证明 P 是单纯传递的，使用 d)）。推出 W 有唯一的群结构，使得映射 \(p \mapsto p(e)\)
+\end{enumerate}
+
+ （其中 \(e\) 表示 \(W\) 中满足 \(B = C(e)\) 的元素）是从 \(P\) 到 \(W\) 的同构。映射 \(q \mapsto q(e)\) 于是也是同构；此外，\(s.w = w * s = sw\) 对所有 \(s \in S\) 和所有 \(w \in W\) 成立，且 \(C(w)^{-1} = C(w^{-1})\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\item
+  证明对 \((W,S)\) 是一个 Coxeter 系统，并推广第 4 项的结果。
+\item
+  设 X 是 S 的一个子集，\(W_{X}\) 是由 X 生成的 W 的子群。证明并集 \(G_{X}\)，它由 \(C(w)\)（其中 \(w \in W_{X}\)）组成，是 G 的子群，并且第 5 项定理 3 仍然成立。证明 B 是 \(G_{X}\) 的 Tits 子群。推广第 5 项命题 2 和 3，以及第 6 项定义 2、命题 4 和定理 4。证明 S 正是 \(w \in W\) 中满足 \(B \cup C(w)\) 是异于 B 的 G 的子群的那些元素的集合。因此，Coxeter 系统 (W, S) 和群 W（称为 (G, B) 的 Weyl 群）只依赖于 (G, B)。
+\item
+  设 N 是 G 的一个子群，满足 \(B \cap N\) 在 N 中正规，并且每个关于 B 的双陪集 \(C(w)\) 与 N 的交是关于 \(B \cap N\) 的一个双陪集。证明群 \(N/(B \cap N)\) 可以认作 W，并且 \((G, B, N, S)\) 是一个 Tits 系统。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 \((G, B, N, S)\) 和 \((G', B', N', S')\) 是两个 Tits 系统，满足 \(G = G'\) 和 \(B = B'\)，其 Weyl 群分别为 W 和 \(W'\)。令 j 为从 W 到 \(W'\) 的双射，由关系
+\end{enumerate}
+
+\[
+\mathrm{B} w \mathrm{B} = \mathrm{B} ^ {\prime} j (w) \mathrm{B} ^ {\prime}.
+\]
+
+证明 \(j\) 是 \(W\) 与 \(W'\) 之间的群同构，且 \(j(S) = S'\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 \(\Sigma = (G, B, N, S)\) 为一个 Tits 系统。置 \(T = B \cap N\)，并令 \(\tilde{N}\) 为 \(N\) 的正规化子。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(b \in B \cap \hat{N}\)。证明 \(bnb^{-1}n^{-1} \in B \cap N\) 对所有 \(n \in N\) 成立（置 \(bn = n'b\)，并使用定理 1），且 b 属于共轭子群的交 \(\tilde{T}\)，其中共轭子群为 \(nBn^{-1}\)（对所有 \(n \in N\)）。证明 \(\tilde{T} \cap N = T\)。
+\end{enumerate}
+
+若 \(\tilde{\mathrm{T}} = \mathrm{T}\)，则称 \(\Sigma\) 是饱和的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  置 \(\tilde{N} = N.\tilde{T}\)。证明 \(\tilde{N}\) 是 G 的一个子群，包含 \(\tilde{T}\) 这个正规子群，且 \(\tilde{N} \cap B = \tilde{T}\)。证明 N 到 \(\tilde{N}\) 的嵌入定义了从 \(\Sigma\) 的 Weyl 群 W 到 \(\tilde{N}/\tilde{T}\) 的同构。
+\item
+  证明 \((\mathbf{G},\mathbf{B},\tilde{\mathbf{N}},j(\mathbf{S}))\) 是一个饱和的 Tits 系统，称为与 \(\Sigma\) 相关的 Tits 系统。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\item
+  沿用第 2 项的记号，并令 \(\mathbf{N}_0\) 为 \(\mathbf{N}\) 的由所有元素均为 0 或 1 的矩阵组成的子群。证明 \(\mathbf{B} \cap \mathbf{N}_0 = \mathbf{T} \cap \mathbf{N}_0 = \{1\}\)，并且自然映射 \(j\) 从 \(\mathbf{N}_0\) 到 \(\mathbf{W} = \mathbf{N} / \mathbf{T}\) 是同构。置 \(S_0 = j^{-1}(S)\)。证明 \((\mathbf{G}, \mathbf{B}, \mathbf{N}_0, S_0)\) 是 Tits 系统，且 \((\mathbf{G}, \mathbf{B}, \mathbf{N}, S)\) 是相关的饱和 Tits 系统。
+\item
+  设 G 是作用于集合 E 的一个群。若 \(x, y, x', y' \in E\) 满足 \(x \neq y\) 和 \(x' \neq y'\)，都存在元素 \(g \in G\) 使得 \(g.x = x'\) 且 \(g.y = y'\)，则称 G 在 E 上二重传递地作用。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \((G, B, N, S)\) 是 Weyl 群 W 阶为 2 的 Tits 系统。证明 G 在 G/B 上二重传递地作用。
+\item
+  设 G 是二重传递地作用于集合 E 的一个群。假设 \(\operatorname{Card}(E) \geqslant 3\)。令 \(e \in E\)，令 B 为 e 的稳定子群。令 \(x \in E\) 且 \(x \neq e\)，并令 \(n \in G\) 满足 \(n(e) = x\) 和 \(n(x) = e\)。令 N 为由 n 生成的 G 的子群。令 s 为 n 在 N/T 中的自然像。证明 \((G, B, N, \{s\})\) 是 Weyl 群阶为 2 的 Tits 系统。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  设 \((\mathrm{G},\mathrm{B},\mathrm{N},\mathrm{S})\) 为一个 Tits 系统；置 \(T=B\cap N\)，W=N/T。令 \(\tilde{G}\) 为包含 G 为正规子群的一个群。假设对所有 \(h\in\tilde{G}\)，都存在 \(g\in G\)，使得 \(hBh^{-1}=gBg^{-1}\) 且 \(hNh^{-1}=gNg^{-1}\)。令 \(\hat{B}\)（分别为 \(\hat{N}\)）为 \(\tilde{G}\) 中 B（分别为 N）的正规化子；置 \(\Gamma=\hat{B}\cap\hat{N}\)、\(\hat{N}=\Gamma.N\) 和 \(\tilde{T}=\tilde{N}\cap B\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 \(\tilde{\mathbf{G}} = \Gamma .\mathbf{G}\)、\(\hat{\mathbf{B}} = \Gamma .\mathbf{B}\)、\(\Gamma \cap \mathrm{B} = \Gamma \cap \mathrm{G}\) 以及 \(\tilde{\mathbf{T}} = (\Gamma \cap \mathbf{B}).\mathbf{T}\)。因此，群 \(\Omega = \Gamma /(\Gamma \cap \mathrm{B})\)、\(\tilde{\mathbf{G}} /\mathbf{G}\) 和 \(\hat{\mathbf{B}} /\mathbf{B}\) 典范同构。若 \(\varPhi \subset \varOmega\)，且 \(\mathbf{H}\) 是 \(\mathbf{G}\) 的包含 \(\Gamma \cap \mathrm{B}\) 的子群，则以 \(\varPhi \mathrm{H}\) 表示子集 \(\varphi \mathrm{H}\)（其中 \(\varphi \in \varPhi\)）的并集。
+\item
+  证明 \(\tilde{T}\) 在 \(\tilde{N}\) 中正规（为证明 \(n\gamma n^{-1} \in \tilde{N}\) 对 \(n \in \tilde{N}\) 和 \(\gamma \in \Gamma \cap B\) 成立，使用习题 5 a)），并且 \(N \cap \tilde{T} = T\)、\(\Gamma \cap \tilde{T} = \Gamma \cap B\)。因此，将 N（分别为 \(\Gamma\)）嵌入 \(\tilde{N}\)，可将 W（分别为 \(\Omega\)）认作 \(\tilde{W} = \tilde{N}/\tilde{T}\) 的一个子群。证明 \(\Omega\) 正规化 S，且 \(\tilde{W}\) 是 \(\Omega\) 与 W 的半直积。
+\item
+  证明对所有 \(s \in S\) 和所有 \(u \in \tilde{W}\)，
+\end{enumerate}
+
+\[
+\mathrm{BsBuB} \subset (\mathrm{BuB}) \cup (\mathrm{BsuB}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  证明映射 \(u \mapsto BuB\) 是从 \(\tilde{W}\) 到 \(B\backslash\tilde{G}/B\) 的双射（使用定理 1 以及 \(\Gamma\) 正规化 B 这一事实）。
+\item
+  令 \(\mathfrak{B}\) 为二元组 \((\varPhi, X)\) 的集合，其中 \(\varPhi\) 是 \(\Omega\) 的子群，且 \(X\) 是 \(X\) 的子集并被 \(\varPhi\) 正规化。置 \(G_{(\varPhi, X)} = \varPhi G_X = B \varPhi W_X B\)（沿用第 5 项的记号）。证明映射 \((\varPhi, X) \mapsto G_{(\varPhi, X)}\) 是从 \(\mathfrak{B}\) 到 \(\tilde{G}\) 中包含 \(B\) 的子群集合的双射。推广第 5 项定理 3 的断言 \(b)\) 和 \(c)\)，以及命题 2。
+\end{enumerate}
+
+证明 \(\mathrm{G}_{(\varPhi,\mathrm{X})}\) 在 \(\tilde{G}\) 中的正规化子是子群 \(\mathrm{G}_{(\varPhi',\mathrm{X})}\)，其中 \(\varPhi'\) 是 \(\Omega\) 中同时正规化 \(\varPhi\) 和 X 的元素所成的集合。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  证明 \(G_{(\Phi, \mathsf{X})}\) 是 \(\tilde{\mathbf{G}}\) 的极大子群，当且仅当以下两个条件之一得到满足：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(X = S\) 且 \(\varPhi\) 是 \(\varOmega\) 的极大子群；
+\item
+  \(\Phi = \Omega\) 且 \(\Phi\) 在 \(S - X\) 上传递地作用（该集合非空）。
+\end{enumerate}
+
+证明 \(G_{(\Phi,X)}\) 在不包含 G 的 \(\tilde{G}\) 的子群集合中是极大子群，当且仅当
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \(X \neq S\)，\(\Phi\) 是 \(X\) 在 \(\Omega\) 中的正规化子，且在 \(S - X\) 上传递地作用。
+\end{enumerate}
+
+\(g)\) 设 \(\Phi\) 为 \(\Omega\) 的正规子群，并置 \(G' = \Phi G\)、\(B' = \Phi B\)、\(N' = \Phi N\) 和 \(T' = B' \cap N'\)。证明 \(T' = \Phi \tilde{T}\)，且 \(T'\) 在 \(N'\) 中正规，当且仅当 \(\Phi\) 的每个元素都与 \(W\) 的每个元素交换。证明此时 \(G'\) 在 \(\tilde{G}\) 中正规，且 \(N\) 到 \(N'\) 的嵌入定义了同构 \(j\)，它从 \(W\) 到 \(W' = N'/T'\)；并且 \((G', B', N', S')\)（其中 \(S' = j(S)\)）是 Tits 系统。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  令 \((G, B, N, S)\) 为 Tits 系统，X、Y、Z 为 S 的三个子集。证明
+\end{enumerate}
+
+\[
+\mathrm{G} _ {\mathrm{X}} \cap (\mathrm{G} _ {\mathrm{Y}}. \mathrm{G} _ {\mathrm{Z}}) = (\mathrm{G} _ {\mathrm{X}} \cap \mathrm{G} _ {\mathrm{Y}}). (\mathrm{G} _ {\mathrm{X}} \cap \mathrm{G} _ {\mathrm{Z}})
+\]
+
+（使用 §1 的习题 1 以及第 3 项的命题 2）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  设 G 是一个群，B 是 G 的 Tits 子群。沿用习题 3 的记号。对 \(s \in S\)，以 \(G^{(s)}\) 表示子群 \(G_{S - \{s\}}\)（习题 3 g)）。令 I 为形如 \(gG^{(s)}\)（其中 \(g \in G\)、\(s \in S\)）的 G 的子集的集合，令 C 为形如 \(C_g = \{gG^{(s)} \mid s \in S\}\)（其中 \(g \in G\)）的 I 的子集的集合。称 \(C_g\) 为 I 的室（§ 1，习题 15）。令 G 通过左平移作用于 I。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  令 \(\mathfrak{F}\) 为 I 的面的集合（即室的子集，参见 §1，习题 15）。令 \(F \in \mathfrak{F}\)。证明存在 S 的唯一子集 X 和 \(g \in G\)，使得 \(gG_{X} = \bigcap_{a \in F} a\)；称 F 为 X 型。证明此时 F 正是 \(gG^{(s)}\)（其中 \(s \in S - X\)）的集合，并且它在包含它的任一室中的余维为 \(\operatorname{Card}(X)\)。证明映射 \(j: F \mapsto \bigcap_{a \in F} a\) 是从 \(\mathfrak{F}\) 到形如 \(gG_{X}\)（其中 \(g \in G\)、\(X \subset S\)）的 G 的子集的严格递减双射，并与左平移相容。证明：若 \(X \subset Y \subset S\)，则每个 X 型面都包含唯一的 Y 型面。
+\item
+  证明 G 在室集 C 上传递地作用，并且室 \(C_{g}\)（\(g \in G\)）的稳定子群等于 \(gBg^{-1}\)；因此映射 \(g \mapsto C_{g}\) 定义了从 G/B 到 C 的双射。
+\item
+  证明两个室 \(C_{g}\) 和 \(C_{g'}\)（\(g, g' \in G\)）相邻（§1，习题 15），当且仅当存在 \(s \in S\) 使得 \(g' \in g(B \cup BsB)\)。
+\end{enumerate}
+
+\(d)\) 令 \(C_1, \ldots, C_n\) 为 I 的室，并置 \(C_0 = C_e\)。证明以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  序列 \(\Gamma = (\mathrm{C}_0, \mathrm{C}_1, \ldots, \mathrm{C}_n)\) 是一个单射廊；
+\item
+  存在由 S 的元素组成的序列 \(\mathbf{s} = (s_1, \ldots, s_n)\) 和由 B 的元素组成的序列 \((b_1, \ldots, b_n)\)，使得 \(C_j = b_1 \bar{s}_1 b_2 \bar{s}_2 \ldots b_j \bar{s}_j (C_0)\)（其中 \(\bar{s}_j\) 表示双陪集 \(Bs_jB\) 的一个给定元素）对 \(1 \leqslant j \leqslant n\) 成立。
+\end{enumerate}
+
+证明：若这些条件满足，则序列 s 是唯一的：称其为 \(\Gamma\) 的类型，记为 \(\mathbf{s}(\Gamma)\)。证明单射廊是最短的，当且仅当其类型是一个约化分解。证明以下条件得到满足：
+
+(WI 1) 对 I 的任意两个室 C 和 \(\mathbf{C}'\)，存在唯一的 W 的元素 \(t(\mathbf{C},\mathbf{C}')\)，使得端点为 C 和 \(\mathbf{C}'\) 的最短廊的类型集正是 \(t(\mathbf{C},\mathbf{C}')\) 的约化分解集。
+
+(WI 2) 对任意室 C，映射 \(\mathrm{C}' \mapsto t(\mathrm{C}, \mathrm{C}')\) 从 I 的室集到 W 是满射。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\item
+  证明两个类型相同且端点相同的最短廊相同。（归结为证明：若 \((s_{1},\ldots,s_{n})\) 是一个约化分解，且 \(b_{1},\ldots,b_{n},b_{1}^{\prime},\ldots,b_{n}^{\prime}\) 是 B 的元素，满足 \(b_{1}\bar{s}_{1}\ldots b_{n}\bar{s}_{n}\in b_{1}^{\prime}\bar{s}_{1}\ldots b_{n}^{\prime}\bar{s}_{n}B\)，则 \(b_{1}\bar{s}_{1}\in b_{1}^{\prime}\bar{s}_{1}B\)。为此，注意若 \(\bar{s}_{1}^{-1}b_{1}^{-1}b_{1}^{\prime}\bar{s}_{1}\notin B\)，则此元素将属于 \(Bs_{1}B\)，于是有 \(b_{2}\bar{s}_{2}\ldots b_{n}\bar{s}_{n}\in b\bar{s}_{1}b^{\prime}b_{2}^{\prime}\bar{s}_{2}\ldots b_{n}^{\prime}\bar{s}_{n}B\)，其中 \(b,b^{\prime}\in B\)，这与第 4 项定理 2 的推论 1 矛盾。）
+\item
+  证明 I 配备 C 后是一个建筑，称为与 (G, B) 相关的建筑。证明 I 存在唯一的编号（§ 1，习题 20），使得一个面的类型就是 a) 中定义的类型。
+\item
+  证明 I 是宽敞的，即 I 的每个面板至少包含于三个室中（参见 § 1，习题 24）。证明以下条件得到满足：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  给定一个面板 F、一个室 C、一个廊 \(\Gamma = (\mathrm{C}_0, \ldots, \mathrm{C}_n)\)，满足 \(\mathrm{F} \subset \mathrm{C}_n\) 且长度最短，以及包含 F 的室 \(\mathrm{C}'\) 和 \(\mathrm{C}''\)，它们都异于 \(\mathrm{C}_n\)，存在元素 \(g \in \mathrm{G}\)，使得 \(g(\mathrm{C}_i) = \mathrm{C}_i\) 对 \(0 \leqslant i \leqslant n\) 成立，且 \(g(\mathrm{C}') = \mathrm{C}''\)。
+\end{enumerate}
+
+(归结为 \(C_{0} = C\) 的情形；令 \(u \in S\) 使 F 为 \(S - \{u\}\) 型，并令 s 为 \(\Gamma\) 的类型。证明 \((\mathbf{s}, u)\) 是一个约化分解。取 \(h \in G\) 使得 \(C_{n} = h(\mathrm{C})\)；存在 \(b'\) 和 \(b'' \in B\)，使得 \(C' = hb'u(\mathrm{C})\) 且 \(C'' = hb''u(\mathrm{C})\)。然后使用推广到 Tits 子群情形的第 4 项定理 2 的推论 1（参见习题 3 f)），证明存在 \(b \in B\) 使得 \(bhb'uB = hb''uB\)；于是 \(b \in hBuBu^{-1}Bh^{-1} \subset (hBh^{-1}) \cup (hBuBh^{-1})\)。若 \(b \in hBuBh^{-1}\)，则有 BhB \(\subset BhBuB = BhuB\)（同上引），这是不可能的。因此 \(b(C_{n}) = C_{n}\)，由 e) 得对所有 i 都有 \(b(C_{i}) = C_{i}\)。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  设 \((\mathbf{W},\mathbf{S})\) 为 Coxeter 系统，I 为由 S 编号的建筑（§ 1，习题 20）。若 \(\Gamma = (\mathbf{C}_0,\dots ,\mathbf{C}_n)\) 是一个单射廊，则 \(\Gamma\) 的类型（记为 \(s(\Gamma)\)）是 S 的元素组成的序列 \((s_1,\ldots ,s_n)\)，满足面板 \(\mathbf{C}_{i - 1}\cap \mathbf{C}_i\) 的类型为 \(\mathbf{S} - \{s_i\}\)（当 \(1\leqslant i\leqslant n\) 时）。若习题 10 的条件 (WI 1) 和 (WI 2) 得到满足，则称 I 为一个 \((\mathbf{W},\mathbf{S})\)-建筑。
+\end{enumerate}
+
+设 I 是一个宽敞的 (W, S)-建筑（参见习题 10 g)），G 是 I 的满足以下条件的允许自同构群：
+
+(G0) 给定包含同一面板的三个不同室 C、C' 和 C''，存在元素 \(g \in G\)，使得 \(g(\mathrm{C}) = \mathrm{C}\) 且 \(g(\mathrm{C}') = \mathrm{C}'\)。
+
+取 I 的一个室 C，并以 B 表示 C 在 G 中的稳定子群。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 G 在 I 的室集上传递地作用。
+\item
+  设 \(C'\) 和 \(C''\) 是两个室。证明 \(t(\mathrm{C},\mathrm{C}') = t(\mathrm{C},\mathrm{C}'')\)，当且仅当存在 \(b \in B\) 使得 \(\mathrm{C}'' = b(\mathrm{C}')\)（若 \(t(\mathrm{C},\mathrm{C}') = t(\mathrm{C},\mathrm{C}'') = w\)，取 w 的一个约化分解 s，以及类型为 s 的最短廊 \(\Gamma'\) 和 \(\Gamma''\)，端点分别为 C 与 \(C'\)、C 与 \(C''\)。利用 \(l(w)\) 作归纳，使用 \((\mathrm{G}_{0})\) 和 a)。推出存在双射 \(w \mapsto \mathrm{B}(w)\)，从 W 到 B\textbackslash G/B。
+\item
+  令 F 为 C 的 S- \(\{s\}\) 型面。证明 F 在 G 中的稳定子群等于 B \(\cup\) B(s)（若 g(F) = F，则 t(C, g(C)) = 1 或 s）。证明 B \(\subset\) B(s)B(s)（使用 (G0)）。
+\item
+  证明 B 是 G 的 Tits 子群，且 (G,B) 的 Coxeter 系统典范同构于 (W,S)。（令 \(w \in W\) 和 \(s \in S\) 满足 \(l_{\mathbb{S}}(sw) = l_{\mathbb{S}}(w) + 1\)。令 \(g \in \mathrm{B}(w)\)、\(u \in \mathrm{B}(s)\)；令 \(\mathbf{s} = (s_1, \ldots, s_n)\) 为 \(w\) 的一个约化分解，\(C = C_0, C_1, \ldots, C_n = g(C)\) 为类型为 s 的最短廊，并取 \(\bar{s}_i \in \mathrm{B}(s_i)\)；证明利用 \((G_0)\)，存在 \(b_i \in B\)，使得 \(C_i = b_1 \bar{s}_1 \ldots b_i \bar{s}_i(C)\)。置 \(C_i' = u(C_{i-1})\)，证明廊 \((C, u(C), u(C_1), \ldots, u(C_n))\) 的类型为 \((s, s)\)，因而是最短的。推出 \(ug \in \mathrm{B}(sw)\) 且 \(B(s) B(w) = B(sw)\)。若现在 \(l(sw) = l(w) - 1\)，置 \(w' = sw\)：于是 \(B(s) B(w') = B(w)\)，从而
+\end{enumerate}
+
+\[
+\mathrm{B} (s) \mathrm{B} (w) = \mathrm{B} (s) \mathrm{B} (s) \mathrm{B} \left(w ^ {\prime}\right) \subset \mathrm{B} \left(w ^ {\prime}\right) \cup \left(\mathrm{B} (s) \mathrm{B} \left(w ^ {\prime}\right)\right) = \mathrm{B} (s w) \cup \mathrm{B} (w);
+\]
+
+最后，由于 \(\mathrm{B} \subset \mathrm{B}(s)\mathrm{B}(s)\)，还有 \(\mathrm{B}(w') = \mathrm{B}(sw) \subset \mathrm{B}(s)\mathrm{B}(w)\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  证明存在从与 (G, B) 相关的建筑（习题 10）到 I 的唯一同构，它与 G 的作用相容，并将典范室 \(C_{e}\) 映到 C。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  设 \((\mathbf{G},\mathbf{B},\mathbf{N},\mathbf{S})\) 为一个 Tits 系统，\(\mathrm{W} = \mathrm{N} / (\mathrm{B}\cap \mathrm{N})\) 为其 Weyl 群，I 为与 \((\mathrm{W},\mathrm{S})\) 相关的 \((\mathbf{G},\mathbf{B})\)-建筑（习题 10），\(\mathbf{C} = \mathbf{C}_e\) 为 I 的典范室。令 \(\mathbf{A}_0\) 为与 Coxeter 系统 \((\mathrm{W},\mathrm{S})\) 相关的公寓（§ 1，习题 16）。对所有 \(g\in \mathbf{G}\)，令 \(\varphi_g\) 为从 \(\mathbf{A}_0\) 到 I 的映射；它将点 \(w\mathrm{W}^{(s)}\)（属于 \(\mathbf{A}_0\)，其中 \(w\in \mathrm{W}, s\in \mathrm{S}\)）映到 I 的点 \(gw\mathrm{G}^{(s)}\)。
+\end{enumerate}
+
+证明：对所有 \(g \in G\)，映射 \(\varphi_{g}\) 是从 \(A_{0}\) 到 I 的一个有编号建筑的同构，其像是由 \(gn(C_{e})\)（其中 \(n \in N\)）组成的室的并集。证明 I 配备由 \(\varphi_{g}(A_{0})\)（其中 \(g \in G\)）组成的集合 U 后，是一个结构建筑（§1，习题 24）（为证明 (SB 2)，注意若 \(g', g'' \in G\)，则存在 \(b', b'' \in B\) 和 \(n \in N\)，使得 \(g'^{-1}g'' = b'nb''\)；于是置 \(g = g'b'n\)，并证明 \(g'(C)\) 和 \(g''(C)\) 包含于 \(\varphi_{g}(A_{0})\) 中。为证明 (SB 3)，归结到两个公寓 \(A' = \varphi_{e}(A_{0})\) 和
+
+\(A'' = \varphi_b(A_0)\)，其中 \(b \in B\)，并使用第 5 项命题 2 证明映射 \(a \mapsto b(a)\) 固定 \(A' \cap A''\) 的各点）。证明 Coxeter 系统 (W, S) 和 I 的编号适配于 (I, U)（§1，习题 24 e)），并且集合 \(\mathfrak{I}\)，即从 \(A_0\) 到 \(\mathfrak{U}\) 的各个元素的允许同构，正是 \(\varphi_g\)（其中 \(g \in G\)）的集合。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  沿用 §1 习题 24 的记号：(I, U) 是一个配备 Coxeter 系统 (W, S) 和适配编号的宽敞结构建筑，而 I 是从与 (W, S) 相关的公寓 \(A_{0}\) 到 (I, U) 的各个公寓的允许同构的集合。此外，令 G 为 I 的保持 E 的允许自同构群：于是 G 作用于 I，并假设 G 在 I 上传递地作用。
+\end{enumerate}
+
+以 C 表示 I 的一个室，A 表示 U 中包含 C 的一个公寓，以 \(\varphi\) 表示将 \(A_{0}\) 的典范室 \(C_{e}\) 映到 C 的允许同构（从 \(A_{0}\) 到 A）；以 B 表示 C 在 G 中的稳定子群，以 N 表示 A 在 G 中的稳定子群。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：若 \(A'\) 和 \(A''\) 是 U 中包含同一室的两个公寓，则存在 \(g \in G\)，使得 \(g(A') = A''\)，且 \(g(a) = a\) 对所有 \(a \in A' \cap A''\) 成立。证明 G 在二元组 (A, C) 的集合上传递地作用，其中 \(A \in U\)，C 是 A 的一个室。
+\item
+  证明映射 \(n \mapsto \varphi^{-1} \circ n \circ \varphi\) 是从 N 到 W 的满同态，其核为 \(B \cap N\)。因此可以将 \(N/(B \cap N)\) 认作 W。
+\item
+  证明习题 10 d) 的条件 (WI 1) 和 (WI 2) 得到满足（使用以下事实：若 I 的一个公寓包含两个室 C' 和 C''，则它包含端点为 C' 和 C'' 的每个最短廊（§ 1，习题 24 b)）。
+\item
+  证明习题 10 g) 的条件 (G)（从而条件 (G₀) 也得到满足）得到满足（沿用 (G) 的记号，考虑 I 中包含 C₀ 和 C'（分别为 C''）的公寓 A'（分别为 A''）；使用 §1 习题 24 b) 证明 Γ ⊂ A'' ∩ A''，并使用 a)）。
+\item
+  证明 \((G, B, N, S)\) 是一个 Tits 系统，且 \((I, \mathfrak{U})\) 典范同构于相关的有编号结构建筑（习题 12）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\item
+  设 \((\mathbf{G},\mathbf{B},\mathbf{N},\mathbf{S})\) 为一个 Tits 系统，\((\mathbf{I},\mathfrak{U})\) 为相关的有编号结构建筑（习题 12）。证明 G 视为 I 的自同构群时满足习题 13 的条件。沿用习题 12 的记号，置 \(\mathrm{A}=\varphi_{e}(\mathrm{A}_{0})\) 和 \(\mathrm{C}=\varphi_{e}(\mathrm{C}_{e})\)；证明 B 是 C 在 G 中的稳定子群。令 \(\tilde{N}\) 为 A 在 G 中的稳定子群；证明 \(\tilde{\mathrm{N}}/(\mathrm{B}\cap\tilde{\mathrm{N}})\) 可以认作 W，且 \((\mathrm{G},\mathrm{B},\tilde{\mathrm{N}},\mathrm{S})\) 是与 \((\mathrm{G},\mathrm{B},\mathrm{N},\mathrm{S})\) 相关的饱和 Tits 系统（习题 5）。
+\item
+  沿用习题 10 的假设和记号。此外，假设 \(\mathbf{W}\)（\((\mathbf{G},\mathbf{B})\) 的 Weyl 群）有限，并以 \(w_0\) 表示 \(\mathbf{W}\) 的最长元素（§1，习题 22）。若两个室 \(\mathbf{C}\) 和 \(\mathbf{C}'\) 满足 \(t(\mathbf{C},\mathbf{C}') = w_0\)，则称其对置。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明若 C 与 C' 对置，则 C' 与 C 也对置。证明每个给定的室 C 都存在一个与之对置的室。证明室 C 在 G 中的稳定子群在与 C 对置的室集上是传递的。
+\item
+  设 C 与 \(C'\) 是两个对置的室。证明对所有 \(w \in W\)，存在唯一的室 \(C_w\) 具有如下性质：若 \((s_1, \ldots, s_k)\)（分别为 \((s'_1, \ldots, s'_h)\)）是 w（分别是 \(w' = w_0 w^{-1}\)）的一个约化分解，则存在最短廊 \((C_0 = C, C_1, \ldots, C_n = C')\)，其类型为 \((s_1, \ldots, s_k, s'_1, \ldots, s'_h)\)（其中 \(n = h + k\)），使得 \(C_w = C_k\)（使用 §1 习题 22 以及习题 10 d) 和 e)）。证明 \(C_w\) 与 \(C_{ww_0}\) 对置。
+\item
+  令 \(\mathfrak{M}\) 为对置室的二元组集合。对 \(m = (C, C') \in \mathfrak{M}\)，令 \(A_m\) 为上面构造的室 \(C_w\) 的并集。证明 I 配备由 \(\mathfrak{U}\) 中的 \(A_m\)（其中 \(m \in \mathfrak{M}\)）组成的集合后是一个结构建筑（\(\S 1\)，习题 24），且 Coxeter 系统 (W, S) 和 I 的编号适配于 (I, \(\mathfrak{U}\) )；定义从 \(\mathfrak{M}\) 到习题 24 中记为 \(\mathfrak{I}\) 的集合（该习题见 \(\S 1\)）的典范双射。我们认同这两个集合。
+\item
+  令 \(m = (C, C') \in \mathfrak{M}\)，其中 \(C = C_e\)，并令 N 为 \(A_m\) 在 G 中的稳定子群。证明 \(N/(B \cap N)\) 可以认作 W，且 \((G, B, N, S)\) 是饱和的 Tits 系统（使用习题 13）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  沿用习题 15 的假设和记号。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 C 和 \(C'\) 是两个室。证明存在一个室 \(C''\)，同时与 C 和 \(C'\) 对置（取与 C 对置的 \(C''\)，使 \(t(\mathrm{C},\mathrm{C}')\) 具有可能的最大长度；若 \(t(\mathrm{C}',\mathrm{C}'')\neq w_{0}\)，则存在一个室 \(C_{1}\)，它与 \(C''\) 相邻，使得 \(l(t(\mathrm{C}',\mathrm{C}_{1}))>l(t(\mathrm{C}',\mathrm{C}''))\)；使用习题 10 的条件 (G) 证明可以假设 \(C_{1}\not\subset A_{(C,C'')}\)，并且此时 \(C_{1}\) 与 C 对置）。
+\item
+  令 \(a \in U\)；证明存在唯一的对合自同构 \(j_{A}\)（不一定允许），将 A 的每个室映到其对置室（使用 §1 习题 22 c)）。令 F 和 \(F'\) 为 I 的两个面；证明若 \(F' = j_{A}(F)\) 对某个 \(A \in U\) 成立且该 A 包含 F 和 \(F'\)，则对所有 \(A \in U\)（包含 F 和 \(F'\)）都成立同样结论（若 \(F, F' \in A \cap A'\)，其中 \(A, A' \in U\)，则考虑室 C（分别为 \(C'\)）（分别属于 A 和 \(A'\)，并分别包含 F 和 \(F'\)），再取 \(A'' \in U\) 包含 C 和 \(C'\)，并使用 (SB 3)）。于是称 F 与 \(F'\) 对置。证明两个面有公共的对置面，当且仅当它们具有相同的类型 T；并且与 T 型面相对的面是 \(w_{0}Tw_{0}^{-1}\) 型。
+\item
+  令 \(A_{0}\) 为与 Coxeter 系统 (W, S) 相关的公寓（§1，习题 16），令 J 为从 \(A_{0}\) 到 U 的各个元素的允许同构的集合。若 \(\alpha\) 是 \(A_{0}\) 的一个半部，其墙为 L（§1，习题 16），且 \(\varphi \in J\)，则称 \(\varphi(\alpha)\) 为 I 的一个半公寓，其墙为 \(\varphi(L)\)。证明 \(\varphi(L)\) 只依赖于 \(\varphi(\alpha)\)，而不依赖于二元组 \((\varphi, \alpha)\)。令 \(D_{1}\) 和 \(D_{2}\) 为具有同一墙 L 的两个不同半公寓：证明存在 \(\varphi \in J\) 和 \(L_{0}\)（属于 \(A_{0}\) 的一面墙），使得 \(L = \varphi(L_{0})\) 并且 \(D_{i}\) 是 \(\varphi\) 将 \(A_{0}\) 中由 \(L_{0}\) 确定的两个半部映出的像（取包含于 L 中的一个面板，以及室 \(C_{1}\) 和 \(C_{2}\)，其中一个包含于 \(D_{1}\)，另一个包含于 \(D_{2}\)，并且 \(C_{1}\) 包含 F，\(C_{2}\) 包含 \(D_{1}\) 中与 F 对置的面板（该面板在 \(D_{2}\) 中也与 F 对置），再考虑包含 \(C_{1}\) 和 \(C_{2}\) 的 I 的公寓）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  沿用习题 15 和 16 的假设及记号。取 \(\varphi \in \mathfrak{I}\)，将典范室 \(C\)（属于 \(A_0\)，见 \(\S 1\)，习题 16）映到典范室 \(C_e\)（属于 \(I\)），并如习题 15 \(d\)）中那样，以 \(N\) 表示公寓 \(\varphi(A_0) \in \mathfrak{U}\) 在群 \(G\) 中的稳定子群。对任意子集 \(D\)（属于 \(A_0\)），以 \(B_D\) 表示 \(G\) 中固定 \(\varphi(D)\) 的所有点的子群：有 \(B = B_C\) 且 \(B \cap N = B_{A_0}\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(\alpha\) 是包含 C 的 \(A_0\) 的一个半部。证明 \(B_{\alpha}\) 在 I 中与 \(\varphi(\alpha)\) 不同且其墙为 \(\varphi(\alpha)\) 的墙 L 的半公寓集合上传递地作用（令 X 为这样的半公寓，F 为包含于 L 中的面板，\(C'\) 为包含 F 的 \(\varphi(\alpha)\) 的一个室；使用习题 16 c) 和习题 13 a) 证明存在 \(g \in G\)，使得 \(g(X \cup \varphi(\alpha)) = \varphi(A_0)\) 且 \(g(C') = C'\)；证明 \(g(F) = F\)，并由 §1 习题 22 c) 推出 \(g \in B_{\alpha}\)。推出 \(B_L\) 在墙为 L 的半公寓上二重传递地作用，且 \((B_L, B_{\alpha}, B_L \cap N)\) 是 Weyl 群阶为 2 的 Tits 系统（参见习题 7）。
+\item
+  设 \(D_{1}\) 和 \(D_{2}\) 是 \(A_{0}\) 的两个凸子集，满足 \(C \subset D_{1} \subset D_{2}\)，并且存在唯一的半部 \(\alpha\)（属于 \(A_{0}\)），使得 \(D_{1} \subset \alpha\) 而 \(D_{2} \not\subset \alpha\)：于是 \(D_{1} = D_{2} \cap \alpha\)（§1，习题 21 c)）。证明 \(B_{D_{1}} = B_{\alpha}B_{D_{2}}\)，且 \(B_{\alpha} \cap B_{D_{2}} = B \cap N\)（考虑一个最短廊，其一个端点等于 C，另一个端点包含点 \(a \in D_{2} - D_{1}\)，证明存在两个相邻室 \(C_{1}'\) 和 \(C_{2}'\)（属于 \(A_{0}\)），满足 \(C_{1}' \subset D_{1}\)、\(C_{2}' \subset D_{2}\)、\(C_{2}' \not\subset D_{1}\)，且 \(C_{1}' \cap C_{2}'\) 包含于墙 \(L'\)（属于 \(\alpha\)）中。置 \(C_{i} = \varphi(C_{i}')\)、\(F = \varphi(C_{1}' \cap C_{2}')\) 和 \(L = \varphi(L')\)。证明 \(D_{1} \cup C_{2}'\) 的凸包等于 \(D_{2}\)。令 \(b \in B_{D_{1}}\)：则 \(b(C_{1}) = C_{1}\)，因而 \(b(F) = F\) 且 \(b(C_{2}) \neq C_{1}\)。推出 \(b(C_{2}) \cup L\) 的凸包是异于 \(\varphi(\alpha)\) 且墙为 L 的半公寓 X，并且存在 \(b' \in B_{\alpha}\)，使得
+\end{enumerate}
+
+\[
+b ^ {\prime} (\varphi (A _ {0})) = X \cup \varphi (\alpha).
+\]
+
+证明 \(b'b(a) = a\) 对所有 \(a \in \varphi(\mathrm{D}_1 \cup \mathrm{C}_2')\) 成立，且 \(b'b \in \mathrm{B}_{\mathrm{D}_2}\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  令 \((\alpha_{i})_{1\leqslant i\leqslant q}\) 为包含 C 的 \(A_0\) 的半部，并对其编号，使得映射
+\end{enumerate}
+
+\[
+j \mapsto \bigcap_ {1 \leqslant i \leqslant j} \alpha_ {i}
+\]
+
+  \(\mathbf{B} = \mathbf{B}_{\alpha_1} \ldots \mathbf{B}_{\alpha_q}\)。证明若 \(b_i, b_i' \in \mathbf{B}_{\alpha_i}\) 且 \(b_1 \ldots b_q = b_1' \ldots b_q'\)，则 \(b_i' \in b_i(\mathbf{B} \cap \mathbf{N})\) 对 \(1 \leqslant i \leqslant q\) 成立。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  令 \(V_i\) 为由 \(k^n\) 的基 \(e_1, \ldots, e_i\) 张成的子空间（\(1 \leqslant i \leqslant n - 1\)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 \(G_{X}\) 是满足 \(g \in G\) 且 \(g(V_{i}) = V_{i}\) 时有 \(s_{i} \notin X\) 的元素所成的集合。
+\item
+  令 I 为与 Tits 系统 (G, B, N, S) 相关的建筑（习题 10 和 12）。证明将 I 的点 \(g\mathbf{G}^{(i)}\)（其中 \(\mathbf{G}^{(i)}\) 表示 G 的子群 \(G_{S-\{s_i\}}\)，换言之是 \(V_i\) 的稳定子群）关联到向量子空间 \(g(V_i)\) 的映射 j，是从 I 到 \(k^n\) 的满足 \(\neq \{0\}\) 且 \(\neq k^n\) 的向量子空间集合的双射，并与 G 的作用相容。
+\item
+  设 E 为向量空间。E 的一个旗是 E 的向量子空间的集合，且按包含关系全序。证明 I 的元素 \(a_{1}, \ldots, a_{k}\) 属于 I 的同一个面，当且仅当 \(\{j(a_{1}), \ldots, j(a_{k})\}\) 是 \(k^{n}\) 的一个旗。
+\item
+  证明 G 在 \(k^{n}\) 的一维向量子空间集上二重传递地作用。假设 \(n \geqslant 2\)，令 \(N_{1}\) 为由交换 \(e_{1}\) 和 \(e_{2}\) 且固定其余 \(e_{i}\) 的元素生成的 G 的子群。证明 \((\mathrm{G}, \mathrm{G}^{(1)}, \mathrm{N}_{1})\) 是 Weyl 群阶为 2 的 Tits 系统。
+\item
+  假设 \(k\) 可交换。置
+\end{enumerate}
+
+\[
+\mathrm{G} ^ {\prime} = \mathbf {S L} (n, k), \quad \mathrm{B} ^ {\prime} = \mathrm{G} ^ {\prime} \cap \mathrm{B}, \quad \mathrm{N} ^ {\prime} = \mathrm{G} ^ {\prime} \cap \mathrm{N} \text {and} \mathrm{T} ^ {\prime} = \mathrm{N} ^ {\prime} \cap \mathrm{B} ^ {\prime} = \mathrm{T} \cap \mathrm{G} ^ {\prime}.
+\]
+
+证明 \(N^{\prime}/T^{\prime}\) 可以认作 \(S_{n}\)，且 \((G^{\prime}, B^{\prime}, N^{\prime}, S)\) 是一个 Tits 系统（按第 2 项的方法论证）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{18}
+\item
+  令 \(k\) 为特征 \(\neq 2\) 的可交换域，令 \(\mathbf{Q}\) 为二次型 \(x_{1}x_{3} + x_{2}^{2}\)，定义在 \(k^{3}\) 上。证明群 \(\mathbf{SO}(\mathbf{Q})\) 在 \(k^{3}\) 的各向同性直线集上二重传递地作用。将相应的 Tits 系统（习题 7）与第 2 项中 \(n = 2\) 时得到的 Tits 系统进行比较（参见《代数》第 IX 章，§9，习题 15）。
+\item
+  沿用第 2 项的记号，并假设 k 可交换。考虑以下情形：
+\end{enumerate}
+
+\((B_{l})\ n=2l+1\ (with\ l\geqslant1),\ k\ is\ of\ characteristic\neq2\ and\ k^{n}\ is\ equipped\) 配备二次型 \(Q=x_{1}x_{n}+\cdots+x_{l}x_{l+2}+x_{l+1}^{2};\)
+
+\((C_{l}) \ n = 2l \ (\text{其中 } l \geqslant 1) \ \text{且} \ k^{n} \ \text{配备交错型 } \Phi \ \text{使得 } \Phi(e_{i}, e_{j}) = 0 \ \text{对} \ 1 \leqslant i \leqslant n, \ 1 \leqslant j \leqslant n \ \text{且} \ i \leqslant j, \ \text{除非} \ i \leqslant l, \ j = n + 1 - i, \ \text{此时} \Phi(e_{i}, e_{j}) = 1;\)
+
+\((D_{l})\ n = 2l \text{ (其中 } l \geqslant 2), k \text{ 的特征 } \neq 2 \text{ 且 } k^{n} \text{ 配备二次型 } Q = x_{1}x_{n} + \cdots + x_{l}x_{l+1}.\)
+
+以 \(G_{1}\) 表示特殊正交群 \(\mathbf{SO}(Q)\)（情形 \((B_{l})\) 和 \((D_{l})\)），并表示辛群 \(\mathbf{Sp}(\varPhi)\)（情形 \((C_{l})\)）。置
+
+\[
+\mathrm{B} _ {1} = \mathrm{G} _ {1} \cap \mathrm{B}, \quad \mathrm{N} _ {1} = \mathrm{G} _ {1} \cap \mathrm{N} \text {and} \mathrm{T} _ {1} = \mathrm{G} _ {1} \cap \mathrm{T} = \mathrm{B} _ {1} \cap \mathrm{N} _ {1}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明 \(N_{1}\) 在直线 \(ke_{i}\) 集合上的作用定义了一个同态：其定义域为 \(N_{1}\)，核为 \(T_{1}\)，且满射到 \(W_{1}\)（它是 \(S_{n}\) 的子群），从而可将 \(W_{1}\) 认作 \(N_{1}/T_{1}\)。证明 \(W_{1}\) 是由下列元素生成的 \(S_{n}\) 的子群：
+\end{enumerate}
+
+\(\sigma_{j} = s_{j}s_{n - j}\)（\(1\leqslant j <   l\)）以及 \(\sigma_l = s_{l - 1}s_ls_{l - 1}\)，情形 \((\mathrm{B}_l)\)；
+
+\(\sigma_{j} = s_{j}s_{n - j}\)（\(1\leqslant j <   l\)）以及 \(\sigma_l = s_l\)，情形 \((C_l)\)；
+
+\[
+\text { the } \sigma_ {j} = s _ {j} s _ {n - j} \text { for } 1 \leqslant j <   l \text { and by } \sigma_ {l} = s _ {l - 1} s _ {l} s _ {l - 1} s _ {l} s _ {l + 1} s _ {l} \text { in case } (D _ {l}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  令 \(S_{1}\) 为由 \(\sigma_{j}\)（其中 \(1 \leqslant j \leqslant l\)）组成的集合。证明 \((\mathrm{G}_{1}, \mathrm{B}_{1}, \mathrm{N}_{1}, \mathrm{S}_{1})\) 是一个 Tits 系统（要证明 \(G_{1}\) 的由 \(B_{1}\) 和 \(N_{1}\) 生成的子群 H 等于整个 \(G_{1}\)，按《代数》第 II 章 §10 第 13 项论证），注意到 H 包含 \(G_{1}\) 的下三角子群，并且对于任意 \(\xi_{i} \in k\)（\(2 \leqslant i \leqslant n\)），存在矩阵 \(b = (b_{ij}) \in B_{1}\)，满足 \(b_{11} = 1\)、\(b_{1i} = \xi_{i}\)（\(2 \leqslant i \leqslant n - 1\)），且 \(b_{1n} = \xi_{n}\)（情形 \((\mathrm{C}_{l})\)），而 \(b_{1n} = 0\)（情形 \((\mathrm{B}_{l})\) 和 \((\mathrm{D}_{l})\)）。然后仿照第 2 项，引入子群 \(G_{1,j} = G_{1} \cap (G_{j}, G_{n-j})\)（\(1 \leqslant j < l\)）以及子群 \(G_{1,l}\)，其元素固定 \(G_{1}\)
+\end{enumerate}
+
+\(e_i\)（\(i \neq l, l + 1, l + 2\)）以及由 \(e_l, e_{l+1}\) 和 \(e_{l+2}\) 生成的子空间，情形 \((B_l)\)；
+
+\(e_{i}\)（\(i \neq l, l + 1\)）以及由 \(e_{l}\) 和 \(e_{l+1}\) 生成的平面，情形 \((\mathrm{C}_{l})\)；\(e_{i}\)（对于 i \textless{} l - 1 或 \(i > l + 2\)）以及由 \(e_{l-1}\) 和 \(e_{l+1}\)、\(e_{l}\) 和 \(e_{l+2}\) 生成的两个平面，情形 \((\mathrm{D}_{l})\)。 
+
+证明 \(G_{1,j}\) 分别可以认作 \(\mathbf{GL}(2,k)\)、\(\mathbf{SL}(2,k)\) 或习题 19 中的特殊正交群。
+
+\(^{*}c)\) 证明群 \(W_{1}\) 的 Coxeter 图在上述三种情形中分别为 \((B_{l})\)、\((C_{l})\) 或 \((D_{l})\) 型（第 VI 章，§4，第 1 项）。
+
+\(d\)）证明：对 \(\mathbf{S}_1\) 的任意子集 X，子群 \(\mathbf{G}_{1\mathbf{X}}\) 由满足 \(g\in \mathbf{G}_1\) 且 \(g(\mathrm{V}_i) = \mathrm{V}_i\) 对所有 \(i\)（其中 \(\sigma_{i}\notin \mathbf{X}\)）的元素组成；但在情形 \((\mathrm{D}_l)\) 中，若 \(\mathrm{V}_{r - 1}\) 表示由 \(e_1,\dots ,e_{r - 1}\) 和 \(e_{r + 1}\) 生成的子空间，则同一断言成立。仿照习题 18 b)，推出存在一个双射 \(j\)，从与 \((\mathrm{G}_1,B_1)\) 相关的建筑到满足 \(\neq 0\) 的全各向同性子空间集合（情形 \((\mathrm{B}_l)\) 和 \((\mathrm{C}_l)\)），以及维数满足 \(\neq 0\) 且 \(\neq r - 1\) 的全各向同性子空间集合（情形 \((\mathrm{D}_l)\)）。证明 I 的点 \(a_1,\ldots ,a_k\) 属于同一个面，当且仅当 \(\{j(a_1),\dots ,j(a_k)\}\) 是一个旗。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  令 A 为离散赋值环（《交换代数》第 VI 章，§3，第 6 项），m 为其极大理想，γ 为 m 的一个生成元，K 为 A 的分式域。令 G 为群 SL(2,K)，B 为 G 的子群，由矩阵 \(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\) 组成，其中 \(a, b, d \in A\) 且 \(c \in m\)（其中 ad - bc = 1）；令 N 为由属于 G 且每行每列恰有一个非零元素的矩阵组成的子群。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 \(\mathrm{T} = \mathrm{B} \cap \mathrm{N}\) 在 \(\mathbb{N}\) 中正规，且 \(\mathrm{W} = \mathrm{N} / \mathrm{T}\) 是由矩阵的类 \(s\) 和 \(s'\)（分别为 \(\left( \begin{array}{cc}0 & 1\\ -1 & 0 \end{array} \right)\) 和 \(\left( \begin{array}{cc}0 & \gamma \\ -\gamma^{-1} & 0 \end{array} \right)\)）生成的无限二面体群。
+\item
+  证明 \((G, B, N, S)\)（其中 \(S = \{s, s'\}\)）是一个 Tits 系统。
+\item
+  令 \(\mathbf{H} = \mathbf{SL}(2, \mathbf{A})\) 为 G 的子群，由系数属于 A 的矩阵组成。证明 \((\mathbf{H}, \mathbf{B} \cap \mathbf{H}, \mathbf{N}, \{s\})\) 是一个 Tits 系统。与习题 18 e) 比较。
+\item
+  令 \(\hat{\mathbf{A}}\) 为 \(\mathbf{A}\) 的完备化，令 \(\hat{\mathbf{G}},\hat{\mathbf{B}},\hat{\mathbf{N}},\hat{\mathbf{T}}\) 为如上定义但将 \(\mathbf{A}\) 替换为 \(\hat{\mathbf{A}}\) 得到的群。证明 \(\mathbf{G}\) 到 \(\hat{\mathbf{G}}\) 的嵌入定义了一个同构，将建筑 \(\mathbf{I}\)（与 \((\mathbf{G},\mathbf{B})\) 相关）映到建筑 \(\hat{\mathbf{I}}\)（与 \((\hat{\mathbf{G}},\hat{\mathbf{B}})\) 相关）（习题 10）。令 \((\mathbf{I},\mathfrak{U})\)（分别为 \((\hat{\mathbf{I}},\hat{\mathfrak{U}})\)）为与 \((\mathbf{G},\mathbf{B},\mathbf{N})\)（分别为 \((\hat{\mathbf{G}},\hat{\mathbf{B}},\hat{\mathbf{N}})\)）相关的结构建筑（习题 12）：证明 \(j(\mathfrak{U})\subset \hat{\mathfrak{U}}\)，但 \(j(\mathfrak{U})\neq \hat{\mathfrak{U}}\)（若 \(\mathbf{A}\neq \hat{\mathbf{A}}\)）（注意，公寓 \(\hat{\mathfrak{U}}\)（分别为 \(\mathfrak{U}\)）与 \(\mathbf{T}\)（分别为 \(\hat{\mathbf{T}}\)）在 \(\mathbf{G}\)（分别为 \(\hat{\mathbf{G}}\)）下的共轭子群一一对应）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  令 \(G\) 为群，\(B\) 为 \(G\) 的子群。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明下列条件等价：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(B \cap gBg^{-1}\) 在 \(B\) 中对所有 \(g \in G\) 具有有限指数；
+\item
+  关于 B 的每个双陪集 BgB 都是关于 B 的左陪集的有限并。
+\end{enumerate}
+
+更精确地，证明对所有 \(g \in G\)，指数 \(q_{g}\)（\(B \cap gBg^{-1}\) 在 B 中的指数）等于双陪集 BgB 中所包含的关于 B 的左陪集数。证明 \(q_{gh} \leqslant q_{g}q_{h}\) 对所有 \(g, h \in G\) 成立。
+
+从现在起假设条件 (i) 和 (ii) 均已满足，并记 k 为可交换环。对 \(t \in G/B\)（分别对 \(t \in B \backslash G/B\)），记 \(a_{t}\) 为从 G 到 k 的映射，其定义为 \(a_{t}(g) = 0\)（若 \(g \notin t\)）且 \(a_{t}(g) = 1\)（若 \(g \in t\)）。令 L（分别为 H）为由 \(a_{t}\)（其中 \(t \in G/B\)，分别 \(t \in B \backslash G/B\)）生成的 k-模。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  证明存在唯一的线性形式 \(\mu\)，定义在 \(\mathbf{L}\) 上，使得 \(\mu(a_t) = 1\) 对所有 \(t \in \mathbf{G} / \mathbf{B}\) 成立。
+\item
+  令 \(\varphi \in \mathbf{L}\) 且 \(\psi \in \mathbf{H}\)。证明对所有 \(x \in \mathbf{G}\)，映射
+\end{enumerate}
+
+\[
+\theta_ {x}: y \mapsto \varphi (y) \psi (y ^ {- 1} x)
+\]
+
+属于 L，且映射 \(\varphi * \psi : x \mapsto \mu(\theta_x)\) 属于 L。此外，若 \(\varphi \in H\)，则 \(\varphi * \psi \in H\)。证明映射 \((\varphi, \psi) \mapsto \varphi * \psi\) 使 H 成为 \(k\) 上的代数，单位元为 \(a_B\)，并使 L 成为右 H-模。
+
+代数 \(\mathbf{H}\) 称为 \(\mathbf{G}\) 关于 \(\mathbf{H}\) 的 Hecke 代数，记作 \(\mathrm{H}_k(\mathbf{G},\mathbf{B})\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  证明对 \(t, t' \in B \backslash G / B\)，
+\end{enumerate}
+
+\[
+a _ {t} * a _ {t ^ {\prime}} = \sum_ {t ^ {\prime \prime}} m (t, t ^ {\prime}; t ^ {\prime \prime}) a _ {t ^ {\prime \prime}},
+\]
+
+其中，\(m(t, t'; t'')\) 是包含于 \(t \cap gt'^{-1}\) 的关于 B 的陪集数（对所有 \(g \in t''\) 均如此）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  令 G 通过左平移作用于 L。证明 H 在 L 上的作用定义了从 H 到由此得到的 G 在 L 上的线性表示的交换子的同构。
+\end{enumerate}
+
+\(^{*}f\) ) 假设 G 有限，且 k 的特征不整除 G 的阶。证明 \(H_{k}(G,B)\) 在 k 上绝对半单（《代数》第 VIII 章，§7，第 5 项）（使用 Maschke 定理（第 V 章，附录）以及《代数》第 VIII 章 §5 第 1 项的命题 3）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  假设 G 是拓扑群且 B 是 G 的紧开子群。证明条件 (i) 和 (ii) 得到满足，并且当 k = R 或 C 时，乘积 \(\varphi * \psi\) 正是相对于 G 上右 Haar 测度的卷积乘积，其归一化条件为 \(\mu(B) = 1\)（参见《积分》第 VIII 章，§4，第 5 项）。
+\end{enumerate}

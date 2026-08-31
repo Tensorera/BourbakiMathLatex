@@ -1,0 +1,735 @@
+\setcounter{exercisegroup}{8}
+\edef\CurrentExerciseGroup{\arabic{exercisegroup}}
+\section*{\texorpdfstring{\S\CurrentExerciseGroup}{第{\CurrentExerciseGroup}节}}
+\phantomsection
+\addcontentsline{toc}{section}{第{\CurrentExerciseGroup}节习题}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  设 \(\mathrm{T}, \mathrm{T}'\) 为两个局部紧空间，\(\mu\) 为 \(\mathrm{T}\) 上的正测度，\(\mu'\) 为 \(\mathrm{T}'\) 上的正测度。证明：若测度 \(\mu'\) 有界，则投影 \(\mathrm{pr}_1\) 把 \(\mathrm{T} \times \mathrm{T}'\) 映到 \(\mathrm{T}\) 上，它是 \((\mu \otimes \mu')\) -逆紧映射，且 \(\mathrm{pr}_1(\mu \otimes \mu') = a \cdot \mu\)，其中 \(a = \mu'(\mathrm{T}')\)。由此给出一个 \((\mu \otimes \mu')\) -可忽略子集（含于 \(\mathrm{T} \times \mathrm{T}'\)）的例子，使它在 \(\mathrm{T}\) 上的投影不是 \(\mu\) -可测的。
+\item
+  设 T 为 R 中区间 \([0,1]\)，赋以由 R 的拓扑诱导的拓扑，设 \(T'\) 为 R 中区间 \([0,1]\)，赋以离散拓扑；设 \(\mu\) 为 T 上的 Lebesgue 测度，\(\mu'\) 为 \(T'\) 上由 \(T'\) 的每点质量 +1 定义的离散测度，并设 \(\nu = \mu \otimes \mu'\) 为 \(X = T \times T'\) 上的乘积测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个 \(t \in \mathrm{T}\)，集合 \(\{t\}\) 是 \(\mu\) -可忽略的，但集合 \(\{t\} \times \mathrm{T}'\) 不是 \(\nu\) -可忽略的。
+\item
+  “对角线”\(\Delta\)（\(\mathrm{T} \times \mathrm{T}'\) 中点 \((t, t)\) 所成的集，其中 \(t\) 跑遍 \([0, 1]\)）是 \(\mathrm{T} \times \mathrm{T}'\) 中的闭集，局部 \(\nu\) -可忽略但非 \(\nu\) -可忽略，且 \(\mu'(\Delta(t)) = 1\)（对所有 \(t \in \mathrm{T}\)）而 \(\mu(\Delta(t')) = 0\)（对所有 \(t' \in \mathrm{T}'\)）（参见 §3, 习题 3）。
+\item
+  在空间 \(\mathrm{X} \times \mathrm{X} = \mathrm{Y}\) 上考察乘积测度 \(\rho = \nu \times \nu\)。证明 \(\mathrm{Y}\) 中存在一个集合 \(\mathrm{A}\)，局部 \(\rho\) -可忽略，使得对每个 \(x \in \mathrm{X}\)，\(\mathrm{A}(x)\) 与 \(\mathrm{A}^{-1}(x)\) 都是 \(\nu\) -可测的且非局部可忽略的。（若 \(x = (t, t')\)，其中 \(t \in \mathrm{T}\)，\(t' \in \mathrm{T}'\)，取 A 使 A(x) 包含所有点 \((s, t) \in X\)，其中 \(0 \leqslant s \leqslant 1\)。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 T 为局部紧空间，\(\mu\) 为 T 上的正测度，f 为定义在 T 上的数值函数 \(\geqslant 0\)。在乘积空间 \(T \times R\) 中，用 \(D_{f}\) 表示点 \((t, x)\) 所成之集，其中 \(0 \leqslant x \leqslant f(t)\)；另一方面，设 \(\nu\) 为 R 上的 Lebesgue 测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：为使 \(f\) 是 \(\mu\) -可测的，必须且只需 \(D_f\) 是关于乘积测度 \(\lambda = \mu \otimes \nu\) 的可测集。（为证条件必要，证明：若 \(f\) 是 \(\mu\) -可测的，则对每个紧子集 \(K\)（含于 \(T\)），\(D_f \cap (K \times R_+)\) 是一个 \(\lambda\) -可忽略集与形如 \(A \times I\) 的集所成的一个可数族之并，其中 \(A\) 是 \(\mu\) -可测的，\(I\) 是 \(R_+\) 的一个区间。为证条件充分，证明：若该条件满足，则对每个紧子集 \(K\)（含于 \(T\)），存在稠密集 \(H \subset R_+\)，使得对每个 \(\alpha \in H\)，\(K \cap f^{-1}([\alpha, +\infty])\) 是 \(\mu\) -可测的，这里要用命题 7 的推论 2。）
+\item
+  证明：为使 \(f\) 是 \(\mu\) -可积的，必须且只需 \(\mathrm{D}_f\) 是 \(\lambda\) -可积的，且此时有 \(\lambda(\mathrm{D}_f) = \int f d\mu\)。此外，用 \(g\) 表示 \(\mathbf{R}_+\) 上由 \(g(t) = \mu\left( f([t, +\infty]) \right)\) 定义的递减数值函数（可能等于 \(+\infty\)，当 \(t = 0\) 时（Ch. IV, §5, 习题 29)），则有 \(\int f d\mu = \int_0^{+\infty} g(t) dt\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \(T, T'\) 为两个无穷远处可数的局部紧空间，\(\mu\) 为 T 上的正测度，\(\mu'\) 为 \(T'\) 上的正测度。证明：对每个 \((\mu \otimes \mu')\) -可测映射 f（把 \(T \times T'\) 映入 R 中），函数 \(F : t \mapsto \int^{*} |f(t, t')| d\mu'(t')\) 是 \(\mu\) -可测的（把 \(T'\) 看作递增紧集序列之并）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  再假设，对几乎每个 \(t \in T\)（关于 \(\mu\)）函数 \(f(t, \cdot)\) 是 \(\mu'\) -可积的，且对几乎每个 \(t' \in T'\)（关于 \(\mu'\)）函数 \(f(\cdot, t')\) 是 \(\mu\) -可积的；最后，假设函数（关于 \(\mu\) 几乎处处有定义）
+\end{enumerate}
+
+\(t \mapsto \int f(t, t') d\mu'(t')\) 是 \(\mu\) -可积的。证明函数（关于 \(\mu'\) 几乎处处有定义）\(t' \mapsto \int f(t, t') d\mu(t)\) 此时是 \(\mu'\) -可积的，且
+
+\[
+\int d \mu^ {\prime} (t ^ {\prime}) \int f (t, t ^ {\prime}) d \mu (t) = \int d \mu (t) \int f (t, t ^ {\prime}) d \mu^ {\prime} (t ^ {\prime}).
+\]
+
+（由 \(a\)），存在 \(\mathbf{T}\) 的一个分割，由一个 \(\mu\) -可忽略集 \(\mathbf{N}\) 与一列紧集 \((\mathrm{K}_n)\) 组成，使函数 \(f\varphi_{\mathrm{K}_n\times \mathrm{T}'}\) 中每一个都是 \((\mu \otimes \mu')\) -可积的。令
+
+\[
+g _ {n} (t ^ {\prime}) = \sum_ {j = 1} ^ {n} \int_ {K _ {j}} f (t, t ^ {\prime}) d \mu (t)
+\]
+
+并应用 §5 习题 20。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(\mathbf{T}\) 为 \([0,1]\)（\(\mathbf{R}\) 中的区间），\(\mu\) 为 \(\mathbf{T}\) 上的 Lebesgue 测度。对每个整数 \(n > 0\)，令 \(\mathrm{A}_n^\prime = \left[\frac{1}{2^n}, \frac{3}{2^{n+1}}\right]\)，\(\mathrm{A}_n^{\prime\prime} = \left[\frac{3}{2^{n+1}}, \frac{1}{2^{n-1}}\right]\)，并在乘积空间 \(\mathbf{T} \times \mathbf{T}\) 中令 \(\mathrm{B}_n^\prime = \mathrm{A}_n^\prime \times \mathrm{A}_n^\prime\)，\(\mathrm{B}_n^{\prime\prime} = \mathrm{A}_n^{\prime\prime} \times \mathrm{A}_n^{\prime\prime}\)，\(\mathrm{C}_n^\prime = \mathrm{A}_n^\prime \times \mathrm{A}_n^{\prime\prime}\)，\(\mathrm{C}_n^{\prime\prime} = \mathrm{A}_n^{\prime\prime} \times \mathrm{A}_n^\prime\)。令 \(f(t,t') = 4^{n+1}\) 于 \(\mathrm{B}_n^\prime\) 与 \(\mathrm{B}_n^{\prime\prime}\) 中，令 \(f(t,t') = -4^{n+1}\) 于 \(\mathrm{C}_n^\prime\) 与 \(\mathrm{C}_n^{\prime\prime}\) 中（对每个整数 \(n > 0\)），并令 \(f(t,t') = 0\) 于 \(\mathbf{T} \times \mathbf{T}\) 的其余点处。证明两个积分 \(\int d\mu(t') \int f(t,t') d\mu(t)\) 与 \(\int d\mu(t) \int f(t,t') d\mu(t')\) 都有定义且相等，但函数 \(f\) 关于测度 \(\mu \otimes \mu\) 不可积。
+\end{enumerate}
+
+¶ 5) 设 T, T′ 为两个局部紧空间，μ 为 T 上的正测度，μ′ 为 T′ 上的正测度；假设 T 的每个紧子集都可度量化。设 f 为 T × T′ 到可度量化空间 G 中的映射，满足：1° 对每个 t ∈ T，映射 t′ → f(t, t′) 是 μ′-可测的；2° 对每个 t′ ∈ T′，映射 t → f(t, t′) 是连续的。证明在这些条件下，f 是 (μ ⊗ μ′)-可测的。（指出（利用 Egoroff 定理）：对 T 的每个紧子集 K，f 在 K × T′ 上的限制是一列 (μ ⊗ μ′)-可测函数的极限。）
+
+¶ 6) a) 设 T 为局部紧空间，ν 为 T 上的正测度，I 为 R 的区间，μ 为 I 上的正测度。设 A 为乘积 I × T 的一个子集，满足：1° 对每个 x ∈ I，A 在 x 处的截面 A(x) ⊂ T 是 ν-可测的；2° 关系 x ≤ y 蕴含 A(x) ⊂ A(y)。证明 A 是 (μ ⊗ ν)-可测的。（化归于 I 与 T 紧且 μ 弥散的情形；考察 I 的点的递增序列 (xi)0≤i≤n，x0 与 xn 为 I 的端点，使对 0 ≤ i ≤ n-1 有 μ({[}xi, xi+1{]}) ≤ ε，然后作 I × T 的两个子集 B, C，关于 λ = μ ⊗ ν 可测，使 B ⊂ A ⊂ C 且 λ(C - B) ≤ εν(t)。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  由 a) 推出：若 \(f\) 是定义在 \(\mathrm{I} \times \mathrm{T}\) 上的数值函数，满足：\(1^{\circ}\) 对每个 \(x \in \mathrm{I}\)，\(t \mapsto f(x, t)\) 是 \(\nu\) -可测的，且 \(2^{\circ}\) 对每个 \(t \in \mathrm{T}\)，\(x \mapsto f(x, t)\) 是递增的，则 \(f\) 是 \((\mu \otimes \nu)\) -可测的。
+\item
+  设 \(g\) 为定义在 \(I \times T\) 上的数值函数，满足：\(1^{\circ}\) 对每个 \(x \in I\)，\(t \mapsto g(x, t)\) 是 \(\nu\) -可测的；\(2^{\circ}\) 对每个 \(t \in T\)，\(x \mapsto g(x, t)\) 是单调的。由 \(b\) 推出 \(g\) 是 \((\mu \otimes \nu)\) -可测的。（设 \(T_1 \subset T\) 为 \(t \in T\) 中使映射 \(x \mapsto g(x, t)\) 递增者所成的集；证明 \(T_1\) 是 \(\nu\) -可测的。为此，对每对有理数 \((r_1, r_2)\)（属于 \(I\) 且满足 \(r_1 \leqslant r_2\)），考察 \(D_{r_1, r_2}\)，即由点 \(t \in T\) 所成的集，其中 \(g(r_1, t) \leqslant g(r_2, t)\)，并把 \(T_1\) 表为诸集 \(D_{r_1, r_2}\) 的交。）
+\end{enumerate}
+
+¶ 7) a) 设 T, T′ 为两个局部紧空间；假设 T′ 具有可数基。设 μ 为 T 上的正测度，μ′ 为 T′ 上的正测度。设 f 为定义在 T × T′ 上的数值函数 ≥0，在 T × T′ 的每个紧子集上有界，且满足：\(1^{\circ}\) 对几乎每个 \(t \in \mathrm{T}\)，函数 \(t' \mapsto f(t, t')\) 是 \(\mu'\) -可测的；\(2^{\circ}\) 对每个函数 \(h \in \mathcal{K}(\mathrm{T}')\)，函数
+
+\[
+t \mapsto \int f (t, t ^ {\prime}) h (t ^ {\prime}) d \mu^ {\prime} (t ^ {\prime}),
+\]
+
+几乎处处有定义，是 \(\mu\) -可测的。证明在这些条件下，存在一个函数 \(g\)（关于 \(\mu \otimes \mu'\) 可测），使对每个 \(t \in \mathrm{T}\)，有 \(f(t, t') = g(t, t')\)，但一个 \(\mu'\) -可忽略集 \(\mathrm{A}_t\)（依赖于 \(t\)）中的点除外。（证明：对每个函数 \(\varphi \in \mathcal{K}(\mathrm{T} \times \mathrm{T}')\)，函数 \(t' \mapsto f(t, t')\varphi(t, t')\) 是 \(\mu'\) -可积的（对几乎每个 \(t \in \mathrm{T}\)），且函数 \(t \mapsto \int f(t, t')\varphi(t, t') d\mu'(t')\) 几乎处处有定义，是 \(\mu\) -可积的；这里要用 Ch. III, §4, No.~1 的引理 1。其次注意，\(\varphi \mapsto \int d\mu(t) \int f(t, t')\varphi(t, t') d\mu'(t')\) 是 \(\mathrm{T} \times \mathrm{T}'\) 上以 \(\mu \otimes \mu'\) 为基的正测度，应用 Lebesgue-Nikodym 定理；最后利用 \(\mathcal{K}(\mathrm{T}')\) 中存在可数稠密集这一事实。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  再设 T 可度量化。证明若满足：\(1^{\circ}\) 对几乎每个 \(t' \in T'\)，函数 \(t \mapsto f(t, t')\) 是 \(\mu\) -可测的；\(2^{\circ}\) 对几乎每个 \(t \in T\)，函数 \(t' \mapsto f(t, t')\)（关于 \(\mu'\)）几乎处处连续，则 a) 的条件成立。（利用 Ch. IV, §5 习题 13。）
+\item
+  取 \(\mathrm{T} = \mathrm{T}' = [0,1]\)。承认连续统假设（S, Ch. III, §6, No.~4），设 \(x \prec y\) 为 \(\mathrm{T}\) 上的一个良序关系，它没有最大元，且对每个 \(x \in \mathrm{T}\)，使 \(z \prec x\) 的 z 所成之集可数。若取 \(\mu = \mu'\) 为 Lebesgue 测度，证明特征函数 \(f\)（即偶 \((t, t')\) 中使 \(t \prec t'\) 的偶所成之集的特征函数）满足 \(a\))，但 \(\int f(t, t') d\mu(t) = 0\)（对每个 \(t' \in \mathrm{T}'\)），而 \(\int f(t, t') d\mu'(t') = 1\)（对每个 \(t \in \mathrm{T}\)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  设 \(\mathrm{T}\) 为局部紧空间，\(\mu\) 为一个 \(\neq 0\) 的正测度，定义在 \(\mathrm{T}\) 上，A 为离散空间，\(\lambda\) 为 \(\mathrm{A}\) 上以 \(+1\) 为 \(\mathrm{A}\) 中每点质量的测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  为使映射 \(f\)（由 \(\mathrm{A} \times \mathrm{T}\) 到一个拓扑空间中）是 \((\lambda \otimes \mu)\) -可测的，必须且只需：对每个 \(\alpha \in \mathrm{A}\)，映射 \(t \mapsto f(\alpha, t)\) 是 \(\mu\) -可测的。
+\item
+  为使函数 \(\mathbf{f}\)（定义在 \(\mathrm{A} \times \mathrm{T}\) 上、取值于 \(\overline{\mathbf{R}}\) 或某个 Banach 空间中）是 \((\lambda \otimes \mu)\) -可积的，必须且只需：\(1^{\circ}\) 除去 \(\alpha \in \mathrm{A}\) 的一个可数值集外，函数 \(t \mapsto \mathbf{f}(\alpha, t)\) 恒等于零；\(2^{\circ}\) 对每个 \(\alpha \in \mathrm{A}\)，函数 \(t \mapsto \mathbf{f}(\alpha, t)\) 是 \(\mu\) -可积的；\(3^{\circ} \sum_{\alpha \in \mathrm{A}} \int |\mathbf{f}(\alpha, t)| d\mu(t) < +\infty\)。为使 \(\mathbf{f}\)
+\end{enumerate}
+
+是本质 \((\lambda \otimes \mu)\) -可积的，必须且只需：\(1^{\circ}\) 对每个 \(\alpha \in \mathbf{A}\)，函数 \(t \mapsto \mathbf{f}(\alpha, t)\) 是本质 \(\mu\) -可积的；\(2^{\circ} \sum_{\alpha \in \mathbf{A}} \int |\mathbf{f}(\alpha, t)| d\mu(t) < +\infty\)；此时
+
+有
+
+\[
+\iint \mathbf {f} d \lambda d \mu = \sum_ {\alpha \in A} \int \mathbf {f} (\alpha , t) d \mu (t).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 X 为局部紧空间，\((\alpha,t)\mapsto\rho_{\alpha,t}\) 为 X 上的一个正测度族 \((\alpha\in\mathrm{A},t\in\mathrm{T})\)。为使族 \((\alpha,t)\mapsto\rho_{\alpha,t}\) 是 \((\mu\otimes\nu)\) -适宜的，必须且只需：对每个 \(\alpha\in\mathrm{A}\)，族 \(t\mapsto\rho_{\alpha,t}\) 是 \(\mu\) -适宜的，且测度族 \(\left(\int\rho_{\alpha,t}d\mu(t)\right)_{\alpha\in\mathrm{A}}\) 是可和的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  设 \(u\) 与 \(v\) 为 \(\mathbf{R}\) 上两个递增且右连续的数值函数，满足 \(u(x) = v(x) = 0\)（对 \(x < 0\)）。设 \(w\) 为 \(\mathbf{R}\) 上由下式定义的递增右连续函数：\(w(t) = u(t)v(t)\)（对 \(t \geqslant 0\)），\(w(t) = 0\)（对 \(t < 0\)）；设 \(\lambda, \mu, \nu\) 分别为与 \(u, v, w\) 相联系的 Stieltjes 测度（§6, 习题 5）。
+\end{enumerate}
+
+对每个函数 \(\mathbf{f}\)（定义在 \(\mathbf{R}\) 上、取值于 \(\overline{\mathbf{R}}\) 或某个 Banach 空间 \(\mathrm{F}\) 中），使它对应于函数 \(\overline{\mathbf{f}}\)（定义在 \(\mathbf{R}^2\) 上，由下述条件给出：\(\overline{\mathbf{f}}(x,y) = \mathbf{f}(x)\)（若 \(y < x\)），\(\overline{\mathbf{f}}(x,y) = \mathbf{f}(y)\)（若 \(y \geqslant x\)））。证明：为使 \(\mathbf{f}\) 是 \(\nu\) -可积的，必须且只需 \(\overline{\mathbf{f}}\) 关于乘积测度 \(\lambda \otimes \mu\) 可积，此时 \(\int \mathbf{f} d\nu = \iint \overline{\mathbf{f}} d\lambda d\mu\)（先对区间的特征函数证明）。由此推出公式
+
+\[
+\int \mathbf {f} (x) d w (x) = \int \mathbf {f} (x) v (x -) d u (x) + \int \mathbf {f} (x) u (x +) d v (x).
+\]
+
+特别地，若 \(u\) 与 \(v\) 在 \(\mathbf{R}\) 上连续，就得到分部积分公式
+
+\[
+\int_ {a} ^ {b} u (x) d v (x) = u (b) v (b) - u (a) v (a) - \int_ {a} ^ {b} v (x) d u (x).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  设 \(\mathbf{T}\) 与 \(\mathbf{X}\) 为两个局部紧空间，\(\lambda\) 为 \(\mathbf{T}\) 上的正测度，\(\mu\) 为 \(\mathbf{X}\) 上的有界正测度且 \(\mu(\mathbf{X}) = 1\)。设 \(f\) 为一个 \(> 0\) 的数值函数（在 \(\mathbf{T} \times \mathbf{X}\) 的每点），它与 \(\log f\) 都关于测度 \(\lambda \otimes \mu\) 可积。证明不等式
+\end{enumerate}
+
+\[
+\log \left(\int \exp (\int \log f d \mu) d \lambda\right) \leqslant \int (\log \int f d \lambda) d \mu
+\]
+
+并证明：除非 \(f\) 等价于形如 \(g \otimes h\) 的函数，否则等式不可能成立（对每个 \(t \in \mathrm{T}\)，对函数 \(x \mapsto f(t,x) / (\int f(t,x)d\lambda (t))\) 应用几何平均不等式（Ch. IV, §6, 习题 7 d））。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  设 \(p\) 为有限实数 \(\geqslant 1\)，\(T\) 与 \(X\) 为两个局部紧空间，\(\lambda\) 为 \(T\) 上的正测度，\(\mu\) 为 \(X\) 上的正测度，\(f\) 为函数 \(\geqslant 0\)（定义在 \(T \times X\) 上），它与 \(f^p\) 都关于测度 \(\lambda \otimes \mu\) 可积。证明不等式
+\end{enumerate}
+
+\[
+\left(\int^ {*} \left(\int f d \mu\right) ^ {p} d \lambda\right) ^ {1 / p} \leqslant \int^ {*} \left(\int f ^ {p} d \lambda\right) ^ {1 / p} d \mu .
+\]
+
+（对每个 \(t \in \mathbf{T}\)，对写成下述形式的函数 \(x \mapsto f(t, x)\) 应用 Hölder 不等式
+
+\[
+f (t, x) = g (t, x) \left(\int f ^ {p} (t, x) d \lambda (t)\right) ^ {1 / p q},
+\]
+
+其中 \(q\) 是与 \(p\) 共轭的指数。）证明：除非 \(f\) 等价于形如 \(g \otimes h\) 的函数，否则等式不可能成立。
+
+¶ 12) 设 \(\mathrm{T}_i\)（\(1 \leqslant i \leqslant n\)）为 \(n\) 个局部紧空间，\(\mu_i\) 为 \(\mathrm{T}_i\) 上的正测度（\(1 \leqslant i \leqslant n\)）。对每个指标 \(i\)，用 \(\mathrm{E}_i\) 表示乘积 \(\prod_{j \neq i} \mathrm{T}_j\)；设 \(f_i\)
+
+为函数 \(\geqslant 0\)（在 \(\mathrm{T} = \prod_{i=1}^{n} \mathrm{T}_i\) 上），关于 \(\mu = \bigotimes_{i=1}^{n} \mu_i\) 可测且不依赖
+
+于 \(t_{i}\)；证明：若对 \(1 \leqslant k \leqslant n\)，函数 \(f_{k}^{n-1}\) 关于测度 \(\mu_{1} \otimes \cdots \otimes \mu_{k-1} \otimes \mu_{k+1} \otimes \cdots \otimes \mu_{n}\) 可积，则 \(f_{1}f_{2} \cdots f_{n}\) 是 \(\mu\) -可积的，且
+
+\[
+\int f _ {1} f _ {2} \dots f _ {n} d \mu_ {1} d \mu_ {2} \dots d \mu_ {n} \leqslant \left(\prod_ {k = 1} ^ {n} \mathrm{J} _ {k}\right) ^ {1 / (n - 1)}
+\]
+
+其中，对每个指标 k，令 \(J_{k}=\int f_{k}^{n-1}d\mu_{1}\cdots d\mu_{k-1}d\mu_{k+1}\cdots d\mu_{n}\)（对 n 作归纳，应用 Lebesgue--Fubini 定理与 Hölder 不等式）。
+
+由此推出：若 A 是 T 的 \(\mu\) -可测子集，\(A_{i}\) 是它在 \(E_{i}\) 上的投影，且 \(A_{i}\) 可积并具有测度 \(m_{i}\)（关于测度 \(\bigotimes_{j\neq i}\mu_{j}\)，在 \(E_{i}\) 上），则 A 是
+
+\(\mu\) -可积的，且
+
+\[
+\mu (\mathrm{A}) \leqslant (m _ {1} m _ {2} \dots m _ {n}) ^ {1 / (n - 1)}.
+\]
+
+考察这两个不等式中取等号的情形。
+
+推广到下述情形：不考察 \(n\) 个由 \(n - 1\) 个 \(\mathrm{T}_i\) 作成的乘积，而是考察 \(\binom{n}{p}\) 个由 \(p\) 个 \(\mathrm{T}_i\) 作成的乘积，并且在 \(\mathrm{T}\) 上积分 \(\binom{n}{p}\) 个函数 \(\geqslant 0\) 的乘积，其中每个函数只依赖 \(p\) 个变量 \(t_i\)。例如，若 \(\mathrm{F}_{ij} = \mathrm{T}_i \times \mathrm{T}_j (i < j)\) 且 \(f_{ij}\) 只依赖变量 \(t_i\) 与 \(t_j\)，证明
+
+\[
+\int \left(\prod_ {i <   j} f _ {i j}\right) d \mu_ {1} d \mu_ {2} \dots d \mu_ {n} \leqslant \left(\prod_ {i <   j} \int f _ {i j} ^ {n - 1} d \mu_ {i} d \mu_ {j}\right) ^ {1 / (n - 1)}.
+\]
+
+¶ 13) 设 \((T_{\iota})_{\iota \in I}\) 为一族紧空间，且对每个 \(\iota \in I\)，设 \(\mu_{\iota}\) 为 \(T_{\iota}\) 上总质量等于 1 的正测度。设 \(T\) 为乘积空间 \(\prod_{\iota \in I} T_{\iota}\)，
+
+\(\mu\) 为 T 上的乘积测度 \(\bigotimes \mu_{\iota}\)（Ch. III, §4, No.~5）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个 \(\iota \in I\)，设 \(K_{\iota}\) 为 \(T_{\iota}\) 的紧子集；证明若 \(K = \prod_{\iota \in I} K_{\iota}\)，则 \(\mu(K) = \prod \mu_{\iota}(K_{\iota})\)。
+\item
+  设 M 为 T 的紧子集。证明存在 I 的可数子集 J，使得令 H = I - J，\(T_{J} = \prod_{\iota \in J} T_{\iota}\)，\(\mu_{J} = \bigotimes_{\iota \in J} \mu_{\iota}\)，\(T_{H} = \prod_{\iota \in H} T_{\iota}\) 时，有 \(M \subset N \times T_{H}\)，其中 N 是 \(\mu_{J}\) -可测的 \(T_{J}\) 子集，且 \(\mu_{\mathrm{J}}(\overline{\mathrm{N}}) = \mu(\mathrm{M})\)。（指出：对每个 n \textgreater{} 0，存在 M 的一个开邻域，它是有限个初等集的并，其测度与 \(\mu(\mathrm{M})\) 之差小于 1/n。）由此推出：对几乎每个 \(x \in N\)，截面 \(\mathrm{M}(x) \subset \mathrm{T}_{\mathrm{H}}\)（当把 T 与乘积 \(T_{J} \times T_{H}\) 等同时）包含诸测度 \(\mu_{\iota}\)（\(\iota \in H\)）的支集的乘积（利用 Lebesgue--Fubini 定理）。
+\item
+  证明：若 I 可数，且对每个 \(\iota \in I\)，\(A_{\iota}\) 是 \(\mu_{\iota}\) -可测的 \(T_{\iota}\) 子集，则集合 \(A = \prod_{\iota \in I} A_{\iota}\) 是 \(\mu\) -可测的，且 \(\mu(A) = \prod_{\iota \in I} \mu_{\iota}(A_{\iota})\)。
+\item
+  假设 I 不可数。对每个 \(\iota \in I\)，设 \(A_{\iota}\) 为 \(\mu_{\iota}\) -可测的 \(T_{\iota}\) 子集。为使 \(A = \prod_{\iota \in I} A_{\iota}\) 是 \(\mu\) -可测的，必须且只需处于
+\end{enumerate}
+
+下述两种情形之一：\(1^{\circ}\prod_{\iota \in I}\mu_{\iota}(A_{\iota}) = 0;2^{\circ}A_{\iota}\) 包含测度
+
+\(\mu_{\iota}\) 的支集，但可能除去属于 I 的某个可数子集的指标 \(\iota\)。在这两种情形的每一种，\(\mu(A) = \prod_{\iota \in I} \mu_{\iota}(A_{\iota})\)。（假设不处于前述两种情形的任一种，
+
+证明可化归于 \(\mu_{\iota}(\mathrm{A}_{\iota}) = 1\)（对所有 \(\iota \in \mathrm{I}\)）的情形。利用 \(b\)，证明 A 与 T-A 都不能包含具有非零测度的紧集。）
+
+¶ 14) 设 K 为 R 中区间 {[}0,1{]}，λ 为 K 上的 Lebesgue 测度，A 为不可数集，μ 为 T = K\^{}A 上的测度，它是每个因子上的测度 λ 的乘积。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明 T 的每个闭的可度量化子空间 X 都是 \(\mu\) -可忽略的（利用上面的习题 13 b) 以及 GT, IX, §2 习题 8）。
+\item
+  设 Y 为具有可数基的局部紧空间，\(\nu\) 为 Y 上的正测度，\(\pi\) 为 Y 到 T 中的 \(\nu\) -逆紧映射。证明像 \(\pi(\nu)\) 与 \(\mu\) 互奇异（利用 a)，证明 \(\pi(\nu)\) 集中于一个 \(\mu\) -可忽略集上）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  设 \((\mathrm{T}_{\iota})_{\iota \in I}\) 为任意一族紧空间，且对每个 \(\iota \in I\)，设 \(\mu_{\iota}\) 为 \(\mathrm{T}_{\iota}\) 上总质量为 1 的正测度；设 \(\mu\) 为乘积测度 \(\bigotimes_{\iota \in I} \mu_{\iota}\)（在 \(\mathrm{T} = \prod_{\iota \in \mathrm{I}}\mathrm{T}_{\iota}\) 上）。对把 I 分成两个子集的每个分割 (L, M)，把 T 与
+\end{enumerate}
+
+乘积 \(\mathrm{T_L} \times \mathrm{T_M}\) 等同，其中 \(\mathrm{T_L} = \prod_{\iota \in \mathrm{L}} \mathrm{T}_{\iota}\)；对每个 \(t \in \mathrm{T}\)，记 \(t_{\mathrm{L}} = \mathrm{pr}_{\mathrm{L}} t\)，使得
+
+\(t\) 与 \((t_{\mathrm{L}}, t_{\mathrm{M}})\) 等同；设 \(\mu_{\mathrm{L}}\) 为测度 \(\bigotimes_{\iota \in \mathrm{L}} \mu_{\iota}\)（在 \(\mathrm{T}_{\mathrm{L}}\) 上）。设 \(p\) 为有限
+
+实数 \(\geqslant 1\)；对每个函数 \(\mathbf{f}\)（属于 \(\mathcal{L}_{\mathrm{F}}^{p}(\mathrm{T},\mu)\)；F 为 Banach 空间或 \(\mathrm{F} = \overline{\mathbf{R}}\)），记 \(\mathbf{f}_{\mathrm{L}}(t) = \int \mathbf{f}(t_{\mathrm{L}},t_{\mathrm{M}}) d\mu_{\mathrm{M}}(t_{\mathrm{M}})\)。证明：关于 I 的有限子集 L 所成的有向集，\(\mathbf{f}_{\mathrm{L}}\) \(p\) 阶平均收敛于 \(\mathbf{f}\)，而 \(\mathbf{f}_{\mathrm{M}}\) \(p\) 阶平均收敛于等于 \(\int \mathbf{f} d\mu\) 的常值函数。（用一个只依赖有限个变量的连续函数逼近 \(\mathbf{f}\)。）
+
+由此推出：若 \(\mu\) -可测子集 \(A\)（含于 \(T\)）满足：对一切 \(t \in A\)，每个点 \(t' \in T\)（其坐标除有限个指标外都与 \(t\) 的坐标相等）也属于 \(A\)，则 \(\mu(A) = 0\) 或 \(\mu(A) = 1\)。
+
+¶ 16) 设 \((T_n)\) 为紧空间的无穷序列，\(\mu_n\) 为 \(T_n\) 上总质量等于 1 的正测度，\(\mu\) 为乘积测度 \(\bigotimes_{n=1}^{\infty} \mu_n\)（在 \(T = \prod_{n=1}^{\infty} T_n\) 上）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(f\) 为函数 \(\geqslant 0\)，\(\mu\) -可积（在 \(\mathbf{T}\) 上）。设 \((\mathrm{L}_n)\) 为 \(\mathbf{N}\) 的子集的递增序列，且令 \(\mathrm{M}_n = \mathbf{N} - \mathrm{L}_n\)，设 \(g = \sup_n f_{\mathrm{L}_n}\)，\(h = \sup_n f_{\mathrm{M}_n}\)（记号见习题 15）。对每个 \(\alpha > 0\)，设 \(\mathrm{A}_{\alpha}\) 为 \(t \in \mathbb{T}\) 中使 \(g(t) > \alpha\) 的点所成之集，\(\mathrm{B}_{\alpha}\) 为 \(t \in \mathbb{T}\) 中使 \(h(t) > \alpha\) 的点所成之集。证明 \(\alpha \cdot \mu(\mathrm{A}_{\alpha}) \leqslant \int f d\mu\) 且 \(\alpha \cdot \mu(\mathrm{B}_{\alpha}) \leqslant \int f d\mu\)。（指出：\(\mathrm{A}_{\alpha}\) 是 \(t \in \mathbb{T}\) 中使诸 \(f_{\mathrm{L}_n}(t)\) 里至少有一个 \(> \alpha\) 的点所成之集，把它表为两两不交的集 \(\mathrm{G}_n\) 的可数并，使 \(\alpha \cdot \mu(\mathrm{G}_n) \leqslant \int_{\mathrm{G}_n} f d\mu\)。）
+\item
+  假设 \((\mathrm{L}_n)\) 是 \(\mathbf{N}\) 的有限子集的递增序列，其并为 \(\mathbf{N}\)。证明 \(f_{\mathrm{L}_n}\) 几乎处处收敛于 \(f\)，且 \(f_{\mathrm{M}_n}\) 在 \(\mathrm{T}\) 中几乎处处收敛于常数 \(\int f d\mu\)。（对每个 \(\varepsilon > 0\)，考察一个连续函数 \(g\)（只依赖有限个变量且满足 \(\int |f - g| d\mu \leqslant \varepsilon\)），并把 \(a\) 应用于函数 \(|f - g|\)。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  设 \((\mathrm{T}_{\iota})_{\iota \in \mathrm{I}}\) 为任意一族紧空间；对每个 \(\iota \in \mathrm{I}\)，设 \(\mu_{\iota}\) 为 \(\mathrm{T}_{\iota}\) 上总质量等于 1 的正测度，且设 \(\mu\) 为乘积测度 \(\bigotimes_{\iota \in \mathrm{I}} \mu_{\iota}\)（在 \(\mathrm{T} = \prod_{\iota \in \mathrm{I}} \mathrm{T}_{\iota}\) 上）。对每个 \(\iota \in \mathrm{I}\)，设 \(f_{\iota}\) 为函数 \(\geqslant 0\)（定义在 \(\mathrm{T}_{\iota}\) 上），\(\mu_{\iota}\) -可积且满足 \(\int f_{\iota} d\mu_{\iota} \leqslant 1\)；令 \(\mu_{\iota}' = f_{\iota} \cdot \mu_{\iota}\) 且 \(\mu' = \bigotimes_{\iota \in \mathrm{I}} \mu_{\iota}'\)（Ch. III, §4, 习题 6）。假设 \(\mu' \neq 0\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  对每个有限子集 \(J\)（含于 \(I\)），令 \(T_J = \prod_{\iota \in J} T_\iota\)，\(\mu_J = \bigotimes_{\iota \in J} \mu_\iota\)，\(\mu_J' = \bigotimes_{\iota \in J} \mu_\iota'\)，
+\end{enumerate}
+
+\(f_{\mathrm{J}}(t) = \prod_{\iota \in \mathbb{J}}f_{\iota}(\mathrm{pr}_{\iota}t), g_{\mathrm{J}} = \sqrt{f_{\mathrm{J}}}, \mu_{\mathrm{J}}^{\prime \prime} = \sqrt{\mu_{\mathrm{J}}\mu_{\mathrm{J}}^{\prime}}\)（§5, No.~9），且 \(\rho (\mu_{\mathrm{J}},\mu_{\mathrm{J}}^{\prime}) = \mu_{\mathrm{J}}^{\prime \prime}(\mathrm{T}_{\mathrm{J}}) =\)
+
+\(\int g_{\mathrm{J}}d\mu_{\mathrm{J}}\)。证明：为使诸函数 \(g_{\mathrm{J}}\) 关于 I 的有限子集所成的有向有序集均方收敛于 \(\mathcal{L}^2 (\mathrm{T},\mu)\) 中的一个函数，必须且只需数 \(\rho (\mu_{\iota},\mu_{\iota}^{\prime})\) 的乘积在 \(\mathbf{R}_{+}^{*}\) 中收敛，即 \(>0\)。（对满足 \(\mathrm{J}\subset \mathrm{L}\) 的两个有限子集 J, L，估计范数 \(\mathrm{N}_2(g_{\mathrm{J}} - g_{\mathrm{L}})\)（借助于诸 \(\rho (\mu_{\iota},\mu_{\iota}^{\prime})\)）。）由此推出：诸函数 \(f_{\mathrm{J}}\) 此时平均收敛于一个函数 \(f\geqslant 0\)，它满足 \(\mu^{\prime} = f\cdot \mu\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  证明：若乘积 \(\prod_{\iota \in I} \rho(\mu_{\iota}, \mu_{\iota}')\) 为零，则测度 \(\mu\) 与 \(\mu'\) 互
+\end{enumerate}
+
+奇异（考察集 \(\mathrm{A_J}\)（\(t\in \mathrm{T}\) 中使 \(g_{\mathrm{J}}(t) > 1\) 的点所成之集），并估计测度 \(\mu (\mathrm{A_J})\) 与 \(\mu '(T - A_J)\)）。
+
+¶ 18) 记号与习题 17 相同，设 \(\nu_{\iota}\) 为 \(\mathrm{T}_{\iota}\) 上总质量等于 1 的正测度，且设 \(\nu = \bigotimes \nu_{\iota}\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：若诸测度 \(\nu_{\iota}\) 中有一个与具有同一指标的测度 \(\mu_{\iota}\) 互奇异，则 \(\nu\) 与 \(\mu\) 互奇异。
+\item
+  对每个 \(\iota \in I\)，写 \(\nu_{\iota} = \mu_{\iota}' + \mu_{\iota}''\)，其中 \(\mu_{\iota}'\) 以 \(\mu_{\iota}\) 为基，而 \(\mu_{\iota}''\) 与 \(\mu_{\iota}\) 互奇异（§5, 定理 3）；假设 \(\mu_{\iota}' \neq 0\)（对所有 \(\iota \in I\)）。证明：为使 \(\nu\) 不与 \(\mu\) 互奇异，必须且只需 \(\mu_{\iota}'' = 0\) 除去一个可数指标族外成立，且乘积 \(\mu' = \bigotimes_{\iota \in I} \mu_{\iota}'\) 是一个测度 \(\neq 0\)，以 \(\mu\) 为基；此时 \(\mu'' = \nu - \mu'\)
+\end{enumerate}
+
+与 \(\mu\) 互奇异。（若对不可数无穷多个指标有 \(\mu_{\iota}^{\prime\prime} \neq 0\)，证明存在数 \(\alpha\) 使 \(0 < \alpha < 1\)，且对可数无穷多个指标 \(\iota_{n}\) 有 \(\mu_{\iota_{n}}^{\prime}(T_{\iota_{n}}) \leqslant \alpha\)；然后证明 \(\mu\) 与 \(\nu\) 互奇异（利用 \(a\)）；命题的第二部分利用习题 17 证明。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  设 \(X\) 为局部紧空间，\(Y\) 为无穷远处可数的局部紧空间，\(A\) 为 \(X \times Y\) 的普遍可测子集。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个 \(x \in X\)，证明截面 \(\mathrm{A}(x)\) 是 Y 的普遍可测子集。此外，对 Y 上的每个正测度 \(\mu\)，函数 \(x \mapsto \mu^{*}(\mathrm{A}(x))\) 在 X 上普遍可测（利用 Lebesgue--Fubini 定理）。
+\item
+  设 \(\mu\) 为 Y 上的正测度，使得对几乎每个 \(y \in Y\)（关于 \(\mu\)），A 的截面 \(\overline{A}(y)\) 可数。证明 \(x \in X\) 中使 \(\mu^{*}(A(x)) > 0\) 的点所成之集 N 不能包含任何可数紧集。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \(\nu\) 为单位圆 \(\mathbf{U}: |z| = 1\)（在 \(\mathbf{C}\) 中）上的正测度，\(\mu\) 为复测度 \(j \cdot \nu\)，其中 \(j: z \mapsto z\) 是 \(\mathbf{U}\) 到 \(\mathbf{C}\) 中的典范单射，于是 \(|\mu| = \nu\)。设 \(\rho\) 为 \(\nu\) 在典范局部同胚 \(\varphi: t \mapsto e^{it}\)（由 \(\mathbf{R}\) 到 \(\mathbf{U}\) 上）下的逆像（§6, No.~6）。设 A 为 \(\nu\) -可测的 \(\mathbf{U}\) 子集；若 \(\mu(A) = |\mu(A)|e^{i\omega}\)，证明 \(|\mu(A)| \leqslant \left|\int_{\omega - \pi/2}^{\omega + \pi/2} e^{i\theta} d\rho(\theta)\right|\)。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  由 \(a\) 推出：当 A 跑遍 \(\mu\) -可测的 \(\mathbf{U}\) 子集所成之集时，有
+\end{enumerate}
+
+\[
+\begin{array}{l} \sup _ {\mathrm{A}} | \mu (\mathrm{A}) | \geqslant \sup _ {\omega} \left| \int_ {\omega - \pi / 2} ^ {\omega + \pi / 2} \mathcal {R} \big (e ^ {i (\theta - \omega)} \big) d \rho (\theta) \right| \\ \geqslant \frac {1}{2 \pi} \int_ {0} ^ {2 \pi} d \omega \int_ {\omega - \pi / 2} ^ {\omega + \pi / 2} \mathcal {R} \big (e ^ {i (\theta - \omega)} \big) d \rho (\theta) \end{array}
+\]
+
+并由此外推出
+
+\[
+\sup _ {A} | \mu (A) | \geqslant \frac {1}{\pi} \| \mu \|\tag{*}
+\]
+
+（借助 Lebesgue--Fubini 定理计算最后一个积分）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  证明不等式 (*) 对局部紧空间 X 上的每个有界复测度都成立，其中 A 跑遍 X 的 \(\mu\) -可测子集所成之集。（设 \(\mu = h \cdot |\mu|\)，其中 h 取值于 U。考察 U 上的像测度 \(\nu = h(|\mu|)\)，并证明 \(h(\mu) = j \cdot \nu\)；然后对 \(h(\mu)\) 应用 b)。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  用 \(\lambda\) 表示 \(\mathbf{R}^n\) 上的 Lebesgue 测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(\mathbf{C}_0\) 为 \(\mathbf{R}^n\) 中的一个立方体（GT, VI, §1, No.~1），\(u\) 为 \(\mathbf{C}_0\) 上（关于 \(\lambda\)）可积的数值函数。设 \(s\) 为满足下式的实数
+\end{enumerate}
+
+\[
+s \geqslant \frac {1}{\lambda (\mathrm{C} _ {0})} \int_ {\mathrm{C} _ {0}} | u | d \lambda .
+\]
+
+证明存在开立方体的一个序列 \((\mathrm{I}_k)\)（含于 \(\mathbf{C}_0\)），两两不交，且满足以下条件：
+
+\(1^{\circ}\left|u(x)\right|\leqslant s\) 在集合 \(\mathrm{C_0 - }\bigcup_{k}\mathrm{I}_k;\) 中几乎处处成立；
+
+\(2^{\circ}\) 若令
+
+\[
+u _ {k} = \frac {1}{\lambda (\mathrm{I} _ {k})} \int_ {\mathrm{I} _ {k}} | u (x) | d \lambda (x),
+\]
+
+则 \(u_{k} \leqslant 2^{n}s\) 对所有 \(k\) 成立；
+
+\[
+3 ^ {\circ} \sum_ {k} \lambda (I _ {k}) \leqslant \frac {1}{s} \int_ {C _ {0}} | u (x) | d \lambda (x).
+\]
+
+（把 \(C_{0}\) 的每个投影分成两个相等的区间，在 \(2^{n}\) 个两两不交的开立方体中选出立方体 \(I_{1i}\)，使相应的“平均值”\(u_{1i}\) 都 \(\geqslant s\)，并利用 s 的取法证明 \(u_{1i} \leqslant 2^{n}s\)。类似地，把第一次分割中每个立方体分解成 \(2^{n}\) 个立方体，但诸 \(I_{1i}\) 中的立方体除外，这样得到第二个有限的立方体族 \(I_{2i}\)，它们是在所得到的全部新立方体中选出的、使相应平均值 \(u_{2i}\) \(\leqslant s\) 的那些立方体。如此递归地继续下去。为验证条件 \(1^{\circ}\)，用反证法，注意子集 \(B_{m}\)——它由 \(C_{0} - \bigcup_{k} I_{k}\) 中使 \(|u(x)| \geqslant s + 1/m\) 的点组成——除去一个可忽略集外，是开集的递减序列 \((\mathrm{U}_r)\) 之交，其中 \(\mathrm{U}_r\) 是第 \(r\) 次分割中不属于诸 \(\mathrm{I}_k\) 且包含 \(\mathrm{B}_m\) 中一点的那些立方体之并。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathcal{F}\) 为可积数值函数 \(u\)（定义在 \(C_0\) 上）所成的、具有下述性质的集：对每个立方体 \(C \subset C_0\)，若 \(m_C(u)\) 是平均值
+\end{enumerate}
+
+\[
+\frac {1}{\lambda (\mathrm{C})} \int_ {\mathrm{C}} u (x) d \lambda (x),
+\]
+
+则 \(\int_{\mathbb{C}} |u(x) - m_{\mathbb{C}}(u)| d\lambda(x) \leqslant \lambda(\mathbb{C})\)；若 \(u \in \mathcal{F}\)，则 \(u - c\)（对每个实数 \(c\)）亦然。对每个函数 \(u \in \mathcal{F}\)、每个数 \(\sigma > 0\) 与每个立方体 \(\mathbb{C} \subset \mathbb{C}_0\)，用 \(\mathrm{S}(\sigma, u, \mathbb{C})\) 表示 \(x \in \mathbb{C}\) 中使 \(|u(x) - m_{\mathbb{C}}(u)| \geqslant \sigma\) 的点所成之集。最后，用 \(\mathrm{G}(\sigma)\) 表示使
+
+\[
+\lambda \bigl (\mathrm{S} (\sigma , u, \mathrm{C}) \bigr) \leqslant \mathrm{G} (\sigma) \int_ {\mathrm{C}} | u (x) - m _ {\mathrm{C}} (u) | d \lambda (x)
+\]
+
+（当 \(u\) 跑遍 \(\mathcal{F}\)、\(C\) 跑遍含于 \(C_0\) 的立方体全体时）成立的最小数；有 \(G(\sigma) \leqslant 1 / \sigma\)。证明：若 \(\sigma / 2^n > s \geqslant 1\)，则
+
+\[
+\mathrm{G} (\sigma) \leqslant \frac {1}{s} \mathrm{G} (\sigma - 2 ^ {n} s).
+\]
+
+（只需证明：对某个 \(u \in \mathcal{F}\)，有
+
+\[
+\lambda \left(\mathrm{S} (\sigma , u, \mathrm{C} _ {0})\right) \leqslant \frac {1}{s} \mathrm{G} (\sigma - 2 ^ {n} s) \int_ {\mathrm{C} _ {0}} | u (x) - m _ {\mathrm{C} _ {0}} (u) | d \lambda (x),
+\]
+
+并且为简单起见可设 \(m_{\mathrm{C}_0}(u) = 0\)。然后利用把 \(\mathrm{C}_0\) 分解为诸立方体 \(\mathrm{I}_k\) 之并以及一个使 \(|u(x)| \leqslant s\) 几乎处处成立的集合的分解，注意：若 \(x \in \mathrm{I}_k\) 属于 \(\mathrm{S}(\sigma, u, \mathrm{C}_0)\)，则 \(|u(x) - m_{\mathrm{I}_k}(u)| \geqslant \sigma - 2^n s\)，从而
+
+\[
+\lambda \left(\mathrm{I} _ {k} \cap \mathrm{S} (\sigma , u, \mathrm{C} _ {0})\right) \leqslant \mathrm{G} (\sigma - 2 ^ {n} s) \int_ {\mathrm{I} _ {k}} | u (x) - m _ {\mathrm{I} _ {k}} (u) | d \lambda (x). \Big)
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  由 \(b\) 推出：存在两个常数 \(B, b\)，只依赖于 \(n\)，使得对每个函数 \(u \in \mathcal{F}\) 与每个数 \(\sigma > 0\)，有 \(\lambda(\mathrm{S}(\sigma, u, \mathrm{C}_0)) \leqslant \mathrm{Be}^{-b\sigma}\lambda(\mathrm{C}_0)\)。（取 \(s = e\)（在 \(b\) 中）。）
+\end{enumerate}
+
+\chapter*{历史注记}
+\phantomsection
+\addcontentsline{toc}{chapter}{历史注记}
+
+\begin{center}
+\textit{（第 II 章至第 V 章）}
+\end{center}
+
+（注意 --- 罗马数字指本注记末尾的参考文献。）
+
+现代积分概念的发展，与函数观念的演变、以及自 19 世纪初以来对实变量数值函数的深入研究紧密相连。众所周知，Euler 已经以相当一般的方式构想出函数的概念，因为对他而言，给定一条被每条平行于 Oy 轴的直线只交于一点的“任意”曲线，就定义了一个函数 \(y = f(x)\)（参见 FRV, 第 I--III 章的历史注记）；然而，与他的大多数同时代人一样，他不肯承认这样的函数可以用“解析”方式表达。这一观点直到 Fourier 的工作之前几乎没有改变；而 Fourier 发现不连续函数可以表示为三角级数之和，\(^{*}\) 这一发现对后世产生了决定性的影响。说实话，Fourier 的证明完全缺乏严格性，其有效范围也不明显；然而，积分公式
+
+\[
+a _ {n} = \frac {1}{\pi} \int_ {- \pi} ^ {+ \pi} \varphi (x) \cos n x d x, b _ {n} = \frac {1}{\pi} \int_ {- \pi} ^ {+ \pi} \varphi (x) \sin n x d x (n \geqslant 1),\tag{1}
+\]
+
+给出 \(\varphi\) 的 Fourier 级数展开式的系数，当假设 \(\varphi\) 分段连续且单调时，具有明显的直观意义。* 同样，Dirichlet 在其建立 Fourier 级数收敛性的著名论文（II）中，起初也只限于讨论这些函数；但在这项工作的末尾，他已关心把他的结果推广到更广泛的函数类。众所周知，正是在这个场合，Dirichlet 精确化了 Fourier 的想法，定义了我们今天所理解的函数的一般概念；自然，首先要弄清的一点是：在哪些情形下仍能对公式 (1) 赋予意义。“当 {[}\(\varphi\){]} 的间断点为无穷多个 \ldots”Dirichlet 说（(II), p.~169），“这时必须函数 \(\varphi(x)\) 满足：若 a 与 b 表示 \(-\pi\) 与 \(+\pi\) 之间任意两个量，则总能在 a 与 b 之间放进充分接近的其它量 r 与 s，使函数在从 r 到 s 的区间上保持连续。只要考虑到 {[}Fourier{]} 级数的各项都是定积分，并追溯到积分的基本概念，就容易感觉到这一限制的必要。于是将会看到，函数的积分只有当函数满足刚才所述条件时才有意义。”
+
+用现代的语言说，Dirichlet 似乎认为可积性等价于间断点构成一个无处稠密集这一事实；此外，几行之后他指出了著名的例子：函数在 x 为有理数时等于 c，在 x 为无理数时等于另一个值 d，并且他断言这个函数“不能代入”积分。他还宣布了关于这一问题的未来工作，但这些工作从未发表，** 而 25 年间似乎没有人试图朝这个方向前进，也许是因为对如此“病态”的函数的考虑在当时看来完全没有什么趣味；无论如何，当 Riemann 于 1854 年（(III), pp.~227--264）重新研究这个问题时（仍与三角级数有关**），他感到有必要为他的工作辩护：“无论我们对力和物质状态在无穷小尺度上随时间与位置变化的方式如何无知，我们仍然可以确信，Dirichlet 的研究所不适用于的那些函数，并不会在自然现象中出现。然而，”他继续说道，“Dirichlet 未处理的这些情形值得注意，似乎出于两个理由。首先，正如 Dirichlet 本人在其工作末尾所指出的，这个课题与无穷小演算的原理密切相关，可以有助于给这些原理带来更大的清晰性与确定性。从这个观点看，对它的研究有直接的兴趣。其次，Fourier 级数的应用并不限于物理学中的研究；它们目前在纯数学的一个领域即数论中也得到成功的应用，而且看来恰恰是那些 Dirichlet 未研究其三角级数展开的函数，在那里显示了某种重要性（(III), pp.~237--238）。
+
+Riemann 的想法是从由 Cauchy 重新恢复其应有地位的积分逼近程序出发，确定函数 \(f\) 在有界区间 \([a, b]\) 中的“Riemann 和”何时趋于一个极限（当分割各区间的最大长度趋于 0 时），这个问题他毫不困难地得到了解答，形式如下：对每个 \(\alpha > 0\)，存在 \([a, b]\) 的一个分割，其子区间的最大长度充分小，使 \(f\) 在其上振幅 \(>\alpha\) 的该分割各区间的长度之和任意小。此外，他还证明这个条件不仅对分段连续且单调的函数成立，而且对某些可以有稠密间断点集的函数也成立。*
+
+Riemann 的论文直到他去世后的 1867 年才发表。不过这一次，时代对这类研究更为有利，“Riemann 积分”自然而然地在当时的思想潮流中占据了一席之地，这一潮流引向对“连续统”及实变量函数的深入研究（Weierstrass、Du Bois-Reymond、Hankel、Dini），并以 Cantor 而告终——集合论由此诞生。Riemann 给可积条件所取的形式启示了对函数在一个区间中的间断点集引入“测度”的想法；但差不多过了 30 年，人们才成功地给出这一概念的一个富有成效且便于使用的定义。
+
+这个方向上的最初尝试应归功于 Stolz、Harnack 与 Cantor（1884--85）；为了定义 R 的有界子集 E 的“测度”，前两人考察是有限个区间之并的集合 \(F \supset E\)，对每个 F 取相应区间长度之和，并把这些数的下确界称为 E 的“测度”；而 Cantor 则径直置身于空间 \(R^{n}\) 中，对有界集 E 与 \(\rho > 0\)，考察 E 的邻域 \(V(\rho)\)，它由到 E 的距离 \(\leqslant \rho\) 的点构成，并取 \(V(\rho)\) 的“体积”的下确界。** 按这一定义，一个集合的“测度”等于其闭包的“测度”，由此特别推出：两个不交集合之并的“测度”可能小于这两集“测度”之和。无疑是为了消除后一困难，Peano（V）与 Jordan（VI）几年后对含于一个长方体 I 中的集合 A，在 Cantor 的“测度” \(\mu(\mathrm{A})\) 之外，又引入了它的“内测度” \(\mu(\mathrm{I}) - \mu(\mathrm{I} - \mathrm{A})\)，并把使这两个数相等的集合 A（今称“可求积”的）称为“可测的”。两个不交的可求积集 A, B 之并于是可求积，且其“测度”为 A 与 B 的“测度”之和；然而，有界开集不一定可求积，含于一个有界区间中的有理数集亦然，这就使 Peano--Jordan 概念失去了大半趣味。
+
+看出先前各种定义的缺陷并明白如何补救的功劳属于 E. Borel（IX）。自 Cantor 以来人们就知道，R 中每个开集 U 是它的“分支”的可数族之并，这些分支是两两不交的开区间；Borel 不再设法用有限个区间把 U 包住而“从外部”逼近 U，而是根据上述结果，提议（当 U 有界时）取 U 的各分支长度之和作为 U 的测度。接着他非常简略地描述了* 这样一类集合（后来称为“Borel 集”）：从开集出发，通过可数并与“差”A -- B 两种运算的无限制迭代而得到；并且他指出，对这些集合可以定义一个具有完全可加性这一基本性质的测度：若序列 \((\mathrm{A}_{n})\) 由两两不交的 Borel 集组成，则它们之并（假设有界）的测度等于它们的测度之和。
+
+这个定义开启了分析学的一个新纪元：一方面，它与 Baire 同时代的工作相结合，构成了关于点集分类的一整系列拓扑性质研究的出发点；而尤其是，它为 Lebesgue 在 20 世纪最初几年所完成的积分概念的扩张提供了基础。
+
+在他的学位论文（X a)）中，Lebesgue 首先精确化并发展了 E. Borel 的简略提示；仿照 Peano--Jordan 方法，有界集 \(A \subset R\) 的“外测度”定义为包含 A 的开集的测度的下确界；然后，若 I 是包含 A 的区间，则 A 的“内测度”是 I 与 I - A 的外测度之差；这样就得到“可测集”的概念，它与 Borel 最初的“构造性”定义的差别只在于添加了一个 Borel 意义下测度为零的集合的子集。这个定义立刻推广到空间 \(R^{n}\)；把定积分 \(\int_{a}^{b} f(t) dt\)（对一个有界函数 \(\geqslant 0\)）看作由曲线 \(y = f(x)\) 与直线 x = a、x = b 及 y = 0 所围“面积”的这一老观念，由此立即使 Riemann 积分直接推广到所有使上述集合的测度有定义的函数 f。但 Lebesgue 的独创性与其说在于这一扩张的想法*，不如说在于他发现了关于如此构想的积分中积分号下取极限的基本定理，这条定理在他的工作中表现为测度完全可加性的推论；** 他立刻察觉到它的全部重要性，并在 1904 年他在其名著“Leçons sur l'intégration et la recherche des fonctions primitives”（X b)）中所给出的理论的教科书式阐述中，把它当作基石。***
+
+我们无法在此详述 Lebesgue 的结果在无穷小演算经典问题研究中所带来的无数进展；在以后各卷中我们还有机会强调其中若干项。Lebesgue 本人在其学位论文中就已把他的理论应用于把长度与面积的经典概念推广到比通常曲线与曲面更一般的集合上；关于半个世纪以来这一理论的巨大发展，请读者参看 L. Cesari 的新近阐述（XXVI）。我们还提到对三角级数的应用，这是 Lebesgue 在其学位论文之后几乎立即发展起来的（X c)），这些应用为该理论打开了新的视野，对它的探索至今远未完成（见 (XXV)）。最后，也是最重要的，\(L^{p}\) 空间的定义与 Riesz--Fischer 定理（(XIII)、(XV a) 与 (XV b)）；参见第 V 卷的历史注记）揭示了积分的新概念在泛函分析中所能起的作用；这一作用只会随着这一概念后来的种种推广而愈益增长，对这些推广我们马上就要谈到。
+
+但首先，让我们再稍微多停留于 Lebesgue 花费精力最多的一个问题之一：积分与原函数这两个概念之间的联系。随着 Riemann 引入的积分的推广，自然产生了一个问题：对连续函数有效的积分与原函数之间的经典对应，在更一般的情形是否仍然成立。然而，容易举出 Riemann 意义下可积的函数 \(f\) 的例子，使 \(\int_{a}^{x} f(t) dt\) 在某些点没有导数（甚至连右导数或左导数也没有）（参见 FRV, II, §2, 习题 1）；反之，Volterra 早在 1881 年就证明，函数 \(F(x)\) 可以在区间 I 中有有界导数而这个导数在 I 中（Riemann 意义下）不可积。凭借极为精细的分析（其中积分号下取极限的定理远远不够用），Lebesgue 成功地证明：若 \(f\) 在 \([a, b]\) 上（按他的意义）可积，则 \(F(x) = \int_{a}^{x} f(t) dt\) 几乎处处有等于 \(f(x) (\mathrm{X}b)\) ) 的导数。反之，若函数 \(g\) 在 \([a, b]\) 上可微且其导数 \(g' = f\) 有界，则 \(f\) 可积且公式 \(g(x) - g(a) = \int_{a}^{x} f(t) dt\) 成立。然而，Lebesgue 察觉到，当 \(g'\) 不有界时问题要复杂得多；这时 \(g'\) 不一定可积，于是第一个问题就是刻画这样的连续函数 \(g\)：\(g'\) 几乎处处存在且可积。Lebesgue 把自己限制在 \(g\) 的某一个 Dini 导数* 处处有限的情形，证明了 \(g\) 必然是有界变差函数。** 最后，他建立了最后一个结果的逆命题：有界变差函数 \(g\) 几乎处处有导数，且 \(g'\) 可积；然而不再必然有
+
+\[
+g (x) - g (a) = \int_ {a} ^ {x} g ^ {\prime} (t) d t;\tag{2}
+\]
+
+该关系两端的差是一个有界变差函数，它非常数且导数几乎处处为零（“奇异”函数）。剩下要刻画使关系 (2) 成立的有界变差函数 g。Lebesgue 证明了这些函数（Vitali 称之为“绝对连续”函数，并对它们作了详细研究）正是具有下述性质的那些函数：g 在开集 U 上的全变差（g 在 U 的每个连通分支上的全变差之和）随 U 的测度趋于 0。
+
+我们在下文将会看到，这些结果以弱化了的形式，后来获得了远为一般的意义。就其原来形式而言，它们的应用范围一直相当有限，没有超出实变量函数“精细”理论的框架；它们同样不在本教程的讨论范围之内。* 原函数理论后来的种种发展更是如此；我们在此只提一下 Denjoy 以及他的仿效者和后继者（Perron、de la Vallée-Poussin、Khintchine、Lusin、Banach 等）的深刻工作；读者可在 S. Saks 的书（XXIV）中找到这些问题的详细阐述。
+
+Lebesgue 理论带来的本质进展之一涉及多重积分。这个概念是在 18 世纪中叶引入的，最初取“不定积分”的形式（类比单变量函数积分的理论，\(\iint f(x,y) dx dy\) 表示方程 \(\frac{\partial^2 z}{\partial x \partial y} = f(x,y)\) 的一个解）；但 Euler 早在 1770 年就对展布在（由解析曲线弧所围的）有界区域上的二重积分有非常清楚的概念，并且正确地写出了用两个逐次单积分计算这样一个积分的公式（I）。只要被积函数连续、积分区域不太复杂，用“Riemann 和”来论证这个公式并不困难；但一旦想处理更一般的情形，Riemann 的方法就遇到严重困难（\(f(x,y)\) 可以在 Riemann 意义下可积，而当各个单积分取 Riemann 意义时 \(\int dx \int f(x,y) dy\) 却没有意义）。转到 Lebesgue 的定义时，这些困难就消失了；Lebesgue 在其学位论文中已经证明：当 \(f(x,y)\) 是有界的“Baire 函数”时，函数 \(y \mapsto f(x,y)\)（对每个 \(x\)）与 \(x \mapsto \int f(x,y) dy\) 也是 Baire 函数，并且有公式
+
+\[
+\iint f (x, y) d x d y = \int d x \int f (x, y) d y\tag{3}
+\]
+
+（积分取在一个矩形上）。稍后，Fubini（XIV）给这一结果补充了重要的一笔：他证明若只假设 f 可积，则使 \(y \mapsto f(x, y)\) 不可积的那种 x 所成之集测度为零，这就使公式 (3) 立即推广到这种情形。
+
+最后，在 1910 年（X d)），Lebesgue 着手把他关于单积分导数的结果推广到多重积分。于是他对函数 \(f\)（\(\mathbf{R}^n\) 上，在每个紧子集上可积）联系一个集合函数 \(\mathrm{F(E)} = \int_{\mathrm{E}} f(\mathbf{x}) \, dx\)，它对每个可积子集 \(\mathrm{E}\)（\(\mathbf{R}^n\) 的）都有定义，这推广了“不定积分”的概念；他在这个场合注意到这个函数具有以下两个性质：\(1^\circ\) 它是完全可加的；\(2^\circ\) 它是“绝对连续”的，指 \(\mathrm{F(E)}\) 随 \(\mathrm{E}\) 的测度趋于 0。Lebesgue 论文的实质部分在于证明这个命题的逆命题。* 但他没有止步于此，而是在同一方向上提醒人们注意推广有界变差函数概念的可能性：考虑可测集合的函数 \(\mathrm{F(E)}\)，它完全可加，且 \(\sum_{n} |\mathrm{F(E}_{n})|\) 对 \(\mathrm{E}\) 分成可测集 \(\mathrm{E}_{n}\) 的每个可数分割保持有界。而且，尽管他实际上只在 \(\mathbf{R}^n\) 的长方体全体上考虑这样的函数，显然只差一步就到达 J. Radon 于 1913 年定义的一般测度概念，它把 Lebesgue 积分与 Stieltjes 积分综合于一体，对后者我们现在必须谈一谈。
+
+1894 年，T. Stieltjes 以“Recherches sur les fractions continues”为题（VIII）发表了一篇极具独创性的论文，从表面上看十分特殊的问题出发，以罕见的优雅提出并解决了解析函数与实变量函数理论中一类性质全新的问题。\(^{**}\) 为了表示解析函数的某个序列的极限，Stieltjes 特别地被引导引入直线上正的“质量分布”的概念，这个概念在物理科学中早已为人熟悉，但在此之前在数学中只在限制性假设下（一般是在每点存在连续变化的“密度”）被考虑过；他注意到，给定这样一个分布等价于给定递增函数 \(\varphi(x)\)，它对 x \textgreater{} 0 给出端点为 0 与 x 的区间中所含的总质量，对 x < 0 给出改变符号后的这个质量，\(\varphi\) 的间断点对应于“集中于一点”的质量。* 接着 Stieltjes 对区间 \([a,b]\) 中的这样一种质量分布作“Riemann 和” \(\sum_{i} f(\xi_i)(\varphi(x_{i+1}) - \varphi(x_i))\)，并证明当 \(f\) 在 \([a,b]\) 上连续时，这些和趋于一个极限，他把它记作 \(\int_{a}^{b} f(x) d\varphi(x)\)。由于不需要积分连续（甚至可微）函数以外的函数，Stieltjes 没有进一步研究这个积分**，而且有十年之久这个概念似乎没有引起任何注意。*** 然而在 1909 年，F. Riesz（XV c)）在解决 Hadamard 几年前提出的一个问题（参见第 V 卷的历史注记）时，证明了 Stieltjes 积分 \(f \mapsto \int_{a}^{b} f d\varphi\) 是连续实值函数空间 \(\mathcal{C}(\mathrm{I})\)（\(\mathrm{I} = [a,b]\) 上；\(\mathcal{C}(\mathrm{I})\) 赋以一致收敛拓扑）上最一般的连续线性泛函；**** 这个结果的优美与简洁几乎立即引出了各种推广。最幸运的是 J. Radon 1913 年的推广（XVII）：他综合 F. Riesz 与 Lebesgue 的想法，证明了如何从任意的“完全可加集函数”（定义在 Lebesgue 测度的可测集上）出发，而不是从 Lebesgue 测度出发，用 Lebesgue 的程序定义一个积分。在由此定义的 \(\mathbf{R}^n\) 上“Radon 测度”的概念中，“有界变差”函数的概念被吸收在内：把这样的函数分解为两个递增函数之差是测度分解为两个正测度之差的特殊情形；类似地，“以 \(\mu'\) 为基的测度”对应于“绝对连续”函数的概念，而把任意测度分解为以 \(\mu\) 为基的测度与与 \(\mu\) 互奇的测度，对应于有界变差函数的 Lebesgue 分解，即分解为绝对连续函数与“奇异”函数之和。此外，Radon 还利用 F. Riesz 的一个较早的想法（后来被 J. von Neumann 等人重新采纳并推广），证明了当 \(\mu\) 是以 Lebesgue 测度为基的测度时，以 \(\mu\) 为基的测度关于 \(\mu\) 的“密度”仍然存在，这个想法在于构造测度 \(\mu\) 在映射 \(\theta\)（由 \(\mathbf{R}^n\) 到 \(\mathbf{R}\) 中）下的像，把它选得使 \(\theta(\mu)\) 是 \(\mathbf{R}\) 上的 Lebesgue 测度（参见 Ch. V, §6, 习题 8 c)）。
+
+Radon 的论文发表后几乎立即，Fréchet 就观察到该文中几乎所有的结果都可以推广到下述情形：“完全可加集函数”不是对 \(\mathbf{R}^n\) 的可测子集定义，而是对任意集合 E 的某些子集定义（这些子集使得可数并与“差”运算所给出的集合上该函数仍有定义）。然而，以 \(\mu\) 为基的测度表成 \(g \cdot \mu\) 形式这件事，在 Lebesgue 与 Radon 那里依赖于本质上涉及 \(\mathbf{R}^n\) 拓扑的论证（而且我们已经看到，Radon 的证明只当 \(\mu\) 是以 Lebesgue 测度为基的测度时才适用）；直到 1930 年，O. Nikodym（XX）才用一个直接的论证（几年后被 J. von Neumann 借助于 \(\mathrm{L}^2\) 空间的性质显著简化（(XXII), pp.~127-130））得到了一般形式的定理。
+
+随着 Radon 的论文，积分的一般理论就可以认为在大轮廓上已经完成；至于后来实质性的收获，只能勉强举出 Daniell 给出的测度无穷乘积的定义（XIX \(b\)），以及 Bochner 于 1933 年（XXI）给出的取值于 Banach 空间中的函数的积分的定义，后者为我们将要在第六章处理的“弱积分”的研究铺平了道路。但当时还必须普及新理论，把它变成日常使用的数学工具，要知道 1910 年前后，大多数数学家还只把“Lebesgue 积分”看作一种精密却难以驾驭的工具，专供极端精细、极端抽象的研究之用。这将是 Carathéodory 的工作，他写的一本书长期保持着经典地位（XVIII），此外该书还以大量独创的评注丰富了 Radon 的理论。
+
+但也正是在这本书中，处于 Lebesgue 关注中心的积分概念（他的学位论文（X a)）与他关于这些问题的主要著作（X b)）的标题已充分表明这一点）第一次让位于测度概念，后者在 Lebesgue 那里（如同在他之前的 Jordan 那里）只是一种辅助技术。对 Carathéodory 而言，这一观点的改变无疑归于他似乎过分重视了“p 维测度”。* 从那时起，论述积分的作者们就分成了这两种观点的两派，他们不无争论，这些争论虽然未流多少血，却费了不少笔墨。* 一些人追随 Carathéodory；在他们的越来越抽象、越来越公理化的阐述中，测度连同它所容许的一切技术上的精雕细琢，不仅扮演着主导角色，而且趋于脱离它与它实际出现的大多数问题相联系的那些拓扑结构。另一些阐述，例如本教程，则或紧或松地遵循 W. H. Young 早在 1911 年就在一篇不幸少有人注意的论文（XI b)）中指示、随后由 Daniell 发展的方法。前者在处理 Lebesgue 积分时，从假定已知的紧支集连续函数的“Cauchy 积分”出发，依次（如我们在 Ch. IV, §1 中所做的那样）定义下半连续函数的上积分，然后定义任意数值函数的上积分，由此仿照 Lebesgue 对集合的作法、用纯“函数的”手段给出可积函数的定义。Daniell 于 1918 年（(XIX a)，参见 (XXVII)）把这一阐述以其若干变体推广到定义在任意集合上的函数；他的主要功绩在于看出了条件 \(\lim_{n\to \infty}\int f_n d\mu = 0\)（对每个逐点趋于 0 的递减序列 \((f_n)\)）在抽象理论中所起的作用（在 Radon 测度理论中，由于 Dini 定理这个条件自动满足，因而它不可能显得如此清楚）。在同一思想脉络中（且与 Gelfand 之前的谱理论所用的方法严格相关），我们还必须提请注意 F. Riesz 的论文（XV d)），它以简洁而优雅的形式给出了序空间理论中在积分理论中起作用的若干结果；我们在第 II 章中相当紧密地遵循了他的阐述。
+
+与其在那些或多或少可读、但基本内容已不会再有多大变化的阐述性著作中，不如到应用这一方面去寻找 1920 年以来积分理论所取得的进步：概率论（从前是难题与佯谬的口实，自从被 Kolmogoroff 公理化（XXIII）之后已成为积分论的一个分支，尽管是一个拥有自己的方法与问题的自主分支）；遍历理论；谱理论与调和分析，因为 Haar 发现以他的名字命名的测度以及这一发现所引发的思想动向，已使积分成为群论中最重要的工具之一。这些问题已超出本注记的范围；其中一些将在以后的章节或分卷中处理。
+
+\chapter*{参考文献}
+\phantomsection
+\addcontentsline{toc}{chapter}{参考文献}
+
+\begin{enumerate}
+\def\labelenumi{(\Roman{enumi})}
+\item
+  L. EULER, Opera Omnia: De formulas integralibus duplicatis (1), v. XVII, Leipzig--Berlin (Teubner), 1915, pp.~289--315.
+\item
+  G. LEJEUNE--DIRICHLET, Sur la convergence des séries trigonométriques qui servent à représenter une fonction arbitraire entre des limites données, J. de Crelle, 4 (1829), pp.~157--169 (= Werke, v. I, pp.~118--132, Berlin (G. Reimer), 1889).
+\item
+  B. RIEMANN, Gesammelte Mathematische Werke, 2nd. edn., Leipzig (Teubner), 1892.
+\item
+  G. CANTOR, Gesammelte Abhandlungen, Berlin (Springer), 1932.
+\item
+  G. PEANO, Applicazioni geometriche del calcolo infinitesimale, Turin, 1887.
+\item
+  C. JORDAN, Cours d'Analyse, v. I, 2nd. edn., Paris (Gauthier-Villars), 1893.
+\item
+  C. ARZELÀ: a) Sulla integrabilità di una serie di funzioni, Rendic. Acc. dei Lincei, (4), 1 (1885), pp.~321--326; b) Sulla integrazione per serie, ibid., pp.~532--537 and 566--569.
+\item
+  T. STIELTJES, Recherches sur les fractions continues, Ann. Fac. Sci. de Toulouse, 8 (1894), J. 1 to J. 122.
+\item
+  E. BOREL, Leçons sur la théorie des fonctions, Paris (Gauthier-Villars), 1898.
+\item
+  H. LEBESGUE: a) Intégrale, longueur, aire, Annali di Mat., (3), 7 (1902), pp.~231--359; b) Leçons sur l'Intégration et la recherche des fonctions primitives, Paris (Gauthiers--Villars), 1904; c) Sur les séries trigonométriques, Ann. Éc. Norm. Sup., (3), 20 (1903), pp.~453--485; d) Sur l'intégration des fonctions discontinues, Ann. Éc. Norm. Sup., (3), 27 (1910), pp.~361--450.
+\item
+  W. H. YOUNG: a) On upper and lower integration, Proc. Lond. Math. Soc., (2), 2 (1905), pp.~52--66; b) A new method in the theory of integration, Proc. Lond. Math. Soc., (2), 9 (1911), pp.~15--50.
+\item
+  G. VITALI: a) Una proprieta delle funzioni misurabili, R. Ist. Lombardo, Rendiconti, (2), 38 (1905), pp.~599--603; b) Sui gruppi di punti e sulle funzioni di variabili reali, Rendic. Acc. Sci. di Torino, 43 (1908), pp.~229--236.
+\item
+  E. FISCHER, Sur la convergence en moyenne, C. R. Acad. Sci., 144 (1907), pp.~1022--1024.
+\item
+  G. FUBINI, Sugli integrali multipli, Rendic. Acc. dei Lincei, (5), 16 (1907), pp.~608--614.
+\item
+  F. RIESZ: a) Sur les systèmes orthogonaux de fonctions, C. R. Acad. Sci., 144 (1907), pp.~615--619; b) Untersuchungen über Systeme integrierbarer Funktionen, Math. Ann., 69 (1910), pp.~449--497; c) Sur certains systèmes singuliers d'équations intégrales, Ann. Éc. Norm. Sup., (3), 28 (1911), pp.~33--62; d) Sur quelques notions fondamentales dans la théorie générale des opérations linéaires, Ann. of Math., (2), 41 (1940), pp.~174--206.
+\item
+  D. EGOROFF, Sur les suites de fonctions mesurables, C. R. Acad. Sci., 152 (1911), p.~244.
+\item
+  J. RADON, Theorie und Anwendungen der absolut additiven Mengenfunktionen, Sitzungsber. der math. naturwiss. Klasse der Akad. der Wiss. (Wien), 122, Abt. IIa (1913), pp.~1295--1438.
+\item
+  C. CARATHÉODORY, Vorlesungen über reelle Funktionen, Leipzig--Berlin (Teubner), 1918.
+\item
+  P. J. DANIELL: a) A general form of integral, Ann. of Math., (2), 19 (1918), pp.~279--294; b) Integrals in an infinite number of dimensions, Ann. of Math., (2), 20 (1919), pp.~281--288.
+\item
+  O. NIKODYM, Sur une généralisation des intégrales de M. J. Radon, Fund. Math., 15 (1930), pp.~131--179.
+\item
+  S. BOCHNER, Integration von Funktionen deren Werte die Elemente eines Vektorraumes sind, Fund. Math., 20 (1933), pp.~262--276.
+\item
+  J. von NEUMANN, On rings of operators. III, Ann. of Math., (2), 41 (1940), pp.~94--161.
+\item
+  A. KOLMOGOROFF, Grundbegriffe der Wahrscheinlichkeitsrechnung, Berlin (Springer), 1933.
+\item
+  S. SAKS, Theory of the integral, 2nd. edn., New York (Stechert), 1937.
+\item
+  A. ZYGMUND, Trigonometric series, Warsaw, 1935 (2nd. edn., Cambridge University Press, 1959).
+\item
+  L. CESARI, Surface area, Princeton, 1954.
+\item
+  L. H. LOOMIS, An introduction to abstract harmonic analysis, London--New York--Toronto (van Nostrand), 1953.
+\end{enumerate}
+
+\chapter{向量积分}
+
+在本章中，若 F 表示（R 或 C 上的）Hausdorff 局部凸向量空间，我们用 \(F'\) 表示它的对偶，用 \(F''\) 表示它的双对偶，用 \(F'^*\) 表示 \(F'\) 的代数对偶（即 \(F'\) 上全体线性形式所成的空间）；\(F''\) 是 \(F'^*\) 的线性子空间，而 F（作为不带拓扑的向量空间）可以与 \(F''\) 的一个线性子空间等同。我们用 \(F_\sigma\) 表示赋以弱化拓扑 \(\sigma(F, F')\) 的向量空间 F；“弱的”、“弱地”等定语即指这一拓扑。
+
+在本章中，T 表示局部紧空间，\(\mathcal{K}_{\mathbf{R}}(\mathrm{T})\) 或 \(\mathcal{K}(\mathrm{T})\)（相应地 \(\mathcal{K}_{\mathbf{C}}(\mathrm{T})\)）表示 T 上连续且具有紧支集的实（相应地复）值函数所成的向量空间；对 T 的每个子集 A，\(\mathcal{K}(\mathrm{T},\mathrm{A})\)（相应地 \(\mathcal{K}_{\mathbf{C}}(\mathrm{T},\mathrm{A})\)）表示 \(\mathcal{K}(\mathrm{T})\)（相应地 \(\mathcal{K}_{\mathbf{C}}(\mathrm{T})\)）中由支集含于 A 的函数所构成的子空间。除非另有明确说明，空间 \(\mathcal{K}(\mathrm{T})\)（相应地 \(\mathcal{K}_{\mathbf{C}}(\mathrm{T})\)）都赋以在各子空间 \(\mathcal{K}(\mathrm{T},\mathrm{K})\)（相应地 \(\mathcal{K}_{\mathbf{C}}(\mathrm{T},\mathrm{K})\)）上一致收敛拓扑的直接极限拓扑，其中 K 跑遍 T 的紧子集全体。
+
+我们提醒，这个拓扑比一致收敛拓扑更细，因而是 Hausdorff 的；它在每个 \(\mathcal{K}(\mathrm{T},\mathrm{K})\)（相应地 \(\mathcal{K}_{\mathbf{C}}(\mathrm{T},\mathrm{K})\)）上诱导一致收敛拓扑（TVS, II, §4, No.~4, 注）。空间 \(\mathcal{K}_{\mathbf{C}}(\mathrm{T})\) 可以与由 \(\mathcal{K}(\mathrm{T})\) 经把标量域从 R 扩张到 C 所得的空间等同。说 \(\mathcal{K}(\mathrm{T})\) 上的一个线性形式是测度，按定义即指它是连续的（Ch. III, §1, No.~3, 定义 2）。
+
+\section{向量值函数的积分}
+
+在本节中，\(\mu\) 表示 T 上的正测度，F 表示 R 上的 Hausdorff 局部凸向量空间。对 T 到 F 中的每个映射 f 以及每个元素 \(z'\)（属于 F 的对偶 \(F'\)），我们用 \(\langle f, z' \rangle\) 或 \(\langle z', f \rangle\) 表示 T 上的数值函数 \(z' \circ f\)。若对每个 \(z' \in F'\)，\(\langle z', f \rangle\) 具有性质 P，我们就说 f 标量地具有性质 P。例如，我们说 f 是标量本质 \(\mu\) -可积的，如果对每个 \(z' \in F'\)，\(\langle z', f \rangle\) 是本质 \(\mu\) -可积的。\(^{1}\)
+
+注意在这个定义中，F 的拓扑只是通过 F 的对偶 \(F'\) 的媒介而起作用。若函数 f 标量地具有性质 P，则当 F 的拓扑换成与 F 和 \(F'\) 之间的对偶相容的任一 Hausdorff 局部凸拓扑时，f 仍标量地具有性质 P。
+
+\subsection{标量本质可积函数}
+
+若 \(\mathbf{f}\) 是标量本质 \(\mu\) -可积映射（由 \(\mathrm{T}\) 到 \(\mathrm{F}\) 中），则映射 \(\mathbf{z}' \mapsto \int \langle \mathbf{f}(t), \mathbf{z}' \rangle d\mu(t)\) 是 \(\mathrm{F}'\) 上的线性形式，即代数对偶 \(\mathrm{F}'^*\) 的一个元素。
+
+定义 1. --- 我们把 f 关于 \(\mu\) 的积分记作 \(\int f d\mu\) 或 \(\int f(t) d\mu(t)\)，把它定义为下式给出的 \(F'^{*}\) 中的元素：
+
+\[
+\left\langle \mathbf {z} ^ {\prime}, \int \mathbf {f} d \mu \right\rangle = \int \left\langle \mathbf {z} ^ {\prime}, \mathbf {f} \right\rangle d \mu
+\]
+
+对一切 \(\mathbf{z}' \in \mathrm{F}'\)。
+
+若 f 连续且具有紧支集，则它标量可积，且定义 1 与 Ch. III, §3, No.~1 中给出的 f 的积分定义一致。另一方面，若 F 是 Banach 空间且 f 本质可积（Ch. V, §1, No.~3, 定义 3），则 f 标量本质可积，且定义 1 与第 V 章中给出的 f 的积分定义一致（Ch. V, §1, No.~3 与 Ch. IV, §4, No.~2, 定理 1 的推论 1）。
+
+例. --- 设 X 为局部紧空间，\(t \mapsto \lambda_{t}\) 为 T 到 X 上测度空间 \(\mathcal{M}(X)\) 中的映射。说族 \(t \mapsto \lambda_{t}\) 是 \(\mu\) -适宜的，就是指它由正测度组成，且映射 \(t \mapsto \lambda_{t}\) 是标量本质 \(\mu\) -可积的与 \(\mu\) -可测的（关于拓扑 \(\sigma(\mathcal{M}(X), \mathcal{K}(X))\)）。² 它关于 \(\mu\) 的积分就是在 Ch. V, §3, No.~1 中记作 \(\int \lambda_t d\mu(t)\) 的那个测度。
+
+注. --- 1) 若 F 是有限维的，则 T 到 F 中的每个标量本质可积映射都是本质可积的（Ch. V, §1, No.~3）。然而在一般情形，紧空间 T 上的标量可忽略函数甚至可能不是 \(\mu\) -可测的（习题 12）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  显然，\(\mathbf{f}\) 的积分只依赖于 \(\mathbf{f}\) 模 \(\mathbf{T}\) 到 \(\mathbf{F}\) 中的标量局部 \(\mu\) -可忽略映射所成空间的类。注意，标量局部可忽略函数 \(\mathbf{g}\) 不一定几乎处处为零（习题 12）。然而，当 \(\mathbf{F}'\) 中存在一个序列 \((\mathbf{z}_n')\)（关于拓扑 \(\sigma(\mathbf{F}',\mathbf{F})\) 稠密）时，情形确实如此：因为若 \(\mathbf{H}_n\) 是 \(t \in \mathbf{T}\) 中使 \(\langle \mathbf{g}(t), \mathbf{z}_n' \rangle \neq 0\) 的点所成的局部可忽略集，则 \(\mathbf{H}\)（诸 \(\mathbf{H}_n\) 之并）局部可忽略，且对每个 \(t \notin \mathbf{H}\)，有 \(\langle \mathbf{g}(t), \mathbf{z}_n' \rangle = 0\)（对一切 \(n\)），从而 \(\mathbf{g}(t) = 0\)。
+\end{enumerate}
+
+设 \(u\) 是 \(F\) 到 Hausdorff 局部凸空间 \(G\) 中的连续线性映射；它的转置 \(^{t}u\) 是 \(G'\) 到 \(F'\) 中的线性映射，而（代数）转置 \(^{t}(^{t}u)\) 是 \(F'^{*}\) 到 \(G'^{*}\) 中的线性映射，它是 \(u\) 的扩张，我们仍把它记作 \(u\)。按此约定：
+
+命题 1. --- 若 f 是 T 到 F 中的标量本质 μ-可积映射，则映射 u ∘ f 是标量本质 μ-可积的，且
+
+\[
+\int (u \circ \mathbf {f}) d \mu = u \Big (\int \mathbf {f} d \mu \Big).
+\]
+
+对每个 \(z^{\prime} \in G^{\prime}\)，\(\langle z^{\prime}, u \circ f \rangle = \langle {}^{t} u(z^{\prime}), f \rangle\)，由此得第一个结论；第二个结论由公式
+
+\[
+\left\langle \mathbf {z} ^ {\prime}, \int (u \circ \mathbf {f}) d \mu \right\rangle = \int \left\langle \mathbf {z} ^ {\prime}, u \circ \mathbf {f} \right\rangle d \mu = \left\langle {} ^ {t} u (\mathbf {z} ^ {\prime}), \int \mathbf {f} d \mu \right\rangle = \left\langle \mathbf {z} ^ {\prime}, u \left(\int \mathbf {f} d \mu\right) \right\rangle .
+\]
+
+特别地，若 f 是标量本质 \(\mu\) -可积的，则当 F 的拓扑换成更粗的拓扑时，它仍是标量本质 \(\mu\) -可积的。
+
+命题 2. --- 设 f 是 T 到 F 中的标量本质 \(\mu\) -可积映射。对每个数值函数 \(g \geqslant 0\)（\(\mu\) -可测且有界），T 到 F 中的映射 \(t \mapsto g(t)\mathbf{f}(t)\)（记作 gf 或 fg）是标量本质 \(\mu\) -可积的，f 是标量本质 \((g \cdot \mu)\) -可积的，且
+
+\[
+\int \mathbf {f} d (g \cdot \mu) = \int \mathbf {f} g d \mu .
+\]
+
+这是公式 \(\langle z', gf\rangle = g\langle z', f\rangle\)（对一切 \(z' \in F'\)）以及公式 \(\int h d(g \cdot \mu) = \int hg d\mu\)（对每个本质 \(\mu\) -可积的数值函数 h）（Ch. V, §5, No.~3, 定理 1）的直接推论。
+
+关于本质可积数值函数的大量命题可以逐字逐句地改述为关于标量本质可积向量值函数的命题。其中较重要者，我们提请注意函数关于由密度定义的测度（Ch. V, §5, No.~3, 定理 1）、关于测度的像（Ch. V, §6, No.~2, 定理 1）、关于诱导测度（Ch. V, §7, No.~1, 定理 1）、或关于正测度可和族之和（Ch. V, §2, No.~2, 命题 1 与 3 及命题 1 的推论 3）本质可积的条件。这些改述留给读者。
+
+然而，为了得到与“二重积分”定理（Ch. V, §3, No.~3, 定理 1 与 §8, No.~4, 定理 1（Lebesgue--Fubini 定理））相应的命题，必须加强假设（参见习题 1）；把前面引用的定理应用于每个函数 \(\langle z', f \rangle\)（其中 \(z' \in F'\)），就得到下列命题：
+
+命题 3. --- 设 X 为局部紧空间，\(t \mapsto \lambda_{t}\) 为 X 上正测度的 \(\mu\) -适宜族 \(^{3}\)（Ch. V, §3, No.~1, 定义 1），且 \(\nu = \int \lambda_{t} d\mu(t)\)。设 f 为 X 到 F 中的映射；假设：\(1^{\circ} f\) 是标量 \(\nu\) -可积的；\(2^{\circ}\) 存在局部 \(\mu\) -可忽略集 \(N \subset T\)，使对每个 \(t \notin N\)，f 是标量 \(\lambda_{t}\) -可积的且 \(\int f d\lambda_{t} \in F\)。那么，函数 \(t \mapsto \int f d\lambda_{t}\)（对 \(t \notin N\) 定义）是标量本质 \(\mu\) -可积的，且 \(^{4}\)
+
+\[
+\int \mathbf {f} (x) d \nu (x) = \int d \mu (t) \int \mathbf {f} (x) d \lambda_ {t} (x).
+\]
+
+命题 4. --- 设 T 与 T′ 为两个局部紧空间，\(\mu\)（相应地 \(\mu'\)）为 T（相应地 T′）上的正测度，\(\nu = \mu \otimes \mu'\) 为 X = T × T′ 上的乘积测度。设 f 为 X 到 F 中的映射。假设：\(1^{\circ} f\) 是标量 \(\nu\) -可积的；\(2^{\circ}\) 存在局部 \(\mu\) -可忽略集 N ⊂ T，使对每个 \(t \notin N\)，映射 \(t' \mapsto f(t, t')\) 是标量 \(\mu'\) -可积的，且 \(\int f(t, t') d\mu'(t') \in F\)。那么，函数 \(t \mapsto \int f(t, t') d\mu'(t')\)（对 \(t \notin N\) 定义）是标量本质 \(\mu\) -可积的，且 \(^{4}\)
+
+\[
+\iint \mathbf {f} (t, t ^ {\prime}) d \mu (t) d \mu^ {\prime} (t ^ {\prime}) = \int d \mu (t) \int \mathbf {f} (t, t ^ {\prime}) d \mu^ {\prime} (t ^ {\prime}).
+\]
+
+\subsection{标量本质可积函数的积分的性质}
+
+命题 5. --- 设 \(\mu\) 为 T 上的有界正测度，S 为承载 \(\mu\) 的 \(\mu\) -可测集（Ch. V, §5, No.~7, 定义 4），f 为取值于 F 中的标量 \(\mu\) -可积 (*) 函数。设 D 为 \(\mathbf{f}(\mathrm{S})\) 在空间 \(\mathrm{F}'^*\)（赋以拓扑 \(\sigma(\mathrm{F}'^*, \mathrm{F}')\)）中的闭凸包。则 \(\int \mathbf{f} d\mu \in \mu(\mathrm{T})\mathrm{D}\)。
+
+由于 D 是包含 \(\mathbf{f}(\mathrm{S})\) 的诸闭半空间之交（TVS, II, §5, No.~3, 命题 4 的推论 1），只需证明：关系 \(\langle\mathbf{f}(t),\mathbf{z}^{\prime}\rangle\leqslant a\)（对一切 \(t\in S\)；其中 \(z^{\prime}\in F^{\prime},a\in R\)）蕴含 \(\langle z^{\prime},\int f d\mu\rangle\leqslant a\cdot\mu(T)\)；而由于 \(\int f d\mu=\int_{S}f d\mu\)，这由 Ch. IV, §4, No.~2, 定理 1 的推论 1 即得。
+
+推论. --- 设 \(\mu\) 为 T 上的有界正测度，S 为承载 \(\mu\) 的 \(\mu\) -可测集，f 为 T 到 F 中的映射，它标量 \(\mu\) -可测且使 \(\mathbf{f}(\mathbf{S})\) 含于 F 的一个弱紧凸子集 A。则 f 是标量 \(\mu\) -可积的，且 \(\int f d\mu \in \mu(T)A \subset F\)。
+
+对每个 \(z^{\prime} \in F^{\prime}\)，\(\langle z^{\prime}, f \rangle\) 在 S 中 \(\mu\) -可测且有界，故可积，这就证明 f 标量可积。此外，由于 A 在 \(F_{\sigma}\) 中紧，它在 \(F^{\prime*}\) 中闭，且 \(\mathbf{f}(S)\) 在 \(F^{\prime*}\) 中的闭凸包含于 A，推论得证。
+
+命题 6. --- 设 f 为取值于 F 中的标量本质 μ-可积函数，使 \(\int f d\mu \in F\)。对 F 上每个下半连续半范数 q，5
+
+\[
+q \left(\int \mathbf {f} d \mu\right) \leqslant \int^ {\bullet} (q \circ \mathbf {f}) d \mu .
+\]
+
+设 D 为 \(z \in F\) 中使 \(q(\mathbf{z}) \leqslant 1\) 的点所成之集；D 闭、凸且含 0，故 \(D = D^{\circ\circ}\)（TVS, II, §6, No.~3, 定理 1 的推论 3）。因此只需证明：对每个 \(z' \in D^{\circ}\)，有 \(\left|\left\langle z', \int f d\mu \right\rangle\right| \leqslant \int^{\bullet}(q \circ f) d\mu\)；而这由 \(|\langle z', f(t) \rangle| \leqslant q(f(t))\)（对每个 \(t \in T\)）这一事实立即得出。
+
+注意数值函数 \(q \circ f\) 不一定 \(\mu\) -可测（习题 12）。
+
+命题 7. --- 设 f 为 T 到 F 中的标量本质 \(\mu\) -可积映射，使对 T 的每个紧子集 K，\(\mathbf{f}(\mathbf{K})\) 含于 F 的一个弱紧均衡凸子集。则 \(\int f d\mu\) 属于 F 的双对偶 \(F''\)。
+
+对每个紧子集 \(\mathrm{K}\)（\(\mathrm{T}\) 的），
+
+\[
+\int \mathbf {f} \varphi_ {\mathrm{K}} d \mu = \int (\mathbf {f} \varphi_ {\mathrm{K}}) d (\varphi_ {\mathrm{K}} \cdot \mu);
+\]
+
+命题 5 的推论可以应用于有界测度 \(\varphi_{\mathrm{K}} \cdot \mu\) 与函数 \(\mathbf{f}\varphi_{\mathrm{K}}\)，因此 \(\int \mathbf{f}\varphi_{\mathrm{K}} d\mu \in \mathrm{F}\)。对每个 \(\mathbf{z}' \in \mathrm{F}'\)，\(\langle \mathbf{z}', \mathbf{f} \rangle\) 是本质 \(\mu\) -可积的，于是（Ch. V, §1, No.~3, 命题 10）
+
+\[
+\int \langle {\bf z} ^ {\prime}, {\bf f} \rangle d \mu = \lim _ {\mathrm{K}} \int \langle {\bf z} ^ {\prime}, {\bf f} \rangle \varphi_ {\mathrm{K}} d \mu ,
+\]
+
+极限是关于 T 的紧子集的递增有向集取的。由此得出，关于这个集，\(\int f\varphi_{K}d\mu\) 收敛于 \(\int f d\mu\)（依拓扑 \(\sigma(F'^{*},F')\)）。现在，
+
+\[
+\left| \left\langle \mathbf {z} ^ {\prime}, \int \mathbf {f} \varphi_ {\mathrm{K}} d \mu \right\rangle \right| = \left| \int \langle \mathbf {z} ^ {\prime}, \mathbf {f} \rangle \varphi_ {\mathrm{K}} d \mu \right| \leqslant \int | \langle \mathbf {z} ^ {\prime}, \mathbf {f} \rangle | d \mu ,
+\]
+
+这证明元素 \(\int f\varphi_{K}d\mu\) 所成之集是 \(F_{\sigma}\) 的有界子集，从而也是 F 的有界子集（TVS, IV, §1, No.~1, 命题 1）。因此命题 7 是下述引理的推论：
+
+引理 1. --- \(\mathbf{F}^{\prime*}\) 中（关于拓扑 \(\sigma(\mathbf{F}^{\prime*},\mathbf{F}^{\prime})\)）\(\mathbf{F}\) 的每个有界子集的闭包都含于双对偶 \(\mathbf{F}''\)。
+
+因为 F 的有界子集含于 \(F''\) 中的这样一个极集——F 的强对偶 \(F'\) 中 0 的某邻域的极集——故在 \(F''\) 中关于 \(\sigma(\mathrm{F}'',\mathrm{F}')\) 相对紧（TVS, III, §3, No.~5, 命题 7 与 No.~4, 命题 4 的推论 2）；由于 \(\sigma(\mathrm{F}'',\mathrm{F}')\) 由 \(\sigma(\mathrm{F}'*,\mathrm{F}')\) 诱导，引理得证。
+
+推论. --- 假设 F 半自反，并设 f 为 T 到 F 中的标量本质 \(\mu\) -可积映射，使对 T 的每个紧子集 K，\(\mathbf{f}(\mathbf{K})\) 有界。则 \(\int f d\mu\) 属于 F。
+
+因为 F 的每个有界子集都相对弱紧（TVS, IV, §2, No.~2, 定理 1），且 \(F = F''\)。
+
+命题 8. --- 设 \(\mu\) 为 T 上的有界正测度，S 为承载 \(\mu\) 的 \(\mu\) -可测集，f 为 T 到 F 中的 \(\mu\) -可测映射，使 f(S) 含于 F 的一个完备、有界、均衡凸子集 B。则 f 是标量 \(\mu\) -可积的，且 \(\int f d\mu \in \mu(T)B \subset F\)。
+
+由于 S 是 \(\mu\) -可积的，存在 S 的一个分割，由一个 \(\mu\) -可忽略集 N 与一列紧子集 \((\mathrm{K}_{n})\) 组成，使 f 在每个 \(K_{n}\) 上的限制连续（Ch. IV, §4, No.~6, 定理 4 的推论 3 与 §5, No.~1, 定义 1）；因此 \(\mathbf{f}(\mathrm{K}_n)\) 是 F 的紧子集。闭均衡凸包 \(\mathbf{B}_n\)（\(\mathbf{f}(\mathrm{K}_n)\) 的）于是是预紧的（TVS, II, §4, No.~1, 命题 3）且含于 F 的完备子集 B，故它是紧的，从而更是弱紧的。因此（命题 5 的推论）\(\mathbf{f}\varphi_{\mathrm{K}_n}\) 是标量 \(\mu\) -可积的，且
+
+\[
+\mathbf {z} _ {n} = \int \mathbf {f} \varphi_ {\mathrm{K} _ {n}} d \mu \in \mu (\mathrm{K} _ {n}) \mathrm{B} _ {n} \subset \mu (\mathrm{K} _ {n}) \mathrm{B}.
+\]
+
+对 F 上每个连续半范数 p，由此得出
+
+\[
+p (\mathbf {z} _ {n}) \leqslant \mu (\mathrm{K} _ {n}) \cdot \sup _ {\mathbf {x} \in B} p (\mathbf {x});
+\]
+
+由于 B 有界，且以 \(\mu(\mathrm{K}_{n})\) 为通项的级数收敛且有和 \(\mu(\mathrm{T})\)，可见以 \(s_{n}=z_{1}+z_{2}+\cdots+z_{n}\) 为通项的序列是 F 的完备子集 \(\mu(\mathrm{T})\mathrm{B}\) 中的 Cauchy 序列。因此这个序列收敛于 \(\mu(\mathrm{T})\mathrm{B}\) 的一个元素 s；由于可设 \(\mathbf{f}(t)=0\) 在 T-S 上成立，对每个函数 \(\langle z', f\rangle\)（\(z'\in F'\)）应用 Lebesgue 定理就证明 \(s=\int f d\mu\)。

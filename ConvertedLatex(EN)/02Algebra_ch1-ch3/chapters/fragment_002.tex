@@ -1,0 +1,824 @@
+\subsection{DISTRIBUTIVITY}
+
+DEFINITION 5. Let \(\mathbf{E}_1, \ldots, \mathbf{E}_n\) and \(\mathbf{F}\) be sets and \(u\) a mapping of \(\mathbf{E}_1 \times \cdots \times \mathbf{E}_n\) into \(\mathbf{F}\) . Let \(i \in [1, n]\) . Suppose \(\mathbf{E}_i\) and \(\mathbf{F}\) are given the structures of magmas. \(u\) is said to be distributive relative to the index variable \(i\) if the partial mapping
+
+\[
+x _ {i} \mapsto u (a _ {1}, \dots , a _ {i - 1}, x _ {i}, a _ {i + 1}, \dots , a _ {n})
+\]
+
+is a homomorphism of \(\mathbf{E}_i\) into \(\mathbf{F}\) for all fixed \(a_j\) in \(\mathbf{E}_j\) and \(j \neq i\) .
+
+If \(\top\) denotes the internal laws on \(\mathbf{E}_i\) and \(\mathbf{F}\) , the distributivity of \(u\) is given by the equations
+
+\[
+\begin{array}{r l} & u (a _ {1}, \dots , a _ {i - 1}, x _ {i} \top x _ {i} ^ {\prime}, a _ {i + 1}, a _ {n}) \\ & \quad = u (a _ {1}, \dots , a _ {i - 1}, x _ {i}, a _ {i + 1}, \dots , a _ {n}) \top u (a _ {1}, \dots , a _ {i - 1}, x _ {i} ^ {\prime}, a _ {i + 1}, \dots , a _ {n}) \end{array}\tag{1}
+\]
+
+for \(i = 1, 2, \ldots, n\) , \(a_1 \in \mathrm{E}_1, \ldots, a_{i-1} \in \mathrm{E}_{i-1}\) , \(x_i \in \mathrm{E}_i\) , \(x_i' \in \mathrm{E}_i\) , \(a_{i+1} \in \mathrm{E}_{i+1}, \ldots, a_n \in \mathrm{E}_n\) .
+
+Example. Let E be a monoid (resp. group) written multiplicatively. The mapping \((n, x) \mapsto x^{n}\) of \(N \times E\) (resp. \(Z \times E\) ) into E is distributive with respect to the first variable by the equation \(x^{m+n} = x^{m}x^{n}\) (with addition as law on N). If E is commutative, this mapping is distributive with respect to the second variable by the equation \((xy)^{n} = x^{n}y^{n}\) .
+
+PROPOSITION 1. Let \(\mathbf{E}_1, \mathbf{E}_2, \ldots, \mathbf{E}_n\) and \(\mathbf{F}\) be commutative monoids written additively and let \(u\) be a mapping of \(\mathbf{E}_1 \times \cdots \times \mathbf{E}_n\) into \(\mathbf{F}\) , which is distributive with respect to all the variables. For \(i = 1, 2, \ldots, n\) , let \(\mathbf{L}_i\) be a non-empty finite set and \((x_{i,\lambda})_{\lambda \in \mathbf{L}_i}\) a family of elements of \(\mathbf{E}_i\) . Let \(y_i = \sum_{\lambda \in \mathbf{L}_i} x_{i,\lambda}\) for \(i = 1, 2, \ldots, n\) . Then
+
+\[
+u (y _ {1}, \dots , y _ {n}) = \sum_ {\alpha} u (x _ {1, \alpha_ {1}}, \dots , x _ {n, \alpha_ {n}})\tag{2}
+\]
+
+the sum being taken over all sequences \(\alpha = (\alpha_{1},\ldots ,\alpha_{n})\) belonging to \(\mathbf{L}_1\times \dots \times \mathbf{L}_n\)
+
+We argue by induction on \(n\) , the case \(n = 1\) following from formula (2) of §1, no. 2. From the same reference
+
+\[
+u (y _ {1}, \dots , y _ {n - 1}, y _ {n}) = \sum_ {\alpha_ {n} \in L _ {n}} u (y _ {1}, \dots , y _ {n - 1}, x _ {n, \alpha_ {n}})\tag{3}
+\]
+
+for \(y_{n} = \sum_{\alpha_{n} \in \mathbf{L}_{n}} x_{n, \alpha_{n}}\) and the mapping \(z \mapsto u(y_{1}, \ldots, y_{n-1}, z)\) of \(\mathbf{E}_{n}\) into \(F\) is a magma homomorphism. By the induction hypothesis applied to the distributive mappings \((z_{1}, \ldots, z_{n-1}) \mapsto u(z_{1}, \ldots, z_{n-1}, x_{n, \alpha_{n}})\) from \(\mathbf{E}_{1} \times \cdots \times \mathbf{E}_{n-1}\) to \(F\) ,
+
+\[
+u (y _ {1}, \dots , y _ {n - 1}, x _ {n, \alpha_ {n}}) = \sum_ {\alpha_ {1}, \dots , \alpha_ {n - 1}} u (x _ {1, \alpha_ {1}}, \dots , x _ {n - 1, \alpha_ {n - 1}}, x _ {n, \alpha_ {n}}),\tag{4}
+\]
+
+the sum being taken over the sequences \((\alpha_{1},\ldots,\alpha_{n-1})\) belonging to \(M=L_{1}\times\cdots\times L_{n-1}\) . Now \(L_{1}\times\cdots\times L_{n}=M\times L_{n}\) ; writing
+
+\[
+t _ {\alpha_ {1}, \dots , \alpha_ {n}} = u (x _ {1, \alpha_ {1}}, \dots , x _ {n, \alpha_ {n}}),
+\]
+
+we have
+
+\[
+\sum_ {\alpha_ {1}, \dots , \alpha_ {n}} t _ {\alpha_ {1}, \dots , \alpha_ {n}} = \sum_ {\alpha_ {n}} \left(\sum_ {\alpha_ {1}, \dots , \alpha_ {n}} t _ {\alpha_ {1}, \dots , \alpha_ {n - 1}, \alpha_ {n}}\right)\tag{5}
+\]
+
+by formula (7) of § 1, no. 5. (2) follows immediately from (3), (4) and (5).
+
+Remark. If \(u(a_{1},\ldots ,a_{i - 1},0,a_{i + 1},\ldots ,a_{n}) = 0\) for \(i = 1,2,\dots,n\) and \(a_{j}\in \mathbf{E}_{j}\) ( \(j\neq i\) ), then formula (2) remains true for families \((x_{i,\lambda})_{\lambda \in \mathbf{L}_i}\) of finite support.
+
+A special case of Definition 5 is that where u is the law of action associated with the action of a set \(\Omega\) on a magma E. If u is distributive with respect to the second variable, it is also said that the action of \(\Omega\) on the magma E is distributive. In other words:
+
+DEFINITION 6. An action \(\alpha \mapsto f_{\alpha}\) of a set \(\Omega\) on a magma E is said to be distributive if, for all \(\alpha \in \Omega\) , the mapping \(f_{\alpha}\) is an endomorphism of the magma E.
+
+If \(\top\) denotes the law of the magma E and \(\bot\) the law of action associated with the action of \(\Omega\) on E, the distributivity of the latter is then expressed by the formula
+
+\[
+\alpha \perp (x \top y) = (\alpha \perp x) \top (\alpha \perp y) \quad (\text { for   } \alpha \in \Omega \text {   and   } x, y \in E).\tag{6}
+\]
+
+By an abuse of language, it is also said that the law \(\perp\) is distributive (or right distributive) with respect to the law \(\top\).
+
+Formula (2) of § 1, no. 2 shows that then, for every ordered sequence \((x_{\lambda})_{\lambda \in L}\) of elements of E and every \(\alpha \in \Omega\) ,
+
+\[
+\alpha \perp \left(\mathsf {T} _ {\lambda \in L} x _ {\lambda}\right) = \mathsf {T} _ {\lambda \in L} (\alpha \perp x _ {\lambda}).\tag{7}
+\]
+
+If an action \(\alpha\mapsto f_{\alpha}\) is distributive and an equivalence relation R on E is compatible with the law of composition of E and the action \(\alpha\mapsto f_{\alpha}\) , the quotient action on E/R is distributive.
+
+When the law on E is written multiplicatively, we often use the exponential notation \(x^{\alpha}\) for a law of action which is distributive with respect to this multiplication, so that distributivity is expressed by the identity \((xy)^{\alpha} = x^{\alpha}y^{\alpha}\) . If the law on E is written additively, we often use left (resp. right) multiplicative notation \(\alpha.x\) (resp. \(x.\alpha\) ) for a law of action which is distributive with respect to this addition, the distributivity being expressed by the identity
+
+\[
+\alpha (x + y) = \alpha x + \alpha y \quad (\text { resp. } (x + y) \alpha = x \alpha + y \alpha).
+\]
+
+We may also consider the case where \(\Omega\) has an internal law, denoted by \(\overline{\top}\) , and the law of action is distributive with respect to the first variable, which means that
+
+\[
+(\alpha \overline{\top} \beta) \perp x = (\alpha \perp x) \top (\beta \perp x)\tag{8}
+\]
+
+for all \(\alpha, \beta \in \Omega\) and \(x \in \mathbf{E}\) . Then, by formula (2) of §1, no. 2
+
+\[
+\left(\overline {{\mathsf {T}}} _ {\lambda \in L} \alpha_ {\lambda}\right) \perp x = \mathsf {T} _ {\lambda \in L} (\alpha_ {\lambda} \perp x)\tag{9}
+\]
+
+for every ordered sequence \((\alpha_{\lambda})_{\lambda \in L}\) of elements of \(\Omega\) and all \(x\in E\) .
+
+\subsection{DISTRIBUTIVITY OF ONE INTERNAL LAW WITH RESPECT TO ANOTHER}
+
+DEFINITION 7. Let \(\top\) and \(\bot\) be two internal laws on a set E. The law \(\bot\) is said to be distributive with respect to the law \(\top\) if
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+x \perp (y \top z) = (x \perp y) \top (x \perp z)\tag{11}
+\]
+
+\[
+(x \top y) \perp z = (x \perp z) \top (y \perp z)
+\]
+
+for all \(x, y, z\) in \(\mathbf{E}\) .
+
+Note that (10) and (11) are equivalent if the law \(\perp\) is commutative. In general, one of the laws is written additively and the other multiplicatively; if multiplication is distributive with respect to addition, then:
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+x. (y + z) = x. y + x. z\tag{13}
+\]
+
+\[
+(x + y). z = x. z + y. z
+\]
+
+Examples. (1) In the set \(\mathfrak{P}(\mathbf{E})\) of subsets of a set \(\mathbf{E}\) , each of the internal laws \(\cap\) and \(\cup\) is distributive with respect to itself and the other. This follows from formulae of the form
+
+\[
+\begin{array}{l} \mathbf {A} \cap (\mathbf {B} \cup \mathbf {C}) = (\mathbf {A} \cap \mathbf {B}) \cup (\mathbf {A} \cap \mathbf {C}) \\ \mathbf {A} \cup (\mathbf {B} \cap \mathbf {C}) = (\mathbf {A} \cup \mathbf {B}) \cap (\mathbf {A} \cup \mathbf {C}). \end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  In Z (and more generally, in any totally ordered set) each of laws sup and inf is distributive with respect to the other and with respect to itself.
+\item
+  In \(\mathbf{Z}\) (*and more generally in any ring*) multiplication is distributive with respect to addition.
+\item
+  In N addition and multiplication are distributive with respect to the laws sup and inf.
+\end{enumerate}
+
+\section{GROUPS AND GROUPS WITH OPERATORS}
+
+\subsection{GROUPS}
+
+Recall the following definition (§ 2, no. 3, Definition 6).
+
+DEFINITION 1. A set with an associative law of composition, possessing an identity element and under which every element is invertible, is called a group.
+
+In other words, a group is a monoid (§ 2, no. 1, Definition 1) in which every element is invertible. A law of composition on a set which determines a group structure on it is called a group law. If G and H are two groups, a magma homomorphism of G into H is also called a group homomorphism. Such a homomorphism f maps identity element to identity element; for, let e (resp. e') be the identity element of G (resp. H); writing the group laws of G and H multiplicatively, e.e = e, whence \(f(e).f(e) = f(e)\) and, multiplying by \(f(e)^{-1}, f(e) = e'\) . Hence f is unital. It then follows from no. 3 of § 2 that \(f(x^{-1}) = f(x)^{-1}\) for all \(x \in G\) .
+
+Example. In any monoid E the set of invertible elements with the structure induced by that on E is a group. In particular, the set of bijective mappings of a set F onto itself (or set of permutations of F) is a group under the law \((f, g) \mapsto f \circ g\) , called the symmetric group of the set F and denoted by \(S_{F}\) .
+
+In this paragraph, unless otherwise indicated, the law of composition of a group will always be written multiplicatively and e will denote the identity element of such a group law.
+
+A group G is called finite if the underlying set of G is finite; otherwise it is called infinite; the cardinal of a group is called the order of the group.
+
+If a law of composition on G determines a group structure on G, so does the opposite law. The mapping of a group G onto itself which associates with each \(x \in G\) the inverse of x is an isomorphism of G onto the opposite group ( \(\S 2\) , no. 3, Proposition 4).
+
+Following our general conventions (Set Theory, II, § 3, no. 1), we shall denote by \(\mathbf{A}^{-1}\) the image of a subset A of G under the mapping \(x \mapsto x^{-1}\) . But it is important to note that, in spite of the analogy of notation, \(\mathbf{A}^{-1}\) is definitely not the inverse element of A under the law of composition \((\mathbf{X}, \mathbf{Y}) \mapsto \mathbf{XY}\) between subsets of G (recall that XY is the set of xy with \(x \in \mathbf{X}, y \in \mathbf{Y}\) ): the identity element under this law is \(\{e\}\) and the only invertible elements of \(\mathfrak{P}(\mathbf{G})\) under this law are the sets A consisting of a single element (such an A, moreover, certainly has inverse \(\mathbf{A}^{-1}\) ). The identity \((\mathbf{AB})^{-1} = \mathbf{B}^{-1}\mathbf{A}^{-1}\) holds for \(\mathbf{A} \subset \mathbf{G}, \mathbf{B} \subset \mathbf{G}\) . A is called a symmetric subset of \(\mathbf{G}\) if \(\mathbf{A} = \mathbf{A}^{-1}\) . For all \(\mathbf{A} \subset \mathbf{G}, \mathbf{A} \cup \mathbf{A}^{-1}, \mathbf{A} \cap \mathbf{A}^{-1}\) and \(\mathbf{AA}^{-1}\) are symmetric.
+
+\subsection{GROUPS WITH OPERATORS}
+
+DEFINITION 2. Let \(\Omega\) be a set. A group G together with an action of \(\Omega\) on G which is distributive with respect to the group law, is called a group with operators in \(\Omega\) .
+
+In what follows \(x^{\alpha}\) will denote the composition of \(\alpha\in\Omega\) and \(x\in G\) . Distributivity is then expressed by the identity \((xy)^{\alpha}=x^{\alpha}y^{\alpha}\) .
+
+In a group with operators G, each operator defines an endomorphism of the underlying group structure; these endomorphisms will sometimes be called the homotheties of the group with operators G.
+
+A group with operators G is called commutative (or Abelian) if its group law is commutative.
+
+In what follows a group G will be identified with the group with operators in \(\varnothing\) obtained by giving G the unique action of \(\varnothing\) on G. This allows us to consider groups as special cases of groups with operators and to apply to them the definitions and results relating to the latter which we shall state.
+
+Example. In a commutative group G, written multiplicatively, \((xy)^{n} = x^{n}y^{n}\) for all \(n \in Z\) (§2, no. 8, equation (1)); the action \(n \mapsto (x \mapsto x^{n})\) of Z on G therefore defines, together with the group law, the structure of a group with operators on G.
+
+DEFINITION 3. Let G and G' be groups with operators in Ω. A homomorphism of groups with operators of G into G' is a homomorphism of the group G into the group G' such that
+
+\[
+f (x ^ {\alpha}) = (f (x)) ^ {\alpha}
+\]
+
+for all \(\alpha \in \Omega\) and all \(x \in G\) .
+
+An endomorphism of the group with operators G is an endomorphism of the group G which is permutable with all the homotheties of G.
+
+As two homotheties of a group with operators G are not necessarily permutable, a homothety of G is not in general an endomorphism of the group with operators G.
+
+The identity mapping of a group with operators is a homomorphism of groups with operators; the composition of two homomorphisms of groups with operators is also one. For a mapping to be an isomorphism of groups with operators, it is necessary and sufficient that it be a bijective homomorphism of groups with operators and the inverse mapping is then an isomorphism of groups with operators.
+
+More generally, let G (resp. G') be a group with operators in Ω (resp. Ω'). Let φ be a mapping of Ω into Ω'. A φ-homomorphism of G into G' is a homomorphism of the group G into the group G' such that
+
+\[
+f (x ^ {\alpha}) = (f (x)) ^ {\phi (\alpha)}
+\]
+
+for all \(\alpha \in \Omega\) and all \(x \in G\) .
+
+In the rest of this paragraph we shall be given a set \(\Omega\) . Unless otherwise mentioned the groups with operators considered will admit \(\Omega\) as set of operators.
+
+\subsection{SUBGROUPS}
+
+DEFINITION 4. Let G be a group with operators. A stable subgroup of G is a subset H of G with the following properties:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(e\in \mathbf{H};\)
+\item
+  \(x, y \in \mathbf{H}\) implies \(xy \in \mathbf{H}\) ;
+\item
+  \(x \in \mathbf{H}\) implies \(x^{-1} \in \mathbf{H}\) ;
+\item
+  \(x \in \mathbf{H}\) and \(\alpha \in \Omega\) imply \(x^{\alpha} \in \mathbf{H}\) .
+\end{enumerate}
+
+If H is a stable subgroup of G, the structure induced on H by the structure of a group with operators on G is the structure of a group with operators and the canonical injection of H into G is a homomorphism of groups with operators.
+
+Let G be a group. A stable subgroup of G with the action of \(\varnothing\) (no. 2), which is a subset of G satisfying conditions (i), (ii), (iii) of Definition 4, is called a subgroup of G. When we speak of a subgroup of a group of operators we shall always mean a subgroup of the underlying group of G. A subgroup of a group with operators G is not necessarily a stable subgroup of G.
+
+Example (1). Let \(\Sigma\) be a species of structure (Set Theory, IV, § 1, no. 4) and S a structure of species \(\Sigma\) on a set E (loc. cit.). The set of automorphisms of S is a subgroup of \(\mathfrak{S}_{\mathbb{E}}\) .
+
+PROPOSITION 1. Let G be a group with operators and H a subset of G which is stable under the homotheties of G. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  H is a stable subgroup of G.
+\item
+  H is non-empty and the relations \(x \in \mathbf{H}, y \in \mathbf{H}\) imply \(xy \in \mathbf{H}\) and \(x^{-1} \in \mathbf{H}\) .
+\item
+  H is non-empty and the relations \(x \in \mathbf{H}\) , \(y \in \mathbf{H}\) imply \(xy^{-1} \in \mathbf{H}\) .
+\item
+  H is stable under the law on G and the law of composition induced on H by the law of composition on G is a group law.
+\end{enumerate}
+
+Clearly (a) implies (b). We show that (b) implies (a). It suffices to show that H contains the identity element of G. As the subset H is non-empty, let \(x \in H\) . Then \(x^{-1} \in H\) and \(e = xx^{-1} \in H\) . Clearly (b) implies (c). We show that (c) implies (b). First of all since H is non-empty it contains an element x. Hence \(xx^{-1} = e\) is an element of H. For every element \(x\) of H, \(x^{-1} = ex^{-1}\) belongs to H; hence the relations \(x \in H\) , \(y \in H\) imply \(x(y^{-1})^{-1} = xy \in H\) . Clearly (a) implies (d). We show that (d) implies (a): the canonical injection of H into G is a group homomorphism; hence \(e \in H\) and the relation \(x \in H\) implies \(x^{-1} \in H\) (no. 1).
+
+Remarks. (1) Similarly it can be shown that condition (b) is equivalent to the condition
+
+(c') H ≠ ∅ and the relations \(x \in H\) and \(y \in H\) imply \(y^{-1}x \in H\) .
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  For every subgroup H of G there are the following relations
+\end{enumerate}
+
+\[
+\mathrm{H.H} = \mathrm{H} \quad \text { and } \quad \mathrm{H} ^ {- 1} = \mathrm{H}.\tag{1}
+\]
+
+For H.H ⊂ H and H \(^{-1}\) ⊂ H by (b). As e \ensuremath{\in} H, H.H ⊃ e.H = H and taking inverses transforms the inclusion H \(^{-1}\) ⊂ H into H ⊂ H \(^{-1}\) , whence formulae (1).
+
+If H is a stable subgroup of G and K is a stable subgroup of H, clearly K is a stable subgroup of G.
+
+The set \(\{e\}\) is the smallest stable subgroup of G. The intersection of a family of stable subgroups of G is a stable subgroup. There is therefore a smallest stable subgroup H of G containing a given subset X of G; it is called the stable subgroup generated by X and X is called a generating system (or generating set) of H.
+
+PROPOSITION 2. Let X be a non-empty subset of a group with operators G and \(\hat{X}\) the stable subset under the action of \(\Omega\) on G generated by X. The stable subgroup generated by X is the stable subset under the law on G generated by the set Y = \(\hat{X} \cup \hat{X}^{-1}\) .
+
+The latter subset Z is the set of compositions of finite sequences all of whose terms are elements of \(\hat{X}\) or inverse of elements of \(\hat{X}\) : the inverse of such a composition is a composition of the same form (§ 2, no. 3, Corollary 1 to Proposition 5) and Z is stable under the action of \(\Omega\) , as is seen by applying § 3, no. 4, Proposition 1 to the homotheties of G, hence (Proposition 1) Z is a stable subgroup of G. Conversely, every stable subgroup containing X obviously contains Y and hence Z.
+
+COROLLARY 1. Let G be a group with operators and X a subset of G which is stable under the action of Ω. The subgroup generated by X and the stable subgroup generated by X coincide.
+
+COROLLARY 2. Let G be a group and X a subset of G consisting of pairwise permutable elements. The subgroup of G generated by X is commutative.
+
+The set \(Y = X \cup X^{-1}\) consists of pairwise permutable elements (§2, no. 3, Proposition 5) and the law induced on the stable subset generated by Y is commutative (§1, no. 5, Corollary 2).
+
+If G is a group with operators, the stable subgroup generated by a subset of G consisting of pairwise permutable elements is not necessarily commutative.
+
+COROLLARY 3. Let \(f: \mathbf{G} \to \mathbf{G}'\) be a homomorphism of groups with operators and \(\mathbf{X}\) a subset of \(\mathbf{G}\) . The image under \(f\) of the stable subgroup of \(\mathbf{G}\) generated by \(\mathbf{X}\) is the stable subgroup of \(\mathbf{G}'\) generated by \(f(\mathbf{X})\) .
+
+Let \(\mathbf{X}' = f(\mathbf{X})\) . Then \(\hat{\mathbf{X}}' = f(\hat{\mathbf{X}})\) and \(\mathbf{X}^{\prime -1} = f(\mathbf{X}^{-1})\) . Hence
+
+\[
+f (\hat {\mathbf {X}} \cup \hat {\mathbf {X}} ^ {- 1}) = \hat {\mathbf {X}} ^ {\prime} \cup \hat {\mathbf {X}} ^ {- 1}.
+\]
+
+The corollary then follows from § 1, no. 4, Proposition 1.
+
+Example (2). Let G be a group and x an element of G. The subgroup generated by \(\{x\}\) (called more simply the subgroup generated by x) is the set of \(x^{n}, n \in Z\) . The stable subset (under the law on G) generated by \(\{x\}\) is the set of \(x^{n}\) where \(n \in N^{*}\) . These two sets are in general distinct.
+
+Thus, in the additive group \(\mathbf{Z}\) , the subgroup generated by an element \(x\) is the set \(x.\mathbf{Z}\) of \(xn\) , \(n \in \mathbf{Z}\) , and the stable subset generated by \(x\) is the set of \(xn\) , \(n \in \mathbf{N}^*\) . These two sets are always distinct if \(x \neq 0\) .
+
+The union of a right directed family of stable subgroups of G is obviously a stable subgroup. It follows that, if P is a subset of G and H a stable subgroup of G not meeting P, the set of stable subgroups of G containing H and not meeting P, ordered by inclusion, is inductive (Set Theory, III, § 2, no. 4). Applying Zorn's Lemma (Set Theory, III, § 2, no. 4), we obtain the following result:
+
+PROPOSITION 3. Let G be a group with operators, P a subset of G and H a stable subgroup G not meeting P. The set of stable subgroups of G containing H and not meeting P has a maximal element.
+
+\subsection{QUOTIENT GROUPS}
+
+THEOREM 1. Let R be an equivalence relation on a group with operators G; if R is left (resp. right) compatible (§ 3, no. 3) with the group law on G and compatible with the action of Ω, the equivalence class of e is a stable subgroup H of G and the relation R is equivalent to \(x^{-1}y \in H\) (resp. \(yx^{-1} \in H\) ). Conversely, if H is a stable subgroup of G, the relation \(x^{-1}y \in H\) (resp. \(yx^{-1} \in H\) ) is an equivalence relation which is left (resp. right) compatible with the group law on G and compatible with the action of Ω and under which H is the equivalence class of e.
+
+We restrict our attention to the case where the relation R is left compatible with the law on G (the case of a right compatible relation follows by replacing the law on G by the opposite law). The relation \(y \equiv x \pmod{R}\) is equivalent to \(x^{-1}y \equiv e \pmod{R}\) , for \(y \equiv x\) implies \(x^{-1}y \equiv x^{-1}x = e\) and conversely \(x^{-1}y \equiv e\) implies \(y = x(x^{-1}y) \equiv x\) . If H denotes the equivalence class of e, the relation R is then equivalent to \(x^{-1}y \in H\) . We show that H is a stable subgroup of G. For every operator \(\alpha\) , the relation \(x \equiv e\) implies \(x^{\alpha} \equiv e^{\alpha} = e\) , hence \(H^{\alpha} \subset H\) and H is stable under the action of \(\Omega\) . It suffices to establish (Proposition 1) that \(x \in H\) and \(y \in H\) imply \(x^{-1}y \in H\) , that is \(x \equiv e\) and \(y \equiv e\) imply \(x \equiv y\) , which is a consequence of the transitivity of R.
+
+Conversely, let H be a stable subgroup of G; the relation \(x^{-1}y \in H\) is reflexive since \(x^{-1}x = e \in H\) ; it is symmetric since \(x^{-1}y \in H\) implies \(y^{-1}x = (x^{-1}y)^{-1} \in H\) ; it is transitive, for \(x^{-1}y \in H\) and \(y^{-1}z \in H\) imply \(x^{-1}z = (x^{-1}y)(y^{-1}z) \in H\) ; it is left compatible with the law of composition on G, for \(x^{-1}y = (zx)^{-1}(zy)\) for all \(z \in G\) ; finally, for every operator \(\alpha\) , the relation \(y \in xH\) implies \(y^{\alpha} \in x^{\alpha}H^{\alpha} \subset x^{\alpha}H\) and hence the equivalence relation \(x^{-1}y \in H\) is compatible with the action of \(\Omega\) on G.
+
+Let G be a group and H a subgroup of G; the relation \(x^{-1}y \in H\) (resp. \(yx^{-1} \in H\) ) is also written in the equivalent form \(y \in xH\) (resp. \(y \in Hx\) ). Every subgroup H of G thus defines two equivalent relations on G, namely \(y \in xH\) and \(y \in Hx\) : the equivalent classes under these relations are respectively the sets xH, which are called left cosets of H (or modulo H), and the sets Hx, which are called right cosets of H (or modulo H). By saturating a subset A ⊂ G with respect to these relations (Set Theory, II, §6, no. 4), we obtain respectively the sets AH and HA. The mapping \(x \mapsto x^{-1}\) transforms left cosets modulo H into right cosets modulo H and conversely.
+
+The cardinal of the set of left cosets (mod. H) is called the index of the subgroup H with respect to G and is denoted by (G:H); it is also equal to the cardinal of the set of right cosets.
+
+If a subgroup K of G contains H, it is a union of left (or right) cosets of H. Since a left coset of K is obtained from K by left translation, the set of left cosets of H contained in a left coset of K has cardinal independent of the latter. Hence (Set Theory, III, § 5, no. 8, Proposition 9):
+
+PROPOSITION 4. Let H and K be two subgroups of a group G such that H ⊂ K. Then
+
+\[
+(\mathbf {G}: \mathbf {H}) = (\mathbf {G}: \mathbf {K}) (\mathbf {K}: \mathbf {H}).\tag{2}
+\]
+
+COROLLARY. If G is a finite group of order g and H is a subgroup of G of order h, then
+
+\[
+h. (\mathbf {G}: \mathbf {H}) = g\tag{3}
+\]
+
+(in particular, the order and index of H are divisors of the order of G).
+
+Theorem 1 allows us to determine the equivalence relations compatible with the laws on a group with operators G: if R is such a relation, it is both left and right compatible with the group law on G and with the action of \(\Omega\) . Hence, if H is the class of e (mod. R), H is a stable subgroup such that the relations \(y \in xH\) and \(y \in Hx\) are equivalent (since both are equivalent to R); hence \(xH = Hx\) for all \(x \in G\) . Conversely, if this is so, one or other of the equivalent relations \(y \in xH\) , \(y \in Hx\) is compatible with the group law, since it is both left and right compatible with this law (§ 3, no. 4) and is compatible with the action of \(\Omega\) . Since the equation \(xH = Hx\) is equivalent to \(xHx^{-1} = H\) , we make the following definition:
+
+DEFINITION 5. Let G be a group with operators. A stable subgroup H of G is called a normal (or invariant) stable subgroup of G if \(xHx^{-1} = H\) for all \(x \in G\) .
+
+If \(\Omega = \varnothing\) , a normal stable subgroup of G is called a normal (or invariant) subgroup of G. In a commutative group every subgroup is normal.
+
+To verify that a stable subgroup H is normal, it suffices to show that \(xHx^{-1} \subset H\) for all \(x \in G\) ; for if so then \(x^{-1}Hx \subset H\) for all \(x \in G\) , that is \(H \subset xHx^{-1}\) , and hence \(H = xHx^{-1}\) .
+
+Let H be a normal stable subgroup of G and R the equivalence relation \(y \in xH\) defined by H; on the quotient set G/R, the internal law, the quotient by R of the law of the group G, is associative; the class of e is the identity element of this quotient law; the classes of two inverse elements in G are inverses under the quotient law and the action of \(\Omega\) , the quotient by R of the action of \(\Omega\) on G, is distributive with respect to the internal law on G/R ( \(\S 3\) , no. 5). Hence, summarizing the results obtained:
+
+THEOREM 2. Let G be a group with operators. For an equivalence relation R on G to be compatible with the group law and the action of \(\Omega\) , it is necessary and sufficient that it be of the form \(x^{-1}y \in H\) , where H is a normal stable subgroup of G (the relation \(x^{-1}y \in H\) being moreover equivalent to \(yx^{-1} \in H\) for such a subgroup). The law of composition on G/R the quotient of that on G and the action of \(\Omega\) on G/R the quotient of that of \(\Omega\) on G by such a relation R give G/R the structure of a group with operators, called the quotient structure, and the canonical mapping of the passage to the quotient is a homomorphism of groups with operators.
+
+DEFINITION 6. The quotient of a group with operators G by the equivalence relation defined by a normal subgroup H of G, with the quotient structure, is called the quotient group with operators of G by H and is denoted by G/H. The canonical mapping G → G/H is called a canonical homomorphism
+
+Let G be a group and H a normal subgroup of G. The quotient G/H, with its group structure, is called the quotient group of G by H. For a mapping from G/H to a group with operators to be a homomorphism of groups with operators, it is necessary and sufficient that its composition with the canonical mapping of G onto G/H be one: this justifies the name ``quotient group'' (Set Theory, IV, § 2, no. 6).
+
+The equivalence relation defined by a normal stable subgroup of G is denoted by \(x \equiv y \pmod{H}\) or \(x \equiv y(H)\) .
+
+PROPOSITION 5. Let \(f: G \to G'\) be a homomorphism of groups with operators and H and H' normal stable subgroups of G and G' respectively such that \(f(H) \subset H'\) . The mapping \(f\) is compatible with the equivalence relations defined by H and H'. Let \(\pi: G \to G/H\) and \(\pi': G' \to G'/H'\) be the canonical homomorphisms. The mapping \(\bar{f}: G/H \to G'/H'\) derived from \(f\) by passing to the quotients is a homomorphism.
+
+If \(x \equiv y \pmod{H}\) , then \(x^{-1}y \in H\) , whence
+
+\[
+f (x) ^ {- 1} f (y) = f \left(x ^ {- 1}\right) f (y) = f \left(x ^ {- 1} y\right) \in f (\mathrm{H}) \subset \mathrm{H} ^ {\prime}
+\]
+
+and hence \(f(x) \equiv f(y) \pmod{H'}\) . The second assertion follows from the universal property of quotient laws (§ 1, no. 6).
+
+Remarks. (1) If A is any subset of a group G and H is a normal subgroup of G, then AH = HA; this set is obtained by saturating A with respect to the relation \(x \equiv y \pmod{H}\) .
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  If H is a normal subgroup of G of finite index, the quotient group G/H is a finite group of order (G:H).
+\end{enumerate}
+
+Note that if H is a normal subgroup of a group G and K is a normal subgroup of H, K is not necessarily a normal subgroup of G (I, § 5, Exercise 10).
+
+Let G be a group with operators. The intersection of every family of normal stable subgroups of G is a normal stable subgroup. Hence, for every subset X of G, there exists a smallest normal stable subgroup containing X, called the normal stable subgroup generated by X.
+
+In a group with operators G, the stable subgroups G and \(\{e\}\) are normal.
+
+DEFINITION 7. A group with operators G is called simple if \(G \neq \{e\}\) and there exists no normal stable subgroup of G other than G and \(\{e\}\) .
+
+\subsection{DECOMPOSITION OF A HOMOMORPHISM}
+
+PROPOSITION 6. Let G be a group with operators and G' a magma with an action by Ω, written exponentially. Let f: G → G' be a homomorphism of the magna G into the magma G' such that, for all α \ensuremath{\in} Ω and all x \ensuremath{\in} G, \(f(x^{\alpha}) = f(x)^{\alpha}\) . Then \(f(\mathbf{G})\) is a stable subset of G' under the law on G' and the action of Ω; the set \(f(\mathbf{G})\) with the induced laws is a group with operators and the mapping \(x \mapsto f(x)\) of G into \(f(\mathbf{G})\) is a homomorphism of groups with operators.
+
+By virtue of § 1, no. 4, Proposition 1, \(f(\mathbf{G})\) is a stable subset of \(\mathbf{G}'\) under the internal law on \(\mathbf{G}'\) . For every element \(x \in \mathbf{G}\) and for every operator \(\alpha\) , \(f(x)^{\alpha} = f(x^{\alpha}) \in f(\mathbf{G})\) and therefore \(f(\mathbf{G})\) is stable under the action of \(\Omega\) on \(\mathbf{G}'\) . Writing the internal law of \(\mathbf{G}'\) multiplicatively,
+
+\[
+\begin{array}{r l} (f (x) f (y)) f (z) & = f (x y) f (z) = f ((x y) z) = f (x (y z)) = f (x) f (y z) \\ & \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad = f (x) (f (y) f (z)) \end{array}
+\]
+
+for all elements \(x, y, z\) in \(\mathbf{G}\) ; therefore the induced law on \(f(\mathbf{G})\) is associative.
+
+Let \(e\) be the identity element of \(G\) . Its image \(f(e)\) is an identity element of \(f(G)\) (§ 2, no. 1). Every element of \(f(G)\) is invertible in \(f(G)\) (§ 2, no. 3). Therefore the law induced on \(f(G)\) by the internal law on \(G'\) is a group law. For all elements \(x\) and \(y\) in \(G\) and every operator \(\alpha\) ,
+
+\[
+(f (x) f (y)) ^ {\alpha} = (f (x y)) ^ {\alpha} = f ((x y) ^ {\alpha}) = f \left(x ^ {\alpha} y ^ {\alpha}\right) = f \left(x ^ {\alpha}\right) f \left(y ^ {\alpha}\right) = (f (x)) ^ {\alpha} (f (y)) ^ {\alpha}
+\]
+
+which shows that the action of \(\Omega\) is distributive with respect to the group law on \(f(\mathrm{G})\) . Therefore \(f(\mathrm{G})\) with the induced laws is a group with operators and clearly the mapping \(x \mapsto f(x)\) is a homomorphism of groups with operators.
+
+DEFINITION 8. Let \(f: \mathbf{G} \to \mathbf{G}'\) be a homomorphism of groups with operators. The inverse image of the identity element of \(\mathbf{G}'\) is called the kernel of \(f\) .
+
+The kernel of \(f\) is often denoted by \(\operatorname{Ker}(f)\) and the image \(f(\mathbf{G})\) of \(f\) is sometimes denoted by \(\operatorname{Im}(f)\) .
+
+THEOREM 3. Let \(f: \mathbf{G} \to \mathbf{G}'\) be a homomorphism of groups with operators.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  \(\operatorname{Ker}(f)\) is a normal stable subgroup of \(\mathbf{G}\) ;
+\item
+  \(\operatorname{Im}(f)\) is a stable subgroup of \(\mathbf{G}'\) ;
+\item
+  the mapping \(f\) is compatible with the equivalence relation defined on \(\mathbf{G}\) by \(\operatorname{Ker}(f)\)
+\item
+  the mapping \(\tilde{f}\colon \mathbf{G} / \mathbf{Ker}(f)\to \operatorname {Im}(f)\) derived from \(f\) by passing to the quotient is an isomorphism of groups with operators;
+\item
+  \(f = \iota \circ \tilde{f} \circ \pi\) , where \(\iota\) is the canonical injection of \(\operatorname{Im}(f)\) into \(G'\) and \(\pi\) is the canonical homomorphism of \(G\) onto \(G / \operatorname{Ker}(f)\) .
+\end{enumerate}
+
+Assertion (b) follows from Proposition 6. The equivalence relation \(f(x) = f(y)\) on \(G\) is compatible with the group with operators structure on \(G\) . By Theorem 2 (no. 4), it is therefore of the form \(y \in xH\) , where \(H\) is a normal stable subgroup of \(G\) and \(H\) is the class of the identity element, whence \(H = \operatorname{Ker}(f)\) . Assertions (a), (c) and (d) then follow. Assertion (e) is obvious (Set Theory, II, § 6, no. 5).
+
+\subsection{SUBGROUPS OF A QUOTIENT GROUP}
+
+PROPOSITION 7. Let G and H be two groups with operators, f a homomorphism of G into H and N the kernel of f.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Let \(\mathbf{H}'\) be a stable subgroup of \(\mathbf{H}\) . The inverse image \(\mathbf{G}' = f^{-1}(\mathbf{H}')\) is a stable subgroup of \(\mathbf{G}\) and \(\mathbf{G}'\) is normal in \(\mathbf{G}\) if \(\mathbf{H}'\) is normal in \(\mathbf{H}\) . Further, \(\mathbf{N}\) is a normal subgroup of \(\mathbf{G}'\) . If \(f\) is surjective, then \(\mathbf{H}' = f(\mathbf{G}')\) and \(f\) defines an isomorphism of \(\mathbf{G}' / \mathbf{N}\) onto \(\mathbf{H}'\) on passing to the quotient.
+\item
+  Let \(\mathbf{G}'\) be a stable subgroup of \(\mathbf{G}\) . The image \(\mathbf{H}' = f(\mathbf{G}')\) is a stable subgroup of \(\mathbf{H}\) and \(f^{-1}(\mathbf{H}') = \mathbf{G}'\mathbf{N} = \mathbf{NG}'\) . In particular, \(f^{-1}(\mathbf{H}') = \mathbf{G}'\) if and only if \(\mathbf{N} \subset \mathbf{G}'\) . If \(f\) is surjective and \(\mathbf{G}'\) is normal in \(\mathbf{G}\) , then \(\mathbf{H}'\) is normal in \(\mathbf{H}\) .
+\item
+  Let \(x\) and \(y\) be in \(G'\) and \(\alpha \in \Omega\) ; then \(f(x) \in H'\) and \(f(y) \in H'\) , whence \(f(xy^{-1}) = f(x)f(y)^{-1} \in \mathbf{H}'\) , that is \(xy^{-1} \in \mathbf{G}'\) ; hence \(\mathbf{G}'\) is a subgroup of \(\mathbf{G}\) . Now \(f(x^{\alpha}) = f(x)^{\alpha} \in \mathbf{H}'\) , whence \(x^{\alpha} \in \mathbf{G}'\) and therefore \(\mathbf{G}'\) is stable. Suppose \(\mathbf{H}'\) is normal in \(\mathbf{H}\) and let \(x \in \mathbf{G}'\) , \(y \in \mathbf{G}\) ; then \(f(x) \in \mathbf{H}'\) and
+\end{enumerate}
+
+\[
+f (y x y ^ {- 1}) = f (y) f (x) f (y) ^ {- 1} \in \mathrm{H} ^ {\prime}
+\]
+
+whence \(yxy^{-1} \in G'\) ; hence \(G'\) is normal in \(G\) . For all \(n \in N\) , \(f(n) = e \in H'\) , whence \(N \subset G'\) ; as \(N\) is normal in \(G\) , it is normal in \(G'\) . Finally, if \(f\) is surjective, \(f(f^{-1}(A)) = A\) for every subset \(A\) of \(H\) , whence \(H' = f(G')\) ; the restriction of \(f\) to \(G'\) is a homomorphism \(f'\) of \(G'\) onto \(H'\) of kernel \(N\) , hence \(f'\) defines on passing to the quotient an isomorphism of \(G'/N\) onto \(H'\) .
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(a\) and \(b\) be in \(\mathbf{H}'\) and \(\alpha\) in \(\Omega\) ; there exist \(x, y\) in \(\mathbf{G}'\) with \(a = f(x)\) and \(b = f(y)\) , whence \(ab^{-1} = f(xy^{-1}) \in \mathbf{H}'\) , hence \(\mathbf{H}'\) is a subgroup of \(\mathbf{H}\) which is stable, for \(a^{\alpha} = f(x^{\alpha}) \in \mathbf{H}'\) . Let \(x \in \mathbf{G}\) ; then \(x \in f^{-1}(\mathbf{H}')\) if and only if \(f(x) \in \mathbf{H}' = f(\mathbf{G}')\) , that is if and only if there exists \(y\) in \(\mathbf{G}'\) with \(f(x) = f(y)\) ; the relation \(f(x) = f(y)\) is equivalent to the existence of \(n \in \mathbf{N}\) with \(x = yn\) ; finally, \(x \in f^{-1}(\mathbf{H}')\) is equivalent to \(x \in \mathbf{G}'\mathbf{N} = \mathbf{NG}'\) . Clearly the relation \(\mathbf{G}' = \mathbf{G}'\mathbf{N}\) is equivalent to \(\mathbf{G}' \supset \mathbf{N}\) . Suppose finally that \(f\) is surjective and \(\mathbf{G}'\) is normal in \(\mathbf{G}\) ; let \(a \in \mathbf{H}'\) and \(b \in \mathbf{H}\) ; there exist \(x \in \mathbf{G}'\) and \(y \in \mathbf{G}\) with \(a = f(x)\) and \(b = f(y)\) , whence \(bab^{-1} = f(yxy^{-1}) \in f(\mathbf{G}') = \mathbf{H}'\) . Hence \(\mathbf{H}'\) is normal in \(\mathbf{H}\) .
+\end{enumerate}
+
+COROLLARY 1. Suppose that \(f\) is surjective. Let \(\mathfrak{G}\) (resp. \(\mathfrak{G}'\) ) be the set of stable (resp. normal stable) subgroups of \(\mathbf{G}\) containing \(\mathbf{N}\) and \(\mathfrak{H}\) (resp. \(\mathfrak{H}'\) ) the set of stable (resp. normal stable) subgroups of \(\mathbf{H}\) , these sets being ordered by inclusion. The mapping \(\mathbf{G}' \mapsto f(\mathbf{G}')\) is an ordered set isomorphism \(\Phi: \mathfrak{G} \to \mathfrak{H}\) ; the inverse isomorphism \(\Psi: \mathfrak{H} \to \mathfrak{G}\) is the mapping \(\mathbf{H}' \mapsto f^{-1}(\mathbf{H}')\) . Further \(\Phi\) and \(\Psi\) induce isomorphisms \(\Phi': \mathfrak{G}' \to \mathfrak{H}'\) and \(\Psi': \mathfrak{H}' \to \mathfrak{G}'\) .
+
+COROLLARY 2. Let \(f: G \to H\) be a homomorphism of groups with operators, N the kernel of \(f\) , \(G'\) a stable subgroup of G and L a normal stable subgroup of \(G'\) . Then LN, L. ( \(G' \cap N\) ) and \(f(L)\) are normal stable subgroups of \(G'N\) , \(G'\) and \(f(G')\) respectively and the three quotient groups with operators \(G'N/LN\) , \(G'/L\) . ( \(G' \cap N\) ) and \(f(G')/f(L)\) are isomorphic.
+
+Let \(H' = f(G')\) and \(f'\) denote the homomorphism of \(G'\) onto \(H'\) which coincides with \(f\) on \(G'\) ; the kernel of \(f'\) is \(G' \cap N\) and \(f'(L) = f(L)\) ; by Proposition 7, \(f'(L)\) is a normal stable subgroup of \(H'\) and
+
+\[
+f ^ {\prime - 1} (f ^ {\prime} (\mathbf {L})) = \mathbf {L}. (\mathbf {G} ^ {\prime} \cap \mathbf {N})
+\]
+
+is a normal stable subgroup of \(\mathbf{G}'\) . Let \(\lambda\) be the canonical homomorphism of \(\mathbf{H}'\) onto \(\mathbf{H}' / f'(\mathbf{L}) = f(\mathbf{G}') / f(\mathbf{L})\) : as \(\lambda \circ f'\) is surjective with kernel
+
+\[
+f ^ {\prime - 1} (f ^ {\prime} (\mathbf {L})) = \mathbf {L}. (\mathbf {G} ^ {\prime} \cap \mathbf {N}),
+\]
+
+it defines an isomorphism of \(\mathbf{G}' / \mathbf{L}\) . ( \(\mathbf{G}' \cap \mathbf{N}\) ) onto \(f(\mathbf{G}') / f(\mathbf{L})\) . By Proposition 7, (b), \(f^{-1}(\mathbf{H}') = \mathbf{G}'\mathbf{N}\) ; if \(f''\) is the homomorphism of \(\mathbf{G}'\mathbf{N}\) onto \(\mathbf{H}'\) which coincides with \(f\) on \(\mathbf{G}'\mathbf{N}\) , the homomorphism \(\lambda \circ f''\) of \(\mathbf{G}'\mathbf{N}\) onto \(f(\mathbf{G}') / f(\mathbf{L})\) is surjective with kernel \(f^{-1}(f(\mathbf{L})) = \mathbf{L}\mathbf{N}\) ; this proves that \(\mathbf{L}\mathbf{N}\) is a normal stable subgroup of \(\mathbf{G}'\mathbf{N}\) and that \(\lambda \circ f''\) defines an isomorphism of \(\mathbf{G}'\mathbf{N} / \mathbf{L}\mathbf{N}\) onto \(f(\mathbf{G}') / f(\mathbf{L})\) .
+
+COROLLARY 3. Let \(f: \mathbf{G} \to \mathbf{H}\) be a homomorphism of groups with operators, N its kernel, X a subset of G such that \(f(\mathbf{X})\) generates H and Y a subset of N which generates N. Then \(\mathbf{X} \cup \mathbf{Y}\) generates N.
+
+Let \(G'\) be the stable subgroup of G generated by \(X \cup Y\) . As \(Y \subset G', N \subset G'\) . As \(f(X) \subset f(G'), f(G') = H\) , whence \(G' = f^{-1}(H) = G\) .
+
+Remark. In the notation of Proposition 7, the fact that the inverse image of a subgroup of H is a subgroup of G follows from the following more general fact.
+
+If \(\mathbf{A}\) and \(\mathbf{B}\) are subsets of \(\mathbf{H}\) and \(f\) is surjective, then
+
+\[
+f^{-1} (\mathbf {A}. \mathbf {B}) = f^{-1} (\mathbf {A}). f^{-1} (\mathbf {B}), \quad f^{-1} (\mathbf {A} ^ {- 1}) = f^{-1} (\mathbf {A}) ^ {- 1}.
+\]
+
+Obviously \(f^{-1}(\mathbf{A})\) . \(f^{-1}(\mathbf{B}) \subset f^{-1}(\mathbf{A}.\mathbf{B})\) ; on the other hand, if \(z \in f^{-1}(\mathbf{A}.\mathbf{B})\) , there exists \(a \in \mathbf{A}\) and \(b \in \mathbf{B}\) such that \(f(z) = ab\) ; as \(f\) is surjective, there exists \(x \in \mathbf{G}\) such that \(f(x) = a\) ; writing \(y = x^{-1}z\) , \(f(y) = a^{-1}f(z) = b\) and \(z = xy\) , whence \(z \in f^{-1}(\mathbf{A})\) . \(f^{-1}(\mathbf{B})\) . The relation \(x \in f^{-1}(\mathbf{A}^{-1})\) is equivalent to \(f(x) \in \mathbf{A}^{-1}\) , hence to \(f(x^{-1}) \in \mathbf{A}\) , that is to \(x^{-1} \in f^{-1}(\mathbf{A})\) and finally to \(x \in f^{-1}(\mathbf{A})^{-1}\) .
+
+PROPOSITION 8. Let G be a group with operators and A and B two stable subgroups of G. Suppose that the relations \(a \in \mathbf{A}\) and \(b \in \mathbf{B}\) imply \(aba^{-1} \in \mathbf{B}^*\) (in other words, A normalizes B). Then AB = BA is a stable subgroup of G, A ∩ B is a normal stable subgroup of A and B is a normal stable subgroup of AB. The canonical injection of A into AB defines on passing to the quotient an isomorphism of A/(A ∩ B) onto AB/B.
+
+The formulae
+
+\[
+\begin{array}{r l} (a b) (a ^ {\prime} b ^ {\prime}) & = a a ^ {\prime} (a ^ {\prime - 1} b a ^ {\prime}. b ^ {\prime}) \\ (a b) ^ {- 1} & = a ^ {- 1} (a b ^ {- 1} a ^ {- 1}) \\ (a b) ^ {\alpha} & = a ^ {\alpha} b ^ {\alpha} \end{array}
+\]
+
+for \(a, a' \in \mathbf{A}, b, b' \in \mathbf{B}\) and every operator \(\alpha\) on \(\mathbf{G}\) , show that AB is a stable subgroup of \(\mathbf{G}\) . Let \(a \in \mathbf{A}\) and \(x \in \mathbf{A} \cap \mathbf{B}\) ; then \(axa^{-1} \in \mathbf{B}\) by the hypotheses made on \(\mathbf{A}\) and \(\mathbf{B}\) and clearly \(axa^{-1}\) belongs to \(\mathbf{A}\) , hence \(\mathbf{A} \cap \mathbf{B}\) is normal in \(\mathbf{A}\) . Let \(a \in \mathbf{A}\) and \(b, b'\) be in \(\mathbf{B}\) ; the formula \((ab)b'(ab)^{-1} = a(bb'b^{-1})a^{-1}\) shows that \(\mathbf{B}\) is normal in AB. Let \(\phi\) be the restriction to \(\mathbf{A}\) of the canonical homomorphism of AB onto AB/B; then \(\phi(a) = a\mathbf{B}\) and hence the kernel of \(\phi\) is equal to \(\mathbf{A} \cap \mathbf{B}\) . Clearly \(\phi\) is surjective and hence defines an isomorphism of \(\mathbf{A}/(\mathbf{A} \cap \mathbf{B})\) onto AB/B.
+
+THEOREM 4. Let G be a group with operators and N a normal stable subgroup of G.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  The mapping \(\mathbf{G}' \mapsto \mathbf{G}' / \mathbf{N}\) is a bijection of the set of stable subgroups of \(\mathbf{G}\) containing \(\mathbf{N}\) onto the set of stable subgroups of \(\mathbf{G} / \mathbf{N}\) .
+\item
+  Let \(\mathbf{G}'\) be a stable subgroup of \(\mathbf{G}\) containing \(\mathbf{N}\) . For \(\mathbf{G}' / \mathbf{N}\) to be normal in \(\mathbf{G} / \mathbf{N}\) , it is necessary and sufficient that \(\mathbf{G}'\) be normal in \(\mathbf{G}\) and the groups \(\mathbf{G} / \mathbf{G}'\) and \((\mathbf{G} / \mathbf{N}) / (\mathbf{G}' / \mathbf{N})\) are then isomorphic.
+\item
+  Let \(\mathbf{G}'\) be a stable subgroup of \(\mathbf{G}\) . Then \(\mathbf{G}'\mathbf{N}\) is a stable subgroup of \(\mathbf{G}\) and \(\mathbf{N}\) is normal in \(\mathbf{G}'\mathbf{N}\) . Further \(\mathbf{G}' \cap \mathbf{N}\) is normal in \(\mathbf{G}'\) and the groups \(\mathbf{G}' / (\mathbf{G}' \cap \mathbf{N})\) and \(\mathbf{G}'\mathbf{N} / \mathbf{N}\) are isomorphic.
+\end{enumerate}
+
+Let \(f\) denote the canonical homomorphism of \(G\) onto \(G/N\) . For all \(x \in G\) , \(f(x) \in xN\) ; therefore, \(f(G') = G'/N\) for every subgroup \(G'\) of \(G\) containing \(N\) . As \(f\) is surjective, assertion (a) follows from Corollary 1 to Proposition 7; similarly for the equivalence `` \(G'\) normal'' \(\Leftrightarrow\) `` \(G'/N\) normal''. Suppose that \(G'\) is a normal stable subgroup of \(G\) containing \(N\) . By no. 4, Proposition 5 applied to \(Id_G\) , there exists a homomorphism \(u\) of \(G/N\) into \(G/G'\) defined by \(u(xN) = xG'\) for all \(x \in G\) . It is immediate that \(u\) is surjective with kernel \(G'/N\) whence the desired isomorphism of \((G/N)/(G'/N)\) onto \(G/G'\) . Finally, (c) follows immediately from Proposition 8.
+
+\subsection{THE JORDAN-HÖLDER THEOREM}
+
+DEFINITION 9. A composition series of a group with operators G is a finite sequence \((\mathbf{G}_i)_{0\leqslant i\leqslant n}\) of stable subgroups of G, with \(\mathbf{G}_0 = \mathbf{G}\) and \(\mathbf{G}_n = \{e\}\) and such that \(\mathbf{G}_{i + 1}\) is a normal subgroup of \(\mathbf{G}_i\) for \(0\leqslant i\leqslant n - 1\) . The quotients \(\mathrm{G_i / G_{i + 1}}\) are called the quotients of the series. A composition series \(\Sigma^{\prime}\) is said to be finer than a composition series \(\Sigma\) if \(\Sigma\) is a series taken from \(\Sigma^{\prime}\) .
+
+If \((\mathbf{G}_i)_{0\leqslant i\leqslant n}\) and \((\mathbf{H}_j)_{0\leqslant j\leqslant m}\) are respectively composition series of two groups with operators \(\mathbf{G}\) and \(\mathbf{H}\) , they are said to be equivalent if \(m = n\) and there exists a permutation \(\phi\) of the interval \([0,n - 1]\) of \(\mathbf{N}\) , such that the groups with operators \(\mathbf{G}_i / \mathbf{G}_{i + 1}\) and \(\mathrm{H}_{\phi (i)} / \mathrm{H}_{\phi (i) + 1}\) are isomorphic for all \(i\) .
+
+Note that in general a series taken from a composition series \((\mathbf{G}_{i})\) is not a composition series, since for \(j > i + 1\) , \(G_{j}\) is not in general a normal subgroup of \(G_{i}\) .
+
+THEOREM 5 (Schreier). Given two composition series \(\Sigma_{1}, \Sigma_{2}\) of a group with operators G, there exist two equivalent composition series \(\Sigma_{1}^{\prime}, \Sigma_{2}^{\prime}\) , finer respectively than \(\Sigma_{1}\) and \(\Sigma_{2}\) .
+
+Let \(\Sigma_{1} = (\mathrm{H}_{i})_{0\leqslant i\leqslant n}\) and \(\Sigma_{2} = (\mathrm{K}_{j})_{0\leqslant j\leqslant p}\) be the two given composition series with respectively \(n + 1\) and \(p + 1\) terms; we shall see that the composition series \(\Sigma_1^\prime\) can be formed by inserting \(p - 1\) subgroups \(\mathbf{H}_{i,j}^{\prime}\) \((1 \leqslant j \leqslant p - 1)\) between \(H_{i}\) and \(H_{i+1}\) for \(0 \leqslant i \leqslant n - 1\) and the series \(\Sigma_{2}'\) by inserting \(n - 1\) subgroups \(K_{j,i}'\) ( \(1 \leqslant i \leqslant n - 1\) ) between \(K_{j}\) and \(K_{j+1}\) for \(0 \leqslant j \leqslant p - 1\) ; thus two series of \(pn + 1\) stable subgroups of G will be obtained; by choosing suitably the inserted stable subgroups, we shall show that these series are equivalent composition series.
+
+To this end note that \(\mathbf{H}_i \cap \mathbf{K}_j\) is a stable subgroup of \(\mathbf{H}_i\) and of \(\mathbf{K}_j\) and hence (Theorem 4) \(\mathbf{H}_{i+1} \cdot (\mathbf{H}_i \cap \mathbf{K}_j)\) is a stable subgroup of \(\mathbf{H}_i\) containing \(\mathbf{H}_{i+1}\) and \(\mathbf{K}_{j+1} \cdot (\mathbf{H}_i \cap \mathbf{K}_j)\) is a stable subgroup of \(\mathbf{K}_j\) containing \(\mathbf{K}_{j+1}\) . If we write \(\mathbf{H}_{i,j}' = \mathbf{H}_{i+1} \cdot (\mathbf{H}_i \cap \mathbf{K}_j)\) and \(\mathbf{K}_{j,i}' = \mathbf{K}_{j+1} \cdot (\mathbf{H}_i \cap \mathbf{K}_j)\) , \(\mathbf{H}_{i,j+1}'\) is a stable subgroup of \(\mathbf{H}_{i,j}'\) ( \(0 \leqslant j \leqslant p-1\) ) and \(\mathbf{K}_{j,i+1}'\) is a stable subgroup of \(\mathbf{K}_{j,i}'\) ( \(0 \leqslant i \leqslant n-1\) ). Moreover \(\mathbf{H}_{i,0}' = \mathbf{H}_i\) , \(\mathbf{H}_{i,p}' = \mathbf{H}_{i+1}\) , \(\mathbf{K}_{j,0}' = \mathbf{K}_j\) and \(\mathbf{K}_{j,p}' = \mathbf{K}_{j+1}\) . To show the theorem, it suffices to show that \(\mathbf{H}_{i,j+1}'\) (resp. \(\mathbf{K}_{j,i+1}'\) ) is a normal stable subgroup of \(\mathbf{H}_{i,j}'\) (resp. \(\mathbf{K}_{j,i}'\) ) and that the quotient groups \(\mathbf{H}_{i,j}'/\mathbf{H}_{i,j+1}'\) and \(\mathbf{K}_{j,i}'/\mathbf{K}_{j,i+1}'\) are isomorphic ( \(0 \leqslant i \leqslant n-1\) , \(0 \leqslant j \leqslant p-1\) ). This follows from the following lemma by taking \(\mathbf{H} = \mathbf{H}_i\) , \(\mathbf{H}' = \mathbf{H}_{i+1}\) , \(\mathbf{K} = \mathbf{K}_j\) , \(\mathbf{K}' = \mathbf{K}_{j+1}\) .
+
+Lemma 1 (Zassenhaus). Let H and K be two stable subgroups of a group with operators G and H' and K' normal stable subgroups of H and K respectively; then H'.(H ∩ K') is a normal stable subgroup of H'.(H ∩ K), K'.(K ∩ H') is a normal stable subgroup of K'.(K ∩ H) and the quotient groups with operators (H'.(H ∩ K))/(H'.(H ∩ K')) and (K'.(K ∩ H))/(K'.(K ∩ H')) are isomorphic.
+
+By Theorem 4, \(\mathbf{H}' \cap \mathbf{K} = \mathbf{H}' \cap (\mathbf{H} \cap \mathbf{K})\) is a normal stable subgroup of \(\mathbf{H} \cap \mathbf{K}\) ; similarly \(\mathbf{K}' \cap \mathbf{H}\) is a normal stable subgroup of \(\mathbf{K} \cap \mathbf{H}\) ; hence (no. 6, Corollary 2) \((\mathbf{H}' \cap \mathbf{K})(\mathbf{K}' \cap \mathbf{H})\) is a normal stable subgroup of \(\mathbf{H} \cap \mathbf{K}\) . By Theorem 4 applied to the group \(\mathbf{H}\) ,
+
+\[
+\mathbf {H} ^ {\prime}. (\mathbf {H} ^ {\prime} \cap \mathbf {K}). (\mathbf {K} ^ {\prime} \cap \mathbf {H}) = \mathbf {H} ^ {\prime}. (\mathbf {H} \cap \mathbf {K} ^ {\prime})
+\]
+
+is a normal stable subgroup of \(\mathbf{H}'\) . (H ∩ K) and the quotient group
+
+\[
+(\mathbf {H} ^ {\prime}. (\mathbf {H} \cap \mathbf {K})) / (\mathbf {H} ^ {\prime}. (\mathbf {H} \cap \mathbf {K} ^ {\prime}))
+\]
+
+is isomorphic to
+
+\[
+(\mathbf {H} \cap \mathbf {K}) / ((\mathbf {H} ^ {\prime} \cap \mathbf {K}). (\mathbf {K} ^ {\prime} \cap \mathbf {H})).
+\]
+
+In the last quotient, H and H' on the one hand and K and K' on the other appear symmetrically; permuting them the stated result is obtained.
+
+DEFINITION 10. A Jordan-Hölder series of a group with operators G is a strictly decreasing decomposition series \(\Sigma\) such that there exists no strictly decreasing decomposition series distinct from \(\Sigma\) and finer than \(\Sigma\) .
+
+PROPOSITION 9. For a decomposition series of G to be a Jordan-Hölder series it is necessary and sufficient that all the quotients of the series be simple.
+
+A decomposition series is strictly decreasing if and only if none of its successive quotients is reduced to the identity element. If a strictly decreasing composition series \(\Sigma\) is not a Jordan-Hölder series, there exists a strictly decreasing composition series \(\Sigma'\) which is finer than \(\Sigma\) and distinct from \(\Sigma\) . There are therefore two consecutive terms \(G_i\) , \(G_{i+1}\) of \(\Sigma\) which are not consecutive in \(\Sigma'\) ; let H be the first term which follows \(G_i\) in \(\Sigma'\) ; H is a normal stable subgroup of \(G_i\) , containing \(G_{i+1}\) and distinct from the latter; hence H/ \(G_{i+1}\) is a normal stable subgroup of \(G_i/G_{i+1}\) , distinct from the latter and from the identity element; therefore \(G_i/G_{i+1}\) is not simple. Conversely, if \(\Sigma\) is a strictly decreasing composition series one of whose quotients \(G_i/G_{i+1}\) is not simple, this quotient contains a normal stable subgroup other than itself and \(\{e\}\) , whose inverse image in \(G_i\) is a normal stable subgroup H of \(G_i\) , distinct from \(G_i\) and \(G_{i+1}\) (Theorem 4); it suffices to insert H between \(G_i\) and \(G_{i+1}\) to obtain a strictly decreasing composition series distinct from \(\Sigma\) and finer than \(\Sigma\) .
+
+THEOREM 6 (Jordan-Hölder). Two Jordan-Hölder series of a group with operators are equivalent.
+
+Let \(\Sigma_{1}, \Sigma_{2}\) be two Jordan-Hölder series of a group with operators G; by applying Theorem 5 two equivalent composition series \(\Sigma_{1}^{\prime}, \Sigma_{2}^{\prime}\) are obtained which are respectively finer than \(\Sigma_{1}\) and \(\Sigma_{2}\) ; since the latter are Jordan-Hölder series, \(\Sigma_{1}^{\prime}\) is identical with \(\Sigma_{1}\) or is derived from it by repeating certain terms; the series of quotients of \(\Sigma_{1}^{\prime}\) is derived from that for \(\Sigma_{1}\) by inserting a number of terms isomorphic to the group \(\{e\}\) ; since \(\Sigma_{1}\) is strictly decreasing, the series of quotients of \(\Sigma_{1}\) is derived from that of \(\Sigma_{1}^{\prime}\) by suppressing in the latter all the terms isomorphic to \(\{e\}\) . Similarly for \(\Sigma_{2}\) and \(\Sigma_{2}^{\prime}\) . As the series of quotients of \(\Sigma_{1}^{\prime}\) and \(\Sigma_{2}^{\prime}\) differ (up to isomorphism) only in the order of the terms, the same is true of \(\Sigma_{1}\) and \(\Sigma_{2}\) ; the theorem is proved.
+
+COROLLARY. Let G be a group with operators in which there exists a Jordan-Hölder series. If \(\Sigma\) is any strictly decreasing composition series of G, there exists a Jordan-Hölder series finer than \(\Sigma\) .
+
+Let \(\Sigma_0\) be a Jordan-Hölder series of \(G\) ; by Theorem 5, there exist two equivalent composition series, \(\Sigma'\) and \(\Sigma_0'\) respectively finer than \(\Sigma\) and \(\Sigma_0\) ; the argument of Theorem 6 shows that, by suppressing from \(\Sigma'\) the repetitions, a sequence \(\Sigma''\) is obtained which is equivalent to \(\Sigma_0\) and hence a Jordan-Hölder series, since all its quotients are simple (Proposition 9). As \(\Sigma\) is strictly decreasing, \(\Sigma''\) is finer than \(\Sigma\) , whence the corollary.
+
+Remark. A group with operators does not always possess a Jordan-Hölder series; an example is given by the additive group \(\mathbf{Z}\) of rational integers: the sequence \((2^{n}.\mathbf{Z})_{n\geqslant 0}\) is a strictly decreasing infinite sequence of (normal) subgroups of \(\mathbf{Z}\) ; for all \(p\) , the first \(p\) terms of this sequence form with the group \(\{0\}\) a strictly decreasing composition series; if there existed a Jordan-Hölder series for Z, it would have at least \(p + 1\) terms, by the Corollary to Theorem 6; absurd, since p is arbitrary.
+
+On the other hand, there exists a Jordan-Hölder series in every finite group with operators G: if \(G \neq \{e\}\) , among the normal stable subgroups of G distinct from G, let \(H_{1}\) be a maximal subgroup; similarly define \(H_{n+1}\) by induction as a maximal element in the set of normal subgroups of \(H_{n}\) distinct from \(H_{n}\) , when \(H_{n} \neq \{e\}\) ; the sequence of orders of the \(H_{n}\) is strictly decreasing, hence there exists n such that \(H_{n} = \{e\}\) and the sequence consisting of G and the \(H_{i} (1 \leqslant i \leqslant n)\) is by its formation a Jordan-Hölder series.
+
+DEFINITION 11. Let G be a group with operators; the length of G is the upper bound of the integers n such that there exists a strictly decreasing composition series of G (G \(_{i}\) ) \(_{0 \leq i \leq n}\) .
+
+If G admits a Jordan-Hölder series, the length of G is the number of successive quotients of this series, as follows from the Corollary to Theorem 6. If G does not admit a Jordan-Hölder series, its length is infinite; by Proposition 9, for every strictly decreasing series of G there exists a strictly finer strictly decreasing series. The group consisting of the identity element is the only group with operators of length zero. A group with operators is simple if and only if it is of length 1.
+
+Let G be a group with operators, H a normal stable subgroup of G, K the quotient G/H and \(\pi: G \rightarrow K\) the canonical homomorphism. Let
+
+\[
+\Sigma^ {\prime} = \left(\mathrm{H} _ {i}\right) _ {0 \leqslant i \leqslant n}
+\]
+
+be a decomposition series of H and \(\Sigma'' = (\mathbf{K}_j)_{0 \leqslant j \leqslant p}\) be a composition series of K. Writing \(G_i = \pi^{-1}(\mathbf{K}_i)\) for \(0 \leqslant i \leqslant p\) and \(G_i = H_{i-p}\) for \(p \leqslant i \leqslant n + p\) , a composition series \(\Sigma = (G_i)_{0 \leqslant i \leqslant n+p}\) of G is obtained. The sequence of quotients of \(\Sigma\) is obtained by juxtaposing the sequence of quotients of \(\Sigma''\) and the sequence of quotients of \(\Sigma'\) . If \(\Sigma'\) and \(\Sigma''\) are Jordan-Hölder series, \(\Sigma\) is a Jordan-Hölder series of G, by Proposition 9. If H or K admits composition series of arbitrary length, so does G. We have proved:
+
+PROPOSITION 10. Let G be a group with operators and H a normal stable subgroup of G. The length of G is the sum of the lengths of H and G/H.
+
+COROLLARY. Let G be a group with operators and \((\mathrm{G}_{i})_{0\leqslant i\leqslant n}\) a composition series of G. The length of G is the sum of the lengths of the \(G_{i}/G_{i+1}, 0 \leqslant i \leqslant n - 1\) .
+
+If G and G' are isomorphic groups with operators and G admits a Jordan-Hölder series, so does G' and the Jordan-Hölder series of G and G' are equivalent. However, non-isomorphic groups can have equivalent Jordan-Hölder series; such is true for Z/4Z and (Z/2Z) × (Z/2Z), cf.~no. 10.
+
+\subsection{PRODUCTS AND FIBRE PRODUCTS}
+
+Let \((\mathbf{G}_i)_{i\in I}\) be a family of groups with operators. Let \(\mathbf{G}\) be the product monoid of the \(\mathbf{G}_i\) . Consider the action of \(\Omega\) on \(\mathbf{G}\) defined by
+
+\[
+((x _ {i}) _ {i \in I}) ^ {\alpha} = (x _ {i} ^ {\alpha}) _ {i \in I} (\alpha \in \Omega , x _ {i} \in \mathrm{G} _ {i}).
+\]
+
+With this structure G is a group with operators. For all \(i \in I\) , the projection mapping \(pr_{i}: G \to G_{i}\) is a homomorphism of groups with operators.
+
+DEFINITION 12. The group with operators \(\mathbf{G} = \prod_{i\in I}\mathbf{G}_i\) defined above is the product group with operators of the \(\mathbf{G}_i\) . The mappings \(\mathbf{pr}_i\colon \mathbf{G}\to \mathbf{G}_i\) are called the projection homomorphisms.
+
+A particular case of the product of groups with operators is the group \(G^{E}\) consisting of the mappings of a set E into a group with operators G, the laws being defined by:
+
+\[
+\begin{array}{r l} (f g) (x) & = f (x) g (x) \quad (f, g \in \mathbf {G} ^ {E}, x \in \mathbf {E}) \\ f ^ {\alpha} (x) & = f (x) ^ {\alpha} \quad (f \in \mathbf {G} ^ {E}, \alpha \in \Omega , x \in \mathbf {E}). \end{array}
+\]
+
+Let \((\phi_{i} \colon H \to G_{i})_{i \in I}\) be a family of homomorphisms of groups with operators. The mapping \(h \mapsto (\phi_{i}(h))_{i \in I}\) of H into \(\prod_{i \in I} G_{i}\) is a homomorphism of groups with operators. It is the only homomorphism \(\Phi \colon H \to \prod_{i \in I} G_{i}\) satisfying \(\mathbf{pr}_{i} \circ \Phi = \phi_{i}\) for all i. This justifies the name ``product group with operators'' (Set Theory, IV, § 2, no. 4).
+
+Let \((\phi_i: \mathrm{H}_i \to \mathrm{G}_i)_{i \in I}\) be a family of homomorphisms of groups with operators. The mapping \(\prod_{i \in I} \phi_i: (h_i)_{i \in I} \mapsto (\phi_i(h_i))_{i \in I}\) of \(\prod_{i \in I} \mathrm{H}_i\) into \(\prod_{i \in I} \mathrm{G}_i\) is a homomorphism of groups with operators.
+
+PROPOSITION 11. Let \((\phi_i: \mathrm{H}_i \to \mathrm{G}_i)_{i \in I}\) be a family of homomorphisms of groups with operators and let \(\Phi = \prod_{i \in I} \phi_i\) . Then:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  \(\operatorname{Ker}(\Phi) = \prod_{i \in I} \operatorname{Ker}(\phi_i)\) ; in particular, if all the \(\phi_i\) are injective, \(\Phi\) is injective.
+\item
+  \(\operatorname{Im}(\Phi) = \prod_{i\in I}\operatorname{Im}(\phi_i)\) ; in particular, if all the \(\phi_i\) are surjective, \(\Phi\) is surjective.
+\end{enumerate}
+
+This is immediate.
+
+In particular, let \((\mathbf{G}_{i})_{i\in\mathbf{I}}\) be a family of groups with operators and, for all i, let \(\mathbf{H}_i\) be a stable (resp. normal stable) subgroup of \(\mathbf{G}_i\) . The product \(\prod_{i\in I}\mathbf{H}_i\) is a stable (resp. normal stable) subgroup of \(\prod_{i\in I}\mathbf{G}_i\) and the canonical mapping of \(\prod_{i\in I}\mathbf{G}_i\) onto \(\prod_{i\in I}(\mathbf{G}_i / \mathbf{H}_i)\) defines when passing to the quotient an isomorphism of
+
+\[
+\left(\prod_ {i \in I} G _ {i}\right) / \left(\prod_ {i \in I} H _ {i}\right)
+\]
+
+onto \(\prod_{i\in I}(\mathrm{G}_i / \mathrm{H}_i)\) . For example, let J be a subset of I. The subgroup \(\mathbf{G}_{J}\) of \(\prod_{i\in I}\mathbf{G}_i\) consisting of the \((x_{i})_{i\in I}\) such that \(x_{i} = e_{i}\) for \(i\notin J\) is a normal stable subgroup. The mapping \(\iota_{J}\) which associates with \(x = (x_{j})_{j\in J}\) the element \(y = (y_{i})_{i\in I}\) such that \(y_{i} = e_{i}\) for \(i\notin J\) and \(y_{i} = x_{i}\) for \(i\in J\) , is an isomorphism of \(\prod_{j\in J}\mathbf{G}_j\) onto \(\mathbf{G}_{J}\) . The mapping \(\operatorname{pr}_{I - J}\) defines when passing to the quotient an isomorphism \(\theta_J\) of the quotient group \(\mathbf{G} / \mathbf{G}_J\) onto \(\prod_{i\in I - J}\mathbf{G}_i\) . The composition \(\operatorname{pr}_J\circ \iota_J\) is the identity mapping of \(\prod_{j\in J}\mathbf{G}_j\) . \(\mathbf{G} / \mathbf{G}_J\) is often identified with \(\prod_{i\in I - J}\mathbf{G}_i\) because of \(\theta_J\) and \(\prod_{i\in J}\mathbf{G}_i\) with \(\mathbf{G}_J\) because of \(\iota_J\) .
+
+If \(J_{1}\) and \(J_{2}\) are disjoint subsets of I, it follows from the definitions that every element of \(G_{J_{1}}\) commutes with every element of \(G_{J_{2}}\) .
+
+DEFINITION 13. Let G be a group with operators and \((\mathrm{H}_{i})_{i\in I}\) a family of normal stable subgroups of G. Let \(p_{i}\colon G\to G/H_{i}\) be the canonical homomorphism. G is called the internal product (or product) of the family of quotient groups \((\mathrm{G}/\mathrm{H}_{i})\) if the homomorphism \(g\mapsto(p_{i}(g))_{i\in I}\) is an isomorphism of G onto \(\prod_{i\in I}G/H_{i}\) .
+
+Let G and H be groups with operators and let \(\phi\) and \(\psi\) be two homomorphisms of G into H. The set of elements \(x\) in G such that \(\phi(x) = \psi(x)\) is a stable subgroup of G, called the coincidence group of \(\phi\) and \(\psi\) . In particular, let \(\phi_1: G_1 \to H\) and \(\phi_2: G_2 \to H\) be homomorphisms of groups with operators; the coincidence group of the homomorphisms \(\phi_1 \circ \mathrm{pr}_1\) and \(\phi_2 \circ \mathrm{pr}_2\) of \(G_1 \times G_2\) into H is called the fibre product of \(G_1\) and \(G_2\) over H relative to \(\phi_1\) and \(\phi_2\) . It is denoted by \(G_1 \times_H G_2\) when there is no ambiguity about \(\phi_1\) and \(\phi_2\) and the restrictions \(p_1\) and \(p_2\) of \(\mathrm{pr}_1\) and \(\mathrm{pr}_2\) to \(G_1 \times_H G_2\) are also called projection homomorphisms. Then \(\phi_1 \circ p_1 = \phi_2 \circ p_2\) . The elements of \(G_1 \times_H G_2\) are the ordered pairs \((g_1, g_2) \in G_1 \times G_2\) such that \(\phi_1(g_1) = \phi_2(g_2)\) . If \(f_i\) is a homomorphism of a group with operators K into \(G_i (i = 1, 2)\) and \(\phi_1 \circ f_1 = \phi_2 \circ f_2\) , there exist one and only one homomorphism \(f\) of K into \(G_1 \times_H G_2\) such that \(f_i = p_i \circ f\) for \(i = 1, 2\) .
+
+\subsection{RESTRICTED SUMS}
+
+Let \((\mathbf{G}_i)_{i\in I}\) be a family of groups with operators and, for \(i\in I\) , let \(\mathbf{H}_i\) be a stable subgroup of \(\mathbf{G}_i\) . The subset of \(\prod_{i\in I}\mathbf{G}_i\) consisting of the \((x_i)_{i\in I}\) such that the set of \(i\in I\) with \(x_i\notin H_i\) is finite is a stable subgroup of \(\prod_{i\in I}\mathbf{G}_i\) equal to \(\prod_{i\in I}\mathbf{G}_i\) if \(I\) is finite. It is called the restricted sum of the \(\mathbf{G}_i\) with respect to the \(\mathbf{H}_i\) . When, for all \(i\) except for a finite number, \(\mathbf{H}_i\) is a normal stable subgroup of \(\mathbf{G}_i\) , the restricted sum is a normal stable subgroup of the product. When, for all \(i\) , the subgroup \(\mathbf{H}_i\) is reduced to the identity element of \(\mathbf{G}_i\) , the direct sum of the \(\mathbf{G}_i\) with respect to the \(\mathbf{H}_i\) is called simply the restricted sum of the \(\mathbf{G}_i\) and is sometimes denoted by \(\prod_{i\in I}\mathbf{G}_i\) . For all \(i_0\in I\) , the mapping \(\iota_{i_0}:\mathrm{G}_{i_0}\to \prod_{i\in I}\mathrm{G}_i\) defined by \(\iota_{i_0}(x) = (x_i)_{i\in I}\) , where \(x_{i_0} = x\) and \(x_i = e_i\) if \(i\neq i_0\) , is an injective homomorphism of groups with operators called the canonical injection. \(\mathbf{G}_i\) is identified with the stable subgroup \(\operatorname {Im}(\iota_i)\) . The subgroups \(\mathbf{G}_i\) are normal. For \(i\neq j\) , the elements of \(\mathbf{G}_i\) and \(\mathbf{G}_j\) commute and \(\mathrm{G}_i\cap \mathrm{G}_j = \{e\}\) . The group \(\prod_{i\in I}\mathrm{G}_i\) is generated by the set \(\bigcup_{i\in I}\mathrm{G}_i\) .
+
+PROPOSITION 12. Let \((\phi_i: \mathbf{G}_i \to \mathbf{K})_{i \in I}\) be a family of homomorphisms of groups with operators such that, for all \(i \in I\) and \(j \in I\) with \(i \neq j\) , \(x \in \mathbf{G}_i\) , \(y \in \mathbf{G}_j\) , the elements \(\phi_i(x)\) and \(\phi_j(y)\) of \(\mathbf{K}\) commute; there exists one and only one homomorphism of groups with operators \(\Phi\) of \(\prod_{i \in I} \mathbf{G}_i\) into \(\mathbf{K}\) such that \(\phi_i = \Phi \circ \iota_i\) for all \(i \in I\) . For every element \(x = (x_i)_{i \in I}\) of \(\prod_{i \in I} \mathbf{G}_i\) , \(\Phi(x) = \prod_{i \in I} \phi_i(x_i)\) .
+
+If \(\Phi\) and \(\Phi'\) are solutions to the problem, they coincide on \(\bigcup_{i\in I}G_i\) and hence on \(\prod_{i\in I}G_i\) , whence the uniqueness of \(\Phi\) . We now show the existence of \(\Phi\) : for every element \(x = (x_i)_{i\in I}\) of \(\prod_{i\in I}G_i\) , let \(\Phi(x) = \prod_{i\in I}\phi_i(x_i)\) ( \(\S 1\) , no. 5). Clearly \(\Phi \circ \iota_i = \phi_i\) for all \(i\) and \(\Phi\) commutes with homotheties; the formula \(\Phi(xy) = \Phi(x)\Phi(y)\) follows from \(\S 1\) , no. 5, formula (9).
+
+DEFINITION 14. Let G be a group with operators and \((\mathbf{H}_i)_{i\in I}\) a family of stable subgroups of G. G is called the internal restricted sum (or restricted sum) of the family of subgroups \((\mathbf{H}_i)\) if every element of \(\mathbf{H}_i\) is permutable with every element of \(\mathbf{H}_j\) for \(j\neq i\) and the unique homomorphism of \(\prod_{i\in I}\mathbf{H}_i\) into G whose restriction to each of the \(\mathbf{H}_i\) is the canonical injection is an isomorphism.
+
+When I is finite, we also say, by an abuse of language, internal direct product (or direct product, or product) instead of internal restricted sum. Every stable subgroup H of G for which there exists a stable subgroup \(H'\) of G such that G is the direct product of H and \(H'\) is called a direct factor of G.
+
+PROPOSITION 13. Let G be a group with operators and \((\mathbf{H}_i)_{i\in I}\) a family of stable subgroups of G such that every element of \(\mathbf{H}_i\) is permutable with every element of \(\mathbf{H}_j\) for \(j\neq i\) . For G to be the restricted sum of the family of subgroups \((\mathbf{H}_i)_{i\in I}\) , it is necessary and sufficient that every element \(x\) of G be expressible uniquely in the form \(\prod_{i\in I}y_i\) , where \((y_i)_{i\in I}\) is a family with finite support of elements of G with \(y_i\in \mathbf{H}_i\) for all \(i\) .
+
+Obvious.
+
+PROPOSITION 14. Let G be a group with operators and \((\mathbf{H}_i)_{i\in I}\) a finite family of stable subgroups of G. For G to be the restricted sum of the family of subgroups \((\mathbf{H}_i)\) , it is necessary and sufficient that each \(\mathbf{H}_i\) be normal and that G be the product of the quotient groups \((\mathbf{G} / \mathbf{H}^i)\) , where \(\mathbf{H}^i\) is the subgroup generated by the \(\mathbf{H}_j\) for \(j\neq i\) .
+
+The condition is obviously necessary. Conversely, suppose G is the product of the \(K_{i} = G/H^{i}\) and let G be identified with the product of the \(K_{i}\) . Then \(H_{i}\) is identified with a subgroup of \(K_{i}\) , so that, for \(i \neq j\) , every element of \(H_{i}\) is permutable with every element of \(H_{j}\) ; on the other hand, \(H^{i}\) is identified with the product of the \(K_{j}\) for \(j \neq i\) , hence \(H_{i} = K_{i}\) for all i and G is the direct product of the \(H_{i}\) .
+
+PROPOSITION 15. Let G be a group with operators and \((\mathbf{H}_i)_{1\leqslant i\leqslant n}\) a sequence of normal stable subgroups of G such that
+
+\[
+\left(\mathrm{H} _ {1} \mathrm{H} _ {2} \dots \mathrm{H} _ {i}\right) \cap \mathrm{H} _ {i + 1} = \{e \} \text { for } 1 \leqslant i \leqslant n - 1,
+\]
+
+the set \(\mathbf{H}_1\mathbf{H}_2\ldots \mathbf{H}_n\) is a normal stable subgroup of \(\mathbf{G}\) , the restricted sum of the \(\mathbf{H}_i\) .
+
+By induction on \(n\) , this is immediately reduced to proving the proposition for \(n = 2\) . We show first that, if \(x \in \mathrm{H}_1\) and \(y \in \mathrm{H}_2\) , \(x\) and \(y\) are permutable; for \(xyx^{-1}y^{-1} = (xyx^{-1})y^{-1} = x(yx^{-1}y^{-1})\) and hence (since \(\mathrm{H}_1\) and \(\mathrm{H}_2\) are normal) \(xyx^{-1}y^{-1} \in \mathrm{H}_1 \cap \mathrm{H}_2\) , that is \(xyx^{-1}y^{-1} = e\) , by the hypothesis. Moreover \(\mathrm{H}_1\mathrm{H}_2\) is a subset of \(G\) which is stable under the homotheties of \(G\) . It follows (by no. 3, Proposition 1) that \(\mathrm{H}_1\mathrm{H}_2\) is a stable subgroup of \(G\) and it is immediately verified that this subgroup is normal. Suppose finally that \(xy = x'y'\) , with \(x \in \mathrm{H}_1\) , \(x' \in \mathrm{H}_1\) , \(y \in \mathrm{H}_2\) , \(y' \in \mathrm{H}_2\) ; then \(x'^{-1}x = y'y^{-1}\) , hence \(x'^{-1} \in \mathrm{H}_1 \cap \mathrm{H}_2 = \{e\}\) , \(x' = x\) and similarly \(y' = y\) ; \(\mathrm{H}_1\mathrm{H}_2\) is thus the direct product of \(\mathrm{H}_1\) and \(\mathrm{H}_2\) .
+
+When the group considered are commutative, the term direct sum is used instead of direct product.
+
+\subsection{MONOGENOUS GROUPS}
+
+Let \(a \in Z\) ; since \(aZ\) is a subgroup of \(Z\) , the relation between elements \(x, y\) of \(Z\) which states ``there exists \(z \in Z\) such that \(x - y = az\) '' is an equivalence relation, which we agree, once and for all, to write as \(x \equiv y \pmod{a}\) or \(x \equiv y(a)\) and which is called congruence modulo \(a\) . Replacing \(a\) by \(-a\) an equivalent relation is obtained, hence it may be supposed that \(a \geqslant 0\) ; for \(a = 0\) , \(x \equiv y(0)\) means \(x = y\) , hence a relation distinct from equality is obtained only if \(a \neq 0\) : we shall therefore suppose in what follows that \(a > 0\) unless otherwise indicated.
+
+For \(a > 0\) , the quotient of \(\mathbf{Z}\) by the congruence \(x \equiv y(a)\) , that is the group \(\mathbf{Z}/a\mathbf{Z}\) , is called the group of rational integers modulo \(a\) .
+
+PROPOSITION 16. Let \(a\) be an integer \(>0\) . The integers \(r\) such that \(0 \leqslant r < a\) form a system of representatives of the equivalence relation \(x \equiv y \pmod{a}\) on \(\mathbf{Z}\) .
+
+If \(x\) is an integer \(\geqslant 0\) , there exist (Set Theory, III, § 5, no. 6) integers \(q\) and \(r\) such that \(x = aq + r\) and \(0 \leqslant r < a\) and \(x \equiv r \pmod{a}\) . If \(x\) is an integer \(\leqslant 0\) , the integer \(-x\) is \(\geqslant 0\) and by the above there exists an integer \(r\) such that \(0 \leqslant r < a\) and \(-x \equiv r \pmod{a}\) . Writing \(r' = 0\) if \(r = 0\) and \(r' = a - r\) if \(r > 0\) , then
+
+\[
+x \equiv - r \equiv r ^ {\prime} \pmod {a}
+\]
+
+and \(0 \leqslant r' < a\) . We now show that if \(0 \leqslant r < r' < a\) , then \(r \not\equiv r' \pmod{a}\) . Now \(r' - r < na\) for \(n \geqslant 1\) and \(r' - r > na\) for \(n \leqslant 0\) , whence \(r' - r \notin a\mathbf{Z}\) .
+
+COROLLARY. Let \(a\) be an integer \(> 0\) . The group \(\mathbf{Z} / a\mathbf{Z}\) of rational integers modulo \(a\) is a group of order \(a\) .
+
+PROPOSITION 17. Let H be a subgroup of Z. There exists one and only one integer \(a \geqslant 0\) such that H = aZ.
+
+If \(\mathbf{H} = \{0\}\) , then \(\mathbf{H} = 0\mathbf{Z}\) . Suppose that \(\mathbf{H} \neq \{0\}\) . The subgroup \(\mathbf{H}\) has an element \(x \neq 0\) . Then \(x > 0\) or \(-x > 0\) , and therefore \(\mathbf{H}\) has elements \(>0\) . Let \(a\) be the smallest element \(>0\) in \(\mathbf{H}\) . The subgroup \(a\mathbf{Z}\) generated by \(a\) is contained in \(\mathbf{H}\) ; we show that \(\mathbf{H} \subset a\mathbf{Z}\) . Let \(y \in \mathbf{H}\) . By Proposition 16, there exists an integer \(r\) such that \(y \equiv r (\text{mod. } a)\) and \(0 \leqslant r < a\) . A fortiori \(y \equiv r (\text{mod. } H)\) , whence \(r \in \mathbf{H}\) . But this is only possible if \(r = 0\) and therefore \(y \in a\mathbf{Z}\) . The integer \(a\) is unique: if \(\mathbf{H} = \{0\}\) , then necessarily \(a = 0\) , and if \(\mathbf{H} \neq \{0\}\) , the integer \(a\) is the order of \(\mathbf{Z}/\mathbf{H}\) .
+
+DEFINITION 15. A group is called monogenous if it admits a system of generators consisting of a single element. A finite monogenous group is called cyclic.
+
+Every monogenous group is commutative (no. 3, Corollary 2 to Proposition 2). Every quotient group of a monogenous group is monogenous (no. 3, Corollary 3 to Proposition 2).
+
+The additive group Z is monogenous: it is generated by \(\{1\}\) . For every positive integer a, the group Z/aZ is monogenous, for it is a quotient of Z.
+
+PROPOSITION 18. A finite monogenous group of order \(a\) is isomorphic to \(\mathbf{Z}/a\mathbf{Z}\) . An infinite monogenous group is isomorphic to \(\mathbf{Z}\) .
+
+Let G be a monogenous group (written multiplicatively) and x a generator of G. The identity \(x^{m}x^{n} = x^{m+n}\) (§ 1, no. 3, formula (1)) shows that the mapping \(n \mapsto x^{n}\) is a homomorphism of Z into G. Its image is a subgroup of G containing x and hence it is G. By no. 5, Theorem 3, the group G is isomorphic to the quotient of Z by a subgroup, which is necessarily of the form aZ (Proposition 17). If a \textgreater{} 0, the group G is finite of order a and if a = 0, the group G is isomorphic to Z.
+
+PROPOSITION 19. Let \(a\) be an integer \(>0\) . Let \(\mathbf{H}\) be a subgroup of \(\mathbf{Z}/a\mathbf{Z}\) , \(b\) the order of \(\mathbf{H}\) and \(c\) its index in \(\mathbf{Z}/a\mathbf{Z}\) . Then \(a = bc\) , \(\mathbf{H} = c\mathbf{Z}/a\mathbf{Z}\) and \(\mathbf{H}\) is isomorphic to \(\mathbf{Z}/b\mathbf{Z}\) .
+
+Conversely, let \(b\) and \(c\) be two integers \(>0\) such that \(a = bc\) . Then \(a\mathbf{Z} \subset c\mathbf{Z}\) and \(c\mathbf{Z}/a\mathbf{Z}\) is a subgroup of \(\mathbf{Z}/a\mathbf{Z}\) , of order \(b\) and index \(c\) .
+
+a = bc by no. 4, Corollary to Proposition 4. By no. 7, Theorem 4, H is of the form \(H'/aZ\) , where \(H'\) is a subgroup of Z and \(Z/H'\) is isomorphic to \((\mathbf{Z}/a\mathbf{Z})/H\) and hence of order c.~By Proposition 17 and the Corollary to Proposition 16, \(H' = cZ\) and hence H is monogenous. Finally, H is isomorphic to Z/bZ by Proposition 18. Conversely, if a = bc, then \(aZ \subset cZ\) for \(a \in cZ\) : the quotient group \((\mathbf{Z}/a\mathbf{Z})/(c\mathbf{Z}/a\mathbf{Z})\) is isomorphic to Z/cZ (no. 7, Theorem 4) and hence of order c (no. 4, Corollary to Proposition 4) and index b (no. 4, Corollary to Proposition 4).
+
+COROLLARY. Every subgroup of a monogenous group is monogenous.
+
+Let \(a\) and \(b\) be two integers \(\neq 0\) . The relation \(b \in a\mathbf{Z}\) is also written: \(b\) is a multiple of \(a\) , and also \(a\) divides \(b\) or \(a\) is a divisor of \(b\) .
+
+DEFINITION 16. An integer \(p > 0\) is called prime if \(p \neq 1\) and it admits no divisor \(> 1\) other than \(p\) .
+
+PROPOSITION 20. An integer \(p > 0\) is prime if and only if the group \(\mathbf{Z} / p\mathbf{Z}\) is a simple group.
+
+This follows from Proposition 19.
+
+COROLLARY. Every commutative simple group is cyclic of prime order.
+
+Let G be such a group. Then \(G \neq \{e\}\) ; let \(a \neq e\) be an element of G. The subgroup generated by a is normal since G is commutative, it is not reduced to \(\{e\}\) and hence is equal to G. Therefore G is monogenous and hence isomorphic to a group of the form Z/pZ with p \textgreater{} 0, since Z is not simple, and p is necessarily prime.
+
+Remark. A finite group G of prime order is necessarily cyclic. G admits no subgroup other than G and \(\{e\}\) and hence it is generated by every element \(\neq e\) .
+
+Lemma 2. Let a be an integer \textgreater0. By associating with every composition series \((\mathbf{H}_{i})_{0\leqslant i\leqslant n}\) of the group Z/aZ the sequence \((s_{i})_{1\leqslant i\leqslant n}\) , where \(s_{i}\) is the order of \(H_{i-1}/H_{i}\) , a one-to-one correspondence is obtained between the composition series of Z/aZ and the finite sequences \((s_{i})\) of integers \textgreater0 such that \(a=s_{1}\ldots s_{n}\) . The composition series \((\mathbf{H}_{i})_{0\leqslant i\leqslant n}\) is a Jordan-Hölder series if and only if the \(s_{i}\) are prime.
+
+If \((\mathbf{H}_i)_{0\leqslant i\leqslant n}\) is a composition series of \(\mathbf{Z} / a\mathbf{Z}\) , it follows, by induction on \(n\) , from no. 4, Proposition 4, that \(a = \prod_{i=1}^{n} (\mathbf{H}_{i-1}:\mathbf{H}_i)\) .
+
+Conversely, let \((s_i)_{1 \leqslant i \leqslant n}\) be a sequence of integers \(>0\) such that \(a = s_1 \ldots s_n\) . If \((\mathbf{H}_i)_{0 \leqslant i \leqslant n}\) is a composition series of \(\mathbf{Z} / a\mathbf{Z}\) such that \((\mathbf{H}_{i-1} : \mathbf{H}_i) = s_i\) for \(1 \leqslant i \leqslant n\) , then necessarily \(((\mathbf{Z} / a\mathbf{Z}) : \mathbf{H}_i) = \prod_{1 \leqslant j \leqslant i} s_j\) as is seen by induction on \(i\) , whence \(\mathbf{H}_i = \left( \prod_{j=1}^{i} s_j \right) \mathbf{Z} / a\mathbf{Z}\) (Proposition 19), which shows the injectivity of the mapping in question. We now show its surjectivity. Writing \(H_{i}=\left(\prod_{j=1}^{i}s_{j}\right)\mathbf{Z}/a\mathbf{Z}\) for \(0\leqslant i\leqslant n\) , a composition series of Z/aZ is obtained such that \((\mathrm{H}_{i-1}:\mathrm{H}_{i})=s_{i}\) (Proposition 19). The second assertion follows from Proposition 20 and no. 7, Proposition 9.
+
+Let \(\mathfrak{P}\) denote the set of prime numbers.
+
+THEOREM 7 (decomposition into prime factors). Let \(a\) be a strictly positive integer. There exists one and only one family \((v_{p}(a))_{p \in \mathfrak{P}}\) of integers \(\geqslant 0\) such that the set of \(p \in \mathfrak{P}\) with \(v_{p}(a) \neq 0\) is finite and
+
+\[
+a = \prod_ {p \in \mathfrak {P}} p ^ {v _ {p} (a)}.\tag{5}
+\]
+
+As the group \(\mathbf{Z}/a\mathbf{Z}\) is finite, it admits a Jordan-Hölder series. Lemma 2 then implies that \(a\) is a product of prime integers, whence the existence of the family \((v_{p}(a))\) ; further, for every family \((v_{p}(a))_{p\in\mathfrak{P}}\) satisfying the conditions of Theorem 7, the integer \(v_{p}(a)\) is, for all \(p\in\mathfrak{P}\) , equal to the number of factors of a Jordan-Hölder series of \(\mathbf{Z}/a\mathbf{Z}\) isomorphic to \(\mathbf{Z}/p\mathbf{Z}\) (Lemma 2). The uniqueness of the family \((v_{p}(a))\) therefore follows from the Jordan-Hölder theorem (no. 7, Theorem 6).
+
+COROLLARY. Let \(a\) and \(b\) be two integers \(>0\) . Then \(v_{p}(ab) = v_{p}(a) + v_{p}(b)\) . For \(a\) to divide \(b\) , it is necessary and sufficient that \(v_{p}(a) \leqslant v_{p}(b)\) for every prime number \(p\) .
+
+In any group G, if the (monogenous) subgroup generated by an element \(x \in G\) is of finite order d, x is called an element of order d; the number d is therefore the least integer \textgreater0 such that \(x^{d} = e\) ; if the subgroup generated by x is infinite, x is said to be of infinite order. These definitions, together with Proposition 4 (no. 4), imply in particular that in a finite group G the order of every element of G is a divisor of the order of G.
+
+PROPOSITION 21. In a finite group G of order n, \(x^{n} = e\) for all \(x \in G\) .
+
+If \(p\) is the order of \(x\) , then \(n = pq\) , with \(q\) an integer, and hence \(x^n = (x^p)^q = e\) .
+
+\section{GROUPS OPERATING ON A SET}
+
+\subsection{MONOID OPERATING ON A SET}
+
+DEFINITION 1. Let M be a monoid, with law written multiplicatively and identity element denoted by e, and E a set. An action \(\alpha \mapsto f_{\alpha}\) of M on E is called a left (resp. right) operation of M on E if \(f_{e} = \mathrm{Id}_{\mathrm{E}}\) and \(f_{\alpha \beta} = f_{\alpha} \circ f_{\beta}\) (resp. \(f_{\alpha \beta} = f_{\beta} \circ f_{\alpha}\) ) for all \(\alpha, \beta \in \mathbf{M}\) .
+
+In other words, a left (resp. right) operation of a monoid M on a set E is a monoid homomorphism of M into the monoid \(E^{E}\) (resp. the opposite monoid of \(E^{E}\) ) with composition of mappings. If the law of action corresponding to the action of M is denoted by left (resp. right) multiplication, the fact that this action is a left (resp. right) operation may be expressed by the formulae
+
+\[
+e. x = x; \alpha . (\beta . x) = (\alpha \beta). x \quad \text { for } \alpha , \beta \in \mathrm{M} \text { and } x \in \mathrm{E}.\tag{1}
+\]
+
+\[
+(\text { resp. } x. e = x; (x. \alpha). \beta = x. (\alpha \beta) \quad \text { for } \alpha , \beta \in M \text { and } x \in E).
+\]
+
+Under these conditions, it is also said that M operates on E on the left (resp. right) and that the corresponding laws of action are laws of left (resp. right) operation of the monoid M on E.
+
+Let M be a monoid; a set E with a left (resp. right) operation of M on E is called a left (resp. right) M-set. The monoid M is said to operate on the left (resp. right) faithfully if the mapping \(\alpha \mapsto f_{\alpha}\) of M into \(E^{E}\) is injective.
+
+Examples. (1) Let E be a set; the canonical action of \(E^{E}\) on E (§ 3, no. 1, Example 3) is a left operation.
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let M be a monoid. The left (resp. right) action of M on itself derived from the law on M (§ 3, no. 3, Example 7) is a left (resp. right) operation of M on itself. When considering this operation, we say that M operates on itself by left (resp. right) translation.
+\end{enumerate}
+
+Let E be a left (resp. right) M-set and \(M^{0}\) the opposite monoid to M. Under the same action, the monoid \(M^{0}\) operates on E on the right (resp. left). The \(M^{0}\) -set obtained is called opposite to the M-set E. The definitions and results relating to left M-sets carry over to right \(M^{0}\) -sets when passing to the opposite structures.
+
+In the rest of this paragraph, we shall consider, unless otherwise stated, only left M-sets which we shall call simply M-sets. Their law of action will be denoted by left multiplication.
+
+Let E be a set. Let G be a group operating on E. For all \(\alpha\) in G, the element of \(E^{E}\) defined by \(\alpha\) is a permutation of E ( \(\S\) 2, no. 3, Example 2). Being given an operation of G on E therefore amounts to being given a homomorphism of G into \(S_{E}\) .
+
+In conformity with § 3, no. 3, we make the following definition:
+
+DEFINITION 2. Let M be a monoid and E and E' M-sets. A mapping f of E into E' such that, for all \(x \in E\) and all \(\alpha \in M\) , \(f(\alpha \cdot x) = \alpha \cdot f(x)\) is called an M-set homomorphism (or M-morphism, or mapping compatible with the operations of M).
+
+The identity mapping of an M-set is an M-morphism. The composition of two M-morphisms is an M-morphism. For a mapping of one M-set into another to be an isomorphism, it is necessary and sufficient that it be a bijective M-morphism and the inverse mapping is then an M-morphism.
+
+Let \((\mathbf{E}_i)_{i\in \mathbf{I}}\) be a family of M-sets and let \(\mathbf{E}\) be the product set of \(\mathbf{E}_i\) . The monoid M operates on \(\mathbf{E}\) by \(\alpha .(x_i)_{i\in \mathbf{I}} = (\alpha .x_i)_{i\in \mathbf{I}}\) and \(\mathbf{E}\) , with this action, is an M-set; let \(\mathbf{E}'\) be an M-set; a mapping \(f\) of \(\mathbf{E}'\) into \(\mathbf{E}\) is an M-morphism if and only if \(\mathbf{pr}_i\circ f\) is an M-morphism of \(\mathbf{E}'\) into \(\mathbf{E}_i\) for all \(i\in \mathbf{I}\) .
+
+Let E be an M-set and F a stable subset of E under the action of M; with the induced law, F is an M-set and the canonical injection \(F \rightarrow E\) is an M-morphism.
+
+Let E be an M-set and R an equivalence relation on E compatible with the action of M; the quotient E/R with the quotient action is an M-set and the canonical mapping \(E \rightarrow E/R\) is an M-morphism.
+
+Let \(\phi: \mathbf{M} \to \mathbf{M}'\) be a monoid homomorphism, \(\mathbf{E}\) an \(\mathbf{M}\) -set and \(\mathbf{E}'\) an \(\mathbf{M}'\) -set. A mapping \(f\) of \(\mathbf{E}\) into \(\mathbf{E}'\) such that, for all \(x \in \mathbf{E}\) and \(\alpha \in \mathbf{M}\) ,
+
+\[
+f (\alpha . x) = \phi (\alpha). f (x)
+\]
+
+is called a \(\phi\) -morphism of E into E' (cf.~§ 3, no. 1).
+
+Extension of a law of operation. Given (for example) three sets \(F_{1}, F_{2}, F_{3}\) , permutations \(f_{1}, f_{2}, f_{3}\) of \(F_{1}, F_{2}, F_{3}\) respectively and an echelon F on the base sets \(F_{1}, F_{2}, F_{3}\) (Set Theory, IV, § 1, no. 1), we can define, proceeding step by step on the construction of the echelon F, a permutation of F called the canonical extension of \(f_{1}, f_{2}, f_{3}\) to F (Set Theory, IV, § 1, no. 2); we shall denote it by \(\phi_{F}(f_{1}, f_{2}, f_{3})\) .
+
+Then let G be a group and \(h_{i}\) a homomorphism of G into the symmetric group of \(F_{i}\) (i = 1, 2, 3), in other words an operation of G on \(F_{i}\) . The mapping \(x \mapsto x_{F} = \phi_{F}(h_{1}(x), h_{2}(x), h_{3}(x))\) is a homomorphism of G into \(S_{F}\) , in other words an operation of G on F, called the extension of \(h_{1}, h_{2}, h_{3}\) to F. Let P be a subset of F such that, for all \(x \in G\) , \(x_{F}(P) = P\) ; let \(x_{P}\) be the restriction of \(x_{F}\) to
+
+P; then the mapping \(x \mapsto x_{P}\) is an operation of G on P, also called the extension of \(h_{1}, h_{2}, h_{3}\) to P.
+
+For example, let \(\mathbf{K}\) and \(\mathbf{L}\) be two echelons on \(\mathbf{F}_1, \mathbf{F}_2, \mathbf{F}_3\) ; take \(\mathbf{F}\) to be the set of subsets of \(\mathbf{K} \times \mathbf{L}\) and \(\mathbf{P}\) to be the set of mappings of \(\mathbf{K}\) into \(\mathbf{L}\) , identified with their graphs. If \(w \in \mathbf{P}\) and \(x \in \mathbf{G}\) , \(x_{\mathbf{P}}(w)\) is the mapping \(k \mapsto x_{\mathbf{L}}(w(x_{\mathbf{K}}^{-1}(k)))\) of \(\mathbf{K}\) into \(\mathbf{L}\) .
+
+\subsection{STABILIZER, FIXER}
+
+DEFINITION 3. Let M be a monoid operating on a set E and A and B subsets of E. The set of \(\alpha \in \mathbf{M}\) such that \(\alpha \mathbf{A} \subset \mathbf{B}\) (resp. \(\alpha \mathbf{A} = \mathbf{B}\) ) is called the transporter (resp. strict transporter) of A to B. The transporter (resp. strict transporter) of A to A is called the stabilizer (resp. strict stabilizer) of A. The set of \(\alpha \in \mathbf{M}\) such that \(\alpha a = a\) for all \(a \in \mathbf{A}\) is called the fixer of A.
+
+An element \(\alpha\) of M is said to stabilize (resp. stabilize strictly, resp. fix) a subset A of E if \(\alpha\) belongs to the stabilizer (resp. strict stabilizer, resp. fixer) of A. A subset P of M is said to stabilize (resp. stabilize strictly, resp. fix) a subset A of E if all the elements of P stabilize (resp. strictly stabilize, resp. fix) A. The fixer of A is contained in the strict stabilizer of A which itself is contained in the stabilizer of A.
+
+PROPOSITION 1. Let M be a monoid operating on a set E and A a subset of E.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  The stabilizer, strict stabilizer and fixer of A are submonoids of M.
+\item
+  Let \(\alpha\) be an invertible element of \(\mathbf{M}\) ; if \(\alpha\) belongs to the strict stabilizer (resp. fixer) of \(\mathbf{A}\) , so does \(\alpha^{-1}\) .
+\end{enumerate}
+
+Let \(e\) be the identity element of \(\mathbf{M}\) ; then \(ea = a\) for every element \(a \in \mathbf{A}\) and therefore \(e\) belongs to the fixer of \(\mathbf{A}\) . Let \(\alpha\) and \(\beta\) be elements of \(\mathbf{E}\) which stabilize \(\mathbf{A}\) . Then \((\alpha\beta)\mathbf{A} = \alpha(\beta\mathbf{A}) \subset \alpha\mathbf{A} \subset \mathbf{A}\) and therefore the stabilizer of \(\mathbf{A}\) is a submonoid of \(\mathbf{M}\) . Similarly for the strict stabilizer and fixer of \(\mathbf{A}\) , whence (a). If \(\alpha\mathbf{A} = \mathbf{A}\) , then \(\mathbf{A} = \alpha^{-1}(\alpha\mathbf{A}) = \alpha^{-1}\mathbf{A}\) . If for all \(a \in \mathbf{A}\) , \(\alpha a = a\) , then \(a = \alpha^{-1}(\alpha a) = \alpha^{-1}a\) , whence (b).
+
+COROLLARY. Let G be a group operating on a set E and A be a subset of E. The strict stabilizer S and the fixer F of A are subgroups of G and F is a normal subgroup of S.
+
+The first assertion follows from the proposition and F is the kernel of the homomorphism of S into \(S_{A}\) associated with the operation of S on A.
+
+A group G operates faithfully on a set E if and only if the fixer of E consists of the identity element of G. The fixer of E is the kernel of the given homomorphism of G into \(S_{E}\) ; this homomorphism is injective if and only if its kernel consists of the identity element (§ 4, no. 5, Theorem 3).
+
+Let M be a monoid, E an M-set and a an element of E. The fixer, strict stabilizer and stabilizer of \(\{a\}\) are equal; this monoid is called equally the fixer or stabilizer of a. The fixer of a subset A of E is the intersection of the fixers of the elements of A. a is called an invariant element of E if the fixer of a is the monoid M. M is said to operate trivially on E if every element of E is invariant.
+
+PROPOSITION 2. Let G be a group operating on a set E and, for all \(x \in E\) , let \(S_x\) be the stabilizer of \(x\) . For all \(\alpha \in G\) , \(S_{\alpha x} = \alpha S_x \alpha^{-1}\) .
+
+If \(s \in S_x\) , then \(\alpha s \alpha^{-1}(\alpha x) = \alpha s x = \alpha x\) , whence \(\alpha S_x \alpha^{-1} \subset S_{\alpha x}\) . As \(x = \alpha^{-1}(\alpha x)\) , \(\alpha^{-1}S_{\alpha x} \alpha \subset S_x\) , whence \(S_{\alpha x} \subset \alpha S_x \alpha^{-1}\) .
+
+It is seen similarly that, if A and B are two subsets of E and T is the transporter (resp. strict transporter) of A to B, then the transporter (resp. strict transporter) of \(\alpha A\) to \(\alpha B\) is equal to \(\alpha T\alpha^{-1}\) .

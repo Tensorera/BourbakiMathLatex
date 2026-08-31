@@ -1,0 +1,825 @@
+\textbf{例}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  对每个 \(a \in \mathbf{A}\)，由 \(a^n\)（其中 \(n \in \mathbf{N}\)）所成的集合是 \(\mathbf{A}\) 的一个乘性子集。
+\item
+  设 \(\mathfrak{p}\) 是 \(\mathbf{A}\) 的一个理想。为使 \(\mathbf{A} - \mathfrak{p}\) 是 \(\mathbf{A}\) 的乘性子集，必须且只需 \(\mathfrak{p}\) 是素理想。
+\item
+  A 中不是零因子的元素所组成的集合是 A 的一个乘性子集。
+\item
+  若 S 与 T 是 A 的乘性子集，则由乘积 st（其中 \(s \in S\)，\(t \in T\)）组成的集合 ST 是一个乘性子集。
+\item
+  设 \(\mathfrak{S}\) 是 A 的乘性子集构成的一个（关于关系 \(\subset\) 的）定向集。则 \(T = \bigcup_{S \in \mathfrak{S}} S\) 是 A 的乘性子集，因为 T 的任意两个元素都属于某个子集 \(S \in \mathfrak{S}\)，从而其乘积属于 T。
+\item
+  A 的乘性子集的任意交都是乘性子集。
+\end{enumerate}
+
+对环 A 的任意子集 S，都存在包含 S 的 A 的乘性子集，例如 A 本身。所有这些子集的交是 A 的包含 S 的最小乘性子集；称它为由 S 生成的乘性子集。由此立即可知，它是由 S 的元素的一切有限乘积组成的集合。
+
+命题 1. 设 A 是环，S 是 A 的子集。存在一个环 A' 以及一个 A 到 A' 的同态 h，具有下列性质：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  \(h(\mathbf{S})\) 的元素在 \(\mathbf{A}'\) 中可逆；
+\item
+  对每个同态 \(u\)（\(\mathbf{A}\) 到环 \(\mathbf{B}\) 的同态），只要 \(u(\mathbf{S})\) 的元素在 \(\mathbf{B}\) 中可逆，就存在唯一的同态 \(u'\)（\(\mathbf{A}'\) 到 \(\mathbf{B}\)），使得 \(u = u' \circ h\)。
+\end{enumerate}
+
+换言之，\((A', h)\) 是泛映射问题（《集合论》第 IV 章，§ 3，第 1 节）在下列条件下的一个解：所考虑的结构种 \(\Sigma\) 是环的结构种，态射是环同态，而 \(\alpha\) -映射是 A 到某个环的同态，使得 S 在这样的同态下的像由可逆元组成。回忆（同前引），若 \((A', h)\) 与 \((A_{1}', h_{1})\) 都是该问题的解，则存在唯一的同构 \(j: A' \to A_{1}'\)，使得 \(h_{1} = j \circ h\)。
+
+设 \(\bar{S}\) 是由 S 生成的 A 的乘性子集。显然，上述泛映射问题的每个解也是把 S 换成 \(\bar{S}\) 后所得泛映射问题的解，反之亦然。
+
+在集合 \(\mathbf{A} \times \overline{\mathbf{S}}\) 中，考虑元素 \((a, s)\) 与 \((a', s')\) 之间的如下关系：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+ 「存在 \(t \in \overline{\mathbf{S}}\) 使得 \(t(sa' - s'a) = 0\)」。
+\end{enumerate}
+
+这一关系是一个等价关系：它显然是自反的、对称的；它也是传递的，因为若 \(t(sa' - s'a) = 0\) 且 \(t'(s'a'' - s''a') = 0\)，则 \(tt's'(sa' - s'a) = 0\) 且 \(tt's' \in \overline{\mathbb{S}}\)。设 \(A'\) 是 \(A \times \overline{S}\) 关于这一等价关系的商集；对每个有序对 \((a, s) \in A \times \overline{S}\)，我们用 \(a/s\) 表示 \((a, s)\) 在 \(A'\) 中的典范像，并且令 \(h(a) = a/1\)（对所有 \(a \in A\)）。我们将看到，可以在 \(A'\) 上定义一个环结构，使得有序对 \((A', h)\) 是该问题的解。
+
+设 \(x = a / s\) 与 \(y = b / t\) 是 \(A'\) 的两个元素。元素 \((ta + sb) / st\) 与 \(ab / st\) 只依赖于 \(x\) 和 \(y\)；因为若 \(x = a' / s'\)，则由假设存在 \(r \in \overline{\mathbb{S}}\) 使得 \(r(s'a - sa') = 0\)，由此
+
+\[
+r \left(s ^ {\prime} t (t a + s b) - s t \left(t a ^ {\prime} + s ^ {\prime} b\right)\right) = 0
+\]
+
+且 \(r(s'tab - sta'b) = 0\)。容易验证，合成律 \((x,y) \mapsto x + y = (ta + sb)/st\) 与 \((x,y) \mapsto xy = ab/st\) 在 \(A'\) 上定义了一个交换环结构，其中 0/1 是加法的中性元，1/1 是单位元。此外，立即可以看出 \(h\) 是环同态，且对所有 \(s \in S\)，\(s/1\) 在 \(A'\) 中可逆，其逆为 1/s。最后，设 B 是环，\(u: A \to B\) 是使 \(u(S)\) 的元素在 B 中可逆的同态；则存在唯一的映射 \(u': A' \to B\)，使得
+
+\[
+u ^ {\prime} (a / s) = u (a) (u (s)) ^ {- 1} \quad (a \in A, s \in \bar {S}).\tag{2}
+\]
+
+若 \(a / s = a' / s'\)，则存在 \(t \in \overline{S}\) 使得 \(t(sa' - s'a) = 0\)，由此 \(u(t)(u(s)u(a') - u(s'))u(a)) = 0\)，又因 \(u(t), u(s)\) 与 \(u(s')\) 可逆，故 \(u(a)(u(s))^{-1} = u(a')(u(s'))^{-1}\)。容易验证 \(u'\) 关于加法与乘法是同态；最后，显然 \(u' \circ h = u\)，且 \(u'\) 是满足这一关系的唯一同态，因为该关系蕴含
+
+\[
+u ^ {\prime} (a / s) = u ^ {\prime} ((a / 1) (1 / s)) = u ^ {\prime} (1 / s) u ^ {\prime} (a / 1) = u ^ {\prime} (1 / s) u (a)
+\]
+
+以及 \(1 = u'(1/1) = u'(s/1)u'(1/s) = u(s)u'(1/s)\)，由此即得公式 (2)。
+
+定义 2. 设 A 是环，S 是 A 的子集，\(\overline{\mathbf{S}}\) 是由 S 生成的乘性子集。由 S 定义的 A 的分式环，记作 \(\mathrm{A}[\mathrm{S}^{-1}]\)，是指 \(\mathrm{A} \times \overline{\mathrm{S}}\) 关于等价关系 (1) 的商集，并带有由下式定义的环结构
+
+\[
+(a / s) + (b / t) = (t a + s b) / s t, \quad (a / s) (b / t) = (a b) / (s t)
+\]
+
+其中 \(a, b\) 属于 A，\(s, t\) 属于 \(\bar{S}\)。A 到 A{[}S \(^{-1}\) {]} 的典范映射是同态 \(a \mapsto a/1\)，它使 A{[}S \(^{-1}\) {]} 成为 A 上的代数。
+
+本章中我们通常用 \(i_{A}^{S}\) 表示这一典范映射；命题 1 的证明表明，有序对 \((\mathrm{A}[\mathrm{S}^{-1}], i_{\mathrm{A}}^{\mathrm{S}})\) 满足该命题陈述中的条件。
+
+注
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  显然 \(\mathbf{A}[\overline{\mathbf{S}}^{-1}] = \mathbf{A}[\mathbf{S}^{-1}]\)。
+\item
+  A{[}S \(^{-1}\) {]} 的两个元素总可以写成 a/s 与 a'/s（a, a' 属于 A，s ∈ S）的形式，且具有相同的「分母」s；因为若 b/t 与 b'/t' 是 A{[}S \(^{-1}\) {]} 的两个元素，则 b/t = bt'/tt'，b'/t' = b't/tt'。
+\item
+  \(i_{\mathbf{A}}^{\mathbf{s}}\) 的核是由这样的 \(a \in \mathbf{A}\) 组成的集合：存在 \(s \in \overline{\mathbf{S}}\) 满足 \(sa = 0\)；为使 \(i_{\mathbf{A}}^{\mathbf{s}}\) 是单射，必须且只需 \(\mathbf{S}\) 不含 \(\mathbf{A}\) 中的任何零因子。
+\item
+  若 \(S\) 含有幂零元素，则 \(0 \in \overline{S}\)，而环 \(A[S^{-1}]\) 化为 0；这由定义 2 容易得出。
+\item
+  为使 \(i_{\mathbf{A}}^{\mathbf{S}}\) 是双射，必须且只需每个元素 \(s \in \mathbf{S}\) 都在 A 中可逆：该条件显然是必要的，因为 \(s/1\) 在 \(\mathrm{A}[\mathrm{S}^{-1}]\) 中可逆；它也是充分的，因为对所有 \(t \in \overline{\mathrm{S}}\)，\(t\) 都在 A 中可逆，从而 \(a/t = at^{-1}/1\) 在 \(\mathrm{A}[\mathrm{S}^{-1}]\) 中成立；因此 \(i_{\mathbf{A}}^{\mathbf{S}}\) 是满射，且由注 3 已知它是单射。于是把 A 与 \(\mathrm{A}[\mathrm{S}^{-1}]\) 借助 \(i_{\mathbf{A}}^{\mathbf{S}}\) 等同起来。
+\end{enumerate}
+
+例 (7). 若 R 是 A 中非零因子元素组成的集合，则环 \(\mathrm{A}[\mathrm{R}^{-1}]\) 正是我们所称的 A 的分式环（《代数学》第 I 章，§ 9，第 4 节）；为避免混淆，我们常称它为 A 的全分式环。特别地，若 A 是整环，则 \(\mathrm{A}[\mathrm{R}^{-1}]\) 是 A 的分式域（同前引）。
+
+命题 2. 设 A、B 是两个环，S 是 A 的子集，T 是 B 的子集，f 是 A 到 B 的同态且 \(f(S) \subset T\)。则存在唯一的同态 \(f'\)（从 A{[}S \(^{-1}\) {]} 到 B{[}T \(^{-1}\) {]}），使得 \(f'(a/1) = f(a)/1\) 对所有 \(a \in A\) 成立。
+
+进一步假设 \(\mathbf{T}\) 包含在 \(\mathbf{B}\) 的由 \(f(\mathbf{S})\) 生成的乘性子集之中。那么，若 \(f\) 是满射（相应地，单射），则 \(f'\) 亦然。
+
+第一个断言相当于说，存在唯一的同态 \(f'\)：\(A[S^{-1}] \to B[T^{-1}]\)，它给出一个交换图：
+
+\[
+\begin{array}{c} \mathrm{A} \xrightarrow {f} \mathrm{B} \\ i _ {\mathbf {A}} ^ {\mathbf {S}} \Biggl \downarrow \qquad \qquad \qquad \qquad \Biggl \downarrow i _ {\mathbf {B}} ^ {\mathbf {T}} \\ \mathrm{A} [ \mathrm{S} ^ {- 1} ] \xrightarrow [ f ^ {\prime} ]{} \mathrm{B} [ \mathrm{T} ^ {- 1} ] \end{array}
+\]
+
+而关系 \(f(\mathbf{S}) \subset \mathbf{T}\) 蕴含 \(i_{\mathbf{B}}^{\mathbf{T}}(f(s))\) 在 \(\mathbf{B}[\mathbf{T}^{-1}]\) 中对所有 \(s \in \mathbf{S}\) 可逆，故只需对 \(i_{\mathbf{B}}^{\mathbf{T}} \circ f\) 应用命题 1。由 (2) 容易得出，对所有 \(a \in \mathbf{A}\) 与 \(s \in \overline{\mathbf{S}}\)（\(\mathbf{A}\) 的由 \(\mathbf{S}\) 生成的乘性子集），
+
+\[
+f ^ {\prime} (a / s) = f (a) / f (s).\tag{3}
+\]
+
+假设 \(\mathbf{T}\) 包含在由 \(f(\mathbb{S})\) 生成的乘性子集中，后者正是 \(f(\overline{\mathbb{S}})\)。于是由 (3) 可知，若 \(f\) 是满射，则 \(f'\) 也是满射。
+
+现在设 \(f\) 是单射。设 \(a / s\) 是 \(f'\) 的核中的一个元素。由于由 \(T\) 生成的乘性子集是 \(f(\overline{S})\)，故存在元素 \(s_1 \in \overline{S}\) 使得 \(f(s_1)f(a) = 0\)，从而 \(f(s_1a) = 0\)，于是 \(s_1a = 0\)（因为 \(f\) 是单射）；于是 \(a / s = 0\)，这就证明了 \(f'\) 是单射。
+
+注 (6). 若 T 的元素都在 B 中可逆，则 \(B[T^{-1}]\) 可借助同构 \(i_{B}^{T}\) 与 B 等同，而 \(f'\) 于是就等同于唯一的同态 \(u'\)（\(A[S^{-1}]\) 到 B），使得 \(u' \circ i_{A}^{S} = f\)。
+
+推论 1. 设 A 是环，S 是 A 的子集，u 是 A 到某个环 B 的单同态，使得 \(u(S)\) 的元素在 B 中可逆。则唯一的同态 \(u'\)（\(\mathbf{A}[\mathbf{S}^{-1}]\) 到 B，满足 \(u' \circ i_{\mathbf{A}}^{\mathbf{S}} = u\)）是单射。
+
+这是命题 2 与注 6 的直接推论。
+
+推论 2. 设 A 是环，S 与 T 是 A 的两个子集，且 \(\mathbf{S} \subset \mathbf{T}\)。存在唯一的同态 \(i_{\mathbf{A}}^{\mathrm{T},\mathrm{S}}\)（从 \(\mathrm{A}[\mathrm{S}^{-1}]\) 到 \(\mathrm{A}[\mathrm{T}^{-1}]\)），使得 \(i_{\mathbf{A}}^{\mathrm{T}} = i_{\mathbf{A}}^{\mathrm{T},\mathrm{S}} \circ i_{\mathbf{A}}^{\mathrm{S}}\)。
+
+于是对所有 \(a \in \mathbf{A}\)，\(i_{\mathbf{A}}^{\mathbf{T},\mathbf{S}}\) 把元素 \(a / s\)（在 \(\mathbf{A}[\mathbf{S}^{-1}]\) 中）映为元素 \(a / s\)（在 \(\mathbf{A}[\mathbf{T}^{-1}]\) 中）。
+
+注 (7). 注意，若 \(i_{A}^{T}\) 是单射，则 \(i_{A}^{T,S}\) 也是单射（推论 1）。当 T 是 A 中非零因子元素组成的集合 R 时即是这种情形；这时可以把 \(A[S^{-1}]\) 与全分式环 \(A[R^{-1}]\) 中由 A 以及 S 的元素在 \(A[R^{-1}]\) 中的逆所生成的子环等同起来。
+
+推论 3. 设 A、B、C 是三个环，S（相应地，T、U）是 A（相应地，B、C）的乘性子集，\(f\colon A \to B\)、\(g\colon B \to C\) 是两个同态，\(h\colon A \to C\) 是复合同态 \(g \circ f\)；假设 \(f(S) \subset T\)，\(g(T) \subset U\)。设 \(f'\colon A[S^{-1}] \to B[T^{-1}]\)、\(g'\colon B[T^{-1}] \to C[U^{-1}]\)、\(h'\colon A[S^{-1}] \to C[U^{-1}]\) 是分别对应于 \(f\)、\(g\)、\(h\) 的同态；则 \(h' = g' \circ f'\)。
+
+这由定义容易得出。
+
+特别地，若 S、T、U 是 A 的三个乘性子集且 \(S \subset T \subset U\)，则 \(i_{A}^{U,S} = i_{A}^{U,T} \circ i_{A}^{T,S}\)。
+
+推论 4. 设 S 是环 A 的子集，B 是 A{[}S \(^{-1}\) {]} 的包含 \(i_{\text{A}}^{\text{S}}(\text{A})\) 的子环，S' 是集合 \(i_{\text{A}}^{\text{S}}(\text{A})\) 。设 j 是 B 到 A{[}S \(^{-1}\) {]} 的典范单射；从 B{[}S \(^{-1}\) {]} 到 A{[}S \(^{-1}\) {]} 的满足 \(g \circ i_{\text{A}}^{\text{S}} = j\) 的唯一同态 g 是同构。
+
+由推论 1，映射 g 是单射；环 \(g(\mathbf{B}[\mathbf{S}^{\prime-1}])\) 包含 \(i_{\mathbf{A}}^{\mathbf{s}}(\mathbf{A})\) 以及 \(S'\) 的元素的逆；因此它等于 \(A[S^{-1}]\)。
+
+若 A 是整环且 \(0 \notin S\)，则记号 \(A[S^{-1}]\) 与《代数学》第 IV 章 § 2 第 1 节中的记号一致；而且，若 S 是乘性的，则此时 \(A[S^{-1}]\) 与《代数学》第 I 章 § 1 第 1 节中记作 \(S^{-1}A\) 的集合相吻合。
+
+作为记号的推广，对环 A 的任意乘性子集 S，今后我们用 \(S^{-1}A\) 表示分式环 \(A[S^{-1}]\)。若 S 是 A 的素理想 p 的余集，我们就用 \(A_{p}\) 代替 \(S^{-1}A\)。
+
+若 A 是整环且 \(0 \notin S\)，则 \(S^{-1}A\) 总等同于 A 的分式域中包含 A 的一个子环（注 7）。
+
+\subsection{分式模}
+
+第 1 节中定义的典范同态 \(i_{\mathbf{A}}^{\mathbf{S}} \colon \mathbf{A} \to \mathbf{A}[\mathbf{S}^{-1}]\) 使我们可以把每个 \(\mathbf{A}[\mathbf{S}^{-1}]\) -模看作 A-模。
+
+命题 3. 设 A 是环，S 是 A 的子集，M 是 A-模，M' 是 A-模 M ⊗\_A A{[}S\^{}\{-1\}{]}，f 是 M 到 M' 的典范 A-同态 x ↦ x ⊗ 1。那么：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  对所有 \(s \in \mathbf{S}\)，位似映射 \(z \mapsto sz\) 在 \(\mathbf{M}'\) 上是双射。
+\item
+  对每个满足如下条件的 A-模 N：对所有 \(s \in S\)，位似映射 \(y \mapsto sy\) 在 N 上是双射；以及对每个 M 到 N 的同态 u，存在唯一的同态 \(u'\)（\(M'\) 到 N），使得 \(u = u' \circ f\)。
+\end{enumerate}
+
+换言之，\((M',f)\) 是泛映射问题（《集合论》第 IV 章，§ 3，第 1 节）在下列条件下的解：结构种 \(\Sigma\) 是这样的 A-模的结构种，其中由 S 的元素诱导的位似映射都是双射；态射是 A-模同态，而 \(\alpha\) -映射也是 A-模同态。
+
+对每个 A-模 N 与所有 \(a \in \mathbf{A}\)，用 \(h_a\) 表示位似映射 \(y \mapsto ay\)（在 \(\mathbf{N}\) 上）；于是 \(a \mapsto h_a\) 是 A 到 \(\operatorname{End}_{\mathbf{A}}(\mathbf{N})\) 的环同态。说 \(h_a\) 是双射，就是说 \(h_a\) 是 \(\operatorname{End}_{\mathbf{A}}(\mathbf{N})\) 的可逆元。假设对所有 \(s \in \mathbf{S}\)，\(h_s\) 在 \(\operatorname{End}_{\mathbf{A}}(\mathbf{N})\) 中可逆；于是元素 \(h_a\)（其中 \(a \in \mathbf{A}\)）与元素 \(h_s\)（其中 \(s \in \mathbf{S}\)）的逆在 \(\operatorname{End}_{\mathbf{A}}(\mathbf{N})\) 中生成一个交换子环 B，且 A 到 B 的同态 \(a \mapsto h_a\) 使 S 的元素的像都可逆。于是由此得出（第 1 节，命题 1），存在唯一的同态 \(h'\)（\(\mathrm{A}[\mathrm{S}^{-1}]\) 到 B），使得
+
+\[
+h ^ {\prime} (a / s) = h _ {a} \left(h _ {s}\right) ^ {- 1};
+\]
+
+我们知道（《代数学》第 II 章，§ 1，第 14 节），这样的同态在 N 上定义了一个 A{[}S \(^{-1}\) {]}-模结构，使得 (a/s).y = h \(_{s}^{-1}\) (a.y)；由这个 A{[}S \(^{-1}\) {]}-模结构借助同态 i \(_{A}^{S}\) 导出的 A-模结构正是最初给定的结构。
+
+反之，若 N 是 A{[}S \(^{-1}\) {]}-模，并且借助 \(i_{\text{A}}^{\text{S}}\) 把它看作 A-模，则位似映射 \(y \mapsto sy\)（其中 \(s \in \text{S}\)）是双射，因为 \(y \mapsto (1/s)y\) 是 \(y \mapsto sy\) 的逆映射；而由上述程序从 N 的 A-模结构导出的 A{[}S \(^{-1}\) {]}-模结构就是最初给定的 A{[}S \(^{-1}\) {]}-模结构。于是，在 A{[}S \(^{-1}\) {]}-模与由 S 的元素诱导的位似映射均为双射的 A-模之间存在一个典范的一一对应；此外，若 N、N' 是两个具有这一性质的 A-模，则每个 A-模同态 \(u: \text{N} \to \text{N}'\) 也是 N 与 N' 的 A{[}S \(^{-1}\) {]}-模结构之间的同态，因为对所有 \(y \in \text{N}\) 与所有 \(s \in \text{S}\)，可以写出 \(u(y) = u(s. ((1/s)y)) = s.u((1/s)y)\)，由此得 \(u((1/s)y) = (1/s)u(y)\)；反之是显然的。
+
+在这一讨论之下，命题 3 的陈述不过是把纯量扩张到 A{[}S \(^{-1}\) {]} 时由 M 得到的模的特征刻画，其中用到上述解释（《代数学》第 II 章，§ 5，第 1 节，注 1）。
+
+定义 3. 设 A 是环，S 是 A 的子集，\(\overline{\mathbf{S}}\) 是由 S 生成的 A 的乘性子集，M 是 A-模。由 S 定义的 M 的分式模，记作 \(\mathbf{M}[\mathbf{S}^{-1}]\) 或 \(\overline{\mathbf{S}}^{-1}\mathbf{M}\)，是指 \(\mathbf{A}[\mathbf{S}^{-1}]\) -模 \(\mathbf{M} \otimes_{\mathbf{A}} \mathbf{A}[\mathbf{S}^{-1}]\)。
+
+本章中我们通常用 \(i_{\mathbf{M}}^{\mathbf{S}}\) 表示典范映射 \(m \mapsto m \otimes 1\)（\(\mathbf{M}\) 到 \(\mathbf{M}[\mathbf{S}^{-1}]\)）。
+
+注
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  显然 \(\mathbf{M}[\overline{\mathbf{S}}^{-1}] = \mathbf{M}[\mathbf{S}^{-1}]\)。
+\item
+  对 \(m \in \mathbf{M}\) 与 \(s \in \overline{\mathbf{S}}\)，我们还用 \(m / s\) 表示元素 \(m \otimes (1 / s)\)，它属于 \(\mathbf{M}[\mathbf{S}^{-1}]\)。\(\mathbf{M}[\mathbf{S}^{-1}]\) 的每个元素都具有这种形式，因为这样的元素具有形式 \(\sum_{i} m_i \otimes (a_i / s)\)，其中 \(m_i \in \mathbf{M}\)，\(a_i \in \mathbf{A}\)，\(s \in \mathbf{S}\)（第 1 节，注 2），并且
+\[
+m _ {i} \otimes (a _ {i} / s) = (a _ {i} m _ {i}) \otimes (1 / s),
+\]
+
+于是 \(\sum_{i} m_{i} \otimes (a_{i}/s) = m \otimes (1/s)\)，其中 \(m = \sum_{i} a_{i} m_{i}\)。从而
+
+
+\[
+(m / s) + (m ^ {\prime} / s ^ {\prime}) = (s ^ {\prime} m + s m ^ {\prime}) / s s ^ {\prime}\tag{4}
+\]
+
+\[
+(a / s) (m / s ^ {\prime}) = (a m) / (s s ^ {\prime})\tag{5}
+\]
+
+其中 \(m, m' \in \mathbf{M}, a \in \mathbf{A}\)，\(s, s' \in \mathbf{S}\)。
+
+\item
+  若 S 是 A 的素理想 p 的余集，我们就用 \(M_{p}\) 代替 \(S^{-1}M\)。
+\item
+  设 M 是 A{[}S \(^{-1}\) {]}-模；若把 M 典范地看作 A-模，则 \(i_{M}^{S}\) 是双射，因为由 M 与恒等映射 \(l_{M}\) 组成的有序对显然也是 M{[}S \(^{-1}\) {]} 与 \(i_{M}^{S}\) 所解的泛映射问题的解。于是把 M 与 M{[}S \(^{-1}\) {]} 等同起来。
+\end{enumerate}
+
+命题 4. 设 S 是 A 的乘性子集，M 是 A-模。为使 m/s = 0（m ∈ M，s ∈ S），必须且只需存在 s' ∈ S 使得 s'm = 0。
+
+若 \(s' \in S\) 满足 \(s'm = 0\)，则显然 \(m/s = (s'm)/(ss') = 0\)。反之，设 \(m/s = 0\)。由于 \(1/s\) 在 \(S^{-1}A\) 中可逆，有 \(m/1 = 0\)。对每个包含 1 的 A-子模 \(P\)（\(S^{-1}A\) 的子模），我们用 \(\beta(P, m)\) 表示 \((m, 1)\) 在 \(M \times P\) 到 \(M \otimes_A P\) 的典范映射下的像；于是 \(\beta(S^{-1}A, m) = 0\)。我们知道（《代数学》第 II 章，§ 6，第 3 节，命题 7 的推论 4），存在一个包含 1 的有限生成子模 \(P\)（\(S^{-1}A\) 的子模），使得 \(\beta(P, m) = 0\)。对所有 \(t \in S\)，我们用 \(A_t\) 表示形如 \(a/t\)（其中 \(a \in A\)）的元素组成的集合；由于 \(P\) 是有限生成的，存在 \(t \in S\) 使得 \(P \subset A_t\)（第 1 节，注 2），于是 \(\beta(A_t, m) = 0\)。映射 \(a \mapsto a/t\)（从 \(A\) 到 \(A_t\)）是满射；设 \(B\) 是它的核。它定义了一个满射 \(h: M \otimes_A A \to M \otimes_A A_t\)，其核为 BM（把 M 与 \(M \otimes A\) 等同）；于是 \(\beta(A_t, m) = h(tm)\)，从而 \(tm\) 可以表示为形式 \(\sum_{i=1}^{r} b_i m_i\)，其中 \(b_i \in B\)，\(m_i \in M (1 \leqslant i \leqslant r)\) 。由 \(b_i/t = 0\) 可表示为形式 \(\sum_{i=1}^{n} b_i m_i\)，其中 \(b_i \in \mathbf{B}\)，\(m_i \in \mathbf{M}\)（\(1 \leqslant i \leqslant r\)）。由于 \(b_i / t = 0\) 对 \(1 \leqslant i \leqslant r\) 成立，存在 \(t' \in \mathbf{S}\) 使得 \(t'b_i = 0\) 对 \(1 \leqslant i \leqslant r\) 成立，从而 \(t'tm = 0\)，这就证明了命题 4。
+
+推论 1. 为使 \(m / s = m' / s'\)（在 \(S^{-1}M\) 中）成立，必须且只需存在 \(t \in S\) 使得 \(t(s'm - sm') = 0\)。
+
+\[
+(m / s) - (m ^ {\prime} / s ^ {\prime}) = (s ^ {\prime} m - s m ^ {\prime}) / s s ^ {\prime}.
+\]
+
+推论 2. 设 M 是有限生成的 A-模。为使 \(S^{-1}M = 0\)，必须且只需存在 \(s \in S\) 使得 \(sM = 0\)。
+
+在不对 M 作任何假设的情况下，显然，关系 \(sM = 0\)（对某个 \(s \in S\)）蕴含 \(S^{-1}M = 0\)。反之，设 \(S^{-1}M = 0\)，并设 \((m_i)_{1 \leqslant i \leqslant n}\) 是 M 的一个生成系；\(m_i / 1\) 生成 \(S^{-1}A\)-模 \(S^{-1}M\)，因此说 \(S^{-1}M = 0\) 就相当于说 \(m_i / 1 = 0\) 对 \(1 \leqslant i \leqslant n\) 成立；由
+
+命题 4，存在 \(s_i \in S\) 使得 \(s_i m_i = 0\)；取 \(s = s_1 s_2 \ldots s_n\)，则 \(sm_i = 0\) 对所有 \(i\) 成立，从而 \(sM = 0\)。
+
+推论 3. 设 M 是有限生成的 A-模。为使 A 的理想 a 满足 aM = M，必须且只需存在 \(a \in a\) 使得 \((1 + a)M = 0\)。
+
+显然，关系 \((1 + a)M = 0\) 蕴含 M = aM。为证明其逆，我们使用下面的引理：
+
+引理 1. 对 A 的每个理想 a，由形如 \(1 + a\)（其中 \(a \in a\)）的元素组成的集合 S 是 A 的一个乘性子集，而集合 \(a'\)（由 \(S^{-1}A\) 中形如 a/s 的元素组成，其中 \(a \in a\) 且 \(s \in S\)）是包含于 \(S^{-1}A\) 的 Jacobson 根中的一个理想。
+
+第一个断言是明显的，\(a'\) 是 \(S^{-1}A\) 的理想这一事实也同样明显。另一方面，\((1/1) + (a/s) = (s + a)/s\)，且 \(s + a \in S\) 对所有 \(s \in S\) 与 \(a \in a\)（按 S 的定义）成立；因此 \((1/1) + (a/s)\) 在 \(S^{-1}A\) 中对所有 \(a/s \in a'\) 可逆，这就完成了引理的证明（《代数学》第 VIII 章，§ 6，第 3 节，定理 1）。
+
+在此情形下，若令 \(N = S^{-1}M\)，则显然 N 是有限生成的 \(S^{-1}A\)-模；若 aM = M，则 \(a'N = N\)，于是由 Nakayama 引理（《代数学》第 VIII 章，§ 6，第 3 节，命题 6 的推论）得 N = 0；由此并利用推论 2 即得本推论。
+
+命题 5. 设 A、B 是两个环，S 是 A 的乘性子集，T 是 B 的乘性子集，f 是 A 到 B 的同态且 \(f(S) \subset T\)。设 M 是 A-模，N 是 B-模，u 是 M 到 N 的 A-线性映射。则存在唯一的 \(S^{-1}A\)-线性映射 \(u'\)（从 \(S^{-1}M\) 到 \(T^{-1}N\)），使得 \(u'(m/1) = u(m)/1\) 对所有 \(m \in M\) 成立。
+
+映射 \(i_{\mathbf{N}}^{\mathbf{T}} \circ u\)（从 \(\mathbf{M}\) 到 \(\mathbf{T}^{-1}\mathbf{N}\)）是 A-线性的。此外，若 \(s \in \mathbf{S}\)，则 \(f(s) \in \mathbf{T}\)，因而由 \(s\) 在 \(\mathbf{T}^{-1}\mathbf{N}\) 上诱导的位似映射是双射。于是由命题 3 得出 \(u'\) 的存在性与唯一性。这时，对 \(m \in \mathbf{M}\) 与 \(s \in \mathbf{S}\)，
+
+\[
+u ^ {\prime} (m / s) = u (m) / f (s).\tag{6}
+\]
+
+沿用同样的记号，设 C 是第三个环，U 是 C 的乘性子集，g 是 B 到 C 的同态且 \(g(T) \subset U\)，P 是 C-模，v 是 N 到 P 的 B-线性映射，\(v'\) 是与 v 相伴的 \(T^{-1}B\)-线性映射（从 B 到 \(U^{-1}P\)）。则
+
+\[
+(v \circ u) ^ {\prime} = v ^ {\prime} \circ u ^ {\prime}\tag{7}
+\]
+
+其中左边是 A-线性映射 \(S^{-1}M \rightarrow U^{-1}P\)（与 \(v \circ u\) 相伴的）。类似地，若 \(u_{1}\) 是 M 到 N 的第二个 A-线性映射，则
+
+\[
+(u + u _ {1}) ^ {\prime} = u ^ {\prime} + u _ {1} ^ {\prime},\tag{8}
+\]
+
+左边的项是 A-线性映射 \(S^{-1}M \rightarrow T^{-1}N\)（与 \(u + u_{1}\) 相伴的）。
+
+注 (5). 若在命题 5 中取 B = A、T = S 以及 \(f = 1_{A}\)，则容易看出，\(u'\) 正是映射 \(u \otimes 1: M \otimes S^{-1}A \to N \otimes S^{-1}A\)。今后我们把它记作 \(S^{-1}u\)；若 S 是 A 的素理想 p 的余集，我们就用 \(u_{p}\) 代替 \(S^{-1}u\)。
+
+命题 6. 设 \(f\) 是环 \(\mathbf{A}\) 到环 \(\mathbf{B}\) 的同态，\(\mathbf{S}\) 是 \(\mathbf{A}\) 的乘性子集。存在唯一的映射 \(j\)（从 \((f(\mathbf{S}))^{-1}\mathbf{B}\) 到 \(\mathbf{S}^{-1}\mathbf{B}\)）（其中 \(\mathbf{B}\) 借助 \(f\) 被看作 A-模），使得 \(j(b/f(s)) = b/s\) 对所有 \(b \in \mathbf{B}\)、\(s \in \mathbf{S}\) 成立。若 \(f': \mathbf{S}^{-1}\mathbf{A} \to (f(\mathbf{S}))^{-1}\mathbf{B}\) 是与 \(f\) 相伴的环同态（第 1 节，命题 2），则 \(j \circ f' = \mathbf{S}^{-1}f\)。映射 \(j\) 是 \(\mathbf{S}^{-1}\mathbf{A}\)-模结构（\((f(\mathbf{S}))^{-1}\mathbf{B}\) 上由 \(f'\) 定义者）到 \(\mathbf{S}^{-1}\mathbf{B}\) 上相应结构的同构，也是 B-模结构（\((f(\mathbf{S}))^{-1}\mathbf{B}\) 上者）到 \(\mathbf{S}^{-1}\mathbf{B}\) 上相应结构的同构（这一结构由定义 \(\mathbf{S}^{-1}\mathbf{B} = (\mathbf{S}^{-1}\mathbf{A}) \otimes_{\mathbf{A}} \mathbf{B}\) 而得）。
+
+若 \(b, b'\) 属于 B，\(s, s'\) 属于 S，则条件 \(b / s = b' / s'\) 与 \(b / f(s) = b' / f(s')\) 等价，这由命题 4 的推论 1 得出；这就确立了 \(j\) 的存在性并表明 \(j\) 是双射；\(j\) 的唯一性是明显的。显然 \(j\) 是加群同构。若 \(a \in A\)、\(b \in B\)、\(s \in S\)、\(t \in S\)，则
+
+\[
+(a / s). (b / f (t)) = f ^ {\prime} (a / s) (b / f (t)) = f (a) / f (s) (b / f (t)) = (f (a) b) / f (s t),
+\]
+
+由此得出 \(j\) 是 \((\mathbf{S}^{-1}\mathbf{A})\)-线性的。显然 \(j \circ f^1 = \mathbf{S}^{-1}f\)。最后，若 \(b \in \mathbf{B}\)、\(b' \in \mathbf{B}\)、\(s \in \mathbf{S}\)，则 \(j(b \cdot (b'/f(s)) = j(bb'/f(s)) = bb'/s = b \cdot (b'/s))\)，这就证明了最后一个断言。
+
+命题 6 中的映射 \(j\) 称为 \((f(\mathbf{S}))^{-1}\mathbf{B}\) 到 \(\mathbf{S}^{-1}\mathbf{B}\) 上的典范同构。这两个集合通常借助 \(f\) 等同起来；这时 \(f' = \mathbf{S}^{-1}f\)，\(i_{\mathbf{B}}^{\mathbf{S}} = i_{\mathbf{B}}^{f(\mathbf{S})}\)。
+
+\subsection{乘性子集的更换}
+
+设 A 是环，S 是 A 的乘性子集，M 是 A-模。若 T 是 A 的包含 S 的乘性子集，则由第 2 节命题 5 可知，存在唯一的 \(S^{-1}A\)-线性映射 \(i_{M}^{T,S}:S^{-1}M\to T^{-1}M\)，使得 \(i_{M}^{T}=i_{M}^{T,S}\circ i_{M}^{S}\)；映射 \(i_{M}^{T,S}\) 把 \(S^{-1}M\) 中的元素 m/s 映为 \(T^{-1}M\) 中的元素 m/s。容易验证 \(i_{M}^{T,S}=i_{A}^{T,S}\otimes l_{M}\)。若 U 是 A 的第三个乘性子集且 \(T\subset U\)，则 \(i_{M}^{U,S}=i_{M}^{U,T}\circ i_{M}^{T,S}\)；此外，若 u: \(M\to N\) 是 A-模同态，则图表
+
+\[
+\begin{array}{c} \mathrm{S} ^ {- 1} \mathrm{M} \xrightarrow {\mathrm{S} - 1 _ {u}} \mathrm{S} ^ {- 1} \mathrm{N} \\ i _ {\mathrm{M}} ^ {\mathrm{T}, \mathrm{S}} \Biggl \downarrow \qquad \qquad \qquad \qquad \qquad \qquad \qquad \Biggl \downarrow i _ {\mathrm{N}} ^ {\mathrm{T}, \mathrm{S}} \\ \mathrm{T} ^ {- 1} \mathrm{M} \xrightarrow [ \mathrm{T} - 1 _ {u} ]{} \mathrm{T} ^ {- 1} \mathrm{N} \end{array}
+\]
+
+是交换的。
+
+命题 7. 设 A 是环，S、T 是 A 的两个乘性子集。令 \(\mathbf{T}' = i(\mathbf{T}_{\mathbf{A}}^{\mathbf{s}})\)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  存在唯一的同构 \(j\)（从环 (ST) \(^{-1}\) A 到环 \(\mathbf{T}^{\prime -1}(\mathbf{S}^{-1}\mathbf{A})\)），使得图表
+
+\[
+\begin{array}{c} \mathrm{A} \xrightarrow {i _ {\mathrm{A}} ^ {\mathrm{S}}} \mathrm{S} ^ {- 1} \mathrm{A} \\ i _ {\mathrm{M}} ^ {\mathrm{ST}} \Big \downarrow \qquad \qquad \qquad \qquad \qquad \qquad \qquad \Big \downarrow i _ {\mathrm{S} - 1 _ {\mathrm{A}}} ^ {\mathrm{T} ^ {\prime}} \\ (\mathrm{ST}) ^ {- 1} \mathrm{A} \xrightarrow [ j ]{} \mathrm{T} ^ {\prime - 1} (\mathrm{S} ^ {- 1} \mathrm{A}) \end{array}
+\]
+
+是交换的。
+
+\item
+  设 M 是 A-模。存在一个 \((\mathrm{ST})^{-1}\mathrm{A}\)-同构 k，从 \((\mathrm{ST})^{-1}\mathrm{A}\)-模 \((\mathrm{ST})^{-1}\mathrm{M}\) 到 \(\mathrm{T}^{\prime-1}(\mathrm{S}^{-1}\mathrm{A})\)-模 \(\mathrm{T}^{\prime-1}(\mathrm{S}^{-1}\mathrm{M})\)，使得图表
+\end{enumerate}
+
+\[
+\begin{array}{c} \mathrm{M} \qquad \xrightarrow {i _ {\mathrm{M}} ^ {\mathrm{S}}} \mathrm{S} ^ {- 1} \mathrm{M} \\ i _ {\mathrm{A}} ^ {\mathrm{ST}} \Big \downarrow \qquad \qquad \qquad \qquad \qquad \Big \downarrow i _ {\mathrm{S}} ^ {\mathrm{T} ^ {\prime} - 1 _ {\mathrm{M}}} \\ (\mathrm{ST}) ^ {- 1} \mathrm{M} \xrightarrow [ k ]{} \mathrm{T} ^ {\prime - 1} (\mathrm{S} ^ {- 1} \mathrm{M}) \end{array}
+\]
+
+是交换的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  我们利用 \((\mathrm{ST})^{-1}\mathrm{A}\) 作为一个泛映射问题的解这一定义。设 B 是环，f 是 A 到 B 的同态，使得 \(f(\mathrm{ST})\) 由可逆元组成。由于 \(f(\mathrm{S})\) 从而也由可逆元组成，故存在唯一的同态 \(f': S^{-1}A \to B\) 使得 \(f = f' \circ i_{A}^{S}\)（第 1 节，命题 1）。对所有 \(t \in T\)，\(f'(i_{\mathbf{A}}^{\mathrm{S}}(t)) = f(t)\) 依假设在 B 中可逆，因而 \(f'(\mathrm{T}')\) 由可逆元组成；于是由第 1 节命题 1，存在唯一的同态 \(f''\)（从 \(T'^{-1}(S^{-1}A)\) 到 B）使得 \(f' = f'' \circ i_{S^{-1}A}^{T'}\)，从而 \(f = f'' \circ u\)，其中令 \(u = i_{S^{-1}A}^{T'} \circ i_{A}^{S}\)。
+
+此外，若 \(f_1'' \colon \mathrm{T}^{-1}(\mathrm{S}^{-1}\mathrm{A}) \to \mathrm{B}\) 是使 \(f_1'' \circ u = f\) 成立的第二个同态，则 \((f_1'' \circ i_{\mathrm{S}^{-1}\mathrm{A}}^{\mathrm{T}'} \circ i_{\mathrm{A}}^{\mathrm{S}} = (f'' \circ i_{\mathrm{S}^{-1}\mathrm{A}}^{\mathrm{T}'} \circ i_{\mathrm{A}}^{\mathrm{S}} \text{，由此 } f_1'' \circ i_{\mathrm{S}^{-1}\mathrm{A}}^{\mathrm{T}'} = f'' \circ i_{\mathrm{S}^{-1}\mathrm{A}}^{\mathrm{T}'} \text{ 从而 } f_1'' = f''\)。
+
+由于 ST 的元素经 \(u\) 在 \(\mathbf{T}^{-1}(\mathbf{S}^{-1}\mathbf{A})\) 中的像都可逆，有序对 \((\mathbf{T}^{-1}(\mathbf{S}^{-1}\mathbf{A}), u)\) 是第 1 节中所考虑的（关于 A 与 ST 的）泛映射问题的解。这就表明了 \(j\) 的存在性与唯一性。
+
+\item
+  证明与 (i) 完全类似，只是此时要用第 2 节命题 3，留给读者。
+\end{enumerate}
+
+命题 8. 设 A 是环，S、T 是 A 的两个乘性子集且 \(\mathbf{S} \subset \mathbf{T}\)。下列性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  同态 \(i_{\mathbf{A}}^{\mathrm{T},\mathrm{S}}: \mathrm{S}^{-1}\mathrm{A} \to \mathrm{T}^{-1}\mathrm{A}\) 是双射。
+\item
+  对每个 A-模 M，同态 \(i_{\mathbf{A}}^{\mathrm{T},\mathrm{S}}: \mathrm{S}^{-1}\mathrm{M} \to \mathrm{T}^{-1}\mathrm{M}\) 是双射。
+\item
+  对所有 \(t \in \mathbf{T}\)，存在 \(a \in \mathbf{A}\) 使得 \(at \in \mathbf{S}\)（换言之，\(\mathbf{T}\) 的每个元素整除 \(\mathbf{S}\) 的某个元素）。
+\item
+  每个与 T 相交的素理想也与 S 相交。
+\end{enumerate}
+
+上面已经看到 \(i_{\mathbf{A}}^{\mathrm{T},\mathrm{S}} = 1_{\mathbb{M}} \otimes i_{\mathbf{A}}^{\mathrm{T},\mathrm{S}}\)，由此立即可证 (a) 与 (b) 等价。令 \(\mathrm{T}' = i_{\mathbf{A}}^{\mathrm{S}}(\mathrm{T})\)；于是（命题 7）\(\mathrm{T}^{-1}\mathbf{A}\) 与 \(\mathrm{T}'^{-1}(\mathrm{S}^{-1}\mathbf{A})\) 等同，而 (a) 等价于说 \(\mathrm{T}'\) 的元素在 \(\mathrm{S}^{-1}\mathbf{A}\) 中可逆（第 1 节，注 5）。现在，说 \((t/1)(a/s) = 1/1\)（\(t \in \mathrm{T}\)、\(a \in \mathrm{A}\)、\(s \in \mathrm{S}\)）意味着存在 \(s' \in \mathrm{S}\) 使得 \(tas' = ss'\)，这就表明 (a) 与 (c) 等价。我们证明 (d) 蕴含 (c)。设 \(t\) 是 \(\mathrm{T}\) 的一个元素，并设 \(t/1\) 在 \(\mathrm{S}^{-1}\mathbf{A}\) 中不可逆；于是存在一个极大理想 \(m'\)（\(\mathrm{S}^{-1}\mathbf{A}\) 的），它包含 \(t/1\)（《代数学》第 I 章，§ 8，第 7 节，定理 2），而 \(p = (i_{\mathbf{A}}^{\mathrm{S}})^{-1}(m')\) 是 \(\mathbf{A}\) 的一个素理想，它包含 \(t\) 且不与 \(\mathbf{S}\) 相交（因为在 \(i_{\mathbf{A}}^{\mathrm{S}}\) 之下 \(\mathbf{S}\) 的元素的像是可逆的）。反之，若存在素理想 \(p\) 与 \(\mathrm{T}\) 相交而不与 \(\mathrm{S}\) 相交，则 \(p \cap \mathrm{T}\) 中没有元素能整除 \(\mathrm{S}\) 的元素；这就证明 (c) 蕴含 (d)，并完成证明。
+
+由命题 8 可知，在 A 的包含 S 且满足命题 8 的诸等价条件的乘性子集 T 当中，存在一个最大的，它由 A 中整除 S 的某个元素的全体元素组成（参见习题 1）。
+
+命题 9. 设 I 是一个右定向的预序集，\((\mathrm{S}_{\alpha})_{\alpha \in \mathbf{I}}\) 是环 A 的乘性子集的一个递增族，而 \(S = \bigcup_{\alpha \in I} S_{\alpha}\)。我们记 \(\rho_{\beta \alpha} = i_{A}^{S_{\beta}, S_{\alpha}}\)（对 \(\alpha \leqslant \beta\)），并记 \(\rho_{\alpha} = i_{A}^{S, S_{\alpha}}\)。则 \((S_{\alpha}^{-1}A, \rho_{\beta \alpha})\) 是一个环的正向系，并且，若对所有 \(\alpha \in I\)，\(\rho_{\alpha}'\) 是 \(\mathbf{S}_{\alpha}^{-1}\mathbf{A}\) 到 \(\lim_{\longrightarrow}\mathbf{S}_{\alpha}^{-1}\mathbf{A}\) 的典范映射，则存在唯一的同构 \(j\)（从 \(\lim_{\longrightarrow}\mathbf{S}_{\alpha}^{-1}\mathbf{A}\) 到 \(\mathbf{S}^{-1}\mathbf{A}\)），使得 \(j\circ \rho_{\alpha}^{\prime} = \rho_{\alpha}\) 对所有 \(\alpha \in \mathbf{I}\) 成立。
+
+对 \(\alpha \leqslant \beta \leqslant \gamma\)，\(\rho_{\gamma \alpha} = \rho_{\gamma \beta} \circ \rho_{\beta \alpha}\)（第 1 节，命题 2 的推论 3），因此 \((S_{\alpha}^{-1}A, \rho_{\beta \alpha})\) 是一个正向系。我们记 \(A' = \varinjlim S_{\alpha}^{-1}A\)；由于 \(\rho_{\alpha} = \rho_{\beta} \circ \rho_{\beta \alpha}\) 对 \(\alpha \leqslant \beta\) 成立（第 1 节，命题 2 的推论 3），\((\rho_{\alpha})\) 是同态的一个正向系，而 \(j = \varinjlim \rho_{\alpha}\) 是从 \(A'\) 到 \(S^{-1}A\) 的唯一同态，使得 \(j \circ \rho_{\alpha}' = \rho_{\alpha}\) 对所有 \(\alpha \in I\) 成立。同态 \(\rho_{\alpha}' \circ i_{A^{\alpha}}^{S}: A \to A'\) 都相等，因为 \(\rho_{\beta \alpha} \circ i_{A^{\alpha}}^{S} = i_{A^{\beta}}^{S}\) 对 \(\alpha \leqslant \beta\) 成立；设 \(u\) 是它们的公共值。显然 \(u(S)\) 的元素在 \(A'\) 中可逆，这表明存在同态 \(h: S^{-1}A \to A'\) 使得 \(h \circ i_{A}^{S} = u\)（第 1 节，命题 1）。则
+
+\[
+j \circ h \circ i _ {\mathrm{S}} ^ {\mathrm{A}} = j \circ u = j \circ \rho_ {\alpha} ^ {\prime} \circ i _ {\mathrm{S} ^ {\alpha}} ^ {\mathrm{A}} = \rho_ {\alpha} \circ i _ {\mathrm{A} ^ {\alpha}} ^ {\mathrm{S}} = i _ {\mathrm{A}} ^ {\mathrm{S}}
+\]
+
+对所有 \(\alpha \in \mathbf{I}\) 成立，因而 \(j \circ h\) 是 \(\mathbf{S}^{-1}\mathbf{A}\) 的恒等自同构。另一方面，对所有 \(\alpha \in \mathbf{I}\)，
+
+\[
+h \circ j \circ \rho_ {\alpha} ^ {\prime} \circ i _ {A ^ {\alpha}} ^ {S} = h \circ \rho_ {\alpha} \circ i _ {A ^ {\alpha}} ^ {S} = h \circ i _ {A} ^ {S} = u = \rho_ {\alpha} ^ {\prime} \circ i _ {A ^ {\alpha}} ^ {S},
+\]
+
+从而 \(h \circ j \circ \rho_{\alpha}' = \rho_{\alpha}'\) 对所有 \(\alpha \in I\) 成立；由此得出 \(h \circ j\) 是 \(A'\) 的恒等自同构，因而 \(j\) 是同构。
+
+推论. 在命题 9 的假设下，设 M 是 A-模。我们记 \(f_{\beta \alpha} = i_{\mathrm{M}}^{\mathrm{S}_{\beta},\mathrm{S}_{\alpha}}\) 对 \(\alpha \leqslant \beta, f_{\alpha} = i_{\mathrm{M}}^{\mathrm{S},\mathrm{S}_{\alpha}}\)（对所有 \(\alpha \in \mathbf{I}\)），并设 \(f_{\alpha}'\) 是 \(\mathrm{S}_{\alpha}^{-1}\mathrm{M}\) 到 \(\lim \mathrm{S}_{\alpha}^{-1}\mathrm{M}\) 的典范映射；则存在一个 \(\mathrm{S}^{-1}\mathrm{A}\)-同构 \(g\)（从 \(\mathrm{S}^{-1}\mathrm{M}\) 到 \(\lim \mathrm{S}_{\alpha}^{-1}\mathrm{M}\)），使得 \(g \circ f_{\alpha} = f_{\alpha}'\) 对所有 \(\alpha \in \mathbf{I}\) 成立。
+
+该推论由定义 \(S_{\alpha}^{-1}M = M \otimes_{A} S_{\alpha}^{-1}A\) 与 \(S^{-1}M = M \otimes_{A} S^{-1}A\) 以及取正向极限与张量积交换这一事实（《代数学》第 II 章，§ 6，第 3 节，命题 7）立即得出。
+
+\subsection{分式模的性质}
+
+在本节中，A 表示一个环，S 表示 A 的一个乘性子集。
+
+设 \((\mathbf{M}_{\alpha}, \phi_{\beta\alpha})\) 是 A-模的一个正向系；则 \((\mathrm{S}^{-1}\mathbf{M}_{\alpha}, \mathrm{S}^{-1}\phi_{\beta\alpha})\) 是 \(S^{-1}A\)-模的一个正向系，而取正向极限与张量积交换这一事实（《代数学》第 II 章，§ 6，第 3 节，命题 7）使我们可以定义一个典范同构
+
+\[
+\lim _ {\longrightarrow} \left(\mathrm{S} ^ {- 1} \mathrm{M} _ {\alpha}\right)\rightarrow \mathrm{S} ^ {- 1} \lim _ {\longrightarrow} \mathrm{M} _ {\alpha}.
+\]
+
+类似地，取直和与张量积交换这一事实（《代数学》第 II 章，§ 3，第 7 节，命题 7）使我们可以对 A-模的每个族 \((\mathbf{M}_t)_{i\in I}\) 定义一个典范同构
+
+\[
+\bigoplus_ {i \in I} S ^ {- 1} M _ {i} \rightarrow S ^ {- 1} \bigoplus_ {i \in I} M _ {i}.
+\]
+
+最后我们指出，若 A-模 M 是子模族 \((\mathbf{N}_{\iota})_{\iota\in I}\) 的和，则 \(S^{-1}M\) 是诸子 \(S^{-1}A\)-模之和，这些子模由 \(i_{M}^{S}(N_{\iota})\) 生成。由此得出，若 M 是有限生成的 A-模（相应地，有限表示的 A-模），则 \(S^{-1}M = S^{-1}A \otimes_{A} M\) 是有限生成的 \(S^{-1}A\)-模（相应地，有限表示的 \(S^{-1}A\)-模）。
+
+定理 1. 环 \(\mathbf{S}^{-1}\mathbf{A}\) 是一个平坦的 A-模（第 I 章，§ 2，第 1 节，定义 2）。
+
+若 \(u: \mathbf{M}' \to \mathbf{M}\) 是 A-模的单同态，则须证明 \(\mathbf{S}^{-1}u: \mathbf{S}^{-1}\mathbf{M}' \to \mathbf{S}^{-1}\mathbf{M}\) 是单射。现在，若 \(m'/s\)（\(m' \in \mathbf{M}'\)、\(s \in \mathbf{S}\)）使得 \(u(m')/s = 0\)，这就意味着存在 \(s' \in \mathbf{S}\) 使得 \(s'u(m') = 0\)（第 2 节，命题 4），亦即 \(u(s'm') = 0\)；由于 \(u\) 是单射，得出 \(s'm' = 0\)，从而 \(m'/s = 0\)。
+
+\(\mathbf{S}^{-1}\mathbf{A}\) 是平坦 A-模这一事实使我们可以对它应用第 I 章 § 2 的结果。特别地：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  若 M 是 A-模而 N 是 M 的子模，则 \(S^{-1}N\) 典范地等同于 \(S^{-1}M\) 的由 \(i_{\mathrm{M}}^{\mathrm{S}}(\mathrm{N})\) 生成的子模（第 I 章，§ 2，第 3 节，注 2）；在这一等同下，\(S^{-1}(\mathrm{M}/\mathrm{N})\) 与 \((\mathrm{S}^{-1}\mathrm{M})/(\mathrm{S}^{-1}\mathrm{N})\) 等同，并且，若 P 是 M 的第二个子模，则
+\end{enumerate}
+
+\[
+\mathrm{S} ^ {- 1} (\mathrm{N} + \mathrm{P}) = \mathrm{S} ^ {- 1} \mathrm{N} + \mathrm{S} ^ {- 1} \mathrm{P}, \quad \mathrm{S} ^ {- 1} (\mathrm{N} \cap \mathrm{P}) = \mathrm{S} ^ {- 1} \mathrm{N} \cap \mathrm{S} ^ {- 1} \mathrm{P}
+\]
+
+（第 I 章，§ 2，第 6 节，命题 2）。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  若 M 是有限生成的 A-模，则
+\end{enumerate}
+
+\[
+\mathbf {S} ^ {- 1} \operatorname{Ann} (\mathbf {M}) = \operatorname{Ann} (\mathbf {S} ^ {- 1} \mathbf {M})\tag{9}
+\]
+
+（第 I 章，§ 2，第 10 节，命题 12 的推论 2）。
+
+命题 10. 设 M 是 A-模。对 S \(^{-1}\) A-模 S \(^{-1}\) M 的每个子模 N′，用 \(\phi(N')\) 表示 N′ 在 \(i_{M}^{8}\) 下的原像。则：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\mathbf{S}\phi(\mathbf{N}^{\prime}) = \mathbf{N}^{\prime}.\)
+\item
+  对任一子模 \(\mathbf{N}\)（\(\mathbf{M}\) 的），子模 \(\phi (\mathrm{S}^{-1}\mathrm{N})\)（\(\mathbf{M}\) 中的）由这样的 \(m\in \mathbf{M}\) 组成：存在 \(s\in \mathbf{S}\) 使得 \(sm\in \mathbf{N}\)。
+\item
+  \(\phi\) 是子 \(\mathbf{S}^{-1}\mathbf{A}\)-模（\(\mathbf{S}^{-1}\mathbf{M}\) 的）的集合到满足下列条件的子模 \(\mathbf{Q}\)（\(\mathbf{M}\) 的）组成的集合上的一个同构（关于由包含关系定义的序）：
+
+(MS) 若 \(sm \in \mathbb{Q}\)，其中 \(s \in \mathbb{S}\)、\(m \in \mathbb{M}\)，则 \(m \in \mathbb{Q}\)。
+
+\end{enumerate}
+显然 \(\mathrm{S}^{-1}\phi(\mathrm{N}')\subset\mathrm{N}'\)；反之，若 \(n' = m/s \in N'\)，则 \(m/1 \in N'\)，从而 \(m \in \phi(\mathrm{N}')\)，于是 \(n' \in \mathrm{S}^{-1}(\phi(\mathrm{N'}))\)；由此得 (i)。为使元素 \(m \in M\) 满足 \(m \in \phi(\mathrm{S}^{-1}\mathrm{N})\)，必须且只需 \(m/1 \in S^{-1}N\)，即存在 \(s \in S\) 与 \(n \in N\) 使得 \(m/1 = n/s\)；这就意味着存在 \(s' \in S\) 使得 \(s'sm = s'n \in N\)，由此得 (ii)。最后，关系 \(sm \in \phi(\mathrm{N}')\) 按定义等价于 \(sm/1 \in N'\)，而由于 s/1 在 \(S^{-1}A\) 中可逆，这就蕴含 \(m/1 \in N'\)，亦即 \(m \in \phi(\mathrm{N}')\)，因而 \(\phi(\mathrm{N}')\) 满足条件 (MS)；另一方面，由 (ii) 可知，若 N 满足 (MS)，则 \(\phi(\mathrm{S}^{-1}\mathrm{N}) = N\)，这就完成了 (iii) 的证明。
+
+子模 \(\phi(\mathrm{S}^{-1}\mathrm{N})\) 称为 N 在 M 中关于 S 的饱和，而满足条件 (MS)（从而等于其饱和）的子模称为关于 S 是饱和的。子模 \(\phi(\mathrm{S}^{-1}\mathrm{N})\) 是下列复合同态的核
+
+\[
+\mathrm{M} \xrightarrow {h} \mathrm{M} / \mathrm{N} \xrightarrow {i _ {\mathrm{M} / \mathrm{N}} ^ {\mathrm{S}}} \mathrm{S} ^ {- 1} \mathrm{M} / \mathrm{S} ^ {- 1} \mathrm{N}
+\]
+
+其中 h 是典范同态，这由图表
+
+\[
+\begin{array}{c c c} \mathrm{M} & \stackrel {{h}} {{\longrightarrow}} & \mathrm{M/N} \\ i _ {\mathrm{M}} ^ {\mathrm{S}} \Big \downarrow & & \Big \downarrow i _ {\mathrm{M/N}} ^ {\mathrm{S}} \\ \mathrm{S} ^ {- 1} \mathrm{M} & \xrightarrow [ \mathrm{S} ^ {- 1 h} ]{} \mathrm{S} ^ {- 1} \mathrm{M/S} ^ {- 1} \mathrm{N} \end{array}
+\]
+
+若 S 是 A 中素理想 p 的余集，\(\phi(S^{-1}N)\) 也称为 N 在 M 中关于 p 的饱和。
+
+推论 1. 设 \(N_{1}\)、\(N_{2}\) 是 A-模 M 的两个子模。为使 \(S^{-1}N_{1} \subset S^{-1}N_{2}\)，必须且只需 \(N_{1}\) 关于 S 的饱和包含于 \(N_{2}\) 的饱和。
+
+推论 2. 若 M 是 Noether（相应地，Artin）A-模，则 S \(^{-1}\) M 是 Noether（相应地，Artin）S \(^{-1}\) A-模。特别地，若环 A 是 Noether 的（相应地，Artin 的），则环 S \(^{-1}\) A 亦然。
+
+\subsection{分式环中的理想}
+
+命题 11. 设 A 是环，S 是 A 的乘性子集。对每个理想 \(\mathfrak{b}'\)（\(\mathbf{S}^{-1}\mathbf{A}\) 的），令 \(\mathfrak{b} = (i_{\mathbf{A}}^{\mathbf{S}})^{-1}(\mathfrak{b}')\)，则 \(\mathfrak{b}' = \mathbf{S}^{-1}\mathfrak{b}\)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  设 \(f\) 是典范同态 \(\mathbf{A} \to \mathbf{A} / \mathfrak{b}\)。从 \(\mathbf{S}^{-1}\mathbf{A}\) 到 \((f(\mathbf{S}))^{-1}(\mathbf{A} / \mathfrak{b})\) 的、与 \(f\) 典范相伴的同态（第 1 节，命题 2）是满射，其核为 \(\mathfrak{b}'\)，由此通过取商定义了 \((\mathbf{S}^{-1}\mathbf{A}) / \mathfrak{b}'\) 到 \((f(\mathbf{S}))^{-1}(\mathbf{A} / \mathfrak{b})\) 上的一个典范同构。此外，从 \(\mathbf{A} / \mathfrak{b}\) 到 \((f(\mathbf{S}))^{-1}(\mathbf{A} / \mathfrak{b})\) 的典范同态是单射。
+\item
+  映射 \(\mathfrak{b}' \mapsto \mathfrak{b} = (i_{\mathbf{M}}^{\mathbf{S}})^{-1}(\mathfrak{b}')\) 限制到 \(\mathbf{S}^{-1}\mathbf{A}\) 的极大（相应地，素）理想的集合上，是该集合到 \(\mathbf{A}\) 的在那些不与 \(\mathbf{S}\) 相交的理想中为极大的理想组成的集合（相应地，\(\mathbf{A}\) 的不与 \(\mathbf{S}\) 相交的素理想组成的集合）上的一个同构（关于包含关系）。
+\item
+  若 \(\mathfrak{q}'\) 是 \(S^{-1}A\) 的素理想且 \(\mathfrak{q} = (i_A^S)^{-1}(\mathfrak{q}')\)，则存在分式环 \(A_{\mathfrak{q}}\) 到环 \((S^{-1}A)_{\mathfrak{q}}\) 上的一个同构，它把 \(a/b\) 映为 \((a/1)/(b/1)\)，其中 \(a \in A\)、\(b \in A - \mathfrak{q}\)。
+
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \((f(S))^{-1}(A/b)\) 可借助这两个模之间的典范同构（第 2 节，命题 6）与 \(S^{-1}(A/b)\) 等同。于是正合列 \(0 \rightarrow b \rightarrow A \rightarrow A/b \rightarrow 0\) 诱导出正合列
+
+\[
+0 \rightarrow \mathrm{S} ^ {- 1} \mathfrak {b} \rightarrow \mathrm{S} ^ {- 1} \mathrm{A} \rightarrow \mathrm{S} ^ {- 1} (\mathrm{A} / \mathfrak {b}) \rightarrow 0
+\]
+
+（第 4 节，定理 1）；它的存在性证明了 (i) 的第一个断言，这里用到 \(\mathfrak{b}' = \mathrm{S}^{-1}\mathfrak{b}\) 这一事实。由于 \(\mathfrak{b}\) 关于 S 是饱和的，条件 \(a \in \mathbf{A}\)、\(s \in \mathbf{S}\)、\(as \in \mathfrak{b}\) 蕴含 \(a \in \mathfrak{b}\)；于是比为 \(s\) 的位似映射（在 \(\mathbf{A}/\mathfrak{b}\) 上）是单射，这就证明了 (i) 的第二个断言。
+
+\item
+  我们首先指出，关系 \(b' = S^{-1}A\) 等价于关系 \(b \cap S \neq \varnothing\)，后者表达了 \(b'\) 含 \(S^{-1}A\) 的可逆元这一事实。由第 4 节命题 10 (iii) 可知，\(b' \mapsto b = (i_{\mathrm{A}}^{\mathrm{S}})^{-1}(b')\) 是 \(S^{-1}A\) 的异于 \(S^{-1}A\) 的理想组成的集合到 A 的不与 S 相交且满足命题 10 的条件 (MS) 的理想组成的集合 F 上的一个同构（关于包含关系）。若 \(b'\) 是极大的（相应地，素的），显然 \(b'\) 在 F 中极大（相应地，是素的），反之亦然（由 (i)）。另一方面，若 r 是 A 的与 S 不相交的理想，则它的饱和 \(r_{1}\)（关于 S 的）是 A 的一个包含 r 且与 S 不相交的理想：因为没有元素 \(a \in S\) 能满足 \(sa \in r\)（对某个 \(s \in S\)），否则将得出 \(sa \in r \cap S\)。由此得出，若 r 在 A 的与 S 相交的理想当中为极大的，则它在 F 中极大。类似地，若 r 是不与 S 相交的素理想，则按素理想的定义它满足第 4 节命题 10 的条件 (MS)，从而属于 F。这就完成了 (ii) 的证明。
+\item
+  设 \(q'\) 是素的并且 q 也是素的。集合 \(T = A - q\) 是 A 的一个包含 S 的乘性子集，从而 \(ST = T\)。我们记 \(T' = i_{\mathbf{A}}^{\mathbf{S}}(\mathbf{T})\)；由第 3 节命题 7 (i) 可知，存在唯一的同构 j，从 \(T^{-1}A = A_{q}\) 到 \(T'^{-1}(S^{-1}A)\)，使得
+
+\[
+j (a / b) = (a / 1) / (b / 1),
+\]
+
+其中 \(a \in \mathbf{A}\)、\(b \in \mathbf{T}\)。另一方面，\(\mathbf{T}'\) 显然不与 \(\mathfrak{q}'\) 相交；反之，设 \(a / s \in \mathrm{S}^{-1}\mathrm{A}\)；由于 \(1 / s\) 在 \(\mathrm{S}^{-1}\mathrm{A}\) 中可逆，条件 \(a / s \notin \mathfrak{q}'\) 等价于 \(i_{\mathbf{A}}^{\mathbf{S}}(a) = a / 1 \notin \mathfrak{q}'\)，从而等价于 \(a \notin \mathfrak{q}\)；由此得出 \(\mathrm{S}^{-1}\mathrm{A} - \mathfrak{q}' = \mathrm{S}^{-1}\mathrm{T}'\)，于是由第 3 节命题 8 得 \(\mathrm{T}'^{-1}(\mathrm{S}^{-1}\mathrm{A}) = (\mathrm{S}^{-1}\mathrm{A})_{\mathfrak{q}'}\)。
+
+(iii) 中定义的同构称为典范同构。若 A 是整环，则 \(A_{q}\) 与 \((\mathrm{S}^{-1}\mathrm{A})_{q'}\) 到 A 的分式域 K 的子环上的典范同构具有相同的象。
+\end{enumerate}
+
+注. 为使 A 的理想 a 满足 \(S^{-1}a = S^{-1}A\)（或者，由第 4 节定理 1，这等价于 \(S^{-1}(A/a) = 0\)），必须且只需 \(a \cap S \neq \varnothing\)，这由定义立即得出。
+
+推论 1. 设 A 是环，S 是 A 的乘性子集。A 的在不与 S 相交的理想中为极大的每个理想 p 都是素理想。
+
+由命题 11，关于 p 的假设意味着 \(\mathfrak{p} = (i_{\mathrm{A}}^{\mathrm{S}})^{-1}(\mathfrak{m}')\)，其中 \(m'\) 是 \(S^{-1}A\) 的极大理想；由于 \(m'\) 是素的，p 也是素的。
+
+推论 2. 设 A 是环，S 是 A 的乘性子集。对 A 的每个不与 S 相交的理想 a，存在一个包含 a 且不与 S 相交的素理想。
+
+\(S^{-1}a \neq S^{-1}A\)（注），因而存在 \(S^{-1}A\) 的一个包含 \(S^{-1}a\) 的极大理想（《代数学》第 I 章，§ 8，第 7 节，定理 2），于是由命题 11 (ii) 即得本推论。
+
+推论 3. 设 A、B 是两个环，\(\rho\) 是 A 到 B 的同态，\(\mathfrak{p}\) 是 A 的素理想。为使存在 B 的素理想 \(\mathfrak{p}'\) 满足 \(\overline{\rho}^{1}(\mathfrak{p}') = \mathfrak{p}\)，必须且只需 \(\overline{\rho}^{1}(\mathrm{B}\rho(\mathfrak{p})) = \mathfrak{p}\)。
+
+若存在理想 \(p'\)（\(B\) 的）使得 \(\overline{\rho}^{1}(p') = p\)，则 \(\rho(p) \subset p'\)，从而 \(B\rho(p) \subset p'\)，且 \(\overline{\rho}^{1}(B\rho(p)) \subset \overline{\rho}^{1}(p') \subset p\)；由于反向包含是明显的，故 \(\overline{\sigma}^{1}(B\rho(p)) = p\)。反之，设 \(\overline{\rho}^{1}(B\rho(p)) = p\)，并考虑乘性子集 \(S = \rho(A - p)\)（\(B\) 的）；假设表明
+
+\[
+\mathrm{S} \cap \mathrm{B} _ {\rho} (\mathfrak {p}) = \varnothing ;
+\]
+
+由推论 2，存在一个素理想 \(\mathfrak{p}'\)（B 的），它包含 \(\mathrm{B}\varphi(\mathfrak{p})\) 且不与 S 相交；于是 \(\overline{\rho}^{1}(\mathfrak{p}')\) 包含 \(\mathfrak{p}\)，且不能包含 A - \(\mathfrak{p}\) 的任何元素，从而等于 \(\mathfrak{p}\)。
+
+推论 4. 设 A、B 是两个环，\(\rho\) 是 A 到 B 的同态。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  假设存在一个 B-模 E，使得 \(\rho_{*}(\mathbf{E})\) 是忠实平坦的 A-模。则对 A 的每个素理想 \(\mathfrak{p}\)，存在 B 的一个素理想 \(\mathfrak{p}'\)，使得 \(\overline{\rho}^{-1}(\mathfrak{p}') = \mathfrak{p}\)。
+\item
+  反之，假设 B 是平坦的 A-模。这时，若对 A 的每个素理想 p 存在理想 \(p'\)（B 的）使得 \(\overline{\rho}^{-1}(p') = p\)，则 B 是忠实平坦的 A-模。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  该假设蕴含：对每个理想 \(\mathfrak{a}\)（\(\mathbf{A}\) 的），\(\bar{\rho}^{1}(\mathrm{B}\varphi (\mathfrak{a})) = \mathfrak{a}\)（第 I 章，§ 3，第 5 节，命题 8 (ii)）；于是只需应用推论 3。
+
+\item
+  只需证明：对 A 的每个极大理想 m，存在 B 的一个极大理想 \(m'\) 使得 \(\bar{\rho}^{-1}(m') = m\)（第 I 章，§ 2，第 5 节，命题 9 (e)）。现在由假设存在 B 的理想 q 使得 \(\bar{\rho}^{-1}(q) = m\)；由于 \(q \neq B\)，存在 B 的一个包含 q 的极大理想 \(m'\)，从而 \(\bar{\rho}^{-1}(m') \supset m\)；但由于 \(\bar{\rho}^{-1}(m')\) 不能包含 1，故 \(\bar{\rho}^{-1}(m') = m\)。
+\end{enumerate}
+
+推论 5. 设 A 是环，S 是 A 的乘性子集，B 是满足 \(i_{\mathbf{A}}^{\mathbf{S}}(\mathbf{A}) \subset \mathbf{B} \subset \mathbf{S}^{-1}\mathbf{A}\) 的环。设 \(\mathfrak{q}\) 是 B 的素理想，使得 A 的素理想 \(\mathfrak{p} = (i_{\mathbf{A}}^{\mathbf{S}})^{-1}(\mathfrak{q})\) 不与 S 相交，并设 \(\mathfrak{p}'\) 是素理想 \(\mathbf{S}^{-1}\mathfrak{p}\)（\(\mathbf{S}^{-1}\mathbf{A}\) 中的）。则 \(\mathfrak{p}' \cap \mathbf{B} = \mathfrak{q}\)。
+
+设 \(S' = i_{\mathbf{A}}^{\mathbf{S}}(\mathbf{S})\)；从 \(S'^{-1}\mathbf{B}\) 到 \(S^{-1}\mathbf{A}\) 的一个典范同构已在第 1 节（命题 2 的推论 4）中定义；我们借助这一同构把这两个环等同起来。由于 \(q \cap S' = \varnothing\)，\(q' = S'^{-1}q\) 是 \(S^{-1}\mathbf{A} = S'^{-1}\mathbf{B}\) 的唯一素理想，使得 \(q' \cap B = (i_{\mathbf{A}}^{\mathbf{S}})^{-1}(q') = q\)（命题 11 (ii)），从而 \((i_{\mathbf{A}}^{\mathbf{S}})^{-1}(q') = p\)；于是 \(q' = p'\)（命题 11 (ii)）。
+
+在推论 5 的记号下，\(\mathbf{A}_{\mathfrak{p}}\) 与 \(\mathbf{B}_{\mathfrak{q}}\) 到 \((\mathrm{S}^{-1}\mathrm{A})_{\mathfrak{p}}\) 上有典范同构（命题 11 (iii)），从而有一个典范同构 \(\mathbf{A}_{\mathfrak{p}} \to \mathbf{B}_{\mathfrak{q}}\)。
+
+\subsection{幂零根与极小素理想}
+
+在（交换）环 A 中，幂零元素组成的集合是一个理想，因为若 x、y 是 A 中满足 \(x^{m} = y^{n} = 0\) 的元素，则由二项式定理有 \((x + y)^{m+n} = 0\)。
+
+定义 4. （交换）环 A 的幂零元素组成的理想称为 A 的幂零根。若 a 是 A 的理想，则 A/a 的幂零根在典范映射 \(A \rightarrow A/a\) 下的原像称为 a 的根。
+
+我们常用 \(\mathbf{r}(\mathfrak{a})\) 表示 A 的理想 a 的根。
+
+因此，说元素 \(x \in A\) 属于 \(a\) 的根，就意味着存在整数 \(n > 0\) 使得 \(x^n \in a\)。若 \(f\) 是 \(A\) 到环 \(B\) 的同态且 \(b\) 是 \(B\) 的理想，则 \(f(b)\) 的根是在 \(f\) 之下 \(b\) 的根的原像，因为说 \(x^n \in f(b)\) 就意味着 \((f(x))^n \in b\)。
+
+环 A 的幂零根包含于其 Jacobson 根（《代数学》第 VIII 章，§ 6，第 3 节，定理 1 的推论 3），但可能与它不同；若 A 是 Artin 环，则二者总相等（《代数学》第 VIII 章，§ 6，第 4 节，定理 3）。
+
+我们称环 A 的素理想 p 为极小素理想，如果它在按包含关系排序的 A 的素理想集合中是极小的。
+
+命题 12. 设 \(\mathfrak{p}\) 是环 \(\mathbf{A}\) 的极小素理想。对所有 \(x \in \mathfrak{p}\)，存在 \(s \in \mathbf{A} - \mathfrak{p}\) 以及整数 \(k > 0\) 使得 \(sx^k = 0\)。
+
+形如 \(sx^{k}\)（k 为整数 \textgreater0，\(s \in A - p\)）的元素组成的集合 S 是 A 的乘性子集。若 \(0 \notin S\)，则存在一个不与 S 相交的素理想 \(p'\)（第 5 节，命题 11 的推论 2）。于是 \(p' \subset p\) 且 \(p' \neq p\)，因为 \(x \notin p'\)，这与 p 是极小的假设矛盾。
+
+命题 13. 环 A 的幂零根是 A 的所有素理想的交，它也是 A 的极小素理想的交。
+
+显然，若 \(x \in A\) 是幂零的，则它包含于 A 的每个素理想中（\(\S 1\)，第 1 节，定义 1）。反之，设 x 是 A 的非幂零元素；于是 \(x^{k}\)（k 为整数 \(\geqslant 0\)）组成的集合 S 是 A 的一个不含 0 的乘性子集，因而存在 A 的一个不与 S 相交的素理想 p（第 5 节，命题 11 的推论 2），更有 \(x \notin p\)；这就确立了第一个断言。为证明第二个断言，只需证明
+
+引理 2. 环 A 的每个素理想都包含 A 的一个极小素理想。
+
+由 Zorn 引理，只需证明素理想的集合 P 按关系 \(\supset\) 排序是归纳的。现在，若 G 是 P 的一个非空全序子集，则 \(p_{0}\)（即诸理想 \(p \in G\) 的交）也是素理想：因为若 \(x \notin p_{0}\) 且 \(y \notin p_{0}\)，则存在理想 \(p \in G\) 使得 \(x \notin p\) 且 \(y \notin p\)，从而 \(xy \notin p\)，更有 \(xy \notin p_{0}\)。
+
+注. 在 § 4 第 3 节命题 14 的推论 3 中，我们将证明在 Noether 环中极小素理想的集合是有限的；此外，我们后面将看到，Noether 环中素理想的每个递减序列都是稳定的。
+
+推论 1. 环 A 中理想 a 的根是包含 a 的素理想的交，它也是这一素理想集合的极小元素的交。
+
+推论 2. 对环 A 的理想 a，我们用 r(a) 表示 a 的根。于是，对 A 的两个理想 a、b，
+
+\[
+\mathfrak {r} (a \cap b) = \mathfrak {r} (a b) = \mathfrak {r} (a) \cap \mathfrak {r} (b);
+\]
+
+特别地，若 \(\mathfrak{a} \subset \mathfrak{b}\)，则 \(\mathfrak{r}(\mathfrak{a}) \subset \mathfrak{r}(\mathfrak{b})\)。
+
+为使素理想包含 \(\mathfrak{a} \cap \mathfrak{b}\)（或 \(\mathfrak{ab}\)），必须且只需它包含理想 \(\mathfrak{a}, \mathfrak{b}\) 之一（\(\S 1\)，第 1 节，命题 1）。
+
+命题 14. 为使环的两个理想 a、b 互素，必须且只需它们的根 r(a) 与 r(b) 互素。
+
+该条件的必要性是明显的，因为 \(a \subset \mathfrak{r}(a)\) 且 \(b \subset \mathfrak{r}(b)\)；该条件是充分的，这由 § 1 第 2 节命题 3 得出。
+
+命题 15. 在环 A 中，设 \(\mathfrak{a}\) 是理想，\(\mathfrak{b}\) 是包含于 \(\mathfrak{a}\) 的根中的有限生成理想。则存在整数 \(k > 0\) 使得 \(\mathfrak{b}^k \subset \mathfrak{a}\)。
+
+设 \((b_{i})_{1\leqslant i\leqslant n}\) 是 b 的一个生成系。由假设，存在整数 h 使得 \(b_{i}^{h}\in\mathfrak{a}\) 对 \(1\leqslant i\leqslant n\) 成立。若把 nh 个元素（每个都是 \(b_{i}\) 的系数在 A 中的线性组合）的乘积展开，则每一项都是 nh 个因子的乘积的倍数，其中每个因子都等于某个 \(b_{i}\)；在这些因子中，对某个 i 至少有 h 个具有相同的指标 i，因此该乘积属于 a，而 nh 就是所求的整数 k。
+
+推论. 在 Noether 环中，幂零根是幂零理想。
+
+命题 16. 设 B 是环，A 是 B 的子环。对 A 的每个极小素理想 p，存在 B 的极小素理想 q 使得 q ∩ A = p。
+
+我们记 \(S = A - p\)；于是环 \(A_p = S^{-1}A\) 与 \(S^{-1}B\) 的一个子环等同（第 1 节，命题 2），另一方面，\(A_p\) 只有唯一的素理想 \(p'\)，因为 \(p\) 是极小的（第 5 节，命题 11）。由于 \(S^{-1}B\) 不化为 0（因为它包含 \(A_p\)），它至少有一个素理想 \(r'\)，从而 \(r' \cap A_p = p'\)；若令 \(j = i_B^S\) 并记 \(r = j^{-1}(r')\)，则
+
+\[
+i _ {\mathbf {A}} ^ {\mathbf {S}} (\mathfrak {r} \cap \mathbf {A}) \subset \mathfrak {r} ^ {\prime} \cap \mathbf {A} _ {p} = p ^ {\prime}
+\]
+
+因而 \(\mathfrak{r} \cap \mathbf{A} \subset \mathfrak{p}\)，又因 \(\mathfrak{p}\) 是极小的，\(\mathfrak{r} \cap \mathbf{A} = \mathfrak{p}\)；此外，\(\mathfrak{r}\) 在 \(\mathbf{B}\) 中是素的；若 \(\mathfrak{q}\) 是 \(\mathbf{B}\) 的一个包含于 \(\mathfrak{r}\) 的极小素理想（引理 1），更有 \(\mathfrak{q} \cap \mathbf{A} = \mathfrak{p}\)，因为 \(\mathfrak{p}\) 是极小的。
+
+定义 5. 环 A 称为约化的，如果它的幂零根化为 0，换言之，如果 A 中没有元素 \(\neq 0\) 是幂零的。
+
+若 N 是环 A 的幂零根，则 A/N 是约化的，因为若元素 \(x \in A\) 的模 N 剩余类在 A/N 中是幂零的，这就意味着存在整数 h 使得 \(x^{h} \in N\)，从而存在整数 k 使得 \(x^{hk} = 0\)，于是 \(x \in N\)。
+
+命题 17. 设 A 是环，\(\mathfrak{A}\) 是它的幂零根。对 A 的每个乘性子集 S，\(S^{-1}\mathfrak{A}\) 是 \(S^{-1}A\) 的幂零根。特别地，若 A 是约化的，则 \(S^{-1}A\) 是约化的。
+
+若 \(x \in \mathbf{A}\)、\(s \in \mathbf{S}\) 满足 \((x / s)^n = x^n / s^n = 0\)，则存在 \(s' \in \mathbf{S}\) 使得 \(s' x^n = 0\)（第 1 节，注 3），更有 \((s' x)^n = 0\)，从而 \(s' x \in \mathfrak{N}\)，且 \(x / s = s' x / s' s \in \mathbf{S}^{-1} \mathfrak{N}\)；其逆是直接的。
+
+\subsection{张量积与同态模的分式模}
+
+命题 18. 设 A 是环，S 是 A 的乘性子集。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  若 M 和 N 是两个 A-模，则 \(S^{-1}A\)-模 ( \(S^{-1}M\) ) \(\otimes_{A}N\)、\(M\otimes_{A}(S^{-1}N)\)、( \(S^{-1}M\) ) \(\otimes_{S^{-1}A}(S^{-1}N)\) 与 \(S^{-1}(M\otimes_{A}N)\) 典范地同构。
+\item
+  若 \(M'\) 与 \(N'\) 是两个 \(S^{-1}A\)-模，则典范同态
+
+\[
+\mathbf {M} ^ {\prime} \otimes_ {\mathbf {A}} \mathbf {N} ^ {\prime} \rightarrow \mathbf {M} ^ {\prime} \otimes_ {\mathbf {S} ^ {- 1} \mathbf {A}} \mathbf {N} ^ {\prime}
+\]
+
+由 A-双线性映射 \((x', y') \mapsto x' \otimes y'\)（从 \(M' \times N'\) 到 \(M' \otimes_{S^{-1}} A N'\)）导出，是双射的。
+
+\end{enumerate}
+断言 (i) 是定义 \(\mathbf{S}^{-1}\mathbf{M} =\)
+
+\(M \otimes_{A} S^{-1} A\) 与张量积结合性的直接推论，由此在典范同构的意义下得到
+
+\[
+\begin{array}{r l} \left(\mathrm{S} ^ {- 1} \mathrm{M} \otimes_ {\mathrm{S} ^ {- 1} \mathrm{A}} \left(\mathrm{S} ^ {- 1} \mathrm{N}\right) = (\mathrm{S} ^ {- 1} \mathrm{M}) \otimes_ {\mathrm{S} ^ {- 1} \mathrm{A}} \left(\mathrm{S} ^ {- 1} \mathrm{A} \otimes \mathrm{N}\right) = (\mathrm{S} ^ {- 1} \mathrm{M}) \otimes_ {\mathrm{A}} \mathrm{N} \right. \\ = (\mathrm{S} ^ {- 1} \mathrm{A}) \otimes_ {\mathrm{A}} \mathrm{M} \otimes_ {\mathrm{A}} \mathrm{N} = \mathrm{S} ^ {- 1} (\mathrm{M} \otimes_ {\mathrm{A}} \mathrm{N}). \end{array}
+\]
+
+为证明 (ii)，我们首先注意到，在视为 A-模的 \(\mathbf{M}'\) 与 \(\mathbf{N}'\) 中，由元素 \(s \in S\) 诱导的位似映射是双射的，因而 \(\mathbf{M}' = \mathbf{S}^{-1}\mathbf{M}'\) 且 \(\mathbf{N}' = \mathbf{S}^{-1}\mathbf{N}'\)（第 2 节，注 4），类似地 \(\mathbf{S}^{-1}(\mathbf{M}' \otimes_{\mathbf{A}} \mathbf{N}') = \mathbf{M}' \otimes_{\mathbf{A}} \mathbf{N}'\)；于是 (ii) 是 (i) 的一个特殊情形。
+
+推论. 设 M 是 A-模，a 是 A 的理想。\(\mathbf{S}^{-1}\mathbf{A}\) 的子模 \((\mathbf{S}^{-1}\mathfrak{a})(\mathbf{S}^{-1}\mathbf{M})\)、\(\mathfrak{a}(\mathbf{S}^{-1}\mathbf{M})\)、\((\mathbf{S}^{-1}\mathfrak{a})j(\mathbf{M})\)（其中 \(j: \mathbf{M} \to \mathbf{S}^{-1}\mathbf{M}\) 是典范映射）与 \(\mathbf{S}^{-1}(\mathfrak{a}\mathbf{M})\)（\(\mathbf{S}^{-1}\mathbf{M}\) 的）是相同的。特别地，若 \(\mathfrak{a}\) 与 \(\mathfrak{b}\) 是 A 的两个理想，则
+
+\[
+(S ^ {- 1} a) (S ^ {- 1} b) = a (S ^ {- 1} b) = (S ^ {- 1} a) b = S ^ {- 1} (a b).
+\]
+
+注. 设 M、N、P 为三个 A-模，\(f: M \times N \to P\) 为 A-双线性映射，而 \(S^{-1}f: (S^{-1}M) \times (S^{-1}N) \to (S^{-1}P)\) 为 \(S^{-1}A\)-双线性映射，它由 f 通过把标量环扩张到 \(S^{-1}A\) 而得到（《代数学》第 IX 章，§ 1，第 4 节，命题 1）。设 \(i: M \to S^{-1}M\)、\(j: N \to S^{-1}N\) 为典范同态；立即可得，若 Q 是由 \(f(M \times N)\) 生成的 P 的子 A-模，则 \(S^{-1}Q\) 是子 \(S^{-1}A\)-模（\(S^{-1}P\) 的），由 \((S^{-1}f)(i(M) \times j(N))\) 生成。
+
+命题 19. 设 A 是环，S 是 A 的乘性子集。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  若 M 和 N 是两个 A-模且 M 是有限生成的（相应地，有限表示的），则典范同态（第 I 章，§ 2，第 10 节，公式 (10)）
+
+\[
+\mathrm{S} ^ {- 1} \operatorname{Hom} _ {\mathrm{A}} (\mathrm{M}, \mathrm{N}) \rightarrow \operatorname{Hom} _ {\mathrm{S} ^ {- 1} \mathrm{A}} (\mathrm{S} ^ {- 1} \mathrm{M}, \mathrm{S} ^ {- 1} \mathrm{N})
+\]
+
+是单射的（相应地，双射的）。
+
+\item
+  若 \(M'\)、\(N'\) 是两个 \(S^{-1}A\)-模，则典范双射
+
+\[
+\operatorname{Hom} _ {\mathbf {S} ^ {- 1} \mathbf {A}} (\mathbf {M} ^ {\prime}, \mathbf {N} ^ {\prime}) \rightarrow \operatorname{Hom} _ {\mathbf {A}} (\mathbf {M} ^ {\prime}, \mathbf {N} ^ {\prime})
+\]
+
+是双射的。
+
+\end{enumerate}
+由于 \(S^{-1}A\) 是平坦的 A-模，(i) 是第 I 章 § 2 第 10 节命题 11 的一个特殊情形。另一方面，我们已在第 2 节命题 3 的证明过程中注意到，\(S^{-1}A\)-模的每个 A-同态必然是 \(S^{-1}A\)-同态；由此得 (ii)。
+
+命题 20. 设 A、A' 是两个环，\(\rho: \mathbf{A} \to \mathbf{A}'\) 是同态，S 是 A 的乘性子集，\(S' = \rho(S)\)，而 \(\rho': S^{-1}A \to S'^{-1}A'\) 是对应于 \(\rho\) 的同态（第 1 节，命题 2）。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  对每个 \(\mathbf{A}'\)-模 \(\mathbf{M}'\)，存在唯一的 \(\mathbf{S}^{-1}\mathbf{A}\)-同构
+
+\[
+j \colon \mathrm{S} ^ {- 1} \rho_ {*} (\mathrm{M} ^ {\prime}) \rightarrow \rho_ {*} ^ {\prime} (\mathrm{S} ^ {- 1} \mathrm{M} ^ {\prime})
+\]
+
+它满足 \(j(m' / s) = m' / \rho(s)\)（对所有 \(m' \in \mathbf{M}'\)、\(s \in \mathbf{S}\)）。
+
+\item
+  对每个 A-模 M，存在唯一的同构
+
+\[
+j ^ {\prime} \colon (\mathrm{S} ^ {- 1} \mathrm{M}) \otimes_ {\mathrm{S} ^ {- 1} \mathrm{A}} (\mathrm{S} ^ {\prime - 1} \mathrm{A} ^ {\prime}) \rightarrow \mathrm{S} ^ {\prime - 1} (\mathrm{M} \otimes_ {\mathrm{A}} \mathrm{A} ^ {\prime})
+\]
+
+（\(\mathbf{S}^{\prime -1}\mathbf{A}^{\prime}\)-模的），使得 \(j^{\prime}((m / s)\otimes (a^{\prime} / s^{\prime})) = (m\otimes a^{\prime}) / (\rho (s)s^{\prime})\)
+
+\end{enumerate}
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  如果我们把 \(S^{\prime-1}M^{\prime}\) 借助复合同态 \(i_{M^{\prime}}^{S^{\prime}}\circ\rho\) 视为 A-模，则由 S 的元素诱导的位似映射是双射的，因而存在唯一的具有所述性质的同态 j（第 2 节，命题 3）。由于 \(\rho(S)=S^{\prime}\)，j 是满射的；此外，若 \(m^{\prime}\in M^{\prime}\)、\(s\in S\) 满足 \(m^{\prime}/\rho(s)=0\)，则存在 \(t^{\prime}\in S^{\prime}\) 使得 \(t^{\prime}m^{\prime}=0\)；由于存在 \(t\in S\) 使得 \(\rho(t)=t^{\prime}\)，于是 \(t^{\prime}.m^{\prime}=0\) 在 \(\rho_{*}(M^{\prime})\) 中成立，从而 \(m^{\prime}/s=0\) 在 \(S^{-1}\rho_{*}(M^{\prime})\) 中成立。
+\item
+  由于 \((\mathbf{S}^{-1}\mathbf{M})\otimes_{\mathbf{S}^{-1}\mathbf{A}}(\mathbf{S}^{\prime -1}\mathbf{A}^{\prime}) = (\mathbf{M}\otimes_{\mathbf{A}}\mathbf{S}^{-1}\mathbf{A})\otimes_{\mathbf{S}^{-1}\mathbf{A}}(\mathbf{S}^{\prime -1}\mathbf{A}^{\prime})\) 以及
+
+\[
+\mathbf {S} ^ {- 1} (\mathbf {M} \otimes_ {\mathbf {A}} \mathbf {A} ^ {\prime}) = (\mathbf {M} \otimes_ {\mathbf {A}} \mathbf {A} ^ {\prime}) \otimes_ {\mathbf {A} ^ {\prime}} (\mathbf {S} ^ {- 1} \mathbf {A} ^ {\prime}),
+\]
+
+\(j'\) 的存在性由张量积的结合性得出。
+
+\end{enumerate}
+\subsection{对代数的应用}
+
+设 A 是环，B 是 A-代数（不必结合或交换，也不必有单位元），S 是 A 的乘性子集。我们知道，可以在 \(S^{-1}A\)-模 \(S^{-1}B = B \otimes_{A} S^{-1}A\) 上定义一个典范的 \(S^{-1}A\)-代数结构，称为通过把标量环扩张到 \(S^{-1}A\) 而得到的（《代数学》第 III 章，§ 3），在其下乘积 \((x/s)(y/t)\) 等于 \((xy)/(st)\)。若 e 是 B 的单位元，则 e/1 是 \(S^{-1}B\) 的单位元，且若 B 是结合的（相应地，交换的），则 \(S^{-1}B\) 亦然。
+
+设 A 是环，M 是 A-模；我们用 T(M)（相应地，∧(M)、S(M)）表示 M 的张量代数（相应地，外代数、对称代数）（《代数学》第 III 章）。已知对每个交换 A-代数 C，存在唯一的同构 \(j\)，从 \(\mathsf{T}(\mathbf{M}) \otimes_{\mathbf{A}} \mathbf{C}\) 到 \(\mathsf{T}(\mathbf{M} \otimes_{\mathbf{A}} \mathbf{C})\)（相应地，从 \(\bigwedge (\mathbf{M}) \oplus_{\mathbf{A}} \mathbf{C}\) 到 \(\bigwedge (\mathbf{M} \otimes_{\mathbf{A}} \mathbf{C})\)、从 \(\mathsf{S}(\mathbf{M}) \otimes_{\mathbf{A}} \mathbf{C}\) 到 \(\mathsf{S}(\mathbf{M} \otimes_{\mathbf{A}} \mathbf{C})\)），使得
+
+\[
+i (x \otimes 1) = x \otimes 1
+\]
+
+对所有 \(x \in \mathbf{M}\) 成立，这里 \(\mathbf{M}\) 典范地等同于 \(T(\mathbf{M})\)（相应地，\(\bigwedge (\mathbf{M}), S(\mathbf{M})\)）的子模（出处同前）。于是特别地可以看到，对每个乘性子集 \(\mathbf{R}\)（\(\mathbf{A}\) 的），有典范同构
+
+\[
+\begin{array}{c} \mathbf {R} ^ {- 1} \mathsf {T} (\mathbf {M}) \to \mathsf {T} (\mathbf {R} ^ {- 1} \mathbf {M}), \qquad \mathbf {R} ^ {- 1} \bigwedge (\mathbf {M}) \to \bigwedge (\mathbf {R} ^ {- 1} \mathbf {M}), \\ \mathbf {R} ^ {- 1} \mathsf {S} (\mathbf {M}) \to \mathsf {S} (\mathbf {R} ^ {- 1} \mathbf {M}) \end{array}
+\]
+
+它们在 \(R^{-1}M\) 上限制为恒同映射。
+
+\subsection{分次模的分式模}
+
+设 A 是分次环，M 是分次 A-模，\(\Delta\) 是次数幺半群；在本节中我们假设 \(\Delta\) 是一个群。回忆（《代数学》第 II 章，§ 11），A 与 M 分别是加群的直和
+
+\[
+\mathbf {A} = \bigoplus_ {i \in \Delta} \mathbf {A} _ {i}, \quad \mathbf {M} = \bigoplus_ {i \in \Delta} \mathbf {M} _ {i}
+\]
+
+其中 \(\mathbf{A}_i\mathbf{A}_j\subset \mathbf{A}_{i + j}\) 与 \(\mathrm{A}_i\mathrm{M}_j\subset \mathrm{M}_{i + j}\) 对所有 \(i,j\in \Delta\) 成立。设 S 是 A 的一个所有元素都是齐次的乘性子集。对所有 \(i\in \Delta\)，我们记 \(\mathbf{S}_i = \mathbf{S}\cap \mathbf{A}_i\)，并用 \((\mathrm{S}^{-1}\mathbf{M})_i\) 表示元素 \(m^{\prime}\)（\(\mathbf{S}^{-1}\mathbf{M}\) 的）的集合，对它们存在元素 \(j\)、\(k\)（属于 \(\Delta\)），元素 \(m\in \mathbf{M}_j\) 与元素 \(s\in \mathbf{S}_k\)，使得 \(j - k = i\) 且 \(m^{\prime} = m / s\)。 若 \((m_q')_{1\leqslant q\leqslant r}\) 是 \(\mathbf{S}^{-1}\mathbf{M}\) 中元素的有限族，使得
+
+\[
+m _ {q} ^ {\prime} \in (\mathrm{S} ^ {- 1} \mathrm{M}) _ {i (q)},
+\]
+
+则存在元素 \(j(q) \in \Delta\) 与 \(k \in \Delta\)、元素 \(m_q \in \mathrm{M}_{j(q)}\)（\(1 \leqslant q \leqslant r\)）以及元素 \(s \in \mathrm{S}_k\)，使得 \(m_q' = m_q / s\) 对 \(1 \leqslant q \leqslant r\) 成立（第 1 节，注 2）。
+
+命题 21. 环 \(\mathbf{S}^{-1}\mathbf{A}\) 连同族 \(((\mathbf{S}^{-1}\mathbf{A})_i)\) 是分次环，而 \(\mathbf{S}^{-1}\mathbf{M}\) 连同族 \(((\mathbf{S}^{-1}\mathbf{M})_i)\) 是分次环 \(\mathbf{S}^{-1}\mathbf{A}\) 上的分次模。典范映射 \(i_{\mathbf{A}}^{\mathbf{S}}\) 与 \(i_{\mathbf{M}}^{\mathbf{S}}\) 是 0 次齐次的。
+
+设 \(m \in M_j\)、\(s \in S_k\)、\(m' \in M_{j'}\)、\(s' \in S_{k'}\)，并设 \(j - k = j' - k' = i\)；则 \((m/s) - (m'/s') = (s'm - sm')/ss'\)，且 \(s'm - sm' \in M_{j+k'} = M_{j'+k}\)，且 \(ss' \in S_{k+k'}\)，因而按定义 \((m/s) - (m'/s') \in (\mathrm{S}^{-1}\mathrm{M})_i\)；这表明诸 \((\mathrm{S}^{-1}\mathrm{M})_i\) 是 \(S^{-1}\mathrm{M}\) 的加法子群。 这些群的和是整个 \(S^{-1}\mathrm{M}\)：因为每个 \(x \in S^{-1}\mathrm{M}\) 都可写成 \(m/s\)，其中 \(m \in \mathbf{M}\)、\(s \in \mathbf{S}\)；由假设 \(s\) 是齐次的，而 \(m\) 是齐次元素 \(m_j\) 之和；于是 \(x\) 是诸 \(m_j / s\) 之和，其中每个都属于某个子群 \((\mathbf{S}^{-1}\mathbf{M})_i\)。 最后，诸 \((\mathbf{S}^{-1}\mathbf{M})_i\) 的和是直和；因为考虑元素的有限族 \(x_q\)（\(1 \leqslant q \leqslant n\)），它满足 \(x_q \in (\mathbf{S}^{-1}\mathbf{M})_{i(q)}\)，其中指标 \(i(q)\) 互不相同，并设 \(\sum_{q=1}^{n} x_q = 0\)。 每个 \(x_q\) 都可写成 \(x_q = m_q / s\)，其中 \(s \in S_k\) 且 \(m_q \in M_{i(q)+k}\)；该假设蕴含存在 \(s' \in S\) 使得 \(s'\left(\sum_{q=1}^{n} m_q\right) = 0\)； 若诸 \(s'm_q\) 不全为零，我们将得到矛盾，因为若 \(s' \in S_d\)，则 \(s'm_q \in M_{i(q)+d}\)，而诸 \(i(q) + d\) 互不相同。由此得出 \(x_q = 0\)，对每个指标 \(q\)。
+
+立即可验证，若 \(a \in (\mathrm{S}^{-1}\mathrm{A})_i\) 且 \(x \in (\mathrm{S}^{-1}\mathrm{M})_j\)，则 \(ax \in (\mathrm{S}^{-1}\mathrm{M})_{i+j}\)。把这个结果应用于 \(\mathbf{M} = \mathbf{A}\) 的情形，我们首先看到 \(\mathrm{S}^{-1}\mathbf{A}\) 是以诸 \((\mathrm{S}^{-1}\mathrm{A})_i\) 分次的环；然后看到 \(\mathrm{S}^{-1}\mathrm{M}\) 是 \(\mathrm{S}^{-1}\mathrm{A}\) 上的分次模。最后，由于 \(1 \in \mathrm{A}_0\)，\(i_{\mathrm{A}}^{\mathrm{S}}\) 与 \(i_{\mathrm{M}}^{\mathrm{S}}\) 是 0 次齐次的。
+
+命题 22. 设 A（相应地，B）是型为 \(\Delta\) 的分次环，M（相应地，N）是分次环 A（相应地，B）上的分次模，S（相应地，T）是 A（相应地，B）的乘性子集且其所有元素都是齐次的，\(f: \mathrm{A} \to \mathrm{B}\) 是 0 次齐次同态且满足 \(f(\mathrm{S}) \subset \mathrm{T}\)，而 \(u: \mathrm{M} \to \mathrm{N}\) 是 \(k\) 次齐次的 A-线性映射。则同态 \(f': \mathrm{S}^{-1}\mathrm{A} \to \mathrm{T}^{-1}\mathrm{B}\)（由 \(f\) 导出；第 1 节，命题 2）是 0 次齐次的，且 \((\mathrm{S}^{-1}\mathrm{A})\)-线性映射
+
+\[
+u ^ {\prime} \colon \mathrm{S} ^ {- 1} \mathrm{M} \rightarrow \mathrm{T} ^ {- 1} \mathrm{N}
+\]
+
+由 f 与 u 导出的这一映射（第 2 节，命题 5）是 k 次齐次的。
+
+这由等式 \(f'(a / s) = f(a) / f(s)\) 与 \(u'(m / s) = u(m) / f(s)\) 立即得出。
+
+最后我们注意到，若 E 是分次 A-代数而 S 是由齐次元素组成的 A 的乘性子集，则 \(S^{-1}E\) 连同其 \((S^{-1}A)\)-代数结构（第 8 节）与分次 \((S^{-1}E)_{t}\) 是一个分次 \(S^{-1}A\)-代数，这由定义立即得出。
+
+\section{局部环. 从局部到整体的过渡}
+
+\subsection{局部环}
+
+命题 1. 设 A 是环，I 是 A 的不可逆元素组成的集合。集合 I 是 A 的异于 A 的理想的并。此外，下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  I 是理想。
+\item
+  \(\mathbf{A}\) 的异于 \(\mathbf{A}\) 的理想组成的集合有一个最大元素。
+\item
+  A 有唯一的极大理想。
+\end{enumerate}
+
+关系 \(x \in I\) 等价于 \(1 \notin xA\)，从而 \(xA \neq A\)。若 \(a\) 是 \(A\) 的异于 \(A\) 的理想且 \(x \in a\)，则 \(xA \subset a\)，从而 \(xA \neq A\) 且 \(x \in I\)。因而 \(A\) 的每个异于 \(A\) 的理想都包含于 \(I\)，且每个元素 \(x \in I\) 都属于某个主理想 \(xA \neq A\)。这就证明了第一个断言，它立即蕴含 (a)、(b) 与 (c) 的等价性。
+
+注 (1). 注意，若 (c) 成立，则 I 是环 A 的 Jacobson 根（《代数学》第 VIII 章，§ 6，第 3 节，定义 3）。
+
+定义 1. 环 A 称为局部环，如果它满足命题 1 的等价条件 (a)、(b) 与 (c)。A 对其 Jacobson 根（它就是 A 的唯一极大理想）的商称为 A 的剩余域。
+
+定义 2. 设 A、B 是两个局部环，m、n 是它们各自的极大理想。同态 \(u: \mathbf{A} \to \mathbf{B}\) 称为局部的，如果 \(u(\mathfrak{m}) \subset \mathfrak{n}\)。
+
+这等价于说 \(\bar{u}^{1}(\mathfrak{n}) = \mathfrak{m}\)，因为 \(\bar{u}^{1}(\mathfrak{n})\) 此时是一个包含 m 而不包含 1 的理想，从而等于 m。取商，我们于是由 u 典范地导出一个从 A 的剩余域到 B 的剩余域的单同态 A/m → B/n。
+
+\textbf{例}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  域是局部环。化为 0 的环不是局部环。
+\item
+  设 A 是局部环，k 是它的剩余域。形式幂级数环 \(B = A[[X_{1}, \ldots, X_{n}]]\) 是局部环，因为 B 的不可逆元素恰是常数项在 A 中不可逆的形式幂级数（《代数学》第 IV 章，§ 5，第 6 节，命题 4）。A 到 B 的典范单射是局部同态，且相应的剩余域的单射是同构。
+\item
+  设 \(\mathfrak{b}\) 是环 A 的理想，它只包含于单独一个极大理想 m 中；则 A/b 是局部环，其极大理想是 m/b，剩余域典范地同构于 A/m。这特别适用于 \(b = m^{k}\) 的情形，其中 m 是 A 的任意极大理想（\(\S\) 1，第 1 节，命题 1 的推论）。若 A 本身是以 m 为极大理想的局部环，则对 A 的每个理想 \(b \neq A\)，A/b 是局部环，典范同态 \(A \to A/b\) 是局部同态，且相应的剩余域同态是同构。
+\item
+  设 X 是拓扑空间，\(x_{0}\) 是 X 的一点，A 是在点 \(x_{0}\) 处的芽组成的环，这些芽来自在 \(x_{0}\) 的某个邻域中连续的实值函数（《一般拓扑学》第 I 章，§6，第 10 节）。显然，为使连续函数 f 在 \(x_{0}\) 处的芽在 A 中可逆，必须且只需 \(f(x_{0}) \neq 0\)，因为这蕴含 \(f(x) \neq 0\) 在 \(x_{0}\) 的某个邻域中成立。因此环 A 是局部环，其极大理想 m 是在 \(x_{0}\) 处取零值的函数的芽组成的集合；取商，A 到 R 的映射 \(g \mapsto g(x_{0})\) 给出剩余域 A/m 到 R 的一个同构。
+\end{enumerate}
+
+命题 2. 设 A 是环，p 是 A 的素理想。环 \(A_{p}\) 是局部的；其极大理想是理想 \(pA_{p} = p_{p}\)（由 p 在 \(A_{p}\) 中的典范像生成）；其剩余域典范地同构于 A/p 的分式域。
+
+设 \(S = A - p\)，并设 \(j: A \to A_p\) 是典范同态；\(p\) 是素理想的假设蕴含 \(p\) 关于 \(S\) 是饱和的，因而 \(j^{1}(\mathfrak{pA}_{\mathfrak{p}}) = \mathfrak{p}\)（§ 2，第 4 节，命题 10），而且由于 A 的不与 S 相交的理想恰是包含于 \(\mathfrak{p}\) 中的那些，前两个断言是 § 2 第 5 节命题 11 (ii) 的特殊情形。此外，若 \(f\) 是典范同态 \(A \to A/\mathfrak{p}\)，则 \(f(S)\) 是 \(\neq 0\) 的元素组成的集合（整环 \(A/\mathfrak{p}\) 的），因而最后一个断言是 § 2 第 5 节命题 11 (i) 的特殊情形。
+
+定义 3. 设 A 是环，p 是 A 的素理想。环 \(A_{p}\) 称为 A 在 p 处的局部环，或在无歧义时称为 p 的局部环。
+
+注 (2). 若 A 是局部环而 m 是其极大理想，则 A --- m 的元素都是可逆的（命题 1），因而 \(A_{m}\) 典范地等同于 A（§ 2，第 1 节，注 5）。
+
+\textbf{例}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 \(p\) 是素数。局部环 \(\mathbf{Z}_{(p)}\) 是有理数 \(a / b\) 组成的集合，其中 \(a, b\) 是有理整数且 \(b\) 与 \(p\) 互素；\(\mathbf{Z}_{(p)}\) 的剩余域同构于素域 \(\mathbf{F}_p = \mathbf{Z} / (p)\)。
+\end{enumerate}
+
+* (6) 设 V 是仿射代数簇，A 是 V 上的正则函数环，W 是 V 的不可约子簇，而 p 是 A 中由在 W 的每点取零值的函数组成的（必然为素的）理想。环 \(\mathbf{A}_{\mathfrak{p}}\) 称为 V 上 W 的局部环。*
+
+命题 3. 设 A 是环，p 是 A 的素理想，且 S = A - p.~对每个理想 \(\mathfrak{b}'\)（\(\mathbf{A}_{\mathfrak{p}}\) 的，异于 \(\mathbf{A}_{\mathfrak{p}}\)），设 \(\mathfrak{b}\) 是 A 的理想 \((i_{\mathbf{A}}^{\mathbf{S}})^{-1}(\mathfrak{b}')\)，于是 \(\mathfrak{b}' = \mathfrak{bA}_{\mathfrak{p}}\)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  设 \(f\) 是典范同态 \(\mathbf{A} \to \mathbf{A} / \mathfrak{b}\)。从 \(\mathbf{A}_{\mathfrak{p}}\) 到 \((\mathbf{A} / \mathfrak{b})_{\mathfrak{p} / \mathfrak{b}}\) 的与 \(f\) 典范相联的同态（§ 2，第 1 节，命题 2）是满射的，其核是 \(\mathfrak{b}'\)，由此通过取商定义了 \(\mathbf{A}_{\mathfrak{p}} / \mathfrak{b}'\) 到 \((\mathbf{A} / \mathfrak{b})_{\mathfrak{p} / \mathfrak{b}}\) 的一个典范同构。
+\item
+  映射 \(\mathfrak{b}' \to \mathfrak{b} = (i_{\mathbf{A}}^{\mathbb{S}})^{-1}(\mathfrak{b}')\) 限制到 \(\mathbf{A}_{\mathfrak{p}}\) 的素理想集合上，是这个集合到 \(\mathbf{A}\) 的素理想集合（包含于 \(\mathfrak{p}\) 中的那些）的（关于包含关系的）同构。若 \(\mathfrak{b}'\) 在 \(\mathbf{A}_{\mathfrak{p}}\) 中是素的，则存在环 \(\mathbf{A}_{\mathfrak{b}}\) 到环 \((\mathbf{A}_{\mathfrak{p}})_{\mathfrak{b}'}\) 的同构，它把 \(a / s\) 映为 \((a / 1) / (s / 1)\)（对所有 \(a \in \mathbf{A}\)、\(s \in \mathbf{A} - \mathfrak{b}\)）。
+\end{enumerate}
+
+这只是 § 2 第 5 节命题 11 的一个特殊情形。
+
+\textbf{注}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\item
+  若 \(\mathfrak{a}\) 是 \(\mathbf{A}\) 的不包含于 \(\mathfrak{p}\) 的理想，则 \(\mathfrak{a}\mathrm{A}_{\mathfrak{p}} = \mathrm{A}_{\mathfrak{p}}\) 且 \((\mathrm{A} / \mathfrak{a})_{\mathfrak{p}} = 0\)（§ 2，第 5 节，注）。
+\item
+  设 A、B 是两个环，\(\rho: A \to B\) 是同态，\(q\) 是 B 的素理想，而 \(p\) 是 A 的素理想 \(\rho^{-1}(q)\)。由于 \(\rho(A - p) \subset B - q\)，一个典范同态 \(\rho_q: A_p \to B_q\) 由 \(\rho\) 导出（\(\S 2\)，第 1 节，命题 2），且立即可见 \(\rho_q(pA_p) \subset qB_q\)，因而 \(\rho_q\) 是局部同态。
+\end{enumerate}

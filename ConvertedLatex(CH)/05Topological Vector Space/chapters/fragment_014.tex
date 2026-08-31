@@ -1,0 +1,757 @@
+\subsection{正规算子}
+
+定义 4. --- 设 E 为希尔伯特空间，且 \(u \in \mathcal{L}(\mathrm{E})\)。若 \(u\) 与其伴随算子 \(u^{*}\) 交换，则称其为正规算子。
+
+例如，设 \(u\) 是希尔伯特空间 \(E\) 的一个自同构，则它是正规的，因为我们有 \(uu^{*} = u^{*}u = 1_{E}\)。
+
+命题 7. --- 为使 \(u \in \mathcal{L}(\mathrm{E})\) 是正规的，必要且充分的是：\(\| u(x) \| = \| u^{*}(x) \|\) 对所有 \(x \in \mathrm{E}\) 成立。
+
+我们定义埃尔米特型 \(\Phi\)（在 \(E\) 上）如下
+
+\[
+\Phi (x, y) = \langle u u ^ {*} (x) | y \rangle - \langle u ^ {*} u (x) | y \rangle .
+\]
+
+为使 u 是正规的，必要且充分的是 \(\Phi = 0\)。由极化公式（V, p.~2），这等价于 \(\Phi(x, x) = 0\) 对所有 \(x \in E\) 成立。由于
+
+\[
+\Phi (x, x) = \left\| u ^ {*} (x) \right\| ^ {2} - \left\| u (x) \right\| ^ {2}.
+\]
+
+命题 8. --- 假设 \(u \in \mathcal{L}(\mathrm{E})\) 是正规的。设 \(\mathbf{N}\) 为 \(u\) 的核，\(\mathbf{M}\) 为 \(\mathbf{N}\) 在 \(\mathrm{E}\) 中的正交补；设 \(m\)、\(n\) 为满足 \(m + n \geqslant 1\) 的两个正整数。则 \(\mathbf{N}\) 是 \(u^{m}(u^{*})^{n}\) 的核，且 \(\mathbf{M}\) 既是 \(u^{m}(u^{*})^{n}\) 的初始子空间又是它的终子空间。特别地，\(\mathbf{M}\) 既是 \(u\) 与 \(u^{*}\) 的初始子空间，又是它们的终子空间，并且在 \(u\) 与 \(u^{*}\) 下稳定。
+
+命题 7 表明 u 与 \(u^{*}\) 有相同的核 N。由 V, p.~41 的命题 4, (ii)，E 的子空间 M 在 u 与 \(u^{*}\) 下稳定，因为这对 \(N = M^{\circ}\) 成立；又因 \(M \cap N = \{0\}\)，u 与 \(u^{*}\) 在 M 上诱导的自同态都是单射。设 \(v = u^{m}(u^{*})^{n}\)；前面的论证表明 v 在 M（相应地 N）上的限制是单射（相应地为零），因而 N 是 v 的核。于是 \(M = N^{\circ}\) 是 v 的初始子空间。由 V, p.~41 的命题 4, (i)，v 的终子空间等于 \(v^{*}\) 的初始子空间。但 \(v^{*} = u^{n}(u^{*})^{m}\)，故由前所述，\(v^{*}\) 的初始子空间等于 M。
+
+推论. --- 设 \(\lambda \in \mathbf{K}\)。E 的下列子空间相等：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(u\) 的关于 \(\lambda\) 的特征子空间；
+\item
+  \(u^{*}\) 的关于 \(\overline{\lambda}\) 的特征子空间；
+\item
+  \(u\) 的关于 \(\lambda\) 的准素子空间（换言之，按 LIE, VII, § 1, No.~1，即所有这样的向量 \(x\)（属于 \(E\)）组成的集：存在整数 \(n \geqslant 0\) 使 \((u - \lambda .1_{E})^{n}(x) = 0\)）；
+\item
+  \(u^{*}\) 的关于 \(\overline{\lambda}\) 的准素子空间。
+\end{enumerate}
+
+显然 \(w = u - \lambda \cdot 1_{E}\) 是 E 的正规自同态，因而由命题 8，E 的自同态 w、\(w^{*} = u^{*} - \overline{\lambda} \cdot 1_{E}\)、\(w^{n}\) 与 \((w^{*})^{n}\) 有相同的核。
+
+\subsection{自伴算子}
+
+定义 5. --- 设 E 为希尔伯特空间，且 \(u \in \mathcal{L}(\mathrm{E})\)。若 \(u\) 满足 \(u^* = u\)，则称其为自伴算子。
+
+用 \(\mathcal{H}(\mathrm{E})\) 表示 \(\mathcal{L}(\mathrm{E})\) 中所有自伴元素组成的集；它是向量空间 \(\mathcal{L}(\mathrm{E})_{[\mathbb{R}]}\)（\(\mathbf{R}\) 上的，由 \(\mathcal{L}(\mathrm{E})\) 经限制标量而得到）的一个向量子空间。
+
+对每个 \(u \in \mathcal{L}(\mathrm{E})\)，我们曾（V, p.~16, 推论 2）关联了一个半双线性型 \(\Phi_u : (x, y) \mapsto \langle x | u(y) \rangle\)（在 \(\mathbf{E} \times \mathbf{E}\) 上）。我们有
+
+\[
+\Phi_ {u ^ {*}} (x, y) = \overline {{{{\Phi_ {u} (y , x)}}}} \quad (x, y \text {in E});\tag{14}
+\]
+
+因此，\(u\) 是自伴算子当且仅当型 \(\Phi_u\) 是埃尔米特型。当 \(K\) 为 \(C\) 时，只需假设 \(\Phi_u(x, x) = \langle x | u(x) \rangle\) 对所有 \(x \in E\) 为实数即可（V, p.~2, 注）。
+
+设 \(u \in \mathcal{L}(\mathrm{E})\)。我们已经看到（V, p.~16, 推论 2），\(u\) 的范数可由下列公式计算
+
+\[
+\| u \| = \sup _ {\| x \| \leqslant 1, \| y \| \leqslant 1} \left| \Phi_ {u} (x, y) \right|.\tag{15}
+\]
+
+当 u 是自伴算子时，我们有如下结果：
+
+命题 9. --- 对 E 的每个自伴算子 u，我们有
+
+\[
+\| u \| = \sup _ {\| x \| \leqslant 1} | \langle x | u (x) \rangle |.\tag{16}
+\]
+
+令 \(\Phi = \Phi_{u}\)，\(c = \sup_{\| x\| \leqslant 1}|\Phi (x,x)|\)，则显然 \(c\leqslant \| u\|\)。设 E 中的 \(x,y\) 满足 \(\| x\| \leqslant 1\)、\(\| y\| \leqslant 1\)。则
+
+\[
+\Phi (x + y, x + y) = \Phi (x, x) + \Phi (y, y) + 2 \mathscr {R} \Phi (x, y),
+\]
+
+因而
+
+\[
+4 \mathscr {R} \Phi (x, y) = \Phi (x + y, x + y) - \Phi (x - y, \dot {x} - y);
+\]
+
+但 \(|\Phi(t, t)| \leqslant c \|t\|^2\) 对所有 \(t \in \mathbf{E}\) 成立，于是
+
+\[
+4 \left| \mathcal {R} \Phi (x, y) \right| \leqslant c \left(\| x + y \| ^ {2} + \| x - y \| ^ {2}\right) = 2 c \left(\| x \| ^ {2} + \| y \| ^ {2}\right) \leqslant 4 c.
+\]
+
+设 \(a = \Phi(x, y)\)；存在绝对值为 1 的复数 \(\lambda\) 使 \(\lambda a = |a|\)。在前一不等式中把 \(y\) 换成 \(\lambda y\)，便得 \(|\Phi(x,y)| \leqslant c\)。由 (15)，\(\|u\| \leqslant c\)，命题得证。证毕。
+
+显然每个自伴算子都是正规的。反之：
+
+命题 10. --- 假设 K 为 C。设 \(u \in \mathcal{L}(\mathrm{E})\)。则存在唯一的一对 E 的自伴算子 \((h_1, h_2)\)，使得 \(u = h_1 + ih_2\)。为使 u 是正规的，必要且充分的是 \(h_1\) 与 \(h_2\) 交换。
+
+因为，关系式 \(\ll u = h_1 + ih_2\)、\(h_1^* = h_1\)、\(h_2^* = h_2\) 等价于
+
+\[
+\ll h _ {1} = \frac {1}{2} (u + u ^ {*}) \text { and } h _ {2} = \frac {i}{2} (u ^ {*} - u) \gg .
+\]
+
+此外，我们有 \(h_1h_2 - h_2h_1 = \frac{i}{2} (uu^* - u^*u)\)。这就证明了命题 10。
+
+命题 11. --- 设 \(p \in \mathcal{L}(\mathbf{E})\)。为使 \(p\) 是从 \(\mathbf{E}\) 到 \(\mathbf{E}\) 的某个闭向量子空间上的正交投影算子，必要且充分的是 \(p^2 = p = p^*\)。
+
+假设 \(p^{2} = p\)。设 M 为 p 的像，N 为它的核。E 是 M 与 N 的拓扑直和。为使 p 是正交投影算子，必要且充分的是 M 与 N 正交，也就是说，对 E 中所有 x、y 有 \(\langle p(x)|y - p(y)\rangle = 0\)。后一关系式等价于 \(p = p^{*}p\)，并蕴含 \(p^{*} = (p^{*}p)^{*} = p^{*}p = p\)；反之，若 \(p^{*} = p\)，我们有 \(p = p^{2} = p^{*}p\)。
+
+\subsection{正算子}
+
+定义 6. --- 设 E 为希尔伯特空间，\(u \in \mathcal{L}(E)\)。我们称 u 是正的并记作 \(u \geqslant 0\)，如果 u 是自伴的且 \(\langle x|u(x) \rangle \geqslant 0\) 对所有 \(x \in E\) 成立。
+
+当 K 等于 C 时，关系式
+
+\[
+\langle x | u (x) \rangle \geqslant 0 \quad \text { for   all } \quad x \in E
+\]
+
+蕴含 \(u\) 是自伴的（V, p.~2, 注），从而是正的。
+
+用 \(\mathcal{L}_{+}(\mathrm{E})\) 表示 \(\mathcal{L}(\mathrm{E})\) 中所有正元素组成的集；它是实向量空间 \(\mathcal{L}(\mathrm{E})_{[\mathbb{R}]}\)（\(\mathcal{L}(\mathrm{E})\) 的底向量空间）中的一个真尖凸锥。为使 \(u\) 是正的，必要且充分的是：半双线性型 \(\Phi_u\)（在 \(\mathrm{E} \times \mathrm{E}\) 上，与 \(u\) 相伴）是正埃尔米特型。给定 \(u\) 与 \(v\)（都属于 \(\mathcal{L}(\mathrm{E})\)），关系式 \(u - v \geqslant 0\) 也可写作 \(u \geqslant v\) 或 \(v \leqslant u\)；这是 \(\mathcal{L}(\mathrm{E})_{[\mathbb{R}]}\) 上的一个序关系，与它的实向量空间结构相容。
+
+命题 12. --- 设 u 为 \(\mathcal{L}(\mathrm{E})\) 中的自伴（相应地，正的）元素，v 为从 E 到希尔伯特空间 F 中的连续线性映射。则 vuv* 是 \(\mathcal{L}(\mathrm{F})\) 中的自伴（相应地，正的）元素。
+
+因为，我们有 \((vuv^{*})^{*} = v^{**}u^{*}v^{*} = vuv^{*}\)。另一方面，若 \(u \geqslant 0\)，我们有
+
+\[
+\langle y | v u v ^ {*} (y) \rangle = \langle v ^ {*} (y) | u (v ^ {*} (y)) \rangle \geqslant 0
+\]
+
+对所有 \(y \in \mathbf{F}\) 成立，因而 \(vuv^{*} \geqslant 0\)。
+
+命题 12 特别表明，\(vv^*\) 对所有 \(v \in \mathcal{L}(\mathrm{E};\mathrm{F})\) 都是正的。由于特别地，正交投影算子 \(p\) 满足 \(p = p^2 = pp^*\)，故它是正的。
+
+注. --- 1) 对每个自伴的 \(u\)（属于 \(\mathcal{L}(\mathrm{E})\)），令 \(m(u) = \inf_{||x|| = 1} \langle x|u(x) \rangle\)，\(\mathbf{M}(u) = \sup_{||x|| = 1} \langle x|u(x) \rangle\)。若 E 不恰为 0，则 \(m(u)\) 与 \(\mathbf{M}(u)\) 都是有限的；此外，\(\mathbf{M}(u)\) 是最小的实数 \(\lambda\)，使得 \(u \leqslant \lambda\) . \(1_{\mathrm{E}}\)；而 \(m(u)\) 是最大的实数 \(\mu\)，使得 \(u \geqslant \mu\) . \(1_{\mathrm{E}}\)。显然我们有 \(m(-u) = -\mathbf{M}(u)\) 及 \(\mathbf{M}(-u) = -m(u)\)。显然
+
+\[
+\sup \left(| m (u) |, | \mathrm{M} (u) |\right) = \sup _ {\| x \| = 1} \left| \langle x | u (x) \rangle \right|
+\]
+
+而命题 9（V, p.~44）蕴含（对 E ≠ \{0\}）
+
+\[
+\| u \| = \sup \left(| m (u) |, | \mathbf {M} (u) |\right).\tag{17}
+\]
+
+* 当 K 为 C 时，这一公式的另一证明见 TS, I, § 6, No.~8 的命题 14。 * 2) 设 M 与 N 为 E 的两个闭向量子空间，\(p_{\mathbf{M}}\)（相应地 \(p_{\mathbf{N}}\)）为从 E 到 M（相应地 N）上的正交投影算子。则 \(\mathbf{M} \subset \mathbf{N}\) 当且仅当 \(p_{\mathbf{M}} \leqslant p_{\mathbf{N}}\)。因为，我们有 \(p_{\mathbf{M}}^{*}p_{\mathbf{M}} = p_{\mathbf{M}}\)，因而
+
+\[
+\left\| p _ {\mathbf {M}} (x) \right\| ^ {2} = \langle p _ {\mathbf {M}} (x) | p _ {\mathbf {M}} (x) \rangle = \langle x | p _ {\mathbf {M}} ^ {*} p _ {\mathbf {M}} (x) \rangle = \langle x | p _ {\mathbf {M}} (x) \rangle
+\]
+
+对所有 \(x \in E\) 成立。因此关系式 \(p_{M} \leqslant p_{N}\) 等价于 « \(\|p_{M}(x)\| \leqslant \|p_{N}(x)\|\) 对所有 \(x \in E\) 成立 »。若 \(M \subset N\)，我们有 \(p_{M} = p_{M} p_{N}\)，因而 \(\|p_{M}(x)\| \leqslant \|p_{N}(x)\|\)，因为 \(\|p_{M}\| \leqslant 1\)。反之，若 \(\|p_{M}(x)\| \leqslant \|p_{N}(x)\|\) 对所有 \(x \in E\) 成立，则 \(p_{M}\) 的核包含 \(p_{N}\) 的核，即 \(M^{\circ} \supset N^{\circ}\)，这蕴含 \(M \subset N\)。
+
+命题 13. --- 设 \(\mathcal{H}(\mathrm{E})\) 为希尔伯特空间 E 的所有连续自伴算子组成的集。设 \(\mathcal{F}\) 为 \(\mathcal{H}(\mathrm{E})\) 的一个非空、递增有向且有界的子集。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  集 \(\mathcal{F}\) 有一个上界 \(u_0\)（在 \(\mathcal{H}(\mathrm{E})\) 中）；我们有
+\end{enumerate}
+
+\[
+\langle x | u _ {0} (x) \rangle = \sup _ {u \in \mathcal {F}} \langle x | u (x) \rangle \quad f o r a l l \quad x \in E.\tag{18}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \(\mathcal{F}\) 的截口滤子收敛于 \(u_0\)（在赋有简单收敛拓扑的空间 \(\mathcal{L}(\mathrm{E})\) 中）。
+\end{enumerate}
+
+设 \(\Sigma\) 为 \(\mathcal{F}\) 的截口滤子；对每个 \(u \in \mathcal{H}(\mathrm{E})\)，设 \(\Phi_u\) 为 \(\mathbf{E}\) 上由下式定义的连续埃尔米特型
+
+\[
+\Phi_ {u} (x, y) = \langle x | u (y) \rangle .
+\]
+
+令
+
+\[
+\Psi_ {u} (x) = \Phi_ {u} (x, x)
+\]
+
+（其中 \(u \in \mathcal{H}(\mathrm{E})\)，\(x \in \mathrm{E}\)）。由极化公式（V, p.~2），我们有
+
+\[
+4 \Phi_ {u} (x, y) = \Psi_ {u} (x + y) - \Psi_ {u} (x - y) \quad \text { if } \quad \mathbf {K} = \mathbf {R}\tag{19}
+\]
+
+\[
+4 \Phi_ {u} (x, y) = \Psi_ {u} (x + y) - \Psi_ {u} (x - y) - i \Psi_ {u} (x + i y) + i \Psi_ {u} (x - i y) \quad \text { if } \quad \mathbf {K} = \mathbf {C}.\tag{20}
+\]
+
+对每个 \(x \in \mathbf{E}\)，映射 \(u \mapsto \Psi_u(x)\)（取值于 \(\mathbf{R}\)）是递增且有界的，因而关于 \(\Sigma\) 有极限。由前面的公式，极限
+
+\[
+\lim _ {u, \Sigma} \Phi_ {u} (x, y) = \Phi (x, y)
+\]
+
+对 E 的每一对元素 \((x, y)\) 都存在。显然 \(\Phi\) 是 E 上的埃尔米特型。若 \(v_{1} \in F\) 且 \(v_{2}\) 是 F 的一个界，则埃尔米特型 \(f_{1} = \Phi - \Phi_{v_{1}}\) 与 \(f_{2} = \Phi_{v_{2}} - \Phi\) 是正的；存在实数 \(M \geqslant 0\) 使
+
+\[
+f _ {1} (x, x) + f _ {2} (x, x) = \Phi_ {v _ {2} - v _ {1}} (x, x) \leqslant \mathbf {M} \| x \| ^ {2},
+\]
+
+因而
+
+\[
+f _ {1} (x, x) \leqslant \mathbf {M} \| x \| ^ {2}, f _ {2} (x, x) \leqslant \mathbf {M} \| x \| ^ {2} (x \in \mathrm{E});
+\]
+
+因而半范数 \(x \mapsto f_i(x, x)^{1/2}\) 在 E 上连续。由于
+
+\[
+f _ {2} - f _ {1} = \Phi_ {v _ {2}} + \Phi_ {v _ {1}} - 2 \Phi ,
+\]
+
+我们断定 \(x \mapsto \Phi(x, x)\) 是 E 上的连续函数，并由公式 (19) 与 (20)，\(\Phi\) 在 \(E \times E\) 上连续。因此存在（V, p.~16, 推论 2）一个元素 \(u_{0}\)（属于 \(\mathcal{H}(E)\)），使得 \(\Phi = \Phi_{u_{0}}\)。公式 (18) 显然满足，因而 \(u_{0}\) 是 F 在 \(\mathcal{H}(E)\) 中的上界。这就证明了 (i)。
+
+按构造，我们有
+
+\[
+\lim _ {u, \Sigma} \langle x | (u _ {0} - u) (x) \rangle = 0 \quad \text { for   all } \quad x \in E.\tag{21}
+\]
+
+设 \(v_{1} \in \mathcal{F}\)；给定一个 \(u \in \mathcal{F}\) 满足 \(u \geqslant v_{1}\)，令 \(v = u_{0} - u\)。如果把 Cauchy-Schwarz 不等式应用于 E 上的正埃尔米特型 \(\Phi_v\)，就得到
+
+\[
+\begin{array}{r l} \left\| v (x) \right\| ^ {4} & = \left| \Phi_ {v} (v (x), x) \right| ^ {2} \leqslant \Phi_ {v} (v (x), v (x)). \Phi_ {v} (x, x) \\ & = \langle v (x) | v ^ {2} (x) \rangle \langle x | v (x) \rangle \leqslant \| v \| ^ {3} \| x \| ^ {2} \langle x | v (x) \rangle \\ & \leqslant \| u _ {0} - v _ {1} \| ^ {3} \| x \| ^ {2} \langle x | v (x) \rangle , \end{array}
+\]
+
+因为由 V, p.~44 的命题 9 有 \(\| v\| \leqslant \| u_0 - v_1\|\)。于是由 (21) 得 \(\lim_{u,\Sigma}\left\| (u_0 - u)(x)\right\| = 0\) 对所有 \(x\in \mathrm{E}\) 成立；这就证明了断言 (ii)。证毕。
+
+特别地，命题 13 可应用于递增且有界的序列 \((u_n)_{n\in \mathbf{N}}\)（元素属于 \(\mathcal{H}(\mathrm{E})\)）的情形。这时存在一个元素 \(v\)（属于 \(\mathcal{H}(\mathrm{E})\)），它由下式刻画
+
+\[
+\langle x | v (x) \rangle = \lim _ {n \rightarrow \infty} \langle x | u _ {n} (x) \rangle = \sup _ {n \in \mathbf {N}} \langle x | u _ {n} (x) \rangle \quad (x \in E),
+\]
+
+并且有 \(v(x) = \lim_{n\to \infty}u_n(x)\) 对所有 \(x\in E\) 成立。此外，\(v\) 是诸 \(u_{n}\) 组成的集在 \(\mathcal{H}(E)\) 中的上界。
+
+\subsection{自同态的迹}
+
+设 E 与 F 为两个希尔伯特空间。按照 V, p.~40 的约定，我们用 \(ba^{*}\)（对 E 中的 \(a\) 与 F 中的 \(b\)）表示从 E 到 F 中的连续线性映射 \(x \mapsto b \langle a|x\rangle\)。
+
+引理 1. --- 存在一个同构 \(\theta\)，从向量空间 \(\mathbf{F} \otimes \mathbf{E}'\) 映到空间 \(\mathcal{L}_f(\mathbf{E}; \mathbf{F})\)（由从 \(\mathbf{E}\) 到 \(\mathbf{F}\) 中的所有有限秩连续线性映射组成）上，它由 \(\theta(b \otimes a^*) = ba^*\)（对 \(a \in \mathbf{E}\)、\(b \in \mathbf{F}\)）刻画。
+
+由 A, II, § 4, No.~2，存在一个单射线性映射 \(\theta\)，从 \(\mathbf{F} \otimes \mathbf{E}'\) 到 \(\mathcal{L}(\mathbf{E};\mathbf{F})\) 中，且仅存在一个，它把 \(b \otimes a'\) 变为线性映射 \(x \mapsto ba'(x)\)（对 \(a' \in \mathbf{E}'\)、\(b \in \mathbf{F}\)）。显然 \(\theta(b \otimes a^*) = ba^*\)，且 \(\theta\) 的像包含在 \(\mathcal{L}_f(\mathbf{E};\mathbf{F})\) 中。然而，设 \(u \in \mathcal{L}_f(\mathbf{E};\mathbf{F})\)，且 \((e_1,\dots,e_n)\) 为 \(u\) 的像（在 \(\mathbf{F}\) 中）的标准正交基。令 \(f_i = u^*(e_i)\)（对 \(1 \leqslant i \leqslant n\)）。对每个 \(x \in \mathbf{E}\)，我们有
+
+\[
+u (x) = \sum_ {i = 1} ^ {n} \left\langle e _ {i} | u (x) \right\rangle . e _ {i} = \sum_ {i = 1} ^ {n} \left\langle f _ {i} | x \right\rangle . e _ {i},
+\]
+
+因而 \(u = \sum_{i=1}^{n} e_i f_i^* = \theta(\sum_{i=1}^{n} e_i \otimes f_i^*)\)。所以 \(\theta\) 的像等于 \(\mathcal{L}_f(\mathrm{E};\mathrm{F})\)。
+
+\[
+\mathrm{E} = \mathrm{F},
+\]
+
+\[
+\mathscr {L} _ {f} (\mathrm{E}) = \mathscr {L} _ {f} (\mathrm{E}; \mathrm{E})
+\]
+
+\[
+\mathcal {L} _ {f} (\mathrm{E})
+\]
+
+\[
+\tau (\theta (a \otimes a ^ {\prime})) = a ^ {\prime} (a)
+\]
+
+\[
+a \in \mathrm{E}, a ^ {\prime} \in \mathrm{E} ^ {\prime}\tag{22}
+\]
+
+\[
+\tau (b a ^ {*}) = \langle a | b \rangle \quad \text { for } a, b \text { in } E.
+\]
+
+当 E 为有限维时，我们有 \(\mathcal{L}_{f}(\mathrm{E}) = \mathcal{L}(\mathrm{E})\)，而 \(\tau(u)\) 是 E 的自同态 u 的迹（A, II, § 4, No.~3）。
+
+引理 2. --- 设 \((e_i)_{i\in \mathbf{I}}\) 为 E 的标准正交基。则
+
+\[
+\tau (u) = \sum_ {i \in \mathrm{I}} \left\langle e _ {i} | u (e _ {i}) \right\rangle
+\]
+
+对所有 \(u \in \mathcal{L}_f(\mathrm{E})\) 成立。
+
+只需考虑 \(u = ba^{*}\)（其中 \(a, b\) 属于 E）的情形。这时
+
+\[
+\langle e _ {i} | u (e _ {i}) \rangle = e _ {i} ^ {*} b. a ^ {*} e _ {i} = \overline {{\langle e _ {i} | a \rangle}} \langle e _ {i} | b \rangle
+\]
+
+而引理 2 由公式 (22) 以及 V, p.~22 的公式 (3) 得出。
+
+引理 3. --- 设 u 为 E 的连续正自同态，F 为 E 上所有有限秩正交投影算子组成的集。则对 E 的每个标准正交基 \((e_{i})_{i\in\mathbf{I}}\)，我们（在 \((in\overline{\mathbf{R}}_{+})\) 中）有等式
+
+\[
+\sum_ {i \in \mathrm{I}} \left\langle e _ {i} | u (e _ {i}) \right\rangle = \sup _ {p \in \mathcal {F}} \tau (p u p).
+\]
+
+对 I 的每个有限子集 J，令 \(p_{J} = \sum_{i \in J} e_{i} e_{i}^{*}\)；这是从 E 到由向量 \(e_{i}\)（i 取遍 J）生成的向量子空间上的正交投影算子。我们有
+
+\[
+p _ {\mathrm{J}} u p _ {\mathrm{J}} = \sum_ {i \in \mathrm{J}, j \in \mathrm{J}} \left\langle e _ {i} | u (e _ {j}) \right\rangle e _ {i} e _ {j} ^ {*},
+\]
+
+因而 \(\tau(p_{\mathbf{J}}up_{\mathbf{J}}) = \sum_{i\in \mathbf{J}}\langle e_i|u(e_i)\rangle\)。由于 \(p_{\mathbf{J}}\in \mathcal{F}\)，
+
+\[
+\sum_ {i \in \mathbf {J}} \left\langle e _ {i} | u (e _ {i}) \right\rangle \leqslant \sup _ {p \in \mathcal {F}} \tau (p u p);
+\]
+
+于是我们断定
+
+\[
+\sum_ {i \in \mathbf {I}} \left\langle e _ {i} | u (e _ {i}) \right\rangle = \sup _ {\mathbf {J}} \sum_ {i \in \mathbf {J}} \left\langle e _ {i} | u (e _ {i}) \right\rangle \leqslant \sup _ {p \in \mathcal {F}} \tau (p u p).
+\]
+
+设 \(v\) 为 \(\mathbf{E}\) 的一个有限秩连续正自同态，且 \(p \in \mathcal{F}\)。由 \(\mathbf{V}\), p.~23 的定理 2，存在标准正交基 \((f_{\alpha})_{\alpha \in \mathbf{A}}\)（属于 \(\mathbf{E}\)）及有限子集 \(\mathbf{B}\)（属于 \(\mathbf{A}\)），使得 \((f_{\alpha})_{\alpha \in \mathbf{B}}\) 是 \(p\) 的像的标准正交基。这时我们有 \(p = \sum_{\alpha \in \mathbf{B}} f_{\alpha} f_{\alpha}^{*}\)，于是与上面一样，有关系式 \(\tau(pvp) = \sum_{\alpha \in \mathbf{B}} \langle f_{\alpha}|v(f_{\alpha}) \rangle\)。由引理 2（V, p.~48）我们有 \(\tau(v) = \sum_{\alpha \in \mathbf{A}} \langle f_{\alpha}|v(f_{\alpha}) \rangle\)，由此得到公式
+
+\[
+\sum_ {\alpha \in \mathbf {B}} \langle f _ {\alpha} | v (f _ {\alpha}) \rangle \leqslant \tau (v).
+\]
+
+把这一不等式应用于 \(v = p_{\mathbf{J}}.up_{\mathbf{J}}\) 且 \(\mathbf{J}\) 为 \(\mathbf{I}\) 的有限子集的情形，就得到
+
+\[
+\sum_ {\alpha \in \mathbf {B}} \left\langle p _ {\mathbf {J}} (f _ {\alpha}) | u p _ {\mathbf {J}} (f _ {\alpha}) \right\rangle \leqslant \sum_ {i \in \mathbf {J}} \left\langle e _ {i} | u (e _ {i}) \right\rangle .\tag{23}
+\]
+
+对每个 \(x \in \mathbb{E}\)，我们有 \(p_{\mathbf{J}}(x) = \sum_{i \in \mathbf{J}} \langle e_i | x \rangle e_i\)，因而 \(x = \lim_{\mathbf{J}} p_{\mathbf{J}}(x)\)，这里极限是关于 \(\mathbf{J}\)（\(\mathbf{I}\) 的有限子集）组成的有序有向集取的。在 (23) 中对 \(\mathbf{J}\) 取极限，就得到
+
+\[
+\tau (p u p) = \sum_ {\alpha \in \mathrm{B}} \left\langle f _ {\alpha} | u (f _ {\alpha}) \right\rangle \leqslant \sum_ {i \in \mathrm{I}} \left\langle e _ {i} | u (e _ {i}) \right\rangle ,
+\]
+
+这样就完成了引理 3 的证明。
+
+定义 7. --- 设 u 为希尔伯特空间 E 的连续正自同态。令
+
+\[
+\operatorname{Tr} (u) = \sup _ {p \in \mathcal {F}} \tau (p u p)\tag{24}
+\]
+
+（上界在 \(\overline{\mathbf{R}}_+\) 中），其中 \(\mathcal{F}\) 为 E 上所有有限秩正交投影算子组成的集。我们称 \(\operatorname{Tr}(u)\) 为 \(u\) 的迹。
+
+设 \(p\) 为从 \(E\) 到 \(E\) 的某个有限维向量子空间上的正交投影算子，且 \((x_1, \ldots, x_m)\) 为 \(F\) 的标准正交基。我们已建立了关系式 \(\tau(pup) = \sum_{i=1}^{m} \langle x_i | u(x_i) \rangle\)。因此，我们可以用下列公式定义迹
+
+\[
+\operatorname{Tr} (u) = \sup _ {x _ {1}, \dots , x _ {m}} \sum_ {i = 1} ^ {m} \left\langle x _ {i} | u (x _ {i}) \right\rangle ,\tag{24'}
+\]
+
+其中 \((x_{1},\dots,x_{m})\) 取遍 E 的向量的所有有限标准正交序列组成的集。
+
+由引理 3（V, p.~48），我们有
+
+\[
+\operatorname{Tr} (u) = \sum_ {i \in \mathbf {I}} \left\langle e _ {i} | u (e _ {i}) \right\rangle\tag{25}
+\]
+
+（对 E 的每个标准正交基 \((e_{i})_{i\in I}\)）。由此我们导出
+
+\[
+\operatorname{Tr} (u + v) = \operatorname{Tr} (u) + \operatorname{Tr} (v)\tag{26}
+\]
+
+\[
+\operatorname{Tr} (\lambda u) = \lambda . \operatorname{Tr} (u)\tag{27}
+\]
+
+对 E 的所有连续正自同态 u、v 以及每个实数 \(\lambda \geqslant 0\) 成立（在 (27) 中我们约定 \(0. (+\infty) = 0\)）。设 \(\phi\) 为从 E 到希尔伯特空间 F 上的同构；由于 \(\phi\) 把 E 的每个标准正交基变为 F 的标准正交基，由 (25) 我们得到
+
+\[
+\operatorname{Tr} \left(\phi u \phi^ {- 1}\right) = \operatorname{Tr} (u).\tag{28}
+\]
+
+设 \((u_{\alpha})_{\alpha \in \mathbf{A}}\) 为 E 的连续正自同态组成的一个非空、递增有向且有界的族；令 \(u = \sup_{\alpha} u_{\alpha}\)，则 \(\langle x|u(x) \rangle = \sup_{\alpha} \langle x|u_{\alpha}(x) \rangle\) 对所有 \(x \in \mathrm{E}\) 成立（V, p.~46, 命题 13）。我们有 \(\operatorname{Tr}(u) = \sup_{\mathbf{J} \subset \mathbf{I}} \sum_{i \in \mathbf{J}} \langle e_i | u(e_i) \rangle\)，其中 \(\mathbf{J}\) 取遍 I 的所有有限子集，因而
+
+\[
+\operatorname{Tr} (u) = \sup _ {\alpha} \operatorname{Tr} (u _ {\alpha}) \quad \text { for } \quad u = \sup _ {\alpha} u _ {\alpha}.\tag{29}
+\]
+
+设 \(p_{\mathrm{F}}\) 为从 E 到希尔伯特子空间 F 上的正交投影算子；存在 E 的标准正交基 \((e_i)_{i \in \mathrm{I}}\) 及 I 的子集 J，使得 \((e_i)_{i \in \mathrm{J}}\) 是 F 的标准正交基。我们有 \(\operatorname{Tr}(p_{\mathrm{F}} up_{\mathrm{F}}) = \sum_{i \in \mathrm{J}} \langle e_i | u(e_i) \rangle\)。这个公式有两个推论：第一，我们有 \(\operatorname{Tr}(p_{\mathrm{F}} up_{\mathrm{F}}) \leqslant \operatorname{Tr}(u)\)；第二，取 \(u = 1_{\mathrm{E}}\)，就得到
+
+\[
+\operatorname{Tr} (p _ {\mathrm{F}}) = \left\{ \begin{array}{l l} \dim \mathrm{F} & \text { if   F   is   finite   dimensional } \\ + \infty & \text { if   not. } \end{array} \right.\tag{30}
+\]
+
+定义 8. --- 设 E 为复希尔伯特空间。用 \(\mathcal{L}^{1}(\mathrm{E})\) 表示 \(\mathcal{L}(\mathrm{E})\) 中由 E 的所有具有有限迹的连续正自同态生成的向量子空间。
+
+由 V, p.~50 的公式 (25)，迹可以延拓为 \(\mathcal{L}^1 (\mathrm{E})\) 上的一个线性型，仍记作 Tr，且满足关系式 \(\operatorname{Tr}(u) = \sum_{i\in I}\langle e_i|u(e_i)\rangle\)（对所有 \(u\)（属于 \(\mathcal{L}^1 (\mathrm{E})\)）及 E 的每个标准正交基 \((e_i)_{i\in I}\)）。对每个 \(u\in \mathcal{L}^1 (\mathrm{E})\)，我们有 \(u^{*}\in \mathcal{L}^{1}(\mathrm{E})\) 且 \(\operatorname {Tr}(u^{*}) = \overline{\operatorname{Tr}(u)}\)。V, p.~50 的公式 (28) 可推广到 \(u\) 属于 \(\mathcal{L}^1 (\mathrm{E})\) 的情形。设 F 为 E 的希尔伯特子空间；由公式 (30)，正交投影算子 \(p_{\mathrm{F}}\) 属于 \(\mathcal{L}^1 (\mathrm{E})\) 当且仅当 F 是有限维的。对 E 中每对 \(a\) 与 \(b\)，我们有 \(4ab^{*} = \sum_{\varepsilon^{4} = 1}\varepsilon (a + \varepsilon b)(a + \varepsilon b)^{*}\)，且 \(cc^{*}\) 对所有 \(c\in \mathrm{E}\) 都是具有有限迹的正算子：因此，若 \(u\) 是 E 的有限秩连续自同态，则 \(u \in \mathcal{L}^1(\mathrm{E})\) 且 \(\operatorname{Tr}(u) = \tau(u)\)。
+
+设 \(\mathbf{E}\) 为实希尔伯特空间，\(\mathrm{E}_{(\mathbf{C})}\) 为其复化（V, p.~5）。我们把 \(\mathbf{E}\) 等同于 \(\mathrm{E}_{(\mathbf{C})}\) 的一个子集。于是 \(\mathcal{L}(\mathrm{E})\) 可等同于 \(\mathcal{L}(\mathrm{E}_{(\mathbf{C})})\) 的一个实向量子空间，它由所有连续线性映射 \(u\)（从 \(\mathrm{E}_{(\mathbf{C})}\) 到 \(\mathrm{E}_{(\mathbf{C})}\) 中，满足 \(u(\mathrm{E}) \subset \mathrm{E}\)）组成。这时我们写 \(\mathcal{L}^1(\mathrm{E}) = \mathcal{L}(\mathrm{E}) \cap \mathcal{L}^1(\mathrm{E}_{(\mathbf{C})})\)。对每个 \(u \in \mathcal{L}^1(\mathrm{E})\)，迹 \(\operatorname{Tr}(u)\) 是实的且等于 \(\operatorname{Tr}(u^*)\)。公式 (25) 与 (28) 仍然有效，\(\mathcal{L}_f(\mathrm{E}) \subset \mathcal{L}^1(\mathrm{E})\) 且 \(\operatorname{Tr}(u) = \tau(u)\) 对所有 \(u \in \mathcal{L}_f(\mathrm{E})\) 成立。最后，闭向量子空间 \(\mathbf{F}\)（\(\mathbf{E}\) 的）是有限维的当且仅当 \(p_{\mathrm{F}}\) 属于 \(\mathcal{L}^1(\mathrm{E})\)。
+
+* 注 1. --- 我们以后将定义从 Banach 空间 E 到 Banach 空间 F 中的核映射的概念。我们将证明，当 \(\mathcal{L}^1 (\mathrm{E})\) 由从 E 到 E 中的所有核映射组成时，E 是实或复的希尔伯特空间。 *
+
+命题 14. --- 设 \(E_{1}, \ldots, E_{n}\) 为希尔伯特空间，\(E = E_{1} \hat{\otimes}_{2} \ldots \hat{\otimes}_{2} E_{n}\)，且 \(u_{i}\) 为 \(E_{i}\) 的连续自同态（对 \(1 \leqslant i \leqslant n\)）。若 \(u_{1}, \ldots, u_{n}\) 都是正的，则 \(u = u_{1} \hat{\otimes}_{2} \ldots \hat{\otimes}_{2} u_{n}\) 也是正的，并且
+
+\[
+\operatorname{Tr} (u) = \prod_ {i = 1} ^ {n} \operatorname{Tr} (u _ {i}).\tag{31}
+\]
+
+若 \(u_{i} \in \mathcal{L}^{1}(\mathrm{E}_{i})\)（对所有 \(1 \leqslant i \leqslant n\)），则 \(u \in \mathcal{L}^{1}(\mathrm{E})\)，且公式 (31) 在这一情形仍然有效。
+
+对 \(n\) 用归纳法，我们立即归结到 \(n = 2\) 的情形。
+
+对 i=1,2，我们定义半双线性型 \(\Phi_{i}\)（在 \(E_{i}\) 上），其公式为 \(\Phi_{i}(x,y)=\langle x|u_{i}(y)\rangle\)（对 \(E_{i}\) 中的 x、y）。若 \(u_{1}\) 与 \(u_{2}\) 都是正的，则型 \(\Phi_{1}\) 与 \(\Phi_{2}\) 是埃尔米特的且是正的。由 V, p.~25 的命题 1，存在一个正埃尔米特型 \(\Phi\)（在向量空间 \(E_{1}\otimes E_{2}\) 上），使得
+
+\[
+\Phi (x _ {1} \otimes x _ {2}, y _ {1} \otimes y _ {2}) = \Phi_ {1} (x _ {1}, y _ {1}). \Phi_ {2} (x _ {2}, y _ {2})
+\]
+
+（对 \(x_{1}, y_{1}\)（属于 \(E_{1}\)）与 \(x_{2}, y_{2}\)（属于 \(E_{2}\)））。我们立即验证关系式 \(\Phi(z, t) = \langle z|u(t) \rangle\)（其中 \(z\) 与 \(t\) 属于 \(E_{1} \otimes E_{2}\)）。由于 \(\Phi\) 是正的，我们有 \(\langle z|u(z) \rangle \geqslant 0\)（对所有 \(z\)，属于 \(E_{1} \otimes E_{2}\)）。由于 \(u\) 连续且 \(E_{1} \otimes E_{2}\) 在希尔伯特空间 \(E = E_{1} \hat{\otimes}_{2} E_{2}\) 中稠密，我们断定 \(u\) 是 \(E\) 的连续正自同态。
+
+设 \((e_i)_{i\in I}\) 为 \(\mathbf{E}_1\) 的标准正交基，\((f_j)_{j\in J}\) 为 \(\mathbf{E}_2\) 的标准正交基；则族 \((e_i\otimes f_i)_{i\in I,j\in J}\) 是 E 的标准正交基，并且我们有
+
+\[
+\begin{array}{r l} & {\mathrm{Tr} (u) = \sum_ {i \in \mathbf {I}} \sum_ {j \in \mathbf {J}} \langle e _ {i} \otimes f _ {j} | u (e _ {i} \otimes f _ {j}) \rangle} \\ & {\quad = \sum_ {i \in \mathbf {I}} \sum_ {j \in \mathbf {J}} \langle e _ {i} | u _ {1} (e _ {i}) \rangle . \langle f _ {j} | u _ {2} (f _ {j}) \rangle} \\ & {\quad = \mathrm{Tr} (u _ {1}). \mathrm{Tr} (u _ {2}).} \end{array}
+\]
+
+特别地，若 \(u_{1}\) 与 \(u_{2}\) 是具有有限迹的正自同态，则 u 也是。由线性性，我们推出：当 K = C 时 u 属于 \(\mathcal{L}^{1}(\mathrm{E})\)，且对 i = 1, 2，诸 \(u_{i}\) 属于 \(\mathcal{L}^{1}(\mathrm{E}_{i})\)；公式 (31) 由线性性推广到这一情形。最后，K = R 且诸 \(u_{i} \in \mathcal{L}^{1}(\mathrm{E}_{i})\) 的情形可通过标量扩张归结为复的情形。
+
+注 2. --- 设 E 为希尔伯特空间，它是希尔伯特子空间族 \((\mathrm{E}_{i})_{i\in\mathrm{I}}\) 的希尔伯特和。设 u 为 \(\mathcal{L}(\mathrm{E})\) 中满足 \(u(\mathrm{E}_{i}) \subset \mathrm{E}_{i}\)（对所有 \(i \in I\)）的元素；令 \(u_{i}\) 为 \(\mathcal{L}(\mathrm{E}_{i})\) 中在 \(E_{i}\) 上与 u 一致的元素。则 \(\operatorname{Tr}(u) = \sum_{i \in \mathrm{I}} \operatorname{Tr}(u_{i})\)（当 u 是正的，或属于 \(\mathcal{L}^{1}(\mathrm{E})\) 时）；这一关系式由 V, p.~50 的公式 (25) 应用于 E 的、由各 \(E_{i}\) 的标准正交基的并组成的标准正交基而得到。
+
+\subsection{Hilbert-Schmidt 映射}
+
+定义 9. --- 设 E 与 F 为两个希尔伯特空间。从 E 到 F 中的连续线性映射 u 称为 Hilbert-Schmidt 映射，如果 E 的正自同态 \(u^{*}u\) 的迹是有限的。用 \(\mathcal{L}^{2}(\mathrm{E},\mathrm{F})\) 表示从 E 到 F 中的所有 Hilbert-Schmidt 映射组成的集。
+
+当 \(\mathrm{E} = \mathrm{F}\) 时，我们把 \(\mathcal{L}^2(\mathrm{E})\) 用作 \(\mathcal{L}^2(\mathrm{E};\mathrm{E})\) 的记号。
+
+对每个 \(u \in \mathcal{L}(\mathrm{E},\mathrm{F})\)，令 \(\| u \|_2 = \operatorname{Tr}(u^* u)^{1/2}\)，于是 \(u\) 属于 \(\mathcal{L}^2(\mathrm{E};\mathrm{F})\) 当且仅当 \(\| u \|_2\) 是有限的。由迹的定义，我们得到
+
+\[
+\| u \| _ {2} ^ {2} = \sup _ {x _ {1}, \dots , x _ {m}} \sum_ {i = 1} ^ {m} \left\| u (x _ {i}) \right\| ^ {2}\tag{32}
+\]
+
+其中 \((x_{1},\ldots ,x_{m})\) 取遍 E 中的有限标准正交序列组成的集。特别地，在公式 (32) 中取 \(m = 1\)，我们有
+
+\[
+\| u \| \leqslant \| u \| _ {2} \quad (u \in \mathscr {L} (\mathrm{E}; \mathrm{F})).\tag{33}
+\]
+
+设 \((e_i)_{i\in I}\) 为 \(E\) 的标准正交基，\((f_j)_{j\in J}\) 为 \(F\) 的标准正交基。由 \(V\), p.~50 的公式 (25) 及 Parseval 等式（V, p.~22），我们有
+
+\[
+\left\| u \right\| _ {2} ^ {2} = \sum_ {i \in I} \left\| u (e _ {i}) \right\| ^ {2} = \sum_ {i, j} \left| \langle f _ {j} | u (e _ {i}) \rangle \right| ^ {2}.\tag{34}
+\]
+
+由于 \(\left|\langle f_j | u(e_i) \rangle\right| = \left|\langle e_i | u^*(f_j) \rangle\right|\)，公式 (34) 蕴含
+
+\[
+\| u ^ {*} \| _ {2} = \| u \|;\tag{35}
+\]
+
+因此，Hilbert-Schmidt 映射的伴随映射仍是 Hilbert-Schmidt 映射。设 \(E_{1}\)、\(F_{1}\) 为希尔伯特空间，\(v: E_{1} \to E\)、\(w: F \to F_{1}\) 为连续线性映射。由 (32)，我们立即导出
+
+\[
+\| w u \| _ {2} \leqslant \| w \|. \| u \| _ {2}.\tag{36}
+\]
+
+由 (35)、(36) 及关系式 \(uv = (v^{*}u^{*})^{*}\)，我们得到
+
+\[
+\left\| u v \right\| _ {2} \leqslant \left\| u \right\| _ {2} \left\| v \right\|.\tag{37}
+\]
+
+特别地，若 \(u\) 属于 \(\mathcal{L}^2(\mathrm{E},\mathrm{F})\)，则 wuv 属于 \(\mathcal{L}^2(\mathrm{E}_1,\mathrm{F}_1)\)。
+
+定理 1. --- 设 E 与 F 为两个希尔伯特空间。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  集 \(\mathcal{L}^2 (\mathrm{E},\mathrm{F})\) 是 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 的向量子空间，且 \(u\mapsto \| u\| _2\) 是 \(\mathcal{L}^2 (\mathrm{E};\mathrm{F})\) 上的一个希尔伯特范数（V, p.~6）。
+\item
+  同构 \(\theta\)（从 \(\mathbf{F} \otimes \mathbf{E}'\) 到 \(\mathcal{L}_f(\mathbf{E};\mathbf{F})\) 上，由 \(\theta(y \otimes x^*) = yx^*\) 刻画）可延拓为一个同构 \(\hat{\theta}\)（从 \(\mathbf{F} \hat{\otimes}_2 \mathbf{E}'\) 到 \(\mathcal{L}^2(\mathbf{E};\mathbf{F})\) 上）。特别地，\(\mathcal{L}_f(\mathbf{E};\mathbf{F})\) 在 \(\mathcal{L}^2(\mathbf{E};\mathbf{F})\) 中稠密。
+\end{enumerate}
+
+设 \((e_i)_{i\in \mathbf{I}}(\mathrm{resp.}(f_j)_{j\in \mathbf{J})}\) 为 E（相应地 F）的标准正交基。对每个 \(u\in \mathcal{L}(\mathbf{E};\mathbf{F})\)，令 \(\Lambda (u)\) 为 \(u\) 关于 E 与 F 的所选标准正交基的矩阵（V, p.~22）。用 \(\| \mathbf{a}\| _2\) 表示元素 \(a\)（属于希尔伯特空间 \(\ell^2 (\mathbf{J}\times \mathbf{I})\)）的范数。由公式 (34)，\(\Lambda\) 是一个从 \(\mathcal{L}^2 (\mathbf{E};\mathbf{F})\) 到 \(\ell^2 (\mathbf{J}\times \mathbf{I})\) 中的映射，使得 \(\| \Lambda (u)\| _2 = \| u\|\)；显然 \(\Lambda\) 是单射。为证明 (i)，只需证明 \(\Lambda\) 是满射。设 \(\mathbf{a} = (a_{ji})\) 为 \(\ell^2 (\mathbf{J}\times \mathbf{I})\) 的一个元素；由 Cauchy-Schwarz 不等式，我们有
+
+\[
+\left| \sum_ {j, i} \overline {{{{\eta}}}} _ {j} a _ {j i} \xi_ {i} \right| ^ {2} \leqslant \sum_ {j, i} | a _ {j i} | ^ {2} \sum_ {j, i} | \overline {{{{\eta}}}} _ {j} \xi_ {i} | ^ {2} = \| \mathbf {a} \| _ {2} ^ {2} \| \boldsymbol {\xi} \| ^ {2} \| \boldsymbol {\eta} \| ^ {2}
+\]
+
+（对每个 \(\xi = (\xi_i)\)（属于 \(\ell^2 (\mathrm{I})\)）及 \(\pmb{\eta} = (\eta_j)\)（属于 \(\ell^2 (\mathrm{J})\)））。则存在连续半双线性型 \(\Phi\)（在 \(\mathbf{F}\times \mathbf{E}\) 上），使得 \(\Phi (y,x) = \sum_{j,i}\overline{\eta}_ja_{ji}\xi_i\)（对 E 中的 \(x = \sum_{i}\xi_{i}e_{i}\) 及 F 中的 \(y = \sum_{j}\eta_{j}f_{j}\)）。设 \(u\in \mathcal{L}(\mathrm{E};\mathrm{F})\) 使得 \(\Phi (y,x) = \langle y|u(x)\rangle\)（V, p.~16, 推论 2）。我们得到
+
+\[
+a _ {j i} = \Phi (f _ {j}, e _ {i}) = \langle f _ {j} | u (e _ {i}) \rangle \quad \text { for } \quad i \in \mathrm{I}, j \in \mathrm{J}  ,
+\]
+
+因而 \(\mathbf{a} = \Lambda(u)\)。
+
+由于 \(\Lambda\) 是从 \(\mathcal{L}^2 (\mathrm{E};\mathrm{F})\) 到 \(\ell^2 (\mathrm{J}\times \mathrm{I})\) 上的希尔伯特空间同构，且 \((f_j\otimes e_i^*)\) 是 \(\mathbf{F}\hat{\otimes}_2\mathbf{E}'\) 的标准正交基，故存在一个同构 \(\hat{\theta}\)（从 \(\mathbf{F}\hat{\otimes}_2\mathbf{E}'\) 到 \(\mathcal{L}^2 (\mathrm{E};\mathrm{F})\) 上），使得
+
+\[
+\langle f _ {j} | \hat {\theta} (t) e _ {i} \rangle = \langle f _ {j} \otimes e _ {i} ^ {*} | t \rangle
+\]
+
+（对每个 \(i \in \mathbf{I}\)、\(j \in \mathbf{I}\) 及 \(t \in \mathbf{F} \hat{\otimes}_2 \mathbf{E}'\)）。特别地，取 \(t = y \otimes x^*\)，我们得到
+
+\[
+\langle f _ {j} | \hat {\theta} (y \otimes x ^ {*}) e _ {i} \rangle = \langle f _ {j} \otimes e _ {i} ^ {*} | y \otimes x ^ {*} \rangle = \langle f _ {j} | y \rangle \langle x | e _ {i} \rangle = \langle f _ {j} | y x ^ {*} e _ {i} \rangle
+\]
+
+因而 \(\hat{\theta}(y\otimes x^{*}) = yx^{*}\)。这就证明了 (ii)。
+
+证毕。
+
+例. --- 1) 设 I 与 J 为两个集。由上面给出的证明，为使映射 \(u\)（从 \(\ell^2(\mathbf{I})\) 到 \(\ell^2(\mathbf{J})\) 中）是 Hilbert-Schmidt 映射，必要且充分的是：存在一个矩阵 \((a_{ji})\)（属于 \(\ell^2(\mathbf{J} \times \mathbf{I})\)），使得 \(u(\xi)_j = \sum_{i \in \mathbf{I}} a_{ji} \xi_i\) 对所有 \(\xi = (\xi_i)\)（属于 \(\ell^2(\mathbf{I})\)）成立。
+
+* 2) 设 X 与 Y 为两个 Hausdorff 拓扑空间，分别赋有正测度 \(\mu\) 与 \(\nu\)。我们可以证明，从 \(\mathcal{L}^2(\mathrm{X})\) 到 \(\mathcal{L}^2(\mathrm{Y})\) 中的 Hilbert-Schmidt 映射与 \(\mathrm{Y} \times \mathrm{X}\) 上的平方可积函数的类一一对应；与函数 \(\mathrm{N} \in \mathcal{L}^2(\mathrm{Y} \times \mathrm{X}, \nu \otimes \mu)\) 的类对应的是由下式给出的映射 \(u_{\mathrm{N}}\)
+
+\[
+(u _ {\mathrm{N}} f) (y) = \int_ {\mathrm{X}} \mathrm{N} (y, x) f (x) d \mu (x)\tag{38}
+\]
+
+（对 v-几乎所有的 \(y \in \mathbf{Y}\) 及 \(f \in \mathcal{L}^2(\mathbf{X}, \mu)\)）。我们有
+
+\[
+\| u _ {\mathrm{N}} \| _ {2} ^ {2} = \int_ {\mathrm{X}} \int_ {\mathrm{Y}} | \mathrm{N} (y, x) | ^ {2} d \mu (x) d v (y). *\tag{39}
+\]
+
+注. --- 1) 设 \(\mathbf{K} = \mathbf{C}\)。设 \(u\) 与 \(v\) 属于 \(\mathcal{L}^2(\mathrm{E};\mathrm{F})\)。我们有关系式 \(4u^{*}v = \sum_{\varepsilon^{4} = 1}\overline{\varepsilon} (u + \varepsilon v)^{*}(u + \varepsilon v)\)，因而 \(u^{*}v\) 属于 \(\mathcal{L}^1(\mathrm{E})\)。希尔伯特空间 \(\mathcal{L}^2(\mathrm{E};\mathrm{F})\) 中的内积由下式给出
+
+\[
+\langle u | v \rangle = \operatorname{Tr} (u ^ {*} v)\tag{40}
+\]
+
+因为这一公式在 \(\mathcal{L}^{2}(\mathrm{E};\mathrm{F})\) 上定义了一个埃尔米特型，并且我们得到 \(\langle u|u\rangle=\|u\|_{2}^{2}\)。若 \(u\in\mathcal{L}^{2}(\mathrm{E};\mathrm{F})\) 且 \(v\in\mathcal{L}^{2}(\mathrm{F};\mathrm{E})\)，则由前面的结果，vu 属于 \(\mathcal{L}^{1}(\mathrm{E})\)，uv 属于 \(\mathcal{L}^{1}(\mathrm{F})\)；此外，我们有
+
+\[
+\operatorname{Tr} (u v) = \operatorname{Tr} (v u).\tag{41}
+\]
+
+由线性性与连续性，只需在 \(u = y_{1}x_{1}^{*}\) 且 \(v = x_{2}y_{2}^{*}\)（其中 \(x_{1}, x_{2}\) 属于 E，\(y_{1}, y_{2}\) 属于 F）时验证这一公式；但这时 uv 是映射 \(y \mapsto y_{1} \langle x_{1}|x_{2} \rangle \langle y_{2}|y \rangle\)，而 vu 是映射 \(x \mapsto x_{2} \langle y_{2}|y_{1} \rangle \langle x_{1}|x \rangle\)，于是 (41) 由 V, p.~48 的公式 (22) 得出。
+
+因此，若 \(u_{1}, u_{2}\) 是 \(\mathcal{L}^2(\mathrm{E};\mathrm{F})\) 的两个元素，则我们在希尔伯特空间 \(\mathcal{L}^2(\mathrm{F};\mathrm{E})\) 中有
+
+\[
+\langle u _ {1} ^ {*} | u _ {2} ^ {*} \rangle = \operatorname{Tr} (u _ {1} u _ {2} ^ {*}) = \operatorname{Tr} (u _ {2} ^ {*} u _ {1}) = \langle u _ {2} | u _ {1} \rangle = \overline {{\langle u _ {1} | u _ {2} \rangle}};\tag{42}
+\]
+
+换言之，\(u \mapsto u^*\) 是从希尔伯特空间 \(\mathcal{L}^2(\mathrm{E};\mathrm{F})\) 到希尔伯特空间 \(\mathcal{L}^2(\mathrm{F};\mathrm{E})\) 的共轭空间（V, p.~6）上的同构。若把这个共轭空间与 \(\mathcal{L}^2 (\mathrm{F};\mathrm{E})\) 的对偶（V, p.~15）等同起来，我们就看到 \(\mathcal{L}^2 (\mathrm{E};\mathrm{F})\) 可与 \(\mathcal{L}^2 (\mathrm{F};\mathrm{E})\) 的对偶等同，典范双线性型 \((v,u)\mapsto \langle v,u\rangle\) 等同于 \((v,u)\mapsto \operatorname {Tr}(vu)\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 K = R。我们留给读者去验证公式 (40) 与 (41) 仍然有效，并证明 \(\mathcal{L}^{2}(E; F)\) 可与 \(\mathcal{L}^{2}(F; E)\) 的对偶借助双线性型 \((u, v) \mapsto \operatorname{Tr}(uv)\) 等同起来。
+\end{enumerate}
+
+\subsection{Hilbert-Schmidt 映射的对角化}
+
+定理 2. --- 设 E 与 F 为两个希尔伯特空间，u 为从 E 到 F 中的 Hilbert-Schmidt 映射。存在 E 的标准正交基 \((e_{i})_{i\in I}\)，它被 u 变为 F 中的一个正交族。
+
+用 B 表示 E 的（闭）单位球，并赋以弱化拓扑；这是一个紧空间（V, p.~17）。我们令 \(\mathbf{Q}(x) = \|u(x)\|^{2}\)（对所有 \(x \in B\)）。最后用 P 表示 E 中满足下列性质的向量 x 的全体；
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  对每个 \(y \in \mathbf{E}\)（与 \(x\) 正交），元素 \(u(y)\)（属于 \(\mathbf{E}\)）与 \(u(x)\) 正交。
+\end{enumerate}
+
+引理 4. --- 函数 \(\mathbf{Q}:\mathbf{B}\to \mathbf{R}\) 是连续的。
+
+设 \((f_j)_{j\in \mathbf{J}}\) 为 F 的标准正交基。令 \(\lambda_{j} = \| u^{*}(f_{j})\|^{2}\)（对所有 \(j\in \mathbf{J}\)）。由于 \(u\) 属于 \(\mathcal{L}^2 (\mathrm{E};\mathrm{F})\)，我们有 \(u^{*}\in \mathcal{L}^{2}(\mathrm{F};\mathrm{E})\)，因而 \(\sum_{j}\lambda_{j} < + \infty\)。此外，我们有
+
+\[
+Q (x) = \left\| u (x) \right\| ^ {2} = \sum_ {j} \left| \langle u ^ {*} (f _ {j}) | x \rangle \right| ^ {2}\tag{43}
+\]
+
+由 Parseval 公式（V, p.~22）及伴随映射的定义（V, p.~38）。对每个 \(x \in \mathbf{B}\)，由 Cauchy-Schwarz 不等式有 \(|\langle u^{*}(f_{j})|x\rangle|^{2} \leqslant \lambda_{j}\)；因此，公式 (43) 中和的收敛在 B 上是一致的，从而得到引理 4（GT, X, § 1, No.~6）。
+
+引理 5. --- 设 \(\mathbf{E}_1\) 为 \(\mathbf{E}\) 的闭向量子空间，在 \(u^*u\) 下稳定。若 \(\mathbf{E}_1 \neq \{0\}\)，则在 \(\mathbf{E}_1 \cap \mathbf{P}\) 中存在一个范数为 1 的向量。
+
+由于 B 是弱紧的，B 的弱闭子空间 \(B \cap E_{1}\) 也是弱紧的。因而存在（GT, IV, §6, No.~1, 定理 1）一个点 \(x_{0}\)（属于 \(B \cap E_{1}\)），使得 \(Q(x_{0} \geqslant Q(x))\) 对所有 \(x \in B \cap E_{1}\) 成立。若 \(Q(x_{0}) = 0\)，则 \(Q(x) = 0\) 且 \(u(x) = 0\)（对所有 \(x \in B \cap E_{1}\)）。于是 \(E_{1} \subset P\)，引理 5 在这一情形成立。
+
+现在设 \(\mathbf{Q}(x_0) > 0\)，则 \(x_0 \neq 0\)。由于向量 \(\| x_0 \|^{-1} \cdot x_0\) 属于 \(\mathbf{B} \cap \mathbf{E}_1\)，我们有
+
+\[
+\mathrm{Q} \left(x _ {0}\right) \geqslant \mathrm{Q} \left(\left\| x _ {0} \right\| ^ {- 1}. x _ {0}\right) = \mathrm{Q} \left(x _ {0}\right) / \left\| x _ {0} \right\| ^ {2}
+\]
+
+即 \(\|x_{0}\|=1\)。我们将证明 \(x_{0}\) 属于 P；设 \(y\in E\) 与 \(x_{0}\) 正交。只需证明 \(u(y)\) 与 \(u(x_{0})\) 正交。但由于 y 是 \(E_{1}\) 中一个向量与一个与 \(E_{1}\) 正交的向量之和，且两者都与 \(x_{0}\) 正交（因为 \(x_{0}\in E_{1}\)），所以只需考虑下面两种情形：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(y\) 与 \(\mathbf{E}_1\) 正交：由于 \(\mathbf{E}_1\) 在 \(u^* u, u^* u(x_0) \in \mathbf{E}_1\) 下稳定，因而 \(0 = \langle y | u^* u(x_0) \rangle = \langle u(y) | u(x_0) \rangle\)。
+\item
+  \(y\) 属于 \(\mathbf{E}_1\)：对所有 \(t \in \mathbf{R}\)，向量 \(x(t) = (x_0 + ty) / \| x_0 + ty \|\) 属于 \(\mathbf{B} \cap \mathbf{E}_1\)。我们有 \(Q(xt) = f(t) / g(t)\)，其中
+\end{enumerate}
+
+\[
+f (t) = \left\| u (x _ {0}) \right\| ^ {2} + 2 t \mathscr {R} \left\langle u (x _ {0}) | u (y) \right\rangle + t ^ {2} \left\| u (y) \right\| ^ {2}
+\]
+
+\[
+g (t) = 1 + t ^ {2} \| y \| ^ {2}.
+\]
+
+根据 \(x_0\) 的定义，我们有 \(\mathrm{Q}(x(0)) \geqslant \mathrm{Q}(x(t))\)（对所有实数 \(t\)），因而 \(\frac{d}{dt} \mathrm{Q}(x(t))\) 在 \(t = 0\) 处为零。但 \(f(0) = \| u(x_0)\|^2\)，\(g(0) = 1\)，\(f'(0) = 2\mathcal{R}\langle u(x_0)|u(y)\rangle\)，\(g'(0) = 0\)。由于
+
+\[
+\frac {d}{d t} \mathrm{Q} (x (t)) = \frac {f ^ {\prime} (t) g (t) - f (t) g ^ {\prime} (t)}{g (t) ^ {2}},
+\]
+
+我们断定 \(f'(0)=0\)，即 \(\mathcal{R}\langle u(x_{0})|u(y)\rangle=0\)。当 K=R 时，\(u(x_{0})\) 与 \(u(y)\) 正交；当 K=C 时，向量 iy 属于 \(E_{1}\) 且与 \(x_{0}\) 正交，因而 \(\mathcal{I}\langle u(x_{0})|u(y)\rangle=-\mathcal{R}\langle u(x_{0})|u(iy)\rangle=0\)，最终 \(u(x_{0})\) 与 \(u(y)\) 正交。这就证明了引理 5。
+
+现在我们证明定理 2。应用 S, III, §4, No.~5 的定理 1，如同 V, p.~23 那样，我们看到存在一个集 S，它在 E 的包含于 P 的标准正交子集中是极大的。令 \(E_{1}\) 为与 S 正交的所有向量组成的集。设 \(y \in E_{1}\)；若 \(x \in S\)，则向量 x 与 y 正交，且由于 \(S \subset P\)，我们断定 \(u(x)\) 与 \(u(y)\) 正交；于是
+
+\[
+\langle x | u ^ {*} u (y) \rangle = \langle u (x) | u (y) \rangle = 0
+\]
+
+并且 \(u^{*}u(y)\) 与 S 正交。因而 \(E_{1}\) 在 \(u^{*}u\) 下稳定。倘若 \(E_{1} \neq \{0\}\)，就会存在一个范数为 1 的向量 \(x\)（属于 \(E_{1} \cap P\)）（引理 5），而 \(S \cup \{x\}\) 将是 E 的包含于 P 的标准正交子集。这与 S 的极大性矛盾。因而 \(E_{1} = \{0\}\)，S 是 E 的标准正交基。证毕。
+
+推论 1. --- 设 v 为希尔伯特空间 E 的具有有限迹的连续正自同态。存在 E 的标准正交基 \((e_{i})_{i\in I}\) 及正实数的可和族 \((\lambda_{i})_{i\in I}\)，使得 \(v(e_{i}) = \lambda_{i}e_{i}\) 对所有 \(i \in I\) 成立。
+
+令 \(\Phi(x, y) = \langle x | v(y) \rangle\)（对 E 中的 \(x, y\)）。则 \(\Phi\) 是 E 上的正埃尔米特型。存在（V, p.~8, 推论）一个希尔伯特空间 F 及一个从 E 到 F 中的连续线性映射 \(u\)，使得 \(\Phi(x, y) = \langle u(x) | u(y) \rangle\)（对 E 中的 \(x, y\)）。换言之，我们有 \(v = u^{*}u\)。根据定义 9（V, p.~52），\(u\) 是从 E 到 F 中的 Hilbert-Schmidt 映射。由定理 2，存在 E 的标准正交基 \((e_{i})_{i \in I}\)，使得向量 \(u(e_{i})\) 两两正交。设 \(i \in I\)；对 I 中每个 \(j \neq i\)，我们有
+
+\[
+\langle e _ {j} | v (e _ {i}) \rangle = \langle u (e _ {j}) | u (e _ {i}) \rangle = 0
+\]
+
+因而 \(v(e_{i})\) 与 \(e_{i}\) 成比例，且具有 \(\lambda_{i}e_{i}\) 的形式，其中 \(\lambda_{i}=\langle e_{i}|v(e_{i})\rangle\)；于是
+
+\[
+\lambda_ {i} \geqslant 0 \quad \text { and } \quad \sum_ {i \in I} \lambda_ {i} = \operatorname{Tr} (v) <   + \infty .
+\]
+
+推论 2. --- 设 E 为希尔伯特空间。则 \(\mathcal{L}^{1}(\mathrm{E})\subset \mathcal{L}^{2}(\mathrm{E})\)
+
+实的情形可通过标量扩张归结为复的情形；因此我们可以设 \(\mathbf{K} = \mathbf{C}\)。
+
+由于 \(\mathcal{L}^{2}(E)\) 是 \(\mathcal{L}(E)\) 的向量子空间，只需证明 E 的每个具有有限迹的连续正自同态 v 属于 \(\mathcal{L}^{2}(E)\)。用推论 1 的记号，我们有
+
+\[
+\sum_ {i \in \mathbf {I}} \left\| v (e _ {i}) \right\| ^ {2} = \sum_ {i \in \mathbf {I}} \lambda_ {i} ^ {2} \leqslant (\sum_ {i} \lambda_ {i}) ^ {2} <   + \infty .
+\]
+
+推论 3. --- 设 v 为希尔伯特空间 E 的具有有限迹的连续正自同态。存在 E 的一个正 Hilbert-Schmidt 自同态 w，使得 \(v = w^{2}\) 且 v 与 w 交换。
+
+用推论 1 的记号，只需考虑自同态 \(w\)，它把向量 \(\sum_{i\in I}\xi_i e_i\) 变为向量 \(\sum_{i}\lambda_i^{1 / 2}\xi_i e_i\)。
+
+注. --- 用定理 2 的记号，令 J 为所有 \(i \in \mathbf{I}\)（满足 \(u(e_i) \neq 0\)）组成的集。对所有 \(i \in \mathbf{J}\)，令 \(\lambda_i = \| u(e_i)\|\) 及 \(f_i = \lambda_i^{-1}u(e_i)\)。则 \((e_i)_{i \in \mathbf{J}}(\text{resp. } (f_i)_{i \in \mathbf{J})}\) 是 \(u\) 的初始（相应地终）子空间的标准正交基，我们有 \(u(e_i) = \lambda_i f_i\)（对所有 \(i \in \mathbf{J}\)），且 \(\sum_{i \in \mathbf{J}} \lambda_i^2 = \| u\|_2^2\) 是有限的。
+
+\subsection{二次型关于另一二次型的迹}
+
+在本节中，E 将表示一个实向量空间，Q、H 表示 E 上两个正二次型。存在两个对称双线性型 \((x, y) \mapsto \langle x | y \rangle_{\mathbf{Q}}\) 与 \((x, y) \mapsto \langle x | y \rangle_{\mathbf{H}}\)（在 \(E \times E\) 上），由下式刻画
+
+\[
+\mathrm{Q} (x) = \langle x | x \rangle_ {\mathrm{Q}}, \quad \mathrm{H} (x) = \langle x | x \rangle_ {\mathrm{H}}
+\]
+
+（对所有 \(x \in \mathbf{E}\)）。
+
+我们把一个有限或无限的实正数称为 Q 关于 H 的迹，记作 \(\mathrm{Tr}(\mathrm{Q}/\mathrm{H})\)，其定义如下：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  若存在 \(x \in \mathbf{E}\) 使 \(\mathbf{H}(x) = 0\) 且 \(\mathbf{Q}(x) \neq 0\)，则令 \(\mathrm{Tr}(\mathbf{Q} / \mathbf{H}) = +\infty\)。
+\item
+  否则，\(\mathrm{Tr}(\mathbf{Q} / \mathbf{H})\) 是所有形如 \(\sum_{i=1}^{m} \mathbf{Q}(x_i)\) 的数组成的集的上界，其中 \((x_1, \ldots, x_m)\) 取遍 \(\mathbf{E}\) 中元素的、满足 \(\langle x_i | x_j \rangle_{\mathbf{H}} = \delta_{ij}\) 的有限序列组成的集（Kronecker 记号）。
+\end{enumerate}
+
+注. --- 1) 对 E 的每个子空间 F，用 \(\mathrm{Q}_{\mathrm{F}}\) 表示 Q 在 F 上的限制，用 \(\mathrm{H}_{\mathrm{F}}\) 表示 H 在 F 上的限制。我们有 \(\mathrm{Tr}(\mathrm{Q}_{\mathrm{F}} / \mathrm{H}_{\mathrm{F}}) \leqslant \mathrm{Tr}(\mathrm{Q} / \mathrm{H})\)，且 \(\mathrm{Tr}(\mathrm{Q} / \mathrm{H})\) 是所有数 \(\mathrm{Tr}(\mathrm{Q}_{\mathrm{F}} / \mathrm{H}_{\mathrm{F}})\) 组成的集的上界，其中 F 取遍 E 的所有有限维向量子空间组成的族。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathbf{E}_1\) 为实向量空间，\(\mathbf{Q}_1\) 与 \(\mathbf{H}_1\) 为 \(\mathbf{E}_1\) 上两个正二次型，且 \(\pi: \mathbf{E} \to \mathbf{E}_1\) 为满射线性映射。若 \(\mathbf{Q} = \mathbf{Q}_1 \circ \pi\) 且 \(\mathbf{H} = \mathbf{H}_1 \circ \pi\)，则 \(\operatorname{Tr}(\mathbf{Q}/\mathbf{H}) = \operatorname{Tr}(\mathbf{Q}_1/\mathbf{H}_1)\)。
+\end{enumerate}
+
+命题 15. --- 假设 E 上存在一个实希尔伯特空间结构，使得 \(\mathbf{H}(x) = \|x\|^2\) 对所有 \(x \in E\) 成立。为使 \(\operatorname{Tr}(\mathbf{Q}/\mathbf{H})\) 是有限的，必要且充分的是：存在 E 的一个具有有限迹的连续正自同态 u，使得 \(\mathbf{Q}(x) = \langle x|u(x) \rangle\) 对所有 \(x \in E\) 成立；这一自同态 u 是唯一的，并且我们有
+
+\[
+\operatorname{Tr} (u) = \operatorname{Tr} (\mathrm{Q} / \mathrm{H}) = \sum_ {i \in \mathrm{I}} \mathrm{Q} \left(e _ {i}\right)\tag{44}
+\]
+
+（对 E 的每个标准正交基 \((e_i)_{i\in \mathbf{I}}\)）。
+
+设 \(\operatorname{Tr}(\mathbf{Q} / \mathbf{H})\) 是有限的。对每个范数为 1 的 \(x\in E\)，我们有 \(\mathrm{H}(x) = 1\)，因而 \(\mathrm{Q}(x)\leqslant \mathrm{Tr}(\mathrm{Q} / \mathrm{H})\)。因此，\(\mathrm{Q}(x)\leqslant \mathrm{Tr}(\mathrm{Q} / \mathrm{H}).\| x\|^2\) 对所有 \(x\in E\) 成立，并且
+
+\[
+\left| \langle x | y \rangle_ {\mathrm{Q}} \right| \leqslant \mathrm{Q} (x) ^ {1 / 2} \mathrm{Q} (y) ^ {1 / 2} \leqslant \operatorname{Tr} (\mathrm{Q} / \mathrm{H}). \| x \|. \| y \|
+\]
+
+由 Cauchy-Schwarz 不等式。因此，双线性型 \((x,y)\mapsto\langle x|y\rangle_{\mathbf{Q}}\)（在 \(E\times E\) 上）是连续的。存在（V, p.~16, 推论 2）一个映射 \(u\in\mathcal{L}(E)\)，使得 \(\langle x|y\rangle_{\mathbf{Q}}=\langle x|u(y)\rangle\)。对 E 中的 x、y 我们有 \(\langle x|y\rangle_{\mathbf{Q}}=\langle y|x\rangle_{\mathbf{Q}}\)，因而 u 是自伴的；而 \(\langle x|u(x)\rangle=\mathbf{Q}(x)\geqslant0\)，因而 u 是正的。
+
+反之，设 \(u\) 为 \(E\) 的一个连续正自同态，使得 \(Q(x) = \langle x|u(x) \rangle\) 对所有 \(x \in E\) 成立。则
+
+\[
+\langle x | u (y) \rangle = \frac {1}{2} (\mathrm{Q} (x + y) - \mathrm{Q} (x) - \mathrm{Q} (y)) = \langle x | y \rangle_ {\mathrm{Q}},
+\]
+
+由此得到 u 的唯一性。由公式 (24')（V, p.~50），我们得到
+
+\[
+\operatorname{Tr} (u) = \sup _ {x _ {1}, \dots , x _ {m}} \sum_ {i = 1} ^ {m} \left\langle x _ {i} \mid u \left(x _ {i}\right) \right\rangle = \sup _ {x _ {1}, \dots , x _ {m}} \sum_ {i = 1} ^ {m} Q \left(x _ {i}\right),
+\]
+
+其中 \((x_{1},\ldots ,x_{m})\) 取遍 E 中元素的所有有限标准正交序列组成的集。由 \(\mathrm{Tr}(\mathrm{Q / H})\) 的定义，我们得到 \(\mathrm{Tr}(u) = \mathrm{Tr}(\mathrm{Q / H})\)。最后，对 E 的每个标准正交基 \((e_i)_{i\in \mathbf{I}}\)，由 V, p.~50 的公式 (25) 我们有 \(\mathrm{Tr}(u) = \sum_{i\in \mathbf{I}}\langle e_i|u(e_i)\rangle\)，因而 \(\mathrm{Tr}(u) = \sum_{i\in \mathbf{I}}\mathrm{Q}(e_i)\)。证毕。
+
+注. --- 3) 设 E 与 F 为两个希尔伯特空间，v 为从 E 到 F 中的、不必连续的线性映射。令 \(\mathbf{H}(x)=\|x\|^{2}\) 及 \(\mathbf{Q}(x)=\|v(x)\|^{2}\)（对所有 \(x\in E\)）。由命题 15 推出，v 是 Hilbert-Schmidt 映射当且仅当 \(\operatorname{Tr}(\mathbf{Q}/\mathbf{H})\) 是有限的，且这时 \(\operatorname{Tr}(\mathbf{Q}/\mathbf{H})=\|v\|_{2}^{2}\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 E 是有限维的。当二次型 H 可逆时，命题 15 适用。设 \((e_{1}, \ldots, e_{n})\) 为 E 的一个基。令 \(q_{ij} = \langle e_{i}|e_{j} \rangle_{Q}\) 与 \(h_{ij} = \langle e_{i}|e_{j} \rangle_{H}\)，并引进矩阵 \(q = (q_{ij})\) 与 \(h = (h_{ij})\)。设 u 为 E 的一个自同态，使得 \(Q(x) = \langle x|u(x) \rangle_{H}\) 对所有 \(x \in E\) 成立。我们有
+\end{enumerate}
+
+\[
+\langle x | y \rangle_ {\mathrm{Q}} = \langle x | u (y) \rangle_ {\mathrm{H}} \quad (x, y \in \mathrm{E}),
+\]
+
+因而 \(u\) 关于基 \((e_1, \ldots, e_n)\)（\(E\) 的）的矩阵等于 \(h^{-1}q\)。由命题 15，我们有
+
+\[
+\operatorname{Tr} (\mathrm{Q} / \mathrm{H}) = \operatorname{Tr} (h ^ {- 1} q) = \operatorname{Tr} (q h ^ {- 1}).\tag{45}
+\]
+
+若基 \((e_1, \dots, e_n)\) 关于 \(\mathbf{H}\) 是标准正交的，则 \(h\) 是 \(n\) 阶单位矩阵，于是我们得到
+
+\[
+\operatorname{Tr} (\mathrm{Q} / \mathrm{H}) = \operatorname{Tr} (q) = \sum_ {i = 1} ^ {n} \mathrm{Q} (e _ {i});
+\]
+
+这样我们在这一情形得到公式 (44)。
+
+现在设二次型 \(\mathbf{H}\) 不可逆。令 \(\mathbf{N}\) 为 \(\mathbf{H}\) 的核，令 \(\pi\) 为从 \(\mathrm{E}\) 到 \(\mathrm{E} / \mathrm{N}\) 上的典范映射。存在一个可逆二次型 \(\mathrm{H}_1\)（在 \(\mathrm{E} / \mathrm{N}\) 上），使得 \(\mathrm{H} = \mathrm{H}_1 \circ \pi\)。设 \((e_1, \dots, e_n)\) 为 \(\mathrm{E}\) 中元素的一个序列，使得序列 \((\pi(e_1), \dots, \pi(e_m))\) 是 \(\mathrm{E} / \mathrm{N}\) 的、关于 \(\mathrm{H}_1\) 标准正交的基。设 \((e_1, \dots, e_n)\) 为 \(\mathbf{N}\) 的一个基。则 \((e_1, \dots, e_n)\) 是 \(\mathrm{E}\) 的基，并且我们有
+
+\[
+\mathrm{H} \left(\xi_ {1} e _ {1} + \dots + \xi_ {n} e _ {n}\right) = \xi_ {1} ^ {2} + \dots + \xi_ {m} ^ {2}\tag{46}
+\]
+
+（对所有实数 \(\xi_1, \ldots, \xi_n\)）。
+
+假设对所有 \(x \in \mathbf{E}\)，关系式 \(\mathrm{H}(x) = 0\) 蕴含 \(\mathrm{Q}(x) = 0\)；换言之，假设存在一个二次型 \(\mathbf{Q}_1\)（在 \(\mathrm{E} / \mathrm{N}\) 上），使得 \(\mathrm{Q} = \mathrm{Q}_1 \circ \pi\)。由注 2 与命题 15，我们有
+
+\[
+\operatorname{Tr} (\mathrm{Q} / \mathrm{H}) = \mathrm{Q} (e _ {1}) + \dots + \mathrm{Q} (e _ {m}).\tag{47}
+\]
+
+\exercisesheading

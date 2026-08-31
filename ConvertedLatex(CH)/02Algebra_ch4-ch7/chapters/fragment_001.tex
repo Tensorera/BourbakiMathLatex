@@ -1,0 +1,994 @@
+\chapter{多项式与有理分式}
+
+在本章中，A表示一个交换环。
+
+\section{多项式}
+
+\subsection{多项式的定义}
+
+设 I 为一个集合。我们回顾（III，p.～452），A 上关于 I 的自由交换代数记为 \(\mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 或 \(\mathbf{A}[\mathbf{X}_i]_{i\in I}\) 。该代数的元素称为关于未定元 \(\mathbf{X}_i\) （或在未定元 \(\mathbf{X}_i\) 中）系数在 A 中的多项式。让我们回顾，未定元 \(\mathbf{X}_i\) 是 \(i\) 在 A 上关于 I 的自由交换代数中的典范像；有时用另一个符号表示该像很方便，例如 \(\mathbf{X}_i'\) , \(\mathbf{Y}_i\) , \(\mathbf{T}_i\) 等。这一约定常通过如下短语引入：「设 \(\mathbf{Y} = (\mathbf{Y}_i)_{i\in I}\) 为一族未定元」；此时所讨论的多项式代数记为 \(\mathbf{A}[\mathbf{Y}]\) 。当 \(\mathrm{I} = \{1,2,\dots,n\}\) 时，用 \(\mathbf{A}[\mathbf{X}_1,\mathbf{X}_2,\dots,\mathbf{X}_n]\) 代替 \(\mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 。
+
+对于 \(\nu \in \mathbf{N}^{(I)}\) 我们令
+
+\[
+\mathbf {X} ^ {\nu} = \prod_ {i \in I} \mathbf {X} _ {i} ^ {\nu_ {i}}.
+\]
+
+则 \((\mathbf{X}^{\nu})_{\nu \in \mathbf{N}^{(I)}}\) 是 A-模 \(\mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 的一组基。这些 \(\mathbf{X}^{\nu}\) 称为未定元 \(\mathbf{X}_i\) 的单项式。对于 \(\nu = 0\) ，我们得到 \(\mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 的单位元。每个多项式 \(u\in \mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 可以唯一地写成如下形式
+
+\[
+u = \sum_ {\nu \in \mathbf {N} ^ {(I)}} \alpha_ {\nu} X ^ {\nu}
+\]
+
+，其中 \(\alpha_{\nu}\in A\) ，且这些 \(\alpha_{\nu}\) 除有限个外均为零； \(\alpha_{\nu}\) 称为 u 的系数； \(\alpha_{\nu}X^{\nu}\) 称为 u 的项（通常，元素 \(\alpha_{\nu}X^{\nu}\) 称为 \(X^{\nu}\) 中的项），特别地， \(\alpha_{0}X^{0}\) 的项（它与 \(\alpha_{0}\) 等同）称为 u 的常数项。当 \(\alpha_{\nu}=0\) 时，我们滥用语言说 u 不含 \(X^{\nu}\) 中的元素；特别地，当 \(\alpha_{0}=0\) 时，我们说u是一个无常数项的多项式（III，第453页）。1的任何标量倍称为常数多项式。
+
+设 B 为交换环， \(\rho: \mathbf{A} \to \mathbf{B}\) 为环同态。我们把 \(\mathrm{B}[(\mathbf{X}_i)_{i \in I}]\) 通过 \(\rho\) 视为 A-代数。于是，映射 \(\sigma\) —— 即 \(\mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) 到 \(\mathrm{B}[(\mathbf{X}_i)_{i \in I}]\) 中的、将 \(\sum \alpha_\nu \mathbf{X}^\nu\) 变换为 \(\sum \rho(\alpha_\nu) \mathbf{X}^\nu\) 的映射 —— 是 A-代数的一个同态；如果 \(u \in \mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) ，我们有时用 \(^p u\) 表示 \(u\) 在这个同态下的像。 \(\mathbf{B} \otimes_{\mathbf{A}} \mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) 到 \(\mathrm{B}[(\mathbf{X}_i)_{i \in I}]\) 中的、由 \(\sigma\) 典范地定义的同态，对每一个 \(i \in I\) 将 \(1 \otimes \mathbf{X}_i\) 变换为 \(\mathbf{X}_i\) ；这是 B-代数的一个同构（III，第449页）。
+
+设 M 为以 \((e_{i})_{i\in I}\) 为基的自由 A-模。存在唯一的保单位同态 \(\varphi\) ，它把对称代数 \(\mathbf{S}(\mathbf{M})\) 映入代数 \(\mathbf{A}[(\mathbf{X}_{i})_{i\in I}]\) ，使得 \(\varphi(e_{i})=\mathbf{X}_{i}\) （对每个 \(i\in I\) ），并且这个同态是同构（III，第506页）。这个同构称为典范同构。它使我们能够将对称代数的某些性质应用于多项式代数。例如，设 \((\mathrm{I}_{\lambda})_{\lambda\in L}\) 是 I 的一个划分。设 \(\varphi_{\lambda}\) 为把 \(P_{\lambda}=\mathbf{A}[(\mathbf{X}_{i})_{i\in I_{\lambda}}]\) 映入 \(P=\mathbf{A}[(\mathbf{X}_{i})_{i\in I}]\) 的同态，它将 \(X_{i}\) （作为 \(P_{\lambda}\) 的元素）变换为 \(X_{i}\) （作为 P 的元素）。于是这些 \(\varphi_{\lambda}\) 定义了代数 \(\otimes_{\lambda\in L}P_{\lambda}\) 到代数 P 中的同态，
+
+且此同态为同构（III，第503页，命题9）。
+
+设 \(\mathbf{E}\) 是一个 \(\mathbf{A}\) -模，并令 \(\mathbf{E} \otimes_{\mathbf{A}} \mathbf{A}[(\mathbf{X}_i)_{i \in I}] = \mathbf{E}[(\mathbf{X}_i)_{i \in I}]\) 。 \(\mathbf{A}\) -模 \(\mathbf{E}[(\mathbf{X}_i)_{i \in I}]\) 的元素称为未定元 \(\mathbf{X}_i\) 中的、系数在 \(\mathbf{E}\) 中的多项式。这样的多项式可以唯一地写成 \(\sum_{\nu \in \mathbf{N}^{(I)}} e_\nu \otimes \mathbf{X}^\nu\) ，其中 \(e_\nu \in \mathbf{E}\) ，且这些 \(e_\nu\) 除有限个
+
+下标外均为零；我们经常写 \(e_{\nu}X^{\nu}\) 以代替 \(e_{\nu}\otimes X^{\nu}\) 。
+
+\subsection{次数}
+
+设 \(\mathbf{P} = \mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 是一个多项式代数。对于每个整数 \(n\in \mathbf{N}\) ，令 \(\mathbf{P}_n\) 为 \(\mathbf{P}\) 的由单项式 \(\mathbf{X}^{\nu}\) （其中 \(|\nu| = \sum_{i\in I}\nu_i\)
+
+等于 \(n\) 者）生成的子模。于是 \((\mathbf{P}_n)_{n \in \mathbf{N}}\) 是一个分次，它把 \(\mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) 变成 \(\mathbf{N}\) 型分次代数（III，第459页）。次数为 \(n\) 的齐次元在 \(\mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) 中有时称为 \(n\) 次型（关于未定元 \(\mathbf{X}_i\) ）。
+
+当我们处理非齐次多项式的次数时，我们约定在自然数集 N 中添加一个元素，记作 \(-\infty\) ，并按下列约定把 N 上的序关系和加法扩张到 \(N \cup \{-\infty\}\) （其中 \(n \in N\) ）：
+
+\[
+- \infty <   n, (- \infty) + n = n + (- \infty) = - \infty , (- \infty) + (- \infty) = - \infty .
+\]
+
+设 \(u = \sum_{\nu \in \mathbf{N}^{(I)}} \alpha_{\nu} X^{\nu}\) 是一个多项式。齐次分量 \(u_{n}\) 的次数为
+
+\(n\) （它是 \(u\) 的齐次分量，对于上述定义的 \(\mathbf{N}\) 型分次而言）等于 \(\sum_{|\nu| = n} \alpha_{\nu} X^{\nu}\) ，并且我们
+
+显然有 \(u = \sum_{n \in \mathbb{N}} u_n\) 。若 \(u \neq 0\) ，这些 \(u_n\) 并非全为零，我们定义 u 的次数
+
+（或全次数），记作 \(\deg u\) ，为使得 \(u_{n} \neq 0\) 的那些 n 中的最大者；换言之（III，第453页），u 的次数是整数 \(|\nu|\) （其中多重指标 \(\nu\) 满足 \(\alpha_{\nu} \neq 0\) ）中的最大者。当 u = 0 时，按约定 u 的次数为 \(-\infty\) 。对每个整数 \(p \in N\) ，关系式 \(\deg u \leqslant p\) 便等价于 \(\alpha_{\nu} = 0\) 对每个多重指标 \(\nu\) （ \(|\nu| > p\) ）成立；因此，满足 \(\deg u \leqslant p\) 的多项式 u 的集合是 \(\mathbf{A}[(\mathbf{X}_{i})_{i \in I}]\) 的一个 A-子模，用上述记号即等于 \(P_{0} + P_{1} + \cdots + P_{p}\) 。
+
+设 E 为一个 A-模。族 \((\mathrm{E} \otimes \mathrm{P}_{n})_{n \in \mathbb{N}}\) 是系数在 E 中的多项式所成的模 \(\mathrm{E}[(\mathrm{X}_{i})_{i \in I}] = \mathrm{E} \otimes_{\mathbb{A}} \mathrm{A}[(\mathrm{X}_{i})_{i \in I}]\) 的一个 N 型分次。我们把上文对非齐次多项式次数所采用的约定推广到这种情形。
+
+命题 1. --- 设 u 和 v 是两个多项式。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  如果 \(\deg u \neq \deg v\) ，则我们有
+\end{enumerate}
+
+\[
+u + v \neq 0 \quad a n d \quad \deg (u + v) = \sup (\deg u, \deg v).
+\]
+
+如果 \(\deg u = \deg v\) ，则我们有 \(\deg (u + v) \leqslant \deg u\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们有 \(\deg(uv) \leqslant \deg u + \deg v\) .
+\end{enumerate}
+
+证明是直接的。
+
+设 \(J \subset I\) ，且 \(B = A[(X_i)_{i \in I - J}]\) ；我们将把 \(A[(X_i)_{i \in I}]\) 与 \(B[(X_i)_{i \in J}]\) 等同（III，第 453 页及以下）。 \(u \in A[(X_i)_{i \in I}]\) 作为 \(B[(X_i)_{i \in J}]\) 的元素的次数，称为 \(u\) 关于 \(X_i\) （指标 \(i \in J\) ）的次数（III，第 454 页）。
+
+设 \(u = \sum_{k=0}^{n} \alpha_k X^k \in A[X]\) 为次数为 \(n\) 的非零多项式，属于单个
+
+不定元。系数 \(\alpha_{n}\) （由假设它 \(\neq0\) ）称为 u 的首项系数。首项系数等于 1 的多项式 \(u\neq0\) 称为首一多项式。在
+
+ \(\mathbf{A}[\mathbf{X}_1, \mathbf{X}_2, \ldots, \mathbf{X}_q]\) 中，总次数为 \(p\) 的单项式的个数，等于形如 \((n_k)_{1 \leqslant k \leqslant q}\) 、属于 \(\mathbf{N}^q\) 且满足 \(\sum_{k=1}^{q} n_k = p\) 的元素的个数，即 \(\binom{q + p - 1}{p}\)
+
+（集合 III，命题 15，第 182 页）。
+
+更一般地，设 \(\Delta\) 是一个交换幺半群， \((\delta_i)_{i \in I}\) 是 \(\Delta\) 的一个元素族。存在唯一的 \(\Delta\) 型分次（作用于代数 \(\mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) ），使得每个单项式 \(\mathbf{X}^\nu\) 的次数为 \(\sum_{i \in I} \nu_i \delta_i\) （III，第458页，
+
+例3）。上述考虑的情形是 \(\Delta = \mathbf{N}\) 且 \(\delta_{i} = 1\) 的情形。在一般情形，为避免混淆，我们将用「权」一词代替「次数」，用「等权」代替「齐次」。例如，存在唯一的 \(\mathbf{N}\) 型分次（作用于代数 \(\mathbf{A}[(\mathbf{X}_{i})_{i\geqslant 1}]\) ），使得 \(\mathbf{X}_i\) 的权为 \(i\) （对每个整数 \(i \geqslant 1\) ）。权为 \(n\) 的等权元素是形如 \(\sum_{\nu} a_{\nu} X^{\nu}\) 的多项式，其中 \(a_{\nu} = 0\) （对于 \(\sum_{i \geqslant 1} i \cdot \nu_i \neq n\) ）。
+
+\subsection{替换}
+
+的多项式。设 E 是 A 上的含单位元结合代数，且 \(\mathbf{x} = (x_{i})_{i \in I}\) 是 E 中两两可交换的元素族。设 \(\mathbf{X} = (\mathbf{X}_{i})_{i \in I}\) 是一族未定元。由 III，第 449 页命题 7，存在唯一的从 A{[}X{]} 到 E 中的保单位同态 f，使得 \(f(\mathbf{X}_{i}) = x_{i}\) （对每个 \(i \in I\) ）。A{[}X{]} 的元素 u 在 f 下的像记为 \(u(\mathbf{x})\) ，称为在 u 中以 \(x_{i}\) 代替 \(X_{i}\) 所得的 E 的元素，也称为 u 在 \(X_{i} = x_{i}\) 处的值。特别地， \(u = u((\mathbf{X}_{i})_{i \in I})\) 。若 \(I = \{1, \ldots, n\}\) ，我们记 \(u(x_{1}, \ldots, x_{n})\) 以代替 \(u((x_{i})_{i \in I})\) 。更一般地，如果 M 是一个 A-模，并且 v 是
+
+\[
+\mathbf {M} [ (\mathbf {X} _ {i}) _ {i \in I} ] = \mathbf {M} \otimes_ {\mathbf {A}} \mathbf {A} [ (\mathbf {X} _ {i}) _ {i \in I} ],
+\]
+
+的一个元素，我们把 \(v\) 在 \(\mathbf{M} \otimes_{\mathbf{A}} \mathbf{E} = \mathbf{M}_{(\mathbf{E})}\) 中在映射 \(1_{\mathbf{M}} \otimes f\) 下的像记为 \(v(\mathbf{x})\) 。
+
+如果同态 \(u \mapsto u(\mathbf{x})\) （从 \(\mathbf{A}[\mathbf{X}]\) 到 \(\mathbf{E}\) 中的同态）是单射，我们就说族 \(\mathbf{x}\) 在 \(\mathbf{A}\) 上是代数自由的，或者这些 \(x_i\) 在 \(\mathbf{A}\) 上代数无关。这也就是说，单项式 \(\mathbf{x}^\nu\) ( \(\nu \in \mathbf{N}^{(I)}\) ) 在 \(\mathbf{A}\) 上线性无关。
+
+如果 \(\lambda\) 是 \(E\) 到某个含单位元的结合 A-代数 \(E'\) 中的保单位同态，则我们有
+
+\[
+\lambda \left(u \left(\left(x _ {i}\right) _ {i \in I}\right)\right) = u \left(\left(\lambda \left(x _ {i}\right) _ {i \in I}\right)\right),\tag{1}
+\]
+
+这是因为 \(\lambda \circ f\) 是 \(\mathbf{A}[\mathbf{X}]\) 到 \(\mathbf{E}'\) 中的同态，它把 \(\mathbf{X}_i\) 映为 \(\lambda(x_i)\) 。
+
+设 \(u \in A[X]\) 。若 E 是交换的，则映射 \(x \mapsto u(x)\) （从 \(E^{I}\) 到 E 中）称为由 \(u\) （及代数 E）定义的多项式函数；我们有时把它记作 \(\tilde{u}\) （甚至就记作 \(u\) ）。
+
+设 \(\mathbf{Y} = (\mathbf{Y}_j)_{j\in J}\) 是另一族未定元，并取 E 为多项式代数 \(\mathbf{A}[\mathbf{Y}]\) 。给定 \(u\in \mathbf{A}[\mathbf{X}]\) ，取 \(g_{i}\in \mathbf{A}[\mathbf{Y}]\) （对每个 \(i\in I\) ），并令 \(\mathbf{g} = (g_i)_{i\in I}\) ；设 \(u(\mathbf{g})\in \mathbf{A}[\mathbf{Y}]\) 为以多项式 \(g_{i}\) 代替 \(\mathbf{X}_i\) 代入 \(u\) 后所得的多项式。设 \(\mathbf{y} = (y_j)_{j\in J}\) 为某个含单位元的结合 A-代数 \(\mathbf{E}'\) 中两两可交换的一族元素；应用（1）并取 \(\lambda\) 为同态 \(g\mapsto g(\mathbf{y})\) （从 E 到 \(\mathbf{E}'\) 中），我们得到
+
+\[
+(u (\mathbf {g})) (\mathbf {y}) = u \left(\left(g _ {i} (\mathbf {y})\right)\right).\tag{2}
+\]
+
+如果 \(\mathbf{f} = (f_i)_{i\in I}\in (\mathbf{A}[(\mathbf{X}_j)_{j\in J}])^I\) 且 \(\mathbf{g} = (g_j)_{j\in J}\in (\mathbf{A}[(\mathbf{Y}_k)_{k\in K}])^J\) ，我们用 \(\mathbf{f}\circ \mathbf{g}\) 或 \(f(\mathbf{g})\) 表示多项式族 \((f_i(\mathbf{g}))_{i\in I}\in (\mathbf{A}[(\mathbf{Y}_k)_{k\in K}])^I\) 。如果我们用 \(\tilde{\mathbf{f}}\) 表示映射 \(\mathbf{x} \mapsto (f_i(\mathbf{x}))_{i \in I}\) （从 \(\mathrm{E}^{\prime J}\) 到 \(\mathrm{E}^{\prime I}\) 中）（其中 \(\mathrm{E}'\) 是一个含单位元、结合且交换的 A-代数），则关系式 (2) 蕴含
+
+\[
+(\mathbf {f} \circ \mathbf {g}) ^ {\sim} = \tilde {\mathbf {f}} \circ \tilde {\mathbf {g}}.\tag{3}
+\]
+
+如果 \(\mathbf{h} = (h_k)_{k\in K}\in (\mathbf{A}[(\mathbf{Z}_l)_{l\in L}])^{\mathbf{K}}\) ，由(2)可得：
+
+\[
+\mathbf {f} \circ (\mathbf {g} \circ \mathbf {h}) = (\mathbf {f} \circ \mathbf {g}) \circ \mathbf {h}.\tag{4}
+\]
+
+命题2。——设 \(\mathbf{a} = (a_i)_{i \in I}\) 是 A 中元素的一个族，并令 \(u \in A[X]\) 。若 v 是以 \(X_i + a_i\) 代替 \(X_i\) （对每个 \(i \in I\) ）代入后所得的多项式，则 v 的常数项等于 \(u(\mathbf{a})\) 。
+
+v 的常数项是通过把 v 中的 \(X_{i}\) （对每个 \(i \in I\) ）替换为 0 而得到的。因此结果由 (2) 得出。
+
+推论 1. --- 设 m 为满足 \(u \in A[X]\) 且 \(u(\mathbf{a}) = 0\) 的多项式 u 所成的理想。则 m 由多项式 \(X_{i} - a_{i}\) （对于 \(i \in I\) ）生成。
+
+显然 \(X_{i} - a_{i} \in m\) （对每个 \(i \in I\) ）。设 \(u \in m\) ，并令 v 如命题 2 所述。由于 v 没有常数项，因此存在一个多项式族 \((\mathbf{P}_{i})_{i \in I}\) （由 A{[}X{]} 中的多项式组成，具有有限支撑），使得
+
+\[
+v (\mathbf {X}) = \sum_ {i \in I} \mathrm{X} _ {i} \cdot \mathrm{P} _ {i} (\mathbf {X}).
+\]
+
+如果在上述方程中把 \(X_{i}\) 替换为 \(X_{i}-a_{i}\) （对每个 \(i\in I\) ），我们就得到一个形如 \(u(\mathbf{X})=\sum_{i\in I}\left(\mathbf{X}_{i}-a_{i}\right)\cdot\mathbf{P}_{i}^{\prime}(\mathbf{X})\) 的关系式，由此得出推论。
+
+推论 2. —— 设 \(\mathbf{X} = (\mathbf{X}_i)_{i \in I}\) 与 \(\mathbf{Y} = (\mathbf{Y}_i)_{i \in I}\) 是两组未定元。多项式 \(u \in \mathbf{A}[\mathbf{X}, \mathbf{Y}]\) 中使得 \(u(\mathbf{X}, \mathbf{X}) = 0\) 者所成的集合，是 \(\mathbf{A}[\mathbf{X}, \mathbf{Y}]\) 的由多项式 \(\mathbf{X}_i - \mathbf{Y}_i\) （对于 \(i \in I\) ）所生成的理想。
+
+此推论直接由推论 1 得出：只需把 A 替换为 A{[}Y{]} ，把 \(a_{i}\) 替换为 \(Y_{i}\) ，并把 A{[}X, Y{]} 解释为以 \(X_{i}\) 为未定元、系数在 A{[}Y{]} 中的多项式环。
+
+命题3. --- 设 \(u \in \mathbf{A}[\mathbf{X}]\) ，并令 \(\mathbf{X} \cdot \mathbf{Z}\) 为元素族 \((\mathbf{X}_i\mathbf{Z})_{i \in I}\) （属于多项式环 \(\mathbf{A}[\mathbf{X}][\mathbf{Z}]\) ）。 \(\mathbf{Z}^k\) 在 \(u(\mathbf{X}, \mathbf{Z})\) 中的系数是次数为 \(k\) 的、 \(u\) 的齐次分量（对每个正整数 \(k\) ）。
+
+只需在 \(u\) 是单项式的情形下证明此命题，而在此情形下结论是显然的。
+
+推论. --- 对于一个多项式 \(u \in A[X]\) 为次数 \(k\) 的齐次多项式，其充分必要条件为：
+
+\[
+u (\mathbf {X} \cdot \mathbf {Z}) = u (\mathbf {X}) \cdot \mathbf {Z} ^ {k}.
+\]
+
+注记。——设 \(x \in A^{I}\) ，并设 f 为映射 \(u \mapsto u(x)\) （从 A{[}X{]} 到 A 中）。给定一个 A-模 M ，我们考虑同态 \(1 \otimes f\) （从 M{[}X{]} = M \(\otimes_{A} A[X]\) 到 \(\mathbf{M} \otimes_{\mathbf{A}} \mathbf{A} = \mathbf{M}\) 中）。对每个 \(v \in \mathbf{M}[\mathbf{X}]\) ，我们有 \((1 \otimes f)(v) = v(\mathbf{x})\) 。若 \(v = \sum_{\nu \in \mathbf{N}^{(I)}} e_{\nu} X^{\nu}\) ，则 \(v(\mathbf{x}) = \sum_{\nu \in \mathbf{N}^{(I)}} \mathbf{x}^{\nu} e_{\nu}\) 。
+
+\subsection{微分与导子}
+
+设 \(\mathbf{B} = \mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) ，则由 III，第 569 页，对每个 \(i\in I\) ，存在唯一的 A-导子 \(\mathbf{D}_i\) （ \(\mathbf{B}\) 的），使得
+
+\[
+\mathrm{D} _ {i} \mathrm{X} _ {i} = 1, \quad \mathrm{D} _ {i} \mathrm{X} _ {j} = 0 \quad \text { for } \quad j \neq i.\tag{5}
+\]
+
+多项式 \(D_{i}P\) 称为 P 关于 \(X_{i}\) 的偏导数；我们也把它记作 \(D_{X_{i}}P\) 或 \(\frac{\partial P}{\partial X_{i}}\) 或 \(P'_{X_{i}}\) 。由 III，第 558 页，公式 (21)，对于 \(\nu = (\nu_{j}) \in \mathbf{N}^{(I)}\) 我们有
+
+\[
+\mathrm{D} _ {i} \left(\mathbf {X} ^ {\nu}\right) = \left\{ \begin{array}{c c c} \nu_ {i} \mathbf {X} _ {i} ^ {\nu_ {i} - 1} \prod_ {j \in I - \{i \}} \mathbf {X} _ {j} ^ {\nu_ {j}} & \text {if} & \nu_ {i} > 0 \\ 0 & \text {if} & \nu_ {i} = 0. \end{array} \right.\tag{6}
+\]
+
+由 (6) 可知 \(\mathbf{D}_i\mathbf{D}_j = \mathbf{D}_j\mathbf{D}_i\) （对任意 \(i, j \in I\) ）。对于 \(\nu = (\nu_i)_{i \in I} \in \mathbf{N}^{(I)}\) ，我们令 \(\mathbf{D}^{\nu} = \prod_{i \in I} \mathbf{D}_i^{\nu_i}\) 及 \(\nu! = \prod_{i \in I} (\nu_i!)\) 。在 \(\mathbf{N}^{(I)}\) 上取乘积序，我们有
+
+\[
+\mathrm{D} ^ {\nu} \left(\mathrm{X} ^ {\mu}\right) = \left\{ \begin{array}{c l} \frac {\mu !}{(\mu - \nu) !} \mathrm{X} ^ {\mu - \nu} & \text { if } \quad \nu \leqslant \mu , \\ 0 & \text { if   not }. \end{array} \right.
+\]
+
+当 P 是单个未定元 X 的多项式时， P 的唯一偏导数记作 DP 或 \(\frac{dP}{dX}\) 或 \(P'\) ，并简称为 P 的导数。
+
+再次令 \(\mathbf{B} = \mathbf{A}\left[(\mathbf{X}_i)_{i\in I}\right]\) ；由 III，第 569 页，B 的 A-微分所构成的 B-模 \(\Omega_{\mathbf{A}}(\mathbf{B})\) 以族 \((d\mathbf{X}_i)_{i\in I}\) （即 \(\mathbf{X}_i\) 的微分所成的族）为基。设 \(\partial_i\) 为指标为 \(i\) 的坐标形式（相对于 \(\Omega_{\mathbf{A}}(\mathbf{B})\) 上的这组基）。于是， B 到自身的映射 \(u\mapsto \langle \partial_i,du\rangle\) 是 B 的一个导子，它把 \(\mathbf{X}_i\) 映为 1 ，把 \(\mathbf{X}_j\) 映为 0 （对于 \(j\neq i\) ），因而就是 \(\mathbf{D}_i\) ；换言之，我们有
+
+\[
+d u = \sum_ {i \in I} \left(\mathrm{D} _ {i} u\right) d \mathrm{X} _ {i}\tag{7}
+\]
+
+对每个 \(u \in \mathbf{B}\) 。若 \(\mathbf{I}\) 是有限的，则 \((\mathbf{D}_i)_{i \in \mathbf{I}}\) 是由 \(\mathbf{B}\) 的导子组成的 B-模的一组基。
+
+命题4. --- 设 E 是一个结合的、交换的且含单位元的 A-代数， \(\mathbf{x} = (x_i)_{i\in I}\) 是 E 的元素族， \(u\) 是 \(\mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 的元素，且 \(y = u(\mathbf{x})\) 。那么对于从 E 到某个 E-模中的每个导子 D，我们有
+
+\[
+\mathrm{D} y = \sum_ {i \in I} \left(\mathrm{D} _ {i} u\right) (\mathbf {x}) \cdot \mathrm{D} x _ {i}.
+\]
+
+只需在 \(u\) 为单项式的情形下证明该命题，而在该情形下，结论由 III，第 558 页，命题 6 可得。
+
+推论。——设 \(f \in \mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_p]\) 与 \(g_i \in \mathbf{A}[\mathbf{Y}_1, \ldots, \mathbf{Y}_q]\) （对于 \(1 \leqslant i \leqslant p\) ），并记 \(h = f(g_1, \ldots, g_p)\) ，则对于 \(1 \leqslant j \leqslant q\) 我们有
+
+\[
+\frac {\partial h}{\partial \mathbf {Y} _ {j}} = \sum_ {i = 1} ^ {p} \mathrm{D} _ {i} f (g _ {1}, \dots , g _ {p}) \cdot \frac {\partial g _ {i}}{\partial \mathbf {Y} _ {j}}.\tag{8}
+\]
+
+这是命题 4 当 \(\mathbf{E} = \mathbf{A}[\mathbf{Y}_1,\dots ,\mathbf{Y}_q]\) 、 \(x_{i} = g_{i}\) 且 \(\mathbf{D} = \partial /\partial \mathbf{Y}_j\) 时的特殊情形。
+
+设 \(\mathbf{X} = (\mathbf{X}_i)_{i\in I}\) ， \(\mathbf{Y} = (\mathbf{Y}_i)_{i\in I}\) 是两族不相交的未定元，并把 \(\mathbf{X} + \mathbf{Y}\) 记为族 \((\mathbf{X}_i + \mathbf{Y}_i)_{i\in I}\) 。给定 \(u\in \mathbf{A}[\mathbf{X}]\) ，考虑元素 \(u(\mathbf{X} + \mathbf{Y})\) （属于 \(\mathbf{A}[\mathbf{X},\mathbf{Y}]\) ）。对于 \(\nu \in \mathbf{N}^{(I)}\) ，我们用 \(\Delta^{\nu}u\) 表示 \(\mathbf{Y}^{\nu}\) 在 \(u(\mathbf{X} + \mathbf{Y})\) 中的系数（把后者视为关于 \(\mathbf{Y}_i\) 的、系数在 \(\mathbf{A}[\mathbf{X}]\) 中的多项式）。根据定义，我们有 \(\Delta^{\nu}u\in \mathbf{A}[\mathbf{X}]\) ，且
+
+\[
+u (\mathbf {X} + \mathbf {Y}) = \sum_ {\nu} \left(\Delta^ {\nu} u\right) (\mathbf {X}) \mathbf {Y} ^ {\nu}.\tag{9}
+\]
+
+（此处以及本号其余部分，求和均对指标集 \(\mathbf{N}^{(I)}\) 进行，除非另有说明。）
+
+设 \(\mathbf{a} \in \mathbf{A}^{I}\) ，然后在 (9) 中以 \(\mathbf{a}\) 代替 \(\mathbf{X}\) 、以 \(\mathbf{X} - \mathbf{a}\) 代替 \(\mathbf{Y}\) ，我们得到
+
+\[
+u (\mathbf {X}) = \sum_ {\nu} \left(\Delta^ {\nu} u\right) (\mathbf {a}) (\mathbf {X} - \mathbf {a}) ^ {\nu}.\tag{10}
+\]
+
+特别地，我们有
+
+\[
+u (\mathbf {X}) = \sum_ {\nu} \left(\Delta^ {\nu} u\right) (0) \mathbf {X} ^ {\nu}.\tag{11}
+\]
+
+如果 \(u, v \in \mathbf{A}[\mathbf{X}]\) ，我们有
+
+\[
+\begin{array}{r l} (u v) (\mathbf {X} + \mathbf {Y}) & = \left(\sum_ {\nu} (\Delta^ {\nu} u) (\mathbf {X}) \mathbf {Y} ^ {\nu}\right) \left(\sum_ {\rho} (\Delta^ {\rho} v) (\mathbf {X}) \mathbf {Y} ^ {\rho}\right) \\ & = \sum_ {\sigma} \left[ \sum_ {\nu + \rho = \sigma} (\Delta^ {\nu} u) (\mathbf {X}) (\Delta^ {\rho} v) (\mathbf {X}) \right] \mathbf {Y} ^ {\sigma} \end{array}
+\]
+
+因此
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\Delta^ {\sigma} (u v) = \sum_ {\nu + \rho = \sigma} (\Delta^ {\nu} u) (\Delta^ {\rho} v).
+\]
+
+设 \(\mathbf{Z} = (Z_i)_{i\in I}\) 是另一族未定元。
+
+我们有：
+
+\[
+\begin{array}{r l} \sum_ {\nu} (\Delta^ {\nu} u) (\mathbf {X}) (\mathbf {Y} + \mathbf {Z}) ^ {\nu} & = u (\mathbf {X} + \mathbf {Y} + \mathbf {Z}) \\ & = \sum_ {\sigma} (\Delta^ {\sigma} u) (\mathbf {X} + \mathbf {Y}) \mathbf {Z} ^ {\sigma} \\ & = \sum_ {\rho , \sigma} (\Delta^ {\rho} \Delta^ {\sigma} u) (\mathbf {X}) \mathbf {Y} ^ {\rho} \mathbf {Z} ^ {\sigma}, \end{array}
+\]
+
+因此由 I，第 99 页，推论 2：
+
+\[
+\Delta^ {\rho} \Delta^ {\sigma} u = \frac {(\rho + \sigma) !}{\rho ! \sigma !} \Delta^ {\rho + \sigma} u.\tag{13}
+\]
+
+命题5. --- 对任意 \(u \in \mathbf{A}[\mathbf{X}]\) 及 \(\nu \in \mathbf{N}^{(I)}\) ，我们有
+
+\[
+\mathbf {D} ^ {\nu} \boldsymbol {u} = \nu ! \Delta^ {\nu} \boldsymbol {u}.
+\]
+
+首先假设 \(\nu\) 的长度为 1 ；则存在 I 的元素 \(i\) ，使得 \(\nu = \varepsilon_i\) ，即 \(\nu_i = 1\) 且 \(\nu_j = 0\) （对 I 中所有 \(j \neq i\) ）。公式 (12) 表明 \(\Delta^{\varepsilon_i}\) 是 A-代数 A{[}X{]} 的一个导子，它显然在 \(\mathbf{X}_j\) （对于 \(j \neq i\) ）上取值为零，而在 \(\mathbf{X}_i\) 上取值为 1 。于是我们有 \(\Delta^{\varepsilon_i} = \mathbf{D}_i\) （对每个 \(i \in I\) ）。
+
+由 (13) 我们有
+
+\[
+(\rho ! \Delta^ {\rho}) \cdot (\sigma ! \Delta^ {\sigma}) = (\rho + \sigma)! \Delta^ {\rho + \sigma}\tag{14}
+\]
+
+此式在 A-模 \(\mathbf{A}[\mathbf{X}]\) 的自同态代数中成立。现在对 \(\nu\) 的长度作归纳，即得 \(\nu! \Delta^{\nu} = \mathbf{D}^{\nu}\) 。
+
+如果 \(\mathbf{A}\) 是一个 \(\mathbf{Q}\) -代数，公式 (9)、(10)、(11) 就可以写成
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+u (\mathbf {X} + \mathbf {Y}) = \sum_ {\nu} \frac {1}{\nu !} (\mathrm{D} ^ {\nu} u) (\mathbf {X}) \mathbf {Y} ^ {\nu}
+\]
+
+\[
+u (\mathbf {X}) = \sum_ {\nu} \frac {1}{\nu !} (D ^ {\nu} u) (\mathbf {a}) (\mathbf {X} - \mathbf {a}) ^ {\nu}\tag{16}
+\]
+
+\[
+u (\mathbf {X}) = \sum_ {\nu} \frac {1}{\nu !} (D ^ {\nu} u) (0) \mathbf {X} ^ {\nu}.\tag{17}
+\]
+
+公式(15)、(16)、(17)三者均被称为“泰勒公式”。
+
+命题6（“欧拉恒等式”）。——设 \(u \in \mathbf{A}[\mathbf{X}]\) 是次数为 \(r\) 的齐次多项式；我们有
+
+\[
+\sum_ {i \in I} X _ {i} \cdot D _ {i} u = r u.
+\]
+
+设 D 为 A{[}X{]} 到自身的 A-线性映射，使得当 v 为 s 次齐次元时 \(D(v) = sv\) 。我们知道（III，第 554 页，例 6）D 是 A{[}X{]} 的一个导子。因此命题 6 是命题 4（IV，第 6 页）的一个推论。
+
+\subsection{多项式环中的零因子}
+
+命题7。——设 \(f \in A[X]\) 是单个未定元的非零多项式，且 \(\alpha\) 为其首项系数。如果 \(\alpha\) 在 \(A\) 中可消去（特别地，若 \(f\) 是首一多项式），则对任意非零元素 \(g\) （在 \(A[X]\) 中），我们有
+
+\[
+f g \neq 0 \quad a n d \quad \deg (f g) = \deg f + \deg g.
+\]
+
+设 \(g \in A[X]\) 是非零多项式， \(\beta\) 为其首项系数， \(n = \deg f\) 且 \(p = \deg g\) 。于是 \(X^{n+p}\) 在 \(fg\) 中的系数是 \(\alpha\beta\) ，它不为零，由此命题得证。
+
+命题8. -- 若 A 是整环，则 \(\mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 也是整环。
+
+设 \(u, v\) 为 \(\mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) 的两个非零元素；我们必须证明 \(uv \neq 0\) 。现在 \(u\) 与 \(v\) 属于环 \(\mathbf{A}[(\mathbf{X}_j)_{j \in J}]\) ，其中 \(J\) 是 \(I\) 的有限子集。因此我们可以只限于 \(I\) 有限且等于 \(\{1, 2, \ldots, p\}\) 的情形。另一方面，环 \(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_p]\) 同构于以 \(\mathbf{X}_p\) 为未定元、系数在 \(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_{p-1}]\) 中的多项式环。于是，对 \(p\) 作归纳，我们被归结为对 \(\mathbf{A}[\mathbf{X}]\) 证明该命题，而这时只需应用命题 7 即可。
+
+推论1. --- 若 A 是整环，且 u 、 v 是 \(\mathbf{A}[(\mathbf{X}_{i})_{i\in I}]\) 的元素，则 \(\deg(uv)=\deg u+\deg v\) 。
+
+我们可以只限于 \(u\) 与 \(v\) 均非零的情形。设 \(m = \deg u\) ， \(n = \deg v\) ；我们有
+
+\[
+u = u _ {0} + u _ {1} + \dots + u _ {m}, v = v _ {0} + v _ {1} + \dots + v _ {n}
+\]
+
+，其中 \(u_{h}\) （相应地 \(v_{h}\) ）是 u（相应地 v）的 h 次齐次分量。由于 \(u_{m} \neq 0\) 且 \(v_{n} \neq 0\) ，我们有 \(u_{m}v_{n} \neq 0\) （命题 8）。现在 \(uv = u_{m}v_{n} + w\) ，其中 \(\deg w < m + n\) ，由此得出结果。
+
+推论2.——若 A 是整环，则 A{[}(X \(_{i}\) ) \(_{i \in I}\) {]} 的可逆元就是 A 的可逆元。
+
+这直接由推论1得出。
+
+命题9. —— 设 \(u \in A[(X_i)_{i \in I}]\) ；那么 \(u\) 在环 \(A[(X_i)_{i \in I}]\) 中为幂零的充分必要条件是，它的所有系数在环 \(A\) 中均为幂零。
+
+如同命题 8 的证明，我们可以化归到一元多项式的情形。若 u 的所有系数都是幂零的，则 u 是幂零的（I，第 99 页，推论 1）。假设 \(u\) 幂零但非零，设 \(n\) 为其次数；我们对 \(n\) 作归纳。设 \(\alpha\) 为 \(u\) 的首项系数。存在整数 \(m > 0\) 使得 \(u^m = 0\) 。 \(u^m\) 的首项系数是 \(\alpha^m\) ，因此 \(\alpha^m = 0\) 。现在 \(u - \alpha X^n\) 是幂零的（I，同上引文），且归纳假设表明 \(u - \alpha X^n\) 的所有系数都是幂零的。于是 \(u\) 的所有系数都是幂零的。
+
+注记。--- 设 u 和 v 为 \(\mathbf{A}[(\mathbf{X}_{i})_{i\in I}]\) 的元素，并假设 A 是整环， v 是 u 的非零倍元且 v 是齐次的；则 u 也是齐次的。事实上，设 \(u'\in\mathbf{A}[(\mathbf{X}_{i})_{i\in I}]\) 使得 \(v=uu'\) ；我们有 \(u\neq0\) ， \(u'\neq0\) ，且若
+
+\[
+\begin{array}{c} u = u _ {h} + u _ {h + 1} + \dots + u _ {k} \\ u ^ {\prime} = u _ {h ^ {\prime}} ^ {\prime} + u _ {h ^ {\prime} + 1} ^ {\prime} + \dots + u _ {k ^ {\prime}} ^ {\prime} \end{array}
+\]
+
+是 u 与 \(u'\) 的齐次分量分解，其中 \(u_{h} \neq 0\) , \(u_{k} \neq 0\) , \(u_{h'}' \neq 0\) , \(u_{k'}' \neq 0\) ，则 \(v = u_{h} u_{h'}' + u_{h} u_{h'+1}' + \cdots + u_{k} u_{k'}'\) ，且 \(u_{h} u_{h'}'\) 是次数为 \(h + h'\) 的非零齐次元，而 \(u_{k} u_{k'}'\) 是次数为 \(k + k'\) 的非零齐次元（命题 8）。由于 v 是齐次的，我们有 \(h + h' = k + k'\) ，从而 h = k ， \(h' = k'\) 。
+
+\subsection{一元多项式的欧几里得除法}
+
+命题 10. --- 设 \(f\) 与 \(g\) 是 \(\mathbf{A}[\mathbf{X}]\) 的非零元素，其次数分别为 \(m\) 与 \(n\) 。设 \(\alpha_0\) 为 \(f\) 的首项系数，且 \(\mu = \sup (n - m + 1, 0)\) 。存在 \(u, v \in \mathbf{A}[\mathbf{X}]\) 使得
+
+\[
+\alpha_ {0} ^ {\mu} g = u f + v, \quad \deg v <   m.
+\]
+
+如果 \(\alpha_0\) 在 A 中可消去，则 \(u\) 与 \(v\) 由这些性质唯一确定。
+
+\(u\) 与 \(v\) 的存在性当 \(n < m\) 时是显然的，因为此时可取 \(u = 0\) 与 \(v = g\) 。对 \(n \geqslant m\) ，我们将对 \(n\) 作归纳。设 \(\beta\) 为 \(g\) 的首项系数；若 \(f = \sum_{k=0}^{m} \alpha_k X^{m-k}\) ，我们可以写出 \(\alpha_0^\mu g = \alpha_0^{\mu-1} \beta X^{n-m} f + \alpha_0^{\mu-1} g_1\) ，其中 \(g_1 \in A[X]\) 且 \(\deg g_1 < n\) 。根据归纳假设，存在 \(u_1, v \in A[X]\) 使得 \(\alpha_0^{\mu-1} g_1 = u_1 f + v\) 且 \(\deg v < m\) 。因此
+
+\[
+\alpha_ {0} ^ {\mu} g = \left(\alpha_ {0} ^ {\mu - 1} \beta X ^ {n - m} + u _ {1}\right) f + v
+\]
+
+并且只需令 \(u = \alpha_0^{\mu - 1}\beta X^{n - m} + u_1\) 。
+
+假设 \(\alpha_0\) 在 \(\mathbf{A}\) 中可消去，现在让我们证明 \(u\) 与 \(v\) 的唯一性。设 \(u, v, u_1, v_1 \in \mathbf{A}[\mathbf{X}]\) 使得
+
+\[
+\alpha_ {0} ^ {\mu} g = u f + v = u _ {1} f + v _ {1}, \quad \deg v <   m, \quad \deg v _ {1} <   m.
+\]
+
+我们有 \((u - u_{1})f = v_{1} - v\) 且 \(\deg (v_1 - v) < m\) ，因此 \(u - u_{1} = 0\) （IV，第 9 页，命题 7），从而 \(v_{1} - v = 0\) 。
+
+推论（“多项式的欧几里得除法”）。--- 设 \(f\) 为 A{[}X{]} 的一个非零元素，其首项系数可逆，且 \(m = \deg f\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  对每个 \(g \in \mathbf{A}[\mathbf{X}]\) ，存在 \(u, v \in \mathbf{A}[\mathbf{X}]\) 使得
+\end{enumerate}
+
+\[
+g = u f + v, \quad \deg v <   m.
+\]
+
+此外，这些条件唯一地确定 \(u\) 与 \(v\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  子 A-模 \(A + AX + \cdots + AX^{m-1}\) 与 \(fA[X]\) （均为 A{[}X{]} 的子模）在 A{[}X{]} 中是互补的。
+\item
+  设 \(f\) 非常数，并把 \(\mathbf{A}[\mathbf{X}]\) 视为 \(\mathbf{A}[\mathbf{T}]\) -模（借助同态 \(u(\mathbf{T}) \mapsto u(f(\mathbf{X}))\) ，它把 \(\mathbf{A}[\mathbf{T}]\) 映入 \(\mathbf{A}[\mathbf{X}]\) ）。则 \(\mathbf{A}[\mathbf{X}]\) 是自由 \(\mathbf{A}[\mathbf{T}]\) -模，以 \((1, \mathbf{X}, \ldots, \mathbf{X}^{m-1})\) 为基。
+\end{enumerate}
+
+断言 (i) 与 (ii) 是命题 10 的直接推论。
+
+我们来证明 (iii)。设 \(\psi\) 为同态 \(v \mapsto v(f(X), X)\) （从 A{[}T, X{]} 到 A{[}X{]} 中）。首先把 A{[}T, X{]} 视为以 T 为未定元、系数在 A{[}X{]} 中的多项式环；IV 第 5 页推论 1 表明 \(\mathfrak{a}\) （ \(\psi\) 的核）是 A{[}T, X{]} 的理想 (T - f(X))。现在把 A{[}T, X{]} 视为以 X 为未定元、系数在 A{[}T{]} 中的多项式环；则 \(\psi\) 是一个 A{[}T{]} -线性映射（从 A{[}T{]}{[}X{]} 到 A{[}X{]} 中）。上述断言 (ii)（应用于多项式 \(f(X) - T\) —— 以 X 为未定元、系数在 A{[}T{]} 中）表明， \((1, X, ..., X^{m-1})\) 是一个 A{[}T{]} -子模（属于 A{[}T, X{]} ，与 \(\mathfrak{a}\) 互补）的一组基。由于 \(\psi(X^i) = X^i\) （对每个整数 \(i \geqslant 0\) ）， (iii) 立即得出。
+
+采用 (i) 中的记号，我们称 u 为 g 除以 f 的欧几里得除法中的商，称 v 为余式；余式为零的充分必要条件是 f 整除 g。
+
+\subsection{\texorpdfstring{一元多项式的整除性 \(^{1}\)}{一元多项式的整除性 [1]}}
+
+命题11。——设 K 是一个交换域。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对于每个非零理想 \(\mathfrak{a}\) （在 \(\mathbf{K}[\mathbf{X}]\) 中），存在且仅存在一个首一多项式 \(f\) （在 \(\mathbf{K}[\mathbf{X}]\) 中）使得 \(\mathfrak{a} = (f)\) 。
+\item
+  设 \(f_{1}\) 与 \(f_{2}\) 属于 \(\mathbf{K}[\mathbf{X}]\) ；要使 \((f_{1}) = (f_{2})\) 成立，必要且充分条件是存在非零元素 \(\lambda\) （ \(\mathbf{K}\) 中的）使得 \(f_{2} = \lambda f_{1}\) 。
+\end{enumerate}
+
+我们来证明 (ii)，所述条件的充分性是显然的。 \(f_{1}\) 与 \(f_{2}\) 生成零理想的情形是平凡的。因此设非零多项式 \(f_{1}\) 与 \(f_{2}\) 生成 K{[}X{]} 的同一个理想。那么存在多项式 \(u_{1}\) 与 \(u_{2}\) 使得 \(f_{1}=u_{1}f_{2}\) 且 \(f_{2}=u_{2}f_{1}\) ；由此可得 \(u_{1}u_{2} = 1\) ，从而 \(\deg u_{1} + \deg u_{2} = 0\) ，因此 \(\deg u_{2} = 0\) 。这样我们就证明了 \(u_{2}\) 是 \(\mathbf{K}\) 的一个非零元素。
+
+为证明 (i)，设 \(f\) 是 \(\mathfrak{a}\) 中一个次数尽可能小的首一多项式。给定 \(g\) （在 \(\mathfrak{a}\) 中），设 \(u\) 与 \(v\) 为 \(g\) 除以 \(f\) 的欧几里得除法的商与余式；则 \(v = g - uf\) 属于 \(\mathfrak{a}\) ，且我们有 \(\deg v < \deg f\) ；若 \(v\) 非零，则存在非零元素 \(\lambda\) （ \(K\) 中的）使得 \(\lambda v\) 是首一的，而由于 \(\lambda v \in \mathfrak{a}\) ，这将与 \(f\) 的定义矛盾。于是我们有 \(\mathfrak{a} = (f)\) ；首一多项式 \(f\) （使得 \(\mathfrak{a} = (f)\) 者）的唯一性现在由 (ii) 得出。
+
+命题12。——设 K 是一个交换域， f 和 g 是 K{[}X{]} 的两个元素。对于 K{[}X{]} 中的每个多项式 d ，以下性质是等价的：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  多项式 \(d\) 整除 \(f\) 与 \(g\) ，且每个同时整除 \(f\) 与 \(g\) 的多项式都整除 \(d\) 。
+\item
+  多项式 \(d\) 整除 \(f\) 与 \(g\) ，且存在两个多项式 \(u\) 与 \(v\) 使得 \(d = uf + vg\) 。
+\item
+  理想之间的关系 \((d) = (f) + (g)\) 在 \(\mathbf{K}[\mathbf{X}]\) 中成立。
+\end{enumerate}
+
+多项式 d 由这些性质确定，且可相差 K 中一个非零元素的乘法。若 f 和 g 不全为零，则 \(d \neq 0\) 且 d 的次数大于等于整除 f 和 g 的每一个多项式的次数。
+
+当 \(f\) 与 \(g\) 均为零时，性质 (i) 至 (iii) 中的每一条仅对 \(d = 0\) 成立，因此它们此时等价。以下我们假设 \(f, g\) 不全为 0 ，并用 \(\mathfrak{a}\) 表示理想 \((f) + (g)\) （ \(\mathbf{K}[\mathbf{X}]\) 中的）。
+
+我们指出，对任意多项式 \(u\) 与 \(v\) （在 \(\mathbf{K}[\mathbf{X}]\) 中），性质 \((u) \supset (v)\) 与 \(\langle u \text{ 整除 } v \rangle\) 等价。于是断言 (ii) 等价于 \(\langle (d) \supset (f) \text{ 且 } (d) \supset (g) \text{ 且 } d \in (f) + (g) \rangle\) ，即 (iii)。显然 (ii) 蕴含 (i)。最后假设 (i) 成立；我们有 \((d) \supset (f)\) 与 \((d) \supset (g)\) ，从而 \((d) \supset \mathfrak{a}\) ；另一方面，由命题 11（IV，第 12 页），存在多项式 \(d_1\) 使得 \(\mathfrak{a} = (d_1)\) ；由于 \(d_1\) 同时整除 \(f\) 与 \(g\) ，由假设它整除 \(d\) ，从而 \((d) \subset \mathfrak{a}\) ，最后我们有 \((d) = \mathfrak{a}\) ，即 (iii)。
+
+命题 12 的其余断言是把命题 11 应用于理想 \(\mathfrak{a} = (f) + (g)\) 而得到的直接推论。
+
+定义 1. --- 采用命题 12 的记号，我们称 d 为 f 与 g 的一个最大公因子（简称 gcd）。若 1 是 f 与 g 的一个最大公因子，则称 f 与 g 互素，或称 f 与 g 互质。
+
+称 f 与 g 互素，即意味着存在 K{[}X{]} 中的多项式 u 和 v 使得 \(uf + vg = 1\) 。
+
+推论1. — 设 \(d\) 是 \(f\) 与 \(g\) 的一个最大公因子，且 \(\mathbf{K}'\) 是一个包含 \(\mathbf{K}\) 作为子域的交换域。则 \(d\) 是 \(f\) 与 \(g\) （视为 \(\mathbf{K}'[\mathbf{X}]\) 的元素）的一个最大公因子。
+
+这由命题 12（iii）得出。
+
+推论2. --- 设 d 是 f 与 g 的一个最大公因子。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  如果 \(u \in \mathbf{K}[\mathbf{X}]\) ，则 du 是 fu 与 gu 的一个最大公因子。
+\item
+  如果 \(v \in \mathbf{K}[\mathbf{X}]\) 是（ \(\neq 0\) ） \(f\) 与 \(g\) 的一个公因子，则 \(d / v\) 是 \(f / v\) 与 \(g / v\) 的一个最大公因子。
+\end{enumerate}
+
+这由命题 12（ii）推出。
+
+推论3. —— 设 w 是 f 和 g 的一个公因子。 w 成为 f 和 g 的最大公因子的充分必要条件是 f/w 与 g/w 互素。这由推论 2 得出。
+
+推论4. --- 设 \(f, g, h \in \mathbf{K}[\mathbf{X}]\) 。若 \(f\) 整除 \(gh\) 且与 \(g\) 互素，则 \(f\) 整除 \(h\) 。
+
+因为 \(f\) 整除 \(gh\) 与 \(fh\) ，因此 \(f\) 整除 \(gh\) 与 \(fh\) 的每个最大公因子，特别地整除 \(h\) （推论 2，(i)）。
+
+推论5. --- 设 \(f, g \in \mathbf{K}[\mathbf{X}]\) 。 \(f\) 与 \(g\) 互素的充分必要条件是 \(g\) 在 \(\mathbf{K}[\mathbf{X}] / (f)\) 中的典范像可逆。
+
+因为这一条件意味着存在 \(u, v \in \mathbf{K}[\mathbf{X}]\) 使得 \(uf + vg = 1\) 。
+
+推论6. --- 设 \(f, g_1, g_2, \ldots, g_n \in \mathbf{K}[\mathbf{X}]\) 。若 \(f\) 与 \(g_1, g_2, \ldots, g_n\) 互素，则 \(f\) 与 \(g_1g_2\ldots g_n\) 互素。
+
+* 推论7. --- \(f\) 与 \(g\) 互素的充分必要条件是，它们在 \(K\) 的任何扩张中都没有公共根。
+
+因为若 \(d\) 是 \(f, g\) 的一个最大公因子，则 \(f\) 与 \(g\) 在扩张 \(\mathbf{K}'\) （ \(\mathbf{K}\) 的扩张）中的公共根就是 \(d\) 在 \(\mathbf{K}'\) 中的根。于是推论由 \(V\) ，第 21 页，命题 4 得出。*
+
+\subsection{不可约多项式}
+
+定义2. --- 设 K 是一个交换域。我们说 \(f \in \mathbf{K}[\mathbf{X}]\) 是不可约的，如果 \(\deg f \geqslant 1\) 且 \(f\) 不能被任何多项式 \(g\) （满足 \(0 < \deg g < \deg f\) ）整除。
+
+这等同于说 \(\deg f \geqslant 1\) 且 f 在 K{[}X{]} 中的因子只有标量 \(\neq 0\) 以及 f 与标量 \(\neq 0\) 的乘积。由于关系式 \((f) \subset (g)\) 意味着 g 整除 f，我们看到 K{[}X{]} 的不可约多项式也可以定义为使理想 \((f)\) 为极大理想的多项式 f（I，第 104 页）。
+
+设 \(f, g \in \mathbf{K}[\mathbf{X}]\) 。若 \(f\) 不可约，显然要么 \(f\) 与 \(g\) 互素，要么 \(f\) 整除 \(g\) 。若 \(f\) 与 \(g\) 都不可约，则要么 \(f\) 与 \(g\) 互素，要么每一个都是另一个与标量 \(\neq 0\) 的乘积。特别地，两个不同的不可约首一多项式是互素的。
+
+命题13. —— 设 \(\mathcal{I}\) 为 K{[}X{]} 中不可约首一多项式的集合。设 f 为 K{[}X{]} 的非零元素，且 α 为其首项系数；则存在唯一一族具有有限支撑的正整数 \((v_{p})_{p\in \mathcal{I}}\) ，使得我们有分解
+
+\[
+f = \alpha \prod_ {p \in \mathcal {I}} p ^ {v _ {p}}.\tag{18}
+\]
+
+只需在 \(f\) 是首一的（即 \(\alpha = 1\) ）情形下证明该命题。我们将对次数 \(n\) （ \(f\) 的）作归纳， \(n = 0\) 的情形是平凡的。于是设 \(n \geqslant 1\) ，并设该命题已对所有次数 \(< n\) 的多项式建立。
+
+设 E 为整除 f 的首一多项式 \(\neq1\) 组成的集合；我们有 \(f\in E\) ，因此 E 非空，且 E 中存在一个次数最小的多项式 g。显然 g 是不可约的，并且存在一个次数 \textless n 的首一多项式 h 使得 f=gh；根据归纳假设，h 是有限族不可约首一多项式的乘积，因此 f 也具有同样的性质。这证明了分解式 (18) 的存在性。
+
+现在让我们证明分解式 (18) 的唯一性。设 \((w_{p})_{p\in \mathcal{I}}\) 为一个具有有限支撑的正整数族，使得 \(f = \prod_{p\in \mathcal{I}}p^{w_p}\) 。由于 \(f\) 的
+
+次数 \(n \geqslant 1\) ，存在 \(p \in \mathcal{I}\) 使得 \(w_{p} > 0\) ；如果我们有 \(v_{p} = 0\) ，则 f 将是 \(\mathcal{I}\) 中异于 p 的元素组成的族之乘积，因此它与 p 互素（IV，第 13 页，推论 6），这与 p 整除 f 的事实相矛盾。由归纳假设，多项式 f/p 有唯一的类型 (18) 的分解；因此我们得出等式 \(w_{q} = v_{q}\) （对每个 \(q \in \mathcal{I}\) ）。
+
+设 \(f\) 是 \(\mathbf{K}[\mathbf{X}]\) 中的一个非零多项式。我们就说 \(f\) 无重因子，如果分解 (18) 中的指数 \(v_{p}\) 全都 \(\leqslant 1\) ；这等同于说 \(f\) 是有限个两两不同的不可约多项式之乘积，或者说 \(f\) 不能被 \(\mathbf{K}[\mathbf{X}]\) 中任何非常数多项式的平方整除。
+
+\section{多项式的零点}
+
+\subsection{一元多项式的根。重数}
+
+设 \(g \in A[(X_i)_{i \in I}]\) ，并设 \(E\) 是一个含单位元的结合 \(A\) -代数。设 \(x = (x_i)_{i \in I}\) 是 \(E\) 中两两可交换的元素族。我们就说 \(x\) 是 \(g\) 在 \(E^{I}\) 中的零点，如果 \(g(x) = 0\) 。若 \(f\) 是单个未定元的多项式，则 \(f\) 在 \(E\) 中的零点也称为 \(f\) 在 \(E\) 中的根。
+
+命题1。——设 \(f \in \mathbf{A}[\mathbf{X}]\) 与 \(\alpha \in \mathbf{A}\) 。 \(f\) 除以 \(\mathbf{X} - \alpha\) 的余式是 \(f(\alpha)\) 。 \(\alpha\) 成为 \(f\) 的根的充分必要条件是 \(\mathbf{X} - \alpha\) 是 \(f\) 在 \(\mathbf{A}[\mathbf{X}]\) 中的因子。
+
+因为如果 \(u, v \in \mathbf{A}[\mathbf{X}]\) 使得 \(f = (\mathbf{X} - \alpha)u + v\) , \(\deg v < 1\) ，则 \(v\) 是一个标量且 \(f(\alpha) = (\alpha - \alpha)u(\alpha) + v = v\) 。这证明了第一个断言，第二个断言由它推出。
+
+命题2。——设 \(f \in \mathbf{A}[\mathbf{X}]\) ， \(\alpha \in \mathbf{A}\) ，并设 \(h\) 为整数 \(\geqslant 0\) 。以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(f\) 能被 \((\mathbf{X} - \alpha)^h\) 整除，但不能被 \((\mathbf{X} - \alpha)^{h + 1}\) 整除；
+\item
+  存在 \(g \in \mathbf{A}[\mathbf{X}]\) 使得 \(f = (\mathbf{X} - \alpha)^h g\) 且 \(g(\alpha) \neq 0\) 。
+\item
+  \(\Rightarrow\) (ii) 由命题 1 立即可得。
+\item
+  \(\Rightarrow\) (i)：假设 \(f = (\mathbf{X} - \alpha)^h g\) ，其中 \(g\) 不以 \(\alpha\) 为根。那么 \(f\) 能被 \((\mathbf{X} - \alpha)^h\) 整除；如果存在 \(g_1 \in \mathbf{A}[\mathbf{X}]\) 使得 \(f = (\mathbf{X} - \alpha)^{h + 1}g_1\) ，则由于 \((\mathbf{X} - \alpha)^n\) 在 \(\mathbf{A}[\mathbf{X}]\) （IV，第 9 页，命题 7）中不是零因子，我们有 \(g = (\mathbf{X} - \alpha)g_1\) ，从而 \(g(\alpha) = 0\) ，这是荒谬的。
+\end{enumerate}
+
+命题3. --- 设 \(f\) 是 \(\mathbf{A}[\mathbf{X}]\) 的非零元素，且 \(\alpha \in \mathbf{A}\) 。存在唯一一个整数 \(h \geqslant 0\) 满足命题 2 的条件 (i) 与 (ii) 。
+
+这一点对条件 (i) 是显然的，只要注意到：若 \(f\) 能被 \((\mathbf{X} - \alpha)^h\) 整除，则 \(\deg f \geqslant h\) （IV，第 9 页，命题 7）。
+
+定义1. --- 在上述记号下，我们说 \(\alpha\) 的阶为 \(h\) ，或重数为 \(h\) （相对于 \(f\) ）。
+
+若 h \textgreater{} 0 ，我们也称 \(\alpha\) 为 f 的 h 阶根或重数 h 的根。1 阶根称为单根，2 阶根称为二重根，\ldots{} 阶数 \textgreater{} 1 的根称为重根。
+
+注记。--- 1) 若 \(f=0\) ，我们约定说 \(\alpha\) 的阶 \(\geqslant h\) （相对于 \(f\) ），不论 \(\alpha\in\mathbf{A}\) 与整数 \(h\geqslant0\) 如何。对任意 \(f\in\mathbf{A}[\mathbf{X}]\) 与 \(\alpha\in\mathbf{A}\) ，说 \(\alpha\) 的阶 \(\geqslant h\) （相对于 \(f\) ）意味着 \((\mathbf{X}-\alpha)^{h}\) 整除 \(f\) 。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 B 为包含 A 作为子环的交换环。设 \(f \in A[X]\) 非零且 \(\alpha \in A\) 。 \(\alpha\) 相对于 f 的阶是相同的（无论把 f 视为 B{[}X{]} 的元素还是 A{[}X{]} 的元素）。这由命题 2 的条件 (ii) 可以清楚地看出。
+\end{enumerate}
+
+命题 4. --- 设 f 和 g 是 A{[}X{]} 的非零元素。设 \(\alpha \in \mathbf{A}\) ，并设 \(\alpha\) 相对于 f 和 g 的阶分别为 p 和 q。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\alpha\) 相对于 \(f + g\) 的阶 \(\geqslant \inf(p, q)\) ，且它等于 \(\inf(p, q)\) （当 \(p \neq q\) 时）。
+\item
+  \(\alpha\) 相对于 \(fg\) 的阶 \(\geqslant p + q\) ，且它等于 \(p + q\) （当 \(\mathbf{A}\) 是整环时）。
+\end{enumerate}
+
+因为我们有 \(f(\mathbf{X}) = (\mathbf{X} - \alpha)^p f_1(\mathbf{X}), g(\mathbf{X}) = (\mathbf{X} - \alpha)^q g_1(\mathbf{X})\) ，其中 \(f_1(\alpha) \neq 0\) , \(g_1(\alpha) \neq 0\) 。例如设 \(p \leqslant q\) ；于是我们有
+
+\[
+f (\mathbf {X}) + g (\mathbf {X}) = (\mathbf {X} - \alpha) ^ {p} \left(f _ {1} (\mathbf {X}) + (\mathbf {X} - \alpha) ^ {q - p} g _ {1} (\mathbf {X})\right),
+\]
+
+并且若 \(p < q\) ，则 \(\alpha\) 不是 \(f_1(\mathbf{X}) + (\mathbf{X} - \alpha)^{q - p} g_1(\mathbf{X})\) 的根；这证明了 (i)。另一方面，我们有 \(f(\mathbf{X})g(\mathbf{X}) = (\mathbf{X} - \alpha)^{p + q} f_1(\mathbf{X})g_1(\mathbf{X})\) ，且 \(f_1(\alpha)g_1(\alpha) \neq 0\) （当 \(\mathbf{A}\) 是整环时）；这证明了 (ii)。
+
+命题5. --- 设 A 是整环。令 f 为 A{[}X{]} 的非零元素，且 \(\alpha_{1},\ldots,\alpha_{p}\) 为 f 在 A 中的两两不同的根，其阶数依次为 \(k_{1},\ldots,k_{p}\) 。我们有
+
+\[
+f (\mathrm{X}) = \left(\mathrm{X} - \alpha_ {1}\right) ^ {k _ {1}} \left(\mathrm{X} - \alpha_ {2}\right) ^ {k _ {2}} \dots \left(\mathrm{X} - \alpha_ {p}\right) ^ {k _ {p}} g (\mathrm{X})
+\]
+
+，其中 \(g \in \mathbf{A}[\mathbf{X}]\) ，且 \(\alpha_1, \ldots, \alpha_p\) 不是 \(g\) 的根。
+
+我们对 \(p\) 作归纳，由定义 1，该命题对 \(p = 1\) 是显然的。现在设 \(f(\mathbf{X}) = g_1(\mathbf{X})g_2(\mathbf{X})\) ，其中
+
+\[
+g _ {1} (\mathrm{X}) = \left(\mathrm{X} - \alpha_ {1}\right) ^ {k _ {1}} \dots \left(\mathrm{X} - \alpha_ {p - 1}\right) ^ {k _ {p - 1}}, \quad g _ {2} (\mathrm{X}) \in \mathrm{A} [ \mathrm{X} ].
+\]
+
+由于 A 是整环且 \(\alpha_{p}\) 不同于 \(\alpha_{1},\ldots,\alpha_{p-1}\) ，因此 \(\alpha_{p}\) 不是 \(g_{1}(X)\) 的根，从而 \(\alpha_{p}\) 是 \(k_{p}\) 阶根（相对于 \(g_{2}(X)\) ；命题 4，(ii)）。由此可得 \(g_{2}(X)\) 能被 \((\mathbf{X}-\alpha_{p})^{k_{p}}\) 整除，因此
+
+\[
+f (\mathbf {X}) = \left(\mathbf {X} - \alpha_ {1}\right) ^ {k _ {1}} \dots \left(\mathbf {X} - \alpha_ {p}\right) ^ {k _ {p}} g (\mathbf {X})
+\]
+
+，其中 \(g(\mathbf{X}) \in \mathbf{A}[\mathbf{X}]\) 。显然 \(\alpha_1, \ldots, \alpha_p\) 不是 \(g\) 的根。
+
+定理 1. --- 设 A 是一个整环。给定 A{[}X{]} 的一个非零元素 f ，其次数为 n，则 f 在 A 中所有根的阶数之和 ≤ n。这直接由命题 5 得出。
+
+推论。--- 假设 A 是整环，且设 \(f, g \in A[X]\) ，次数 \(\leqslant n\) 。如果存在 A 的 \(n+1\) 个两两不同的元素 \(x_{1}, \ldots, x_{n+1}\) ，使得 \(f(x_{i}) = g(x_{i})\) （对 \(1 \leqslant i \leqslant n+1\) ），则 \(f = g\) 。
+
+只需将定理1应用于 f - g 即可。
+
+命题 6（拉格朗日插值公式）。--- 设 K 为交换域， \(\alpha_{1}, \alpha_{2}, \ldots, \alpha_{n}\) 是 K 的不同元素， \(\beta_{1}, \beta_{2}, \ldots, \beta_{n}\) 是 K 的任意元素。对 \(i = 1, 2, \ldots, n\) ，我们令
+
+\[
+f _ {i} (\mathbf {X}) = \prod_ {j \in U (i)} \left(\mathbf {X} - \alpha_ {j}\right) / \left(\alpha_ {i} - \alpha_ {j}\right),
+\]
+
+，其中 \(\mathrm{U}(i)\) 是满足 \(j \neq i\) 且 \(1 \leqslant j \leqslant n\) 的整数 j 的集合。则 \(\beta_{1}f_{1} + \cdots + \beta_{n}f_{n}\) 是 K{[}X{]} 中唯一的元素 f ，满足 \(\deg f < n\) 且 \(f(\alpha_{i}) = \beta_{i}\) （对 \(1 \leqslant i \leqslant n\) ）。
+
+\(f\) 的唯一性由定理 1 的推论可得。设 \(f = \beta_{1}f_{1} + \cdots + \beta_{n}f_{n}\) ，则由于 \(f_{i}\) 的次数为 \(n - 1\) ，我们有 \(\deg f < n\) 。另一方面， \(f_{i}(\alpha_{j}) = 0\) （对 \(j \neq i\) ）且 \(f_{i}(\alpha_{i}) = 1\) ，因此 \(f(\alpha_{i}) = \beta_{i}\) （对 \(1 \leqslant i \leqslant n\) ）。
+
+推论。--- 设 A 是一个整环。令 \(f \in A[X]\) ，次数 \textless{} n ，并设 K 是 A 的一个子环且是一个域。若存在 A 的 n 个不同的元素 \(\alpha_{1}, \ldots, \alpha_{n}\) ，使得 \(\alpha_{i} \in K\) 且 \(f(\alpha_{i}) \in K\) （对 \(i = 1, \ldots, n\) ），则 \(f \in K[X]\) 。
+
+\subsection{根的重数的微分判别法}
+
+命题 7. --- 设 \(f \in A[X]\) ，并设 \(\alpha \in A\) 是 \(f\) 的根。 \(\alpha\) 是 \(f\) 的单根的充分必要条件是： \(\alpha\) 不是 \(Df\) （ \(f\) 的导数）的根。
+
+根据假设，我们有 \(f = (\mathbf{X} - \alpha)g\) ，其中 \(g \in \mathbf{A}[\mathbf{X}]\) 。 \(\alpha\) 是 \(f\) 的单根的充分必要条件是 \(g(\alpha) \neq 0\) 。现在我们有 \(Df = g + (\mathbf{X} - \alpha)Dg\) ，由此得 \((Df)(\alpha) = g(\alpha)\) 。
+
+更一般地：
+
+命题 8. --- 设 \(f \in A[X]\) 与 \(\alpha \in A\) ，并假设 \(\alpha\) 的阶为 \(k \geqslant 1\) （相对于 \(f\) ）。则 \(\alpha\) 的阶 \(\geqslant k - 1\) （相对于 \(Df\) ）。若 \(k \cdot 1\) 在 \(A\) 中可消去，则 \(\alpha\) 的阶为 \(k - 1\) （相对于 \(Df\) ）。
+
+根据假设，存在 \(g \in \mathbf{A}[\mathbf{X}]\) 使得 \(f = (\mathbf{X} - \alpha)^k g\) 且 \(g(\alpha) \neq 0\) 。因此 \(Df = k(\mathbf{X} - \alpha)^{k-1}g + (\mathbf{X} - \alpha)^k Dg = (\mathbf{X} - \alpha)^{k-1}(kg + (\mathbf{X} - \alpha)Dg)\) ，这就证明了命题的第一部分。 \(kg + (\mathbf{X} - \alpha)Dg\) 在 \(\mathbf{X} = \alpha\) 处的值为 \(kg(\alpha)\) ，而若 \(k \cdot 1\) 在 \(\mathbf{A}\) 中可消去，它就是非零的；这证明了命题的第二部分。
+
+设 \(k\) 是整数 \(> 0\) ，使得 \(k \cdot 1 = 0\) （在 \(\mathbf{A}\) 中）。若 \(f(\mathbf{X}) = \mathbf{X}^k\) ，则 \(0\) 是 \(k\) 阶根（ \(f\) 的），且是 \(Df\) 的阶任意高的根。
+
+推论。--- 设 \(f \in \mathbf{A}[\mathbf{X}]\) , \(\alpha \in \mathbf{A}\) ，并设 \(p\) 为整数 \(\geqslant 0\) ，进一步假设 \(p!\) . 1 在 A 中可消去。那么， \(\alpha\) 是 \(p\) 阶根（ \(f\) 的）的充分必要条件是： \(\alpha\) 是 \(f\) , \(Df\) , \ldots, \(D^{p-1}f\) 的根而不是 \(D^p f\) 的根。
+
+这由命题8对p作归纳得出。
+
+\subsection{无限整环上的多项式函数}
+
+假设 A 是一个整环。设 I 是一个集合， \((\mathrm{H}_{i})_{i\in I}\) 为 A 的无限子集的一个族，且 \(H=\prod_{i\in I}H_{i}\subset A^{I}\) 。若 f 是非零
+
+的元素 \(\mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) ，并设 \(\mathrm{H}_f\) 是所有 \(\mathbf{x}\in \mathrm{H}\) 中满足 \(f(\mathbf{x})\neq 0\) 者组成的集合，则 \(\mathrm{H}\) 与 \(\mathrm{H}_f\) 等势。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  首先假设 I 是有限的，并令 \(n = \text{Card I}\) 。该命题对 \(n = 0\) 是显然的；我们将对 \(n\) 作归纳来证明它。选取 I 的一个元素 \(i_0\) ，并令 \(J = I - \{i_0\}\) , \(B = A[(X_i)_{i \in J}]\) 。由于 \(f \neq 0\) ，我们可以写出 \(f = \sum_{k=0}^{m} g_k X_{i_0}^k\) ，其中 \(g_0, \ldots, g_m \in \mathbf{B}\) 且 \(g_m \neq 0\) 。由归纳假设，集合 \(\mathbf{K}\) （由所有 \(\mathbf{x} \in \prod_{i \in J} \mathrm{H}_i\) 中满足 \(g_m(\mathbf{x}) \neq 0\) 者组成）与 \(\prod_{i \in J} \mathrm{H}_i\) 等势。对 \(\mathbf{x} \in \mathbf{K}\) ，多项式
+\end{enumerate}
+
+\[
+h \left(\mathrm{X} _ {i _ {0}}\right) = \sum_ {k = 0} ^ {m} g _ {k} (\mathbf {x}) \mathrm{X} _ {i _ {0}} ^ {k} \in \mathrm{A} \left[ \mathrm{X} _ {i _ {0}} \right]
+\]
+
+非零。根据定理 1（IV，第 16 页），所有 \(\alpha \in \mathrm{H}_{i_0}\) 中满足 \(h(\alpha) \neq 0\) 者组成的集合与 \(\mathrm{H}_{i_0}\) 等势，由此
+
+\[
+\operatorname{Card} \mathrm{H} \geqslant \operatorname{Card} \mathrm{H} _ {f} \geqslant (\operatorname{Card} \mathrm{K}). (\operatorname{Card} \mathrm{H} _ {i _ {0}}) = \operatorname{Card} \mathrm{H},
+\]
+
+因此 \(\mathbf{H} = \mathbf{Card}\mathbf{H}_f\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在一般情形，存在有限子集 \(\mathbf{I}'\) （ \(\mathbf{I}\) 的）使得 \(f \in \mathbf{A}[(\mathbf{X}_i)_{i \in \mathbf{I}'}]\) 。设 \(\mathbf{H}_f'\) 是所有 \(\mathbf{x} \in \prod_{i \in \mathbf{I}'} \mathbf{H}_i\) 中满足 \(f(\mathbf{x}) \neq 0\) 者组成的集合，则 \(\mathbf{H}_f = \mathbf{H}_f' \times \left( \prod_{i \in \mathbf{I} - \mathbf{I}'} \mathbf{H}_i \right)\) ，只需将证明的第一部分应用于 \(\mathbf{H}_f'\) 。
+\end{enumerate}
+
+推论 1. --- 我们保留命题 9 的假设和记号。若 I 非空，则 \(H_{f}\) 是无限的。
+
+推论 2. --- 设 A 是无限整环，或 A 是无限域上的代数。对每一个 \(f \in \mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) ，设 \(\tilde{f}: \mathbf{A}^{\mathrm{I}} \to \mathbf{A}\) 为由 \(f\) 定义的多项式函数（IV，第 4 页）。于是映射 \(f \mapsto \tilde{f}\) 是单射的。
+
+当 \(\mathbf{A}\) 是一个无限整环，则该推论立即由命题 9 得出。假设 \(\mathbf{A}\) 是某个无限域上的代数，该域记作 \(k\) 。设 \(f = \sum_{\nu \in \mathbb{N}^{(I)}} \alpha_{\nu} X^{\nu}\)
+
+是 \(\mathbf{A}[(\mathbf{X}_i)_{i\in I}]\) 中的非零元素；则存在 \(\nu_0\in \mathbf{N}^{(I)}\) 使得 \(\alpha_{\nu_0}\neq 0\) ，以及一个 \(k\) -线性形式 \(\varphi\) （ \(\mathbf{A}\) 上的）使得 \(\varphi (\alpha_{\nu_0})\neq 0\) 。设 \(g = \sum_{\nu \in \mathbf{N}^{(I)}}\varphi (\alpha_{\nu})\mathbf{X}^{\nu}\in k[(\mathbf{X}_i)_{i\in I}]\) ；我们有 \(g\neq 0\) ，因此存在 \(\mathbf{x}\in k^{\mathrm{I}}\) 使得
+
+\[
+g (\mathbf {x}) \neq 0
+\]
+
+\[
+\varphi (f (\mathbf {x})) = g (\mathbf {x}) \neq 0
+\]
+
+\[
+f (\mathbf {x}) \neq 0
+\]
+
+当 A 是无限整环，或当 A 是无限域上的代数时，我们通常将 f 与 \(\tilde{f}\) 等同。
+
+假设 A 是有限的，并令 \(f(X) = \prod_{\alpha \in A} (X - \alpha)\) ，则 \(f \neq 0\) ，但 \(\tilde{f} = 0\) 。其他例子见 IV，第 88 页，习题 7 和 8。
+
+定理 2（代数恒等式延拓原理）。--- 假设 A 是无限整环。设 \(g_1, \ldots, g_m\) , \(f\) 为 \(\mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) 的元素，并假设以下假设成立：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(g_{1} \neq 0, \ldots, g_{m} \neq 0\) ;
+\item
+  对所有 \(\mathbf{x} \in \mathbf{A}^{I}\) （满足 \(g_1(\mathbf{x}) \neq 0, \ldots, g_m(\mathbf{x}) \neq 0\) ），有 \(f(\mathbf{x}) = 0\) 。则 \(f = 0\) 。
+\end{enumerate}
+
+因为如果 \(f \neq 0\) ，我们有 \(fg_1 \ldots g_m \neq 0\) （IV，第 9 页，命题 8），因此存在 \(\mathbf{x} \in \mathbf{A}^{I}\) 使得 \(f(\mathbf{x})g_1(\mathbf{x}) \ldots g_m(\mathbf{x}) \neq 0\) （IV，第 18 页，推论 2），这与假设矛盾。
+
+附释。--- 设 A 是整环且 \(f \in \mathbf{A}[(\mathbf{X}_i)_{i \in I}]\) 。定理 2 提供了证明 f = 0 的一个便捷方法。只需考虑一个以 A 为子环的无限整环 E；如果我们能证明 \(f((x_i)) = 0\) 对所有 \((x_i) \in \mathrm{E}^{\mathrm{I}}\) 成立（甚至仅对 \((x_i) \in \mathrm{E}^{\mathrm{I}}\) 中那些使有限个给定的非零多项式不消失的点成立），那么就可以推出 f = 0。如果 A 本身不是无限的，例如可以取 E 为环 A{[}X{]} 或其分式域。
+
+一旦我们证明了关系式 \(f = 0\) ，我们显然可以推断出 \(f((y_i)) = 0\) （对所有 \((y_i) \in \mathbf{F}^{I}\) ），其中 \(\mathbf{F}\) 是任意一个含单位元的结合且交换的 \(\mathbf{A}\) -代数；特别地， \(\mathbf{F}\) 可以是有限的或非整环的。
+
+换言之，恒等式 \(f((x_{i})) = 0\) （当 \(x_{i}\) 遍历一个以 A 为子环的无限整环时，且可带有如下限制： \(g_{k}((x_{i})) \neq 0\) （对 \(1 \leqslant k \leqslant m\) ，其中 \(g_{k}\) 是非零多项式））的证明，蕴含当 \(x_{i}\) 遍历任意含单位元的结合交换 A-代数时的同一恒等式。
+
+特别地，设 \(f \in \mathbf{Z}[(\mathbf{X}_i)_{i \in I}]\) 。若 \(f((x_i)) = 0\) （当 \(x_i\) 遍历 \(\mathbf{Z}\) 时，可带有限制： \(g_k((x_i)) \neq 0\) （对 \(1 \leqslant k \leqslant m\) ，其中 \(g_k\) 是 \(\mathbf{Z}[(\mathbf{X}_i)]\) 的非零元素）），则当 \(x_i\) 遍历任意交换环时，同一恒等式成立。
+
+\section{有理分式}
+
+\subsection{有理分式的定义}
+
+定义 1. --- 设 K 是一个交换域，I 是一个集合。整环 \(\mathrm{K}[(\mathrm{X}_{i})_{i\in I}]\) 的分式域（I，第 116 页）记作 \(\mathrm{K}((\mathrm{X}_{i})_{i\in I})\) 或 \(\mathrm{K}(\mathrm{X}_{i})_{i\in I}\) 。其元素称为系数在 K 中的未定元 \(X_{i}\) 的有理分式。
+
+对于 \(I = \{1, 2, \dots, n\}\) ，我们用 \(K(X_1, X_2, \dots, X_n)\) 代替 \(K((X_i)_{i \in I})\) 。
+
+设 A 是一个整环，K 是其分式域。环 \(\mathbf{A}[(\mathbf{X}_{i})_{i\in I}]\) 可以与 \(\mathbf{K}[(\mathbf{X}_{i})_{i\in I}]\) 的一个子环等同，从而也与 \(\mathbf{K}((\mathbf{X}_{i})_{i\in I})\) 的一个子环等同。对于每个 \(f\in\mathbf{K}[(\mathbf{X}_{i})_{i\in I}]\) ，存在 A 的一个非零元素 \(\alpha\) ，使得 \(\alpha f\in\mathbf{A}[(\mathbf{X}_{i})_{i\in I}]\) 。因此 \(\mathbf{K}((\mathbf{X}_{i})_{i\in I})\) 的每个元素都可以写成 u/v 的形式，其中 \(u,v\in\mathbf{A}[(\mathbf{X}_{i})_{i\in I}],v\neq0\) 。这样， \(\mathbf{K}((\mathbf{X}_{i})_{i\in I})\) 就可以与 \(\mathbf{A}[(\mathbf{X}_{i})_{i\in I}]\) 的分式域等同。
+
+现在设 K 是一个交换域，I 是一个集合，且 \(J \subset I\) 。令 \(\mathbf{B} = \mathbf{K}[(\mathbf{X}_i)_{i \in J}]\) ，则 \(\mathbf{K}[(\mathbf{X}_i)_{i \in I}] = \mathbf{B}[(\mathbf{X}_i)_{i \in I-J}]\) ，并且根据上述内容， \(\mathbf{K}((\mathbf{X}_i)_{i \in I})\) 可以与 \(\mathbf{K}'((\mathbf{X}_i)_{i \in I-J})\) 等同，其中 \(\mathbf{K}' = \mathbf{K}((\mathbf{X}_i)_{i \in J})\) 。
+
+\subsection{次数}
+
+设 K 为一个交换域。对于 \(\mathrm{K}((\mathbf{X}_{i})_{i\in I})\) 的每个元素 r，存在 u、 \(v\in\mathrm{K}[(\mathbf{X}_{i})_{i\in I}]\) 使得 \(v\neq0\) 且 \(r=\frac{u}{v}\) 。关系式 \(\frac{u}{v}=\frac{u_{1}}{v_{1}}\) （其中 \(v\neq0\) , \(v_{1}\neq0\) ）等价于 \(uv_{1}=vu_{1}\) ；如果 \(r\neq0\) ，我们有 \(u\neq0\) 且 \(u_{1}\neq0\) ，因此 \(\deg u+\deg v_{1}=\deg v+\deg u_{1}\) （IV，第 9 页），或者也可以写成 \(\deg u-\deg v=\deg u_{1}-\deg v_{1}\) 。于是有理整数 \(\deg u-\deg v\) 仅依赖于 r；我们称之为 r 的次数，或 r 的总次数，并记作 \(\deg r\) 。我们约定写 \(\deg0=-\infty\) 。若 \(J\subset I\) ，我们同样可以定义关于 \(X_{j}\) （指标 \(j\in J\) ）的次数。当 r 是多项式时，这些概念与 IV 第 2 页所定义的一致。
+
+命题 1. --- 设 r, s 为两个有理分式。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  如果 \(\deg r \neq \deg s\) ，我们有
+\end{enumerate}
+
+\[
+r + s \neq 0 \quad a n d \quad \deg (r + s) = \sup (\deg r, \deg s).
+\]
+
+如果 \(\deg r = \deg s\) ，我们有 \(\deg (r + s) \leqslant \deg r\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们有 \(\deg(rs) = \deg r + \deg s\) 。
+\end{enumerate}
+
+我们可以限于 \(r\) 与 \(s\) 都非零的情形。
+
+我们写 \(r = \frac{u}{v}\) , \(s = \frac{w}{z}\) ，其中 \(u, v, w, z\) 是非零多项式。我们有 \(rs = \frac{uw}{vz}\) ，因此
+
+\[
+\deg (r s) = \deg (u w) - \deg (v z) = \deg u - \deg v + \deg w - \deg z = \quad = \deg r + \deg s.
+\]
+
+另一方面，我们有 \(r + s = \frac{uz + vw}{vz}\) 。假设 \(\deg r \neq \deg s\) ，换言之 \(\deg u + \deg z \neq \deg w + \deg v\) 。则 \(uz + wv \neq 0\) ，并且
+
+\[
+\begin{array}{r l} \deg (r + s) & = \deg (u z + w v) - \deg (v z) \\ & = \sup (\deg (u z), \deg (w v)) - \deg (v z) \\ & = \sup (\deg (u z) - \deg (v z), \deg (w v) - \deg (v z)) \\ & = \sup (\deg r, \deg s). \end{array}
+\]
+
+假设 \(\deg r = \deg s\) ，即 \(\deg u + \deg z = \deg w + \deg v\) 。若 \(r + s \neq 0\) ，则我们有
+
+\[
+\begin{array}{r l} \deg (r + s) & = \deg (u z + w v) - \deg (v z) \\ & \leqslant \deg (u z) - \deg (v z) = \deg r. \end{array}
+\]
+
+* 因此，映射 \(r \mapsto -\deg r\) 是域 \(K((X_i)_{i \in I})\) 上的一个离散赋值。*
+
+\subsection{替换}
+
+设 K 是一个交换域，E 是一个含单位元的结合 K-代数， \(\mathbf{x} = (x_i)_{i \in I}\) 是 E 中两两可交换的元素的一个族。设 \(\mathbf{B} = \mathbf{K}[(\mathbf{X}_i)_{i \in I}]\) ，并设 \(S_x\) 为所有非零 \(v \in B\) （使 \(v(\mathbf{x})\) 在 E 中可逆者）组成的集合。设 \(u \in B\) , \(v \in S_x\) 且 \(f = \frac{u}{v} \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) 。元素 \(u(\mathbf{x}) v(\mathbf{x})^{-1} = v(\mathbf{x})^{-1} u(\mathbf{x})\) 在 E 中有定义；此外，如果 \(u_1\) , \(v_1\) 是两个多项式，使得 \(f = \frac{u_1}{v_1}\) 且 \(v_1 \in S_x\) ，则 \(uv_1 = vu_1\) ，因此 \(u(\mathbf{x}) v_1(\mathbf{x}) = v(\mathbf{x}) u_1(\mathbf{x})\) ，从而
+
+\[
+u (\mathbf {x}) v (\mathbf {x}) ^ {- 1} = u _ {1} (\mathbf {x}) v _ {1} (\mathbf {x}) ^ {- 1}.
+\]
+
+设 \(f \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) 。如果至少存在一对 \((u, v)\) 使得 \(f = \frac{u}{v}\) 且 \(v \in S_x\) ，我们就说 \(x\) 在 \(f\) 中可代入；元素 \(u(x) v(x)^{-1}\) （它仅依赖于 \(f\) 与 \(x\) ）这时记作 \(f(x)\) 或 \(f((x_i))\) 或 \(f((x_i)_{i \in I})\) 。
+
+命题 2. --- 设 K 是一个交换域，E 是一个含单位元的结合 K-代数，且 \(\mathbf{x} = (x_i)_{i \in I}\) 是 E 中两两可交换的元素的一个族。集合 \(\mathbf{S}_{\mathbf{x}}^{-1}\mathbf{B}\) 由所有 \(f \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) （ \(\mathbf{x}\) 在 \(f\) 中可代入者）组成，它是 \(\mathbf{K}((\mathbf{X}_i)_{i \in I})\) 的一个 K-子代数。映射 \(f \mapsto f(\mathbf{x})\) 是一个保单位同态 \(\varphi\) （ \(\mathbf{S}_{\mathbf{x}}^{-1}\mathbf{B}\) 到 E 中的）。像 \(\varphi(\mathbf{S}_{\mathbf{x}}^{-1}\mathbf{B})\) 是所有 \(yz^{-1}\) （其中 \(y\) 遍历含单位元子代数 \(\mathbf{K}[\mathbf{x}]_E\) （ E 的、由族 \(\mathbf{x}\) 生成的），而 \(z\) 遍历 \(\mathbf{K}[\mathbf{x}]_E\) 的所有可逆元素）组成的集合。
+
+设 \(f_{1} = \frac{u_{1}}{v_{1}}\) , \(f_{2} = \frac{u_{2}}{v_{2}}\) 是 \(K((X_{i})_{i\in I})\) 的两个元素，满足 \(v_{1}, v_{2} \in S_{x}\) 。我们有 \(f_{1} + f_{2} = \frac{u_{1}v_{2} + u_{2}v_{1}}{v_{1}v_{2}}\) , \(f_{1}f_{2} = \frac{u_{1}u_{2}}{v_{1}v_{2}}\) 且 \(v_{1}, v_{2} \in S_{x}\) 。因此 \(S_{x}^{-1}B\) 是 \(K((X_{i})_{i\in I})\) 的一个 K-子代数。命题的其余部分是显然的。
+
+推论。--- 设 L 是一个交换域，K 是 L 的一个子域， \(\mathbf{x} = (x_i)_{i \in I}\) 是 L 的元素的一个族，M 是由这些 \(x_i\) 组成的集合，U 是所有使 x 在 f 中可代入的 \(f \in \mathrm{K}((\mathrm{X}_i)_{i \in I})\) 组成的集合， \(\varphi\) 是 U 到 L 中的同态 \(f \mapsto f(\mathbf{x})\) 。则 \(\varphi(\mathrm{U})\) 是由 \(K \cup M\) 生成的 L 的子域。
+
+设 \(L'\) 为由 \(K \cup M\) 生成的 L 的子域。我们有
+
+\[
+\mathbf {K} \cup \mathbf {M} \subset \varphi (\mathbf {U}) \subset \mathbf {L} ^ {\prime}
+\]
+
+且 \(\varphi(\mathbf{U})\) 是 \(\mathbf{L}\) 的一个子环。现在命题 2 蕴含 \(\varphi(\mathbf{U})\) 是 \(\mathbf{L}\) 的一个子域，从而 \(\varphi(\mathbf{U}) = \mathbf{L}'\) 。
+
+设 \(f \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) ，并设 \((g_i)_{i \in I}\) 是 \(\mathbf{K}((\mathbf{Y}_l)_{l \in L})\) 的元素的一个族。若 \((g_{i})\) 在 f 中可代入，则 \(f((g_{i}))\) 是 \(\mathbf{K}((\mathbf{Y}_{l})_{l\in L})\) 的一个元素。特别地， \((\mathbf{X}_{i})_{i\in I}\) 在 f 中可代入，且 \(f=f((\mathbf{X}_{i})_{i\in I})\) 。
+
+命题 3. --- 设 E 是 K 上的一个结合、交换、含单位元且非零的代数。设 \(f \in \mathbf{K}((\mathbf{X}_i)_{i \in \mathbb{I}})\) ，且对每个 \(i \in \mathbb{I}\) ，设 \(g_i \in \mathbf{K}((\mathbf{Y}_l)_{l \in \mathbb{I}})\) 。给定 E 的元素的一个族 \(\mathbf{y} = (y_l)_{l \in \mathbb{L}}\) ，假设 \(\mathbf{y}\) 可代入到每个 \(g_i\) 中，且 \((g_i(\mathbf{y}))_{i \in \mathbb{I}}\) 在 \(f\) 中可代入。那么：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \((g_{i})_{i\in I}\) 在 \(f\) 中可代入；
+\item
+  若以 \(h\) 表示元素 \(f((g_i))\) （ \(\mathbf{K}((\mathbf{Y}_l)_{l \in L})\) 的），则 \(\mathbf{y}\) 在 \(h\) 中可代入，且 \(h(\mathbf{y}) = f((g_i(\mathbf{y})))\) 。
+\end{enumerate}
+
+我们可以取 I 为有限集。根据假设，对每个 \(i \in I\) , \(g_i\) 可以写成 \(p_i/q_i\) 的形式，其中 \(p_i\) , \(q_i \in K[(Y_l)_{l \in L}]\) 且 \(q_i(\mathbf{y})\) 在 E 中可逆。同样， \(f\) 可以写成 \(u/v\) ，其中 \(u\) , \(v \in K[(X_i)_{i \in I}]\) 且 \(v((g_i(\mathbf{y})))\) 可逆。设 \(m = \sup(\deg u, \deg v)\) ，并设 \(w = \prod_{i \in I} q_i \in K[(Y_l)_{l \in L}]\) , \(u_1 = u((g_i))w^m\) , \(v_1 = v((g_i))w^m\) 。多项式 \(u\) 是单项式 \(\prod_{i \in I} X_i^{\nu_i}\) （满足 \(\sum_{i \in I} \nu_i \leqslant m\) ）的 K-线性组合。我们有 \(w^m \prod_{i \in I} g_i^{\nu_i} = w^m\left(\prod_{i \in I} p_i^{\nu_i}\right)\left(\prod_{i \in I} q_i^{\nu_i}\right)^{-1} \in K[(Y_l)_{l \in L}]\) （由 \(m\) 的取法）。因此 \(u_1 \in K[(Y_l)_{l \in L}]\) ，类似地 \(v_1 \in K[(Y_l)_{l \in L}]\) 。此外， \(v_1(\mathbf{y}) = (w(\mathbf{y}))^m v((g_i(\mathbf{y})))\) 可逆。因此 \(v_1 \neq 0\) （因为 \(E \neq 0\) ），从而 \(v((g_i)) \neq 0\) 。于是族 \((g_i)\) 在 \(f\) 中可代入。此外，我们有 \(f((g_i)) = u_1/v_1\) ，因此 \(\mathbf{y}\) 在 \(h = f((g_i))\) 中可代入，且 \(h(\mathbf{y}) = u_1(\mathbf{y})/v_1(\mathbf{y}) = u((g_i(\mathbf{y})))/v((g_i(\mathbf{y}))) = f((g_i(\mathbf{y})))\) 。
+
+设 K 是一个交换域，E 是一个交换、结合且含单位元的 K-代数，并设 \(f \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) 。设 \(T_f\) 是所有 \(\mathbf{x} = (x_i)_{i \in I} \in E^{I}\) （在 \(f\) 中可代入者）组成的集合。映射 \(\mathbf{x} \mapsto f(\mathbf{x})\) （ \(T_f\) 到 E 中的）称为与 \(f\) （以及 E）相伴的有理函数；我们有时将它记作 \(\tilde{f}\) 。若 \(g \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) ，我们有 \(T_f \cap T_g \subset T_{f + g}\) , \(T_f \cap T_g \subset T_{fg}\) ，因此与 \(f + g\) （相应地 \(fg\) ）相伴的有理函数定义在 \(T_f \cap T_g\) 上，并且在该集合上与 \(\tilde{f} + \tilde{g}\) （相应地 \(\tilde{f}\tilde{g}\) ）取相同的值。设 \(T_f'\) 为所有 \(\mathbf{x} \in T_f\) （使 \(f(\mathbf{x})\) 可逆者）组成的集合；若 \(\mathbf{x} \in T_f'\) ，则 \(\mathbf{x}\) 在 \(1/f\) 中可代入，且与 \(1/f\) 相伴的有理函数在 \(\mathbf{x}\) 处取值 \(f(\mathbf{x})^{-1}\) 。
+
+如果 K 是一个无限交换域， \(f \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) , \(g \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) ，且 \(\tilde{f}\) , \(\tilde{g}\) 是与 f, g（以及 K）相伴的有理函数，并且如果 \(\tilde{f}(\mathbf{x}) = \tilde{g}(\mathbf{x})\) （对所有 \(x \in T_f \cap T_g\) ），则 f = g。因为如果 f = u/v 且 \(g = u_1 / v_1\) ，其中 u, v, \(u_1\) , \(v_1\) 是多项式，我们有 \(u(\mathbf{x})v_1(\mathbf{x}) = u_1(\mathbf{x})v(\mathbf{x})\) （对所有满足 \(v(x)v_1(x) \neq 0\) 的 x），因此 \(uv_1 = u_1v\) （IV，第 18 页，定理 2）。因此映射 \(f \mapsto \tilde{f}\) 是单射的，我们将经常把 f 与 \(\tilde{f}\) 等同。
+
+* 利用 \(\mathbf{K}[(\mathbf{X}_i)_{i\in I}]\) 的唯一因子分解性（交换代数，第七章，第 3 节，第 502 页及定理 2 的推论，第 506 页），容易证明以下结论：对每一个 \(f\in \mathbf{K}((\mathbf{X}_i)_{i\in I})\) ，存在 \(u,v\in \mathbf{K}[(\mathbf{X}_i)_{i\in I}]\) 使得：
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  \(f = u / v\)
+\item
+  \(\mathbf{x} \in \mathbf{K}^{I}\) 在 \(f\) 中可代入的充分必要条件是 \(v(\mathbf{x}) \neq 0\) 。
+\end{enumerate}
+
+\subsection{微分与导子}
+
+设 K 为交换域。根据 III，第 558 页，命题 5， \(\mathbf{K}[(\mathbf{X}_i)_{i\in I}]\) 的每个导子 D 都以唯一方式延拓为导子 \(\bar{\mathbf{D}}\) （ \(\mathbf{K}((\mathbf{X}_i)_{i\in I})\) 的）。若 D, D' 是 \(\mathbf{K}[(\mathbf{X}_i)_{i\in I}]\) 的可交换导子，则括号 \([\mathbf{D},\mathbf{D}'] = \mathbf{DD}' - \mathbf{D}'\mathbf{D}\) 为零，因此 \([\bar{\mathbf{D}},\bar{\mathbf{D}}']\) （它是 \(\mathbf{K}((\mathbf{X}_i)_{i\in I})\) 的、延拓了 {[}D, D'{]} 的导子）为零；换言之， \(\bar{\mathbf{D}}\) 与 \(\bar{\mathbf{D}}'\) 是可交换的。特别地，导子 D\_i（IV，第 6 页）延拓为 \(\mathbf{K}((\mathbf{X}_i)_{i\in I})\) 的导子，仍记作 D\_i，且它们两两可交换。如果 \(f\in \mathbf{K}((\mathbf{X}_i)_{i\in I})\) , D\_if 也写作 D\_x\_i f 或 \(\frac{\partial f}{\partial\mathbf{X}_i}\) 或 \(f_{\mathbf{x}_i}'\) 。当只有一个未定元 X 时，使用记号 Df， \(\frac{df}{d\mathbf{X}}\) , \(f'\) 。
+
+设 \(\mathbf{B} = \mathbf{K}[(\mathbf{X}_i)_{i \in I}]\) , \(\mathbf{C} = \mathbf{K}((\mathbf{X}_i)_{i \in I})\) 。根据 III，第 574 页，命题 23，典范映射
+
+\[
+\Omega_ {\mathrm{K}} (\mathrm{B}) \otimes_ {\mathrm{B}} \mathrm{C} \rightarrow \Omega_ {\mathrm{K}} (\mathrm{C})
+\]
+
+是向量 C-空间的一个同构。考虑到 III，第 570 页，我们看到向量 C-空间 \(\Omega_{\mathbf{K}}(\mathbf{C})\) 以族 \((d\mathbf{X}_i)_{i\in I}\) （由 \(\mathbf{X}_i\) 的微分组成）为一组基。设 \(\partial_i\) 是指标 \(i\) 的坐标形式（在 \(\Omega_{\mathbf{K}}(\mathbf{C})\) 上、相对于该基）。则映射 \(u\mapsto \langle \partial_i,du\rangle\) （C 到自身的）是 C 的一个导子，它把 \(\mathbf{X}_i\) 映到 1 ，把 \(\mathbf{X}_j\) 映到 0 （对 \(j\neq i\) ），因此等于 \(\mathrm{D}_i\) ；换言之，我们有
+
+\[
+d u = \sum_ {i \in I} \left(\mathrm{D} _ {i} u\right) d \mathrm{X} _ {i}\tag{1}
+\]
+
+对每个 \(u \in \mathbf{C}\) 成立。若 \(\mathbf{I}\) 是有限的，则 \((\mathrm{D}_i)_{i \in \mathbf{I}}\) 是 \(\mathbf{C}\) 的导子构成的向量 \(\mathbf{C}\) -空间的一组基。
+
+命题 4. --- 设 E 是一个结合、交换且含单位元的 K-代数， \(\mathbf{x} = (x_i)_{i \in I}\) 是 E 的元素的一个族，且 \(f \in \mathbf{K}((\mathbf{X}_i)_{i \in I})\) 。假设 \(\mathbf{x}\) 在 \(f\) 中可代入，且 \(y = f(\mathbf{x})\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对每个导子 \(\Delta\) （ \(\mathbf{K}((\mathbf{X}_i)_{i\in I})\) 的、把 \(\mathbf{K}[(\mathbf{X}_i)_{i\in I}]\) 映入自身的）， \(\mathbf{x}\) 在 \(\Delta f\) 中可代入。
+\item
+  对于E到某个E-模的每个导子D，我们有
+\end{enumerate}
+
+\[
+\mathrm{D} y = \sum_ {i \in I} (\mathrm{D} _ {i} f) (\mathbf {x}) \cdot \mathrm{D} x _ {i}.
+\]
+
+设 \(f = \frac{u}{v}\) ，其中 \(u, v \in \mathbf{K}[(\mathbf{X}_i)_{i \in I}]\) 且 \(v(\mathbf{x})\) 在 E 中可逆。设 \(\Delta\) 是 \(\mathbf{K}((\mathbf{X}_i)_{i \in I})\) 的一个把 \(\mathbf{K}[(\mathbf{X}_i)_{i \in I}]\) 映入自身的导子。我们有
+
+\[
+\Delta f = \frac {(\Delta u) v - u (\Delta v)}{v ^ {2}}
+\]
+
+且 \(v^2(\mathbf{x})\) 可逆，因此 \(\mathbf{x}\) 在 \(\Delta f\) 中可代入。其次令 \(r = u(\mathbf{x})\) , \(s = v(\mathbf{x})\) ；我们有 \(y = s^{-1}r\) ，因此对 E 到某个 E-模的每个导子 D，我们有
+
+\[
+\begin{array}{l} \mathrm{D} y = s ^ {- 2} (s (\mathrm{D} r) - r (\mathrm{D} s)) \\ = s ^ {- 2} \left(s \sum_ {i \in I} (\mathrm{D} _ {i} u) (\mathbf {x}) \cdot \mathrm{D} x _ {i} - r \sum_ {i \in I} (\mathrm{D} _ {i} v) (\mathbf {x}) \cdot \mathrm{D} x _ {i}\right) \end{array}
+\]
+
+（据 IV，第 6 页，命题 4）。于是 \(Dy = \sum_{i \in I} w_i \cdot Dx_i\) ，其中
+
+\[
+w _ {i} = v (\mathbf {x}) ^ {- 2} (v (\mathbf {x}) \left(\mathrm{D} _ {i} u\right) (\mathbf {x}) - u (\mathbf {x}) \left(\mathrm{D} _ {i} v\right) (\mathbf {x})) = \left(\mathrm{D} _ {i} f\right) (\mathbf {x}).
+\]
+
+\section{形式幂级数}
+
+\subsection{形式幂级数的定义。阶}
+
+设 I 为一个集合。我们回顾（III，第 454 与 456 页），A 上的幺半群 \(\mathbf{N}^{(I)}\) 的总体代数称为关于未定元 \(\mathbf{X}_i\) ( \(i \in I\) )（或在未定元 \(\mathbf{X}_i\) 中）的、系数在 A 中的形式幂级数代数。它记作 \(\mathbf{A}[[\mathbf{X}_i]]_{i \in I}\) 或 \(\mathbf{A}[[(\mathbf{X}_i)_{i \in I}]]\) 或也记作 \(\mathbf{A}[[\mathbf{X}]]\) ，这时以 \(\mathbf{X}\) 表示族 \((\mathbf{X}_i)_{i \in I}\) ：在本节中我们将主要使用记号 \(\mathbf{A}[[I]]\) 。有时方便的是，在 \(\mathbf{A}[[I]]\) 中把 I 的元素 \(i\) 的典范像用异于 \(\mathbf{X}_i\) 的符号来表示，例如 \(\mathbf{Y}_i\) , \(\mathbf{Z}_i\) , \(\mathrm{T}_i\) , \ldots；这种情形下所用的约定与多项式情形的约定类似（IV，第 1 页）。代数 \(\mathbf{A}[[I]]\) 这时记作 \(\mathbf{A}[[\mathbf{Y}_i]]_{i \in I}\) ，或 \(\mathbf{A}[[\mathbf{Y}]]\) 等等。
+
+当 I 是含 p 个元素的有限集合时，我们也说 A{[}{[}I{]}{]} 是 p 个未定元的形式幂级数代数。对固定的 p，这些代数都是同构的。1, 2, \ldots{} 个未定元的形式幂级数代数也将记作 A{[}{[}X{]}{]}, A{[}{[}U, V{]}{]}, \ldots，而不具体指出指标集 I。
+
+形式幂级数 \(u\) 通常写作 \(u = \sum_{\nu \in \mathbb{N}^{(I)}} \alpha_{\nu} X^{\nu}\) （参见 IV，第 1 页）。
+
+这些 \(\alpha_{\nu}\) 是 \(u\) 的系数；它们之中可以有无限多个 \(\neq 0\) 。这些 \(\alpha_{\nu}X^{\nu}\) 称为 \(u\) 的项； \(u\) 是多项式的充分必要条件是 \(u\) 只有有限个 \(\neq 0\) 的项。这些项 \(\alpha_{\nu}X^{\nu}\) （满足 \(|\nu|=p\) ）称为总次数为 p 的项。形式幂级数 \(u_{p}=\sum_{|\nu|=p}\alpha_{\nu}X^{\nu}\) 称为 u 的 p 次齐次分量（当 I 有限时它是一个多项式）； \(u_{0}\) 等同于 A 的一个元素，也称为 u 的常数项。我们说 u 是 p 次齐次的，如果 \(u = u_{p}\) 。若 u， \(v \in A[[I]]\) 且 w = uv，我们有
+
+\[
+w _ {p} = \sum_ {q + r = p} u _ {q} v _ {r}\tag{1}
+\]
+
+对每个整数 \(p \geqslant 0\) 成立。
+
+我们回顾（III，第 456 页），阶 \(\omega(u)\) （形式幂级数 \(u \neq 0\) 的）是最小整数 \(p\) （满足 \(u_p \neq 0\) ）。我们约定在 \(\mathbf{Z}\) 中添加一个记作 \(\infty\) 的元素，并按下列约定把 \(\mathbf{Z}\) 上的序关系与加法延拓到 \(\mathbf{Z} \cup \{\infty\}\) ：
+
+\[
+n <   \infty , \quad \infty + \infty = \infty , \quad \infty + n = n + \infty = \infty
+\]
+
+对每个 \(n \in \mathbf{Z}\) ；我们还设 \(\omega(0) = \infty\) 。在这些约定下，我们有关系式
+
+\[
+\begin{array}{c} \omega (u + v) \geqslant \inf (\omega (u), \omega (v)), \\ \omega (u + v) = \inf (\omega (u), \omega (v)) \quad \text { if } \quad \omega (u) \neq \omega (v), \\ \omega (u v) \geqslant \omega (u) + \omega (v), \end{array}
+\]
+
+（对任意形式幂级数 \(u\) 与 \(v\) （在 A{[}{[}I{]}{]} 中）成立。）
+
+我们回顾（III，第 457 页），对任意子集 \(J\) （ \(I\) 的），我们把 \(A[[I]]\) 与 \(A[[I - J]][[J]]\) 等同，这使我们能够定义阶 \(\omega_{j}(u)\) （形式幂级数相对于 \(X_{j}\) ( \(j \in J\) ) 的）、 \(u\) 相对于 \(X_{j}\) ( \(j \in J\) ) 的齐次分量等等。
+
+设 \(\varphi\) 是 A 到环 B 的一个同态。我们把 \(\varphi\) 延拓为同态 \(\overline{\varphi}\) （ A{[}{[}I{]}{]} 到 B{[}{[}I{]}{]} 的），其方式是让每个形式幂级数 \(u = \sum_{\nu} \alpha_{\nu} X^{\nu}\) 对应
+
+到形式幂级数 \(\sum_{\nu} \varphi(\alpha_{\nu}) X^{\nu}\) ；我们说后者是通过
+
+将 \(\varphi\) 应用到形式幂级数 \(u\) 的系数上而得到的。我们有时用 \({}^{\varphi}u\) 代替 \(\bar{\varphi}(u)\) 。
+
+特别地，如果 A 是 B 的子环且 \(\varphi\) 是 A 到 B 的典范单射，则同态 \(\bar{\varphi}\) （ A{[}{[}I{]}{]} 到 B{[}{[}I{]}{]} 的）是单射；我们通常把 A{[}{[}I{]}{]} 与 B{[}{[}I{]}{]} 的一个子环等同起来（借助 \(\bar{\varphi}\) ）。
+
+\subsection{形式幂级数集合上的拓扑。可和族}
+
+根据定义，A{[}{[}I{]}{]} 无非就是乘积集合 \(\mathbf{A}^{\mathbf{N}^{(I)}}\) 。除非另有明确说明，我们将赋予 A 离散拓扑，并赋予 A{[}{[}I{]}{]} 乘积拓扑（一般拓扑学，I，第 31 页及以下），我们称之为典范拓扑。赋有加法与离散拓扑的 A 是一个分离且完备的拓扑群；因此就加法而言，A{[}{[}I{]}{]} 是一个分离且完备的拓扑群（一般拓扑学，III，第 238 与 242 页，以及一般拓扑学，II，第 187 页）。此外，多项式代数 A{[}(X \(_{i}\) ) \(_{i\in I}\) {]} 在 A{[}{[}I{]}{]} 中稠密（一般拓扑学，III，第 238 页，命题 25），因此我们可以把 A{[}{[}I{]}{]} 视为 A{[}(X \(_{i}\) ) \(_{i\in I}\) {]} 的完备化。
+
+对每个 \(\beta \in \mathbf{N}^{(I)}\) ，令 \(S_{\beta}\) 为多重指标 \(\nu\) （满足 \(\nu \leqslant \beta\) ）组成的集合，并令 \(\alpha_{\beta}\) 为由所有形式幂级数 \(u = \sum_{\nu} \alpha_{\nu} X^{\nu}\) （满足 \(\alpha_{\nu} = 0\) ，对
+
+\(\nu \in S_{\beta}\) ）组成的集合。显然 \(S_{\beta}\) 是 \(\mathbf{N}^{(I)}\) 的有限子集，而 \(\mathbf{N}^{(I)}\) 的每个有限子集都包含于形如 \(S_{\beta}\) 的集合。由此可见，族 \((\mathfrak{a}_{\beta})_{\beta \in \mathbf{N}^{(I)}}\) 是 A{[}{[}I{]}{]} 中 0 的一个基本邻域系。集合 \(\mathfrak{a}_{\beta}\) 是 A{[}{[}I{]}{]} 中的理想，因此（一般拓扑学，III，第 275 页）A{[}{[}I{]}{]} 是拓扑环。
+
+引理 1. --- 设 L 是一个无限集， \((u_{\lambda})_{\lambda \in L}\) 是 A{[}{[}I{]}{]} 的元素的一个族，并令 \(u_{\lambda} = \sum_{\nu} \alpha_{\lambda, \nu} X^{\nu}\) （对 \(\lambda \in L\) ）。则以下条件是
+
+等价的：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  族 \((u_{\lambda})_{\lambda \in L}\) 在 A{[}{[}I{]}{]} 中是可和的（一般拓扑学，III，第 262 页）。
+\item
+  我们有 \(\lim u_{\lambda} = 0\) ，这是沿 \(L\) 的有限子集的补集组成的滤子取的极限。
+\item
+  对每个 \(\nu \in \mathbf{N}^{(I)}\) ，我们有 \(\alpha_{\lambda, \nu} = 0\) ，除去有限个指标 \(\lambda \in L\) 外。
+\end{enumerate}
+
+当这些条件成立时，级数 \(u = \sum_{\lambda \in L} u_{\lambda}\) 等于 \(\sum_{\nu} \alpha_{\nu} X^{\nu}\) ，其中 \(\alpha_{\nu} = \sum_{\lambda \in L} \alpha_{\lambda, \nu}\) （对每个 \(\nu \in \mathbf{N}^{(I)}\) ）。
+
+（i）与（ii）的等价性由一般拓扑学 III，第 263 页，推论 2 得出。（ii）与（iii）的等价性由乘积空间中极限的性质得出（一般拓扑学，I，第 55 页，推论 1）。
+
+最后一个断言由《一般拓扑学》III，第266页，命题4推出。
+
+下面给出一些可和族的例子。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(u \in \mathbf{A}[[\mathrm{I}]]\) ，并令 \(\alpha_{\nu}\) 是 \(\mathbf{X}^{\nu}\) 在 \(u\) 中的系数。则族 \((\alpha_{\nu}\mathbf{X}^{\nu})_{\nu \in \mathbb{N}^{(I)}}\) 是可和的，其和为 \(u\) （这证明了写 \(u = \sum_{\nu} \alpha_{\nu}\mathbf{X}^{\nu}\) 的合理性）。
+\item
+  设 \(u \in \mathbf{A}[[\mathbf{I}]]\) ；对每个整数 \(p \geqslant 0\) ，令 \(u_p\) 为次数 \(p\) 的齐次分量（ \(u\) 的）。则族 \((u_p)_{p \in \mathbb{N}}\) 是可和的，并且我们有 \(u = \sum_{p \geqslant 0} u_p\) 。
+\item
+  设 \((u_{\lambda})_{\lambda \in L}\) 是 A{[}{[}I{]}{]} 的元素的一个族，并假设对每个整数 \(n \geqslant 0\) ，由所有 \(\lambda \in L\) （满足 \(\omega(u_{\lambda}) < n\) 者）组成的集合是有限的。则族 \((u_{\lambda})_{\lambda \in L}\) 是可和的。
+\end{enumerate}
+
+注记. --- 假设 I 是有限的。对每个整数 \(n \geqslant 0\) ，令 \(\mathbf{b}_n\) 为由所有形式幂级数 \(u \in \mathbf{A}[[\mathbf{I}]]\) （满足 \(\omega(u) \geqslant n\) 者）组成的集合。序列 \((\mathbf{b}_n)_{n \geqslant 0}\) 是 A{[}{[}I{]}{]} 中 0 的一个基本邻域系。因此，由元素 \(u_{\lambda}\) （属于 A{[}{[}I{]}{]}， \(\lambda \in L\) ）组成的族是可和的，当且仅当对每个 \(n \in \mathbb{N}\) ，由所有 \(\lambda \in L\) （满足 \(\omega(u_{\lambda}) < n\) 者）组成的集合是有限的。
+
+命题 1. --- 设 \((u_{\lambda})_{\lambda \in L}\) 与 \((v_{\mu})_{\mu \in M}\) 是 A{[}{[}I{]}{]} 的元素的两个可和族。则族 \((u_{\lambda}v_{\mu})_{(\lambda, \mu) \in L \times M}\) 是可和的，并且我们有
+
+\[
+\sum_ {(\lambda , \mu) \in L \times M} u _ {\lambda} v _ {\mu} = \left(\sum_ {\lambda \in L} u _ {\lambda}\right) \left(\sum_ {\mu \in M} v _ {\mu}\right).\tag{2}
+\]
+
+设 \((\alpha_{\lambda, \nu})_{\nu \in \mathbf{N}^{(I)}}\) （相应地 \((\beta_{\mu, \nu})_{\nu \in \mathbf{N}^{(I)}}\) ）是 \(u_{\lambda}\) （相应地 \(v_{\mu}\) ）的系数族。对每个 \(\nu \in \mathbf{N}^{(I)}\) ，只存在有限多对 \((\nu_1, \nu_2) \in \mathbf{N}^{(I)} \times \mathbf{N}^{(I)}\) 满足 \(\nu_1 + \nu_2 = \nu\) ，因此只有有限多对 \((\lambda, \mu) \in L \times M\) 使得 \(X^{\nu}\) 在 \(u_{\lambda}v_{\mu}\) 中的系数 \(\neq 0\) 。因此族 \((u_{\lambda}v_{\mu})_{(\lambda, \mu) \in L \times M}\) 是可和的。而公式 (2) 由和的结合性得出（一般拓扑学，III，第 265 页，公式 (2)）。
+
+在 A{[}{[}I{]}{]} 中，乘积是一个结合且交换的合成法则。因此我们可以谈论 A{[}{[}I{]}{]} 的元素的可乘族以及一个可乘族的乘积（一般拓扑学，III，第 262 页，注记 3）。
+
+命题 2. --- 设 \((u_{\lambda})_{\lambda \in L}\) 是 A{[}{[}I{]}{]} 的元素的一个可和族。(i) 族 \((1 + u_{\lambda})_{\lambda \in L}\) 是可乘的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathfrak{F}\) 是 L 的所有有限子集组成的集合。对任意 \(\mathbf{M} \in \mathfrak{F}\) ，令 \(u_{\mathbf{M}} = \prod_{\lambda \in \mathbf{M}} u_{\lambda}\) 。则族 \((u_{\mathbf{M}})_{\mathbf{M} \in \mathfrak{F}}\) 是可和的，并且我们有
+\end{enumerate}
+
+\[
+\sum_ {M \in \mathfrak {F}} u _ {M} = \prod_ {\lambda \in L} (1 + u _ {\lambda}).
+\]
+
+按本节开头那样定义理想 \(\mathfrak{a}_{\beta}\) ，并设 \(\beta \in \mathbf{N}^{(I)}\) 。存在一个有限子集 \(L_0\) （ \(L\) 的），使得 \(u_{\lambda} \in \mathfrak{a}_{\beta}\) （对 \(\lambda \notin L_0\) ）。于是对每个 \(M \in \mathfrak{F}\) （满足 \(M \subset L_0\) ），我们有 \(u_M \in \mathfrak{a}_{\beta}\) 。由此可见，族 \((u_M)_{M \in \mathfrak{F}}\) 是可和的。另一方面，对任意有限子集 \(M_0\) （ \(L\) 的），我们有
+
+\[
+\sum_ {M \subset M _ {0}} u _ {M} = \prod_ {\lambda \in M _ {0}} (1 + u _ {\lambda}).
+\]
+
+沿滤过有序集 \(\mathfrak{F}\) 取极限，左端的极限为 \(\sum_{M\in\mathfrak{F}}u_{M}\) 。因此右端的极限也为 \(\sum_{M\in\mathfrak{F}}u_{M}\) ，这就证明了 (i) 与 (ii)
+
+同时。
+
+命题 3. --- 设 \(u = \sum_{\nu} \alpha_{\nu} X^{\nu} \in \mathbf{A}[[\mathbf{I}]]\) ，并设 \(m\) 是一个 \(> 0\) 的整数。对每个 \(n \in \mathbb{N}\) ，令 \((\alpha_{\nu, n})_{\nu \in \mathbb{N}^{(I)}}\) 是 \(u^n\) 的系数族。若 \(\alpha_0^m = 0\) ，则 \(\alpha_{\nu, n} = 0\) （对 \(n \geqslant |\nu| + m\) ）。
+
+设 \(\nu \in \mathbf{N}^{(I)}\) 与 \(n\in \mathbf{N}\) 。我们有
+
+\[
+\alpha_ {\nu , n} = \sum_ {\nu (1) + \dots + \nu (n) = \nu} \alpha_ {\nu (1)} \dots \alpha_ {\nu (n)}.
+\]
+
+如果 \(n \geqslant |\nu| + m\) 且 \(\nu(1) + \cdots + \nu(n) = \nu\) ，我们有 \(|\nu(1)| + \cdots + |\nu(n)| \leqslant n - m\) 。于是 \(\nu(r) = 0\) 对至少 m 个不同的 r 值成立，从而 \(\alpha_{\nu(r)} = \alpha_0\) ；由此推出 \(\alpha_{\nu(1)} \ldots \alpha_{\nu(n)} = 0\) ，从而得到结论。
+
+推论. --- 设 \(u \in \mathbf{A}[[\mathbf{I}]]\) ；那么要使 \(\lim_{n \to \infty} u^n = 0\) 成立，其必要且
+
+充分条件是 \(u\) 的常数项为幂零元。
+
+设 \(\alpha_0\) 是 \(u\) 的常数项。 \(u^n\) 的常数项是 \(\alpha_0^n\) ，因此所述条件是必要的；其充分性由命题 3 得出。

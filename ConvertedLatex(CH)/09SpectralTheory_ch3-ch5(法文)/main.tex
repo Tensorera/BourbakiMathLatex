@@ -1,0 +1,119 @@
+\documentclass[UTF8,12pt,a4paper,oneside]{ctexbook}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont[
+  BoldFont=FandolSong-Bold.otf,
+  ItalicFont=FandolKai-Regular.otf
+]{FandolSong-Regular.otf}
+\setCJKsansfont[
+  BoldFont=FandolHei-Bold.otf
+]{FandolHei-Regular.otf}
+\setCJKmonofont[
+  BoldFont=FandolHei-Bold.otf
+]{FandolHei-Regular.otf}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{newunicodechar}
+\newunicodechar{∅}{\ensuremath{\varnothing}}
+\newunicodechar{ℰ}{\ensuremath{\mathcal{E}}}
+\newunicodechar{ℜ}{\ensuremath{\mathfrak{R}}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∘}{\ensuremath{\circ}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{∨}{\ensuremath{\vee}}
+\newunicodechar{∪}{\ensuremath{\cup}}
+\newunicodechar{⊕}{\ensuremath{\oplus}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+\newunicodechar{⊂}{\ensuremath{\subset}}
+\newunicodechar{∧}{\ensuremath{\wedge}}
+\newunicodechar{⊤}{\ensuremath{\top}}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array}
+\usepackage{xcolor,framed,fancyvrb}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks,unicode,pdfusetitle,bookmarksnumbered]{hyperref}
+\usepackage[open,openlevel=2]{bookmark}
+\doublespacing
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\setlist{itemsep=0.25\baselineskip,topsep=0.25\baselineskip}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\newcommand{\specialchapter}[1]{%
+  \chapter*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}%
+}
+% 印刷的“第 k 节习题”分组：由计数器生成，不手写序号。
+\newcounter{exercisepar}
+\newcommand{\exercisesection}[1]{%
+  \refstepcounter{exercisepar}%
+  \section*{第\theexercisepar 节习题}%
+  \phantomsection
+  \addcontentsline{toc}{section}{第\theexercisepar 节习题}%
+}
+% 历史注记的编号条目（该部分没有 § 层级）。
+\newcounter{histitem}
+\newcommand{\histitem}[1]{%
+  \refstepcounter{histitem}%
+  \section*{\thehistitem.\quad #1}%
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}%
+}
+% 术语索引中的字母分组：仅排版用途，不进入目录。
+\newcommand{\lettergroup}[1]{\par\bigskip\noindent\textbf{#1}\par\nobreak\medskip}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newenvironment{Highlighting}[1][]{}{}
+\newcommand{\NormalTok}[1]{#1\par}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.8\textheight 0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\graphicspath{{images/}}
+\emergencystretch=3em
+\pagestyle{plain}
+\title{谱理论（第3--5章）}
+\author{尼古拉·布尔巴基}
+\date{}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\clearpage
+\frontmatter
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{2}
+\input{chapters/fragment_001}
+\input{chapters/fragment_002}
+\input{chapters/fragment_003}
+\input{chapters/fragment_004}
+\input{chapters/fragment_005}
+\input{chapters/fragment_006}
+\input{chapters/fragment_007}
+\input{chapters/fragment_008}
+\input{chapters/fragment_009}
+\input{chapters/fragment_010}
+\input{chapters/fragment_011}
+\input{chapters/fragment_012}
+\input{chapters/fragment_013}
+\input{chapters/fragment_014}
+\input{chapters/fragment_015}
+\input{chapters/fragment_016}
+\input{chapters/fragment_017}
+\input{chapters/fragment_018}
+\input{chapters/fragment_019}
+\end{document}

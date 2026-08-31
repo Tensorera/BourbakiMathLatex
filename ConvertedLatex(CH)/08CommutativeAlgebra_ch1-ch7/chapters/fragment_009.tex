@@ -1,0 +1,548 @@
+\subsection{形式幂级数系统的合成}
+
+设 A 为一个交换环；称一个系统
+
+\[
+\mathbf {f} = (f _ {1}, \dots , f _ {p}) \in (\mathrm{A} [ [ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {q} ] ]) ^ {p}\tag{8}
+\]
+
+在 \(X_{j}\) 中（ \(1 \leqslant j \leqslant q\) ）、系数在 A 中的形式幂级数系统，如果所有 \(f_{j}\) 都无常数项，则称其无常数项。对于每个形式幂级数系统 (8) 以及每个系统
+
+\[
+\mathbf {g} = (g _ {1}, \dots , g _ {q}) \in (\mathrm{A} [ [ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {r} ] ]) ^ {q}\tag{9}
+\]
+
+由 \(q\) 个无常数项的形式幂级数组成的系统，我们将 \(\mathbf{f} \circ \mathbf{g}\)（或 \(\mathbf{f}(\mathbf{g})\)）记作由 \(f_{j}(g_{1},\ldots ,g_{q})\)（\(1\leqslant j\leqslant p\)）组成的、属于
+
+\[
+\left. \left(\mathrm{A} \left[ \left[ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {r} \right] \right]\right) ^ {p} \right.
+\]
+
+（《代数》，第 IV 章，§ 5，第 5 节）。如果
+
+\[
+\mathbf {h} = (h _ {1}, \dots , h _ {r}) \in (\mathrm{A} [ [ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {s} ] ]) ^ {r}
+\]
+
+是第三个无常数项的系统，则
+
+\[
+(\mathbf {f} \circ \mathbf {g}) \circ \mathbf {h} = \mathbf {f} \circ (\mathbf {g} \circ \mathbf {h}).\tag{10}
+\]
+
+对于每个整数 m，
+
+\[
+\left(\mathbf {f} ^ {(m)} \circ \mathbf {g} ^ {(m)}\right) \circ \mathbf {h} ^ {(m)} = \mathbf {f} ^ {(m)} \circ \left(\mathbf {g} ^ {(m)} \circ \mathbf {h} ^ {(m)}\right)
+\]
+
+其中，\(\mathbf{f}^{(m)}\)、\(\mathbf{g}^{(m)}\)、\(\mathbf{h}^{(m)}\) 表示形式幂级数系统 f、g、h 中由总次数 \(\leqslant m\) 的项组成的多项式系统。但显然，级数中总次数 \(\leqslant m\) 的项，在 \((\mathbf{f} \circ \mathbf{g}) \circ \mathbf{h}\)（分别在 \(\mathbf{f} \circ (\mathbf{g} \circ \mathbf{h})\)）中，与 \((\mathbf{f}^{(m)} \circ \mathbf{g}^{(m)}) \circ \mathbf{h}^{(m)}\)（分别与 \(\mathbf{f}^{(m)} \circ (\mathbf{g}^{(m)} \circ \mathbf{h}^{(m)})\)）相同，故断言成立。
+
+对于每个系统 (8)，我们以 \(M_{\mathbf{f}}\) 或 \(M_{\mathbf{f}}(\mathbf{X})\) 表示雅可比矩阵 \((\partial f_i / \partial \mathbf{X}_j)\)（ \(1 \leqslant i \leqslant p, 1 \leqslant j \leqslant q\)），其中 \(i\) 是行指标，\(j\) 是列指标；对于两个系统 (8) 和 (9)，若 \(\mathbf{g}\) 无常数项，则
+
+\[
+M _ {\mathbf {f} \circ \mathbf {g}} = (M _ {\mathbf {f}} (\mathbf {g})). M _ {\mathbf {g}}\tag{11}
+\]
+
+其中，\(M_{\mathbf{f}}(\mathbf{g})\) 是如下矩阵：在每个级数元素中以 \(g_j\) 代替 \(\mathbf{X}_j\)（ \(1 \leqslant j \leqslant q\)）后得到的矩阵，这里的每个级数元素取自 \(M_{\mathbf{f}}\)；这个公式只是《代数》第 IV 章 § 5 第 8 节公式 (9) 的改写。我们以 \(M_{\mathbf{f}}(0)\) 表示 \(M_{\mathbf{f}}\) 各元素的常数项组成的矩阵；于是由 (11) 得到
+
+\[
+M _ {\mathbf {f} \circ \mathbf {g}} (0) = M _ {\mathbf {f}} (0). M _ {\mathbf {g}} (0).\tag{12}
+\]
+
+给定整数 \(n > 0\)，记
+
+\[
+\mathbf {1} _ {n} = \mathbf {X} = (\mathrm{X} _ {1}, \dots , \mathrm{X} _ {n}) \in (\mathrm{A} [ [ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {n} ] ]) ^ {n},\tag{13}
+\]
+
+并把它看作只有一列的矩阵。
+
+对于每个系统 \(\mathbf{f} = (f_1, \ldots, f_n) \in (\mathrm{A}[[\mathrm{X}_1, \ldots, \mathrm{X}_n]])^n\)，\(M_{\mathbf{f}}\) 是 \(n\) 阶方阵；我们以 \(\mathrm{J}_{\mathbf{f}}\) 或 \(\mathrm{J}_{\mathbf{f}}(\mathbf{X})\) 表示其行列式，以 \(\mathrm{J}_{\mathbf{f}}(0)\) 表示 \(\mathrm{J}_{\mathbf{f}}\) 的常数项，它等于 \(\det(M_{\mathbf{f}}(0))\)；若 \(\mathbf{g} = (g_1, \ldots, g_n)\) 是 \((\mathrm{A}[[\mathrm{X}_1, \ldots, \mathrm{X}_n]])^n\) 中的无常数项系统，则由 (11) 和 (12) 有
+
+\[
+J _ {f \circ g} = J _ {f} (g) \cdot J _ {g}\tag{14}
+\]
+
+\[
+\mathrm{J} _ {\mathbf {f} \circ \mathbf {g}} (0) = \mathrm{J} _ {\mathbf {f}} (0) \mathrm{J} _ {\mathbf {g}} (0).\tag{15}
+\]
+
+命题 5. 设 A 为交换环，\(\mathbf{f} = (f_1, \ldots, f_n)\) 是由 \(n\) 个级数组成的、属于 \(\mathrm{A}[[\mathrm{X}_1, \ldots, \mathrm{X}_n]]\) 的无常数项系统。假设 \(\mathrm{J}_{\mathbf{f}}(0)\) 在 A 中可逆。则存在无常数项系统 \(\mathbf{g} = (g_1, \ldots, g_n)\)，它由 \(n\) 个级数组成，属于 \(\mathrm{A}[[\mathrm{X}_1, \ldots, \mathrm{X}_n]]\)，使得
+
+\[
+\mathbf {f} \circ \mathbf {g} = \mathbf {1} _ {n}.\tag{16}
+\]
+
+该系统唯一，且
+
+\[
+\mathbf {g} \circ \mathbf {f} = \mathbf {1} _ {n}.\tag{17}
+\]
+
+\(\mathbf{g}\) 的存在性和唯一性由《代数》第 IV 章 § 5 第 9 节命题 10 得出；该命题应用于以下 \(n\) 个形式幂级数
+
+\[
+f _ {i} (\mathrm{Y} _ {1}, \dots , \mathrm{Y} _ {n}) - \mathrm{X} _ {i} \quad (1 \leqslant i \leqslant n).
+\]
+
+由 (15) 和 (16) 得 \(\mathrm{J}_{\mathbf{f}}(0)\mathrm{J}_{\mathbf{g}}(0)=1\)，因而 \(\mathrm{J}_{\mathbf{g}}(0)\) 也可逆。于是存在系统 \(\mathbf{h}=(h_{1},\ldots,h_{n})\)，它由 \(\mathrm{A}[[\mathrm{X}_{1},\ldots,\mathrm{X}_{n}]]\) 中的 n 个无常数项级数组成，满足 \(g\circ h=1_{n}\)；由此关系和 (16)，借助 (10)，得到
+
+\[
+\mathbf {h} = \mathbf {1} _ {n} \circ \mathbf {h} = (\mathbf {f} \circ \mathbf {g}) \circ \mathbf {h} = \mathbf {f} \circ (\mathbf {g} \circ \mathbf {h}) = \mathbf {f} \circ \mathbf {1} _ {n} = \mathbf {f}.
+\]
+
+命题 5 以及公式 (10)、(15) 表明，在合成律 \((\mathbf{f},\mathbf{g})\mapsto \mathbf{f}\circ \mathbf{g}\) 下，所有系统 \(\mathbf{f} = (f_1,\dots ,f_n)\)（它们由 \(n\) 个无常数项级数组成，属于 \(\mathrm{A}[[\mathrm{X}_1,\dots ,\mathrm{X}_n]]\)，并满足 \(\mathrm{J}_{\mathbf{f}}(0)\) 在 A 中可逆）构成一个群。
+
+\subsection{完备环中的方程组}
+
+为简便起见，以下称一个环满足 Hensel 条件，如果它是交换的、具有线性拓扑、Hausdorff 且完备；给定这种环中的理想 m，若 m 在 A 中是闭的且其元素都是拓扑幂零元，则称 m（或有序对 (A, m)）满足 Hensel 条件。A 中所有拓扑幂零元组成的理想 t 满足 Hensel 条件（第 3 节）。
+
+特别地，若 A 是交换环，m 是 A 的理想，且 A 关于 m-进拓扑是 Hausdorff 且完备的，则有序对 (A, m) 满足 Hensel 条件。
+
+命题 6. 设 A 是交换环，B 是满足 Hensel 条件的环，且 \(u: \mathbf{A} \to \mathbf{B}\) 是同态。对于 B 中每个拓扑幂零元族 \(\mathbf{x} = (x_1, \ldots, x_n)\)，存在唯一同态 \(\tilde{u}\)，从 \(\mathbf{A}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\) 到 B，使得 \(\tilde{u}(a) = u(a)\)（对所有 \(a \in \mathbf{A}\)），并且 \(\tilde{u}(\mathbf{X}_i) = x_i\)（ \(1 \leqslant i \leqslant n\)）。此外，若 m 表示 \(\mathbf{A}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\) 中的无常数项级数理想，则 \(\tilde{u}\) 关于 m-进拓扑连续。
+
+令 \(\mathfrak{a}\) 为 \(\mathbf{B}\) 中由 \(x_{i}\)（ \(1 \leqslant i \leqslant n\)）生成的有限生成理想；对于每个开理想 \(\mathfrak{S}\)（它是 \(\mathbf{B}\) 的开理想），\(x_{i}\) 在 \(\mathbf{B}/\mathfrak{S}\) 中的像都是幂零元，故理想 \((\mathfrak{a} + \mathfrak{S})/\mathfrak{S}\) 在 \(\mathbf{B}/\mathfrak{S}\) 中幂零，并存在整数 \(k\)，使得当 \(\sum_{i=1}^{n} p_{i} \geqslant k\) 时，\(x_{1}^{p_{1}} \ldots x_{n}^{p_{n}} \in \mathfrak{S}\)。由于 \(m^{k}\) 中的每个元素都是形如 \(X_{1}^{p_{1}} \ldots X_{n}^{p_{n}} g(X_{1}, \ldots, X_{n})\) 的形式幂级数的有限和，其中 \(\sum_{i=1}^{n} p_{i} \geqslant k\)，可见若 \(\tilde{u}\) 解决该问题，则 \(\tilde{u}(\mathfrak{m}^k) \subset \mathfrak{S}\)，这证明了 \(\tilde{u}\) 的连续性。显然存在唯一同态
+
+\[
+v \colon \mathrm{A} [ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {n} ] \rightarrow \mathrm{B}
+\]
+
+使得 \(v(a) = u(a)\)（其中 \(a \in \mathbf{A}\)），且 \(v(\mathbf{X}_i) = x_i\)（ \(1 \leqslant i \leqslant n\)）；上述论证表明，\(v\) 关于由 m-进拓扑在 \(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 上诱导的拓扑连续。由于 \(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 在 m-进拓扑下稠密于 \(\mathbf{A}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\)，而 B 是 Hausdorff 且完备的，故 \(\tilde{u}\) 的存在性和唯一性得证。
+
+注意，该命题还给出了 § 2 第 9 节命题 11 的 (i) 作为特例。
+
+若 A 本身具有线性拓扑，则 \(\tilde{u}\) 在 \(A\{X_{1},\ldots,X_{n}\}\) 上的限制，与第 2 节命题 4 中由 u 导出的同态重合。这立即由以下事实得出：\(A[X_{1},\ldots,X_{n}]\) 在 \(A\{X_{1},\ldots,X_{n}\}\) 中稠密；若将该环赋予以理想 \(m^{k}\cap N_{3}\) 为 0 的邻域基本系的拓扑（按第 2 节的记号，这个拓扑是在 \(A\{X_{1},\ldots,X_{n}\}\) 上由 \(A[[X_{1},\ldots,X_{n}]]\) 的 m-进拓扑诱导的拓扑与第 2 节定义的拓扑的最小上界）。
+
+若 B = A 且 u 是恒等映射，对于每个形式幂级数，我们把 \(f(x_{1}, \ldots, x_{n})\) 或 \(f(\mathbf{x})\) 记作元素 \(\tilde{u}(f)\) 的记号，其中 \(f \in A[[X_{1}, \ldots, X_{n}]]\)；对于每个系统 \(\mathbf{f} = (f_{1}, \ldots, f_{r})\)，其分量是 \(A[[X_{1}, \ldots, X_{n}]]\) 中的形式幂级数，令 \(\mathbf{f}(\mathbf{x})\) 表示元素 \((f_{1}(\mathbf{x}), \ldots, f_{r}(\mathbf{x}))\)（它属于 \(A^{r}\)），则称其为在 f 中以 \(x_{i}\) 代替 \(X_{i}\) 得到的系统。~若 \(n \leqslant m\) 且 F 是 \(A[[X_{1}, \ldots, X_{m}]]\) 中的形式幂级数，可以把 F 看作关于 \(X_{n+1}, \ldots, X_{m}\) 的、系数在 \(A[[X_{1}, \ldots, X_{n}]]\) 中的形式幂级数；令
+
+\[
+\mathbf {F} (x _ {1}, \dots , x _ {n}, \mathbf {X} _ {n + 1}, \dots , \mathbf {X} _ {m})
+\]
+
+表示在 \(\mathrm{A}[[\mathrm{X}_{n+1}, \ldots, \mathrm{X}_{m}]]\) 中的形式幂级数：在 F 的系数中以 x \(_{i}\) 代替 X \(_{i}\)，其中 1 ≤ i ≤ n。
+
+令 B 为形式幂级数环 \(\Lambda[[\mathbf{X}_1,\ldots,\mathbf{X}_r]]\)，令 \(n\) 为 B 中无常数项级数所成的理想，于是 (B, n) 满足 Hensel 条件（§ 2，第 6 节，命题 6 的推论）。取 \(x_i \in B\) 为无常数项级数，即可应用命题 6；于是对于每个级数 \(f \in A[[\mathbf{X}_1,\ldots,\mathbf{X}_n]]\)，\(\tilde{u}(f)\) 正是《代数》第 IV 章 § 5 第 5 节中定义的形式幂级数 \(f(x_1,\ldots,x_n)\)。当 \(f\) 是多项式时这显然成立；一般情形由该命题以及以下观察得出：映射 \(f \mapsto f(x_1,\ldots,x_n)\) 关于 m-进拓扑在 \(A[[\mathbf{X}_1,\ldots,\mathbf{X}_n]]\) 上连续。
+
+推论。设 A 是满足 Hensel 条件的环，\(\mathbf{x} = (x_{1},\ldots ,x_{n})\) 是 A 中的拓扑幂零元族。设 \(\mathbf{g} = (g_1,\dots,g_q)\) 是 \(\mathbf{A}[[\mathbf{X}_1,\ldots ,\mathbf{X}_n]]\) 中的无常数项级数系统，\(\mathbf{f} = (f_1,\dots,f_p)\) 是 \(\mathbf{A}[[\mathbf{X}_1,\dots,\mathbf{X}_q]]\) 中的形式幂级数系统。则 \(\mathbf{g}(\mathbf{x}) = (g_1(\mathbf{x}),\dots,g_q(\mathbf{x}))\) 是 \(\mathbf{A}\) 中的拓扑幂零元族，并且
+
+\[
+(\mathbf {f} \circ \mathbf {g}) (\mathbf {x}) = \mathbf {f} (\mathbf {g} (\mathbf {x})).\tag{18}
+\]
+
+\(g_{i}(\mathbf{x})\) 是拓扑幂零元这一事实，立即由命题 6 以及 A 中拓扑幂零元所成的理想是闭的这一事实得到。当 \(f_{j}\) 是多项式时，关系 (18) 显然成立；另一方面，若 m 和 \(m'\) 分别是下列环中的无常数项级数理想：
+
+\[
+\mathrm{A} \left[ \left[ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {q} \right] \right] \quad \text { and } \quad \mathrm{A} \left[ \left[ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {n} \right] \right]
+\]
+
+则显然，关系 \(f \in \mathfrak{m}^k\) 蕴含 \(f(g_1, \ldots, g_q) \in \mathfrak{m}'^k\)。因此，根据上述观察和命题 6，(18) 两边都是从 \(\mathbf{f}\) 到 \((\mathrm{A}[[\mathrm{X}_1, \ldots, \mathrm{X}_q]])^p\) 的连续函数（其中 \(\mathrm{A}[[\mathrm{X}_1, \ldots, \mathrm{X}_q]]\) 赋予 m-进拓扑）；故关系 (18) 成立。
+
+以下，对于环 A 及其理想 m，记 \(m^{\times n}\) 为
+
+乘积集 \(\prod_{i=1}^{n} m_i\) 位于 \(A^n\) 中，其中 \(m_i = m\)（当 \(1 \leqslant i \leqslant n\) 时），以免混淆。
+
+命题 7. 设 A 是一个环，m 是 A 的理想，且有序对 (A, m) 满足 Hensel 条件。设 \(\mathbf{f} = (f_1, \ldots, f_n)\) 是 \(\mathrm{A}[[\mathrm{X}_1, \ldots, \mathrm{X}_n]]\) 中的无常数项级数系统，且 \(\mathrm{J}_{\mathbf{f}}(0)\) 在 A 中可逆。则对所有 \(\mathbf{x} \in \mathfrak{m}^{\times n}\)，有 \(\mathbf{f}(\mathbf{x}) \in \mathfrak{m}^{\times n}\)，并且映射 \(\mathbf{x} \mapsto \mathbf{f}(\mathbf{x})\) 是从 \(\mathfrak{m}^{\times n}\) 到其自身的双射；其逆双射为 \(\mathbf{x} \mapsto \mathbf{g}(\mathbf{x})\)，其中 \(\mathbf{g}\) 由第 4 节的关系 (16) 给出。
+
+\(\mathbf{f}(\mathbf{x})\in\mathfrak{m}^{\times n}\) 这一事实在 \(f_{i}\) 是多项式时显然；一般情形由命题 6 以及 m 在 A 中是闭的这一事实得到。命题的其他断言随即由 (16)、(17) 和 (18) 立即推出。
+
+推论。设 \(\mathfrak{q}\) 是包含于 \(\mathfrak{m}\) 的 A 的闭理想。则关系 \(\mathbf{x} \equiv \mathbf{x}'\)（模 \(\mathfrak{q}^{\times n}\)）等价于 \(\mathbf{f}(\mathbf{x}) \equiv \mathbf{f}(\mathbf{x}')\)（模 \(\mathfrak{q}^{\times n}\)）。
+
+对于每个形式幂级数 \(f \in \mathbf{A}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\)，
+
+\[
+f \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {n}\right) - f \left(\mathrm{Y} _ {1}, \dots , \mathrm{Y} _ {n}\right) = \sum_ {i = 1} ^ {n} \left(\mathrm{X} _ {i} - \mathrm{Y} _ {i}\right) h _ {i} \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {n}, \mathrm{Y} _ {1}, \dots , \mathrm{Y} _ {n}\right)
+\]
+
+其中 \(h_i\) 属于 \(\mathbf{A}[[\mathbf{X}_1,\ldots,\mathbf{X}_n,\mathbf{Y}_1,\ldots,\mathbf{Y}_n]]\)（《代数》第 IV 章 § 5 第 8 节命题 9）；立即可得，关系 \(\mathbf{x} \equiv \mathbf{x}'\)（模 \(\mathfrak{q}^{\times n}\)）蕴含 \(\mathbf{f}(\mathbf{x}) \equiv \mathbf{f}(\mathbf{x}')\)（模 \(\mathfrak{q}^{\times n}\)）。反向蕴含通过将 \(\mathbf{f}\) 替换为其“逆”\(\mathbf{g}\) 得到。
+
+定理 2. 设 \(\mathbf{A}\) 是一个环，\(\mathfrak{m}\) 是 \(\mathbf{A}\) 的理想，且有序对 \((\mathbf{A},\mathfrak{m})\) 满足 Hensel 条件。设 \(\mathbf{f} = (f_1,\ldots ,f_n)\) 是由 \(n\) 个元素组成的、属于 \(\mathbf{A}\{\mathbf{X}_1,\ldots ,\mathbf{X}_n\}\) 的系统，并令 \(\mathbf{a}\in \mathbf{A}^n\)；记 \(\mathrm{J}_{\mathbf{f}}(\mathbf{a}) = e\)。则存在系统 \(\mathbf{g} = (g_1,\dots ,g_n)\)，它由 \(\mathbf{A}\{\mathbf{X}_1,\dots ,\mathbf{X}_n\}\) 中 n 个无常数项的受限形式幂级数组成，使得
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(M_{\mathbf{g}}(0) = I_{n}\)（单位矩阵）。
+\item
+  对所有 \(\mathbf{x} \in \mathbf{A}^n\)，
+
+\[
+\mathbf {f} (\mathbf {a} + e \mathbf {x}) = \mathbf {f} (\mathbf {a}) + M _ {\mathbf {f}} (\mathbf {a}). e \mathbf {g} (\mathbf {x}).\tag{19}
+\]
+
+\item
+  令 \(\mathbf{h} = (h_1, \ldots, h_n)\) 为无常数项的形式幂级数系统（不一定受限），满足 \(\mathbf{g} \circ \mathbf{h} = \mathbf{1}_n\)（命题 5）。对于所有 \(y \in \mathfrak{m}^{\times n}\)，
+
+\[
+\mathbf {f} (\mathbf {a} + e \mathbf {h} (\mathbf {y})) = \mathbf {f} (\mathbf {a}) + M _ {\mathbf {f}} (\mathbf {a}). e \mathbf {y}.\tag{20}
+\]
+
+\end{enumerate}
+
+对于每个形式幂级数 \(f \in \mathbf{A}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\)，
+
+\[
+f (\mathbf {X} + \mathbf {Y}) = f (\mathbf {X}) + M _ {f} (\mathbf {X}). \mathbf {Y} + \sum_ {1 \leqslant i \leqslant j \leqslant n} \mathrm{G} _ {i j} (\mathbf {X}, \mathbf {Y}) \mathrm{Y} _ {i} \mathrm{Y} _ {j}\tag{21}
+\]
+
+其中 \(G_{ij}\) 是下列环中唯一确定的形式幂级数：
+
+\[
+\mathrm{A} \left[ \left[ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {n}, \mathrm{Y} _ {1}, \dots , \mathrm{Y} _ {n} \right] \right].
+\]
+
+若 \(f\) 是受限的，则 \(M_{f}\) 的各元素和 \(G_{ij}\) 也都是受限的，因为当 \(f\) 是多项式时这些形式幂级数是多项式；再由它们的唯一性可知，对于每个开理想 \(\Im\)（属于 \(A\)），若以 \(p_{\Im} \colon A \to A / \Im\) 表示典范映射，则 \(G_{ij}\) 在 \(\bar{p}_{\Im}\) 下的像，是 \(Y_{i}Y_{j}\) 在 \(\bar{p}_{\Im}(F)\) 中的系数，其中 \(F\) 是形式幂级数 \(f(\mathbf{X} + \mathbf{Y})\)，属于环 \(A[[X_1, \ldots, X_n, Y_1, \ldots, Y_n]]\)；因而断言得证。
+
+据此，对每个级数 \(f_{i}\)（ \(1 \leqslant i \leqslant n\)）写出公式 (21)，便得到对所有 \(\mathbf{x} \in \mathbf{A}^n\)（第 2 节命题 4），
+
+\[
+\mathbf {f} (\mathbf {a} + e \mathbf {x}) = \mathbf {f} (\mathbf {a}) + M _ {\mathbf {f}} (\mathbf {a}). e \mathbf {x} + e ^ {2} \mathbf {r} (\mathbf {x})\tag{22}
+\]
+
+其中 \(\mathbf{r} = (r_1, \ldots, r_n)\) 是一个受限形式幂级数系统，且其中每个级数的总阶 \(\geqslant 2\)。由《代数》第 III 章 § 6 第 5 节的公式 (18) 可知，存在方阵 \(M' \in \mathbf{M}_n(\mathbf{A})\)，使得
+
+\[
+M _ {\mathbf {f}} (\mathbf {a}). M ^ {\prime} = e I _ {n},\tag{23}
+\]
+
+因此将其代入 (22) 得
+
+\[
+\mathbf {f} (\mathbf {a} + e \mathbf {x}) = \mathbf {f} (\mathbf {a}) + M _ {\mathbf {f}} (\mathbf {a}). e \mathbf {x} + M _ {\mathbf {f}} (\mathbf {a}) M ^ {\prime}. e \mathbf {r} (\mathbf {x}).\tag{24}
+\]
+
+令 \(\mathbf{g} = \mathbf{1}_n + M'.\mathbf{r}\)，可见 \(\mathbf{g}\) 满足条件 (i) 和 (ii)；于是只需将 \(\mathbf{x}\) 替换为 \(\mathbf{h}(\mathbf{y})\)，即可得到 (iii)。
+
+推论 1. 设 A 是一个环，m 是 A 的理想，且有序对 (A, m) 满足 Hensel 条件。设 \(f \in \mathrm{A}\{\mathbf{X}\}\)、\(a \in \mathrm{A}\)，并记 \(e = f'(a)\)。若 \(f(a) \equiv 0 \pmod{e^2\mathfrak{m}}\)，则存在 \(b \in \mathrm{A}\)，使得 \(f(b) = 0\) 且 \(b \equiv a \pmod{e\mathfrak{m}}\)。若 \(b'\) 是 A 的另一个元素，满足 \(f(b') = 0\) 且 \(b' \equiv a (\text{mod. em})\)，则 \(e(b - b') = 0\)。特别地，当 e 不是 A 的零因子时，b 唯一。
+
+设 \(f(a) = e^{2}c\)，其中 \(c \in \mathfrak{m}\)；当 \(n = 1\) 时，公式 (20) 给出
+
+\[
+f (a + e h (y)) = e ^ {2} (c + y)
+\]
+
+因此只需取 \(y = -c\)、\(b = a + eh(-c)\)。此外，若 \(b = a + ex\)、\(b' = a + ex'\)，其中 \(x \in \mathfrak{m}\)、\(x' \in \mathfrak{m}\)，且 \(f(b) = f(b') = 0\)，则由 (19) 得 \(e^2(g(x) - g(x')) = 0\)。由于 \(g(\mathbf{X}) - g(\mathbf{Y}) = (\mathbf{X} - \mathbf{Y})u(\mathbf{X}, \mathbf{Y})\)，其中 \(u\) 是受限的且 \(u(0,0) = 1\)，有 \(g(x) - g(x') = (x - x')v\)，其中 \(v \in \mathbf{A}\) 可逆；事实上，由于 \(\mathfrak{m}\) 是闭的，\(v - 1 = u(x,x') - 1 \in \mathfrak{m}\)，而 \(\mathfrak{m}\) 包含于 \(\mathbf{A}\) 的 Jacobson 根中；故有关系 \(e(b - b') = 0\)。
+
+注。特别是在 \(e\) 于 A 中可逆时，该推论适用；此时还可由 Hensel 定理推出 \(b\) 的存在性，因为 \(f(\mathbf{X})\) 在 \((\mathbf{A} / \mathfrak{m})\{\mathbf{X}\}\) 中的典范像形如 \((\mathbf{X} - \alpha)f_1(\mathbf{X}), \mathbf{X} - \alpha\)，且前述两项与 \(f_1(\mathbf{X})\) 强互素；这是因为 \(f_1(\alpha) = f'(\alpha)\) 是 \(e\) 的像（第 1 节，例）。
+
+\textbf{例}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+ 设 \(p\) 是一个 \(\neq 2\) 的素数，\(n\) 是一个整数，其模 \(p\) 的类是一个 \(\neq 0\) 的平方，且在素域 \(\mathbf{F}_p\) 中。若 \(\mathbf{Z}_p\) 是 \(p\)-进整数环（§ 2，第 12 节，例 3），将推论 1 应用于多项式 \(\mathbf{X}^2 - n\) 表明，\(n\) 是 \(\mathbf{Z}_p\) 中的平方；例如，7 是 \(\mathbf{Z}_3\) 中的平方。
+\item
+  设 \(\mathbf{A} = \mathbf{K}[[\mathbf{Y}]]\) 是系数在交换域 \(\mathbf{K}\) 中、关于一个不定元的形式幂级数环；赋予 (Y)-进拓扑时，环 \(\mathbf{A}\) 是 Hausdorff 且完备的（§ 2，第 6 节，命题 6 的推论），而映射 \(f(\mathbf{Y}) \mapsto f(0)\) 通过取商环定义了从 \(\mathbf{A}/(\mathbf{Y})\) 到域 \(\mathbf{K}\) 的一个同构。由推论 1，若 \(\mathbf{F}(\mathbf{Y}, \mathbf{X})\) 是关于 \(\mathbf{X}\) 的、系数在 \(\mathbf{A}\) 中的多项式，且 \(a\) 是 \(\mathbf{F}(0, \mathbf{X})\) 在 \(\mathbf{K}\) 中的单根，则存在唯一形式幂级数 \(f(\mathbf{Y})\)，使得 \(f(0) = a\) 且 \(\mathbf{F}(\mathbf{Y}, f(\mathbf{Y})) = 0\)。
+\end{enumerate}
+
+推论 2. 设 A 是一个环，m 是 A 的理想，且有序对 (A, m) 满足 Hensel 条件。设 r、n 是满足 \(0 \leqslant r < n\) 的整数，\(\mathbf{f} = (f_{r+1}, \ldots, f_n)\) 是 \(A\{X_1, \ldots, X_n\}\) 中的 n - r 个元素组成的系统；令 \(\mathrm{J}_{\mathbf{f}}^{(n-r)}(\mathbf{X})\) 表示 \(M_{\mathbf{f}}(\mathbf{X})\) 的子式，该子式由列指标 j 满足 \(r + 1 \leqslant j \leqslant n\) 的列组成。令 \(a \in A^n\)，使得 \(\mathrm{J}_{\mathbf{f}}^{(n-r)}(\mathbf{a})\) 在 A 中可逆且 \(\mathbf{f}(\mathbf{a}) \equiv 0 \pmod{\mathfrak{m}^{\times(n-r)}}\)。则存在唯一的 \(\mathbf{x} = (x_1, \ldots, x_n) \in \mathrm{A}^n\)，使得 \(x_k = a_k\)（当 \(1 \leqslant k \leqslant r\) 时），\(x \equiv a \pmod{m^{\times n}}\)，且 \(\mathbf{f}(\mathbf{x}) = 0\)。
+
+以 \(a_k\) 代替 \(\mathbf{X}_k\)（其中 \(1 \leqslant k \leqslant r\)）于 \(f_i\) 中（第 2 节，注 3），立即可见，为证明该推论只需考虑 \(r = 0\) 的情形。于是定理 1 和命题 7 表明，\(\mathbf{f}\) 将 \(\mathbf{a} + \mathfrak{m}^{\times n}\) 双射到 \(\mathbf{f}(\mathbf{a}) + \mathfrak{m}^{\times n} = \mathfrak{m}^{\times n}\)；推论由 \(0 \in \mathfrak{m}^{\times n}\) 这一事实得到。
+
+推论 3. 采用推论 2 的记号，设 \(\mathbf{a} \in \mathbf{A}^n\)；记 \(e = \mathrm{J}_{\mathbf{f}}^{(n-r)}(\mathbf{a})\)（不一定在 A 中可逆），并假设 \(\mathbf{f}(\mathbf{a}) \equiv 0 \pmod{e^2\mathfrak{m}^{\times(n-r)}}\)。则存在 \(n - r\) 个无常数项形式幂级数 \(\phi_i (r + 1 \leqslant i \leqslant n)\)，它们属于 \(\mathbf{A}[[\mathbf{X}_1, \ldots, \mathbf{X}_r]]\)，使得对所有 \(\mathbf{t} = (t_1, \ldots, t_r) \in \mathfrak{m}^{\times r}\)，
+
+\[
+f _ {i} \left(a _ {1} + e ^ {2} t _ {1}, \dots , a _ {r} + e ^ {2} t _ {r}, a _ {r + 1} + e \phi_ {r + 1} (\mathbf {t}), \dots , a _ {n} + e \phi_ {n} (\mathbf {t})\right) = 0
+\]
+
+\[
+\text{其中 } r + 1 \leqslant i \leqslant n.
+\]
+
+对于 \(1 \leqslant i \leqslant r\)，令 \(f_{i}(\mathbf{X}) = \mathbf{X}_{i} - a_{i}\)，并令 \(\mathbf{u} = (f_{1}, \ldots, f_{n})\)；则 \(\mathrm{J}_{\mathbf{u}}(\mathbf{a}) = e\)，且定理 2 可应用于系统 \(\mathbf{u}\)。沿用定理 2 的记号，由上述定义可得 \(g_{i}(\mathbf{X}) = \mathbf{X}_{i}\) 对 \(1 \leqslant i \leqslant r\) 成立，从而 \(h_{i}(\mathbf{X}) = \mathbf{X}_{i}\) 对 \(1 \leqslant i \leqslant r\) 也成立；此外，若 \(M' \in \mathbf{M}_{n}(\mathbf{A})\) 满足 \(M_{\mathbf{u}}(\mathbf{a}) \cdot M' = eI_{n}\)，则 \(M'\) 具有形式
+
+\[
+\left( \begin{array}{c c} e I _ {r} & 0 \\ * & * \end{array} \right).
+\]
+
+在公式 (20) 中以 \(\mathbf{y}\) 替换为 \(M^{\prime}.\mathbf{z}\)（其中 \(\mathbf{z} = (z_{1},\ldots ,z_{n})\in \mathfrak{m}^{\times n}\)），得到
+
+\[
+\begin{array}{r l} f _ {i} (a _ {1} + e ^ {2} z _ {1}, \dots , a _ {r} + e ^ {2} z _ {r}, a _ {r + 1} + e h _ {r + 1} (M ^ {\prime}. \mathbf {z}), \dots , a _ {n} + e h _ {n} (M ^ {\prime}. \mathbf {z})) \\ & = f _ {i} (a) + e ^ {2} z _ {i} \quad \text { for } \quad 1 \leqslant i \leqslant n. \end{array}\tag{26}
+\]
+
+根据假设，\(f_{j}(a) = e^{2}b_{j}\)，其中 \(b_{j} \in \mathfrak{m}\)，且 \(r + 1 \leqslant j \leqslant n\)。记 \(\psi_{j}(\mathbf{X}_{1},\ldots ,\mathbf{X}_{n}) = h_{j}(M^{\prime}.\mathbf{X})\)，并令
+
+\[
+\phi_ {j} \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {r}\right) = \psi_ {j} \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {r}, - b _ {r + 1}, \dots , - b _ {n}\right)
+\]
+
+其中 \(r + 1 \leqslant j \leqslant n\)。对于 \(r + 1 \leqslant i \leqslant n\)，在 (26) 中以 \(t_j\) 代替 \(z_j\)（ \(1 \leqslant j \leqslant r\)），并以 \(b_j\) 代替 \(z_j\)（ \(r + 1 \leqslant j \leqslant n\)），便得到对所有 \(t \in m^{\times r}\) 成立的关系 (25)。
+
+\subsection{环分解的应用}
+
+引理 2. 设 A 是一个环，m 是 A 的理想，且有序对 (A, m) 满足 Hensel 条件。设 B 是商环 A/m，\(\pi: A \to B\) 是典范同态。对于 B 的每个幂等元 c，存在唯一的 A 的幂等元 e，使得 \(\pi(e) = c\)。
+
+取 \(a\) 使得 \(\pi(a) = c\)；将第 5 节定理 2 的推论 1 应用于多项式 \(f(\mathbf{X}) = \mathbf{X}^2 - \mathbf{X}\)，它属于 \(\mathbf{A}[\mathbf{X}]\)，以及元素 \(a \in \mathbf{A}\)。则 \(f'(a) = 2a - 1\)；由于 \(\pi(2a - 1) = 2c - 1\)，且 \((2c - 1)^2 = 1\) 在 \(\mathbf{B}\) 中成立，\(2c - 1\) 在 \(\mathbf{B}\) 中可逆，因而 \(2a - 1\) 在 \(\mathbf{A}\) 中可逆（§ 2，第 13 节，引理 3）。由于 \(f(a) \in \mathfrak{m}\)，第 5 节定理 2 的推论 1 立即给出 \(e\) 的存在性和唯一性。
+
+命题 8. 设 A 是一个环，m 是 A 的理想，且有序对 (A, m) 满足 Hensel 条件。设 B 是商环 A/m，π: A → B 是典范同态。若 B 是理想有限族 \((\mathfrak{b}_{i})_{i\in I}\) 的直分解，则存在唯一的 A 的理想族 \((\mathfrak{a}_{i})_{i\in I}\)，使得 \(\pi(\mathfrak{a}_{i}) = \mathfrak{b}_{i}\) 对所有 \(i \in I\) 成立，且 A 是理想族 \((\mathfrak{a}_{i})\) 的直分解。
+
+令 \(1 = \sum_{i} c_{i}\)，其中 \(c_{i} \in \mathfrak{b}_{i}\)（对所有 \(i\)）；\(c_{i}\) 是 \(\mathbf{B}\) 中的幂等元，满足 \(c_{i}c_{j} = 0\)（当 \(i \neq j\) 时）。由引理 2，存在幂等元 \(e_{i}\)，它们属于 \(\mathbf{A} (i \in \mathbf{I})\)，使得 \(\pi(e_{i}) = c_{i}\)（对所有 \(i\)）；由于 \(e_{i}e_{j}\) 是一个幂等元，满足
+
+\[
+\pi (e _ {i} e _ {j}) = c _ {i} c _ {j} = 0
+\]
+
+对于 \(i \neq j\)，有 \(e_i e_j = 0\)，这对 \(i \neq j\) 成立（引理 2）；由于 \(1 - \sum_{i} e_i\) 是满足 \(\pi\left(1 - \sum_{i} e_i\right) = 1 - \sum_{i} c_i = 0\) 的幂等元，同样有 \(1 = \sum_{i} e_i\)。于是 \(A\) 是理想 \(a_i = e_i A\) 的直分解，且 \(\pi(a_i) = \pi(e_i) B = b_i\)。
+
+还需证明这种分解的唯一性。现在，设 A 是另一理想族 \((\mathfrak{a}_i')_{i\in I}\) 的直分解，且 \(\pi (\mathfrak{a}_i^{\prime}) = \mathfrak{b}_i\) 对所有 \(i\) 成立；于是 \(1 = \sum_{i}e_{i}^{\prime}\)，其中 \(e_i^\prime \in \mathfrak{a}_i^\prime\)，从而在 B 中 \(1 = \sum_{i}\pi (e_i^{\prime})\)，其中 \(\pi (e_i^{\prime})\in \mathfrak{b}_i\)，这蕴含 \(\pi (e_i^{\prime}) = c_i\)；由于 \(e_i^\prime\) 和 \(e_i\) 都是幂等元，必有 \(e_i^\prime = e_i\)（引理 2），证明完毕。
+
+注。命题 8 再次给出了 A 的半局部环结构，其中 A 关于 r-进拓扑是 Hausdorff 且完备的（r 是 A 的 Jacobson 根）；这一结构此前已作为 § 2 第 13 节命题 19 的推论得到。
+
+\section{滤过模的平坦性性质}
+
+\subsection{理想 Hausdorff 模}
+
+定义 1. 设 A 是交换环，\(\mathfrak{I}\) 是 A 的理想。称 A-模 M 关于 \(\mathfrak{I}\) 是理想 Hausdorff 的（若无歧义，也简称理想 Hausdorff），如果对于 A 的每个有限生成理想 \(\mathfrak{a}\)，A-模 \(\mathfrak{a} \otimes_{\mathbf{A}} \mathbf{M}\) 关于 \(\mathfrak{I}\)-进拓扑是 Hausdorff 的。
+
+在定义中取 \(\mathfrak{a} = \mathbf{A}\)，我们已经看到 \(\mathbf{M}\) 必然关于 3-进拓扑是 Hausdorff 的。
+
+\textbf{例}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  若 A 是 Noether 环且 \(\mathfrak{I}\) 包含于 A 的 Jacobson 根（换言之，若 A 是赋予 \(\mathfrak{I}\)-进拓扑的 Zariski 环），则每个有限生成 A-模都是理想 Hausdorff 模（\(\S\) 3，第 3 节，命题 6）。
+\item
+  理想 Hausdorff 模的每个直和都是理想 Hausdorff 模，这是由以下关系得到的：
+\end{enumerate}
+
+\[
+\Im^ {n} \left(a \otimes_ {A} \bigoplus_ {\lambda \in L} M _ {\lambda}\right) = \Im^ {n} \bigoplus_ {\lambda \in L} (a \otimes_ {A} M _ {\lambda}) = \bigoplus_ {\lambda \in L} \Im^ {n} (a \otimes_ {A} M _ {\lambda}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  若 A-模 M 是平坦的且关于 \(\Im\)-进拓扑是 Hausdorff 的，则它是理想 Hausdorff 模，因为此时 \(a \otimes_{A} M\) 可识别为 M 的一个子模，而 \(\Im\)-进拓扑在 \(a \otimes_{A} M\) 上比 \(a \otimes_{A} M\) 上由 M 上的 \(\Im\)-进拓扑诱导的拓扑更细；后一个拓扑按假设是 Hausdorff 的。
+\end{enumerate}
+
+\subsection{平坦性判别准则的陈述}
+
+设 A 是一个环，\(\mathfrak{I}\) 是 A 的双边理想，M 是左模，gr(A) 和 gr(M) 分别是由环 A 及模 M 配备 \(\mathfrak{I}\)-进滤过所相伴的分次环及分次 gr(A)-模（§ 2，第 3 节）。我们已经看到（同上），对于每个整数 \(n \geqslant 0\)，存在满射 Z-模同态
+
+\[
+\gamma_ {n} \colon (\mathfrak {I} ^ {n} / \mathfrak {I} ^ {n + 1}) \otimes_ {\mathrm{A} / \mathfrak {I}} (\mathrm{M} / \mathfrak {I} \mathrm{M}) \rightarrow \mathfrak {I} ^ {n} \mathrm{M} / \mathfrak {I} ^ {n + 1} \mathrm{M}
+\]
+
+以及一个次数为 0 的分次 gr(A)-模的分次同态
+
+\[
+\gamma_ {M} \colon \operatorname{gr} (A) \otimes_ {\mathbf {g r} _ {0} (A)} \operatorname{gr} _ {0} (M) \to \operatorname{gr} (M)
+\]
+
+其在 \(\mathrm{gr}_n(\mathbf{A})\otimes_{\mathbf{gr}_0(\mathbf{A})}\mathrm{gr}_0(\mathbf{M})\) 上的限制是 \(\gamma_{n}\) 对所有 \(n\) 成立，因而它是满射。
+
+定理 1. 设 A 是交换环，\(\Im\) 是 A 的理想，M 是 A-模。考虑以下性质：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  M 是平坦 A-模。
+\item
+  都有 \(\operatorname{Tor}_1^{\mathbf{A}}(\mathbf{N},\mathbf{M}) = 0\)，其中 \(\mathbf{N}\) 是被 \(\Im\) 消灭的 A-模。
+\item
+  M/3M 是平坦的 (A/3)-模，且典范映射 \(\Im \otimes_{\mathbf{A}} \mathbf{M} \to \Im \mathbf{M}\) 是双射（后一个条件等价于 \(\operatorname{Tor}_{1}^{\mathbf{A}}(\mathbf{A}/\Im, \mathbf{M}) = 0\)，这是由关系 \(\operatorname{Tor}_{1}^{\mathbf{A}}(\mathbf{A}, \mathbf{M}) = 0\) 以及正合列
+
+\[
+\operatorname{Tor} _ {1} ^ {\mathbf {A}} (\mathrm{A}, \mathrm{M}) \rightarrow \operatorname{Tor} _ {1} ^ {\mathbf {A}} (\mathrm{A} / \Im , \mathrm{M}) \rightarrow \Im \otimes_ {\mathrm{A}} \mathrm{M} \rightarrow \mathrm{M}).
+\]
+
+\item
+  M/3M 是平坦的 (A/3)-模，且典范同态
+
+\[
+\gamma_ {\mathbf {M}} \colon \operatorname{gr} (\mathbf {A}) \otimes_ {\mathbf {g r} _ {0} (\mathbf {A})} \operatorname{gr} _ {0} (\mathbf {M}) \rightarrow \operatorname{gr} (\mathbf {M})
+\]
+
+是双射（§ 2，第 8 节的性质 (GR)）。
+
+\item
+  对所有 \(n \geqslant 1\)，\(\mathbf{M} / \Im^n\mathbf{M}\) 都是平坦的 \((\mathbf{A} / \Im^n)\)-模。
+\end{enumerate}
+
+\[
+(i) \Rightarrow (i i) \Leftrightarrow (i i i) \Rightarrow (i v) \Leftrightarrow (v).
+\]
+
+此外，若 \(\mathfrak{I}\) 是幂零的，或者 A 是 Noether 环且 M 是理想 Hausdorff 的，则性质 (i)、(ii)、(iii)、(iv) 和 (v) 等价。
+
+注。若 A/3 是一个域（这在应用中经常发生），则条件“ M/3M 是平坦的 (A/3)-模”对每个 A-模 M 都自动成立，从而简化了性质 (iii) 和 (iv) 的陈述；此外，在此情形下，性质 (v) 等价于：对于每个整数 n ≥ 1，M/3 \(^{n}\) M 是自由的 (A/3 \(^{n}\) )-模（第 II 章 § 3，第 2 节，命题 5 的推论 2）。
+
+\subsection{平坦性判别准则的证明}
+
+\textbf{(A) 蕴含关系 (i) \(\Rightarrow\) (ii) \(\Leftrightarrow\) (iii)}\par
+
+蕴含关系 (i) \(\Rightarrow\) (ii) 是立即的（第 I 章 § 4）。等价关系 (ii) \(\Leftrightarrow\) (iii) 是第 I 章 § 4 命题 2 的特例；该命题应用于 R = A、S = A/3、F = M、E = N，并注意到：给 N 赋予一个 (A/3)-模结构，等价于给 N 赋予一个 A-模结构，使 N 被 3 消灭。
+
+注 (1)。条件 (ii) 也等价于下述条件：
+
+(ii') \(\operatorname{Tor}_1^{\mathbf{A}}(\mathbf{N},\mathbf{M}) = 0\)，对于每个被 \(\Im\) 的某个幂消灭的 A-模 N 都成立。显然 (ii') 蕴含 (ii)。反之，若 (ii) 成立，则特别有 \(\operatorname{Tor}_1^{\mathbf{A}}(\Im^n\mathrm{N} / \Im^{n + 1}\mathrm{N},\mathbf{M}) = 0\) 对所有 \(n\) 成立；由正合列
+
+\[
+0 \rightarrow \Im^ {n + 1} N \rightarrow \Im^ {n} N \rightarrow \Im^ {n} N / \Im^ {n + 1} N \rightarrow 0
+\]
+
+得到正合列
+
+\[
+\operatorname{Tor} _ {1} ^ {\mathbf {A}} \left(\Im^ {n + 1} \mathrm{N}, \mathrm{M}\right)\rightarrow \operatorname{Tor} _ {1} ^ {\mathbf {A}} \left(\Im^ {n} \mathrm{N}, \mathrm{M}\right)\rightarrow \operatorname{Tor} _ {1} ^ {\mathbf {A}} \left(\Im^ {n} \mathrm{N} / \Im^ {n + 1} \mathrm{N}, \mathrm{M}\right)
+\]
+
+又由于存在整数 \(m\) 使得 \(\mathfrak{S}^m\mathrm{N} = 0\)，我们对 \(n\) 作递降归纳，得到 \(\operatorname{Tor}_1^{\mathbf{A}}(\mathfrak{S}^n\mathrm{N},\mathbf{M}) = 0\) 对所有 \(n\leqslant m\) 成立，特别地对 \(n = 0\) 成立。
+
+由此可知，若 \(\Im\) 是幂零的，则 (ii) 蕴含 (i)，因为此时 (ii') 意味着对每个 A-模都有 \(\operatorname{Tor}_1^{\mathbf{A}}(\mathbf{N},\mathbf{M}) = 0\)，其中 \(\mathbf{N}\) 是任意 A-模，从而 \(\mathbf{M}\) 是平坦的（第 I 章 § 4）。
+
+\textbf{(B) 证明下述命题：}\par
+
+命题 1. 设 A 是交换环，\(\mathfrak{I}\) 是 A 的理想，M 是 A-模。以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  对所有 \(n \geqslant 1\)，\(\operatorname{Tor}_1^{\mathbf{A}}(\mathbf{A}/\mathfrak{I}^n, \mathbf{M}) = 0\)。
+\item
+  对所有 \(n \geqslant 1\)，典范同态
+\end{enumerate}
+
+\[
+\theta_ {n} \colon \mathfrak {I} ^ {n} \otimes_ {\mathbf {A}} \mathbf {M} \rightarrow \mathfrak {I} ^ {n} \mathbf {M}
+\]
+
+是双射。
+
+此外，这些条件蕴含：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  典范同态 \(\gamma_{\mathrm{M}}: \operatorname{gr}(\mathbf{A}) \otimes_{\mathbf{g}_{0}(\mathbf{A})} \operatorname{gr}_{0}(\mathbf{M}) \to \operatorname{gr}(\mathbf{M})\) 是双射。反之，若 \(\Im\) 是幂零的，则 (c) 蕴含 (a) 和 (b)。
+\end{enumerate}
+
+由正合列可得 (a) 与 (b) 等价：
+
+\[
+0 = \operatorname{Tor} _ {1} ^ {\mathbf {A}} (\mathrm{A}, \mathrm{M}) \rightarrow \operatorname{Tor} _ {1} ^ {\mathbf {A}} (\mathrm{A} / \Im^ {n}, \mathrm{M}) \rightarrow \Im^ {n} \otimes_ {\mathbf {A}} \mathrm{M} \rightarrow \mathrm{M}.
+\]
+
+再考虑图
+
+\[
+\begin{array}{c} \mathfrak {I} ^ {n + 1} \otimes_ {\mathrm{A}} \mathrm{M} \longrightarrow \mathfrak {I} ^ {n} \otimes_ {\mathrm{A}} \mathrm{M} \longrightarrow (\mathfrak {I} ^ {n} / \mathfrak {I} ^ {n + 1}) \otimes_ {\mathrm{A}} (\mathrm{M} / \mathfrak {I M}) \longrightarrow 0 \\ \theta_ {n + 1} \Bigg \downarrow \quad \theta_ {n} \Bigg \downarrow \quad \gamma_ {n} \Bigg \downarrow \\ 0 \longrightarrow \mathfrak {I} ^ {n + 1} \mathrm{M} \longrightarrow \mathfrak {I} ^ {n} \mathrm{M} \longrightarrow \operatorname{gr} _ {n} (\mathrm{M}) \longrightarrow 0 \end{array}\tag{1}
+\]
+
+这里注意到，\((\mathfrak{I}^n / \mathfrak{I}^{n+1}) \otimes_{\mathbf{A}} (\mathbf{M} / \mathfrak{I}\mathbf{M})\) 典范地识别为 \((\mathfrak{I}^n / \mathfrak{I}^{n+1}) \otimes_{\mathbf{A} / \mathfrak{S}} (\mathbf{M} / \mathfrak{I}\mathbf{M})\)。根据 \(\gamma_n\) 的定义，此图交换且其各行正合。若 (b) 成立，则 \(\theta_n\) 和 \(\theta_{n+1}\) 是双射，因而由余核的定义 \(\gamma_n\) 也是双射，于是 (b) 蕴含 (c)。反之，假设 \(\mathfrak{I}\) 幂零，我们证明 (c) 蕴含 (b)；我们对 \(n\) 作递降归纳，因为 \(\mathfrak{I}^n \otimes_{\mathbf{A}} \mathbf{M} = \mathfrak{I}^n\mathbf{M} = 0\) 在 \(n\) 足够大时成立。于是，若在图 (1) 中 \(\gamma_n\) 和 \(\theta_{n+1}\) 是双射，则根据第 I 章 § 1 第 4 节命题 2 的推论 1，\(\theta_n\) 也是双射。
+
+\textbf{(C) 蕴含关系 (ii) \(\Rightarrow\) (iv)}\par
+
+若 (ii) 成立，则根据注 1，(ii') 也成立；于是命题 1 表明 \(\gamma_{\mathbf{M}}\) 是同构。另一方面，我们已经知道 (ii) 蕴含 (iii)，因而 M/Im 是平坦的 (A/Im)-模，这就完成了 (ii) 蕴含 (iv) 的证明。
+
+注 (2)。命题 1 表明，若 \(\mathfrak{S}\) 是幂零的，则 (iv) 蕴含 (iii)；结合注 1，我们因而证明了在此情形下 (i)、(ii)、(iii) 和 (iv) 等价。
+
+\textbf{(D) 等价关系 (iv) \(\Leftrightarrow\) (v)}\par
+
+  对所有 \(n \geqslant 1\)，M/ \(\Im^{n}M\) 具有典范的 (A/ \(\Im^{n}\) )-模结构。若以 \((\Im/\Im^{n})\)-进滤过对其进行滤过，立即有：\(\mathrm{gr}_{m}(\mathrm{M}/\Im^{n}\mathrm{M}) = \mathrm{gr}_{m}(\mathrm{M})\) 当 m \textless{} n，且 \(\mathrm{gr}_{m}(\mathrm{M}/\Im^{n}\mathrm{M}) = 0\) 当 \(m \geqslant n\)。对于所有 \(k \geqslant 1\)，令 \(A_{k} = A/\Im^{k}\)、\(\Im_{k} = \Im/\Im^{k} M_{k} = M/\Im^{k} M\)；令 \((\mathrm{iv})_{k}\)（分别为 \((\mathrm{v})_{k}\)）表示将 A、\(\Im\)、M 替换为 \(A_{k}\)、\(\Im_{k}\)、\(M_{k}\) 后由 (iv)（分别由 (v)）得到的断言。由刚才所述，(iv) 等价于“对所有 \(k \geqslant 1\)，\((\mathrm{iv})_{k}\)”；显然 (v) 等价于“对所有 \(k \geqslant 1\)，\((\mathrm{v})_{k}\)”。于是只需对所有 k 证明 \((\mathrm{iv})_{k} \Leftrightarrow (\mathrm{v})_{k}\)，或者只需证明 \(\Leftrightarrow (\mathrm{v})\) 当 \(\Im\) 幂零时。现在（注 2）我们已经看到，在此情形下 (iv) 等价于 (i)。由于 M/ \(\Im^{n}M\) 同构于 M \(\otimes_{A} (A/\Im^{n})\)，(i) 蕴含 (v)（第 I 章 §2，第 7 节，命题 8 的推论 2）；此外显然 (v) 蕴含 (i)。因此，我们已在所有情形证明了 (iv) \(\Leftrightarrow (\mathrm{v})\)，并且在 \(\Im\) 幂零时证明了定理的所有性质都等价。
+
+\textbf{(E) 当 \((\mathbf{v})\Rightarrow (\mathbf{i})\) 且 \(\mathbf{A}\) 是 Noether 环、\(\mathbf{M}\) 是理想 Hausdorff 模时}\par
+
+只需证明，对于每个理想 \(\mathfrak{a}\)（它属于 \(\mathbf{A}\)），典范映射 \(j\colon \mathfrak{a} \otimes_{\mathbf{A}} \mathbf{M} \to \mathbf{M}\) 是单射（第 I 章 § 2，第 3 节，命题 1）。令 \(x \in \operatorname{Ker} j\)；由于 \(\mathfrak{a} \otimes_{\mathbf{A}} \mathbf{M}\) 关于 \(\mathfrak{S}\)-进拓扑是 Hausdorff 的，只需验证对于每个整数 \(n > 0\)，都有 \(x \in \mathfrak{S}^n(\mathfrak{a} \otimes_{\mathbf{A}} \mathbf{M})\)。令 \(f\colon \mathfrak{S}^n\mathfrak{a} \to \mathfrak{a}\) 为典范嵌入；只需证明 \(x \in \operatorname{Im}(f \otimes 1_{\mathbf{M}})\)；因为若 \(b \in \mathfrak{S}^n\)、\(a \in \mathfrak{a}\) 且 \(m \in \mathbf{M}\)，则 \(f \otimes 1_{\mathbf{M}}\) 作用于元素 \((ba) \otimes m\)（该元素属于 \((\mathfrak{S}^n\mathfrak{a}) \otimes_{\mathbf{A}} \mathbf{M}\)）所得的像，是元素 \((ba) \otimes m = b(a \otimes m)\)，它属于 \(\mathfrak{a} \otimes_{\mathbf{A}} \mathbf{M}\)，故 \(\operatorname{Im}(f \otimes 1_{\mathbf{M}}) \subset \mathfrak{S}^n(\mathfrak{a} \otimes_{\mathbf{A}} \mathbf{M})\)。由 Krull 定理（§ 3，第 2 节，定理 2），存在整数 \(k\)，使得 \(\mathfrak{a}_k = \mathfrak{a} \cap \mathfrak{S}^k \subset \mathfrak{S}^n\mathfrak{a}\)；若 \(i: \mathfrak{a}_k \to \mathfrak{a}\) 是典范嵌入，则只需证明 \(x \in \operatorname{Im}(i \otimes 1_M)\)。现在，记 \(p: \mathfrak{a} \to \mathfrak{a}/\mathfrak{a}_k\) 和 \(h: \mathfrak{a}/\mathfrak{a}_k \to \mathrm{A}/\mathfrak{S}^k\) 为典范映射，则存在交换图
+
+\[
+\begin{array}{c} \mathfrak {a} _ {k} \otimes_ {\mathrm{A}} \mathrm{M} \xrightarrow {i \otimes 1 _ {\mathrm{M}}} \mathfrak {a} \otimes_ {\mathrm{A}} \mathrm{M} \xrightarrow {p \otimes 1 _ {\mathrm{M}}} (\mathfrak {a} / \mathfrak {a} _ {k}) \otimes_ {\mathrm{A}} \mathrm{M} \longrightarrow 0 \\ j \Biggl \downarrow \\ \mathrm{M} \quad \longrightarrow \quad (\mathrm{A} / \mathfrak {I} ^ {k}) \otimes_ {\mathrm{A}} \mathrm{M} \end{array}
+\]
+
+其中第一行正合。只需证明 \(x \in \operatorname{Ker}(p \otimes 1_{\mathbf{M}})\)；又由于按假设 \(x \in \operatorname{Ker} j\)，故只需验证映射 \(h \otimes 1_{\mathbf{M}}\) 是单射。现在，它还可写成（《代数》第 II 章 § 3 第 6 节命题 6 的推论 3）
+
+\[
+h \otimes 1 _ {\mathbf {M} / \Im^ {k} \mathbf {M}}: (a / a _ {k}) \otimes_ {\mathbf {A} / \Im^ {k}} (\mathbf {M} / \Im^ {k} \mathbf {M}) \rightarrow \mathbf {M} / \Im^ {k} \mathbf {M}
+\]
+
+由于 \(h\) 是单射，且根据 (v)，\(\mathbf{M} / \Im^k\mathbf{M}\) 是平坦的 \((\mathbf{A} / \Im^k)\)-模，证明完毕。
+
+\subsection{应用}
+
+命题 2. 设 A 是交换环，\(\mathfrak{S}\) 是 A 的理想，B 是交换 Noether A-代数，且 B 包含于 B 的 Jacobson 根中。则每个有限生成 B-模 M 都是关于 \(\mathfrak{S}\) 的理想 Hausdorff A-模。
+
+更一般地，我们将看到，对于每个有限生成 A-模 N，\(N \otimes_{A} M\) 关于 \(\Im\)-进拓扑是 Hausdorff 的。因为 \(\mathrm{N}_{(\mathrm{B})} = \mathrm{N} \otimes_{\mathrm{A}} \mathrm{B}\) 是有限生成 B-模，而 B-模 \(N \otimes_{A} M\) 根据张量积的结合律典范地识别为 \(\mathrm{N}_{(\mathrm{B})} \otimes_{\mathrm{B}} M\)。令 L 为 B 的 Jacobson 根；由于 \(\Im B\) 包含于 L 中，\(\Im\)-进拓扑在 \(N \otimes_{A} M\) 上可识别为比 \(\Im\)-进拓扑在 \(\mathrm{N}_{(\mathrm{B})} \otimes_{\mathrm{B}} M\) 上诱导的拓扑更细；但后一个拓扑是 Hausdorff 的，因为 \(\mathrm{N}_{(\mathrm{B})} \otimes_{\mathrm{B}} M\) 是有限生成 B-模（第 1 节，例 1），结论得证。
+
+命题 3. 设 A 是交换环，B 是交换 A-代数，\(\mathfrak{I}\) 是 A 的理想，M 是 B-模。假设 B 是 Noether 环及平坦 A-模，且 M 关于 \(\mathfrak{S}\) B 是理想 Hausdorff 的。以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  M 是平坦 B-模。
+\item
+  \(\mathbf{M}\) 是平坦 A-模，且 \(\mathbf{M} / \Im \mathbf{M} = \mathbf{M} / (\Im \mathbf{B})\mathbf{M}\) 是平坦的 (B/3B)-模。
+\end{enumerate}
+
+若进一步地，典范同态 \(\mathbf{A} / \Im \to \mathbf{B} / \Im \mathbf{B}\) 是双射，则条件 (a) 和 (b) 还等价于：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  M 是平坦 A-模。
+\end{enumerate}
+
+条件 (a) 蕴含 (b)，这是由第 I 章 §2 第 7 节命题 8 的推论 2 和 3，以及 M/Im 同构于 M ⊗B (B/ImB) 这一事实得到的。设条件 (b) 成立；为了证明 M 是平坦 B-模，我们将把第 2 节的定理 1 中的 A 换为 B、S 换为 SIB。因此，只需证明典范映射 \(f\colon \mathfrak{B} \otimes_{\mathbf{B}} \mathbf{M} \to \mathfrak{M}\) 是单射。令 \(f_1\) 为典范映射 \(\mathfrak{I} \otimes_{\mathbf{A}} \mathbf{B} \to \mathfrak{B}\)，令 \(f_2\) 为典范同构 \(\mathfrak{I} \otimes_{\mathbf{A}} \mathbf{M} \to (\mathfrak{I} \otimes_{\mathbf{A}} \mathbf{B}) \otimes_{\mathbf{B}} \mathbf{M}\)；易于验证，\(f \circ (f_1 \circ 1_{\mathbf{M}}) \circ f_2\) 是典范映射 \(f'\colon \mathfrak{I} \otimes_{\mathbf{A}} \mathbf{M} \to \mathfrak{IM}\)。现在 \(f'\) 是同构，因为 M 是平坦 A-模；而 \(f_1\) 是同构，因为 B 关于 A 平坦；于是 \(f\) 是同构。
+
+令 \(\rho: \mathring{\mathrm{A}}/\mathfrak{I} \to \mathrm{B}/\mathfrak{I}\mathrm{B}\) 为典范同态；(A/ \(\mathfrak{I}\) )-模结构在 M/ \(\mathfrak{I}\) M 上经由 \(\rho\) 从其 (B/ \(\mathfrak{I}\) B)-模结构导出，所得结构同构于 M \(\otimes_{\mathrm{A}} (\mathrm{A}/\mathfrak{I})\) 上的模结构。因此，若 M 是平坦 A-模，则 M/ \(\mathfrak{I}\) M 是平坦的 (A/ \(\mathfrak{I}\) )-模，也是 (B/ \(\mathfrak{I}\) B)-模（当 \(\rho\) 为同构时）；由此我们在该情形证明了 (c) \(\Rightarrow\) (b)。
+
+推论。设 A 是交换 Noether 环，\(\Im\) 是 A 的理想，\(\hat{\mathbf{A}}\) 是 A 关于 \(\Im\)-进拓扑的 Hausdorff 完备化，M 是一个 \(\hat{\mathbf{A}}\)-模，且关于 \(\Im\hat{\mathbf{A}}\) 是理想 Hausdorff 模。M 为平坦 A-模的充要条件是 M 为平坦 \(\hat{\mathbf{A}}\)-模。
+
+事实上，我们知道 \(\hat{\mathbf{A}}\) 是 Noether 环（\(\S 3\)，第 4 节，命题 8）及平坦 A-模（\(\S 3\)，第 4 节，定理 3），\(\Im \hat{\mathbf{A}} = \hat{\mathfrak{I}}\)（\(\S 2\)，第 12 节，命题 16），且典范同态 \(\mathrm{A} / \Im \to \hat{\mathrm{A}} / \hat{\mathfrak{I}}\) 是双射（\(\S 2\)，第 12 节，命题 15）；因此可应用命题 3。
+
+命题 4. 设 A、B 是两个交换 Noether 环，h: A → B 是环同态，∑ 是 A 的理想，∑ 是 B 的一个包含 ∑B 且包含于 B 的 Jacobson 根中的理想。令 A 为 A 关于 ∑-进拓扑的 Hausdorff 完备化，B 为 B 关于 ∑-进拓扑的 Hausdorff 完备化；h 关于这些拓扑连续，因而 h: A → B 使 B 成为 A-代数。设 M 是有限生成 B-模，M 是 M 关于 ∑-进拓扑的 Hausdorff 完备化；以下性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  M 是平坦 A-模。
+\item
+  \(\hat{\mathbf{M}}\) 是平坦 A-模。
+\item
+  \(\hat{\mathbf{M}}\) 是平坦 \(\hat{\mathbf{A}}\)-模。
+\end{enumerate}
+
+由于 B 关于 \(\mathfrak{L}\)-进拓扑是 Zariski 环，\(\hat{\mathbf{B}}\) 是忠实平坦 B-模（§ 3，第 5 节，命题 9），且 \(\hat{\mathbf{M}}\) 典范同构于 \(\mathbf{M} \otimes_{\mathbf{B}} \hat{\mathbf{B}}\)（§ 3，第 4 节，定理 3）；立即可验证，这个典范同构把 \(\hat{\mathbf{M}}\) 上的 A-模结构同构到由 M 上的结构导出的 \(\mathbf{M} \otimes_{\mathbf{B}} \hat{\mathbf{B}}\) 上的 A-模结构。将第 I 章 § 3 第 2 节的命题 4 中的 R 换为 B、S 换为 A、E 换为 \(\hat{\mathbf{B}}\)、F 换为 M，可知 M 为平坦 A-模的充要条件是 \(\hat{\mathbf{M}}\) 为平坦 A-模。此外，\(\hat{\mathbf{M}}\) 是有限生成 \(\hat{\mathbf{B}}\)-模，且 \(\mathfrak{J}\hat{\mathbf{B}}\) 包含于 \(\hat{\mathfrak{L}} = \mathfrak{L}\hat{\mathbf{B}}\)，因而包含于 \(\hat{\mathbf{B}}\) 的 Jacobson 根中（§ 3，第 4 节，命题 8）；所以 \(\hat{\mathbf{M}}\) 是理想 Hausdorff \(\hat{\mathbf{A}}\)-模，且关于 \(\mathfrak{J}\hat{\mathbf{A}}\)（命题 2）。因此，根据命题 3 的推论，条件 (b) 和 (c) 等价。
+
+
+\exercisesection{1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  设 A 是 Z 型分次交换环，\((A_{n})\) 是其分次结构；置 \(A^{\geq} = \bigoplus_{n \geq 0} A_{n}, A^{\leq} = \bigoplus_{n \leqslant 0} A_{n}\)；它们是 A 的分次子环。
+
+\begin{enumerate}
+\def\labelenumii{(\alph{enumii})}
+\item
+  对于每个齐次元 \(f\)，它属于 \(\mathbf{A}\)，次数为 \(d\)，分式环 \(\mathbf{A}_f\)（对应于由 \(f^n\)（其中 \(n \geqslant 0\)）组成的乘性子集）具有典范的分次环结构（《代数》，第 II 章，§11）；记 \(\mathbf{A}_{(f)}\) 为 \(\mathbf{A}_f\) 中由次数 0 的元素组成的子环。证明：若 \(d > 0\)，则 \((\mathbf{A}^{\geq})_f = \mathbf{A}_f, \mathbf{A}_{(f)}\) 同构于 \(\mathbf{A}^{(d)} / (f - 1)\mathbf{A}^{(d)}\)，且 \(((\mathbf{A}_f)^{\geq})_{f/1}\) 是与 \(\mathbf{A}_f\) 同构的分次环。
+\item
+  令多项式环 \(\mathbf{B} = \mathbf{A}[\mathbf{X}] = \mathbf{A} \otimes_{\mathbf{Z}} \mathbf{Z}[\mathbf{X}]\) 具有由 \(\mathbf{A}\) 和 \(\mathbf{Z}[\mathbf{X}]\) 上的分次结构的张量积给出的分次；这个分次与 \(\mathbf{B}\) 的环结构相容。证明：若 \(d > 0\)，则 \(\mathrm{B}_{(f)}\) 同构于 \((\mathrm{A}_f)^{\leqslant}\)，而 \((\mathrm{A}^{(d)})_f\) 是与 \(\mathrm{A}_{(f)} \otimes_{\mathbf{Z}} \mathbf{Z}[\mathbf{X}, \mathbf{X}^{-1}]\) 同构的分次环。
+\item
+  令 \(g\) 是 \(A\) 的另一个次数为 \(e\) 的齐次元。证明：若 \(d > 0\) 且 \(e > 0\)，则 \(A_{(fg)}\) 同构于 \((A_{(f)})_{g^d / f^e}\)。\\
+  \item[* (d)] 假设 \(d > 0\) 且 \(A_n = \{0\}\) 对 \(n < 0\) 成立。证明：若 \(A\) 是 Noether 环，则 \(A_{(f)}\) 也是 Noether 环（使用 §2，第 10 节，定理 2 的推论 4）。*
+\end{enumerate}
+
+\item
+  设 A 是 Z 型分次交换环，且 \(A_{n}=0\) 对 n\textless0 成立。对于所有 \(n\geqslant0\)，令 \(A_{[n]}\) 表示 A 的分次理想 \(\bigoplus_{m\geqslant n}A_{m}\)；A-代数 \(A^{\sharp}=\bigoplus_{n\geqslant0}A_{[n]}\) 是一个按 \(A_{[n]}=A_{n}^{\sharp}\) 分次的环；对于所有 \(f\in A_{d}(d>0)\)，令 \(f^{\sharp}\) 表示 \(A^{\sharp}\) 中的元素，除次数 d 的分量等于 f 外，其余分量均为零。
+
+\begin{enumerate}
+\def\labelenumii{(\alph{enumii})}
+\item
+  证明：若 \(f \in \mathbf{A}_d\) 且 \(d > 0\)，则环 \(\mathrm{A}_{(f^{\sharp})}^{\sharp}\) 同构于 \((\mathbf{A}_f)^{\geqslant}\)（记号见习题 1）。
+\item
+  \(\mathbf{A}^{\natural}\) 是有限生成 A-代数的充要条件是 \(\mathbf{A}\) 是有限生成 \(\mathbf{A}_0\)-代数。
+\item
+  要使 \(\mathbf{A}_{n+1}^{\natural} = \mathbf{A}_1^{\natural}\mathbf{A}_n^{\natural}\)（分别使 \(\mathbf{A}_n^{\natural} = (\mathbf{A}_1^{\natural})^n\)）在 \(n \geqslant n_0\) 时成立，其充要条件是 \(\mathbf{A}_{n+1} = \mathbf{A}_1\mathbf{A}_n\)（分别 \(\mathbf{A}_n = (\mathbf{A}_1)^n\)）在 \(n \geqslant n_0\) 时成立。
+\end{enumerate}
+
+\item
+  设 K 是一个域，B 是按总次数分次的多项式环 \(\mathrm{K}[X,Y]\)，C 是 B 中由 X 和 \(Y^{2}\) 生成的分次子环，a 是 C 中由 \(Y^{4}\) 生成的分次理想。证明：在分次环 A = C/a 中，\(A_{n+1} = A_{1}A_{n}\) 对 \(n \geqslant 2\) 成立，但 \(A_{n} \neq (A_{1})^{n}\) 对 \(n \geqslant 6\) 成立。
+\end{enumerate}

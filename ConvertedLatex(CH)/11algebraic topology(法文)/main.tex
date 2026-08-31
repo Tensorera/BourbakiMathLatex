@@ -1,0 +1,274 @@
+\documentclass[UTF8,12pt,a4paper,oneside]{ctexbook}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{DejaVu Sans Mono}
+\setCJKmainfont[
+  BoldFont=FandolSong-Bold.otf,
+  ItalicFont=FandolKai-Regular.otf
+]{FandolSong-Regular.otf}
+\setCJKsansfont[
+  BoldFont=FandolHei-Bold.otf
+]{FandolHei-Regular.otf}
+\setCJKmonofont[
+  BoldFont=FandolHei-Bold.otf
+]{FandolHei-Regular.otf}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{newunicodechar}
+% unicode-math re-codes some math-active characters at begin-document,
+% so every mapping is (re)asserted afterwards; see hierarchy note.
+\AtBeginDocument{%
+\newunicodechar{∅}{\ensuremath{\varnothing}}
+\newunicodechar{ℰ}{\ensuremath{\mathcal{E}}}
+\newunicodechar{ℜ}{\ensuremath{\mathfrak{R}}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∉}{\ensuremath{\notin}}
+\newunicodechar{∘}{\ensuremath{\circ}}
+\newunicodechar{↦}{\ensuremath{\mapsto}}
+\newunicodechar{∇}{\ensuremath{\nabla}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{∨}{\ensuremath{\vee}}
+\newunicodechar{∪}{\ensuremath{\cup}}
+\newunicodechar{∩}{\ensuremath{\cap}}
+\newunicodechar{⊕}{\ensuremath{\oplus}}
+\newunicodechar{⇔}{\ensuremath{\Leftrightarrow}}
+\newunicodechar{⊂}{\ensuremath{\subset}}
+\newunicodechar{⊃}{\ensuremath{\supset}}
+\newunicodechar{⊆}{\ensuremath{\subseteq}}
+\newunicodechar{∧}{\ensuremath{\wedge}}
+\newunicodechar{⊤}{\ensuremath{\top}}
+\newunicodechar{∖}{\ensuremath{\setminus}}
+\newunicodechar{⋅}{\ensuremath{\cdot}}
+\newunicodechar{∼}{\ensuremath{\sim}}
+\newunicodechar{≃}{\ensuremath{\simeq}}
+\newunicodechar{≅}{\ensuremath{\cong}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{≤}{\ensuremath{\leqslant}}
+\newunicodechar{≥}{\ensuremath{\geqslant}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≡}{\ensuremath{\equiv}}
+\newunicodechar{×}{\ensuremath{\times}}
+\newunicodechar{∞}{\ensuremath{\infty}}
+\newunicodechar{∂}{\ensuremath{\partial}}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{φ}{\ensuremath{\varphi}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{ω}{\ensuremath{\omega}}
+\newunicodechar{Γ}{\ensuremath{\Gamma}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{Θ}{\ensuremath{\Theta}}
+\newunicodechar{Λ}{\ensuremath{\Lambda}}
+\newunicodechar{ξ}{\ensuremath{\xi}}
+\newunicodechar{Π}{\ensuremath{\Pi}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{Φ}{\ensuremath{\Phi}}
+\newunicodechar{Ψ}{\ensuremath{\Psi}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{ϖ}{\ensuremath{\varpi}}
+\newunicodechar{ι}{\ensuremath{\iota}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{ϱ}{\ensuremath{\varrho}}
+\newunicodechar{ς}{\ensuremath{\varsigma}}
+\newunicodechar{ϕ}{\ensuremath{\phi}}
+\newunicodechar{ϑ}{\ensuremath{\vartheta}}
+\newunicodechar{υ}{\ensuremath{\upsilon}}
+\newunicodechar{χ}{\ensuremath{\chi}}
+\newunicodechar{ζ}{\ensuremath{\zeta}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{→}{\ensuremath{\to}}
+\newunicodechar{←}{\ensuremath{\gets}}
+\newunicodechar{⟵}{\ensuremath{\longleftarrow}}
+\newunicodechar{⟶}{\ensuremath{\longrightarrow}}
+\newunicodechar{⟷}{\ensuremath{\longleftrightarrow}}
+\newunicodechar{↪}{\ensuremath{\hookrightarrow}}
+\newunicodechar{↑}{\ensuremath{\uparrow}}
+\newunicodechar{↓}{\ensuremath{\downarrow}}
+\newunicodechar{∀}{\ensuremath{\forall}}
+\newunicodechar{∃}{\ensuremath{\exists}}
+\newunicodechar{∝}{\ensuremath{\propto}}
+\newunicodechar{⊥}{\ensuremath{\perp}}
+\newunicodechar{∠}{\ensuremath{\angle}}
+\newunicodechar{′}{\ensuremath{\prime}}
+\newunicodechar{″}{\ensuremath{\prime\prime}}
+\newunicodechar{−}{\ensuremath{-}}
+\newunicodechar{₀}{\textsubscript{0}}
+\newunicodechar{₁}{\textsubscript{1}}
+\newunicodechar{₂}{\textsubscript{2}}
+\newunicodechar{₃}{\textsubscript{3}}
+\newunicodechar{ₙ}{\textsubscript{n}}
+\newunicodechar{ₓ}{\textsubscript{x}}
+\newunicodechar{ᵢ}{\textsubscript{i}}
+\newunicodechar{ᵤ}{\textsubscript{u}}
+\newunicodechar{ʼ}{'}
+}% end of \AtBeginDocument unicode mappings
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array}
+\usepackage{xcolor,framed,fancyvrb}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks,unicode,pdfusetitle,bookmarksnumbered]{hyperref}
+\usepackage[open,openlevel=2]{bookmark}
+\doublespacing
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\setlist{itemsep=0.25\baselineskip,topsep=0.25\baselineskip}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\providecommand{\G}{\textbackslash}
+\newcommand{\specialchapter}[1]{%
+  \chapter*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}%
+}
+\newcommand{\exerciseshdr}[1]{%
+  \section*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}%
+}
+\newcounter{exercisegroup}[chapter]
+\newcommand{\exercisegroup}{%
+  \refstepcounter{exercisegroup}%
+  \subsection*{\S~\theexercisegroup}%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\S~\theexercisegroup}%
+}
+\newcounter{subitem}[subsection]
+\newcommand{\subitemhead}[1]{%
+  \refstepcounter{subitem}%
+  \subsubsection*{\thesubitem)~#1}%
+}
+\newcounter{caseitem}[subsection]
+\newcommand{\casehead}[1]{%
+  \refstepcounter{caseitem}%
+  \subsubsection*{\Alph{caseitem})~#1}%
+}
+\newcommand{\indexletter}[1]{%
+  \par\bigskip\noindent\textbf{\large #1}\par\medskip
+}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newenvironment{Highlighting}[1][]{}{}
+\newcommand{\NormalTok}[1]{#1\par}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.8\textheight 0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\graphicspath{{images/}}
+\emergencystretch=3em
+\pagestyle{plain}
+\title{代数拓扑}
+\author{尼古拉·布尔巴基}
+\date{}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\clearpage
+\frontmatter
+\tableofcontents
+% front matter, relocated verbatim from the head of fragment_001
+\specialchapter{引言}
+
+代数拓扑学的目标，是通过以函子方式把各种代数结构（模、群胚等）关联到拓扑空间上来研究它们，这些代数结构的性质反映了所考虑空间的性质。
+
+本卷的第 I 至 IV 章讨论覆叠和庞加莱群的理论；它们导向范坎彭定理的一般表述。随后各章将处理同调与上同调、高阶同伦群以及胞腔复形。
+
+覆叠的概念是第 I 章的主题。尽管这一概念涉及的是某些连续映射 \(p: E \rightarrow B\) ，其中 E 与 B 为拓扑空间，但通行的术语把 E 视为覆叠，把 B 视为其基，而映射 p 在绝大多数情形是隐而不言的。这样，我们便被引导去一般地研究 B-空间的结构（ \(§1\) ）。平展 B-空间在 \(§2\) 中定义，但往往宜于从 B 上的层这一等价观点来考察它们（ \(§3\) ）。局部平凡纤维空间的概念在 \(§4\) 中引入；它们是局部同构于某个积 \(B \times F\) 的 B-空间，其中纤维 F 是一个拓扑空间。覆叠是其纤维为离散拓扑空间的那些纤维空间。在 \(§5\) 中，我们定义伽罗瓦覆叠的概念，并证明：若基 B 非空、连通且局部连通，则每个覆叠都可以伴随于一个伽罗瓦覆叠。单连通空间在 \(§6\) 中定义：它们是使每个覆叠皆可平凡化的那些空间；R 的区间、数值空间 \(R^{n}\) 的凸子集以及球面 \(S_{n}\) （其维数 \(n \geqslant 2\) ）都是单连通空间，但圆周 \(S_{1}\) 不是。
+
+群胚这一代数概念在第 II 章中定义；它推广了群的概念，最初由 H. BRANDT 在其关于四元数代数的可逆分式理想的研究中引入。箭图、图与范畴的概念在第 II 章的 §1、§2 与 §3 中定义；群胚是每个箭皆可逆的范畴。§4 与 §5 的结果将使我们可以从以群胚表述的范坎彭定理出发，在各种情形下推出庞加莱群的明显表现。
+
+对给定的拓扑空间 B 的覆叠加以分类，是通过在第 III 章的 §3 中引入它的庞加莱群胚 \(\varpi(\mathrm{B})\) 来实现的；该群胚由 B 中道路关于严格同伦关系的等价类来定义。当 b 是 B 的一点时，庞加莱群 \(\pi_{1}(\mathrm{B},b)\) 就表现为群胚 \(\varpi(\mathrm{B})\) 在 b 处的迷向群。同伦的概念在 §1 中引入；那里特别研究同伦的重要扩张性质。§2 专论拓扑空间中道路的概念以及道路连通空间与局部道路连通空间的概念。那里还建立了一个关于道路提升的定理。
+
+同伦与覆叠空间之间的联系在第 4、5 节中研究。若 E 是拓扑空间 B 的覆叠空间，且 \(b \in \mathbf{B}\) ，则纤维 \(\mathrm{E}_b\) 赋有群 \(\pi_1(\mathrm{B}, b)\) 的一个自然作用；这一构造给出一个函子，从 B 的覆叠的范畴到赋有 \(\pi_1(\mathrm{B}, b)\) 作用的集合的范畴。当 B 是连通且局部道路连通的拓扑空间时，这个函子是全忠实的；它的像由群 \(\pi_1(\mathrm{B}, b)\) 在某个离散集合上的那些作用组成，这些作用对群 \(\pi_1(\mathrm{B}, b)\) 上的某个称为“容许”的拓扑是连续的。
+
+第 IV 章专论可解圈空间；它们是使庞加莱群的容许拓扑为离散拓扑的局部道路连通拓扑空间。对这些空间而言，覆叠与庞加莱群的作用之间的对应因而是完美的：上文描述的函子给出 B 的覆叠的范畴与赋有群 \(\pi_{1}(B,b)\) 作用的集合的范畴之间的一个范畴等价。
+
+称拓扑空间 B 为道路单连通的，如果它是道路连通的，并且群 \(\pi_1(B, b)\) 对 B 的每一点 \(b\) 都是平凡的。文中证明：非空的可解圈空间具有一个道路单连通的伽罗瓦万有覆叠。文中还证明：紧致可解圈拓扑空间的庞加莱群是有限表现的（§2）；若不假设空间可解圈，这个庞加莱群可以具有连续统的基数（SHELAH 定理）。§3 中将证明：连通拓扑群在其单位元处的庞加莱群是交换群，并且（在可解圈的情形）其万有覆叠具有自然的拓扑群结构。
+
+当 \(f \colon Y \to X\) 是连续映射而 E 是一个 Y-空间时，§4 用下降数据的语言描述了使 E 经换基而得自的那些可能的 X-空间。这样，我们便把 A. GROTHENDIECK 在代数几何中系统使用的程序移植到一般拓扑的框架之中。文中还给出保证 Y 的覆叠来自 X 的覆叠的条件。在关于 \(f\) 的某些假设下，由此可以证明一般形式的范坎彭定理：X 的庞加莱群胚同构于某个群胚（余均衡子，第 II 章，§5），它利用 Y 的庞加莱群胚和纤维方块 \(Y \times_X Y\) 的庞加莱群胚构造出来。
+
+然而，为了应用，还须由此推出 X 在一点处的庞加莱群的表现。为此，§5 中把第 II 章的一般计算应用于大量例子，以得到这样的表现。特别地，那里在给定 X 由一族开的道路连通子集所成的覆盖时，计算了 X 的庞加莱群。正如 R. BROWN 特别证明的，群胚的观点使得不必对这些子集的两两交的连通性作任何假设。在某些可解圈性条件下，还处理了 X 由闭子集所成的局部有限覆盖的情形。那里还计算了可解圈空间被一个离散群的逆紧自由作用作商所得空间的庞加莱群。最后，那里还在略有不同的假设下明确了原始的范坎彭定理。
+
+最后，§6 研究拓扑群 G 的分类空间的概念：当有这样的空间 \(B_{G}\) 时，对群为 G、基为仿紧空间 B 的主纤维丛的同构类的研究，就转化为对从 B 到 \(B_{G}\) 中的映射的同伦类的研究。当 G 为离散群时，可以构造出一个分类空间，它是一个可度量化的空间。
+
+第 I 至 IV 章的结果依赖于前四卷（E、A、TG、FVR）；某些例子和注还用到 EVT、VAR、LIE III 与 LIE IV 中的结果。
+
+最初曾计划让本卷构成一般拓扑之书的第 XI 章的内容。因此，前面各卷中对 TG, XI 的引用须按如下方式修改：
+
+LIE, III, §1, no. 9, p. 114, note 1. 读作 “Cf. TA, IV, p. 379, prop. 6.”
+
+LIE, III, §6, p. 192, note 1. 读作 “回忆 (TA, I, p. 124, def. 3)：称一个空间为单连通的，如果它的每个覆叠皆可平凡化；单连通空间是连通的。再回忆 (TA, I, p. 100, cor. 3)：若 G₁、G₂ 是连通拓扑群，若 φ 是从 G₁ 到 G₂ 上的连续开同态且核为离散的，而 G₂ 单连通，则 φ 是同胚。”
+
+LIE, III, §6, no. 7, p. 206, line 11. 应将 “根据 TG, XI” 改读为 “根据 TA, IV, p. 379, prop. 6”。
+
+LIE, VII, p. 66, appendix II, exercise 1. 应将 “TG, XI” 改读为 “TA, I, p. 69, def. 2”。
+
+LIE, IX, §2, no. 4, p. 12, line -9. 应将 “TG, XI, 待出版” 改读为 “TA, VII, 待出版”。
+
+LIE, IX, §3, no. 6, p. 22. 应将 “TG, XI, 待出版” 改读为 “TA, I, p. 127, example 3”。
+
+LIE, IX, §4, no. 2, p. 27, line 11. 应将 “TG, XI, 待出版” 改读为 “TA, VII, 待出版”。
+
+LIE, IX, §4, no. 6, p. 34, line -6. 应将 “TG, XI, 待出版” 改读为 “TA, VII, 待出版”。
+
+LIE, IX, §4, no. 9, p. 39, line 13. 应将 “TG, XI, 待出版” 改读为 “根据 TA, IV, p. 379, prop. 6”。
+
+LIE, IX, §5, no. 4, p. 51, line -13. 应将 “TG, XI, 待出版” 改读为 “根据 TA, IV, p. 358, example”。
+
+LIE, IX, §5, no. 4, p. 51, line -4. 应将 “cf. TG, XI, 待出版” 改读为 “TA, I, p. 106, example 4 与 p. 111, prop. 10”。
+
+LIE, IX, §9, no. 1, p. 89, line 9. 应将 “根据 TG, XI” 改读为 “根据 TA, I, p. 37, th. 2”。
+
+LIE, IX, p. 112, exercise 8. 应将 “TG, XI” 改读为 “TA, VII”。
+
+LIE, IX, p. 118, exercise 2. 应将 “TG, XI” 改读为 “TA, III, p. 229, def. 1”。
+
+\specialchapter{参考文献}
+
+BRANDT (H.), "Über eine Verallgemeinerung des Gruppenbegriffes", Mathematische Annalen (1926), vol. 96, p. 360--366.
+
+BROWN (R.), "Groupoids and van Kampen's theorem", Proceedings of the London Mathematical Society (3) (1967), vol. 17, p. 385--401.
+
+GROTHENDIECK (A.), Revêtements étales et groupe fondamental (SGA 1), Documents mathématiques, vol. 3, Société mathématique de France, 2003.
+
+VAN KAMPEN (E. R.), "On the connection between the fundamental groups of some related spaces", American Journal of Mathematics (1933), vol. 55, no. 1, p. 261--267.
+
+\mainmatter
+\input{chapters/fragment_001}
+\input{chapters/fragment_002}
+\input{chapters/fragment_003}
+\input{chapters/fragment_004}
+\input{chapters/fragment_005}
+\input{chapters/fragment_006}
+\input{chapters/fragment_007}
+\input{chapters/fragment_008}
+\input{chapters/fragment_009}
+\input{chapters/fragment_010}
+\input{chapters/fragment_011}
+\input{chapters/fragment_012}
+\input{chapters/fragment_013}
+\input{chapters/fragment_014}
+\input{chapters/fragment_015}
+\input{chapters/fragment_016}
+\input{chapters/fragment_017}
+\end{document}

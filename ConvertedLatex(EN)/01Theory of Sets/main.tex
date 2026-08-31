@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{DejaVu Sans Mono}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{newunicodechar}
+\newunicodechar{∅}{\ensuremath{\varnothing}}
+\newunicodechar{ℰ}{\ensuremath{\mathcal{E}}}
+\newunicodechar{ℜ}{\ensuremath{\mathfrak{R}}}
+\newunicodechar{⇒}{\ensuremath{\Rightarrow}}
+\newunicodechar{∀}{\ensuremath{\forall}}
+\newunicodechar{∃}{\ensuremath{\exists}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∘}{\ensuremath{\circ}}
+\newunicodechar{∨}{\ensuremath{\lor}}
+\newunicodechar{∪}{\ensuremath{\cup}}
+\newunicodechar{⊂}{\ensuremath{\subset}}
+\newunicodechar{⊃}{\ensuremath{\supset}}
+\newunicodechar{⊄}{\ensuremath{\not\subset}}
+\newunicodechar{⊅}{\ensuremath{\not\supset}}
+\newunicodechar{⊕}{\ensuremath{\oplus}}
+\newunicodechar{⊗}{\ensuremath{\otimes}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+\newunicodechar{⟶}{\ensuremath{\longrightarrow}}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array}
+\usepackage{xcolor,framed,fancyvrb}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks,unicode,pdfusetitle,bookmarksnumbered]{hyperref}
+\usepackage[open,openlevel=2]{bookmark}
+\doublespacing
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\setlist{itemsep=0.25\baselineskip,topsep=0.25\baselineskip}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newenvironment{Highlighting}[1][]{}{}
+\newcommand{\NormalTok}[1]{#1\par}
+\newcommand{\listheading}[1]{\par\medskip\noindent{\bfseries #1}\par\nobreak}
+\newcommand{\minorheading}[1]{\par\medskip\noindent\textit{#1}\par\nobreak}
+\newcounter{exercisegroup}
+\newcommand{\startexercises}{%
+  \clearpage
+  \section*{EXERCISES}%
+  \setcounter{exercisegroup}{0}%
+}
+\newcommand{\exercisegroup}{%
+  \refstepcounter{exercisegroup}%
+  \section*{\texorpdfstring{\S\ \arabic{exercisegroup}}{Section \arabic{exercisegroup}}}%
+  \phantomsection
+  \addcontentsline{toc}{section}{Exercises for \texorpdfstring{\S\ \arabic{exercisegroup}}{Section \arabic{exercisegroup}}}%
+}
+\newcommand{\appendixexercisegroup}{%
+  \section*{APPENDIX}%
+  \phantomsection
+  \addcontentsline{toc}{section}{Exercises for the Appendix}%
+}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.8\textheight 0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\graphicspath{{images/}}
+\emergencystretch=3em
+\title{Theory of Sets}
+\author{Nicolas Bourbaki}
+\date{}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\clearpage
+\frontmatter
+\include{chapters/00_preface}
+\tableofcontents
+\mainmatter
+\include{chapters/01_introduction}
+\include{chapters/02_description_of_formal_mathematics}
+\include{chapters/03_theory_of_sets}
+\include{chapters/04_ordered_sets_cardinals_integers}
+\include{chapters/05_historical_note_chapter_iii}
+\include{chapters/06_structures}
+\include{chapters/07_historical_note_chapters_i_iv}
+\backmatter
+\include{chapters/08_summary_of_results}
+\end{document}

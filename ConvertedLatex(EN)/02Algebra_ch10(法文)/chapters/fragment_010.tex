@@ -1,0 +1,1584 @@
+\exercisesection{Composition Product}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Let \(k\) be a commutative ring, A an associative unital \(k\) -algebra, M an (A, A)-bimodule. An extension of A by M is the data of an associative unital \(k\) -algebra B and of an exact sequence of \(k\) -modules
+\end{enumerate}
+
+\[
+(\mathcal {E}): 0 \rightarrow \mathrm{M} \stackrel {{i}} {{\rightarrow}} \mathrm{B} \stackrel {{p}} {{\rightarrow}} \mathrm{A} \rightarrow 0,
+\]
+
+where p is an algebra homomorphism and where
+
+\[
+i (p (b) m) = b i (m) \quad \text { and } \quad i (m p (b)) = i (m) b \quad \text { for } \quad b \in \mathbf {B}, \quad m \in \mathbf {M}.
+\]
+
+Two extensions \(0 \to M \xrightarrow{i} B \xrightarrow{p} A \to 0\) and \(0 \to M \xrightarrow{i'} B' \xrightarrow{p'} A \to 0\) are said to be equivalent if there exists an algebra homomorphism \(u: B \to B'\) such that \(p' \circ u = p\) and \(u \circ i = i'\) ; the homomorphism \(u\) is then bijective.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  We assume that the exact sequence of \(k\) -modules \(0 \to \mathbf{M} \xrightarrow{i} \mathbf{B} \xrightarrow{p} \mathbf{A} \to 0\) is split; let \(s: \mathbf{A} \to \mathbf{B}\) be a \(k\) -linear section of \(p\) . Show that there exists an element \(f \in \mathbf{C}^2(\mathbf{A}, \mathbf{M})\) (X, p.~195, exercise 26, b)) such that \(s(a) s(a') - s(aa') = i(f(a, a'))\) for \(a, a' \in \mathbf{A}\) . Show that \(f\) is a 2-cocycle and that its class in \(\mathbf{H}^2(\mathbf{A}, \mathbf{M})\) is independent of the choice of \(s\) ; we denote it \(c(\mathcal{E})\) .
+\item
+  Let \(\mathrm{Ex}_{k}(\mathbf{A},\mathbf{M})\) be the set of equivalence classes of extensions of A by M which are trivial as extensions of k-modules. Show that c defines a bijection from \(\mathrm{Ex}_{k}(\mathbf{A},\mathbf{M})\) onto \(\mathrm{H}^{2}(\mathbf{A},\mathbf{M})\) .
+\item
+  Let \(\mathcal{E}:0\to\mathbf{M}\stackrel{i}{\to}\mathbf{B}\stackrel{p}{\to}\mathbf{A}\to0\) and \(\mathcal{E}':0\to\mathbf{M}\stackrel{i'}{\to}\mathbf{B}\stackrel{p'}{\to}\mathbf{A}\to0\) be two extensions of A by M. We denote by C the subalgebra of \(\mathbf{B}\times\mathbf{B}'\) consisting of the elements \((b,b')\) such that \(p(b)=p'(b')\) , c the ideal of C consisting of the elements \((i(m),-i'(m))\) for \(m\in\mathbf{M}\) , \(\mathbf{B}''\) the algebra C/c, \(\pi:\mathbf{C}\to\mathbf{B}''\) the quotient homomorphism. Let \(i'':\mathbf{M}\to\mathbf{B}''\) and \(p'':\mathbf{B}''\to\mathbf{A}\) be the homomorphisms such that \(i''(m)=\pi((m,0))\) for \(m\in\mathbf{M}\) and \(p''\pi((b,b'))=p(b)\) for \(b\in\mathbf{B},b'\in\mathbf{B}'\) . Show that the sequence \(0\to\mathbf{M}\to\mathbf{B}''\to\mathbf{A}\to0\) is an extension of A by M, called the sum extension of ( \(\mathcal{E}\) ) and ( \(\mathcal{E}'\) ), and that this defines a commutative group law on the set of equivalence classes of extensions of A by M. In particular, the set \(\mathrm{Ex}_{k}(\mathbf{A},\mathbf{M})\) is thereby endowed with a group structure, and the map \(c\) is a group isomorphism.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  Suppose that the \(k\) algebra A admits an augmentation \(\pi:\mathbf{A}\to k\) (X, p.~196, exercise 27) and that
+\item
+  Suppose that the \(k\) -algebra \(\mathbf{A}\) admits an augmentation \(\pi : \mathbf{A} \to k\) (X, p.~196, exercise 27) and that, moreover, \(\mathbf{A}\) is a projective \(k\) -module. We denote by I the kernel of \(\pi\) . Let \(\mathbf{M}\) be a left \(\mathbf{A}\) -module.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Let \((\mathcal{E}):0\to M_{(\pi)}\stackrel{i}{\to}\mathbf{B}\stackrel{p}{\to}\mathbf{A}\to 0\) be an extension of \(\mathbf{A}\) by the \((\mathbf{A},\mathbf{A})\) -bimodule \(M_{(\pi)}\) (X, p.~196, exercise 27); we denote by \(\overline{\mathbf{B}}\) the ideal of \(\mathbf{B}\) of elements \(b\in \mathbf{B}\) such that \(p(b)\in I\) . We have \(i(m)b = 0\) for \(m\in \mathbf{M}\) and \(b\in \overline{\mathbf{B}}\) , so that \(\overline{\mathbf{B}}\) is equipped with a structure of left \(\mathbf{A}\) -module such that \(p(\beta)b = \beta b\) for \(\beta \in \mathbf{B}\) , \(b\in \overline{\mathbf{B}}\) . Show that there exists an exact sequence of \(\mathbf{A}\) -modules \(0\to \mathrm{M}\to \overline{\mathrm{B}}\to I\to 0\) ; we denote by \(\theta (\mathcal{E})\) the class of this exact sequence in \(\operatorname {Ext}_{\mathbf{A}}^{1}(I,\mathbf{M})\) .
+\item
+  Show that \(\theta\) defines a map from \(\mathrm{Ex}_{k}(\mathbf{A},\mathbf{M}_{(\pi)})\) to \(\mathrm{Ext}_{\mathbf{A}}^{1}(I,\mathbf{M})\) . Prove the commutativity of the diagram:
+\end{enumerate}
+
+\[
+\begin{array}{c c c} \operatorname{Ex} _ {k} (\mathbf {A}, \mathbf {M} _ {(\pi)}) & \stackrel {{\theta}} {{\longrightarrow}} & \operatorname{Ext} _ {\mathbf {A}} ^ {1} (I, \mathbf {M}) \\ \downarrow^ {c} & & \downarrow^ {- \delta} \\ \mathbf {H} ^ {2} (\mathbf {A}, \mathbf {M} _ {(\pi)}) & \stackrel {{\varphi}} {{\longrightarrow}} & \operatorname{Ext} _ {\mathbf {A}} ^ {2} (k, \mathbf {M}) \end{array}
+\]
+
+where δ is the connecting homomorphism deduced from the exact sequence \(0 \rightarrow I \rightarrow A \xrightarrow{\pi} k \rightarrow 0\) , and where φ is the isomorphism obtained by computing with the standard resolution (X, p.~196, exercise 27, b)). Deduce that θ is an isomorphism of groups.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let G be a group, A the algebra \(\mathbf{Z}^{(\mathrm{G})}, j: \mathrm{G} \to \mathrm{A}\) the canonical injection. One endows A with the augmentation \(\pi: A \to Z\) defined by \(\pi(e_g) = 1\) for all \(g \in G\) . Let M be a left A-module.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Let \(0 \to M_{(\pi)} \xrightarrow{i} B \xrightarrow{p} A \to 0\) be an extension of \(A\) by the \((A, A)\) -bimodule \(M_{(\pi)}\) (X, p.~196, exercise 27). We denote by \(\Gamma\) the subset of \(B\) consisting of the elements \(b\) of \(B\) such that \(p(b) \in j(G)\) . Show that \(\Gamma\) , endowed with the multiplication induced by that of \(B\) , is a group, an extension of \(G\) by the \(G\) -module \(M\) .
+\item
+  The preceding construction defines a map from \(\mathrm{Ex}_{\mathbf{Z}}(\mathbf{A},\mathbf{M}_{(\pi)})\) to \(\mathrm{Ex}(\mathbf{G},\mathbf{M})\) (VIII, § 13). Show that the diagram
+\end{enumerate}
+
+\[
+\begin{array}{c} \operatorname{Ex} _ {\mathbf {Z}} (\mathbf {A}, \mathbf {M} _ {(\pi)}) \to \operatorname{Ex} (\mathbf {G}, \mathbf {M}) \\ \downarrow^ {c} \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \downarrow \\ \mathbf {H} ^ {2} (\mathbf {A}, \mathbf {M} _ {(\pi)}) \xrightarrow {\varphi^ {2}} \mathbf {H} ^ {2} (\mathbf {G}, \mathbf {M}) \end{array}
+\]
+
+is commutative.
+
+* 4) Let g be a Lie k-algebra, M a g-module. An extension of g by M is an exact sequence of k-modules \(0 \rightarrow M \xrightarrow{i} h \xrightarrow{p} g \rightarrow 0\) where h is a Lie k-algebra, p a homomorphism of Lie algebras, and where \(i(p(H)m) = [H, i(m)]\) for \(H \in h, m \in M\) . Two extensions
+
+\[
+0 \rightarrow \mathrm{M} \stackrel {i} {\rightarrow} \mathfrak {h} \stackrel {p} {\rightarrow} \mathfrak {g} \rightarrow 0, 0 \rightarrow \mathrm{M} \stackrel {i ^ {\prime}} {\rightarrow} \mathfrak {h} ^ {\prime} \stackrel {p ^ {\prime}} {\rightarrow} \mathfrak {g} \rightarrow 0
+\]
+
+are said to be equivalent if there exists a homomorphism \(u: \mathfrak{h} \to \mathfrak{h}'\) such that \(p' \circ u = p\) , \(u \circ i = i'\) . We denote by Liex (g, M) the set of equivalence classes of extensions of g by M. We assume that g is a free k-module.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Let \((\mathcal{E}):0\to \mathrm{M}\stackrel {i}{\to}\mathfrak{h}\stackrel {p}{\to}\mathfrak{g}\to 0\) be an extension of \(\mathfrak{g}\) by \(\mathbf{M}\) ; we choose a \(k\) -linear section \(s:\mathfrak{g}\to \mathfrak{h}\) of \(p\) . We define an element \(f\in C^2 (\mathfrak{g},\mathbf{M})\) (X, p.~196, exercise 28, b)) by setting
+\end{enumerate}
+
+\[
+i (f (x, y)) = [ s (x), s (y) ] - s ([ x , y ]) \quad \text { for } \quad x  ,   y \in \mathfrak {g}  .
+\]
+
+Show that \(f\) is a 2-cocycle and that its class in \(\mathbf{H}^{2}(\mathfrak{g},\mathbf{M})\) does not depend on the choice of \(s\) ; we denote it \(\theta(\mathcal{E})\) . b) Show that \(\theta\) defines a bijection from Liex \((\mathfrak{g},\mathbf{M})\) onto \(\mathbf{H}^{2}(\mathfrak{g},\mathbf{M})\) . Describe directly the group structure on Liex \((\mathfrak{g},\mathbf{M})\) obtained by transport via \(\gamma\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let U be the enveloping algebra of g, \(M_{(\pi)}\) the (U, U)-bimodule associated with M by means of the augmentation \(\pi: U \to k\) (X, p.~196, exercise 27). Let \(0 \to M_{(\pi)} \to B \xrightarrow{p} U \to 0\) be an extension of U by \(M_{(\pi)}\) (exercise 1); we denote by b the set of elements b of B such that \(p(b) \in j(g)\) .
+\end{enumerate}
+
+Show that b is a Lie k-algebra, an extension of g by M. This construction defines a map \(\lambda: \mathrm{Ex}_{k}(\mathrm{U}, \mathrm{M}_{(\pi)}) \to \mathrm{Liex}(\mathfrak{g}, \mathrm{M})\) . Show that the diagram
+
+\[
+\begin{array}{c c c} \operatorname{Ex} _ {k} (\mathrm{U}, \mathrm{M} _ {(\pi)}) & \xrightarrow {\lambda} & \text { Liex(g,M) } \\ \downarrow^ {c} & & \downarrow^ {\gamma} \\ \mathrm{H} ^ {2} (\mathrm{U}, \mathrm{M} _ {(\pi)}) & \xrightarrow {\varphi^ {2}} & \mathrm{H} ^ {2} (\mathrm{g,M}) \end{array}
+\]
+
+(where \(\varphi^2\) is the isomorphism defined in X, p.~196, exercise 27) is commutative. Deduce that \(\lambda\) is an isomorphism. *
+
+¶ 5) Let G, F be two groups.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  For every extension \(\mathcal{E}: F \to E \to G\) of \(G\) by \(F\) (I, p.~62), the action of \(E\) on \(F\) by inner automorphisms defines a homomorphism \(E \to \text{Aut}(F)\) , whence, by passing to the quotient, a group homomorphism \(\theta: G \to \text{Aut}(F)/\text{Int}(F)\) , called the homomorphism associated with the extension \(\mathcal{E}\) . Two isomorphic extensions of \(G\) by \(F\) have the same associated homomorphism.
+\item
+  Conversely, we consider a group homomorphism \(\theta: G \to \text{Aut} (F)/\text{Int} (F)\) . Let
+\end{enumerate}
+
+\[
+p: \operatorname{Aut} (\mathbf {F}) \rightarrow \operatorname{Aut} (\mathbf {F}) / \operatorname{Int} (\mathbf {F})
+\]
+
+the quotient map. We choose a map \(\sigma\) from G to Aut (F) such that \(p \circ \sigma = \theta\) , and a map \(f\) from G \(\times\) G to F such that \(\sigma(x)\, \sigma(y)\, (\sigma(xy))^{-1} = \text{Int}(f(x,y))\) for \(x,y \in G\) ; set \(c(x,y,z) = \sigma(x)\, (f(y,z)).f(x,yz).(f(xy,z))^{-1}.(f(x,y))^{-1}\) . Show that \(c(x,y,z)\) belongs to the center Z of F.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  We consider Z as a G-module by setting \(g . z = \sigma(g) (z)\) for \(g \in G, z \in Z\) ; this definition is independent of the choice of \(\sigma\) . The map c defines an element of \(C^{3}(G, Z)\) ; show that c is a 3-cocycle, and that its class in \(H^{3}(G, Z)\) is independent of the choices of \(\sigma\) and of f. We denote it \(\omega(G, F, \theta)\) . d) Show that the vanishing of \(\omega(G, F, \theta)\) is a necessary and sufficient condition for there to exist an extension of G by F having as associated homomorphism \(\theta\) . If \(\omega(G, F, \theta) = 0\) , show that one can choose f so that the cocycle c is zero, then define a group law on \(G \times F\) .
+\item
+  Assume \(\omega(G, F, \theta) = 0\) . Show that the set of isomorphism classes of extensions of \(G\) by \(F\) of the associated homomorphism \(\theta\) is a principal homogeneous set under the group H \(^{2}\) (G, Z).
+\item
+  Let H be a group, M a \(\mathbf{Z}^{(H)}\) -module, \(x\) be an element of \(\mathrm{H}^3 (\mathrm{H},\mathrm{M})\) . Show that there exists a group E with center M and a homomorphism \(\varphi :\mathrm{H}\to \mathrm{Aut}(\mathrm{E}) / \mathrm{Int}(\mathrm{E})\) , inducing on M the given H-module structure, such that \(\omega (\mathrm{H},\mathrm{E},\varphi) = x\) (take \(\mathbf{E} = \mathbf{M}\times \mathbf{L}\) , where L is the free group on \(\mathrm{H}\times \mathrm{H}\) ).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Let M be a right A-module and N a left A-module. For \(n \geqslant 0\) , we denote by \(\mathcal{T}_{n}(M, N)\) the set of triples \((P, p, q)\) , where P is a complex of finitely generated free A-modules, such that \(P_{r} = 0\) for \(r < 0\) and \(r > n\) , and where \(p: P \to N\) and \(q: P^{*} \to M(n)\) are morphisms of A-complexes (we denote by \(P^{*}\) the Homgr complex \(_{A}\) \((P, A)\) ). Two elements \((P, p, q)\) and \((P', p', q')\) of \(\mathcal{T}_{n}(M, N)\) are said to be linked if there exists a morphism \(u: P \to P'\) such that \(p = p' \circ u\) and \(q' = q \circ 'u\) ; we denote by \(T_{n}(M, N)\) the quotient of \(\mathcal{T}_{n}(M, N)\) by the finest equivalence relation for which two related elements are equivalent (cf.~II, p.~52, exercise 9). a) Show that \(T_{n}(M, N)\) is identified with Tor \(_{n}^{A}\) \((M, N)\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \((\mathcal{E}):0\to \mathrm{M}^{\prime}\stackrel {i}{\to}\mathrm{M}\stackrel {\pi}{\to}\mathrm{M}^{\prime \prime}\to 0\) be an exact sequence of right A-modules. Describe the connecting homomorphism \(\partial :\mathbf{T}_n(\mathbf{M}'',\mathbf{N})\to \mathbf{T}_{n - 1}(\mathbf{M}',\mathbf{N})\) deduced from \(\partial (\mathcal{E},\mathbf{N})\) using the previous identifications.
+\end{enumerate}
+
+\((\mathrm{If}(\mathbf{P},p,q)\in\mathcal{T}_{n}(\mathbf{M}^{\prime\prime},\mathbf{N}),\text{show that we have}\partial(\mathbf{P},p,q)=(\overline{\mathbf{P}},\overline{p},\overline{q}),\text{where}\overline{\mathbf{P}}\text{ is the complex obtained by replacing } \mathbf{P}_{n}\text{ by 0 in } \mathbf{P},\overline{p}\text{ is the morphism deduced from } p\text{ and }(\overline{q})^{n-1}: \mathbf{P}_{n-1}^{*}\to\mathbf{M}^{\prime}\text{ is equal to }u^{n-1},u\text{ being a morphism from } \mathbf{P}^{*}\text{ into the complex (Con (i)) (n) such that }\pi\circ u^{n}=q^{n}.)\)
+
+¶ 7) Let A' be an (associative and unital) k-algebra and B = A ⊗k A'.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Let M be a left A-module, Q a right A-module, M' a left A'-module, Q' a right A'-module. Let (P, p) (resp. (P', p'), resp. (R, r)) be a projective resolution of the A-module M (resp. of the A'-module M', resp. of the B-module M ⊗\_k M'). Show that there exists a morphism of B-complexes
+\end{enumerate}
+
+\[
+u: \mathbf {P} \otimes_ {k} \mathbf {P} ^ {\prime} \rightarrow \mathbf {R},
+\]
+
+unique up to homotopy, such that \(r \circ u = p \otimes p'\) . Define, using \(u\) , a graded \(k\) -homomorphism of degree zero
+
+\[
+\top : \operatorname{Tor} ^ {\mathbf {A}} (\mathrm{Q}, \mathrm{M}) \otimes_ {k} \operatorname{Tor} ^ {\mathbf {A} ^ {\prime}} (\mathrm{Q} ^ {\prime}, \mathrm{M} ^ {\prime}) \rightarrow \operatorname{Tor} ^ {\mathbf {B}} (\mathrm{Q} \otimes_ {k} \mathrm{Q} ^ {\prime}, \mathrm{M} \otimes_ {k} \mathrm{M} ^ {\prime}).
+\]
+
+Show that \(\top\) does not depend on the choice of resolutions P, P', R and of the morphism \(u\) . If \(a \in \operatorname{Tor}^{\mathbf{A}}(\mathbf{Q}, \mathbf{M})\) and \(a' \in \operatorname{Tor}^{\mathbf{A}'}(\mathbf{Q}', \mathbf{M}')\) , we set \(\top(a \otimes a') = a \top a'\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  We assume moreover that the \(k\) -modules \(\mathbf{A}\) and \(\mathbf{A}'\) are projective and that one has \(\operatorname{Tor}_n^k (\mathbf{M},\mathbf{M}') = 0\) for \(n > 0\) . Show that \(\mathbf{P} \otimes_k \mathbf{P}'\) is then a projective resolution of the \(\mathbf{B}\) -module \(\mathbf{M} \otimes_k \mathbf{M}'\) ; deduce from this, for every \(\mathbf{A}\) -module \(\mathbf{N}\) and for every \(\mathbf{A}'\) -module \(\mathbf{N}'\) , a graded \(k\) -homomorphism of degree zero
+\end{enumerate}
+
+\[
+\vee : \operatorname{Ext} _ {\mathbf {A}} (\mathbf {M}, \mathbf {N}) \otimes_ {k} \operatorname{Ext} _ {\mathbf {A} ^ {\prime}} (\mathbf {M} ^ {\prime}, \mathbf {N} ^ {\prime}) \rightarrow \operatorname{Ext} _ {\mathbf {B}} (\mathbf {M} \otimes_ {k} \mathbf {M} ^ {\prime}, \mathbf {N} \otimes_ {k} \mathbf {N} ^ {\prime}).
+\]
+
+Show that \(\vee\) is independent of the choice of resolutions \(\mathbf{P}\) and \(\mathbf{P}'\) . If \(b \in \operatorname{Ext}_{\mathbf{A}}(\mathbf{M}, \mathbf{N})\) and \(b' \in \operatorname{Ext}_{\mathbf{A}'}(\mathbf{M}', \mathbf{N}')\) , we write \(\vee (b \otimes b') = b \vee b'\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let A'' be a third k-algebra (associative and unital), M'' and N'' left A''-modules, Q'' a right A''-module. We identify the k-algebras A ⊗\_k (A' ⊗\_k A'') and (A ⊗\_k A') ⊗\_k A'', as well as the k-modules M ⊗\_k (M' ⊗\_k M'') and (M ⊗\_k M') ⊗\_k M'', N ⊗\_k (N' ⊗\_k N'') and (N ⊗\_k N') ⊗\_k N'', Q ⊗\_k (Q' ⊗\_k Q'') and (Q ⊗\_k Q') ⊗\_k Q''. Prove the formulas
+\end{enumerate}
+
+\[
+\begin{array}{l l} a \top (a ^ {\prime} \top a ^ {\prime \prime}) = (a \top a ^ {\prime}) \top a ^ {\prime \prime} & \text {for} \quad a \in \operatorname{Tor} ^ {\mathbf {A}} (\mathrm{Q}, \mathrm{M}), \quad a ^ {\prime} \in \operatorname{Tor} ^ {\mathbf {A} ^ {\prime}} (\mathrm{Q} ^ {\prime}, \mathrm{M} ^ {\prime}), \\ & \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad a ^ {\prime \prime} \in \operatorname{Tor} ^ {\mathbf {A} ^ {\prime \prime}} (\mathrm{Q} ^ {\prime \prime}, \mathrm{M} ^ {\prime \prime}) \end{array}
+\]
+
+\[
+\begin{array}{r l} b \vee (b ^ {\prime} \vee b ^ {\prime \prime}) = (b \vee b ^ {\prime}) \vee b ^ {\prime \prime} & \text {for} \quad b \in \operatorname{Ext} _ {\mathbf {A}} (\mathbf {M}, \mathbf {N}), \quad b ^ {\prime} \in \operatorname{Ext} _ {\mathbf {A}} (\mathbf {M} ^ {\prime}, \mathbf {N} ^ {\prime}), \\ & \qquad \qquad \qquad \qquad \qquad \qquad b ^ {\prime \prime} \in \operatorname{Ext} _ {\mathbf {A} ^ {\prime \prime}} (\mathbf {M} ^ {\prime \prime}, \mathbf {N} ^ {\prime \prime}). \end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Let \(\sigma : \mathrm{Tor}^{\mathbf{A} \otimes_{\mathbf{k}} \mathbf{A}'}(\mathbf{Q} \otimes_{\mathbf{k}} \mathbf{Q}', \mathbf{M} \otimes_{\mathbf{k}} \mathbf{M}') \to \mathrm{Tor}^{\mathbf{A}' \otimes_{\mathbf{k}} \mathbf{A}}(\mathbf{Q}' \otimes_{\mathbf{k}} \mathbf{Q}, \mathbf{M}' \otimes_{\mathbf{k}} \mathbf{M})\) and
+\end{enumerate}
+
+\[
+\tau : \operatorname{Ext} _ {\mathbf {A} \otimes_ {k} \mathbf {A} ^ {\prime}} (\mathrm{M} \otimes_ {k} \mathrm{M} ^ {\prime}, \mathrm{N} \otimes_ {k} \mathrm{N} ^ {\prime}) \rightarrow \operatorname{Ext} _ {\mathbf {A} ^ {\prime} \otimes_ {k} \mathbf {A}} (\mathrm{M} ^ {\prime} \otimes_ {k} \mathrm{M}, \mathrm{N} ^ {\prime} \otimes_ {k} \mathrm{N})
+\]
+
+the isomorphisms deduced from the commutation isomorphisms
+
+\[
+\mathrm{A} \otimes_ {k} \mathrm{A} ^ {\prime} \rightarrow \mathrm{A} ^ {\prime} \otimes_ {k} \mathrm{A}, \quad \mathrm{M} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{M} ^ {\prime} \otimes_ {k} \mathrm{M}, \quad \mathrm{N} \otimes_ {k} \mathrm{N} ^ {\prime} \rightarrow \mathrm{N} ^ {\prime} \otimes_ {k} \mathrm{N}, \quad \mathrm{Q} \otimes_ {k} \mathrm{Q} ^ {\prime} \rightarrow \mathrm{Q} ^ {\prime} \otimes_ {k} \mathrm{Q}.
+\]
+
+Prove the formulas.
+
+\[
+\begin{array}{l l} \sigma (a \top a ^ {\prime}) = (- 1) ^ {p q} a ^ {\prime} \top a & \text { for } \quad a \in \operatorname{Tor} _ {p} ^ {A} (Q, M), \quad a ^ {\prime} \in \operatorname{Tor} _ {q} ^ {A ^ {\prime}} (Q ^ {\prime}, M ^ {\prime}) \\ \tau (b \vee b ^ {\prime}) = (- 1) ^ {p q} b ^ {\prime} \vee b & \text { for } \quad b \in \operatorname{Ext} _ {A} ^ {p} (M, N), \quad b ^ {\prime} \in \operatorname{Ext} _ {A ^ {\prime}} ^ {q} (M ^ {\prime}, N ^ {\prime}). \end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Let \((\mathcal{E}):0\to \mathbf{M}_2\to \mathbf{M}_1\to \mathbf{M}_0\to 0\) be an exact sequence of A-modules, such that the sequence
+\end{enumerate}
+
+\[
+(\mathcal {E} \otimes \mathrm{M} ^ {\prime}): 0 \rightarrow \mathrm{M} _ {2} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{M} _ {1} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{M} _ {0} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow 0
+\]
+
+be exact. Let δ (resp. Δ) denote the connecting homomorphism δ(Q, ℰ) (resp. δ(Q ⊗ₖ Q′, ℰ ⊗ M′)). Show that one has (δa) ⊤ a′ = Δ(a ⊗ a′) for a ∈ Tor\^{}A(Q, M₀), a′ ∈ Tor\^{}A(Q', M'). Prove the analogous formulas for the product ∨.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  If k is a field, show that \(\top\) is an isomorphism of graded k-modules; the same holds for ∨ if, moreover, A and A' are left noetherian and the A-module M and the A'-module M' are finitely generated. g) If one identifies the modules \(\operatorname{Tor}_{n}^{\mathbf{A}}(\mathbf{Q},\mathbf{M})\) with the sets \(\operatorname{T}_{n}(\mathbf{Q},\mathbf{M})\) defined in Exercise 6, prove the formula \((\mathbf{P},p,q)\top(\mathbf{P}',p',q')=(\mathbf{P}\otimes_{k}\mathbf{P}',p\otimes p',q\otimes q')\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  We keep the notation of Exercise 7; we assume that the \(k\) -modules A and A' are projective.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  We assume that one has \(\mathrm{Tor}_{i}^{k}(\mathbf{M},\mathbf{M}^{\prime}) = 0\) for \(i > 0\) . Show that the map \(b\mapsto b\vee 1_{\mathbf{M}'}\) defines a graded \(k\) -homomorphism of degree zero from \(\operatorname{Ext}_{\mathbf{A}}(\mathbf{M},\mathbf{N})\) to \(\operatorname{Ext}_{\mathbf{B}}(\mathbf{M}\otimes_{k}\mathbf{M}',\mathbf{N}\otimes_{k}\mathbf{M}')\) , which induces in degree zero the canonical homomorphism \(b\mapsto b\otimes 1_{\mathbf{M}'}\) .
+\item
+  We assume that the k-module M' is flat. Let
+\end{enumerate}
+
+\[
+0 \rightarrow \mathrm{N} \rightarrow \mathrm{R} _ {n} \rightarrow \dots \rightarrow \mathrm{R} _ {1} \rightarrow \mathrm{M} \rightarrow 0
+\]
+
+be an exact sequence of A-modules, of class \(b \in \operatorname{Ext}_{\mathbf{A}}^{n}(\mathbf{M}, \mathbf{N})\) . Show that the exact sequence of B-modules
+
+\[
+0 \rightarrow \mathrm{N} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{R} _ {n} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \dots \rightarrow \mathrm{R} _ {1} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow \mathrm{M} \otimes_ {k} \mathrm{M} ^ {\prime} \rightarrow 0
+\]
+
+has class \(b \vee 1_{\mathbf{M}'}\) in \(\operatorname{Ext}_{\mathbf{B}}^{n}(\mathbf{M} \otimes_{k} \mathbf{M}', \mathbf{N} \otimes_{k} \mathbf{N}')\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  We assume that the k-modules M, M', N, N' are flat. Show that we have:
+\end{enumerate}
+
+\[
+b \vee b ^ {\prime} = (b \vee 1 _ {N ^ {\prime}}) \circ (1 _ {M} \vee b ^ {\prime}) = (- 1) ^ {p q} (1 _ {N} \vee b ^ {\prime}) \circ (b \vee 1 _ {M ^ {\prime}})
+\]
+
+for \(b \in \operatorname{Ext}_{\mathbf{A}}^{p}(\mathbf{M}, \mathbf{N})\) , \(b' \in \operatorname{Ext}_{\mathbf{A}'}^{q}(\mathbf{M}', \mathbf{N}')\) .
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  We assume the ring A is commutative. Let B, C be two associative and unital A-algebras; we denote by \(m_{\mathbf{B}}: \mathbf{B} \otimes_{\mathbf{A}} \mathbf{B} \to \mathbf{B}\) the multiplication of B, and \(m_{\mathbf{C}}\) the multiplication of C.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Show that the homomorphism
+\end{enumerate}
+
+\[
+\operatorname{Tor} \left(m _ {\mathrm{B}}, m _ {\mathrm{C}}\right) \circ \top : \operatorname{Tor} ^ {\mathrm{A}} (\mathrm{B}, \mathrm{C}) \otimes_ {\mathrm{A}} \operatorname{Tor} ^ {\mathrm{A}} (\mathrm{B}, \mathrm{C}) \rightarrow \operatorname{Tor} ^ {\mathrm{A}} (\mathrm{B}, \mathrm{C})
+\]
+
+(cf.~exercise 7) defines on Tor \(^{A}\) (B, C) a structure of graded A-algebra, associative and unital. b) Let S be a differential graded A-algebra and \(p : S_{0} \to B\) a homomorphism of A-algebras such that (S, p) is a free resolution of B (cf. X, p. 183, exercise 18). Show that the isomorphism
+
+\[
+\psi (\mathbf {S}, \mathbf {C}): \operatorname{Tor} ^ {\mathbf {A}} (\mathbf {B}, \mathbf {C}) \rightarrow \mathbf {H} (\mathbf {S} \otimes_ {\mathbf {A}} \mathbf {C})
+\]
+
+is an isomorphism of A-algebras if one endows H(S ⊗A C) with the algebra structure deduced from the differential graded algebra structure of S ⊗A C (X, p.~183, exercise 18, b) and c)).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  If the A-algebras B and C are commutative, prove that the graded algebra Tor \(^{A}\) (B, C) is alternating (cf. X, p. 183, exercise 19).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Let B be a k-bialgebra (III, p.~148), which we regard as an augmented k-algebra (X, p.~196, exercise 27) via the counit \(\beta: \mathbf{B} \to k\) ; we assume that the \(k\) -module B is projective.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Let M, N be two left B-modules. The homomorphism ∨ of Exercise 7 is identified with a graded homomorphism of degree zero
+\end{enumerate}
+
+\[
+\mathrm{H} ^ {\bullet} (\mathbf {B}, \gamma ; \mathbf {M}) \otimes_ {k} \mathrm{H} ^ {\bullet} (\mathbf {B}, \gamma ; \mathbf {N}) \rightarrow \mathrm{H} ^ {\bullet} (\mathbf {B} \otimes_ {k} \mathbf {B}, \gamma \otimes \gamma ; \mathbf {M} \otimes_ {k} \mathbf {N});
+\]
+
+by composing with the homomorphism induced by the comultiplication, deduce from this a graded homomorphism of degree zero \(\cup: H'(B, \gamma; M) \otimes_k H'(B, \gamma; N) \to H'(B, \gamma; M \otimes_k N)\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Let C be an associative unital k-algebra, which we equip with the B-module structure induced by γ. Show that the homomorphism ∪ defines on H'(B, γ ; C) a structure of associative unital graded k-algebra; if C is commutative and the bialgebra B is cocommutative, the algebra H'(B, γ ; C) is anticommutative.
+\item
+  We take C = k. Show that the product ∪ coincides with the composition product on \(\operatorname{Ext}_{\mathbf{B}}(k, k)\) . d) Let G be a group, M and N two \(\mathbf{Z}^{(\mathbf{G})}\) -modules. We endow M ⊗\_z N with the structure of \(\mathbf{Z}^{(\mathbf{G})}\) -module defined by \(g(x \otimes y) = gx \otimes gy\) for \(g \in G\) , \(x \in M\) , \(y \in N\) . Show that the map
+\end{enumerate}
+
+\[
+\cup : \mathrm{H} ^ {\bullet} (\mathrm{G}, \mathrm{M}) \otimes_ {\mathbf {z}} \mathrm{H} ^ {\bullet} (\mathrm{G}, \mathrm{N}) \rightarrow \mathrm{H} ^ {\bullet} (\mathrm{G}, \mathrm{M} \otimes_ {\mathbf {z}} \mathrm{N})
+\]
+
+is the homomorphism induced on homology by the graded homomorphism of degree zero
+
+\[
+u: \mathrm{C} ^ {*} (\mathrm{G}, \mathrm{M}) \otimes_ {\mathbf {z}} \mathrm{C} ^ {*} (\mathrm{G}, \mathrm{N}) \rightarrow \mathrm{C} ^ {*} (\mathrm{G}, \mathrm{M} \otimes_ {\mathbf {z}} \mathrm{N})
+\]
+
+defined by \(u(f \otimes h)(g_1, \ldots, g_{p+q}) = f(g_1, \ldots, g_p) \otimes g_1 \ldots g_p h(g_{p+1}, \ldots, g_{p+q})\) for
+
+\[
+f \in \mathbf {C} ^ {p} (\mathbf {G}, \mathbf {M}), \quad h \in \mathbf {C} ^ {q} (\mathbf {G}, \mathbf {N}), \quad g _ {1} \dots g _ {p + q} \in \mathbf {G}.
+\]
+
+(Use Exercise 5, p.~185.)
+
+¶ 11) Suppose that the bigebra B admits an inversion i (cf.~III, p.~198, exercise 4). Let M and N be B-modules. The k-module M ⊗k N (resp. Homk(M, N)) has a natural structure of B ⊗k B-module (resp. B ⊗k B°-module); one endows it with the B-module structure deduced from the homomorphism c (resp. (1B ⊗ i) ∘ c).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Show that the homomorphism u (Exercise 10) defines a graded homomorphism of degree zero
+\end{enumerate}
+
+\[
+\cup : \mathrm{H} ^ {*} (\mathbf {B}, \gamma ; \operatorname{Hom} _ {k} (\mathbf {M}, \mathbf {N})) \otimes_ {k} \mathrm{H} ^ {*} (\mathbf {B}, \gamma ; \mathbf {M}) \rightarrow \mathrm{H} ^ {*} (\mathbf {B}, \gamma ; \mathbf {N}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(0 \to M \to R_n \to \cdots \to R_1 \to k \to 0\) be an exact sequence of B-modules, with \(R_i\) projective ( \(1 \leqslant i \leqslant n\) ); let \(\theta\) be its class in \(\operatorname{Ext}_B^n(k, M) = H^n(B, \gamma; M)\) . Show that for \(p \geqslant 1\) , the map \(x \mapsto x \cup \theta\) is a \(k\) -isomorphism of \(H^p(B, \gamma; \operatorname{Hom}_k(M, N))\) onto \(H^{p+n}(B, \gamma; N)\) .
+\end{enumerate}
+
+(Show that this map factors through
+
+\[
+\mathrm{H} ^ {p} (\mathrm{B}, \gamma ; \operatorname{Hom} _ {k} (\mathrm{M}, \mathrm{N})) \rightarrow \operatorname{Ext} _ {\mathrm{B}} ^ {p} (\mathrm{M}, \mathrm{N}) \xrightarrow {\theta} \operatorname{Ext} _ {\mathrm{B}} ^ {p + n} (k, \mathrm{N}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let G be a group, N a \(\mathbf{Z}^{(G)}\) -module. Let F be a free group, \(p: F \to G\) a surjective homomorphism, R = Ker( \(p\) ), \(\overline{R} = R/(R, R)\) , \(\overline{F} = F/(R, R)\) . The extension \(\overline{R} \to \overline{F} \to G\) defines a class \(\varepsilon \in H^2(G, \overline{R})\) ; prove that the map \(x \mapsto x \cup \varepsilon\) from \(H^p(G, \operatorname{Hom}_{\mathbf{Z}}(\overline{R}, N))\) to \(H^{p+2}(G, N)\) is an isomorphism for \(p \geqslant 1\) (use exercise 3, d), p.~179).
+\end{enumerate}
+
+\exercisesection{Homological Dimension}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Let \(u: \mathbf{A} \to \mathbf{B}\) be a ring homomorphism, M a B-module. Prove the inequality
+\end{enumerate}
+
+\[
+\mathrm{dp} _ {\mathbf {A}} (\mathbf {M}) \leqslant \mathrm{dp} _ {\mathbf {B}} (\mathbf {M}) + \mathrm{dp} _ {\mathbf {A}} (\mathbf {B} _ {s}).
+\]
+
+(Reason by induction on dpB(M) or use the spectral sequence of Exercise 6, p.~188.)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  Assume the ring A is noetherian; let M be a finitely generated A-module of projective dimension n. Show that the k-module Ext \(_{A}^{n}\) (M, A) is nonzero.
+\item
+  Let \(n\) be an integer \(\geqslant 1\) . Show that \(\mathrm{dh}(\mathbf{M}_n(\mathbf{A})) = \mathrm{dh}(\mathbf{A})\) (cf.~VIII, § 4).
+\item
+  Let M be an A-module. One calls the injective dimension of M, and denotes it by \(\mathrm{di}_{\mathbf{A}}(\mathbf{M})\) , the infimum in \(\overline{\mathbf{Z}}\) of the lengths of injective resolutions of M.
+\end{enumerate}
+
+If n is an integer \(\geqslant\) 0, show that the following conditions are equivalent:
+
+\(\alpha)\mathrm{di}_{\mathbf{A}}(\mathbf{M})\leqslant n;\)
+
+β) \(\operatorname{Ext}_{\mathbf{A}}^{r}(\mathbf{N},\mathbf{M}) = 0\) for every A-module N and every integer \(r > n\) ;
+
+\(\gamma)\ \mathrm{Ext}_{\mathbf{A}}^{n+1}(\mathbf{N},\mathbf{M}) = 0\) for every A-module \(\mathbf{N}\) ;
+
+δ) \(\operatorname{Ext}_{\mathbf{A}}^{n+1}(\mathbf{N},\mathbf{M})=0\) for every cyclic A-module N;
+
+ε) for every exact sequence 0 → M → I⁰ → \(\cdots\) → Iⁿ⁻¹ → N → 0, where the Iᵏ are injective, N is injective. 5) Let (Mᵢ)ᵢ∈F be a family of A-modules.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that \(\mathrm{di}_{\mathbf{A}}(\prod \mathbf{M}_i) = \sup \mathrm{di}_{\mathbf{A}}(\mathbf{M}_i)\) .
+\item
+  If A is noetherian, show that \(\mathrm{di}_{\mathbf{A}}(\bigoplus \mathbf{M}_i) = \sup \mathrm{di}_{\mathbf{A}}(\mathbf{M}_i)\) .
+\item
+  If \(\mathrm{di}_{\mathbf{A}}(\bigoplus_{i\in E}\mathbf{M}_{i}) = \sup_{i\notin E}\mathrm{di}_{\mathbf{A}}(\mathbf{M}_{i})\) for every family \((\mathbf{M}_i)_{i\in E}\) of A-modules, A is noetherian (use Exercise 21, p.~170).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\item
+  Let I be the set of left ideals of A. Show that \(\mathrm{dh}(\mathbf{A}) = \sup \mathrm{dp}_{\mathbf{A}}(\mathbf{A}/\mathfrak{a})\) .
+\item
+  Let M be an A-module. We call the flat dimension of M, and denote it by \(dpl_{A}\) (M), the infimum in \(\overline{Z}\) of the lengths of the flat resolutions of M.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  If n is an integer \(\geqslant 0\) show that the following conditions are equivalent:
+\end{enumerate}
+
+\(\alpha)\mathrm{dpl}_{\mathbf{A}}(\mathbf{M})\leqslant n.\)
+
+\(\beta)\ \mathrm{Tor}_{r}^{\mathbf{A}}(\mathbf{N},\mathbf{M})=0\ \text{for every right A-module N and every integer }r>n.\)
+
+\(\gamma)\ \mathrm{Tor}_{n+1}^{\mathbf{A}}(\mathbf{N},\mathbf{M})=0\) for every right A-module N.
+
+\(\delta)\ \mathrm{Tor}_{n+1}^{\mathbf{A}}(\mathbf{N},\mathbf{M})=0\) for every monogenic right A-module N.
+
+ε) For every exact sequence \(0 \rightarrow K \rightarrow P_{n-1} \rightarrow \cdots \rightarrow P_{0} \rightarrow M \rightarrow 0\) where the \(P_{k}\) are flat, K is flat.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Show that one has \(\mathrm{dpl}_{\mathbf{A}}(\mathbf{M}) \leqslant \mathrm{dp}_{\mathbf{A}}(\mathbf{M})\) ; there is equality if A is noetherian and M is finitely generated.
+\item
+  Let \((\mathbf{N}_{\alpha})_{\alpha \in I}\) be an inductive system of A-modules and N its inductive limit. Prove the inequality
+\end{enumerate}
+
+\[
+\mathrm{dpl} _ {A} (N) \leqslant \sup _ {\alpha \in I} \mathrm{dpl} _ {A} (N _ {\alpha}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  We call the tor-dimension of A and denote by td(A) the supremum in \(\overline{\mathbf{Z}}\) of the set of integers \(n\) for which there exist a left A-module N and a right A-module M such that \(\operatorname{Tor}_{n}^{\mathbf{A}}(\mathbf{M},\mathbf{N})\neq0\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Let \(n\) be an integer \(\geqslant 0\) . Show that the following conditions are equivalent:
+\end{enumerate}
+
+\(\alpha)\ \mathrm{td}(\mathbf{A}) \leqslant n.\)
+
+β) For every A-module M, we have \(\mathrm{dpl}_{\mathbf{A}}(\mathbf{M}) \leqslant n\) (Exercise 7).
+
+\(\gamma)\) For every monogenic A-module M, we have \(\mathrm{dpl}_{\mathbf{A}}(\mathbf{M}) \leqslant n\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Show that we have td(A) = td(A°) and td(A) ≤ dh(A); equality holds if A is left noetherian.
+\end{enumerate}
+
+¶ 9) a) Show that the following conditions are equivalent:
+
+α) Every finitely generated (left) ideal of A is a projective A-module.
+
+β) Every finitely generated submodule of a projective A-module is projective.
+
+\(\gamma)\) We have td(A) \(\leqslant\) 1 (Exercise 8), and the ring A is coherent (X, p.~181, Exercise 11).
+
+δ) For every set I, every submodule of A¹ is flat.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Suppose that the ring A satisfies the equivalent conditions of a). Prove that every projective A-module is isomorphic to a direct sum of finitely generated ideals of A. (First treat the case of a finitely generated module; then treat by induction the case of a module admitting a countable family of generators, observing that every element of a projective A-module P is contained in a finitely generated direct summand of P. Deduce the general case from Kaplansky's theorem (II, p.~183, Exercise 2).)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Assume \(\mathbf{A}\) is an integral domain; let \(\mathbf{K}\) be its field of fractions. We say that an ideal \(\mathfrak{a}\) of \(\mathbf{A}\) is \(invertible\) if there exist elements \(x_{1},\ldots ,x_{n}\) of \(\mathbf{K}\) such that \(x_{i}\mathfrak{a}\subset \mathbf{A}\) for \(1\leqslant i\leqslant n\) and \(\sum x_i\mathfrak{a} = \mathbf{A}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that every invertible ideal is finitely generated.
+\item
+  Show that a nonzero ideal of A is a projective A-module if and only if it is invertible.
+\item
+  Let a be an invertible ideal of A, D a divisible A-module. Prove that \(\operatorname{Ext}_A^i(A/a, D) = 0\) for \(i \geqslant 1\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Suppose the ring A is an integral domain. Show that the conditions \(\alpha\) to \(\delta\) of Exercise 9 are still equivalent to the following conditions:
+  \end{enumerate}
+\end{enumerate}
+
+ε) Every finitely generated torsion-free A-module is projective.
+
+ζ) Every torsion-free A-module is flat.
+
+η) Every submodule of a flat A-module is flat.
+
+(Use Exercise 13, p.~169.)
+
+An integral domain satisfying these conditions is said to be Prüferian.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let B be an integral domain, the union of an increasing filtered family of Prüferian subrings. Show that B is Prüferian.
+\end{enumerate}
+
+* c) Show that the ring of algebraic integers is Prüferian. *
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Suppose the ring A is an integral domain. Show that the following conditions are equivalent:
+\end{enumerate}
+
+\(\alpha)\ \mathrm{dh}(\mathbf{A}) \leqslant 1.\)
+
+β) Every divisible A-module is injective.
+
+γ) The ring A is Prüferian (Exercise 11) and noetherian.
+
+(To show that α) implies β), use Exercise 10.)
+
+We then say that A is a Dedekind ring.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Assume A is left and right noetherian. Show that the following conditions are equivalent:
+\end{enumerate}
+
+\(\alpha)\ \mathrm{dh}(\mathbf{A}) \leqslant 2.\)
+
+β) For all integers \(p, q\) and every A-linear map \(u: \mathbf{A}^p \to \mathbf{A}^q\) , the kernel of \(u\) is a projective A-module.
+
+γ) The dual of every finitely generated A-module is projective.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Let x be an element of A that is left-cancellable.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that the ideal \(x\mathbf{A}\) is two-sided if and only if there exists an endomorphism \(\sigma\) of the ring \(\mathbf{A}\) such that \(ax = x\sigma(a)\) for all \(a \in \mathbf{A}\) .
+\item
+  We now assume that the conditions of a) are satisfied. Let M be an A-module such that xM = 0. Prove the equality dp\_A(M) = dp\_{A/xA}(M) + 1 (one may use the spectral sequence of Exercise 6, d), p. 188).
+\item
+  We assume that \(x\) belongs to the radical of \(\mathbf{A}\) , and that \(\mathbf{A}\) is noetherian. Let \(\mathbf{N}\) be a finitely generated \(\mathbf{A}\) -module, such that the homothety of ratio \(x\) is injective in \(\mathbf{N}\) . Show that we have \(\mathrm{dp}_{\mathbf{A}}(\mathbf{N}) = \mathrm{dp}_{\mathbf{A}/\mathbf{A}x}(\mathbf{N}/x\mathbf{N})\) . d) Under the conditions of \(c\) ), show that one has \(\mathrm{dh}(\mathbf{A}) = \mathrm{dh}(\mathbf{A}/\mathbf{A}x) + 1\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Let σ be an automorphism of the ring A.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  We denote by \(\mathbf{A}_{\sigma}[\mathbf{X}]\) the ring defined in VIII, § 1, no. 3. Show that
+\end{enumerate}
+
+\[
+\mathrm{dh} (\mathbf {A} _ {\sigma} [ \mathbf {X} ]) = \mathrm{dh} (\mathbf {A}) + 1.
+\]
+
+(The inequality dh(A \(_{\sigma}\) {[}X{]}) \(\geqslant\) dh(A) + 1 follows from Exercise 14, \(b\) ); for the opposite inequality, be inspired by the proof of X, p.~142, lemma 3, \(a\) .)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  We denote by \(\mathbf{A}_{\sigma}[[\mathbf{X}]]\) the ring defined in IV, § 4, Exercise 8. Show that if A is noetherian, then we have \(\mathrm{dh}(\mathbf{A}_{\sigma}[[\mathbf{X}]))=\mathrm{dh}(\mathbf{A})+1\) (use Exercise 14).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  Let A be a local ring that is noetherian on the right and on the left, and let m be its maximal ideal; we denote by \(k_{s}\) (resp. \(k_{d}\) ) the left (resp. right) A-module A/m. Let M be a Tor \(_{n+1}^{A}\) finitely generated left module and let n be an integer. a) Show that one has dp \(_{A}\) (M) \(\leqslant\) n if and only if Tor \(_{n+1}^{A}\) ( \(k_{d}\) , M) = 0 (use Exercise 4, p.~185).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Show that one has \(\mathrm{dh(A)} = \mathrm{dp}_{\mathbf{A}}(k_s)\) ; for \(\mathrm{dh(A)} \leqslant n\) it is necessary and sufficient that one has
+\end{enumerate}
+
+\[
+\operatorname{Tor} _ {n + 1} ^ {\mathbf {A}} \left(k _ {d}, k _ {s}\right) = 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let \(x\) be an element of the center of \(\mathbf{A}\) belonging to \(m\) , such that the homothety with ratio \(x\) in \(M\) is injective. Show that we have \(\mathrm{dp}_{\mathrm{A}}(\mathrm{M}/x\mathrm{M}) = \mathrm{dp}_{\mathrm{A}}(\mathrm{M}) + 1\) (cf. also Exercise 14).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  Let M be an A-module, I a well-ordered set, \((\mathbf{M}_{\alpha})_{\alpha \in I}\) an increasing family of submodules of M, such that \(M = \bigcup M_{\alpha}\) . We set \(M_{\alpha}^{\prime} = \bigcup M_{\beta}\) for \(\alpha \in I\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Prove the inequality dpA(M) ≤ sup dpA(Mα/Mα').
+\item
+  Suppose there exists an integer \(n\) such that \(\mathrm{dp}_{\mathbf{A}}(\mathbf{M}_{\alpha}') \leqslant n\) for all \(\alpha \in I\) . Show that we have
+\end{enumerate}
+
+\[
+\mathrm{dp} _ {\mathbf {A}} (\mathbf {M}) \leqslant n + 1.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Let \((\mathbf{M}_{\alpha})_{\alpha \in I}\) be an inductive system of A-modules relative to a countable set I, M its limit, \(n\) be an integer \(\geqslant 0\) . Show that if \(\mathrm{dp}_{\mathbf{A}}(\mathbf{M}_{\alpha}) \leqslant n\) for all \(\alpha \in I\) , we have \(\mathrm{dp}_{\mathbf{A}}(\mathbf{M}) \leqslant n + 1\) (reduce to the case \(n = 0\) and \(I = N\) , then write an exact sequence \(0 \to \bigoplus_{n} \mathbf{M}_{n} \to \bigoplus_{n} \mathbf{M}_{n} \to \mathbf{M} \to 0\) ).
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Let P be a flat A-module admitting a presentation \(\mathbf{A}^{(\mathbb{S})}\to\mathbf{A}^{(\mathbb{T})}\to\mathbf{P}\to0\) , where the set S is countable. Deduce from a) that one has dp \(_{\mathbb{A}}(\mathbb{P})\leqslant1\) .
+\item
+  Assume that every left ideal of the ring A is generated by a countable set of elements. Prove that dpA(M) ≤ dplA(M) + 1 for every A-module M generated by a countable family of elements. Deduce the inequalities dh(A) ≤ td(A) + 1 and \textbar dh(A) - dh(A°)\textbar{} ≤ 1. (Use Exercise 12, p.~181, Exercise 8, p.~202, as well as b).)
+\end{enumerate}
+
+¶ 19) a) Let n be an integer ≥ 0, let (Mα)α ∈ I be an inductive system of A-modules, and let M be its inductive limit. Assume that Card (I) ≤ Nn (E, III, p.~87, exercise 10) and that there exists an integer r such that dpA(Mα) ≤ r for every α ∈ I. Show that dpA(M) ≤ r + n + 1 (argue by induction on n, using exercise 18, a) and exercise 17).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  We assume that every left ideal of A is generated by a family of elements of cardinal \(\leqslant \aleph_{n}\) . Prove that one has dp \(_{A}\) (M) \(\leqslant\) dpl \(_{A}\) (M) + n + 1 for every A-module M generated by a family of elements of cardinality \(\leqslant \aleph_{n}\) . Deduce from this the inequalities
+\end{enumerate}
+
+\[
+\mathrm{dh} (\mathbf {A}) \leqslant \mathrm{td} (\mathbf {A}) + n + 1 \quad \text { and } \quad | \mathrm{dh} (\mathbf {A}) - \mathrm{dh} (\dot {\mathbf {A}} ^ {\circ}) | \leqslant n + 1.
+\]
+
+¶ 20) Let R be a principal ideal ring, K its field of fractions. We denote by B the subring of M₂(K) consisting of the matrices \(\begin{pmatrix} a & 0 \\ x & y \end{pmatrix}\) with \(a \in \mathbb{R}, x, y \in \mathbb{K}\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that B is left noetherian but not right noetherian.
+\item
+  Show that \(\mathrm{dh(B)} = 1\) and \(\mathrm{dh(B^{\circ})} = 2\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  Let r be the radical of A. Show that the following conditions are equivalent:
+\end{enumerate}
+
+α) A/r is semisimple, and for every sequence \((a_{n})_{n\geq1}\) of elements of r, there exists an integer n such that \(a_{1}\ldots a_{n}=0\) .
+
+β) Every A-module admits a projective cover.
+
+\(\gamma)\) For every A-module M, we have \(\mathrm{dpl}_{\mathbf{A}}(\mathbf{M}) = \mathrm{dp}_{\mathbf{A}}(\mathbf{M})(\mathbf{X}, p. 202, \text{exercise } 7)\) .
+
+δ) For every inductive system \((\mathbf{M}_{\alpha}, f_{\beta\alpha})_{\alpha \in I}\) of A-modules, we have:
+
+\[
+\mathrm{dp} _ {\mathrm{A}} (\varinjlim \mathrm{M} _ {\alpha}) \leqslant \sup _ {\alpha \in I} \mathrm{dp} _ {\mathrm{A}} (\mathrm{M} _ {\alpha}).
+\]
+
+ε) Every flat A-module is projective.
+
+φ) Every descending sequence of monogenic right ideals of A is stationary.
+
+(For the equivalence of \(\alpha\) ) and \(\beta\) ), cf.~VIII, § 8, exercise 26. To show that \(\beta\) ) implies \(\gamma\) ), note that M admits a minimal projective resolution P and that \(P_n/rP_n\) is isomorphic to Tor \(_n^A\) (A/r, M). To prove \(\varepsilon) \Rightarrow \varphi\) ), let \((l_n)_{n \geq 1}\) be a decreasing sequence of monogenic right ideals, such that
+
+\[
+\mathrm{I} _ {n} = a _ {1} \dots a _ {n} \mathrm{A}, \quad \text { with } \quad a _ {i} \in \mathrm{A}.
+\]
+
+In the free module \(\mathbf{A}^{(\mathbf{N})}\) , consider the submodules \(\mathbf{N}_p\) generated by \(e_1 - a_1 e_2, \ldots, e_p - a_p e_{p+1}\) . Deduce from \(\varepsilon\) ) that \(\mathbf{N} = \bigcup \mathbf{N}_p\) is a direct summand in \(\mathbf{A}^{(\mathbf{N})}\) ; conclude from this that \(\mathrm{l}_{n+1} = \mathrm{l}_n\) for \(n\) large enough.
+
+For the implication \(\varphi) \Rightarrow \alpha)\) , use VIII, § 9, exercise 12.)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  Show that the following conditions are equivalent:
+\end{enumerate}
+
+(α) Every finitely presented A-module of finite projective dimension is projective.
+
+(β) Every injective A-homomorphism \(A^{p} \rightarrow A^{q}\) admits a retraction.
+
+(γ) For every finitely generated right ideal a distinct from A, there exists a nonzero element x of A such that xa = 0.
+
+(δ) Every simple right A-module of finite presentation is isomorphic to a (minimal) right ideal of A.
+
+(Observe that condition \(\gamma\) ) is equivalent to condition \(\beta\) in the case \(p = 1\) .)
+
+¶ 23) Show that the following conditions are equivalent:
+
+(α) Every A-module of finite projective dimension is projective.
+
+(β) The ring A satisfies the equivalent conditions of Exercise 21, and for every finitely generated right ideal a distinct from A, there exists an element \(x \neq 0\) of A such that \(xa = 0\) .
+
+(γ) The ring A satisfies the equivalent conditions of Exercise 21, and every simple A-module is a quotient of an injective A-module.
+
+(Show that \(\alpha\) ) implies that every descending sequence of monogenic right ideals of A is stationary, by adapting the proof of Exercise 21. Then deduce from Exercise 22 the equivalence of \(\alpha\) ) and \(\beta\) ). To see that \(\alpha\) ) implies \(\gamma\) ), consider a projective cover P of the simple module M, an injective module I containing P, and a projective cover Q of I; define an A-homomorphism from Q to P, and deduce from it a surjection from I to M. To show that \(\gamma\) ) implies \(\alpha\) ), show that an A-module M such that dp \(_{A}\) (M) \(\leqslant\) 1 is projective by considering a projective cover \(p: P \to M\) and a surjection from Ker \(p\) onto a simple module.)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{23}
+\tightlist
+\item
+  We denote by dhf(A) (resp. dif(A), resp. tdf(A)) the supremum of the projective (resp. injective, resp. flat) dimensions of A-modules for which this dimension is finite. If A has finite homological dimension, then dhf(A) = dif(A) = dh(A) and tdf(A) = td(A). If td(A) \textless{} ∞, we have tdf(A) = td(A). a) Show that tdf(A) ≤ dif(A°); equality holds if A is left noetherian (use X, p.~189, exercise 3).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Assume A is left noetherian. Show that we have dhf(A) ≤ di\_A(A\_s). If di\_A(A\_s) and dif(A) are finite, show that they are equal (use Exercise 2, p.~202).
+\item
+  Let G be a finite group not reduced to the identity element, and let A be the ring \(\mathbf{Z}^{(G)}\) . Show that we have
+\end{enumerate}
+
+\[
+\mathrm{dh} (\mathbf {A}) = + \infty , \mathrm{dhf} (\mathbf {A}) = \mathrm{dif} (\mathbf {A}) = \mathrm{tdf} (\mathbf {A}) = 1, \mathrm{di} _ {\mathbf {A}} (\mathbf {A} _ {s}) = + \infty
+\]
+
+(cf. exercise 20, p. 193).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Assume the ring A is self-injective (cf. X, p. 171, exercise 26), not semisimple. Show that every non-projective A-module has infinite projective dimension and infinite injective dimension. Deduce that one has dh(A) = +∞, dhf(A) = dif(A) = tdf(A) = di\_A(A\_s) = 0.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{24}
+\tightlist
+\item
+  We denote by \(\mathbf{A}^e\) the \(k\) -algebra \(\mathbf{A} \otimes_k \mathbf{A}^*\) and we consider \(\mathbf{A}\) as a left \(\mathbf{A}^e\) -module. We set
+\end{enumerate}
+
+\[
+\mathrm{da} _ {k} (\mathrm{A}) = \mathrm{dp} _ {\mathrm{A} ^ {e}} (\mathrm{A}).
+\]
+
+If n is an integer \(\geqslant0\) , the inequality \(\mathrm{da}_{k}(\mathrm{A})\leqslant n\) is therefore equivalent to the vanishing of \(\mathrm{H}^{n+1}(\mathrm{A},\mathrm{M})\) for every (A, A)-bimodule M (X, p.~195, exercise 26). One has \(\mathrm{da}_{k}(\mathrm{A})=\mathrm{da}_{k}(\mathrm{A}^{\circ})\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that one has \(\mathrm{da}_k(\mathbf{M}_n(k)) = 0\) and \(\mathrm{da}_k(k[\mathbf{X}_1, \ldots, \mathbf{X}_n]) = n\) for all \(n \geqslant 0\) .
+\item
+  If \(k\) is a field, one has \(\mathrm{da}_{k}(\mathbf{A}) = 0\) if and only if the \(k\) -algebra \(\mathbf{A}\) is absolutely semisimple (cf.~VIII, § 11, n° 3, th. 2).
+\item
+  Let M be a free \(k\) -module. Prove that one has \(\mathrm{da}_{k}(\mathbf{T}_{k}(\mathbf{M})) = 1\) (If \((e_{i})_{i \in I}\) is a basis of M, prove that the elements \((e_{i} \otimes 1 - 1 \otimes e_{i})\) form a basis of the left ideal of \(\mathbf{A}^{e}\) kernel of multiplication \(\mathbf{A} \otimes_{k} \mathbf{A}^{-} \to \mathbf{A}\) , with \(\mathbf{A} = \mathbf{T}_{k}(\mathbf{M})\) ).
+\item
+  We now assume that the \(k\) -module A is projective. Let \(\rho: k \to k'\) be a homomorphism of commutative rings; show that one has \(\mathrm{da}_k(\mathbf{A} \otimes_k k') \leqslant \mathrm{da}_k(\mathbf{A})\) . If \(\rho\) is injective and if \(\rho(k)\) is a direct summand of the \(k\) -module \(k'\) , one has equality (use X, p.~195, exercise 26, c)).
+\item
+  Let B be a second k-algebra (associative and unital), projective over k. Show that
+\end{enumerate}
+
+\[
+\mathrm{da} _ {k} (\mathbf {A} \otimes_ {k} \mathbf {B}) \leqslant \mathrm{da} _ {k} (\mathbf {A}) + \mathrm{da} _ {k} (\mathbf {B}).
+\]
+
+If moreover k is a field and A and B are finite-dimensional over k, then equality holds (use X, p.~195, exercise 26, d)).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Assume that k is a field. Prove the inequalities \(\mathrm{dh}(\mathbf{A}) \leqslant \mathrm{da}_{k}(\mathbf{A})\) and \(\mathrm{dh}(\mathbf{A}^{\circ}) \leqslant \mathrm{da}_{k}(\mathbf{A})\) (cf. X, p. 196, exercise 26, e)).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{25}
+\tightlist
+\item
+  Let A be an augmented \(k\) -algebra (X, p.~196, exercise 27); one assumes that there exists a homomorphism \(\rho: \mathrm{A} \to \mathrm{A}^e\) which satisfies the conditions of X, p.~196, exercise 27, c). Show that \(\mathrm{da}_k(\mathbf{A}) = \mathrm{dp}_\mathbf{A}(k)\) ; if moreover \(k\) is a field, one has \(\mathrm{da}_k(\mathbf{A}) = \mathrm{dp}_\mathbf{A}(k) = \mathrm{dh}(\mathbf{A}) = \mathrm{dh}(\mathbf{A}^\circ)\) . (Use Exercise 27, b) and c), p.~196, and Exercise 26, e), p.~196.) In particular, if V is a nonzero \(k\) -vector space, we have \(\mathrm{dh}\,\mathbf{T}_k(\mathbf{V}) = 1\) .
+\end{enumerate}
+
+* 27) We assume that \(k\) is a field. Let \(g\) be a Lie algebra over \(k\) of dimension \(n\) , U its enveloping algebra. Show that \(dhU = n\) . (Use Exercise 26, Exercise 27, d), p.~196, and Exercise 28, c), p.~197.) *
+
+¶ 28) Let G be a group. One calls the cohomological dimension of G, denoted dc(G), the projective dimension of the \(\mathbf{Z}^{(G)}\) -module Z. If \(n\) is an integer, we thus have dc(G) \(\leqslant n\) if and only if H \(^{q}\) (G, M)=0 for every \(\mathbf{Z}^{(G)}\) -module M and every \(q > n\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Prove that one has \(\mathrm{da}_{\mathbf{Z}}(\mathbf{Z}^{(G)}) = \mathrm{dc}(G)\) (use Exercise 26 and Exercise 27, d), p.~196).
+\item
+  If G is a free group not reduced to the identity element, then dc(G) = 1.
+\item
+  Let H be a subgroup of G; prove the inequality dc(H) ≤ dc(G). If dc(G) \textless{} ∞ and if H has finite index in G, show that dc(H) = dc(G) (show that for q = dc(G), the homomorphism
+\end{enumerate}
+
+\[
+t ^ {q}: \mathrm{H} ^ {q} (\mathrm{H}, \mathrm{M}) \rightarrow \mathrm{H} ^ {q} (\mathrm{G}, \mathrm{M})
+\]
+
+of Exercise 14, p.~191, is surjective).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  Show that the cohomological dimension of a finite group not reduced to the identity element is infinite. Deduce that if dc(G) \textless{} ∞, every element of G other than the identity element has infinite order (one then says that G is torsion-free).
+\item
+  If G is torsion-free and if H is a subgroup of finite index in G, show that dc(H) = dc(G). (If (P, p) is a projective resolution of \(\mathbf{Z}^{(H)}\) -module Z and if (G : H) = n, define on the graded \(\mathbf{Z}^{(H)}\) -module \(\mathbf{T}_{\mathbf{Z}}^{n}(\mathbf{P})\) a structure of \(\mathbf{Z}^{(G)}\) -complex so that \((\mathbf{T}_{\mathbf{Z}}^{n}(\mathbf{P}), p^{\otimes n})\) is a projective resolution of the \(\mathbf{Z}^{(G)}\) -module Z.)
+\item
+  If H is a normal subgroup of G, show that we have
+\end{enumerate}
+
+\[
+\mathrm{dc} (\mathbf {G}) \leqslant \mathrm{dc} (\mathbf {H}) + \mathrm{dc} (\mathbf {G} / \mathbf {H}).
+\]
+
+\exercisesection{Koszul Complexes}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Let A be a ring, L an A-module, and K the complex \(\mathbf{S}(\mathbf{L})\otimes_{\mathbf{A}}\symbf{\Lambda}(\mathbf{L})\) (X, p.~151, example 1).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Show that there exists an A-linear endomorphism s of K, graded of degree zero, such that
+\end{enumerate}
+
+\[
+d s (x) + s d (x) = (p + q) x
+\]
+
+for all integers \(p, q \geqslant 0\) and every \(x \in \mathbf{S}^p L \otimes_{\mathbf{A}} \Lambda^q L\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Assume that A is a Q-algebra. Show that K defines a resolution of the A-module A.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let A be a ring, \(u: \mathbf{L} \to \mathbf{M}\) a homomorphism of A-modules.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  We denote by \(\varepsilon\) the commutation factor on \(\mathbf{Z}^2\) defined by \(\varepsilon(\alpha, \beta) = \alpha_2 \beta_2\) for \(\alpha, \beta \in \mathbf{Z}^2\) , \(\alpha = (\alpha_1, \alpha_2)\) , \(\beta = (\beta_1, \beta_2)\) . Show that there exists a unique (A, \(\varepsilon\) )-derivation (III, p.~118) \(d\) of the bigraded algebra \(\mathbf{S}(M) \otimes_A \symbf{\Lambda}(L)\) of degree \((1, -1)\) , such that one has \(d(1 \otimes x) = u(x) \otimes 1\) for \(x \in L\) . Show that \(d \circ d = 0\) , so that \(\mathbf{S}(M) \otimes_A \symbf{\Lambda}(L)\) , equipped with the grading induced by that of \(\symbf{\Lambda}(L)\) and with the differential \(d\) , defines a complex \(\mathbf{K}(u)\) .
+\item
+  If M = L and u = \(ld_{L}\) , show that \(\mathbf{K}(u)\) is equal to the complex defined in no. 3, p.~151.
+\item
+  Let \(\mathbf{B} = \mathbf{S}_{\mathbf{A}}(\mathbf{M})\) , and let \(\overline{u}: \mathbf{B} \otimes_{\mathbf{A}} \mathbf{L} \to \mathbf{B}\) be the B-homomorphism deduced from \(u\) . Show that \(\mathbf{K}(u)\) is canonically identified with the complex \(\mathbf{K}^{\mathbf{B}}(\overline{u})\) .
+\item
+  Let \(u': L' \to M'\) be a second A-homomorphism. Show that the complexes \(K(u \oplus u')\) and \(K(u) \otimes_{A} K(u')\) are isomorphic.
+\item
+  Let \(f: \mathbf{L} \to \mathbf{L}'\) and \(g: \mathbf{M} \to \mathbf{M}'\) be two A-homomorphisms such that \(g \circ u = u' \circ f\) . Show that the homomorphism \(\mathbf{S}(g) \otimes \symbf{\Lambda}(f)\) is a morphism of complexes from \(\mathbf{K}(u)\) to \(\mathbf{K}(u')\) . In particular, if \(v: \mathbf{M} \to \mathbf{P}\) is an A-homomorphism such that \(v \circ u = 0\) , we obtain a morphism of complexes \(h: \mathbf{K}(u) \to \mathbf{S}_{\mathbf{A}}(\mathbf{P})\) .
+\item
+  We assume that the sequence \(0 \rightarrow L \xrightarrow{u} M \xrightarrow{v} P \rightarrow 0\) is an exact sequence of flat A-modules. Show that h is an isomorphism (reduce to the case where L, M, P are finitely generated free, and use d)). Deduce from this for every \(n \geqslant 1\) an exact sequence
+\end{enumerate}
+
+\[
+0 \rightarrow \Lambda^ {n} L \rightarrow M \otimes_ {A} \Lambda^ {n - 1} L \rightarrow \dots \rightarrow S ^ {n - 1} M \otimes_ {A} L \rightarrow S ^ {n} M \rightarrow S ^ {n} P \rightarrow 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let \(n\) be an integer, \(k\) a ring, \(A = k[X_1, \ldots, X_n]\) . Show that for every A-module M there exists an isomorphism of graded A-modules
+\end{enumerate}
+
+\[
+\delta_ {\mathbf {M}}: \operatorname{Tor} ^ {\mathbf {A}} (k, \mathbf {M}) \rightarrow \operatorname{Ext} _ {\mathbf {A}} (k, \mathbf {M}) (- n)
+\]
+
+such that for every homomorphism of A-modules \(u: M \to N\) , one has Ext \((1_k, u) \circ \delta_M = \delta_N \circ \text{Tor } (1_k, u)\) . 4) Let A be a ring, L an A-module, \(u: L \to A\) a linear form.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that the complex \(\mathbf{K}(u)\) , endowed with the algebra structure of \(\symbf{\Lambda}(\mathrm{L})\) , is a graded differential A-algebra (X, p.~183, exercise 18).
+\item
+  Let B be a differential graded A-algebra such that \(B_{0} = A\) and let \(f : L \to B_{1}\) be an A-homomorphism such that \(d_{1} \circ f = u\) . Show that there exists a unique morphism of graded differential A-algebras \(F : \mathbf{K}(u) \to \mathbf{B}\) such that \(F_{0} = 1_{A}\) and \(F_{1} = f\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\item
+  Let A be a ring, M an A-module, \(x = (x_1, \ldots, x_n)\) a sequence of elements of A, \(k = (k_1, \ldots, k_n) \in \mathbf{N}^n\) , \(x^k = (x_1^{k_1}, \ldots, x_{n}^{k_n})\) . Prove that the sequence \(x^k\) is M-regular if and only if the sequence \(x\) is; in that case the A-module \(\mathrm{M}/(x^k)\) admits a composition series whose quotients are isomorphic to \(\mathrm{M}/(x)\) . (Argue by induction on \(n\) .)
+\item
+  Let A be a ring, \(x = (x_1, \ldots, x_n)\) a sequence of elements of A, \(x\) the ideal \(\sum_{i} x_i\) A. Let
+\end{enumerate}
+
+\[
+0 \rightarrow \mathbf {M} ^ {\prime} \stackrel {i} {\rightarrow} \mathbf {M} \rightarrow \mathbf {M} ^ {\prime \prime} \rightarrow 0
+\]
+
+an exact sequence of A-modules. Suppose that the sequence x is completely secant for M and that the A-modules \(\mathrm{M}''/(x_{1}\mathrm{M}''+\cdots+x_{i-1}\mathrm{M}'')\) are separated for the x-adic topology ( \(1\leqslant i\leqslant n\) ). Show that the following conditions are equivalent:
+
+α) The sequence x is completely secant for M''.
+
+β) The homomorphism \(\bigoplus_{r} (\mathfrak{x}^{r} \, \mathrm{M}^{\prime}/\mathfrak{x}^{r+1} \, \mathrm{M}') \to \bigoplus_{r} (\mathfrak{x}^{r} \, \mathrm{M}/\mathfrak{x}^{r+1} \, \mathrm{M})\) induced by \(i\) is injective.
+
+\(\gamma)\) The homomorphism \(\mathbf{M}' / \mathfrak{x}\mathbf{M}' \to \mathbf{M} / \mathfrak{x}\mathbf{M}\) induced by \(i\) is injective.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Let A be a ring, M an A-module, \(x = (x_1, \ldots, x_n)\) a sequence of elements of A.
+\end{enumerate}
+
+\[
+(X, p p. 1 7 5 - 1 7 7,
+\]
+
+\[
+\mathrm{E} _ {p q} ^ {2} = \operatorname{Tor} _ {p} ^ {\mathrm{A}} \left(\mathrm{H} _ {q} (\boldsymbol {x}, \mathrm{A}) \right.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(p\) be an integer \(\leqslant n\) ; set \(x' = (x_1, \ldots, x_p)\) and \(x'' = (x_{p+1}, \ldots, x_n)\) . Show that there exists a spectral sequence E such that 'E \(_{pa}^{2}\) = H \(_{p}\) x'`, H \(_{a}\) (x', M)), converging to H. (x, M).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  Let A be a ring, M an A-module, \(\boldsymbol{x}' = (x_1, \ldots, x_p)\) and \(\boldsymbol{x}'' = (x_{p+1}, \ldots, x_n)\) two sequences of elements of A; we denote by \(\boldsymbol{x}\) the sequence \((x_1, \ldots, x_n)\) , and by \(\boldsymbol{M}'\) the A-module \(\mathrm{M}/(\boldsymbol{x}')\) M.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  If \(x'\) is completely secant for M and \(x''\) completely secant for M', show that x is completely secant for M.
+\item
+  If the sequences \(x\) and \(x'\) are completely secant for M, show that the sequence \(x''\) is completely secant for M'.
+\item
+  Give an example of an A-regular sequence \((x, y)\) contained in the radical of A, such that x is completely secant for A/yA, but y is not completely secant for A.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\tightlist
+\item
+  Let A be a ring, M an A-module, and k an integer \(\geqslant\) 1. One says that a family x of elements of A is k-secant for M if one has \(H_{i}(x, M) = 0\) for \(1 \leqslant i \leqslant k\) . A family x is therefore completely secant if and only if it is k-secant for every \(k \geqslant 1\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Let \(0 \to M' \to M \to M'' \to 0\) be an exact sequence of A-modules. Show that if the family \(x\) is \(k\) -secant for \(M'\) and \(M''\) , it is so for \(M\) .
+\item
+  If x is k-secant for M and if N is a flat A-module, then x is k-secant for M \(\otimes_{A} N\) .
+\item
+  Let \(a_{1},\ldots,a_{n}\) be integers \(\geqslant 1\) . Show that a sequence \((x_{1},\ldots,x_{n})\) is \(k\) -secant for M if and only if the same holds for the sequence \((x_{1}^{a_{1}},\ldots,x_{n}^{a_{n}})\) .
+\item
+  For every pair of integers k, n with \(1 \leqslant k < n\) , give an example of a ring A, an A-module M, and a sequence \((x_{1}, \ldots, x_{n})\) of elements of A that is k-secant but not \((k + 1)\) -secant for M (use X, p.~159, remark 4).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Let A be a ring, M an A-module, \(\boldsymbol{x} = (x_{1}, \ldots, x_{n})\) a sequence of elements of A, p an integer \(\leqslant n\) . We write \(\boldsymbol{x}' = (x_{1}, \ldots, x_{p})\) , \(\boldsymbol{x}'' = (x_{p+1}, \ldots, x_{n})\) and \(\mathrm{M}' = \mathrm{M}/(\boldsymbol{x}')\) M.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Let \(k, k'\) be two integers such that \(k \leqslant k'\) . Suppose that the sequence \(x'\) is \(k'\) -secant for M (exercise 9). Show that the sequence \(x\) is \(k\) -secant for M if and only if the sequence \(x''\) is \(k\) -secant for M'.
+\item
+  Show that if the sequence x is 1-secant for M, then the sequence \(x''\) is 1-secant for \(M'\) .
+\end{enumerate}
+
+¶ 11) Let A be a noetherian local ring, m its maximal ideal, k = A/m. Let M be a nonzero finitely generated A-module. The depth of M, denoted prof (M), is defined as the supremum of the integers n for which there exists a sequence \((x_{1}, \ldots, x_{n})\) of elements of m that is completely secant for M.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that prof (M) = 0 if and only if m is associated to M (X, p.~172, exercise 28), in other words, if M contains a submodule isomorphic to k (observe that an ideal contained in a union of prime ideals is necessarily contained in one of them).
+\item
+  Show that prof(M) is the infimum of the integers n for which Ext \(_{A}^{n}\) (k, M) is nonzero (argue by induction on n). If prof(M) = n, then every sequence (x \(_{1}\) , \ldots, x \(_{p}\) ) of elements of m that is completely secant for M (p ≤ n) can be extended to a sequence (x \(_{1}\) , \ldots, x \(_{n}\) ) in m completely secant for M. c) If (x \(_{1}\) , \ldots, x \(_{k}\) ) is a sequence of elements of m completely secant for M, show that
+\end{enumerate}
+
+\[
+\operatorname{prof} \left(\mathbf {M} / (x _ {1} \mathbf {M} + \dots + x _ {k} \mathbf {M})\right) = \operatorname{prof} (\mathbf {M}) - k.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  Assume that M has finite projective dimension. Prove the equality dpA(M) + prof(M) = prof(A) (argue by induction on dpA(M)).
+\item
+  Show that prof(A) is the supremum of the projective dimensions of A-modules that are finitely generated and of finite projective dimension.
+\end{enumerate}
+
+¶ 12) Let A be a noetherian local ring, m its maximal ideal.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Show that if \(0 < \mathrm{dh}(\mathbf{A}) < \infty\) there exists a non-zero-divisor element in \(\mathfrak{m} - \mathfrak{m}^2\) (show as in Exercise 11, a) that \(\mathfrak{m}\) would otherwise be associated with \(\mathbf{A}\) whence an exact sequence
+\end{enumerate}
+
+\[
+0 \to k \to \mathbf {A} \to \mathbf {N} \to 0;
+\]
+
+lead to a contradiction by using Exercise 16, p.~203).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  For any integer n, show that dh(A) = n if and only if there exists a sequence \((x_{1}, \ldots, x_{n})\) completely secant for A, generating m (argue by induction on n, using a) and exercise 14, p.~203).
+\end{enumerate}
+
+A local ring is said to be regular if it is noetherian and has finite homological dimension.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Let A be a regular local ring (Exercise 14) of homological dimension n; denote its maximal ideal by m and let k = A/m.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that one has \(\dim_k(m/m^2) = n\) .
+\item
+  Show that the \(k\) -algebra \(\bigoplus_{r\geqslant 0}(m^{r} / m^{r + 1})\) is isomorphic to a polynomial algebra in \(n\) indeterminates.
+\item
+  If \(n = 0\) , A is a field. If \(n = 1\) , show that A is a principal ideal ring * and therefore a discrete valuation ring * (show that A is an integral domain by observing that \(m \cap m^n = \bigcap m^n\) , whence \(\bigcap m^n = 0\) ).
+\item
+  Show that the ring A{[}{[}T{]}{]} is regular.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\item
+  Let A be a ring, and let a be an ideal of A. Consider the graded alternating (A/a)-algebra \(\mathrm{Tor}^{\mathbf{A}}(\mathbf{A}/\mathbf{a}, \mathbf{A}/\mathbf{a})\) (cf. X, p. 201, exercise 9) and the homomorphism of graded (A/a)-algebras \(\theta: \Lambda_{\mathbf{A}/\mathbf{a}}(\mathbf{a}/\mathbf{a}^{2}) \to \mathrm{Tor}^{\mathbf{A}}(\mathbf{A}/\mathbf{a}, \mathbf{A}/\mathbf{a})\) deduced from the isomorphism \(a/a^{2} \to \mathrm{Tor}_{1}^{\mathbf{A}}(\mathbf{A}/\mathbf{a}, \mathbf{A}/\mathbf{a})\) (X, p. 73). Show that if the ideal a is generated by a completely secant sequence in A, \(\theta\) is an isomorphism.
+\item
+  Let A be a noetherian ring, and let a be an ideal contained in the radical of A. Suppose that the (A/a)-module \(a/a^{2}\) is free and that the homomorphism \(\theta_{2}: \Lambda_{A/a}^{2}(a/a^{2}) \to \operatorname{Tor}_{2}^{\mathbf{A}}(\mathbf{A}/\mathbf{a}, \mathbf{A}/\mathbf{a})\) (exercise 14) is surjective. Show that a is generated by a completely secant sequence in A. (If x is a minimal family of generators of a, show with the aid of exercise 7 (or directly) that Coker ( \(\theta_{2}\) ) is isomorphic to
+\end{enumerate}
+
+\[
+\mathrm{H} _ {1} (\boldsymbol {x}, \mathbf {A}) \otimes_ {\mathbf {A}} \mathbf {A} / \mathfrak {a}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  Let A be a local noetherian ring, m its maximal ideal, k = A/m. Show that the homomorphism of graded k-algebras \(\theta : \symbf{\Lambda}_{k}(\mathfrak{m}/\mathfrak{m}^{2}) \to \operatorname{Tor}^{\mathbf{A}}(k, k)\) is injective: if \(\theta_{2}\) is bijective, the ring A is regular (exercise 12).
+\end{enumerate}
+
+(If x is a minimal system of generators of m, show that the complex K(x, A) satisfies the conditions of exercise 14, p. 182; use exercises 4 and 15.)
+
+¶ 17) Let A be a ring such that the A-module \(A_{s}\) has finite injective dimension (X, p. 202, exercise 4; a regular local ring (exercise 12) satisfies this property).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Let x be a non-zero-divisor and non-invertible element of A. Show that one has
+\end{enumerate}
+
+\[
+\mathrm{di} _ {\mathbf {A} / \mathbf {A} x} (\mathbf {A} / \mathbf {A} x) = \mathrm{di} _ {\mathbf {A}} (\mathbf {A}) - 1.
+\]
+
+(Let 0 → A → I⁰ → I¹ → \ldots{} be a minimal injective resolution (X, p. 182, exercise 13) of A; show that the complex Homₐ(A/AX, I¹) → Homₐ(A/AX, I²) → \ldots{} defines a minimal injective resolution of the (A/AX)-module A/AX.)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  We henceforth suppose that the ring A is local noetherian. Prove the equality di(A) = prof(A) (exercise 11; reason by induction on di(A)).
+\item
+  Let \((x_{1},\ldots ,x_{n})\) be a completely secant sequence for A, contained in the maximal ideal of A, with \(n = \mathrm{di}(\mathbf{A})\) . Show that the ring A is self-injective (X, p. 171, exercise 26).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  Let A be a noetherian ring, C a stable set of classes of A-modules (X, p. 40), \(x = (x_{1}, \ldots, x_{n})\)
+\end{enumerate}
+
+a sequence of elements of A, x the ideal generated by x. We denote by \(\mathcal{C}_{x}\) the set of elements of \(\mathcal{C}\) which are annihilated by x. Let M be a finitely generated A-module.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Prove that for every \(i \geqslant 0\) , there exists an element \(\mathbf{M}_{i}\) of \(\mathcal{C}_{x}\) such that one has
+\end{enumerate}
+
+\[
+\sum_ {k \geqslant 0} (- 1) ^ {k} \left[ \mathrm{H} _ {i + k} (\mathbf {x}, \mathrm{M}) \right] = [ \mathrm{M} _ {i} ]
+\]
+
+in \(\mathbf{K}(\mathcal{C}_{\pmb{x}})\) (reason by induction on \(n\) , using prop. 4, p. 157; in the case \(n = 1\) , consider the successive powers of the endomorphism \((x_{1})_{\mathbb{M}}\) ).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  We assume that \(\mathbf{A} / x\) has finite length. Show that there exist positive integers \(m_{i}\) ( \(i \geqslant 0\) ) such that one has length \(\mathrm{H}_{i}(x, \mathbf{M}) = m_{i} + m_{i+1}\) .
+\end{enumerate}
+
+\specialchapter{Index of Notations}
+
+\[
+(\mathbf {C}, d): \mathbf {p}. 2 3.
+\]
+
+\[
+\mathrm{C} _ {n}, \mathrm{C} ^ {n}: \mathrm{p}. 2 4.
+\]
+
+\[
+\mathbf {Z} (\mathbf {C}, d), \mathbf {Z} _ {n} (\mathbf {C}, d), \mathbf {B} (\mathbf {C}, d), \mathbf {B} _ {n} (\mathbf {C}, d), \mathbf {H} (\mathbf {C}),
+\]
+
+\[
+\mathrm{H} _ {n} (\mathrm{C}, d), \mathrm{H} ^ {n} (\mathrm{C}, d): \mathrm{p}. 2 5.
+\]
+
+\[
+\mathbf {H} (u), \mathbf {Z} (u), \mathbf {B} (u): \mathrm{p.26}.
+\]
+
+\[
+\mathbf {C} (p): \mathrm{p.26}.
+\]
+
+\[
+\mathbf {A} (\varepsilon): \mathbf {p}. 2 7.
+\]
+
+\[
+\partial_ {u, v}, \partial : \mathbf {p}. 2 9.
+\]
+
+\[
+\operatorname{Con} (u), \operatorname{Cyl} (u): \mathrm{p.36}.
+\]
+
+\[
+\mathbf {K} (\mathcal {C}), [ \mathrm{M} ] _ {\mathcal {C}}, [ \mathrm{M} ]: \text { p. } 4 0.
+\]
+
+\[
+\chi_ {\varphi} (\mathbf {M}), \chi (\mathbf {M}): \mathrm{p.~41}.
+\]
+
+\[
+\Omega_ {\mathrm{A} / k} ^ {p}: \mathrm{p.~43.}
+\]
+
+\[
+\nabla : \mathrm{p}. 4 5.
+\]
+
+\[
+\mathbf {L} (\mathbf {M}), \mathbf {L} (f): \mathrm{p.} 5 0.
+\]
+
+\[
+\mathrm{I} (\mathbf {M}), \mathrm{I} (f): \mathrm{p}. 5 2.
+\]
+
+\[
+\mathbf {B} (\mathbf {A}, \mathbf {M}): \mathrm{p.} 5 7.
+\]
+
+\[
+\mathbf {C} \otimes_ {\mathbf {A}} \mathbf {C} ^ {\prime}: \mathrm{p.~61}.
+\]
+
+\[
+\begin{array}{l}\gamma (\mathbf {C}, \mathbf {C} ^ {\prime}): \mathbf {H} (\mathbf {C}) \otimes_ {\mathbf {A}} \mathbf {H} (\mathbf {C} ^ {\prime}) \rightarrow \mathbf {H} (\mathbf {C} \otimes_ {\mathbf {A}} \mathbf {C} ^ {\prime}):\\\text { p.62. }\end{array}
+\]
+
+\[
+\sigma (\mathbf {C}, \mathbf {C} ^ {\prime}): \mathrm{p.~62.}
+\]
+
+\[
+\operatorname{Tor} _ {n} ^ {\mathbf {A}} (\mathbf {M}, \mathbf {N}): \mathrm{p.~67}.
+\]
+
+\[
+\operatorname{Tor} ^ {\mathbf {A}} (f, g): \mathrm{p.~68}.
+\]
+
+\[
+\psi_ {\mathbf {M}} (\mathbf {N}), \overline {{\psi}} _ {\mathbf {N}} (\mathbf {M}): \mathrm{p.~69}.
+\]
+
+\[
+\sigma_ {\mathbf {M}, \mathbf {N}}: \mathbf {p}. 7 1.
+\]
+
+\[
+\operatorname{Homgr} _ {\mathbf {A}} (\mathbf {C}, \mathbf {C} ^ {\prime}): \text { p. } 8 1.
+\]
+
+\[
+\lambda (\mathbf {C}, \mathbf {C} ^ {\prime}): \mathrm{p.} 8 2.
+\]
+
+\[
+\operatorname{Ext} _ {\mathbf {A}} (\mathbf {M}, \mathbf {N}), \operatorname{Ext} _ {\mathbf {A}} ^ {n} (\mathbf {M}, \mathbf {N}): p. 8 6.
+\]
+
+\[
+\varphi_ {\mathbf {M}} (\mathbf {N}), \overline {{\varphi}} _ {\mathbf {N}} (\mathbf {M}): \mathrm{p.} 8 8.
+\]
+
+\[
+\delta (\mathbf {M}, \mathcal {E}): \mathrm{p.} 9 0.
+\]
+
+\[
+\delta (\mathcal {F}, \mathrm{N}): \mathrm{p.} 9 2.
+\]
+
+\[
+\psi (\mathrm{S}, \mathrm{R}), \varphi (\mathrm{R}, \mathrm{E}): \mathrm{p}. 1 0 0.
+\]
+
+\[
+\psi^ {\prime} \left(\mathrm{S} _ {1}, \mathrm{R} _ {1}\right), \varphi^ {\prime} \left(\mathrm{R} _ {1}, \mathrm{E} _ {1}\right): \mathrm{p}. 1 0 2.
+\]
+
+\[
+\mathrm{H} ^ {n} (\mathrm{G}, \mathrm{M}), \mathrm{H} _ {n} (\mathrm{G}, \mathrm{M}): \mathrm{p}. 1 1 1.
+\]
+
+\[
+a _ {\mathbf {M}, \mathbf {N}}: \mathrm{p.} 1 1 3.
+\]
+
+\[
+c _ {\mathbf {M}, \mathbf {N}, \mathbf {P}}, u \circ v: \mathrm{p}. 1 1 4.
+\]
+
+\[
+\delta^ {m} (\mathbf {P}, \mathcal {S}), \delta^ {m} (\mathcal {S}, \mathbf {P}), \partial^ {m} (\mathbf {P}, \mathcal {S}), \partial^ {m} (\mathcal {S} _ {1}, \mathbf {M})
+\]
+
+\[
+1 2 7, 1 3 1, 1 3 2.
+\]
+
+\[
+c _ {\mathbf {P}, \mathbf {Q}; \mathbf {M}}: \mathbf {p}. 1 2 8.
+\]
+
+\[
+c _ {\mathbf {P}; \mathbf {M}, \mathbf {N}}: \mathfrak {p}. 1 2 9.
+\]
+
+\[
+\mathrm{dp} _ {\mathbf {A}} (\mathbf {M}): \mathrm{p}. 1 3 4.
+\]
+
+\[
+\mathrm{dh} (\mathrm{A}): \mathrm{p}. 1 3 8.
+\]
+
+\[
+\mathbf {K} (u), \mathbf {K} _ {\cdot} (u, \mathbf {C}), \mathbf {K} ^ {\prime} (u, \mathbf {C}): \mathrm{p.~147.}
+\]
+
+\[
+b \vee b ^ {\prime}, a \top a ^ {\prime}: \mathrm{p.} 2 0 0, \text {   exerc.   } 7.
+\]
+
+\[
+\mathrm{di} _ {\mathbf {A}} (\mathbf {M}): \mathbf {p}. 2 0 2, \text {   exerc.   } 4.
+\]
+
+\[
+\mathrm{dpl} _ {\mathbf {A}} (\mathbf {M}): \text { p. } 2 0 2, \text { exerc. } 7.
+\]
+
+\[
+\operatorname{td} (\mathbf {A}): \mathrm{p.202,exerc.8.}
+\]
+
+\[
+\mathrm{da} _ {k} (\mathrm{A}): \mathrm{p.205,exerc.25.}
+\]
+
+\[
+\operatorname{dc} (\mathbf {G}): \mathrm{p.206,exerc.28.}
+\]
+
+\specialchapter{Terminological Index}
+
+Absolutely flat (ring ---): p. 169, exerc. 16. Acyclic in degree n (complex ---): p. 26. x-adic (topology ---): p. 159. Augmented algebra: p. 196, exerc. 27. Differential graded algebra: p. 183, exerc. 18. Ascending (degree ---): p. 23. Associated (class ---) to an exact sequence: p. 117. Augmentation of an algebra: p. 196, exerc. 27. Self-injective (ring): p. 171, exerc. 26. Bicomplex: p. 174, exerc. 11. Bounded above, below: p. 24. Canonical (injective resolution ---): p. 52. Canonical (free resolution ---): p. 50. Euler-Poincaré characteristic: p. 40. Cellular (complexes ---): p. 32. Golod-Shafarevich (theorem of ---): p. 192, exerc. 16. Five (lemma of the ---): p. 7. Universal coefficients (formula of ---): p. 78, 99. Cogenerator (module ---): p. 18. Coherent on the left, on the right (ring ---): p. 181, exerc. 11. Coherent, pseudo-coherent (module ---): p. 181, exerc. 10. Cohomology of groups: p. 111. Cohomological (dimension ---): p. 206, exerc. 28. Cohomologous: p. 194, exerc. 23. Co-induced (module ---): p. 190, exerc. 12. Commutation (isomorphism of ---): p. 71. Completely secant (family ---): p. 157. Complexes: p. 23. Koszul complexes: p. 147, 154. Composition (product of ---): p. 113. Cone of a morphism of complexes: p. 36. Conical (simplicial scheme ---): p. 177, exerc. 19. Connection: p. 45. Convergent (spectral sequence ---): p. 175, exerc. 14. Coregular (sequence ---): p. 159. Cylinder of a morphism of complexes: p. 36. Dedekind (rings of ---): p. 141, 203, exerc. 12. De Rham (complex of ---): p. 43. Descending (degree ---): p. 23. Commutative diagrams: p. 1. Differential: p. 24. Differential (algebra ---): p. 183, exerc. 18.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Exterior differential: p. 44.}
+\NormalTok{Cohomological dimension: p. 206, exerc. 28.}
+\NormalTok{Homological dimension: p. 138.}
+\NormalTok{Injective dimension: p. 202, exerc. 4.}
+\NormalTok{Flat dimension: p. 202, exerc. 7.}
+\NormalTok{Projective dimension: p. 134.}
+\NormalTok{Divisible (module ---): p. 17.}
+\NormalTok{Dualizing (module ---): p. 172, exerc. 30.}
+
+\NormalTok{Injective envelope: p. 19.}
+\NormalTok{Euler{-}Poincaré (characteristic of\textquotesingle{}---): p. 40.}
+\NormalTok{Extensions (modules of\textquotesingle{}---): p. 81, 86.}
+\NormalTok{Extension of\textquotesingle{}an algebra: p. 197, exerc. 1.}
+\NormalTok{Extension of\textquotesingle{}a Lie algebra: p. 198, exerc. 4.}
+
+\NormalTok{Faithfully flat (module ---): p. 169, exerc. 9.}
+\NormalTok{Differential forms: p. 44.}
+
+\NormalTok{Goldie (theorem of —): p. 171, exerc. 25.}
+\NormalTok{Golod{-}Chafarévitch (theorem of —): p. 192, exerc. 16.}
+
+\NormalTok{Hilbert (syzygy theorem of —): p. 146.}
+\NormalTok{Homology (classes of\textquotesingle{}—, module of\textquotesingle{}—) : p. 25.}
+\NormalTok{Homology (exact sequence of\textquotesingle{}—): p. 30.}
+\NormalTok{Group homology: p. 111.}
+\NormalTok{Homological (dimension —): p. 138.}
+\NormalTok{Homologism: p. 26.}
+\NormalTok{Homologous (cycles —): p. 25.}
+\NormalTok{Homomorphisms (complexes of\textquotesingle{}—) : p. 81.}
+\NormalTok{Homotopic to zero (complex —): p. 34.}
+\NormalTok{Homotopies (morphisms —): p. 32.}
+\NormalTok{Homotopic (simplicially —): p. 177, exerc. 19.}
+\NormalTok{Homotopy: p. 32.}
+\NormalTok{Homotopism: p. 33.}
+
+\NormalTok{Induced (module —): p. 190, exerc. 12.}
+\NormalTok{Injective (modules —): p. 15.}
+\NormalTok{Injective (dimension —): p. 202, exerc. 4.}
+\NormalTok{Iterates (connecting homomorphisms —): pp. 127, 131, 132.}
+
+\NormalTok{Koszul (complex of —): pp. 147, 154.}
+\NormalTok{Künneth (formula of —): p. 79.}
+
+\NormalTok{Connecting (homomorphism of —): p. 29.}
+\NormalTok{Connecting (homomorphism of —) of extension modules: pp. 90, 92.}
+\NormalTok{Connecting (homomorphism of —) of torsion products: p. 72.}
+\NormalTok{Length of\textquotesingle{}a complex: p. 24.}
+\NormalTok{Length (of\textquotesingle{}a presentation): p. 180, exerc. 6.}
+
+\NormalTok{Minimal (injective resolution —): p. 182, exerc. 13.}
+\NormalTok{Minimal (projective resolution —): p. 54.}
+\NormalTok{Morphism of complexes: p. 25.}
+
+\NormalTok{Zero on the right, zero on the left: p. 24.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Flat (absolutely —): p. 169, exerc. 16.}
+\NormalTok{Flat (faithfully —): p. 169, exerc. 9.}
+\NormalTok{Flat (dimension —): p. 202, exerc. 7.}
+\NormalTok{Flat (modules —): p. 8.}
+\NormalTok{Poincaré (characteristic of\textquotesingle{}Euler{-} ---): p. 40.}
+\NormalTok{Poincaré polynomial: p. 41.}
+\NormalTok{Precomplex: p. 174, exerc. 13.}
+\NormalTok{Presentation, finite presentation: p. 10.}
+\NormalTok{Presentation of length n: p. 180, exerc. 6.}
+\NormalTok{Composition product: p. 113,}
+\NormalTok{Torsion product: pp. 61, 67.}
+\NormalTok{Projective (dimension —): p. 134.}
+\NormalTok{Prüferian (ring —): p. 203, exerc. 11.}
+\NormalTok{Pseudo{-}coherent (module —): p. 181, exerc. 10.}
+
+\NormalTok{Regular (local ring —): p. 208, exerc. 12.}
+\NormalTok{Regular (sequence —): p. 158.}
+\NormalTok{Regular (spectral sequence —): p. 175, exerc. 14.}
+\NormalTok{Relatively projective, injective: p. 170, exerc. 19.}
+\NormalTok{Resolutions: p. 48.}
+\NormalTok{Canonical injective resolution: p. 52.}
+\NormalTok{Canonical free resolution: p. 50.}
+\NormalTok{Graded resolution: p. 56.}
+\NormalTok{Minimal projective resolution: p. 54.}
+\NormalTok{Projective, injective resolution of\textquotesingle{}a complex: p. 183, exerc. 17.}
+
+\NormalTok{Simplicial scheme: p. 177, exerc. 19.}
+\NormalTok{Split (completely —): p. 35.}
+\NormalTok{Splitting: p. 35.}
+\NormalTok{Secant (completely —): p. 157.}
+\NormalTok{Snake (— diagram): p. 3.}
+\NormalTok{Simplex: p. 178, exerc. 19.}
+\NormalTok{Simplicial (— scheme): p. 177, exerc. 19.}
+\NormalTok{Simplicially homotopic: p. 177, exerc. 19.}
+\NormalTok{Singular (— homology): p. 31.}
+\NormalTok{Spectral (— sequence): p. 175, exerc. 14.}
+\NormalTok{Standard (— resolution): p. 57.}
+\NormalTok{Stationary (— spectral sequence): p. 175, exerc. 14.}
+\NormalTok{Exact sequence of\textquotesingle{}homology: p. 30.}
+\NormalTok{Spectral sequence: p. 175, exerc. 14.}
+\NormalTok{Syzygies (theorem of —): p. 146.}
+
+\NormalTok{Tensor (— product) of two complexes: p. 61.}
+\NormalTok{Torsion (— product): p. 61, 67.}
+\NormalTok{Tor{-}dimension: p. 202, exerc. 8.}
+\NormalTok{Topology x{-}adic: p. 159.}
+\NormalTok{(p{-}th) Translate: p. 27.}
+\NormalTok{Transfer: p. 191, exerc. 14.}
+\NormalTok{Trivial (cohomologically —): p. 192, exerc. 18.}
+
+\NormalTok{Universal (— coefficients): p. 78, 99.}
+\end{Highlighting}
+\end{Shaded}

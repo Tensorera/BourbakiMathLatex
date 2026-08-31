@@ -1,0 +1,991 @@
+\subsection{\texorpdfstring{Hypocontinuity of the mapping \((u, v) \mapsto v \circ u\)}{Hypocontinuity of the mapping (u, v) \textbackslash mapsto v \textbackslash circ u}}
+
+PROPOSITION 9. --- Let R, S, T be three locally convex Hausdorff spaces. Suppose that the spaces \(\mathcal{L}(\mathbf{R};\mathbf{S})\) , \(\mathcal{L}(\mathbf{S};\mathbf{T})\) , \(\mathcal{L}(\mathbf{R};\mathbf{T})\) are each assigned the topology of simple (resp. compact, bounded) convergence. Then the bilinear mapping \((u, v) \mapsto v \circ u\) from \(\mathcal{L}(\mathrm{R}; \mathrm{S}) \times \mathcal{L}(\mathrm{S}; \mathrm{T})\) into \(\mathcal{L}(\mathrm{R}; \mathrm{T})\) is \((\mathfrak{S}, \mathfrak{T})\) -hypocontinuous, where \(\mathfrak{T}\) is the family of equicontinuous subsets of \(\mathcal{L}(\mathrm{S}; \mathrm{T})\) , and \(\mathfrak{S}\) the family of finite (resp. compact, bounded) subsets of \(\mathcal{L}(\mathrm{R}; \mathrm{S})\) .
+
+We first prove that \((u, v) \mapsto v \circ u\) is \(\mathfrak{T}\) -hypocontinuous. Let H be an equicontinuous set in \(\mathcal{L}(S; T)\) , let W be a neighbourhood of 0 in T and let M be a finite (resp. compact, bounded) subset of R. We must show that there exists a neighbourhood V of 0 in S such that if \(u(M) \subset V\) and \(v \in H\) , then \(v(u(M)) \subset W\) . But for this, it is enough to have \(v(V) \subset W\) for all \(v \in H\) , and the existence of such a neighbourhood follows from the equicontinuity of H.
+
+To see that \((u, v) \mapsto v \circ u\) is \(\mathfrak{S}\) -hypocontinuous, we shall prove that, for every neighbourhood \(W\) of 0 in \(T\) , every finite (resp. compact, bounded) subset \(M\) of \(R\) and every finite (resp. compact, bounded) subset \(L\) of \(\mathcal{L}(R; S)\) there exists a finite (resp. compact, bounded) subset \(N\) of \(S\) such that the relations \(v(N) \subset W\) and \(u \in L\) imply that \(v(u(M)) \subset W\) . Evidently it is enough to show that we can take \(N = \bigcup_{u \in L} u(M)\) ,
+
+i.e.~that the set N is finite (resp. compact, bounded) whenever L and M are. This is immediate if L and M are finite, or if M is bounded in R and L is bounded in \(\mathcal{L}(\mathrm{R};\mathrm{S})\) (for the topology of bounded convergence, cf.~III, p.~22). Finally, we show that if M is compact in R and L is compact in \(\mathcal{L}(\mathrm{R};\mathrm{S})\) for the topology of compact convergence, then N is compact in S. But if \(u_{M}\) is the restriction to M of \(u \in L\) , the mapping \(u \mapsto u_{M}\) from L into the space \(\mathcal{C}(\mathrm{M};\mathrm{S})\) of all continuous mappings from M into S, with the topology of uniform convergence, is continuous; hence the image of L under this mapping is compact, and our assertion then follows from the continuity of the map \((w,x) \mapsto w(x)\) from \(\mathcal{C}(\mathrm{M};\mathrm{S}) \times \mathrm{M}\) into S (GT, X, § 1, No.~6, prop. 9).
+
+In the two corollaries that follow, we assume as in prop. 9, that the spaces \(\mathcal{L}(\mathbf{R};\mathbf{S})\) , \(\mathcal{L}(\mathbf{S};\mathbf{T})\) , \(\mathcal{L}(\mathbf{R};\mathbf{T})\) are all three assigned the topology of simple convergence, or all three the topology of compact convergence, or all three that of bounded convergence.
+
+COROLLARY 1. --- For every equicontinuous subset H of \(\mathcal{L}(\mathbf{S};\mathbf{T})\) the map \((u,v)\mapsto v\circ u\) from \(\mathcal{L}(\mathbf{R};\mathbf{S})\times \mathbf{H}\) into \(\mathcal{L}(\mathbf{R};\mathbf{T})\) is continuous.
+
+This follows immediately from prop. 9 (III, p.~32) and 4 (III, p.~31).
+
+COROLLARY 2. --- Suppose S is barrelled. If the sequence \((u_n)\) tends to \(u\) in \(\mathcal{L}(\mathbf{R};\mathbf{S})\) and the sequence \((v_{n})\) to \(v\) in \(\mathcal{L}(\mathbf{S},\mathbf{T})\) , then the sequence \((v_{n}\circ u_{n})\) tends to \(v\circ u\) in \(\mathcal{L}(\mathbf{R};\mathbf{T})\) .
+
+In fact, the sequence \((v_{n})\) , being simply bounded in \(\mathcal{L}(\mathrm{S};\mathrm{T})\) is equicontinuous, since \(\mathrm{S}\) is barrelled (III, p.~25, th. 1); the corollary is then a consequence of cor. 1.
+
+\section{BOREL'S GRAPH THEOREM}
+
+\subsection{Borel's graph theorem}
+
+THEOREM 1. --- Let E be a locally convex space which is the inductive limit of Banach spaces, F a Souslin locally convex space, for example a Lusin space (GT, IX, § 6, No.~2 and No.~4), and u a linear mapping from E into F. If the graph of u is a Borel subset of E × F, then u is continuous.
+
+Let \(E_i\) be a family of Banach spaces, and \((u_i)\) a family of continuous linear mappings \(u_i: E_i \to E\) such that the topology of \(E\) is the finest locally convex topology for which the \(u_i\) are continuous. It is enough to prove that the composed mappings \(u \circ u_i\) are continuous, or in fact (GT, IX, § 2, No.~6, prop. 10) that the restriction of \(u \circ u_i\) to every closed subspace \(G\) of \(E_i\) satisfying the first axiom of countability is continuous. The graph of this restriction is the inverse image of the graph of \(u\) under the continuous mapping \(u_i \times \text{Id}_F: G \times F \to E \times F\) , hence is a Borel set in \(G \times F\) . In addition, \(G \times F\) is a Souslin space and every Borel subset of a Souslin space is a Souslin space (GT, IX, § 6, No.~3, prop. 10). Th. 1 then follows from th. 4, GT, IX, § 6, No.~8.
+
+Remark. --- Recall (III, p.~12) that every homological Hausdorff and semi-complete space, for example every Fréchet space, is the inductive limit of Banach spaces. * This is also true for the strong dual of a reflexive Fréchet space (IV, p.~23, prop. 4). *
+
+\subsection{Locally convex Lusin spaces}
+
+PROPOSITION 1. --- Let E be a Hausdorff locally convex space. Suppose that there exists a sequence \((\mathrm{E}_{n})_{n\in\mathbb{N}}\) of Fréchet spaces satisfying the first axiom of countability, and continuous linear mappings \(u_{n}:E_{n}\to E\) such that \(\mathrm{E}=\bigcup_{n\in\mathbb{N}}u_{n}(\mathrm{E}_{n})\) . Then E is a Lusin space.
+
+Let \(P_n\) be the kernel of \(u_n\) ; then \(u_n\) defines a bijective continuous mapping from the quotient space \(E_n / P_n\) onto \(u_n(E_n)\) . Since \(E_n / P_n\) is a Fréchet space satisfying the first axiom of countability (GT, IX, § 3, No.~1), hence a polish space (GT, IX, § 6, No.~1, def. 1), \(u_n(E_n)\) is a Lusin subspace of E (GT, IX, § 6, No.~4, prop. 11). Therefore by GT, IX, § 6, No.~7, cor. of th. 3, the space E, which is regular (GT, III, § 3, No.~1) is a Lusin space.
+
+Example 1. --- Every Fréchet space satisfying the first axiom of countability is a polish space, hence a Lusin space. Consequently, so are the spaces \(\mathcal{C}(\mathrm{X})\) , where \(\mathrm{X}\) is locally compact and has a countable base (the topology of \(\mathcal{C}(\mathrm{X})\) being that of compact convergence, cf.~GT, X, § 3, No.~3, corollary and § 1, No.~6, cor. 3); * the spaces \(\mathcal{C}^{\infty}(\mathrm{U})\) , where U is an open subset of \(\mathbf{R}^{n}\) (III, p.~9) and \(\mathcal{H}(\mathrm{U})\) , where U is an open subset of \(\mathbf{C}^{n}\) (III, p.~10).
+
+Prop. 1 shows that the spaces \(\mathcal{C}_0^\infty (\mathbf{U})\) , where \(\mathbf{U}\) is an open set in \(\mathbf{R}^n\) , \(\mathcal{G}_s(\mathbf{I})\) , where \(\mathbf{I}\) is a compact interval in \(\mathbf{R}\) and \(s\geqslant 1\) , and \(\mathcal{H}(\mathbf{K})\) , where \(\mathbf{K}\) is a compact subset of \(\mathbf{C}^n\) are all Lusin spaces (III, p.~10).
+
+THEOREM 2. --- Let E be a locally convex space, which is the inductive limit of an increasing sequence \((\mathrm{E}_n)_{n\in \mathbb{N}}\) of subspaces of E, endowed with the topologies of Fréchet spaces satisfying the first axiom of countability. Suppose that every compact subset of E is contained in one of the \(E_{n}\) and is compact in this space. Let F be a Fréchet space satisfying the first axiom of countability. Then the space \(\mathcal{L}_{c}(E;F)\) is a Lusin space.
+
+The space E is bornological (III, p.~12), hence the space \(\mathcal{L}_c(\mathrm{E};\mathrm{F})\) is complete (III, p.~23, prop. 12). The linear mapping \(j\colon f\mapsto (f|\mathrm{E}_n)_{n\in \mathbf{N}}\) is an injection from \(\mathcal{L}_c(\mathrm{E};\mathrm{F})\) into the product space \(\prod_{n\in \mathbf{N}}\mathcal{L}_c(\mathrm{E}_n;\mathrm{F})\) ; by virtue of the hypothesis on the compact subsets of E and the definition of the \(\mathfrak{S}\) -topologies, \(j\) is an isomorphism from \(\mathcal{L}_c(\mathrm{E};\mathrm{F})\) onto its image (endowed with the topology induced by the product topology); moreover, since \(\mathcal{L}_c(\mathrm{E};\mathrm{F})\) is complete, this image is a closed subspace of \(\prod_{n\in \mathbf{N}}\mathcal{L}_c(\mathrm{E}_n;\mathrm{F})\)
+
+(GT, II, § 3, No.~4, prop. 8). By GT, IX, § 6, No.~4, it is therefore enough to prove that each of the spaces \(\mathcal{L}_c(\mathrm{E};\mathrm{F})\) is a Lusin space. For the rest of the proof, we shall assume that E is a Fréchet space satisfying the first axiom of countability.
+
+Since F is a Fréchet space satisfying the first axiom of countability, it is isomorphic to a closed subspace of a countable product of Banach spaces \(F_{n}\) , each of which is a quotient of F (II, p.~5), hence satisfies the first axiom of countability. The linear mapping \(j': f \mapsto (\mathrm{pr}_{n} \circ f)_{n \in \mathbb{N}}\) is an injection from \(\mathcal{L}_{c}(\mathrm{E}; \mathrm{F})\) into the product space \(\prod_{n \in \mathbb{N}} \mathcal{L}_{c}(\mathrm{E}; \mathrm{F}_{n})\) , and by using the definition of the S-topologies and of the open sets in a product, \(j'\) is an isomorphism from \(\mathcal{L}_{c}(\mathrm{E}; \mathrm{F})\) onto its image; moreover, since \(\mathcal{L}_{c}(\mathrm{E}; \mathrm{F})\) is complete, this image is a closed subspace of \(\prod_{n \in \mathbb{N}} \mathcal{L}_{c}(\mathrm{E}; \mathrm{F})\) . Therefore it is enough to prove that each of the spaces \(\mathcal{L}_{c}(\mathrm{E}; \mathrm{F}_{n})\) is a Lusin space (GT, IX, § 6, No.~4), and consequently, we can assume that F is a Banach space satisfying the first axiom of countability.
+
+The space \(\mathcal{L}_{c}(\mathrm{E};\mathrm{F})\) is the union of a countable family of equicontinuous and closed subsets (III, p.~19, cor. 1 and GT, X, § 2, No.~3, prop. 6). But every equicontinuous subset H of \(\mathcal{L}_{c}(\mathrm{E};\mathrm{F})\) is metrizable and satisfies the first axiom of countability (III, p.~18, prop. 6 and GT, X, § 2, No.~4, th. 1); if H is closed, then it is a complete space for the uniform structure induced by that of \(\mathcal{L}_{c}(\mathrm{E};\mathrm{F})\) , since the latter is complete In other words, H is a polish space, and a fortiori a Lusin space; consequently the regular space \(\mathcal{L}_{c}(\mathrm{E};\mathrm{F})\) is a Lusin space (GT, IX, § 6, No.~7, cor. of th. 3).
+
+COROLLARY. --- The hypotheses on E being as in th. 2, assume, in addition that every bounded subset of E is relatively compact. Then the strong dual of E is a Lusin space. * In particular, the strong dual of a Fréchet space satisfying the first axiom of countability, which is also a Montel space, is a Lusin space. *
+
+* Example 2. --- Let U be an open subset of \(\mathbf{R}^{n}\) . The corollary applies in particular to the Fréchet space \(E = \mathcal{C}^{\infty}(\mathrm{U})\) ; its dual \(\mathcal{C}_{0}^{-\infty}(\mathrm{U})\) (the space of distributions with compact support on U) is then a Lusin space. The space \(\mathcal{C}_{0}^{\infty}(\mathrm{U})\) is a strict inductive limit of a sequence of Fréchet spaces \(\mathcal{C}_{K_n}^{\infty}(\mathrm{U})\) satisfying the first axiom of countability (III, p.~9). We can show that each of the spaces \(\mathcal{C}_{K_n}^{\infty}(\mathrm{U})\) is a Montel space; in addition, every bounded subset of \(\mathcal{C}_{0}^{\infty}(\mathrm{U})\) is contained in one of the spaces \(\mathcal{C}_{K_n}^{\infty}(\mathrm{U})\) (III, p.~5, prop. 6). We can then apply the corollary of th. 2. Then the dual \(\mathcal{C}_{0}^{-\infty}(\mathrm{U})\) of \(\mathcal{C}_{0}^{\infty}(\mathrm{U})\) (the space of distributions on U) is a Lusin space for the strong topology. *
+
+Similarly we prove that for every open subset U of \(C^{n}\) , and for every compact subset K of \(C^{n}\) , the strong dual of \(\mathcal{H}(U)\) and the strong dual of \(\mathcal{H}(K)\) are Lusin spaces. *
+
+Remark. --- Let E be as in th. 2; let F be a Hausdorff locally convex space which is the union of the images of a sequence of continuous linear mappings \(u_n: \mathrm{F}_n \to \mathrm{F}\) , where each \(\mathrm{F}_n\) is a Fréchet space satisfying the first axiom of countability; then \(\mathcal{L}_c(\mathrm{E};\mathrm{F})\) is a Lusin space. As in prop. 1, we first reduce to the case where each \(u_n\) is injective; then, as in the proof of th. 2, we can assume that E is a Fréchet space satisfying the first axiom of countability. Then, by I, p.~20, prop. 1, \(\mathcal{L}(\mathrm{E};\mathrm{F})\) is the union of the \(\mathcal{L}(\mathrm{E};\mathrm{F}_n)\) ; moreover, the canonical injection \(\mathcal{L}_c(\mathrm{E};\mathrm{F}_n) \to \mathcal{L}_c(\mathrm{E};\mathrm{F})\) is continuous (GT, X, § 1, No.~4, prop. 3). Since each of the spaces \(\mathcal{L}_c(\mathrm{E};\mathrm{F}_n)\) is a Lusin space by th. 2, \(\mathcal{L}(\mathrm{E};\mathrm{F}_n)\) is also a Lusin space for the topology induced by that of \(\mathcal{L}_c(\mathrm{E};\mathrm{F})\) (GT, IX, § 6, No.~4, prop. 11); consequently \(\mathcal{L}_c(\mathrm{E};\mathrm{F})\) is a Lusin space by virtue of GT, IX, § 6, No.~7, corollary of th. 3.
+
+\subsection{\texorpdfstring{* Measurable linear mappings on a Banach space \(^{1}\)}{Measurable linear mappings on a Banach space \^{}\{1\}}}
+
+PROPOSITION 2. --- Let E be a Banach space, F a locally convex space and u a linear mapping from E into F. Assume that for every closed subset B of F, every compact subset X of E and every measure \(\mu\) on X, the intersection \(X \cap u^{-1}(B)\) is \(\mu\) -measurable. Then u is continuous.
+
+First assume that F is the base field. For every compact subset X of E and every measure \(\mu\) on X, the restriction of u to X is \(\mu\) -measurable (INT, IV). Suppose that u is not continuous. Then we can find a sequence of points \((x_{n})\) in E such that \(\sum_{n} \|x_{n}\| < \infty\) and \(|u(x_{n})| \geqslant n\) for every integer n.~Consider the mapping \(g:(t_{n}) \mapsto \sum_{n} t_{n} x_{n}\) from the cube \(C = [0, 1]^{N}\) into E; it is clear that g is continuous. Hence \(f = u \circ g\) is measurable for every measure on C (INT, V); in particular for the measure \(\mu\) which is the product of Lebesgue measures on the factors of C. Hence there exists a compact subset D of C such that \(\mu(D) > \frac{1}{2}\) and such that the restriction of f to D is continuous, hence also bounded. Let M be the upper bound of \(|f|\) on D and let \(p \in N\) be such that \(p \geqslant 4M\) . Let \(s = (s_{n})\) and \(t = (t_{n})\) be two points of D such that \(s_{n} = t_{n}\) for all \(n \neq p\) . Then
+
+\[
+f (s) - f (t) = u (\sum_ {n} s _ {n} x _ {n} - \sum_ {n} t _ {n} x _ {n}) = (s _ {p} - t _ {p}) u (x _ {p}).
+\]
+
+Since \(|f(s) - f(t)| \leqslant 2\mathbf{M}\) and \(|u(x_p)| \geqslant p \leqslant 4\mathbf{M}\) , we get
+
+\[
+\left| s _ {p} - t _ {p} \right| \leqslant \frac {1}{2}.
+\]
+
+The Lebesgue-Fubini theorem (INT, V, 2nd ed., § 8, No.~3, cor. 2 of prop. 7) implies that \(\mu(D) \leqslant \frac{1}{2}\) ; this gives a contradiction. Hence \(u\) is continuous.
+
+In the general case, for every \(v \in F'\) , the linear form \(v \circ u\) is continuous, by the preceding argument. Let \((x_{n})_{n \in \mathbb{N}}\) be a sequence of points of E tending to 0; then the sequence \((u(x_{n}))_{n \in \mathbb{N}}\) tends to 0 in F, if F is assigned the topology \(\sigma(\mathrm{F}, \mathrm{F}')\) ; hence this sequence is bounded for \(\sigma(\mathrm{F}, \mathrm{F}')\) and so it is bounded in F (III, p.~27, cor. 3). Since E is bornological (III, p.~12, prop. 2); the linear mapping \(u: E \to F\) is continuous.*
+
+1 The results of this section depend on the book of Integration.
+
+\exercisesheading
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Let \(\mathbf{E}\) be a left topological vector space over a non-discrete topological field \(\mathbf{K}\) . A subset \(\mathbf{B}\) of \(\mathbf{E}\) is said to be bounded if for every neighbourhood \(\mathbf{V}\) of 0 in \(\mathbf{E}\) there exists \(\lambda \neq 0\) in \(\mathbf{K}\) such that \(\lambda \mathbf{B} \subset \mathbf{V}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that if B is bounded in E, then for every neighbourhood V of 0 in E, there exists a neighbourhood U of 0 in K such that U.B ⊂ V.
+\item
+  Show that the closure of a bounded set in E is bounded. The union of two bounded sets is bounded. Every precompact set in E is bounded. Extend the corollaries of III, p.~4, prop. 4 to topological vector spaces over K.
+\item
+  Prove that if A is a bounded set in K (considered as a vector space on the left over itself) and B is a bounded set in E, then A.B is bounded in E.
+\item
+  Extend prop. 3 of III, p.~4 to the case where K is a metrizable topological division ring. e) Extend the notion of a quasi-complete space and its properties to topological vector spaces.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Let E be a left topological vector space over a non-discrete topological field K. Prove that if there exists a neighbourhood V of 0 in E which is bounded (exerc. 1), than the sets \(\lambda\) V, for \(\lambda \in \mathbf{K}\) and \(\lambda \neq 0\) , form a fundamental system of neighbourhoods of 0 in E. If K is metrizable, the Hausdorff topology associated with the topology of E (GT, III, § 2, No.~6) is metrizable. If \(\mathbf{K} = \mathbf{R}\) or \(\mathbf{K} = \mathbf{C}\) , the locally convex topology on E which is the finest of the topologies coarser than the given topology on E (II, p.~80, exerc. 23) can be defined by a single semi-norm.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Prove that the topology of an infinite product of locally convex Hausdorff spaces (of which none is just 0) cannot be defined by a single semi-norm.
+\item
+  Let E be a locally convex space whose topology is defined by an increasing sequence \((p_n)\) of semi-norms. In order that the topology of E be defined by a single semi-norm, it is necessary and sufficient that there exists an integer \(n_0\) such that for every \(n \geqslant n_0\) there exists a number \(k_n \geqslant 0\) such that \(p_n(x) \leqslant k_n p_{n_0}(x)\) for all \(x \in E\) .
+\end{enumerate}
+
+\(d\) ) Let E be the vector space over \(\mathbf{R}\) consisting of infinitely differentiable numerical functions on the interval \(\mathrm{I} = [0,1]\) . For every integer \(n\geqslant 0\) , let \(p_n(f) = \sup_{0\leqslant k\leqslant n}\left(\sup_{x\in I}|f^{(k)}(x)|\right)\) (with
+
+\(f^{(0)} = f)\) ; show that the \(p_n\) are norms on E and that the topology defined by the sequence of norms \(p_n\) cannot be defined by a single norm.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\item
+  Let E be a metrizable vector space over R, d a translation invariant distance, compatible with the topology of E. Let \(|x| = d(x, 0)\) (I, p.~16). Prove that for every integer n \textgreater{} 0, we have \(\frac{1}{n}|x| \leqslant \left|\frac{x}{n}\right|\) . Deduce from this that if B is a bounded subset of E, then \(\sup_{x \in B} |x| < +\infty\) (in other words, B is bounded for the distance d (GT, IX, § 2, No.~3)). Give an example of a metrizable vector space E and an unbounded set in E which is bounded for the distance d (exerc. 2).
+\item
+  Let E be a topological vector space over a non-discrete metrizable topological field K. Show that if E is a Baire space and if in E there exists a countable base for the bornology formed by bounded subsets of E (III, p.~37, exerc. 1), then there exists a neighbourhood of 0 in E which is bounded, and consequently the Hausdorff topology associated with the topology of E is metrizable (III, p.~37, exerc. 2) (compare with exerc. 6).
+\item
+  Let \(\mathbf{E}\) be a metrizable vector space over a non-discrete valuated field \(\mathbf{K}\) . Prove that if \((\mathbf{B}_n)\) is an arbitrary sequence of bounded subsets of \(\mathbf{E}\) (III, p.~37, exerc. 1), then there exists a sequence \((\lambda_n)\) of scalars \(\neq 0\) , such that the union of the sets \(\lambda_n\mathbf{B}_n\) is bounded.
+\item
+  Let \(\mathrm{E}\) be a locally convex space, which is the strict inductive limit of a strictly increasing sequence \((\mathrm{E}_n)\) of locally convex Hausdorff spaces, each \(\mathrm{E}_n\) being closed in \(\mathrm{E}_{n+1}\) (II, p.~32, prop. 9).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Prove that E is not metrizable (use III, p.~5, prop. 6 and the preceding exerc. 5).\\
+\item
+  In order that there exist a countable base for the canonical bornology of E, it is necessary and sufficient that the canonical bornology of each \(\mathrm{E}_n\) has a countable base in \(\mathrm{E}_n\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Let E be an infinite dimensional Banach space and let S be the family of compact, convex and balanced subsets of E, which is a directed set for the relation \(\subset\) . Show that E is the inductive limit of the inductive system of the Banach spaces \(E_{A}\) , where A runs through S. (Prove by contradiction that a neighbourhood V of 0 for the inductive limit topology of the topologies of \(E_{A}\) contains a ball with center 0; for this, note that otherwise, there will exist a sequence \((x_{n})\) of points of E such that \(\|x_{n}\| \leqslant 1/n^{2}\) , and which will not belong to V.) Deduce from this that there exist bounded subsets in E which are not contained in any \(E_{A}\) for \(A \subset S\) .
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let E be an infinite dimensional Banach space. On the vector space \(\prod_{m=1}^{\infty}E_{m}\) , where \(E_{m}=E\) for each m, let \(T_{n}\) denote the topology obtained by taking the product of the Banach space topology on each \(E_{m}\) for \(m\leqslant n\) , and for m\textgreater n, the finest locally convex topology on \(E_{m}\) ; \(F_{n}\) denotes the locally convex space \(\prod_{m=1}^{\infty}E_{m}\) with the topology \(T_{n}\) . Every identity map \(F_{n}\to F_{n+1}\) is continuous; show that the inductive limit space of the inductive system \(F_{n}\) is the space F obtained by assigning to \(\prod_{m=1}^{\infty}E_{m}\) the topology which is the product of the Banach space topologies on each of the factors. Deduce from this that there are bounded subsets in F which are not bounded in any \(F_{n}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\item
+  Prove that in a space which is an infinite product of topological vector spaces (over \(\mathbf{R}\) or \(\mathbf{C}\) ) none just the point 0, there does not exist a countable base for the canonical bornology (first show that it is enough to prove this for the space \(\mathbf{R}^{\mathbf{N}}\) , and then use III, p.~38, exerc. 4).
+\item
+  Let E be the vector space over R consisting of all regulated functions on the interval I = \{0, 1\} (FVR, I, p.~4). For every integer n \textgreater{} 0, let \(V_{n}\) be the set of all functions \(f \in E\) such that \(\int_{0}^{1} \sqrt{|f(t)|} dt \leqslant 1/n\) . Show that the sets \(V_{n}\) form a fundamental system of neighbourhoods of 0 for a metrizable topology which is compatible with the vector space structure of E and that for this topology the sets \(V_{n}\) are bounded; but the convex envelope of each \(V_{n}\) is the entire space E. (Observe that every function \(f \in E\) can be written as \(f = \frac{1}{2}(g + h)\) , where g and h belong to E, and
+\end{enumerate}
+
+\[
+\int_ {0} ^ {1} \sqrt {| g (t) |} d t = \int_ {0} ^ {1} \sqrt {| h (t) |} d t = \frac {1}{\sqrt {2}} \int_ {0} ^ {1} \sqrt {| f (t) |} d t.
+\]
+
+Deduce from this that the only locally convex topology coarser than the topology of E is the coarsest topology on E.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Let \((\mathrm{E}_{\iota})_{\iota \in I}\) be an infinite family of Hausdorff topological vector spaces, none just the point 0, over a non-discrete topological field K. Let E be the direct sum vector space of the \(\mathbf{E}_{\iota}\) , and \(\mathcal{T}_0\) the topology on E defined in I, p.~24, exerc. 14. Then a subset B of E is bounded for \(\mathcal{T}_0\) (III, p.~37, exerc. 1) if and only if B is contained in a product subspace \(\prod_{\iota \in H} \mathbf{E}_{\iota}\) , where H is a finite
+\end{enumerate}
+
+subset of I and the projections of B on each \(E_{\iota}\) for \(\iota \in H\) are bounded. Deduce (for K = R or C) that, if each \(E_{\iota}\) is a quasi-complete space, then E with \(T_{0}\) is quasi-complete.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Let \(\mathbf{E}\) be a topological vector space over a field \(\mathbf{K}\) with a non discrete valuation.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  For a balanced subset A of E to absorb every bounded subset (III, p.~37, exerc. 1) of E, it is sufficient that A absorbs the set of points of every sequence \((x_{n})\) tending to 0 in E. Then A is said to be bornivorous.
+\item
+  Let \(u\) be a linear mapping from \(E\) into a topological vector space \(F\) over \(K\) . The image of every bounded subset of \(E\) under \(u\) is bounded in \(F\) if and only if for every sequence \((x_{n})\) of points of \(E\) tending to 0, the sequence \((u(x_{n}))\) is bounded in \(F\) .
+\item
+  Suppose \(\mathbf{E}\) is metrizable. Show that every bornivorous subset of \(\mathbf{E}\) is a neighbourhood of 0 in \(\mathbf{E}\) . Deduce that if \(u\) is a linear mapping from \(\mathbf{E}\) into a topological vector space \(\mathbf{F}\) over \(\mathbf{K}\) which transforms every sequence converging to 0 in \(\mathbf{E}\) into a bounded sequence in \(\mathbf{F}\) , then \(u\) is continuous on \(\mathbf{E}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\item
+  Let E be a Hausdorff topological vector space over a field K with a non-discrete valuation, and F a metrizable vector space over K. If u is a continuous linear mapping from E into F such that, for every bounded subset B of F, \(u^{-1}(\mathbf{B})\) is bounded in E, show that u is an isomorphism from E onto a subspace of F.
+\item
+  Let \(I\) be an infinite set, and \((E_{\iota})_{\iota\in I}\) a family of locally convex spaces, none of which is 0. Let \(f\) be a linear mapping from \(E = \prod_{\iota\in I}E_{\iota}\) into a Banach space \(F\) . Show that if the image of every bounded subset of E under f is a bounded subset of F, then there exists a finite subset H of I such that for every \(\iota \notin H\) , the restriction of f to \(E_{\iota}\) (considered as a subspace of E) is null. (Argue by contradiction that if not, we can construct a bounded sequence \((x_{n})\) in E whose image under f is unbounded in F.)
+\item
+  Show that if the topology of a metrizable locally convex space E cannot be defined by a single norm, then there does not exist a countable base for the canonical bornology of E (using III, p.~38, exerc. 5, show that otherwise there will exist a bounded bornivorous set (III, p.~39, exerc. 11) in E, and complete the argument using III, p.~39, exerc. 11, c)).
+\item
+  In a Hausdorff topological vector space E over R, let A be a compact convex set and B a closed, convex and bounded set. Show that the convex envelope C of the union \(A \cup B\) is a closed set. (Consider a point z in the closure of C, but not in A, and reduce to the case where z = 0. Observe that there exists a neighbourhood V of 0 and a number \(\alpha < 1\) such that the relations \(0 \leqslant \lambda \leqslant 1\) , \(x \in A\) , \(y \in B\) , \(\lambda x + (1 - \lambda)y \in V\) imply that \(\lambda \leqslant \alpha\) . Next, for every neighbourhood W of 0 consider the set of triplets \((\lambda, x, y)\) such that \(\lambda x + (1 - \lambda)y \in W\) , \(0 \leqslant \lambda \leqslant 1\) , \(x \in A\) , \(y \in B\) .)
+\item
+  Let \(\mathbf{E}\) be a locally convex metrizable space satisfying the first axiom of countability, such that its completion \(\hat{\mathbf{E}}\) is a Fréchet space which satisfies the first axiom of countability.
+\end{enumerate}
+
+Show that every bounded subset B of \(\hat{E}\) is contained in the closure of a bounded subset of \(\hat{E}\) . (Reduce to the case where B is countable, arranged as a sequence \((x_{n})\) ; on the other hand, let \((p_{n})\) be an increasing sequence of semi-norms defining the topology of \(\hat{E}\) ; for each integer n consider a sequence \((y_{nk})_{k\geqslant1}\) of points of E, which converges to \(x_{n}\) and is such that \(p_{n}(x_{n}-y_{nk})\leqslant1\) for all \(k\geqslant1\) .)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  Let \(\mathbf{A}\) be the set of increasing mappings \(\geqslant 1\) from \(\mathbf{N}\) into \(\mathbf{N}\) ; for every \(\alpha \in \mathbf{A}\) , let \(\mathbf{B}_{\alpha}\) denote the set of all points \(z = (z_n) \in \mathbf{R}^{\mathbf{N}}\) such that \(|z_n| \leqslant \alpha(n)\) for all \(n \in \mathbf{N}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that the sets \(\mathbf{B}_{\alpha}\) form a base for the bornology of all bounded subsets of the space \(\mathbf{R}^{\mathbf{N}}\) . b) For every \(\alpha \in \mathbf{A}\) , the set \(\mathbf{RB}_{\alpha}\) is a vector subspace of \(\mathbf{R}^{\mathbf{N}}\) , distinct from \(\mathbf{R}^{\mathbf{N}}\) and dense in \(\mathbf{R}^{\mathbf{N}}\) ; hence there exists a linear form \(f_{\alpha} \neq 0\) (not continuous) on \(\mathbf{R}^{\mathbf{N}}\) such that \(f_{\alpha}(z) = 0\) for all \(z \in \mathbf{B}_{\alpha}\) .
+\item
+  Let \(\mathbf{E}\) be the vector space consisting of all mappings \(g: \alpha \mapsto (g_n(\alpha)) \in \mathbf{R}^{\mathbf{N}}\) from \(\mathbf{A}\) into \(\mathbf{R}^{\mathbf{N}}\) such that for all \(n \in \mathbf{N}\) , the sum \(p_n(g) = \sum_{\alpha} |g_n(\alpha)|\) is finite. Show that the \(p_n\) are semi-norms
+\end{enumerate}
+
+which define the topology of a Fréchet space on E.
+
+\(d\) ) Let \(\mathbf{H}\) be the set of all \(h\in \mathbf{E}\) such that \(h(\alpha)\in \mathbf{RB}_2\) for all \(\alpha \in \mathbf{A}\) ; show that \(\mathbf{H}\) is an everywhere dense vector subspace of \(\mathbf{E}\) (observe that every \(h\in \mathbf{E}\) such that \(h(\alpha) = 0\) except for a finite number of values of \(\alpha \in \mathbf{A}\) belongs to \(\mathbf{H}\) ).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Let \(\mathrm{E}_0 \subset \mathrm{E}\) be the vector subspace of \(\mathrm{E}\) consisting of all \(g \in \mathrm{E}\) such that \(\sum_{\alpha} |f_{\alpha}(g(\alpha))| < +\infty\) ;
+\end{enumerate}
+
+the mapping \(u: g \mapsto (f_{\alpha}(g(\alpha)))_{\alpha \in \mathbf{A}}\) is then a linear mapping from \(\mathrm{E}_0\) into the Banach space \(\mathrm{F} = \ell^1(\mathrm{A})\) (I, p.~4). Prove that \(u(\mathrm{E}_0)\) is everywhere dense in \(\mathrm{F}\) (observe that for every finite subset \(\mathrm{J}\) of \(\mathrm{A}\) , there exists \(g \in \mathrm{E}_0\) such that \(g(\alpha) = 0\) for all \(\alpha \in \mathrm{A} - \mathrm{J}\) and that the \(f_{\alpha}(g(\alpha))\) for \(\alpha \in \mathrm{J}\) take arbitrary values in \(\mathbf{R}\) ). Show that \(u^{-1}(0)\) is everywhere dense in \(\mathrm{E}_0\) (use \(d\) ). Finally, show that for every bounded subset \(C\) of \(E\) , there exists \(\alpha_0 \in A\) such that \(f_{\alpha_0}(g(\alpha_0)) = 0\) for all \(g \in C \cap E_0\) , and deduce that the closure of \(u(C \cap E_0)\) in \(F\) is not a neighbourhood of 0 in \(F\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Let G be the graph of u in \(E_{0} \times F\) , a vector subspace of the Fréchet space \(E \times F\) . Show that G is everywhere dense in \(E \times F\) (observe that for every \(x \in E_{0}\) , \(x + u^{-1}(0)\) is dense in E). However, show that for every bounded subset M of G, the closure \(\overline{M}\) of M in \(E \times F\) does not contain the bounded set \(\{0\} \times U\) of \(E \times F\) , where U is the unit ball in F (if \(N = \text{pr}_{1}(M)\) , observe that because of e), \(\overline{u(N)}\) cannot contain U).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  In the Banach space \(\ell^1 (\mathbf{N})\) (I, p.~4) let \(e_m\) be the sequence \((\delta_{mn})_{n\geq 0}\) such that \(\delta_{mn} = 0\) for \(m\neq n\) and \(\delta_{nn} = 1\) . Define a continuous mapping from \(\ell^1 (\mathbf{N})\) in \(\mathbf{R}\) which transforms the bounded sequence of the \(e_n\) into a non bounded subset of \(\mathbf{R}\) (use Urysohn's th. (GT, IX, §4, No.~2, th. 2)).
+\end{enumerate}
+
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Let E be a locally convex space, and T its topology. Amongst the locally convex topologies on E for which the bounded sets are the same as those for T, there is one \(T'\) finer than all the others, and this is the only one amongst these topologies which is bornological. The space obtained by assigning E with \(T'\) is called the bornological space associated with E. A linear map u from E into a locally convex space F transforms every bounded subset of E into a bounded subset of F if and only if it is continuous for the topology \(T'\) .
+\end{enumerate}
+
+Show that the topology \(\mathcal{T}'\) is the finest of the locally convex topologies on \(E\) for which the canonical injections \(E_A \to E\) , where \(A\) runs through the family of convex, bounded and balanced subsets of \(E\) , are continuous.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let I be an infinite set and \((\mathrm{E}_{\iota})_{\iota \in \mathrm{I}}\) a family of locally convex spaces, none of which is 0. a) Suppose that each space \(\mathrm{E}_{\iota}\) is bornological. Show that if, in addition, the product space \(\mathbf{R}^{\mathrm{I}}\) is bornological, then the product \(\mathrm{E} = \prod_{\iota \in \mathrm{I}}\mathrm{E}_{\iota}\) is bornological (using III, p.~11, prop. 1 (iii)
+\end{enumerate}
+
+and p.~39, exerc. 15, reduce to proving the following: a linear mapping \(f\) from \(E\) into a Banach space, which transforms every bounded set into a bounded set, and whose restriction to each \(E_{\iota}\) is null, is necessarily null on \(E\) . For this consider, for every \(x = (x_{\iota}) \in E\) , the restriction of \(f\) to the product of lines \(\mathbf{R}x_{\iota}\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Deduce from \(a\) ) that every product of a sequence \((\mathrm{E}_n)\) of bornological spaces is bornological.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let \(\mathbf{E}\) be a locally convex space, \(\mathbf{L}\) a vector subspace of \(\mathbf{E}\) of finite codimension, and \(\mathbf{S}\) a convex balanced bornivorous set (III, p.~39, exerc. 11) in \(\mathbf{L}\) . We shall prove that there exists a convex, balanced and bornivorous set \(\mathbf{S}'\) in \(\mathbf{E}\) such that \(\mathbf{S} = \mathbf{S}' \cap \mathbf{L}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  We can reduce to the case where L is a hyperplane such that \(E = L \oplus Ra\) for a point \(a \notin L\) , and such that there exists a bounded sequence \((x_{n})\) in E such that if we put \(x_{n} = \lambda_{n}(y_{n} + a)\) with \(\lambda_{n} \in R\) and \(y_{n} \in L\) , then \(|\lambda_{n}|\) tends to \(+\infty\) ; if \(B_{0}\) is the convex balanced envelope of the set consisting of a and the \(x_{n}\) , then we have \(y_{n} + a \in \lambda_{n}^{-1}B_{0}\) for all n.
+\item
+  Let \(\mathfrak{B}\) be the set of all bounded, convex, balanced subsets of \(E\) which contain \(\mathbf{B}_0\) ; by hypothesis, for every \(\mathbf{B} \in \mathfrak{B}\) , there exists \(\rho_{\mathbf{B}} > 0\) such that \(2\rho_{\mathbf{B}}\mathbf{B} \cap \mathbf{L} \subset \mathbf{S}\) . Show that if \(\mathbf{R}\) is the convex balanced envelope of the union of the sets \(\rho_{\mathbf{B}}\mathbf{B}\) for \(\mathbf{B} \in \mathfrak{B}\) , then we have \(\mathbf{R} \cap \mathbf{L} \subset \mathbf{S}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Deduce from exerc. 3 that if E is a locally convex bornological space, then every subspace of E with finite codimension is bornological (cf.~IV, p.~64, exerc. 11).
+\end{enumerate}
+
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Let X be a Hausdorff topological space, and F a topological vector space (over R or C). Show that on the space \(\mathcal{C}(X; F)\) of all continuous maps from X into F, the topology of compact convergence is compatible with the vector space structure.
+\item
+  Let \(\mathbf{E}\) and \(\mathbf{F}\) be two Hausdorff locally convex spaces, and \(\mathfrak{S}\) a family of bounded subsets of \(\mathbf{E}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that if F is not just 0, then a necessary (and sufficient) condition for \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) to be Hausdorff is that the union of the sets of S is total in E (use Hahn-Banach th.).
+\item
+  Suppose that \(\mathfrak{S}\) is a cover for E. Show that there exists an isomorphism from F onto a closed subspace of \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) . Deduce that if \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) is quasi-complete, then F is necessarily quasi-complete.
+\item
+  Suppose that \(\mathfrak{S}\) is a bornology adapted to E (III, p.~3, def. 4). In order that \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) be metrizable, it is necessary and sufficient that F is metrizable and that there exists a countable base (III, p.~1) for the bornology \(\mathfrak{S}\) . In order that the \(\mathfrak{S}\) -topology on \(\mathcal{L}(\mathrm{E};\mathrm{F})\) be defined by a single norm it is necessary and sufficient that the topology of F can be defined by a single norm and that there exists a set \(\mathbf{M} \in \mathfrak{S}\) which absorbs every set of \(\mathfrak{S}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\item
+  Let E be a topological vector space over R (resp. C). Show that for every family S of bounded subsets of R (resp. C) none of which is the point 0, the space \(\mathcal{L}_{\mathfrak{S}}(\mathbf{R};\mathbf{E})\) (resp. \(\mathcal{L}_{\mathfrak{S}}(\mathbf{C};\mathbf{E})\) ) is canonically isomorphic to E. Deduce that for every integer n \textgreater{} 0 and every covering S of \(R^{n}\) (resp. \(C^{n}\) ) by bounded subsets, \(\mathcal{L}_{\mathfrak{S}}(\mathbf{R}^{n};\mathbf{E})\) (resp. \(\mathcal{L}_{\mathfrak{S}}(\mathbf{C}^{n};\mathbf{E})\) ) is isomorphic to \(E^{n}\) .
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Let \(\mathrm{E}_1, \mathrm{E}_2, \mathrm{F}\) be three topological vector spaces (over \(\mathbf{R}\) or \(\mathbf{C}\) ). Let \(f\) be a continuous linear mapping from \(\mathrm{E}_1\) into \(\mathrm{E}_2\) , and \(\mathfrak{S}_1\) (resp. \(\mathfrak{S}_2\) ) a family of bounded subsets of \(\mathrm{E}_1\) (resp. \(\mathrm{E}_2\) ), such that \(f(\mathfrak{S}_1) \subset \mathfrak{S}_2\) . Show that \(u \mapsto u \circ f\) is a continuous linear mapping from \(\mathcal{L}_{\mathfrak{S}_2}(\mathrm{E}_2; \mathrm{F})\) into \(\mathcal{L}_{\mathfrak{S}_1}(\mathrm{E}_1; \mathrm{F})\) .
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(\mathbf{E},\mathbf{F}\) be two topological vector spaces, and \(\mathbf{M}\) be a vector subspace of \(\mathbf{E}\) . Let \(f\) be the canonical map from \(\mathbf{E}\) onto \(\mathrm{E / M}\) , and \(\mathfrak{S}\) be a family of bounded subsets of \(\mathbf{E}\) . Show that the mapping \(u\mapsto u\circ f\) is an isomorphism from \(\mathcal{L}_{f(\mathfrak{S})}(\mathrm{E / M};\mathrm{F})\) onto the subspace of \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) consisting of those continuous linear mappings from \(\mathbf{E}\) into \(\mathbf{F}\) which are null on \(\mathbf{M}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Let \((\mathrm{E}_{\alpha})_{\alpha\in\mathrm{A}}\) be a family of locally convex spaces, E a vector space (over the same field of scalars as the \(E_{\alpha}\) ), and for each \(\alpha\in A\) , let \(h_{\alpha}\) be a linear mapping from \(E_{\alpha}\) into E. The space E is assigned the finest locally convex topology for which the \(h_{\alpha}\) are continuous (II, p.~27). For every \(\alpha \in \mathrm{A}\) , let \(\mathfrak{S}_{\alpha}\) be a family of bounded subsets of \(\mathrm{E}_{\alpha}\) , and let \(\mathfrak{S}\) be the union of the families \(h_{\alpha}(\mathfrak{S}_{\alpha})\) of bounded subsets of \(\mathrm{E}\) . Under these conditions, show that, for every locally convex space \(\mathrm{F}\) , the \(\mathfrak{S}\) -topology on \(\mathcal{L}(\mathrm{E};\mathrm{F})\) is the coarsest topology for which the linear mappings \(u\mapsto u\circ h_{\alpha}\) from \(\mathcal{L}(\mathrm{E};\mathrm{F})\) into \(\mathcal{L}_{\mathfrak{S}_{\alpha}}(\mathrm{E}_{\alpha};\mathrm{F})\) are continuous. In particular, if \(\mathrm{E}\) is the topological direct sum (II, p.~29, def. 2) of the family \((\mathrm{E}_{\alpha})_{\alpha \in \mathrm{A}}\) (each \(\mathrm{E}_{\alpha}\) being identified with a subspace of \(\mathrm{E}\) ), then the product space \(\prod_{\alpha \in \mathrm{A}}\mathcal{L}_{\mathfrak{S}_{\alpha}}(\mathrm{E}_{\alpha};\mathrm{F})\) is canonically isomorphic to the space \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) ,
+\end{enumerate}
+
+where \(\mathfrak{S}\) is the union of the \(\mathfrak{S}_{\alpha}\) in \(\mathfrak{P}(\mathrm{E})\) .
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\item
+  Let \((\mathrm{E}_{\iota})_{\iota \in I}\) be a family of Hausdorff locally convex spaces, none of which is 0, let E be the product space \(\prod_{\iota \in I} \mathrm{E}_{\iota}\) and F be a normed space. Show that there exists a canonical isomorphism from the space \(\mathcal{L}(\mathrm{E};\mathrm{F})\) with the topology of bounded convergence (resp. of simple convergence, resp. of precompact convergence) onto the topological direct sum space of the spaces \(\mathcal{L}(\mathrm{E}_{\iota};\mathrm{F})\) , where each of these spaces is assigned the topology of bounded convergence (resp. of simple convergence, resp. of precompact convergence). (Observe that if u is a continuous linear mapping from E into F, then there exists a finite subset H of I such that \(u^{-1}(0)\) contains the product of the \(E_{\iota}\) for all indices \(\iota\notin H\) .)
+\item
+  Let \(\mathrm{E}\) , \(\mathrm{F}_1\) , \(\mathrm{F}_2\) be three topological vector spaces, let \(f\) be a continuous linear mapping from \(\mathrm{F}_1\) into \(\mathrm{F}_2\) , and \(\mathfrak{S}\) be a set of bounded subsets of \(\mathrm{E}\) ; show that \(u \mapsto f \circ u\) is a continuous linear mapping from \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F}_1)\) into \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F}_2)\) .
+\item
+  Let \(\mathbf{E}\) be a topological vector space, with a set of bounded subsets of \(\mathfrak{S}\) . Let \((\mathbf{G}_{\iota})_{\iota \in \mathbf{I}}\) be a family of topological vector spaces, and \(\mathbf{F}\) be a vector space (over the same field of scalars as \(\mathbf{E}\) and the \(\mathbf{G}_{\iota}\) ); for every \(\iota \in \mathbf{I}\) , let \(g_{\iota}\) be a linear mapping from \(\mathbf{F}\) into \(\mathbf{G}_{\iota}\) . Suppose \(\mathbf{F}\) is assigned the coarsest topology for which the \(g_{\iota}\) are continuous. Show that the \(\mathfrak{S}\) -topology on \(\mathcal{L}(\mathbf{E};\mathbf{F})\) is the coarsest topology for which the linear mappings \(u\mapsto g_{\iota}\circ u\) from \(\mathcal{L}(\mathbf{E};\mathbf{F})\) into \(\mathcal{L}_{\mathfrak{S}}(\mathbf{E};\mathbf{G}_{\iota})\) are continuous. In particular, if \(\mathrm{F} = \prod_{\iota \in \mathrm{I}}\mathrm{G}_{\iota}\) , the product space \(\prod_{\iota \in \mathrm{I}}\mathcal{L}_{\mathfrak{S}}(\mathbf{E};\mathbf{G}_{\iota})\) is canonically
+\end{enumerate}
+
+identified with \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{8}
+\item
+  Let E and F be two Hausdorff topological vector spaces, and H an equicontinuous subset of \(\mathcal{L}(\mathrm{E};\mathrm{F})\) . Show that if there exists a countable total set in E, and if every bounded subset of F is metrizable, then H is metrizable for the topology of simple convergence in E. If moreover, every bounded subset of F satisfies the first axiom of countability, then so does H.
+\item
+  Let \(\mathbf{E}\) be a topological vector space, which is a Baire space, and \(\mathbf{F}\) be a topological vector space.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that, if a subset \(\mathrm{H}\) of \(\mathcal{L}(\mathrm{E};\mathrm{F})\) is bounded for the topology of simple convergence, then \(\mathrm{H}\) is equicontinuous (for every closed neighbourhood \(\mathrm{V}\) of 0 in \(\mathrm{F}\) , consider the sets \(\mathbf{M}_n = \bigcap_{u\in \mathrm{H}}u^{-1}(n\mathrm{V})\) ).
+\item
+  Show that, if a subset H of \(\mathcal{L}(\mathrm{E},\mathrm{F})\) is not equicontinuous, the set of all \(x\in E\) such that \(\mathrm{H}(x)\) is not bounded in F is the complement of a first category set. Deduce from this that, if \((\mathrm{H}_{n})\) is a sequence of subsets of \(\mathcal{L}(\mathrm{E};\mathrm{F})\) which are not equicontinuous, then there exists an \(x\in E\) such that none of the sets \(\mathrm{H}_{n}(x)\) is bounded in F (« principle of condensation of singularities »).
+\end{enumerate}
+
+¶ 11) Let T be a metrizable topological space, E a topological vector space which is a Baire space, and M a family of mappings from E × T into a topological vector space F, satisfying the following conditions :
+
+\(1^{\circ}\) for all \(t_0 \in \mathbf{T}\) , the set of all mappings \(x \mapsto f(x, t_0)\) where \(f\) runs through \(\mathbf{M}\) , is an equicontinuous set of linear mappings from \(\mathbf{E}\) into \(\mathbf{F}\) ;
+
+\(2^{\circ}\) for all \(x_0 \in \mathbf{E}\) , the set of all mappings \(t \mapsto f(x_0, t)\) from \(\mathbf{T}\) into \(\mathbf{F}\) , where \(f\) runs through \(\mathbf{M}\) , is equicontinuous.
+
+Show that \(\mathbf{M}\) is equicontinuous. (Given \(t_0 \in \mathbf{T}\) and a closed balanced neighbourhood \(\mathbf{V}\) of 0 in F, for every \(x \in E\) , let \(d_{x}\) be the upper bound of the radii of all open balls with center \(t_{0}\) in T such that, for an arbitrary point t in one of these balls, we have \(f(x, t) - f(x, t_{0}) \in \mathrm{V}\) for all \(f \in M\) . Show that \(x \mapsto d_{x}\) is upper semi-continuous at every point \(x_{0} \in E\) ; for this, show that if we had \(d_{x} > \alpha > d_{x_{0}}\) for points arbitrarily close to \(x_{0}\) , then for every neighbourhood W of 0 in F, \(f(x_{0}, t) - f(x_{0}, t_{0})\) would belong to \(V + W\) for \(d(t, t_{0}) \leqslant \alpha\) and \(f \in M\) . Finally use GT, IX, § 5, No.~4, th. 2.)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Let \(\mathbf{E}\) be a bornological locally convex space, and \(\mathfrak{S}\) be a family of bounded subsets of \(\mathbf{E}\) containing the image of every sequence converging to 0.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that for every locally convex space \(\mathbf{F}\) , every bounded subset of \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) is equicontinuous.
+\item
+  Show that if F is a Hausdorff and quasi-complete locally convex space, then the space \(\mathcal{L}_{\mathfrak{S}}(E;F)\) is quasi-complete.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Show that if E is a Hausdorff and semi-complete locally convex space, then for every locally convex space F, every subset of \(\mathcal{L}(\mathrm{E};\mathrm{F})\) bounded for the topology of simple convergence is bounded for every S-topology.
+\end{enumerate}
+
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Show that the completion of a Hausdorff barrelled space is barrelled.
+\item
+  Let E be a vector space over R or C. Show that E, with the finest locally convex topology on E (II, p.~25) is barrelled. Deduce from this examples of barrelled spaces which are not metrizable and are not Baire spaces.
+\item
+  Let \(E\) be a Hausdorff locally convex space with a countably infinite base \((a_{n})\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that E admits a countable, topologically independent base \((e_n)\) (using the fact that every line in E has a topological complement, define the \(e_n\) by induction).
+\item
+  Show that, for E to be barrelled, it is necessary and sufficient that the topology T of E is identical with the finest locally convex topology on E (observe that the convex balanced envelope of every sequence \((\lambda_{n}e_{n})\) is closed in E). In particular, if T is metrizable, E is not barrelled (cf.~exerc. 2).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\item
+  Let E be a Banach space in which there exists an infinite algebraically independent sequence \((a_{n})\) which is total in E (for example the space \(\ell^{1}(\mathbf{N})\) (I, p.~4)). Let B be a base of E containing the \(a_{n}\) ; we know (II, p.~80, exerc. 24) that B is not countable. Let \((e_{n})\) be a sequence of distinct elements of B, and distinct from the \(a_{n}\) , and let C be the complement of the set of the \(e_{n}\) in B. Let \(F_{n}\) be the vector subspace of E generated by C and the \(e_{k}\) for indices \(k \leqslant n\) ; E is the union of the \(F_{n}\) . Let S be the unit ball in E; show that there exists an index n such that \(S \cap F_{n}\) , is not a first category set. Deduce that for this value of n, \(F_{n}\) is a metrizable, non-complete Baire space.
+\item
+  Give an example of a locally convex space which is a complete, Hausdorff Baire space, but is not metrizable (cf.~GT, IX, § 5, exerc. 16).
+\item
+  A locally convex space \(\mathbf{E}\) is said to be relatively bounded if there exists a bounded barrel in \(\mathbf{E}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  In order that E be relatively bounded, it is necessary and sufficient that the topology of E is coarser than a topology defined by a semi-norm. Then there exists a base for the canonical bornology of E consisting of barrels.
+\item
+  For E to be bornological and relatively bounded, it is necessary and sufficient that the topology of E is the lower bound of a family of normed space topologies on E (cf.~III, p.~40, exerc. 1). Further, in order that there exist also a countable base for the canonical bornology of E, it is necessary and sufficient that the topology of E is the lower bound of a sequence of normed space topologies.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\item
+  A locally convex space E is said to be infra-barrelled if every barrel of E which is bornivorous (III, p.~39, exerc. 11) is a neighbourhood of 0 in E. Every bornological space is infra-barrelled; every barrelled space is infrabarrelled. Show that the completion of a Hausdorff infrabarrelled space is barrelled (use the fact that in a Hausdorff locally convex space E, each barrel absorbs every convex, balanced, bounded and semi-complete subset of E).
+\item
+  Let \((\mathrm{E}_{\iota})_{\iota\in I}\) be a family of infrabarrelled spaces, and for every \(\iota\in I\) , let \(f_{\iota}\) be a linear mapping from \(\mathrm{E}_{\iota}\) into a vector space E. Show that the space E, with the finest locally convex topology for which the \(f_{\iota}\) are continuous, is infrabarrelled. In particular, every quotient space of an infrabarrelled space is infrabarrelled; every topological direct sum of infrabarrelled spaces is infrabarrelled.
+\item
+  Let I be an uncountably infinite set; on the direct sum vector space \(E = R^{(I)}\) , consider, on the one hand, the finest locally convex topology T, and on the other hand, the topology \(T_{0}\) defined in I, p.~24, exerc. 14, which is locally convex; we know that T and \(T_{0}\) are distinct (II, p.~75, exerc. 11) and that E with \(T_{0}\) is complete (GT, III, § 3, exerc. 10). Show that the bounded sets in E are the same for T and \(T_{0}\) (III, p.~39, exerc. 10) and that E with \(T_{0}\) is not barrelled (observe that the set T of all \(x = (\xi_{\mathfrak{u}}) \in \mathbf{E}\) such that \(\sum_{\mathfrak{u} \in I} |\xi_{\mathfrak{u}}| \leqslant 1\) is a barrel and use exerc. 11 of II, p.~75).
+\item
+  Show that an infrabarrelled space in which every closed convex balanced and bounded subset is semi-complete is a barrelled space.
+\item
+  Let \(\mathbf{E}\) be an infrabarrelled space, \(\mathbf{F}\) a locally convex space. Show that every subset of \(\mathcal{L}(\mathbf{E};\mathbf{F})\) which is bounded for the topology of bounded convergence is equicontinuous.
+\end{enumerate}
+
+¶ 12) a) Let E be a locally convex space, \((A_n)\) an increasing sequence of convex balanced sets in E such that \(A = \bigcup_{n} A_n\) is absorbent. Let \((W_n)\) be a decreasing sequence of convex balanced
+
+neighbourhoods of 0; then the convex balanced envelope V of the \(\mathrm{W}_n\cap \mathrm{A}_n\) is absorbent; if E is barrelled, \(\overline{\mathbf{V}}\) is a neighbourhood of 0.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Let \(\mathfrak{F}\) be a filter on E; suppose that for every \(n\) , there exists a set \(\mathrm{M}_n \in \mathfrak{F}\) such that \((\mathrm{M}_n + \mathrm{W}_n) \cap \mathrm{A}_{2n} = \emptyset\) . Let \(\mathrm{V}_n\) be the convex balanced envelope of the \(\mathrm{W}_k \cap \mathrm{A}_k\) for \(k \leqslant n - 1\) and of \(\mathrm{W}_n\) in such a way that \(\mathrm{V}_n\) is a neighbourhood of 0 and that we have \(\frac{1}{2}\overline{\mathrm{V}} \subset \mathrm{V}_n\) for all \(n\) . Show that \((\mathrm{M}_n + \mathrm{V}_n) \cap \mathrm{A}_n = \emptyset\) for all \(n\) .
+\item
+  Deduce from a) and b) that if E is barrelled and if \(\mathfrak{F}\) is a Cauchy filter on E, then there exists an integer N such that, for all \(\mathbf{M} \in \mathfrak{F}\) and every neighbourhood W of 0 in E, \(\mathbf{M} + \mathbf{W}\) meets \(\mathrm{A}_{\mathbf{N}}\) . (Argue by contradiction; with the notations of b), consider a set \(\mathbf{M} \in \mathfrak{F}\) with small order \(\frac{1}{2}\overline{\mathrm{V}}\) .)
+\end{enumerate}
+
+¶ 13) a) Let E be a barrelled space, \((C_n)\) an increasing sequence of convex, balanced sets such that \(E = \bigcup_{n} C_n\) . Let U be a convex, balanced and absorbent set such that for every n,
+
+\(U \cap C_{n}\) is closed in \(C_{n}\) . Show that U is a neighbourhood of 0 in E. (Show that \(\overline{U} \subset 2U\) , by considering a filter \(\mathfrak{F}\) on U converging to a point \(x \in E\) and applying exerc. 12, c)).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(\mathrm{E}\) be a barrelled space, \((\mathrm{E}_n)\) an increasing sequence of subspaces of \(\mathbf{E}\) such that \(\mathrm{E} = \bigcup_{n} \mathrm{E}_n\) .
+\end{enumerate}
+
+Show that if \(\mathbf{U}\) is a subset of \(\mathbf{E}\) such that \(\mathbf{U} \cap \mathbf{E}_n\) is a barrel in \(\mathbf{E}_n\) for every \(n\) , then \(\mathbf{U}\) is a neighbourhood of 0 in \(\mathbf{E}\) . In particular, \(\mathbf{E}\) is the strict inductive limit (II, p.~33) of the sequence \((\mathbf{E}_n)\) .
+
+¶ 14) a) Let E be a Hausdorff locally convex space, L a subspace of E with finite codimension, and T a barrel in L. Show that there exists a barrel T' in E such that T' ∩ L = T (show that we can take for T' the sum of the closure T̅ of T in E and of a finite dimensional compact convex set).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let E be a barrelled space, L a subspace of E, which has a complement having a countable basis. Show that L is barrelled (use \(a\) ) and exerc. 13, b)).
+\end{enumerate}
+
+* c) Let E be a Hausdorff locally convex space; its completion \(\hat{\mathbf{E}}\) can be identified with a closed subspace of a barrelled space F, which is the product of a family of Fréchet spaces (II, p.~5, prop. 3 and IV, p.~14, corollary). Let \((e_{\alpha})_{\alpha \in \mathbf{A}}\) be the basis of a complement in F of the subspace E, and let \(\mathrm{H}_{\alpha}\) be the hyperplane in F generated by E and the \(e_{\beta}\) for indices \(\beta \neq \alpha\) ; by \(b\) ), \(\mathrm{H}_{\alpha}\) is a barrelled space. For every \(x \in \mathrm{E}\) , let \(u(x)\) be the point of the barrelled space \(\mathrm{G} = \prod_{\alpha \in \mathbf{A}} \mathrm{H}_{\alpha}\) (sub-
+
+space of \(F^{A}\) ) all whose coordinates are equal to x; u is an isomorphism from E onto the subspace \(\Delta \cap G\) , where \(\Delta\) is the diagonal in \(F^{A}\) . Show that \(u(E) = \Delta \cap G\) is closed in G, and consequently that every Hausdorff locally convex space is isomorphic to a closed subspace of a Hausdorff barrelled space. *
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  Let E be a Hausdorff barrelled (resp. infrabarrelled) space, and \(\hat{E}\) be its completion. Show that every subspace F of \(\hat{E}\) which contains E is barrelled (resp. infrabarrelled) (cf.~III, p.~24, cor. and IV, p.~52, exerc. 1).
+\end{enumerate}
+
+¶ * 16) Let \((E_{\iota})_{\iota\in I}\) be an uncountable family of Hausdorff barrelled spaces, none of which are the point 0, and let \(E = \prod_{\iota \in I} E_{\iota}\) ; then \(E\) is barrelled (IV, p.~14, corollary). Let \(G\) be the subspace of E consisting of all points \((x_{\iota})\) such that \(x_{\iota}=0\) except for a countable number of indices. Every sequence of points of G which converges in E has a limit belonging to G, but G is dense in E.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Show that every subset \(\mathbf{M}\) of \(\mathrm{G}' = \mathrm{E}'\) , which is bounded for \(\sigma(\mathrm{E}', \mathrm{G})\) is contained in a finite product \(\prod_{\iota \in \mathrm{H}} \mathrm{E}_{\iota}'\) (IV, p.~12, prop. 13), where \(\mathrm{H}\) is a finite subset of I; consequently \(\mathbf{M}\) is
+\end{enumerate}
+
+bounded for \(\sigma(E', E)\) . Deduce from this that \(G\) is barrelled.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let F be a subspace of E such that \(G \subset F \subset E\) and such that G is a hyperplane (everywhere dense) in F; F is barrelled (exerc. 15). Show that F is not bornological. (Argue by reductio ad absurdum; if there were a convex, balanced and bounded set A in F such that G is an everywhere dense hyperplane in the normed space \(F_{A}\) (III, p.~7), then there would exist a sequence of points of G converging to a point of F not belonging to G) (cf.~IV, p.~52, exerc. 2). *
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Let E be a Hausdorff locally convex space, L a vector subspace of E of finite codimension, and T a bornivorous barrel in L. Show that there exists a bornivorous barrel \(T'\) in E such that \(T' \cap L = T\) . (Reduce to the case where L is a hyperplane in E. Let \(E_{0}\) be the bornological space associated with E (III, p.~40, exerc. 1), \(L_{0}\) the hyperplane L with the topology induced by that of \(E_{0}\) ; observe that T is a neighbourhood of 0 in \(L_{0}\) and consider the following two cases: that \(L_{0}\) is dense in \(E_{0}\) , or is closed in \(E_{0}\) ; show that for \(T'\) we can take the closure \(\overline{T}\) of T in E or the sum of T and a compact convex set of dimension 1).
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let E be an infrabarrelled space, L a vector subspace of E of finite codimension. Deduce from a) that L is infrabarrelled (cf.~IV, p.~64, exerc. 11).
+\end{enumerate}
+
+¶ 18) Let E be a strict inductive limit space of an increasing sequence ( \(E_{n}\) ) of locally convex metrizable subspaces (II, p.~33), and let F be a vector subspace of E such that every point of E is a limit point of a sequence of points of F.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  If \(\overline{\mathbf{E}}_n\) is the closure of \(\mathbf{E}_n\) in \(\mathbf{E}\) , then \(\mathbf{E}\) is the strict inductive limit of the sequence \((\overline{\mathbf{E}}_n)\) . Let \(\mathbf{F}_n\) be the closure of \(\mathbf{F} \cap \overline{\mathbf{E}}_n\) in \(\mathbf{E}\) . Show that \(\mathbf{E}\) is the union of the increasing sequence of subspaces \(\mathbf{F}_n\) .
+\item
+  Suppose E is barrelled. Show that F is bornological. (Let u be a linear mapping from F into a Banach space G which transforms every bounded subset of F into a bounded subset of G. Show that there exists a linear mapping from E into G, whose restriction to F is equal to u, and whose restriction to each \(F_{n}\) is continuous. Finally use exerc. 13, b) of III, p.~44.)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  A Hausdorff locally convex space E is said to be ultrabornological if every convex subset of E which absorbs all the convex, balanced, bounded and semi-complete subsets of E, is a neighbourhood of 0 in E.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that every ultrabornological space is both bornological and barrelled.
+\item
+  Let E be a Hausdorff locally convex space such that the closed, convex, balanced envelope of the set of points of every sequence tending to 0 is semi-complete. Show that if E is bornological then it is ultrabornological. In particular every bornological and quasi-complete space is ultrabornological; every Fréchet space is ultrabornological.
+\item
+  Let \((\mathrm{E}_{\alpha})\) be a directed increasing family of vector subspaces of a vector space E such that, E is the union of the \(\mathrm{E}_{\alpha}\) . Let \(\mathcal{T}_{\alpha}\) be a locally convex topology on \(\mathrm{E}_{\alpha}\) for every \(\alpha\) , and let \(\mathcal{T}\) be the finest locally convex topology for which the canonical injections from \(\mathrm{E}_{\alpha}\) into E are continuous. Suppose that \(\mathcal{T}\) is Hausdorff and that, for every \(\alpha\) , the topology on \(\mathrm{E}_{\alpha}\) induced by \(\mathcal{T}\) is \(\mathcal{T}_{\alpha}\) . Show that if each of the spaces \(\mathrm{E}_{\alpha}\) is ultrabornological, then E with \(\mathcal{T}\) is ultrabornological. d) Show that every finite product of ultrabornological spaces is ultrabornological; deduce that every topological direct sum of ultrabornological spaces is ultrabornological.
+\item
+  Show that the product space \(\mathrm{E} = \prod_{n=0}^{\infty} \mathrm{E}_n\) of an infinite sequence of ultrabornological
+\end{enumerate}
+
+spaces is ultrabornological. (Let A be a convex subset of E which absorbs every convex, balanced, bounded and semi-complete subset of E. Show that if A were not a neighbourhood of 0 in E, then there would have existed a sequence \((x_{n})\) in \(\mathbb{C}\) A such that \(x_{n}\) has its first \(n - 1\) coordinates zero, but is \(\neq 0\) . Next observe that the closed convex balanced envelope of the set of points of such a sequence is identical to the set of points \(\sum_{n = 0}^{\infty}\lambda_n x_n\) , where \(\sum_{n = 0}^{\infty}|\lambda_n| \leqslant 1\) , and
+
+that this envelope is a semi-complete set.)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{19}
+\item
+  Show that, for a Hausdorff locally convex space \(E\) to be ultrabornological it is necessary and sufficient that it is the inductive limit of a family of Banach spaces. (To see that the condition is necessary, consider the convex, balanced, bounded and semi-complete sets \(B\) in \(E\) , and the spaces \(E_B\) . To see that it is sufficient, observe that if \(E\) is the inductive limit of a family of Banach spaces \(E_\alpha\) , we can assume that the \(E_\alpha\) are (algebraically) subspaces of \(E\) ; if \(V\) is a convex set in \(E\) which absorbs the convex, balanced, bounded and semi-complete subsets of \(E\) , show that \(V\) absorbs each ball \(B_\alpha\) of \(E_\alpha\) (argue by reductio ad absurdum); if \(V\) does not absorb \(B_\alpha\) , then it does not absorb a sequence \((x_n)\) of points of \(B_\alpha\) , tending to 0 in \(E\) ; then use the fact that in a Banach space, the closed, convex envelope of a compact set is compact.)
+\item
+  Show that if E is a Hausdorff locally convex semi-complete space, then the bornological space associated with E (III, p.~40, exerc. 1) is ultrabornological.
+\end{enumerate}
+
+¶ 22) Let E be an infinite dimensional Banach space satisfying the first axiom of countability.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that the set \(\mathcal{K}\) of all compact, convex and balanced subsets A of E such that \(\mathrm{E_A}\) is infinite dimensional, is infinite and has a cardinality \(\leqslant 2^{\mathrm{Card}(\mathbf{N})}\) (GT, IX, § 5, exerc. 17). For every \(x_0 \in \mathrm{E}\) and every \(\mathrm{A} \in \mathcal{K}\) , the set \(x_0 + \mathrm{A}\) contains a free subset of cardinality \(2^{\mathrm{Card}(\mathbf{N})}\) (II, p.~80, exerc. 24, c)).
+\item
+  Let \(x_0 \neq 0\) be in E. Show that there exists a family \((y_{\mathrm{A}})_{\mathrm{A} \in \mathcal{K}}\) such that \(x_0\) and the \(y_{\mathrm{A}}\) form a free family and that we have \(y_{\mathrm{A}} \in x_0 + \mathrm{A}\) for all \(\mathrm{A} \in \mathcal{K}\) (well order \(\mathcal{K}\) and argue by transfinite induction, using \(a\) ).
+\item
+  Let \(f \in \mathrm{E}^{*}\) be a linear form such that \(f(x_0) = 1\) and \(f(y_{\mathrm{A}}) = 0\) for all \(\mathrm{A} \in \mathcal{K}\) , and let \(\mathrm{H} = f^{-1}(0)\) . Show that a subset \(\mathbf{M}\) of \(\mathrm{H}\) which is convex, balanced and semi-complete is necessarily finite dimensional (observe that if not, \(\mathbf{M}\) will contain an infinite dimensional compact convex and balanced set \(\mathrm{A}\) ; hence \(y_{\mathrm{A}}\) will belong to \(\mathrm{H} \cap (x_0 + \mathbf{M})\) ).
+\item
+  Show that H with the topology induced by that of E is not ultrabornological, in spite of being bornological and barrelled (III, p.~44, exerc. 14). (By using c), show that if H were ultrabornological, its topology would have been the finest locally convex topology, and deduce a contradiction.)
+\end{enumerate}
+
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  Let E, F and G be three locally convex spaces, S a cover of E consisting of bounded sets. Show that if u is a separately continuous bilinear mapping from \(E \times F\) into G such that for every set \(M \in S\) the restriction of u to \(M \times F\) is continuous, then u is S-hypocontinuous.
+\item
+  Let \(\mathbf{E}\) be the direct sum space \(\mathbf{R}^{(\mathbf{N})}\) , with the topology induced by the product topology on \(\mathbf{R}^{\mathbf{N}}\) . Show that the bilinear form \(((x_n), (y_n)) \mapsto \sum_{n=0}^{\infty} x_n y_n\) on \(\mathbf{E} \times \mathbf{E}\) , is separately continuous, but that for every set \(\mathfrak{S}\) of bounded subsets of \(\mathbf{E}\) containing at least one infinite dimensional bounded set this bilinear form is not \(\mathfrak{S}\) -hypocontinuous.
+\end{enumerate}
+
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let E be the space \(\mathbf{R}^{(\mathbf{N})}\) with the finest locally convex topology (II, p.~26); let F be the space \(R^{N}\) ; the space E is ultrabornological (III, p.~45, exerc. 19) and complete, whilst F is metrizable and complete. Let S (resp. T) be the set of all bounded subsets of E (resp. F). Show that the bilinear form \(((x_{n}), (y_{n})) \mapsto \sum_{n=0}^{\infty} x_{n} y_{n}\) on E × F is \((\mathfrak{S}, \mathfrak{T})\) -hypocontinuous, but is not continuous
+\end{enumerate}
+
+(cf.~IV, p.~48, exerc. 11).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\item
+  Let E be a locally convex space, F an infrabarrelled space (III, p.~44, exerc. 7) and T the set of all bounded subsets of F. Show that, if a bilinear mapping from \(E \times F\) into a locally convex space G is T-hypocontinuous, it is \((\mathfrak{S}, \mathfrak{T})\) -hypocontinuous for every set S of bounded subsets of E (cf.~III, p.~44, exerc. 11).
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Let \(\mathbf{E}\) , \(\mathbf{F}\) and \(\mathbf{G}\) be three Hausdorff locally convex spaces, and \(u\) a bilinear mapping from \(\mathrm{E} \times \mathrm{F}\) into \(\mathbf{G}\) . In order that there exist a balanced neighbourhood \(\mathbf{U}\) of 0 in \(\mathbf{E}\) such that the set of all mappings \(u(x, .)\) , where \(x\) runs through \(\mathbf{U}\) , is equicontinuous in \(\mathcal{L}(\mathbf{F}; \mathbf{G})\) , it is necessary and sufficient that \(u\) is continuous when we replace the topology of \(\mathbf{E}\) by the coarsest topology for which the sets \(\lambda \mathbf{U} (\lambda \neq 0)\) form a fundamental system of neighbourhoods of 0. Show that if \(\mathbf{G}\) is normed, this condition is satisfied by every continuous bilinear mapping from \(\mathrm{E} \times \mathrm{F}\) into \(\mathbf{G}\) .
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Take for E, F and G the product space \(R^{N}\) , and for u the continuous bilinear mapping \(((x_{n}), (y_{n})) \mapsto (x_{n}y_{n})\) . Show that there does not exist any neighbourhood U of 0 in E such that the set of maps \(u(x, .)\) , where x runs through U, is equicontinuous in \(\mathcal{L}(F; G)\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Let E, F and G be three topological vector spaces. A set H of bilinear mappings from \(E \times F\) into G is said to be separately equicontinuous if for all \(x \in E\) , the set of linear mappings \(u(x, .)\) , where u runs through H, is equicontinuous in \(\mathcal{L}(F; G)\) and if for all \(y \in F\) , the set of linear mappings \(u(. , y)\) , where u runs through H, is equicontinuous in \(\mathcal{L}(E; G)\) .
+\end{enumerate}
+
+Suppose that F is metrizable, and that E is a Baire space (cf.~III, p.~43, exerc. 5 and V, p.~79, exerc. 15). Show that every separately equicontinuous set of bilinear mappings from \(E \times F\) into G is equicontinuous (cf.~III, p.~42, exerc. 11).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Let \(\mathrm{E}\) , \(\mathrm{F}\) and \(\mathrm{G}\) be three topological vector spaces, \(\mathfrak{S}\) a set of bounded subsets of \(\mathrm{E}\) , and \(\mathrm{H}\) a set of separately continuous bilinear mappings from \(\mathrm{E} \times \mathrm{F}\) into \(\mathrm{G}\) . The following properties are equivalent:
+\end{enumerate}
+
+\(\alpha)\) For every neighbourhood \(\mathbf{W}\) of 0 in \(\mathbf{G}\) and every set \(\mathbf{M} \in \mathfrak{S}\) , there exists a neighbourhood \(\mathbf{V}\) of 0 in \(\mathbf{F}\) such that \(u(\mathbf{M} \times \mathbf{V}) \subset \mathbf{W}\) for all \(u \in \mathbf{H}\) .
+
+\(\beta)\) For every set \(\mathbf{M} \in \mathfrak{S}\) , the image of \(\mathbf{H} \times \mathbf{M}\) under the mapping \((u, x) \mapsto u(x, .)\) is an equicontinuous subset of \(\mathcal{L}(\mathrm{F}; \mathrm{G})\) .
+
+\(\gamma)\) As \(u\) runs through H, the set of mappings \(y \mapsto u(., y)\) from F into \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E}; \mathrm{G})\) is equicontinuous.
+
+We then say that H is a S-equihypocontinuous set of bilinear mappings (separately continuous) from \(E \times F\) into G. Similarly for a set T of bounded subsets of F, we define the notions of a T-equihypocontinuous set and a \((\mathfrak{S}, \mathfrak{T})\) -equihypocontinuous set.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\item
+  Let H be a S-equihypocontinuous set of bilinear mappings from \(E \times F\) into G (exerc. 7). For every subset \(M \in S\) , show that H is equicontinuous in \(M \times F\) ; moreover, for every bounded subset Q of F, the union of the sets \(u(\mathbf{M} \times \mathbf{Q})\) , where u runs through H, is bounded in G.
+\item
+  Let H be a \((\mathfrak{S}, \mathfrak{T})\) -equihypocontinuous set of bilinear mappings from \(E \times F\) into G (exerc. 7); show that for every pair of sets \(M \in S\) , \(N \in T\) , H is uniformly equicontinuous in \(M \times N\) .
+\item
+  Let \(\mathrm{E}_1\) , \(\mathrm{E}_2\) and \(\mathrm{F}\) be three topological vector spaces, \(\mathbf{G}_1\) (resp. \(\mathbf{G}_2\) ) an everywhere dense subspace of \(\mathrm{E}_1\) (resp. \(\mathrm{E}_2\) ), and \(\mathfrak{S}_1\) (resp. \(\mathfrak{S}_2\) ) a family of bounded subsets of \(\mathbf{G}_1\) (resp. \(\mathbf{G}_2\) ). Let \(\mathrm{H}\) be a set of separately continuous bilinear mappings from \(\mathrm{E}_1 \times \mathrm{E}_2\) into \(\mathrm{F}\) ; if the set of restrictions to \(\mathbf{G}_1 \times \mathbf{G}_2\) of the mappings \(u \in \mathrm{H}\) is \((\mathfrak{S}_1, \mathfrak{S}_2)\) -equihypocontinuous, then so is \(\mathrm{H}\) .
+\item
+  If \(\mathbf{F}\) is a barrelled space, every separately equicontinuous set of bilinear mappings from \(\mathbf{E} \times \mathbf{F}\) into a locally convex space \(\mathbf{G}\) is \(\mathfrak{S}\) -equihypocontinuous for every set \(\mathfrak{S}\) of bounded subsets of \(\mathbf{E}\) .
+\item
+  Let E, F be two topological vector spaces, and let f be the bilinear mapping \((x, u) \mapsto u(x)\) from \(E \times \mathcal{L}(E; F)\) into F; let T be a topology compatible with the vector space structure of \(\mathcal{L}(E; F)\) and finer than the topology of simple convergence. Let S be a family of bounded subsets of E, U a family of bounded subsets of \(\mathcal{L}(E; F)\) (for the topology T). Show that f is S-hypocontinuous if and only if T is finer than the S-topology; f is U-hypocontinuous if and only if the sets of U are equicontinuous subsets of \(\mathcal{L}(E; F)\) .
+\item
+  Let E, F, G be three topological vector spaces, and S (resp. T) a family of bounded subsets of E (resp. F). Let H be the vector space of T-hypocontinuous bilinear mappings from \(E \times F\) into G.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Show that on H the topology of uniform convergence on sets of the form \(M \times N\) , where \(M \in S\) and \(N \in T\) is compatible with the vector space structure; this topology is called the \((\mathfrak{S}, \mathfrak{T})\) -topology on H. For every mapping \(u \in H\) , let \(\tilde{u}\) be the continuous mapping \(x \mapsto u(x, .)\) from E into \(\mathcal{L}_{\mathfrak{T}}(F; G)\) . Show that \(u \mapsto \tilde{u}\) is an isomorphism from the space H, endowed with the \((\mathfrak{S}, \mathfrak{T})\) -topology, onto the space \(\mathcal{L}_{\mathfrak{S}}(E; \mathcal{L}_{\mathfrak{T}}(F; G))\) .
+\item
+  Let L be a subset of H such that, for every pair \((x, y) \in E \times F\) , the set of all \(u(x, y)\) , where u runs through L, is bounded in G (simply bounded subset of H). Show that, if E, F, G are locally convex, and if E and F are Hausdorff and quasi-complete, then L is bounded in H for the \((\mathfrak{S}, \mathfrak{T})\) -topology.
+\item
+  Let E, F, G be three Hausdorff locally convex spaces. If E is barrelled and F quasi-complete or barrelled, then every simply bounded subset L of H is T-equihypocontinuous (III, p.~47, exerc. 7).
+\end{enumerate}
+
+\(d\) ) If E and F are barrelled, and G quasi-complete, and if \(\mathfrak{S}\) and \(\mathfrak{T}\) are coverings of E and F respectively, then H is Hausdorff and quasi-complete for the \((\mathfrak{S},\mathfrak{T})\) -topology.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\item
+  Extend the definitions and results of § 5 to arbitrary multilinear mappings. Let E, F, G be three topological vector spaces, S (resp. T) a family of bounded subsets of E (resp. F), and U a family of bounded subsets of the space \(\mathcal{L}_{\mathfrak{S},\mathfrak{T}}\) (E, F; G) of bilinear (S, T)-hypocontinuous mappings from E × F into G, endowed with the (S, T)-topology (exerc. 13). Show that the trilinear map (x, y, u) → u(x, y) from E × F × \(\mathcal{L}_{\mathfrak{S},\mathfrak{T}}\) (E, F; G) into G is (S, T)-hypocontinuous; in order that it is (S, U)-hypocontinuous, it is necessary and sufficient that every set L ∈ U is S-equihypocontinuous (III, p.~47, exerc. 7).
+\item
+  Let \(E\) be the space of all sequences \(x = (\xi_n)_{n \geqslant 0}\) of real numbers such that the series with the general term \(\xi_n\) is convergent. Put \(\| x \| = \sup_n | \sum_{k=0}^n \xi_k |\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Show that \(\| x\|\) is a norm on E, and that E is complete for this norm.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Show that the vector space \(\ell^1 (\mathbf{N})\) (I, p.~4), considered as a subspace of E, is everywhere dense (for the topology of E); the topology on \(\ell^1 (\mathbf{N})\) defined by the norm \(\| x\| _1 = \sum_{n = 0}^{\infty}|\xi_n|\) is strictly finer than the topology induced by that of E.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let \((\mathbf{P}_n)\) be an increasing sequence of finite subsets of \(\mathbf{N} \times \mathbf{N}\) forming a cover of \(\mathbf{N} \times \mathbf{N}\) . For every \(x = (\xi_n) \in \mathrm{E}\) and every \(y = (\eta_n) \in \ell^1(\mathbf{N})\) , let \(f_n(x, y) = \sum_{(i,j) \in \mathbf{P}_n} \xi_i \eta_j\) . Then the sequence \((f_n(x, y))\) tends to a limit for every pair \((x, y) \in \mathrm{E} \times \ell^1(\mathbf{N})\) if and only if for each of these pairs \((x, y)\) , the sequence \((f_n(x, y))\) is bounded; the limit of \(f_n(x, y)\) is then equal to \(\left(\sum_{n=0}^{\infty} \xi_n\right) \left(\sum_{n=0}^{\infty} \eta_n\right)\) .
+\end{enumerate}
+
+(Using exerc. 13, c) of III, p.~48, show that the sequence of bilinear forms \((f_n)\) is equicontinuous, and observe that it converges in the subspace \(\ell^1 (\mathbf{N})\times \ell^1 (\mathbf{N})\) ; conclude the argument using \(b).\) \(d)\) For every \(j\in \mathbf{N}\) , let \(\rho_{jn}\) be the smallest number of closed intervals of \(\mathbf{N}\) whose union is the projection of \(\mathbf{P}_n\cap (\mathbf{N}^{\prime}\times \{j\})\) onto \(\mathbf{N}\) ; let \(\rho_{n} = \sup_{j\in \mathbf{N}}\rho_{jn}\) . Show that the condition obtained in \(c)\) is equivalent to \(\sup_n\rho_n < + \infty\) . (If \(\phi_n\) is the characteristic function of \(\mathbf{P}_n\) , show that
+
+the norm of the bilinear form \(f_{n}\) is \(\sup_{j\in \mathbf{N}}\big(\sum_{i = 0}^{\infty}|\rho_n(i,j) - \phi_n(i + 1,j)|\big).\)
+
+\exercisegroup
+
+¶ 1) An exhaustion of a Hausdorff locally convex space is given by a sieve \(C = (C_n, p_n)_{n \geqslant 0}\) (GT, IX, § 6, No.~5, def. 8) and, for every \(n \geqslant 0\) , a mapping \(\rho_n\) from \(C_n\) into the set of all convex and balanced subsets of E having the following properties : E1) E is the union of the \(\phi_0(c)\) where \(c\) ranges over \(C_0\) ;
+
+E2) for every \(n\) and every \(c \in \mathbf{C}_n\) , \(\phi_n(c)\) is the union of the \(\phi_{n+1}(c')\) where \(c'\) ranges over \(p_n^{-1}(c)\) ; E3) for every sequence \((c_k)_{k \geqslant 0}\) such that \(c_k \in \mathbf{C}_k\) and \(c_k = p_k(c_{k+1})\) for all \(k \geqslant 0\) , there exists a sequence \((\phi_k)\) of numbers \(>0\) such that, for every sequence \((x_k)\) of points of E such that \(x_k \in \phi_k(c_k)\) and every sequence \((\lambda_k)\) of real numbers satisfying \(0 \leqslant \lambda_k \leqslant \rho_k\) for all \(k\) , the series \(\sum_{k=0}^{\infty} \lambda_k x_k\) is convergent in E.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Under the above hypotheses, show that if in addition the \(\phi_n(c)\) are closed for \(c \in \mathbf{C}_n\) , then we can assume that the \(\rho_k\) have been so chosen that we have \(\sum_{k=m}^{\infty} \lambda_k x_k \in \phi_m(c_m)\) for all \(m \geqslant 1\).
+
+(take the \(\rho_{k}\) such that \(\sum_{k=0}^{\infty} \rho_{k} \leqslant 1\) ).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Suppose that we are given a sieve C and sequence \((\phi_{n})\) of mappings into the set of convex and balanced subsets of E satisfying E1), E2) and the following condition: E3') for every sequence \((c_{k})_{k\geq0}\) such that \(c_{k}=p_{k}(c_{k+1})\) for all \(k\geq0\) , there exists a sequence \((\mu_{k})\) of numbers \textgreater0 such that, for every sequence \((x_{k})\) of points of E with \(x_{k}\in\phi_{k}(c_{k})\) for all k, the sequence of points \((\mu_{k}x_{k})\) is contained in a convex, bounded balanced and semi-complete set in E.
+\end{enumerate}
+
+Show that then the condition E3) is also verified (take \(\rho_{k} = 2^{-k}\mu_{k}\) ).
+
+A locally convex Hausdorff space is said to be exhaustible if there exists an exhaustion of E.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(\mathbf{E}\) be a locally convex space which is a Baire space, \(\mathbf{F}\) a locally convex exhaustible space (exerc. 1), and \((\mathbf{C}_n, p_n, \phi_n)\) an exhaustion of \(\mathbf{F}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Let \(u\) be a linear mapping from \(\mathbf{E}\) into \(\mathbf{F}\) and let \(\mathbf{W}\) be a convex, balanced and absorbent set in \(\mathbf{F}\) . Show that there exists a sequence \((c_k)\) such that \(c_k \in \mathbf{C}_k\) , \(c_k = p_k(c_{k+1})\) for all \(k \geqslant 0\) , and a sequence \((m_k)\) of integers \(> 0\) , such that each of the sets \(u^{-1}(\phi_k(c_k) \cap m_k\mathbf{W})\) (which is denoted by \(\mathbf{M}_k\) ) is not a thin set in \(\mathbf{E}\) . Show that for every \(\varepsilon > 0\) , there exists a sequence \((\nu_k)\) of numbers \(> 0\) such that if the sequence \((x_k)_{k \geqslant 1}\) of points of \(\mathbf{E}\) is such that \(x_k \in \nu_k\mathbf{M}_k\) for all \(k \geqslant 1\) , the series \(\sum_{k=1}^{\infty} u(x_k)\) converges in \(\mathbf{F}\) and that its sum belongs to \(\varepsilon\mathbf{W}\) .
+\item
+  Suppose, in addition, that E is metrizable and that the graph of u in \(E \times F\) is closed. Show that for every \(\varepsilon > 0\) , we have \(\overline{u^{-1}(\mathbf{W})} \subset (1 + \varepsilon) u^{-1}(\mathbf{W})\) . (Observe that if \((\mathrm{U}_{k})\) is a countable fundamental system of neighbourhoods of 0 in E, then for every k there exists a convex balanced neighbourhood \(V_{k}\) of 0 in E such that \(V_{k} \subset U_{k} \cap v_{k} \overline{M}_{k}\) . For every point \(a \in \overline{u^{-1}(\mathbf{W})}\) , find a sequence \((x_{k})_{k \geqslant 0}\) such that \(x_{0} \in u^{-1}(\mathbf{W})\) , \(x_{k} \in v_{k} M_{k}\) for \(k \geqslant 1\) and \(a - \sum_{j=0}^{k} x_{j} \in V_{k}\) for all \(k \geqslant 1\) , then apply a).
+\item
+  Deduce from \(b\) ) that if \(E\) is a metrizable Baire space, then every linear mapping from \(E\) into \(F\) whose graph is closed is continuous.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\item
+  Show that a Fréchet space \(\mathbf{E}\) is exhaustible (if \((\mathbf{U}_k)\) is a decreasing sequence forming a fundamental system of closed, convex and balanced neighbourhoods of 0 in \(\mathbf{E}\) , consider the finite intersections of the sets \((m + 1)\mathrm{U}_k\) , where \(m\) and \(k\) run through \(\mathbf{N}\) ).
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    Every closed subspace of an exhaustible locally convex space is exhaustible.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let E be an exhaustible locally convex space, and \(u:E \rightarrow F\) a continuous linear surjective mapping from E into F. Show that F is exhaustible. In particular, every quotient space of E by a closed subspace of E is exhaustible. Every space obtained by assigning to E a Hausdorff locally convex topology coarser than that of E is exhaustible.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Let \((\mathrm{C}^{(m)})_{m\geqslant 0}\) be a sequence of sieves \(\mathrm{C}^{(m)} = (\mathrm{C}_n^{(m)},p_n^{(m)})_{n\geqslant 0}\) . For every \(n\geqslant 0\) , put
+\end{enumerate}
+
+\[
+\mathrm{D} _ {n} = \mathrm{C} _ {n} ^ {(0)} \times \mathrm{C} _ {n - 1} ^ {(1)} \times \dots \times \mathrm{C} _ {0} ^ {(n)} \times \prod_ {m = n + 1} ^ {\infty} \left\{a _ {m} \right\},
+\]
+
+where \(a_{m} = 0\) for all \(m\geqslant 0\) ; the mapping \(p_n:\mathrm{D}_{n + 1}\to \mathrm{D}_n\) is taken to be equal to
+
+\[
+p _ {n} ^ {(0)} \times p _ {n - 1} ^ {(1)} \times \dots \times p _ {0} ^ {(n)} \times q ^ {(n + 1)} \times \prod_ {m = n + 2} ^ {\infty} \mathrm{id} _ {m}
+\]
+
+where \(q^{(n + 1)}\) is the unique mapping from \(C_0^{(n + 1)}\) onto \(\{0\}\) , and \(\mathrm{id}_m\) is the identity map of \(\{a_m\}\) . Then \((\mathrm{D}_n, p_n)\) is a sieve.
+
+Let \((\mathrm{E}^{(m)})_{m\geqslant 0}\) be a sequence of Hausdorff locally convex spaces; we assume that for each \(m\) there exists an exhaustion \((\mathrm{C}_n^{(m)},p_n^{(m)},\phi_n^{(m)})_{n\geqslant 0}\) of \(\mathrm{E}^{(m)}\) . Consider the Hausdorff locally convex space \(\mathrm{E} = \prod \mathrm{E}^{(m)}\) , and for every \(n\) , put
+
+\[
+\phi_ {n} = \phi_ {n} ^ {(0)} \times \phi_ {n - 1} ^ {(1)} \times \dots \times \phi_ {0} ^ {(n)} \times \prod_ {m = n + 1} ^ {\infty} \psi_ {m}
+\]
+
+where \(\psi_{m}\) is the mapping from \(\{a_m\}\) into the set of convex and balanced subsets of \(\mathrm{E}^{(m)}\) such that \(\psi_{n}(a_{m}) = \mathrm{E}^{(m)}\) . Show that \((\mathrm{D}_n,p_n,\phi_n)\) is an exhaustion on the product space E.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Show that an inductive limit (II, p.~31) of an increasing sequence of subspaces \(\mathbf{E}_n\) of a vector space \(\mathbf{E}\) , with topologies \(\mathcal{T}_n\) , such that \(\mathbf{E}_n\) endowed with \(\mathcal{T}_n\) is exhaustible, is an exhaustible locally convex space, if it is Hausdorff.
+\end{enumerate}
+
+\chapter{Duality in topological vector spaces}
+
+Throughout this chapter, all the vector spaces under consideration are vector spaces over a field K which is either R or C.
+
+\section{DUALITY}
+
+\subsection{Topologies compatible with a duality}
+
+In this section, E and F denote two vector spaces put into duality by a bilinear form B (II, p.~40). We recall (II, p.~41) that we defined two linear mappings
+
+\[
+d _ {\mathbf {B}}: \mathrm{F} \to \mathrm{E} ^ {*}, s _ {\mathbf {B}}: \mathrm{E} \to \mathrm{F} ^ {*}
+\]
+
+characterized by the relation
+
+\[
+\mathbf {B} (x, y) = \langle x, d _ {\mathbf {B}} (y) \rangle = \langle y, s _ {\mathbf {B}} (x) \rangle\tag{1}
+\]
+
+for \(x\in \mathbf{E},y\in \mathbf{F}.\)
+
+DEFINITION 1. --- A locally convex topology T on E is said to be compatible with the duality between E and F if \(d_{B}\) is a bijection from F onto the dual of the locally convex space obtained by assigning the topology T to E.
+
+If there exists one such topology \(\mathcal{T}\) , the mapping \(d_{\mathrm{B}}\) is injective, that is to say, the duality between E and F is separating in F (II, p.~41).
+
+PROPOSITION 1. --- (i) The closed convex subsets in E are the same for all the locally convex topologies on E which are compatible with the duality between E and F.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  The bounded subsets of \(\mathbf{E}\) are the same for all the locally convex topologies on \(\mathbf{E}\) which are compatible with the duality between \(\mathbf{E}\) and \(\mathbf{F}\) .
+\end{enumerate}
+
+Let T be a topology on E compatible with the duality between E and F, hence finer than \(\sigma(\mathrm{E},\mathrm{F})\) . If a convex subset of E is closed for T, it is the intersection of closed, real half-spaces (II, p.~38, cor. 1), hence it is closed for \(\sigma(\mathrm{E},\mathrm{F})\) . This proves (i). Assertion (ii) was proved in cor. 3 of III, p.~27.
+
+Let \(F_{\sigma}\) denote the vector space F endowed with the weak topology \(\sigma(F, E)\) . Then the linear mapping \(s_{B}\) maps E onto the dual \((F_{\sigma})'\) of \(F_{\sigma}\) (II, p.~43, prop. 3). Let \(S\) be a family of bounded subsets of \(F_{\sigma}\) . By abuse of language, the inverse image under \(s_{B}\) of the \(S\) -topology on \((F_{\sigma})'\) is called the \(S\) -topology on E. It is defined by the family of semi-norms
+
+\[
+p _ {\mathbf {A}} (x) = \sup _ {y \in \mathbf {A}} | \mathrm{B} (x, y) |,\tag{2}
+\]
+
+where A runs through S. In particular, when S is the family of finite subsets of F, the S-topology is precisely the weak topology \(\sigma(\mathrm{E}, \mathrm{F})\) .
+
+DEFINITION 2. --- Let E and F be two spaces in duality. The Mackey topology on E, denoted by \(\tau(\mathrm{E},\mathrm{F})\) is defined as the \(\mathfrak{S}\) -topology on E, where \(\mathfrak{S}\) is the family of all subsets of F whose image in \(E^{*}\) (under \(d_{\mathrm{B}}\) ) is convex, balanced and compact for \(\sigma(\mathrm{E}^{*},\mathrm{E})\) .
+
+When the duality between E and F is separating in F, \(d_{B}\) is injective and the topology \(\sigma(F, E)\) on F is the inverse image under \(d_{B}\) of the topology \(\sigma(E^{*}, E)\) on \(E^{*}\) . In this case, S consists of all those subsets of F which are convex, balanced and compact for \(\sigma(F, E)\) .
+
+In general, if \(F_{1}=d_{\mathrm{B}}(\mathrm{F})\subset\mathrm{E}^{*}\) , and if we denote by \((x,y_{1})\mapsto\mathrm{B}_{1}(x,y_{1})\) the restriction of the canonical bilinear form \((x,x^{*})\mapsto\langle x,x^{*}\rangle\) to \(E\times F_{1}\) , then E and \(F_{1}\) are put in duality by \(B_{1}\) , and this duality is separating in \(F_{1}\) , since by definition we have \(\mathrm{B}(x,y)=B_{1}(x,d_{\mathrm{B}}(y))\) , def. 2 shows that \(\tau(\mathrm{E},\mathrm{F})=\tau(\mathrm{E},\mathrm{F}_{1})\) .
+
+Remark 1. --- Let A be a compact convex subset of a Hausdorff locally convex space G, and let \(\tilde{A}\) be the closed convex balanced envelope of A. When the field K is R, the set \(\tilde{A}\) is the closed convex envelope of \(A \cup (-A)\) ; when K is C, the set \(\tilde{A}\) is contained in the closed convex envelope of \(2A \cup (-2A) \cup (2iA) \cup (-2iA)\) . Consequently (II, p.~14, prop. 15), \(\tilde{A}\) is compact.
+
+We deduce, in particular, that when the duality between E and F is separating in F, the Mackey topology \(\tau(\mathrm{E},\mathrm{F})\) is also the \(S'\) -topology, where \(S'\) is the set of all convex subsets of F which are compact for \(\sigma(\mathrm{F},\mathrm{E})\) . In an analogous way we define the Mackey topology \(\tau(\mathrm{F},\mathrm{E})\) on F.
+
+THEOREM 1 (Mackey). --- Let E and F be two spaces in duality; suppose that the duality is separating in F. In order that a locally convex topology T on E be compatible with the duality between E and F, it is necessary and sufficient that T be finer than the topology \(\sigma(\mathrm{E},\mathrm{F})\) and coarser than the Mackey topology \(\tau(\mathrm{E},\mathrm{F})\) .
+
+Identify F with its image in \(E^{*}\) under \(d_{B}\) . Let \(S_{0}\) denote the set of all subsets of F which are convex, balanced and compact for \(\sigma(F, E)\) . By definition, \(\tau(E, F)\) is the \(S_{0}\) -topology on E, hence is finer than \(\sigma(E, F)\) .
+
+Lemma 1. --- The subspace F of E* consists of all linear forms on E which are continuous for \(\tau(\mathrm{E},\mathrm{F})\) .
+
+Every element of F is a continuous mapping for \(\sigma(\mathrm{E},\mathrm{F})\) , hence for \(\tau(\mathrm{E},\mathrm{F})\) .
+
+Conversely, let \(f \in \mathrm{E}^*\) be continuous for \(\tau(\mathrm{E}, \mathrm{F})\) . There exists a neighbourhood \(\mathbf{U}\) of 0 in \(\mathrm{E}\) (for \(\tau(\mathrm{E}, \mathrm{F})\) ), such that \(|f| \leqslant 1\) on \(\mathbf{U}\) ; we can assume that there exists a set \(\mathbf{A} \in \mathfrak{S}_0\) such that \(\mathbf{U} = \mathbf{A}^\circ\) . In other words, \(f\) belongs to the bipolar \(\mathbf{A}^{\circ\circ}\) of \(\mathbf{A}\) for the duality between \(\mathbf{E}^*\) and \(\mathbf{E}\) . But the topology \(\sigma(\mathrm{F}, \mathrm{E})\) on \(\mathbf{F}\) is induced by \(\sigma(\mathrm{E}^*, \mathrm{E})\) ; consequently \(\mathbf{A}\) is convex, balanced and compact for \(\sigma(\mathrm{E}^*, \mathrm{E})\) , and the theorem of bipolars (II, p.~44, th. 1) implies the equality \(\mathbf{A} = \mathbf{A}^{\circ\circ}\) . Therefore we have that \(f \in \mathrm{F}\) , from which the lemma follows.
+
+Lemma 2. --- Let T be a locally convex topology on E such that every linear form on E which is continuous for T belongs to F. Then T is coarser than \(\tau(\mathrm{E}, \mathrm{F})\) .
+
+Let \(\mathfrak{U}\) be the set of convex, balanced neighbourhoods of 0 for \(\mathcal{T}\) . Let \(\mathfrak{S}\) be the set of polars in F of elements of \(\mathfrak{U}\) . By cor. 2 of III, p.~17, we have \(\mathfrak{S} \subset \mathfrak{S}_0\) , and by cor. 1 of prop. 7 of III, p.~19, \(\mathcal{T}\) is identical with the \(\mathfrak{S}'\) -topology, where \(\mathfrak{S}'\) is the set of polars of sets of \(\mathfrak{U}\) in the dual E' of E. But E' \(\subset\) F, by hypothesis, hence every set of \(\mathfrak{S}'\) is contained in a set of \(\mathfrak{S}\) ; and the lemma follows.
+
+Let T be a topology on E compatible with the duality between E and F. Then T is coarser than \(\tau(\mathrm{E},\mathrm{F})\) by lemma 2, and evidently T is finer than \(\sigma(\mathrm{E},\mathrm{F})\) . Conversely, F is the dual of E for the topology \(\tau(\mathrm{E},\mathrm{F})\) (lemma 1) and for the topology \(\sigma(\mathrm{E},\mathrm{F})\) (II, p.~43, prop. 3), hence also for every topology intermediate between \(\tau(\mathrm{E},\mathrm{F})\) and \(\sigma(\mathrm{E},\mathrm{F})\) .
+
+COROLLARY. --- Let p be a semi-norm on E. The following conditions are equivalent :
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(p\) is continuous for the topology \(\tau(\mathrm{E},\mathrm{F})\) ;
+\item
+  every linear form \(f\) on \(\mathbf{E}\) , such that \(|f| \leqslant p\) , comes from an element of \(\mathbf{F}\) .
+\item[]
+  \((i) \Rightarrow (ii):\) if \(p\) is continuous for \(\tau(\mathrm{E},\mathrm{F})\) , every linear form \(f\) on \(\mathrm{E}\) such that \(|f|\leqslant p\) is continuous for \(\tau(\mathrm{E},\mathrm{F})\) , hence comes from an element of \(\mathrm{F}\) by lemma 1.
+\item[]
+  \((ii) \Rightarrow (i):\) let T be the topology on E defined by the semi-norm p.~If condition (ii) is satisfied, the linear forms on E which are continuous for T belong to F. By lemma 2 T is coarser than \(\tau(\mathrm{E}, \mathrm{F})\) , hence p is continuous for \(\tau(\mathrm{E}, \mathrm{F})\) .
+\end{enumerate}
+
+Remark 2. --- * Let K be a convex subset of F which is compact for the weak topology \(\sigma(F, E)\) and \(\mu\) a positive measure on K. Put
+
+\[
+p (x) = \int_ {\mathbf {K}} | \mathrm{B} (x, y) | d \mu (y)
+\]
+
+for all \(x \in E\) . It is immediate that p is a semi-norm. Moreover, for every \(x \in E\) , the relation \(\langle |B(x, y)| \leqslant 1 \text{ for all } y \in K \rangle\) implies that \(p(x) \leqslant \mu(K)\) . This proves that the semi-norm p on E is continuous for the Mackey topology \(\tau(E, F)\) . *
+
+Example. --- Let G be a locally convex space and \(G'\) its dual. On \(G'\) , the weak topology \(\sigma(G', G)\) and the topology of convex compact convergence (III, p.~14) are compatible with the duality between \(G'\) and G. In general, the strong topology and the topology of compact convergence on \(G'\) are not compatible with the duality between \(G'\) and G. Recall however that when G is Hausdorff and quasi-complete, the topology of compact convergence on \(G'\) coincides with that of convex compact convergence (III, p.~8), hence is compatible with the duality between \(G'\) and G.
+
+DEFINITION 3. --- Let E and F be two vector spaces in duality, and T the family of subsets of F which are bounded for \(\sigma(\mathrm{F}, \mathrm{E})\) . Then the T-topology on F is denoted by \(\beta(\mathrm{E}, \mathrm{F})\) .
+
+Similarly, we define the topology \(\beta(\mathrm{F},\mathrm{E})\) on F. It can be seen easily that the topology \(\beta(\mathrm{E},\mathrm{F})\) is identical with \(\beta(\mathrm{E},\mathrm{F}/\mathrm{E}^{\circ})\) , and we can reduce to the case when the duality between E and F is separating in F.
+
+Remarks. --- 3) Let \(E_{\sigma}\) denote the space E endowed with the topology \(\sigma(\mathrm{E}, \mathrm{F})\) . The barrels (III, p.~24) in \(E_{\sigma}\) are the subsets of E which are convex, balanced closed and absorbent for \(\sigma(\mathrm{E}, \mathrm{F})\) . These are none other than the polars of the subsets of F which are convex, balanced and bounded for \(\sigma(\mathrm{F}, \mathrm{E})\) . Consequently, the family of all barrels in \(E_{\sigma}\) is a fundamental system of neighbourhoods of 0 for the topology \(\beta(\mathrm{E}, \mathrm{F})\) in E. In other words, a semi-norm on E is continuous for \(\beta(\mathrm{E}, \mathrm{F})\) if and only if it is lower semi-continuous for \(\sigma(\mathrm{E}, \mathrm{F})\) (cf.~III, p.~24, prop. 1).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\item
+  Let \(\mathcal{T}\) be a topology on E compatible with the duality between E and F. By prop. 1, (ii) of IV, p.~1, the topology \(\beta(\mathrm{F},\mathrm{E})\) on F is none other than the strong topology on F, when F is identified with the dual of E (with the topology \(\mathcal{T}\) ).
+\item
+  The topology \(\beta(\mathrm{E},\mathrm{F})\) on \(\mathrm{E}\) is finer than \(\tau(\mathrm{E},\mathrm{F})\) . It is not, in general compatible with the duality between \(\mathrm{E}\) and \(\mathrm{F}\) (cf.~however § 2). In particular, a subset of \(\mathrm{E}\) which is bounded for \(\sigma(\mathrm{E},\mathrm{F})\) is not necessarily bounded for \(\beta(\mathrm{E},\mathrm{F})\) .
+\end{enumerate}

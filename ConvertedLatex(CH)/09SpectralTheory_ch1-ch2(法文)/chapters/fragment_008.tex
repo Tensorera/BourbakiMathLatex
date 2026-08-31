@@ -1,0 +1,914 @@
+\subsection{Pontryagin 对偶定理}
+
+定理 2（Pontryagin）.　从 G 到 \(\widehat{G}\) 中的典范映射 η 是拓扑群的一个同构。它把 Haar 测度 dx 映为二重对偶 Haar 测度 d \(\widehat{x}\)。
+
+我们先证明 \(\eta\) 是单射且是严格态射。为此只需证明：对 G 中 \(e\) 的每个邻域 U，存在 \(e\) 在 \(\widehat{\mathbf{G}}\) 中的一个邻域 W，使得 \(\overline{\eta}^{-1}(\mathrm{W})\subset \mathrm{U}\)（II，第 200 页，引理 2）。现设 V 是 G 中 \(e\) 的一个紧对称邻域，满足 \(\mathrm{V}^2\subset \mathrm{U}\)；设 \(f\) 是 G 上一个连续的正函数，其支集含于 V 中，且满足 \(f(e) > 0\)。设 \(g = \widetilde{f}*f\)。则 \(g\) 属于 \(\mathrm{A}(\mathrm{G})\)，其支集含于 U 中，且 \(g(e) > 0\)。此外，由 II，第 217 页，命题 11，\(\mathcal{F}_{\mathrm{G}}(g)\in \mathrm{L}^{1}(\widehat{\mathrm{G}})\)。集合 W 由这样的 \(\xi\)（属于 \(\widehat{\mathbf{G}}\)）组成，它使
+
+\[
+\left| \overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\mathcal {F} _ {\mathrm{G}} (g)) (\xi) - \overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\mathcal {F} _ {\mathrm{G}} (g)) (e) \right| <   \frac {1}{2} g (e)
+\]
+
+成立；W 是 \(e\) 在 \(\widehat{\mathbf{G}}\) 中的一个邻域，因为函数 \(\overline{\mathcal{F}}_{\widehat{\mathrm{G}}}(\mathcal{F}_{\mathrm{G}}(g))\) 在 \(\widehat{\mathbf{G}}\) 上连续。设 \(x \in \overline{\eta}^{-1}(\mathrm{W})\)。由公式 (26)，我们有
+
+\[
+\overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\mathcal {F} _ {\mathrm{G}} (g)) (\eta (x)) = g (x),
+\]
+
+因而 \(|g(x) - g(e)| < \frac{1}{2} g(e)\)。这蕴含 \(g(x) \neq 0\)，从而 \(x \in \mathrm{U}\)，因为 \(g\) 的支集含于 U 中。于是 \(\overline{\eta}^{-1}(\mathrm{W}) \subset \mathrm{U}\)。
+
+我们证明映射 \(\eta\) 是满射。由于该映射是到其像上的一个同胚，群 \(\eta(\mathbf{G})\) 是 \(\widehat{\widehat{\mathbf{G}}}\) 的一个局部紧子群，因此它在 \(\widehat{\widehat{\mathbf{G}}}\) 中是闭的（TG，III，第 22 页，推论 2）。我们用反证法，假设存在一个特征标 \(\xi \in \widehat{\widehat{\mathbf{G}}}\)，使得 \(\xi \notin \eta(\mathbf{G})\)。于是由 II，第 219 页，推论 1，存在一个非零元素 \(f\) 属于 \(\mathrm{L}^1(\widehat{\mathrm{G}})\)，使得 \(\mathcal{F}_{\widehat{\mathrm{G}}} (f)\) 在 \(\eta(\mathrm{G})\) 上为零。设 \(g \in \mathrm{L}^1(\mathrm{G})\)。函数 \((x, \chi) \mapsto g(x)f(\chi)\overline{\langle\chi,x\rangle}\) 属于 \(\mathrm{L}^1(\mathrm{G} \times \widehat{\mathrm{G}})\)。由 Lebesgue-Fubini 定理（INT，V，§8，第 4 节，定理 1, a)）可得
+
+\[
+\begin{array}{r} \int_ {\widehat {\mathrm{G}}} f (\chi) \mathcal {F} _ {\mathrm{G}} (g) (\chi) d \chi = \int_ {\mathrm{G}} g (x) \Bigl (\int_ {\widehat {\mathrm{G}}} f (\chi) \overline {{\langle \chi , x \rangle}} d \chi \Bigr) d x \\ = \int_ {\mathrm{G}} g (x) \mathcal {F} _ {\widehat {\mathrm{G}}} (f) (\eta (x)) d x = 0. \end{array}
+\]
+
+由于 Fourier 变换的像在 \(\mathcal{C}_{0}(\widehat{\mathrm{G}})\) 中稠密（II，第 209 页，命题 5 的推论），可知测度 \(f \cdot d\chi\) 为零。这与 \(f \neq 0\)（在 \(\mathrm{L}^{1}(\widehat{\mathrm{G}})\) 中）相矛盾，并证明了 \(\eta\) 是满射。
+
+像测度 \(\eta(dx)\) 与测度 \(\nu\)（即测度 \(d\chi\) 的对偶测度）都是 \(\widehat{\widehat{G}}\) 上的 Haar 测度。设 \(f\) 是 A(G) 的一个非零元素；特别地 \(f \in \mathrm{L}^2(\mathrm{G})\)。由 II，第 219 页，命题 12，\(\mathcal{F}_{\mathrm{G}}(f) \in \mathrm{L}^{1}(\widehat{\mathrm{G}})\)，且
+
+\[
+\int_ {\widehat {\widehat {\mathrm{G}}}} \Big | \overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\mathcal {F} _ {\mathrm{G}} (f)) \Big | ^ {2} \eta (d x) = \int_ {\mathrm{G}} | f | ^ {2} d x = \int_ {\widehat {\widehat {\mathrm{G}}}} \Big | \overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\mathcal {F} _ {\mathrm{G}} (f)) \Big | ^ {2} d \nu ,
+\]
+
+其中第二个等式由两次应用 Plancherel 公式得到，因此 \(d\chi\) 的对偶 Haar 测度就是测度 \(\eta(dx)\)。
+
+此后我们将把 G 与 \(\widehat{\mathrm{G}}\) 通过同构 \(\eta\) 等同起来。于是我们有：
+
+推论.　从 \(L^{2}(\widehat{G})\) 到 \(L^{2}(G)\) 上的 Fourier 余变换与从 \(L^{2}(G)\) 到 \(L^{2}(\widehat{G})\) 上的 Fourier 变换互为逆等距。
+
+注.　设 \(f \in \mathrm{L}^2(\mathrm{G})\)，\(g \in \mathrm{L}^2(\widehat{\mathrm{G}})\)。对 \(f\) 与 \(\overline{\mathcal{F}_{\widehat{\mathrm{G}}}(g)}\) 应用 Plancherel 公式 (24)，我们得到公式
+
+\[
+\int_ {\mathrm{G}} f (x) \mathcal {F} _ {\widehat {\mathrm{G}}} (g) (x) d x = \int_ {\widehat {\mathrm{G}}} \mathcal {F} _ {\mathrm{G}} (f) (\chi) g (\chi) d \widehat {x} (\chi)\tag{29}
+\]
+
+因为我们有 \(\mathcal{F}_{\mathrm{G}}(\overline{\mathcal{F}_{\widehat{\mathrm{G}}}(\boldsymbol{g})}) = \mathcal{F}_{\mathrm{G}}(\overline{\mathcal{F}}_{\widehat{\mathrm{G}}}(\overline{\boldsymbol{g}})) = \overline{\boldsymbol{g}}.\)
+
+定义在 \(\mathcal{M}^{1}(\widehat{\mathrm{G}})\) 上的 Fourier 变换与余变换取值于 G 上连续有界函数所成的空间。对 \(\beta\in\mathcal{M}^{1}(\widehat{\mathrm{G}})\) 与 \(x\in\mathrm{G}\)，有
+
+\[
+\mathcal {F} _ {\widehat {\mathrm{G}}} (\beta) (x) = \int_ {\widehat {\mathrm{G}}} \overline {{\langle \chi , x \rangle}} d \beta (\chi), \qquad \overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\beta) (x) = \int_ {\widehat {\mathrm{G}}} \langle \chi , x \rangle d \beta (\chi).
+\]
+
+G 与 \(\widehat{G}\) 的 Fourier 变换也互为转置。更精确地说：
+
+命题 13.　设 \(\alpha \in \mathcal{M}^{1}(\mathrm{G})\)，\(\beta \in \mathcal{M}^{1}(\widehat{\mathrm{G}})\)。则我们有
+
+\[
+\mathcal {F} _ {\mathrm{G}} (\overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\beta) \cdot \alpha) = \beta * \mathcal {F} _ {\mathrm{G}} (\alpha)\tag{30}
+\]
+
+特别地，有
+
+\[
+\int_ {\mathrm{G}} \mathcal {F} _ {\widehat {\mathrm{G}}} (\beta) (x) d \alpha (x) = \int_ {\widehat {\mathrm{G}}} \mathcal {F} _ {\mathrm{G}} (\alpha) (\chi) d \beta (\chi).\tag{31}
+\]
+
+在恒等式两边于 \(\chi = 1\) 处取值，即由公式 (30) 得出公式 (31)。我们来证明 (30)。设 \(\chi \in \widehat{G}\)。于是有
+
+\[
+\begin{array}{r l} & {(\mathcal {F} _ {\mathrm{G}} (\overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\beta) \cdot \alpha)) (\chi) = \int_ {\mathrm{G}} \overline {{\langle \chi , x \rangle}} \overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\beta) (x) d \alpha (x)} \\ & {\qquad = \int_ {\mathrm{G}} \overline {{\langle \chi , x \rangle}} \Big (\int_ {\widehat {\mathrm{G}}} \langle \xi , x \rangle d \beta (\xi) \Big) d \alpha (x).} \end{array}
+\]
+
+函数 \((x,\xi)\mapsto\overline{\langle\chi,x\rangle}\langle\xi,x\rangle\) 连续且有界，因而在 \(G\times\widehat{G}\) 上关于测度 \(\alpha\otimes\beta\) 可积。由 Lebesgue-Fubini 定理（INT，V，§8，第 4 节，定理 1, a)），我们得到
+
+\[
+\begin{array}{r l} & {(\mathcal {F} _ {\mathrm{G}} (\overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\beta) \cdot \alpha)) (\chi) = \int_ {\widehat {\mathrm{G}}} \Bigl (\int_ {\mathrm{G}} \overline {{\langle \chi \xi^ {- 1} , x \rangle}} d \alpha (x) \Bigr) d \beta (\xi)} \\ & {\qquad = \int_ {\widehat {\mathrm{G}}} \mathcal {F} _ {\mathrm{G}} (\alpha) (\chi \xi^ {- 1}) d \beta (\xi) = (\beta * \mathcal {F} _ {\mathrm{G}} (\alpha)) (\chi),} \end{array}
+\]
+
+此即所要证明的。
+
+推论.　Fourier 变换 \(\mathcal{F}_{\mathrm{G}}\) 在 \(\mathcal{M}^{1}(\mathrm{G})\) 上是单射。
+
+事实上，若 \(\alpha \in \mathcal{M}^1 (\mathrm{G})\) 满足 \(\mathcal{F}_{\mathrm{G}}(\alpha) = 0\)，则由 (31) 推出，\(\alpha (\mathcal{F}_{\widehat{\mathrm{G}}} (f)) = 0\) 对每个 \(f\in \mathrm{L}^{1}(\widehat{\mathrm{G}})\) 都成立。由于 \(\mathrm{L}^1 (\widehat{\mathrm{G}})\) 在 Fourier 变换下的像在 \(\mathcal{C}_0(\mathrm{G})\) 中稠密（II，第 209 页，命题 5 的推论），因此有 \(\alpha = 0\)。
+
+在 G 与 \(\widehat{\mathbf{G}}\) 上，除 \(\mathrm{L}^2 (\mathrm{G})\) 与 \(\mathrm{L}^2 (\widehat{\mathrm{G}})\) 之外，还存在使 \(\mathcal{F}\) 与 \(\overline{\mathcal{F}}\) 互为逆同构的其他函数空间。下面的定理给出一个例子。我们用 B(G) 表示 \(\mathrm{L}^1 (\mathrm{G})\) 中由元素 \(f\in \mathrm{L}^1 (\mathrm{G})\)（它们满足 \(\mathcal{F}_{\mathrm{G}}(f)\in \mathrm{L}^1 (\widehat{\mathrm{G}})\)）所组成的向量子空间。它是 \(\mathrm{L}^1 (\mathrm{G})\) 的一个子代数。事实上，设 \(f\) 与 \(g\) 属于 B(G)。我们有 \(f*g\in \mathrm{L}^1 (\mathrm{G})\)，且 \(\mathcal{F}_{\mathrm{G}}(f*g) = \mathcal{F}_{\mathrm{G}}(f)\mathcal{F}_{\mathrm{G}}(g)\in \mathrm{L}^1 (\widehat{\mathrm{G}})\)，因为 \(\mathcal{F}_{\mathrm{G}}(f)\in \mathrm{L}^1 (\widehat{\mathrm{G}})\) 而 \(\mathcal{F}_{\mathrm{G}}(g)\in \mathcal{C}_0(\widehat{\mathrm{G}})\)。
+
+定理 3.　Fourier 变换在 B(G) 上的限制诱导一个从 B(G) 到 B( \(\widehat{G}\) ) 上的向量空间同构，其逆由 Fourier 余变换在 B( \(\widehat{G}\) ) 上的限制所诱导。
+
+设 \(f \in \mathrm{B}(\mathrm{G})\)。记 \(g = \mathcal{F}_{\mathrm{G}}(f)\)。我们有 \(g \in \mathrm{L}^1(\widehat{\mathrm{G}}) \cap \mathcal{C}_0(\widehat{\mathrm{G}}) \subset \mathrm{L}^1(\widehat{\mathrm{G}}) \cap \mathrm{L}^2(\widehat{\mathrm{G}})\)。令 \(f_1 = \overline{\mathcal{F}}_{\widehat{\mathrm{G}}} (g) \in \mathrm{L}^2(\mathrm{G})\)。对每个具有紧支集的连续函数 \(h \in \mathcal{K}(\widehat{\mathrm{G}})\)，有 \(h \in \mathrm{L}^1(\widehat{\mathrm{G}}) \cap \mathrm{L}^2(\widehat{\mathrm{G}})\)，且
+
+\[
+\begin{array}{r l} & {\int_ {\mathrm{G}} f _ {1} (x) \mathcal {F} _ {\widehat {\mathrm{G}}} (h) (x) d x = \int_ {\mathrm{G}} \overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (g) (x) \overline {{\overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\overline {{h}}) (x)}} d x} \\ & {\qquad = \int_ {\widehat {\mathrm{G}}} g (\chi) h (\chi) d \widehat {x} (\chi)} \\ & {\qquad = \int_ {\widehat {\mathrm{G}}} \mathcal {F} _ {\mathrm{G}} (f) (\chi) h (\chi) d \widehat {x} (\chi) = \int_ {\mathrm{G}} f (x) \mathcal {F} _ {\widehat {\mathrm{G}}} (h) (x) d x} \end{array}
+\]
+
+这里用到了 Plancherel 定理与公式 (31)。由于 \(\mathcal{K}(\widehat{\mathrm{G}})\) 在 \(\mathrm{L}^2 (\widehat{\mathrm{G}})\) 中稠密，它在 Fourier 变换下的像在 \(\mathrm{L}^2 (\mathrm{G})\) 中稠密。因此有 \(f_{1} = f\)（在 \(\mathrm{L}^{1}(\mathrm{G})\) 中）；这表明 \(g\in \mathrm{B}(\widehat{\mathrm{G}})\)。
+
+公式 \(f_{1}=f\) 表明复合 \(\overline{F}_{\widehat{G}}\circ F_{G}\) 在 B(G) 上的限制是 B(G) 的恒等映射。交换 G 与 \(\widehat{G}\) 的角色，即见 \(F_{G}\circ\overline{F}_{\widehat{G}}\) 是 B( \(\widehat{G}\) ) 的恒等映射，这就完成了定理的证明。
+
+推论 1.　设 \(f \in \mathrm{L}^{1}(\mathrm{G})\)。则 \(f \in \mathrm{B}(\mathrm{G})\) 当且仅当 \(f\) 属于 Fourier 变换 \(\mathcal{F}_{\widehat{\mathrm{G}}}\) 在 \(\mathrm{L}^{1}(\widehat{\mathrm{G}})\) 上的像。特别地，我们有 \(\mathrm{A}(\mathrm{G}) \subset \mathrm{B}(\mathrm{G})\)。
+
+定理 3 证明：若 \(f \in \mathrm{B}(\mathrm{G})\)，则 \(f = \mathcal{F}_{\widehat{\mathrm{G}}}(\overline{\mathcal{F}}_{\mathrm{G}}(f))\)，其中 \(\overline{\mathcal{F}}_{\mathrm{G}}(f)\) 属于 \(\mathrm{L}^1(\widehat{\mathrm{G}})\)。反之，若 \(f = \mathcal{F}_{\widehat{\mathrm{G}}}(g)\)，其中 \(g \in \mathrm{L}^1(\widehat{\mathrm{G}})\)，则由该定理有 \(g \in \mathrm{B}(\widehat{\mathrm{G}})\)，从而 \(f \in \mathrm{B}(\mathrm{G})\)。最后一个断言则由 II，第 217 页，命题 11 得到。
+
+推论 2.　向量空间 B(G) 对于乘法与对于卷积都是一个代数。Fourier 变换把 B(G) 与 B( \(\widehat{G}\) ) 中的卷积与乘法互换。
+
+我们已经看到 B(G) 是 L \(^{1}\) (G) 的一个子代数。另一方面，若 \(f\) 与 \(g\) 属于 B(G)，则 \(fg \in \text{L}^{1}(\text{G})\)，因为 \(f \in \text{L}^{1}(\text{G})\)，而 \(g\) 属于 Fourier 变换在 L \(^{1}\) ( \(\widehat{\text{G}}\) ) 上的像（推论 1）。由于存在 \(f_{1}\) 与 \(g_{1}\)，它们属于 L \(^{1}\) ( \(\widehat{\text{G}}\) )，使得 \(f = \mathcal{F}_{\widehat{\text{G}}} (f_{1})\) 且 \(g = \mathcal{F}_{\widehat{\text{G}}} (g_{1})\)（同前），我们有 \(fg = \mathcal{F}_{\widehat{\text{G}}} (f_{1} * g_{1})\)，于是再由上一个推论得 \(fg \in \text{B(G)}\)。
+
+命题 14.　设 \(f\) 与 \(g\) 属于 \(\mathrm{L}^2 (\mathrm{G})\)。则 \(\mathcal{F}_{\mathrm{G}}(fg) = \mathcal{F}_{\mathrm{G}}(f)*\mathcal{F}_{\mathrm{G}}(g)\)。
+
+若 \(f\) 与 \(g\) 属于 B(G)，则等式成立（推论 2）；特别地，由于 A(G) ⊂ B(G)（推论 1），若 \(f\) 与 \(g\) 属于 A(G)，等式也成立。由于 A(G) 在 L²(G) 中稠密（II，第 212 页，推论 1），只需证明等式的两边都是 \((f,g)\in\mathrm{L}^{2}(\mathrm{G})\times\mathrm{L}^{2}(\mathrm{G})\) 的、取值于 \(\mathcal{C}_{0}(\widehat{\mathrm{G}})\) 的连续函数即可。而映射 \((f,g)\mapsto\mathcal{F}_{\mathrm{G}}(fg)\) 是把连续映射 \((f,g)\mapsto fg\)（由 \(\mathrm{L}^{2}(\mathrm{G})\times\mathrm{L}^{2}(\mathrm{G})\) 到 \(\mathrm{L}^{1}(\mathrm{G})\) 中）与 Fourier 变换 \(\mathcal{F}_{\mathrm{G}}\)（由 \(\mathrm{L}^{1}(\mathrm{G})\) 到 \(\mathcal{C}_{0}(\widehat{\mathrm{G}})\) 中，它也是连续的）复合而成的。同样，映射 \((f,g)\mapsto\mathcal{F}_{\mathrm{G}}(f)*\mathcal{F}_{\mathrm{G}}(g)\) 是把连续映射 \((f,g)\mapsto(\mathcal{F}_{\mathrm{G}}(f),\mathcal{F}_{\mathrm{G}}(g))\)（由 \(\mathrm{L}^{2}(\mathrm{G})\times\mathrm{L}^{2}(\mathrm{G})\) 到 \(\mathrm{L}^{2}(\widehat{\mathrm{G}})\times\mathrm{L}^{2}(\widehat{\mathrm{G}})\) 中）与映射 \((h_{1},h_{2})\mapsto h_{1}*h_{2}\)（由 \(\mathrm{L}^{2}(\widehat{\mathrm{G}})\times\mathrm{L}^{2}(\widehat{\mathrm{G}})\) 到 \(\mathcal{C}_{0}(\widehat{\mathrm{G}})\) 中）（INT，VIII，§4，第 5 节，命题 15）复合而成的。
+
+注.　关于 Fourier 变换在其上为同构的函数空间的其他例子（就特殊的群 G 而言），见第 9 节以及 II，第 270 页习题 22 与 II，第 275 页习题 31。
+
+\subsection{对偶的函子性质}
+
+设 G 与 H 是局部紧交换群。回顾：若 \(\varphi\colon\mathbf{G}\to\mathbf{H}\) 是拓扑群的一个态射，则对偶态射 \(\widehat{\varphi}\colon\widehat{\mathrm{H}}\to\widehat{\mathrm{G}}\) 由 \(\langle\chi,\varphi(x)\rangle=\langle\widehat{\varphi}(\chi),x\rangle\)（对一切 \(\chi\in\widehat{\mathrm{H}}\) 与 \(x\in\mathrm{G}\)）定义。这个定义表明 \(\widehat{\widehat{\varphi}}=\varphi\)，其中按照 II，第 220 页定理 2 把 G（相应地，H）与 \(\widehat{\widehat{\mathrm{G}}}\)（相应地，\(\widehat{\widehat{\mathrm{H}}}\)）等同。
+
+设 \(\theta\) 是从 \(\mathbf{G} \times \mathbf{H}\) 到 \(\mathbf{U}\) 中的一个映射。对每个 \(x \in \mathbf{G}\)（相应地，每个 \(y \in \mathbf{H}\)），用 \(\theta_x\)（相应地，\(\theta^y\)）表示从 \(\mathbf{G}\) 到 \(\mathbf{U}\) 中的、由 \(y \mapsto \theta(x, y)\) 定义的函数（相应地，从 \(\mathbf{H}\) 到 \(\mathbf{U}\) 中的、由 \(x \mapsto \theta(x, y)\) 定义的函数）。假设映射 \(\alpha: x \mapsto \theta_x\) 是拓扑群 \(\mathbf{G}\) 到拓扑群 \(\widehat{\mathbf{H}}\) 上的一个同构。对每个 \(y \in \mathbf{H}\) 与 \(x \in \mathbf{G}\)，有
+
+\[
+\theta^ {y} (x) = \theta (x, y) = \langle \alpha (x), y \rangle = \langle x, \widehat {\alpha} (y) \rangle ,
+\]
+
+即 \(\theta^{y} = \widehat{\alpha}(y)\)。于是由 II，第 220 页定理 2，映射 \(\beta: y \mapsto \theta^{y}\) 是拓扑群 H 到拓扑群 \(\widehat{G}\) 上的一个同构。在这类条件下，我们说 \(\theta\) 使 G 与 H 成对偶，或说 G 与 H 关于 \(\theta\) 成对偶。这时我们将把 G 与 H 各自同另一个群的对偶等同起来。我们将把由 dx 的对偶测度经结构转移所得到的 H 上的 Haar 测度称为 Haar 测度 dx 的对偶测度。
+
+引理 7.　设 \((\mathrm{G}_{i})_{i\in\mathrm{I}}\) 与 \((\mathrm{H}_{i})_{i\in\mathrm{I}}\) 是局部紧拓扑群的有限族。对 \(i\in I\)，设 \(\theta_{i}\colon G_{i}\times H_{i}\to U\) 是使群 \(G_{i}\) 与 \(H_{i}\) 成对偶的一个映射。映射 \(\theta\) 由
+
+\[
+\theta ((g _ {i}), (h _ {i})) = \prod_ {i \in I} \theta_ {i} (g _ {i}, h _ {i})
+\]
+
+定义，它使群 \(\prod G_{i}\) 与 \(\prod H_{i}\) 成对偶。
+
+这由 II，第 206 页命题 2 及其前面的定义得到。
+
+定义 5.　设 G、H 与 K 是拓扑群。设 \(f: \mathrm{H} \to \mathrm{G}\) 与 \(g: \mathrm{G} \to \mathrm{K}\) 是拓扑群的态射。若 \((f, g)\) 是群的一个正合列（A，II，第 10 页，注记 5），且 \(f\) 与 \(g\) 都是严格态射，则称它为拓扑群的一个正合列。
+
+我们将用图式
+
+\[
+\mathrm{H} \xrightarrow {f} \mathrm{G} \xrightarrow {g} \mathrm{K},
+\]
+
+来表示一个正合列，并且我们说一个图式
+
+\[
+\mathrm{G} _ {1} \xrightarrow {f _ {1}} \mathrm{G} _ {2} \xrightarrow {f _ {2}} \mathrm{G} _ {3} \rightarrow \dots \rightarrow \mathrm{G} _ {n} \xrightarrow {f _ {n}} \mathrm{G} _ {n + 1}
+\]
+
+是正合的，如果每个二元组 \((f_i, f_{i+1})\)（\(1 \leqslant i \leqslant n-1\)）都是正合的。
+
+一个序列
+
+\[
+1 \to \mathrm{H} \xrightarrow {f} \mathrm{G} \xrightarrow {g} \mathrm{K} \to 1
+\]
+
+是正合的，当且仅当 f 是一个严格单射态射，g 是一个严格满射态射，且 g 的核等于 f 的像。若 K 是分离的，则 f 的像是 G 的一个闭子群。
+
+例.　1) 设 \(f\colon H \to G\) 是一个严格单射态射，其像是一个正规子群。序列
+
+\[
+1 \to \mathrm{H} \xrightarrow {f} \mathrm{G} \xrightarrow {p} \mathrm{G} / f (\mathrm{H}) \to 1,
+\]
+
+（其中 p 是典范投影）是正合的。特别地，若 H 是 G 的一个闭正规子群，则拓扑群的序列
+
+\[
+1 \to \mathrm{H} \xrightarrow {j} \mathrm{G} \xrightarrow {p} \mathrm{G} / \mathrm{H} \to 1,
+\]
+
+（其中 j 是包含映射，p 是典范投影）是正合的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(g: G \rightarrow K\) 是一个严格满射态射。序列
+\end{enumerate}
+
+\[
+1 \to \mathrm{Ker} (g) \stackrel {j} {\longrightarrow} \mathrm{G} \stackrel {g} {\longrightarrow} \mathrm{K} \to 1,
+\]
+
+（其中 j 是包含映射）是正合的。
+
+定理 4.　一个序列
+
+\[
+\mathrm{H} \xrightarrow {f} \mathrm{G} \xrightarrow {g} \mathrm{K}
+\]
+
+（为局部紧交换拓扑群的序列）是正合的，当且仅当对偶序列
+
+\[
+\widehat {\mathrm{K}} \xrightarrow {\widehat {g}} \widehat {\mathrm{G}} \xrightarrow {\widehat {f}} \widehat {\mathrm{H}}
+\]
+
+是正合的。
+
+我们先证明几个引理。此外注意，它们中的每一个也都是定理 4 的断言的简单推论。
+
+引理 8.　设 \(g \colon G \to K\) 是局部紧交换拓扑群的一个态射。若态射 \(g\) 是满射且严格的，则 \(\widehat{g}\) 是单射且严格的。
+
+由于 \(g\) 是满射，态射 \(\widehat{g}\) 是单射（II，第 205 页，引理 2）。为证明 \(\widehat{g}\) 是一个严格态射，只需证明：对 \(e\) 在 \(\widehat{\mathbf{K}}\) 中的每个邻域 U，存在 \(e\) 在 \(\widehat{\mathbf{G}}\) 中的一个邻域 V，使得 \(\overline{\widehat{g}}^{-1} (\mathrm{V})\subset \mathrm{U}\)（II，第 200 页，引理 2）。设 U 是 \(e\) 在 \(\widehat{\mathbf{K}}\) 中的一个这样的邻域。由 \(\widehat{\mathbf{K}}\) 的拓扑的定义，存在 K 的一个紧子集 X 及一个数 \(\varepsilon >0\)，使得 U 包含由那些 \(\widehat{z}\in \widehat{\mathbf{K}}\)（它们对每个 \(z\in \mathrm{X}\) 都满足 \(|\langle \widehat{z},z\rangle -1| < \varepsilon\)）组成的集合。由于 \(g\) 严格且满射，由 TG，I，第 80 页，命题 10，存在 G 的一个紧子集 \(\mathrm{X}_0\)，使得 \(g(\mathrm{X}_0) = \mathrm{X}\)。设 V 是 \(e\) 在 \(\widehat{\mathbf{G}}\) 中的一个邻域，它由元素 \(\chi \in \widehat{\mathbf{G}}\)（它们对所有 \(x\in \mathrm{X}_0\) 都满足 \(|\langle \chi ,x\rangle -1| < \varepsilon\)）组成。于是有 \(\overline{\widehat{g}}^{-1} (\mathrm{V})\subset \mathrm{U}\)。这就证明了该断言。
+
+引理 9.　设 \(f\colon H\to G\) 是局部紧拓扑群的一个态射。若态射 \(f\) 是单射且严格的，则 \(\widehat{f}\) 是满射且严格的。
+
+假设 \(f\) 单射且严格。态射 \(\widehat{f}\) 通过过渡到商诱导一个态射 \(q \colon \widehat{\mathrm{G}} / \mathrm{Ker}(\widehat{f}) \to \widehat{\mathrm{H}}\)。剩下要证明这是一个拓扑群的同构；由对偶性，为此只需证明它的对偶 \(\widehat{q}\) 是一个同构。
+
+用 L 表示 \(\widehat{\mathrm{G}}/\mathrm{Ker}(\widehat{f})\) 的对偶群，用 \(p\colon\widehat{\mathrm{G}}\to\widehat{\mathrm{G}}/\mathrm{Ker}(\widehat{f})\) 表示典范投影。我们先证明 \(\widehat{p}\) 通过过渡到子空间诱导一个从 L 到 \(f(\mathrm{H})\) 上的同构。
+
+我们有 \(q \circ p = \widehat{f}\)，从而 \(\widehat{p} \circ \widehat{q} = f\)。因此 \(\widehat{p}\) 的像包含 \(f(\mathrm{H})\)。
+
+由于 \(f\) 严格，它的像 \(f(\mathrm{H})\) 是 \(\mathrm{G}\) 的一个局部紧子群，因而是闭的（TG，III，第 22 页，推论 2）。设 \(\mathrm{K} = \mathrm{G}/f(\mathrm{H})\)，并考察正合序列
+
+\[
+1 \to \mathrm{H} \xrightarrow {f} \mathrm{G} \xrightarrow {g} \mathrm{K} \to 1
+\]
+
+相伴于例 1。由对偶性，态射 \(\widehat{f} \circ \widehat{g}\) 是平凡的，因而 \(\widehat{g}\) 的像含于 \(\operatorname{Ker}(\widehat{f}) = \operatorname{Ker}(p)\)。于是 \(p \circ \widehat{g}\) 是平凡态射，且再由对偶性，\(g \circ \widehat{p}\) 也是平凡的。由此推出 \(\widehat{p}\) 的像含于 \(g\) 的核，而后者等于 \(f(\mathrm{H})\)。我们断定 \(\widehat{p}\) 的像等于 \(f(\mathrm{H})\)。
+
+此外，由于 p 是一个满射且严格的态射，对偶态射 \(\widehat{p}\) 是从 L 到 G 中的一个严格单射态射（引理 8）。由此，\(\widehat{p}\) 诱导一个从 L 到 \(f(\mathrm{H})\) 上的拓扑群同构。由于 \(\widehat{p} \circ \widehat{q} = f\)，且 f 诱导一个从 H 到其像 \(f(\mathrm{H})\) 上的同构，故态射 \(\widehat{q}\) 是一个同构。
+
+引理 10.　设
+
+\[
+\mathrm{H} \xrightarrow {f} \mathrm{G} \xrightarrow {g} \mathrm{K}
+\]
+
+是局部紧交换群的一个正合序列。\(\hat{f}\) 的核等于 \(\hat{g}\) 的像。
+
+同态 \(\widehat{f} \circ \widehat{g}\) 由对偶性是平凡的，故 \(\widehat{g}\) 的像含于 \(\widehat{f}\) 的核。反之，设 \(\chi\) 属于 \(\widehat{f}\) 的核。这意味着 \(\operatorname{Im}(f) = \operatorname{Ker}(g)\) 含于 \(\chi\) 的核，因而存在一个特征标 \(\eta\)（在 \(\operatorname{Im}(g)\) 上），使得 \(\eta \circ g = \chi\)。由于 \(\operatorname{Im}(g)\) 到 K 中的包含映射是严格的，从 K 到 \(\operatorname{Im}(g)\) 的特征标限制的对偶映射是满射的（引理 9）。因此存在 K 的一个特征标 \(\beta\)，使得 \(\eta\) 是 \(\beta\) 的限制，从而 \(\chi = \beta \circ g = \widehat{g}(\beta)\)。由此我们断定 \(\widehat{f}\) 的核含于 \(\widehat{g}\) 的像。
+
+现在来证明定理 4。由对偶性，只需证明序列 \(\widehat{\mathrm{K}}\xrightarrow{\widehat{g}}\widehat{\mathrm{G}}\xrightarrow{\widehat{f}}\widehat{\mathrm{H}}\) 在序列 \(\mathrm{H}\xrightarrow{f}\mathrm{G}\xrightarrow{g}\mathrm{K}\) 正合时是正合的。而由引理 8 与引理 9，态射 \(\widehat{f}\) 与 \(\widehat{g}\) 都是严格的；由引理 10，\(\widehat{f}\) 的核等于 \(\widehat{g}\) 的像。
+
+推论 1.　设
+
+\[
+1 \to \mathrm{H} \xrightarrow {f} \mathrm{G} \xrightarrow {g} \mathrm{K} \to 1
+\]
+
+是局部紧交换拓扑群的一个正合序列。态射 \(\widehat{g}\) 诱导 \(\widehat{\mathrm{K}}\) 与 \(f(\mathrm{H})^{\perp}\) 之间的一个同构，而 \(\widehat{f}\) 通过过渡到商诱导 \(\widehat{\mathrm{G}} / f(\mathrm{H})^{\perp}\) 与 \(\widehat{\mathrm{H}}\) 之间的一个同构。
+
+由定理 4，序列
+
+\[
+1 \to \widehat {\mathrm{K}} \xrightarrow {\widehat {g}} \widehat {\mathrm{G}} \xrightarrow {\widehat {f}} \widehat {\mathrm{H}} \to 1\tag{32}
+\]
+
+是正合的。因此态射 \(\widehat{g}\) 诱导一个从 \(\widehat{\mathbf{K}}\) 到 \(\mathrm{Ker}(\widehat{f}) = f(\mathrm{H})^{\perp}\) 上的同构（II，第 205 页，引理 2），而 \(\widehat{f}\) 通过过渡到商诱导一个从 \(\widehat{\mathrm{G}} / \mathrm{Ker}(\widehat{f}) = \widehat{\mathrm{G}} / f(\mathrm{H})^{\perp}\) 到 \(\widehat{\mathrm{H}}\) 上的同构（同前）。
+
+推论 2.　设 \(f\colon G\to H\) 是局部紧交换拓扑群的一个态射。态射 \(f\) 是严格的，当且仅当 \(\widehat{f}\) 是严格的。
+
+由严格态射的典范分解（E，II，第 44 页），这可由引理 8 与引理 9 得到。
+
+推论 3.　设 H 是 G 的一个子群。则 (H \(^{\perp}\) ) \(^{\perp}\) = \(\overline{H}\)。
+
+由于 \(H^{\perp} = \overline{H}^{\perp}\)，我们可以假设 H 是闭的。设 \(f: H \to G\) 是典范单射，\(p: G \to G/H\) 是典范投影。我们有 \(H^{\perp} = \operatorname{Ker}(\widehat{f})\)（引理 10）。设 k 是 \(H^{\perp}\) 到 \(\widehat{G}\) 中的典范单射。由定理 4，态射 \(\widehat{p}\) 诱导一个拓扑群的同构 \(\widehat{p}_{H}: \widehat{G/H} \to H^{\perp}\)，且我们有 \(k \circ \widehat{p}_{H} = \widehat{p}\)。于是（推论 1）我们得到
+
+\[
+(\mathrm{H} ^ {\perp}) ^ {\perp} = \mathrm{Ker} (\widehat {k}) = \mathrm{Ker} (\widehat {\widehat {p}} _ {\mathrm{H}} \circ \widehat {k}) = \mathrm{Ker} (p) = \mathrm{H}.
+\]
+
+推论 4.　设 I 是一个集合，\((\mathrm{H}_{i})_{i\in\mathrm{I}}\) 是 G 的一族闭子群。由诸 \(H_{i}\) 生成的闭子群的正交是 \(\bigcap_{i\in I}H_{i}^{\perp}\)。\(\bigcap_{i}H_{i}\) 的正交是由诸子群 \(H_{i}^{\perp}\) 生成的闭子群。
+
+第一个断言由正交的定义得到。把这个结果与推论 3 应用于闭子群族 \((\mathrm{H}_{i}^{\perp})_{i\in\mathrm{I}}\)（它们是 \(\widehat{G}\) 的闭子群），便知 \(\bigcap_{i}H_{i}\) 是由诸子群 \(H_{i}^{\perp}\) 生成的闭子群的正交，于是第二个断言由对偶性得到。
+
+推论 5.　设 \(\varphi\) : G → H 是局部紧交换群的一个态射。则 H 的子群 \(\overline{\text{Im}(\varphi)}\) 与子群 \(\text{Ker}(\widehat{\varphi})\)（\(\widehat{\text{H}}\) 的子群）互为正交。特别地，\(\widehat{\varphi}\) 为单射的必要充分条件是 \(\varphi\) 的像在 H 中稠密。
+
+我们有 \(\operatorname{Ker}(\widehat{\varphi}) = \varphi(\mathrm{G})^{\perp}\)（II，第 205 页，引理 2），由此据推论 3 即得结论。
+
+推论 6.　设 \(k \in \mathbf{Z}\)。则从 G 到 G 的同态 \(x \mapsto x^k\) 的核与态射 \(\chi \mapsto \chi^k\)（从 \(\widehat{\mathrm{G}}\) 到 \(\widehat{\mathrm{G}}\)）的像的闭包互为正交。
+
+由于从 G 到 G 的态射 \(x \mapsto x^{k}\) 与态射 \(\chi \mapsto \chi^{k}\)（从 \(\widehat{G}\) 到 \(\widehat{G}\)）互为对偶，这由上一个推论得到。
+
+回顾（A，X，第 17 页）：若对每个非零的 \(n \in \mathbf{Z}\)，从 A 到 A 的映射 \(a \mapsto a^n\) 都是满射的，则称交换群 A 是可除的。
+
+推论 7.　设 G 是一个局部紧交换群。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  若 G 是可除的，则对偶群 \(\widehat{\mathrm{G}}\) 是无挠的；
+\item
+  若对偶群 \(\widehat{\mathbf{G}}\) 是无挠的，且 \(k\in\mathbf{Z}\) 非零，则从 G 到 G 的同态 \(x\mapsto x^{k}\) 的像在 G 中稠密；
+\item
+  假设 G 是离散的或紧的。G 为可除的必要充分条件是 \(\widehat{G}\) 无挠。
+\end{enumerate}
+
+断言 \(a\)) 与 \(b\)) 由推论 6 得到。若 G 是离散的或紧的，则从 G 到 G 的同态 \(x \mapsto x^k\) 的像是闭的，而 \(c\)) 由 \(a\)) 与 \(b\)) 得到。
+
+注.　存在不可除且使 \(\widehat{G}\) 无挠的局部紧交换群 G（II，第 299 页，习题 63）。
+
+\subsection{Poisson 公式}
+
+在本节中，我们考察 G 的一个闭子群 H。我们用 \(\beta = dx\) 表示 G 上的 Haar 测度，用 \(\widehat{\beta}\) 表示 \(\widehat{G}\) 上的对偶 Haar 测度。用 \(\alpha\) 表示 H 上的一个 Haar 测度，用 \(\widehat{\alpha}\) 表示对偶群 \(\widehat{H}\) 上的对偶 Haar 测度，我们把后者与 \(\widehat{G}/H^{\perp}\) 等同（II，第
+
+226 页的定理 4）。我们还把 \(\widehat{\mathrm{G}}/\widehat{\mathrm{H}}\) 与 \(\mathrm{H}^{\perp}\) 通过典范投影 \(\mathrm{G}\to\mathrm{G}/\mathrm{H}\) 的对偶映射等同起来（同前）。
+
+我们将用 \(\dot{x}\) 表示元素 \(x\)（属于 G）在 G/H 中的典范像，用 \(\dot{\chi}\) 表示元素 \(\chi\)（属于 \(\widehat{G}\)）在 \(\widehat{G}/H^{\perp}\) 中的典范像。
+
+我们用 \(\gamma\) 表示 G/H 上的 Haar 测度 \(\beta/\alpha\)（INT，VII，§2，第 2 节，定义 1 及第 7 节，命题 10），用 \(\widehat{\gamma}\) 表示 \(H^{\perp}\) 上的对偶 Haar 测度。回顾（INT，VII，§2，第 3 节，命题 5, c)）：测度 \(\gamma\) 由下述性质刻画：对每个 \(f \in \mathcal{L}^{1}(G)\)，H 上的函数 \(y \mapsto f(xy)\) 是 \(\alpha\)-可积的（对 \(\beta\)-几乎所有的 \(x \in G\)）；其积分只依赖于 \(\dot{x}\)，且在 G/H 上由以下方式 \(\gamma\)-几乎处处定义的函数
+
+\[
+f ^ {\flat} \colon \dot {x} \mapsto \int_ {\mathrm{H}} f (x h) d \alpha (h)
+\]
+
+属于 L \(^{1}\) (G/H, γ)，且满足
+
+\[
+\int_ {\mathrm{G} / \mathrm{H}} f ^ {\flat} d \gamma = \int_ {\mathrm{G}} f d \beta .\tag{33}
+\]
+
+命题 15.　设 \(f \in \mathrm{L}^1(\mathrm{G})\)，使得在 \(\mathrm{H}^\perp\) 上连续函数 \(\mathcal{F}_{\mathrm{G}}(f)\) 的限制关于 \(\widehat{\gamma}\) 可积。则对几乎所有的 \(x \in \mathrm{G}\)，函数 \(y \mapsto f(xy)\)（它在 \(\mathrm{H}\) 上）是 \(\alpha\)-可积的，且有：
+
+\[
+\int_ {\mathrm{H}} f (x y) d \alpha (y) = \int_ {\mathrm{H} ^ {\perp}} \langle \chi , x \rangle \mathcal {F} _ {\mathrm{G}} (f) (\chi) d \widehat {\gamma} (\chi).
+\]
+
+根据上述，函数 \(f^{\flat}\)（在 G/H 上几乎处处由
+
+\[
+f ^ {\flat} (\dot {x}) = \int_ {\mathrm{H}} f (x y) d \alpha (y)
+\]
+
+定义）属于 \(L^{1}(G/H)\)。\(f^{\flat}\) 的 Fourier 变换等同于 \(H^{\perp} = \widehat{G/H}\) 上如下给出的函数：对 \(\chi \in H^{\perp}\)，
+
+\[
+\begin{array}{r} \mathcal {F} _ {\mathrm{G/H}} (f ^ {\flat}) (\chi) = \int_ {\mathrm{G/H}} \overline {{\langle \chi , \dot {x} \rangle}} f ^ {\flat} (\dot {x}) d \gamma (\dot {x}) \\ = \int_ {\mathrm{G}} \overline {{\langle \chi , x \rangle}} f (x) d \beta (x) = \mathcal {F} _ {\mathrm{G}} (f) (\chi) \end{array}
+\]
+
+这是对可积函数 \(x \mapsto \overline{\langle\chi, x\rangle} f(x)\) 应用公式 (33) 得到的。根据假设，函数 \(\mathcal{F}(f)|\mathrm{H}^{\perp} = \mathcal{F}_{\mathrm{G}/\mathrm{H}}(f^{\flat})\) 属于 \(\mathrm{L}^{1}(\mathrm{H}^{\perp})\)，因而函数 \(f^{\flat}\) 属于空间 B(G/H)。由此（II，第 222 页，定理 3），\(f^{\flat}\) 与 \(\overline{\mathcal{F}}_{\widehat{\mathrm{G / H}}}(\mathcal{F}_{\mathrm{G / H}}(f^{\flat}))\) 几乎处处重合。因此，对几乎每个 \(\dot{x}\in \mathrm{G / H}\)，我们有
+
+\[
+f ^ {\flat} (\dot {x}) = \int_ {\mathrm{H} ^ {\perp}} \langle \chi , x \rangle \mathcal {F} _ {\mathrm{G/H}} (f ^ {\flat}) (\chi) d \widehat {\gamma} (\chi) = \int_ {\mathrm{H} ^ {\perp}} \langle \chi , x \rangle \mathcal {F} _ {\mathrm{G}} (f) (\chi) d \widehat {\gamma} (\chi).
+\]
+
+这就完成了证明。
+
+推论（Poisson 公式）.　设 \(f \in \mathcal{L}^{1}(G)\)。假设下列条件满足：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\mathcal{F}_{\mathrm{G}}(f)\) 在 \(\mathrm{H}^{\perp}\) 上的限制是可积的；
+\item
+  对每个 \(x \in G\)，H 上的函数 \(y \mapsto f(xy)\) 是可积的；
+\item
+  映射 \(x\mapsto \int_{\mathrm{H}}f(xy)d\alpha (y)\) 在 G 上连续。则有
+\end{enumerate}
+
+\[
+\int_ {\mathrm{H}} f (y) d \alpha (y) = \int_ {\mathrm{H} ^ {\perp}} \mathcal {F} _ {\mathrm{G}} (f) (\chi) d \widehat {\gamma} (\chi).\tag{34}
+\]
+
+事实上，沿用上一命题证明中的记号，G/H 上的函数 \(f^{\flat}\) 与 \(\overline{\mathcal{F}}_{\widehat{\mathrm{G/H}}}\left(\mathcal{F}_{\mathrm{G/H}}(f^{\flat})\right)\) 连续且几乎处处相等。因此它们处处相等，特别地在 e 处相等，这就给出公式 (34)。
+
+命题 16.　测度 \(\widehat{\alpha}\)（它在 \(\widehat{\mathrm{H}} = \widehat{\mathrm{G}} / \mathrm{H}^{\perp}\) 上）等于 \(\widehat{\beta} / \widehat{\gamma}\)。
+
+取定一个非零的 \(f\in \mathcal{K}(\mathrm{G})\)。对 \(x\in \mathrm{G}\) 与 \(\chi \in \widehat{\mathrm{G}}\)，令
+
+\[
+\varphi (x, \chi) = \int_ {\mathrm{H}} f (x y) \langle \chi , y \rangle d \alpha (y).
+\]
+
+函数 \(\varphi\) 在 \(G \times \widehat{G}\) 上连续（INT，IV，§4，第 3 节，定理 2 的推论 1）。固定 \(x\) 时，\(\varphi(x, \chi)\) 只依赖于 \(\chi\) 在 \(\widehat{G}/H^{\perp} = \widehat{H}\) 中的类。固定 \(\chi\) 时，\(\langle \chi, x \rangle \varphi(x, \chi)\) 只依赖于 \(x\) 在 \(G/H\) 中的类，且函数 \(\dot{x} \mapsto \langle \chi, x \rangle \varphi(x, \chi)\)（在 \(G/H\) 上）具有紧支集。
+
+设 \(x \in G\)。函数 \(\dot{\chi} \mapsto \varphi(x, \chi)\)（在 \(\hat{H}\) 上）是 H 上函数 \(y \mapsto f(xy)\) 的 Fourier 余变换。后者是平方可积的，故由 II，第 217 页的 Plancherel 公式 (23)，我们有
+
+\[
+\int_ {\widehat {\mathrm{G}} / \mathrm{H} ^ {\perp}} | \varphi (x, \chi) | ^ {2} d \widehat {\alpha} (\dot {\chi}) = \int_ {\mathrm{H}} | f (x y) | ^ {2} d \alpha (y).\tag{35}
+\]
+
+ 设 \(\chi\in\widehat{\mathrm{G}}\)。函数 \(\dot{x}\mapsto\langle\chi,x\rangle\varphi(x,\chi)\) 属于 \(\mathcal{H}(\mathrm{G}/\mathrm{H})\)，从而属于 \(\mathrm{L}^{1}(\mathrm{G}/\mathrm{H})\)。它的 Fourier 余变换是 \(\mathrm{H}^{\perp}\) 上的函数
+
+它在 \(\xi\in\mathrm{H}^{\perp}\) 处的值为
+
+\[
+\begin{array}{r l} & {\int_ {\mathrm{G/H}} \langle \xi , \dot {x} \rangle \langle \chi , x \rangle \varphi (x, \chi) d \gamma (\dot {x}) = \int_ {\mathrm{G/H}} \Bigl (\int_ {\mathrm{H}} \langle \chi \xi , x y \rangle f (x y) d \alpha (y) \Bigr) d \gamma (\dot {x})} \\ & {\qquad = \int_ {\mathrm{G}} \langle \chi \xi , x \rangle f (x) d \beta (x) = \overline {{\mathcal {F}}} _ {\mathrm{G}} (f) (\chi \xi)} \end{array}
+\]
+
+（由公式 (33)）。因此
+
+\[
+\int_ {\mathrm{G/H}} | \varphi (x, \chi) | ^ {2} d \gamma (\dot {x}) = \int_ {\mathrm{H} ^ {\perp}} | \overline {{\mathcal {F}}} _ {\mathrm{G}} (f) (\chi \xi) | ^ {2} d \widehat {\gamma} (\xi)\tag{36}
+\]
+
+这是再次由 Plancherel 公式得到的。
+
+最后我们计算
+
+\[
+\begin{array}{l l} \int_ {\widehat {G}} | \overline {{\mathcal {F}}} _ {G} (f) | ^ {2} d \widehat {\beta} = \int_ {G} | f | ^ {2} d \beta & (\text {by (23)}) \\ = \int_ {G / H} d \gamma (\dot {x}) \int_ {H} | f (x y) | ^ {2} d \alpha (y) & (\text {by (33)}) \\ = \int_ {G / H} d \gamma (\dot {x}) \int_ {\widehat {G} / H ^ {\perp}} | \varphi (x, \chi) | ^ {2} d \widehat {\alpha} (\dot {\chi}) & (\text {by (35)}) \\ = \int_ {\widehat {G} / H ^ {\perp}} d \widehat {\alpha} (\dot {\chi}) \int_ {G / H} | \varphi (x, \chi) | ^ {2} d \gamma (\dot {x}) \\ = \int_ {\widehat {G} / H ^ {\perp}} d \widehat {\alpha} (\dot {\chi}) \int_ {H ^ {\perp}} | \overline {{\mathcal {F}}} _ {G} (f) (\chi \xi) | ^ {2} d \widehat {\gamma} (\xi) & (\text {by (36)}) \end{array}
+\]
+
+其中把 INT，V，§8，第 3 节，命题 5 应用于连续正函数 \((\dot{x},\dot{\chi})\mapsto |\varphi (x,\chi)|^{2}\)（在 \(\mathrm{G / H}\times \widehat{\mathrm{G}} /\mathrm{H}^{\perp}\) 上）。
+
+把这个等式与群 \(\widehat{G}\) 的积分公式 (33) 相比较，便可断定 Haar 测度 \(\widehat{\alpha}\) 与 \(\widehat{\beta}/\widehat{\gamma}\) 重合。
+
+\subsection{对偶的例子}
+
+命题 17.　设 \(n \geqslant 1\) 是一个整数。用 \(\boldsymbol{\mu}_{n}\) 表示 \(n\) 次单位根（在 \(\mathbf{C}\) 中）所成的群。群 \(\mathbf{Z}/n\mathbf{Z}\) 与 \(\boldsymbol{\mu}_{n}\) 关于由映射 \(\mathbf{Z} \times \boldsymbol{\mu}_{n} \to \mathbf{U}\)（定义为 \((m,z) \mapsto z^{m}\)）过渡到商所诱导的映射成对偶。
+
+群 \(\mathbf{Z}/n\mathbf{Z}\) 与同态 \(\chi\)（从 \(\mathbf{Z}/n\mathbf{Z}\) 到 \(\mathbf{U}\)）所成的集合重合。这些同态形如 \(m \mapsto \chi(1)^m\)，其中 \(\chi(1)\) 是 \(\mathbf{U}\) 中满足 \(\chi(1)^n = 1\) 的任意元素，由此即得结论。
+
+推论 1.　设 G 是一个有限交换群。对偶群 \(\widehat{\mathbf{G}}\) 同构于 G。
+
+群 G 同构于循环群的一个有限乘积（A，VII，第 22 页，定理 3），而它的对偶群同构于这些循环群的对偶群的乘积（II，第 206 页，命题 2）。于是归结为 G 是循环群的情形，而这由命题 17 得到，因为群 \(\mu_{n}\) 是 n 阶循环群（A，V，第 75 页，定理 1）。
+
+推论 2.　设 G 是一个局部紧交换群。群 G 是有限的，当且仅当 \(\widehat{\mathbf{G}}\) 是有限的。G 的一个闭子群 H 具有有限指数，当且仅当它的正交是有限的。
+
+由对偶性，第一个断言由有限群的对偶是有限的这一事实（推论 1）得到。第二个断言由它得到，因为 \(\widehat{\mathrm{G / H}}\) 与 \(\mathrm{H}^{\perp}\) 等同（II，第 226 页，定理 4）。
+
+命题 18.　\(\widehat{\mathbf{G}}\) 为紧的必要充分条件是 \(\mathbf{G}\) 是离散的。若 \(\mathbf{G}\) 是离散的，则 \(\mathbf{G}\) 上计数测度的对偶测度是 \(\widehat{\mathbf{G}}\) 上的规范化 Haar 测度。若 \(\mathbf{G}\) 是紧的，则规范化 Haar 测度的对偶测度是 \(\widehat{\mathbf{G}}\) 上的计数测度。
+
+假设 G 是离散的，设 \(\alpha\) 是 G 上的计数测度。设 \(\varphi\) 是 \(e \in G\) 的特征函数。我们有 \(\mathcal{F}_{\mathrm{G}}(\varphi) = 1\)（在 \(\widehat{G}\) 上）。由于 \(\mathcal{F}_{\mathrm{G}}(\varphi)\) 在无穷远处趋于 0，群 \(\widehat{G}\) 是紧的。
+
+此外，对测度 \(\widehat{\alpha}\)（\(\alpha\) 的对偶测度）而言，函数 \(\mathcal{F}_{\mathrm{G}}(\varphi)\) 的积分应为 \(\varphi(e)=1\)（II，第 219 页，命题 12）。因此 \(\widehat{\alpha}(\widehat{\mathrm{G}})=1\)。
+
+假设 G 是紧的。此时 Haar 测度 dx 属于 \(\mathcal{M}^{1}(G)\)。它的 Fourier 变换在 \(\chi = e\) 处严格为正，而对 \(\chi \neq 0\) 为零（II，第 210 页，命题 6）。由于它在 \(\widehat{G}\) 上连续，群 \(\widehat{G}\) 是离散的。若 G 的测度为 1，则由对偶性从上一情形推出，测度 dx 的对偶测度是 \(\widehat{G}\) 上的计数测度。
+
+推论 1（正交关系）.　假设 G 是离散的且赋予计数测度。对 G 中的 x 与 y，我们有
+
+\[
+\int_ {\widehat {G}} \chi (x) \overline {{\chi (y)}} d \chi = \left\{ \begin{array}{l l} 0 & \text{若 } x \neq y \\ 1 & \text{若 } x = y. \end{array} \right.
+\]
+
+这由 II，第 215 页定理 1 的推论以及对偶性得到。
+
+推论 2.　设 H 是 G 的一个闭子群。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  H 为紧的必要充分条件是 \(H^{\perp}\) 在 \(\widehat{G}\) 中是开的；
+\item
+  H 为开的必要充分条件是 \(H^{\perp}\) 在 \(\widehat{G}\) 中是紧的。
+\item
+  说 \(H^{\perp}\) 是开的，等于说 \(\widehat{G}/H^{\perp}\) 是离散的；而 \(\widehat{G}/H^{\perp}\) 同构于 \(\widehat{H}\)（II，第 226 页，定理 4），因此该断言由命题 18 得到。断言 b) 由把断言 a) 应用于 \(H^{\perp}\) 再经对偶性得到。
+\end{enumerate}
+
+推论 3.　设 \((\mathrm{H}_{i})_{i\in\mathrm{I}}\) 是 G 的紧子群的一个递降滤过族。G 与群 \(G/H_{i}\) 的射影极限等同的必要充分条件是 \(\hat{G}\) 为诸开子群 \(H_{i}^{\perp}\) 的并。
+
+说 G 与 \(G/H_{i}\) 的射影极限等同，等于说 \(\bigcap_{i}H_{i}=\{e\}\)（TG，III，第 60 页，命题 2），也就是 \(\bigcup_{i}H_{i}^{\perp}\) 在 \(\widehat{G}\) 中稠密（II，第 226 页，定理 4 的推论 4）。而 \(\bigcup_{i}H_{i}^{\perp}\) 是 \(\widehat{G}\) 的一个开子群，从而是闭子群。
+
+推论 4.　设 I 是一个集合，\((\mathrm{H}_{i})_{i\in\mathrm{I}}\) 是一族紧群。诸 \(H_{i}\) 的乘积群的对偶是诸群 \(\widehat{H}_{i}\) 的离散群直和。
+
+这是推论 3 的一个特殊情形。
+
+命题 19.　设 K 是一个局部紧、非离散的域，不必交换，并设 G 是 K 的加法群，其群运算写作加法。设 \(\chi\) 是 G 的一个异于 1 的酉特征标。对 \(x,y\in\mathbf{G}\)，令 \(\theta(x,y)=\chi(xy)\)。则 G 关于 \(\theta\) 与自身成对偶。
+
+对 \(y \in \mathbf{G}\)，用 \(\chi_y\) 表示从 \(\mathbf{G}\) 到 \(\mathbf{U}\) 中且满足 \(\chi_y(x) = \chi(xy)\) 的映射。我们有 \(\chi_y \in \widehat{\mathbf{G}}\)，且须证明 \(\beta: y \mapsto \chi_y\) 是从 \(\mathbf{G}\) 到 \(\widehat{\mathbf{G}}\) 上的一个拓扑群同构。
+
+映射 \(\beta\) 是从 G 到 \(\widehat{\mathbf{G}}\) 中的一个单射同态；它是连续的（TG，X，第 28 页，定理 3 应用于连续映射 \(\theta\)（从 \(\mathbf{G} \times \mathbf{G}\) 到 \(\mathbf{C}\) 中））。我们来证明 \(\theta\) 是到其像上的一个同胚。只需（II，第 200 页，引理 2）证明：对 K 中 0 的每个邻域 U，存在 \(e\) 在 \(\widehat{\mathbf{G}}\) 中的一个邻域 V，使得 \(\overline{\beta}^{-1}(\mathrm{V}) \subset \mathrm{U}\)。设 \(x \mapsto |x|\) 是 K 上定义 K 的拓扑的一个绝对值（AC，VI，§9，第 1 节，命题 1），并设 \(x_0 \in \mathrm{K}\) 使得 \(\chi(x_{0}) \neq 1\)；记 \(\eta = |\chi(x_{0}) - 1| > 0\)。设 U 是 K 中 0 的一个邻域。存在 \(\delta > 0\)，使得 U 包含由 \(y \in K\)（满足 \(|y| < \delta\)）所成的集合。设 V 是由特征标 \(\xi \in \widehat{G}\)（对它们有 \(|\langle\xi, x\rangle - 1| < \eta\)，只要元素 \(x \in K\) 满足 \(|x| \leqslant |x_{0}|/\delta\)）所成的集合。它是 \(\widehat{G}\) 中 e 的一个邻域。若 \(y \neq 0\) 使 \(\beta(y)\) 属于 V，则我们有 \(|\chi(xy) - 1| < |\chi(x_{0}) - 1|\)（对所有满足 \(|x| \leqslant |x_{0}|/\delta\) 的 x）。从而 \(|x_{0}y^{-1}| > |x_{0}|/\delta\)，于是 \(|y| < \delta\)，故 \(y \in U\)。
+
+由于 \(\beta\) 是到其像上的一个同胚，它的像在 \(\widehat{\mathbf{G}}\) 中是闭的（TG，III，第 22 页，推论 2）。但另一方面，\(\beta\) 的像的正交是由元素 \(x\)（属于 \(\mathbf{G}\)，且 \(\chi(xy) = 1\) 对所有 \(y \in \mathbf{G}\) 成立）组成的集合，因而化为 \(\{0\}\)。于是 \(\beta\) 的像在 \(\widehat{\mathbf{G}}\) 中稠密（II，第 228 页，推论 3）。我们断定 \(\beta\) 是满射的。
+
+推论 1.　设 K 是一个局部紧、非离散、不必交换的域，\(\chi\) 是 K 的加法群的一个非平凡酉特征标。设 E 是 K 上一个有限维拓扑向量空间。映射 \(\theta\)（从 \(E \times E'\) 到 U 中，由 \(\theta(x,\lambda)=\chi(\langle\lambda,x\rangle)\)（对 \((\lambda,x)\in\mathrm{E}'\times\mathrm{E}\)）定义）使拓扑群 E 与 E' 成对偶。
+
+设 n 是 E 的维数，\((e_{1},\ldots,e_{n})\) 是 E 的一个基。它使我们可以把 E 与 \(K^{n}\) 等同（EVT，I，第 14 页，定理 2）。于是结论由命题 19 与 II，第 206 页命题 2 得到。
+
+我们用 T 表示群 R/Z。
+
+推论 2.　a) 群 R 关于映射 \((x,y)\mapsto\exp(2i\pi xy)\) 与自身成对偶，且 Lebesgue 测度的对偶测度是 Lebesgue 测度；
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  群 Z 与 T 关于由从 \(Z \times R\) 到 U 且 \((n, x) \mapsto \exp(2i\pi nx)\) 的映射过渡到商所得到的映射成对偶。Z 上计数测度的对偶 Haar 测度是 R/Z 上的规范化 Haar 测度。
+\end{enumerate}
+
+由命题 19，群 \(\mathbf{R}\) 关于映射 \((x,y)\mapsto \exp (2i\pi xy)\) 与自身成对偶。我们把 \(\widehat{\mathbf{R}}\) 与 \(\mathbf{R}\) 等同。\(\mathbf{Z}\) 在 \(\widehat{\mathbf{R}} = \mathbf{R}\) 中的正交就是 \(\mathbf{Z}\)，而 \(b)\) 由 II，第 226 页定理 4 得到。
+
+设 \(\alpha\) 是 Z 上的计数测度，\(\gamma\) 是 T 上的规范化 Haar 测度。若用 \(\beta\) 表示 \(\mathbf{R}\) 上的 Lebesgue 测度，我们有 \(\gamma = \beta/\alpha\)，因为 R/Z 上这两个 Haar 测度的质量都是 1。Haar 测度 \(\widehat{\alpha}\)（在 \(\widehat{Z} = T\) 上）是规范化 Haar 测度（命题 18），而 Haar 测度 \(\widehat{\gamma}\) 是 \(\mathbf{Z}\) 上的计数测度（同前）。由 II，第 231 页命题 16，\(\beta\) 的对偶测度因此是测度 \(\beta\)。
+
+注.　特别地，我们重新得到 I，第 36 页例 4 中对 \(\mathsf{X}(\mathsf{L}^{1}(\mathbf{Z}))\) 的确定。
+
+对每个整数 \(n \geqslant 0\) 及 \((x, y) \in \mathbf{R}^n \times \mathbf{R}^n\)，我们记
+
+\[
+x \cdot y = \sum_ {j = 1} ^ {n} x _ {j} y _ {j}.
+\]
+
+推论 3.　设 \(n \geqslant 1\) 是一个整数。群 \(\mathbf{R}^{n}\) 关于映射 \((x,y) \mapsto \exp(2i\pi x \cdot y)\) 与自身成对偶，且 \(\mathbf{R}^{n}\) 上 Lebesgue 测度的对偶测度是 Lebesgue 测度。群 \(\mathbf{Z}^{n}\) 与 \(\mathbf{T}^{n} = \mathbf{R}^{n}/\mathbf{Z}^{n}\) 关于由映射 \((n,x) \mapsto \exp(2i\pi x \cdot y)\) 过渡到商所得到的映射成对偶，且 \(\mathbf{Z}^{n}\) 上计数测度的对偶 Haar 测度是 \((\mathbf{R}/\mathbf{Z})^{n}\) 上的规范化 Haar 测度。
+
+这由 II，第 225 页引理 7、II，第 217 页命题 10 以及推论 2 得到。
+
+注.　对 \(R^{n}\) 的一个子群 H，相应地有它的正交 \(H^{\perp}\)，即 \(\widehat{R^{n}} = R^{n}\) 的一个子群，它正是 TG，VII，第 6 页，第 3 节中定义的与 H 相伴的子群。
+
+在下文中，我们将借助该推论的对偶，把 \(R^{n}\)（相应地，\(T^{n}\)）的对偶与 \(R^{n}\)（相应地，\(Z^{n}\)）等同。特别地，对 \(f \in \mathrm{L}^{1}(\mathbf{R}^{n})\)，它的 Fourier 变换等同于 \(R^{n}\) 上取值于 C 的、把 \(y \in R^{n}\) 映为为
+
+\[
+\mathcal {F} (f) (y) = \int_ {\mathbf {R} ^ {n}} f (x) \exp (- 2 i \pi x \cdot y) d x.
+\]
+
+推论 4.　群 \(\mathbf{R}^{*}\) 与群 \(\{-1,1\} \times \mathbf{R}\) 通过映射 \((x,(\sigma,t)) \mapsto \sigma(x/|x|)|x|^{it}\) 成对偶。群 \(\mathbf{R}_{+}^{*}\) 与 \(\mathbf{R}\) 通过映射 \((x,t) \mapsto x^{it}\) 成对偶。
+
+事实上，映射 \(x \mapsto (x/|x|, \log(|x|))\) 是从 \(R^{*}\) 到 \(\{-1, 1\} \times R\) 上的一个拓扑群同构。于是该断言由 II，第 225 页引理 7、推论 2 以及 \(\{-1, 1\}\) 的酉特征标恰为 1 与 \(x \mapsto x\) 这一事实得到。
+
+设 \(p\) 是一个素数。域 \(\mathbf{Q}_{p}\)（即 \(p\) 进数域）是 \(\mathbf{Q}\) 关于 \(p\) 进赋值的完备化（INT，VII，§1，第 6 节，例，及 AC，VI，§3，第 4 节，例 4）。对每个 \(x \in \mathbf{Q}_{p}\)，存在唯一的整数 \(\nu\geqslant0\) 与唯一的满足 \(0\leqslant q<p^{\nu}\) 的整数 q，使得 \(qp^{-\nu}-x\in Z_{p}\)（A，VII，第 10 页，定理 2，应用于主理想整环 \(Z_{p}\) 与集合 \(R_{p}\)（由满足 \(0\leqslant j<p\) 的整数 j 组成））。我们记 \(\lambda(x)=qp^{-\nu}\)。
+
+命题 20.　映射 \(x \mapsto \exp(2i\pi\lambda(x))\) 是 \(\mathbf{Q}_{p}\) 的一个酉特征标，其核为 \(\mathbf{Z}_{p}\)。
+
+对 \(x_1\) 与 \(x_2\)（属于 \(\mathbf{Q}_p\)），按定义有 \(\lambda(x_1 + x_2) - \lambda(x_1) - \lambda(x_2) \in \mathbf{Z}_p \cap \mathbf{Q} = \mathbf{Z}\)。此外，映射 \(\lambda\) 是局部常数的，因为 \(\lambda(x + y) = \lambda(x)\)（若 \(y \in \mathbf{Z}_p\)）。由此推出 \(x \mapsto \exp(2i\pi\lambda(x))\) 是 \(\mathbf{Q}_p\) 的一个酉特征标。由于 \(\lambda(x) \in \mathbf{Z}\) 当且仅当 \(x \in \mathbf{Z}_p\)，这个特征标的核是 \(\mathbf{Z}_p\)。
+
+回顾：\(Q_{p}\) 的加法群上的规范化 Haar 测度是指唯一的 Haar 测度 \(\mu\)，它使 \(\mu(\mathbf{Z}_{p}) = 1\)（INT，VII，§1，第 6 节，例）。
+
+推论.　a) 群 \(\mathbf{Q}_{p}\) 关于映射 \((x,y)\mapsto\exp(2i\pi\lambda(xy))\) 与自身成对偶。\(\mathbf{Q}_{p}\) 上的规范化 Haar 测度这时是它自己的对偶；
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  群 \(Z_{p}\) 与 \(Q_{p}/Z_{p}\) 关于由 \((z,x)\mapsto\exp(2i\pi\lambda(zx))\) 所定义的映射过渡到商而得到的映射成对偶，且 \(Z_{p}\) 上规范化 Haar 测度的对偶测度是 \(Q_{p}/Z_{p}\) 上的计数测度。
+\end{enumerate}
+
+其证明逐字重复命题 19 的推论 2 的证明。
+
+\subsection{Euclid Fourier 变换与 Fourier 级数}
+
+* 设 \(n \in \mathbf{N}\)。我们按 II，第 236 页推论 3 把 \(\mathbf{R}^n\) 与其对偶等同。Lebesgue 测度的对偶测度这时仍是 Lebesgue 测度。我们给 \(\mathbf{R}^n\) 赋以 Euclid 范数。对每个多重指标 \(\alpha \in \mathbf{N}^n\) 及每个 \(x = (x_1, \ldots, x_n) \in \mathbf{R}^n\)，我们记 \(x^\alpha = x_1^{\alpha_1} \cdots x_n^{\alpha_n}\)，并用 \(\mathrm{X}^\alpha\) 表示函数 \(x \mapsto x^\alpha\)（在 \(\mathbf{R}^n\) 上）。
+
+设 \(m \in R^{m}\)。从 \(R^{m}\) 到 \(R^{n}\) 中的每个连续交换群同态都是一个线性映射 \(\sigma \in \mathcal{L}(\mathbf{R}^{n}, \mathbf{R}^{m})\)（TG，VII，第 11 页，命题 1）。对偶同态 \(\widehat{\sigma}\) 与线性映射 \(^{t}\sigma\) 等同。
+
+在 Schwartz 函数空间及其对偶（IV，待出版）的框架下，\(\mathbf{R}^n\) 中的 Fourier 变换具有特别方便的形式。我们在此概述其主要结果。
+
+设 \(\mathcal{S}(\mathbf{R}^{n})\) 是函数 \(\varphi\)（在 \(\mathbf{R}^{n}\) 上取复值的无穷次可微函数）所成的空间，使得对每个多重指标 \(\alpha\in\mathbf{N}^{n}\) 及每个整数 \(k\in\mathbf{N}\)，函数
+
+\[
+x \mapsto \| x \| ^ {k} \partial^ {\alpha} \varphi (x)
+\]
+
+在 \(\mathbf{R}^{n}\) 上是有界的。我们给 \(\mathcal{S}(\mathbf{R}^{n})\) 赋以由半范数
+
+\[
+p _ {k, \alpha} \colon \varphi \mapsto \sup _ {x \in \mathbf {R} ^ {n}} \| x \| ^ {k} | \partial^ {\alpha} \varphi (x) |.
+\]
+
+所定义的局部凸拓扑。我们称 \(\mathcal{S}(\mathbf{R}^{n})\) 为 \(\mathbf{R}^{n}\) 上的 Schwartz 函数空间。
+
+对每个 \(\alpha \in \mathbf{N}^n\)，映射 \(\varphi \mapsto \partial^\alpha \varphi\) 与 \(\varphi \mapsto \mathrm{X}^\alpha \varphi\) 都从 \(\mathcal{S}(\mathbf{R}^n)\) 到其自身连续。空间 \(\mathcal{S}(\mathbf{R}^n)\) 是一个拓扑代数；它是 Fréchet 空间，也是 Montel 空间（EVT，IV，第 18 页，定义 4）。对每个 \(p \in [1, +\infty]\)，空间 \(\mathcal{S}(\mathbf{R}^n)\) 含于 \(\mathcal{L}^p (\mathbf{R}^n)\)，且 \(\mathcal{S}(\mathbf{R}^n)\) 到 \(\mathcal{L}^p (\mathbf{R}^n)\) 中的典范单射是连续的。\(\mathcal{S}(\mathbf{R}^n)\) 在 \(\mathrm{L}^p (\mathbf{R}^n)\) 中的像当 \(p \neq +\infty\) 时是稠密的。
+
+由于每个 Schwartz 函数 \(\varphi\) 都在 \(\mathbf{R}^n\) 上可积，它有 Fourier 变换，记作 \(\widehat{\varphi}\)，后者等同于 \(\mathbf{R}^n\) 上由
+
+\[
+y \mapsto \int_ {\mathbf {R} ^ {n}} \varphi (x) \exp (- 2 i \pi x \cdot y) d x.
+\]
+
+所定义的连续函数。\(\varphi\) 的 Fourier 余变换则等同于由
+
+\[
+y \mapsto \int_ {\mathbf {R} ^ {n}} \varphi (x) \exp (2 i \pi x \cdot y) d x.
+\]
+
+所定义的连续函数。设 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\)。设 \(\alpha\in\mathbf{N}^{n}\) 是一个多重指标。我们有
+
+\[
+\mathcal {F} (\partial^ {\alpha} \varphi) = (2 i \pi) ^ {| \alpha |} \mathrm{X} ^ {\alpha} \mathcal {F} (\varphi),
+\]
+
+\[
+\mathcal {F} (\mathrm{X} ^ {\alpha} \varphi) = (- 2 i \pi) ^ {- | \alpha |} \partial^ {\alpha} (\mathcal {F} (\varphi)).
+\]
+
+命题 21.　Fourier 变换在 \(\mathcal{S}(\mathbf{R}^{n})\) 上的限制是拓扑向量空间的一个自同构，其逆是 Fourier 余变换的限制。
+
+设 \(\Lambda \subset \mathbf{R}^n\) 是一个格（TG，VII，第 4 页），并设 \(\Lambda^{*} \subset \mathbf{R}^{n}\) 是相伴的格（TG，VII，第 6 页），有时也称对偶格。
+
+我们把 \(\mathbf{R}^n/\Lambda\) 关于由 \(\mathbf{R}^n\) 上 Lebesgue 测度所诱导的 Haar 测度的测度称为格 \(\Lambda\) 的余体积，记作 \(V(\Lambda)\)（参看 INT，VIII，§5，第 5 节，例）。对每个函数 \(f \in \mathcal{S}(\mathbf{R}^n)\) 及每个 \(y \in \mathbf{R}^n\)，我们有 Poisson 公式
+
+\[
+\sum_ {x \in \Lambda} f (x + y) = \frac {1}{\mathrm{V} (\Lambda)} \sum_ {z \in \Lambda^ {*}} \widehat {f} (z) \exp (2 i \pi y \cdot z).
+\]
+
+注.　1) 更一般地，由 II，第 230 页命题 15 的推论，该公式对 \(\mathbf{R}^n\) 上任何满足如下条件的可积复值函数成立：
+
+\[
+\sum_ {x \in \Lambda} | f (x + y) | <   + \infty ,
+\]
+
+对所有 \(y \in R^{n}\) 成立，且 \(T^{n}\) 上由
+
+\[
+y \mapsto \sum_ {x \in \Lambda} f (x + y)
+\]
+
+定义的函数是连续的，并有绝对收敛的 Fourier 级数（参看下文）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  存在函数 \(f \in \mathrm{B}(\mathbf{R})\)，使得级数 \(\sum_{n \in \mathbf{Z}} f(n)\) 发散（II，第 263 页，习题 4）。
+\end{enumerate}
+
+例.　设 Q 是 \(R^{n}\) 上一个正定二次型。由 \(\varphi(x)=\exp(-\pi\mathrm{Q}(x))\) 定义的函数属于 \(\mathcal{S}(\mathbf{R}^{n})\)。存在 \(\sigma\in\mathrm{GL}(n,\mathbf{R})\)，使得 \(\mathrm{Q}(x)=\|\sigma(x)\|^{2}\) 对所有 \(x\in R^{n}\) 成立。\(\varphi\) 的 Fourier 变换由下式给出：对所有 \(y\in R^{n}\)，
+
+\[
+\widehat {\varphi} (y) = \frac {1}{| \det (\sigma) |} \exp (- \pi \mathrm{Q} ^ {*} (y))
+\]
+
+其中 \(\mathrm{Q}^{*}(y)=\|^{t}\sigma^{-1}(y)\|^{2}\)（参看 INT，IX，§6，第 4–5 节及 II，第 262 页，习题 1, c)）。
+
+定义 6.　我们把 \(\mathbf{R}^{n}\) 上的缓增分布空间称为赋有有界收敛拓扑的 \(\mathcal{S}(\mathbf{R}^{n})\) 的对偶空间，记作 \(\mathcal{S}'(\mathbf{R}^{n})\)。
+
+由于 \(\mathcal{S}(\mathbf{R}^n)\) 是有型空间，空间 \(\mathcal{S}'(\mathbf{R}^n)\) 是完备的且有型的（EVT，III，第 24 页，推论 1 与 2）。由于 \(\mathcal{S}(\mathbf{R}^n)\) 是 Montel 空间，\(\mathcal{S}'(\mathbf{R}^n)\) 也是（EVT，IV，第 19 页，命题 9）。
+
+设 \(\alpha\in\mathbf{N}^{n}\)。我们仍用 \(f\mapsto\mathrm{X}^{\alpha}f\) 表示自同态 \(\varphi\mapsto\mathrm{X}^{\alpha}\varphi\)（\(\mathcal{S}(\mathbf{R}^{n})\) 的自同态）的转置，并用 \(f\mapsto\partial^{\alpha}f\) 表示 \(\mathcal{S}'(\mathbf{R}^{n})\) 的由
+
+\[
+\langle \partial^ {\alpha} f, \varphi \rangle = (- 1) ^ {| \alpha |} \langle f, \partial^ {\alpha} \varphi \rangle
+\]
+
+（对 \(f\in \mathcal{S}'(\mathbf{R}^n)\) 与 \(\varphi \in \mathcal{S}(\mathbf{R}^n)\)）所定义的自同态。
+
+设 \(f\) 是从 \(\mathcal{S}(\mathbf{R}^{n})\) 到 \(\mathbf{C}\) 中的一个线性映射。则 \(f\) 是缓增分布，当且仅当对每个族 \((\mathrm{M}_{k,\alpha})_{(k,\alpha)\in\mathbf{N}\times\mathbf{N}^{n}}\)（取值于 \(\mathbf{R}_{+}\)），线性形式 \(f\) 在由函数 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\)（它们对所有 \((k,\alpha)\in\mathbf{N}\times\mathbf{N}^{n}\) 满足 \(p_{k,\alpha}(\varphi)\leqslant\mathrm{M}_{k,\alpha}\)）所成的集合上是有界的。
+
+缓增分布的序列 \((f_{m})_{m\in\mathbf{N}}\) 收敛于缓增分布 f，当且仅当 \(\langle f_{m},\varphi\rangle\to\langle f,\varphi\rangle\) 对所有 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) 成立。
+
+例.　测度 \(\nu\)（在 \(\mathbf{R}^n\) 上）称为缓增的，如果存在一个正整数 \(r\)，使连续映射 \(x \mapsto (1 + \|x\|)^{-r}\) 是 \(\nu\)-可积的（在 \(\mathbf{R}^n\) 上）。\(\nu\) 在 \(\mathcal{S}(\mathbf{R}^n)\) 上的限制是一个缓增分布。它为零当且仅当测度 \(\nu\) 为零。
+
+设 \(p \in [1, +\infty]\) 且 \(f \in \mathcal{L}^{p}(\mathbf{R}^{n})\)。则以 f 为密度关于 Lebesgue 测度的测度 \(f \cdot dx\) 是缓增的。特别地，Lebesgue 测度 \(\mu\)（在 \(R^{n}\) 上）是缓增的，且 \(R^{n}\) 上每个有界测度都是缓增的。
+
+对每个 \(p \in [1, +\infty]\)，可把 \(\mathrm{L}^{p}(\mathbf{R}^{n})\) 与 \(\mathcal{S}'(\mathbf{R}^{n})\) 的一个子空间借助线性映射 \(f \mapsto f \cdot dx\) 等同；这个映射是连续的。
+
+定义 7.　我们把 \(\mathcal{S}(\mathbf{R}^n)\) 上 Fourier 变换（相应地，Fourier 余变换）的转置称为 \(\mathcal{S}'(\mathbf{R}^n)\) 上的 Fourier 变换（相应地，Fourier 余变换），并分别记作 \(\mathcal{F}\) 与 \(\overline{\mathcal{F}}\)。
+
+对 \(f \in \mathcal{S}'(\mathbf{R}^n)\)，缓增分布 \(\mathcal{F}(f)\)（相应地，\(\overline{\mathcal{F}}(f)\)）由 \(\varphi \mapsto \langle f, \mathcal{F}(\varphi) \rangle\)（对 \(\varphi \in \mathcal{S}(\mathbf{R}^n)\)）定义（相应地，由 \(\varphi \mapsto \langle f, \overline{\mathcal{F}}(\varphi) \rangle\) 定义）。
+
+\(\mathcal{S}'(\mathbf{R}^n)\) 上的 Fourier 变换是拓扑向量空间的一个自同构，其逆是 Fourier 余变换 \(\overline{\mathcal{F}}\)。
+
+命题 22.　设 f 是属于 \(\mathcal{M}^{1}(\mathbf{R}^{n})\)（相应地，属于 \(\mathrm{L}^{2}(\mathbf{R}^{n})\)）的一个缓增分布。\(f\) 在 \(\mathcal{S}'(\mathbf{R}^{n})\) 中的 Fourier 变换是与 f 在 \(\mathcal{C}_{0}(\mathbf{R}^{n})\)（相应地，在 \(L^{2}(\mathbf{R}^{n})\)）中的 Fourier 变换相伴的缓增分布。对 Fourier 余变换同样的结论成立。
+
+注.　关于测度的 Fourier 变换的初等公式对缓增分布的 Fourier 变换仍然有效。
+
+于是，若 \(\alpha \in \mathbf{N}^n\) 且 \(f\in \mathcal{S}'(\mathbf{R}^n)\)，则有
+
+\[
+\mathcal {F} (\partial^ {\alpha} f) = (2 i \pi) ^ {| \alpha |} X ^ {\alpha} \mathcal {F} (f),
+\]
+
+\[
+\mathcal {F} (X ^ {\alpha} f) = (- 2 i \pi) ^ {- | \alpha |} \partial^ {\alpha} (\mathcal {F} (f)).
+\]
+
+设 \(y \in \mathbf{R}^n\)。用 \(\gamma(y)\) 表示 \(\mathcal{S}'(\mathbf{R}^n)\) 的由
+
+\[
+\langle \boldsymbol {\gamma} (y) f, \varphi \rangle = \langle f, \boldsymbol {\gamma} (- y) \varphi \rangle
+\]
+
+（对 \(f \in \mathcal{S}'(\mathbf{R}^n)\) 与 \(\varphi \in \mathcal{S}(\mathbf{R}^n)\)）所定义的自同态。用 \(e_y\) 表示 \(\mathbf{R}^n\) 的满足 \(e_y(x) = \exp(2i\pi x \cdot y)\) 的特征标。则 \(e_y \in \mathcal{S}'(\mathbf{R}^n)\)。我们有 \(\mathcal{F}(e_y) = \varepsilon_y\)，且更一般地有
+
+\[
+\mathcal {F} (e _ {y} f) = \boldsymbol {\gamma} (y) \mathcal {F} (f)
+\]
+
+（对所有 \(f \in \mathcal{S}'(\mathbf{R}^n)\)）。*
+
+设 \(n \geqslant 1\) 是一个整数，\(G = T^{n}\)，赋以规范化 Haar 测度。G 的对偶群与 \(Z^{n}\) 通过映射 \(h \mapsto \chi_{h}\) 等同，其中 \(\chi_{h}\) 是 \(T^{n}\) 的、由特征标 \(x \mapsto \exp(2i\pi h \cdot x)\)（\(R^{n}\) 的特征标）过渡到商所得到的酉特征标（II，第 236 页，推论 3）。\(\mu\) 在 \(T^{n}\) 上的 Fourier 变换等同于族 \((\widehat{\mu}(h))_{h \in \mathbf{Z}^{n}}\)，其中
+
+\[
+\widehat {\mu} (h) = \int_ {\mathbf {T} ^ {n}} e ^ {- 2 i \pi h \cdot x} d \mu (x).
+\]
+
+级数
+
+\[
+\sum_ {h \in \mathbf {Z} ^ {n}} \widehat {\mu} (h) \chi_ {h}
+\]
+
+称为 μ 的 Fourier 级数。
+
+若 \(f \in L^{1}(\mathbf{T}^{n})\) 使它的 Fourier 级数在 \(L^{1}(\mathbf{Z}^{n})\) 中绝对收敛，则我们有 \(f \in \mathcal{C}(\mathbf{T}^{n})\)，且
+
+\[
+f (x) = \sum_ {h \in {\bf Z} ^ {n}} \widehat {f} (h) e ^ {2 i \pi h \cdot x}
+\]
+
+对所有 \(x \in \mathbf{T}^n\) 成立（II，第 222 页，定理 3），其中
+
+\[
+\widehat {f} (h) = \int_ {\mathbf {T} ^ {n}} f (x) e ^ {- 2 i \pi h \cdot x} d x, \qquad h \in \mathbf {Z} ^ {n}.
+\]
+
+对 \(f \in \mathrm{L}^2(\mathbf{T}^n)\)，Fourier 反演公式（II，第 219 页，命题 12）断言：若以 \(\widehat{f}(h)\) 为通项的级数绝对收敛，则我们有
+
+\[
+f (x) = \sum_ {h \in \mathbf {Z} ^ {n}} \widehat {f} (h) e ^ {2 i \pi h \cdot x}
+\]
+
+对几乎每个 \(T^{n}\) 中的 x 成立。
+
+然而，即使 f 连续，f 的 Fourier 级数一般也并不对所有 x 收敛于 \(f(x)\)（II，第 274 页，习题 30）。因此下面的结果格外有用。
+
+命题 23（Fejér 定理）.　设 \(n \geqslant 1\) 是一个整数。对每个 \(h = (h_i) \in \mathbf{Z}^n\)，我们记 \(|h| = \sup_i |h_i|\)。设 \(f \in \mathcal{C}(\mathbf{T}^n)\)。对每个整数 \(N \geqslant 1\)，设 \(f_N\) 是 \(\mathbf{T}^n\) 上满足
+
+\[
+f_{\mathrm{N}}(x) = \sum_{\substack{h\in \mathbf{Z}^{n}\\ |h|\leqslant \mathrm{N}}}\widehat{f} (h)e^{2i\pi h\cdot x}\prod_{j = 1}^{n}\Bigl (1 - \frac{|h_{j}|}{\mathrm{N}}\Bigr)
+\]
+
+（对 \(x\in \mathbf{T}^n\)）的函数。则 \(f_{\mathrm{N}}\) 收敛于 \(f\)（在 \(\mathcal{C}(\mathbf{T}^n)\) 中）。
+
+引理 11.　对每个 N ≥ 1，设 \(\mu_{\mathrm{N}}\) 是 \(\mathbf{T}^{n}\) 上以连续映射
+
+\[
+\mathrm{F}_{\mathrm{N}}\colon x\mapsto \sum_{\substack{h\in \mathbf{Z}\\ |h|\leqslant \mathrm{N}}}e^{2i\pi h\cdot x}\prod_{j = 1}^{n}\Bigl (1 - \frac{|h_{j}|}{\mathrm{N}}\Bigr).
+\]
+
+为密度的测度。测度序列 \((\mu_{\mathrm{N}})_{\mathrm{N}\geqslant1}\) 收敛于 \(\varepsilon_{0}\)（在空间 \(\mathcal{M}^{1}(\mathbf{T}^{n})\) 中，该空间赋有 \(\mathcal{C}(\mathbf{T}^{n})\) 中紧收敛拓扑）。
+
+注意到 \(\mu_{N}\) 是 n = 1 情形同类型测度的乘积，我们便归结为 n = 1 的情形。于是只需验证序列 ( \(\mu_{N}\) ) 满足 INT，VIII，§2，第 7 节引理 4 的假设（取 a = 0）。
+
+为此，我们首先注意 \(F_{N}\) 是 Z 上映射 \(\varphi_{\mathrm{N}}\colon h\mapsto(1-|h|/\mathrm{N})\) 的 Fourier 余变换。它可写作 \(\varphi_{N}=N^{-1}\psi_{N}*\widetilde{\psi}_{N}\)，其中 \(\psi_{N}\) 是由 \(-N/2<|h|\leqslant N/2\) 定义的集合的特征函数。于是 \(F_{N}=N^{-1}|\overline{\mathcal{F}}(\psi_{N})|^{2}\geqslant0\)。从而 \(\mu_{N}\) 是正测度；我们有 \(\mu_{\mathrm{N}}(\mathbf{T})=1\)，这就证明了同前处的 (i) 与 (iii)。
+
+我们来证明同前处的条件 (ii)。设 U 是 T 中 0 的一个开邻域。只需证明 \(\mu_{\mathrm{N}}(\mathrm{U}) \to 1\)（当 \(\mathrm{N} \to +\infty\) 时）。设 K 是 0 的一个紧对称邻域，满足 \(\mathrm{K}^2 \subset \mathrm{U}\)，并设 \(\psi\) 是 K 的特征函数。令 \(\varphi = \psi * \psi\)。它是 A(T) 中一个支集含于 U 的元素。实数 \(m = \varphi(0)\) 是集合 K 的测度，故 \(m > 0\)。此外，我们有 \(0 \leqslant \varphi \leqslant m\)，因为 \(\varphi(x)\) 是集合 K \(\cap x\) K 的测度。我们有
+
+\[
+\mu_ {\mathrm{N}} (\mathrm{U}) \geqslant \frac {1}{m} \int_ {\mathbf {T}} \varphi (x) \mu_ {\mathrm{N}} (x) = \frac {1}{m} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) \varphi_ {\mathrm{N}} (h)
+\]
+
+这是由 Fourier 变换的转置性质（II，第 221 页，命题 13）得到的。由于 \(\varphi \in \mathrm{A}(\mathbf{T})\)，它的 Fourier 变换属于 \(\mathrm{L}^1 (\mathbf{Z})\)，且 \(\varphi\) 满足 Fourier 反演公式（II，第 217 页，命题 11）。由于 \(\varphi_{\mathrm{N}}(h)\to 1\) 对所有 \(h\in \mathbf{Z}\) 成立且 \(|\varphi_{\mathrm{N}}(h)|\leqslant 1\)，Lebesgue 定理（INT，IV，§3，第 7 节，定理 6）与 Fourier 反演公式蕴含
+
+\[
+\begin{array}{r l} & {\underset {\mathrm{N} \to + \infty} {\liminf} \mu_ {\mathrm{N}} (\mathrm{U}) \geqslant \frac {1}{m} \underset {\mathrm{N} \to + \infty} {\lim} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) \varphi_ {\mathrm{N}} (h) =} \\ & {\qquad \qquad \qquad \qquad \frac {1}{m} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) = \frac {1}{m} \varphi (0) = 1.} \end{array}
+\]
+
+我们来证明该命题。我们有 \(f * \mathrm{F}_{\mathrm{N}} = f_{\mathrm{N}}\)（对 \(\mathrm{N} \geqslant 1\)）。正则表示 \(\gamma\)（\(\mathbf{T}^n\) 到 \(\mathcal{C}(\mathbf{T}^n)\) 中的正则表示）（INT，VIII，§2，第 3 节）是连续的，且满足 \(f * \mathrm{F}_{\mathrm{N}} = \gamma(\mu_{\mathrm{N}})f\)（INT，VIII，§4，第 5 节，命题 5 (iv)）。映射 \(\mu \mapsto \gamma(\mu)f\) 从 \(\mathcal{M}^1(\mathbf{T}^n)\) 到 \(\mathcal{C}(\mathbf{T}^n)\) 中连续（INT，VI，§1，第 6 节，命题 14）。由引理，我们因此有
+
+\[
+\lim _ {N \to + \infty} f _ {N} = \lim _ {N \to + \infty} f * F _ {N} = \lim _ {N \to + \infty} \gamma (\mu_ {N}) f = \gamma (\varepsilon_ {0}) (f) = f
+\]
+
+在 \(\mathcal{C}(\mathbf{T}^n)\) 中成立。
+
+注记.　存在函数 \(f \in \mathrm{L}^{1}(\mathbf{T})\)，其 Fourier 级数在每一点 \(x \in T\) 都发散（Kolmogorov 定理，参看 II，第 289 页，习题 51）。
+
+Carleson 的一个定理 \(^{(1)}\) 证明：f 的 Fourier 级数的对称部分和收敛于 \(f(x)\)（对几乎所有 \(x \in T\)，只要 \(f \in \mathcal{L}^{2}(T)\)）。
+
+\section{分类}
+
+\subsection{由紧子集生成的群}
+
+引理 1.　设 H 是一个局部紧群，R 是群 R 或 Z 之一。设 \(\varphi\) 是从 R 到 H 中的一个连续态射。若 \(\varphi\) 不是从 R 到 H 的一个子群上的拓扑同构，则 R 在 H 中的像是相对紧的。
+
+设 I 是 \(\varphi\) 的像。把 H 换成 \(\bar{I}\)，我们可以假设 I 在 H 中稠密。于是须证明：若 \(\varphi\) 不是从 R 到 I 上的拓扑同构，则 H 是紧的。
+
+假设存在 H 中 \(e\) 的一个邻域 V 及一个整数 \(M > 0\)，使得对 R 中所有 \(t > \mathrm{M}\)，有 \(\varphi(t) \notin \mathrm{V}\)。则 \(\varphi\) 是单射：若 \(\varphi(u) = e\)，则有 \(\varphi(nu) = e\)（对每个整数 \(n \geqslant 1\)），于是集合 \(\mathbf{N}u\) 在 R 中有界，这意味着 \(u = 0\)。因此 \(\varphi\) 在 \([-M, M] \cap R\) 上的限制是到其像上的一个同胚，而该像包含 \(V \cap I\)。由于 \(\varphi^{-1}\) 在 \(V \cap I\) 上的限制连续，由此得出 \(\varphi\) 是从 R 到 I 上的一个拓扑同构。
+
+现在假设 \(\varphi\) 不是从 R 到 I 上的拓扑同构。设 W 是 H 中 \(e\) 的一个相对紧的开邻域，V 是 \(e\) 的一个对称邻域，满足 \(\mathrm{V}^2 \subset \mathrm{W}\)。对每个 \(x \in \mathrm{H} = \overline{\mathrm{I}}\)，存在一个元素 \(s \in \mathrm{R}\)，使得 \(x \in \varphi(s)\mathrm{V}\)。由上一段及关于 \(\varphi\) 的假设，存在 \(t \in \mathrm{R}\)，使得 \(t > |s|\) 且 \(\varphi(t) \in \mathrm{V}\)。于是我们有 \(x \in \varphi(t + s)\varphi(t)^{-1}\mathrm{V} \subset \varphi(t + s)\mathrm{W}\)，且 \(t + s > 0\)。因此，开集 \(\varphi(u)\mathrm{W}\)（对 \(u > 0\)）组成 H 的一个开覆盖。由于 W 相对紧，存在一个整数 \(n \geqslant 1\) 及 R 中严格为正的元素 \(u_1, \ldots, u_n\)，使得 \(\overline{\mathrm{W}} \subset \bigcup_{1 \leqslant i \leqslant n} \varphi(u_i)\mathrm{W}\)。设 U 是诸 \(u_i\) 中最大者。
+
+设 \(x \in \mathrm{H}\)，并令 \(s = \inf \{t \in \mathrm{R} | t \geqslant 0, \varphi(t)x^{-1} \in \overline{\mathrm{W}}\}\)。由于 \(\overline{\mathrm{W}}\) 是紧的，我们有 \(\varphi(s)x^{-1} \in \overline{\mathrm{W}}\)。存在一个整数 \(i\)，使得 \(\varphi(s)x^{-1} \in \varphi(u_i)\mathrm{W}\)，从而 \(\varphi(s - u_i)x^{-1} \in \overline{\mathrm{W}}\)。\(s\) 的定义蕴含 \(s - u_i < 0\)，于是 \(s \leqslant \mathrm{U}\)。由此得出 \(\mathrm{H} = \varphi([0,\mathrm{U}] \cap \mathrm{R})\overline{\mathrm{W}}\) 是紧的。
+
+引理 2.　若 G 由一个紧子集 V 生成，则存在一个整数 \(n \geqslant 0\) 及 G 的一个同构于 \(Z^{n}\) 的离散子群 D，使得 G/D 是紧的。
+
+把 V 换成 \(V \cup V^{-1}\)，我们可以假设 V 是对称的；于是假设意味着 G 是诸集合 \(V^{n}\)（\(n \in N\)）的并。
+
+由于 \(V^{2}\) 是紧的，存在一个整数 \(k \geqslant 1\) 及元素 \(x_{1}, \ldots, x_{k} \in G\)，使得 \(V^{2} \subset \bigcup_{1 \leqslant i \leqslant k} x_{i}V\)。设 \(D_{0}\) 是 G 中由族 \((x_{i})_{1 \leqslant i \leqslant k}\) 生成的子群。我们有 \(V^{2} \subset D_{0}V\)，从而由归纳法，\(V^{n} \subset D_{0}V\) 对每个整数 \(n \geqslant 1\) 成立，于是 \(G = D_{0}V\)，因为 V 生成 G。再设 J 是 \(\{1, 2, \ldots, k\}\) 的一个子集，使得由族 \((x_{i})_{i \in J}\) 生成的子群 D 拓扑同构于 \(\mathbf{Z}^{\mathrm{Card(J)}}\) 并对此性质为极大。我们来证明 G/D 是紧的。
+
+设 \(p\) 是从 G 到 G/D 上的典范满射。设 \(i \in \{1, 2, \ldots, k\} - J\)。若子群 \(H_i\)（G/D 中由 \(p(x_i)\) 生成的子群）拓扑同构于 \(Z\)，则 G 中由 D 与 \(x_i\) 生成的子群是离散的，且映射 \((d, n) \mapsto dx_i^n\) 是从 D × \(Z\) 到这个子群上的一个同构，这与 J 的极大性矛盾。因此引理 1 蕴含 \(\overline{H}_i\) 是紧的。于是 G/D = \((\prod_{i \not\in J} \overline{H}_i)p(V)\) 是紧的。
+
+引理 3.　设 A 与 B 是交换群，且 A 是可除的。设 C 是 B 的一个子群，\(\varphi\) 是从 C 到 A 中的一个态射。则存在一个从 B 到 A 中的态射延拓 \(\varphi\)。
+
+设 \(\mathcal{O}\) 是由二元组 \((\mathrm{X},f)\) 组成的集合，其中 \(\mathrm{X}\) 是 B 的包含 C 的子群，\(f\) 是从 \(\mathrm{X}\) 到 A 中的延拓 \(\varphi\) 的态射。用下列关系给 \(\mathcal{O}\) 排序：“ \(\mathrm{X} \subset \mathrm{X}'\) 且 \(f'\) 延拓 \(f\) ”。可以验证 \(\mathcal{O}\) 是归纳的。设 \((\mathrm{X},f)\) 是 \(\mathcal{O}\) 的一个极大元素（E，III，第 20 页，定理 2）。若 \(\mathrm{X} \neq \mathrm{B}\)，取 B-X 的一个元素 \(b\)，并设 \(\mathrm{X}'\) 是由 \(\mathrm{X}\) 与 \(b\) 生成的子群。B 的交换性表明 \(\mathrm{X}'\) 是形如 \(b^n x\)（\(n \in \mathbf{Z}\)，\(x \in \mathrm{X}\)）的元素所成的集合。首先假设 \(b^n \notin \mathrm{X}\)（对每个整数 \(n \neq 0\)）。把 \(f'\) 定义为从 \(\mathrm{X}'\) 到 A 中的一个态射：取一个任意元素 \(y \in \mathrm{A}\)，并令 \(f'(b^n x) = y^n f(x)\)（对所有 \(n \in \mathbf{Z}\) 与每个 \(x \in \mathrm{X}\)）。由于 A 交换，\(f'\) 是一个态射，且它延拓 \(f\)。现在假设存在 \(n \neq 0\) 使 \(b^n \in \mathrm{X}\)，并设 \(m > 0\) 满足 \(m\mathbf{Z} = \{n \in \mathbf{Z} \mid b^n \in \mathrm{X}\}\)。由于 A 可除，存在一个元素 \(y \in \mathrm{A}\) 使得 \(y^m = f(b^m)\)。于是把 \(f\) 延拓为从 \(\mathrm{X}'\) 到 A 中的一个态射：令 \(f'(b^n x) = y^n f(x)\)（对 \(n \in \{0,1,\ldots,m-1\}\) 与 \(x \in \mathrm{X}\)）。在这两种情形，\((\mathrm{X},f)\) 都不是极大的。因此 \(\mathrm{X} = \mathrm{B}\)，引理得证。
+
+注.　用范畴的语言，该引理断言可除群是交换群范畴中的内射对象；参看 A，VII，第 53 页，习题 3。
+
+命题 1.　下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  G 由一个紧子集生成；
+\item
+  存在正整数 p 与 q 以及一个紧群 K，使得 G 同构于 \(R^{p} \times Z^{q} \times K\)；
+\item
+  存在一个整数 \(n \geqslant 0\)，使得 \(\widehat{G}\) 局部同构于 \(R^{n}\)；
+\item
+  存在正整数 p 与 q 以及一个离散群 D，使得 \(\widehat{G}\) 同构于 \(R^{p} \times T^{q} \times D\)。
+\item
+  \(\Longrightarrow\) (iii)：若 G 具有性质 (i)，则存在一个整数 \(n \geqslant 0\) 及 G 的一个同构于 \(Z^{n}\) 的子群 D，使得 G/D 是紧的（引理 2）。这时 \(D^{\perp}\)——它与 G/D 的对偶等同——是离散的（II，第 226 页定理 4 及 II，第 233 页命题 18）。因此 \(\widehat{G}\) 局部同构于 \(\widehat{G}/D^{\perp}\)，也就是同构于 \(\widehat{D}\)，后者同构于 \(T^{n}\)（II，第 226 页定理 4 及 II，第 233 页命题 18）。而 \(T^{n}\) 局部同构于 \(R^{n}\)。
+\item
+  \(\Longrightarrow\) (iv)：若 \(\widehat{\mathbf{G}}\) 局部同构于 \(\mathbf{R}^n\)，则存在一个整数 \(p\)，\(0 \leqslant p \leqslant n\)，使得中性分支 \(\widehat{\mathbf{G}}_0\)（\(\widehat{\mathbf{G}}\) 的中性分支）是同构于 \(\mathbf{R}^p \times \mathbf{T}^{n-p}\) 的开子群（TG，VII，第 13 页，定理 1）。特别地，\(\widehat{\mathbf{G}}_0\) 是可除群。把引理 3 应用于子群 \(\widehat{\mathbf{G}}_0\)（\(\widehat{\mathbf{G}}\) 的子群）到可除群 \(\widehat{\mathbf{G}}_0\) 中的恒等映射，存在一个态射 \(\pi\)（从 \(\widehat{\mathbf{G}}\) 到 \(\widehat{\mathbf{G}}_0\) 中），它在 \(\widehat{\mathbf{G}}_0\) 上是恒等映射。于是我们有 \(\pi \circ \pi = \pi\)，即 \(\pi\) 是一个射影。它是连续的，因为它在开子群 \(\widehat{\mathbf{G}}_0\) 上的限制是连续的。因此 \(\widehat{\mathbf{G}}\) 是 \(\widehat{\mathbf{G}}_0\) 与子群 \(\overline{\pi}^{-1}(e)\) 的直积，后者是离散的，因为它同构于 \(\widehat{\mathbf{G}} / \widehat{\mathbf{G}}_0\)（TG，III，第 47 页，推论）。(iv) \(\Longrightarrow\) (ii)：由 II，第 206 页命题 2、II，第 233 页命题 18 及 II，第 236 页推论 3 得到。
+\item
+  \(\Longrightarrow\) (i)：对每个紧群 K，群 \(R^{p} \times Z^{q} \times K\) 由紧集 \([0,1]^{p} \times \{0,1\}^{q} \times K\) 生成。
+\end{enumerate}
+
+推论 1.　假设 G 由 e 的一个紧邻域生成。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  存在 G 的一个紧子群 K 及正整数 p 与 q，使得 G 同构于 \(R^{p} \times Z^{q} \times K\)。
+\item
+  反之，设 K 是一个紧群，p 与 q 是正整数，G 是同构于 \(R^{p} \times Z^{q} \times K\) 的群。则 K 是 G 的唯一极大紧子群，且整数 \((p,q)\) 由 G 唯一确定。
+\end{enumerate}
+
+断言 \(a\)) 由命题 1 得到。设 K 是一个紧群，\(p\)、\(q\) 是正整数。假设 G 同构于群 \(\mathbf{R}^{p} \times \mathbf{Z}^{q} \times \mathrm{K}\)，且我们把 G 与这个群等同。在 G 到 \(\mathbf{R}^{p} \times \mathbf{Z}^{q}\) 的典范投影下，G 的每个紧子群的像是 \(\mathbf{R}^{p} \times \mathbf{Z}^{q}\) 的紧子群；因而它化为单位元素。因此 \(\mathrm{K}' \subset \mathrm{K}\)，即 K 是 G 的最大紧子群。子群 \(\mathbf{R}^{p} \times \mathrm{K}\) 也是唯一的，因为 \(\mathbf{R}^{p}\) 是 G/K 的中性分支。考虑到 TG，VII，第 13 页，推论 3，整数 \(p\) 由 G 唯一确定。由于 \(\mathrm{G}/(\mathbf{R}^{p} \times \mathrm{K})\) 同构于 \(\mathbf{Z}^{q}\)，整数 \(q\) 也由 G 唯一确定。
+
+注记.　由对偶性，\(\hat{G}\) 同构于 \(R^{p} \times T^{q} \times D\)（命题 3 (iv)），其中子群 \(R^{p} \times T^{q}\) 与 \(T^{q}\) 以及整数 p 与 q 都唯一确定。
+
+推论 2.　下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  群 G 与 \(\hat{G}\) 都由紧子集生成；
+\item
+  存在正整数 n 与 m，使得 G 局部同构于 \(R^{m}\)，且 \(\hat{G}\) 局部同构于 \(R^{n}\)；
+\item
+  存在正整数 p、q 与 r 以及一个有限群 A，使得 G 同构于 \(R^{p} \times T^{q} \times Z^{r} \times A\)；
+\item
+  存在正整数 p、q 与 r 以及一个有限群 A，使得 \(\hat{G}\) 同构于乘积 \(R^{p} \times Z^{q} \times T^{r} \times A\)。
+\end{enumerate}
+
+由命题 1 有 (i) \(\Leftrightarrow\) (ii)，由对偶性有 (iii) \(\Leftrightarrow\) (iv)，从而有 (iii) \(\Rightarrow\) (i)。最后，若 (i) 为真，则 \(\widehat{\mathbf{G}}\) 同构于 \(\mathbf{R}^{p} \times \mathbf{T}^{r} \times \mathbf{D}\)，其中 D 是离散的（命题 1）。群 D 由一个紧子集生成，因而是有限的。于是存在 \(q \geqslant 0\)，使得 D 同构于 \(\mathbf{Z}^{q} \times \mathbf{A}\)，其中 A 是有限群（A，VII，第 22 页，定理 3）。
+
+注记.　采用推论 2 的记号，若把 G 与 \(R^{p} \times T^{q} \times Z^{r} \times A\) 等同，则子群 \(R^{p} \times T^{q}\) 是 G 的单位元连通分支，子群 \(T^{q} \times A\) 是它的最大紧子群，而 \(T^{q}\) 是后者的单位元连通分支；由上一个注记，整数 p、q、r 由 G 唯一确定，且群 A 在同构意义下由 G 确定。
+
+命题 2.　假设 G 是紧的。存在 G 的闭子群的一个递降滤过族 \((\mathrm{H}_{i})_{i\in\mathrm{I}}\)，使得
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  群 G 与诸 \(\mathrm{G / H_i}\) 的射影极限等同；
+\item
+  对每个 i，存在一个整数 \(q \geqslant 0\) 及一个有限群 A，使得 \(G/H_{i}\) 同构于 \(T^{q} \times A\)。
+\end{enumerate}
+
+事实上，\(\widehat{\mathbf{G}}\) 是离散的（II，第 233 页，命题 18），因而是有限生成子群的一个递增滤过族 \((\mathrm{D}_i)_{i\in \mathrm{I}}\) 的并。令 \(\mathrm{H}_i = \mathrm{D}_i^\perp\)；群 G 与诸 \(\mathrm{G / H_i}\) 的射影极限等同（II，第 234 页，推论 3），且 \((\mathrm{H}_i)\) 是一个递降滤过族。
+
+设 \(i \in I\)。存在一个整数 \(q \geqslant 0\) 及一个有限群 A，使得群 \(D_{i}\) 同构于 \(Z^{q} \times A\)（A，VII，第 22 页，定理 3），于是 \(G/H_{i}\) 同构于 \(T^{q} \times \widehat{A}\)（参看 II，第 232 页，推论 1）。
+
+推论.　如果群 G 由一个紧子集生成，那么它是同构于形如 \(R^{p} \times T^{q} \times Z^{r} \times A\) 的群的群的射影极限，其中 A 是有限群，p、q、r 是正整数。
+
+由 II，第 246 页，命题 1 的 (ii)，本推论可由命题 2 得出。
+
+\subsection{一般情形}
+
+在本节中，G 表示一个局部紧交换群。
+
+命题 3.　a) 存在一个整数 \(n \geqslant 0\) 及一个子群 L，使得 G 是 L 与一个同构于 \(\mathbf{R}^n\) 的子群的直积，而且 L 具有一个紧开子群 K，使得 L/K 是离散的；
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  群 G 是开子群的一个递增滤过族的并，其中每个开子群都是同构于形如 \(R^{p} \times T^{q} \times Z^{r} \times A\) 的群的群的射影极限，这里 A 是有限群，p、q、r 是正整数。
+\end{enumerate}
+
+我们证明 \(b\) )。对 \(e\) 的每个紧邻域 V，用 \(\mathrm{G_V}\) 表示由 V 生成的 G 的子群。它是开的，且由命题 2 的推论，群 \(\mathrm{G_V}\) 是形如 \(\mathbf{R}^p\times \mathbf{T}^q\times \mathbf{Z}^r\times \mathrm{A}\) 的群的射影极限，其中 A 是紧群，\(p,q\) 与 \(r\) 属于 \(\mathbf{N}\)。当 V 取遍 \(e\) 的紧邻域时，这些子群 \(\mathrm{G_V}\) 构成一个滤过族（因为对 e 的任意紧邻域 V 与 W，\(G_{V}\) 与 \(G_{W}\) 都包含于 \(G_{V\cup W}\)）。最后，群 G 是诸子群 \(G_{V}\) 的并。
+
+设 H 是 G 的由 e 的一个紧邻域生成的开子群。存在一个紧群 K 及正整数 p 和 q，使得 H 同构于 \(R^{p} \times Z^{q} \times K\)（II，第 246 页，命题 1）；把 H 与这个乘积等同。H 到可除群 \(R^{p}\) 上的典范满射可以延拓为一个态射 \(\pi\)（G 到 \(R^{p}\) 上的态射）（II，第 245 页，引理 3）。它是一个投影子 \(\pi\)（G 到 \(R^{p}\) 上的），由于它在开子群 H 上的限制是连续的，它是连续的。于是 G 是 \(R^{p}\) 与 \(\pi\) 的核 L 的直积（TG，III，第 47 页，推论）。我们有 \(Z^{q} \times K = H \cap L\)，因而 \(Z^{q} \times K\) 是 L 的一个开子群。这样，K 是 L 的一个紧开子群，从而 L/K 是离散的。
+
+命题 4.　设 B \(_{G}\) 是 G 中生成 G 的一个相对紧子群的那些元素组成的集合。那么 B \(_{G}\) 是 G 的一个闭子群，且 B \(_{G}^{\perp}\) 是 \(\widehat{G}\) 的单位元连通分支。
+
+集合 \(B_{G}\) 是 G 的一个子群，因为 G 的两个紧子集的乘积是 G 的一个紧子集。
+
+设 H 是 G 的由 e 的一个紧邻域生成的开子群。存在正整数 p 和 q 及一个紧群 K，使得子群 H 同构于 \(R^{p} \times Z^{q} \times K\)（II，第 246 页，命题 1）。若把这些群等同起来，就看到 \(B_{G} \cap H = K\) 在 H 中是闭的。由于由紧邻域生成的开子群 H 组成的族是 G 的一个开覆盖（例如，对 e 的每个固定的紧邻域 U，x 都属于由 \(U \cap \{x\}\) 生成的子群），由此推出 \(B_{G}\) 是闭的。
+
+现在来计算 \(B_{G}^{\perp}\)。由命题 3 的 a)，存在一个正整数 \(n \geqslant 0\) 及一个具有紧开子群的群 L，使得 G 可以与 \(R^{n} \times L\) 等同。于是 \(B_{G}\) 与 \(\{0\} \times B_{L}\) 等同，而 \(B_{G}^{\perp}\) 与 \(R^{n} \times B_{L}^{\perp}\) 等同。这样我们就归结到 G = L 具有一个紧开子群 K 的情形。
+
+这时有 \(K \subset B_{G}\)。若把 \(\widehat{G/K}\) 与 \(K^{\perp}\) 等同（II，第 226 页，定理 4），则正交 \((\mathrm{B}_{\mathrm{G}}/\mathrm{K})^{\perp}\)（即 \(B_{G}/K\) 在 \(\widehat{G/K}\) 中的正交）与 \(B_{G}^{\perp}\) 等同。但另一方面 \(B_{G}/K = B_{G/K}\)，且由于 \(K^{\perp}\) 是 \(\widehat{G}\) 的一个开子群（II，第 233 页，推论 2），\(\widehat{G}_{0}\)（\(\widehat{G}\) 的中性分支）也是 \(K^{\perp}\) 的中性分支。于是关于离散群 G/K 的断言与关于 G 的断言等价。
+
+最后，假设 G 是离散的。这时群 \(\widehat{G}\) 是紧的（II，第 233 页，命题 18）。中性分支 \((\widehat{\mathrm{G}})_{0}\) 是 \(\widehat{G}\) 的诸开子群的交（TG，III，第 35 页，命题 14），而 \(\widehat{G}\) 的一个子群是开的，当且仅当它是闭的且具有有限指标，或者等价地，它的正交是有限的（II，第 233 页，推论 2）；II，第 228 页的推论 4 表明 \((\widehat{\mathrm{G}})_{0}^{\perp}\) 是 G 的有限子群的并，由于 G 是离散的，它不是别的，正是 \(B_{G}\)。我们由对偶性得出结论。
+
+推论 1.　假设 G 是紧的。那么下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  群 G 是连通的；
+\item
+  群 \(\widehat{\mathbf{G}}\) 是无挠的；
+\item
+  群 G 是可除的。
+\end{enumerate}
+
+由于 \(B_{G} = G\)，由命题 4 及 II，第 229 页的推论 7 即得。
+
+推论 2.　假设 G 是紧的。那么 G 是全不连通的，当且仅当 \(\widehat{\mathbf{G}}\) 是一个挠群。
+
+群 G 是全不连通的，当且仅当它的单位元连通分支退化为 \(\{e\}\)；命题 4 表明这一条件等价于 \(B_{\widehat{G}} = \widehat{G}\)。由于群 \(\widehat{G}\) 是离散的（II，第 233 页，命题 18），这就相当于说 \(\widehat{G}\) 的每个元素都生成一个有限群，即 \(\widehat{G}\) 是挠群。
+
+推论 3.　若 G 是连通的，则 G 是可除的。
+
+事实上，存在一个紧连通群 K 及一个整数 \(n \geqslant 0\)，使得 G 同构于 \(R^{n} \times K\)（II，第 248 页，命题 3，其中必有 L = K）。推论 1 表明 K 是可除的，因而 G 是可除的。
+
+\section{不变子空间}
+
+本节的目标是研究空间 \(L^{1}(G)\)、\(L^{2}(G)\) 与 \(L^{\infty}(G)\) 中某些在平移下不变的子空间。
+
+\subsection{\texorpdfstring{Hilbert 空间 \(L^{2}(G)\) 的情形}{Hilbert 空间 L\^{}\{2\}(G) 的情形}}
+
+对 \(\widehat{\mathbf{G}}\) 的每个可测子集 M，用 \(\mathrm{E_M}\) 表示 \(f \in \mathrm{L}^2(\mathbf{G})\)（其 Fourier 变换 \(\mathcal{F}_{\mathrm{G}}(f)\) 在 \(\widehat{\mathbf{G}}\) 上几乎处处为零）所成的集合。设 \(\varphi_{\mathrm{M}}\) 是 M 的特征函数。空间 \(\mathrm{E_M}\) 是连续线性映射 \(f \mapsto \varphi_{\mathrm{M}}\mathcal{F}_{\mathrm{G}}(f)\)（由 \(\mathrm{L}^2(\mathbf{G})\) 到 \(\mathrm{L}^2(\widehat{\mathbf{G}})\) 中）的核，因而它是 \(\mathrm{L}^2(\mathbf{G})\) 的一个闭子空间。
+
+命题 1.　a) 设 M 是 \(\widehat{\mathbf{G}}\) 的一个可测子集。对每个 \(x \in \mathbf{G}\)，空间 \(\mathrm{E}_{\mathrm{M}}\) 在映射 \(f \mapsto \varepsilon_x * f\) 之下稳定；
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 M 与 N 是 G 的可测子集。有 \(E_{M} = E_{N}\)，当且仅当 M 与 N 在相差一个局部可忽略集的意义下相等；
+\item
+  \(L^{2}(G)\) 的每个在诸映射 \(f \mapsto \varepsilon_{x} * f\)（对所有 \(x \in G\)）之下稳定的子空间都具有 \(E_{M}\) 的形式，其中 M 是 \(\widehat{G}\) 的某个可测子集。
+\end{enumerate}
+
+这一结果将在以后证明（参看 V，待出版）。

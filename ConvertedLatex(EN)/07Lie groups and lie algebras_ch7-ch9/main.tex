@@ -1,0 +1,107 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\setsansfont{Times New Roman}
+\setmonofont{DejaVu Sans Mono}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{newunicodechar}
+\newunicodechar{∅}{\ensuremath{\varnothing}}
+\newunicodechar{ℰ}{\ensuremath{\mathcal{E}}}
+\newunicodechar{ℜ}{\ensuremath{\mathfrak{R}}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{⊂}{\ensuremath{\subset}}
+\usepackage{graphicx}
+\usepackage{longtable,booktabs,array}
+\usepackage{xcolor,framed,fancyvrb}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks,unicode,pdfusetitle,bookmarksnumbered]{hyperref}
+\usepackage[open,openlevel=2]{bookmark}
+\doublespacing
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{0pt}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\setlist{itemsep=0.25\baselineskip,topsep=0.25\baselineskip}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newenvironment{Highlighting}[1][]{}{}
+\newcommand{\NormalTok}[1]{#1\par}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>0.8\textheight 0.8\textheight\else\Gin@nat@height\fi}
+\makeatother
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\graphicspath{{images/}}
+\emergencystretch=3em
+\pagestyle{plain}
+% ---- structural macros for the printed Bourbaki hierarchy ----
+% Unnumbered chapter-level division (EXERCISES, INDEX, SUMMARY): starred
+% chapter plus one TOC/bookmark entry.
+\newcommand{\specialchapter}[1]{%
+  \chapter*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{chapter}{#1}}
+% Unnumbered plain section (TABLE 1, TABLE 2).
+\newcommand{\plainsection}[1]{%
+  \section*{#1}%
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}}
+% Exercise group within a chapter: arg is the printed label (\S~1,
+% Appendix~I); heading reads "Exercises for ...".
+\newcommand{\exercisesection}[1]{%
+  \section*{Exercises for #1}%
+  \phantomsection
+  \addcontentsline{toc}{section}{Exercises for #1}}
+% Per-chapter appendices: numbered I, II, ... resetting each chapter,
+% typeset at section level without disturbing the section counter.
+\newcounter{appsection}[chapter]
+\newcommand{\appendixsection}[1]{%
+  \stepcounter{appsection}%
+  \section*{Appendix~\Roman{appsection}. #1}%
+  \phantomsection
+  \addcontentsline{toc}{section}{Appendix~\Roman{appsection}. #1}}
+% Numbered items inside an appendix: 1, 2, ... restarting per appendix.
+\newcounter{appitem}[appsection]
+\newcommand{\appendixitem}[1]{%
+  \stepcounter{appitem}%
+  \subsection*{\arabic{appitem}. #1}%
+  \phantomsection
+  \addcontentsline{toc}{subsection}{\arabic{appitem}. #1}}
+\title{Lie Groups and Lie Algebras, Chapters 7--9}
+\author{Nicolas Bourbaki}
+\date{}
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+\clearpage
+\frontmatter
+\tableofcontents
+\mainmatter
+\setcounter{chapter}{6}
+\input{chapters/fragment_001}
+\input{chapters/fragment_002}
+\input{chapters/fragment_003}
+\input{chapters/fragment_004}
+\input{chapters/fragment_005}
+\input{chapters/fragment_006}
+\input{chapters/fragment_007}
+\input{chapters/fragment_008}
+\input{chapters/fragment_009}
+\input{chapters/fragment_010}
+\input{chapters/fragment_011}
+\input{chapters/fragment_012}
+\input{chapters/fragment_013}
+\input{chapters/fragment_014}
+\input{chapters/fragment_015}
+\input{chapters/fragment_016}
+\input{chapters/fragment_017}
+\input{chapters/fragment_018}
+\input{chapters/fragment_019}
+\end{document}

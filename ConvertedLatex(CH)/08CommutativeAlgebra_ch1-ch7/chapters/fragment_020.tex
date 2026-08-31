@@ -1,0 +1,851 @@
+\subsection{形式幂级数环的自同构预备知识}
+
+引理 2. 设 \(f(\mathbf{X}_1, \mathbf{X}_2, \ldots, \mathbf{X}_n)\) 是一个系数属于环 E 的非零形式幂级数。存在整数 \(\neq 0\)\(u(i) \geqslant 1\)（\(1 \leqslant i \leqslant n - 1\)），使得
+
+\[
+f (\mathrm{T} ^ {u (1)}, \dots , \mathrm{T} ^ {u (n - 1)}, \mathrm{T}) \neq 0.
+\]
+
+假设已经确定整数 \(u(i) \geqslant 1\)（\(1 \leqslant i \leqslant k - 1\)），使得 \(f(\mathbf{X}_n^{u(1)}, \ldots, \mathbf{X}_n^{u(k-1)}, \mathbf{X}_k, \ldots, \mathbf{X}_n) \neq 0\)。我们将确定一个整数 \(u(k) \geqslant 1\)，使得
+
+\[
+f \left(\mathrm{X} _ {n} ^ {u (1)}, \dots , \mathrm{X} _ {n} ^ {u (k - 1)}, \mathrm{X} _ {n} ^ {u (k)}, \mathrm{X} _ {k + 1}, \dots , \mathrm{X} _ {n}\right) \neq 0.
+\]
+
+于是引理可由归纳法证明。
+
+注意，级数 \(f(\mathbf{X}_n^{u(1)}, \ldots, \mathbf{X}_n^{u(k-1)}, \mathbf{X}_k, \ldots, \mathbf{X}_n)\) 可以看作关于 \(\mathbf{X}_k\) 和 \(\mathbf{X}_n\) 的级数，其系数属于 \(\mathbf{E}[[\mathbf{X}_{k+1}, \ldots, \mathbf{X}_{n-1}]]\)。因此只需在 \(n = 2\) 时证明引理。
+
+因此令
+
+\[
+f = \sum_ {i, j} e _ {i j} \mathbf {X} ^ {i} \mathbf {Y} ^ {j} \in \mathrm{E} [ [ \mathbf {X}, \mathbf {Y} ] ]
+\]
+
+其中 \(f \neq 0\)。令 \(G \subset N \times N\) 为满足  的有序对 \((i, j)\) 组成的非空集。赋予 \(e_{ij} \neq 0\)\(N \times N\) 字典序。令 \((c, d)\) 为 \(G\) 的最小元。取整数 \(p > d\)。在下式的展开式中
+
+\[
+f (\mathbf {T} ^ {p}, \mathbf {T}) = \sum_ {(i, j) \in \mathbb {G}} e _ {i j} \mathbf {T} ^ {i p + j}
+\]
+
+我们考察次数为 \(cp + d\) 的项。如果 \(ip + j = cp + d\)，则不可能有 \(i \geqslant c + 1\)，因为这将导致
+
+\[
+i p + j \geqslant (c + 1) p + j \geqslant (c + 1) p > c p + d;
+\]
+
+同样也不可能有 \(i < c\)，因为 \((c, d)\) 是 \(G\) 的最小元；因此 \(i = c\)，进而 \(j = d\)。所以  中次数为 \(cp + d\) 的项是 \(f(T^p, T)\)\(e_{cd}T^{cp + d}\)。由于 \(e_{cd} \neq 0, f(T^p, T) \neq 0\)，。引理得证。
+
+在环 \(\operatorname{E}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\) 中，令 \(a\) 为不含常数项的形式幂级数所成的理想。若 \(w_1, \ldots, w_n\) 是 \(a\) 的元素，记得映射 \(f(\mathbf{X}_1, \ldots, \mathbf{X}_n) \mapsto f(w_1, \ldots, w_n)\) 是环  的唯一自同态 \(s\)，满足 \(\operatorname{E}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\)\(s(\mathbf{X}_i) = w_i\)（\(1 \leqslant i \leqslant n\)）（第三章，§ 4，第 5 节，命题 6）。
+
+取 \(w_1 = \mathbf{X}_1 + \mathbf{X}_n^{u(1)}, \ldots, w_{n-1} = \mathbf{X}_{n-1} + \mathbf{X}_n^{u(n-1)}, w_n = \mathbf{X}_n\)，其中 \(u(i)\) 是满足 \(\geqslant 1\) 的整数。令 \(s'\) 为 \(\operatorname{E}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\) 的自同态，它把 \(\mathbf{X}_1\) 映为 \(\mathbf{X}_1 - \mathbf{X}_n^{u(1)}, \ldots, \mathbf{X}_{n-1}\)，把  映为 \(\mathbf{X}_{n-1} - \mathbf{X}_n^{u(n-1)}\)，并把 \(\mathbf{X}_n\) 映为 \(\mathbf{X}_n\)。于是对 ，有 \(s'(s(\mathbf{X}_i)) = \mathbf{X}_i\)，所以 \(1 \leqslant i \leqslant n\)\(s' \circ s\) 是恒等自同构；对于 \(s \circ s'\) 也同样如此。因此 \(s\) 是自同构。
+
+引理 3. 设 \(f\) 是 \(\operatorname{E}[[\mathbf{X}_1, \ldots, \mathbf{X}_n]]\) 的非零元。存在整数 \(u(i) \geqslant 1 (1 \leqslant i \leqslant n - 1)\)，使得由下式定义的  的自同构 \(s\)\(\operatorname{E}\)
+
+\[
+s (\mathbf {X} _ {i}) = \mathbf {X} _ {i} + \mathbf {X} _ {n} ^ {u (i)} \quad (1 \leqslant i \leqslant n - 1)
+\]
+
+并且 \(s(\mathbf{X}_n) = \mathbf{X}_n\) 将 \(f\) 映为一个元 \(g\)，使得 \(g(0, \ldots, 0, \mathbf{X}_n) \neq 0\)。
+
+\(g(0,\ldots,0,\mathbf{X}_n) = f(\mathbf{X}_n^{u(1)},\ldots ,\mathbf{X}_n^{u(n - 1)},\mathbf{X}_n)\)。因此引理 3 是引理 2 的推论。
+
+\subsection{预备定理}
+
+在本节中，A 表示一个局部环，m 表示其极大理想，k = A/m 表示其剩余域。设 A 关于 m-进拓扑是 Hausdorff 且完备的。令 B = A{[}{[}X{]}{]}；它是一个局部环，其极大理想 N 由 m 和 X 生成；关于 \(\mathfrak{N}\)-进拓扑，B 是 Hausdorff 且完备的（第三章，§ 2，第 6 节，命题 6）。
+
+对于每个形式幂级数
+
+\[
+f = \sum_ {i = 0} ^ {\infty} a _ {i} \mathbf {X} ^ {i} \in \mathbf {B},
+\]
+
+记作
+
+\[
+\bar {f} = \sum_ {i = 0} ^ {\infty} \bar {a} _ {i} X ^ {i} \in k [ [ X ] ],
+\]
+
+其中 \(\bar{a}_{i}\) 表示 \(a_{i}\) 在 k 中的典范像。级数 \(\bar{f}\) 称为 f 的约化幂级数；若 \(\bar{f} \neq 0\)，则 \(\bar{f}\) 的阶（即满足 \(a_{s} \notin m\) 的最小整数 s）称为 f 的约化阶。
+
+命题 5. 设 \(f \in \mathbf{B}\) 是约化幂级数非零的级数。令 \(s\) 表示其约化阶，令 \(\mathbf{M}\) 为 \(\mathbf{B}\) 的子-A-模，其基为 \(\{1, X, \ldots, X^{s-1}\}\)。则 \(\mathbf{B}\) 是 \(\mathbf{M}\) 与 \(f\mathbf{B}\) 的直和，且 \(f\) 不是 \(\mathbf{B}\) 中的零因子。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  我们证明 \(f\mathbf{B} \cap \mathbf{M} = (0)\)。假设存在一个关系：
+\end{enumerate}
+
+\[
+\left(\sum_ {i = 0} ^ {\infty} b _ {i} \mathrm{X} ^ {i}\right) f = r _ {0} + r _ {1} \mathrm{X} + \dots + r _ {s - 1} \mathrm{X} ^ {s - 1} \quad (b _ {i} \in \mathrm{A}, r _ {j} \in \mathrm{A}).\tag{3}
+\]
+
+我们证明所有 \(b_{i}\)（从而所有 \(r_{j}\)）都为零；这尤其将证明 \(f\) 不是 B 中的零因子。由于 A 是 Hausdorff，只需证明对所有 \(b_{i} \in \mathfrak{m}^{n}\)\(i \geqslant 0\) 和所有 \(n \geqslant 0\)，都有 。\(n = 0\) 时显然成立。我们作双重归纳：假设对所有  有 \(b_{i} \in \mathfrak{m}^{n-1}\)，且对 \(i\) 有 \(b_{i} \in \mathfrak{m}^{n}\)，并证明这推出 \(i < k\)\(b_{k} \in \mathfrak{m}^{n}\)。为此，写成 \(f = \sum_{i=1}^{\infty} a_{i} X^{i}\)，并在（3）中比较 \(\mathbf{X}^{s+k}\) 的系数；于是：
+
+\[
+\left(b _ {0} a _ {s + k} + \dots + b _ {k - 1} a _ {s + 1}\right) + b _ {k} a _ {s} + \left(b _ {k + 1} a _ {s - 1} + \dots + b _ {k + s} a _ {0}\right) = 0.\tag{4}
+\]
+
+第一括号中的项属于 \(\mathfrak{m}^n\)，因为当  时 \(b_i \in \mathfrak{m}^n\)；第二括号中的项同理，因为对所有 \(i < k\) 都有 \(b_i \in \mathfrak{m}^{n-1}\)，且当 \(i\) 时 \(a_i \in \mathfrak{m}\)。因此 \(i \leqslant s - 1\)\(b_k a_s \in \mathfrak{m}^n\)，又由于 \(a_s\) 是 A 中的可逆元，故 \(b_k \in \mathfrak{m}^n\)。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们证明 \(f\mathbf{B} + \mathbf{M} = \mathbf{B}\)。写成
+\end{enumerate}
+
+\[
+g = a _ {s} + a _ {s + 1} \mathbf {X} + a _ {s + 2} \mathbf {X} ^ {2} + \dots ;
+\]
+
+它是 B 中的可逆元。于是
+
+\[
+f - \mathrm{X} ^ {s} g = a _ {0} + a _ {1} \mathrm{X} + \dots + a _ {s - 1} \mathrm{X} ^ {s - 1};
+\]
+
+因此若写成 \(fg^{-1} - \mathbf{X}^s = (f - \mathbf{X}^s g)g^{-1} = -h\)，则 h 的系数属于 \(h\)\(m\)。令 r 为 B 的一个元素。按 n 作归纳，定义 B 中元素的序列 \(r\)\(n\)\((q^{(n)})\)：取 \(q^{(0)}\) 为满足下式的唯一级数：
+
+\[
+r \equiv \mathbf {X} ^ {s} q ^ {(0)} \pmod {\mathbf {M}};\tag{5}
+\]
+
+写成 \(h = \sum_{i=0}^{\infty} h_i X^i\) 和 \(q^{(n)} = \sum_{i=0}^{\infty} q_i^{(n)} X^i\)，则 \(q_i^{(n)}\) 由下式定义：
+
+\[
+q _ {i} ^ {(n)} = \sum_ {j = 0} ^ {i + s} h _ {j} q _ {i + s - j} ^ {(n - 1)}.\tag{6}
+\]
+
+由（6）立即得到：
+
+\[
+\mathbf {X} ^ {s} q ^ {(n)} \equiv h q ^ {(n - 1)} \pmod {\mathbf {M}}.\tag{7}
+\]
+
+由于对所有  都有 \(h_j \in \mathfrak{m}\)，由（6）对 n 作归纳还可得到，对所有 \(j\)\(n\) 都有 \(q_i^{(n)} \in \mathfrak{m}^n\)。由于 A 是完备的，级数\(i\)\(n\)\(A\)
+
+\[
+q ^ {(0)} + q ^ {(1)} + \dots + q ^ {(n)} + \dots
+\]
+
+收敛到 B 中的一个元素 q。由（5）和（7），\(q\)
+
+\[
+\mathbf {X} ^ {s} (q ^ {(0)} + q ^ {(1)} + \dots + q ^ {(n)}) \equiv r + h (q ^ {(0)} + \dots + q ^ {(n - 1)}) \pmod {\mathbf {M}}. \tag {8}
+\]
+
+由于 \(\mathbf{M}\) 是闭的，（8）在极限处给出 \(r \equiv (\mathbf{X}^s - h)q\)（模 \(\mathbf{M}\)），即
+
+\[
+r \in f g ^ {- 1} q + \mathbf {M} \subset f \mathbf {B} + \mathbf {M}.
+\]
+
+也可以利用第三章 §2 的结果证明关系 \(B = fB + M\)（参见习题 12）。这里采用的方法的优点是也适用于收敛级数。
+
+推论。在命题 5 的假设和记号下，设 \(s \geqslant 1\)，因而 \(f \in \mathbf{B}\mathfrak{m} + \mathbf{B}\mathbf{X}\)。则从 \(h\)\(\mathbf{B}' = \mathbf{A}[[\mathbf{T}]]\) 到 \(\mathbf{B} = \mathbf{A}[[\mathbf{X}]]\) 的 A-同态 ，满足 \(h(\mathbf{T}) = f\)（第三章，§2，第 9 节，命题 11 (a)），在 \(\mathbf{B}\) 上定义一个以  为基的自由 \(\mathbf{B}'\)-模结构。特别地，\(\{1, \mathbf{X}, \ldots, \mathbf{X}^{s-1}\}\)\(h\) 是单射。
+
+赋予 B' 模 B 以 (T)-进滤过，该滤过由  时的 \(f^{n}B\) 组成（第三章，§2，第 1 节）。则 B/fB 是环 A = B'/TB' 上的自由模，而 \(n \geqslant 0\)\(X^{i}\)（\(0 \leqslant i \leqslant s - 1\)）在此 A-模中的像构成其基（命题 5）；又由于 f 不是 B 中的零因子（命题 5），\(Bf^{n}/Bf^{n+1}\) 也是秩为 s 的 (B'/TB')-自由模，因而第三章 §2 第 8 节的条件 (GR) 得到满足（以 B' 代替 A，以 B 代替 M）。另一方面，由于 B' 关于 (T)-进滤过是 Hausdorff 且完备的，且由上可知 gr(B) 是有限生成的 gr(B')-模，首先可见（第三章，§2，第 9 节，命题 12 的推论 1）B 是有限生成的 B' 模。于是推论的第一断言由第三章 §2 第 9 节命题 13 得出。第二断言立即由此得出。
+
+定义 2. 若多项式 \(\mathbf{F} \in \mathbf{A}[\mathbf{X}]\) 形如
+
+\[
+\mathbf {F} = \mathbf {X} ^ {s} + a _ {s - 1} \mathbf {X} ^ {s - 1} + \dots + a _ {0},
+\]
+
+其中 \(a_{i} \in \mathfrak{m}\)（\(0 \leqslant i \leqslant s - 1\)），则称其为特异多项式。
+
+注意，两个特异多项式的乘积仍是特异多项式。
+
+命题 6（预备定理）。设 \(f \in \mathbf{B}\) 是约化幂级数非零的级数，且 \(s\) 是其约化阶。则存在唯一的有序对 \((u, \mathbf{F})\)，其中 \(u\) 是 \(\mathbf{B}\) 中的可逆元，\(\mathbf{F}\) 是次数为 \(s\) 的特异多项式，并且 \(f = u\mathbf{F}\)。
+
+写成 \(F = X^{s} + G\)，其中 \(G = g_{0} + \cdots + g_{s-1}X^{s-1} (g_{i} \in A)\)。关系 f = uF 等价于 \(F = u^{-1}f\)，即 \(X^{s} = u^{-1}f - G\)。因此命题 5 表明 G 和 \(u^{-1}\) 是唯一的，从而 F 和 u 也是唯一的。它还表明存在 \(v \in B\) 和多项式 \(G = g_{0} + \cdots + g_{s-1}X^{s-1} (g_{i} \in A)\)，使得 \(X^{s} = vf - G\)；还需证明 v 在 B 中可逆，且对所有 i 都有 \(g_{i} \in m\)。现在，记 \(\bar{g}_{i}\) 为 \(g_{i}\) 在 k 中的典范像，并以 \(\bar{f}\)、\(\bar{v}\) 表示 f、g 的约化幂级数，
+
+\[
+\mathbf {X} ^ {s} + \bar {g} _ {0} + \bar {g} _ {1} \mathbf {X} + \dots + \bar {g} _ {s - 1} \mathbf {X} ^ {s - 1} = \bar {f} \bar {v};
+\]
+
+由于 \(\bar{f}\) 的阶为 \(s\)，所以对所有  都有 \(\bar{g}_i = 0\)，且 \(i\)\(\bar{v}\) 的阶为 0，故 v 可逆。\(v\)
+
+命题 7. 设 F 是特异多项式，g、h 是 B 中两个形式幂级数，满足 F = gh。则存在 B 中的可逆元 u，使得 ug 和 \(u^{-1}h\) 是特异多项式，且 \(\mathbf{F} = (ug)(u^{-1}h)\)。
+
+事实上，g 和 h 的约化幂级数均非零；因此由命题 6，存在 B 中的可逆元 u、v，使得 ug 和 vh 是特异多项式。于是 \(\neq0\)\(uvF = (ug)(vh)\) 是特异多项式，且 uv 可逆。考察约化幂级数，立即可见 F 与 uvF 的约化阶相同，即次数相同。因此由命题 6 的唯一性断言，F = uvF，从而 uv = 1。
+
+推论。进一步设 A 是整环，F 是次数为 s 的特异多项式。F 在 A{[}X{]} 中为极端元的充要条件，是它在 B = A{[}{[}X{]}{]} 中为极端元。
+
+假设 F 在 A{[}X{]} 中不是极端元，于是 \(F = f_{1}f_{2}\)，其中 \(f_{1}\) 和 \(f_{2}\) 是 A{[}X{]} 中的不可逆元；由于 \(f_{1}\) 和 \(f_{2}\) 的最高次项系数之积等于 1，这些系数在 A 中可逆，而假设推出 \(f_{1}\) 和 \(f_{2}\) 的次数分别大于 0 且小于 s；由于约化多项式 \textgreater\textless\(\bar{f}_{1}, \bar{f}_{2}\) 满足 \(\bar{f}_{1}\bar{f}_{2} = X^{s}\)，\(\bar{f}_{1}\) 和 \(\bar{f}_{2}\) 都不可能在 k{[}{[}X{]}{]} 中可逆，因为若 \(\bar{f}_{1}\) 可逆，则 \(\bar{f}_{2}\) 的阶将为 s，这是荒谬的。更不用说，\(f_{1}\) 和 \(f_{2}\) 都不在 B 中可逆，F 也不是 B 中的极端元。
+
+反之，若 F 在 A{[}{[}X{]}{]} 中不是极端元，则 F = gh，其中 g、h 在 B 中都不可逆；因此它们的约化阶都 \(\geqslant 1\)；于是命题 7 中的特异多项式 ug 和 \(u^{-1}h\) 都不是常数，这表明 F 不是 A{[}X{]} 中的极端元。
+
+\subsection{形式幂级数环的因子分解性}
+
+命题 8. 设 C 是一个环，它或者是域，或者是离散赋值环。则形式幂级数整环 C{[}{[}X₁, . . ., Xₙ{]}{]} 是因子分解整环。
+
+令 p 为 C 的极大理想，\(\pi\) 为 p 的一个生成元（若 C 是域，则 \(\pi = 0\)）。赋予 C p-进拓扑，该拓扑是 Hausdorff 的。由于 C 是 Noether 局部环，\(B = C[[X_{1}, \ldots, X_{n}]]\) 是 Noether 局部环，且其完备化为 \(\hat{C}[[X_{1}, \ldots, X_{n}]]\)（第三章，§2，第 6 节，命题 6）。由命题 4 的推论（第 6 节），只需证明 \(\hat{C}[[X_{1}, \ldots, X_{n}]]\) 是因子分解整环。现在，如果 C 是域，则 \(\hat{C} = C\)；如果 C 是离散赋值环，\(\hat{C}\) 也具有同样性质（第六章，§5，第 3 节，命题 5）。因此在证明的其余部分，假设 C 是完备的。
+
+从 n = 0 的平凡情形开始作归纳，假设已经证明 \(A = C[[X_{1}, \ldots, X_{n-1}]]\) 是因子分解整环。我们把 B 识别为 \(A[[X_{n}]]\)，并以 m 表示 A 的极大理想（由 \(\pi\)、\(X_{1}, \ldots, X_{n-1}\) 生成）。我们将证明，B 的每个非零元 g 都能以本质唯一的方式写成极端元的乘积。
+
+令 K 为域 C/Cπ；由于 B/Bπ 识别为 K{[}{[}X₁, . . . , Xₙ{]}{]}，理想 Bπ 是素理想，而 π 是极端元。若 π ≠ 0，则 \(B_{B\pi}\) 是一个赋范离散赋值 w 的环（第六章，§ 3，第 6 节，命题 9）；因此 B 的每个非零元 g 都可写成 g = πw(g)f，其中 f ∈ B 且 f 不是 π 的倍元。因此只需证明 f 是极端元的本质唯一乘积。现在 f 在 K{[}{[}X₁, . . . , Xₙ{]}{]} 中的典范像非零；所以引理 3（第 7 节）表明，存在 B 的一个自同构，将 f 映为一个元 f'，使得 f'(0, . . . , 0, Xₙ) 的系数不全属于 Cπ；这意味着，把级数 f' 看作关于 Xₙ 的形式幂级数时，其系数不全属于 m。只需对 f' 证明我们的断言。
+
+下文中，B 的所有元素都看作系数在 A 中的 \(X_{n}\) 的形式幂级数。由第 8 节命题 6（之所以适用，是因为 C，从而 A，是分离且完备的，并且 \(f'\) 的约化幂级数 \(\neq0\)），\(f'\) 在 B 中与唯一的特异多项式 F 相伴。由第 8 节命题 7，任何整除 \(f'\) 的级数（或者等价地，整除 F 的级数）都与一个整除 F 的特异多项式相伴，而 \(f'\) 的每个分解，在可逆因子意义下，都形如 \(f' = uF_{1}\ldots F_{q}\)，其中 u 可逆，且 \(F_{t}\) 是 B 中满足 \(F = F_{1}\ldots F_{q}\) 的极端特异多项式。由第 8 节命题 7 的推论，\(F_{t}\) 在 \(A[X_{n}]\) 中也都是极端元。现在，由于 A 按归纳假设是因子分解整环，\(A[X_{n}]\) 也是如此（定理 2，第 5 节）；因此，由于它们是首一的，\(F_{i}\) 由 F 唯一确定（相差一个排列）。这说明分解 \(f' = uF_{1} \ldots F_{q}\) 的唯一性；其存在性来自 B 是 Noether 环这一事实，证明完毕。
+
+\textbf{注}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  存在因子分解整环 A，使得环 A{[}{[}X{]}{]} 不是因子分解整环（习题 8）。然而，若 A 是主理想整环，则 A{[}{[}X₁, \ldots, Xₙ{]}{]} 是因子分解整环（习题 9）。
+\item
+  * 我们稍后将用同调方法看到，每个正则局部环都是因子分解整环（参见 § 4，第 7 节，命题 16 的推论 3）。这将给出命题 8 的另一种、在概念上更简单的证明。 *
+\end{enumerate}
+
+\section{整闭 Noether 整环上的模}
+
+在本段中，A 始终表示一个分式域为 K 的交换整环。从第 2 节起，进一步假设 A 是 Noether 且整闭的（因而是 Krull 整环（§ 1，第 3 节，定理 2 的推论））；于是 P(A)、D(A) 和 C(A) 分别表示 A 的高度为 1 的素理想集合（§ 1，第 6 节）、A 的除子群（§ 1，第 3 节）和 A 的除子类群（§ 1，第 10 节），后两个群均用加法记号书写。
+
+研究整闭 Noether 整环 A 上有限生成模的一般方法，是相对于 A 中所有高度为 1 的素理想 \(p \in \mathrm{P}(\mathrm{A})\) 对这些模作``局部化''；因为此时 \(A_{p}\) 是离散赋值环（§ 1，第 6 节，定理 4），有限生成 \(A_{p}\)-模的结构是众所周知的（代数，第七章，§ 4），因而能提供关于有限生成 A-模结构的信息。特别地，当 A 是 Dedekind 整环时，我们可以得到与 A 为主理想整环时（第 10 节）同样完备的理论。
+
+\subsection{格}
+
+定义 1. 设 V 是域 K 上的有限维向量空间。V 关于 A 的格（或简称 V 的格）定义为满足下列条件的 V 的任一子-A-模：
+
+存在 V 的两个自由子-A-模 \(L_{1}\)、\(L_{2}\)，使得 \(L_{1} \subset M \subset L_{2}\)，且 \(\operatorname{rg}_{\mathbf{A}}(\mathbf{L}_{1}) = \operatorname{rg}_{\mathbf{K}}(\mathbf{V})\)。
+
+\textbf{例子}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  若取 \(\mathbf{V} = \mathbf{K}\)，则 \(\mathbf{K}\) 的格恰好是 \(\neq (0)\)\(\mathbf{K}\) 的非零分式理想（\(\S 1\)，第 1 节，定义 1）。
+\item
+  若 \(\operatorname{rg}_{\mathbf{K}}(\mathbf{V}) = n\)，则 V 的每个自由子-A-模 L 都有一个至多含 n 个元素的基，V 中每个在 A 上自由的子集在 K 上也自由；L 成为 V 的格的充要条件，是 L 有一个含 n 个元素的基（换言之，\(\operatorname{rg}_{\mathbf{A}}(\mathbf{L}) = n\)）。
+\item
+  若 A 是主理想整环，则 V 的每个格 M 都是有限生成的 A-模（因为 A 是 Noether 环），且无挠，因而是自由 A-模（代数，第七章，§ 4，第 3 节，定理 2 的推论 2）。
+\end{enumerate}
+
+命题 1. 对于 V 的子-A-模 M，要成为 V 的格，充要条件是 KM = V 且 M 被包含于 V 的某个有限生成子-A-模中。
+
+这些条件显然必要，因为与 V 具有相同秩的 V 的自由子-A-模生成 V。反之，若 KM = V，则 M 包含 V 在 K 上的一个基 \((a_{i})_{1 \leqslant i \leqslant n}\)，因而包含由  生成的自由子-A-模 \(L_{1}\)；另一方面，若 \(a_{i}\)\(M \subset M_{1}\)，其中 \(M_{1}\) 是由有限个元素 \(b_{j}\) 生成的 V 的子-A-模，且 \((e_{i})_{1 \leqslant i \leqslant n}\) 是 V 在 K 上的一个基，则存在 A 中的元素 \(s \neq 0\)，使得每个 \(b_{j}\) 都是以 A 中元素为系数的 \(s^{-1}e_{i}\) 的线性组合；若 \(L_{2}\) 是由 \(s^{-1}e_{i}\) 生成的 V 的自由子-A-模，则 \(M \subset L_{2}\)。
+
+推论。设 A 是 Noether 环；对于 V 的子-A-模 M，要成为 V 的格，充要条件是 KM = V 且 M 是有限生成的。
+
+注（1）。回忆，对于 V 的每个子-A-模 M，典范映射 \(M \otimes_{A} K \to V\) 是单射，且像为 KM（代数，第二章，§ 7，第 10 节，命题 26）；因此说 KM = V 就意味着此映射是双射。
+
+命题 2. 设 M 是 V 的格，\(M_{1}\) 是 V 的子-A-模。若存在 \(K^{*}\) 中的两个元素 x、y，使得 \(xM \subset M_{1} \subset yM\)，则 \(M_{1}\) 是 V 的格；反之，若 \(M_{1}\) 是 V 的格，则存在 A 中的两个非零元 a、b，使得 \(aM \subset M_{1} \subset b^{-1}M\)。
+
+若 \(L_{1}\)、\(L_{2}\) 是 V 的两个自由格，满足 \(L_{1} \subset M \subset L_{2}\)，则关系 \(xM \subset M_{1} \subset yM\) 推出 \(xL_{1} \subset M_{1} \subset yL_{2}\)，且 \(xL_{1}\) 和 \(yL_{2}\) 是自由格；反之，若 \(M_{1}\) 是一个格，且 \((e_{i})_{1 \leqslant i \leqslant n}\) 是 \(L_{2}\) 在 A 上的一个基，则关系 \(KM_{1} = V\) 推出存在 \(x = a/s \in K^{*}\)（其中 a、s 是 A 中的非零元），使得对所有 i 有 \(xe_{i} \in M_{1}\)，从而 \(xM \subset xL_{2} \subset M_{1}\)，特别地 \(aM \subset M_{1}\)；交换 M 与 \(M_{1}\) 的角色，同理可见存在 A 中的 \(b \neq 0\)，使得 \(bM_{1} \subset M\)。
+
+命题 3. (i) 若 \(\mathbf{M}_1\) 和 \(\mathbf{M}_2\) 是 \(\mathbf{V}\) 的格，则 \(\mathbf{M}_1 \cap \mathbf{M}_2\) 和 \(\mathbf{M}_1 + \mathbf{M}_2\) 也是格。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  若 \(\mathbf{W}\) 是 \(\mathbf{V}\) 的向量子空间，且 \(\mathbf{M}\) 是 \(\mathbf{V}\) 的格，则 \(\mathbf{M} \cap \mathbf{W}\) 是 \(\mathbf{W}\) 的格。
+\item
+  设 \(\mathbf{V},\mathbf{V}_1,\ldots ,\mathbf{V}_k\) 是 \(\mathbf{K}\) 上的有限秩向量空间，并令
+\end{enumerate}
+
+\[
+f \colon \mathrm{V} _ {1} \times \dots \times \mathrm{V} _ {k} \rightarrow \mathrm{V}
+\]
+
+为一个像生成 V 的多重线性映射。若 \(M_{i}\) 是 \(V_{i}\) 的格（\(1 \leqslant i \leqslant k\)），则由 \(f(\mathbf{M}_{1} \times \cdots \times \mathbf{M}_{k})\) 生成的 V 的子-A-模是 V 的格。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{3}
+\item
+  设 \(\mathbf{V}\) 和 \(\mathbf{W}\) 是 \(\mathbf{K}\) 上的两个有限秩向量空间，\(\mathbf{M}\) 是 \(\mathbf{V}\) 的格，\(\mathbf{N}\) 是 \(\mathbf{W}\) 的格。 的子-A-模 \(\mathbf{N}:\mathbf{M}\) 由满足  的 K-线性映射  组成，是 \(\operatorname{Hom}_{\mathbf{K}}(\mathbf{V},\mathbf{W})\) 的格。\(f\)\(f(\mathbf{M})\subset \mathbf{N}\)\(\operatorname{Hom}_{\mathbf{K}}(\mathbf{V},\mathbf{W})\)
+\item
+  根据命题 2，存在  中的非零元 \(a\) 和 \(b\)，使得 \(\mathbf{A}\)\(a\mathbf{M}_1 \subset \mathbf{M}_2 \subset b^{-1}\mathbf{M}_1\)；于是 \(\mathbf{M}_1 \cap \mathbf{M}_2\) 和 \(\mathbf{M}_1 + \mathbf{M}_2\) 都位于 \(a\mathbf{M}_1\) 与 \(b^{-1}\mathbf{M}_1\) 之间，因而根据命题 2 它们是格。
+\item
+  令 S 是 V 中 W 的一个补，\(L_{w}\) 是 W 的自由格，\(L_{s}\) 是 S 的自由格，从而 \(L = L_{w} \oplus L_{s}\) 是 V 的自由格。于是存在 \(K^{*}\) 中的 x、y，使得 \(xL \subset M \subset yL\)。由此得到 \(xL_{w} \subset M \cap W \subset yL_{w}\)，这说明 \(M \cap W\) 是 W 的格（命题 2）。
+\item
+  由于 \(KM_{i} = V_{i}\)，由线性性显然 \(f(\mathbf{M}_{1} \times \cdots \times \mathbf{M}_{k})\) 生成 K-向量空间 V；另一方面，对所有 i，都存在  的有限生成子-A-模 \(N_{i}\)，使得 \(V_{i}\)\(M_{i} \subset N_{i}\)；由 \(f(\mathbf{N}_{1} \times \cdots \times \mathbf{N}_{k})\) 生成的 V 的子-A-模 N 是有限生成的并包含 M，因而 M 是 V 的格（命题 1）。
+\item
+  令 P（相应地 Q）为包含 M（相应地包含于 N）的 V（相应地 W）的自由格；显然 N: M ⊃ Q: P。现在立即可见 Q: P 同构于 Hom \(_{A}\) (P, Q)，因而是秩为 (rg \(_{A}\) P)(rg \(_{A}\) Q) 的自由 A-模（代数，第二章，§ 1，第 6 节，命题 6 的推论 1），所以是 Hom \(_{K}\) (V, W) 的格。同样，若 P'（相应地 Q'）是包含于 M（相应地包含 N）的 V（相应地 W）的自由格，则 Q': P' ⊃ N: M，且 Q': P' 是 Hom \(_{K}\) (V, W) 的格；结论得出。
+\end{enumerate}
+
+\textbf{注}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  命题 3 (i) 表明，V 的格集合 R(V) 关于包含关系构成格序集；此外，若 M 是 V 的一个固定格，则 xM（其中 x 遍历 K*）构成 R(V) 的一个子集，该子集既共初又共终（集合论，第三章，§ 1，第 7 节）。
+\item
+  在命题 3 (iv) 的记号下，典范映射
+\end{enumerate}
+
+\[
+\mathrm{N}: \mathrm{M} \rightarrow \operatorname{Hom} _ {\mathrm{A}} (\mathrm{M}, \mathrm{N}),
+\]
+
+它把每个 K-线性映射 \(f \in N\) : M 映为从 M 到 N 的 A-线性映射，该映射与 \(f|_{M}\) 具有相同的图；这个映射是双射。每个 A-线性映射 \(g\) : \(M \to N\) 都可嵌入一个 K-线性映射
+
+\[
+g \otimes 1: M \otimes_ {A} K \rightarrow N \otimes_ {A} K
+\]
+
+并且已经看到，\(M \otimes_{A} K\) 和 \(N \otimes_{A} K\) 分别与 V 和 W 识别。
+
+特别地，若取 W = K、N = A，则 \(\operatorname{Hom}_{K}(V, W)\) 就是 V 的对偶 K-向量空间 \(V^{*}\)，而 A: M 可识别为 M 的对偶 A-模 \(M^{*}\)；今后作此识别，并称 \(M^{*}\) 为 M 的对偶格：因此它是满足对所有  都有  的 \(x^{*} \in V^{*}\) 所成的集合。\(\langle x, x^{*} \rangle \in A\)\(x \in M\)
+
+推论。设 U、V、W 是 K 上的三个有限秩向量空间，且 \(f: \mathbf{U} \times \mathbf{V} \to \mathbf{W}\) 是左非退化的 K-双线性映射（代数，第九章，§ 1，第 1 节，定义 3）。若 M 是 V 的格，N 是 W 的格，则集合 N: \(f\mathbf{M}\)，即由满足对所有  都有  的 \(x \in \mathbf{U}\) 组成的集合，是 U 的格。\(f(x, y) \in \mathbf{N}\)\(y \in \mathbf{M}\)
+
+令 \(s_f \colon \mathbf{U} \to \operatorname{Hom}_{\mathbf{K}}(\mathbf{V}, \mathbf{W})\) 为与 \(f\) 左相伴的 K-线性映射（代数，第九章，同上），使得 \(s_f(x)\) 是映射 \(y \mapsto f(x, y)\)；回忆，\(f\) 左非退化意味着 \(s_f\) 是单射。根据命题 3 (iv)，\(\mathbf{N} \colon \mathbf{M}\) 是 \(\operatorname{Hom}_{\mathbf{K}}(\mathbf{V}, \mathbf{W})\) 的格；由于 \(\mathbf{N} \colon {}_f \mathbf{M} = s_f^{-1}(\mathbf{N} \colon \mathbf{M})\) 且 \(s_f\) 是单射，推论由命题 3 (ii) 得出。
+
+\textbf{例子}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 S 是一个有限秩的（不必结合的）K-代数，带有单位元；则从 S × S 到 S 的双线性映射 \((x,y)\mapsto xy\) 是（左、右）非退化的。若 M、N 是 S 关于 A 的格，则 M.N（命题 3 (iii)）以及由满足  的 \(x\in S\) 组成的集合（命题 3 的推论）也是格。注意，S 中存在一个包含 S 的单位元且为 S 的格的子-A-代数；为此，取 S 的一个基 \(xM\subset N\)\((e_{i})_{1\leqslant i\leqslant n}\)，使 \(e_{1}\) 为 S 的单位元，并令 \(e_{i}e_{j}=\sum_{k}c_{ijk}e_{k}\) 为 S 的乘法表（\(1\leqslant i\leqslant n,1\leqslant j\leqslant n\)），从而 \(c_{1jk}=\delta_{jk},c_{11k}=\delta_{1k}\)（克罗内克符号）。令 \(s\in A\) 为非零元，并使 \(c_{ijk}^{\prime}=s.c_{ijk}\in A\) 对所有指标三元组 \((i,j,k)\) 都成立；若对  写 \(e_{i}^{\prime}=s^{-1}e_{i}\)，则\(i\geqslant2\)
+\end{enumerate}
+
+\[
+e _ {i} ^ {\prime} e _ {j} ^ {\prime} = s c _ {i j 1} ^ {\prime} e _ {1} + \sum_ {k \geqslant 2} c _ {i j k} ^ {\prime} e _ {k} ^ {\prime}
+\]
+
+当 \(i \geqslant 2\) 且 \(j \geqslant 2\) 时；以 \(e_1\) 和 \(e_i' (2 \leqslant i \leqslant n)\) 为基的 S 的格是 S 的一个子-A-代数，单位元为 \(e_1\)。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 V 是 K 上的有限维向量空间，f 是 V 上的非退化双线性型。若 M 是 V 的格，则由命题 3 的推论，集合 \(M_{f}^{*}\)，即由满足对所有  都有  的 \(x \in V\) 组成的集合，也是 V 的格；若 \(f(x, y) \in A\)\(y \in M\)\(s_{f}: V \to V^{*}\) 是与 f 左相伴的线性映射（它是双射），则 \(s_{f}(M_{f}^{*})\) 正是 M 的对偶格 \(M^{*}\)。
+\end{enumerate}
+
+命题 4. 设 B 是整环，A 是 B 的子环，K 和 L 分别是 A 和 B 的分式域。设 V 是 K 上的有限维向量空间。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对于 \(\mathbf{M}\)\(\mathbf{V}\) 关于 \(\mathbf{A}\) 的每个格 \(\mathbf{BM}\)，\(\mathbf{M}_{(\mathbf{B})} = \mathbf{M} \otimes_{\mathbf{A}} \mathbf{B}\) 在 \(\mathbf{V}_{(\mathbf{L})} = \mathbf{V} \otimes_{\mathbf{K}} \mathbf{L}\) 中的像 ，是 \(\mathbf{V}_{(\mathbf{L})}\) 关于 \(\mathbf{B}\) 的格。
+\item
+  进一步设 B 是平坦 A-模。则典范映射 \(\mathbf{M}_{(\mathbf{B})}\to\mathbf{BM}\) 是双射。若 B 还是忠实平坦的，则把 V 关于 A 的每个格 M 映为 \(\mathbf{V}_{(\mathbf{L})}\) 关于 B 的格 BM 的映射是单射。
+\item
+  由于 \(\mathbf{KM} = \mathbf{V}\)，显然 \(\mathbf{L}\) . (BM) = \(\mathbf{V}_{(L)}\)；另一方面，\(\mathbf{M}\) 被包含于  的有限生成子-A-模 \(\mathbf{M}_1\) 中，因而 \(\mathbf{V}\)\(\mathbf{BM}\) 被包含于 \(\mathbf{BM}_1\)，后者是有限生成的 B-模；断言 (i) 由此得出（命题 1）。
+\item
+  \(V_{(L)} = V \otimes_{K} L = V \otimes_{A} L\)（第二章，§ 2，第 7 节，命题 18），且由于 L 是平坦 B-模，它也是平坦 A-模（第一章，§ 2，第 7 节，命题 8 的推论 3）。由于 B 是平坦 A-模，典范映射 \(M \otimes_{A} B \to V \otimes_{A} B\) 是单射；另一方面，由于 V 是自由 K-模且 K 是平坦 A-模，V 是平坦 A-模（第一章，§ 2，第 7 节，命题 8 的推论 3），从而典范映射 \(V \otimes_{A} B \to V \otimes_{A} L\) 是单射，这证明了第一断言。还要说明，当 B 是忠实平坦 A-模时，对于 V 关于 A 的两个格 ，关系 \(BM_{1} = BM_{2}\) 推出 \(M_{1} = M_{2}\)，先注意 \(M_{1}, M_{2}\)\(BM_{1} \cap BM_{2} = B(M_{1} \cap M_{2})\)（第一章，§ 2，第 6 节，命题 6）；因此可限于 \(M_{1} \subset M_{2}\) 的情形，而我们的断言由第一章 § 3 第 1 节命题 3 应用于典范单射 \(M_{1} \to M_{2}\) 得出。
+\end{enumerate}
+
+推论。设 A 是离散赋值环。令 \(\hat{\mathbf{A}}\) 为其完备化，令 \(\hat{\mathbf{K}}\) 为 \(\hat{\mathbf{A}}\) 的分式域（第六章，§ 5，第 3 节）。映射 \(\phi\) 把 V 的每个格 M 映为 \(\hat{\mathbf{A}}\mathbf{M}\)\(\hat{\mathbf{V}} = \mathbf{V} \otimes_{\mathbf{K}} \hat{\mathbf{K}}\) 关于 \(\hat{\mathbf{A}}\) 的格 ，它是双射；其逆把 \(\hat{\mathbf{V}}\) 关于 \(\hat{\mathbf{A}}\) 的每个格 M' 映为 M' \(\cap\) V，其中 V 已典范地识别为 \(\hat{\mathbf{V}}\) 的一个子-K-向量空间。
+
+若 L 是 V 的自由格，则 aL（其中 \(a \in A\)、\(a \neq 0\)）构成 V 上某个拓扑 T 的 0 的邻域基（与其 A-模结构相容）；取 L 在 A 上的一个基后，该拓扑可识别为 \(K^{n}\) 上的乘积拓扑；根据命题 2，T 的 0 的邻域基也由 V 关于 A 的所有格组成；显然，\(\hat{V}\) 是 V 关于 T 的完备化。此外，若 m 是 A 的极大理想，则 T 在 V 关于 A 的每个格 M 上诱导出 m-进拓扑，因为 M 是有限生成的 A-模（第三章，§3，第 2 节，定理 2），且 \(\hat{A}M\) 是 M 关于此拓扑的完备化（第三章，§2，第 12 节，命题 16）；又由于 M 在 V 中是开集（因而是闭集），有 \(\hat{A}M \cap V = M\)，这再次证明 \(\phi\) 是单射（也可直接由命题 4 (ii) 得到，因为 \(\hat{A}\) 是忠实平坦 A-模）。最后，若 \(M'\) 是 \(\hat{V}\) 关于 \(\hat{A}\) 的格，则 \(M = M' \cap V\) 是 V 关于 A 的格，因为 \(\hat{A}\) 的每个元素都是 A 中一个元素与 \(\hat{A}\) 中一个可逆元的乘积，因而由命题
+
+2 可知存在 \(a, b\) 属于 \(\mathbf{A} - \{0\}\)，使得 \(a\hat{\mathbf{A}}\mathbf{L} \subset \mathbf{M}' \subset b\hat{\mathbf{A}}\mathbf{L}\)，从而 \(a\mathbf{L} \subset \mathbf{M}' \cap \mathbf{V} \subset b\mathbf{L}\)。此外，\(\mathbf{M}'\) 在 \(\mathbf{V}\) 中是开集，且由于 \(\mathbf{V}\) 在 \(\hat{\mathbf{V}}\) 中稠密，\(\mathbf{M}'\) 是 \(\mathbf{M}' \cap \mathbf{V} = \mathbf{M}\) 的完备化；这证明 \(\phi\) 是满射，推论得证。
+
+例（6）。设 S 是 A 中不含 0 的乘性子集；将命题 4 应用于 \(B = S^{-1}A\)；此时 L = K，\(BM = S^{-1}M\)；因此 \(S^{-1}M\) 是 V 关于 \(S^{-1}A\) 的格。此外：
+
+命题 5. 设 V、W 是 K 上的有限秩向量空间，M 是 V 的格，N 是 W 的格。若 M 是有限生成的，则（沿用命题 3 的记号）：
+
+\[
+\mathbf {S} ^ {- 1} (\mathbf {N}: \mathbf {M}) = \mathbf {S} ^ {- 1} \mathbf {N}: \mathbf {S} ^ {- 1} \mathbf {M}\tag{1}
+\]
+
+在 \(\operatorname{Hom}_{\mathbf{K}}(\mathbf{V},\mathbf{W})\) 中
+
+显然，(1) 的左边包含于右边。反之，令 \(f \in S^{-1}N: S^{-1}M\)，并令 \((x_i)_{1 \leqslant i \leqslant n}\) 为 M 的一个生成元系。存在 \(s \in S\)，使得对所有  都有 \(f(x_i) \in s^{-1}N\)，因而 \(i\)\(sf \in N: M\)，命题得证。
+
+\subsection{对偶性；自反模}
+
+回忆，从现在起假设整环 A 是 Noether 且整闭的，并且 P(A)（或简称 P）表示 A 的高度为 1 的素理想集合。关于 A 的每个格都是有限生成的 A-模（第 1 节，命题 1 的推论）。
+
+设 V 是 K 上的有限秩向量空间，V* 是其对偶，V** 是其二重对偶；借助典范映射 \(c_{V}\)（代数，第二章，§ 7，第 5 节，定理 6），我们把 V 与 V** 识别。设 M 是 V 的格；回忆，M 的对偶 A-模 M* 可典范地识别为 M 的对偶格，即由满足对所有  都有  的 \(x^{*} \in V^{*}\) 组成的集合；因此，M 的二重对偶 A-模 M** 是 V 的一个包含 M 的格。此外 M*** = M*，因为关系 \(\langle x, x^{*} \rangle \in A\)\(x \in M\)\(M \subset M**\) 蕴含 \((\mathbf{M}^{**})^{*} \subset \mathbf{M}^{*}\)，而另一方面由上面可知 \(M^{*} \subset (\mathbf{M}^{*})^{**}\)（参见集合论，第三章，§ 1，第 5 节，命题 2）。
+
+若 p 是素理想，将命题 5 应用于 N = A，得到关系 \((\mathbf{M}^{*})_{\mathfrak{p}} = (\mathbf{M}_{\mathfrak{p}})^{*}\)，这说明可以对两项都使用记号 \(M_{p}^{*}\)。
+
+定理 1. 若 \(\mathbf{M}\) 是 \(\mathbf{V}\) 的格，则 \(\mathbf{M}^{*} = \bigcap_{\mathfrak{p} \in \mathbb{P}} \mathbf{M}_{\mathfrak{p}}^{*}\)。
+
+显然，\(\mathbf{M}^*\) 包含于每个 \(\mathbf{M}_{\mathfrak{p}}^{*}\)\(x^{*} \in \bigcap_{\mathfrak{p} \in \mathbf{P}} \mathbf{M}_{\mathfrak{p}}^{*}\)。反之，设 ；若 \(x \in \mathbf{M}\)，则 \(\langle x, x^{*} \rangle \in \bigcap_{\mathfrak{p} \in \mathbf{P}} \mathbf{A}_{\mathfrak{p}}\)，而由于 \(\mathbf{A} = \bigcap_{\mathfrak{p} \in \mathbf{P}} \mathbf{A}_{\mathfrak{p}}\)（§ 1，第 6 节，定理 4），有 \(x^{*} \in \mathbf{M}^{*}\)。
+
+推论。\(\mathbf{M}^{**} = \bigcap_{p \in P}\mathbf{M}_{p}\)
+
+将定理 1 应用于 \(\mathbf{M}^*\)，得到 \(\mathbf{M}^{**} = \bigcap_{\mathfrak{p}\in \mathbb{P}}\mathbf{M}_{\mathfrak{p}}^{**}\)。但是，由于 \(\mathbf{A}_{\mathfrak{p}}\) 是主理想整环（§ 1，第 6 节，定理 4），\(\mathbf{M}_{\mathfrak{p}}\) 是有限生成的自由 \(\mathbf{A}_{\mathfrak{p}}\)-模，因而 \(\mathbf{M}_{\mathfrak{p}}^{**}\) 可典范地识别为 \(\mathbf{M}_{\mathfrak{p}}\)（代数，第二章，§ 2，第 7 节，命题 14），推论得证。
+
+对于关于 A 的任意格 M，典范映射 \(c_{M}: M \to M^{**}\)（代数，第二章，§2，第 7 节）把 \(x \in M\) 中的元素  与其自身识别，因为 x 是 \(V = V^{**}\) 中满足对所有  都有 \(\langle x, x^{*} \rangle = \langle y, x^{*} \rangle\) 的唯一元素 y，这是由于 \(x^{*} \in M^{*}\)\(M^{*}\) 生成 \(V^{*}\)。若 \(M^{**} = M\)（同上），则称 M 是自反的。由于如上所见 \(M^{*} = (M^{*})^{**}\)，可见任意格的对偶总是自反的。
+
+注（1）。设 M 是有限生成的 A-模；显然，M 的对偶 M*（识别为 \(\operatorname{Hom}_{\mathbf{A}}(\mathbf{M}, \mathbf{K})\) 的一个子-A-模）是 K-向量空间 \(\operatorname{Hom}_{\mathbf{A}}(\mathbf{M}, \mathbf{K})\) 的格；特别地，每个有限生成的自反 A-模都同构于某个合适 K-向量空间的格。
+
+定理 2. 若 M 是 V 的格，则下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  M 是自反的。
+\item
+  \(\mathbf{M} = \bigcap_{\mathfrak{p}\in \mathbb{P}}\mathbf{M}_{\mathfrak{p}}.\)
+\item
+  \(\operatorname{Ass}(\mathbf{V} / \mathbf{M})\subset \mathbf{P}\)
+\end{enumerate}
+
+条件 (a) 与 (b) 的等价性由定理 1 的推论得到。若 (b) 成立，则 V/M 可典范地识别为乘积 \(\prod_{\mathfrak{p} \in \mathbb{P}} (\mathrm{V} / \mathrm{M}_{\mathfrak{p}})\) 的一个子-A-模；但事实上，它包含于直和 \(\bigoplus_{\mathfrak{p} \in \mathbb{P}} (\mathrm{V} / \mathrm{M}_{\mathfrak{p}})\)：因为若 \(\mathbf{L} \subset \mathbf{M}\) 是一个自由格，且 \((e_i)_{1 \leq i \leq n}\) 是 \(\mathbf{L}\) 的一个基，则点 \(x_i\)\(x \in \mathbf{V}\) 关于 \((e_i)\) 的每个坐标 ，除有限多个  外，都属于 \(\mathbf{A}_{\mathfrak{p}}\)。于是关系 \(\mathfrak{p} \in \mathbb{P}\)\(\mathrm{V} / \mathrm{M} \subset \bigoplus_{\mathfrak{p} \in \mathbb{P}} (\mathrm{V} / \mathrm{M}_{\mathfrak{p}})\) 推出：
+
+\[
+\operatorname{Ass} (\mathrm{V} / \mathrm{M}) \subset \bigcap_ {\mathfrak {p} \in \mathrm{P}} \operatorname{Ass} (\mathrm{V} / \mathrm{M} _ {\mathfrak {p}}).
+\]
+
+由于 \(V / M_{p}\) 是 \(A_{p}\)-模，\(A - p\) 中的元素不能湮灭 \(\neq 0\)\(V / M_{p}\) 的非零元，因为 \(A - p\) 中的元素在 \(A_{p}\) 中都是可逆的；因此 \(\operatorname{Ass}(V / M_{p})\) 中的元素都包含于 \(p\)，且都不等于 \(\neq 0\)，因为 \(V / M_{p}\) 是挠 \(A_{p}\)-模；由于 \(p\) 的高度为 1，若 ，则必有 \(\operatorname{Ass}(V / M_{p}) = \{p\}\)，而若 \(V / M_{p} \neq \{0\}\)，则 \(\operatorname{Ass}(V / M_{p}) = \varnothing\)；因此 \(V / M_{p} = \{0\}\)\(\operatorname{Ass}(V / M) \subset P\)。
+
+最后，若条件 (c) 成立，则
+
+\[
+\operatorname{Ass} (\mathbf {M} ^ {* *} / \mathbf {M}) \subset \operatorname{Ass} (\mathbf {V} / \mathbf {M}) \subset \mathbf {P}.
+\]
+
+另一方面，若 \(\mathfrak{p} \in \mathbf{P}\)，则在定理 1 的推论的证明中已经看到 \(\mathbf{M}_{\mathfrak{p}}^{**} = \mathbf{M}_{\mathfrak{p}}\)，从而 \(\mathfrak{p} \notin \operatorname{Ass}(\mathbf{M}^{**}/\mathbf{M})\)（第四章，§ 1，第 3 节，命题 7 的推论 1）。我们得出 \(\operatorname{Ass}(\mathbf{M}^{**}/\mathbf{M}) = \varnothing\)，从而 \(\mathbf{M}^{**} = \mathbf{M}\)（第四章，§ 1，第 1 节，命题 2 的推论 1）。
+
+推论。设 M、N 是 V 关于 A 的两个格，且 N 是自反的。要有 \(M \subset N\)，充要条件是对所有 \(p \in P\)，都有 \(M_{p} \subset N_{p}\)。
+
+该条件显然必要；若它满足，则
+
+\[
+\bigcap_ {p \in P} M _ {p} \subset \bigcap_ {p \in P} N _ {p} = N.
+\]
+
+由于 \(\mathbf{M} \subset \mathbf{M}^{**} = \bigcap_{\mathfrak{p} \in \mathbb{P}} \mathbf{M}_{\mathfrak{p}}\)，当然有 \(\mathbf{M} \subset \mathbf{N}\)。
+
+例子
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  每个自由格都是自反的。
+\item
+  取 \(\mathbf{V} = \mathbf{K}\)。 的分式理想 \(\mathfrak{a}\) 成为自反格的充要条件，是它为除性理想；这是由定理 2 的条件 (b) 以及 §1，第 4 节，命题 5 和命题 7 得出的。\(\mathbf{K}\)
+\item
+  设 M 是关于 A 的格；若 S 是 A 中不含 0 的乘性子集，则第 1 节命题 5 表明 \(\mathrm{S}^{-1}(\mathbf{M}^{*}) = (\mathrm{S}^{-1}\mathrm{M})^{*}\)；若 M 是自反的，则 \(S^{-1}M\) 因而是关于 \(S^{-1}A\) 的自反格。
+\end{enumerate}
+
+命题 6. (i) 若 \(\mathbf{M}_1\) 和 \(\mathbf{M}_2\) 是 \(\mathbf{V}\) 的自反格，则 \(\mathbf{M}_1 \cap \mathbf{M}_2\) 也是自反格。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  若 \(\mathbf{W}\) 是 \(\mathbf{V}\) 的向量子空间，且 \(\mathbf{M}\) 是 \(\mathbf{V}\) 的自反格，则 \(\mathbf{M} \cap \mathbf{W}\) 是 \(\mathbf{W}\) 的自反格。
+\item
+  设 V、W 是 K 上的两个有限秩向量空间，M（相应地 N）是 V（相应地 W）的格。若 N 是自反的，则 \(\operatorname{Hom}_{\mathbb{K}}(\mathrm{V}, \mathrm{W})\) 的格 N: M（第 1 节，命题 3）是自反的。
+\item
+  对所有 ，\((\mathbf{M}_1 \cap \mathbf{M}_2)_p = (\mathbf{M}_1)_p \cap (\mathbf{M}_2)_p\)（第二章，§ 2，第 4 节，定理 1）。若 \(p \in P\)\(\mathbf{M}_1 = \bigcap_{p \in P} (\mathbf{M}_1)_p\) 且 \(\mathbf{M}_2 = \bigcap_{p \in P} (\mathbf{M}_2)_p\)，则
+\end{enumerate}
+
+\[
+\mathrm{M} _ {1} \cap \mathrm{M} _ {2} = \bigcap_ {\mathfrak {p} \in \mathrm{P}} (\mathrm{M} _ {1} \cap \mathrm{M} _ {2}) _ {\mathfrak {p}}
+\]
+
+因此由定理 2 得出结论。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  同样，\((\mathbf{M} \cap \mathbf{W})_{\mathfrak{p}} = \mathbf{M}_{\mathfrak{p}} \cap \mathbf{W}_{\mathfrak{p}} = \mathbf{M}_{\mathfrak{p}} \cap \mathbf{W}\)，因此
+\end{enumerate}
+
+\[
+\mathbf {M} \cap \mathbf {W} = \bigcap_ {\mathfrak {p} \in \mathbf {P}} (\mathbf {M} \cap \mathbf {W}) _ {\mathfrak {p}},
+\]
+
+这证明了 (ii)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  由于 \(\mathbf{M}\) 是有限生成的，由第 1 节命题 5 得 \((\mathbf{N}:\mathbf{M})_{\mathfrak{p}} = \mathbf{N}_{\mathfrak{p}}:\mathbf{M}_{\mathfrak{p}}\)；此外，关系 \(\mathbf{N} = \bigcap_{\mathfrak{p}\in P}\mathbf{N}_{\mathfrak{p}}\) 推出：
+\end{enumerate}
+
+\[
+\mathbf {N}: \mathbf {M} = \bigcap_ {\mathfrak {p} \in \mathbf {P}} \left(\mathbf {N} _ {\mathfrak {p}}: \mathbf {M} _ {\mathfrak {p}}\right).
+\]
+
+因为若 \(f \in \bigcap_{\mathfrak{p} \in \mathbb{P}} (\mathbf{N}_{\mathfrak{p}}: \mathbf{M}_{\mathfrak{p}})\) 且 \(x \in \mathbf{M}\)，则 \(f(x) \in \bigcap_{\mathfrak{p} \in \mathbb{P}} \mathbf{N}_{\mathfrak{p}} = \mathbf{N}\)，从而 \(f \in \mathbf{N}: \mathbf{M}\)；这说明 \(\mathbf{N}: \mathbf{M}\) 是自反的。
+
+\textbf{注}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  若 \(\mathbf{M}_1\) 和 \(\mathbf{M}_2\) 是 \(\mathbf{V}\) 的自反格，则格 \(\mathbf{M}_1 + \mathbf{M}_2\) 不一定自反（参见 § 1，习题 2）。
+\item
+  若 M 是有限生成的 A-模，T 是其挠子模，则 M 的对偶 \(M^{*}\) 与 M/T 的对偶相同，因为对于 M 上的每个线性形式 f，\(f(T)\) 是 A 的挠子模，因而为零。由于 M/T 同构于某个 K-向量空间的格，可见每个有限生成 A-模的对偶都是自反的。
+\end{enumerate}
+
+命题 7. 设 \(0 \to M \to N \to Q \to 0\) 是 A-模的正合列。设 \(N\) 是有限生成且无挠的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+若 \(\mathbf{M}\) 是自反的，则 \(\operatorname{Ass}(\mathbf{Q}) \subset \mathbf{P} \cup \{\{0\}\}\)（换言之，\(\mathbf{Q}\) 的每个伴随理想要么是 (0)，要么高度为 1）。
+\item
+  反之，若 N 是自反的且 \(\operatorname{Ass}(\mathbf{Q}) \subset \mathbf{P} \cup \{\{0\}\}\)，则 M 是自反的。
+\end{enumerate}
+
+由于 A 是 Noether 环，M 也是有限生成的；若写成 \(V = M_{(K)}\)、\(W = N_{(K)}\)，则 M（相应地 N）可典范地识别为 V（相应地 W）的格（第 1 节，命题 1）。考虑两个正合列：
+
+\[
+0 \rightarrow \mathrm{V} / \mathrm{M} \rightarrow \mathrm{W} / \mathrm{M} \rightarrow \mathrm{W} / \mathrm{V} \rightarrow 0
+\]
+
+\[
+0 \rightarrow Q \rightarrow W / M \rightarrow W / N \rightarrow 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  我们得到（第四章，§ 1，第 1 节，命题 3）：
+\end{enumerate}
+
+\[
+\operatorname{Ass} (Q) \subset \operatorname{Ass} (W / M) \subset \operatorname{Ass} (V / M) \cup \operatorname{Ass} (W / V).
+\]
+
+若 M 是自反的，则 \(\operatorname{Ass}(V/M) \subset P\)（定理 2）；另一方面，显然 \(\operatorname{Ass}(W/V)\) 要么为空，要么简化为 \(\{0\}\)；因此得到 (i)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  同样：
+\end{enumerate}
+
+\[
+\operatorname{Ass} (\mathbf {V} / \mathbf {M}) \subset \operatorname{Ass} (\mathbf {W} / \mathbf {M}) \subset \operatorname{Ass} (\mathbf {Q}) \cup \operatorname{Ass} (\mathbf {W} / \mathbf {N}).
+\]
+
+因此假设推出 \(\operatorname{Ass}(\mathbf{V} / \mathbf{M}) \subset \mathbf{P} \cup \{\{0\}\}\)。但是 \(\mathbf{V} / \mathbf{M}\) 是挠 A-模，故 \(\{0\} \notin \operatorname{Ass}(\mathbf{V} / \mathbf{M})\)；于是定理 2 表明 \(\mathbf{M}\) 是自反的。
+
+命题 8. 设 R、S 是两个交换环，\(\rho: \mathrm{R} \to \mathrm{S}\) 是环同态，M 是有限生成的 R-模。设 R 是 Noether 环且 S 是平坦 R-模。则若 M 是自反的，S-模 \(\mathrm{M}_{(\mathrm{S})} = \mathrm{M} \otimes_{\mathrm{R}} \mathrm{S}\) 也是自反的。
+
+我们知道（第一章，§ 2，第 10 节，命题 11）存在典范同构 \(\omega_{\mathbf{M}}\colon (\mathbf{M}^{*})_{(\mathbf{S})}\to (\mathbf{M}_{(\mathbf{S})})^{*}\)，使得
+
+\[
+\langle x \otimes 1, \omega_ {\mathrm{M}} (x ^ {*} \otimes 1) \rangle = \rho (\langle x, x ^ {*} \rangle)
+\]
+
+对于 \(x \in \mathbf{M}\)、\(x^{*} \in \mathbf{M}^{*}\)。由于 \(\mathbf{M}\) 是有限生成自由 R-模 \(\mathbf{L}\) 的商，\(\mathbf{M}^{*}\) 同构于对偶 \(\mathbf{L}^{*}\) 的一个子-R-模，而 \(\mathbf{L}^{*}\) 是自由且有限生成的；由于 \(\mathbf{R}\) 是 Noether 环，\(\mathbf{M}^{*}\) 因而也是有限生成的 R-模，从而有同构 \(\omega_{\mathbf{M}^{*}}: (\mathbf{M}^{**})_{(\mathbf{S})} \to ((\mathbf{M}^{*})_{(\mathbf{S})})^{*}\)，使得
+
+\[
+\langle x ^ {*} \otimes 1, \omega_ {M ^ {*}} (x ^ {* *} \otimes 1) \rangle = \rho (\langle x ^ {*}, x ^ {* *} \rangle)
+\]
+
+对于 \(x^{*} \in \mathbf{M}^{*}\) 和 \(x^{**} \in \mathbf{M}^{**}\)。另一方面，存在同构 \(^t\omega_{\mathbf{M}}: (\mathbf{M}_{(\mathbf{S})})^{**} \to ((\mathbf{M}^{*})_{(\mathbf{S})})^{*}\)，从而通过复合得到典范同构：
+
+\[
+\phi = \left(^ {t} \omega_ {\mathrm{M}} ^ {- 1}\right) \circ (\omega_ {\mathrm{M} ^ {*}}): (\mathrm{M} ^ {* *}) _ {(\mathrm{S})} \rightarrow (\mathrm{M} _ {(\mathrm{S})}) ^ {* *}
+\]
+
+使得在上述记号下：
+
+\[
+\langle \omega_ {M} (x ^ {*} \otimes 1), \phi (x ^ {* *} \otimes 1) \rangle = \rho (\langle x ^ {*}, x ^ {* *} \rangle).\tag{1}
+\]
+
+现在考虑典范同态 \(c_{\mathbf{M}}: \mathbf{M} \to \mathbf{M}^{**}\)，并证明复合同态：
+
+\[
+\psi : \mathrm{M} _ {(\mathbf {S})} \xrightarrow [ c _ {\mathbf {M}} \otimes 1 ]{} (\mathrm{M} ^ {* *}) _ {(\mathbf {S})} \longrightarrow (\mathrm{M} _ {(\mathbf {S})}) ^ {* *}\tag{2}
+\]
+
+正是典范同态 \(c_{\mathbf{M}_{(\mathbf{S})}}\)。这立即由（1）给出的关系得到：
+
+\[
+\begin{array}{r l} \langle \omega_ {\mathrm{M}} (x ^ {*} \otimes 1), \psi (x \otimes 1) \rangle = & \rho (\langle x ^ {*}, c _ {\mathrm{M}} (x) \rangle) \\ & = \rho (\langle x, x ^ {*} \rangle) = \langle x \otimes 1, \omega_ {\mathrm{M}} (x ^ {*} \otimes 1) \rangle \end{array}
+\]
+
+并且 \(\omega_{\mathbf{M}}(x^{*}\otimes 1)\) 这些元素生成 \((\mathbf{M}_{(\mathbf{S})})^{*}\)。既然如此，\(\mathbf{M}\) 自反这一假设意味着 \(c_{\mathbf{M}}\) 是双射，因而 \(c_{\mathbf{M}}\otimes 1\) 也是双射，所以 \(\psi = c_{\mathbf{M}_{(\mathbf{S})}}\) 是双射，这就证明了命题。
+
+\subsection{自反模的局部构造}
+
+沿用第 2 节的记号和假设。若某性质满足``对几乎所有 \(p \in P\)''，即不满足该性质的 \(p \in P\) 所成集合是有限集，则称该性质成立。
+
+定理 3. 设 V 是 K 上的有限秩向量空间，M 是 V 关于 A 的格。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  设 N 是 V 关于 A 的格；则对 A 的每个素理想 p，\(N_{p}\) 是 V 关于 \(A_{p}\) 的格，并且对几乎所有 \(p \in P\)，有 \(N_{p} = M_{p}\)。
+\item
+  反之，设对每个 \(\mathfrak{p} \in \mathbf{P}\) 给定一个 \(\mathrm{N}(\mathfrak{p})\)\(\mathbf{V}\) 关于 \(\mathbf{A}_{\mathfrak{p}}\) 的格 ，使得对几乎所有  有 \(\mathrm{N}(\mathfrak{p}) = \mathrm{M}_{\mathfrak{p}}\)。则 \(\mathfrak{p} \in \mathbf{P}\)\(\mathrm{N} = \bigcap_{\mathfrak{p} \in \mathbf{P}} \mathrm{N}(\mathfrak{p})\) 是 \(\mathbf{A}\) 关于 \(\mathbf{A}\) 的自反格，并且它是唯一满足对所有 \(\mathrm{N}'\) 有  的 \(\mathbf{V}\) 关于 \(\mathbf{A}\) 的自反格 \(\mathrm{N}_{\mathfrak{p}}' = \mathrm{N}(\mathfrak{p})\)\(\mathfrak{p} \in \mathbf{P}\)。
+\item
+  第一断言由第 1 节命题 4 得出。此外，存在  中的 \(x, y\)，使得 \(\mathbf{K}^*\)\(x\mathrm{N} \subset \mathrm{M} \subset y\mathrm{N}\)（第 1 节，命题 2）；我们知道，对几乎所有 \(\mathfrak{p} \in \mathbf{P}\)，有 \(v_{\mathfrak{p}}(x) = v_{\mathfrak{p}}(y) = 0\)（§ 1，第 6 节，定理 4），这表明 x 和 y 在 \(x\)\(y\)\(\mathbf{A}_{\mathfrak{p}}\) 中可逆，从而 \(\mathbf{M}_{\mathfrak{p}} = \mathbf{N}_{\mathfrak{p}}\)。
+\item
+  可以将 M 换为 \(x^{-1}\mathbf{M}\)，其中 \(x \neq 0\) 属于 A，并假设对所有  都有 \(\mathrm{N}(\mathfrak{p}) \subset \mathbf{M}_{\mathfrak{p}}\)。令 \(\mathfrak{p} \in \mathrm{P}\)\(\mathfrak{p}_1, \ldots, \mathfrak{p}_h\) 为 P 中满足当 \(\mathrm{N}(\mathfrak{p}) = \mathrm{M}_{\mathfrak{p}}\)\(\mathfrak{p}\) 不同于各个 \(\mathfrak{p}_i\) 时有  的元素（\(1 \leqslant i \leqslant h\)）；记作：
+\end{enumerate}
+
+\[
+Q = M \cap N (p _ {1}) \cap \dots \cap N (p _ {h}).
+\]
+
+由于每个 \(\mathrm{N}(p_{i})\) 都包含一个关于 \(A_{p_{i}}\) 的自由格，所以它当然包含一个关于 A 的 V 的格；因而 Q 包含一个关于 A 的 V 的格（第 1 节，命题 3），又由于 Q 包含于 M，Q 是关于 A 的格。为证明对所有  有 \(Q_{p} = N(p)\)，我们将使用下列引理：\(p \in P\)
+
+引理 1. 设 \(\mathfrak{p}\) 和 \(\mathfrak{p}'\) 是 \(\mathbf{A}\) 的两个素理想，且 (0) 是包含于 \(\mathbf{A}\)\(\mathfrak{p} \cap \mathfrak{p}'\) 的 \(\mathbf{A}\) 的唯一素理想。则对于  的每个子--模 \(\mathbf{E}\)，有 \(\mathbf{V}\)\((\mathbf{E}_{\mathfrak{p}})_{\mathfrak{p}'} = \mathbf{K} \cdot \mathbf{E}\)。
+
+令 S 为 A 的乘性子集 \((\mathbf{A}-\mathfrak{p})(\mathbf{A}-\mathfrak{p}')\)；由第二章，§2，第 3 节，命题 7，\((\mathrm{E}_{\mathfrak{p}})_{\mathfrak{p}'}=\mathrm{S}^{-1}\mathrm{E}\)。此外，\(A\subset S^{-1}A\subset K\)；\(S^{-1}A\) 的素理想对应于 A 中满足 \(q\cap S=\varnothing\) 的素理想 q（第二章，§2，第 5 节，命题 11），而根据假设，(0) 是 A 中唯一不与 S 相交的素理想；因此 \(S^{-1}A=K\)，且 \(S^{-1}E=K.E\)。
+
+现在回到 (ii) 的证明。若 \(p \in P\) 不同于 \(p_i (1 \leqslant i \leqslant h)\)，将引理 1 应用于 \(\mathrm{N}(\mathfrak{p}_i)\)，得到 \((\mathrm{N}(\mathfrak{p}_i))_{\mathfrak{p}} = ((\mathrm{N}(\mathfrak{p}_i))_{\mathfrak{p}_i})_{\mathfrak{p}} = \mathrm{K}. \mathrm{N}(\mathfrak{p}_i) = \mathrm{V}\)，因为 \(p_i\) 和 p 的高度均为 1。于是
+
+\[
+\mathbf {Q} _ {\mathfrak {p}} = \mathbf {M} _ {\mathfrak {p}} \cap (\mathbf {N} (\mathfrak {p} _ {1})) _ {\mathfrak {p}} \cap \dots \cap (\mathbf {N} (\mathfrak {p} _ {h})) _ {\mathfrak {p}} = \mathbf {M} _ {\mathfrak {p}} = \mathbf {N} (\mathfrak {p})
+\]
+
+（第二章，§ 2，第 4 节）。另一方面，若 \(\mathfrak{p}\) 等于 \(\mathfrak{p}_i\)（\(1 \leqslant i \leqslant h\)），则由上述论证，当  时 \((\mathrm{N}(\mathfrak{p}_i))_{\mathfrak{p}_j} = \mathrm{V}\)，且 \(i \neq j\)\((\mathrm{N}(\mathfrak{p}_i))_{\mathfrak{p}_i} = \mathrm{N}(\mathfrak{p}_i)\)，从而
+
+\[
+\mathbf {Q} _ {\mathfrak {p} _ {i}} = \mathbf {M} _ {\mathfrak {p} _ {i}} \cap \mathbf {N} (\mathfrak {p} _ {i}) = \mathbf {N} (\mathfrak {p} _ {i}).
+\]
+
+因此我们已经证明，对所有 ，有 \(Q_{\mathfrak{p}} = N(\mathfrak{p})\)。于是\(\mathfrak{p} \in P\)
+
+\[
+\mathbf {N} = \mathbf {Q} ^ {* *} = \bigcap_ {\mathfrak {p} \in \mathbf {P}} \mathbf {Q} _ {\mathfrak {p}}
+\]
+
+是自反的，并满足对所有  有 \(N_{p} = Q_{p} = N(p)\)；唯一性立即由第 2 节的定理 2 得出。\(p \in P\)
+
+注。设 L 是 V 关于 A 的自由格。由于对 ，\(A_{p}\) 是主理想整环，\(p \in P\)\(N(p)\) 是秩与 L 相同的自由 \(A_{p}\)-模，并且存在 \(u(p) \in \mathbf{GL}(V)\)，使得 \(u(p)(L_{p}) = N_{p}\)；此外，这个条件把 \(u(p)\) 确定到右乘 \(\mathbf{GL}(L_{p})\) 中的一个元素为止。条件“对几乎所有  有 \(N(p) = L_{p}\)”意味着必有 \(p \in P\)\(u(p) \in \mathbf{GL}(L_{p})\)
+
+对几乎所有 \(\mathfrak{p} \in \mathbb{P}\) 都如此。满足后一性质的族 \((u(\mathfrak{p}))_{\mathfrak{p} \in \mathbb{P}}\) 构成一个乘法群 \(\mathbf{GL}_a(V)\)，它包含乘积 \(\prod_{\mathfrak{p} \in \mathbb{P}} \mathbf{GL}(L_{\mathfrak{p}})\) 作为子群。于是定理 3 表明，V 的自反格集合与齐性空间 \(V\)\(\mathbf{GL}_a(V)/\prod_{\mathfrak{p} \in \mathbb{P}} \mathbf{GL}(L_{\mathfrak{p}})\) 存在典范一一对应。若选取 L 在 A 上的基 \((e_i)_{1 \leq i \leq n}\)，则 \(L\)\(A\)\(\mathbf{GL}(V)\)（相应地 \(\mathbf{GL}(L_{\mathfrak{p}})\)）可识别为可逆矩阵群 \(\mathbf{GL}(n, K)\)（相应地 \(\mathbf{GL}(n, A_{\mathfrak{p}})\)），而群 \(\mathbf{GL}_a(V)\) 可识别为阶为 \(n\) 的矩阵系群 \((U(\mathfrak{p}))_{\mathfrak{p} \in P}\)，满足对所有  有 \(U(\mathfrak{p}) \in \mathbf{GL}(n, K)\)，并且对几乎所有 \(\mathfrak{p} \in P\) 有 \(U(\mathfrak{p}) \in \mathbf{GL}(n, A_{\mathfrak{p}})\)。若 A 是 Dedekind 整环，则群 \(\mathfrak{p} \in P\)\(A\)\(\mathbf{GL}_a(V)\) 也可识别为群 \(\mathbf{GL}(n, A)\)，其中 A 是限制阿代尔环（§ 2，第 4 节）。\(A\)
+
+\subsection{伪同构}
+
+保留第 2、3 节的记号和假设。
+
+命题 9. 设 M 是有限生成的 A-模。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  对每个高度  的素理想 ，有 \(\mathbf{M}_{\mathfrak{p}} = 0\)。\(\mathfrak{p}\)\(\leqslant 1\)
+\item
+   的湮灭子 \(\mathfrak{a}\) 是非零理想，且 \(\mathbf{M}\)\(\neq (0)\)\(\mathbf{A}:\mathfrak{a} = \mathbf{A}\)（如 § 1，第 1 节，\(\mathbf{A}:\mathfrak{a}\) 表示由满足  的 \(x\in \mathbf{K}\) 组成的集合）。\(xa\in \mathbf{A}\)
+\end{enumerate}
+
+我们知道（第二章，§ 2，第 2 节，命题 4 的推论 2），条件 \(\mathbf{M}_{\mathfrak{p}} = 0\) 等价于 \(\mathfrak{a} \nsubseteq \mathfrak{p}\)，因而等价于 \(\mathfrak{a}\mathbf{A}_{\mathfrak{p}} = \mathbf{A}_{\mathfrak{p}}\)（第二章，§ 2，第 5 节，注）；另一方面，对于 A 的每个非零整理想 \(\mathfrak{b} \neq 0\)，关系``对所有 ，\(\mathfrak{b}\mathbf{A}_{\mathfrak{p}} = \mathbf{A}_{\mathfrak{p}}\)''等价于 D(A) 中的 \(\mathfrak{p} \in \mathbb{P}\)\(\operatorname{div} \mathfrak{b} = \operatorname{div} \mathbf{A} = 0\)（§ 1，第 4 节，命题 7），或者也等价于 \(\operatorname{div}(\mathbf{A}: \mathfrak{b}) = 0\)；由于 A: \(\mathfrak{b}\) 是除性理想（§ 1，第 1 节，命题 1），这个关系还等价于 A: \(\mathfrak{b} = \mathbf{A}\)。注意到当  时说 \(\mathfrak{a} \nsubseteq \mathfrak{p}\) 意味着 \(\mathfrak{p} = (0)\)\(\mathfrak{a} \neq (0)\)，命题得证。
+
+注（1）。命题 9 的等价条件还意味着 \(\operatorname{Ass}(\mathbf{M})\) 不包含高度 \(\leqslant 1\) 的素理想。* 也可以将其解释为：\(\operatorname{Supp}(\mathbf{M})\) 在  中的余维 \(\geqslant 2\)。*\(\operatorname{Spec}(\mathbf{A})\)
+
+定义 2. 若 A-模 M 是有限生成的且满足命题 9 的等价条件，则称其为伪零模。
+
+该定义和命题 9 表明，伪零 A-模是挠 A-模；反之不成立。
+
+\textbf{例子}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  若 A 是 Dedekind 整环，则 A 的每个素理想的高度都 \(\leqslant1\)；因此说 M 是伪零的就意味着 Supp(M) = \(\varnothing\)，从而 M = 0（第二章，§ 4，第 4 节）。
+\item
+  令 \(k\) 为一个域，\(A = k[X, Y]\) 为 \(k\) 上两个不定元的多项式环；若 \(m\) 是  的极大理想 \(AX + AY\)，则 \(A\)\(A\)-模 \(A/m\) 是伪零的；因为其湮灭子 \(m\) 的高度不为 \(\leqslant 1\)，这是由于它包含主素理想 \(AX\) 和 \(AY\)，且不同于二者；因此 \(A: m = A\)（§ 1，第 6 节，定理 3 的推论 1）。
+\end{enumerate}
+
+定义 3. 设 M 和 N 是两个 A-模，f: M → N 是一个同态。若 Ker(f)（相应地 Coker(f)、Im(f)）是伪零的，则称 f 为伪单射（相应地为伪满射、伪零）；若 f 既是伪单射又是伪满射，则称 f 为伪双射。
+
+伪双射同态也称为伪同构。
+
+设 M 和 N 是有限生成的；则 \(f: M \to N\) 为伪单射（相应地为伪满射、伪零）的充要条件是，对所有 \(p \in P \cup \{\{0\}\}, f_{p}: M_{p} \to N_{p}\)， 是单射（相应地是满射、零映射）；这由 A-模 \(A_{p}\) 的平坦性得出（参见第一章，§ 2，第 3 节，注 2）。
+
+例（3）。设 M 是有限生成的无挠 A-模；则 M 到其二重对偶的典范映射 \(c_{M}: M \to M^{**}\) 是伪同构。因为 M 可识别为 \(V = M \otimes_{A} K\) 的格（第 1 节，命题 1）；我们已经看到，对所有 ，\(M_{p} = M_{p}^{**}\)（第 2 节，例 2），而当 p = 0 时，\(p \in P\)\(M_{p}\) 和 \(M_{p}^{**}\) 都等于 V。
+
+定理 4. 设 E 是有限生成的 A-模，T 是 E 的挠子模，且 M = E/T。存在一个伪同构
+
+\[
+f \colon \mathbf {E} \rightarrow \mathbf {T} \times \mathbf {M}.
+\]
+
+我们先证明两个引理。
+
+引理 2. 设 \((\mathfrak{p}_i)_{1 \leqslant i \leqslant k}\) 是 A 的高度为 1 的素理想组成的非空有限族，并令 \(S = \bigcap_{i} (A - \mathfrak{p}_i)\)；则环 \(S^{-1}A\) 是主理想整环。
+
+\(S^{-1}A\) 是半局部环，其极大理想为 \(m_{i} = p_{i}S^{-1}A\)（\(1 \leqslant i \leqslant k\)），局部环 \((S^{-1}A)_{m_{i}}\) 同构于 \(A_{p_{i}}\)（第二章，§3，第 5 节，命题 17），因而是离散赋值环。因此，环 \(S^{-1}A\) 是 Dedekind 整环（§2，第 2 节，定理 1 (f)；又由于它是半局部环，故是主理想整环（§2，第 2 节，命题 1）。
+
+引理 3. 存在一个同态 \(g: \mathbf{E} \to \mathbf{T}\)，其在 \(\mathbf{T}\) 上的限制既是伸缩同态又是伪同构。
+
+令 \(\mathfrak{a}\) 为 \(\mathrm{T}\) 的湮灭子；由于 \(\mathrm{T}\) 是有限生成的挠 A-模，\(\mathfrak{a} \neq 0\)。令 \(\mathfrak{p}_i\)（\(1 \leqslant i \leqslant k\)）为包含 \(\mathfrak{a}\) 的高度为 1 的素理想（其数目有限（§ 1，第 6 节，定理 4））；若此数为 0，则 T 是伪零的（命题 9(a)），可以取 g = 0。否则，令 \(S = \bigcap_{i} (A - p_{i})\)；由引理 2，\(S^{-1}A\) 是主理想整环，因而 \(S^{-1}M\)（这是无挠的有限生成 \(S^{-1}A\)-模）是自由的（代数，第七章，§ 4，第 3 节，定理 2 的推论 2），又由于 \(S^{-1}M = (S^{-1}E)/(S^{-1}T)\)，\(S^{-1}T\) 是 \(S^{-1}E\) 的直因子（代数，第二章，§ 1，第 11 节，命题 21）。现在，
+
+\[
+\operatorname{Hom} _ {\mathbf {S} ^ {- 1} \mathbf {A}} (\mathrm{S} ^ {- 1} \mathrm{E}, \mathrm{S} ^ {- 1} \mathrm{T}) = \mathrm{S} ^ {- 1} \operatorname{Hom} _ {\mathbf {A}} (\mathrm{E}, \mathrm{T})
+\]
+
+（第二章，§2，第 7 节，命题 19）；因此存在 \(s_0 \in S\) 和 \(g_0 \in \mathrm{Hom}_{\mathbf{A}}(\mathbf{E}, \mathbf{T})\)，使得 \(s_0^{-1}g_0\) 是从 \(\mathbf{S}^{-1}\mathbf{E}\) 到 \(\mathbf{S}^{-1}\mathbf{T}\) 的投影算子。若 \(h_0 \in \mathrm{Hom}_{\mathbf{A}}(\mathbf{T}, \mathbf{T})\) 表示 \(g_0\) 在 \(\mathbf{T}\) 上的限制，则存在 \(s_1 \in \mathbf{S}\)，使得对所有  有 \(s_1h_0(x) = s_1s_0x\)；令 \(x \in \mathbf{T}\)\(s = s_1s_0\)、\(g = s_1g_0\)、\(h = s_1h_0\)，则 h 是 T 上比为 s 的伸缩，并且是 g 在 T 上的限制。还需验证 h 是伪同构。现在，若 \(h\)\(s\)\(\mathbf{T}\)\(g\)\(\mathbf{T}\)\(h\)\(p = 0\)，或 \(p \in P\) 不同于 \(p_i (1 \leqslant i \leqslant k)\)，则 \(T_p = 0\)（第二章，§4，第 4 节，命题 17），且 \(h_p: T_p \to T_p\) 是同构；反之，若 \(p\) 等于某个 \(p_i (1 \leqslant i \leqslant k)\)，则 s 在 \(s\)\(A_{p_i}\) 中可逆，而 \(h_{p_i}\)（T＿\(s\)\(T_{p_i}\)p＿i 上比为 s 的伸缩）也是同构，这完成了引理 3 的证明。
+
+现在证明定理 4。令 \(g: \mathbf{E} \to \mathbf{T}\) 为满足引理 3 性质的同态；令 h 为 g 在 \(h\)\(g\)\(\mathbf{T}\) 上的限制，令 \(\pi\) 为 \(\mathbf{E}\) 到 \(\mathbf{M}\) 的典范投影。我们证明同态 \(f = (g, \pi): \mathbf{E} \to \mathbf{T} \times \mathbf{M}\) 解决了问题。交换图为：
+
+\[
+\begin{array}{c c c} 0 \longrightarrow \mathrm{T} \longrightarrow & \mathrm{E} & \longrightarrow \mathrm{M} \longrightarrow 0 \\ h \Big \downarrow & f \Big \downarrow & ^ {1 _ {\mathrm{M}}} \Big \downarrow \\ 0 \longrightarrow \mathrm{T} \longrightarrow \mathrm{T} \times \mathrm{M} \longrightarrow \mathrm{M} \longrightarrow 0 \end{array}
+\]
+
+其中两行都是正合的。蛇形图（第一章，§ 1，第 4 节，命题 2）给出正合列：
+
+\[
+0 \rightarrow \operatorname{Ker} (h) \rightarrow \operatorname{Ker} (f) \rightarrow 0 \rightarrow \operatorname{Coker} (h) \rightarrow \operatorname{Coker} (f) \rightarrow 0
+\]
+
+从而 \(\operatorname{Ker}(f)\) 同构于 \(\operatorname{Ker}(h)\)，而 \(\operatorname{Coker}(f)\) 同构于 \(\operatorname{Coker}(h)\)。由于 h 是伪同构，f 也是伪同构。\(h\)\(f\)
+
+可以说，在``伪同构意义下''，定理 4 将有限生成 A-模的研究归结为两部分：一方面是无挠模的研究，另一方面是挠模的研究。此外，我们在上面（例 3）已经看到，无挠模与其二重对偶伪同构，因而与一个自反模伪同构。至于挠模，有如下结果，它们在伪同构意义下被确定：
+
+定理 5. 设 T 是有限生成的挠 A-模。存在两个有限族 \((n_i)_{i\in I}\) 和 \((p_i)_{i\in I}\)，其中 \(n_i\) 是满足 \(\geqslant 1\) 的整数，\(p_i\) 是 A 的高度为 1 的素理想，并且若写成 \(\mathrm{T}' = \bigoplus_{i\in I} \mathrm{A} / p_i^{n_i}\)，则存在从 T 到 \(\mathrm{T}'\) 的伪同构。此外，具有此性质的族 \((n_i)_{i\in I}\) 和 \((p_i)_{i\in I}\) 在指标集的一个双射意义下是唯一的，且 \(p_i\) 包含 T 的湮灭子。
+
+唯一性：若 \(f\colon T\to T'\) 是伪同构，且对 \(\mathfrak{p}\in\mathbf{P},f_{\mathfrak{p}}\colon T_{\mathfrak{p}}\to T'_{\mathfrak{p}}\)， 是同构。现在，\(T'_{\mathfrak{p}}\) 是各个 \(A_{\mathfrak{p}}/p^{n_{i}}A_{\mathfrak{p}}\) 的直和，求和遍历满足  的指标 \(i\)；因此 \(\mathfrak{p}_{i}=\mathfrak{p}\)\(p^{n_{i}}A_{\mathfrak{p}}\) 是挠 \(A_{\mathfrak{p}}\)-模 \(T_{\mathfrak{p}}\) 的初等因子（代数，第七章，§ 4，第 7 节），其唯一性已在代数，第七章，§ 4，第 7 节，命题 7 中证明。
+
+存在性：可将注意力限于 \(\mathbf{T} \neq 0\) 的情形。令 \(\mathfrak{a}\) 为 \(\mathbf{T}\) 的湮灭子（非零且不同于 A），令 \(\mathfrak{p}_i\)（\(1 \leqslant i \leqslant k\)）为包含 \(\mathfrak{a}\) 的 A 的高度为 1 的素理想（其数目有限（§ 1，第 6 节，定理 4）），并令 \(\mathbf{S} = \bigcap_i (\mathbf{A} - \mathfrak{p}_i)\)。半局部环 \(\mathbf{A}' = \mathbf{S}^{-1}\mathbf{A}\) 是主理想整环（引理 2），其极大理想为 \(\mathfrak{m}_i = \mathfrak{p}_i\mathbf{A}'\)；由于 \(\mathbf{S}^{-1}\mathbf{T}\) 是有限生成的挠 \(\mathbf{A}'\)-模，它同构于有限直和 \(\bigoplus_{f \in \mathbf{I}} \mathbf{A}' / \mathfrak{m}_{\phi(f)}^{n_f}\)，其中 \(\phi\) 是从有限集 I 到 \([1, k]\) 的映射（代数，第七章，§ 4，第 7 节，命题 7）；由于 \(\mathbf{A}' / \mathfrak{m}_{\phi(f)}^{n_f}\) 同构于 \(\mathbf{S}^{-1}(\mathbf{A} / \mathfrak{p}_{\phi(f)}^{n_f})\)（第二章，§ 2，第 4 节），我们得到所需类型的挠 A-模 \(\mathbf{T}'\)，以及把 \(f_0\)\(\mathbf{S}^{-1}\mathbf{T}\) 映到 \(\mathbf{S}^{-1}\mathbf{T}'\) 上的同构 。由于 \(\operatorname{Hom}_{\mathbf{S}^{-1}\mathbf{A}}(\mathbf{S}^{-1}\mathbf{T}, \mathbf{S}^{-1}\mathbf{T}')\) 等于 \(\mathbf{S}^{-1}\operatorname{Hom}_{\mathbf{A}}(\mathbf{T}, \mathbf{T}')\)（第二章，§ 2，第 7 节，命题 19），存在 \(s \in S\) 和同态 \(f: T \to T'\)，使得 \(f_0 = s^{-1}f\)。还需证明 f 是伪同构：现在，若 \(f\)\(\mathfrak{p} = 0\)，或 \(\mathfrak{p} \in P\) 不同于 \(\mathfrak{p}_i\)，则 \(\mathrm{T}_{\mathfrak{p}} = \mathrm{T}_{\mathfrak{p}}' = 0\)（第二章，§ 4，第 4 节，命题 17）；反之，若 \(\mathfrak{p}\) 是某个 \(\mathfrak{p}_i\)（\(1 \leqslant i \leqslant k\)），则 s 在 \(s\)\(\mathbf{A}_{\mathfrak{p}_i}\) 中可逆，并且由于 \(f_{\mathfrak{p}_i} = s(f_0)_{\mathfrak{p}_i}\)，而 \((f_0)_{\mathfrak{p}_i}\) 是从 \(\mathrm{T}_{\mathfrak{p}_i} = (\mathrm{S}^{-1}\mathrm{T})_{\mathfrak{m}_i}\)\(\mathrm{T}_{\mathfrak{p}_i}' = (\mathrm{S}^{-1}\mathrm{T}')_{\mathfrak{m}_i}\) 到  的同构，所以 \(f_{\mathfrak{p}_i}\) 也是同构。
+
+注（2）。在定理 5 的陈述中，模 \(\mathbf{A} / \mathfrak{p}_i^n\) 可以替换为 \(\mathbf{A} / \mathfrak{p}_i^{(n_i)}\)（§ 1，第 4 节，命题 8）。对于所有 \(\mathfrak{p} \in \mathbb{P}\)，典范映射 \(g\colon \mathbf{A} / \mathfrak{p}^n \to \mathbf{A} / \mathfrak{p}^{(n)} = \mathbf{A} / (\mathbf{A} \cap \mathfrak{p}^n \mathbf{A}_{\mathfrak{p}})\) 是伪同构，因为对于所有不同于  的 \(\mathfrak{q} \in \mathbb{P}\)，\(\mathfrak{p}\)\(\mathbf{A}_{\mathfrak{q}} / \mathfrak{p}^n \mathbf{A}_{\mathfrak{q}} = \mathbf{A}_{\mathfrak{q}} / \mathfrak{p}^{(n)} \mathbf{A}_{\mathfrak{q}} = 0\)，且 \(\mathbf{A}_{\mathfrak{p}} / \mathfrak{p}^n \mathbf{A}_{\mathfrak{p}} = \mathbf{A}_{\mathfrak{p}} / \mathfrak{p}^{(n)} \mathbf{A}_{\mathfrak{p}}\)。
+
+* 给定 A-模的正合列 E → F → G，若 E 和 G 是伪零的，则 F 也是伪零的，这由定义 2 和第二章，§ 2，第 4 节，定理 1 得出。用范畴语言，我们于是可以说，在 A-模范畴 C 中，伪零模的子范畴 C' 是满子范畴，从而可以定义商范畴 C/C'：该范畴的对象仍是 A-模，但从 E 到 F 的态射集合（其中 E、F 属于 C/C'）是集合 \(\mathrm{Hom}_{\mathbf{A}}(\mathbf{E}',\mathbf{F}')\) 的直极限，其中 \(\mathbf{E}'\)（相应地 \(\mathbf{F}'\)）分别遍历 \(\mathbf{E}\) 的子模集合（相应地， 的商模 \(\mathbf{F} / \mathbf{F}''\) 的集合），使得 \(\mathbf{F}\)\(\mathbf{E} / \mathbf{E}'\)（相应地 \(\mathbf{F}''\)）是伪零的。当然，对于每一对 A-模 \(\mathbf{E}\)、\(\mathbf{F}\)，都有典范同态 \(\mathrm{Hom}_{\mathcal{C}}(\mathbf{E},\mathbf{F})\to \mathrm{Hom}_{\mathcal{C} / \mathcal{C}'}(\mathbf{E},\mathbf{F})\)。称同态 \(u\in \mathrm{Hom}_{\mathbf{A}}(\mathbf{E},\mathbf{F})\) 是伪零的（相应地是伪单射、伪满射、伪双射），是指它在 \(\mathrm{Hom}_{\mathcal{C} / \mathcal{C}'}(\mathbf{E},\mathbf{F})\) 中的典范像为零（相应地为单态、满态、同构）。*
+
+\subsection{附属于挠模的除子}
+
+沿用第 2、3、4 节的记号和假设。回忆，D(A)（或简称 D）表示 A 的除子群，用加法记号书写；我们知道（§ 1，第 3 节，定理 2），D 是由 P 的元素生成的自由 Z-模。
+
+设 T 是有限生成的挠 A-模。对于所有 \(p \in P\)，\(T_{p}\) 是有限生成的挠 \(A_{p}\)-模，因而是有限长度的模（第四章，§2，第 5 节，命题 7 的推论 2）；将此长度记为 \(l_{p}(T)\)。现在，对于不包含 T 的湮灭子的所有 p，都有 \(T_{p} = 0\)，因而对几乎所有 p 都如此（§1，第 6 节，定理 4），这就说明下列定义是合理的：
+
+定义 4. 若 T 是有限生成的挠 A-模，则除子：
+
+\[
+\chi (\mathbf {T}) = \sum_ {\mathfrak {p} \in \mathbf {P}} l _ {\mathfrak {p}} (\mathbf {T}). \mathfrak {p}.
+\]
+
+称为 T 的容度。
+
+命题 10. (i) 设 \(0 \to T_1 \to T_2 \to T_3 \to 0\) 是有限生成挠 A-模的正合列。则
+
+\[
+\chi (\mathrm{T} _ {2}) = \chi (\mathrm{T} _ {1}) + \chi (\mathrm{T} _ {3}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  若存在伪同构 \(f \colon \mathrm{T}_1 \to \mathrm{T}_2\)，则 \(\chi(\mathrm{T}_1) = \chi(\mathrm{T}_2)\)。
+\item
+  要有 \(\chi(T) = 0\)，充要条件是 \(T\) 为伪零模。
+\end{enumerate}
+
+根据定义 4，只需对每个 \(p \in P\) 考察所讨论挠模的 \(l_{p}\) 值。性质 (i) 由第二章，§2，第 4 节，定理 1 以及正合列中长度的可加性得出（代数，第二章，§1，第 10 节，命题 16），性质 (ii) 和 (iii) 则立即由第 4 节的定义得出。
+
+推论。设 \(0 \to T_n \to T_{n-1} \to \cdots \to T_0 \to 0\) 是有限生成挠 A-模的正合列。则 \(\sum_{i=0}^{n} (-1)^i \chi(T_i) = 0\)。
+
+根据第二章，§2，第 4 节，定理 1，这再次由 \(l_{\mathfrak{p}}\) 的相应性质得出（代数，第二章，§1，第 10 节，命题 16 的推论 3）。
+
+回忆（第二章，§ 5，第 4 节），我们可以相对于同构关系谈论有限生成 A-模的类组成的集合 \(\mathbf{F}(\mathbf{A})\)；对于每个有限生成 A-模 M，令 \(\operatorname{cl}(\mathbf{M})\) 表示 \(\mathbf{F}(\mathbf{A})\) 中相应的元素；记 \(\mathbf{T}(\mathbf{A})\) 为 \(\mathbf{F}(\mathbf{A})\) 的子集，它由有限生成挠 A-模的类组成。显然，\(\chi\) 定义了从 \(\mathbf{T}(\mathbf{A})\) 到 \(\mathbf{D}(\mathbf{A})\) 的映射，仍记为 \(\chi\)，使得 \(\chi(\operatorname{cl}(\mathbf{T})) = \chi(\mathbf{T})\)。
+
+命题 11. 设 G 是一个用加法记号书写的交换群，\(\phi: T(A) \to G\) 是一个映射；对于每个有限生成挠 A-模 T，我们也滥用语言写作 \(\phi(T) = \phi(\text{cl}(T))\)。假设满足下列条件：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  若 \(0 \to \mathrm{T}_1 \to \mathrm{T}_2 \to \mathrm{T}_3 \to 0\) 是有限生成挠 A-模的正合列，则 \(\phi(\mathrm{T}_2) = \phi(\mathrm{T}_1) + \phi(\mathrm{T}_3)\)。
+\item
+  若 \(\mathbf{T}\) 是伪零的，则 \(\phi (\mathbf{T}) = 0\)。
+\end{enumerate}
+
+则存在唯一同态 \(\theta: \mathbf{D}(\mathbf{A}) \to \mathbf{G}\)，使得 \(\phi = \theta \circ \chi\)。
+
+由于 \(\chi(A/p) = p\) 对所有 \(p\) 成立，必有 \(\theta(p) = \phi(A/p)\) 对所有 \(p \in P\)，这证明了 \(\theta\) 的唯一性，因为 P 的元素构成 D(A) 的一组基。反之，设 \(P\)\(D(A)\)\(\theta\) 是从 D(A) 到 G 的同态，满足对所有 \(D(A)\)\(G\) 有 \(\theta(p) = \phi(A/p)\)，证明它满足要求。为此，写成\(p \in P\)
+
+\[
+\psi (\mathbf {T}) = \phi (\mathbf {T}) - \theta (\chi (\mathbf {T}))
+\]
+
+对每个有限生成挠 A-模 T；显然若以 \(\phi\) 替换为 \(\psi\)，条件 (1) 和 (2) 仍满足。另一方面，若 ，则 \(\psi(A/p) = 0\)；若 \(p \in P\)\(p\) 是一个 \(\neq 0\) 且不在 \(P\) 中的素理想，则 A/p 的湮灭子不包含于 \(A/p\)\(P\) 中任何理想，因而（第 4 节，定理 5）A/p 是伪零的，所以 \(A/p\)\(\psi(A/p) = 0\)。既然如此，每个有限生成挠 A-模 T 都有一个分解列，其因子同构于形如 \(A/p\) 的 A-模，其中 \(p \in \text{Supp}(T)\)（第四章，§ 1，第 4 节，定理 1 和定理 2），并且由于 T 是挠模，有 \(p \neq 0\)。对该分解列的长度作归纳，结合 \(T\)\(\psi\) 的性质 (1)，得到（根据定义）\(\psi(T) = 0\)。
+
+* 我们可以像第 4 节那样，考虑由有限生成挠 A-模组成的范畴 \(\mathcal{T} / \mathcal{T}'\)\(\mathcal{T}\) 关于有限生成伪零挠 A-模组成的满子范畴 \(\mathcal{T}'\) 的商范畴 \(\mathcal{T} / \mathcal{T}'\)。用阿贝尔范畴的语言，命题 11 表明，阿贝尔范畴  的 Grothendieck 群典范同构于 D(A)。 *
+
+命题 12. 若 a 是 A 的非零理想，\(\neq 0\)
+
+\[
+\chi (\mathrm{A} / \mathfrak {a}) = \chi ((\mathrm{A}: \mathfrak {a}) / \mathrm{A}) = \operatorname{div} \mathfrak {a}.
+\]
+
+令 \(p \in P\)。则 \(aA_p = p^{n_p}A_p\)，其中 \(n_p \geqslant 0\)，因为 \(A_p\) 是离散赋值环。由于 \((A/a)_p = A_p/aA_p\)，\(l_p(A/a) = n_p\)，从而 \(\chi(A/a) = \sum_{p \in P} n_p p = \text{div } a\)（\(\S 1, \text{ no. } 4, \text{ Proposition } 7\)）。
+
+另一方面，\((\mathbf{A}:\mathfrak{a})_{\mathfrak{p}} = \mathbf{A}_{\mathfrak{p}}\colon \mathfrak{a}\mathbf{A}_{\mathfrak{p}} = \mathfrak{p}^{-n_{\mathfrak{p}}}\mathbf{A}_{\mathfrak{p}}\)，因此 \(l_{\mathfrak{p}}((\mathbf{A}:\mathfrak{a}) / \mathbf{A}) = n_{\mathfrak{p}}\)，同理可得结论。
+
+\subsection{两个格的相对不变量}
+
+沿用第 2 至 5 节的记号和假设。设 V 是 K 上秩为 n 的向量空间，M 是 V 关于 A 的格。令 W 为外幂 \(\bigwedge^{n}V\)，它是 K 上秩为 1 的向量空间；令 \(M_{W}\) 表示 W 的格，该格由 \(M^{n}\) 在典范映射 \(V^{n}\to\bigwedge^{n}V\) 下的像生成（第 1 节，命题 3 (iii)；注意 \(M_{W}\) 不一定同构于 \(\bigwedge^{n}M\)（代数，第三章，§ 5，习题 9））。若 e 是 W 在 K 上的一个基，可以写 \(M_{W}=a.e\)，其中 a 是 A 的非零分式理想。\(\neq0\)
+
+令 \(\mathbf{M}'\) 是 \(\mathbf{V}\) 的另一个格，并写作 \(\mathbf{M}_{\mathbf{W}}' = \mathfrak{a}'\) .e，其中 \(\mathfrak{a}'\) 是 \(\neq 0\)\(\mathbf{A}\) 的非零分式理想；除子 \(\operatorname{div}(\mathfrak{a}) - \operatorname{div}(\mathfrak{a}')\) 不依赖于所选的 \(e\)\(\mathbf{W}\) 的基 e，因为换基时 \(\mathfrak{a}\) 和 \(\mathfrak{a}'\) 同时乘以 \(\mathbf{K}^*\) 中的同一元素；我们写 \(\chi(\mathbf{M}, \mathbf{M}') = \operatorname{div}(\mathfrak{a}) - \operatorname{div}(\mathfrak{a}')\)，并称该除子为 \(\mathbf{M}'\) 关于 \(\mathbf{M}\) 的相对不变量。显然，若 \(\mathbf{M}, \mathbf{M}', \mathbf{M}''\) 是 \(\mathbf{V}\) 的三个格，则：
+
+\[
+\chi (\mathbf {M}, \mathbf {M} ^ {\prime}) + \chi (\mathbf {M} ^ {\prime}, \mathbf {M} ^ {\prime \prime}) + \chi (\mathbf {M} ^ {\prime \prime}, \mathbf {M}) = 0\tag{3}
+\]
+
+\[
+\chi (\mathbf {M}, \mathbf {M} ^ {\prime}) + \chi (\mathbf {M} ^ {\prime}, \mathbf {M}) = 0\tag{4}.
+\]
+
+对所有 \(p \in P\)，由定义立即得到 \((M_{W})_p = (M_p)_{W}\)；此外，由于此时 \(M_p\) 是自由 \(A_p\)-模（因为 \(A_p\) 是主理想整环），\(M_p\) 在 \(A_p\) 上的一个基也是 V 在 K 上的一个基，因而 \(V\)\(K\)\((M_p)_W = \bigwedge^n (M_p)\)（第二章，§ 2，第 8 节），且分式理想 \(a_p = aA_p\) 是主理想整环。若令 \(a_p = p^{n_p} A_p\)、\(a' = p^{n'_{p}} A_p\)，则：
+
+\[
+\chi (\mathbf {M}, \mathbf {M} ^ {\prime}) = \sum_ {p \in P} (n _ {p} - n _ {p} ^ {\prime}). p,
+\]
+
+也可以写成：
+
+\[
+\chi (\mathbf {M}, \mathbf {M} ^ {\prime}) = \sum_ {p \in P} \chi (\mathbf {M} _ {p}, \mathbf {M} _ {p} ^ {\prime})\tag{5}
+\]
+
+将 \(\mathbf{D}(\mathbf{A}_{\mathfrak{p}})\) 识别为 \(\mathbf{D}(\mathbf{A})\) 中由 p 生成的子-Z-模。
+
+命题 13. 设 M 是 V 的格，u 是 V 的一个 K-自同构。则：
+
+\[
+- \chi (\mathbf {M}, u (\mathbf {M})) = \operatorname{div} (\det (u)).\tag{6}
+\]
+
+对所有 \(p \in P\)，有 \(\bigwedge^{n} (u(M)_{p}) = \bigwedge^{n} (u(M_{p}))\)；若 \((e_{i})_{1 \leqslant i \leqslant n}\) 是 \(M_{p}\) 的一个基，则
+
+\[
+\bigwedge^ {n} \left(\mathrm{M} _ {p}\right) = \mathrm{A} _ {p}. e _ {1} \wedge e _ {2} \wedge \dots \wedge e _ {n},
+\]
+
+且 \(\bigwedge^{n}(u(\mathbf{M}_{\mathfrak{p}})) = \mathbf{A}_{\mathfrak{p}}.\det (u)e_{1}\wedge e_{2}\wedge \dots \wedge e_{n}\)，从而由公式（5）得到命题。
+
+命题 14. 若 M、M' 是 V 的两个格，满足 M' ⊂ M，M/M' 是有限生成的挠 A-模，则
+
+\[
+\chi (\mathbf {M}, \mathbf {M} ^ {\prime}) = - \chi (\mathbf {M} / \mathbf {M} ^ {\prime}).\tag{7}
+\]
+
+显然 \(\mathbf{M} / \mathbf{M}' \subset \mathbf{V} / \mathbf{M}'\) 是有限生成的挠模；另一方面，对所有 \(\mathfrak{p} \in \mathbb{P}\)，我们知道（代数，第七章，§ 4，第 2 节，定理 1）存在  的基 \((e_i)_{1 \leqslant i \leqslant n}\) 和 \(\mathbf{M}_{\mathfrak{p}}\) 的基 \((e_i')_{1 \leqslant i \leqslant n}\)，使得当 \(\mathbf{M}_{\mathfrak{p}}'\) 时 \(e_i' = \pi^{\nu_i} e_i\)，其中 \(1 \leqslant i \leqslant n\)\(\nu_i \geqslant 0\)，而 \(\pi\) 是 \(\mathbf{A}_{\mathfrak{p}}\) 的一致化元。因此（沿用上面的记号）\(n_{\mathfrak{p}}' - n_{\mathfrak{p}} = \sum_{i=1}^{n} \nu_i\)；另一方面，\((\mathbf{M} / \mathbf{M}')_{\mathfrak{p}} = \mathbf{M}_{\mathfrak{p}} / \mathbf{M}_{\mathfrak{p}}'\) 同构于挠 \(\mathbf{A}_{\mathfrak{p}}\)-模 \(\bigoplus_{i=1}^{n} \mathbf{A}_{\mathfrak{p}} / p^{\nu_i} \mathbf{A}_{\mathfrak{p}}\)，因而其长度为 \(\sum_{i=1}^{n} \nu_i\)，结合（5）和第 5 节的定义 4，命题得证。
+
+推论。设 \(L_{1}\)、\(L_{2}\) 是秩相同的两个自由 A-模，且 \(f: L_{1} \to L_{2}\) 是同态。令 U 为 f 关于 \(L_{1}\) 和 \(L_{2}\) 的基的矩阵。Coker(f) 为挠 A-模的充要条件是 \(\det(U) \neq 0\)，并且此时：
+
+\[
+\chi (\operatorname{Coker} (f)) = \operatorname{div} (\det (U)).\tag{8}
+\]
+
+\(L_{1}\) 和 \(L_{2}\) 可分别视为 \(V_{1} = L_{1} \otimes_{A} K\) 和 \(V_{2} = L_{2} \otimes_{A} K\) 中的格，f 延拓为 K-同态 \(f_{(K)}: V_{1} \to V_{2}\)。于是
+
+\[
+\left(\operatorname{Coker} (f)\right) _ {(\mathbf {K})} = \operatorname{Coker} \left(f _ {(\mathbf {K})}\right)
+\]
+
+而说 \(\operatorname{Coker}(f)\) 是挠 A-模，意味着 \(\operatorname{Coker}(f_{(\mathbf{K})}) = 0\)；现在，这等价于说 \(f_{(\mathbf{K})}\) 是满射，或者说 \(\det(U) \neq 0\)，从而得到第一断言。另一方面，可以写成 \(f(\mathbf{L}_1) = u(\mathbf{L}_2)\)，其中 u 是 \(u\)\(\mathbf{L}_2\) 的一个行列式为 \(\det(U)\) 的自同态；由于
+
+\[
+\operatorname{Coker} (f) = \mathrm{L} _ {2} / u (\mathrm{L} _ {2}),
+\]
+
+公式（8）由（7）和（6）得出。
+
+例。如果 A = Z，则 A 的除子群可识别为有理数 0 的乘法群 \(Q_{+}^{*}\)。对于每个有限交换群 T，\textgreater\(\chi(T)\) 是 T 的阶；上述推论表明，群 \(\operatorname{Coker}(f)\) 的阶等于 \(\det(U)\) 的绝对值（参见代数，第七章，§4，第 7 节，定理 3 的推论 3）。
