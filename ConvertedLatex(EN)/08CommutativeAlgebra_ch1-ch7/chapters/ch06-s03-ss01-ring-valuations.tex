@@ -1,0 +1,54 @@
+\subsection{Valuations on a ring}
+
+Let \(\Gamma\) be a totally ordered commutative group written additively. In the rest of this chapter, we shall have to consider, for such a group, the set obtained by adjoining to \(\Gamma\) an element denoted by \(+\infty\) ; we shall denote this set by \(\Gamma_{\infty}\) and we shall give it: (1) a total ordering for which \(+\infty\) is the greatest element, in other words, such that \(\alpha < +\infty\) for all \(\alpha \in \Gamma\) ; (2) a commutative monoid structure whose law induces on \(\Gamma\) the given group law and is defined by the equations
+
+\[
+(+ \infty) + (+ \infty) = + \infty , \quad \alpha + (+ \infty) = + \infty
+\]
+
+for all \(\alpha \in \Gamma\) ; it is immediately verified that this law is associative and commutative and that the relation \(\alpha \leqslant \beta\) in \(\Gamma_{\infty}\) implies \(\alpha + \gamma \leqslant \beta + \gamma\) for all \(\gamma \in \Gamma_{\infty}\) .
+
+DEFINITION 1. Let C be a (not necessarily commutative) ring and \(\Gamma\) a totally ordered commutative group written additively. A valuation on C with values in \(\Gamma\) is any mapping \(v: \mathbf{C} \to \Gamma_{\infty}\) which satisfies the following conditions:
+
+\[
+(\mathrm{VL}_{\mathrm{I}}) \quad v (x y) = v (x) + v (y) for x \in \mathbf {C}, y \in \mathbf {C}.
+\]
+
+\[
+(\mathrm{VL}_{\mathrm{II}}) \quad v (x + y) \geqslant \inf (v (x), v (y)) for x \in \mathbf {C}, y \in \mathbf {C}.
+\]
+
+\[
+(\mathrm{VL} _ {\mathrm{III}}) \quad v (1) = 0 and v (0) = + \infty .
+\]
+
+If C has no divisor of zero other than 0, the unique mapping \(v_0\) of C to \(\Gamma_\infty\) such that \(v_0(x) = 0\) for \(x \neq 0\) and \(v_0(0) = +\infty\) is a valuation, called the improper valuation on C. If \(z \in \mathbf{C}\) is such that \(z^n = 1\) for some integer \(n \geqslant 1\) , then, by \((\mathrm{VL}_{\mathrm{I}})\) , \(nv(z) = v(z^n) = 0\) and hence \(v(z) = 0\) for every valuation \(v\) on C, since \(\Gamma\) is a totally ordered group. In particular \(v(-1) = 0\) , whence \(v(-x) = v(x)\) for all \(x \in \mathbf{C}\) . Moreover, it follows from \((\mathrm{VL}_{\mathrm{I}})\) that \(v(xy) = v(yx)\) for all \(x, y\) in C. If \(x\) is invertible in C, then \(v(x^{-1}) = -v(x)\) .
+
+PROPOSITION 1. Let \(v\) be a valuation on \(a\) (not necessarily commutative) ring \(\mathbf{C}\) . For any elements \(x_{i} \in \mathbf{C}\) ( \(1 \leqslant i \leqslant n\) ),
+
+\[
+v \left(\sum_ {i = 1} ^ {n} x _ {i}\right) \geqslant \inf _ {1 \leqslant i \leqslant n} v (x _ {i})\tag{1}
+\]
+
+Moreover, if there exists a single index \(k\) such that \(v(x_k) = \inf_{1 \leqslant i \leqslant n} v(x_i)\) , the two sides of (1) are equal. In particular, if \(v(x) \neq v(y)\) , then \(v(x + y) = \inf(v(x), v(y))\) .
+
+Relation (1) follows from axiom \((\mathrm{VL}_{\mathrm{II}})\) by induction on \(n\) . If there exists a single index \(k\) such that \(v(x_k) = \inf_{1 \leqslant i \leqslant n} v(x_i)\) , then, writing \(y = \sum_{i \neq k} x_i\) and \(z = \sum_{i=1}^{n} x_i\) , \(v(y) > v(x_k)\) and \(v(z) \geqslant v(x_k)\) by (1); if \(v(z) > v(x_k)\) , the relation \(x_k = z - y\) would give \(v(x_k) \geqslant \inf(v(z), v(y)) > v(x_k)\) , which is absurd; whence \(v(z) = v(x_k)\) , which proves the second assertion.
+
+COROLLARY. If a finite sequence of elements \((x_{i})_{1\leqslant i\leqslant n}\) of C (for \(n\geqslant 2\) ) is such that \(\sum_{i = 1}^{n}x_{i} = 0\) , there exist at least two distinct indices \(j,k\) such that
+
+\[
+v (x _ {j}) = v (x _ {k}) = \inf _ {1 \leqslant i \leqslant n} v (x _ {i}).
+\]
+
+If there were only a single index \(k\) such that \(v(x_k) = \inf_{1 \leqslant i \leqslant n} v(x_i)\) , Proposition 1 would show that \(v(x_k) = v(0) = +\infty\) , whence \(v(x_i) = +\infty\) for all \(i\) , contrary to the relation \(n \geqslant 2\) and the hypothesis made on \(k\) .
+
+Remarks
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  If \(v: \mathbf{C} \to \Gamma_{\infty}\) is a valuation on \(\mathbf{C}\) and \(u: \mathbf{B} \to \mathbf{C}\) a homomorphism of a ring \(\mathbf{B}\) to \(\mathbf{C}\) , it is immediate that the composite mapping \(\mathbf{B} \xrightarrow{u} \mathbf{C} \xrightarrow{v} \Gamma_{\infty}\) is a valuation on \(\mathbf{B}\) with values in \(\Gamma\) .
+\item
+  Conditions \((\mathrm{VL}_{\mathrm{I}})\) and \((\mathrm{VL}_{\mathrm{II}})\) show immediately that the set \(\overline{v}^{-1}(+\infty)\) is a two-sided ideal p in C distinct from C by virtue of \((\mathrm{VL}_{\mathrm{III}})\) ; moreover, if x, y are two elements of C such that \(v(xy)=+\infty\) , it follows from \((\mathrm{VL}_{\mathrm{I}})\) that necessarily \(v(x)=+\infty\) or \(v(y)=+\infty\) ; in other words, the quotient ring C/p has no divisor of 0 other than 0; it is immediately verified that the mapping \(\overline{v}:C/p\to\Gamma_{\infty}\) derived from v by passing to the quotient is a valuation on C/p, the inverse image of \(+\infty\) under this valuation reducing to 0.
+\end{enumerate}
+

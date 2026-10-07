@@ -1,0 +1,103 @@
+\subsection{二次型关于另一二次型的迹}
+
+在本节中，E 将表示一个实向量空间，Q、H 表示 E 上两个正二次型。存在两个对称双线性型 \((x, y) \mapsto \langle x | y \rangle_{\mathbf{Q}}\) 与 \((x, y) \mapsto \langle x | y \rangle_{\mathbf{H}}\)（在 \(E \times E\) 上），由下式刻画
+
+\[
+\mathrm{Q} (x) = \langle x | x \rangle_ {\mathrm{Q}}, \quad \mathrm{H} (x) = \langle x | x \rangle_ {\mathrm{H}}
+\]
+
+（对所有 \(x \in \mathbf{E}\)）。
+
+我们把一个有限或无限的实正数称为 Q 关于 H 的迹，记作 \(\mathrm{Tr}(\mathrm{Q}/\mathrm{H})\)，其定义如下：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  若存在 \(x \in \mathbf{E}\) 使 \(\mathbf{H}(x) = 0\) 且 \(\mathbf{Q}(x) \neq 0\)，则令 \(\mathrm{Tr}(\mathbf{Q} / \mathbf{H}) = +\infty\)。
+\item
+  否则，\(\mathrm{Tr}(\mathbf{Q} / \mathbf{H})\) 是所有形如 \(\sum_{i=1}^{m} \mathbf{Q}(x_i)\) 的数组成的集的上界，其中 \((x_1, \ldots, x_m)\) 取遍 \(\mathbf{E}\) 中元素的、满足 \(\langle x_i | x_j \rangle_{\mathbf{H}} = \delta_{ij}\) 的有限序列组成的集（Kronecker 记号）。
+\end{enumerate}
+
+注. --- 1) 对 E 的每个子空间 F，用 \(\mathrm{Q}_{\mathrm{F}}\) 表示 Q 在 F 上的限制，用 \(\mathrm{H}_{\mathrm{F}}\) 表示 H 在 F 上的限制。我们有 \(\mathrm{Tr}(\mathrm{Q}_{\mathrm{F}} / \mathrm{H}_{\mathrm{F}}) \leqslant \mathrm{Tr}(\mathrm{Q} / \mathrm{H})\)，且 \(\mathrm{Tr}(\mathrm{Q} / \mathrm{H})\) 是所有数 \(\mathrm{Tr}(\mathrm{Q}_{\mathrm{F}} / \mathrm{H}_{\mathrm{F}})\) 组成的集的上界，其中 F 取遍 E 的所有有限维向量子空间组成的族。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathbf{E}_1\) 为实向量空间，\(\mathbf{Q}_1\) 与 \(\mathbf{H}_1\) 为 \(\mathbf{E}_1\) 上两个正二次型，且 \(\pi: \mathbf{E} \to \mathbf{E}_1\) 为满射线性映射。若 \(\mathbf{Q} = \mathbf{Q}_1 \circ \pi\) 且 \(\mathbf{H} = \mathbf{H}_1 \circ \pi\)，则 \(\operatorname{Tr}(\mathbf{Q}/\mathbf{H}) = \operatorname{Tr}(\mathbf{Q}_1/\mathbf{H}_1)\)。
+\end{enumerate}
+
+命题 15. --- 假设 E 上存在一个实希尔伯特空间结构，使得 \(\mathbf{H}(x) = \|x\|^2\) 对所有 \(x \in E\) 成立。为使 \(\operatorname{Tr}(\mathbf{Q}/\mathbf{H})\) 是有限的，必要且充分的是：存在 E 的一个具有有限迹的连续正自同态 u，使得 \(\mathbf{Q}(x) = \langle x|u(x) \rangle\) 对所有 \(x \in E\) 成立；这一自同态 u 是唯一的，并且我们有
+
+\[
+\operatorname{Tr} (u) = \operatorname{Tr} (\mathrm{Q} / \mathrm{H}) = \sum_ {i \in \mathrm{I}} \mathrm{Q} \left(e _ {i}\right)\tag{44}
+\]
+
+（对 E 的每个标准正交基 \((e_i)_{i\in \mathbf{I}}\)）。
+
+设 \(\operatorname{Tr}(\mathbf{Q} / \mathbf{H})\) 是有限的。对每个范数为 1 的 \(x\in E\)，我们有 \(\mathrm{H}(x) = 1\)，因而 \(\mathrm{Q}(x)\leqslant \mathrm{Tr}(\mathrm{Q} / \mathrm{H})\)。因此，\(\mathrm{Q}(x)\leqslant \mathrm{Tr}(\mathrm{Q} / \mathrm{H}).\| x\|^2\) 对所有 \(x\in E\) 成立，并且
+
+\[
+\left| \langle x | y \rangle_ {\mathrm{Q}} \right| \leqslant \mathrm{Q} (x) ^ {1 / 2} \mathrm{Q} (y) ^ {1 / 2} \leqslant \operatorname{Tr} (\mathrm{Q} / \mathrm{H}). \| x \|. \| y \|
+\]
+
+由 Cauchy-Schwarz 不等式。因此，双线性型 \((x,y)\mapsto\langle x|y\rangle_{\mathbf{Q}}\)（在 \(E\times E\) 上）是连续的。存在（V, p.~16, 推论 2）一个映射 \(u\in\mathcal{L}(E)\)，使得 \(\langle x|y\rangle_{\mathbf{Q}}=\langle x|u(y)\rangle\)。对 E 中的 x、y 我们有 \(\langle x|y\rangle_{\mathbf{Q}}=\langle y|x\rangle_{\mathbf{Q}}\)，因而 u 是自伴的；而 \(\langle x|u(x)\rangle=\mathbf{Q}(x)\geqslant0\)，因而 u 是正的。
+
+反之，设 \(u\) 为 \(E\) 的一个连续正自同态，使得 \(Q(x) = \langle x|u(x) \rangle\) 对所有 \(x \in E\) 成立。则
+
+\[
+\langle x | u (y) \rangle = \frac {1}{2} (\mathrm{Q} (x + y) - \mathrm{Q} (x) - \mathrm{Q} (y)) = \langle x | y \rangle_ {\mathrm{Q}},
+\]
+
+由此得到 u 的唯一性。由公式 (24')（V, p.~50），我们得到
+
+\[
+\operatorname{Tr} (u) = \sup _ {x _ {1}, \dots , x _ {m}} \sum_ {i = 1} ^ {m} \left\langle x _ {i} \mid u \left(x _ {i}\right) \right\rangle = \sup _ {x _ {1}, \dots , x _ {m}} \sum_ {i = 1} ^ {m} Q \left(x _ {i}\right),
+\]
+
+其中 \((x_{1},\ldots ,x_{m})\) 取遍 E 中元素的所有有限标准正交序列组成的集。由 \(\mathrm{Tr}(\mathrm{Q / H})\) 的定义，我们得到 \(\mathrm{Tr}(u) = \mathrm{Tr}(\mathrm{Q / H})\)。最后，对 E 的每个标准正交基 \((e_i)_{i\in \mathbf{I}}\)，由 V, p.~50 的公式 (25) 我们有 \(\mathrm{Tr}(u) = \sum_{i\in \mathbf{I}}\langle e_i|u(e_i)\rangle\)，因而 \(\mathrm{Tr}(u) = \sum_{i\in \mathbf{I}}\mathrm{Q}(e_i)\)。证毕。
+
+注. --- 3) 设 E 与 F 为两个希尔伯特空间，v 为从 E 到 F 中的、不必连续的线性映射。令 \(\mathbf{H}(x)=\|x\|^{2}\) 及 \(\mathbf{Q}(x)=\|v(x)\|^{2}\)（对所有 \(x\in E\)）。由命题 15 推出，v 是 Hilbert-Schmidt 映射当且仅当 \(\operatorname{Tr}(\mathbf{Q}/\mathbf{H})\) 是有限的，且这时 \(\operatorname{Tr}(\mathbf{Q}/\mathbf{H})=\|v\|_{2}^{2}\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 E 是有限维的。当二次型 H 可逆时，命题 15 适用。设 \((e_{1}, \ldots, e_{n})\) 为 E 的一个基。令 \(q_{ij} = \langle e_{i}|e_{j} \rangle_{Q}\) 与 \(h_{ij} = \langle e_{i}|e_{j} \rangle_{H}\)，并引进矩阵 \(q = (q_{ij})\) 与 \(h = (h_{ij})\)。设 u 为 E 的一个自同态，使得 \(Q(x) = \langle x|u(x) \rangle_{H}\) 对所有 \(x \in E\) 成立。我们有
+\end{enumerate}
+
+\[
+\langle x | y \rangle_ {\mathrm{Q}} = \langle x | u (y) \rangle_ {\mathrm{H}} \quad (x, y \in \mathrm{E}),
+\]
+
+因而 \(u\) 关于基 \((e_1, \ldots, e_n)\)（\(E\) 的）的矩阵等于 \(h^{-1}q\)。由命题 15，我们有
+
+\[
+\operatorname{Tr} (\mathrm{Q} / \mathrm{H}) = \operatorname{Tr} (h ^ {- 1} q) = \operatorname{Tr} (q h ^ {- 1}).\tag{45}
+\]
+
+若基 \((e_1, \dots, e_n)\) 关于 \(\mathbf{H}\) 是标准正交的，则 \(h\) 是 \(n\) 阶单位矩阵，于是我们得到
+
+\[
+\operatorname{Tr} (\mathrm{Q} / \mathrm{H}) = \operatorname{Tr} (q) = \sum_ {i = 1} ^ {n} \mathrm{Q} (e _ {i});
+\]
+
+这样我们在这一情形得到公式 (44)。
+
+现在设二次型 \(\mathbf{H}\) 不可逆。令 \(\mathbf{N}\) 为 \(\mathbf{H}\) 的核，令 \(\pi\) 为从 \(\mathrm{E}\) 到 \(\mathrm{E} / \mathrm{N}\) 上的典范映射。存在一个可逆二次型 \(\mathrm{H}_1\)（在 \(\mathrm{E} / \mathrm{N}\) 上），使得 \(\mathrm{H} = \mathrm{H}_1 \circ \pi\)。设 \((e_1, \dots, e_n)\) 为 \(\mathrm{E}\) 中元素的一个序列，使得序列 \((\pi(e_1), \dots, \pi(e_m))\) 是 \(\mathrm{E} / \mathrm{N}\) 的、关于 \(\mathrm{H}_1\) 标准正交的基。设 \((e_1, \dots, e_n)\) 为 \(\mathbf{N}\) 的一个基。则 \((e_1, \dots, e_n)\) 是 \(\mathrm{E}\) 的基，并且我们有
+
+\[
+\mathrm{H} \left(\xi_ {1} e _ {1} + \dots + \xi_ {n} e _ {n}\right) = \xi_ {1} ^ {2} + \dots + \xi_ {m} ^ {2}\tag{46}
+\]
+
+（对所有实数 \(\xi_1, \ldots, \xi_n\)）。
+
+假设对所有 \(x \in \mathbf{E}\)，关系式 \(\mathrm{H}(x) = 0\) 蕴含 \(\mathrm{Q}(x) = 0\)；换言之，假设存在一个二次型 \(\mathbf{Q}_1\)（在 \(\mathrm{E} / \mathrm{N}\) 上），使得 \(\mathrm{Q} = \mathrm{Q}_1 \circ \pi\)。由注 2 与命题 15，我们有
+
+\[
+\operatorname{Tr} (\mathrm{Q} / \mathrm{H}) = \mathrm{Q} (e _ {1}) + \dots + \mathrm{Q} (e _ {m}).\tag{47}
+\]
+

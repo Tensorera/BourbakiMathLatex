@@ -1,0 +1,60 @@
+\subsection{线性流形的闭包}
+
+回忆 (A, II, § 9.3)：在除环 K 上的向量空间 E 中，非空仿射线性流形（当不致引起混淆时称为«线性流形»）是 E 的某个向量子空间经平移所成的像。
+
+命题 1. --- 在拓扑向量空间 E 中，线性流形的闭包是一个线性流形。
+
+由于 E 的每个平移都是同胚，只需对 E 的向量子空间 M 证明本命题即可，而这一情形的命题已在 I, 第 4 页 中证明。
+
+推论. --- 在拓扑向量空间 E 中，每个超平面或者是闭的，或者是处处稠密的。
+
+事实上，齐次超平面 H 的闭包只能是 H 或整个空间 E，因为它是包含 H 的一个向量子空间（prop. 1）。
+
+超平面 H 在 E 中是闭的，当且仅当 CH 含有一个内点。
+
+在拓扑向量空间 E 中，由集合 A 生成的向量子空间 M 是 A 的点的线性组合所成的集合（A, II, § 1.7, prop. 9）；由 prop. 1，M 在 E 中的闭包是包含 A 的最小闭向量子空间；我们称它为由 A 生成的闭向量子空间。
+
+定义 1. --- 拓扑向量空间 E 中的集合 A 称为完全的，当且仅当由 A 生成的闭向量子空间与 E 重合（即 A 的元素的线性组合所成的集合在 E 中处处稠密）。
+
+例. --- 1) 在函数的赋范空间 \(\mathcal{C}(\mathrm{I};\mathbf{C})\)（在域 \(\mathbf{C}\) 上）中——这里考虑的是在 \(\mathrm{I} = [0,1]\) 上连续、取值于 \(\mathbf{C}\) 的函数——限制在 \(\mathrm{I}\) 上的诸函数 \(x^n\)（\(n\in \mathbf{N}\)）依 Weierstrass-Stone 定理构成一个完全集（GT, X, § 4.2, th. 3）。类似地，限制在 \(\mathrm{I}\) 上的诸函数 \(e^{2n\pi ix}\)（\(n\in \mathbf{Z}\)）在子空间 \(\mathbf{P}\)（即 \(\mathcal{C}(\mathrm{I},\mathbf{C})\) 中由满足 \(f(0) = f(1)\) 的函数构成的子空间）中构成一个完全集（GT, X, § 4.4, prop. 8）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在非离散赋值除环上的拓扑向量空间 E 中，每个吸收集（特别地，E 中的每个零邻域）都是完全集，因为它生成 E（I, 第 7 页）。因此，在 E 中不稠密的线性流形必然是 E 中的无处稠密集（GT, IX, § 5.1），因为它的闭包不可能含有内点。
+\end{enumerate}
+
+定义 2. --- 拓扑向量空间 E 的点的一个族 \((a_{\iota})_{\iota\in\mathbf{I}}\) 称为拓扑无关的，如果对任何 \(\kappa\in I\)，由诸 \(a_{\iota}\)（\(\iota\neq\kappa\)）生成的闭向量子空间都不包含 \(a_{\kappa}\)。
+
+例. --- 3) 在函数的赋范空间 \(\mathcal{C}(\mathrm{I};\mathbf{C})\)（这些函数定义于 \(\mathrm{I} = [0,1]\) 上且连续）中，限制在 \(\mathrm{I}\) 上的诸函数 \(e^{2n\pi ix}(n\in \mathbf{Z})\) 构成一个拓扑无关族。若 \(f(x)\) 是线性组合 \(\sum_{k\neq n}c_k e^{2k\pi ix}\)（其中诸 \(c_k\) 除有限多个外全为零），则
+
+\[
+\int_ {0} ^ {1} \left| e ^ {2 n \pi i x} - f (x) \right| ^ {2} d x = 1 + \sum_ {k \neq n} | c _ {k} | ^ {2} \geqslant 1
+\]
+
+并且由中值定理，更有
+
+\[
+\sup _ {x \in \mathbf {I}} \left| e ^ {2 n \pi i x} - f (x) \right| \geqslant 1
+\]
+
+这表明 \(e^{2\pi inx}\) 不属于 \(\mathcal{C}(\mathrm{I};\mathbf{C})\) 中由 \(e^{2k\pi ix}, k \neq n\) 生成的闭向量子空间。
+
+拓扑无关族的元素所成的集合称为 E 的拓扑无关集。拓扑无关集的每个子集都是拓扑无关的；若 E 是 Hausdorff 空间，则每个由单独一个点 \(x \neq 0\) 组成的子集都是拓扑无关的。
+
+拓扑无关族是无关的（在代数意义上；cf.~A, II, § 7.1, 注记），但逆命题不成立。
+
+例. --- 4) 在函数的赋范空间 \(\mathcal{C}(\mathrm{I};\mathbf{C})\)（这些函数在 \(\mathrm{I} = [0,1]\) 上连续）中，限制在 \(\mathrm{I}\) 上的诸函数 \(x^n\)（\(n\in \mathbf{N}\)）构成一个代数无关族。但存在多项式的序列（\(p_n\)），使 \(p_n(x^2)\) 一致收敛于 \(x\) 于 \(\mathrm{I}\) 之上（GT, X, § 4.2, 引理 2），这表明 \(x\) 属于 \(\mathcal{C}(\mathrm{I};\mathbf{C})\) 中由诸函数 \(x^{2n}\)（\(n\in \mathbf{N}\)）生成的闭向量子空间。
+
+注记. --- 1) 拓扑向量空间的拓扑无关集所成的族对于包含关系不一定是归纳的（I, 第 25 页, 习题 2）；因此这一情形不同于代数无关集的情形。此外，E 中不一定存在极大的拓扑无关子集（I, 第 25 页, 习题 4），因而不一定存在既完全又拓扑无关的子集。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathbf{M}\) 是 \(\mathrm{E}\) 的闭向量子空间，\((\dot{a}_{\mathrm{t}})_{\mathrm{t}\in \mathrm{I}}\) 是商空间 \(\mathrm{E / M}\) 中的一个拓扑无关族。若 \(a_{\mathrm{t}}\) 是类 \(\dot{a}_{\mathrm{t}}\) 中任意一个元素，则由 def. 2 以及 \(\mathrm{E}\) 到 \(\mathrm{E / M}\) 上的典范映射连续这一事实，可推出族 \((a_{\mathrm{t}})_{\mathrm{t}\in \mathrm{I}}\) 是拓扑无关的。但注意，若 \(\mathbf{N}\) 是由诸 \(a_{\mathrm{t}}\) 生成的闭向量子空间，则有可能发生 \(\mathbf{M} \cap \mathbf{N} \neq \{0\}\)（I, 第 25 页, 习题 2），因而和 \(\mathbf{M} + \mathbf{N}\) 在代数意义上不一定是直和（在拓扑意义上更是如此）。
+\end{enumerate}
+

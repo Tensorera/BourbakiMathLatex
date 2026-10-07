@@ -1,0 +1,96 @@
+\subsection{Minlos 引理}
+
+设 T 是有限维向量空间，\(\mu\) 是 \(T'\) 上的有界测度；将 T 认作 \(T'\) 的对偶，从而 \(\Phi\) 的傅里叶变换 \(\mu\) 是 T 上的函数。设 T 上给定两个正二次型 h 和 q，以及一个数 \(\varepsilon > 0\)。对于每个实数 r > 0，记 \(C_{r}\) 为满足 \(x' \in T'\)（对所有 \(\langle x, x' \rangle^{2} \leqslant r^{2} h(x)\)）的 \(x \in T\) 的集合。
+
+命题 10. --- 在假设 \(\Phi(0) - \mathcal{R}\Phi \leqslant \varepsilon + q\) 下，有
+
+\[
+\mu (\mathrm{T} ^ {\prime} - \mathrm{C} _ {r}) \leqslant 3 \left(\varepsilon + r ^ {- 2} \operatorname{Tr} (q / h)\right)\tag{55}
+\]
+
+对于每个 \(r > 0\)。
+
+记 \(\operatorname{Tr}(q/h)\) 为 q 相对于 h 的迹（参见附录，第~1号）。当 \(\operatorname{Tr}(q/h)\) 为无穷时，公式 (55) 是平凡的。以下假设 \(\operatorname{Tr}(q/h)\) 有限，因而对于 \(h(x)=0\)，\(q(x)=0\) 蕴含 \(x\in T\)。
+
+令 \(a_1, \ldots, a_n\) 是 \(\mathbf{T}\) 中的元素，\(\mathbf{D}\) 是满足 \(x' \in \mathbf{T}'\) 的 \(\sum_{j=1}^{n} \langle a_j, x' \rangle^2 > 1\) 的集合。对于每个实数 \(t \geqslant 0\)，有 \(3(1 - e^{-t/2}) \geqslant 0\)，并且还有
+
+\[
+3 (1 - e ^ {- t / 2}) \geqslant 3 (1 - e ^ {- 1 / 2}) \geqslant 3 \left(1 - \left(\frac {9}{4}\right) ^ {- 1 / 2}\right) = 1
+\]
+
+当 \(t > 1\) 时成立，因为 \(e > \frac{9}{4}\)。将这些不等式用于 \(t = \sum_{j=1}^{n} \langle a_j, x' \rangle^2\)，得到
+
+\[
+\mu (\mathrm{D}) \leqslant 3 \int_ {\mathrm{T} ^ {\prime}} \left(1 - \exp \left(- \frac {1}{2} \sum_ {j = 1} ^ {n} \langle a _ {j}, x ^ {\prime} \rangle^ {2}\right)\right) d \mu (x ^ {\prime}).\tag{56}
+\]
+
+令 \(\gamma\) 为 \(\mathbf{R}\) 上相对于勒贝格测度密度为 \(t \mapsto (2\pi)^{-1/2} e^{-t^2/2}\) 的测度。由第~4号的引理 2，
+
+\[
+\int_ {\mathbf {R}} e ^ {i u t} d \gamma (t) = e ^ {- u ^ {2} / 2}
+\]
+
+对于所有实数 \(u\)。因此，
+
+\[
+\begin{array}{l} 1 - \exp \left(- \frac {1}{2} \sum_ {j = 1} ^ {n} \langle a _ {j}, x ^ {\prime} \rangle^ {2}\right) \\ = \int \dots \int \left(1 - e ^ {i \sum_ {j = 1} ^ {n} \langle a _ {j}, x ^ {\prime} \rangle t _ {j}}\right) d \gamma (t _ {1}) \dots d \gamma (t _ {n}) \end{array}\tag{57}
+\]
+
+对于所有 \(x' \in T'\)。第二成员中关于 \(x', t_{1}, \ldots, t_{n}\) 待积分的函数是连续的，且绝对值有上界 2；而 \(\mu\) 和 \(\gamma\) 都是有界测度。因此可以对 (57) 两端关于 \(d\mu(x')\) 积分，并交换关于 \(\mu\) 和 \(\gamma\) 的积分；得到
+
+\[
+\begin{array}{l} \int_ {\mathbf {T} ^ {\prime}} \left(1 - \exp \left(- \frac {1}{2} \sum_ {j = 1} ^ {n} \langle a _ {j}, x ^ {\prime} \rangle^ {2}\right)\right) d \mu (x ^ {\prime}) \\ = \int \dots \int \left(\Phi (0) - \Phi \left(\sum_ {j = 1} ^ {n} t _ {j} a _ {j}\right)\right) d \gamma (t _ {1}) \dots d \gamma (t _ {n}). \end{array}\tag{58}
+\]
+
+由于 q 是 \(q\)\(\mathbf{T}\) 上的二次型，存在实数 \(q_{jk}\)，使得
+
+\[
+q \left(\sum_ {j = 1} ^ {n} t _ {j} a _ {j}\right) = \sum_ {j, k} q _ {j k} t _ {j} t _ {k}
+\]
+
+对于实数 \(t_1, \ldots, t_n\)；特别地，当 \(q_{jj} = q(a_j)\) 时，\(1 \leqslant j \leqslant n\)。此外，积分 \(\int_{\mathbf{R}} t^n d\gamma(t)\) 在 \(n = 0, 1, 2\) 时分别取值 1, 0, 1（第~4号，引理 1）。由此立即得到
+
+\[
+\int \dots \int \left(\varepsilon + q \left(\sum_ {j = 1} ^ {n} t _ {j} a _ {j}\right)\right) d \gamma (t _ {1}) \dots d \gamma (t _ {n}) = \varepsilon + \sum_ {j = 1} ^ {n} q (a _ {j}).\tag{59}
+\]
+
+现在，(58) 的第一成员和 \(\Phi(0)\) 都是实数；因此可以在 (58) 的第二成员中用 \(\Phi\) 替代 \(R\Phi\)。不等式 \(\Phi(0)-\mathcal{R}\Phi\leqslant\varepsilon+q\) 以及公式 (56)、(58) 和 (59) 蕴含
+
+\[
+\mu (\mathrm{D}) \leqslant 3 \left(\varepsilon + \sum_ {j = 1} ^ {n} q (a _ {j})\right).\tag{60}
+\]
+
+固定数 \(r > 0\)。由于二次型 h 为正，存在 T 的一个基 \(h\)\((e_1, \ldots, e_n)\) 和一个介于 0 与 n 之间的整数 m，使得\(T\)\(m\)\(n\)
+
+\[
+h \left(\sum_ {j = 1} ^ {n} t _ {j} e _ {j}\right) = \sum_ {j = 1} ^ {m} t _ {j} ^ {2}
+\]
+
+对于实数 \(t_1, \ldots, t_n\)（附录，第~1号，命题 2）。于是立即可见，\(\mathbf{C}_r\) 由满足下列条件的 \(x' \in \mathbf{T}'\) 组成：
+
+\[
+\sum_ {j = 1} ^ {m} \langle e _ {j}, x ^ {\prime} \rangle^ {2} \leqslant r ^ {2}, \quad \sum_ {j = m + 1} ^ {n} \langle e _ {j}, x ^ {\prime} \rangle^ {2} = 0.
+\]
+
+对于每个整数 \(l \geqslant 1\)，令 \(D_l\) 为满足下列不等式的 \(x' \in T'\) 的集合
+
+\[
+\sum_ {j = 1} ^ {m} \left\langle r ^ {- 1} e _ {j}, x ^ {\prime} \right\rangle^ {2} + \sum_ {j = m + 1} ^ {n} \left\langle l e _ {j}, x ^ {\prime} \right\rangle^ {2} > 1.
+\]
+
+容易看出，序列 \((\mathrm{D}_l)_{l\geqslant 1}\) 递增，其并为 \(\mathbf{T}' - \mathbf{C}_r\)，从而
+
+\[
+\mu (\mathrm{T} ^ {\prime} - \mathrm{C} _ {r}) = \lim _ {l \to \infty} \mu (\mathrm{D} _ {l}).\tag{61}
+\]
+
+但由 (60)，
+
+\[
+\mu \left(\mathrm{D} _ {l}\right) \leqslant 3 \left(\varepsilon + \sum_ {j = 1} ^ {m} r ^ {- 2} q \left(e _ {j}\right) + \sum_ {j = m + 1} ^ {n} l ^ {2} q \left(e _ {j}\right)\right);\tag{62}
+\]
+
+当 \(j = m + 1, \ldots, n\) 时，有 \(h(e_j) = 0\)，因而 \(q(e_j) = 0\)。此外，\(\operatorname{Tr}(q/h) = \sum_{j=1}^{m} q(e_j)\)（附录，第~1号，命题 2）。关系 (55) 由 (61) 和 (62) 得到。
+
+证毕
+

@@ -1,0 +1,166 @@
+\subsection{常系数线性微分方程}
+
+再设 E 是 R 上一个任意的完备赋范空间；设 A 是 A 的一个连续自同态，与 t 无关，并考虑齐次线性方程
+
+\[
+{\frac {d \mathbf {x}}{d t}} = A. \mathbf {x}.\tag{19}
+\]
+
+当 \(\mathrm{E}\) 为有限维时，方程 (19) 等价于一个由数量微分方程组成的齐次方程组 (3) (IV, p.~183)，其中系数 \(a_{ij}\) 为常数。
+
+由定理 1 (IV, p.~179)，(19) 的每个积分都在整个 \(\mathbf{R}\) 上有定义；由定理 2 (IV, p.~179)，(19) 的取值 \(\mathbf{x}_0\) （在点 \(t_0 \in \mathbf{R}\) 处）的积分可以写成 \(C(t, t_0)\mathbf{x}_0\) ，其中 \(C(t, t_0)\) 是 E 到其自身上的一个双射双连续线性映射，它满足方程
+
+\[
+\frac {d U}{d t} = A U\tag{20}
+\]
+
+并且使得 \(C(t_0, t_0) = I\) 。此外，我们有恒等式
+
+\[
+C (t + \tau , t _ {0} + \tau) = C (t, t _ {0})\tag{21}
+\]
+
+（对任意 \(\tau \in \mathbf{R}\) ）：事实上，由 (20) 有 \(dC(s, t_0 + \tau) / ds = AC(s, t_0 + \tau)\) ，并且由于 \(A\) 是常数，还有
+
+\[
+\frac {d C (t + \tau , t _ {0} + \tau)}{d t} = A C (t + \tau , t _ {0} + \tau);
+\]
+
+此外
+
+\[
+C (t _ {0} + \tau , t _ {0} + \tau) = I = C (t _ {0}, t _ {0}),
+\]
+
+由此即得恒等式 (21)，因为在点 \(t_{0}\) 处等于 I 的 (20) 的积分是唯一的。
+
+若令 \(C_0(t) = C(t, 0)\) ，则 \(C(t, t_0) = C_0(t - t_0)\) ；此外，对每个 \(\lambda \in \mathbf{R}\) ，\(C_0(\lambda t)\) 都等同于方程
+
+\[
+\frac {d U}{d t} = \lambda A U\tag{22}
+\]
+
+的取值 \(I\) 于点 0 的积分。我们给出下面的定义：
+
+定义 1. 给定 E 的一个连续自同态 A，我们以 \(e^{A}\) 或 exp A 表示 E 的这样一个自同构：它等于方程 (20) 的在点 t = 0 处取值 I 的积分在点 t = 1 处的值。
+
+采用此记号，定义 1 之前的注记表明
+
+\[
+C (t, t _ {0}) = \exp \left(A (t - t _ {0})\right).\tag{23}
+\]
+
+刚才引入的指数记号之所以合理，是基于下面这些性质，它们与 z 为实数或复数时的函数 \(\exp z\) 的性质完全类似 (cf.~III, p.~98 与 106)：
+
+命题 7. \(1^{\circ}\) 映射 \(X \mapsto e^{X}\) 是 \(\mathcal{L}(\mathrm{E})\) 到 \(\mathrm{E}\) 的自同构群（\(\mathcal{L}(\mathrm{E})\) 中的可逆元所成的群）的一个连续映射。
+
+\(2^{\circ}\) 映射 \(t\mapsto e^{Xt}\) （由 \(\mathbf{R}\) 到 \(\mathcal{L}(\mathrm{E})\) ）是可导的，并且
+
+\[
+\frac {d}{d t} \big (e ^ {X t} \big) = X e ^ {X t} = e ^ {X t} X.\tag{24}
+\]
+
+\(3^{\circ}\) 对任意 \(X\in \mathcal{L}(\mathrm{E})\) 有
+
+\[
+e ^ {X} = \sum_ {n = 0} ^ {\infty} \frac {X ^ {n}}{n !}\tag{25}
+\]
+
+右端在 \(\mathcal{L}(\mathrm{E})\) 的每个有界子集上绝对且一致收敛；特别地，\(e^{It} = e^{t}I\) （对 \(t \in R\) ）。
+
+\(4^{\circ}\) 若 X 与 Y 可交换，则 Y 与 \(e^{Y}\) 都与 \(e^{X}\) 可交换，并且
+
+\[
+e ^ {X + Y} = e ^ {X} e ^ {Y}.\tag{26}
+\]
+
+关系式 (24) 由 \(C(t,0)\) 的表达式 (23) 以及该函数是 (20) 的积分这一事实得出；对 n 用递归法由 (24) 推出，\(t \mapsto e^{Xt}\) 在 R 上无穷次可导，并且
+
+\[
+\mathrm{D} ^ {n} \left(e ^ {X t}\right) = X ^ {n} e ^ {X t}.
+\]
+
+于是由泰勒公式可以写出
+
+\[
+e ^ {X} = I + \frac {X}{1 !} + \frac {X ^ {2}}{2 !} + \dots + \frac {X ^ {n}}{n !} + X ^ {n + 1} \int_ {0} ^ {1} \frac {(1 - t) ^ {n}}{n !} e ^ {X t} d t.\tag{27}
+\]
+
+另一方面，IV, p.~181 的 cor. 3 表明 \(\left\| e^{Xt}\right\| \leqslant \exp \left(\| X\| |t|\right)\) 。于是公式 (27) 中的余项 \(r_n(X) = X^{n + 1}\int_0^1\frac{(1 - t)^n}{n!} e^{Xt}dt\) 满足不等式
+
+\[
+\| r _ {n} (X) \| \leqslant \frac {\| X \| ^ {n + 1}}{(n + 1) !} e ^ {\| X \|}
+\]
+
+由此推出公式 (25)，右端的级数在 \(\mathcal{L}(\mathrm{E})\) 的每个有界子集上绝对且一致收敛。对 \(\mathcal{L}(\mathrm{E})\) 中每一对元素 X、T 有
+
+\[
+e ^ {X + T} - e ^ {X} = \sum_ {n = 1} ^ {\infty} \frac {1}{n !} \big ((X + T) ^ {n} - X ^ {n} \big).
+\]
+
+现在，可以写出 \((X + T)^n - X^n = \sum_{(V_i)} V_1 V_2 \ldots V_n\) ，其中求和遍及 \(2^n - 1\) 个序列 \((V_i)\) （由 \(\mathcal{L}(\mathrm{E})\) 的元素组成），它们满足 \(V_i = X\) 或 \(V_i = T\) （对 \(1 \leqslant i \leqslant n\) ），且至少有一个 \(V_i\) 等于 \(T\) ；于是不等式
+
+\[
+\left\| (X + T) ^ {n} - X ^ {n} \right\| \leqslant \left(\| X \| + \| T \|\right) ^ {n} - \| X \| ^ {n}
+\]
+
+立即成立，由此
+
+\[
+\| \exp (X + T) - \exp X \| \leqslant \exp \left(\| X \| + \| T \|\right) - \exp \| X \|\tag{28}
+\]
+
+这就建立了映射 \(X \mapsto \exp X\) 的连续性。
+
+最后，若 X 与 Y 可交换，则 Y 与 \(e^{Xt}\) 可交换 (IV, p.~181, prop. 2)，于是
+
+\[
+\frac {d}{d t} \big (e ^ {X t} e ^ {Y t} \big) = X e ^ {X t} e ^ {Y t} + e ^ {X t} (Y e ^ {Y t}) = (X + Y) e ^ {X t} e ^ {Y t}.
+\]
+
+另一方面，由于 \(e^{Xt}e^{Yt}\) 在 t = 0 处等于 I，故有 \(e^{Xt}e^{Yt} = e^{(X+Y)t}\) ，由此得公式 (26)。由后者特别可推出，对任意的实数 s 与 t 有
+
+\[
+e ^ {X (s + t)} = e ^ {X s} e ^ {X t}\tag{29}
+\]
+
+并且还有
+
+\[
+e ^ {- X} = \left(e ^ {X}\right) ^ {- 1}.\tag{30}
+\]
+
+反之，要注意的是：若不再假设 X 与 Y 可交换，(26) 未必仍成立；因为否则它将蕴含 \(\exp X\) 与 \(\exp Y\) 总可交换，而事实并非如此，简单的例子即可表明这一点 (IV, p.~204, exerc. 3)。
+
+现在假设 E 是域 C 上的有限维向量空间，A 是 E 的一个自同态（关于 E 在 C 上的向量空间结构），可把它与 A 关于 E 的某个基的矩阵等同起来；于是对所有的 \(t \in R\) ，\(e^{At}\) 都是 E 关于同一结构的一个自同构 (IV, p.~181, prop. 2)。设 \(r_k\) ( \(1 \leqslant k \leqslant q\) ) 是自同态 A 的特征多项式 \(\varphi(r) = \det(A - rI)\) 的互异根（在 C 中）（即 A 的“特征根”）；若 \(n_k\) 是 \(r_k\) 的重数，则 \(\sum_{k=1}^{q} n_k = n\) 。我们知道 (Alg., VII, 31, n° 3)，对每个根 \(r_k\) 对应着 E 的一个子空间 \(E_k\) ，其维数为 \(n_k\) ，使得 \(E_k\) 在 A 之下稳定，并且 E 是诸 \(E_k\) 的直和：\(E_k\) 可定义为满足下式的向量 x 所成的子空间
+
+\[
+(A - r _ {k} I) ^ {n _ {k}}. \mathbf {x} = 0.
+\]
+
+设 \(\mathbf{a}\) 是 E 中任意一个向量；可以写出 \(\mathbf{a} = \sum_{k=1}^{q} \mathbf{a}_k\) ，其中 \(\mathbf{a}_k \in \mathrm{E}_k\) ；于是 IV, p.~188 的方程 (19) 的取值 \(\mathbf{a}\) 于点 \(t = 0\) 的积分由下式给出
+
+\[
+\mathbf {u} (t) = e ^ {A t}. \mathbf {a} = \sum_ {k = 1} ^ {q} e ^ {A t}. \mathbf {a} _ {k} = \sum_ {k = 1} ^ {q} e ^ {r _ {k} t} e ^ {(A - r _ {k} I) t}. \mathbf {a} _ {k}.
+\]
+
+但由于 \(\mathbf{a}_k\in \mathrm{E}_k\) ，有
+
+\[
+\begin{array}{c} e ^ {(A - r _ {k} I) t}. \mathbf {a} _ {k} = \mathbf {a} _ {k} + \frac {t}{1 !} (A - r _ {k} I). \mathbf {a} _ {k} + \frac {t ^ {2}}{2 !} (A - r _ {k} I) ^ {2}. \mathbf {a} _ {k} + \dots \\ + \frac {t ^ {n _ {k} - 1}}{(n _ {k} - 1) !} (A - r _ {k} I) ^ {n _ {k} - 1}. \mathbf {a} _ {k}. \end{array}\tag{31}
+\]
+
+于是，IV, p.~188 的方程 (19) 的每个积分都可以写成
+
+\[
+\mathbf {u} (t) = \sum_ {k = 1} ^ {q} e ^ {r _ {k} t} \mathbf {p} _ {k} (t)\tag{32}
+\]
+
+其中 \(\mathbf{p}_{k}(t)\) 是 t 的一个多项式，其系数在向量空间 \(E_{k}\) 中，次数 \(\leqslant n_{k}-1\) 。特别地，若 A 的特征方程的所有根都是单根，则诸空间 \(E_{k}\) ( \(1 \leqslant k \leqslant n\) ) 都是域 C 上的一维空间，于是存在 n 个向量 \(c_{k}\) ，使得 n 个函数 \(e^{r_{k}t}c_{k}\) ( \(1 \leqslant k \leqslant n\) ) 构成 IV, p.~188 的方程 (19) 的一个基本积分组。
+
+自同态 \(A\) 的特征根也称为 IV, p.~188 的线性方程 (19) 的特征根。可以注意到，\(A\) 的特征方程可以这样得到：写出函数 \(\mathbf{c}e^{rt}\) （对一个向量 \(\mathbf{c} \neq 0\) ）是 (19) 的积分。
+
+当根 \(r_{k}\) ( \(1 \leqslant k \leqslant q\) ) 连同 \(n_{k}\) （\(r_{k}\) 的重数）都已明确求出之后，实际求 (19) 的积分的办法是：写出该方程被 IV, p.~191 的表达式 (32) 所满足，其中 \(p_{k}\) 是次数 \(\leqslant n_{k}-1\) 、系数在 E 中的任意多项式；在如此得到的等式的两边等同 \(e^{r_{k}t}\) （对 \(1 \leqslant k \leqslant q\) ）的系数，便得到关于多项式 \(p_{k}\) 的系数的线性方程：容易证明，这些方程把次数 \textgreater0 的项确定为 \(p_{k}\) 的常数项的函数，而该常数项本身是方程 \((A - r_{k}I)^{n_{k}}.x = 0\) 的解，该方程定义子空间 \(E_{k}\) （“待定系数法”）。
+
+注. 当存在 E 的一个基，使 A 关于该基的矩阵具有实元素时 (cf.~IV, p.~186, 注 2)，A 的特征方程就有实系数。对 E 的每个向量 \(\mathbf{x} = (\xi_k)_{1 \leqslant k \leqslant n}\) （在所考虑的基下表示），令 \(\overline{x} = (\overline{\xi}_k)_{1 \leqslant k \leqslant n}\) ；映射 \(x \mapsto \overline{x}\) 是 E 的一个反线性对合。我们知道 (Alg., VII)，若 \(r_k\) 是特征方程的一个非实根，\(E_k\) 是相应的稳定子空间，则 \(\overline{r}_k\) 是一个特征根，其重数 \(n_k\) 与 \(r_k\) 的相同，且 \(E'_k\) （即 \(E_k\) 在映射 \(x \mapsto \overline{x}\) 下的像）是对应于 \(\overline{r}_k\) 的稳定子空间。由此推出：若 \(u_j\) ( \(1 \leqslant j \leqslant n_k\) ) 是 \(n_k\) 个取值于 \(E_k\) 的线性无关的积分，则 \(2n_k\) 个积分 \(u_j + \overline{u}_j\) 、\(i(\mathbf{u}_j - \overline{\mathbf{u}}_j)\) 线性无关，并且它们关于 E 的所选基的分量都是实函数。若 \(r_k\) 是一个实特征根，则 IV, p.~186 的注 2 表明（用同样的记号），存在 \(n_k\) 个线性无关的积分 \(v_j\) ( \(1 \leqslant j \leqslant n_k\) )，它们取值于 \(E_k\) ，其分量为实值。这样便得到 (19) 的一个所有分量均为实值的基本积分组。
+

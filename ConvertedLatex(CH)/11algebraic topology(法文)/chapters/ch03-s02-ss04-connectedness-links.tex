@@ -1,0 +1,48 @@
+\subsection{连通性与道路连通性之间的联系}
+
+道路连通空间是连通的（III, p. 258, 命题 4）。存在连通的、甚至局部连通的空间，它们不是道路连通的（参见 III, p. 331, 习题 2 与 4）。然而：
+
+命题 11. --- 连通且局部连通、其拓扑可由一个使之为完备的距离定义的拓扑空间，是道路连通的。
+
+设 X 为拓扑空间。把 X 中非空有限序列 \(\mathrm{T} = (\mathrm{W}_{i})_{1 \leqslant i \leqslant n}\)（由 X 的连通开子集组成，满足 \(W_{i} \cap W_{i+1} \neq \varnothing\)（对 \(1 \leqslant i \leqslant n-1\)））称为 X 中的列车。称 n 为列车 T 的长，称诸 \(W_{i}\) 为它的车厢。若 X 赋有与它的拓扑相容的距离，则称列车 T 的诸车厢直径的最大值为列车 T 的宽度。若点 a 属于第一节车厢而点 b 属于最后一节车厢，则称该列车连接点 a 与点 b。把对 \((\mathrm{T}', f)\)（由列车 \(\mathrm{T}' = (\mathrm{W}_{j}')_{1 \leqslant j \leqslant m}\) 与严格递增映射 \(f: \{0, 1, \ldots, n\} \to \{0, 1, \ldots, m\}\) 构成，满足 \(f(0) = 0\)，\(f(n) = m\)，且 \(W_{j}' \subset W_{i}\)（对 \(1 \leqslant i \leqslant n\) 与 \(f(i-1) < j \leqslant f(i)\)））称为 T 的加细。
+
+引理 1. --- 设 X 为连通且局部连通的度量空间，a 与 b 为 X 的点，\(\varepsilon\) 为实数 \(>0\)。X 中存在宽度 \(\leqslant \varepsilon\) 的列车连接 a 与 b。
+
+更精确地说，每条连接 a 与 b 的列车 T 都有加细 \((\mathrm{T}^{\prime}, f)\)，其中 \(T^{\prime}\) 是宽度 \(\leqslant\varepsilon\) 且连接 a 与 b 的列车。
+
+关系“存在宽度 \(\leqslant\varepsilon\) 的列车连接 x 与 y”是 X 中 x 与 y 之间的等价关系。一点 x 的等价类包含 x 的每个直径 \(\leqslant\varepsilon\) 的连通开邻域，而由于 X 局部连通，x 具有这样的邻域。因此这个关系下的等价类都是开的，从而也是闭的。由于 X 连通，它们至多有一个。这就证明了第一个断言。
+
+设 \(\mathrm{T}=(\mathrm{W}_{i})_{1\leqslant i\leqslant n}\) 为 X 中连接 a 与 b 的列车。令 \(x_{0}=a\)，\(x_{n}=b\)，并对 \(1\leqslant i\leqslant n-1\) 选取一点 \(x_{i}\)，它属于非空集 \(W_{i}\cap W_{i+1}\)。对 \(1\leqslant i\leqslant n\)，开集 \(W_{i}\) 连通且局部连通，而 \(x_{i-1}\)、\(x_{i}\) 是它的两个点；由前段，存在列车 \((\mathrm{W}_{i,k})_{1\leqslant k\leqslant m_{i}}\)（在 \(W_{i}\) 中，宽度 \(\leqslant\varepsilon\)，连接 \(x_{i-1}\) 与 \(x_{i}\)）。
+
+令 \(m = m_{1} + \cdots + m_{n}\)。对 \(1 \leqslant j \leqslant m\)，令 \(W_{j}^{\prime} = W_{i,k}\)，其中 \((i, k)\) 是满足 \(1 \leqslant i \leqslant n\)，\(1 \leqslant k \leqslant m_{i}\) 且 \(j = m_{1} + \cdots + m_{i-1} + k\) 的唯一的整数对。对 \(0 \leqslant i \leqslant n\)，令 \(f(i) = m_{1} + \cdots + m_{i}\)。于是 \(T^{\prime} = (W_{j}^{\prime})_{1 \leqslant j \leqslant m}\) 是 X 中宽度 \(\leqslant \varepsilon\)、连接 a 与 b 的列车，且 \((T^{\prime}, f)\) 是 T 的加细。
+
+现在证明命题 11。给连通且局部连通的空间 X 赋以与它的拓扑相容、且使之为完备的距离 d。设 a 与 b 为 X 的点。引理 1 使我们可以归纳地构造序列 \((\mathrm{T}_s)_{s \geqslant 0}\) 与 \((f_s)_{s \geqslant 1}\)，使得对每个 \(s \geqslant 0\)，\(\mathrm{T}_s = (\mathrm{W}_{s,i})_{1 \leqslant i \leqslant n_s}\) 是宽度 \(\leqslant 2^{-s}\)、连接 a 与 b 的列车，且 \((\mathrm{T}_{s+1}, f_{s+1})\) 是 \(\mathrm{T}_s\) 的加细。
+
+我们可以归纳地选取，对 \(s \geqslant 0\)，严格递增映射 \(g_{s} \colon \{0,1,\ldots,n_{s}\} \to I\)，满足 \(g_{s}(0) = 0\) 与 \(g_{s}(n_{s}) = 1\)，使得 \(g_{s+1} \circ f_{s} = g_{s}\)。对 \(s \geqslant 0\)，用下式定义子集 \(A_{s}\)（\(I \times X\) 中的）：
+
+\[
+\mathrm{A} _ {s} = \bigcup_ {1 \leqslant i \leqslant n _ {s}} ([ g _ {s} (i - 1), g _ {s} (i) ] \times \mathrm{W} _ {s, i}).
+\]
+
+序列 \((\mathrm{A}_{s})_{s\geqslant0}\) 是递减的：事实上，对每个整数 \(j\in\{1,\ldots,n_{s+1}\}\)，存在唯一的整数 \(i\in\{1,\ldots,n_{s}\}\) 满足 \(f_{s}(i-1)<j\leqslant f_{s}(i)\)，且有
+
+\[
+[ g _ {s + 1} (j - 1), g _ {s + 1} (j) ] \subset [ g _ {s} (i - 1), g _ {s} (i) ], \quad \mathrm{W} _ {s + 1, j} \subset \mathrm{W} _ {s, i}.
+\]
+
+设 \(t \in \mathbf{I}\)。对所有 \(s \geqslant 0\)，用 \(\mathrm{A}_s(t)\) 表示由 \(x \in \mathrm{X}\)（满足 \((t, x) \in \mathrm{A}_s\)）组成的集合。集合 \(\mathrm{A}_s(t)\) 或者是列车 \(\mathrm{T}_s\) 的某一节车厢，或者是它的两节相邻车厢的并；因此它是 \(\mathrm{X}\) 的非空子集，直径 \(\leqslant 2^{1-s}\)。序列 \((\mathrm{A}_s(t))_{s \geqslant 0}\) 是递减的。它的项组成的集合是一个柯西滤子基。它收敛于一点 \(c(t)\)（因为度量空间 \(\mathrm{X}\) 是完备的）。
+
+由于 \(a\) 属于每个集合 \(\mathrm{A}_s(0) = \mathrm{W}_{s,1}\)，我们有 \(c(0) = a\)；类似地有 \(c(1) = b\)。设 \(t \in \mathbf{I}\)，并设 \(s\) 为整数 \(\geqslant 0\)。点 \(t\) 在 \(\mathbf{I}\) 中有下列形式之一的邻域 V：\([g_s(0), g_s(1)[\)，\(]g_s(i - 1), g_s(i + 1)[\)（\(i\) 为满足 \(1 \leqslant i \leqslant n_s - 1\) 的整数），或 \(]g_s(n_s - 1), g_s(n_s)]\)。视情形而定，集合 \(c(\mathrm{V})\) 包含于列车 \(\mathrm{T}_s\) 的第一节车厢、两节相邻车厢的并、或最后一节车厢的闭包中。因此它的直径 \(\leqslant 2^{1-s}\)，且 \(d(c(t), c(t')) \leqslant 2^{1-s}\)（对 \(t' \in \mathrm{V}\)）。这证明映射 \(c\colon \mathbf{I} \to \mathbf{X}\) 是连续的。于是 \(c\) 是 X 中连接 \(a\) 与 \(b\) 的道路，故 X 道路连通。
+
+推论 1. --- 其拓扑可由一个使之为完备的距离定义的局部连通拓扑空间，是局部道路连通的。
+
+设 X 为这样的空间，U 为 X 的开且连通的子集。由下面的引理 2，U 上存在与它的拓扑相容、且使之为完备的距离。由于 U 局部连通，由命题 11 推出 U 是道路连通的。
+
+引理 2. --- 设 X 为完备度量空间，U 为 X 的开子集。U 上存在与它的拓扑相容、且使之为完备的距离。
+
+我们将采用 TG, IX, p. 57 命题 2 的证明中的论证。可以假设 U 与 X 不同。设 V 为乘积 \(\mathbf{R} \times \mathbf{X}\) 的由点 \((t,x)\)（满足 \(td(x,\mathrm{X}-\mathrm{U})=1\)）组成的子集；\(\mathbf{R} \times \mathbf{X}\) 的子空间 V 是闭的，而从 V 到 U 的映射 \((t,x) \mapsto x\) 是同胚（TG, IX, p. 13, 命题 3）。\(\mathbf{R} \times \mathbf{X}\) 上存在距离 \(d'\)（与它的拓扑相容，且使 \(\mathbf{R} \times \mathbf{X}\) 为完备）（TG, IX, p. 15, 推论 2 及 TG, II, p. 17, 命题 10）。空间 V 对由 \(d'\) 诱导的距离是完备的（TG, II, p. 16, 命题 8），引理得证。
+
+推论 2. --- 局部紧、局部连通且可度量化的拓扑空间是局部道路连通的。若它连通，则它道路连通。
+
+只需证明第一个断言（III, p. 260, 命题 7）。设 X 为局部紧且局部连通的度量空间。X 的开、连通且相对紧的子集构成 X 的拓扑的基。设 U 为这样一个集合；由于 U 在它的闭包（紧从而完备的度量空间）中是开的，由引理 2，U 上存在与它的拓扑相容、且使之为完备的距离。由 III, p. 264 的命题 11 推出 U 是道路连通的，推论得证。
+

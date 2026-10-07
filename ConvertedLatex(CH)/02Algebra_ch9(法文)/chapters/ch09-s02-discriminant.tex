@@ -1,0 +1,236 @@
+\section{半双线性型的判别式}
+
+本小节中，A 表示一个交换环，J 表示 A 的一个自同构，E 表示一个维数为 n 的自由 A-模。
+
+定义 1. --- 给定 E 上关于 J 的半双线性型 \(\Phi\) 以及由 E 的 n 个元素构成的组 \(S = (x_1, \ldots, x_n)\)，称 \(\Phi\) 关于该组的判别式（记作 \(D_{\Phi}(x_1, \ldots, x_n)\) 或 \(D_{\Phi}(S)\)）为 A 的元素 det \((\Phi(x_i, x_j))\)。
+
+若 \((e_{1},\ldots,e_{n})\) 是 E 的一个基，则 \(\Phi\) 关于该基的判别式正是 \(\Phi\) 关于该基的矩阵的行列式。
+
+由 \(\Phi\) 到 \(\wedge\) E 的扩张的定义（\(\S\) 1，第 9 小节）可知
+
+\[
+\mathrm{D} _ {\Phi} (x _ {1}, \dots , x _ {n}) = \Phi_ {(n)} (x _ {1} \wedge \dots \wedge x _ {n}, x _ {1} \wedge \dots \wedge x _ {n}),\tag{1}
+\]
+
+其中 \(\Phi_{(n)}\) 表示 \(\Phi\) 到 \(\wedge\) E 的扩张。因此，对每个置换 \(\sigma \in \mathfrak{S}_n\)，有
+
+\[
+\mathrm{D} _ {\Phi} (x _ {\sigma (\mathbf {1})}, \dots , x _ {\sigma (n)}) = \mathrm{D} _ {\Phi} (x _ {\mathbf {1}}, x _ {\mathbf {2}}, \dots , x _ {n}).
+\]
+
+例. --- 设 B 是环 A 上的一个代数，且 B 是维数为 n 的自由 A-模。于是映射 \((x, y) \to \mathrm{Tr}_{\mathrm{B}/\mathrm{A}}(xy)\)（第 VIII 章，§ 12，第 2 小节）是 B 上的一个双线性型。给定由 B 的 n 个元素构成的组 \((x_{1}, \ldots, x_{n})\)，此型关于该组的判别式称为组 \((x_{1}, \ldots, x_{n})\) 在 A 上的判别式，记作 \(\mathrm{D}_{\mathrm{B}/\mathrm{A}}(x_{1}, \ldots, x_{n})\) 。于是有
+
+\[
+\mathrm{D} _ {\mathrm{B/A}} (x _ {1}, \dots , x _ {n}) = \det (\operatorname{Tr} _ {\mathrm{B/A}} (x _ {i} x _ {j})).\tag{2}
+\]
+
+注. --- 设 \((e_{1},\ldots,e_{n})\) 是 B 在 A 上的一个基，且 \(e_{i}e_{j}=\sum_{k=1}^{n}c_{ijk}e_{k}\;(c_{ijk}\in\mathrm{A})\) 为该基的乘法表（第 II 章，§ 7，第 2 小节）。由于 B 的 A-线性自同态 \(x\to e_{k}x\) 关于 \((e_{r})\) 的矩阵是 \((c_{ksr})\)，故有 \(\mathrm{Tr}_{\mathrm{B}/\mathrm{A}}(e_{k})=\sum_{r=1}^{n}c_{krr}\)，从而 \(\mathrm{Tr}_{\mathrm{B}/\mathrm{A}}(e_{i}e_{j})=\sum_{k,r}c_{ijk}c_{krr}\) 。由此可得
+
+\[
+\mathrm{D} _ {\mathbf {B} / \mathbf {A}} (e _ {1}, \dots , e _ {n}) = \det _ {i, j} (\sum_ {k, r} c _ {i j k} c _ {k r r}).\tag{3}
+\]
+
+命题 1. — 设 \(\Phi\) 是 E 上关于 J 的半双线性型，\((x_1,\ldots,x_n)\) 是由 E 的 \(n\) 个元素构成的组，\((a_{ij})_{(i,j=1,\ldots,n)}\) 是 A 的 \(n^2\) 个元素构成的族；令 \(y_j = \sum_{i=1}^{n} a_{ji} x_i\) 。则有
+
+\[
+\mathrm{D} _ {\Phi} (y _ {1}, \dots , y _ {n}) = \det (a _ {i j}). \det (a _ {i j}) ^ {\mathrm{J}}. \mathrm{D} _ {\Phi} (x _ {1}, \dots , x _ {n}).
+\]
+
+事实上，由于 \(\Phi\) 是半双线性型，有 \(\Phi(y_i, y_j) = \sum_{k,m} a_{ik} \Phi(x_k, x_m) a_{jm}^{\mathfrak{J}}\) 。因此，若以 \(A\) 记矩阵 \((a_{ij})\)，则矩阵 \((\Phi(y_i, y_j))\) 等于 \(A \cdot (\Phi(x_i, x_j)) \cdot {}^t A^{\mathfrak{J}}\) 。由 \(\det(^t A) = \det(A)\) 与 \(\det(A^{\mathfrak{J}}) = \det(A)^{\mathfrak{J}}\)，即得我们的断言。
+
+特别地，若 \((e_{i})\) 与 \((e_{i}^{\prime})\) 是 E 的两个基，D 与 D' 是 \(\Phi\) 分别关于这两个基的判别式，a 是从基 \((e_{i})\) 到基 \((e_{i}^{\prime})\) 的过渡矩阵的行列式，则有
+
+\[
+\mathrm{D} ^ {\prime} = a a ^ {\mathrm{J}} \mathrm{D}.\tag{4}
+\]
+
+由命题 1 可知，若 \((e_i)\) 是 E 的一个基，而 \((x_i)\) 是 E 的 \(n\) 个元素构成的任意一个组，则 \(\mathrm{D}_{\Phi}(e_1,\ldots ,e_n)\) 整除 \(\mathrm{D}_{\Phi}(x_1,\dots,x_n)\) 。特别地，\(\Phi\) 关于 E 的任意两个基的判别式生成 A 的同一个主理想。
+
+设 \((\mathbf{E}_i)_{i\in I}\) 是由有限维自由 A-模构成的有限族，\(\Phi_i\) 是 \(\mathbf{E}_i\) 上关于 J 的半双线性型，\(\mathbf{B}_i\) 是 \(\mathbf{E}_i\) 的一个基。若以 \(\Phi\) 表示诸 \(\Phi_i\) 的直和（\(\S 1\)，第 3 小节），以 B 表示 \(\prod E_i\) 的由诸 \(\mathbf{B}_i\) 之并得到的基，则显然有
+
+\[
+\mathrm{D} _ {\Phi} (\mathrm{B}) = \prod_ {i \in \mathrm{I}} \mathrm{D} _ {\Phi_ {i}} (\mathrm{B} _ {i}).\tag{5}
+\]
+
+设 \(\Phi\) 是关于 \(J\) 的 \(E\) 上的半双线性型，\(h\) 是 \(A\) 到一个交换环 \(A'\) 中的同态，\(\Phi'\) 是 \(A' \otimes_A E\) 上由 \(\Phi\) 经标量扩张得到的半双线性型（\(\S 1\)，第 4 小节），\((x_1, \ldots, x_n)\) 是 \(E\) 的元素的任意一个组。由于 \(A' \otimes_A E\) 是自由 \(A'\) -模，\(D_{\Phi'}(1 \otimes x_1, \ldots, 1 \otimes x_n)\) 有定义，且显然有
+
+\[
+\mathrm{D} _ {\Phi^ {\prime}} (1 \otimes x _ {1}, \dots , 1 \otimes x _ {n}) = h (\mathrm{D} _ {\Phi} (x _ {1}, \dots , x _ {n})).\tag{6}
+\]
+
+例. --- 设 B 是 A 上的一个代数，且是维数为 \(n\) 的自由 A-模，\((x_{1},\ldots,x_{n})\) 是 B 在 A 上的一个基，m 是 A 的一个理想。若以 \(h\) 表示 B 到 B/mB 上的典范同态，则 \((h(x_{1}),\ldots,h(x_{n}))\) 是 B/mB 在 A/m 上的一个基（第 I 章，§ 6，第 5 小节，命题 5），且 B/mB 同构于 \((A/m)\otimes_{A}B\) 。于是有
+
+\[
+\mathrm{D} _ {(\mathrm{B} / \mathfrak {m B}) / (\mathrm{A} / \mathfrak {m})} (h (x _ {1}), \dots , h (x _ {n})) = h (\mathrm{D} _ {\mathrm{B} / \mathrm{A}} (x _ {1}, \dots , x _ {n})).
+\]
+
+命题 2. --- 假设 A 是一个整环。设 \(\Phi\) 是 E 上关于 J 的半双线性型，\((e_1, \ldots, e_n)\) 是 E 的一个基，使得 \(\mathrm{D}_{\Phi}(e_1, e_2, \ldots, e_n) \neq 0\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  要使组 \((x_{1},\ldots ,x_{n})\)（由 E 的 \(n\) 个元素组成）是自由的，必须且只需 \(\mathrm{D}_{\Phi}(x_1,\dots,x_n)\) \(\neq 0\) 。
+\item
+  要使组 \((x_{1},\ldots ,x_{n})\)（由 E 的 \(n\) 个元素组成）是 E 的一个基，必须且只需 \(\mathrm{D}_{\Phi}(x_1,\dots,x_n)\) 与 \(\mathrm{D}_{\Phi}(e_1,\dots,e_n)\) 是 A 中的相伴元素（参见第 VI 章，§ 1，第 5 小节）。
+\end{enumerate}
+
+令 \(x_j = \sum_{i=1}^{n} a_{ji} e_i\)（ \(a_{ji} \in A\) ）。先证 \(a\) )。若 \(D_{\Phi}(x_1, \ldots, x_n) = 0\)，则由命题 1 有 \(\det(a_{ji})\) . \(\det(a_{ji})^{\mathfrak{J}} = 0\)，因为 \(D_{\Phi}(e_1, \ldots, e_n) \neq 0\) 且 A 是整环；于是 \(\det(a_{ji}) = 0\)，从而向量 \(x_j\) 线性相关（第 III 章，§ 7，第 1 小节，定理 1，应用于向量空间 \(K \otimes_A E\)，其中 K 表示 A 的分式域）。反之，若这些向量线性相关，则 \(\det(a_{ji}) = 0\)（ \(ibid.\) ），从而 \(D_{\Phi}(x_1, \ldots, x_n) = 0\)（命题 1）。
+
+再证 \(b\) )。若 \(\mathrm{D}_{\Phi}(x_1, \ldots, x_n)\) 与 \(\mathrm{D}_{\Phi}(e_1, \ldots, e_n)\) 在 A 中相伴，则命题 1 表明 \(\det(a_{ij}) \cdot \det(a_{ij})^{\mathrm{J}}\) 在 A 中可逆。于是 \(\det(a_{ij})\) 在 A 中也可逆；从而 A 上的矩阵 \((a_{ij})\) 可逆（第 III 章，§ 6，第 5 小节，定理 2），且 E 的自同态 \(g\)（由 \(g(e_i) = x_i\)（ \(i = 1, \ldots, n\) ）定义）是一个自同构；于是 \((x_1, \ldots, x_n)\) 是 E 的一个基。逆命题由命题 1 立即得出。
+
+命题 3. --- 设 \(\Phi\) 是 E 上关于 J 的半双线性型，S 是 E 的一个基。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  映射 \(s_{\Phi}\)（E 到 \(E^{*}\) 中与 \(\Phi\) 相伴的映射）是双射。
+\item
+  映射 \(d_{\Phi}\)（E 到 \(E^{*}\) 中与 \(\Phi\) 相伴的映射）是双射。
+\item
+  元素 \(D_{\Phi}(S)\) 在 A 中可逆。
+\end{enumerate}
+
+事实上，条件 \(c\) 表明 \(\Phi\) 关于 S 的矩阵可逆（第 III 章，§ 6，第 5 小节，定理 2）。于是 \(c\) 等价于 \(a\)（ \(§ 1\) ，第 10 小节）；同样，\(c\) 等价于 \(b\)）。
+
+命题 4. --- 假设 A 是一个整环。设 S 是 E 的一个基。要使 E 上的半双线性型 \(\Phi\) 非退化，必须且只需 D \(_{\Phi}\) (S) ≠ 0。
+
+事实上，设 K 是 A 的分式域，\(\Phi'\) 是 \(\Phi\) 到 K-向量空间 \(K\otimes_{\mathbf{A}}E\) 的扩张；我们把 E 与这个向量空间的一个子集视为同一。此时关系 \(D_{\Phi}(S)\neq0\) 由公式 (6) 等价于 \(D_{\Phi'}(S)\neq0\)，而后者表明 \(s_{\Phi'}\) 是双射（命题 3），即 \(\Phi'\) 非退化（\(\S1\)，第 6 小节，命题 6）。又，对每个 \(x\in K\otimes_{\mathbf{A}}E\)，存在 \(a\in A\) 使 \(ax\in E\)。因此，要使 \(\Phi\) 退化，必须且只需 \(\Phi'\) 退化。这就证明了我们的断言。
+
+命题 5. --- 设 A 是一个体，B 是 A 上维数为 n 的交换代数，S 是 B 的一个基。要使 B 可分（第 VIII 章，§ 7，第 5 小节，定义 1），必须且只需 D \(_{B/A}\) (S) ≠ 0。
+
+设 A' 是 A 的代数闭包，B' 是 A' 上的代数 A' ⊗\_A B。若 B 可分，则 B' 半单（第 VIII 章，§ 7，第 5 小节，命题 7 的推论），因而是 n 个同构于 A' 的体的直积（第 VIII 章，§ 6，第 4 小节，命题 9 的推论）。若以 S' 表示 B' 的典范基（与 A'	extsuperscript{n}视为同一），则有 D\_\{B'/A'\}(S') = 1，从而 D\_\{B'/A'\}(S) ≠ 0（命题 1）且 D\_\{B/A\}(S) ≠ 0（公式 (6)）。
+
+反之，设 \(D_{B/A}(S) \neq 0\)。要证明 B 可分，只需证明 \(B'\) 半单，即它不含 \(\neq 0\) 的幂零元素。若 \(x'\) 是 \(B'\) 的一个非零幂零元素，则可取它作为某个基 \(S'\) （\(B'\) 的）的第一个元素，于是 \(\mathrm{Tr}_{\mathbf{B}'/\mathbf{A}'}(x'y') = 0\) 对一切 \(y' \in S'\) 成立，因为幂零自同态的特征值全为零（第 VII 章，§ 5，第 3 小节，命题 8 的推论 3），从而迹为零。由此将得出 \(\mathrm{D}_{\mathbf{B}'/\mathbf{A}'}(\mathrm{S}') = 0\)，于是 \(\mathrm{D}_{\mathbf{B}'/\mathbf{A}'}(\mathrm{S}) = 0\)（命题 1）且 \(\mathrm{D}_{\mathbf{B}/\mathbf{A}}(\mathrm{S}) = 0\)（公式 (6)），与假设矛盾。
+
+注. --- 假设 B 是 A 的一个扩体。设 \(S = (x_{1}, \ldots, x_{n})\) 是 B 的一个基，\((s_{1}, \ldots, s_{n})\) 是 B 到 A 的代数闭包 A' 中的诸 A-同构（每个 \(s_{j}\) 重复 \([B : A]_{i}\) 次）。回忆，对每个 \(z \in B\)，有 \(\operatorname{Tr}_{\mathbf{B}/\mathbf{A}}(z) = \sum_{j=1}^{n} s_{j}(z)\)（第 VIII 章，§ 12，第 2 小节，命题 4）。
+
+于是由行列式的乘法公式可得
+
+\[
+(\det (s _ {j} (x _ {i}))) ^ {2} = \mathrm{D} _ {\mathrm{B/A}} (x _ {1}, \dots , x _ {n}).\tag{7}
+\]
+
+此公式表明命题 5 推广了第 V 章，§ 7，第 2 小节注中给出的可分性条件。
+
+命题 6. --- 设 \(\Phi\) 是 E 上的一个 A-双线性型，K 是 A 的一个子环，使得 A 是维数为 q 的自由 K-模。若 \((e_i)_{i=1,\ldots,n}\) 是 E 在 A 上的一个基，\((a_j)_{j=1,\ldots,q}\) 是 A 在 K 上的一个基，则 \((a_j e_i)\) 是 E 在 K 上的一个基。映射 \(\Phi'\) 从 E \(\times\) E 到 K 中，由 \(\Phi'(x,y)=\mathrm{Tr}_{\mathrm{A/K}}(\Phi(x,y))\) 定义，它是 E 上的 K-双线性型，且有
+
+\[
+\mathrm{D} _ {\Phi^ {\prime}} (a _ {j} e _ {i}) = \mathrm{N} _ {\mathrm{A} / \mathrm{K}} (\mathrm{D} _ {\Phi} (e _ {1}, \dots , e _ {n})) \cdot (\mathrm{D} _ {\mathrm{A} / \mathrm{K}} (a _ {1}, \dots , a _ {q})) ^ {n}.\tag{8}
+\]
+
+前两个断言是明显的，只需证明 (7)。按定义，左端是由下式定义的 E 的 K-线性自同态 u 的行列式
+
+\[
+u (a _ {j} e _ {i}) = \sum_ {r, s} \mathrm{Tr} _ {\mathbf {A} / \mathbf {K}} (a _ {j} a _ {r} \Phi (e _ {i}, e _ {s})) a _ {r} e _ {s}.
+\]
+
+考察 E 的 A-线性自同态 \(\nu\)（由 \(\nu(e_i) = \sum_s \Phi(e_i, e_s)e_s\) 定义）以及 E 的 K-线性自同态 \(w\)（由 \(w(a_j e_i) = (\sum_r \mathrm{Tr}_{\mathrm{A/K}}(a_j a_r)a_r)e_i\) 定义）。我们有
+
+\[
+w \left(v \left(a _ {j} e _ {i}\right)\right) = w \left(\sum_ {s} a _ {j} \Phi \left(e _ {i}, e _ {s}\right) e _ {s}\right) = \sum_ {\tau , s} \operatorname{Tr} _ {\mathrm{A} / \mathrm{K}} \left(a _ {j} \Phi \left(e _ {i}, e _ {s}\right) a _ {\tau}\right) a _ {r} e _ {s}
+\]
+
+因为 \(w(ae_s) = \sum_r \mathrm{Tr}_{\Lambda/\mathbb{K}}(aa_r)a_r e_s\) 对一切 \(a \in A\) 成立；于是 \(u\) 是复合映射 \(w \circ v\)。这样，以 \(v_{\kappa}\) 表示把 \(v\) 视为 K-线性映射，则有 \(\det(u) = \det(v_{\kappa})\det(w)\)。而 \(\det(v_{\kappa}) = N_{\Lambda/\mathbb{K}}(\det(v))\)（第 VIII 章，§ 12，第 2 小节，命题 7），且显然 \(\det(v) = D_{\Phi}(e_1, \ldots, e_n)\)。另一方面，由于每个 A-模 \(Ae_i\)（ \(i = 1, \ldots, n\) ）在 \(w\) 下稳定，且 \(w\) 在 \(Ae_i\) 上的限制的行列式为 \(\det(\mathrm{Tr}_{\Lambda/\mathbb{K}}(a_j a_r)) = D_{\Lambda/\mathbb{K}}(a_1, \ldots, a_q)\)，故有 \(\det(w) = (D_{\Lambda/\mathbb{K}}(a_1, \ldots, a_q))^n\)。于是公式 (8) 化归为 \(\det(u) = \det(v_{\kappa})\det(w)\)，此式上文已证。
+
+推论（“判别式的传递公式”）. — 设 K 是一个交换环，A 是在 K 上具有有限基 \((a_{j})_{j=1,\ldots,q}\) 的交换代数，E 是在 A 上具有有限基 \((e_{i})_{i=1,\ldots,n}\) 的代数。于是 \((a_{j}e_{i})\) 是 E 在 K 上的一个基，且有
+
+\[
+\mathrm{D} _ {\mathrm{E} / \mathrm{K}} (a _ {j} e _ {i}) = \mathrm{N} _ {\mathrm{A} / \mathrm{K}} (\mathrm{D} _ {\mathrm{E} / \mathrm{A}} (e _ {1}, \dots , e _ {n})) \cdot (\mathrm{D} _ {\mathrm{A} / \mathrm{K}} (a _ {1}, \dots , a _ {q})) ^ {n}.
+\]
+
+事实上，若令 \(\Phi(x,y)=\mathrm{Tr}_{\mathrm{E/A}}(xy)\)，则由迹的传递公式（第 VIII 章，§ 12，第 2 小节，命题 7 的推论），命题 6 的 K-双线性型 \(\Phi'\) 为 \(\Phi'(x,y)=\mathrm{Tr}_{\mathrm{E/K}}(xy)\)。
+
+习题. — 1) 设 A 是域 K 上有限秩的代数，具有单位元。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：若 A 的根不等于零，则 A 上的双线性型 \((x, y) \to \mathrm{Tr}_{\mathbf{A}/\mathbf{K}}(xy)\) 是退化的。
+\item
+  假设 K 的特征为 0。证明：若 A 是矩阵代数 \(\mathbf{M}_{n}(\mathrm{K})\)，S 是 A 在 K 上的典范基，则有 \(\mathrm{D}_{\mathrm{A}/\mathrm{K}}(\mathrm{S}) \neq 0\)。
+\item
+  由 a) 与 b) 推出：要使特征 0 的域 K 上有限秩的代数 A 绝对半单，必须且只需双线性型 \((x,y)\to\mathrm{Tr}_{\mathbf{A}/\mathbf{K}}(xy)\) 非退化（或者等价地，对 A 在 K 上的每个基 S 有 \(\mathrm{D}_{\mathbf{A}/\mathbf{K}}(\mathrm{S})\neq0\)）。
+\end{enumerate}
+
+设 B 是一个环，A 是 B 的一个包含 B 的单位元的子环；于是 B 是一个 (A, A)-双模；我们以 \(^s\text{B}\)（相应地 \(^d\text{B}\)）表示把集合 B 视为左（相应地右）A-模，以 \(^s\text{B}^*\)（相应地 \(^d\text{B}^*\)）表示 \(^s\text{B}\)（相应地 \(^d\text{B}\)）的右（相应地左）对偶 A-模。对每个 \(x' \in ^s\text{B}^*\) 与每个 \(b \in \text{B}\)，\(x \to \langle xb, x' \rangle\) 是 \(^s\text{B}\) 上的 A-线性型，因而是 \(^s\text{B}^*\) 中记作 \(bx'\) 的元素；映射 \((b, x') \to bx'\) 在 \(^s\text{B}^*\) 上定义了一个左 B-模结构（参见第 III 章，第 2 版，附录 II，第 7 小节）。
+
+\[
+(\mathrm{A}, \mathrm{A})
+\]
+
+\[
+(\mathrm{A}, \mathrm{A}) -
+\]
+
+\[
+\Phi : (x, y) \rightarrow \varphi (x y)
+\]
+
+\(^{s}\) B × \(^{d}\) B 到 A 中的型是非退化的，必须且只需 \(\varphi(0)\) 不包含 B 的除 \(\{0\}\) 之外的任何理想（左理想或右理想）。这时称 \(\varphi\) 为 B 到 A 中的弗罗贝尼乌斯同态。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(\varphi\) 是 B 到 A 中的弗罗贝尼乌斯同态；证明映射 \(d_{\Phi}\) （与 \(\Phi\) 右相伴）是左 B-模 \(B_s\) 到左 B-模 \(^sB^*\) 的一个子模上的同构。证明在下列两种情形的每一种中 \(d_{\Phi}\) 都是双射：\(1^\circ\) A 是满足条件（ \(N_s\) ）与（ \(N_d\) ）的左、右阿廷环（\(\S 1\)，习题 11），且 \(^sB\) 与 \(^dB\) 是有限长度的自由 A-模（利用 \(\S 1\) 习题 11 b)）；\(2^\circ\) A 是交换的对合阿廷环（第 VIII 章，\(\S 3\)，习题 11），含于 B 的中心，且 \(^{s}\) B 是有限长度的 A-模（利用第 VIII 章 § 3 习题 11）。
+\item
+  反之，证明若 B \(_{s}\) 与 \(^{s}\) B \(^{*}\) 同构，则在 b) 所考虑的两种情形之一中，且 \(^{s}\) B 与 \(^{d}\) B 有相同长度时，存在 B 到 A 中的弗罗贝尼乌斯同态（利用 § 1 习题 11 b)）。
+\item
+  在 a) 的假设与记号下，证明 B 的左理想 I（相应地右理想 r）的右零化子（相应地左零化子）是子模 I（相应地 r）（sB（相应地 dB）的子模）关于型 Φ 的正交补 l⁰（相应地 r⁰）。
+\item
+  设 \(\varphi\) 是 B 到 A 中的弗罗贝尼乌斯同态。证明若 A 是对合阿廷环（第 VIII 章，§ 3，习题 11），则在再假设 \(b\) ) 的两个条件之一成立时，B 也是（利用 \(b\) ) 与 \(d\) )）。
+\end{enumerate}
+
+¶ 3) 设 A 是一个域，B 是 A 上有限秩的代数，具有单位元。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  要使 B 是弗罗贝尼乌斯代数，必须且只需存在 B 到 A 中的弗罗贝尼乌斯同态（习题 2）。（利用上文的习题 2 c) 与 e)，以及第 VIII 章 § 13 习题 6 b)。）
+\item
+  设 \(\varphi\) 是 B 到 A 中的弗罗贝尼乌斯同态；于是 B 上的每个 A-线性型都可以以唯一方式写成 \(x \to \varphi(b'x)\)（相应地 \(x \to \varphi(xb'')\)），其中 \(b'\) 与 \(b''\) 属于 B；要使此型是弗罗贝尼乌斯同态，必须且只需 \(b'\)（相应地 \(b''\)）在 B 中可逆。
+\item
+  对每个 \(x \in B\)，设 \(x^{\sigma}\) 是满足 \(\varphi(xy) = \varphi(yx^{\sigma})\)（对一切 \(y \in B\)）的唯一元素（参见 b)）。证明 \(x \to x^{\sigma}\) 是 B 的一个 A-自同构。若 \(\sigma\) 是 B 的内自同构，则称弗罗贝尼乌斯代数 B 是对称的；此时存在 B 到 A 中的一个弗罗贝尼乌斯同态，使 \(\sigma\) 为恒等（参见 b)）。这等价于说 (B, B)-双模 B 与 \(^{s}B^{*} = ^{d}B^{*}\)（记作 B*）同构（习题 2 c)）。
+\item
+  设 E 是有限长度的左 B-模，E' 是它的对偶，E'* 是把 E' 视为 A 上向量空间时的对偶；对 \(x' \in \mathrm{E}', x'' \in \mathrm{E}*\)，\(b \in \mathrm{B}\)，令 \(\langle x', bx'' \rangle = \langle x'b, x'' \rangle\)，便给 E'* 配备了一个左 B-模结构（第 III 章，第 2 版，附录 II，第 7 小节）。对每个 \(x \in \mathrm{E}\)，设 \(f_{\mathrm{E}}(x)\)（或简记 \(f(x)\)）为 E'* 中满足 \(\langle x', f(x) \rangle = \varphi(\langle x, x' \rangle)\)（对一切 \(x' \in \mathrm{E}'\)）的元素；证明 \(f\) 是关于自同构 \(\sigma\) 的半线性双射，从左 B-模 E 映到左 B-模 E'* 上（利用第 VIII 章 § 4 习题 10）。对 \(\mathrm{E} = \mathrm{B}_s\)，有（用习题 2 b) 的记号）\(d_{\Phi}(x^{\sigma}) = f_{\mathrm{B}_s}(x)\)，对一切 \(x \in \mathrm{B}\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 G 是一个有限群。证明：群 G 在任意域 A 上的代数 B 是对称弗罗贝尼乌斯代数（习题 3）。（考察 B 到 A 中的映射 \(\varphi\)，它把每个元素 \(x = \sum_{s \in G} \xi_s.s\) 对应到 \(\varphi(x) = \xi_e\)，其中 \(e\) 表示 G 的单位元。）
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 E 是域 A 上维数为 n 的向量空间，B 是外代数 \(\wedge\) E。证明 B 是弗罗贝尼乌斯代数。（若 \((e_i)_{1 \leqslant i \leqslant n}\) 是 E 的一个基，考察这样的映射：它把 B 的每个元素 \(x\) 对应到 \(e_1 \wedge e_2 \wedge \ldots \wedge e_n\) 在 \(x\) 用与 \((e_i)\) 相应的 B 的基表出时的系数。）要使弗罗贝尼乌斯代数 B 是对称的，必须且只需 \(n\) 是偶数或 A 的特征为 2。
+\end{enumerate}
+
+¶ 5) a) 证明：域 K 上有限秩的两个弗罗贝尼乌斯代数（相应地弗罗贝尼乌斯且对称的代数）的张量积是弗罗贝尼乌斯代数（相应地弗罗贝尼乌斯且对称的代数）（参见 § 1，第 9 小节，命题 9）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 B 是 K 上有限秩的代数，L 是 K 上有限次的扩张。证明：若 L 上的代数 \(\mathrm{B}_{(\mathrm{L})} = \mathrm{B} \otimes_{\mathrm{K}} \mathrm{L}\) 是弗罗贝尼乌斯代数（相应地弗罗贝尼乌斯且对称的代数），则 B 也是。（利用上文的习题 2 c) 与 3 c)，以及第 VIII 章 § 2 习题 2。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  证明：域 A 上有限秩的绝对半单代数 B 都是对称弗罗贝尼乌斯代数。（化归到 B 为单代数的情形；利用上文的习题 5 b)，以及第 VIII 章 § 12 第 3 小节命题 9。）
+\end{enumerate}
+

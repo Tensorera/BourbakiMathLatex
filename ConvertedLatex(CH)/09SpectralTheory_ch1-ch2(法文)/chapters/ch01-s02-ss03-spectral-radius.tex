@@ -1,0 +1,80 @@
+\subsection{谱半径}
+
+引理 2 (Fekete 引理). --- 设 \((a_{n})_{n\geqslant1}\) 是一个实数序列。假定
+
+\[
+a _ {n + m} \leqslant a _ {n} + a _ {m}
+\]
+
+对一切 \(n \geqslant 1\) 与每个 \(m \geqslant 1\) 成立。则序列 \((a_n / n)_{n \geqslant 1}\) 收敛且满足
+
+\[
+\lim _ {n \to + \infty} \frac {a _ {n}}{n} = \inf _ {n \geqslant 1} \frac {a _ {n}}{n}.
+\]
+
+令 \(a_0 = 0\)；不等式 \(a_{n+m} \leqslant a_n + a_m\) 对每个 \(n \geqslant 0\) 与每个 \(m \geqslant 0\) 仍然成立。固定一个整数 \(m \geqslant 1\)。对每个整数 \(n \geqslant 1\)，用 \(q(n)\) 与 \(r(n)\) 表示使 \(n = q(n)m + r(n)\) 且 \(0 \leqslant r(n) < m\) 的整数 (E, III, p.~39, 定理 1)。于是假设蕴涵
+
+\[
+\frac {a _ {n}}{n} \leqslant \frac {a _ {q (n) m}}{n} + \frac {a _ {r (n)}}{n} \leqslant \frac {q (n) a _ {m}}{n} + \frac {a _ {r (n)}}{n} \leqslant \frac {q (n)}{n} a _ {m} + \frac {m}{n}.
+\]
+
+令 \(n\) 趋于 \(+\infty\)，就推出 \(\limsup_{n}(a_{n}/n) \leqslant a_{m}/m\)，因为 \(q(n)/n \to 1/m\)。由于这对每个 \(m \geqslant 1\) 都成立，因此我们有
+
+\[
+\limsup _ {n \to + \infty} \frac {a _ {n}}{n} \leqslant \inf _ {m \geqslant 1} \frac {a _ {m}}{m} \leqslant \liminf _ {n \to + \infty} \frac {a _ {n}}{n}.
+\]
+
+这些不等式证明了序列 \((a_{n}/n)_{n\geqslant1}\) 的收敛性以及公式 \(\lim a_{n}/n = \inf_{n\geqslant1} a_{n}/n\)。
+
+命题 1. --- 设 A 是一个赋范代数。对每个 \(x \in \mathrm{A}\)，序列 \((\|x^n\|^{1/n})_{n \geqslant 1}\) 收敛，且其极限 \(\varrho(x)\) 等于 \(\inf_{n \geqslant 1} \|x^n\|^{1/n}\)。而且，对定义 A 的拓扑的任何范数 \(x \mapsto \|x\|_1\)，也有
+
+\[
+\varrho (x) = \lim _ {n \to + \infty} \| x ^ {n} \| _ {1} ^ {1 / n} = \inf _ {n \geqslant 1} \| x ^ {n} \| _ {1} ^ {1 / n}.
+\]
+
+若 \(x\) 是幂零的，则有 \(\| x^n\| _1^{1 / n} = 0\)（对每个充分大的整数 \(n\) 以及定义 A 的拓扑的每个范数 \(x\mapsto \| x\| _1\)）。
+
+现在设 \(x\) 不是幂零的，并令 \(\alpha_{n} = \| x^{n}\|\)。有 \(\alpha_{n} > 0\)（对每个整数 \(n \geqslant 1\)），且由 (1)，有 \(\alpha_{n + m} \leqslant \alpha_{n}\alpha_{m}\)（对一切 \(n, m \in \mathbf{N}\)）。把引理 2 应用于序列 \(a_n = \log(\alpha_n)\)，就证明了极限 \(\varrho(x)\) 的存在性以及公式 \(\varrho(x) = \inf_{n > 0} \alpha_n^{1/n}\)。
+
+设 \(x \mapsto \|x\|_1\) 是定义 A 的拓扑的一个范数。存在实数 \(a > 0\) 与 \(b > 0\)，使得
+
+\[
+a \| x \| \leqslant \| x \| _ {1} \leqslant b \| x \|
+\]
+
+对一切 \(x \in A\) 成立 (EVT, II, p.~7, 推论 2)。由此得
+
+\[
+a ^ {1 / n} \| x ^ {n} \| ^ {1 / n} \leqslant \| x ^ {n} \| _ {1} ^ {1 / n} \leqslant b ^ {1 / n} \| x ^ {n} \| ^ {1 / n},
+\]
+
+对一切 \(n \geqslant 1\) 成立；因而，取极限或取下确界，就得到等式
+
+\[
+\varrho (x) = \lim _ {n \to + \infty} \| x ^ {n} \| _ {1} ^ {1 / n} = \inf _ {n > 0} \| x ^ {n} \| _ {1} ^ {1 / n}.
+\]
+
+定义 2. --- 对赋范代数 A 的每个元素 x，实数
+
+\[
+\varrho (x) = \lim _ {n \to \infty} \| x ^ {n} \| ^ {1 / n} = \inf _ {n > 0} \| x ^ {n} \| ^ {1 / n}
+\]
+
+称为 x 的谱半径。
+
+对 A 的每个元素 \(x\)，我们有
+
+\[
+\begin{array}{r l} (3) & \varrho (x) \leqslant \| x \| \\ (4) & \varrho (x ^ {n}) = \varrho (x) ^ {n}, \text { for every integer } n \geqslant 1. \end{array}
+\]
+
+定义 3. --- A 的元素 x 称为拟幂零的，如果 \(\varrho(x)=0\)。
+
+这等价于说，对任何 \(\lambda \in \mathbf{K}\)，诸数 \(\| (\lambda x)^n\|\) 对 \(n\geqslant 1\) 有界，或者等价地，对任何 \(\lambda \in \mathbf{K}\)，序列 \((\lambda x)^n\) 当 \(n\to +\infty\) 时趋于 0。
+
+注 1. --- 设 A 是一个赋范代数。若元素 \(x \in \mathbf{A}\) 满足 \(\varrho(x) = \|x\|\)，则由 (3) 与 (4)，有 \(\|x^n\| = \|x\|^n\)（对一切 \(n \in \mathbf{N}\)）。
+
+反之，假定有 \(\|x^{2}\|=\|x\|^{2}\)（对一切 \(x\in A\)）。则对每个整数 \(n\geqslant0\)，有等式 \(\|x^{2^{n}}\|=\|x\|^{2^{n}}\)，因而 \(\|x\|=\|x^{2^{n}}\|^{2^{-n}}\)；令 n 趋于 \(+\infty\)，就得到 \(\|x\|=\varrho(x)\)。
+
+注 2. --- A 上的函数 \(x \mapsto \varrho(x)\)，作为连续函数 \(x \mapsto \|x^n\|^{1/n}\)（\(n \geqslant 1\)）的下包络，是上半连续的 (TG, IV, p.~31, 推论)，但一般说来它不连续。甚至可能发生这样的情形 (参见 I, p.~157, 习题 12)：A 的一个幂零元素序列收敛于一个不是拟幂零的元素。
+

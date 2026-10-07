@@ -1,0 +1,108 @@
+\subsection{TAYLOR'S FORMULA}
+
+Let f be a vector function defined on an interval \(I \subset R\) , with values in a normed space E over R; to say that f has a derivative at a point \(a \in I\) signifies that
+
+\[
+\lim _ {x \to a, x \in \mathrm{I}, x \neq a} \frac {\mathbf {f} (x) - \mathbf {f} (a) - \mathbf {f} ^ {\prime} (a) (x - a)}{x - a} = 0;\tag{6}
+\]
+
+or, otherwise, that \(\mathbf{f}\) is ``approximately equal'' to the linear function \(\mathbf{f}(a) + \mathbf{f}'(a)(x - a)\) on a neighbourhood of \(a\) (cf.~chap.~V, where this concept is developed in a general manner). We shall see that the existence of the \(n^{th}\) order derivative of \(\mathbf{f}\) at the point \(a\) entails in the same way that \(\mathbf{f}\) is ``approximately equal'' to a polynomial of degree \(n\) in \(x\) , with coefficients in E (Gen.~Top., X, p.~315) on a neighbourhood of \(a\) . To be precise:
+
+THEOREM 1. If the function f has an \(n^{th}\) derivative at the point a then
+
+\[
+\lim _ {x \to a, x \in \mathrm{I}, x \neq a} \frac {\mathbf {f} (x) - \mathbf {f} (a) - \mathbf {f} ^ {\prime} (a) \frac {(x - a)}{1 !} - \cdots - \mathbf {f} ^ {(n)} (a) \frac {(x - a) ^ {n}}{n !}}{(x - a) ^ {n}} = 0.\tag{7}
+\]
+
+We proceed by induction on n.~The theorem holds for n = 1. For arbitrary n one can, by the induction hypothesis, apply it to the derivative \(f'\) of f : for any \(\varepsilon > 0\) there is an h \textgreater{} 0 such that, if one puts
+
+\[
+\mathbf {g} (x) = \mathbf {f} (x) - \mathbf {f} (a) - \mathbf {f} ^ {\prime} (a) \frac {(x - a)}{1 !} - \mathbf {f} ^ {\prime \prime} (a) \frac {(x - a) ^ {2}}{2 !} - \dots - \mathbf {f} ^ {(n)} (a) \frac {(x - a) ^ {n}}{n !}
+\]
+
+one has, for \(|y - a| \leqslant h\) and \(y \in I\) ,
+
+\[
+\begin{array}{l} \left\| \mathbf {g} ^ {\prime} (y) \right\| = \left\| \mathbf {f} ^ {\prime} (y) - \mathbf {f} ^ {\prime} (a) - \mathbf {f} ^ {\prime \prime} (a) \frac {(y - a)}{1 !} - \dots - \mathbf {f} ^ {(n)} (a) \frac {(y - a) ^ {n - 1}}{(n - 1) !} \right\| \\ \leqslant \varepsilon | y - a | ^ {n - 1}. \end{array}
+\]
+
+We apply the mean value theorem (I, p.~15, th. 2) on the interval with endpoints \(a\) , \(x\) (with \(|x - a| \leqslant h\) ) to the vector function \(\mathbf{g}\) and to the real increasing function equal to \(\varepsilon |y - a|^n / n\) if \(x > a\) , and to \(-\varepsilon |y - a|^n / n\) if \(x < a\) ; it follows that \(\| \mathbf{g}(x) \| \leqslant \varepsilon |x - a|^n / n\) , which proves the theorem.
+
+We thus can write
+
+\[
+\begin{array}{c} \mathbf {f} (x) = \mathbf {f} (a) + \mathbf {f} ^ {\prime} (a) \frac {(x - a)}{1 !} + \mathbf {f} ^ {\prime \prime} (a) \frac {(x - a) ^ {2}}{2 !} + \dots \\ + \mathbf {f} ^ {(n)} (a) \frac {(x - a) ^ {n}}{n !} + \mathbf {u} (x) \frac {(x - a) ^ {n}}{n !} \end{array}\tag{8}
+\]
+
+where \(\mathbf{u}(x)\) approaches 0 as \(x\) approaches \(a\) while remaining in I; this formula is called Taylor's formula of order \(n\) at the point \(a\) , and the right-hand side of (8) is called the Taylor expansion of order \(n\) of the function \(\mathbf{f}\) at the point \(a\) . The last term \(\mathbf{r}_n(x) = \mathbf{u}(x)(x - a)^n / n!\) is called the remainder in the Taylor formula of order \(n\) .
+
+When f has a derivative of order \(n + 1\) on I, one can estimate \(\|\mathbf{r}_{n}(x)\|\) in terms of this \(n + 1^{th}\) derivative, on all of I, and not just on an unspecified neighbourhood of a :
+
+PROPOSITION 3. If \(\left\| \mathbf{f}^{(n + 1)}(x)\right\| \leqslant \mathbf{M}\) on I, then we have
+
+\[
+\| \mathbf {r} _ {n} (x) \| \leqslant \mathrm{M} \frac {| x - a | ^ {n + 1}}{(n + 1) !}\tag{9}
+\]
+
+on I.
+
+Indeed, the formula holds for \(n = 0\) , by I, p.~15, th. 2. Let us prove it by induction on \(n\) : by the induction hypothesis applied to \(\mathbf{f}'\) , one has
+
+\[
+\left| \left| \mathbf {r} _ {n} ^ {\prime} (y) \right| \right| \leqslant \mathrm{M} \frac {| y - a | ^ {n}}{n !}
+\]
+
+from which the formula (9) follows by the mean value theorem (I, p.~23, th. 2).
+
+COROLLARY. If \(f\) is a finite real function with a derivative of order \(n + 1\) on \(\mathbf{I}\) , and if \(m \leqslant f^{(n + 1)}(x) \leqslant \mathbf{M}\) on \(\mathbf{I}\) , then for all \(x \geqslant a\) in \(\mathbf{I}\) one has
+
+\[
+m \frac {(x - a) ^ {n + 1}}{(n + 1) !} \leqslant r _ {n} (x) \leqslant \mathrm{M} \frac {(x - a) ^ {n + 1}}{(n + 1) !}\tag{10}
+\]
+
+and the second term cannot be equal to the first (resp. to the third) unless \(f^{(n+1)}\) is constant and equal to m (resp. M) on the interval \([a, x]\) .
+
+The proof proceeds in the same way, but applying th. 1 of I, p.~14.
+
+Remarks. 1) We have already noticed in the proof of th. 1 that if f has a derivative of order n on I, and if
+
+\[
+\mathbf {f} (x) = \mathbf {a} _ {0} + \mathbf {a} _ {1} (x - a) + \mathbf {a} _ {2} (x - a) ^ {2} + \dots + \mathbf {a} _ {n} (x - a) ^ {n} + \mathbf {r} _ {n} (x)\tag{11}
+\]
+
+is its Taylor expansion of order \(n\) at the point \(a\) , then the Taylor expansion of order \(n - 1\) for \(\mathbf{f}'\) at the point \(a\) is
+
+\[
+\mathbf {f} ^ {\prime} (x) = \mathbf {a} _ {1} + 2 \mathbf {a} _ {2} (x - a) + \dots + n \mathbf {a} _ {n} (x - a) ^ {n - 1} + \mathbf {r} _ {n} ^ {\prime} (x).\tag{12}
+\]
+
+We say that it is obtained from the expansion (11) of \(\mathbf{f}\) by differentiating term-by-term.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  With the same hypotheses, the coefficients \(\mathbf{a}_i\) in (11) are determined recursively by the relations
+\end{enumerate}
+
+\[
+\begin{array}{l} \mathbf {a} _ {0} = \mathbf {f} (a) \\ \mathbf {a} _ {1} = \lim _ {x \to a} \frac {\mathbf {f} (x) - \mathbf {f} (a)}{x - a} \\ \mathbf {a} _ {2} = \lim _ {x \to a} \frac {\mathbf {f} (x) - \mathbf {f} (a) - \mathbf {a} _ {1} (x - a)}{(x - a) ^ {2}} \\ \dots \\ \mathbf {a} _ {n} = \lim _ {x \to a} \frac {\mathbf {f} (x) - \mathbf {f} (a) - \mathbf {a} _ {1} (x - a) - \cdots - \mathbf {a} _ {n - 1} (x - a) ^ {n - 1}}{(x - a) ^ {n}}. \end{array}
+\]
+
+In the case \(a = 0\) one concludes, in particular, that if \(\mathbf{f}(x^p)\) ( \(p\) an integer \(> 0\) ) has a derivative of order \(pn\) on a neighbourhood of 0 then the Taylor expansion of order \(pn\) of this function is simply
+
+\[
+\mathbf {f} (x ^ {p}) = \mathbf {a} _ {0} + \mathbf {a} _ {1} x ^ {p} + \mathbf {a} _ {2} x ^ {2 p} + \dots + \mathbf {a} _ {n} x ^ {n p} + \mathbf {r} _ {n} (x ^ {p})\tag{13}
+\]
+
+where \(\mathbf{r}_{n}(x^{p})\) is the remainder in the expansion (cf.~V, p.~222).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  The definition of the derivative of order n and the preceding results generalize immediately to functions of a complex variable; we shall not pursue this topic further here; it will be treated in detail in a later Book in this Series.
+\end{enumerate}
+

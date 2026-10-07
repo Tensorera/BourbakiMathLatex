@@ -1,0 +1,70 @@
+\subsection{Groupoid of path classes of a graph}
+
+Let G be a graph. Denote by \(\Omega_{\mathrm{G}}\) the category of paths of the quiver underlying G (II, p. 160, example 1). Consider the finest equivalence relation \(\mathcal{R}\) in \(\mathrm{Ch(G)}\) such that:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  For every pair \((a,b)\) of vertices of G and every arrow f in G connecting a to b, the paths \((a,f,b,\overline{f},a)\) and \(e_{a}\) are equivalent modulo R;
+\item
+  If \((c,d)\) and \((c',d')\) are pairs of juxtaposable paths in G such that \(R\{c,c'\}\) and \(R\{d,d'\}\) are equivalent, then the paths \(c*d\) and \(c'*d'\) are equivalent modulo R.
+\end{enumerate}
+
+Two paths equivalent modulo \(\mathcal{R}\) have the same origin and the same target. The maps \(o\) and \(t\) of \(\mathrm{Ch(G)}\) to \(\mathrm{Som(G)}\) define, by passing to the quotient, maps \(o'\) and \(t'\) from \(\mathrm{Ch(G)/\mathcal{R}}\) to \(\mathrm{Som(G)}\) . Denote by \(\varpi_{G}\) the quiver (Som(G), Ch(G)/R, \(o', t'\) ). The pair \(\varphi\) formed by the identity of Som(G) and the canonical projection of Ch(G) onto Ch(G)/R is a quiver morphism from \(\Omega_{G}\) to \(\varpi_{G}\) . The juxtaposition of paths in Ch(G) defines, by passing to quotients, a composition law in \(\varpi_{G}\) .
+
+PROPOSITION 4. --- Equipped with this composition law, \(\varpi_{\mathrm{G}}\) is a groupoid.
+
+By construction, we have the relation \(\varphi(cc') = \varphi(c)\varphi(c')\) , for every pair of paths \((c,c')\) juxtaposable in G. Every arrow of \(\varpi_{\mathrm{G}}\) is of the form \(\varphi(c)\) , where \(c\) is a path in G. This implies that the composition law of \(\varpi_{\mathrm{G}}\) is associative and that \(\varphi(e_a)\) is a neutral element at \(a\) for every vertex \(a\) of \(\varpi_{\mathrm{G}}\) . It remains to show that every arrow of \(\varpi_{\mathrm{G}}\) is invertible. Let \(c\) be a path in G and let us prove by induction on the length of \(c\) that one has \(\varphi(c)\varphi(\overline{c}) = \varphi(e_{o(c)})\) . This equality is true if \(c\) has length 0. If \(c\) has length \(n \geqslant 1\) , one can write \(c = c_1c_2\) , with \(c_1\) of length 1 and \(c_2\) of length \(n - 1\) . Then, \(\overline{c} = \overline{c_2}\overline{c_1}\) and one has
+
+\[
+\begin{array}{c} \varphi (c) \varphi (\overline {{c}}) = \varphi (c _ {1}) \varphi (c _ {2}) \varphi (\overline {{c _ {2}}}) \varphi (\overline {{c _ {1}}}) = \varphi (c _ {1}) \varphi (e _ {o (c _ {2})}) \varphi (\overline {{c _ {1}}}) = \varphi (c _ {1}) \varphi (\overline {{c _ {1}}}) \\ = \varphi (c _ {1} \overline {{c _ {1}}}) = \varphi (e _ {o (c _ {1})}) \end{array}
+\]
+
+by definition of the relation \(\mathcal{R}\) .
+
+Applying this equality to the path \(\overline{c}\) , we see that \(\varphi(\overline{c})\varphi(c)=\varphi(e_{t(c)})\) . Thus, \(\varphi(c)\) is invertible, with inverse \(\varphi(\overline{c})\) .
+
+The equivalence classes of the relation \(\mathcal{R}\) are called the path classes in the graph G; the groupoid \(\varpi_{\mathrm{G}}\) is called the groupoid of path classes of the graph G. It has the same vertex set as G and its orbits are the connected components of the graph G.
+
+Denote by \(v\) the map which, to an arrow \(f\) of \(G\) , associates the class of the path \((o(f), f, t(f))\) of \(G\) . The pair \(j = (\mathrm{Id}_{\mathrm{Som}(G)}, v)\) is a morphism, called canonical, of quivers from \(G\) to \(\varpi_G\) . Its image generates \(\varpi_G\) ; for every arrow \(f\) of \(G\) , we have \(j(\overline{f}) = j(f)^{-1}\) .
+
+Let G and \(G'\) be graphs, let \(\varphi\colon G \to G'\) be a graph morphism. Denote by \(j\colon G \to \varpi_{G}\) and \(j'\colon G' \to \varpi_{G'}\) the canonical morphisms. If \(c = (a_0, f_1, a_1, \ldots, a_n)\) is a path in G, the class of the path \(\varphi(c) = (\varphi(a_0), \varphi(f_1), \varphi(a_1), \ldots, \varphi(a_n))\) depends only on the class of c. One thus defines, by passing to equivalence classes, a quiver morphism \(\varpi(\varphi)\colon\varpi_{\mathrm{G}}\to\varpi_{\mathrm{G}^{\prime}}\) such that \(\varpi(\varphi)\circ j=j^{\prime}\circ\varphi\) . This is a morphism of groupoids.
+
+PROPOSITION 5. — Let G be a graph; denote by j the canonical quiver morphism from G to \(\varpi_{\mathrm{G}}\) . Let \(\varphi\) be a quiver morphism from G into a groupoid \(\mathrm{G}'\) such that \(\varphi(\overline{f}) = \varphi(f)^{-1}\) for every arrow \(f\) of G. Then there exists a unique morphism of groupoids \(\varphi'\) from \(\varpi_{\mathrm{G}}\) to \(\mathrm{G}'\) such that \(\varphi' \circ j = \varphi\) .
+
+One defines a map \(u\colon \mathrm{Ch}(\mathrm{G})\to \mathrm{Fl}(\mathrm{G}^{\prime})\) by setting, for every path \(c = (a_0,f_1,a_1,\ldots ,f_n,a_n)\) in G, \(u(c) = e_{a_0}\varphi (f_1)\dots \varphi (f_n)\) . For every pair \((c,c')\) of juxtaposable paths in G, we have \(u(cc^{\prime}) = u(c)u(c^{\prime})\) . The map \(u\) is compatible with the equivalence relation \(\mathcal{R}\) defined above, whence, by passing to the quotient, a map \(u'\colon \mathrm{Ch}(\mathrm{G}) / \mathcal{R}\to \mathrm{Fl}(\mathrm{G}')\) . Let us then set \(\varphi ' = (\mathrm{Som}(\varphi),u')\) . This is a groupoid morphism from \(\varpi_{\mathrm{G}}\) to \(\mathrm{G}'\) such that \(\varphi '\circ j = \varphi\) .
+
+Let \(\psi\) be a groupoid morphism from \(\varpi_{\mathrm{G}}\) to \(\mathbf{G}'\) such that \(\psi \circ j = \varphi\) . The equalizer of \(\varphi'\) and \(\psi\) is a subgroupoid of \(\varpi_{\mathrm{G}}\) which contains \(j(\mathrm{G})\) . It is therefore equal to \(\varpi_{\mathrm{G}}\) since \(\varpi_{\mathrm{G}}\) is generated by \(j(\mathrm{G})\) and one has \(\psi = \varphi'\) .
+
+COROLLARY 1. --- In a graph, every path class contains a unique path without backtracking.
+
+Let G be a graph. Denote by \(j\colon G\to\varpi_{G}\) the canonical quiver morphism.
+
+The existence, for every path \(c\) of G, of an equivalent path without backtracking is immediate by induction on the length of \(c\) (cf. II, p. 157).
+
+Let A be an orientation of G and let G' be the groupoid associated with the free group F(A) constructed on A (II, p. 163, example 1). Let ψ be the quiver morphism from G to G' such that, for every \(f \in A\) , \(\psi(f)\) is the element f of F(A) and \(\psi(\overline{f})\) is the element \(f^{-1}\) of F(A). Let ψ' be the unique groupoid morphism from \(\varpi_{G}\) to G' such that ψ' ∘ j = ψ.
+
+Let \(c\) and \(c'\) be paths without backtracking equivalent modulo \(\mathcal{R}\) . They have the same source and the same target. To prove that they are equal, it suffices to prove that the sequences \((f_1, \ldots, f_n)\) and \((g_1, \ldots, g_m)\) of their arrows are equal. The image under \(\psi'\) of the common class of \(c\) and \(c'\) is equal to \(\psi(f_1) \ldots \psi(f_n)\) and to \(\psi(g_1) \ldots \psi(g_m)\) . Now the terms of the sequences \((\psi(f_1), \ldots, \psi(f_n))\) and \((\psi(g_1), \ldots, \psi(g_m))\) belong to the subset \(\mathrm{A} \cup \mathrm{A}^{-1}\) of \(\mathrm{F(A)}\) and two consecutive elements of these sequences are not inverses of one another. By A, I, p. 84, prop. 7, these two sequences are equal. It follows that the sequences \((f_{1},\ldots,f_{n})\) and \((g_{1},\ldots,g_{m})\) are equal, and hence that \(c=c'\) , whence uniqueness.
+
+COROLLARY 2. --- The canonical morphism from G to \(\varpi_{\mathrm{G}}\) is injective.
+
+This follows immediately from Corollary 1.
+
+COROLLARY 3. --- Let G' be a subgraph of G. The morphism from \(\varpi_{\mathrm{G}'}\) to \(\varpi_{\mathrm{G}}\) deduced from the injection of G' into G is injective.
+
+Denote by \(i\) the inclusion morphism of \(\mathbf{G}'\) into \(\mathbf{G}\) and \(\varpi(i)\) the morphism from \(\varpi_{\mathbf{G}'}\) to \(\varpi_{\mathbf{G}}\) which is deduced from it. The maps \(\operatorname{Som}(i)\) and \(\operatorname{Som}(\varpi(i))\) coincide. Moreover, if \(c\) is a path with no backtracking in \(\mathbf{G}'\) , the path \(i(c)\) is a path with no backtracking in \(\mathbf{G}\) . The assertion therefore follows from Corollary 1.
+
+COROLLARY 4. --- A nonempty graph G is a tree if and only if the groupoid \(\varpi_{\mathrm{G}}\) is simply transitive.
+
+Let \(a\) be a point of G. By Corollary 1, the following properties are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  The isotropy group of \(\varpi_{\mathrm{G}}\) at \(a\) is reduced to the identity element;
+\item
+  The only loop of G originating from \(a\) which is without backtracking is the constant loop based at \(a\) .
+\end{enumerate}
+
+The groupoid \(\varpi_{G}\) is simply transitive if and only if it is transitive and has property (i) for every a. The graph G is a tree if and only if it is connected and has property (ii) for every point a. Since the orbits of \(\varpi_{G}\) are identified with the connected components of G, the corollary follows.
+

@@ -1,0 +1,208 @@
+\subsection{克赖因-鲁特曼定理}
+
+引理 3. --- 设 \((a_n)_{n \geqslant 0}\) 是一个正实数序列，使得幂级数
+
+\[
+f (z) = \sum_ {n \geqslant 0} a _ {n} z ^ {n}
+\]
+
+具有有限的收敛半径 r \textgreater{} 0。设 D ⊂ C 是以 0 为心、以 r 为半径的开圆盘。不存在定义在 C 中 r 的某个开邻域 U 上且在 U ∩ D 上与 f 一致的全纯函数 \(\widetilde{f}\)。
+
+假设这样一个全纯函数 \(\tilde{f}\)（定义在 \(r\) 的一个开邻域 U 上）存在。存在实数 \(s < r\) 和 \(\delta > 0\)，使得 \(s + \delta > r\)，且使得以 \(s\) 为心、以 \(\delta\) 为半径的开圆盘 D' 包含于 U 中。\(\tilde{f}\) 在点 \(s\) 处的幂级数展开（VAR, R1, p. 26, 3.2.1）于是对每个 \(z\)（只要它落在以 0 为心、以 \(\delta\) 为半径的圆盘中）都收敛（VAR, R1, p. 29, 3.3.4）。此级数为
+
+\[
+\widetilde {f} _ {s} (z) = \sum_ {n = 0} ^ {+ \infty} \frac {\widetilde {f} ^ {(n)} (s)}{n !} z ^ {n} = \sum_ {n = 0} ^ {+ \infty} \frac {f ^ {(n)} (s)}{n !} z ^ {n}
+\]
+
+（VAR, R1, p. 27, 3.2.4）。由于 \(s \in D\) ，我们有
+
+\[
+f ^ {(n)} (s) = \sum_ {k = n} ^ {+ \infty} k (k - 1) \dots (k - n + 1) a _ {k} s ^ {k - n}
+\]
+
+（VAR, R1, p. 28, 3.2.11）。取 \(z\) 使得 \(0 < z < \delta\) 。由于 \(a_{k} \geqslant 0\) ，我们有
+
+\[
+\begin{array}{r l} & {\widetilde {f} _ {s} (z) = \sum_ {n = 0} ^ {+ \infty} \biggl (\sum_ {k = n} ^ {+ \infty} \frac {k (k - 1) \cdots (k - n + 1)}{n !} a _ {k} s ^ {k - n} \biggr) z ^ {n}} \\ & {\qquad = \sum_ {k = 0} ^ {+ \infty} \biggl (a _ {k} \sum_ {n = 0} ^ {k} \frac {k !}{n ! (k - n) !} s ^ {k - n} z ^ {n} \biggr) = \sum_ {k = 0} ^ {+ \infty} a _ {k} (s + z) ^ {k}} \end{array}
+\]
+
+（TG, III, p. 40）。当 \(s + z > r\) 时，这个表达式的收敛性与幂级数 \(f\) 的收敛半径等于 \(r\) 这一假设相矛盾。
+
+设 E 是一个实巴拿赫空间。设 C 是 E 中的一个尖凸锥。由 C 生成的向量空间等于 C -- C（EVT, II, p. 12, 推论 1）。特别地，锥 C 在 E 中是全的，当且仅当 C -- C 在 E 中稠密。回顾：当 C ∩ (−C) 仅由 0 组成时，称 C 是突出的（EVT, II, p. 11）。
+
+C 的极集 C° 是由连续线性形式 \(\ell \in E'\) 组成的集合，其中 \(\ell(x) \geqslant 0\) 对所有 \(x \in C\) 成立（EVT, II, p. 47, 命题 4）。由双极定理（EVT, II, p. 48, 定理 1），若 C 是闭尖凸锥，则 C°° = C。
+
+引理 4. --- 设 E 是一个实巴拿赫空间，\(u \in \mathcal{L}(\mathrm{E}_{(\mathbf{C})})\) 是 \(\mathrm{E}_{(\mathbf{C})}\) 的一个非零自同态。设 C 是 E 中的一个全凸锥。则存在 \(x \in \mathrm{C}\) 使得 \(u(x) \neq 0\) 。
+
+事实上，若 \(u\) 在 C 上为零，则 \(u\) 在 C - C 上为零，从而在 E 上为零，因此在 \(\mathrm{E}_{(\mathbf{C})}\) 上为零。
+
+定理 4（克赖因–鲁特曼）. --- 设 E 是 R 上的一个完备可赋范空间。设 C 是 E 中一个闭的全突出凸锥，并设 \(u \in \mathcal{L}(\mathrm{E})\) 是满足 \(u(\mathrm{C}) \subset \mathrm{C}\) 的紧线性映射。若谱半径 \(\varrho(u)\) \textgreater0，则 \(\varrho(u)\) 是 u 的谱的孤立点，并且存在 u 的非零特征向量 \(x \in C\)，其特征值为 \(\varrho(u)\) 。
+
+设 \(E_{(\mathbf{C})}\) 是 E 的复化，设 \(u_{(\mathbf{C})}\) 是 \(E_{(\mathbf{C})}\) 的由 u 经纯量扩张得到的自同态。\(u_{(\mathbf{C})}\) 的谱半径等于 \(\varrho(u)\)（I, p. 86）；以下简记为 \(\varrho\) 。由于 \(\varrho > 0\) ，\(u\) 的复谱不只由 0 组成。因此存在 \(\lambda_0 \in \mathrm{Sp}_\mathrm{s}(u_{(\mathbf{C})})\) 使得 \(|\lambda_0| = \varrho\)（III, p. 90 的命题 5）。设 \(e_0\) 是 \(u_{(\mathbf{C})}\) 的与 \(\lambda_0\) 相伴的谱投影。
+
+预解式 \(\lambda \mapsto \mathrm{R}(u_{(\mathbf{C})},\lambda) = (\lambda -u_{(\mathbf{C})})^{-1}\) 在 \(u_{(\mathbf{C})}\) 的谱的余集上是全纯的（I, p. 24 的定理 1）。复数 \(\lambda_0\) 是预解式的一个极点，其留数是谱投影 \(e_0\)（I, p. 131）。
+
+设 \(y\) 和 \(y'\) 是 E 中使得 \(y + iy' \in \mathrm{E}_{(\mathbf{C})}\) 是 \(u_{(\mathbf{C})}\) 的属于特征值 \(\lambda_0\) 的特征向量的元素。由于 \(e_0(y + iy') = y + iy' \neq 0\) ，存在元素 \(x_0 \in \mathrm{C}\) 使得 \(e_0(x_0) \neq 0\)（引理 4）。由于 C 是闭的且是尖的，其极集 \(\mathrm{C}^\circ\) 是全的（EVT, II, p. 48, 推论 1），因此存在线性形式 \(\ell_0 \in \mathrm{C}^\circ\) 使得 \(\langle e_0(x_0), \ell_0 \rangle \neq 0\) 。
+
+考虑函数 \(f\)，它由 \(f(0)=0\) 以及
+
+\[
+f (z) = \langle \mathrm{R} (u _ {(\mathbf {C})}, z ^ {- 1}) x _ {0}, \ell_ {0} \rangle
+\]
+
+（其中 \(z \in \mathbf{C}\) 满足 \(z^{-1} \notin \mathrm{Sp}(u_{(\mathbf{C})})\)）定义。这个函数满足
+
+\[
+f (z) = \ell_ {0} \bigg (\Bigl (\sum_ {n = 0} ^ {+ \infty} z ^ {n + 1} u _ {(\mathbf {C})} ^ {n} \Bigr) x _ {0} \bigg) = \sum_ {n = 0} ^ {\infty} \langle u ^ {n} (x _ {0}), \ell_ {0} \rangle z ^ {n + 1}\tag{1}
+\]
+
+对 \(|z| < 1 / \varrho\) 成立（I, p. 24, 定理 1, d)），因而在以 0 为心、以 \(1 / \varrho\) 为半径的圆盘内是全纯的。
+
+存在一个全纯函数 \(\widetilde{\mathrm{R}}\)，它定义在 \(\lambda_0\) 的一个开邻域 U 上，取值于 \(\mathcal{L}(\mathrm{E})\) 中，使得只要 \(z\) 属于 \(\mathrm{U} - \{\lambda_0\}\) ，就有
+
+\[
+\mathrm{R} (u _ {(\mathbf {C})}, z) = \widetilde {\mathrm{R}} (z) + \sum_ {n = 0} ^ {+ \infty} (z - \lambda_ {0}) ^ {- n - 1} (u _ {(\mathbf {C})} - \lambda_ {0}) ^ {n} e _ {0}
+\]
+
+（I, p. 83 的命题 17）。于是，对 \(z\) 满足 \(z^{-1} \in \mathrm{U}\) 且 \(z \neq 1 / \lambda_0\) 的情形，有
+
+\[
+f (z) = \langle \widetilde {\mathrm{R}} (z ^ {- 1}) x _ {0}, \ell_ {0} \rangle + \sum_ {n = 0} ^ {+ \infty} (z ^ {- 1} - \lambda_ {0}) ^ {- n - 1} \langle (u _ {(\mathbf {C})} - \lambda_ {0}) ^ {n} e _ {0} (x _ {0}), \ell_ {0} \rangle .
+\]
+
+该级数中对应于 \(n=0\) 的项是 \((z^{-1}-\lambda_{0})^{-1}\langle e_{0}(x_{0}),\ell_{0}\rangle\) 。由于 \(\langle e_{0}(x_{0}),\ell_{0}\rangle\neq0\) ，洛朗展开的唯一性（VAR, R1, p. 30, 3.3.9）表明 \(f\) 不能延拓为 \(1/\lambda_{0}\) 的一个邻域上的全纯函数。特别地，函数 \(f\) 在点 0 处的幂级数展开 (1) 的收敛半径等于 \(1/\varrho\) 。
+
+幂级数 (1) 的系数是 \(\langle u^n(x_0),\ell_0\rangle\geqslant 0\)，因为 \(u(\mathrm{C})\subset\mathrm{C}\) 且 \(\ell_{0}\in\mathrm{C}^{\circ}\) 。由引理 3，函数 \(f\) 不能延拓为 \(1/\varrho\) 的一个邻域上的全纯函数。因此 \(u_{(\mathbf{C})}\) 的预解式不能延拓为 \(\varrho\) 的一个邻域上的全纯函数，即 \(\varrho\in\mathrm{Sp}(u)\) 。这蕴含 \(\varrho\) 是 \(u_{(\mathbf{C})}\) 的特征值（III, p. 90 的命题 5）。由于 \(\varrho\) 是实数，它也是 \(u\) 的特征值。
+
+设 \(d \geqslant 1\) 是 \(u_{(\mathbf{C})}\) 的预解式在 \(\varrho\) 处极点的阶。设 \(e\) 是自同态
+
+\[
+e = \lim _ {z \to \varrho} (z - \varrho) ^ {d} \mathrm{R} (u _ {(\mathbf {C})}, z).
+\]
+
+它是非零的且与 \(u_{(\mathbf{C})}\) 交换，其像包含在 \(u_{(\mathbf{C})}\) 对应于 \(\varrho\) 的特征空间中（参见 I, p. 131, no. 3）。现在设 \(\ell\) 是 C° 的一个元素，\(x\) 是 C 的一个元素。由 I, p. 24, 定理 1, d)，我们有
+
+\[
+\langle e(x),\ell \rangle = \lim_{\substack{z\to \varrho \\ z > \varrho}}(z - \varrho)^{d}\sum_{n\geqslant 0}\langle u^{n}(x),\ell \rangle z^{-n - 1}\geqslant 0.
+\]
+
+双极定理（EVT, II, p. 48, 定理 1）表明 \(e(x) \in \mathrm{C}\) 对所有 \(x \in \mathrm{C}\) 成立。由于 \(\mathrm{C}\) 是全的，存在 \(x \in \mathrm{C}\) 使得 \(e(x) \neq 0\)（引理 4），于是 \(e(x)\) 属于 \(\mathrm{C}\) 且是 \(u\) 的属于特征值 \(\varrho\) 的特征向量，这正是所要证明的。
+
+推论. --- 设 E 是 R 上的一个完备可赋范空间。设 C 是 E 中一个闭的、全的突出凸锥，并设 \(u \in \mathcal{L}(E)\) 是满足 \(u(\mathrm{C}) \subset \mathrm{C}\) 的紧线性映射。若 u 的谱半径 \(\varrho(u)\) \textgreater{} 0，则 \(\varrho(^{t}u) = \varrho(u)\) 是 \(^{t}u\) 的特征值，并且 \(^{t}u\) 有一个属于 \(\varrho(u)\) 的特征向量位于 \(C^{\circ}\) 中。
+
+我们有 \(\varrho(^{t}u) = \varrho(u)\)（I, p. 131 的命题 3）。由 III, p. 9 的推论 1，E' 的自同态 \(^{t}u\) 是紧的。此外，我们有 \(^{t}u(C^{\circ}) \subset C^{\circ}\) ；于是结论由应用于 \(^{t}u\) 以及闭凸锥 \(C^{\circ}\) 的克赖因-鲁特曼定理得出，因为后者是突出的（由于 C 是全的）且是全的（由于 C 是突出的）。
+
+注. --- 在克赖因–鲁特曼定理中，假设 \(\varrho(u) > 0\) 一般不能省略。例如，设 V 是巴拿赫空间 \(\mathcal{C}([0,1])\) 上由
+
+\[
+\mathrm{V} (f) (x) = \int_ {0} ^ {x} f (y) d y
+\]
+
+（其中 \(f \in \mathcal{C}([0,1])\)）所定义的自同态。映射 V 是紧的，且其谱半径为零（I, p. 187 的习题 1）。它保持 \(\mathcal{C}([0,1])\) 中由正函数组成的闭的、全的、突出的凸锥，并且没有特征值（出处同上）。
+
+下面的命题刻画了保持一个锥的自同态具有严格正谱半径的一个充分条件，并进而细化了克赖因-鲁特曼定理。
+
+命题 8. --- 设 E 是 R 上的一个非零完备可赋范空间。设 C 是 E 中内部 \(\mathring{\mathrm{C}}\) 非空的闭突出凸锥，并设 \(u \in \mathcal{L}(\mathrm{E})\) 是满足 \(u(\mathrm{C} - \{0\}) \subset \mathring{\mathrm{C}}\) 的紧线性映射。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  有 \(\varrho(u) > 0\)，并且存在一个向量 \(x_0\)，它是 \(u\) 的位于 \(\mathring{C}\) 中、属于特征值 \(\varrho(u)\) 的特征向量；
+\item
+  u 的对应于 \(\varrho(u)\) 的谱投影的秩为 1；
+\item
+  设 \(\lambda \neq \varrho(u)\) 是 \(u_{(\mathbf{C})}\) 的任意一个特征值，则 \(|\lambda| < \varrho(u)\)；
+\item
+  设 F 是 E 的在 u 下稳定且使 \((\mathrm{C}-\{0\})\cap\mathrm{F}\) 非空的子空间。则 \(x_{0}\in F\) 。特别地，u 在 C 中的特征向量只有 \(x_{0}\) 的倍向量。
+\end{enumerate}
+
+我们先证明两个预备引理。
+
+引理 5. --- 设 E 是实巴拿赫空间，C 是 E 中的一个凸锥，\(u \in \mathcal{L}(\mathrm{E})\) 满足 \(u(\mathrm{C} - \{0\}) \subset \mathring{\mathrm{C}}\) 。设 \(\ell \in \mathrm{C}^{\circ}\) 是 \(^{t}u\) 的一个特征向量。则 \(\ell\) 的核在 \(u\) 下稳定且与 \(\mathrm{C} - \{0\}\) 不相交。
+
+设 \(\lambda \in \mathbf{R}\) 满足 \(^t u(\ell) = \lambda \ell\) 。对每个 \(x \in \mathrm{Ker}(\ell)\)，我们有
+
+\[
+\langle u (x), \ell \rangle = \langle x, ^ {t} u (\ell) \rangle = \lambda \langle x, \ell \rangle = 0,
+\]
+
+因而 \(\operatorname{Ker}(\ell)\) 在 \(u\) 下稳定。
+
+设 \(x\) 是 \(\operatorname{Ker}(\ell)\) 的一个非零元素。对 E 的每个元素 \(y\)，只要 \(\langle y, \ell \rangle < 0\)，就有 \(\langle u(x) + y, \ell \rangle < 0\)，由此推出 \(u(x) + y \notin \mathrm{C}\)，因为 \(\ell \in \mathrm{C}^\circ\) 。我们推得 \(u(x)\) 不属于 \(\mathring{\mathrm{C}}\) 。由于 \(u(\mathrm{C} - \{0\}) \subset \mathring{\mathrm{C}}\) ，这蕴含 \(x \notin \mathrm{C}\) 。
+
+引理 6. --- 设 E 是有限维实向量空间，B 是 E 中 0 的一个紧凸邻域。设 u 是 E 的满足 \(u(B) \subset \mathring{B}\) 的自同态。则 u 的复谱包含于 C 的单位圆盘，特别地，它与 C 中以 0 为心、以 1 为半径的圆不相交。
+
+将 B 换成 \(B \cap (-B)\) ，可化归为 B 是均衡集的情形。此时 B 的度规 p（EVT, II, p. 28, 习题 3）是 E 上的一个范数，并且它给出 E 的拓扑（EVT, I, p. 14, 定理 2）。假设蕴含 \(p(u(x)) < p(x)\) 对 E - \{0\} 的每个元素 x 成立，从而 u 的谱半径 \textless{} 1；由于它也是 \(u_{(\mathbf{C})}\) 的谱半径（参见 I, p. 86），结论得证。
+
+现在来证明该命题。
+
+用 \(x \preccurlyeq y\) 表示 E 上与凸锥 C 相伴的序关系（EVT, II, p. 13, n° 5），即 \(x \preccurlyeq y\) 当且仅当 \(y - x \in \mathrm{C}\) 。我们有 \(u(x) \preccurlyeq u(y)\)，只要 \(x \preccurlyeq y\)。由于 \(\mathring{\mathrm{C}}\) 非空，由 C 生成的向量空间 C -- C（EVT, II, p. 12, 推论 1）包含 0 的一个邻域，因此锥 C 是全的。
+
+我们来证明断言 \(a\) )。设 \(\varrho = \varrho(u)\) 。设 \(y_0\) 是 \(\mathring{\mathrm{C}}\) 的一个元素。我们有 \(y_0 \neq 0\) 。取 \(r > 0\) 使得以 \(y_0\) 为心、以 \(r\) 为半径的闭球包含于 C。对每个 \(y \in \mathrm{E} - \{0\}\) ，有 \(y_0 - r \| y\|^{-1}y \in \mathrm{C}\) ，因而 \(y \preccurlyeq r^{-1}\| y\| y_0\) 对所有 \(y \in \mathrm{E}\) 成立。
+
+由于 \(y_{0} \neq 0\)，假设蕴含 \(u(y_{0}) \in \mathring{\mathrm{C}}\) 。因此存在 t \textgreater{} 0 使得 \(tu(y_{0}) - y_{0} \in \mathrm{C}\) 。令 v = tu。这是 E 的一个紧自同态，满足 \(v(\mathrm{C}) \subset \mathrm{C}\) 且 \(v(y_{0}) \succcurlyeq y_{0}\) 。对每个整数 \(n \geqslant 1\)，我们有
+
+\[
+y _ {0} \preccurlyeq v ^ {n} (y _ {0}) \preccurlyeq r ^ {- 1} \| v ^ {n} (y _ {0}) \| y _ {0} \preccurlyeq r ^ {- 1} \| v ^ {n} \| \| y _ {0} \| y _ {0},
+\]
+
+因而 \((r^{-1}\|v^{n}\|\|y_{0}\|-1)y_{0}\in\mathrm{C}\) 。由于 C 是突出的，这蕴含 \(t^{n}\|u^{n}\|=\|v^{n}\|\geqslant r/\|y_{0}\|\) ，从而 \(\varrho\geqslant t^{-1}>0\)（I, p. 20, 命题 1）。
+
+由克赖因–鲁特曼定理（定理 4），实数 \(\varrho\) 是 \(u\) 的特征值，且存在一个向量 \(x_0\)，它是 \(u\) 的位于 C 中、属于特征值 \(\varrho\) 的特征向量。由假设有 \(\varrho x_0 = u(x_0) \in \mathring{\mathrm{C}}\)，因而 \(x_0 \in \mathring{\mathrm{C}}\) 。这就证明了断言 \(a\) )。
+
+设 K 是 \(u_{(\mathbf{C})}\) 的谱与 C 中以 0 为心、以 \(\varrho\) 为半径的圆的交。由于 u 是紧的且 \(\varrho > 0\)，集合 K 是有限的，并且谱投影 \(e_{K}\) 的像是 \(\mathrm{E}_{(\mathbf{C})}\) 的一个有限维子空间（III, p. 83 的命题 2 与 III, p. 90 的命题 5）。由于 K 在复共轭下稳定，\(e_{K}\) 的像是 \(\mathrm{E}_{(\mathbf{C})}\) 中在 R 上有理的有限维子空间（A, V, p.60, 命题 6）；用 F 表示 E 中使 \(\mathrm{F}_{(\mathbf{C})}\) 等于 \(e_{K}\) 的像的子空间。空间 F 在 u 下稳定且包含 u 对应于 \(\varrho\) 的特征空间，因此 F 非零。
+
+为证明断言 \(b)\) 与 \(c),\)，只需证明 \(F\) 是一维的。
+
+用 \(v\) 表示由 \(u\) 通过过渡到子空间得到的 F 的自同态。设 \(C_F = C \cap F\) 。这是 F 中内部非空的闭突出凸锥（因为 \(x_0 \in \mathring{C} \cap F\)），因而是全的；它满足 \(v(C_F - \{0\}) \subset \mathring{C}_F\)，特别地在 \(v\) 下稳定。由于 \(\varrho(v) \leqslant \varrho\) 且 \(x_0 \in F\)，我们有 \(\varrho(v) = \varrho\)。由定理 4 的推论（应用于 \(C_F\) 和 \(v\)），存在一个向量 \(\ell\)，它是 \(^t v\) 的位于 \(C_F^\circ\) 中、属于特征值 \(\varrho(v) = \varrho > 0\) 的特征向量。
+
+F 的子空间 \(\mathrm{Ker}(\ell)\) 在 v 下稳定。设 w 是 \(\mathrm{Ker}(\ell)\) 的、由 \(\varrho^{-1}v\) 通过过渡到商子空间而得到的自同态；它的谱包含于单位圆。集合 B 由这样的 \(y \in \mathrm{Ker}(\ell)\) 组成：\(x_{0} + y \in C_{F}\)；它是 \(\mathrm{Ker}(\ell)\) 中 0 的一个闭凸邻域。对每个 \(y \in B\) 和每个 \(z \in \mathrm{Ker}(\ell)\)，我们有
+
+\[
+x _ {0} + (w (y) + z) = \varrho^ {- 1} (v (x _ {0} + y) + \varrho z)
+\]
+
+当 z 的范数充分小时它属于 \(C_{F}\)，因而 \(w(y) \in \mathring{\mathrm{B}}\) 。集合 B 是有界的：事实上，若存在一个序列 \((y_{n})_{n \in \mathbf{N}}\)，它含于 \(\operatorname{Ker}(\ell)\)，使得 \(\|y_{n}\| \to +\infty\) 且 \(x_{0} + y_{n} \in C_{F}\)，那么在过渡到子列后，将有 \(y_{n}/\|y_{n}\| \to y\)，其中 \(y \in \operatorname{Ker}(\ell)\) 非零，而 \(y = \lim \|y_{n}\|^{-1}(x_{0} + y_{n})\) 将属于 \(C_{F}\)，这与引理 5 矛盾。因此集合 B 是紧的。
+
+于是，由应用于 \(\mathrm{Ker}(\ell)\)、B 和 \(w\) 的引理 6 推出，\(w\) 的复谱与以 0 为心、以 1 为半径的圆不相交；这蕴含 \(w\) 的谱是空的，即 \(\mathrm{Ker}(\ell)\) 化为 \(\{0\}\)，从而 F 的维数为 1。因此断言 \(b\) 和 \(c\) 得证。
+
+线性映射 \({}^t u\) 是紧的（III, p. 9 的推论 1），且 \({}^t u(\mathrm{C}^\circ) \subset \mathrm{C}^\circ\)；此外 \(\varrho(^t u) = \varrho > 0\)（I, p. 131 的命题 3）。由定理 4 的推论，在 \(\mathrm{C}^\circ\) 中存在一个向量 \(\ell \neq 0\)，它是 \({}^t u\) 的属于特征值 \(\varrho\) 的特征向量。\(\ell\) 的核在 \(u\) 下稳定且与 \(\mathrm{C} - \{0\}\) 不相交（引理 5）。特别地，有 \(x_0 \notin \operatorname{Ker}(\ell)\) 。
+
+设 F 是 E 的一个在 u 下稳定的子空间。我们有分解 \(\mathrm{F} = (\mathrm{F} \cap \mathbf{R}x_{0}) \oplus (\mathrm{F} \cap \operatorname{Ker}(\ell))\) 。若 F 不包含 \(x_{0}\)，则 \(\mathrm{F} \subset \operatorname{Ker}(\ell)\)，从而 F 与 \(C - \{0\}\) 不相交。这就证明了 d)，命题证毕。
+
+推论. --- 设 E 是 R 上的一个非零完备可赋范空间。设 C 是 E 中内部 \(\dot{C}\) 非空的闭凸突出锥，并设 u 是 E 的满足 \(u(\mathrm{C}) \subset \mathrm{C}\) 的紧自同态。假设存在整数 \(k \geqslant 1\) 使得 \(u^{k}(\mathrm{C} - \{0\}) \subset \mathring{\mathrm{C}}\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  有 \(\varrho(u) > 0\)，并且存在一个向量 \(x_0\)，它是 \(u\) 的位于 \(\dot{C}\) 中、属于特征值 \(\varrho(u)\) 的特征向量；
+\item
+  u 的对应于 \(\varrho(u)\) 的谱投影的秩为 1；
+\item
+  设 \(\lambda \neq \varrho(u)\) 是 \(u_{(\mathbf{C})}\) 的任意一个特征值，则 \(|\lambda| < \varrho(u)\)；
+\item
+  u 在 C 中的特征向量只有 \(x_0\) 的倍向量。
+\end{enumerate}
+
+设 \(\varrho = \varrho(u)\) 。可以把定理 4 应用于 \(u\)，把命题 8 应用于 \(u^k\) 。因此存在一个向量 \(x_0\)，它是 \(u\) 的位于 C 中、属于特征值 \(\varrho\) 的特征向量。由于 \(0 < \varrho(u^k) = \varrho^k\)（I, p. 21 的公式 (4)），特别地有 \(\varrho > 0\)；又由于 \(x_0\) 是 \(u^k\) 的属于特征值 \(\varrho(u^k)\) 的特征向量，我们有 \(x_0 \in \mathring{\mathrm{C}}\) 。
+
+我们有 \(\mathrm{Sp}(u_{(\mathbf{C})}^{k})=\mathrm{Sp}(u_{(\mathbf{C})})^{k}\)（I, p. 2 的注 4），因此每个特征值 \(\lambda\in C\)（属于 \(u_{(\mathbf{C})}\)），只要 \(|\lambda|=\varrho\)，就满足 \(\lambda^{k}=\varrho^{k}\)；由于对应于 \(\lambda\) 的每个特征向量都是 \(u^{k}\) 的属于 \(\varrho^{k}\) 的特征向量，从而与 \(x_{0}\) 成比例，故有 \(\lambda=\varrho\) 。
+
+若 u 的对应于特征值 \(\varrho\) 的谱投影的秩至少为 2，则 \(u^{k}\) 的对应于特征值 \(\varrho^{k}\) 的谱投影的秩也至少为 2（参见 I, p. 129, no. 2）。
+
+最后，若 \(x \in C\) 是 u 的一个特征向量，则它也是 \(u^{k}\) 的特征向量，从而与 \(x_{0}\) 成比例。
+
+设 n 是一个 \(\geqslant 1\) 的整数。集合 \(R_{+}^{n}\) 是 \(R^{n}\) 中的闭凸尖突出锥，其非空内部等于 \((\mathbf{R}_{+}^{*})^{n}\) 。
+
+设 \(A = (a_{i,j})\) 是一个 \((n,n)\) 型实矩阵，\(u_A\) 是由 \(x \mapsto Ax\) 给出的 \(\mathbf{R}^n\) 的自同态。设 \(\varrho = \varrho(u_A)\) 是它的谱半径。
+
+引理 7. --- 有 \(u_A(\mathbf{R}_+^n) \subset \mathbf{R}_+^n\)，当且仅当对所有 i 和 j 有 \(a_{i,j} \geqslant 0\)；有 \(u_A(\mathbf{R}_+^n - \{0\}) \subset (\mathbf{R}_+^*)^n\)，当且仅当对所有 i 和 j 有 \(a_{i,j} > 0\)。
+
+设 \((e_{1},\ldots,e_{n})\) 是 \(R^{n}\) 的典范基。向量 \(e_{i}\) 属于 \(R_{+}^{n}\)，且对所有 i 有 \(u_{A}(e_{i})\in\mathbf{R}_{+}^{n}\)（相应地，对所有 i 有 \(u_{A}(e_{i})\in(\mathbf{R}_{+}^{*})^{n}\)），当且仅当对所有 i 和 j 有 \(a_{i,j}\geqslant0\)（相应地，对所有 i 和 j 有 \(a_{i,j}>0\)）。由线性性即得结论。
+
+定理 5（佩龙–弗罗贝尼乌斯）. --- a) 若 \(a_{i,j} \geqslant 0\)，其中 \(i\) 和 \(j\) 取遍 \(\{1,\ldots,n\}\)，则实数 \(\varrho\) 是 \(A\) 的特征值；b) 若 \(a_{i,j} > 0\)，其中 \(i\) 和 \(j\) 取遍 \(\{1,\ldots,n\}\)，则 \(\varrho > 0\)，且 \(u_A\) 对应于 \(\varrho\) 的准素空间，即 \(A - \varrho 1_{\mathbf{R}^n}\) 的幂零空间，维数为 1，并由一个向量 \(x_0 \in (\mathbf{R}_+^*)^n\) 生成。\(A\) 没有其他在 \(\mathbf{R}_+^n\) 中有特征向量的特征值，并且所有复特征值 \(\lambda \neq \varrho\)（\(A\) 的）都满足 \(|\lambda| < \varrho\) 。
+
+若 \(\varrho = 0\)，断言 \(a\) ) 是初等的，因为此时 0 是 \(A\) 的特征值。若 \(\varrho > 0\)，则由引理 7，断言 \(a\) ) 可由定理 4 得出。出于同样的理由，断言 \(b\) ) 是命题 8 的推论。
+
+注. --- 假设存在整数 \(k \geqslant 1\) 使得 \(A^{k}\) 的所有系数都 \textgreater0（这样的矩阵有时称为本原矩阵）。那么，由命题 8 的推论，谱半径 \(\varrho\) 是 A 的特征值，\(u_{A}\) 对应于 \(\varrho\) 的准素空间维数为 1，且由一个向量 \(x_{0} \in (\mathbf{R}_{+}^{*})^{n}\) 生成。此外，A 没有其他在 \(R_{+}^{n}\) 中有特征向量的复特征值，并且 A 的所有复特征值 \(\lambda \neq \varrho\) 满足 \(|\lambda| < \varrho\) 。
+

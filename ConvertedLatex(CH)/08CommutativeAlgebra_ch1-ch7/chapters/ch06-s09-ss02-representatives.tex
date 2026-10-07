@@ -1,0 +1,42 @@
+\subsection{代表元的存在}
+
+命题 3. 设 K 为一个（不必交换的）非离散局部紧域，其拓扑由离散赋值 v 定义；令 A 为 v 的环，m 为 v 的理想，并记 \(\operatorname{Card}(\mathbf{A}/\mathfrak{m}) = q = p^{f}\)（p 为素数）。则存在 A/m 在 A 中的一个代表系 S 以及 v 的一个一致化元 u，使得 \(0 \in S\)，\(S^{*} = S \cap K^{*}\) 是 \(K^{*}\) 的循环子群，且 \(u^{-1} Su = S\)。此外，A 的每个元素都可唯一写成 \(\sum_{i=0}^{\infty} s_{i} u^{i}\) 的形式，其中 \(s_{i} \in S\)。
+
+我们将使用下述引理：
+
+引理 1. 设 \(x, y\) 是 \(A\) 中两个可交换的元素，使得 \(x - y \in \mathfrak{m}^j\)（\(j \geqslant 1\)）；则 \(x^{p^n} - y^{p^n} \in \mathfrak{m}^{j + n}\) 对每个整数 \(n \geqslant 0\) 都成立。
+
+对 \(n\) 归纳即可将其归结为证明 \(n = 1\) 的情形。于是
+
+\[
+x ^ {p} - y ^ {p} = (x - y) \left(x ^ {p - 1} + x ^ {p - 2} y + \dots + y ^ {p - 1}\right);
+\]
+
+第二因子是 \(p\) 个彼此模 \(m\) 同余的项之和；由于 \(A / m\) 的特征为 \(p, p\)。\(1 \in m\) 在 \(A\) 中，因而
+
+\[
+x ^ {p - 1} + x ^ {p - 2} y + \dots + y ^ {p - 1} \in \mathfrak {m};
+\]
+
+由此 \(x^{p} - y^{p}\in \mathfrak{m}^{j + 1}\)
+
+我们知道乘法群 \((\mathbf{A} / \mathfrak{m})^*\) 是一个具有 \(q - 1\) 个元素的循环群（代数，第 V 章，第 11 节，第 1 节，定理 1）；令 \(x\) 为 A 中该群一个生成元的代表；则 \(x^{q} - x \in \mathfrak{m}\)，由引理 1 得 \(x^{q^{n + 1}} - x^{q^n} \in \mathfrak{m}^{1 + fn}\)，因为 \(x^{q}\) 与 \(x\) 可交换。由此证明 \((x^{q^n})_{n \geqslant 0}\) 是 A 中的 Cauchy 序列；由于 A 紧且完备，该序列在 A 中有极限 \(s\)，显然满足 \(s \equiv x\)（模 \(\mathfrak{m}\)）且 \(s^q = s\)。由于 \(s \neq 0\)，\(s^{q - 1} = 1\)；更确切地说，\(s\) 是 A 中的一个本原 \((q - 1)\) 次单位根。显然，由 0 和各个幂 \(s^j\)（\(0 \leqslant j \leqslant q - 2\)）组成的集合 S 是 A 模 \(\mathfrak{m}\) 的各类的代表系，并且在 A 的乘法下不变。
+
+现在令 \(a\) 为 \(v\) 的一致化元，并考察内自同构 \(y \mapsto a^{-1}ya\)（定义在 \(K\) 上）；它把 \(A\) 映到自身，把 \(m\) 映到自身，因而取商后定义域 \(A/m\) 的自同构；已知（代数，第 V 章，第 11 节，第 4 节，命题 5）这样的自同构具有 \(z \mapsto z^{p^r}\) 的形式，其中 \(0 \leqslant r \leqslant f - 1\)。于是 \(a^{-1}s^j a \equiv s^{jp^r} \pmod{m}\) 对 \(0 \leqslant j \leqslant q - 2\) 成立；由于 \(a \in m\) 且 \(s \notin m\)，这意味着 \(s^{-j}as^{jp^r} \equiv a \pmod{m^2}\)。
+
+记
+
+\[
+u = \sum_ {j = 0} ^ {q - 2} s ^ {- j} a s ^ {j p ^ {r}}.
+\]
+
+于是 \(u \equiv (q - 1)a \equiv -a \pmod{m^2}\)，因为 \(p.1 \in m\)；我们得出 \(u\) 也是 \(v\) 的一致化元；此外
+
+\[
+s ^ {- 1} u s ^ {p ^ {r}} = u\tag{3}
+\]
+
+由此得到 \(u^{-1} \mathrm{S}u = \mathrm{S}\)。
+
+最后，对于所有 \(x \in \mathbf{A}\)，存在唯一序列 \((s_i)\)（\(i \in \mathbf{N}\)），使得 \(s_i \in \mathbf{S}\) 对所有 \(i\) 都成立，并且 \(x \equiv \sum_{i=0}^{n} s_i u^i \pmod{\mathfrak{m}^{n+1}}\) 对所有 \(n \geqslant 0\) 都成立：关于 \(n\) 的归纳立即给出这一点，因为每个元素 \(t\) 属于 \(\mathfrak{m}^{n+1}\)，都满足形如 \(t \equiv t'u^{n+1} \pmod{\mathfrak{m}^{n+2}}\) 的关系，其中 \(t'\) 是 \(S\) 中唯一确定的元素。于是 \(x = \sum_{i=0}^{\infty} s_i u^i\)，族 \((s_i)\) 满足该关系且 \(s_i \in S\) 对所有 \(i\) 都成立，并被唯一确定。
+

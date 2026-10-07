@@ -1,0 +1,46 @@
+\subsection{部分和；结合性}
+
+命题 2. 在完备群 G 中，可和族的每个子族都是可和的。
+
+因为若族 \((x_{i})_{i\in I}\) 满足 Cauchy 判别准则，那么它的每个子族都平凡地满足该准则。
+
+因此，若 \((x_{i})_{i\in I}\) 可和，则和 \(\sum_{i\in J}x_{i}\) 对每个子集 \(J\)（\(I\) 的，无论有限与否）都有定义：我们仍称它为族 \((x_{i})\) 的对应于指标集的子集 \(J\) 的部分和。可和族的部分和全体显然包含在有限部分和全体的闭包中。
+
+定理 2（和的结合性）. 设 \((x_{i})_{i\in I}\) 是完备群 \(\mathbf{G}\) 中的可和族，并设 \((I_{\lambda})_{\lambda \in L}\) 是 \(\mathbf{I}\) 的任意一个分拆。若用 \(s_{\lambda}\) 表示 \(\sum_{i\in I_{\lambda}}x_{i}\)，则族 \((s_{\lambda})_{\lambda \in L}\) 可和且与族 \((x_{i})_{i\in I}\) 有相同的和。
+
+设 \(s = \sum_{i \in I} x_i\)，并设 \(V\) 是 \(G\) 中 0 的任意闭邻域。那么存在有限子集 \(J_0\)（含于 \(I\)），使得对每个有限子集 \(J\)（含于 \(I\) 且包含 \(J_0\)），都有 \(\sum_{i \in J} x_i \in s + V\)。设 \(K_0\) 是 \(L\) 的由这样的指标 \(\lambda\) 组成的子集：它们使 \(J_\lambda = I_\lambda \cap J_0\) 非空；\(K_0\) 显然是有限的。设 \(K\) 是 \(L\) 的包含 \(K_0\) 的任意有限子集；我们将证明 \(\sum_{\lambda \in K} s_\lambda \in s + V\)，由此即证得定理。现在，\(s_\lambda\) 与 \((x_i)\) 的某个指标全属于 \(I_\lambda\) 的有限部分和非常接近；更精确地说，给定 0 的任意对称邻域 \(W\)，对每个 \(\lambda \in K\) 存在有限子集 \(H_\lambda\)（含于 \(I_\lambda\)，包含 \(J_\lambda\)），使得 \(s_\lambda - \sum_{i \in H_\lambda} x_i \in W\)。令 \(J = \bigcup_{\lambda \in K} H_\lambda\)；则 \(J\) 是 \(I\) 的包含 \(J_0\) 的有限子集，并且我们有
+
+\[
+\sum_ {i \in J} x _ {i} = \sum_ {\substack {i \in \bigcup_ {\lambda \in K} H _ {\lambda}}} x _ {i} = \sum_ {\lambda \in K} (\sum_ {i \in H _ {\lambda}} x _ {i})
+\]
+
+这是由有限和的结合性得到的。于是，由于 \(J_{0}\) 与诸 \(H_{\lambda}\) 的取法，我们有
+
+\[
+\sum_ {\lambda \in \mathbf {K}} s _ {\lambda} \in s + \mathbf {V} + n \mathbf {W}
+\]
+
+其中 \(n\) 是 \(\mathbf{K}\) 中元素的个数；这个关系式对每个 \(\mathbf{W}\) 都成立，从而也有 \(\sum_{\lambda \in \mathbb{K}} s_{\lambda} \in s + \mathbf{V}\)，因为 \(\mathbf{V}\)（是闭的）是诸邻域 \(\mathbf{V} + n\mathbf{W}\) 的交{[}§ 3，第 1 节，公式 (1){]}。
+
+于是我们可以写出和的结合公式：
+
+\[
+\sum_ {\lambda \in L} (\sum_ {i \in I _ {\lambda}} x _ {i}) = \sum_ {i \in \bigcup_ {\lambda \in L} I _ {\lambda}} x _ {i},\tag{1}
+\]
+
+只要族 \((I_{\lambda})\) 是其并集的一个分拆且右端有定义，这个公式就成立。特别地，若指标集是积 \(I = L \times M\)，且“双重”族 \((x_{\lambda\mu})_{(\lambda,\mu) \in L \times M}\) 可和，我们就有求和次序交换的公式
+
+\[
+\sum_ {(\lambda , \mu) \in \mathbf {L} \times \mathbf {M}} x _ {\lambda \mu} = \sum_ {\lambda \in \mathbf {L}} (\sum_ {\mu \in \mathbf {M}} x _ {\lambda \mu}) = \sum_ {\mu \in \mathbf {M}} (\sum_ {\lambda \in \mathbf {L}} x _ {\lambda \mu}).\tag{2}
+\]
+
+应当指出，(1) 的左端可以有意义，而右端却没有定义。例如考虑 \(I = L \times \{1, 2\}\) 且 L 是无限集、\(I_{\lambda}\) 由 \((\lambda, 1)\) 与 \((\lambda, 2)\) 两个元素组成的情形；若取 \(x_{\lambda,1} = a\)，\(x_{\lambda,2} = -a\)，其中 \(a\) 是 \(\mathbf{G}\) 的任意非零元素，则对应于诸 \(I_{\lambda}\) 的所有部分和都为零，因此 (1) 的左端有定义且等于 0，而由命题 1，(1) 的右端没有意义。
+
+同样可能发生这样的情形：(2) 的左端没有定义，但 (2) 中的两个“双重和”却都有意义；并且它们所表示的 G 的元素未必相等（见第四章，§ 7，习题 17）。
+
+因此，虽然总是可以把一个和的项“结合”起来，但反过来却不可能把和式中本身表现为和的那些项“分解”为它们的元素。不过，只要这些“可分解”项的数目是有限的，这个运算就是合法的。
+
+命题 3. 设 \((x_{\iota})_{\iota \in \mathbf{I}}\) 是群 \(\mathbf{G}\) 的点族，\((I_{\lambda})_{\lambda \in \mathbf{L}}\) 是 \(\mathbf{I}\) 的有限分拆。若每个子族 \((x_{\iota})_{\iota \in \mathbf{I}_{\lambda}}\) 都可和，则族 \((x_{\iota})_{\iota \in \mathbf{I}}\) 可和且公式 (1) 成立。
+
+只需对 \(L = (1,2)\) 的情形证明本命题；在此基础上，再对 L 的元素个数用归纳法进行。设 \(s_{1} = \sum_{i \in I_{1}} x_{i}\)，\(s_{2} = \sum_{i \in I_{2}} x_{i}\)。对原点的每个邻域 V，存在有限子集 \(J_{1}\)（相应地，\(J_{2}\)），它含于 \(I_{1}\)（相应地，\(I_{2}\)），使得对每个有限子集 \(H_{1}\)（相应地，\(H_{2}\)）——含于 \(I_{1}\)（相应地，\(I_{2}\)）且包含 \(J_{1}\)（相应地，\(J_{2}\)）——有 \(\sum_{i \in H_{1}} x_{i} \in s_{1} + V\)（相应地，\(\sum_{i \in H_{2}} x_{i} \in s_{2} + V\)）。若令 \(J_{0} = J_{1} \cup J_{2}\)，则由此推出，对 I 的包含 \(J_{0}\) 的每个有限子集 H，有 \(\sum_{i \in H} x_{i} \in s_{1} + s_{2} + V + V\)，结论得证。
+

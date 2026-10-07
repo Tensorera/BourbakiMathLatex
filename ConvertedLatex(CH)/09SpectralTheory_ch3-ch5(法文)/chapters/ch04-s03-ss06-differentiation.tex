@@ -1,0 +1,54 @@
+\subsection{广义函数的求导}
+
+设 \(\alpha \in \mathbf{N}^n\) 。线性映射 \(\varphi \mapsto \partial^\alpha \varphi\) 从 \(\mathcal{D}(\mathrm{U})\) 到 \(\mathcal{D}(\mathrm{U})\) 中是连续的。它的转置 \(^t\partial^\alpha\) 是从 \(\mathcal{D}'(\mathrm{U})\) 到 \(\mathcal{D}'(\mathrm{U})\) 中的连续线性映射（EVT, IV, p. 6，推论，\(b\) ））。
+
+我们用 \(\partial^{\alpha}\) 表示连续线性映射 \((-1)^{|\alpha|}{}^{t}\partial^{\alpha}\) ——从 \(\mathcal{D}'(\mathrm{U})\) 到自身。
+
+定义 2. --- 若 \(f \in \mathcal{D}'(\mathrm{U})\) 是广义函数，则称 \(\partial^{\alpha} f\) 为 \(\alpha\) 阶迭代偏导数（\(f\) 的）。
+
+于是，按定义
+
+\[
+\langle \partial^ {\alpha} f, \varphi \rangle = (- 1) ^ {| \alpha |} \langle f, \partial^ {\alpha} \varphi \rangle
+\]
+
+（对每个函数 \(\varphi\in\mathcal{D}(\mathrm{U})\) ）。等式 \(\partial^{\alpha+\beta}=\partial^{\alpha}\circ\partial^{\beta}\) 对所有 \(\alpha\) 与 \(\beta\) （\(\mathbf{N}^{n}\) 中的）成立。
+
+若 \(n=1\) ，也用 \(f'\) 记广义函数 \(f\in\mathcal{D}'(U)\) 的导数。该定义的合理性由下述引理给出。
+
+引理 6. --- 设 k 是自然数。设 \(f \in \mathcal{C}^k(\mathrm{U})\) ，\(\lambda\) 是与 \(f\) 相伴的广义函数。对每个 \(\beta \in \mathbf{N}^n\) （满足 \(|\beta| \leqslant k\) ），广义函数 \(\partial^\beta\lambda\) 是与函数 \(\partial^\beta f\) 相伴的广义函数。
+
+对 \(k\) 作归纳，只需在 \(\beta\) 满足 \(|\beta| = 1\) 时证明此性质，甚至可以假设 \(\beta = (0, \ldots, 0, 1)\) 。由于广义函数构成一个层（IV, p. 204，命题 5），只需在存在开集 \(V \subset \mathbf{R}^{n-1}\) 与开区间 \(I \subset \mathbf{R}\) 使得 \(U = V \times I\) 时验证断言。
+
+对每个测试函数 \(\varphi\in\mathcal{D}(\mathrm{U})\) ，按定义有
+
+\[
+\langle \partial^ {\beta} \lambda , \varphi \rangle = - \int_ {\mathrm{U}} f (x) \partial^ {\beta} \varphi (x) d x = - \int_ {\mathrm{V}} \Bigl (\int_ {\mathrm{I}} f (y, t) \partial^ {\beta} \varphi (y, t) d t \Bigr) d y
+\]
+
+这里用到勒贝格--富比尼定理（INT, V, p. 96, § 8, n° 4，定理 1）。由分部积分（FVR, II, p. 10），有
+
+\[
+- \int_ {\mathrm{I}} f (y, t) \partial^ {\beta} \varphi (y, t) d t = \int_ {\mathrm{I}} \partial^ {\beta} f (y, t) \varphi (y, t) d t,
+\]
+
+因为 \(t \mapsto \varphi(y, t)\) 在 I 中有紧支集。于是得到
+
+\[
+\langle \partial^ {\beta} \lambda , \varphi \rangle = \int_ {V} \left(\int_ {I} \partial^ {\beta} f (y, t) \varphi (y, t) d t\right) d y = \langle \partial^ {\beta} f, \varphi \rangle .
+\]
+
+命题 9（莱布尼茨公式）. --- 设 f 是 U 上的广义函数，g 是 U 上的无穷次可微函数。设 \(\alpha \in \mathbf{N}^n\) 。我们有关系式
+
+\[
+\partial^ {\alpha} (f g) = \sum_ {\beta \leqslant \alpha} \binom {\alpha} {\beta} \partial^ {\beta} f   \partial^ {\alpha - \beta} g.
+\]
+
+如同 FVR, I, p. 28，命题 2 的证明那样对 \(|\alpha|\) 作归纳，只需考虑 \(|\alpha|=1\) 的情形。结论由计算
+
+\[
+\begin{array}{c} \langle \partial^ {\alpha} (f g), \varphi \rangle = \langle f g, - \partial^ {\alpha} \varphi \rangle = \langle f, - g \partial^ {\alpha} \varphi \rangle \\ = \langle f, - \partial^ {\alpha} (g \varphi) + \varphi \partial^ {\alpha} g \rangle = \langle g \partial^ {\alpha} f + f \partial^ {\alpha} g, \varphi \rangle \end{array}
+\]
+
+（对 \(\varphi\in\mathcal{D}(\mathrm{U})\) 成立）得出。
+

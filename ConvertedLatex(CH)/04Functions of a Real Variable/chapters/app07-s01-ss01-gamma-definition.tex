@@ -1,0 +1,120 @@
+\subsection{Γ 函数的定义}
+
+我们已经（集合论，III, p.~179）定义了函数 \(n!\) （对每个整数 \(n \geqslant 0\) ），它等于乘积 \(\prod_{0 \leqslant k < n} (n - k)\) ；于是 \(0! = 1\) ，且 \((n + 1)! = (n + 1)n!\) （对 \(n \geqslant 0\) ）。
+
+我们置 \(\Gamma(n)=(n-1)!\) （对每个整数 \(n\geqslant1\) ）；我们打算在实数集 x\textgreater0 上定义一个连续函数 \(\Gamma(x)\) ，它是函数 \(\Gamma\) （定义在整数集 \(\geqslant1\) 上的）的延拓。
+
+显然这样的函数有无穷多个；由于 \(\Gamma(n+1)=n\Gamma(n)\) （对每个整数 \(n\geqslant1\) ），在延拓 \(\Gamma\) 的连续函数中，我们只限于考虑满足方程
+
+\[
+f (x + 1) = x f (x)\tag{1}
+\]
+
+对每个 \(x > 0\) 成立的函数。
+
+这个方程的一个解是 \(\Gamma(n)\) 的延拓，其必要充分条件是它还满足 \(f(1) = 1\) 。
+
+若 \(f\) 满足 (1) ，则对 \(n\) 作递归得
+
+\[
+f (x + n) = x (x + 1) (x + 2) \dots (x + n - 1) f (x)\tag{2}
+\]
+
+对每个整数 n \textgreater{} 1 和一切 x \textgreater{} 0 成立。这个关系特别表明，f 在区间 \(]n, n + 1]\) （n 为整数 \(\geqslant 1\) ）上的值由它在区间 \(]0, 1]\) 上的值确定。反过来，设 \(\varphi\) 是 \(]0, 1]\) 上只满足条件 \(\varphi(1) = 1\) 、\(\lim_{x \to 0} x \varphi(x) = 1\) 的连续函数；对每个整数 \(n \geqslant 1\) ，在区间 \(]n, n + 1]\) 上用关系
+
+\[
+f (x) = (x - 1) (x - 2) \dots (x - n) \varphi (x - n);
+\]
+
+这样便定义了 f ；显然 \(f\) 在 \(]0, +\infty[\) 上连续，满足方程 (1) ，并且是 \(\Gamma(n)\) 的延拓。
+
+若 \(f\) 是 (1) 的连续解且取值 \(> 0\) （在 \(]0, 1]\) 上），则由 (2) ，它取值 \(> 0\) （在 \(]0, +\infty[\) 上）；于是函数 \(g(x) = \log f(x)\) 有定义且连续
+
+于 {]}0, +∞{[} 上，并满足方程
+
+\[
+g (x + 1) - g (x) = \log x\tag{3}
+\]
+
+在此区间上成立。
+
+若 \(g_{1}\) 是 (3) 在 {]}0, +∞{[} 上的另一个连续解，且 \(h = g_{1} - g\) ，则有 \(h(x + 1) - h(x) = 0\) （对每个 x \textgreater{} 0 ）；换句话说，h 是定义在 {]}0, +∞{[} 上、以 1 为周期的连续周期函数；反之，对每个这种性质的 h ，\(g + h\) 是 (3) 的连续解。
+
+命题 1. 存在唯一的、定义在 \(]0, +\infty[\) 上、满足方程 (3) 且在 x = 1 处取值 0 的凸函数 g 。
+
+先证明：若存在满足所述条件的函数 g ，则它在区间 \(]0, 1]\) 上、从而在区间 \(]0, +\infty[\) 上完全确定。事实上，对每个整数 n \textgreater{} 1 ，由于 g 是凸函数，连接点 \((n, g(n))\) 与点 \((x, g(x))\) 的直线的斜率是 x 的递增函数（I, p.~27, prop. 5）；于是，对 \(0 < x \leqslant 1\) 必有
+
+\[
+\frac {g (n - 1) - g (n)}{(n - 1) - n} \leqslant \frac {g (n + x) - g (n)}{(n + x) - n} \leqslant \frac {g (n + 1) - g (n)}{(n + 1) - n}
+\]
+
+即由 (3) ，
+
+\[
+x \log (n - 1) \leqslant g (x + n) - g (n) \leqslant x \log n.\tag{4}
+\]
+
+而由 (3) ，
+
+\[
+g (x + n) - g (n) = g (x) + \log x + \sum_ {k = 1} ^ {n - 1} (\log (x + k) - \log k).
+\]
+
+此外，可以写 \(\log n = \sum_{k=2}^{n} \log \frac{k}{k-1}\) ，于是不等式 (4) 可以写成
+
+\[
+x \sum_ {k = 2} ^ {n - 1} \log \frac {k}{k - 1} \leqslant g (x) + \log x + \sum_ {k = 2} ^ {n} (\log (x + k - 1) - \log (k - 1))
+\]
+
+\[
+\leqslant x \sum_ {k = 2} ^ {n} \log \frac {k}{k - 1}.
+\]
+
+对每个 \(n \geqslant 2\) ，置
+
+\[
+u _ {n} (x) = x \log {\frac {n}{n - 1}} - \log (x + n - 1) + \log (n - 1)\tag{5}
+\]
+
+以及
+
+\[
+g _ {n} (x) = - \log x + \sum_ {k = 2} ^ {n} u _ {k} (x).
+\]
+
+于是对 \(0 < x \leqslant 1\) 有
+
+\[
+g _ {n} (x) - x \log \frac {n}{n - 1} \leqslant g (x) \leqslant g _ {n} (x).\tag{6}
+\]
+
+由于 \(\log \frac{n}{n - 1}\) 趋于 0 （当 \(n\) 趋于 \(+\infty\) 时），由 (6) 推出：若解 \(g\) 存在，则它在 \(]0, 1]\) 上必等于诸 \(g_n(x)\) 的极限。
+
+而由 (5) 立即推出，对固定的 x 且 \textgreater{} 0 ，有
+
+\[
+u _ {n} (x) = - x \log \left(1 - \frac {1}{n}\right) - \log \left(1 + \frac {x - 1}{n}\right) + \log \left(1 - \frac {1}{n}\right) \sim \frac {x (x - 1)}{2 n ^ {2}}
+\]
+
+当 \(n\) 趋于 \(+\infty\) 时，这证明以 \(u_{n}(x)\) 为通项的级数对每个 \(x > 0\) 收敛。由于每个函数 \(u_{n}(x)\) 都在 \(]0, +\infty[\) 上凸，\(-\log x\) 亦然，函数 \(g(x) = -\log x + \sum_{n=2}^{\infty} u_{n}(x)\) 在这个区间上凸（I, p.~27, prop. 2 与 prop. 4）；最后，有 \(u_{n}(1) = 0\) ，由此 \(g(1) = 0\) ，且
+
+\[
+u _ {n} (x + 1) = u _ {n + 1} (x) + x \left(\log \frac {n}{n - 1} - \log \frac {n + 1}{n}\right)
+\]
+
+由此
+
+\[
+g (x + 1) = - \log (x + 1) + x \log 2 + \sum_ {n = 3} ^ {\infty} u _ {n} (x) = \log x + g (x);
+\]
+
+换句话说，g 满足 VII, p.~306 的方程 (3) 。
+
+定义 1. 用 \(\Gamma(x)\) 表示函数 \(>0\) ，它定义在区间 \(]0, +\infty[\) 上、满足方程
+
+\[
+\Gamma (x + 1) = x \Gamma (x),\tag{7}
+\]
+
+并且 \(\Gamma(1) = 1\) ，\(\log \Gamma(x)\) 在 \(]0, +\infty[\) 上是凸的。
+

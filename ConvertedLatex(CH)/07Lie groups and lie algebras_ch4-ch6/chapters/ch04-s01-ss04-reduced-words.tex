@@ -1,0 +1,98 @@
+\subsection{Coxeter 群中的约化分解}
+
+设 \((W,S)\) 是一个 Coxeter 系统。令 T 为 W 中 S 的元素的共轭元组成的集合。对于 S 中元素的任意有限序列 \(\mathbf{s}=(s_{1},\ldots,s_{q})\)，记 \(\Phi(\mathbf{s})\) 为由 T 中元素组成的序列 \((t_{1},\ldots,t_{q})\)，其中
+
+\[
+t _ {j} = \left(s _ {1} \dots s _ {j - 1}\right) s _ {j} \left(s _ {1} \dots s _ {j - 1}\right) ^ {- 1} \quad \text { for } 1 \leqslant j \leqslant q.\tag{11}
+\]
+
+于是 \(t_1 = s_1\)，且 \(s_1 \ldots s_q = t_q t_{q-1} \ldots t_1\)。对于任意元素 \(t \in \mathbf{T}\)，记 \(n(\mathbf{s}, t)\) 为这样的整数 \(j\) 的个数：\(1 \leqslant j \leqslant q\) 且 \(t_j = t\)。最后，置
+
+\[
+R = \{1, - 1 \} \times T.
+\]
+
+引理 1. (i) 设 \(w \in \mathbf{W}\) 且 \(t \in \mathbf{T}\)。数 \((-1)^{n(\mathbf{s},t)}\) 取同一个值 \(\eta(w,t)\)，对所有序列 \(\mathbf{s} = (s_1, \ldots, s_q)\)（其元素属于 \(S\)）且满足 \(w = s_1 \ldots s_q\) 的情形都如此。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  对于 \(w \in \mathbf{W}\)，令 \(\mathrm{U}_w\) 为从 \(\mathbf{R}\) 到自身的如下映射：
+\end{enumerate}
+
+\[
+\mathrm{U} _ {w} (\varepsilon , t) = (\varepsilon . \eta (w ^ {- 1}, t), w t w ^ {- 1}) \quad (\varepsilon = \pm 1, t \in \mathrm{T}).\tag{12}
+\]
+
+映射 \(w \mapsto \mathrm{U}_w\) 是从 \(\mathbf{W}\) 到 \(\mathbb{R}\) 的置换群的一个同态。
+
+对于 \(s \in S\)，定义 \(U_s\) 为从 \(R\) 到自身的映射：
+
+\[
+\mathrm{U} _ {s} (\varepsilon , t) = \left(\varepsilon . (- 1) ^ {\delta_ {s, t}}, s t s ^ {- 1}\right) \quad (\varepsilon = \pm 1, t \in \mathrm{T}),\tag{13}
+\]
+
+其中 \(\delta_{s,t}\) 是 Kronecker 符号。立即可见 \(U_{s}^{2} = Id_{R}\)，这表明 \(U_{s}\) 是 R 的一个置换。
+
+设 \(\mathbf{s} = (s_1, \ldots, s_q)\) 是由 \(S\) 中元素组成的序列。置 \(w = s_q \ldots s_1\) 且 \(U_{\mathbf{s}} = U_{s_q} \ldots U_{s_1}\)。我们将对 \(q\) 作归纳证明：
+
+\[
+\mathrm{U} _ {\mathbf {s}} (\varepsilon , t) = (\varepsilon . (- 1) ^ {n (\mathbf {s}, t)}, w t w ^ {- 1}).\tag{14}
+\]
+
+当 \(q = 0,1\) 时这是显然的。若 \(q > 1\)，置 \(\mathbf{s}' = (s_1,\dots ,s_{q - 1})\)，并置
+
+\[
+w ^ {\prime} = s _ {q - 1} \dots s _ {1}.
+\]
+
+利用归纳假设，得到
+
+\[
+\begin{array}{r l} \mathrm{U} _ {\mathbf {s}} (\varepsilon , t) & = \mathrm{U} _ {s _ {q}} (\varepsilon . (- 1) ^ {n (\mathbf {s} ^ {\prime}, t)}, w ^ {\prime} t w ^ {\prime - 1}) \\ & = (\varepsilon . (- 1) ^ {n (\mathbf {s} ^ {\prime}, t) + \delta_ {s _ {q}, w ^ {\prime} t w ^ {\prime - 1}}}, w t w ^ {- 1}). \end{array}
+\]
+
+但是 \(\Phi(\mathbf{s}) = (\Phi(\mathbf{s}'), w'^{-1}s_q w')\)，且 \(n(\mathbf{s}, t) = n(\mathbf{s}', t) + \delta_{w'^{-1}s_q w', t}\)，这就证明了公式 (14)。
+
+现在设 \(s, s' \in S\)，满足 \(p = ss'\) 的阶为有限数 \(m\)。令 \(\mathbf{s} = (s_1, \ldots, s_{2m})\) 为由 \(S\) 中元素按下述方式定义的序列：满足 \(s_j = s\)（当 \(j\) 为奇数）且 \(s_j = s'\)（当 \(j\) 为偶数）。于是 \(s_{2m} \ldots s_1 = p^{-m} = 1\)，公式 (11) 蕴含
+
+\[
+t _ {j} = p ^ {j - 1} s \quad \text { for } 1 \leqslant j \leqslant 2 m.\tag{15}
+\]
+
+由于 \(p\) 的阶为 \(m\)，元素 \(t_1, \ldots, t_m\) 彼此不同，且 \(t_{j+m} = t_j\) 对 \(1 \leqslant j \leqslant m\) 成立。对于所有 \(t \in \mathbf{T}\)，整数 \(n(\mathbf{s}, t)\) 因而等于 0 或 2，且 (14) 表明 \(\mathrm{U_s} = \mathrm{Id_R}\)。换言之，\((\mathrm{U_sU_{s'}})^m = \mathrm{Id_R}\)。因此，根据 Coxeter 系统的定义，存在一个同态 \(w \mapsto \mathrm{U}_w\)，从 \(W\) 到 \(R\) 的置换群，使得 \(U_s\) 由 (13) 的右端给出。于是 \(U_w = U_s\)，其中每个序列 \(s = (s_1, \ldots, s_q)\) 都满足 \(w = s_q \ldots s_1\)，引理 1 立即由 (14) 得出。
+
+引理 2. 设 \(\mathbf{s} = (s_1, \ldots, s_q)\)，\(\Phi(\mathbf{s}) = (t_1, \ldots, t_q)\)，且 \(w = s_1 \ldots s_q\)。令 \(\mathrm{T}_w\) 为 \(\mathrm{T}\) 中满足 \(\eta(w, t) = -1\) 的元素集合。则 \(\mathbf{s}\) 是 \(w\) 的一个约化分解，当且仅当 \(t_i\) 彼此不同；在此情形下，\(\mathrm{T}_w = \{t_1, \ldots, t_q\}\)，且 \(\operatorname{Card}(\mathrm{T}_w) = l(w)\)。
+
+显然 \(T_{w} \subset \{t_{1}, \ldots, t_{q}\}\)。取 s 为约化分解，便得到 \(\operatorname{Card}(T_{w}) \leqslant l(w)\)。此外，若 \(t_{i}\) 彼此不同，则 \(n(\mathbf{s}, t)\) 根据 t 是否属于 \(\{t_{1}, \ldots, t_{q}\}\) 分别等于 1 或 0。由此得到 \(T_{w} = \{t_{1}, \ldots, t_{q}\}\)，并且 \(q = \operatorname{Card}(T_{w}) \leqslant l(w)\)，这说明 s 是约化的。最后，若 \(t_{i} = t_{j}\)，且 i \textless{} j，则有 \(s_{i} = us_{j}u^{-1}\)，其中 \(u = s_{i+1} \ldots s_{j-1}\)，因而
+
+\[
+w = s _ {1} \dots s _ {i - 1} s _ {i + 1} \dots s _ {j - 1} s _ {j + 1} \dots s _ {q}.
+\]
+
+这表明 s 不是 w 的约化分解。
+
+引理 3. 设 \(w \in \mathbb{W}\) 且 \(s \in \mathbb{S}\)，满足 \(l(sw) \leqslant l(w)\)。对于任意序列 \(\mathbf{s} = (s_1, \ldots, s_q)\)，其元素属于 \(\mathbb{S}\) 且满足 \(w = s_1 \ldots s_q\)，存在一个整数 \(j\)，满足 \(1 \leqslant j \leqslant q\)，并且
+
+\[
+s s _ {1} \dots s _ {j - 1} = s _ {1} \dots s _ {j - 1} s _ {j}.
+\]
+
+令 \(p\) 为 \(w\) 的长度，并令 \(w' = sw\)。由第 3 号的备注，\(l(w') \equiv l(w) + 1 \mod 2\)。假设 \(l(w') \leqslant l(w)\)，再结合关系
+
+\[
+| l (w) - l (w ^ {\prime}) | \leqslant l (w w ^ {\prime - 1}) = l (s) = 1
+\]
+
+从而得到 \(l(w') = p - 1\)。取一个约化分解
+
+\[
+\left(s _ {1} ^ {\prime}, \ldots , s _ {p - 1} ^ {\prime}\right)
+\]
+
+它是 \(w'\) 的约化分解，并置 \(\mathbf{s} = (s, s_1', \ldots, s_{p-1}')\) 和 \(\Phi(\mathbf{s}') = (t_1', \ldots, t_p')\)。显然，\(\mathbf{s}'\) 是 \(w\) 的一个约化分解，且 \(t_1' = s\)。根据引理 2，元素 \(t_1', \ldots, t_p'\) 彼此不同，故 \(n(\mathbf{s}', s) = 1\)。由于 \(w\) 是序列 \(\mathbf{s}\) 的乘积，根据引理 1，\(n(\mathbf{s}, s) \equiv n(\mathbf{s}', s) \mod 2\)，从而 \(n(\mathbf{s}, s) \neq 0\)。因此，\(s\) 等于某个元素 \(t_j\)，而该元素属于序列 \(\Phi(\mathbf{s})\)，于是引理得证。
+
+备注。引理 2 中定义的集合 \(T_{w}\) 由形如 \(w''sw''^{-1}\) 的元素组成，这些元素对应于三元组 \((w', w'', s) \in W \times W \times S\)，满足 \(w = w''sw'\) 且 \(l(w') + l(w'') + 1 = l(w)\)。
+

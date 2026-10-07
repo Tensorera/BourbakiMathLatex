@@ -1,0 +1,76 @@
+\subsection{形成性判据}
+
+CF1. 如果 \(A\) 和 \(B\) 是理论 \(\mathfrak{G}\) 中的关系，那么 \(\vee AB\) 是 \(\mathfrak{G}\) 中的关系。
+
+考虑 \(\mathfrak{G}\) 中的两个形成性构造，其中一个包含 \(A\) ，另一个包含 \(B\) 。依次写出第一个构造的组装、第二个构造的组装，最后写出 \(\vee AB\) ，便得到一个组装序列。由于 \(A\) 和 \(B\) 都属于第二类，立即可以验证这个序列是 \(\mathfrak{G}\) 中的形成性构造。组装 \(\vee AB\) 属于第二类，因此它是 \(\mathfrak{G}\)
+
+中的一个关系。以下三个判据可用类似方法建立：
+
+CF2. 若A是理论C中的一个关系，则 \(\neg A\) 是 C 中的一个关系。
+
+CF3. 若A是理论G中的一个关系，且x是一个字母，则 \(\tau_{x}(A)\) 是 G 中的一个项。
+
+CF4. 如果 \(A_1, A_2, \ldots, A_n\) 是理论 \(\mathfrak{C}\) 中的项，并且 \(s\) 是权重为 \(n\) 的关系符号（相应地，实体符号），且属于 \(\mathfrak{C}\) ，那么 \(sA_1A_2\ldots A_n\) 是 \(\mathfrak{C}\) 中的关系（相应地，项）。
+
+这些准则立即蕴含以下结论：
+
+如果A和B是理论C中的关系，那么 \(\Longrightarrow AB\) 是 C 中的一个关系。
+
+CF6。设 \(A_1, A_2, \ldots, A_n\) 是理论 \(\mathfrak{C}\) 中的一个形成性构造，\(x\) 和 \(y\) 是字母。假设 \(y\) 不出现在任何 \(A_i\) 中。那么 \((y|x)A_1\) , \((y|x)A_2, \ldots, (y|x)A_n\) 是 \(\mathfrak{C}\)
+
+中的一个形成性构造。为证明CF6，令 \(A_i'\) 为组装 \((y|x)A_i\) 。如果 \(A_i\) 是一个字母，则 \(A_i'\) 也是一个字母。如果 \(A_i\) 具有形式 \(\neg A_j\) ，其中 \(A_j\) 是在构造中先于 \(A_i\) 的第二类组装，则由CS5，\(A_i'\) 与 \(\neg A_j'\) 相同，而 \(A_j'\) 是第二类组装。若 \(A_i\) 具有形式 \(\vee A_jA_k\) 或 \(sA_{j_1}A_{j_2}\ldots A_{j_m}\) ，其中 \(s\) 是 \(\mathfrak{G}\) 的特定符号，论证类似。最后，若 \(A_i\) 具有形式 \(\tau_z(A_j)\) ，其中 \(A_j\) 是在构造中先于 \(A_i\) 的第二类组装，则需考虑以下几种情形：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  z 是一个与 x 和 y 不同的字母。那么 \(A_{i}^{\prime}\) 与 \(\tau_{z}(A_{j}^{\prime})\) 相同，根据 CS4，且 \(A_{j}^{\prime}\) 是第二类的组装。
+\item
+  z 与 x 相同。那么 \(A_{i}\) 不包含 x，因此 \(A_{i}^{\prime}\) 与 \(A_{i}\) 相同，也就是说与 \(\tau_{x}(A_{j})\) 相同；由于 y 不出现在 \(A_{j}\) 中，\(\tau_{x}(A_{j})\) 与 \(\tau_{y}(A_{j})\) 相同，根据 CS3。
+\item
+  z 与 y 相同。那么 \(A_{i}\) 是组装 \(\tau A_{j}\) ，因为 y 不出现在 \(A_{j}\) 中；因此 \(A_{i}^{\prime}\) 是组装 \(\tau A_{j}^{\prime}\) ，即 \(\tau_{u}(A_{j}^{\prime})\) ，其中 u 是一个不出现在 \(A_{j}^{\prime}\) 中的字母。
+\end{enumerate}
+
+CF7. 设 \(A\) 为理论 \(\mathfrak{G}\) 中的一个关系（相应地，一个项），\(x\) 和 \(y\) 为字母。那么 \((y|x)A\) 是 \(\mathfrak{G}\) 中的一个关系（相应地，一个项）。
+
+设 \(A_1, A_2, \ldots, A_n\) 是一个形成性构造，其中 \(A\) 出现。我们将逐步证明，如果 \(A_t\) 是一个关系（相应地，一个项）则 \((y|x)A_t\) ，我们将其记为 \(A_t'\) ，也是一个关系（相应地，一个项）。假设这一点已经对 \(A_1, A_2, \ldots, A_{i-1}\) 成立；让我们对 \(A_i\) 加以证明。如果 \(A_i\) 是一个字母，则 \(A_i'\) 是一个字母。如果 \(A_i\) 在构造中先于一个关系 \(A_j\) 使得 \(A_i\) 是 \(\neg A_j\) ，那么 \(A_i'\) 与 \(\neg A_j'\) 相同（由CS5），且 \(\neg A_j'\) 是由CF2得到的一个关系。论证类似，如果 \(A_i\) 前面有关系 \(A_j, A_k\) 使得 \(A_i\) 是 \(\vee A_jA_k\) ，或者如果 \(A_i\) 前面有项 \(A_{j_1}, \ldots, A_{j_m}\) 使得 \(A_i\) 是 \(sA_{j_1}\ldots A_{j_m}\) ，其中 \(s\) 是 \(\mathfrak{G}\) 的一个权重为 \(m\) 的特定符号。最后，如果 \(A_i\) 前面有一个关系 \(A_j\) 使得 \(A_i\) 是 \(\tau_z(A_j)\) ，则有各种情况需要考虑：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  z 与 x 和 y 均不同。那么 \(A_{i}^{\prime}\) 与 \(\tau_{\mathbf{z}}(A_{j}^{\prime})\) 相同，由CS4可知，并且我们已经知道 \(A_{j}^{\prime}\) 是一个关系；因此 \(A_{i}^{\prime}\) 根据 CF3 是一个项。
+\item
+  \(z\) 与 \(x\) 相同。然后 \(A_i\) 不包含 \(x\) ，因此 \(A_i'\) 与 \(A_i\) 相同，从而是一个项。
+\item
+  \(z\) 与 \(y\) 相同。然后令 \(u\) 为一个字母，与 \(x\) 和 \(y\) 均不同，且不出现在 \(A_1, A_2, \ldots, A_j\) 中。根据CF6，组装序列 \((u|y) A_1, \ldots, (u|y) A_j\) ，我们将其记为 \(A_1'', \ldots, A_j''\) ，构成了 \(\mathfrak{G}\) 中的一个形成性构造。由于 \(y\) 不再出现在这个新构造中，\((y|x) A_1'', \ldots, (y|x) A_j''\) 根据CF6是一个形成性构造，因此 \((y|x) A_j''\) 是 \(\mathfrak{G}\) 中的一个关系；因此 \(\tau_u((y|x)A_j'')\)
+\end{enumerate}
+
+是 \(\mathfrak{C}\) 中的一个项。但由CS4，这个项与 \((y|x)\tau_u(A_j'')\) 相同；再由CS3，它与 \((y|x)\tau_y(A_j)\) 相同，因而与 \(A_i'\) 相同。
+
+CF8. 设 \(A\) 为理论 \(\mathfrak{G}\) 中的一个关系（相应地，一个项），\(x\) 为一个字母，\(T\) 为 \(\mathfrak{G}\) 中的一个项。那么 \((T|x)A\) 是 \(\mathfrak{G}\) 中的一个关系（相应地，一个项）。
+
+设 \(A_1, A_2, \ldots, A_n\) 是一个形成性构造，其中 \(A\) 出现。设 \(x_1, x_2, \ldots, x_p\) 为出现在 \(T\) 中的不同字母。让我们将每个字母 \(x_i\) 与一个字母 \(x_i'\) 相关联，后者与每个字母 \(x_1, \ldots, x_p\) 以及出现在 \(A_1, \ldots, A_n\) 中的字母均不同，且使得字母 \(x_1', \ldots, x_p'\) 两两互异。该组装
+
+\[
+\left(\boldsymbol {x} _ {1} ^ {\prime} \mid \boldsymbol {x} _ {1}\right) \left(\boldsymbol {x} _ {2} ^ {\prime} \mid \boldsymbol {x} _ {2}\right) \dots \left(\boldsymbol {x} _ {p} ^ {\prime} \mid \boldsymbol {x} _ {p}\right) \boldsymbol {T}
+\]
+
+是一个项 \(\pmb{T}'\) ，依据CF7，且 \((\pmb{T}|\pmb{x})\pmb{A}\) 与
+
+\[
+\left(\boldsymbol {x} _ {1} \mid \boldsymbol {x} _ {1} ^ {\prime}\right) \left(\boldsymbol {x} _ {2} \mid \boldsymbol {x} _ {2} ^ {\prime}\right) \dots \left(\boldsymbol {x} _ {p} \mid \boldsymbol {x} _ {p} ^ {\prime}\right) \left(\boldsymbol {T} ^ {\prime} \mid \boldsymbol {x}\right) \boldsymbol {A}
+\]
+
+相同，这通过应用CS1得到。因此只需证明 \((T^{\prime}|x)A\) 是一个关系（相应地，一个项）；换言之，从现在起我们可以假设出现在 \(T\) 中的字母不出现在 \(A_{1},\ldots ,A_{n}\) 中。我们将逐步证明，如果 \(A_{t}\) 是一个关系（相应地，一个项），则 \((T|x)A_{t}\) ，我们将其记为 \(A_{t}^{\prime}\) ，是一个关系（相应地，一个项）。假设这一点已对 \(A_{1},A_{2},\ldots ,A_{i - 1}\) 成立，并让我们证明它对于 \(A_{i}\) 。如果 \(A_{i}\) 是一个字母，则 \(A_{i}^{\prime}\) 要么是同一个字母，要么是 \(T\) ，因此是一个项。如果 \(A_{i}\) 具有形式 \(\lnot A_j\) ，其中 \(A_{j}\) 是一个在构造中先于 \(A_{i}\) 的关系，那么 \(A_{i}^{\prime}\) 与 \(\lnot A_j^{\prime}\) 相同，根据CS5，并且我们已经知道 \(A_{j}^{\prime}\) 是一个关系，因此 \(A_{i}^{\prime}\) 根据CF2是一个关系。如果 \(A_{i}\) 具有形式 \(\vee A_{j}A_{k}\) ，或 \(sA_{j_1}\ldots A_{j_m}\) ，证明是类似的。最后，如果 \(A_{i}\) 具有形式 \(\tau_{z}(A_j)\) ，其中 \(A_{j}\) 是一个在构造中先于 \(A_{i}\) 的关系，则有各种情况需要考虑：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  \(z\) 与 \(x\) 以及出现在 \(T\) 中的字母均不同。然后 \(A_i'\) 与 \(\tau_z(A_j')\) 相同，由CS4可知，并且我们已经知道 \(A_j'\) 是一个关系；因此 \(A_i'\) 根据CF3是一个项。
+\item
+  \(\pmb{z}\) 与 \(\pmb{x}\) 相同。然后 \(A_{i}\) 不包含 \(\pmb{x}\) ，因此 \(A_{i}'\) 与 \(A_{i}\) 相同，因此是一个项。
+\item
+  \(z\) 出现在 \(T\) 。然后 \(z\) 不出现在 \(A_j\) 中，因此 \(A_i'\) 与 \(\tau A_j\) 相同；因此 \(A_i'\) 与 \(\tau A_j'\) 相同。现在，我们已经知道 \(A_j'\) 是一个关系，而 \(\tau A_j'\) 与 \(\tau_u(A_j')\) 相同，其中 \(u\) 是一个不出现在 \(A_j'\) 中的字母；根据CF3可知， \(A_i'\) 是一个项。
+\end{enumerate}
+
+直观地说，如果A是C中的一个关系，我们可以将其视为表达对象x的某种性质，那么断言 \((B|x)A\) 相当于说对象B具有这一性质。如果A是C中的一个项，它表示一个以某种方式依赖于由x所表示的对象；项 \((B|x)A\) 表示当我们把x取为对象B时，对象A所变成的东西。
+

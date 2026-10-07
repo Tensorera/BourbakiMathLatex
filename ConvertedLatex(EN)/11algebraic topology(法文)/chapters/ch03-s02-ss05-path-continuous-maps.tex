@@ -1,0 +1,26 @@
+\subsection{Path-continuous maps}
+
+DEFINITION 5. --- Let X and Y be topological spaces. A map \(f: X \to Y\) is said to be path-continuous if, for every path \(c\) in X, the map \(f \circ c: I \to Y\) is continuous.
+
+Remark. --- Suppose that the space X is path-connected. Let x be a point of X. For f to be path-continuous, it suffices that, for every path c with origin x, the map \(f \circ c\) be continuous. Indeed, let d be any path in X and let c be a path in X with origin x and endpoint \(d(0)\) . If the map \(f \circ (c * d)\) is continuous, then so is the map \(f \circ d\) because we have \(f \circ d(t) = f \circ (c * d)((t + 1)/2)\) .
+
+A continuous map is path-continuous. The converse is not always true; Propositions 12 and 13 below provide criteria for asserting that a path-continuous map is continuous.
+
+PROPOSITION 12. --- Let X and Y be topological spaces and let \(f: \mathrm{X} \to \mathrm{Y}\) be a map. Suppose that the space X is locally path-connected and that every point of X has a countable fundamental system of neighborhoods. If the map \(f\) is path-continuous, it is continuous.
+
+By (TG, IX, p. 18), it suffices to prove that, for every point \(x\) of X and every sequence \((x_n)_{n \geqslant 1}\) of points of X tending to \(x\) , the sequence \((f(x_n))_{n \geqslant 1}\) tends to \(f(x)\) . By possibly deleting the first terms of the sequence \((x_n)_{n \geqslant 1}\) , we reduce to the case where the terms of the sequence all belong to the same path-connected neighborhood of \(x\) in X. By the lemma below, there then exists a path \(c: \mathbf{I} \to \mathbf{X}\) such that \(c(0) = x\) and \(c(1/n) = x_n\) for \(n \geqslant 1\). If the map \(f\) is path-continuous, the map \(f \circ c\) is continuous and the element \(f(x) = f(c(0))\) is the limit of the sequence \((f(c(1/n)))_{n \geqslant 1}\) , that is, of the sequence \((f(x_n))_{n \geqslant 1}\), whence the corollary.
+
+Lemma. --- Let X be a connected and locally path-connected topological space and let x be a point of X. Suppose that the point x has a countable fundamental system of neighborhoods. Then, for every sequence \((x_{n})_{n\geqslant1}\) of points of X tending to x, there exists a path c in X such that \(c(0)=x\) and \(c(1/n)=x_{n}\) for \(n\geqslant1\).
+
+Let \((\mathrm{W}_{m})_{m\geqslant1}\) be a fundamental system of neighborhoods of x. Set \(V_{0}=X\) and for every \(m\geqslant1\), let \(V_{m}\) be a path-connected neighborhood of x contained in \(V_{m-1}\cap W_{m}\).
+
+For every integer \(n \geqslant 1\), denote by \(m_n\) the largest integer \(m \leqslant n\) such that \(x_k \in V_m\) for all \(k \geqslant n\). The sequence \((m_n)_{n \geqslant 1}\) is increasing by definition; it tends to infinity, because the sequence \((x_n)_{n \geqslant 1}\) tends to \(x\). For every integer \(n \geqslant 1\), let \(c_n: \mathbf{I} \to V_{m_n}\) be a path of origin \(x_{n+1}\) and of endpoint \(x_n\) in \(V_{m_n}\). Let us define a map \(c: \mathbf{I} \to X\) by setting \(c(0) = x\) and \(c(t) = c_n(n(n+1)t - n)\) if \(1/(n+1) < t \leqslant 1/n\). We have \(c(1/n) = x_n\) for all \(n \geqslant 1\). The map \(c\) is therefore continuous on every interval of the form \([1/(n+1), 1/n]\) with \(n \geqslant 1\), hence on the interval \([0,1]\). If \(t \leqslant 1/n\), the point \(c(t)\) belongs to \(V_{m_n}\); the map \(c\) is therefore continuous at 0.
+
+PROPOSITION 13. --- Let \(p \colon \mathrm{E} \to \mathrm{B}\) be a separated étale morphism and let \(s \colon \mathrm{B} \to \mathrm{E}\) be a section of \(p\). If the space B is locally path-connected and if the section \(s\) is path-continuous, it is continuous.
+
+Let \(b\) be a point of B; let us prove that \(s\) is continuous at the point \(b\). Since \(p\) is an étale map, there exists a neighborhood V of \(b\) and a continuous local section \(s'\) of \(p\) defined in V such that \(s'(b) = s(b)\) (I, p. 33, prop. 9). Since B is locally path-connected, we may assume that V is path-connected. For every path \(c\) in V, originating from \(b\), the maps \(s \circ c\) and \(s' \circ c\) are two continuous liftings to E of the map \(c \colon \mathbf{I} \to \mathbf{B}\) and one has \(s \circ c(0) = s' \circ c(0) = s(b)\). By Corollary 1 of I, p. 34, we have \(s \circ c = s' \circ c\) and in particular \(s \circ c(1) = s' \circ c(1)\). Since every point of V is the endpoint of a path in V starting from \(b\), the maps \(s\) and \(s'\) coincide in V. The map \(s\) is therefore continuous in V.
+
+COROLLARY. --- Let B be a topological space, and let (E, p) and (E', p') be two B-spaces. Suppose that the map p is étale and separated and that the space E' is locally path-connected. Then every path-continuous map \(f: E' \to E\) such that \(p \circ f = p'\) is continuous.
+
+The map \(pr_{1}: E'\times_{B} E \rightarrow E'\) is étale and separated (I, p. 31, prop. 8 and I, p. 27, prop. 4), and the map \(x \mapsto (x, f(x))\) is a path-continuous section. By Proposition 13, it is continuous, hence f is continuous.
+

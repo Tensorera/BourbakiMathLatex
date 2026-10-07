@@ -1,0 +1,69 @@
+\subsection{代数的判别式}
+
+定义 3. 设 A 是一个 K-代数，具有由 n 个元素构成的有限基。A 中 n 个元素的序列 \((x_{1},\ldots,x_{n})\) 关于 K 的判别式，记作 \(\mathrm{D}_{\mathrm{A}/\mathrm{K}}(x_{1},\ldots,x_{n})\) ，定义为下述方阵的判别式
+
+\[
+\left(\operatorname{Tr} _ {\mathbf {A} / \mathbb {K}} \left(x _ {i} x _ {j}\right)\right) _ {1 \leqslant i \leqslant n, 1 \leqslant j \leqslant n}.
+\]
+
+首先考虑 A 在 K 上的一个基 \((e_i)_{1\leqslant i\leqslant n}\) ，并记
+
+\[
+e _ {i} e _ {j} = \sum_ {k = 1} ^ {n} c _ {i j k} e _ {k} \quad \text { with } \quad c _ {i j k} \in \mathbf {K}.\tag{30}
+\]
+
+那么 \(\mathrm{Tr}_{\mathbf{A} / \mathbf{K}}(e_i) = \sum_{s=1}^{n} c_{iss}\) ，由此 \(\mathrm{Tr}_{\mathbf{A} / \mathbf{K}}(e_i e_j) = \sum_{k,s} c_{ijk} c_{kss}\) ，进而
+
+\[
+\mathrm{D} _ {\mathrm{A} / \mathrm{K}} (e _ {1}, \dots , e _ {n}) = \det \left(\left(\sum_ {k, s} c _ {i j k} c _ {k s s}\right) _ {1 \leqslant i \leqslant n, 1 \leqslant j \leqslant n}\right).\tag{31}
+\]
+
+现在令 \((x_{i})_{1\leqslant i\leqslant n},(x_{i}^{\prime})_{1\leqslant i\leqslant n}\) 是 A 的 \(n\) 个元素的两个序列，并假设存在一个 \(n\) 阶方阵 \(M = (m_{ij})\) ，其系数在 K 中，使得 \(x_{i} = \sum_{j=1}^{n} m_{ij} x_{j}'\) 对 \(1 \leqslant i \leqslant n\) 成立。我们记
+
+\[
+T = \left(\operatorname{Tr} _ {\mathrm{A} / \mathrm{K}} \left(x _ {i} x _ {j}\right)\right) _ {1 \leqslant i \leqslant n, 1 \leqslant j \leqslant n}, \quad T ^ {\prime} = \left(\operatorname{Tr} _ {\mathrm{A} / \mathrm{K}} \left(x _ {i} ^ {\prime} x _ {j} ^ {\prime}\right)\right) _ {1 \leqslant i \leqslant n, 1 \leqslant j \leqslant n}.
+\]
+
+那么 \(\mathrm{Tr}_{\mathbf{A} / \mathbf{K}}(x_i x_j) = \sum_{p,q} m_{ip} m_{jq} \mathrm{Tr}_{\mathbf{A} / \mathbf{K}}(x_p' x_q')\) ，因此 \(T = M. T'.^t M\) ；于是行列式的乘法规则给出
+
+\[
+\det T = \det M. \det T ^ {\prime}. \det ^ {t} M = (\det M) ^ {2} \det T ^ {\prime}
+\]
+
+最终得到
+
+\[
+\mathrm{D} _ {\mathrm{A} / \mathrm{K}} (x _ {1}, \dots , x _ {n}) = (\det M) ^ {2} \mathrm{D} _ {\mathrm{A} / \mathrm{K}} (x _ {i} ^ {\prime}, \dots , x _ {n} ^ {\prime}).\tag{32}
+\]
+
+上述公式特别表明，A 在 K 上的两组基的判别式相差 K 中一个可逆元素的平方，因此生成 K 的同一个（主）理想。这个理想 \(\Delta_{A/K}\) 称为 A 在 K 上的判别式理想；由公式 (32)，A 中仅项的顺序不同的任意 n 个元素的序列都具有相同的判别式，因为置换矩阵的行列式等于 \(\pm1\) 。
+
+例子。(1) 若 A 是 K 上类型为 \((\alpha, \beta)\) 的二次代数，则（采用 § 2 第 3 号的记号） \(\operatorname{Tr}(e_1) = 2\) ， \(\operatorname{Tr}(e_2) = \beta\) ，
+
+\[
+\operatorname{Tr} (e _ {2} ^ {2}) = \alpha \operatorname{Tr} (e _ {1}) + \beta \operatorname{Tr} (e _ {2}) = 2 \alpha + \beta^ {2},
+\]
+
+由此 \(\mathbf{D}_{\mathbf{A} / \mathbb{K}}(e_1,e_2) = \beta^2 +4\alpha .\)
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(\mathbf{A} = \mathbf{K}[\mathbf{X}] / \mathbf{K}[\mathbf{X}]\mathbf{P}\) ，其中 \(\mathrm{P}(\mathbf{X}) = \mathbf{X}^3 + p\mathbf{X} + q\) ，于是若 \(x\) 是 \(\mathbf{X}\) 在 \(\mathbf{A}, 1, x, x^2\) 中的像，则它们构成 \(\mathbf{A}\) 在 \(\mathbf{K}\) 上的一组基，且 \(x^3 = -px - q\) 。立即可以看出 \(\operatorname{Tr}(1) = 3\) ， \(\operatorname{Tr}(x) = 0\) ， \(\operatorname{Tr}(x^2) = -2p\) ；利用关系 \(x^3 = -px - q\) ， \(\operatorname{Tr}(x^3) = -3q\) ， \(\operatorname{Tr}(x^4) = 2p^2\) ，由此容易得到 \(\mathrm{D}_{\mathbf{A} / \mathbf{K}}(1, x, x^2) = -4p^3 - 27q^2\) 。
+\item
+  设 A 是 K 上类型为 \((\alpha, \beta, \gamma)\) 的四元数代数， \((1, i, j, k)\) 是 A 的一个类型为 \((\alpha, \beta, \gamma)\) 的基；利用 § 3 第 5 号公式 (30)，容易得出 \(\operatorname{Tr}(1) = 4\) ， \(\operatorname{Tr}(i) = 2\beta\) ， \(\operatorname{Tr}(j) = \operatorname{Tr}(k) = 0\) ，于是
+\end{enumerate}
+
+\[
+\mathrm{D} _ {\mathrm{A/K}} (1, i, j, k) = - 16 \gamma^ {2} (\beta^ {2} + 4 \alpha) ^ {2}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 \(\mathbf{A} = \mathbf{M}_n(\mathbf{K})\) ，并考虑典范基 \((E_{ij})_{1\leqslant i\leqslant n,1\leqslant j\leqslant n}\) （ \(\mathbf{A}\) 在 \(\mathbf{K}\) 上的）(II, § 10, 第 3 号)。立即可见 \(\operatorname{Tr}_{\mathbf{A} / \mathbf{K}}(E_{ij}) = 0\) （若 \(j\neq i\) ），且 \(\operatorname{Tr}_{\mathbf{A} / \mathbf{K}}(E_{ii}) = n\) 对所有 \(i\) 成立；由此不难得出，矩阵 \((\operatorname{Tr}(E_{ij}E_{hk}))\) （ \(n^2\) 阶）具有 \(n.P\) 的形式，其中 \(P\) 是一个置换矩阵，从而 \(\mathrm{D}_{\mathbf{A} / \mathbf{K}}((E_{ij})) = \pm n^{n^2}\) 。
+\end{enumerate}
+

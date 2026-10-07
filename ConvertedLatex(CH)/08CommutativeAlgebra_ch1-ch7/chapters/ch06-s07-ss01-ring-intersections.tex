@@ -1,0 +1,54 @@
+\subsection{有限个赋值环的交}
+
+命题 1. 设 K 是域，\((\mathbf{A}_{i})_{1 \leqslant i \leqslant n}\) 是 K 的赋值环的有限族，\(B = \bigcap_{i=1}^{n} A_{i}\) 。记 \(p_{i} = B \cap m(A_{i})\) 。那么对一切 i 有 \(A_{i} = B_{p_{i}}\) ，且 B 的分式域是 K。
+
+显然 \(B_{p_t} \subset A_t\) 。为证明相反的包含关系，我们需要下面的引理： 引理 1. 设 \(v_i (1 \leqslant i \leqslant n)\) 是域 \(K\) 上的赋值，\(x \in K^*\) 。那么存在一个形如下式的多项式 \(f(X)\)
+
+\[
+\begin{array}{l} (1) f (\mathbf {X}) = 1 + n _ {1} \mathbf {X} + \dots + n _ {k - 1} \mathbf {X} ^ {k - 1} + \mathbf {X} ^ {k} \\ \quad (k \geqslant 2, n _ {j} \in \mathbf {Z} for 1 \leqslant j \leqslant k - 1) \end{array}
+\]
+
+使得 \(f(x) \neq 0\) ，且元素 \(z = f(x)^{-1}\) 对 \(1 \leqslant i \leqslant n\) 具有下列性质：
+
+\[
+\begin{array}{l l} v _ {i} (z) = 0 & \text { if } \quad v _ {i} (x) \geqslant 0 \\ v _ {i} (z) + v _ {i} (x) > 0 & \text { if } \quad v _ {i} (x) <   0. \end{array}
+\]
+
+暂且承认这条引理，我们来说明它怎样蕴含 \(A_{1} \subset B_{p_{1}}\) 。设 x 是 \(A_{1}\) 的一个非零元素。把引理应用于 x 和诸赋值 \(v_{i}\) （与诸 \(A_{i}\) 相伴）。那么对一切 i 有 \(v_{i}(z) \geqslant 0\) 与 \(v_{i}(zx) \geqslant 0\) ，因而 \(z \in B\) 且 \(zx \in B\) 。由于 \(v_{1}(x) \geqslant 0\) ，有 \(v_{1}(z) = 0\) ，因而 \(z \notin p_{1}\) 。于是 \(x = xz/z \in B_{p_{1}}\) 。于是 B 的分式域包含 \(A_{1}\) ，从而是 K。
+
+现在转到引理的证明。设 I 是指标 \(i\) （满足 \(v_{i}(x) \geqslant 0\) ）的集合。对一切 \(i \in I\) ，用 \(\bar{x}_{i}\) 表示 \(x\) 在 \(\kappa(A_{i})\) 中的典范像。对一切 \(i \in I\) ，如下构造一个多项式 \(f_{i}\) ：若存在形如 (1) 的多项式 \(g(X)\) 使得 \(g(\bar{x}_{i}) = 0\) 在 \(\kappa(A_{i})\) 中成立，就取 \(f_{i}\) 为这样一个多项式；否则取 \(f_{i} = 1\) 。然后记 \(f(X) = 1 + X^{2} \prod_{i \in I} f_{i}(X)\) 。它显然是形如 (1) 的多项式。若 \(i \in I\) ，则 \(f(x) \in A_{i}\) ，且由构造 \(f(\bar{x}_{i}) \neq 0\) ；因而 \(f(x) \notin m(A_{i})\) ，\(v_{i}(f(x)) = 0\) 且 \(v_{i}(z) = 0\) 。若 \(i \notin I\) ，则 \(v_{i}(x) < 0\) ，于是 \(v_{i}(f(x)) = kv_{i}(x)\) （ \(\S\) 3 第 1 节命题 1），且
+
+\[
+v _ {i} (x) + v _ {i} (z) = (1 - k) v _ {i} (x) > 0
+\]
+
+（因为 \(k \geqslant 2\) ）。引理得证。
+
+命题 2. 在命题 1 的假设下，进一步设 \(\mathbf{A}_i \not\subset \mathbf{A}_j\) 对 \(i \neq j\) 成立。那么诸 \(\mathfrak{p}_i\) 是 \(\mathbf{B}\) 的互异的极大理想，且 \(\mathbf{B}\) 的每个极大理想都等于某个 \(\mathfrak{p}_i\) 。
+
+若 \(\mathfrak{p}_i\subset \mathfrak{p}_j\) （对 \(i\neq j,\mathrm{A}_i = \mathrm{B}_{\mathfrak{p}_i}\supset \mathrm{B}_{\mathfrak{p}_j} = \mathrm{A}_j\) ），则只需应用第二章 § 3 第 5 节命题 17 的推论。
+
+推论 1. 设 \(\mathbf{A}_i \subsetneq \mathbf{A}_j\) 对 \(i \neq j\) 成立。对每个由元素 \(a_i \in \mathbf{A}_i\) ( \(1 \leqslant i \leqslant n\) ) 组成的族，存在 \(x \in \mathbf{B}\) 使得 \(x \equiv a_i \pmod{\mathfrak{m}(\mathbf{A}_i)}\) 对 \(1 \leqslant i \leqslant n\) 成立。
+
+由于诸 \(p_i\) 是 B 的极大理想，\(A_i / m(A_i) = B_{p_i} / p_i B_{p_i} = B / p_i\) ，因此可以设 \(a_i \in B\) 对一切 \(i\) 成立。于是推论由
+
+B 到 \(\prod_{i=1}^{n} (B/p_i)\) 的典范映射是满射这一事实得出（第二章 § 1 第 2 节命题 5）。
+
+推论 2. 设 \(\mathbf{A}_i \not\subset \mathbf{A}_j\) 对 \(i \neq j\) 成立。存在元素 \(x_i\) ( \(1 \leqslant i \leqslant n\) ) （\(\mathbf{K}\) 的），使得 \(v_i(x_i) = 0\) 且 \(v_j(x_i) > 0\) 对 \(i \neq j\) 成立。
+
+对每个指标 \(i\) ，把推论 1 应用于族 \((a_{j})\) ，它满足 \(a_{i} = 1\) 且 \(a_{j} = 0\) （对 \(j \neq i\) ）。
+
+推论 3. K 的每个包含 B 的赋值环都包含某个 A \(_{i}\) 。
+
+可以只限于 \(A_{i} \not\subset A_{j}\) （对 \(i \neq j\) ）的情形。设 V 是 K 的包含 B 的赋值环。记
+
+\[
+\mathfrak {p} = \mathfrak {m} (\mathrm{V}) \cap \mathrm{B}.
+\]
+
+存在 B 的包含 p 的极大理想 \(p_{i}\) ，于是
+
+\[
+\mathrm{A} _ {i} = \mathrm{B} _ {\mathfrak {p} _ {i}} \subset \mathrm{B} _ {\mathfrak {p}} \subset \mathrm{V}.
+\]
+

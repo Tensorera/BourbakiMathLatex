@@ -1,0 +1,488 @@
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  一个集合 \(\mathbf{E}\) 是无限的，当且仅当对于每个映射 \(f\) （从 \(\mathbf{E}\) 到 \(\mathbf{E}\) 中），存在 \(\mathbf{E}\) 的一个非空子集 \(\mathbf{S}\) ，使得 \(\mathbf{S} \neq \mathbf{E}\) 和 \(f(\mathbf{S}) \subset \mathbf{S}\) .
+\item
+  证明：如果 \(\mathfrak{a}, \mathfrak{b}, \mathfrak{c}, \mathfrak{d}\) 是四个基数，使得 \(\mathfrak{a} < \mathfrak{c}\) 并且 \(\mathfrak{b} < \mathfrak{d}\) ，那么 \(\mathfrak{a} + \mathfrak{b} < \mathfrak{c} + \mathfrak{d}\) 并且 \(\mathfrak{a}\mathfrak{b} < \mathfrak{c}\mathfrak{d}\) （参见习题 21 (c)）。
+\item
+  若 E 是无限集，则 E 的与 E 等势的子集所成的集合与 \(\mathfrak{P}(E)\) 等势（利用第 4 号的命题 3）。
+\item
+  若 E 是无限集，则 E 的所有划分所成的集合与 \(\mathfrak{P}(\mathbf{E})\) 等势（对 E 的每个划分，关联 \(E \times E\) 的一个子集）。
+\item
+  如果E是无限集，则E的所有排列构成的集合与 \(\mathfrak{P}(\mathbf{E})\) 等势（利用第4号命题3证明：对于E的每个子集A，若其补集不是单元素集，则存在E的一个置换f，使得A是E中在f下不变的元素所成的集合。）
+\item
+  设E、F为两个无限集，且Card (E) ≤ Card (F)。证明：（i）所有从E到F的满射所成的集合，（ii）所有从E到F的映射所成的集合，以及（iii）所有从E的子集到F的映射所成的集合，均与P(F)等势。
+\item
+  设 E, F 为两个无限集，使得 Card (E) \textless{} Card (F)。证明：所有与 E 等势的 F 的子集所构成的集合，以及所有从 E 到 F 的单射所构成的集合，都与由从E到F的所有映射组成的集合 \(F^{E}\) 等势（对于从E到F的每个映射f，考虑单射 \(x \to (x, f(x))\) 将E映入 \(E \times F\) ).
+\item
+  证明无限集E上的良序关系的集合（更不必说E上的序关系的集合）与 \(\mathfrak{P}(\mathbf{E})\) 等势（使用习题5）。
+\item
+  设E是一个非空良序集，其中除E的最小元素外的每个元素x都有一个前驱（即 \(] \leftarrow, x[\) 的最大元素）。证明 E 同构于 N 或 N 的某个区间 \([0, n]\) （注意，每个段 \(\neq E\) 是有限的，利用第5号中的命题6；然后使用§2第5号的定理3）。
+\item
+  让 \(\omega\) 或 \(\omega_0\) 表示序数 Ord (N) （ \(\S 2\) ，练习14）。所有整数的集合于是成为一个良序集，与所有 \(< \omega\) 的序数的集合同构。对于每个整数 \(n\) 我们再次用 \(n\) （通过滥用语言）表示序数Ord（{[}0, n{]}).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明对于每个基数 \(\mathfrak{a}\) ，关系“ \(\xi\) 是一个序数且 Card \((\xi) < \mathfrak{a}\) ” 是收集性的（使用策梅洛定理）。设 \(W(\mathfrak{a})\) 表示所有序数 \(\xi\) （满足 Card \((\xi) < \mathfrak{a}\) ）所成的集合 .
+\item
+  对于每个序数 \(\alpha > 0\) ，定义函数 \(f_{\lambda}\) ，在良序集 \(\mathrm{O}'(\alpha)\) （序数 \(\leqslant \alpha\) 所成的良序集）上通过超限归纳如下： \(f_{\alpha}(0) = \omega_0 = \omega\) ，并且对于每个序数 \(\xi\) 使得 \(0 < \xi \leqslant \alpha\) , \(f_{\alpha}(\xi)\) 是由满足以下条件的序数 \(\zeta\) 组成的集合的最小上界（§ 2，习题 14 (d)）：\(\operatorname{Card}(\zeta) \leqslant \operatorname{Card}(f_{\alpha}(\eta))\) 至少对于一个序数 \(\eta < \xi\) . 证明：如果 \(0 \leqslant \eta < \xi \leqslant \alpha\) ，那么 \(\operatorname{Card}(f_{\alpha}(\eta)) < \operatorname{Card}(f_{\alpha}(\xi))\) 并且，如果 \(\xi \leqslant \alpha \leqslant \beta\) ，那么 \(f_{\alpha}(\xi) = f_{\beta}(\xi)\) 。令 \(\omega_{\alpha} = f_{\alpha}(\alpha)\) ; \(\omega_{\alpha}\) 被称为指标为 \(\alpha\) 的初始序数。我们有 \(\omega_{\alpha} \geqslant \alpha\) 。令 \(\aleph_{\alpha} = \operatorname{Card}(\omega_{\alpha})\) ; \(\aleph_{\alpha}\) 被称为指标为 \(\alpha\) 的aleph。特别地， \(\aleph_0 = \operatorname{Card}(\mathbf{N})\) .
+\item
+  证明：对于每一个无限基数 \(\mathfrak{a}\) ，最小上界 \(\lambda\) ——序数集合 \(W(\mathfrak{a})\) 的最小上界——是一个初始序数 \(\omega_{\alpha}\) ，以及 \(\mathfrak{a} = \aleph_{\alpha}\) （考虑最小的序数 \(\mu\) 使得 \(\omega_{\mu} \geqslant \lambda\) ）；换言之， \(\omega_{\alpha}\) 是最小的序数 \(\xi\) 使得 \(\operatorname{Card}(\xi) = \aleph_{\alpha}\) 。对于每个序数 \(\alpha\) ，映射 \(\xi \to \aleph_{\xi}\) （定义在 \(O'(\alpha)\) 上）是从良序集 \(O'(\alpha)\) 到由基数组成的良序集（ \(\leqslant \aleph_{\alpha}\) ）上的同构；特别地， \(\aleph_{\alpha+1}\) 是最小的基数 \(> \aleph_{\alpha}\) . 证明：如果 \(\alpha\) 没有前驱，则对于每一个严格递增映射 \(\xi \to \sigma_{\xi}\) （从序数 \(\beta\) 到 \(\alpha\) 中），使得 \(\alpha = \sup_{\xi \in \Omega} \sigma_{\xi}\) ，我们有
+\end{enumerate}
+
+\[
+\sum_ {\xi <   \beta} \aleph_ {\sigma_ {\xi}} = \aleph_ {\alpha}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  由(c)推出， \(\omega_{\xi}\) 是一个正规序数泛函符号（§2，习题17）。
+\end{enumerate}
+
+¶ 11. (a) 证明序数 \(\omega\) 是最小的没有前驱的序数 \(>0\) ，即 \(\omega\) 是不可分解的（§ 2，习题 16），并且对于每个序数 \(\alpha > 0\) , \(\alpha\omega\) 是最小的不可分解序数 \(>\alpha\) (注意： \(n\omega = \omega\) 对于每个整数 \(n\) ）。由此得出
+
+\[
+(\alpha + 1) \omega = \alpha \omega \quad \text { 对   每个 } \alpha > 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  由(a)推出，一个序数不可分解当且仅当它具有如下形式 \(\omega^{\beta}\) （利用第2节练习18（d）。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    证明：对于每个序数 \(\alpha\) 以及每个序数 \(\gamma > 1\) ，存在两个有限的序数序列 \((\lambda_i)\) 与 \((\mu_i)\) ( \(1 \leqslant i \leqslant k\) ) 使得
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\alpha = \gamma^ {\lambda_ {1}} \mu_ {1} + \gamma^ {\lambda_ {2}} \mu_ {2} + \dots + \gamma^ {\lambda_ {k}} \mu_ {k},
+\]
+
+其中 \(0 < \mu_i < \gamma\) （对每个 \(i\) ），且 \(\lambda_i > \lambda_{i+1}\) （对 \(1 \leqslant i \leqslant k - 1\) ；利用第2节习题18(d)和第4节习题3）。此外，序列 \((\lambda_i)\) , \((\mu_i)\) 由这些条件唯一确定。特别地，存在唯一的有限递减序列 \((\beta_j)_{1 \leqslant j \leqslant m}\) 使得
+
+\[
+\alpha = \omega^ {\beta_ {1}} + \omega^ {\beta_ {2}} + \dots + \omega^ {\beta_ {m}}.
+\]
+
+让 \(\varphi(\alpha)\) 表示此分解中最大的序数 \(\omega^{\beta_1}\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  对于每个整数n，令 \(f(n) \leqslant n!\) 为形如 \(\alpha_{\sigma(1)} + \alpha_{\sigma(2)} + \cdots + \alpha_{\sigma(n)}\) 的序数所成集合元素个数的最大值，其中 \((\alpha_i)_{1 \leqslant i \leqslant n}\) 是n个序数的任意序列，且 \(\sigma\) 遍历区间 {[}1, n{]}. 证明
+\end{enumerate}
+
+\[
+f (n) = \sup _ {1 \leqslant k \leqslant n - 1} (k. 2 ^ {k - 1} + 1) f (n - k).\tag{1}
+\]
+
+（首先考虑所有 \(\varphi(\alpha_i)\) 相等的情形，并证明所需形式的不同序数的最大可能个数等于 \(n\) ，利用§2中习题16(a)。然后对序数 \(\alpha_i\) ——即那些 \(\varphi(\alpha_i)\) 在序数集合 \(\varphi(\alpha_j)\) ( \(1 \leqslant j \leqslant n\) )中取最小可能值者——的个数进行归纳。从(1)推出，对于 \(n \geqslant 20\) 我们拥有 \(f(n) = 81f(n - 5)\) .
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  证明 \(n!\) 个序数 \((\omega + \sigma(1)) (\omega + \sigma(2)) \ldots (\omega + \sigma(n))\) （其中 \(\sigma\) 遍历 \([1, n]\) 的所有排列所成的集合）都是不同的。
+\end{enumerate}
+
+¶ 13. (a) 设 \(w(\xi)\) 是一个序数泛函符号（§2，习题17），定义于 \(\xi \geqslant \alpha_0\) 且使得关系 \(\alpha_0 \leqslant \xi < \xi'\) 蕴含 \(w(\xi) < w(\xi')\) . 证明：如果 \(\xi \geqslant \alpha_0\) ，那么 \(w(\xi + \eta) \geqslant w(\xi) + \eta\) 对于每一个序数 \(\eta\) （用反证法论证）。由此推出存在 \(\alpha\) 使得 \(w(\xi) \geqslant \xi\) 对于所有 \(\xi \geqslant \alpha\) （取 \(\alpha\) 为最小的不可分解序数 \(\geqslant \alpha_0\) ；参见习题11 (a)）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  让 \(f(\xi, \eta)\) 是§2，习题17 (b)中定义的序数泛函符号。假设关系 \(\alpha_0 \leqslant \xi \leqslant \xi'\) 并且 \(\alpha_0 \leqslant \eta \leqslant \eta'\) 蕴含 \(g(\xi, \eta) \leqslant g(\xi', \eta')\) ，使得关系 \(\alpha_0 \leqslant \xi \leqslant \xi'\) 并且 \(1 \leqslant \eta \leqslant \eta'\) 蕴含 \(f(\xi, \eta) \leqslant f(\xi', \eta')\) （§ 2，习题 17 (d)）。证明对于每个序数 \(\beta\) 至多存在有限个序数 \(\eta\) 使得方程 \(f(\xi, \eta) = \beta\) 至少有一个解。（注意，如果 \(\xi_1\) 是 \(f(\xi, \eta_1) = \beta\) 的最小解，并且如果 \(\xi_2\) 是 \(f(\xi, \eta_2) = \beta\) 的最小解，则关系 \(\eta_1 < \eta_2\) 蕴含 \(\xi_1 > \xi_2\) .)
+\item
+  关于 \(f\) 的一个临界序数是任意无穷序数 \(\gamma > \alpha_0\) ，使得 \(f(\xi, \gamma) = \gamma\) 对于所有 \(\xi\) （满足 \(\alpha_0 \leqslant \xi < \gamma\) ）成立. 证明一个临界序数（关于 \(f\) ）没有前驱。如果存在一个集合 \(A\) （由序数组成），使得 \(f(\xi, \gamma) = \gamma\) 对于所有 \(\xi \in A\) ，并且如果 \(\gamma\) 是 \(A\) 的最小上界，证明 \(\gamma\) 是一个临界序数。
+\item
+  让 \(h(\xi) = f(\xi, \xi)\) （对 \(\xi \geqslant \alpha_0\) 有定义）。归纳定义 \(\alpha_1 = \alpha_0 + 2\) , \(\alpha_{n+1} = h(\alpha_n)\) 对于 \(n \geqslant 1\) 。证明序列 \((\alpha_n)\) 的最小上界是关于 \(f\) 的临界序数.
+\item
+  证明关于 \(f\) 的每个临界序数集合的最小上界仍然是临界序数，并且每个临界序数都是不可分解的（注意 \(f(\xi, \eta + 1) \geqslant \omega(\xi) + \eta \geqslant \xi + \eta\) 对于所有 \(\xi \geqslant \alpha_0\) ).
+\end{enumerate}
+
+¶ 14. (a) 证明如果 \(\alpha \geqslant 2\) 并且如果 \(\beta\) 没有前驱，则 \(\alpha^{\beta}\) 是不可分解序数（参见§ 2，练习16 (a)）；如果 \(\alpha\) 是有限的，并且如果 \(\beta = \omega \gamma\) ，那么 \(\alpha^{\beta} = \omega^{\gamma}\) ；若 \(\alpha\) 是无限的，并且如果 \(\pi\) 是最大的不可分解序数 \(\leqslant \alpha\) ，那么 \(\alpha^{\beta} = \pi^{\beta}\) （使用练习11）。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  一个序数 \(\delta\) 关于函数符号 \(f(\xi, \eta) = \xi \eta\) 是临界的，当且仅当，对于每个 \(\alpha\) （满足 \(1 < \alpha \leqslant \delta\) ），方程 \(\delta = \alpha^{\xi}\) 有解；该方程的唯一解 \(\xi\) 则是不可分解的（使用练习13 (e)，以及§2的练习18 (d)）。反之，对于每个 \(\alpha > 1\) 和每个不可分解序数 \(\pi\) , \(\alpha^{\pi}\) 是关于 \(\xi \eta\) 的临界序数（利用习题13(c)）。由此推出 \(\delta\) 是关于 \(\xi \eta\) 的临界序数当且仅当 \(\delta\) 具有形式 \(\omega^{\omega^{\mu}}\) （参见习题11(b)）。
+\item
+  对于序数 \(\varepsilon\) 要关于函数符号 \(f(\xi, \eta) = \xi^{\eta}\) 是临界的——即满足 \(\gamma^{\varepsilon} = \varepsilon\) 对于每一个 \(\gamma\) （满足 \(2 \leqslant \gamma \leqslant \varepsilon\) ）——只需 \(2^{\varepsilon} = \varepsilon\) 。证明最小临界序数 \(\varepsilon_0\) 关于 \(\xi^{\eta}\) 是可数的（参见练习13(d)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  让 \(\gamma\) 为一个序数 \(>1\) ，并且对于每个序数 \(\alpha\) ，让 \(\mathbf{L}(\alpha)\) 表示指数 \(\lambda_{i}\) （在如练习12（a）中所给出的表达式 \(\alpha\) 中）所成的集合。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  证明 \(\lambda_{i} \leqslant \alpha\) 对于每一个 \(\lambda_{i} \in \mathbf{L}(\alpha)\) ，以及 \(\lambda_{i} = \alpha\) （对这些序数之一而言）仅当 \(\alpha = 0\) 或者 \(\alpha\) 是关于 \(\xi^{\eta}\) 的临界序数时成立（练习14（c））。
+\item
+  通过对 n 进行归纳，定义 \(\mathbf{L}_{n}(\alpha)\) 如下： \(\mathbf{L}_{1}(\alpha)=\mathbf{L}(\alpha)\) ，而 \(\mathbf{L}_{n}(\alpha)\) 是诸集合 \(\mathbf{L}(\beta)\) （当 \(\beta\) 遍历 \(\mathbf{L}_{n-1}(\alpha)\) 时）的并集. 证明存在一个整数 \(n_{0}\) 使得 \(\mathbf{L}_{n+1}(\alpha)=\mathbf{L}_{n}(\alpha)\) 对每个 \(n\geqslant n_{0}\) 成立，并且 \(\mathbf{L}_{n}(\alpha)\) 的这些元素要么是0，要么是关于 \(\xi^{\eta}\) 的临界序数（用反证法论证：对每个 n，考虑集合 \(\bar{\mathbf{M}}_{n}(\alpha)\) 的元素 \(\beta\in\mathbf{L}_{n}(\alpha)\) （即满足 \(\beta\notin\mathbf{L}(\beta)\) 的元素），并假设 \(\mathbf{M}_{n}(\alpha)\) 对任意 n 均非空；利用 (a) 得出矛盾。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  每个全序集都有一个良序的共尾子集（§2，习题 2）。E 的良序共尾子集 M 的序数 Ord (M) 中最小的那个称为 E 的终特征。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  一个序数 \(\xi\) 若等于其终特征，则称为正则的；否则称为奇异的。证明每个无限正则序数都是初始序数 \(\omega_{\alpha}\) （习题 10）。反之，每个初始序数 \(\omega_{\alpha}\) ，其指标 \(\alpha\) 要么为0，要么有前驱，是正则序数。一个初始序数 \(\omega_{\alpha}\) ，其指标 \(\alpha\) 没有前驱，则是奇异序数，如果 \(0 < \alpha < \omega_{\alpha}\) ；特别地， \(\omega_{\omega}\) 是最小的无穷奇异初始序数。
+\item
+  一个初始序数 \(\omega_{\alpha}\) 被称为不可达的，如果它是正则的且其指标 \(\alpha\) 没有前驱。证明，若 \(\alpha = 0\) ，那么 \(\omega_{\alpha} = \alpha\) ；换句话说， \(\alpha\) 是关于正规函数符号 \(\omega_{\eta}\) 的临界序数（习题10(d)和13(c)）。设x是关于该函数符号的最小临界序数。证明 \(\omega_{x}\) 是奇异的，其终特征为 \(\omega\) （参见习题13(d)）。换言之，不存在不可达序数 \(\omega_{\alpha}\) 使得 \(0 < \alpha \leqslant x (*)\) .
+\item
+  证明：在给定的全序集 E 中，存在唯一一个与其共尾的正则序数；该序数等于 E 的终特征，并且若 E 非空且无最大元，则它是一个初始序数。若 \(\omega_{\overline{\alpha}}\) 是 \(\omega_{\alpha}\) 的终特征，那么 \(\overline{\alpha} \leqslant \alpha\) ；以及 \(\omega_{\alpha}\) 是正则的当且仅当 \(\alpha = \overline{\alpha}\) .
+\item
+  让 \(\omega_{\alpha}\) 为一个正则序数，并设 I 为良序集，使得 \(\operatorname{Ord}(I) < \omega_{\alpha}\) . 证明：对每个由序数组成的族 \((\xi_{i})_{i \in I}\) ，使得 \(\xi_{i} < \omega_{\alpha}\) 对于所有 \(i \in I\) ，我们有 \(\sum_{i \in I} \xi_{i} < \omega_{\alpha}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  基数 \(\aleph_{\alpha}\) 被称为正则的（相应地，奇异）如果初始序数 \(\omega_{\alpha}\) 是正则的（相应地，奇异）。对于 \(\aleph_{\alpha}\) 要成为正则的，必要且充分条件是对于每个由基数组成的族 \((a_{i})_{i\in I}\) ，使得 Card (I) \(< \aleph_{\alpha}\) 并且 \(a_{i} < \aleph_{\alpha}\) 对于所有 \(i\in I\) ，我们有
+\end{enumerate}
+
+\[
+\sum_ {i \in I} a _ {i} <   \aleph_ {\alpha}.
+\]
+
+\(\aleph_{\omega}\) 是最小的奇异基数。
+
+¶ 18. (a) 对每个序数 \(\alpha\) 以及每个基数 \(\mathfrak{m} \neq 0\) 我们拥有 \(\aleph_{\alpha+1}^{\mathfrak{m}} = \aleph_{\alpha}^{\mathfrak{m}} \cdot \aleph_{\alpha+1}\) （化简为以下情形 \(\mathfrak{m} < \aleph_{\alpha+1}\) 并考虑从基数 \(\mathfrak{m}\) 到序数 \(\omega_{\alpha+1}\) 中的映射).
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  从(a)推断出，对于每个序数 \(\gamma\) 使得 Card \((\gamma) \leqslant m\) ，我们有 \(\aleph_{\alpha + \gamma}^{m} = \aleph_{\alpha}^{m} \cdot \aleph_{\alpha + \gamma}^{\text{Card}(\gamma)}\) （对 \(\gamma\) 进行超限归纳).
+\item
+  从(b)推出，对于每个序数 \(\alpha\) 使得 \(\operatorname{Card}(\alpha) \leqslant \mathfrak{m}\) ，我们有 \(\aleph_{\alpha}^{\mathfrak{m}} = 2^{\mathfrak{m}} \cdot \aleph_{\alpha}^{\operatorname{Card}(\alpha)}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{18}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    让 \(\alpha\) 和 \(\beta\) 是两个序数，使得 \(\alpha\) 没有前驱，且设 \(\xi \to \sigma_{\xi}\) 是一个从序数 \(\omega_{\beta}\) 到序数 \(\alpha\) 中的严格递增映射，使得 \(\sup \sigma_{\xi} = \alpha\) . 证明
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\sup _ {\xi <   \omega_ {\beta}} \sigma_ {\xi} = \alpha .
+\]
+
+\[
+\aleph_ {\alpha} ^ {N _ {3}} = \prod_ {\xi <   \omega_ {\beta}} \aleph_ {\sigma_ {\xi}}.
+\]
+
+（对于每个映射 \(f\) （从序数 \(\omega_{\beta}\) 到序数 \(\omega_{\alpha}\) 中），关联一个单射映射 \(\overline{f}\) （从 \(\omega_{\beta}\) 到由所有 \(\omega_{\sigma_{\xi}}(\xi < \omega_{\beta})\) 组成的集合中），使得 \(f(\zeta) \leqslant f(\zeta)\) 对于所有 \(\zeta < \omega_{\beta}\) 成立. 计算映射 \(f\) ——与同一个 \(\overline{f}\) 相关联者——所成集合的基数，并观察到
+
+\[
+\mathfrak {m} = \prod_ {\xi <   \omega_ {\beta}} \aleph_ {\sigma_ {\xi}} \geqslant 2 ^ {\operatorname{Card} (\omega_ {\beta})}
+\]
+
+并且 \(\mathfrak{m} \geqslant \aleph_{\alpha}\) （参见第3节，练习3。）
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  让 \(\overline{\alpha}\) 是使得 \(\omega_{\overline{\alpha}}\) 为 \(\omega_{\alpha}\) 的终特征的序数。证明 \(\aleph_{\alpha}^{\aleph_{\overline{\alpha}}} > \aleph_{\alpha}\) ，并且如果存在 \(n\) 使得 \(\aleph_{\alpha} = n^{\aleph_{\gamma}}\) ，那么 \(\gamma < \overline{\alpha}\) （利用(a)及第3节练习3）。
+\item
+  证明：如果 \(\lambda < \bar{\alpha}\) ，那么
+\end{enumerate}
+
+\[
+\aleph_ {\alpha} ^ {\aleph_ {\lambda}} = \sum_ {\xi <   \alpha} \aleph_ {\xi} ^ {\aleph_ {\lambda}}
+\]
+
+（仿照练习18(a)论证）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    对于基数 \(\mathfrak{a}\) 要成为正则的（练习17），必要条件是对于每个基数 \(\mathfrak{b} \neq 0\) 我们应当有
+  \end{enumerate}
+\end{enumerate}
+
+\[
+a ^ {b} = a. \sum_ {m <   a} m ^ {b}.
+\]
+
+（利用习题19，并分别考虑情形（i） \(\mathfrak{b}\) 是有限的，（ii） \(\aleph_0 \leqslant \mathfrak{b} < \mathfrak{a}\) ，(iii) \(\mathfrak{b} \geqslant \mathfrak{a}\) ；同时利用§3的习题3。）广义连续统假设蕴含上述条件也是充分的。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  证明，如果一个基数 \(\mathfrak{a}\) 满足 \(\mathfrak{a}^{\mathfrak{m}} = \mathfrak{a}\) 对于每一个基数 \(\mathfrak{m}\) （满足 \(0 < \mathfrak{m} < \mathfrak{a}\) ），那么 \(\mathfrak{a}\) 是正则的（利用§3的习题3）。
+\item
+  证明：对于每一个正则基数 a 和每一个基数 m，若 0 \textless{} m \textless{} a，我们有 \(a = a^{m}\) ''这一断言等价于广义连续统假设（利用（a））。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  一个无限基数 \(\mathfrak{a}\) 被称为支配的，如果对于每一对基数 \(\mathfrak{m} < \mathfrak{a}\) , \(\mathfrak{n} < \mathfrak{a}\) ，我们有 \(\mathfrak{m}^{\mathfrak{n}} < \mathfrak{a}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  要使 \(\mathfrak{a}\) 成为支配基数，只需 \(2^{\mathfrak{m}} < \mathfrak{a}\) （对每个基数 \(\mathfrak{m} < \mathfrak{a}\) ）.
+\item
+  归纳地定义一个由基数组成的序列 \((\mathfrak{a}_n)\) 如下： \(\mathfrak{a}_0 = \aleph_0\) , \(\mathfrak{a}_{n+1} = 2^{\mathfrak{a}_n}\) 。证明该和 \(\mathfrak{b}\) ——即序列 \((\mathfrak{a}_n)\) 之和——是一个支配基数。 \(\aleph_0\) 和 \(\mathfrak{b}\) 是两个最小的支配基数。
+\item
+  证明 \(\mathfrak{b}^{\aleph_0} = \aleph_0^{\mathfrak{b}} = 2^{\mathfrak{b}}\) (注意： \(2^{\mathfrak{b}} \leqslant \mathfrak{b}^{\aleph_0}\) ）。由此得出 \(\mathfrak{b}^{\aleph_0} = (2^{\mathfrak{b}})^{\mathfrak{b}}\) ，尽管 \(\mathfrak{b} < 2^{\mathfrak{b}}\) 并且 \(\aleph_0 < \mathfrak{b}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  称基数 \(\aleph_{\alpha}\) 是不可达的，如果序数 \(\omega_{\alpha}\) 是不可达的（练习16（b））。于是有 \(\omega_{\alpha} = \alpha\) （如果 \(\omega_{\alpha} \neq \omega_{0}\) ）. 如果基数 \(a\) 既不可达又是支配基数，就称它是强不可达的（练习21）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  广义连续统假设蕴涵每个不可达基数都是强不可达的。
+\item
+  对于基数 \(\mathfrak{a} \geqslant 3\) 要成为强不可达的，必要且充分条件是，对于每个由基数组成的族 \((\mathfrak{a}_i)_{i \in I}\) ，使得
+\end{enumerate}
+
+\[
+\text { Card } (I) <   a \quad \text { 且 } \quad a _ {i} <   a
+\]
+
+对于所有 \(\iota \in I\) ，我们应当有 \(\prod_{\iota \in I} a_{\iota} < a\) .
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  对于一个无穷基数 \(\mathfrak{a}\) 要成为强不可达基数，当且仅当它是支配的（习题21）并且满足以下两个条件之一：（i） \(\mathfrak{a}^{\mathfrak{b}} = \mathfrak{a}\) 对于每一个基数 \(\mathfrak{b}\) 使得 \(0 < \mathfrak{b} < \mathfrak{a}\) ；(ii) \(\mathfrak{a}^{\mathfrak{b}} = \mathfrak{a}.2^{\mathfrak{b}}\) 对于每一个基数 \(\mathfrak{b} > 0\) 。（利用习题20和21。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{22}
+\tightlist
+\item
+  让 \(\alpha\) 为一个序数 \(>0\) 。一个映射 \(f\) （把序数 \(\alpha\) 映到自身）被称为发散的，如果对于每个序数 \(\lambda_0 < \alpha\) 存在一个序数 \(\mu_0 < \alpha\) 使得关系 \(\mu_0 \leqslant \xi < \alpha\) 蕴含 \(\lambda_0 \leqslant f(\xi) < \alpha\) (*).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  让 \(\varphi\) 是一个从序数 \(\beta\) 到 \(\alpha\) 中的严格递增映射，使得
+\end{enumerate}
+
+\[
+\varphi (\sup _ {\zeta <   \gamma} \zeta) = \sup _ {\zeta <   \gamma} \varphi (\zeta) \quad \text { 对   所有 } \quad \gamma <   \beta ,
+\]
+
+并且使得
+
+\[
+\sup _ {\zeta <   \beta} \varphi (\zeta) = \alpha (\dagger).
+\]
+
+那么存在一个发散映射 \(f\) （从 \(\alpha\) 到自身），使得 \(f(\xi) < \xi\) 对于所有 \(\xi\) （满足 \(0 < \xi < \alpha\) ）成立，当且仅当存在一个从 \(\beta\) 到自身的同类型发散映射。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  从（a）可推出，存在一个从 \(\omega_{\alpha}\) 到自身的发散映射，使得 \(f(\xi) < \xi\) 对于所有 \(\xi\) （满足 \(0 < \xi < \alpha\) ）成立，当且仅当 \(\omega_{\alpha}\) 的终特征是 \(\omega_0\) 。 （如果 \(\omega_{\alpha}\) 是一个正则序数 \(> \omega_0\) ，归纳地定义一个严格递增的序列 \((\eta_n)\) 如下： \(\eta_1 = 1\) ，以及 \(\eta_{n+1}\) 是最小的序数 \(\zeta\) 使得 \(f(\xi) > \eta_n\) 对于所有 \(\xi \geqslant \zeta\) .)
+\item
+  让 \(\omega_{\overline{\alpha}}\) 是 \(\omega_{\alpha}\) 的终特征（习题16）。证明，如果 \(\overline{\alpha} > 0\) 并且如果 \(f\) 是一个从 \(\omega_{\alpha}\) 到自身的映射，使得 \(f(\xi) < \zeta\) 对于所有 \(\xi\) （满足 \(0 < \xi < \omega_{\alpha}\) ）成立，那么存在一个序数 \(\lambda_0\) 使得方程 \(f(\xi) = \lambda_0\) 的解集具有基数 \(\geqslant \aleph_{\overline{\alpha}}\) .
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{23}
+\tightlist
+\item
+  让 \(\mathfrak{F}\) 为集合 \(E\) 的一个子集族，使得对于每一个 \(A \in \mathfrak{F}\) 我们拥有 \(\operatorname{Card}(A) = \operatorname{Card}(\mathfrak{F}) = a \geqslant \aleph_0\) . 证明 \(E\) 有一个子集 \(P\) 使得 \(\operatorname{Card}(P) = a\) 并且使得 \(\mathfrak{F}\) 中没有集合包含于 \(P\) 。 （如果 \(a = \aleph_{\alpha}\) ，通过超限归纳定义两个单射映射 \(\xi \to f(\xi)\) 与 \(\xi \to g(\xi)\) （从 \(\omega_{\alpha}\) 到 \(E\) 中），使得集合 \(P = f(\omega_{\alpha})\) 与 \(Q = g(\omega_{\alpha})\) 互不相交，并且使得它们每一个都与每个子集 \(A \in \mathfrak{F}\) 相交.)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  进一步假设，对于每个子集 \(\mathfrak{G}\) （ \(\mathfrak{F}\) 的子集）——它满足 \(\operatorname{Card}(\mathfrak{G}) < \mathfrak{a}\) ——在 \(\mathbf{E}\) 中，诸集合 \(\mathbf{A} \in \mathfrak{G}\) 的并的补集具有基数 \(\geqslant \mathfrak{a}\) . 证明 \(\mathbf{E}\) 则有一个子集 \(\mathbf{P}\) 使得 \(\operatorname{Card}(\mathbf{P}) = \mathfrak{a}\) 并且使得，对于每个 \(\mathbf{A} \in \mathfrak{G}\) , \(\operatorname{Card}(\mathbf{P} \cap \mathbf{A}) < \mathfrak{a}\) （类似方法）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{24}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    让 \(\mathfrak{F}\) 为无限集合 E 的一个覆盖。 \(\mathfrak{F}\) 的不相交度是最小的基数 \(c\) ，使得 \(c\) 严格大于基数Card \((\mathbf{X} \cap \mathbf{Y})\) 对于每一对不同的集合 \(\mathbf{X}, \mathbf{Y} \in \mathfrak{F}\) 。如果Card \((\mathbf{E}) = a\) 和Card \((\mathfrak{F}) = b\) ，证明 \(b \leqslant a^c\) （注意，基数为 \(c\) 的 E 的子集至多包含在 \(\mathfrak{F}\) 的一个集合中。）
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  让 \(\omega_{\alpha}\) 为一个初始序数，并设 F 为一个集合，使得 \(2 \leqslant \mathfrak{p} = \operatorname{Card}(\mathbf{F}) < \aleph_{\alpha}\) 。设 E 为从 \(\omega_{\alpha}\) 的段（ \(\omega_{\alpha}\) 本身除外）到 F 中的映射所组成的集合。于是我们有 \(\operatorname{Card}(\mathbf{E}) \leqslant \mathfrak{p}^{\aleph_{\alpha}}\) . 对于每个映射 \(f\) （从 \(\omega_{\alpha}\) 到 F 中），令 \(\mathbf{K}_f\) 为由 \(f\) 到 \(\omega_{\alpha}\) 的各段（ \(\omega_{\alpha}\) 本身除外）上的限制所组成的 E 的子集。证明集合 \(\mathfrak{F}\) ——由子集 \(\mathbf{K}_f\) 组成——是E的一个覆盖，使得 \(\operatorname{Card}(\mathfrak{F}) = \mathfrak{p}^{\aleph_{\alpha}}\) ，并且其不相交度等于 \(\aleph_{\alpha}\) .
+\item
+  让 \(\mathbf{E}\) 是基数为 \(\mathfrak{a}\) 的无穷集合，并且让 \(\mathfrak{c}\) , \(\mathfrak{p}\) 为两个基数 \(> 1\) ，使得 \(\mathfrak{p} < \mathfrak{c}\) , \(\mathfrak{p}^{\mathfrak{m}} < \mathfrak{a}\) 对于所有 \(\mathfrak{m} < \mathfrak{c}\) ，以及 \(\mathfrak{a} = \sum_{\mathfrak{m} < \mathfrak{c}} \mathfrak{p}^{\mathfrak{m}}\) 。由(b)推出存在一个覆盖 \(\mathfrak{F}\) —— \(\mathbf{E}\) 的覆盖——由基数为 \(\mathfrak{c}\) 的集合组成，其不相交度等于 \(\mathfrak{c}\) ，并且使得 \(\operatorname{Card}(\mathfrak{F}) = \mathfrak{p}^{\mathfrak{c}}\) 。特别地，如果 \(\mathbf{E}\) 是可数无穷的，存在一个覆盖 \(\mathfrak{F}\) —— \(\mathbf{E}\) 的覆盖——由无穷集合组成，使得 \(\operatorname{Card}(\mathfrak{F}) = 2^{\aleph_0}\) 并且使得 \(\mathfrak{F}\) 中任何两个集合的交是有限的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{25}
+\tightlist
+\item
+  设 E 是一个无限集合，F 是 E 的子集族，使得对每个 \(A \in F\) 我们拥有
+\end{enumerate}
+
+\[
+\operatorname{Card} (\mathrm{A}) = \operatorname{Card} (\mathfrak {F}) = \operatorname{Card} (\mathrm{E}) = \mathfrak {a} \geqslant \aleph_ {0}.
+\]
+
+证明存在一个划分 \((\mathbf{B}_{\iota})_{\iota\in\mathbf{I}}\) 使得
+
+\[
+\operatorname{Card} (\mathbf {I}) = \operatorname{Card} \left(\mathbf {B} _ {t}\right) = \mathfrak {a}
+\]
+
+对于所有 \(\iota\in\mathbf{I}\) ，并且使得 \(\mathbf{A}\cap\mathbf{B}_{\iota}\neq\phi\) 对于所有 \(\mathbf{A}\in\mathfrak{F}\) 以及所有 \(\iota\in\mathbf{I}\) .
+
+（沿用练习24（a）的记号，首先考虑一个满射映射 \(f\) （从 \(\omega_{\alpha}\) 到 \(\mathfrak{F}\) 上），使得对于每一个 \(A \in \mathfrak{F}\) ，所有 \(\xi \in \omega_{\alpha}\) （满足 \(f(\xi) = A\) ）所组成的集合具有基数 \(\mathfrak{a}\) 。然后，通过超限归纳法，定义一个双射 \(g\) （从 \(\omega_{\alpha}\) 到 \(E\) 上），使得 \(g(\xi) \in f(\xi)\) 对于每一个 \(\xi \in \omega_{\alpha}\) .)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{26}
+\tightlist
+\item
+  设 L 是一个无限集，且令 \((\mathbf{E}_{\lambda})_{\lambda \in \mathbf{L}}\) 为一个由L索引的集合族。假设对每个整数n \textgreater{} 0 ，集合 \(\lambda \in L\) （满足 \(\operatorname{Card}(\mathbf{E}_{\lambda}) > n\) ）与 L 等势。证明存在一个子集 F ——乘积 \(E = \prod_{\lambda \in L} E_{\lambda}\) 的子集——使得 \(\operatorname{Card}(F) = 2^{\operatorname{Card}(L)}\) ，并且使得 F 具有以下性质：对于每个有限序列 \((f_k)_{1 \leqslant k \leqslant n}\) ，其中元素属于 F 且互不相同，存在 \(\lambda \in L\) 使得元素
+\end{enumerate}
+
+\[
+f _ {k} (\lambda) \in \mathrm{E} _ {\lambda} (1 \leqslant k \leqslant n)
+\]
+
+都是互不相同的。（首先证明存在一个划分 \((\mathbf{L}_j)_{j \in \mathbb{N}}\) —— \(\mathbf{L}\) 的划分——使得 \(\operatorname{Card}(\mathbf{L}_j) = \operatorname{Card}(\mathbf{L})\) 对于所有 \(j\) ，并且使得 \(\operatorname{Card}(\mathbf{E}_{\lambda}) \geqslant 2^j\) 对于每一个 \(\lambda \in \mathbf{L}_j\) 。因此化归到如下情形： \(\mathbf{L}\) 是集合 \(\mathbf{X}^j (j \geqslant 1)\) 的可数族之和，其中 \(\mathbf{X}\) 是一个无限集，并且 \(\mathbf{E}_{\lambda} = 2^j\) 对于每一个 \(\lambda \in \mathbf{X}^j\) 。对于每个映射 \(g \in 2^{\mathbf{X}}\) （从 \(\mathbf{X}\) 到2中），关联元素 \(f \in \mathbf{E}\) 使得 \(f(\lambda) = (g(x_1), \ldots, g(x_j))\) 每当 \(\lambda = (x_k)_{1 \leqslant k \leqslant j} \in \mathbf{X}^j\) ；证明该集合 \(\mathbf{F}\) ——其元素 \(f \in \mathbf{E}\) 如此定义——即具有所需性质。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{27}
+\item
+  设 E 是一个无限集，令 \((\mathcal{X}_{i})_{1\leqslant i\leqslant m}\) 是集合 \(\mathfrak{F}_{n}(\mathbf{E})\) （即 E 的 n 元子集全体）的一个有限划分。证明：存在一个指标 i 和 E 的一个无限子集 F，使得 F 的每个 n 元子集都属于 \(X_{i}\) （通过对 n 进行归纳证明。对于每个 \(a\in E\) 证明存在一个指标 \(j(a)\) 以及一个无限子集 \(\mathbf{M}(a)\) （ \(E-\{a\}\) 的无限子集），使得，对于 \(\mathbf{M}(a)\) 的每个具有 n-1 个元素的子集 A， \(\{a\}\cup A\) 属于 \(\mathcal{X}_{j(a)}\) 。然后定义一个序列 \((a_{i})\) ，其元素属于 E，如下： \(a_{1}\) 是 E 中的任意一个元素， \(a_{2}\) 是 \(\mathbf{M}(a_{1})\) 的任意元素， \(a_{3}\) 按 \(\mathbf{M}(a_{1})\) 和 \(a_{2}\) 来定义，其方式与 \(a_{2}\) 按E和 \(a_{1}\) 来定义的方式相同，依此类推。证明由序列 \((a_{i})\) 的某个适当子序列的元素所构成的集合F满足所需条件。）
+\item
+  \begin{enumerate}
+  \def\labelenumii{(\alph{enumii})}
+  \tightlist
+  \item
+    在有序集E中，有限个（关于诱导序的）诺特子集的并集是诺特的。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  有序集E是诺特的当且仅当对每个 \(a \in E\) ，区间 \(]a, \rightarrow[\) 是诺特的。
+\item
+  设 E 是一个有序集，使得将 E 赋予相反序后得到的有序集是诺特的。设 u 是一个字母，并设 \(T\{u\}\) 是一个项。证明存在一个集合 U 和一个从 E 到 U 的满射 f，使得对每个 \(x \in E\) 我们拥有 \(f(x) = T\{f^{(x)}\}\) ，其中 \(f^{(x)}\) 表示从 \(]\leftarrow, x[\) 到 \(f([)\leftarrow, x[)\) 上的、与 \(f\) 在此区间上一致的映射。此外，U 和 \(f\) 由这一条件唯一确定。
+\item
+  设E是一个诺特有序集，使得E的每个有限子集在E中都有最小上界。证明：若E有最小元素，则E是完全格（§1，习题11）；若E没有最小元素，则通过向E添加一个最小元素所得到的集合 \(E'\) （§1，第7号，命题3）是一个完全格。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{29}
+\item
+  设 E 是一个格，使得将 E 赋予相反序关系后所得的集合是 Noether 的。证明每个元素 \(a \in E\) 可以写成 \(\sup (e_1, e_2, \ldots, e_n)\) ，其中 \(e_1, \ldots, e_n\) 都是不可约的（ \(\S 4\) ，练习 7；首先证明存在一个不可约元素 e 使得 \(a = \sup (e, b)\) 若 a 不是不可约的）。推广 \(\S 4\) 的练习7(b)到E；同时推广 \(\S 4\) 的练习8(b)和9(b)。
+\item
+  设A为无限集，E为A的所有无限子集之集，按包含关系排序。证明E是完全分支的（§2，习题8）但不是反定向的（§1，习题23），并且E有一个反定向的共尾子集F。（首先考虑集合 \(\mathfrak{D}(A)\) ——A 的可数无限子集（在 E 中共尾）所组成的集合——并令 \(Z = R_0(\mathfrak{D}(A))\) （§ 1，练习 23）。将 Z 写成如下形式 \((z_{\lambda})_{\lambda \in L}\) ，其中 L 是一个良序集，并取 F 为可数子集 \(X_n^{\lambda}\) 所组成的集合，其中 \(\lambda\) 遍历 L 的某个适当子集， \(n \in N\) , \(X_m^{\lambda} \supset X_n^{\lambda}\) 每当 \(m \leqslant n\) , \(X_n^{\lambda} - X_{n+1}^{\lambda}\) 对所有 \(n \geqslant 0\) 都是无限的，以及
+\end{enumerate}
+
+\[
+\bigcap_ {n \in \mathbf {N}} \mathrm{X} _ {n} ^ {\lambda} = \phi ;
+\]
+
+这些 \(X_{n}^{\lambda}\) 将通过超限归纳法定义，使得集合 \(X_{n}^{\lambda}\) 在典范映射 \(r: \mathfrak{D}(A) \to Z\) （§1，习题23）下的像两两不相交，并构成Z的一个共尾子集。）
+
+¶ * 32. 设 \((\mathbf{M}_n)\) , \((\mathbf{P}_n)\) 为两个两两不相交的有限集序列（并非全为空集），以有理整数集Z为指标集。设 \(\alpha_n = \text{Card}(\mathbf{M}_n)\) , \(\beta_n = \text{Card}(\mathbf{P}_n)\) 。假设存在一个整数k \textgreater{} 0，使得对每个 \(n \in \mathbf{Z}\) 以及每个整数 \(l \geqslant 1\) 我们拥有
+
+\[
+\begin{array}{l} \alpha_ {n} + \alpha_ {n + 1} + \dots + \alpha_ {n + l} \leqslant \beta_ {n - k} + \beta_ {n - k + 1} + \dots + \beta_ {n + l + k}, \\ \beta_ {n} + \beta_ {n + 1} + \dots + \beta_ {n + l} \leqslant \alpha_ {n - k} + \alpha_ {n - k + 1} + \dots + \alpha_ {n + l + k}. \end{array}
+\]
+
+让 \(\mathbf{M}\) 为该族的并集 \((\mathbf{M}_n)\) 并令 \(\mathbf{P}\) 为该族的并集 \((\mathbf{P}_n)\) 。证明存在一个双射 \(\varphi\) ，从 \(\mathbf{M}\) 到 \(\mathbf{P}\) 上，使得
+
+\[
+\varphi \left(\mathrm{M} _ {n}\right) \subset \bigcup_ {i = n - k - 1} ^ {n + k + 1} \mathrm{P} _ {i} \quad \text { 且 } \quad \varphi^ {- 1} \left(\mathrm{P} _ {n}\right) \subset \bigcup_ {i = n - k - 1} ^ {n + k + 1} \mathrm{M} _ {i}
+\]
+
+对于每一个 \(n \in \mathbf{Z}\) 。（在每个 \(\mathbf{M}_n\) （相应地， \(P_n\) ）上考虑一个全序）并取 \(\mathbf{M}\) （相应地， \(P\) ）为（§1，习题3的意义下的）族 \((\mathbf{M}_n)_{n \in \mathbf{Z}}\) （相应地， \((\mathbf{P}_n)_{n \in \mathbf{Z}}\) ）的序数和。如果 \(n_0\) 是一个指标，使得 \(\mathbf{M}_{n_0} \neq \emptyset\) ，考虑从 \(\mathbf{M}\) 到 \(P\) 上的以下同构，它们将最小元素 \(n_0 + k\)
+
+的 \(M_{n_{0}}\) 变为 \(\bigcup_{j=n_{0}-k} P_{j}\) 的元素之一，并证明这些同构之一满足所需条件。设 \(\delta\) 是这些数中最小的
+
+\[
+\begin{array}{l} \beta_ {n - k} + \beta_ {n - k + 1} + \dots + \beta_ {n + l + k} - (\alpha_ {n} + \alpha_ {n + 1} + \dots + \alpha_ {n + l}), \\ \alpha_ {n - k} + \alpha_ {n - k + 1} + \dots + \alpha_ {n + l + k} - (\beta_ {n} + \beta_ {n + 1} + \dots + \beta_ {n + l}) \end{array}
+\]
+
+对于所有 \(n \in Z\) 以及所有 \(l \geqslant 1\) 。如果 \(n \in Z\) 并且 \(l \geqslant 1\) 使得，例如， \(\beta_{n-k} + \beta_{n-k+1} + \cdots + \beta_{n+l+k} = \delta + \alpha_n + \alpha_{n+1} + \cdots + \alpha_{n+l}\) ，我们可以取 \(\varphi\) ，使得 \(P_{n-k}\) 的最小元素是 \(\varphi\) 对 \(M_n\) 的最小元素所取的像.
+

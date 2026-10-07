@@ -1,0 +1,126 @@
+\subsection{一个测度与一个函数的卷积}
+
+设 X 为局部紧空间，局部紧群 G 连续地左作用于其上。设 \(\beta\) 为 X 上的正测度，在 G 下拟不变。设 \(\chi\) 为 \textgreater0 且定义在 \(G \times X\) 上的函数，它对 \(\mathbf{G} \times \mathbf{X}\) 上的每个测度都可测，且对每个 \(s \in \mathbf{G}\)，\(\chi(s^{-1}, \cdot)\) 是 \(\pmb{\gamma}(s)\beta\) 关于 \(\beta\) 的一个密度：
+
+\[
+\pmb {\gamma} (s) \beta = \chi (s ^ {- 1}, \cdot) \cdot \beta ,\tag{1}
+\]
+
+按照第七章 §1, No.~1 的约定，上式可写成：
+
+\[
+d \beta (s x) = \chi (s, x) d \beta (x).\tag{1'}
+\]
+
+这些数据在 No.~1、No.~2、No.~3 中保持固定（No.~2 的备注 2 除外）。
+
+回顾（§2, No.~5）：若 \(\chi\) 连续且 \(\beta\) 的支集为 \(X\)，则 \(\chi\) 是一个乘子。
+
+设 \(f\) 是局部 \(\beta\)-可积的复值函数，定义在 \(X\) 上，并设 \(\mu\) 是 \(G\) 上的测度。对每个 \(s \in G\)，测度 \(\boldsymbol{\gamma}(s)(f \cdot \beta)\) 以 \(\beta\) 为基，因为 \(\beta\) 是拟不变的。因此，若 \(\mu\) 与 \(f \cdot \beta\) 可作卷积，则 \(\mu * (f \cdot \beta)\) 以 \(\beta\) 为基（§3, No.~2 命题 10）。
+
+定义 1. --- 若 \(\mu\) 与 \(f \cdot \beta\) 可作卷积，则称 \(\mu\) 与 \(f\) 关于 \(\beta\) 可作卷积。\(\mu * (f \cdot \beta)\) 关于 \(\beta\) 的每个密度都称为 \(\mu\) 与 \(f\) 关于 \(\beta\) 的一个卷积，记作 \(\mu * ^{\beta} f\)。
+
+当不致混淆时省略 \(\beta\)。G 上多个测度与 X 上一个函数的卷积以类似方式定义。
+
+\(\mu\) 与 f 的各个卷积在局部 \(\beta\)-几乎处处相等。若 \(\beta\) 的支集为 X，且存在 \(\mu\) 与 f 的一个连续卷积，则它是唯一确定的；这时称它为 \(\mu\) 与 f 关于 \(\beta\) 的卷积。
+
+设 \(s \in G\)，并设 \(f\) 是局部 \(\beta\)-可积的复值函数，定义在 \(X\) 上。则 \(\varepsilon_s\) 与 \(f\) 可作卷积，且
+
+\[
+\varepsilon_ {s} * (f \cdot \beta) = \boldsymbol {\gamma} (s) (f \cdot \beta) = (\boldsymbol {\gamma} (s) f) \cdot (\boldsymbol {\gamma} (s) \beta) = (\boldsymbol {\gamma} (s) f) \cdot \chi (s ^ {- 1}, \cdot) \cdot \beta ,
+\]
+
+因此
+
+\[
+\left(\varepsilon_ {s} * f\right) (x) = \chi \left(s ^ {- 1}, x\right) f \left(s ^ {- 1} x\right) = \left(\gamma_ {\chi} (s) f\right) (x)\tag{2}
+\]
+
+在局部 \(\beta\)-几乎处处成立。
+
+引理 1. --- 设 \(\mu\) 是 \(G\) 上的测度。则 \(\chi\) 是局部 \((\mu \otimes \beta)\)-可积的，且 \(\mu \otimes \beta\) 在同胚 \((s, x) \mapsto (s, s^{-1}x)\)（从 \(G \times X\) 到 \(G \times X\)）下的像是 \(\chi \cdot (\mu \otimes \beta)\)。
+
+可以假设 \(\mu \geqslant 0\)。设 \(\mathbf{F} \in \mathcal{K}_{+}(\mathbf{G} \times \mathbf{X})\)。则
+
+\[
+\begin{array}{l} \iint \mathrm{F} (s, s ^ {- 1} x) d \mu (s) d \beta (x) = \int d \mu (s) \int \mathrm{F} (s, s ^ {- 1} x) d \beta (x) \\ = \int d \mu (s) \int \mathrm{F} (s, x) d (\boldsymbol {\gamma} (s ^ {- 1}) \beta) (x) = \int d \mu (s) \int \mathrm{F} (s, x) \chi (s, x) d \beta (x). \end{array}
+\]
+
+而函数 \((s,x)\mapsto\mathrm{F}(s,x)\chi(s,x)\) 具有紧支集且是 \((\mu\otimes\beta)\)-可测的。由第五章 §8, No.~3 命题 7，前面的等式证明该函数是 \((\mu\otimes\beta)\)-可积的，且
+
+\[
+\iint \mathrm{F} (s, s ^ {- 1} x) d \mu (s) d \beta (x) = \iint \mathrm{F} (s, x) \chi (s, x) d \mu (s) d \beta (x).
+\]
+
+这同时证明了引理 1 的两个断言。
+
+命题 1. --- 设 \(\mu\) 是 G 上的测度，\(f\) 是 X 上局部 \(\beta\)-可积的复值函数。假设函数 \(s \mapsto f(s^{-1}x)\chi(s^{-1}, x)\) 是本质 \(\mu\)-可积的，但一个局部 \(\beta\)-可忽略的 \(x\) 值集合除外，且函数 \(x \mapsto \int |f(s^{-1}x)| \chi(s^{-1}, x) d|\mu|(s)\)（它对 \(\beta\) 局部几乎处处有定义）是局部 \(\beta\)-可积的。则 \(\mu\) 与 \(f\) 可作卷积。
+
+可以假设 \(f \geqslant 0\) 且 \(\mu \geqslant 0\)。设 \(h \in \mathcal{H}_{+}(X)\)。我们要证明函数 \((s, x) \mapsto h(sx)\) 对于 \(\mu \otimes (f \cdot \beta) = (1 \otimes f) \cdot (\mu \otimes \beta)\) 是本质可积的（第五章 §8, No.~5 命题 10），亦即 \(\iint^{\bullet} h(sx)f(x)d\mu(s)d\beta(x) < +\infty\)（第五章 §5, No.~3 命题 3）；显然只需证明：存在 \(a > 0\)，使得对每个紧子集 \(K\)（\(G\) 中的），
+
+\[
+\iint^ {\bullet} h (s x) f (x) \varphi_ {K} (s) d \mu (s) d \beta (x) \leqslant a.
+\]
+
+由引理 1，
+
+\[
+\begin{array}{r l} \iint^ {\bullet} h (s x) f (x) \varphi_ {K} (s) d \mu (s) d \beta (x) \\ & = \iint^ {*} h (x) f (s ^ {- 1} x) \varphi_ {K} (s) \chi (s ^ {- 1}, x) d \mu (s) d \beta (x). \end{array}
+\]
+
+而函数 \((s,x)\mapsto h(x)f(s^{-1}x)\varphi_{\mathrm{K}}(s)\chi(s^{-1},x)\) 是 \((\mu\otimes\beta)\)-可测的（引理 1）且具有紧支集。于是前一表达式等于（第五章 §8, No.~3 命题 7）
+
+\[
+\begin{array}{r l} & {\int^ {*} h (x) d \beta (x) \int^ {*} f (s ^ {- 1} x) \varphi_ {\mathrm{K}} (s) \chi (s ^ {- 1}, x) d \mu (s)} \\ & {\qquad \leqslant (\sup h) \int_ {\mathrm{S}} ^ {*} d \beta (x) \int^ {\bullet} f (s ^ {- 1} x) \chi (s ^ {- 1}, x) d \mu (s),} \end{array}
+\]
+
+其中 S 表示 h 的支集。命题得证。
+
+命题 2. --- 设 \(\mu\) 是 G 上的测度，\(f\) 是 X 上局部 \(\beta\)-可积的复值函数。假设下列条件之一成立：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(f\) 与 \(\chi\) 连续；
+\item
+  G 在 X 中真作用，且 \(f\) 在一个可数紧集并集之外为零；
+\item
+  \(\mu\) 载于一个可数紧集并集。
+\end{enumerate}
+
+若 \(\mu\) 与 \(f\) 可作卷积，则函数 \(s \mapsto f(s^{-1}x)\chi(s^{-1}, x)\) 是本质 \(\mu\)-可积的，但一个局部 \(\beta\)-可忽略的 \(x\) 值集合除外，且局部 \(\beta\)-几乎处处有
+
+\[
+(\mu * ^ {\beta} f) (x) = \int_ {G} f (s ^ {- 1} x) \chi (s ^ {- 1}, x) d \mu (s) = \int_ {G} (\gamma_ {\chi} (s) f) (x) d \mu (s).\tag{3}
+\]
+
+设 \(h \in \mathcal{K}(\mathrm{X})\)。由于 \(\mu\) 与 \(f\) 可作卷积，函数 \((s, x) \mapsto h(sx)f(x)\) 是本质 \((\mu \otimes \beta)\)-可积的。由引理 1，函数 \((s, x) \mapsto h(x)f(s^{-1}x)\chi(s^{-1}, x)\) 是本质 \((\mu \otimes \beta)\)-可积的。在陈述的假设 (i) 或 (ii) 下，进而可推出该函数是 \((\mu \otimes \beta)\)-可积的；因为在第一种情形它连续，可应用第五章 §1, No.~1 命题 3，而在第二种情形它在一个可数紧集并集之外为零，可应用同上引 No.~2 命题 7, 2)。由 Lebesgue--Fubini 定理，
+
+\[
+\begin{array}{c} \iint h (s x) d \mu (s) d (f \cdot \beta) (x) = \iint h (x) f (s ^ {- 1} x) \chi (s ^ {- 1}, x) d \mu (s) d \beta (x) \\ = \int h (x) d \beta (x) \int f (s ^ {- 1} x) \chi (s ^ {- 1}, x) d \mu (s), \end{array}
+\]
+
+其中函数 \(x \mapsto g(x) = \int f(s^{-1}x)\chi (s^{-1},x)d\mu (s)\) 还是局部 \(\beta\)-可积的。于是可见
+
+\[
+\langle h, \mu * (f \cdot \beta) \rangle = \langle h, g \cdot \beta \rangle ,
+\]
+
+由此 \(g = \mu *^{\beta} f\)。
+
+现在假设 \(\mu\) 载于由一列紧集组成的并集 \(S\)。函数
+
+\[
+(s, x) \mapsto h (x) f (s ^ {- 1} x) \chi (s ^ {- 1}, x) \varphi_ {\mathrm{S}} (s)
+\]
+
+是本质 \((\mu\otimes\beta)\)-可积的，且在一个可数紧集并集之外为零，从而是 \((\mu\otimes\beta)\)-可积的。由于 \(\mu=\varphi_{S}\cdot\mu\)，论证可如前一样完成。
+
+备注. --- 当 \(\mu\) 有界时，命题 2 的假设 (iii) 特别地成立。因为，对每个 \(n > 0\)，存在 \(\mathbf{K}_n\)（\(\mathbf{G}\) 的一个紧子集），使得
+
+\[
+| \mu | (\mathrm{G} - \mathrm{K} _ {n}) \leqslant \frac {1}{n}
+\]
+
+（第四章 §4, No.~7），且 \(\mu\) 载于诸 \(K_{n}\) 的并集。更一般地，设 \(\rho\) 是一个 \(>0\) 的有限下半连续函数，定义在 \(G\) 上，满足 \(\rho(st) \leqslant \rho(s)\rho(t)\)；若 \(\mu \in \mathcal{M}^{\rho}\)，则假设 (iii) 成立；因为 \(\rho \cdot \mu\) 有界，且 \(\mu\) 与 \(\rho \cdot \mu\) 载于同样的子集，这是由于在 \(G\) 的每个紧子集上 \(\rho\) 都以一个 \(>0\) 的常数为下界。
+

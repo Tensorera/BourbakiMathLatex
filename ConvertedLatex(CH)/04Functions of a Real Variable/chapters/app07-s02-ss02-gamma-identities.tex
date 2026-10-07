@@ -1,0 +1,148 @@
+\subsection{余元公式与勒让德–高斯倍乘公式}
+
+由 VII, p.~315 的公式 (2) 立即导出，对每个 \(z \in C\) ，
+
+\[
+\frac {1}{\Gamma (z) \Gamma (- z)} = - z ^ {2} \prod_ {n = 1} ^ {\infty} \left(1 - \frac {z ^ {2}}{n ^ {2}}\right).
+\]
+
+而 \(\sin z\) 的欧拉展开（VI, p.~287, th. 2）表明
+
+\[
+z \prod_ {n = 1} ^ {\infty} \left(1 - \frac {z ^ {2}}{n ^ {2}}\right) = \frac {1}{\pi} \sin \pi z;
+\]
+
+再利用 VII, p.~315 的泛函方程 (4) ，便得到：
+
+命题 1. 对每个复数 \(z\) ，有
+
+\[
+\frac {1}{\Gamma (z) \Gamma (1 - z)} = \frac {1}{\pi} \sin \pi z\tag{8}
+\]
+
+（余元公式）。
+
+推论 --- 对每个实数 t ，有
+
+\[
+| \Gamma (i t) | = \sqrt {\frac {\pi}{t \sinh \pi t}} \qquad (t \neq 0)\tag{9}
+\]
+
+\[
+\left| \Gamma (\frac {1}{2} + i t) \right| = \sqrt {\frac {\pi}{\cosh \pi t}}.\tag{10}
+\]
+
+事实上，由 (8) 推出 \(\Gamma(it)\Gamma(-it) = \frac{i\pi}{t\sin\pi it} = \frac{\pi}{t\sinh\pi t}\) ，且有 \(\Gamma(-it) = \overline{\Gamma(it)}\) ；同样，(8) 给出
+
+\[
+\Gamma \left(\frac {1}{2} + i t\right) \Gamma \left(\frac {1}{2} - i t\right) = \frac {\pi}{\sin \left(\frac {\pi}{2} + \pi i t\right)} = \frac {\pi}{\cos \pi i t} = \frac {\pi}{\cosh \pi t},
+\]
+
+并且有
+
+\[
+\Gamma \bigl (\frac {1}{2} - i t \bigr) = \overline {{\Gamma \bigl (\frac {1}{2} + i t \bigr)}}.
+\]
+
+现设 \(p\) 是任意整数 \(> 0\) ，考虑乘积
+
+\[
+f (z) = \Gamma \left(\frac {z + 1}{p}\right) \Gamma \left(\frac {z + 2}{p}\right) \dots \Gamma \left(\frac {z + p}{p}\right).
+\]
+
+由 (3) （VII, p.~315），对每个 \(z \neq -n\) （ \(n \in \mathbf{N}\) ），\(f(z)\) 是乘积
+
+\[
+\begin{array}{c} \frac {n ^ {(z + 1) / p} n !}{\left(\frac {z + 1}{p}\right) \left(\frac {z + 1}{p} + 1\right) \cdots \left(\frac {z + 1}{p} + n\right)}. \\ \frac {n ^ {(z + 2) / p} n !}{\left(\frac {z + 2}{p}\right) \left(\frac {z + 2}{p} + 1\right) \cdots \left(\frac {z + 2}{p} + n\right)} \dots \\ \dots \frac {n ^ {(z + p) / p} n !}{\left(\frac {z + p}{p}\right) \left(\frac {z + p}{p} + 1\right) \cdots \left(\frac {z + p}{p} + n\right)} \\ = \frac {n ^ {z + (p + 1) / 2} p ^ {(n + 1) p} (n !) ^ {p}}{(z + 1) (z + 2) \ldots (z + (n + 1) p)} \end{array}
+\]
+
+的极限；特别地，\(f(0)\) 是乘积
+
+\[
+\frac {n ^ {(p + 1) / 2} p ^ {(n + 1) p} (n !) ^ {p}}{((n + 1) p) !}
+\]
+
+由此推出，\(f(z) / f(0)\) 是
+
+\[
+\begin{array}{c} \frac {n ^ {z} ((n + 1) p) !}{(z + 1) (z + 2) \dots (z + (n + 1) p)} \\ = z   p ^ {- z} \left(\frac {n}{n + 1}\right) ^ {z}. \frac {((n + 1) p) ^ {z} ((n + 1) p) !}{z (z + 1) (z + 2) \dots (z + (n + 1) p)} \end{array}
+\]
+
+的极限；于是由 (3) （VII, p.~315）得
+
+\[
+f (z) = f (0) z p ^ {- z} \Gamma (z).\tag{11}
+\]
+
+但是，可以写
+
+\[
+f (0) = \prod_ {k = 1} ^ {p - 1} \Gamma \left(\frac {k}{p}\right) = \prod_ {k = 1} ^ {p - 1} \Gamma \left(1 - \frac {k}{p}\right) = \sqrt {\prod_ {k = 1} ^ {p - 1} \Gamma \left(\frac {k}{p}\right) \Gamma \left(1 - \frac {k}{p}\right)}
+\]
+
+由于 \(f(0) > 0\) ；于是余元公式给出
+
+\[
+f (0) = \sqrt {\pi^ {p - 1} / \prod_ {k = 1} ^ {p - 1} \sin \frac {k \pi}{p}}
+\]
+
+又由于右端的乘积等于 \(p/2^{p-1}\) （VI, p.~284, cor. 1），最终得到：
+
+命题 2. 对每个不是整数 \(\leqslant 0\) 的复数 z 以及每个整数 p \textgreater{} 0 ，有
+
+\[
+\Gamma \left(\frac {z}{p}\right) \Gamma \left(\frac {z + 1}{p}\right) \dots \Gamma \left(\frac {z + p - 1}{p}\right) = (2 \pi) ^ {(p - 1) / 2} p ^ {\frac {1}{2} - z} \Gamma (z)\tag{12}
+\]
+
+（勒让德–高斯倍乘公式）。
+
+命题 3. 对每个实数 x \textgreater{} 0 ，有
+
+\[
+\int_ {x} ^ {x + 1} \log \Gamma (t) d t = x (\log x - 1) + \frac {1}{2} \log 2 \pi\tag{13}
+\]
+
+（拉阿贝积分）。
+
+首先对 \(x = 0\) 证明公式 (13) 。由于 \(\log \Gamma(x) \sim \log \frac{1}{x}\) （当 \(x\) 趋于 0 时），积分 \(\int_0^1 \log \Gamma(x) dx\) 收敛。此外，函数 \(\log \Gamma(x)\) 在 {[}0, 1{]} 上递减（VII, p.~310）；于是对每个 \(\alpha > 0\) 有
+
+\[
+\frac {1}{n} \sum_ {k = 1} ^ {q} \log \Gamma \left(\frac {k}{n}\right) \leqslant \int_ {0} ^ {\alpha} \log \Gamma (x) d x,
+\]
+
+其中 \(q\) 是使 \(q / n \leqslant \alpha\) 的最大整数。由于 \(\int_{0}^{\alpha} \log \Gamma(x) dx\) 随 \(\alpha\) 而趋于 0 ，且 \(\frac{1}{n} \sum_{k=q+1}^{n} \log \Gamma\left(\frac{k}{n}\right)\) 趋于 \(\int_{\alpha}^{1} \log \Gamma(x) dx\) （当 \(n\) 趋于 \(+\infty\) 时；II, p.~57, prop. 5） ，故有
+
+\[
+\int_ {0} ^ {1} \log \Gamma (x) d x = \lim _ {n \rightarrow \infty} \frac {1}{n} \sum_ {k = 1} ^ {n} \log \Gamma \left(\frac {k}{n}\right).
+\]
+
+而由 (12) ，此公式右端是
+
+\[
+\frac {n - 1}{2 n} \log 2 \pi - \frac {1}{2} \frac {\log n}{n},
+\]
+
+的极限，由此得
+
+\[
+\int_ {0} ^ {1} \log \Gamma (x) d x = \frac {1}{2} \log 2 \pi .\tag{14}
+\]
+
+其次我们注意到，由恒等式
+
+\[
+\log \Gamma (x + 1) = \log \Gamma (x) + \log x
+\]
+
+积分后得到，对 x \textgreater{} 0
+
+\[
+\int_ {0} ^ {x} \log \Gamma (t + 1) d t = \int_ {0} ^ {x} \log \Gamma (t) d t + \int_ {0} ^ {x} \log t d t.
+\]
+
+但左端的积分也等于 \(\int_{1}^{x + 1}\log \Gamma (t)dt\) 。于是由 (14) ，
+
+\[
+\int_ {x} ^ {x + 1} \log \Gamma (t) d t = \int_ {0} ^ {x} \log t d t + \frac {1}{2} \log 2 \pi = x (\log x - 1) + \frac {1}{2} \log 2 \pi .
+\]
+

@@ -1,0 +1,105 @@
+\subsection{约化范数与约化迹}
+
+回顾我们用 A 表示交换域 K 上约化次数为 n 的一个中心单代数。
+
+命题 2. —— 设 a 是 A 的一个元素，\(\mathrm{Pc}(a;\mathrm{X})\) 是它的特征多项式。存在 K{[}X{]} 中唯一的首一多项式 P，使得我们有 \(\mathrm{Pc}(a;\mathrm{X})=\mathrm{P}(\mathrm{X})^{n}\)。
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  P 的唯一性由下面的引理 2 得出。
+\end{enumerate}
+
+引理 2. —— 设 P 与 Q 是 K{[}X{]} 中的首一多项式，而 s 是一个严格正的整数。若 \(P^{s} = Q^{s}\)，则我们有 P = Q。
+
+设 \(\mathcal{I}\) 是 K{[}X{]} 中不可约首一多项式所成的集合。由于 P 与 Q 都是首一的，存在元素 \((a_{\mathrm{F}})\) 与 \((b_{\mathrm{F}})\)（\(\mathbf{N}^{(\mathcal{I})}\) 中的），使得我们有 \(\mathrm{P} = \prod_{\mathrm{F} \in \mathcal{I}} \mathrm{F}^{a_{\mathrm{F}}}\) 与 \(\mathrm{Q} = \prod_{\mathrm{F} \in \mathcal{I}} \mathrm{F}^{b_{\mathrm{F}}}\)。由等式 \(\mathrm{P}^s = \mathrm{Q}^s\) 以及不可约因子分解的唯一性推出，我们有 \(sa_{\mathrm{F}} = sb_{\mathrm{F}}\)（对每个 \(\mathrm{F} \in \mathcal{I}\)）。由于 \(s\) 严格正，我们从而有 \(a_{\mathrm{F}} = b_{\mathrm{F}}\)（对每个 \(\mathrm{F} \in \mathcal{I}\)），因此 \(\mathrm{P} = \mathrm{Q}\)。
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  现在让我们证明 P 的存在性。
+\end{enumerate}
+
+由 VIII, 第 252 页的定理 1，存在 K 的一个有限次伽罗瓦扩张 L 以及 L-代数的一个同构 \(\theta : \mathrm{A}_{(\mathrm{L})} \to \mathbf{M}_n(\mathrm{L})\)。由 III, §9, No.~1, 第 542 页的公式 (12)，多项式 \(\mathrm{Pc}(a; \mathrm{X})\) 也是元素 \(1 \otimes a\)（L-代数 \(\mathrm{A}_{(\mathrm{L})}\) 的）的特征多项式，从而也是元素 \(\theta(1 \otimes a)\)（L-代数 \(\mathbf{M}_n(\mathrm{L})\) 的）的特征多项式。
+
+令 \(\mathrm{P}(\mathrm{X})=\det(\mathrm{XI}_{n}-\theta(1\otimes a))\)；它是 L{[}X{]} 中的一个首一多项式。由 III, §9, No.~3, 第 545 页的例 3，我们有
+
+\[
+\mathrm{Pc} (a; \mathrm{X}) = \mathrm{P} (\mathrm{X}) ^ {n}.\tag{19}
+\]
+
+设 G 是 L 在 K 上的伽罗瓦群。对 \(\sigma\in G\)，用 \(\overline{\sigma}\) 表示环 L{[}X{]} 的这样一个自同构：它在 L 上与 \(\sigma\) 一致并且固定 X。于是 K{[}X{]} 是 L{[}X{]} 中满足 \(\overline{\sigma}(Q)=Q\)（对每个 \(\sigma\in G\)）的多项式 Q 所成的集合（V, §10, No.~1, 第 56 页，定理 1）。由于多项式 \(\mathrm{Pc}(a;\mathrm{X})=\mathrm{P}(\mathrm{X})^{n}\) 属于 K{[}X{]}，我们有 \(\overline{\sigma}(\mathrm{P})^{n}=\mathrm{P}^{n}\)（对每个 \(\sigma\in G\)）。于是由引理 2，我们有 \(\overline{\sigma}(\mathrm{P})=\mathrm{P}\)（对每个 \(\sigma\in G\)），因此 P 属于 K{[}X{]}。
+
+定义 1. —— 设 a 是代数 A 的一个元素。a 的约化特征多项式（关于 A 的）是 K{[}X{]} 中唯一的首一多项式，记作 \(\operatorname{Pcrd}_{\mathrm{A}/\mathrm{K}}(a;\mathrm{X})\)，它满足关系式
+
+\[
+\mathrm{Pc} _ {\mathrm{A/K}} (a; \mathrm{X}) = \mathrm{Pcrd} _ {\mathrm{A/K}} (a; \mathrm{X}) ^ {n}.\tag{20}
+\]
+
+设 a 是 A 的一个元素。由于 A 在 K 上的次数为 \(n^{2}\)，多项式 \(\mathrm{Pc}_{\mathrm{A/K}}(a;\mathrm{X})\) 的次数为 \(n^{2}\)，于是 \(\mathrm{Pcrd}_{\mathrm{A/K}}(a;\mathrm{X})\) 是一个次数为 n 的首一多项式；我们把它写成
+
+\[
+\mathrm{Pcrd} _ {\mathrm{A/K}} (a; \mathrm{X}) = \mathrm{X} ^ {n} + \sum_ {r = 0} ^ {n - 1} (- 1) ^ {r} b _ {r} (a) \mathrm{X} ^ {n - r}.\tag{21}
+\]
+
+我们令
+
+\[
+\mathrm{Trd} _ {\mathrm{A/K}} (a) = b _ {1} (a), \quad \mathrm{Nrd} _ {\mathrm{A/K}} (a) = b _ {n} (a).\tag{22}
+\]
+
+定义 2. —— 我们称 \(\operatorname{Trd}_{\mathrm{A/K}}(a)\) 为 A 的约化迹，称 \(\operatorname{Nrd}_{\mathrm{A/K}}(a)\) 为它的约化范数（关于 K-代数 A 的）。
+
+当没有混淆的危险时，我们在记号中略去 A 与 K，简单地写 \(\operatorname{Pcrd}(a; \mathrm{X})\)、\(\operatorname{Trd}(a)\) 与 \(\operatorname{Nrd}(a)\)。
+
+由公式 (20) 与 (22) 以及 III, §9, No.~1, 第 542 页的公式 (7) 与 (8)，可得下列公式：
+
+\[
+\mathrm{Tr} _ {\mathrm{A/K}} (a) = n \mathrm{Trd} _ {\mathrm{A/K}} (a),\tag{23}
+\]
+
+\[
+\mathrm{N} _ {\mathrm{A/K}} (a) = (\mathrm{Nrd} _ {\mathrm{A/K}} (a)) ^ {n}.\tag{24}
+\]
+
+命题 3. —— A 的元素 a 可逆当且仅当它的约化范数非零。特别地，A 是一个体当且仅当对 A 的每个非零元素 a 我们有 \(\mathrm{Nrd}_{\mathrm{A}/\mathrm{K}}(a) \neq 0\)。
+
+A 的元素 \(a\) 可逆当且仅当它的范数非零（III, §9, No.~4, 第 545 页，命题 3）。因此命题 3 由公式 (24) 得出。
+
+注. —— 设 L 是一个未定元 X 的有理分式体 \(\mathrm{K}(\mathrm{X})\)。A 的元素 a 的约化特征多项式就是元素 \(X \otimes 1 - 1 \otimes a\)（L-代数 \(\mathrm{A}_{(\mathrm{L})}\) 的）的约化范数。这由约化特征多项式的定义以及公式（III, §9, No.~3, 第 544 页）
+
+\[
+\mathrm{Pc} _ {\mathrm{A/K}} (a; \mathrm{X}) = \mathrm{N} _ {\mathrm{A} _ {(\mathrm{L})} / \mathrm{L}} (\mathrm{X} \otimes 1 - 1 \otimes a).\tag{25}
+\]
+
+例. —— 1) 由 VIII, 第 120 页的定理 1，存在一个整数 \(r \geqslant 1\) 以及一个体 D，使得 A 同构于 \(\mathbf{M}_{r}(\mathrm{D})\)。设 d 是 D 在 K 上的约化次数；我们有 r = n/d.~设 M 是一个长度为 \(\ell\) 的 A-模；我们将证明公式
+
+\[
+\mathrm{Pc} _ {M / K} (a_ {M} ;X) = \mathrm{Pcrd} _ {A / K} (a; X) ^ {d\ell}\tag{26}
+\]
+
+对 A 的每个元素 a 成立。A-模 \(A_{s}\) 的长度为 r（VIII, 第 121 页，引理 2）。A-模 \(M^{r}\) 与 \(A_{s}^{\ell}\) 有相同的长度，因此它们同构，并且我们有
+
+\[
+\mathrm{Pc} _ {\mathrm{M/K}} (a _ {\mathrm{M}}; \mathrm{X}) ^ {r} = \mathrm{Pc} _ {\mathrm{A/K}} (a; \mathrm{X}) ^ {\ell}
+\]
+
+这是由 III, §9, No.~2, 第 542 页的公式 (15) 得到的。由于我们有 rd = n，公式 (26) 由公式 (20) 与引理 2（VIII, 第 339 页）得出。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  考虑特殊情形：A 是有限维 K-向量空间 V 的自同态代数 \(\operatorname{End}_{\mathrm{K}}(\mathrm{V})\)。取 M 为单 A-模 V，我们得到关系式
+\end{enumerate}
+
+\[
+\begin{array}{c} \mathrm{Pcrd} _ {\mathrm{A/K}} (u; \mathrm{X}) = \chi_ {u} (\mathrm{X}), \\ \mathrm{Nrd} _ {\mathrm{A/K}} (u) = \det (u), \\ \mathrm{Trd} _ {\mathrm{A/K}} (u) = \operatorname{Tr} (u) \end{array}\tag{27}
+\]
+
+对 V 的每个自同态 u 成立。
+

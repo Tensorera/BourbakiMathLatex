@@ -1,0 +1,39 @@
+\subsection{自由幺半群}
+
+任意有限序列 \(w = (x_{i})_{1 \leqslant i \leqslant n}\) （由 \(\mathbf{X}\) 的元素组成，以区间 \([1, n]\) （ \(\mathbf{N}\) 的）为指标集，可能为空）称为 \(\mathbf{X}\) 上的字。整数 \(n\) 称为字 \(w\) 的长度，记作 \(l(w)\) 。长度为 0 的字是唯一的，即空序列 e。X 将与长度为 1 的字所成的集合等同。
+
+设 \(w = (x_{i})_{1 \leqslant i \leqslant m}\) 和 \(w' = (x_{j}')_{1 \leqslant j \leqslant n}\) 是两个字。 \(w\) 与 \(w'\) 的合成是字 \(u = (y_{k})_{1 \leqslant k \leqslant m + n}\) ，定义为
+
+\[
+y _ {k} = \left\{ \begin{array}{l l} x _ {k} & \text { for } 1 \leqslant k \leqslant m \\ x _ {k - m} ^ {\prime} & \text { for } m + 1 \leqslant k \leqslant m + n. \end{array} \right.\tag{1}
+\]
+
+换言之，序列 \(w''\) 是这样得到的：先写出序列 w 的元素，然后写出 \(w'\) 的元素。w 与 \(w'\) 的合成通常记作 \(ww'\) 或 \(w.w'\) ；有时也说它是由 w 与 \(w'\) 并置得到的。于是按构造有 \(l(w.w') = l(w) + l(w')\) 。
+
+对每个字 w，关系 we = ew = w 立即成立。设 \(w = (x_{i})_{1 \leqslant i \leqslant m}\) ， \(w' = (x_{j}')_{1 \leqslant j \leqslant n}\) 和 \(w'' = (x_{k}'')_{1 \leqslant k \leqslant p}\) 是三个字；显然字 \(w(w'w'')\) 与 \((ww')w''\) 都等于字 \((y_{i})_{1 \leqslant i \leqslant m+n+p}\) ，它由下式定义：
+
+\[
+y _ {l} = \left\{ \begin{array}{l l} x _ {l} & \text { if } 1 \leqslant l \leqslant m \\ x _ {l - m} ^ {\prime} & \text { if } m + 1 \leqslant l \leqslant m + n \\ x _ {l - m - n} ^ {\prime \prime} & \text { if } m + n + 1 \leqslant l \leqslant m + n + p. \end{array} \right.\tag{2}
+\]
+
+上述内容表明，X 上的字所成的集合连同合成律 \((w, w') \mapsto w.w'\) 是一个幺半群，其单位元为 e。它记作 \(\mathrm{Mo}(\mathbf{X})\) ，称为 X 上的自由幺半群。由字的乘积的定义立即可得，每个字 \(w = (x_i)_{1 \leq i \leq n}\) 都等于乘积 \(\prod_{i=1}^{n} x_i\) 。因此，一个字可以写成 \(x_1 \ldots x_{n}\) 的形式。
+
+命题 3. 设 M 为一个幺半群。X 到 M 的每个映射 f 都可以唯一地延拓为 Mo(X) 到 M 的同态。
+
+设 \(g\) 是 \(\operatorname{Mo}(\mathbf{X})\) 到 \(\mathbf{M}\) 中的延拓 \(f\) 的一个同态。若 \(w = (x_{i})_{1 \leqslant i \leqslant n}\) 是一个字，则 \(w = \prod_{i=1}^{n} x_{i}\) （在幺半群 \(\operatorname{Mo}(\mathbf{X})\) 中），从而
+
+\[
+g (w) = \prod_ {i = 1} ^ {n} g (x _ {i}) = \prod_ {i = 1} ^ {n} f (x _ {i})
+\]
+
+在幺半群 M 中（§ 1，第 2 号，公式 (2)）。这证明了 \(g\) 的唯一性。
+
+设 \(h(w) = \prod_{i=1}^{n} f(x_i)\) （对每个字 \(w = (x_i)_{1 \leqslant i \leqslant n}\) ）。结合性定理（§1，第 3 号，定理 1）与 Mo(X) 中乘积的定义蕴含 \(h(ww') = h(w)h(w')\) 。按约定，空乘积 \(h(e)\) 是 M 的单位元，且 \(h(x) = f(x)\) 对 \(x \in X\) 成立。因此 \(h\) 是 Mo(x) 到 M 的一个延拓 \(f\) 的同态。
+
+设 \(u: X \to Y\) 是一个映射。由命题 3，存在唯一的 \(\operatorname{Mo}(\mathbf{X})\) 到 \(\operatorname{Mo}(\mathbf{Y})\) 中的同态，它与 \(u\) 在 \(\mathbf{X}\) 上一致；把它记作 \(\operatorname{Mo}(u)\) 。它把字 \((x_i)_{1 \leqslant i \leqslant n}\) 映到字 \((u(x_i))_{1 \leqslant i \leqslant n}\) 。如同广群的情形（第 1 号），等式 \(\operatorname{Mo}(v \circ u) = \operatorname{Mo}(v) \circ \operatorname{Mo}(u)\) 对每个映射 \(v: \mathbf{Y} \to \mathbf{Z}\) 成立，并且可以证明 \(\operatorname{Mo}(u)\) 是单射的（相应地，满射的，双射的），只要 \(u\) 是。对每个子集 S （ \(\mathbf{X}\) 的）， \(\operatorname{Mo}(\mathbf{S})\) 与 \(\operatorname{Mo}(\mathbf{X})\) 的由 S 生成的子幺半群等同。
+
+设 X 为一个集合， \((u_{\alpha}, v_{\alpha})_{\alpha \in I}\) 是 \(\mathrm{Mo}(\mathrm{X})\) 的元素组成的有序对的一个族。设 R 是 \(\mathrm{Mo}(\mathrm{X})\) 上与 \(\mathrm{Mo}(\mathrm{X})\) 的合成律相容且由诸 \((u_{\alpha}, v_{\alpha})\) 生成的等价关系（§1，第 6 号）。幺半群 \(\mathrm{Mo}(\mathrm{X})/\mathrm{R}\) 称为由 X 和关系元 \((u_{\alpha}, v_{\alpha})_{\alpha \in I}\) 所定义的幺半群。设 h 是 \(\mathrm{Mo}(\mathrm{X})\) 到 \(\mathrm{Mo}(\mathrm{X})/\mathrm{R}\) 上的典范态射。则 \(\mathrm{Mo}(\mathrm{X})\) 由 \(h(\mathrm{X})\) 生成。
+
+设 N 为一个幺半群， \((n_{x})_{x\in\mathbf{X}}\) 为 N 的元素的一个族。设 k 为 \(\mathrm{Mo}(\mathbf{X})\) 到 N 中的态射，使得 \(k(x)=n_{x}\) 对所有 \(x\in X\) 成立（命题 3）。若 \(k(u_{\alpha})=k(v_{\alpha})\) 对所有 \(\alpha\in I\) 成立，则存在唯一的广群态射 \(f:\mathrm{Mo}(\mathbf{X})/\mathbf{R}\to\mathbf{N}\) ，使得 \(f(h(x))=n_{x}\) 对所有 \(x\in X\) 成立（§1，第 6 号，命题 9）；由于 k 是保单位的，f 是幺半群态射。
+% semantic-fragments: legacy-input-seam
+\relax{}

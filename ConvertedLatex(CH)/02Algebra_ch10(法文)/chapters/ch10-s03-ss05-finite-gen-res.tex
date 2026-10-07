@@ -1,0 +1,46 @@
+\subsection{有限生成分解}
+
+特别地，从前两节可以得出，每个A-模都有内射分解、自由分解（因此也有投射分解或平坦分解）。在某些情况下，可以更精确地表述：
+
+假设A是左诺特环，令M为A-模。让我们递归地构造序列 \((\mathbf{L}_{n})_{n\geqslant0},(\mathbf{Z}_{n})_{n\geqslant0},(d_{n})_{n\geqslant1}\) 其中，对所有 \(n\geqslant0\)，\(L_{n}\) 是有限生成的自由A-模，\(Z_{n}\) 是 \(L_{n}\) 的一个子模，而 \(d_{n+1}:L_{n+1}\to L_{n}\) 是一个同态。为此，选取 M 的一个有限生成族 \((m_{i})_{i\in I_{0}}\)，设 \(L_{0}=A^{(I_{0})}\)，定义 \(p:L_{0}\to M\) 为 \(p(e_{i})=m_{i}\)，并设 \(Z_{0}=\operatorname{Ker}(p)\)。对于 \(n\geqslant0\)，设模 \(L_{n}\) 与 \(Z_{n}\) 已经构造完成；由于 \(Z_{n}\) 含于 \(L_{n}\)，它是有限型的；选取 \((x_{n,i})_{i\in I_{n+1}}\) 作为 \(Z_{n}\) 的一个有限生成族；令 \(L_{n+1}=A^{(I_{n+1})}\)，定义 \(d_{n+1}\) 为 \(d_{n+1}(e_{i})=x_{n,i}\)，并设 \(Z_{n+1}=\operatorname{Ker}(d_{n+1})\)。根据构造，我们有一个正合序列
+
+\[
+\dots \longrightarrow \mathrm{L} _ {n + 1} \xrightarrow {d _ {n + 1}} \mathrm{L} _ {n} \longrightarrow \dots \longrightarrow \mathrm{L} _ {0} \xrightarrow {p} \mathrm{M} \longrightarrow 0,
+\]
+
+由此得出：
+
+命题6. --- 当A是左诺特环时，每个有限生成的A-模M都有一个自由分解 \(p: \mathbf{L} \to \mathbf{M}\)，使得 \(\mathbf{L}_n\) 对每个整数 \(n\) 都是有限生成的。更一般地：
+
+命题7. --- 设C是一个A-复形，且设 \(a \in \mathbf{Z}\) 使得 \(\mathrm{H}_{n}(\mathbf{C}) = 0\) 对 \(n < a\) 成立。a) 存在一个自由A-复形 \(\mathbf{L}\)，使得 \(\mathbf{L}_{n} = 0\) 对 \(n < a\) 成立，以及一个拟同构 \(f: \mathbf{L} \to \mathbf{C}\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  假设A是左诺特的，且A-模 \(\mathrm{H}_{n}(\mathbf{C})\) , \(n \in Z\) 是有限生成的。存在一个自由A-复形L，使得 \(L_{n} = 0\) 对 n \textless{} a 成立，且 \(L_{n}\) 对每个 n 都是有限生成的 A-模，并且存在一个拟同构 \(f: L \to C\)。
+\end{enumerate}
+
+设 C' 为 C 的子复形，使得 \(C_{n}^{\prime}=C_{n}\) 对于 n\textgreater a, \(\mathbf{C}_{a}^{\prime}=\mathbf{Z}_{a}(\mathbf{C})\) , \(C_{n}^{\prime}=0\) 对于 n \textless{} a；则从 C' 到 C 的典范单射是一个拟同构。将 C 替换为 \(C'\)，我们因此可以假设 \(C_{n}=0\) 对于 n\textless a。于是该命题可由以下引理对 r=a，\(a+1,\ldots\) 的反复应用得出：
+
+引理3. --- 设 C 是一个复形且 \(r \in \mathbf{Z}\)。存在一个复形 \(\mathbf{C}'\) 以及一个拟同构 \(f: \mathbf{C}' \to \mathbf{C}\)，使得 \(f_n: \mathbf{C}_n' \to \mathbf{C}_n\) 对 \(n < r\) 是同构，并且 \(\mathbf{C}_r'\) 是自由A-模。若A是诺特环且A-模 \(\mathrm{H}_r(\mathbf{C})\) 与 \(\mathbf{C}_{r-1}\) 是有限生成的，则可要求 \(\mathbf{C}_r'\) 是有限生成的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  首先设 \(h: \mathbf{M} \to \mathbf{C}_r\) 为A-模的同态；记 \(d = (d_n)\) 为C的微分。设N为 \(\mathbf{M} \times \mathbf{C}_{r+1}\) 中由对 \((m, x)\)（满足 \(h(m) = d_{r+1}(x)\)）组成的子模；我们定义复形 \((\mathbf{C}', d')\) 如下：\(\mathbf{C}_n' = \mathbf{C}_n\) 对 \(n \neq r, r+1, \mathbf{C}_r' = \mathbf{M}, \mathbf{C}_{r+1}' = \mathbf{N}, d_n' = d_n\)，对 \(n \neq r, r+1, r+2, d_r' = d_r \circ h, d_{r+1}'(m, x) = m\) 成立，其中 \((m, x) \in \mathbf{N}\)，而 \(d_{r+2}'(y) = (0, d_{r+2}(y))\) 对 \(y \in \mathbf{C}_{r+2}\) 成立。再考虑复形的态射 \(f: \mathbf{C}' \to \mathbf{C}\)：\(f_n = 1_{\mathbf{C}_n}\) 对 \(n \neq r, r+1, f_r = h, f_{r+1}(m, x) = x\) 成立。
+\item
+  复形Ker f在次数 \(\neq r, r + 1\) 处为零，且微分 \(d_{r+1}^{\prime}\) 诱导出从 \(\operatorname{Ker} f_{r+1}\) 到 \(\operatorname{Ker} f_r\) 上的同构，因此 \(\operatorname{H}(\operatorname{Ker} f) = 0\)。
+\item
+  当复合映射 \(\mathbf{M} \xrightarrow{\hbar} \mathbf{C}_r \to \mathbf{C}_r / \mathbf{B}_r(\mathbf{C})\) 是满射时，类似地可看出 \(\mathrm{H}(\mathrm{Coker}f) = 0\) ，于是 \(f\) 是一个拟同构（X，第31页，推论2）。
+\item
+  当假设A是诺特环且A-模 \(H_{r}(C)\) 与 \(C_{r-1}\) 是有限生成的，则 \(C_{r}/B_{r}(C)\) 是有限生成的，依据正合序列（X，第25页）
+\end{enumerate}
+
+\[
+0 \to \mathrm{H} _ {r} (\mathrm{C}) \to \mathrm{C} _ {r} / \mathrm{B} _ {r} (\mathrm{C}) \to \mathrm{C} _ {r - 1};
+\]
+
+于是存在有限生成的自由A-模M及一个同态 \(h: \mathbf{M} \to \mathbf{C}_{r}\) 使得 \(c)\) 的条件成立；在一般情况下，存在自由模M及一个满同态 \(h: \mathbf{M} \to \mathbf{C}_{r}\) 。这就完成了证明。
+

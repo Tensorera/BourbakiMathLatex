@@ -1,0 +1,56 @@
+\appendixsection{莫比乌斯函数}
+
+  令 \(n\) 为一个 \(\geqslant 1\) 的整数。若 \(n\) 被某个素数的平方整除，记 \(\mu(n) = 0\)。若 \(n\) 不被任何素数的平方整除，记 \(\mu(n) = (-1)^k\)，其中 \(k\) 是 \(n\) 的素因子个数。如此定义的函数 \(\mu: \mathbf{N}^* \to \{-1, 0, 1\}\) 称为莫比乌斯函数。
+
+回忆一下，给定两个整数 \(n_1 \geqslant 1, n_2 \geqslant 1\)，若 \(n_1|n_2\) 整除 \(n_1\)，就记作 \(n_2\)。
+
+命题。（i）函数 \(\mu\) 是从 \(\mathbf{N}^*\) 到 \(\mathbf{Z}\) 的唯一映射，满足 \(\mu(1) = 1\) 且
+
+\[
+\sum_ {d \mid n} \mu (d) = 0\tag{1}
+\]
+
+对每个整数 \(n > 1\) 都成立。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(s\) 和 \(t\) 是从 \(\mathbf{N}^*\) 到一个用加法记号表示的交换群的两个映射。为了使
+\end{enumerate}
+
+\[
+s (n) = \sum_ {d | n} t (d) \quad \text { for   every   integer } n \geqslant 1,\tag{2}
+\]
+
+成立，充要条件是
+
+\[
+t (n) = \sum_ {d \mid n} \mu (d) s \left(\frac {n}{d}\right) \quad for every integer n \geqslant 1.\tag{3}
+\]
+
+（i）中的唯一性断言是显然的，因为 (1) 允许确定 \(\mu(n)\)，可通过对 \(n\) 作归纳完成。下面证明函数 \(\mu\) 满足 (1)。令 \(n\) 为一个 \(>1\) 的整数。令 P 为 \(n\) 的素因子集合，并令 \(n = \prod_{p \in \mathbb{P}} p^{\nu_p(n)}\) 为 \(n\) 的素因子分解。若 \(d\) 是 \(n\) 的一个因子，则 \(\mu(d) = 0\)，除非 \(d\) 形如 \(\prod_{p \in \mathbb{H}} p\)，其中 H 是 P 的一个子集。于是
+
+\[
+\begin{array}{r l} \sum_ {d | n} \mu (d) & = \sum_ {\mathrm{H} \subset \mathrm{P}} (- 1) ^ {\mathrm{CardH}} \\ & = \sum_ {k = 0} ^ {\mathrm{CardP}} \left(\frac {\mathrm{CardP}}{k}\right) (- 1) ^ {k} = (1 - 1) ^ {\mathrm{CardP}} = 0. \end{array}
+\]
+
+
+设 \(s\) 和 \(t\) 是从 \(\mathbf{N}^*\) 到一个用加法记号表示的交换群的两个映射。令 \(n \in \mathbf{N}^*\)。若 (2) 成立，则
+
+\[
+\begin{array}{r l} \sum_ {d | n} \mu (d) s \left(\frac {n}{d}\right) & = \sum_ {d | n} \mu (d) \sum_ {\delta \mid (n / d)} t (\delta) = \sum_ {d \delta | n} \mu (d) t (\delta) \\ & = \sum_ {\delta | n} t (\delta) \sum_ {d \mid (n / \delta)} \mu (d) = t (n). \end{array}
+\]
+
+反之，若 (3) 成立，则
+
+\[
+\sum_ {d \mid n} t (d) = \sum_ {d \mid n} \sum_ {\delta \mid d} \mu (\delta) s \left(\frac {d}{\delta}\right) = \sum_ {d \mid n} s (d) \sum_ {\delta \mid (n / d)} \mu (\delta) = s (n),
+\]
+
+证明完成。
+
+公式 (3) 称为莫比乌斯反演公式。
+
+

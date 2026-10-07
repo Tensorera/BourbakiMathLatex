@@ -1,0 +1,192 @@
+\subsection{Blow-up and gluing}
+
+Let C be a topological space and let \((\mathrm{B}_{\ell})_{\ell\in\mathrm{L}}\) be a finite family of pairwise disjoint closed subsets of C. Let B be a topological space and, for each \(\ell\in L\), let \(h_{\ell}\) be a homeomorphism from B onto \(B_{\ell}\). We denote by \(B_{L}\) the union of the family \((\mathrm{B}_{\ell})_{\ell\in\mathrm{L}}\). We will assume that B and L are not empty. Let R be the equivalence relation on C defined as follows. The class of an element \(x\) of \(C - B_L\) is the set \(\{x\}\); if \(x\) is an element of \(B_\ell\), where \(\ell \in L\), the class of \(x\) is the set of elements \(h_k(h_\ell^{-1}(x))\), where \(k\) ranges over \(L\). Denote by A the quotient topological space \(C/R\), and let \(f: C \to A\) be the canonical surjection. We say that the space A is obtained from the space C by identifying the sets \(B_\ell\) by means of the homeomorphisms \(h_\ell\).
+
+The map \(f \circ h_{\ell}\) from B into A is independent of the element \(\ell\) of L; it is closed and injective and therefore induces a homeomorphism from B onto a closed subset of A. We will thus identify B with \(f \circ h_{\ell}(\mathrm{B})\) via the homeomorphism \(f \circ h_{\ell}\); the map \(f\) induces a homeomorphism from \(\mathrm{C} - \mathrm{B}_{\mathrm{L}}\) onto \(\mathrm{A} - \mathrm{B}\).
+
+Suppose moreover that there exists a family \((\mathrm{N}_{\ell})_{\ell\in\mathrm{L}}\) of pairwise disjoint open subsets of C such that \(N_{\ell}\) contains \(B_{\ell}\) for all \(\ell\in L\). The union U of the family \((f(\mathrm{N}_{\ell}))_{\ell\in\mathrm{L}}\) is open in A and contains B. The set U-B is the union of the pairwise disjoint open sets \(f(\mathrm{N}_{\ell}-\mathrm{B}_{\ell})\), for \(\ell\in L\).
+
+Lemma 2. --- The map f: C → A is proper and separated; its fibers are finite.
+
+Let us prove that \(f\) is closed. Let X be a closed subset of C. Let us prove that its image is closed in A. For every \(\ell \in L\), \(X \cap B_{\ell}\) is closed in \(B_{\ell}\), hence the space \(Y = \bigcup_{\ell \in L} h_{\ell}^{-1}(X \cap B_{\ell})\) is closed in B since L is finite. The saturation \(X^{*}\) of X for the equivalence relation R is then equal to \(X \cup \bigcup_{\ell \in L} h_{k}(Y)\), hence it is closed in C. Consequently, \(f(X) = f(X^{*})\) is closed in A, as was to be proved.
+
+The fibers of \(f\) are the equivalence classes of the relation \(\mathbb{R}\); they are finite. Consequently, the map \(f\) is proper (TG, I, p. 75, theorem 1).
+
+Let us finally show that \(f\) is separated. Let \(x\) and \(y\) be distinct points of C that have the same image under \(f\). There therefore exists a point \(b \in \mathrm{B}\) and distinct elements \(\ell\) and \(m \in \mathrm{L}\) such that \(x = h_{\ell}(b)\) and \(y = h_{m}(b)\). Consequently, \(\mathrm{N}_{\ell}\) and \(\mathrm{N}_m\) are disjoint neighborhoods of \(x\) and \(y\) in C, whence the desired assertion follows by virtue of prop. 1 of I, p. 25.
+
+Let us further make the following assumptions:
+
+- the space A is deloopable and connected;
+
+- the space C is deloopable;
+
+- the space B is connected and locally path-connected.
+
+Set I = \(\pi_{0}(C)\); if i is an element of I, denote by \(C_{i}\) the connected component of C corresponding to i. Denote by \(\eta: L \rightarrow I\) the map that associates with an element \(\ell \in L\) the connected component of C that contains \(B_{\ell}\). The map \(\eta\) is surjective. Indeed, argue by contradiction and consider a connected component X of C that meets none of the sets \(B_{\ell}\). It is an open and closed subset of C, saturated for the equivalence relation R. Consequently, its image \(f(X)\) is an open and closed subset of A, disjoint from B. Since A is assumed connected and B is nonempty, \(f(X)\) is empty, a contradiction.
+
+Let \(\sigma\colon I\to L\) be a section of the map \(\eta\); set \(\tau=\sigma\circ\eta\) and \(T=\sigma(I)\).
+
+Let us choose a point \(b\) of B. For every \(\ell \in \mathrm{L}\), set \(b_{\ell} = h_{\ell}(b)\) and choose the class \(\beta_{\ell}\) of a path joining \(b_{\ell}\) to \(b_{\tau(\ell)}\) in C; if \(\ell = \tau(\ell)\), choose for \(\beta_{\ell}\) the class of the constant path with image \(b_{\ell}\). For all \(\ell \in \mathrm{L}\), denote by \(\vartheta_{\ell}\) the homomorphism from \(\pi_1(\mathrm{B}, b)\) to \(\pi_1(\mathrm{C}, b_{\tau(\ell)})\) defined by
+
+\[
+\vartheta_ {\ell} (v) = \operatorname{Int} (\beta_ {\ell}) ^ {- 1} ((h _ {\ell}) _ {*} (v)) = \beta_ {\ell} ^ {- 1} (h _ {\ell}) _ {*} (v) \beta_ {\ell},
+\]
+
+for all \(v \in \pi_{1}(B, b)\) . Finally, fix an element \(\ell_{0}\) of L such that \(\ell_{0} = \tau(\ell_{0})\) .
+
+Let Q be the unique group homomorphism
+
+\[
+\mathrm{Q} \colon \big (\underset {i \in \mathrm{I}} {*} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) * \mathrm{F} (\mathrm{L} - \mathrm{T}) \to \pi_ {1} (\mathrm{A}, b)
+\]
+
+such that \(\mathsf{Q}(\ell) = f_{*}(\beta_{\ell})\) for all \(\ell \in \mathrm{L} - \mathrm{T}\) and which coincides with \(\pi_1(f, b_{\sigma(i)})\) on \(\pi_1(\mathrm{C}_i, b_{\sigma(i)})\) for all \(i \in \mathrm{I}\) .
+
+PROPOSITION 5 (Van Kampen). --- The homomorphism Q is surjective; its kernel is the smallest normal subgroup containing the elements
+
+\[
+\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1} \quad \text { for } v \in \pi_ {1} (\mathrm{B}, b) \text { and } \ell \in \mathrm{T},
+\]
+
+\[
+\vartheta_ {\ell_ {0}} (v) \ell \vartheta_ {\ell} (v) ^ {- 1} \ell^ {- 1} \quad \text { for } v \in \pi_ {1} (\mathrm{B}, b) \text { and } \ell \in \mathrm{L} - \mathrm{T}.
+\]
+
+The map \(f \colon \mathrm{C} \to \mathrm{A}\) is proper and separated, with finite fibers (IV, p. 430, lemma 2); the spaces A and C are deloopable. Moreover, \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) is the union of the diagonal \(\Delta_{\mathrm{C}}\) and of the pairwise disjoint subsets \(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{k} = (h_{\ell}, h_{k})(\mathrm{B})\), for \((\ell, k) \in \mathrm{L}^2\) with \(\ell \neq k\). For such a pair \((\ell, k)\), we have \(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{k} = \mathrm{N}_{\ell} \times_{\mathrm{A}} \mathrm{N}_{k}\); consequently, this subset is both open and closed in \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\). The diagonal \(\Delta_{\mathrm{C}}\) is thus open, and its complement in \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\), a finite union of pairwise disjoint subsets homeomorphic to B, is locally connected. This proves that the map \(f\) satisfies property (VK) (case (ii) of IV, p. 405). In order to apply th. 1 of IV, p. 408, we shall define a van Kampen datum for f.
+
+For every \(i \in \mathrm{I}\) , choose as base point in \(\mathrm{C}_i\) the point \(\mathfrak{a}(i) = b_{\sigma(i)}\) .
+
+Let J be the set of path-connected components of \(C \times_{A} C\). The sets \(\Delta_{C_{i}}\), for \(i \in I\), are the connected components of the diagonal \(\Delta_{C}\), which is open and closed in \(C \times_{A} C\); hence these sets belong to J. Likewise, the sets \([\ell_{1}, \ell_{2}] = B_{\ell_{1}} \times_{A} B_{\ell_{2}}\), for \(\ell_{1}\) and \(\ell_{2}\) in L with \(\ell_{1} \neq \ell_{2}\), belong to J. Since these sets form a partition of \(C \times_{A} C\), they describe the set J.
+
+Let \(j\) be an element of J of the form \(\Delta_{\mathrm{C}_i}\), for \(i \in \mathbf{I}\). Choose as base point \(\mathsf{b}(j)\) the point \((\mathsf{a}(i), \mathsf{a}(i)) = (b_{\sigma(i)}, b_{\sigma(i)})\) and take as path classes \(\beta_1(j)\) and \(\beta_2(j)\) the class of the constant path at \(b_{\sigma(i)}\). If \(j\) is an element of J of the form \([\ell_1, \ell_2]\), where \(\ell_1\) and \(\ell_2\) are distinct elements of L, then set \(\mathsf{b}([\ell_1, \ell_2]) = (b_{\ell_1}, b_{\ell_2})\), \(\beta_1([\ell_1, \ell_2]) = \beta_{\ell_1}\) and \(\beta_2([\ell_1, \ell_2]) = \beta_{\ell_2}\).
+
+\[
+\text { Let } \mathrm{K} = \pi_ {0} (\mathrm{C} \times_ {\mathrm{A}} \mathrm{C} \times_ {\mathrm{A}} \mathrm{C}).
+\]
+
+Denote by \(\Delta_{\mathrm{C}}^{\prime}\) the diagonal of the space \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\); it is a closed subset of \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) since \(f\) is separated, and it is homeomorphic to C. For every \(i \in \mathrm{I}\), also denote by \(\Delta_{\mathrm{C}_i}^{\prime}\) the image of \(\mathrm{C}_i\) under the diagonal map of C into \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\); these are open and closed subsets of \(\Delta_{\mathrm{C}}^{\prime}\). For every triple \((\ell_1, \ell_2, \ell_3)\) of elements of L, also set \([\ell_1, \ell_2, \ell_3] = \mathrm{B}_{\ell_1} \times_{\mathrm{A}} \mathrm{B}_{\ell_2} \times_{\mathrm{A}} \mathrm{B}_{\ell_3}\); these are closed subsets of \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\), homeomorphic to B. If the set \(\{\ell_1, \ell_2, \ell_3\}\) has at least two elements, then \([\ell_1, \ell_2, \ell_3] = \mathrm{N}_{\ell_1} \times_{\mathrm{A}} \mathrm{N}_{\ell_2} \times_{\mathrm{A}} \mathrm{N}_{\ell_3}\), which implies that \([\ell_1, \ell_2, \ell_3]\) is also open in \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\). Moreover, \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) is the union of the pairwise disjoint subsets \(\Delta_{\mathrm{C}}^{\prime}\) and \([\ell_1, \ell_2, \ell_3]\), where \((\ell_1, \ell_2, \ell_3)\) ranges over all triples of elements of L that are not all equal to the same element. Thus, \(\Delta_{\mathrm{C}}^{\prime}\), and then the \(\Delta_{\mathrm{C}_i}^{\prime}\), for \(i \in \mathrm{I}\), are open and closed in \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\). This implies that the set K of connected components of this space is the union of the disjoint sets \(\mathrm{K}_0\) and \(\mathrm{K}_1\) as follows.
+
+The set \(K_{0}\) is the set of components of the form \(\Delta_{C_{i}}^{\prime}\). Let \(i \in I\) and let \(k = \Delta_{C_{i}}^{\prime}\). We set \(\mathsf{c}(k) = (b_{\sigma(i)}, b_{\sigma(i)}, b_{\sigma(i)})\). For \((s, t) \in \{(1,2), (2,3), (1,3)\}\), we choose for \(\gamma_{st}(k)\) the class of the constant path at \((b_{\sigma(i)}, b_{\sigma(i)})\).
+
+The set \(K_{1}\) is made up of components of the form \(k = [\ell_{1}, \ell_{2}, \ell_{3}]\), where \(\ell_{1}, \ell_{2}, \ell_{3}\) are three elements of B such that the set \(\{\ell_{1},\ell_{2},\ell_{3}\}\) has cardinality \(\geqslant 2\). We set \(c(k)=(b_{\ell_{1}},b_{\ell_{2}},b_{\ell_{3}})\). Let \((s,t)\in\{(1,2),(1,3),(2,3)\}\). If \(\ell_{s}=\ell_{t}\), we take for \(\gamma_{st}(k)\) the class \((\beta_{\ell_{s}},\beta_{\ell_{t}})\); if \(\ell_{s}\neq\ell_{t}\), we take for \(\gamma_{st}(k)\) the class of the constant path at \((b_{\ell_{s}},b_{\ell_{t}})\).
+
+We then verify that, for all \(k \in K\) and for every \(s \in \{1,2,3\}\), the loop class \(\lambda_{s}(k)\) defined by relation (2) of IV, p. 407, is trivial.
+
+The framework \(\Gamma\) of the pair of groupoid morphisms \((\varpi(p_1), \varpi(p_2))\) from \(\varpi(\mathrm{C} \times_{\mathrm{A}} \mathrm{C})\) to \(\varpi(\mathrm{C})\) has as vertices the set I and as oriented edges the set J. If \(i \in \mathrm{I}\), the arrow \(j = \Delta_{\mathrm{C}_i}\) has origin and terminus \(i\); if \((\ell_1, \ell_2)\) is a pair of distinct elements of L, the arrow \(j = [\ell_1, \ell_2]\) has origin \(\eta(\ell_1)\) and terminus \(\eta(\ell_2)\).
+
+Let \(\mathsf{T}\) be the subquiver of \(\Gamma\) whose vertex set is I and whose arrows are those of the form \([\ell_0,\ell ]\), for \(\ell \in \mathrm{T} - \{\ell_0\}\). The graph associated with \(\mathsf{T}\) is a maximal tree of \(\widetilde{\Gamma}\).
+
+Let us set \(i_0 = \eta (\ell_0)\) .
+
+If \(i \in \mathbf{I} - \{i_0\}\), the unique path of \(\mathsf{T}\) connecting \(i_0\) to \(i\) is \((i_0, [\ell_0, \sigma(i)], i)\). The groupoid morphism from \(\mathrm{Grp}(\Gamma)\) to \(\varpi(\mathrm{Y})\) defined on p. 407 (and denoted \(\tau\) in loc. cit.) sends \(j\) to the identity element if \(j = \Delta_{\mathrm{C}_i}\), for \(i \in \mathrm{I}\), and sends \(j = [\ell_1, \ell_2]\) to \(f_*(\beta_{\ell_1})^{-1}f_*(\beta_{\ell_2})\) if \(\ell_1\) and \(\ell_2\) are distinct elements of L. For every \(i \in \mathrm{I}\), the path class \(\delta_i\) defined loc. cit. and joining \(b = f(b_{\sigma(i_0)})\) to \(b = f(b_{\sigma(i)})\) is given by
+
+\[
+\delta_ {i} = f _ {*} (\beta_ {\ell_ {0}}) ^ {- 1} f _ {*} (\beta_ {\sigma (i)}) = e,
+\]
+
+since \(\beta_{\ell} = e\) if \(\ell \in T\) .
+
+We have thus defined a van Kampen datum of the map f. Consider then the unique group homomorphism
+
+\[
+\mathbf {Q} ^ {\prime} \colon \big (\ast_ {i \in \mathrm{I}} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) * \mathrm{F} (\mathrm{J}) \to \pi_ {1} (\mathrm{A}, b)
+\]
+
+which coincides with \(\pi_1(f, b_{\sigma(i)})\) on \(\pi_1(\mathrm{C}, b_{\sigma(i)})\) and such that
+
+\[
+\mathrm{Q} ^ {\prime} (j) = f _ {*} (\beta_ {1} (j)) ^ {- 1} f _ {*} (\beta_ {2} (j))
+\]
+
+for \(j \in \mathrm{J}\). By IV, p. 408, th. 1, this homomorphism is surjective and its kernel is the smallest distinguished subgroup containing the relators \(\mathsf{r}_1(j)\) (for \(j \in \mathrm{Fl}(\mathsf{T})\)), \(\mathsf{r}_2(j,v)\) (for \(j \in \mathrm{J}\) and \(v \in \pi_1(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}, \mathsf{b}(j))\)) and \(\mathsf{r}_3(k)\) (for \(k \in \mathrm{K}\)) defined, loc. cit., by the equations \((\mathrm{R}_1), (\mathrm{R}_2)\) and \((\mathrm{R}_3)\).
+
+Let \(q'\) be the unique homomorphism from F(L) to F(L-T) such that \(q'(\ell) = \ell\) if \(\ell \in L - T\) and \(q'(\ell) = e\) otherwise. Let
+
+\[
+q \colon \big (\underset {i \in \mathrm{I}} {\ast} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) \ast \mathrm{F(J)} \to \big (\underset {i \in \mathrm{I}} {\ast} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) \ast \mathrm{F(L-T)}
+\]
+
+the unique group homomorphism that coincides with the identity on \(\pi_{1}(\mathrm{C}_{i},b_{\sigma(i)})\), for \(i\in I\), and such that \(q(j)=e\) if \(j=\Delta_{\mathrm{C}_{i}}\), \(q([\ell,\ell'])=q'(\ell)^{-1}q'(\ell')\) if \(\ell\) and \(\ell'\) are distinct elements of L. The homomorphism \(q\) is surjective.
+
+If \(i \in \mathrm{I}\) and \(j = \Delta_{\mathrm{C}_i}\), we have \(\mathsf{Q}'(j) = e_b = \mathsf{Q}'(q(j))\). If \(j = [\ell, \ell']\), for distinct \(\ell\) and \(\ell'\) in L, we have
+
+\[
+\begin{array}{c} \mathsf {Q} ^ {\prime} (j) = f _ {*} (\beta_ {\ell}) ^ {- 1} f _ {*} (\beta_ {\ell^ {\prime}}) = \mathsf {Q} (q ^ {\prime} (\ell)) ^ {- 1} \mathsf {Q} (q ^ {\prime} (\ell^ {\prime})) \\ = \mathsf {Q} (q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} (\ell^ {\prime})) = \mathsf {Q} \circ q ([ \ell , \ell^ {\prime} ]). \end{array}
+\]
+
+Therefore, \(Q' = Q \circ q\) . It follows that the homomorphism Q is surjective and that its kernel is the smallest normal subgroup of \(\left(\ast\pi_{1}(\mathrm{C}_{i}, b_{\sigma(i)})\right)\ast\mathrm{F}(\mathrm{L}-\mathrm{T})\) containing the images under q of the relators \(r_{1}(j)\) (for \(j \in \mathrm{Fl}(\mathsf{T})\) ), \(r_{2}(j, v)\) (for \(j \in J\) and \(v \in \pi_{1}(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}, \mathsf{b}(j))\) ) and \(r_{3}(k)\) (for \(k \in K\) ).
+
+If \(\ell\in\mathrm{T}-\{\ell_{0}\}\) and \(j=[\ell_{0},\ell]\) , we have \(\mathsf{r}_{1}(j)=j\) and \(q(\mathsf{r}_{1}(j))=e\) .
+
+Let \(k \in \mathrm{K}\) . We have \(r_3(k) = j_{12}(k)j_{23}(k)j_{13}(k)^{-1}\) . If \(k = \Delta_{\mathrm{C}_i}'\) , for \(i \in \mathrm{I}\) , set \(j = \Delta_{\mathrm{C}_i}\) ; then we have
+
+\[
+q (\mathsf {r} _ {3} (k)) = q (j j j ^ {- 1}) = q (j) = e.
+\]
+
+Let \(\ell\) and \(\ell'\) be distinct elements of L. If \(k = [\ell, \ell, \ell']\), we therefore have
+
+\[
+q (\mathsf {r} _ {3} (k)) = q \left(\Delta_ {\mathrm{C} _ {\eta (\ell)}} [ \ell , \ell^ {\prime} ] [ \ell , \ell^ {\prime} ] ^ {- 1}\right) = q \left(\Delta_ {\mathrm{C} _ {\eta (\ell)}}\right) = e.
+\]
+
+If \(k = [\ell, \ell', \ell]\) , it follows
+
+\[
+\begin{array}{c} q (\mathsf {r} _ {3} (k)) = q ([ \ell , \ell^ {\prime} ] [ \ell^ {\prime}, \ell ] \Delta_ {\mathrm{C} _ {\eta (\ell)}} ^ {- 1}) \\ = q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} (\ell^ {\prime}) q ^ {\prime} (\ell^ {\prime}) ^ {- 1} q ^ {\prime} (\ell) q (\Delta_ {\mathrm{C} _ {\eta} (\ell)}) ^ {- 1} = e. \end{array}
+\]
+
+Moreover, if \(k = [\ell', \ell, \ell]\) , we have
+
+\[
+\begin{array}{r l} & q (\mathsf {r} _ {3} (k)) = q ([ \ell^ {\prime}, \ell ] \Delta_ {\mathrm{C} _ {\eta (\ell)}} [ \ell^ {\prime}, \ell ] ^ {- 1}) \\ & \qquad = q (\ell^ {\prime}) ^ {- 1} q (\ell) q (\Delta_ {\mathrm{C} _ {\eta (\ell)}}) q (\ell) ^ {- 1} q (\ell^ {\prime}) = e. \end{array}
+\]
+
+Finally, if \(k = [\ell_{1}, \ell_{2}, \ell_{3}]\) , where \(\ell_{1}, \ell_{2}, \ell_{3}\) are elements of L, pairwise distinct, we have
+
+\[
+q (\mathsf {r} _ {3} (k)) = q ([ \ell_ {1}, \ell_ {2} ]) q ([ \ell_ {2}, \ell_ {3} ]) q ([ \ell_ {1}, \ell_ {3} ]) ^ {- 1} = e.
+\]
+
+Let \(i \in I\) and let us set \(j = \Delta_{C_i}\). The group homomorphisms \(\varphi_j\) and \(\psi_j\) from \(\pi_1(C \times_A C, \mathfrak{b}(j)) = \pi_1(C_i, \mathfrak{a}(i))\) to \(\pi_1(C, \mathfrak{a}(i))\) defined by the relations (1) of IV, p. 407, are respectively equal to \((p_1)_*\) and \((p_2)_*\). We then have, for \(v \in \pi_1(C_i, \mathfrak{a}(i))\), \(r_2(j, v) = v j v^{-1} j^{-1}\), whence \(q(r_2(j, v)) = e\).
+
+Finally, let \(j = [\ell, \ell']\), where \(\ell\) and \(\ell'\) are distinct elements of L. The group homomorphism \(\varphi_j \colon \pi_1(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{\ell'}) \to \pi_1(\mathrm{C}_{\eta(\ell)}, b_{\tau(\ell)})\) defined loc. cit. is the homomorphism \(\vartheta_\ell\), and the homomorphism \(\psi_j\) is the homomorphism \(\vartheta_{\ell'}\). We then have, for \(v \in \pi_1(\mathrm{B}_\ell \times_{\mathrm{A}} \mathrm{B}_{\ell'}, \mathfrak{b}(j))\)
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \vartheta_ {\ell} (v) q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} \left(\ell^ {\prime}\right) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} q ^ {\prime} \left(\ell^ {\prime}\right) ^ {- 1} q ^ {\prime} (\ell).
+\]
+
+Let us distinguish four cases. If \(\ell\) and \(\ell'\) both belong to T, we have
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \left. \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1}\right) ^ {- 1} \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1}\right). \right.
+\]
+
+When \(\ell' = \ell_0\) , we obtain the inverse of the element \(\vartheta_{\ell_0}(v)\vartheta_\ell(v)^{-1}\) . If \(\ell \in \mathrm{T}\) but \(\ell' \notin \mathrm{T}\) , we have
+
+\[
+\begin{array}{r l} & q (\mathsf {r} _ {2} (j, v)) = \vartheta_ {\ell} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} (\ell^ {\prime}) ^ {- 1} \\ & \qquad = \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1}\right) ^ {- 1} \vartheta_ {\ell_ {0}} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} (\ell^ {\prime}) ^ {- 1}. \end{array}
+\]
+
+Similarly, if \(\ell\notin\mathrm{T}\) and \(\ell^{\prime}\in\mathrm{T}\) , we have
+
+\[
+\begin{array}{c} q (\mathsf {r} _ {2} (j, v)) = \vartheta_ {\ell} (v) \ell^ {- 1} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \ell \\ = \ell^ {- 1} \bigl (\vartheta_ {\ell_ {0}} (v) \ell \vartheta_ {\ell} (v) ^ {- 1} \ell^ {- 1} \bigr) ^ {- 1} \bigl (\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \bigr) \ell . \end{array}
+\]
+
+Taking \(\ell' = \ell_0\) , we obtain an element conjugate to the inverse of \(\vartheta_{\ell_0}(v)\ell\vartheta_\ell(v)^{-1}\ell^{-1}\) . Finally, if neither \(\ell\) nor \(\ell'\) belongs to T, we have
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \left(\vartheta_ {\ell} (v) \ell^ {- 1} \vartheta_ {\ell_ {0}} (v) ^ {- 1} \ell\right) \ell^ {- 1} \left(\vartheta_ {\ell_ {0}} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \left(\ell^ {\prime}\right) ^ {- 1}\right) \ell .
+\]
+
+These relations show, on the one hand, that the elements announced in the proposition belong to the kernel of the homomorphism Q, and, on the other hand, that these elements \(q(\mathsf{r}_{2}(j,v))\) all belong to the smallest distinguished subgroup containing the elements announced by the statement. The proposition follows.
+
+Remark. --- Let A be a topological space, let B be a closed subset of A, and let U be an open neighborhood of B in A. Suppose that the set U-B is the union of a finite family \((\mathrm{M}_{\ell})_{\ell\in\mathrm{L}}\) of pairwise disjoint open sets. For every \(\ell\in L\), set \(N_{\ell}^{\prime}=M_{\ell}\cup B\). Denote by \(C^{\prime}\) the topological sum of the spaces A-B and \(N_{\ell}^{\prime}\), for \(\ell\in L\); we also denote by \(\varphi:A-B\to C^{\prime}\) and \(\varphi_{\ell}:N_{\ell}^{\prime}\to C^{\prime}\), for \(\ell\in L\), the canonical injections. Let C be the topological quotient of C' by the equivalence relation S, the finest relation for which the points \(\varphi(x)\) and \(\varphi_{\ell}(x)\) are equivalent, for every \(\ell \in L\) and every \(x \in M_{\ell}\); let \(\rho: C' \to C\) be the canonical map.
+
+Let us prove that one recovers the space A from the space C by identifying the sets \(B_{\ell}\) by means of the homeomorphisms \(\rho \circ (\varphi_{\ell} \mid B)\): \(B \to B_{\ell}\).
+
+For every \(\ell \in L\), the set \(M_{\ell}\) is open in A-B and in \(N_{\ell}'\). The maps \(\rho \circ \varphi\) and \(\rho \circ \varphi_{\ell}\) are homeomorphisms of the spaces A-B and \(N_{\ell}'\), for \(\ell \in L\), onto open subsets of C (TG, I, p. 17, prop. 9). For every \(\ell \in L\), the set \(\varphi_{\ell}(B)\) is closed in \(C'\) and saturated for the equivalence relation S. Consequently, the set \(B_{\ell} = \rho(\varphi_{\ell}(B))\) is closed in C and the map \(\rho \circ \varphi_{\ell}\) induces a homeomorphism of B onto \(B_{\ell}\) (loc. cit.). Similarly, for every \(\ell \in L\), the set \(N_{\ell} = \rho(\varphi_{\ell}(N_{\ell}'))\) is an open neighborhood of \(B_{\ell}\); the sets \(N_{\ell}\) are mutually disjoint.
+
+By passing to the quotient, the map \(f' \colon \mathrm{C}' \to \mathrm{A}\) deduced from the canonical injections into A of the spaces A-B and \(\mathrm{N}_{\ell}'\), for \(\ell \in \mathrm{L}\), induces a continuous map \(f \colon \mathrm{C} \to \mathrm{A}\). If \(x\) is a point of B, the fiber \(f^{-1}(x)\) is the set of points \(\rho(\varphi_{\ell}(x))\), for \(\ell \in \mathrm{L}\). The equivalence relation on C associated with the map \(f\) is the relation R defined at the beginning of the section. Let us denote by \(\mathrm{B}_{\mathrm{L}}\) the union of the family \((\mathrm{B}_{\ell})_{\ell \in \mathrm{L}}\). By construction, the map \(f\) induces a homeomorphism from \(\mathrm{C} - \mathrm{B}_{\mathrm{L}}\) onto \(\mathrm{A} - \mathrm{B}\) and, for \(\ell \in \mathrm{L}\), a homeomorphism from \(\mathrm{N}_{\ell}'\) onto \(\mathrm{N}_{\ell}\). We shall prove that the map \(f\) is closed; the topology of A will therefore be the quotient topology of C by the equivalence relation R (I, p. 18, example 2). To do this, let us prove that if F is a subset of A such that \(\mathrm{F} \cap (\mathrm{A} - \mathrm{B})\) is closed in \(\mathrm{A} - \mathrm{B}\) and such that \(\mathrm{F} \cap \mathrm{N}_{\ell}'\) is closed in \(\mathrm{N}_{\ell}'\), for \(\ell \in \mathrm{L}\), the set F is closed in A. The set U, the union of the family \((\mathrm{N}_{\ell}')_{\ell \in \mathrm{L}}\), is open in A, and the sets \(\mathrm{N}_{\ell}'\), for \(\ell \in \mathrm{L}\), form a finite closed covering of it. Consequently, the set F∩U is closed in U (TG, I, p. 18, prop. 3). The sets U and A-B form an open covering of A, so the set F is closed in A (loc. cit.).
+

@@ -1,0 +1,124 @@
+\subsection{模的投射覆盖}
+
+定义 3. —— 设 A 是一个环，M 是一个 A-模。M 的投射覆盖是指一个偶 \((P, u)\)，其中 P 是一个投射 A-模，u 是从 P 到 M 的一个满同态，使得 \(u(P') \neq M\) 对 P 的每个真 A-子模 \(P'\) 成立。
+
+注. —— 1) 对每个投射 A-模 M，偶 \((M,1_{M})\) 是 M 的一个投射覆盖。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \((\mathrm{P}, u)\) 是 A-模 M 的一个投射覆盖。设 \((x_{i})_{i \in \mathrm{I}}\) 是 P 的元素的一个族，\(P'\) 是它生成的 P 的子模；则 \(u(\mathrm{P}')\) 由族 \((u(x_{i}))_{i \in \mathrm{I}}\) 生成。因而，族 \((x_{i})_{i \in \mathrm{I}}\) 生成 A-模 P 当且仅当族 \((u(x_{i}))_{i \in \mathrm{I}}\) 生成 A-模 M。特别地，P 是有限生成的当且仅当 M 是有限生成的。
+\end{enumerate}
+
+命题 8. —— 设 M 与 M' 是 A-模，(P, u) 与 (P', u') 分别是 M 与 M' 的投射覆盖，g : M → M' 是一个 A-线性映射。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  存在一个 A-线性映射 \(f: \mathrm{P} \to \mathrm{P}'\)，使得 \(u' \circ f = g \circ u\)。
+\item
+  设 f 是这样一个映射。若 g 是满射（相应地，双射），则 f 是满射（相应地，双射）。若 g 是单射且其像是 \(M'\) 的一个直因子，则 f 是单射且其像是 \(P'\) 的一个直因子。
+\end{enumerate}
+
+根据假设，A-模 P 是投射的，且映射 \(u'\) 是满射。于是，存在一个 A-线性映射 \(f: P \to P'\)，使得 \(g \circ u = u' \circ f\)（II, §2, No.~2, 第 231 页，命题 4）。断言 a) 由此得出。
+
+设 \(f\) 是 a) 中那样的一个映射。假设 \(g\) 是满射。由于 \(u\) 是满射，我们有 \(M' = g(u(P)) = u'(f(P))\)。由于 \((P', u')\) 是 \(M'\) 的一个投射覆盖，我们有 \(f(P) = P'\)，故 \(f\) 是满射。由同前所引，\(f\) 的核有一个补子模 \(P_1\)，于是 \(f(P_1) = P'\)。现在假设 \(g\) 是双射。我们有 \(g(u(P_1)) = u'(f(P_1)) = u'(P') = M'\)，从而 \(u(P_1) = M\)。由于 \((P, u)\) 是 \(M\) 的一个投射覆盖，我们有 \(P_1 = P\)，因而 \(\text{Ker}(f) = 0\)。所以 \(f\) 是单射；由于已知 \(f\) 是满射，故 \(f\) 是双射。
+
+最后，假设 \(g\) 是单射且其像是 \(\mathrm{M}'\) 的一个直因子。那么存在一个 A-线性映射 \(g': \mathrm{M}' \to \mathrm{M}\)，使得 \(g' \circ g = 1_{\mathrm{M}}\)。由 a)，存在一个 A-线性映射 \(f': \mathrm{P}' \to \mathrm{P}\)，使得 \(u \circ f' = g' \circ u'\)。我们有 \(u \circ (f' \circ f) = g' \circ u' \circ f = (g' \circ g) \circ u\)；由上一段知，映射 \(f' \circ f\) 是双射。用 h 表示其逆双射；我们有 \((h \circ f') \circ f = 1_{\mathrm{P}}\)，故 f 是单射，且其像是 \(P'\) 的一个直因子（II, §1, No.~9, 第 212 页，推论 2）。
+
+推论 1. —— 设 M 是一个 A-模。设 \((P, u)\) 与 \((P', u')\) 是 M 的投射覆盖。存在一个从 P 到 \(P'\) 的同构 f，使得 \(u = u' \circ f\)。
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/part001_525bb1e1.jpg}}
+
+注意，f 不一定由关系式 \(u = u' \circ f\) 唯一确定（VIII, 第 170 页，习题 21）。
+
+推论 2. —— 设 \((\mathrm{P}, u)\) 是 A-模 M 的一个投射覆盖。若 Q 是一个投射 A-模，且 \(g : Q \to M\) 是一个满线性映射，则存在一个满线性映射 \(f : Q \to P\)，使得 \(g = u \circ f\)。
+
+命题 9. —— 设 M 是一个 A-模，\((P, u)\) 是 M 的一个投射覆盖。用 r 表示环 A 的根。由 u 取商得到的同态 \(\overline{u}: P/rP \to M/rM\) 是一个同构。
+
+同态 \(u\) 按定义是满射，故 \(\overline{u}\) 是满射。将 \(u\) 的核记作 \(N\)。我们有 \(u^{-1}(\mathfrak{rM}) = N + \mathfrak{rP}\)。我们来证明 \(N \subset \mathfrak{rP}\)，由此即得 \(\overline{u}\) 的单射性。设 \(P'\) 是 \(P\) 的一个极大子模；我们有 \(u(P') \neq M\)，因而 \(P' + N \neq P\)；由于 \(P'\) 是极大的，我们有 \(N \subset P'\)。于是 \(N\) 作为 \(P\) 的子模含于 \(P\) 的根中。而后者由 VIII, 第 158 页的命题 6 等于 \(\mathfrak{rP}\)。
+
+推论. —— 若 A-模 M 具有一个投射覆盖，则 A/r-模 M/rM 是投射的。
+
+事实上，若 \((P,u)\) 是 M 的一个投射覆盖，则 \((A/\mathfrak{r})\)-模 M/rM 同构于 P/rP（命题 9）。由于 A-模 P 是投射的，\((A/\mathfrak{r})\)-模 P/rP 也是投射的。
+
+注. —— 3) 假设环 A 无根。由命题 9，\((P, u)\) 是 A-模 M 的一个投射覆盖当且仅当 u 是同构。因此，只有投射 A-模才可能具有投射覆盖。
+
+环 Z 无根（VIII, 第 154 页，例 3）。设 \(n \geqslant 2\) 是一个整数。Z-模 Z/nZ 不是投射的，因而不具有投射覆盖。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  假设每个有限生成 A-模都具有一个投射覆盖；则 A 对其根的商 \(A'\) 是半单的。事实上，由该推论，环 \(A'\) 上的每个有限生成模都是投射的。特别地，若 \(\mathfrak{a}\) 是 \(A'\) 的一个左理想，则 \(A'\)-模 \(A_s'/\mathfrak{a}\) 是投射的。于是我们的断言由 VIII, 第 138 页的命题 4 得出。
+\end{enumerate}
+
+我们可以给出这样的例子：一个交换环 A，使得 A/r 是半单的，以及一个不具有投射覆盖的有限生成 A-模 M（VIII, 第 170 页，习题 22）。
+
+命题 10. —— 设 M 是一个 A-模，P 是一个投射 A-模，\(u : P \to M\) 是一个线性映射。设 a 是 A 的一个双边理想。假设由 u 取商得到的线性映射 \(\overline{u} : P / aP \to M / aM\) 是双射，且下列条件之一成立：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  A-模 M 与 P 都是有限生成的，且 a 含于 A 的根中。
+\item
+  理想 \(\mathfrak{a}\) 是幂零的。
+\end{enumerate}
+
+则 (P, u) 是 M 的一个投射覆盖。
+
+在这些假设下，同态 \(u\) 是满射（VIII, 第 159 页，推论 2），且其核 \(N\) 含于 \(\mathfrak{a}P\)。设 \(P'\) 是 \(P\) 的一个真子模。由中山引理（VIII, 第 158 页，定理 2），我们有 \(P' + \mathfrak{a}P \neq P\)，因而 \(u(P') \neq M\)。所以 \((P, u)\) 是 \(M\) 的一个投射覆盖。
+
+推论 1. —— 设 P 是一个投射 A-模。假设 P 是有限生成的，或者 A 的根 r 是一个幂零双边理想。用 u 表示从 P 到 P/rP 的典范映射。则 (P, u) 是 P/rP 的一个投射覆盖。
+
+推论 2. —— 设 a 是 A 的一个双边理想，M 是一个 A-模，使得 (A/a)-模 M/AM 是自由的。假设下列条件之一成立：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  模 M 是有限生成的，且 \(\mathfrak{a}\) 含于 A 的根中。
+\item
+  理想 \(\mathfrak{a}\) 是幂零的。
+\end{enumerate}
+
+则 M 具有一个投射覆盖。
+
+更精确地说，设 P 是一个自由 A-模，\((e_{i})_{i\in\mathrm{I}}\) 是 P 的一个基，\(u:P\to M\) 是一个同态，使得 M/aM 的元素 \(u(e_{i})\) 的典范像构成 (A/a)-模 M/aM 的一个基。则 (P,u) 是 M 的一个投射覆盖。
+
+\((\mathrm{A}/\mathfrak{a})\)-模 P/aP 是自由的，而由 u 取商得到的从 P/aP 到 M/aM 的同态 \(\overline{u}\) 把 P/aP 的一个基变成 M/aM 的一个基，因而是双射。
+
+若 a 是幂零的，则只需应用命题 10。现在假设环 A 非零且模 M 是有限生成的；则 \((A/a)\)-模 M/aM 也是有限生成的，从而 \((A/a)\)-模 P/aP 亦然。于是 P/aP 的每个基都是有限的。由此推出集 I 是有限的，且 A-模 P 是有限生成的。然后再一次应用命题 10。
+
+推论 3. —— 局部环上的每个有限生成模都具有一个投射覆盖。
+
+设 A 是一个局部环，r 是它的根。它是 A 的一个双边理想（VIII, 第 155 页，命题 5, a)），且环 A/r 是一个体（VIII, 第 157 页，推论 4）。若 M 是一个 A-模，则 M/rM 是体 A/r 上的一个向量空间，因而是一个自由 (A/r)-模。于是只需应用推论 2。
+
+注 5. —— 设 A 是一个局部环，r 是它的根。设 M 是一个有限生成 A-模，P 是一个有限生成投射 A-模，\(u : P \to M\) 是一个同态。由 VIII, 第 36 页的推论 6，A-模 P 是自由的。选取 P 的一个基 \((e_{i})_{i \in I}\)。令 \(x_{i} = u(e_{i})\)，且将 \(x_{i}\) 在 M/rM 中的典范像记作 \(\overline{x}_{i}\)。下列性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  偶 \((\mathrm{P},u)\) 是 M 的一个投射覆盖。
+\item
+  族 \((x_{i})_{i\in \mathrm{I}}\) 是 A-模 M 的一个极小生成族。
+\item
+  族 \((\overline{x}_{i})_{i\in\mathrm{I}}\) 是体 A/r 上的向量空间 M/rM 的一个基。
+\end{enumerate}
+
+由 VIII, 第 161 页的注 2 得 (i) \(\Rightarrow\) (ii)，由推论 2 得 (iii) \(\Rightarrow\) (i)。此外，若族 \((x_{i})\) 是 A-模 M 的一个极小生成族，则族 \((\overline{x}_{i})\) 是 A/r 上的向量空间 M/rM 的一个极小生成族，即一个基（VIII, 第 158 页，推论 1）。
+
+命题 11. —— 设 A 是一个环，a 是 A 的一个幂零双边理想。设 M 是一个投射 A/a-模。存在一个投射 A-模 P 和一个核为 aP 的满 A-线性映射 \(u: \mathrm{P} \to \mathrm{M}\)。
+
+把 M 视为 A-模时，这样的一个偶 \((P,u)\) 是 M 的一个投射覆盖。
+
+存在一个 A/ \(\alpha\)-模 \(M'\)，使得 \(M \oplus M'\) 是一个自由 A/ \(\alpha\)-模。选取一个自由 A-模 L 和一个核为 aL 的满 A-线性映射 \(v: L \to M \oplus M'\)。由命题 7 的推论 1（VIII, 第 159 页），存在一个直和分解 \(L = P \oplus P'\)，使得 \(v(P) = M\) 且 \(v(P') = M'\)。A-模 P 是投射的，而在 P 上与 v 一致的从 P 到 M 的 A-线性映射 u 是满射，其核为 aP。第一个断言由此得出。
+
+设 P 是一个投射 A-模，u 是一个从 P 到 M 的核为 aP 的同态。由命题 10，偶 \((P,u)\) 是 M 的一个投射覆盖。
+
+推论. —— 设 P 与 P' 是投射 A-模。若模 P/ \(\alpha\) P 与 P'/ \(\alpha\) P' 同构，则 P 与 P' 同构。
+
+由于 P/aP 与 \(P^{\prime}/aP^{\prime}\) 都是投射的，该推论由命题 11 及投射覆盖的唯一性（VIII, 第 162 页，推论 1）得出。
+

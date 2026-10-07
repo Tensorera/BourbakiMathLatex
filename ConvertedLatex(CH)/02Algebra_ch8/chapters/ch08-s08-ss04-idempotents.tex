@@ -1,0 +1,105 @@
+\subsection{幂等元与半单环}
+
+设 A 是一个环。回顾若我们有 \(e^{2} = e\)，则称 A 的元素 e 为幂等元（I, §1, No.~4, 第 7 页）。此时它也是 A 的反环 \(A^{o}\) 的幂等元。
+
+命题 13. —— a) A 的左理想 \(\mathfrak{a}\) 在 \(\mathrm{A}_s\) 中有补，当且仅当存在 A 中的幂等元 \(e\)，使得 \(\mathfrak{a} = \mathrm{Ae}\)。此时理想 \(\mathfrak{a}\) 由 A 中这样的元素 \(x\) 组成：\(x = xe\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(e\) 与 \(f\) 是 A 中的幂等元。我们有 \(Ae \subset Af\) 当且仅当我们有 \(ef = e\)。
+\item
+  设 M 是一个 A-模。则 M 是投射的且单生成的，当且仅当存在 A 中的幂等元 e，使得 M 同构于 Ae。
+\end{enumerate}
+
+A-模 \(A_{s}\) 的自同态是 A 中元素的右乘。于是 A-模 \(A_{s}\) 中的投影算子就是诸映射 \(x \mapsto xe\)，其中 e 是 A 中的幂等元。此外，\(A_{s}\) 的子模就是左理想，而这样的子模有补当且仅当它是某个投影算子的像（II, §1, No.~9, 第 211 页，命题 14）。由此得断言 a)。
+
+关系 \(\mathrm{Ae} \subset \mathrm{Af}\) 等价于 \(e \in \mathrm{Af}\)。由 a)，它从而等价于 \(e = ef\)；由此得断言 b)。
+
+若 A-模 M 是单生成的，则存在一个满 A-线性映射 \(u: A_{s} \to M\)。若进而 M 是投射的，则存在 \(A_{s}\) 中与 u 的核互补的子模 a。于是 u 诱导出从 a 到 M 的同构。反之，若 M 同构于 \(A_{s}\) 的一个直因子，则它是单生成的且投射的。于是断言 c) 由 a) 得出。
+
+注. —— 1) 设 \(\mathfrak{a}\) 是 A 的一个左理想。由上面的证明及 II, §1, No.~8, 第 209 页命题 12 的推论，映射 \(e \mapsto \mathrm{A}(1 - e)\) 定义了从 A 中幂等元 \(e\)（满足 \(\mathfrak{a} = \mathrm{A}e\)）所成的集到 A 中左理想 \(\mathfrak{b}\)（满足 \(\mathrm{A}_s = \mathfrak{a} \oplus \mathfrak{b}\)）所成的集上的双射。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(e\) 与 \(f\) 是 A 中的幂等元。由命题 13, b)，我们有 \(Ae = Af\) 当且仅当 \(ef = e\) 且 \(fe = f\)。因此，若环 A 是交换的，则关系 \(Ae = Af\) 等价于 \(e = f\)。这一般不成立，例如 \(A = M_2(Z)\)，\(e = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}\)，\(f = \begin{pmatrix} 1 & 0 \\ 1 & 0 \end{pmatrix}\)。
+\end{enumerate}
+
+若环 A 中的幂等元 \(e\) 与 \(e'\) 满足 \(ee' = e'e = 0\)，则称它们是正交的。设 \((e_i)_{i \in I}\) 是 A 中两两正交的幂等元的一个有限族。由于我们有
+
+\[
+\left(\sum_ {i} e _ {i}\right) ^ {2} = \sum_ {i} e _ {i} ^ {2} + \sum_ {i \neq j} e _ {i} e _ {j} = \sum_ {i} e _ {i},
+\]
+
+A 的元素 \(\sum_{i\in I}e_i\) 是幂等的。
+
+幂等元 e 在 A 中的一个分拆是 A 中两两正交的幂等元的一个有限族 \((e_{i})_{i\in\mathrm{I}}\)，使得 \(e=\sum_{i\in I}e_{i}\)。若存在 e 的一个由异于 0 与 e 的两两正交幂等元组成的分拆，则称 A 中的幂等元 e 是可分解的；反之则称它是不可分解的。注意 0 是可分解幂等元。
+
+命题 14. —— 设 e 是 A 中的一个幂等元。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  若 \((e_i)_{i\in I}\) 是 \(e\) 的一个分拆，则 A-模 Ae 是族 \((\mathrm{A}e_i)_{i\in I}\) 的直和。
+\item
+  设 \((\mathfrak{a}_{i})_{i\in\mathrm{I}}\) 是 A 的左理想的一个以 Ae 为直和的有限族。对 \(i\in I\)，把 e 在 \(a_{i}\) 中的分量记作 \(e_{i}\)。则 \((e_{i})_{i\in\mathrm{I}}\) 是 e 的一个分拆，且我们有 \(a_{i}=Ae_{i}\)（对每个 \(i\in I\)）。
+\item
+  A-模 Ae 是不可分解的当且仅当幂等元 e 是不可分解的。
+\end{enumerate}
+
+设 \((e_i)_{i\in \mathrm{I}}\) 是 \(e\) 的一个分拆。对每个 \(i\in \mathrm{I}\)，我们有
+
+\[
+e _ {i} e = \sum_ {j} e _ {i} e _ {j} = e _ {i} ^ {2} + \sum_ {j \neq i} e _ {i} e _ {j} = e _ {i},
+\]
+
+因而 \(Ae_{i} \subset Ae\)。对每个 \(i \in I\)，我们在 Ae 中定义一个 A-线性投影算子 \(p_{i}\)，办法是令 \(p_{i}(x) = xe_{i}\)。我们有 \(p_{i}p_{j} = 0\)（若 \(i \neq j\)），且对 Ae 中的每个 x，
+
+\[
+x = x e = \sum_ {i} x e _ {i} = \sum_ {i} p _ {i} (x).
+\]
+
+于是（II, §1, No.~8, 第 20 页，命题 12），Ae 是诸 \(p_i\) 的像的直和。而我们有 \(ee_i = e_i e = e_i\)，故 \(p_i\) 的像是 \(\mathrm{Ae}_i\)。这就证明了 a)。
+
+取 b) 的记号与假设。设 \(i \in I\)。由于 \(e_{i}\) 属于 Ae，我们有 \(e_{i} = e_{i}e = \sum_{j} e_{i}e_{j}\)。由于 Ae 是诸 \(a_{j}\) 的直和，且对每个 j 都有 \(e_{i}e_{j}\) 属于 \(a_{j}\)，我们有 \(e_{i} = e_{i}e_{i}\) 与 \(e_{i}e_{j} = 0\)（对 \(i \neq j\)）。换言之，\((e_{i})_{i \in I}\) 是幂等元 e 的一个分拆。由 a)，Ae 是诸 \(Ae_{i}\) 的直和。按假设，我们有 \(Ae_{i} \subset a_{i}\)，且 Ae 是诸 \(a_{i}\) 的直和。于是我们有 \(Ae_{i} = a_{i}\)（对每个 \(i \in I\)）。我们证明了 b)。
+
+最后，c) 由 a) 与 b) 立即得出。
+
+注 3. —— 把前面的结果应用于 A 的反环，我们特别看到，一个单生成的右 A-模 M 是投射的，当且仅当存在 A 中的幂等元 e，使得 M 同构于 eA。此外，eA 是不可分解右模当且仅当 e 是不可分解的。
+
+现在设环 A 是半单的，并用 S 表示单左 A-模的类所成的集。A-模 \(A_{s}\) 是半单的，且 \(A_{s}\) 的每个子模都是直因子。设 a 是 A 的一个左理想。由上述，存在 A 中的幂等元 e，使得 a = Ae，且 A-模 a 是单的当且仅当它是不可分解的，即当且仅当 e 是不可分解的。
+
+设 \((\mathfrak{m}_i)_{i\in \mathrm{I}}\) 是 A 的极小左理想的一个族，使得我们有 \(\mathrm{A}_s = \oplus_{i\in \mathrm{I}}\mathfrak{m}_i\)。由命题 14，存在 1 的一个由不可分解幂等元组成的分拆 \((\varepsilon_i)_{i\in \mathrm{I}}\)，使得 \(\mathfrak{m}_i = \mathrm{A}\varepsilon_i\)（对每个 \(i\in \mathrm{I}\)）。
+
+对每个 \(\lambda \in \mathcal{S}\)，设 \(S_{\lambda}\) 是一个类为 \(\lambda\) 的 A-模，\(\mathfrak{a}_{\lambda}\) 是型为 \(\lambda\) 的同型分量（A-模 \(A_s\) 的）。由于 A 是族 \((\mathfrak{a}_{\lambda})_{\lambda \in \mathcal{S}}\) 的直和，存在 1 的一个分拆 \((e_{\lambda})_{\lambda \in \mathcal{S}}\)，使得 \(\mathfrak{a}_{\lambda} = Ae_{\lambda}\)（对每个 \(\lambda \in \mathcal{S}\)）。对 \(\lambda \in \mathcal{S}\)，用 I( \(\lambda\) ) 表示指标 \(i \in I\)（使单 A-模 \(\mathfrak{m}_i\) 为 \(\lambda\) 型者）所成的集。由 VIII, 第 65 页的命题 4, b)，我们有
+
+\[
+\mathfrak {a} _ {\lambda} = \bigoplus_ {i \in I (\lambda)} \mathfrak {m} _ {i}.\tag{3}
+\]
+
+幂等元 \(e_{\lambda}\) 是 1 在 \(\mathfrak{a}_{\lambda}\) 中的分量，故 \(e_{\lambda} = \sum_{i\in \mathrm{I}(\lambda)}\varepsilon_i\)。
+
+命题 15. —— 设环 A 是半单的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个 \(\lambda \in \mathcal{S}\)，\(e_{\lambda}\) 是中心 \(Z\)（\(A\) 的）中满足关系 \((e_{\lambda})_{S_{\lambda}} = 1_{S_{\lambda}}\) 与 \((e_{\lambda})_{S_{\mu}} = 0\)（对 \(\mu \neq \lambda\)）的唯一元素。
+\item
+  环 Z 中的不可分解幂等元就是诸 \(e_{\lambda}\)，而 Z 的极小理想就是诸 \(Ze_{\lambda}\)（\(\lambda \in S\)）。
+\item
+  设 M 是一个 A-模，\((\mathrm{M}_{\lambda})_{\lambda\in\mathcal{S}}\) 是它的同型分量族。与 M 分解为诸 \(M_{\lambda}\) 的直和相关联的投影算子族（VIII, 第 65 页）是 \(((e_{\lambda})_{\mathrm{M}})_{\lambda\in\mathcal{S}}\)，且我们有 \(M_{\lambda}=a_{\lambda}M\)（对每个 \(\lambda\in S\)）。
+\end{enumerate}
+
+设 \(\lambda\) 与 \(\mu\) 是 \(\mathcal{S}\) 中两个互异的元素。我们有 \(e_{\lambda} \in \mathfrak{a}_{\lambda}\)，而 \(\mathfrak{a}_{\lambda}\) 包含于零化子 \(\mathfrak{b}_{\mu}\)（A-模 \(\mathrm{S}_{\mu}\) 的）中（VIII, 第 142 页，命题 9）。于是我们有 \((e_{\lambda})_{\mathrm{S}_{\mu}} = 0\)。关系 \((e_{\lambda})_{\mathrm{S}_{\lambda}} = 1_{\mathrm{S}_{\lambda}}\) 由 \(1 = \sum_{\nu \in \mathcal{S}} e_{\nu}\) 即得。于是断言 a) 是 VIII, 第 141 页命题 8 的推论。
+
+设 \(\lambda\) 属于 \(\mathcal{S}\)。双边理想 \(\mathfrak{a}_{\lambda}\)（\(A\) 的）由这样的元素 \(x\) 组成：\(x = xe_{\lambda}\)；于是我们有 \(Z \cap \mathfrak{a}_{\lambda} = Ze_{\lambda}\)，从而由命题 10, b) 得 b)。
+
+我们来证明 c)。设 \(x\) 是 M 的一个元素。我们有 \(e_{\lambda} \in \mathfrak{a}_{\lambda}\)（对每个 \(\lambda \in \mathcal{S}\)）。由于映射 \(a \mapsto ax\)（从 \(A_s\) 到 M）是 A-线性的，我们有 \(\mathfrak{a}_{\lambda}x \subset M_{\lambda}\)（VIII, 第 66 页，命题 5），特别地，\(e_{\lambda}x \in M_{\lambda}\)。我们有 \(1 = \sum_{\lambda \in \mathcal{S}} e_{\lambda}\)，因而 \(x = \sum_{\lambda \in \mathcal{S}} e_{\lambda}x\)。于是，\(e_{\lambda}x\) 是 \(x\) 在 \(M_{\lambda}\) 中的分量。
+
+注 4. —— 设环 A 是半单的。设 \((e_{i})_{i\in\mathrm{I}}\) 是 1 的一个由 A 的中心 Z 中非零幂等元组成的分拆。若 \(\operatorname{Card}(\mathrm{I})=\operatorname{Card}(\mathcal{S})\)，则诸 \(e_{i}\) 就是 Z 中的不可分解幂等元。
+

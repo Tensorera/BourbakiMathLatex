@@ -1,0 +1,28 @@
+\subsection{恩格尔定理}
+
+引理 1. 设 \(\mathbf{V}\) 是 \(\mathbf{K}\) 上的向量空间。若 \(x\) 是 \(\mathbf{V}\) 的幂零自同态，则从 \(y \mapsto [x, y]\) 到 \(\mathcal{L}(\mathbf{V})\) 的映射 \(\mathcal{L}(\mathbf{V})\) 是幂零的。
+
+若以 \(f\) 表示此映射，则 \(f^m(y)\) 是形如 \(\pm x^i y x^j\) 的项之和，其中 \(i + j = m\)。若 \(x^k = 0\)，则对所有 \(f^{2k - 1}(y) = 0\) 有 \(y\)。
+
+定理 1（恩格尔）. 设 V 是 K 上的向量空间，g 是 \(\mathfrak{gl}(V)\) 的有限维子代数，且其元素都是 V 的幂零自同态。若 \(V \neq \{0\}\)，则 V 中存在 \(u \neq 0\)，使得对所有 \(x \in g\) 都有 x.u = 0。
+
+证明对 \(n\) 的维数 \(\mathfrak{g}\) 作归纳。\(n = 0\) 时定理显然。假设定理对维数 \(< n\) 的代数成立。
+
+设 \(\mathfrak{h}\) 是 \(\mathfrak{g}\) 的维数为 \(m < n\) 的李子代数。若 \(x \in \mathfrak{h}\)，则 \(\operatorname{ad}_{\mathfrak{g}} x\) 将 \(\mathfrak{h}\) 映入自身，并在取商后在空间 \(\sigma(x)\) 上定义自同态 \(\mathfrak{g} / \mathfrak{h}\)。由引理 1，\(\operatorname{ad}_{\mathfrak{g}} x\) 是幂零的，因而 \(\sigma(x)\) 也是幂零的。由归纳假设，\(\mathfrak{g} / \mathfrak{h}\) 中存在被所有 \(\sigma(x)\)（\(x \in \mathfrak{h}\)）消去的非零元素。由此可知，\(\mathfrak{h}\) 是 \((m + 1)\) 的某个 \(\mathfrak{g}\)-维子代数的理想。
+
+我们由此（从 \(\mathfrak{b} = \{0\}\) 开始迭代）得到 \(\mathfrak{g}\) 有一个维数为 \(\mathfrak{b}\) 的理想 \(n - 1\)。令 \(a \in \mathfrak{g}\)，\(a \notin \mathfrak{b}\)。再次使用归纳假设：满足对所有 \(u \in V\) 有 \(x.u = 0\) 的 \(x \in \mathfrak{b}\) 构成 V 的一个非零向量子空间 U。该子空间在 \(a\) 下稳定（\(\S 3\)，第 5 号，命题 5）。由于 \(a\) 是 V 的幂零自同态，U 中存在被 \(a\) 消去的非零元素，因而被 \(\mathfrak{g}\) 的每个元素消去。
+
+推论 1. 李代数 g 幂零的充要条件是：对所有 \(x \in \mathfrak{g}\)，ad \(x\) 都是幂零的。
+
+必要性由命题 1 得到。假设充分性已对维数 \(< n\)（\(n \neq 0\)）的李代数证明。设 \(\mathfrak{g}\) 是 \(n\) 维李代数，且对所有 \(x \in \mathfrak{g}\)，ad \(x\) 都是幂零的。将定理 1 应用于 ad \(x\)（\(x \in \mathfrak{g}\)）的集合，便知 \(c\) 的中心 \(\mathfrak{g}\) 非零。于是 \(\mathfrak{g}\) 是李代数 \(\mathfrak{g}/c\) 的中心扩张，而后者由归纳假设是幂零的。应用命题 2 即完成证明。
+
+推论 2. 设 g 是李代数，h 是 g 的理想。假设 g/h 幂零，且对所有 \(x \in g\)，ad x 在 h 上的限制是幂零的。则 g 幂零。
+
+设 \(x \in \mathfrak{g}\)。由于 \(\mathfrak{g} / \mathfrak{h}\) 幂零，存在整数 \(k\)，使得 \((\operatorname{ad} x)^k(\mathfrak{g}) \subset \mathfrak{h}\)。由假设，存在整数 \(k'\)，使得 \((\operatorname{ad} x)^{k'}(\mathfrak{h}) = \{0\}\)。因此 \((\operatorname{ad} x)^{k + k'}(\mathfrak{g}) = \{0\}\)。所以推论 2 是推论 1 的一个结果。
+
+推论 3. 设 V 是向量空间，g 是 gl(V) 的有限维子代数，且其元素都是 V 的幂零自同态。则 g 是幂零李代数。
+
+这立即由引理 1 和推论 1 得到。
+
+例。代数 \(\mathfrak{n}(n,\mathbf{K})\)（§ 1，第 2 号，例 2 (3)）是幂零的。
+

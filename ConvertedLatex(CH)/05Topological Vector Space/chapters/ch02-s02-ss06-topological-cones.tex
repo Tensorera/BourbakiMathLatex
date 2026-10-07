@@ -1,0 +1,52 @@
+\subsection{拓扑向量空间中的凸锥}
+
+命题 14. --- 在拓扑向量空间 E 中，凸集（相应地凸锥）的闭包是凸集（相应地具有相同顶点的凸锥）。
+
+因为，设 A 是凸集；映射 \((x, y) \mapsto \lambda x + (1 - \lambda)y\)（其中 \(0 < \lambda < 1\)）在 E × E 中连续且把 A × A 映入 A；于是（GT, I, §2.1, th. 1）它把 \(\overline{A} \times \overline{A}\) 映入 \(\overline{A}\)，这表明 \(\overline{A}\) 是凸的。类似地，若 C 是以 0 为顶点的凸锥，则 \(\overline{C} + \overline{C} \subset \overline{C}\) 且 \(\lambda\overline{C} \subset \overline{C}\)（对所有 \(\lambda > 0\)）。
+
+定义 4. --- 对拓扑向量空间 E 中任意集 A，包含 A 的所有闭凸集之交称为 A 的闭凸包；它是包含 A 的最小闭凸集。
+
+由 prop. 14，A 的闭凸包是 A 的凸包的闭包；显然它与 \(\overline{A}\) 的闭凸包相同。
+
+类似地，我们称包含 A 的最小对称闭凸集为 A 的对称闭凸包（或均衡闭凸包）；它是 A 的对称凸包的闭包（II, 第 10 页）；它也是 \(\overline{A}\) 的对称闭凸包。
+
+命题 15. --- 设 \(A_{i}\)（\(1 \leqslant i \leqslant n\)）是 Hausdorff 拓扑向量空间 E 中有限个紧凸集。则诸 \(A_{i}\) 之并的凸包是紧的（因此与该并的闭凸包相同）。
+
+设 B 是 \(R^{n}\) 中由点 \((\lambda_{1},\lambda_{2},\ldots,\lambda_{n})\)（其中 \(\lambda_{i}\geqslant0(1\leqslant i\leqslant n)\) 且 \(\sum_{i=1}^{n}\lambda_{i}=1\)）定义的紧集。定义 \(B\times\prod_{i=1}^{n}A_{i}\subset R^{n}\times E^{n}\) 到 E 中的一个连续映射（由公式 \((\lambda_{1},\lambda_{2},\ldots,\lambda_{n},x_{1},x_{2},\ldots,x_{n})\mapsto\sum_{i=1}^{n}\lambda_{i}x_{i}\)）。\(\bigcup_{i=1}^{n}A_{i}\) 的凸包 C 是 \(B\times\prod_{i=1}^{n}A_{i}\) 在该映射下的像；由于 \(B\times\prod_{i=1}^{n}A_{i}\) 是紧的且 E 是 Hausdorff 的，由此推出 C 是紧的。
+
+推论 1. --- 在 Hausdorff 拓扑向量空间中，有限集的凸包是紧的。
+
+推论 2. --- 在拓扑向量空间 E 中，有限集的凸包是预紧的。
+
+事实上，设 \(j\) 是 \(\mathbf{E}\) 到其 Hausdorff 完备化 \(\hat{\mathbf{E}}\) 中的典范映射；若 \(\mathbf{C}\) 是 \(\mathbf{A}\) 的凸包，则 \(j(\mathbf{C})\) 是有限集 \(j(\mathbf{A})\)（在 \(\hat{\mathbf{E}}\) 中的）的凸包，故 \(j(\mathbf{C})\) 是紧的（cor. 1），从而 \(\mathbf{C}\) 是预紧的（GT, II, § 4.2）。
+
+命题 16. --- 设 A 是拓扑向量空间 E 的一个凸子集，且至少有一个内点 \(x_{0}\)。则对任意点 \(x \in \overline{A}\)，以 \(x_{0}\)、x 为端点的开线段的每个点都属于 A 的内部。
+
+设 y 是该线段中任意一点，f 是以 y 为中心、\(\lambda < 0\) 为比且把 \(x_{0}\) 变为 x 的位似变换。若 V 是包含在 A 中的 \(x_{0}\) 的一个开邻域，则 \(f(\mathrm{V})\) 是 x 的邻域，因此包含一点 \(f(z) \in \mathrm{A}\)；现在
+
+\[
+f (z) - y = \lambda (z - y) = \lambda (z - f (z)) + \lambda (f (z) - y),
+\]
+
+于是 \(y - f(z) = \frac{\lambda}{\lambda - 1} (z - f(z))\)，从而 \(y\) 被变为 \(z\)（由位似变换 \(g\)，其中心为 \(f(z)\)，比为 \(\mu = \lambda / (\lambda - 1)\)）；由于 \(0 < \mu < 1\)，\(g\) 把 \(V\) 变为包含在 \(A\) 中的 0 的邻域。命题得证。
+
+推论 1. --- 内部 \(\mathring{\mathrm{A}}\)（凸集 \(\mathrm{A}\) 的）本身是凸集；若 \(\mathring{\mathrm{A}}\) 非空，则它与 \(\overline{\mathrm{A}}\) 的内部重合，且 \(\overline{\mathrm{A}}\) 是与 \(\mathring{\mathrm{A}}\) 的闭包重合的凸集。
+
+由 prop. 16 推出：若 \(\mathring{\mathrm{A}}\) 非空，则它是凸集且 \(\overline{\mathrm{A}}\) 的每点都是 \(\mathring{\mathrm{A}}\) 的接触点。其次我们证明 \(\overline{\mathrm{A}}\) 的每个内点属于 \(\mathring{\mathrm{A}}\)。设 \(x\) 是 \(\overline{\mathrm{A}}\) 的一个内点，并不妨设 \(x = 0\)。设 \(\mathrm{V}\) 是包含在 \(\overline{\mathrm{A}}\) 中的 0 的一个对称邻域，并设 \(y \in \mathring{\mathrm{A}} \cap \mathrm{V}\)；于是 \(-y \in \overline{\mathrm{A}}\)，因此由 prop. 16，我们看到 \(0 \in \mathring{\mathrm{A}}\)（若 \(y \neq 0\)）；当 \(y = 0\) 时这显然成立。
+
+推论 2. --- 内部 \(\mathring{\mathrm{C}}\)（凸锥 \(\mathrm{C}\) 的）本身是凸锥；若 \(\mathring{\mathrm{C}}\) 非空，则它与 \(\overline{\mathrm{C}}\) 的内部重合，且 \(\overline{\mathrm{C}}\) 是与 \(\mathring{\mathrm{C}}\) 的闭包重合的尖凸锥。
+
+由于以 0 为中心、\textgreater{} 0 为比的位似变换把 C 变为自身，它们对 \(\overset{\circ}{C}\) 也如此，故 \(\overset{\circ}{C}\) 是锥；推论的其余部分由 cor. 1 及显然的注记（若 C 非空，则 \(\overline{C}\) 包含 C 的顶点）得出。
+
+设 H 是 R 上拓扑向量空间 E 中的一个闭超平面；它有一个形如 \(f(x) = \alpha\) 的方程，其中 f 是 E 上不恒为零的连续线性型（I, 第 13 页, th. 1）。于是由 \(f(x) \leqslant \alpha\) 与 \(f(x) \geqslant \alpha\) 分别定义的闭半空间是闭凸集；它们的补集，即由 \(f(x) > \alpha\) 与 \(f(x) < \alpha\) 分别定义的集，是开凸集。我们称这些半空间是由 H 确定的闭（相应地开）半空间。
+
+命题 17. --- 在拓扑向量空间 E 中，设 A 是至少有一个内点的集，且其所有点都位于某个超平面 H 的同侧。则 H 是闭的，A 的内点严格位于 H 的同侧，而 A 的接触点位于 H 的同侧。特别地，开（相应地闭）半空间由闭超平面确定。
+
+事实上，设 H 包含原点且 \(f(x) = 0\) 是 H 的一个方程；不妨设 \(f(x) \geqslant 0\)（对所有 \(x \in A\)）。由满足 \(f(y) > -1\) 的点 y 组成的半空间至少包含一个内点，并且通过平移，由满足 \(f(y) > 0\) 的点 y 组成的半空间也是如此；这表明 H 是闭的（I, 第 11 页, corollary）。于是我们知道 f 是 E 到 R 上的一个严格态射（I, 第 13 页, corollary），因此 \(f(\mathring{\mathrm{A}})\) 是 R 中的开集。这个集不能包含 0，否则它将包含 \textless{} 0 的数，与假设矛盾；从而它包含在开区间 \(\bigg]0, +\infty[\) 中。另一方面，由满足 \(f(y) \geqslant 0\) 的 y 组成的半空间是闭的且包含 A，因此它包含 \(\overline{A}\)。
+
+推论. --- 设 P 是拓扑向量空间 E 中至少有一个内点的尖凸锥。则 E 上每个不恒为零且关于由 P 定义的预序结构（II, 第 13 页）为正的线性型 f 必定连续。进而，若 x 是 P 的内点，则 \(f(x) > 0\)；若 x 是 P 的接触点，则 \(f(x) \geqslant 0\)。
+
+把 prop. 17 应用于 \(\mathbf{A} = \mathbf{P}\) 的情形，其中 \(\mathbf{H}\) 是以 \(f(x) = 0\) 为方程的超平面。
+
+注记. --- 在拓扑向量空间 E 中，每个凸集 C 都是连通的。事实上，若 \(a \in C\)，则 C 是以 a 为一个端点且在 a 处闭的一些线段之并；这些线段都是连通的，结论由 GT, I, § 11.1, prop. 2 得出。
+

@@ -1,0 +1,26 @@
+\subsection{sin z 的欧拉展开}
+
+对每个奇整数 \(n = 2m + 1\) 和复数 \(z\) ，VI, p.~283 的公式 (2) 可以写成
+
+\[
+\begin{array}{l} \sin n z = (- 1) ^ {m}   2 ^ {n - 1}   \prod_ {k = - m} ^ {m}   \sin \left(z - \frac {k \pi}{n}\right) \\ = (- 1) ^ {m}   2 ^ {n - 1}   \sin z   \prod_ {k = 1} ^ {m}   \sin \left(z - \frac {k \pi}{n}\right) \sin \left(z + \frac {k \pi}{n}\right). \end{array}
+\]
+
+现在，有 \(\sin\left(z-\frac{k\pi}{n}\right)\sin\left(z+\frac{k\pi}{n}\right)=\sin^{2}z-\sin^{2}\frac{k\pi}{n}\) ，并且由 (3) （VI, p.~284）有 \(\prod_{k=1}^{m}\sin^{2}\frac{k\pi}{n}=\frac{n}{2^{n-1}}\) ，于是，把 \(z\) 换成 \(z/n\) ，
+
+\[
+\sin z = n \sin \frac {z}{n} \prod_ {k = 1} ^ {m} \left(1 - \frac {\sin^ {2} \frac {z}{n}}{\sin^ {2} \frac {k \pi}{n}}\right).\tag{9}
+\]
+
+可以把这个公式写成 \(\sin z = n\sin \frac{z}{n}\prod_{k = 1}^{m}\big(1 - w_k(n,z)\big)\) ，其中 \(w_{k}(n,z) = 0\) （对 \(k > m\) ），而 \(w_{k}(n,z) = \frac{\sin^{2}\frac{z}{n}}{\sin^{2}\frac{k\pi}{n}}\) （对 \(1\leqslant k\leqslant m\) ）。我们将看到，对每个 \(z\) （属于某个紧子集 \(\mathbf{K}\) ，\(\mathbf{C}\) 的）以及奇数 \(n\) ，以 \(w_{k}(n,z)\) 为通项的级数正规收敛。事实上，当 \(n\) 趋于 \(+\infty\) 时，\(n\sin \frac{z}{n}\) 一致趋于 \(z\) （在 \(\mathbf{K}\) 上），故存在数 \(\mathbf{M} > 0\) ，使得 \(\left|n\sin \frac{z}{n}\right|\leqslant \mathbf{M}\) （对每个整数 \(m\) 和每个 \(z\in \mathbf{K}\) ）。此外，我们在 VI, p.~286 定理 1 的证明中已经看到，对
+
+\(1 \leqslant k \leqslant m\) 有 \(n \sin \frac{k\pi}{n} \geqslant \frac{k\pi}{2}\) ；于是对每个整数 \(k\) （满足 \(k\pi/2 \geqslant M\) 的）有 \(|w_k(n, z)| \leqslant 4M^2/k^2\pi^2\) ，这就证明了我们的断言。由于对每个固定的 \(k\) ，\(w_k(n, z)\) （在 K 上一致）趋于 \(z^2/k^2\pi^2\) （当 \(n\) 趋于 \(+\infty\) 时），可以看出：
+
+定理 2. 对每个复数 \(z\) ，有
+
+\[
+\sin z = z \prod_ {n = 1} ^ {\infty} \left(1 - \frac {z ^ {2}}{n ^ {2} \pi^ {2}}\right)\tag{10}
+\]
+
+右端的无穷乘积在 C 的每个紧子集上绝对且一致收敛（\(\sin z\) 的欧拉展开）。
+

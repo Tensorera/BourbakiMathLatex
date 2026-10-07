@@ -1,0 +1,56 @@
+\subsection{一元多项式的欧几里得除法}
+
+命题 10. --- 设 \(f\) 与 \(g\) 是 \(\mathbf{A}[\mathbf{X}]\) 的非零元素，其次数分别为 \(m\) 与 \(n\) 。设 \(\alpha_0\) 为 \(f\) 的首项系数，且 \(\mu = \sup (n - m + 1, 0)\) 。存在 \(u, v \in \mathbf{A}[\mathbf{X}]\) 使得
+
+\[
+\alpha_ {0} ^ {\mu} g = u f + v, \quad \deg v <   m.
+\]
+
+如果 \(\alpha_0\) 在 A 中可消去，则 \(u\) 与 \(v\) 由这些性质唯一确定。
+
+\(u\) 与 \(v\) 的存在性当 \(n < m\) 时是显然的，因为此时可取 \(u = 0\) 与 \(v = g\) 。对 \(n \geqslant m\) ，我们将对 \(n\) 作归纳。设 \(\beta\) 为 \(g\) 的首项系数；若 \(f = \sum_{k=0}^{m} \alpha_k X^{m-k}\) ，我们可以写出 \(\alpha_0^\mu g = \alpha_0^{\mu-1} \beta X^{n-m} f + \alpha_0^{\mu-1} g_1\) ，其中 \(g_1 \in A[X]\) 且 \(\deg g_1 < n\) 。根据归纳假设，存在 \(u_1, v \in A[X]\) 使得 \(\alpha_0^{\mu-1} g_1 = u_1 f + v\) 且 \(\deg v < m\) 。因此
+
+\[
+\alpha_ {0} ^ {\mu} g = \left(\alpha_ {0} ^ {\mu - 1} \beta X ^ {n - m} + u _ {1}\right) f + v
+\]
+
+并且只需令 \(u = \alpha_0^{\mu - 1}\beta X^{n - m} + u_1\) 。
+
+假设 \(\alpha_0\) 在 \(\mathbf{A}\) 中可消去，现在让我们证明 \(u\) 与 \(v\) 的唯一性。设 \(u, v, u_1, v_1 \in \mathbf{A}[\mathbf{X}]\) 使得
+
+\[
+\alpha_ {0} ^ {\mu} g = u f + v = u _ {1} f + v _ {1}, \quad \deg v <   m, \quad \deg v _ {1} <   m.
+\]
+
+我们有 \((u - u_{1})f = v_{1} - v\) 且 \(\deg (v_1 - v) < m\) ，因此 \(u - u_{1} = 0\) （IV，第 9 页，命题 7），从而 \(v_{1} - v = 0\) 。
+
+推论（“多项式的欧几里得除法”）。--- 设 \(f\) 为 A{[}X{]} 的一个非零元素，其首项系数可逆，且 \(m = \deg f\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  对每个 \(g \in \mathbf{A}[\mathbf{X}]\) ，存在 \(u, v \in \mathbf{A}[\mathbf{X}]\) 使得
+\end{enumerate}
+
+\[
+g = u f + v, \quad \deg v <   m.
+\]
+
+此外，这些条件唯一地确定 \(u\) 与 \(v\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  子 A-模 \(A + AX + \cdots + AX^{m-1}\) 与 \(fA[X]\) （均为 A{[}X{]} 的子模）在 A{[}X{]} 中是互补的。
+\item
+  设 \(f\) 非常数，并把 \(\mathbf{A}[\mathbf{X}]\) 视为 \(\mathbf{A}[\mathbf{T}]\) -模（借助同态 \(u(\mathbf{T}) \mapsto u(f(\mathbf{X}))\) ，它把 \(\mathbf{A}[\mathbf{T}]\) 映入 \(\mathbf{A}[\mathbf{X}]\) ）。则 \(\mathbf{A}[\mathbf{X}]\) 是自由 \(\mathbf{A}[\mathbf{T}]\) -模，以 \((1, \mathbf{X}, \ldots, \mathbf{X}^{m-1})\) 为基。
+\end{enumerate}
+
+断言 (i) 与 (ii) 是命题 10 的直接推论。
+
+我们来证明 (iii)。设 \(\psi\) 为同态 \(v \mapsto v(f(X), X)\) （从 A{[}T, X{]} 到 A{[}X{]} 中）。首先把 A{[}T, X{]} 视为以 T 为未定元、系数在 A{[}X{]} 中的多项式环；IV 第 5 页推论 1 表明 \(\mathfrak{a}\) （ \(\psi\) 的核）是 A{[}T, X{]} 的理想 (T - f(X))。现在把 A{[}T, X{]} 视为以 X 为未定元、系数在 A{[}T{]} 中的多项式环；则 \(\psi\) 是一个 A{[}T{]} -线性映射（从 A{[}T{]}{[}X{]} 到 A{[}X{]} 中）。上述断言 (ii)（应用于多项式 \(f(X) - T\) —— 以 X 为未定元、系数在 A{[}T{]} 中）表明， \((1, X, ..., X^{m-1})\) 是一个 A{[}T{]} -子模（属于 A{[}T, X{]} ，与 \(\mathfrak{a}\) 互补）的一组基。由于 \(\psi(X^i) = X^i\) （对每个整数 \(i \geqslant 0\) ）， (iii) 立即得出。
+
+采用 (i) 中的记号，我们称 u 为 g 除以 f 的欧几里得除法中的商，称 v 为余式；余式为零的充分必要条件是 f 整除 g。
+

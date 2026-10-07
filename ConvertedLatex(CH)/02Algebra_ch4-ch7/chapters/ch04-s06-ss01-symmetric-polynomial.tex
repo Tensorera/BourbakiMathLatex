@@ -1,0 +1,284 @@
+\subsection{对称多项式}
+
+设 \(n\) 为正整数。对每个置换 \(\sigma \in \mathfrak{S}_n\) ，令 \(\varphi_{\sigma}\) 为 A-代数 \(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 的这样一个自同构：它把 \(\mathbf{X}_i\) 映为 \(\mathbf{X}_{\sigma(i)}\) ， \(1 \leqslant i \leqslant n\) 。显然 \(\sigma \mapsto \varphi_{\sigma}\) 是从 \(\mathfrak{S}_n\) 到 \(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 的自同构群中的同态。我们记 \(\sigma f = \varphi_{\sigma}(f)\) ，其中 \(\sigma \in \mathfrak{S}_n\) ， \(f \in \mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 。多项式 \(f\) 称为对称的，如果 \(\sigma f = f\) 对所有 \(\sigma \in \mathfrak{S}_n\) 成立；对称多项式构成 \(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 的一个含单位元的分次子代数；在本段其余部分，我们将其记为 \(\mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]^{\text{sym}}\) 。
+
+对每个正整数 \(k\) ，我们用 \(\mathfrak{P}_k\) 表示由 \(k\) 元子集组成的、集合 \(\{1, 2, \ldots, n\}\) 的子集族，并令
+
+\[
+s _ {k} = \sum_ {\mathrm{H} \in \mathfrak {P} _ {k}} \prod_ {i \in \mathrm{H}} X _ {i}.\tag{1}
+\]
+
+当我们要指明整数 \(n\) 时，我们将用 \(s_{k,n}\) 代替 \(s_k\) 来记。特别地，我们有
+
+\[
+\begin{array}{l} s _ {0} = 1 \\ s _ {1} = \sum_ {1 \leqslant i \leqslant n} X _ {i} \\ s _ {2} = \sum_ {1 \leqslant i <   j \leqslant n} X _ {i} X _ {j} \\ \dots \dots \\ s _ {n} = X _ {1} \dots X _ {n} \end{array}
+\]
+
+且 \(s_k = 0\) 对 \(k > n\) 成立。显然 \(s_k\) 是 \(k\) 次齐次对称多项式；我们称其为 \(k\) 次初等对称多项式。
+
+在环 \(\mathbf{A}[\mathbf{X}_1,\dots ,\mathbf{X}_n,\mathbf{U},\mathbf{V}]\) 中有关系式
+
+\[
+\prod_ {i = 1} ^ {n} \left(\mathrm{U} + \mathrm{VX} _ {i}\right) = \sum_ {k = 0} ^ {n} \mathrm{U} ^ {n - k} \mathrm{V} ^ {k} s _ {k};\tag{2}
+\]
+
+通过适当的代入，我们导出关系式
+
+\[
+\prod_ {i = 1} ^ {n} \left(1 + \mathrm{TX} _ {i}\right) = \sum_ {k = 0} ^ {n} s _ {k} \mathrm{T} ^ {k},\tag{3}
+\]
+
+\[
+\prod_ {i = 1} ^ {n} \left(\mathbf {X} - \mathbf {X} _ {i}\right) = \sum_ {k = 0} ^ {n} (- 1) ^ {n - k} s _ {n - k} \mathbf {X} ^ {k}.\tag{4}
+\]
+
+定理1. --- 设 \(E = A{[}X_{1}, \ldots, X_{n}{]}\) ， \(S = A{[}X_{1}, \ldots, X_{n}{]}^{\text{sym}}\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对称多项式构成的 A-代数 S 由 \(s_1, \ldots, s_n\) 生成。
+\item
+  元素 \(s_1, \ldots, s_n\) （属于 \(\mathbf{E}\) ）在 \(\mathbf{A}\) 上代数无关（IV，第4页）。
+\item
+  单项式族 \(\mathbf{X}^{\nu} = \mathbf{X}_1^{\nu(1)} \ldots \mathbf{X}_n^{\nu(n)}\) （其中 \(0 \leqslant \nu(i) < i\) ， \(1 \leqslant i \leqslant n\) ）是 S-模 \(\mathbf{E}\) 的一组基。特别地， \(\mathbf{E}\) 是秩为 \(n!\) 的自由模。
+\end{enumerate}
+
+我们对 \(n\) 用归纳法来证明该定理，情形 \(n = 0\) 是平凡的。记 \(\mathbf{B} = \mathbf{A}[\mathbf{X}_n]\) ，并用 \(s_k'\) 表示 \(k\) 次的、关于 \(\mathbf{X}_1, \ldots, \mathbf{X}_{n-1}\) 的初等对称多项式；于是我们有 \(\mathbf{B}[\mathbf{X}_1, \ldots, \mathbf{X}_{n-1}] = \mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 。如果在定理1的陈述中把 \(n\) 换成 \(n-1\) ，把 \(\mathbf{A}\) 换成 \(\mathbf{B}\) ，则归纳假设可表述如下：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\item
+  B-代数 \(S'\) （即由多项式 \(f \in A[X_1, \ldots, X_n]\) 中在 \(X_1, \ldots, X_{n-1}\) 的所有置换下不变者组成）由 \(s_1', \ldots, s_{n-1}'\) 生成。
+\item
+  元素 \(s_1', \ldots, s_{n-1}'\) （属于 \(E\) ）在 \(B\) 上代数无关。
+\item
+  单项式族 \(\mathbf{X}_{1}^{\nu(1)}\ldots\mathbf{X}_{n-1}^{\nu(n-1)}\) （其中 \(0\leqslant\nu(i)<i\) ， \(1\leqslant i\leqslant n-1\) ）是 S'-模 E 的一组基。
+\end{enumerate}
+
+我们有显然的关系
+
+\[
+s _ {k} = s _ {k} ^ {\prime} + s _ {k - 1} ^ {\prime} \mathbf {X} _ {n} \quad (1 \leqslant k \leqslant n - 1),\tag{5}
+\]
+
+由此，对 \(k\) 用归纳法得到
+
+\[
+s _ {k} ^ {\prime} = (- 1) ^ {k} \mathbf {X} _ {n} ^ {k} + \sum_ {i = 1} ^ {k} (- 1) ^ {k - i} s _ {i} \mathbf {X} _ {n} ^ {k - i} \quad (1 \leqslant k \leqslant n - 1).\tag{6}
+\]
+
+我们有 \(\mathbf{S} \subset \mathbf{S}'\) ，因此 \(s_1, \ldots, s_n\) 属于 \(\mathbf{S}'\) ；由(A)和公式(6)，B-代数 \(\mathbf{S}'\) 由 \(s_1, \ldots, s_{n-1}\) 生成。
+
+由(B)，存在一个自同态 \(u\) ，它定义在 B-代数 \(S'\) 上，使得
+
+\[
+u \left(s _ {k} ^ {\prime}\right) = (- 1) ^ {k} X _ {n} ^ {k} + \sum_ {i = 1} ^ {k} (- 1) ^ {k - i} s _ {i} ^ {\prime} X _ {n} ^ {k - i} \quad (1 \leqslant k \leqslant n - 1).\tag{7}
+\]
+
+根据(5)，我们有 \(u(s_k) = u(s_k') + u(s_{k-1}') \mathbf{X}_n\) ，经简单计算即得 \(u(s_k) = s_k'\) 。设 \(\mathbf{P} \in \mathbf{B}[\mathbf{Y}_1, \ldots, \mathbf{Y}_{n-1}]\) ；于是从 \(\mathbf{P}(s_1, \ldots, s_{n-1}) = 0\) 可推出
+
+\[
+0 = u \left(\mathrm{P} \left(s _ {1}, \dots , s _ {n - 1}\right)\right) = \mathrm{P} \left(s _ {1} ^ {\prime}, \dots , s _ {n - 1} ^ {\prime}\right),
+\]
+
+因此由(B)得 P = 0。由此可知，B-代数 \(S'\) 由代数无关的元素 \(s_{1}, \ldots, s_{n-1}\) 生成。这一性质可以重新表述如下：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  A-代数 \(S'\) 由代数无关的元素 \(s_1, \ldots, s_{n-1}, X_n\) 生成。
+\end{enumerate}
+
+因此我们可以把 \(S'\) 与多项式环 \(C[X_n]\) 等同起来，其中 \(C\) 是 \(E\) 的、由 \(s_1, \ldots, s_{n-1}\) 生成的子 A-代数。
+
+为证明 a)，设 \(f \in S\) 是 \(m\) 次齐次对称多项式。我们有 \(f \in S' = C[X_n]\) ，因此存在一个元素 \(g = P(s_1, \ldots, s_{n-1})\) （属于 \(C\) ），它是 \(m\) 次齐次的（关于 \(X_1, \ldots, X_n\) ），使得 \(f - g\) 可被 \(X_n\) 整除。由于 \(f - g\) 是对称的，它的每一项也可被 \(X_1, \ldots, X_{n-1}\) 整除，因此 \(f - g\) 可被 \(s_n = X_1 \ldots X_n\) 整除。换言之，存在 \(h \in S\) 使得 \(f = g + hs_n\) ，从而 \(\deg h < m\) 。通过对 \(m\) 作归纳即得 \(f\) 属于
+
+\[
+\mathbf {C} \left[ s _ {n} \right] _ {\mathrm{E}} = \mathbf {A} \left[ s _ {1}, \dots , s _ {n - 1}, s _ {n} \right] _ {\mathrm{E}}.
+\]
+
+这样我们已证明 A-代数 S 由元素 \(s_{1}, \ldots, s_{n}\) 生成。
+
+接下来我们证明 \(b\) ). 若在(4)中以 \(\mathbf{X}_n\) 代替 \(\mathbf{X}\) ，我们得到
+
+\[
+(- 1) ^ {n + 1} s _ {n} = \mathrm{X} _ {n} ^ {n} + \sum_ {k = 1} ^ {n - 1} (- 1) ^ {n - k} s _ {n - k} \mathrm{X} _ {n} ^ {k};
+\]
+
+换言之， \((-1)^{n + 1}s_n\) 是 \(X_{n}\) 的一个次数为 \(n\) 、系数在 C 中的首一多项式。由IV，第11页，我们于是有以下性质：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  C-代数同态 \(\varphi\) ：从 C{[}T{]} 到 C{[}X \(_n\) {]} = S'，它把 T 映到 \(s_n\) ，是单射，且 S' 是 \(\varphi\) 的像上的自由模，以 (1, X \(_n\) , \ldots, X \(_n^{n-1}\) ) 为基。
+\end{enumerate}
+
+元素 \(s_{1}, \ldots, s_{n-1}\) 在 A 上代数无关，由 (D) 可知；因此 \(\varphi\) 的单射性意味着 \(s_{1}, \ldots, s_{n-1}, s_{n}\) 在 A 上代数无关，从而得出 b)。
+
+为证明 c)， \(\varphi\) 的像等于 \(C[s_{n}]_{E} = S\) ，因此由 (E) 可知， \(S'\) 是 S 上以 \((1, X_{n}, ..., X_{n}^{n-1})\) 为基的自由模。现在结论 c) 由归纳假设 (C) 及 II 第 222 页命题 25 得出。证明完毕。
+
+设 \(f\) 是 \(\mathbf{X}_1, \ldots, \mathbf{X}_n\) 中的 \(m\) 次齐次对称多项式。由定理 1（IV，第 62 页），存在多项式 \(\mathbf{Q} \in \mathbf{A}[\mathbf{Y}_1, \ldots, \mathbf{Y}_n]\) 使得 \(f = \mathbf{Q}(s_1, \ldots, s_n)\) 。前面的证明提供了一种显式计算 \(\mathbf{Q}\) 的方法，即对 \(n\) 与 \(m\) 作双重归纳。因为正如我们所见，存在多项式 \(\mathbf{P} \in \mathbf{A}[\mathbf{Y}_1, \ldots, \mathbf{Y}_{n-1}]\) 以及多项式 \(h\) ，它关于 \(\mathbf{X}_1, \ldots, \mathbf{X}_n\) 对称且为 \(m - n\) 次齐次，使得
+
+\[
+f = \mathrm{P} (s _ {1}, \dots , s _ {n - 1}) + s _ {n} h.\tag{8}
+\]
+
+对于每个多项式 \(u \in \mathbf{A}[\mathbf{X}_1, \ldots, \mathbf{X}_n]\) 我们令
+
+\[
+u ^ {\prime} \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {n - 1}\right) = u \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {n - 1}, 0\right).
+\]
+
+则 \(s_1', \ldots, s_{n-1}'\) 是 \(X_1, \ldots, X_{n-1}\) 中的初等对称多项式，且公式(8)蕴含
+
+\[
+f ^ {\prime} = \mathrm{P} \left(s _ {1} ^ {\prime}, \dots , s _ {n - 1} ^ {\prime}\right).
+\]
+
+因此，P的确定归结为对n - 1个未定元中的对称多项式的计算，而h由(8)得到。
+
+我们通过两个例子来说明该方法。
+
+例。--- 1) 设 \(n = 3\) ，且
+
+\[
+f = \mathbf {X} _ {1} ^ {2} (\mathbf {X} _ {2} + \mathbf {X} _ {3}) + \mathbf {X} _ {2} ^ {2} (\mathbf {X} _ {3} + \mathbf {X} _ {1}) + \mathbf {X} _ {3} ^ {2} (\mathbf {X} _ {1} + \mathbf {X} _ {2}).
+\]
+
+我们有
+
+\[
+f ^ {\prime} = \mathbf {X} _ {1} ^ {2} \mathbf {X} _ {2} + \mathbf {X} _ {1} \mathbf {X} _ {2} ^ {2} = \mathbf {X} _ {1} \mathbf {X} _ {2} (\mathbf {X} _ {1} + \mathbf {X} _ {2}) = s _ {1} ^ {\prime} s _ {2} ^ {\prime}.
+\]
+
+我们写 \(g = f - s_1s_2\) ；我们有
+
+\[
+\boldsymbol {g} = f - \left(\mathbf {X} _ {1} + \mathbf {X} _ {2} + \mathbf {X} _ {3}\right) \left(\mathbf {X} _ {1} \mathbf {X} _ {2} + \mathbf {X} _ {1} \mathbf {X} _ {3} + \mathbf {X} _ {2} \mathbf {X} _ {3}\right) = - 3 \mathbf {X} _ {1} \mathbf {X} _ {2} \mathbf {X} _ {3},
+\]
+
+因此最终
+
+\[
+f = s _ {1} s _ {2} - 3 s _ {3}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  再次令 \(n = 3\) 并设 \(p = \mathbf{X}_1^3 + \mathbf{X}_2^3 + \mathbf{X}_3^3\) .
+\end{enumerate}
+
+我们有 \(p(\mathbf{X}_1, 0, 0) = \mathbf{X}_1^3 = s_1(\mathbf{X}_1, 0, 0)^3\) . 写出 \(q = p - s_1^3\) ，我们得到
+
+\[
+q = - 3 f - 6 \mathrm{X} _ {1} \mathrm{X} _ {2} \mathrm{X} _ {3} = - 3 s _ {1} s _ {2} + 3 s _ {3}
+\]
+
+并且最终
+
+\[
+p = s _ {1} ^ {3} - 3 s _ {1} s _ {2} + 3 s _ {3}.
+\]
+
+设 \(S_1, \ldots, S_n\) 为不定元。我们将给多项式代数 \(A[S_1, \ldots, S_n]\) 配备 N 型分次，其中 \(S_k\) 的权为 k （ \(1 \leqslant k \leqslant n\) ）（IV，第3页），并给 \(A[X_1, \ldots, X_n]\) 配备通常的分次。对 \(1 \leqslant k \leqslant n\) ，初等对称多项式 \(s_{k,n}\) （在 \(X_1, \ldots, X_n\) 中）是 k 次齐次的。根据定理1（IV，第62页），映射 \(g \mapsto g(s_{1,n}, \ldots, s_{n,n})\) 因而是分次代数的同构
+
+\[
+\varphi_ {n}: \mathrm{A} [ \mathrm{S} _ {1}, \dots , \mathrm{S} _ {n} ] \rightarrow \mathrm{A} [ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {n} ] ^ {\text { sym }}.
+\]
+
+设 \(m\) 为一个满足以下条件的整数 \(0 \leqslant m \leqslant n\) 。对于每个整数 \(k\) 使得 \(1 \leqslant k \leqslant m\) 我们有
+
+\[
+s _ {k, m} (\mathbf {X} _ {1}, \dots , \mathbf {X} _ {m}) = s _ {k, n} (\mathbf {X} _ {1}, \dots , \mathbf {X} _ {m}, 0, \dots , 0)\tag{9}
+\]
+
+这由 \(s_k\) 的定义（IV，第61页，公式（1））得出。因此图表
+
+\[
+\begin{array}{c} \mathrm{A} [ \mathrm{S} _ {1}, \dots , \mathrm{S} _ {m} ] \xrightarrow {j} \mathrm{A} [ \mathrm{S} _ {1}, \dots , \mathrm{S} _ {n} ] \\ \varphi_ {m} \Bigg | _ {\downarrow} \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \varphi_ {n} \\ \mathrm{A} [ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {m} ] ^ {\text { sym }} \xleftarrow {\rho} \mathrm{A} [ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {n} ] ^ {\text { sym }} \end{array}\tag{10}
+\]
+
+（其中 \(j\) 表示典范包含， \(\rho\) 表示同态
+
+\[
+g \mapsto g \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {m}, 0, \dots , 0\right))
+\]
+
+是交换的。
+
+命题1. --- 对每一对正整数 \(k\) , \(n\) ，令 \(\mathbf{S}_{k}^{(n)}\) 为由 \(\mathbf{X}_{1},\ldots,\mathbf{X}_{n}\) 中所有 \(k\) 次齐次对称多项式组成的 A-模。若整数 \(m\) 满足 \(0\leqslant k\leqslant m\leqslant n\) ，则映射 \(f\mapsto f(\mathbf{X}_{1},\ldots,\mathbf{X}_{m},0,\ldots,0)\) 是 \(\mathbf{S}_{k}^{(n)}\) 到 \(\mathbf{S}_{k}^{(m)}\) 上的同构。
+
+由图表（10）的交换性可知，只需证明权为 k 的、 \(S_{1}, \ldots, S_{n}\) 中的每个等权多项式仅依赖于 \(S_{1}, \ldots, S_{m}\) ，这里假设 \(0 \leqslant k \leqslant m \leqslant n\) 。现在，单项式 \(\mathrm{S}_{1}^{\alpha(1)} \ldots \mathrm{S}_{n}^{\alpha(n)}\) 的权等于整数 \(\alpha(1) + 2\alpha(2) + \cdots + n\alpha(n)\) ；由于整数 \(\alpha(1), \ldots, \alpha(n)\) 为正，关系
+
+\[
+\alpha (1) + 2 \alpha (2) + \dots + n \alpha (n) = k \leqslant n
+\]
+
+蕴含 \(\alpha(j) = 0\) 对 \(k < j \leqslant n\) 成立，由此得结论。
+
+例3.--- 由IV第64页例2及上述命题1，我们有
+
+\[
+\sum_ {i = 1} ^ {n} X _ {i} ^ {3} = s _ {1, n} ^ {3} - 3 s _ {1, n} s _ {2, n} + 3 s _ {3, n}
+\]
+
+对于每个整数 \(n \geqslant 3\) 。图(10)的交换性还给出公式
+
+\[
+\begin{array}{c} \mathbf {X} _ {1} ^ {3} + \mathbf {X} _ {2} ^ {3} = s _ {1, 2} ^ {3} - 3 s _ {1, 2} s _ {2, 2}, \\ \mathbf {X} _ {1} ^ {3} = s _ {1, 1} ^ {3}. \end{array}
+\]
+
+注：--- 设 n 和 k 是两个正整数。我们用 \(\Delta_{k,n}\) 表示 \(N^{n}\) 中长度为 k 的元素组成的集合，并进一步给 \(\Delta_{k,n}\) 配备序关系，记作 \(\alpha \preccurlyeq \beta\) ，它由 \(N^{n}\) 上的字典序（集合论，III，第157页）诱导，并定义群 \(S_{n}\) 在 \(N^{n}\) 上的作用： \((\sigma\alpha)(i) = \alpha(\sigma^{-1}(i))\) ，其中 \(\sigma \in S_{n}\) , \(\alpha \in N^{n}\) ， \(1 \leqslant i \leqslant n\) 。此外，我们用 \(D_{k}\) 表示满足下述条件的元素 \(\alpha = (\alpha(1), \ldots, \alpha(k))\) （属于 \(N^{k}\) ）组成的集合：
+
+\[
+\alpha (1) \geqslant \alpha (2) \geqslant \dots \geqslant \alpha (k), \quad \alpha (1) + \dots + \alpha (k) = k.
+\]
+
+假设 \(k \leqslant n\) ，并将 \(\mathbf{N}^k\) 与 \(\mathbf{N}^n\) 的一个子集经由映射 \((\alpha(1), \ldots, \alpha(k)) \mapsto (\alpha(1), \ldots, \alpha(k), 0, \ldots, 0)\) 等同起来。则 \(D_k\) 由元素 \(\alpha\) （属于 \(\Delta_{k,n}\) ）组成，使得 \(\sigma \alpha \preccurlyeq \alpha\) 对所有 \(\sigma \in \mathfrak{S}_n\) 成立。由此可知，群 \(\mathfrak{S}_n\) 在 \(\Delta_{k,n}\) 中的每个轨道都包含 \(D_k\) 的唯一一个元素。对每个 \(\alpha \in D_k\) ，令 \(O(\alpha)\) 为 \(\alpha\) 在 \(\Delta_{k,n}\) 中在 \(\mathfrak{S}_n\) 作用下的轨道；令
+
+\[
+\mathbf {M} (\alpha) = \sum_ {\beta \in O (\alpha)} \mathbf {X} ^ {\beta}.\tag{11}
+\]
+
+由IV第47页引理1可知，族 \((\mathbf{M}(\alpha))_{\alpha \in \mathrm{D}_k}\) 是 A-模 \(\mathbf{S}_k^{(n)}\) 的一组基。
+
+对每个 \(\alpha \in D_k\) ，令
+
+\[
+\mathrm{S} (\alpha) = \prod_ {i = 1} ^ {k} s _ {i} ^ {\alpha (i) - \alpha (i + 1)} \quad (\text { where   it   is   understood   that } \alpha (k + 1) = 0);\tag{12}
+\]
+
+由于我们有 \(\sum_{i=1}^{k} i \cdot (\alpha(i) - \alpha(i+1)) = \sum_{i=1}^{k} \alpha(i) = k\) ，对称多项式 \(S(\alpha)\) 是 \(k\) 次齐次的。由定理1（IV，第62页）直接可得，族 \((S(\alpha))_{\alpha \in D_k}\) 是 A-模 \(S_k^{(n)}\) 的一组基。
+
+设 \(\alpha, \beta\) 属于 \(D_k\) ，并设 \(c_{\alpha\beta}\) 为单项式 \(X^\beta\) 在多项式 \(S(\alpha)\) （在情形 \(A = Z\) 且 \(k = n\) 下由(12)定义）中的系数。它是一个正整数，与环 \(A\) 及整数 \(n\) 无关。由公式(9)（IV，第64页），我们有
+
+\[
+\mathrm{S} (\alpha) = \sum_ {\beta \in \mathrm{D} _ {k}} c _ {\alpha \beta} \cdot \mathrm{M} (\beta) \quad (\alpha \in \mathrm{D} _ {k}).\tag{13}
+\]
+
+可以证明（参见IV，第101页，练习13），矩阵 \(\mathbf{C} = (c_{\alpha \beta})_{\alpha, \beta \in D_k}\) 满足 \(c_{\alpha \alpha} = 1\) ，且 \(c_{\alpha \beta} = 0\) （对 \(\alpha < \beta\) ）；推广II，第351页中引入的术语，我们称 \(\mathbf{C}\) 属于下全三角群。矩阵 \(\mathbf{D}\) （ \(\mathbf{C}\) 的逆矩阵）也是如此。矩阵 \(\mathbf{C}\) 与 \(\mathbf{D}\) 当 \(2 \leqslant k \leqslant 5\) 时的值列于表（IV，第103-105页）中。
+
+现在假设 \(n < k\) ，并将 \(\mathbf{N}^n\) 与 \(\mathbf{N}^k\) 的一个子集通过映射 \((\alpha(1), \ldots, \alpha(n)) \mapsto (\alpha(1), \ldots, \alpha(n), 0, \ldots, 0)\) 等同起来。对每个 \(\alpha\) （在 \(D_k \cap N^n\) 中），我们再次用 \(O(\alpha)\) 表示 \(\alpha\) 在 \(\Delta_{k,n}\) 中在 \(\mathfrak{S}_n\) 作用下的轨道，并按（11）定义 \(M(\alpha)\) 。进一步，我们按（12）定义 \(S(\alpha)\) ，则族 \((M(\alpha))_{\alpha \in D_k \cap N^n}\) 与 \((S(\alpha))_{\alpha \in D_k \cap N^n}\) 是 A-模 \(S_k^{(n)}\) 的基。根据 IV 第64页的公式（9），我们有一个与（13）类似的公式，其中 \(D_k\) 被换成 \(D_k \cap N^n\) ，且具有相同的整数 \(c_{\alpha\beta}\) 。
+
+例4. --- 根据 IV 第65页的例3，我们有
+
+\[
+\mathbf {M} (3, 0, 0) = \mathbf {S} (3, 0, 0) - 3 \mathbf {S} (2, 1, 0) + 3 \mathbf {S} (1, 1, 1)
+\]
+
+对每个整数 \(n \geqslant 3\) 成立，并且
+
+\[
+\mathbf {M} (3, 0) = \mathbf {S} (3, 0) - 3 \mathbf {S} (2, 1)
+\]
+
+对于 n = 2。
+

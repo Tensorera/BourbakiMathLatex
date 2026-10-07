@@ -1,0 +1,222 @@
+\subsection{Euclid Fourier 变换与 Fourier 级数}
+
+* 设 \(n \in \mathbf{N}\)。我们按 II，第 236 页推论 3 把 \(\mathbf{R}^n\) 与其对偶等同。Lebesgue 测度的对偶测度这时仍是 Lebesgue 测度。我们给 \(\mathbf{R}^n\) 赋以 Euclid 范数。对每个多重指标 \(\alpha \in \mathbf{N}^n\) 及每个 \(x = (x_1, \ldots, x_n) \in \mathbf{R}^n\)，我们记 \(x^\alpha = x_1^{\alpha_1} \cdots x_n^{\alpha_n}\)，并用 \(\mathrm{X}^\alpha\) 表示函数 \(x \mapsto x^\alpha\)（在 \(\mathbf{R}^n\) 上）。
+
+设 \(m \in R^{m}\)。从 \(R^{m}\) 到 \(R^{n}\) 中的每个连续交换群同态都是一个线性映射 \(\sigma \in \mathcal{L}(\mathbf{R}^{n}, \mathbf{R}^{m})\)（TG，VII，第 11 页，命题 1）。对偶同态 \(\widehat{\sigma}\) 与线性映射 \(^{t}\sigma\) 等同。
+
+在 Schwartz 函数空间及其对偶（IV，待出版）的框架下，\(\mathbf{R}^n\) 中的 Fourier 变换具有特别方便的形式。我们在此概述其主要结果。
+
+设 \(\mathcal{S}(\mathbf{R}^{n})\) 是函数 \(\varphi\)（在 \(\mathbf{R}^{n}\) 上取复值的无穷次可微函数）所成的空间，使得对每个多重指标 \(\alpha\in\mathbf{N}^{n}\) 及每个整数 \(k\in\mathbf{N}\)，函数
+
+\[
+x \mapsto \| x \| ^ {k} \partial^ {\alpha} \varphi (x)
+\]
+
+在 \(\mathbf{R}^{n}\) 上是有界的。我们给 \(\mathcal{S}(\mathbf{R}^{n})\) 赋以由半范数
+
+\[
+p _ {k, \alpha} \colon \varphi \mapsto \sup _ {x \in \mathbf {R} ^ {n}} \| x \| ^ {k} | \partial^ {\alpha} \varphi (x) |.
+\]
+
+所定义的局部凸拓扑。我们称 \(\mathcal{S}(\mathbf{R}^{n})\) 为 \(\mathbf{R}^{n}\) 上的 Schwartz 函数空间。
+
+对每个 \(\alpha \in \mathbf{N}^n\)，映射 \(\varphi \mapsto \partial^\alpha \varphi\) 与 \(\varphi \mapsto \mathrm{X}^\alpha \varphi\) 都从 \(\mathcal{S}(\mathbf{R}^n)\) 到其自身连续。空间 \(\mathcal{S}(\mathbf{R}^n)\) 是一个拓扑代数；它是 Fréchet 空间，也是 Montel 空间（EVT，IV，第 18 页，定义 4）。对每个 \(p \in [1, +\infty]\)，空间 \(\mathcal{S}(\mathbf{R}^n)\) 含于 \(\mathcal{L}^p (\mathbf{R}^n)\)，且 \(\mathcal{S}(\mathbf{R}^n)\) 到 \(\mathcal{L}^p (\mathbf{R}^n)\) 中的典范单射是连续的。\(\mathcal{S}(\mathbf{R}^n)\) 在 \(\mathrm{L}^p (\mathbf{R}^n)\) 中的像当 \(p \neq +\infty\) 时是稠密的。
+
+由于每个 Schwartz 函数 \(\varphi\) 都在 \(\mathbf{R}^n\) 上可积，它有 Fourier 变换，记作 \(\widehat{\varphi}\)，后者等同于 \(\mathbf{R}^n\) 上由
+
+\[
+y \mapsto \int_ {\mathbf {R} ^ {n}} \varphi (x) \exp (- 2 i \pi x \cdot y) d x.
+\]
+
+所定义的连续函数。\(\varphi\) 的 Fourier 余变换则等同于由
+
+\[
+y \mapsto \int_ {\mathbf {R} ^ {n}} \varphi (x) \exp (2 i \pi x \cdot y) d x.
+\]
+
+所定义的连续函数。设 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\)。设 \(\alpha\in\mathbf{N}^{n}\) 是一个多重指标。我们有
+
+\[
+\mathcal {F} (\partial^ {\alpha} \varphi) = (2 i \pi) ^ {| \alpha |} \mathrm{X} ^ {\alpha} \mathcal {F} (\varphi),
+\]
+
+\[
+\mathcal {F} (\mathrm{X} ^ {\alpha} \varphi) = (- 2 i \pi) ^ {- | \alpha |} \partial^ {\alpha} (\mathcal {F} (\varphi)).
+\]
+
+命题 21.　Fourier 变换在 \(\mathcal{S}(\mathbf{R}^{n})\) 上的限制是拓扑向量空间的一个自同构，其逆是 Fourier 余变换的限制。
+
+设 \(\Lambda \subset \mathbf{R}^n\) 是一个格（TG，VII，第 4 页），并设 \(\Lambda^{*} \subset \mathbf{R}^{n}\) 是相伴的格（TG，VII，第 6 页），有时也称对偶格。
+
+我们把 \(\mathbf{R}^n/\Lambda\) 关于由 \(\mathbf{R}^n\) 上 Lebesgue 测度所诱导的 Haar 测度的测度称为格 \(\Lambda\) 的余体积，记作 \(V(\Lambda)\)（参看 INT，VIII，§5，第 5 节，例）。对每个函数 \(f \in \mathcal{S}(\mathbf{R}^n)\) 及每个 \(y \in \mathbf{R}^n\)，我们有 Poisson 公式
+
+\[
+\sum_ {x \in \Lambda} f (x + y) = \frac {1}{\mathrm{V} (\Lambda)} \sum_ {z \in \Lambda^ {*}} \widehat {f} (z) \exp (2 i \pi y \cdot z).
+\]
+
+注.　1) 更一般地，由 II，第 230 页命题 15 的推论，该公式对 \(\mathbf{R}^n\) 上任何满足如下条件的可积复值函数成立：
+
+\[
+\sum_ {x \in \Lambda} | f (x + y) | <   + \infty ,
+\]
+
+对所有 \(y \in R^{n}\) 成立，且 \(T^{n}\) 上由
+
+\[
+y \mapsto \sum_ {x \in \Lambda} f (x + y)
+\]
+
+定义的函数是连续的，并有绝对收敛的 Fourier 级数（参看下文）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  存在函数 \(f \in \mathrm{B}(\mathbf{R})\)，使得级数 \(\sum_{n \in \mathbf{Z}} f(n)\) 发散（II，第 263 页，习题 4）。
+\end{enumerate}
+
+例.　设 Q 是 \(R^{n}\) 上一个正定二次型。由 \(\varphi(x)=\exp(-\pi\mathrm{Q}(x))\) 定义的函数属于 \(\mathcal{S}(\mathbf{R}^{n})\)。存在 \(\sigma\in\mathrm{GL}(n,\mathbf{R})\)，使得 \(\mathrm{Q}(x)=\|\sigma(x)\|^{2}\) 对所有 \(x\in R^{n}\) 成立。\(\varphi\) 的 Fourier 变换由下式给出：对所有 \(y\in R^{n}\)，
+
+\[
+\widehat {\varphi} (y) = \frac {1}{| \det (\sigma) |} \exp (- \pi \mathrm{Q} ^ {*} (y))
+\]
+
+其中 \(\mathrm{Q}^{*}(y)=\|^{t}\sigma^{-1}(y)\|^{2}\)（参看 INT，IX，§6，第 4–5 节及 II，第 262 页，习题 1, c)）。
+
+定义 6.　我们把 \(\mathbf{R}^{n}\) 上的缓增分布空间称为赋有有界收敛拓扑的 \(\mathcal{S}(\mathbf{R}^{n})\) 的对偶空间，记作 \(\mathcal{S}'(\mathbf{R}^{n})\)。
+
+由于 \(\mathcal{S}(\mathbf{R}^n)\) 是有型空间，空间 \(\mathcal{S}'(\mathbf{R}^n)\) 是完备的且有型的（EVT，III，第 24 页，推论 1 与 2）。由于 \(\mathcal{S}(\mathbf{R}^n)\) 是 Montel 空间，\(\mathcal{S}'(\mathbf{R}^n)\) 也是（EVT，IV，第 19 页，命题 9）。
+
+设 \(\alpha\in\mathbf{N}^{n}\)。我们仍用 \(f\mapsto\mathrm{X}^{\alpha}f\) 表示自同态 \(\varphi\mapsto\mathrm{X}^{\alpha}\varphi\)（\(\mathcal{S}(\mathbf{R}^{n})\) 的自同态）的转置，并用 \(f\mapsto\partial^{\alpha}f\) 表示 \(\mathcal{S}'(\mathbf{R}^{n})\) 的由
+
+\[
+\langle \partial^ {\alpha} f, \varphi \rangle = (- 1) ^ {| \alpha |} \langle f, \partial^ {\alpha} \varphi \rangle
+\]
+
+（对 \(f\in \mathcal{S}'(\mathbf{R}^n)\) 与 \(\varphi \in \mathcal{S}(\mathbf{R}^n)\)）所定义的自同态。
+
+设 \(f\) 是从 \(\mathcal{S}(\mathbf{R}^{n})\) 到 \(\mathbf{C}\) 中的一个线性映射。则 \(f\) 是缓增分布，当且仅当对每个族 \((\mathrm{M}_{k,\alpha})_{(k,\alpha)\in\mathbf{N}\times\mathbf{N}^{n}}\)（取值于 \(\mathbf{R}_{+}\)），线性形式 \(f\) 在由函数 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\)（它们对所有 \((k,\alpha)\in\mathbf{N}\times\mathbf{N}^{n}\) 满足 \(p_{k,\alpha}(\varphi)\leqslant\mathrm{M}_{k,\alpha}\)）所成的集合上是有界的。
+
+缓增分布的序列 \((f_{m})_{m\in\mathbf{N}}\) 收敛于缓增分布 f，当且仅当 \(\langle f_{m},\varphi\rangle\to\langle f,\varphi\rangle\) 对所有 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) 成立。
+
+例.　测度 \(\nu\)（在 \(\mathbf{R}^n\) 上）称为缓增的，如果存在一个正整数 \(r\)，使连续映射 \(x \mapsto (1 + \|x\|)^{-r}\) 是 \(\nu\)-可积的（在 \(\mathbf{R}^n\) 上）。\(\nu\) 在 \(\mathcal{S}(\mathbf{R}^n)\) 上的限制是一个缓增分布。它为零当且仅当测度 \(\nu\) 为零。
+
+设 \(p \in [1, +\infty]\) 且 \(f \in \mathcal{L}^{p}(\mathbf{R}^{n})\)。则以 f 为密度关于 Lebesgue 测度的测度 \(f \cdot dx\) 是缓增的。特别地，Lebesgue 测度 \(\mu\)（在 \(R^{n}\) 上）是缓增的，且 \(R^{n}\) 上每个有界测度都是缓增的。
+
+对每个 \(p \in [1, +\infty]\)，可把 \(\mathrm{L}^{p}(\mathbf{R}^{n})\) 与 \(\mathcal{S}'(\mathbf{R}^{n})\) 的一个子空间借助线性映射 \(f \mapsto f \cdot dx\) 等同；这个映射是连续的。
+
+定义 7.　我们把 \(\mathcal{S}(\mathbf{R}^n)\) 上 Fourier 变换（相应地，Fourier 余变换）的转置称为 \(\mathcal{S}'(\mathbf{R}^n)\) 上的 Fourier 变换（相应地，Fourier 余变换），并分别记作 \(\mathcal{F}\) 与 \(\overline{\mathcal{F}}\)。
+
+对 \(f \in \mathcal{S}'(\mathbf{R}^n)\)，缓增分布 \(\mathcal{F}(f)\)（相应地，\(\overline{\mathcal{F}}(f)\)）由 \(\varphi \mapsto \langle f, \mathcal{F}(\varphi) \rangle\)（对 \(\varphi \in \mathcal{S}(\mathbf{R}^n)\)）定义（相应地，由 \(\varphi \mapsto \langle f, \overline{\mathcal{F}}(\varphi) \rangle\) 定义）。
+
+\(\mathcal{S}'(\mathbf{R}^n)\) 上的 Fourier 变换是拓扑向量空间的一个自同构，其逆是 Fourier 余变换 \(\overline{\mathcal{F}}\)。
+
+命题 22.　设 f 是属于 \(\mathcal{M}^{1}(\mathbf{R}^{n})\)（相应地，属于 \(\mathrm{L}^{2}(\mathbf{R}^{n})\)）的一个缓增分布。\(f\) 在 \(\mathcal{S}'(\mathbf{R}^{n})\) 中的 Fourier 变换是与 f 在 \(\mathcal{C}_{0}(\mathbf{R}^{n})\)（相应地，在 \(L^{2}(\mathbf{R}^{n})\)）中的 Fourier 变换相伴的缓增分布。对 Fourier 余变换同样的结论成立。
+
+注.　关于测度的 Fourier 变换的初等公式对缓增分布的 Fourier 变换仍然有效。
+
+于是，若 \(\alpha \in \mathbf{N}^n\) 且 \(f\in \mathcal{S}'(\mathbf{R}^n)\)，则有
+
+\[
+\mathcal {F} (\partial^ {\alpha} f) = (2 i \pi) ^ {| \alpha |} X ^ {\alpha} \mathcal {F} (f),
+\]
+
+\[
+\mathcal {F} (X ^ {\alpha} f) = (- 2 i \pi) ^ {- | \alpha |} \partial^ {\alpha} (\mathcal {F} (f)).
+\]
+
+设 \(y \in \mathbf{R}^n\)。用 \(\gamma(y)\) 表示 \(\mathcal{S}'(\mathbf{R}^n)\) 的由
+
+\[
+\langle \boldsymbol {\gamma} (y) f, \varphi \rangle = \langle f, \boldsymbol {\gamma} (- y) \varphi \rangle
+\]
+
+（对 \(f \in \mathcal{S}'(\mathbf{R}^n)\) 与 \(\varphi \in \mathcal{S}(\mathbf{R}^n)\)）所定义的自同态。用 \(e_y\) 表示 \(\mathbf{R}^n\) 的满足 \(e_y(x) = \exp(2i\pi x \cdot y)\) 的特征标。则 \(e_y \in \mathcal{S}'(\mathbf{R}^n)\)。我们有 \(\mathcal{F}(e_y) = \varepsilon_y\)，且更一般地有
+
+\[
+\mathcal {F} (e _ {y} f) = \boldsymbol {\gamma} (y) \mathcal {F} (f)
+\]
+
+（对所有 \(f \in \mathcal{S}'(\mathbf{R}^n)\)）。*
+
+设 \(n \geqslant 1\) 是一个整数，\(G = T^{n}\)，赋以规范化 Haar 测度。G 的对偶群与 \(Z^{n}\) 通过映射 \(h \mapsto \chi_{h}\) 等同，其中 \(\chi_{h}\) 是 \(T^{n}\) 的、由特征标 \(x \mapsto \exp(2i\pi h \cdot x)\)（\(R^{n}\) 的特征标）过渡到商所得到的酉特征标（II，第 236 页，推论 3）。\(\mu\) 在 \(T^{n}\) 上的 Fourier 变换等同于族 \((\widehat{\mu}(h))_{h \in \mathbf{Z}^{n}}\)，其中
+
+\[
+\widehat {\mu} (h) = \int_ {\mathbf {T} ^ {n}} e ^ {- 2 i \pi h \cdot x} d \mu (x).
+\]
+
+级数
+
+\[
+\sum_ {h \in \mathbf {Z} ^ {n}} \widehat {\mu} (h) \chi_ {h}
+\]
+
+称为 μ 的 Fourier 级数。
+
+若 \(f \in L^{1}(\mathbf{T}^{n})\) 使它的 Fourier 级数在 \(L^{1}(\mathbf{Z}^{n})\) 中绝对收敛，则我们有 \(f \in \mathcal{C}(\mathbf{T}^{n})\)，且
+
+\[
+f (x) = \sum_ {h \in {\bf Z} ^ {n}} \widehat {f} (h) e ^ {2 i \pi h \cdot x}
+\]
+
+对所有 \(x \in \mathbf{T}^n\) 成立（II，第 222 页，定理 3），其中
+
+\[
+\widehat {f} (h) = \int_ {\mathbf {T} ^ {n}} f (x) e ^ {- 2 i \pi h \cdot x} d x, \qquad h \in \mathbf {Z} ^ {n}.
+\]
+
+对 \(f \in \mathrm{L}^2(\mathbf{T}^n)\)，Fourier 反演公式（II，第 219 页，命题 12）断言：若以 \(\widehat{f}(h)\) 为通项的级数绝对收敛，则我们有
+
+\[
+f (x) = \sum_ {h \in \mathbf {Z} ^ {n}} \widehat {f} (h) e ^ {2 i \pi h \cdot x}
+\]
+
+对几乎每个 \(T^{n}\) 中的 x 成立。
+
+然而，即使 f 连续，f 的 Fourier 级数一般也并不对所有 x 收敛于 \(f(x)\)（II，第 274 页，习题 30）。因此下面的结果格外有用。
+
+命题 23（Fejér 定理）.　设 \(n \geqslant 1\) 是一个整数。对每个 \(h = (h_i) \in \mathbf{Z}^n\)，我们记 \(|h| = \sup_i |h_i|\)。设 \(f \in \mathcal{C}(\mathbf{T}^n)\)。对每个整数 \(N \geqslant 1\)，设 \(f_N\) 是 \(\mathbf{T}^n\) 上满足
+
+\[
+f_{\mathrm{N}}(x) = \sum_{\substack{h\in \mathbf{Z}^{n}\\ |h|\leqslant \mathrm{N}}}\widehat{f} (h)e^{2i\pi h\cdot x}\prod_{j = 1}^{n}\Bigl (1 - \frac{|h_{j}|}{\mathrm{N}}\Bigr)
+\]
+
+（对 \(x\in \mathbf{T}^n\)）的函数。则 \(f_{\mathrm{N}}\) 收敛于 \(f\)（在 \(\mathcal{C}(\mathbf{T}^n)\) 中）。
+
+引理 11.　对每个 N ≥ 1，设 \(\mu_{\mathrm{N}}\) 是 \(\mathbf{T}^{n}\) 上以连续映射
+
+\[
+\mathrm{F}_{\mathrm{N}}\colon x\mapsto \sum_{\substack{h\in \mathbf{Z}\\ |h|\leqslant \mathrm{N}}}e^{2i\pi h\cdot x}\prod_{j = 1}^{n}\Bigl (1 - \frac{|h_{j}|}{\mathrm{N}}\Bigr).
+\]
+
+为密度的测度。测度序列 \((\mu_{\mathrm{N}})_{\mathrm{N}\geqslant1}\) 收敛于 \(\varepsilon_{0}\)（在空间 \(\mathcal{M}^{1}(\mathbf{T}^{n})\) 中，该空间赋有 \(\mathcal{C}(\mathbf{T}^{n})\) 中紧收敛拓扑）。
+
+注意到 \(\mu_{N}\) 是 n = 1 情形同类型测度的乘积，我们便归结为 n = 1 的情形。于是只需验证序列 ( \(\mu_{N}\) ) 满足 INT，VIII，§2，第 7 节引理 4 的假设（取 a = 0）。
+
+为此，我们首先注意 \(F_{N}\) 是 Z 上映射 \(\varphi_{\mathrm{N}}\colon h\mapsto(1-|h|/\mathrm{N})\) 的 Fourier 余变换。它可写作 \(\varphi_{N}=N^{-1}\psi_{N}*\widetilde{\psi}_{N}\)，其中 \(\psi_{N}\) 是由 \(-N/2<|h|\leqslant N/2\) 定义的集合的特征函数。于是 \(F_{N}=N^{-1}|\overline{\mathcal{F}}(\psi_{N})|^{2}\geqslant0\)。从而 \(\mu_{N}\) 是正测度；我们有 \(\mu_{\mathrm{N}}(\mathbf{T})=1\)，这就证明了同前处的 (i) 与 (iii)。
+
+我们来证明同前处的条件 (ii)。设 U 是 T 中 0 的一个开邻域。只需证明 \(\mu_{\mathrm{N}}(\mathrm{U}) \to 1\)（当 \(\mathrm{N} \to +\infty\) 时）。设 K 是 0 的一个紧对称邻域，满足 \(\mathrm{K}^2 \subset \mathrm{U}\)，并设 \(\psi\) 是 K 的特征函数。令 \(\varphi = \psi * \psi\)。它是 A(T) 中一个支集含于 U 的元素。实数 \(m = \varphi(0)\) 是集合 K 的测度，故 \(m > 0\)。此外，我们有 \(0 \leqslant \varphi \leqslant m\)，因为 \(\varphi(x)\) 是集合 K \(\cap x\) K 的测度。我们有
+
+\[
+\mu_ {\mathrm{N}} (\mathrm{U}) \geqslant \frac {1}{m} \int_ {\mathbf {T}} \varphi (x) \mu_ {\mathrm{N}} (x) = \frac {1}{m} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) \varphi_ {\mathrm{N}} (h)
+\]
+
+这是由 Fourier 变换的转置性质（II，第 221 页，命题 13）得到的。由于 \(\varphi \in \mathrm{A}(\mathbf{T})\)，它的 Fourier 变换属于 \(\mathrm{L}^1 (\mathbf{Z})\)，且 \(\varphi\) 满足 Fourier 反演公式（II，第 217 页，命题 11）。由于 \(\varphi_{\mathrm{N}}(h)\to 1\) 对所有 \(h\in \mathbf{Z}\) 成立且 \(|\varphi_{\mathrm{N}}(h)|\leqslant 1\)，Lebesgue 定理（INT，IV，§3，第 7 节，定理 6）与 Fourier 反演公式蕴含
+
+\[
+\begin{array}{r l} & {\underset {\mathrm{N} \to + \infty} {\liminf} \mu_ {\mathrm{N}} (\mathrm{U}) \geqslant \frac {1}{m} \underset {\mathrm{N} \to + \infty} {\lim} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) \varphi_ {\mathrm{N}} (h) =} \\ & {\qquad \qquad \qquad \qquad \frac {1}{m} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) = \frac {1}{m} \varphi (0) = 1.} \end{array}
+\]
+
+我们来证明该命题。我们有 \(f * \mathrm{F}_{\mathrm{N}} = f_{\mathrm{N}}\)（对 \(\mathrm{N} \geqslant 1\)）。正则表示 \(\gamma\)（\(\mathbf{T}^n\) 到 \(\mathcal{C}(\mathbf{T}^n)\) 中的正则表示）（INT，VIII，§2，第 3 节）是连续的，且满足 \(f * \mathrm{F}_{\mathrm{N}} = \gamma(\mu_{\mathrm{N}})f\)（INT，VIII，§4，第 5 节，命题 5 (iv)）。映射 \(\mu \mapsto \gamma(\mu)f\) 从 \(\mathcal{M}^1(\mathbf{T}^n)\) 到 \(\mathcal{C}(\mathbf{T}^n)\) 中连续（INT，VI，§1，第 6 节，命题 14）。由引理，我们因此有
+
+\[
+\lim _ {N \to + \infty} f _ {N} = \lim _ {N \to + \infty} f * F _ {N} = \lim _ {N \to + \infty} \gamma (\mu_ {N}) f = \gamma (\varepsilon_ {0}) (f) = f
+\]
+
+在 \(\mathcal{C}(\mathbf{T}^n)\) 中成立。
+
+注记.　存在函数 \(f \in \mathrm{L}^{1}(\mathbf{T})\)，其 Fourier 级数在每一点 \(x \in T\) 都发散（Kolmogorov 定理，参看 II，第 289 页，习题 51）。
+
+Carleson 的一个定理 \(^{(1)}\) 证明：f 的 Fourier 级数的对称部分和收敛于 \(f(x)\)（对几乎所有 \(x \in T\)，只要 \(f \in \mathcal{L}^{2}(T)\)）。
+

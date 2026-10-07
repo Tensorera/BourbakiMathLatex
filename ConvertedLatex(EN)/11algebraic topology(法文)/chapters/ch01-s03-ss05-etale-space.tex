@@ -1,0 +1,78 @@
+\subsection{Étale space associated with a presheaf}
+
+Let B be a topological space, \(\mathcal{B}\) a base of the topology of B and \(\mathcal{F} = (\mathcal{F}(U), r_{UV})\) be a presheaf on B relative to the base \(\mathcal{B}\) . Let L be the set of pairs \((U, s)\) with \(U \in \mathcal{B}\) and \(s \in \mathcal{F}(U)\) . Denote by \(X_{\mathcal{F}}\) the sum space of the family \((U)_{(U,s) \in L}\) . Thus \(X_{\mathcal{F}}\) is the set of triples \((U, s, x)\) where \(U \in \mathcal{B}\) , \(s \in \mathcal{F}(U)\) , \(x \in U\) . Let \(R_{\mathcal{F}}\) be the relation on the set \(X_{\mathcal{F}}\) defined by \(R_{\mathcal{F}}((U,s,x),(U',s',x'))\) if and only if “ \(x = x'\) and there exists \(W \in \mathcal{B}\) such that \(x \in W\) , \(W \subset U \cap U'\) and \(r_{WU}(s) = r_{WU'}(s')\) ”. The relation \(R_{\mathcal{F}}\) is an equivalence relation in \(X_{\mathcal{F}}\) : it is, by definition, reflexive and symmetric; let us prove that it is transitive. Let \(\xi = (U, s, x)\) , \(\xi' = (U', s', x')\) and \(\xi'' = (U'', s'', x'')\) be elements of \(X_{\mathcal{F}}\) such that one has \(R_{\mathcal{F}}(\xi,\xi')\) and \(R_{\mathcal{F}}(\xi',\xi'')\) . One then has \(x = x' = x''\) and there exist two elements \(W'\) and \(W''\) of \(\mathcal{B}\) containing \(x\) such that \(W' \subset U \cap U'\) , \(W'' \subset U' \cap U''\) , \(r_{W'U}(s) = r_{W'U'}(s')\) , \(r_{W''U'}(s') = r_{W''U''}(s'')\) . Let W be an element of \(\mathcal{B}\) containing \(x\) and contained in \(W' \cap W''\) . One then has \(W \subset U \cap U''\) ,
+
+\[
+r_{\mathrm{WU}}(s) = r_{\mathrm{WW'}} \circ r_{\mathrm{W'U}}(s) = r_{\mathrm{WW'}} \circ r_{\mathrm{W'U'}}(s') = r_{\mathrm{WU'}}(s')
+\]
+
+and, similarly, \(r_{\mathrm{WU}'}(s') = r_{\mathrm{WU}''}(s'')\) . Consequently, we have \(R_{\mathcal{F}}(\xi,\xi'')\) and the relation \(R_{\mathcal{F}}\) is transitive.
+
+Denote by \(E_{F}\) the quotient set \(X_{F}/R_{F}\) and \([U,s,x]\) the canonical image in \(E_{F}\) of an element \((U,s,x)\) of \(X_{F}\) . For \(U \in B\) and \(s \in \mathcal{F}(U)\) , denote by \(\sigma_{\mathcal{F}}(U,s)\colon U \to E_{\mathcal{F}}\) the map \(x \mapsto [U,s,x]\) . Endow the set \(E_{F}\) with the quotient topology, that is, the finest topology making the maps \(\sigma_{\mathcal{F}}(U,s)\) continuous for \(U \in B\) and \(s \in \mathcal{F}(U)\) . The map \(pr_{3}\colon X_{F} \to B\) passes to the quotient to define a continuous map \(p\colon E_{F} \to B\) : one has \(p([U,s,x]) = x\) .
+
+PROPOSITION 1. --- The map \(p\colon E_{\mathcal{F}} \to B\) is étale. For every open set \(U \in \mathcal{B}\) and every \(s \in \mathcal{F}(U)\) , the map \(\sigma_{\mathcal{F}}(U, s)\) is therefore a continuous section of \(p\) over \(U\) .
+
+Let \(\lambda = (\mathrm{U}, s)\) and \(\mu = (\mathrm{U}', s')\) be elements of L. By definition of the relation \(\mathrm{R}_{\mathcal{F}}\) the set \(\mathrm{A}_{\lambda \mu}\) of points \(x\) of \(\mathrm{U} \cap \mathrm{U}'\) at which \(\sigma_{\mathcal{F}}(\mathrm{U}, s)\) and \(\sigma_{\mathcal{F}}(\mathrm{U}', s')\) coincide is the interior in B of the set of \(x \in \mathrm{U} \cap \mathrm{U}'\) such that \(s(x) = s'(x)\) . It follows that \(\mathrm{A}_{\mu \lambda} = \mathrm{A}_{\lambda \mu}\) . One then denotes by \(h_{\mu \lambda} \colon \mathrm{A}_{\lambda \mu} \to \mathrm{A}_{\mu \lambda}\) the map \(\mathrm{Id}_{\mathrm{A}_{\lambda \mu}}\) . The set \(\mathrm{E}_{\mathcal{F}}\) is obtained by gluing the open sets U along the \(\mathrm{A}_{\lambda \mu}\) by means of the bijections \(h_{\mu \lambda}\) (TG, I, p.~16). By prop. 9 of TG, I, p.~17, the map \(\sigma_{\mathcal{F}}(\mathrm{U},s)\) induces a homeomorphism of U onto an open subset of \(\mathrm{E}_{\mathcal{F}}\) . This proves that the map \(p\) is étale (I, p.~33, prop. 9).
+
+For every open set \(U \in B\) and every \(s \in \mathcal{F}(U)\) , we have \(\sigma_{\mathcal{F}}(U, s)(x) = [U, s, x]\) for all \(x \in U\) . The second assertion therefore follows from the definition of p.
+
+DEFINITION 4. --- The étale B-space \((E_{\mathcal{F}},p)\) defined above is called the étale B-space associated with the presheaf \(\mathcal{F}\) . For \(x \in \mathrm{B}\) , the fiber of \(E_{\mathcal{F}}\) over \(x\) is called the stalk of the presheaf \(\mathcal{F}\) at \(x\) and is denoted \(\mathcal{F}_x\) . For every open set \(U \in \mathcal{B}\) , every section \(s \in \mathcal{F}(\mathrm{U})\) of \(\mathcal{F}\) on U and every point \(x\) of U, the element \([U,s,x]\) of \(E_{\mathcal{F}}\) is called the germ at \(x\) of the section \(s\) .
+
+Let \(a\) be a point of B. The set \(\mathcal{B}(a)\) of the open sets \(\mathrm{U} \in \mathcal{B}\) containing \(a\) and ordered by the relation \(\supset\) is filtering. By restricting the index set of \(\mathcal{F}\) to \(\mathcal{B}(a)\), we obtain a direct system \(((\mathcal{F}(\mathrm{U}))_{\mathrm{U} \in \mathcal{B}(a)}, (r_{\mathrm{UV}}))\). By definition (E, III, p.~60), the inductive limit of this system is the quotient of the set of pairs \((\mathrm{U}, s)\) such that \(a \in \mathrm{U}\) and \(s \in \mathcal{F}(\mathrm{U})\) by the equivalence relation \(R\) defined by \(R((\mathrm{U},s),(\mathrm{U}',s'))\) if and only if there exists \(\mathrm{W} \in \mathcal{B}\) containing \(a\) and contained in \(\mathrm{U} \cap \mathrm{U}'\) and such that \(r_{\mathrm{WU}}(s) = r_{\mathrm{WU}'}(s')\). This limit is therefore identified with the stalk \(\mathcal{F}_a\) of \(\mathcal{F}\) at \(a\) , by definition of inductive limits.
+
+Let \(\mathcal{G}\) be a presheaf on B relative to the base \(\mathcal{B}\) and let \(\varphi = (\varphi_{\mathrm{U}})_{\mathrm{U} \in \mathcal{B}}\) be a morphism of presheaves from \(\mathcal{F}\) into \(\mathcal{G}\) . The map \((\mathrm{U}, s, x) \mapsto (\mathrm{U}, \varphi_{\mathrm{U}}(s), x)\) from \(\mathrm{X}_{\mathcal{F}}\) into \(\mathrm{X}_{\mathcal{G}}\) is compatible with the equivalence relations \(\mathrm{R}_{\mathcal{F}}\) and \(\mathrm{R}_{\mathcal{G}}\) , by definition of a morphism of presheaves. Denote by \(\mathrm{E}(\varphi): \mathrm{E}_{\mathcal{F}} \to \mathrm{E}_{\mathcal{G}}\) the map deduced from it by passing to quotients. For every \(\mathrm{U} \in \mathcal{B}\) and every \(s \in \mathcal{F}(\mathrm{U})\) , we have
+
+\[
+\mathrm{E} (\varphi) \circ \sigma_ {\mathcal {F}} (\mathrm{U}, s) = \sigma_ {\mathcal {G}} (\mathrm{U}, \varphi_ {\mathrm{U}} (s));
+\]
+
+Consequently, the map \(\mathrm{E}(\varphi)\) is continuous. The map \(\mathrm{E}(\varphi)\) is a B-morphism; it is said to be the B-morphism from \(E_{F}\) into \(E_{G}\) associated with the morphism of presheaves \(\varphi\) . For every \(a \in B\) , \(\mathrm{E}(\varphi)\) restricted to the fibers over a yields a map from the stalk \(F_{a}\) of F into the stalk \(G_{a}\) of G; it is denoted \(\varphi_{a}\) . It is also the inductive limit of the maps \(\varphi_{U}\) (E, III, p.~63), where U ranges over the set \(\mathcal{B}(a)\) of open sets belonging to the base B and containing a.
+
+We have \(\operatorname{E}(\operatorname{Id}_{\mathcal{F}}) = \operatorname{Id}_{\operatorname{E}_{\mathcal{F}}}.\)
+
+Let \(\mathcal{H}\) be a presheaf on B relative to \(\mathcal{B}\) and let \(\psi = (\psi_{\mathrm{U}})\) be a morphism of presheaves from \(\mathcal{G}\) into \(\mathcal{H}\) . For \([\mathrm{U}, s, x] \in \mathrm{E}_{\mathcal{F}}\) , we have
+
+\[
+\begin{array}{r l} & {\mathrm{E} (\psi \circ \varphi) ([ \mathrm{U}, s, x ]) = [ \mathrm{U}, \psi_ {\mathrm{U}} \circ \varphi_ {\mathrm{U}} (s), x ]} \\ & {\qquad = \mathrm{E} (\psi) ([ \mathrm{U}, \varphi_ {\mathrm{U}} (s), x ])} \\ & {\qquad = \mathrm{E} (\psi) \circ \mathrm{E} (\varphi) ([ \mathrm{U}, s, x ]).} \end{array}
+\]
+
+Consequently, we have \(\mathrm{E}(\psi \circ \varphi) = \mathrm{E}(\psi) \circ \mathrm{E}(\varphi)\) . In particular, if \(a\) is a point of B, \((\psi \circ \varphi)_a = \psi_a \circ \varphi_a\) .
+
+If \(\varphi\) is an isomorphism, the same holds for \(\mathrm{E}(\varphi)\) .
+
+Remarks. --- Let \(\mathcal{F}\) be a sheaf on B relative to the base \(\mathcal{B}\). Let B' be an open subset of B, let \(\mathcal{B}'\) be a base of the topology of B' such that \(\mathcal{B}' \subset \mathcal{B}\) . Let \(F \mid B'\) be the presheaf on B' relative to the base \(B'\) deduced from F by restriction.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  The set \(X_{F|B'}\) is then a subset of \(X_{F}\), and the equivalence relation \(R_{F}\) induced on \(X_{F|B'}\) is the equivalence relation \(R_{F|B'}\). From this we deduce a canonical injection i from \(E_{F|B'}\) into \(E_{F}\). Its image is \(p^{-1}(B')\); for every element \([U, s, x]\) of \(p^{-1}(B')\) , there exists an element V of \(B'\) such that \(x \in V\), \(V \subset U\), and one has \([U, s, x] = i([V, r_{\mathrm{VU}}(s), x])\) . The map i is continuous because the topology of \(X_{F|B'}\) is the finest topology making the maps defined by \(x \mapsto [U, s, x]\) , for \(U \in B'\) and \(s \in \mathcal{F}(U)\) continuous. By Corollary 2 of Proposition 6 of I, p.~30, the canonical injection i from \(E_{F|B'}\) into \(E_{F}\) induces a B'-isomorphism from \(E_{F|B'}\) onto \(p^{-1}(B')\) .
+\end{enumerate}
+
+In particular, when B' is equal to B, \(i: E_{F|B'} \to E_F\) is a B-isomorphism of étale spaces.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(\mathcal{G}\) be a presheaf on B relative to the base \(\mathcal{B}\) and let \(\varphi\colon\mathcal{F}\to\mathcal{G}\) be a morphism of presheaves. The diagram \(\varphi'=(\varphi_{\mathrm{U}})_{\mathrm{U}\in\mathcal{B}'}\) is a morphism of presheaves from \(\mathcal{F}\mid\mathcal{B}'\) into \(\mathcal{G}\mid\mathcal{B}'\) . The diagram
+\end{enumerate}
+
+\[
+\begin{array}{c} \mathrm{E} _ {\mathcal {F} | \mathcal {B} ^ {\prime}} \xrightarrow {\mathrm{E} (\varphi^ {\prime})} \mathrm{E} _ {\mathcal {G} | \mathcal {B} ^ {\prime}} \\ \Biggl \downarrow_ {i} \\ \mathrm{E} _ {\mathcal {F}} \xrightarrow {\mathrm{E} (\varphi)} \mathrm{E} _ {\mathcal {G}}  , \end{array}
+\]
+
+where i and \(i'\) are the canonical injections, is commutative.
+
+Examples. --- 1) Let B be a topological space, \(\mathcal{B}\) a base of the topology of B and F a set. Take for \(\mathcal{F}\) the presheaf on B relative to \(\mathcal{B}\) defined by \(\mathcal{F}(\mathrm{U}) = \mathrm{F}\) for all \(\mathrm{U} \in \mathcal{B}\) and \(r_{\mathrm{UV}} = \mathrm{Id}_{\mathrm{F}}\) for every pair (U, V) of elements of \(\mathcal{B}\) such that \(\mathrm{U} \subset \mathrm{V}\) . The map \([\mathrm{U}, s, x] \mapsto (x, s(x))\) is a B-isomorphism from the B-space \(\mathrm{E}_{\mathcal{F}}\) onto the B-space \(\mathrm{B} \times \mathrm{F}\) where F is endowed with the discrete topology. Note that when \(\mathcal{B}\) is the set of open subsets of B, the presheaf \(\mathcal{F}\) on B is a sheaf only if the set F is reduced to a single point (cf. I, p.~43, remark).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  Let B be a topological space and \((\mathrm{E},p)\) a B-space. Take for F the sheaf on B of continuous sections of \((\mathrm{E},p)\) . The map \((\mathrm{U},s,x)\mapsto s(x)\) from \(X_{F}\) into E is compatible with the equivalence relation \(R_{F}\) . The map e: \(E_{F}\to E\) obtained by passing to the quotient is a B-morphism; the B-morphism e is said to be canonical. The image of e is the union of the images of the continuous sections of p over the open subsets of B. The map e is therefore surjective if p is étale (I, p.~33, prop. 9). On the other hand, the map e is injective if and only if for every open subset U of B and every pair \((s,s')\) of continuous sections of p over U, the set of points \(x\in U\) such that \(s(x)=s'(x)\) is open; this is in particular the case if p is étale (I, p.~34, prop. 11, b)). Consequently, if \((\mathrm{E},p)\) is an étale B-space, the map e is a B-isomorphism.
+\item
+  Let B be a topological space, \(\mathcal{B}\) a base of the topology of B, \(\mathcal{F}\) a presheaf on B relative to \(\mathcal{B}\) and \(\mathcal{L}\) a subpresheaf of \(\mathcal{F}\) . Then, the set X \(_{\mathcal{L}}\) is contained in the set X \(_{\mathcal{F}}\) and the equivalence relation R \(_{\mathcal{F}}\) induces on X \(_{\mathcal{L}}\) the equivalence relation R \(_{\mathcal{L}}\) . The B-morphism E(i): E \(_{\mathcal{L}} \to\) E \(_{\mathcal{F}}\) associated with the canonical morphism i: \(\mathcal{L} \to \mathcal{F}\) (I, p.~48, example 2) is therefore injective. Since E \(_{\mathcal{L}}\) and E \(_{\mathcal{F}}\) are étale B-spaces, the map E(i) is open and even étale (I, p.~30, cor. 1), hence induces a homeomorphism from E \(_{\mathcal{L}}\) onto an open subset of E \(_{\mathcal{F}}\) .
+\end{enumerate}
+

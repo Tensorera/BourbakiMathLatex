@@ -1,0 +1,84 @@
+\subsection{下半连续正函数的上积分}
+
+设 X 是一个局部紧空间，\(\mu\) 是 X 上的正测度；我们知道 \(\mu\) 是格 \(\mathcal{K}_{+}(\mathrm{X})\) （它也记作 \(K_{+}\) ）上的递增函数。
+
+我们用 \(\mathcal{I}_{+}(\mathrm{X})\) （或简作 \(I_{+}\) ）表示 X 上（有限或非有限的）数值函数中在 X 上为正且下半连续者所成的集。\(^{1}\) 回顾一下，\(I_{+}\) 中函数的任一族之和属于 \(I_{+}\) ；\(I_{+}\) 中的函数与有限数 \(\alpha > 0\) 的乘积属于 \(I_{+}\) ；\(I_{+}\) 中函数的任一族的上包络与 \(I_{+}\) 中函数的有限族的下包络也属于 \(I_{+}\) （GT, IV, §6, No.~2, 命题 2 与定理 4）。我们还将用到下述引理：
+
+引理. --- 每个函数 \(f \in I_{+}\) 都是（按关系 \(\leqslant\) 有向的）所有函数 \(g \in K_{+}\) （满足 \(g \leqslant f\) ）所成之集的上包络。
+
+对每个 \(x \in X\) （使 \(f(x) > 0\) ）及每个实数 a （满足 0 < a < \(f(x)\) ），由假设存在 x 的紧邻域 V 使 \(f(y) \geqslant a\) 在 V 上成立；另一方面，存在函数 \(g \in K_{+}\) ，其支集含于 V ，在点 x 处等于 a 且在 V 上 \(\leqslant a\) （GT, IX, §1, No.~5, 定理 2）；从而 \(0 \leqslant g \leqslant f\) 且 \(g(x) \geqslant a\) ，这就证明了引理。
+
+定义 1. --- 给定 X 上的正测度 \(\mu\) ，函数 \(f \in \mathcal{I}_{+}\) （关于 \(\mu\) ）的上积分指的是正数（有限或等于 \(+\infty\) ）
+
+\[
+\mu^ {*} (f) = \sup _ {g \in \mathcal {K} _ {+}, g \leqslant f} \mu (g).
+\]
+
+对每个函数 \(f \in \mathcal{K}_+\) ，显然有 \(\mu^*(f) = \mu(f)\) ，换言之，\(\mu^*\) 是 \(\mu\) 到 \(\mathcal{I}_+\) 上的一个延拓。
+
+例子. --- 设 X 是离散空间，\(\mu\) 是 X 上的正测度，并令 \(\alpha(x)=\mu(\varphi_{\{x\}})\) （对所有 \(x\in X\) ）。此时定义在 X 上的每个数值函数 f 都是连续的；对这样的函数 \(f\geqslant0\) ，有 \(\mu^{*}(f)=\sum_{x\in X}\alpha(x)f(x)\) ，其中我们约定令 \(\alpha(x)f(x)=0\) （每当 \(\alpha(x)=0\) 且 \(f(x)=+\infty\) ）。事实上，\(\sum_{x\in X}\alpha(x)f(x)=\sup_{M}\left(\sum_{x\in M}\alpha(x)f(x)\right)\) ，其中 M 遍历 X 的所有有限子集组成的集。若存在 \(x_{0}\in X\) 使 \(f(x_{0})=+\infty\) 且 \(\alpha(x_{0})>0\) ，则 \(\sum_{x\in M}\alpha(x)f(x)=+\infty\) （每当 \(x_{0}\in M\) ），而另一方面，\(f\geqslant n\cdot\varphi_{\{x_{0}\}}\) 对每个整数 n\textgreater0 成立，因此 \(\mu^{*}(f)\geqslant n\alpha(x_{0})\) ，从而 \(\mu^{*}(f)=+\infty\) 。反之，若 \(\alpha(x)=0\) 在所有使 \(f(x)=+\infty\) 的点处成立，则在点 \(x\in M\) （使 \(\alpha(x)>0\) 者）处等于 f 而在别处等于 0 的函数 g 属于 \(H_{+}\) ，于是根据所作约定，\(\mu(g)=\sum_{x\in M}\alpha(x)f(x)\) ，这再次证明了关系式 \(\mu^{*}(f)=\sum_{x\in X}\alpha(x)f(x)\) 。
+
+命题 1. --- 对每个有限实数 \(\alpha > 0\) 及每个函数 \(f \in \mathcal{I}_{+}\) ，
+
+\[
+\mu^ {*} (\alpha f) = \alpha \mu^ {*} (f).\tag{1}
+\]
+
+命题 2. --- 在集 \(\mathcal{I}_{+}\) 上，函数 \(\mu^{*}\) 是递增的。
+
+由定义 1 ，证明都是直接的。
+
+定理 1. --- 设 H 是 \(\mathcal{I}_{+}\) 中函数的一个非空集，按关系 \(\leqslant\) 有向。对 X 上的每个正测度 \(\mu\) ，
+
+\[
+\mu^ {*} \left(\sup _ {g \in \mathrm{H}} g\right) = \sup _ {g \in \mathrm{H}} \mu^ {*} (g) = \lim _ {g \in \mathrm{H}} \mu^ {*} (g).\tag{2}
+\]
+
+设 \(f = \sup_{g \in H} g\) 。我们先就下述特殊情形证明定理：诸函数 \(g \in H\) 及其上包络 \(f\) 都属于 \(\mathcal{H}_+\) 。由 Dini 定理（GT, X, §4, No.~1, 定理 1），此时 H 的截面滤子在 X 的每个紧子集上、特别在 f 的支集 K 上一致收敛于 \(f\) 。由于 \(0 \leqslant g \leqslant f\) 对每个函数 \(g \in H\) 成立，H 中每个函数的支集都含于 K ；但按定义，\(\mu\) 在支集含于 K 的连续函数所成的向量空间 \(\mathcal{K}(\mathrm{X},\mathrm{K};\mathbf{C})\) 上关于一致收敛拓扑是连续的；由此得到该情形下的关系式 (2) 。
+
+现在转到一般情形。显然有 \(\mu^{*}(g) \leqslant \mu^{*}(f)\) 对每个函数 \(g \in H\) 成立。根据定义 1 ，问题归结为证明：对每个函数 \(\psi \in K_{+}\) （满足 \(\psi \leqslant f\) ），
+
+\[
+\mu (\psi) \leqslant \sup _ {g \in \mathrm{H}} \mu^ {*} (g).
+\]
+
+对每个函数 \(g \in \mathbf{H}\) ，设 \(\Phi_g\) 是函数 \(\varphi \in \mathcal{K}_+\) （满足 \(\varphi \leqslant g\) ）所成之集，并设 \(\Phi\) 是诸集 \(\Phi_g\) （当 \(g\) 遍历 \(\mathbf{H}\) 时）的并；由于 \(\mathbf{H}\) 有向，\(\Phi\) 也有向，且 \(f = \sup_{\varphi \in \Phi} \varphi\) 。由于 \(\psi \leqslant f\) ，\(\psi\) 是诸函数 \(\inf(\psi, \varphi)\) （当 \(\varphi\) 遍历 \(\Phi\) 时）所成之集的上包络；但由于 \(\psi\) 与诸函数 \(\inf(\psi, \varphi)\) 都属于 \(\mathcal{K}_+\) ，证明的第一部分表明 \(\mu(\psi) = \sup_{\varphi \in \Phi} \mu(\inf(\psi, \varphi))\) 。现在，每个 \(\varphi \in \Phi\) 属于某个集 \(\Phi_g\) ，因此
+
+\[
+\mu \big (\inf (\psi , \varphi) \big) \leqslant \mu (\varphi) \leqslant \mu^ {*} (g) \leqslant \sup _ {g \in \mathrm{H}} \mu^ {*} (g),
+\]
+
+由此立得 \(\mu(\psi) \leqslant \sup_{g \in \mathrm{H}} \mu^{*}(g)\) 。这样我们就证明了 \(\mu^{*}(f) = \sup_{g \in \mathrm{H}} \mu^{*}(g)\) ；而关系式 \(\mu^{*}(f) = \lim_{g \in \mathrm{H}} \mu^{*}(g)\) 则是单调极限定理（GT, IV, §5, No.~2, 定理 2）的推论。
+
+定理 2. --- 若 \(f_1\) 与 \(f_2\) 是 \(\mathcal{I}_+\) 中的两个函数，则
+
+\[
+\mu^ {*} (f _ {1} + f _ {2}) = \mu^ {*} (f _ {1}) + \mu^ {*} (f _ {2}).\tag{3}
+\]
+
+当 \(\varphi_{1}\) （相应地 \(\varphi_{2}\) ）遍历 \(\mathcal{H}_{+}\) 中满足 \(\varphi_{1} \leqslant f_{1}\) （相应地 \(\varphi_{2} \leqslant f_{2}\) ）的函数所成之集时，诸函数 \(\varphi_{1} + \varphi_{2}\) 构成一个有向集（按 \(\leqslant\) ），其上包络为 \(f_{1} + f_{2}\) 。因此，由定理 1 ，
+
+\[
+\mu^ {*} (f _ {1} + f _ {2}) = \sup \mu (\varphi_ {1} + \varphi_ {2}) = \sup \left(\mu (\varphi_ {1}) + \mu (\varphi_ {2})\right),
+\]
+
+其中 \((\varphi_{1},\varphi_{2})\) 遍历 \(\mathcal{H}_{+}\) 中满足 \(\varphi_1\leqslant f_1\) 与 \(\varphi_{2}\leqslant f_{2}\) 的函数对所成之集；由于
+
+\[
+\sup \left(\mu (\varphi_ {1}) + \mu (\varphi_ {2})\right) = \sup \mu (\varphi_ {1}) + \sup \mu (\varphi_ {2})
+\]
+
+（GT, IV, §5, No.~7, 命题 12 的推论 2），定理得证。
+
+命题 3. --- 对函数的每个族 \((f_{\iota})_{\iota \in \mathrm{I}}\) （诸函数属于 \(\mathcal{I}_{+}\) ），
+
+\[
+\mu^ {*} \left(\sum_ {\iota \in I} f _ {\iota}\right) = \sum_ {\iota \in I} \mu^ {*} (f _ {\iota}).\tag{4}
+\]
+
+对 I 的每个有限子集 J ，由定理 2 （对 J 的元素个数作归纳）得 \(\mu^{*}\left(\sum_{\iota \in \mathrm{J}}f_{\iota}\right) = \sum_{\iota \in \mathrm{J}}\mu^{*}(f_{\iota})\) ；当 J 遍历 I 的有限子集所成之集时，诸函数 \(g_{\mathrm{J}} = \sum_{\iota \in \mathrm{J}}f_{\iota}\) 属于 \(\mathcal{I}_{+}\) 且按关系 \(\leqslant\) 构成一个有向集，其上包络是函数 \(\sum_{\iota \in \mathrm{I}}f_{\iota}\) ；命题于是由定理 1 得出。
+
+命题 4. --- 设 \(f\) 是 \(\mathcal{I}_{+}\) 中的一个函数。映射 \(\mu \mapsto \mu^{*}(f)\) （从 \(\mathcal{M}_{+}(\mathrm{X})\) —— \(\mathrm{X}\) 上正测度所成之集 —— 到扩充实直线 \(\overline{\mathbf{R}}\) 中）关于 \(\mathcal{M}_{+}(\mathrm{X})\) 上的淡拓扑是下半连续的（Ch. III, §1, No.~9）。
+
+事实上，这个映射按定义是诸映射 \(\mu \mapsto \mu(g)\) （\(g\) 遍历 \(\mathcal{K}_{+}\) 中满足 \(g \leqslant f\) 的函数所成之集）的上包络；而由淡拓扑的定义，诸映射 \(\mu \mapsto \mu(g)\) 在 \(\mathcal{M}(\mathrm{X})\) 上连续。
+

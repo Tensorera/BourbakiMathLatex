@@ -1,0 +1,150 @@
+\subsection{对偶化函子}
+
+在本节中，我们固定一个局部 Noether 环 A。我们假设给定了
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个有限长度的 A-模 M，一个 A-模 T(M)；
+\item
+  对有限长度 A-模之间的每个 A-线性映射 \(f: \mathrm{M} \to \mathrm{N}\)，一个 A-线性映射 \(\mathrm{T}(f): \mathrm{T}(\mathrm{N}) \to \mathrm{T}(\mathrm{M})\)，使得下列条件满足：
+\end{enumerate}
+
+FD 1) 映射 \(f \mapsto \mathrm{T}(f)\) 都是 A-线性的。
+
+FD 2) 对每个有限长度的 A-模 M，我们有 \(\mathrm{T}(1_{\mathrm{M}}) = 1_{\mathrm{T(M)}}\)。
+
+FD 3) 对有限长度 A-模与 A-线性映射的每个图 M \(\xrightarrow{f}\) N \(\xrightarrow{g}\) P，我们有 T(g \(\circ\) f) = T(f) \(\circ\) T(g)。
+
+FD 4) 对有限长度 A-模的任何正合序列 \(M' \xrightarrow{u} M \xrightarrow{v} M''\)，序列 \(T(M'') \xrightarrow{T(v)} T(M) \xrightarrow{T(u)} T(M')\) 是正合的。
+
+FD 5) A-模 T(κA) 的长度为 1。
+
+由 FD 1) 和 FD 2)，我们推出 \(\mathrm{T}(a_{\mathrm{M}}) = a\mathrm{T}(1_{\mathrm{M}}) = a1_{\mathrm{T(M)}} = a_{\mathrm{T(M)}}\) （对每个 \(a \in \mathrm{A}\)）。取 \(\mathrm{M} = \{0\}\)，我们得到 \(0_{\mathrm{T(M)}} = 1_{\mathrm{T(M)}}\)，从而 \(\mathrm{T}(\{0\}) = \{0\}\)。由此及 FD 4) 可知：对有限长度 A-模之间的每个单射（相应地，满射）线性映射，映射 \(\mathrm{T}(f)\) 是满射（相应地，单射）。
+
+设 M 为一个有限长度的 A-模。则 T(M) 是有限长度的，并且有 \(\operatorname{long}_{\mathbf{A}}(\operatorname{T}(\mathbf{M})) = \operatorname{long}_{\mathbf{A}}(\mathbf{M})\)：这事实上由 FD 4)、FD 5) 以及每个有限长度的模都容有一个合成列、其各商同构于 \(\kappa_{A}\) 这一事实得出。
+
+设 M 为一个有限长度的 A-模，设 \((e_{\lambda})_{\lambda \in L}\) 是 M 的一个正交投影族；由 FD 3)，\((\mathrm{T}(e_{\lambda}))_{\lambda \in L}\) 是 T(M) 的一个正交投影族。因此，若 M 是子模族 \((\mathrm{M}_{\lambda})_{\lambda \in L}\) 的直和，且用 \(p_{\lambda}\) 表示 M 到 \(M_{\lambda}\) 上的投影，则同态 \(\sum_{\lambda \in L} \mathrm{T}(p_{\lambda}) : \bigoplus_{\lambda \in L} \mathrm{T}(\mathrm{M}_{\lambda}) \longrightarrow \mathrm{T}(\mathrm{M})\) 是一个同构。
+
+例.—— 1) 设 J 为一个 Matlis A-模。对每个有限长度的 A-模 M，令 T(M) = Hom\_A(M, J)；对有限长度 A-模之间的每个 A-线性映射 f，令 T(f) = Hom\_A(f, 1\_J)。则条件 FD 1) 至 FD 5) 满足。我们将在下面（定理 3）看到，每个满足条件 FD 1) 至 FD 5) 的构造都是这样得到的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 C 为一个由 A-模组成的内射复形，设 d 为一个整数，使得 \(\mathrm{H}^{i}(\mathrm{Homgr}_{\mathrm{A}}(\kappa_{\mathrm{A}},\mathrm{C}))\) 在 \(i \neq d\) 时为零且在 i = d 时长度为 1。对每个有限长度的 A-模 M，我们有 \(\mathrm{H}^{i}(\mathrm{Homgr}_{\mathrm{A}}(\mathrm{M},\mathrm{C})) = 0\) （对 \(i \neq d\)）；事实上，我们对 M 的长度（设它 \textgreater{} 0）用归纳法来论证；存在 A-模的一个正合序列 \(0 \to \kappa_{A} \to M \to N \to 0\)，由它导出复形的一个正合序列
+\end{enumerate}
+
+\[
+0 \rightarrow \operatorname{Homgr} _ {\mathrm{A}} (\mathrm{N}, \mathrm{C}) \longrightarrow \operatorname{Homgr} _ {\mathrm{A}} (\mathrm{M}, \mathrm{C}) \longrightarrow \operatorname{Homgr} _ {\mathrm{A}} (\kappa_ {\mathrm{A}}, \mathrm{C}) \longrightarrow 0
+\]
+
+而结论由应用于 N 的归纳假设得出。
+
+对每个有限长度的 A-模 M，令 \(\mathrm{T}(\mathrm{M})=\mathrm{H}^{d}(\mathrm{Homgr}_{\mathrm{A}}(\mathrm{M},\mathrm{C}))\)；对有限长度 A-模之间的每个 A-线性映射 f，令 \(\mathrm{T}(f)=\mathrm{H}^{d}(\mathrm{Homgr}_{\mathrm{A}}(f,1_{\mathrm{C}}))\)；则条件 FD 1) 至 FD 5) 满足。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\item
+  设 \(\Omega\) 为一个 A-模，设 \(d\) 为一个整数 \(\geqslant 0\)，使得 \(\mathrm{Ext}_{\mathrm{A}}^{i}(\kappa_{\mathrm{A}},\Omega)\) 在 \(i\neq d\) 时为零且在 \(i = d\) 时长度为 1。对每个有限长度的 A-模 M，令 \(\mathrm{T(M)} = \mathrm{Ext}_{\mathrm{A}}^{d}(\mathrm{M},\Omega)\)；对有限长度 A-模之间的每个 A-线性映射 \(\mathrm{T}(f) = \mathrm{Ext}_{\mathrm{A}}^{d}(f,1_{\Omega})\)，令 \(f\)。于是对每个有限长度的 A-模 M 和每个 \(\mathrm{Ext}_{\mathrm{A}}^{i}(\mathrm{M},\Omega) = 0\)，我们有 \(i\neq d\)，并且条件 FD 1) 至 FD 5) 满足：事实上只需把前面的例应用于 C 是 \(\Omega\) 的典范内射分解的情形。
+\item
+  若 A 是一个 Gorenstein 环，例如一个正则环，则取 \(\Omega = A\) 和 \(d = \dim(A)\)（\(\S\) 3, 第 7 节，命题 11）即可应用例 3。
+\end{enumerate}
+
+对每个整数 \(n \geqslant 0\) ，我们令 \(\mathrm{I}_{n} = \mathrm{T}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n})\)。对 \(m \geqslant n\) ，用 \(p_{mn}: \mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{m} \longrightarrow \mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n}\) 表示典范满射，并用 \(i_{mn}: \mathrm{T}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n}) \longrightarrow \mathrm{T}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{m})\) 表示 A-线性映射 \(\mathrm{T}(p_{mn})\)。它由 FD 4) 是单射的，且由 FD 3)，对 \(i_{mn} \circ i_{np} = i_{mp}\) 有 \(m \geqslant n \geqslant p\)。令 \(\mathrm{I} = \varinjlim \mathrm{T}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n})\)，即系统 \(((\mathrm{I}_{n}), (i_{mn}))\) 的归纳极限 A-模。对每个 \(n \geqslant 0\) ，典范映射 \(\mathrm{I}_{n} \to \mathrm{I}\) 是单射；我们将把 \(\mathrm{I}_{n}\) 等同于它在 I 中的像，于是 I 是诸 \(\mathrm{I}_{n}\) 的递增并。
+
+设 M 为一个有限生成的、有限长度的 A-模，设 n 为一个整数 \(\geqslant0\)，使得 \(m_{A}^{n}M=0\) 。对 \(x\in M\)，用 \(\varphi_{M,x}^{n}\) 表示从 \(A/m_{A}^{n}\) 到 M 中的、把 1 的类映到 x 的 A-线性映射。映射 \(\mathrm{T}(\varphi_{\mathrm{M},x}^{n}):\mathrm{T}(\mathrm{M})\to\mathrm{I}_{n}\) 是 A-线性的，且我们有 \(\mathrm{T}(\varphi_{\mathrm{M},ax}^{n})=a\mathrm{T}(\varphi_{\mathrm{M},x}^{n})\) （对 \(a\in A\)），这由 FD 1)。因此，映射 \((x,u)\mapsto\mathrm{T}(\varphi_{\mathrm{M},x}^{n})(u)\) （从 \(M\times T(M)\) 到 I 上）是 A-双线性的。它不依赖于整数 n 的选取：事实上，对每个整数 \(q\geqslant n\) 和 M 的每个元素 x，我们有 \(\varphi_{M,x}^{q}=\varphi_{M,x}^{n}\circ p_{qn}\)，从而由 FD 3) 有 \(\mathrm{T}(\varphi_{\mathrm{M},x}^{q})=i_{qn}\circ\mathrm{T}(\varphi_{\mathrm{M},x}^{n})\)。由此我们导出一个 A-线性映射
+
+\[
+\theta_ {\mathrm{M}}: \mathrm{T} (\mathrm{M}) \longrightarrow \operatorname{Hom} _ {\mathrm{A}} (\mathrm{M}, 1)
+\]
+
+它满足 \(\theta_{\mathrm{M}}(u)(x) = \mathrm{T}(\varphi_{\mathrm{M},x})(u)\) （对 \(u\in \mathrm{T}(\mathrm{M})\)，\(x\in \mathrm{M}\)
+
+定理 3.—— a) A-模 I 是一个 Matlis 模。对每个整数 \(m \geqslant 0\)，\(\mathrm{I}_{m}\) 是 I 中被 \(\mathfrak{m}_{\mathrm{A}}^{m}\) 零化的元素组成的子模。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  对每个有限长度的 A-模 M，A-线性映射 \(\theta_{\mathrm{M}}: \mathrm{T}(\mathrm{M}) \longrightarrow \mathrm{Hom}_{\mathrm{A}}(\mathrm{M}, \mathrm{I})\) 是双射。
+\item
+  对有限长度 A-模之间的任何 A-线性映射 \(f: \mathrm{M} \to \mathrm{N}\)，我们有 \(\theta_{\mathrm{M}} \circ \mathrm{T}(f) = \operatorname{Hom}_{\mathrm{A}}(f, 1_{\mathrm{I}}) \circ \theta_{\mathrm{N}}\)。
+\end{enumerate}
+
+我们来证明 c)。设 \(n\) 为整数，M、N 为被 \(\mathfrak{m}_{\mathrm{A}}^{n}\) 零化的有限长度 A-模。设 \(f: \mathrm{M} \to \mathrm{N}\) 为一个 A-线性映射。对 T(N) 中的 \(u\) 和 M 中的 \(x\)，我们由 FD 3) 有
+
+\[
+\begin{array}{r l} & {\theta_ {\mathrm{M}} (\mathrm{T} (f) (u)) (x) = \mathrm{T} (\varphi_ {\mathrm{M}, x} ^ {n}) \big (\mathrm{T} (f) (u) \big) = \mathrm{T} (f \circ \varphi_ {\mathrm{M}, x} ^ {n}) (u)} \\ & {\qquad = \mathrm{T} (\varphi_ {\mathrm{N}, f (x)} ^ {n}) (u) = \theta_ {\mathrm{N}} (u) (f (x)) = (\theta_ {\mathrm{N}} (u) \circ f) (x).} \end{array}
+\]
+
+这就证明了 c)。
+
+我们来证明 b)。首先考虑特殊情形 \(M = A/m_{A}^{n}\)。此时 \(T(M)\) 按定义等于 \(I_{n}\)。若 a 是 A 的一个元素，它的类 \(\bar{a}\) 在 M 中，我们有 \(\varphi_{M,\bar{a}}^{n} = a1_{M}\)，从而 \(T(\varphi_{M,\bar{a}}^{n}) = a1_{I_{n}}\)；于是 \(\theta_{M}: I_{n} \longrightarrow \operatorname{Hom}_{A}(A/m_{A}^{n}, I)\) 是典范同构，它把 \(I_{n}\) 的元素 x 映到映射 \(\bar{a} \mapsto ax\)。这就在此情形证明了 b)。
+
+现在设给定了正合序列
+
+\[
+\mathrm{P} \xrightarrow {u} \mathrm{N} \xrightarrow {v} \mathrm{M} \to 0
+\]
+
+其中的项都是被 \(\mathfrak{m}_{\mathrm{A}}^{n}\) 零化的有限长度 A-模。考虑图
+
+\[
+\begin{array}{c c c c c c} 0 \longrightarrow & \mathrm{T(M)} & \xrightarrow {\mathrm{T(v)}} & \mathrm{T(N)} & \xrightarrow {\mathrm{T(u)}} & \mathrm{T(P)} \\ & \theta_ {\mathrm{M}} \Bigg \downarrow & & \theta_ {\mathrm{N}} \Bigg \downarrow & & \theta_ {\mathrm{P}} \Bigg \downarrow \\ 0 \to & \operatorname{Hom} _ {\mathrm{A}} (\mathrm{M}, \mathrm{I}) & \xrightarrow {\operatorname{Hom} (v , 1)} & \operatorname{Hom} _ {\mathrm{A}} (\mathrm{N}, \mathrm{I}) & \xrightarrow {\operatorname{Hom} (u , 1)} & \operatorname{Hom} _ {\mathrm{A}} (\mathrm{P}, \mathrm{I}) \end{array} ;
+\]
+
+由证明的开头，这个图是交换的，且由 FD 4)，它的各行正合。由此推出：\(\theta_{\mathrm{M}}\) 是双射的，只要 \(\theta_{\mathrm{P}}\) 与 \(\theta_{\mathrm{N}}\) 如此。把这个结果应用于一个表现
+
+\[
+\left(\mathrm{A} / \mathfrak {m} _ {\mathrm{A}} ^ {n}\right) ^ {r} \longrightarrow \left(\mathrm{A} / \mathfrak {m} _ {\mathrm{A}} ^ {n}\right) ^ {s} \longrightarrow \mathrm{M} \rightarrow 0
+\]
+
+（A/m \(_{A}^{n}\)-模 M 的一个表现），我们推出 \(\theta_{M}\) 对每个被 m \(_{A}^{n}\) 零化的有限长度 A-模都是双射，由此得 b)。
+
+我们来证明 a)。把前面的结果应用于 A-模 \(A/m_{A}^{n}\)，就得到：\(I_{n}\) 是 I 中被 \(m_{A}^{n}\) 零化的元素组成的集合。由 FD 5)，A-模 \(I_{1} = T(\kappa_{A})\) 同构于 \(\kappa_{A}\)；由第 2 节的命题 2，只需证明：对每个整数 \(n \geqslant 0\) ，典范 A-线性映射
+
+\[
+\beta : \mathrm{I} _ {n + 1} / \mathrm{I} _ {n} \longrightarrow \operatorname{Hom} _ {\mathrm{A}} \left(\mathfrak {m} _ {\mathrm{A}} ^ {n} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1}, \mathrm{I}\right)
+\]
+
+是双射的。现在，由正合序列
+
+\[
+0 \longrightarrow \mathfrak {m} _ {\mathrm{A}} ^ {n} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1} \xrightarrow {u} \mathrm{A} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1} \xrightarrow {p _ {n + 1 , n}} \mathrm{A} / \mathfrak {m} _ {\mathrm{A}} ^ {n} \longrightarrow 0,
+\]
+
+得到一个正合序列
+
+\[
+0 \longrightarrow \mathrm{I} _ {n} \xrightarrow {i _ {n + 1 , n}} \mathrm{I} _ {n + 1} \xrightarrow {\mathrm{T} (u)} \mathrm{T} (\mathfrak {m} _ {\mathrm{A}} ^ {n} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1}) \longrightarrow 0.
+\]
+
+把 \(\mathrm{T}(u)\) 与 \(\theta_{\mathfrak{m}_{\mathrm{A}}^{n} / \mathfrak{m}_{\mathrm{A}}^{n + 1}}\) 复合，就得到一个满射同态
+
+\[
+\gamma : \mathrm{I} _ {n + 1} \longrightarrow \operatorname{Hom} _ {\mathrm{A}} (\mathfrak {m} _ {\mathrm{A}} ^ {n} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1}, \mathrm{I})
+\]
+
+其核为 \(I_{n}\) 。由 c)，\(\gamma\) 是箭头 \(\theta_{I_{n+1}}: I_{n+1} \to \mathrm{Hom}_{\mathrm{A}}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n+1}, \mathrm{I})\) 与 \(\mathrm{Hom}(u,1): \mathrm{Hom}_{\mathrm{A}}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n+1}, \mathrm{I}) \longrightarrow \mathrm{Hom}_{\mathrm{A}}(\mathfrak{m}_{\mathrm{A}}^{n}/\mathfrak{m}_{\mathrm{A}}^{n+1}, \mathrm{I})\) 的复合；由于 \(\theta_{I_{n+1}}\) 是与乘法 \(A/m_{A}^{n+1} \times I_{n+1} \longrightarrow I\) 相伴的线性映射，由 \(I_{n+1}/I_{n} \longrightarrow \mathrm{Hom}_{\mathrm{A}}(\mathfrak{m}_{\mathrm{A}}^{n}/\mathfrak{m}_{\mathrm{A}}^{n+1}, \mathrm{I})\) 导出的同构 \(\gamma\) 与 \(\beta\) 一致，证明完成。
+
+例. 5) 我们回到例 1 的假设与记号。此时 \(\mathrm{T}(\mathrm{A} / \mathfrak{m}_{\mathrm{A}}^{n}) = \mathrm{Hom}_{\mathrm{A}}(\mathrm{A} / \mathfrak{m}_{\mathrm{A}}^{n},\mathrm{J})\) 等同于 J 中被 \(\mathrm{J}_n\) 零化的元素组成的子模 \(\mathfrak{m}_{\mathrm{A}}^{n}\)；过渡到归纳极限，我们得到一个从 I 到 J 上的典范同构。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  我们采用例 3 的假设与记号。我们得到 \(I = \varinjlim \operatorname{Ext}_{\mathrm{A}}^{d}(A / \mathfrak{m}_{\mathrm{A}}^{n}, \Omega)\) 是一个 Matlis A-模。对每个有限长度的 A-模 M，有一个典范 A-同构
+\end{enumerate}
+
+\[
+\theta_ {\mathrm{M}}: \mathrm{Ext} _ {\mathrm{A}} ^ {d} (\mathrm{M}, \Omega) \longrightarrow \mathrm{Hom} _ {\mathrm{A}} (\mathrm{M}, \mathrm{I});
+\]
+
+此外，这个同构是 \(\operatorname{End}_{\mathrm{A}}(\mathrm{M})\)-线性的（定理 3, c)）。
+
+特别地，若环 A 是维数 d 的 Gorenstein 环，则 A-模 \(\lim\operatorname{Ext}_{\mathrm{A}}^{d}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n},\mathrm{A})\) 是一个 Matlis 模。
+

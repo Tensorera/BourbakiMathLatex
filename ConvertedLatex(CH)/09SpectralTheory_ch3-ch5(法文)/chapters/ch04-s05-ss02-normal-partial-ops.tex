@@ -1,0 +1,135 @@
+\subsection{正规部分算子与谱定理}
+
+在本节中，E 是复希尔伯特空间。
+
+定义 2. --- 设 u 是 E 上的部分算子。称 u 为正规的，如果 u 闭且稠定，并且它的有界变换 b(u) 是 E 的正规自同态。
+
+若 \(u \in \mathcal{L}(\mathrm{E})\)，则由公式 \(1_{\mathrm{E}} - b(u)^{*}b(u) = \mathrm{W}(u) = (1_{\mathrm{E}} + u^{*}u)^{-1}\)（IV，第 262 页，命题 1）与 \(b(u^{*}) = b(u)^{*}\)（同上所引之推论），此定义与 EVT，V，第 42 页，定义 4 相一致。
+
+若 \(u\) 是 \(\mathrm{E}\) 上的自伴部分算子，则 \(b(u)\) 是埃尔米特的（IV，第 264 页命题 2 的推论），故 \(u\) 正规。
+
+设 D 是 C 中的开单位圆盘。我们用 \(\beta\) 表示由 \(\beta(z)=z/\sqrt{1+|z|^{2}}\) 定义的从 C 到 D 中的函数。它是一个同胚，其逆满足 \(\beta^{-1}(z)=z/\sqrt{1-|z|^{2}}\)，对 \(z\in D\)。
+
+设 \(u \in \mathcal{L}(\mathrm{E})\)。由 IV，第 262 页命题 1 的公式 (2) 与 (3) 得 \(u = \beta^{-1}(b(u))\)，从而
+
+\[
+b (u) = \beta (u).\tag{5}
+\]
+
+引理 2. --- 设 X 是局部紧拓扑空间，μ 是 X 上的正测度。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(g\) 是 X 上 \(\mu\)-可测的函数。乘法算子 \(m_g\)（\(\mathrm{L}^2 (\mathrm{X},\mu)\) 上的）是正规的，且 \(b(m_g) = m_{\beta \circ g}\)；
+\item
+  设 \(h\colon X\to D\) 是 \(\mu\)-可测函数。自同态 \(m_h\) 属于 \(\Omega(L^2(X,\mu))\)，且 \(B(m_h)=m_{\beta^{-1}\circ h}\)。
+\end{enumerate}
+
+部分算子 \(m_g\) 闭且稠定。由于 \(m_g^* m_g = m_{\overline{g}} m_g = m_{|g|^2}\)（IV，第 253 页命题 23 与 IV，第 255 页命题 24），我们有
+
+\[
+\mathrm{W} (m _ {g}) = - \mathrm{R} (m _ {| g | ^ {2}}, - 1) = m _ {(1 + | g | ^ {2}) ^ {- 1}}
+\]
+
+（IV，第 252 页，命题 22）。由此得
+
+\[
+b (m _ {g}) = m _ {g} \circ \mathrm{W} (m _ {g}) ^ {1 / 2} = m _ {g} \circ m _ {(1 + | g | ^ {2}) ^ {- 1 / 2}} = m _ {\beta \circ g}
+\]
+
+这里依次用到 IV，第 262 页的公式 (2)、IV，第 187 页命题 6 的推论以及 IV，第 254 页引理 6。最后应用 IV，第 187 页命题 6，即得断言 a)。
+
+我们来证明 \(b\)）。由于 \(1 - |h(x)|^2 > 0\) 对一切 \(x \in \mathrm{X}\) 成立，我们有 \(m_h \in \Omega(\mathrm{L}^2(\mathrm{X}, \mu))\)（IV，第 187 页命题 6 的推论）。由于映射 \(u \mapsto b(u)\) 是单射（IV，第 264 页，命题 2），且自同态 \(b(\mathrm{B}(m_h))\) 与 \(b(m_{\beta^{-1}\circ h})\) 都等于 \(m_h\)（由断言 \(a\)），故确有 \(\mathrm{B}(m_h) = m_{\beta^{-1}\circ h}\)。
+
+定理 1（“谱定理”）。--- 设 u 是希尔伯特空间 E 上的正规部分算子。存在局部紧拓扑空间 X、X 上的正测度 μ、从 L²(X,μ) 到 E 上的等距同构 θ 以及 X 上的连续函数 g，使得 \(u = \theta \circ m_g \circ \theta^{-1}\)。
+
+按定义，E 的自同态 \(b(u)\) 是正规的。由 E 的正规自同态的谱定理（IV，第 193 页，推论 1），存在局部紧拓扑空间 \(\widetilde{X}\)、\(\mu\)（\(\widetilde{X}\) 上的正测度）、\(\widetilde{\theta}\)（从 \(\mathrm{L}^2 (\widetilde{\mathrm{X}},\mu)\) 到 E 上的等距同构），以及 \(h\)（\(\widetilde{X}\) 上的有界连续函数），使 \(b(u)\) 与 \(\widetilde{\theta}\circ m_h\circ \widetilde{\theta}^{-1}\) 相合。
+
+设 N 是由 \(x \in \widetilde{X}\)（满足 \(|h(x)| \geqslant 1\) 的）所成的闭子集。由于自同态 \(1 - b(u)^{*}b(u) = \widetilde{\theta} \circ m_{1-|h|^2} \circ \widetilde{\theta}^{-1}\) 正且单射，集合 N 是局部 \(\mu\)-零测的（IV，第 186 页引理 7 与 IV，第 187 页命题 6 的推论）。于是令 X = \(\widetilde{X} - N\)。它是局部紧空间，且函数到 X 上的限制诱导出从 \(\mathrm{L}^{2}(\widetilde{\mathrm{X}}, \mu)\) 到 \(\mathrm{L}^{2}(\mathrm{X}, \mu|\mathrm{X})\) 上的等距同构（IV，第 179 页，命题 1）。于是 \(\widetilde{\theta}\) 与函数到 X 上的限制的复合诱导出等距同构 \(\theta\)（从 \(\mathrm{L}^{2}(\mathrm{X}, \mu|\mathrm{X})\) 到 E 上的）。由于 \(b(u) = \theta \circ m_{h|\mathrm{X}} \circ \theta^{-1}\)，得 \(u = \theta \circ m_{\beta^{-1} \circ (h|\mathrm{X})} \circ \theta^{-1}\)（引理 2）。定理由此公式得出。
+
+引理 3. --- 设 u 是 E 上的正规部分算子。我们有
+
+\[
+\operatorname{Sp} (b (u)) \cap \mathrm{D} = \beta (\operatorname{Sp} (u)).
+\]
+
+我们有 \(b(u) = u \circ \mathrm{W}(u)^{1/2}\)（IV，第 262 页，命题 1）。自同态 \(\mathrm{W}(u)^{1/2}\) 是单射的，且它的像是 u 的定义域（IV，第 262 页，公式 (1)）。
+
+设 \(\lambda \in \mathbf{C}\)。数 \(\lambda\) 属于 \(u\) 的预解集，当且仅当 \((u - \lambda 1_{\mathrm{E}}) \circ \mathrm{W}(u)^{1/2}\) 是从 E 到 E 上的双射线性映射（IV，第 245 页，注 3）。而由 IV，第 262 页的公式 (3)，有
+
+\[
+(u - \lambda 1 _ {\mathrm{E}}) \circ \mathrm{W} (u) ^ {1 / 2} = b (u) - \lambda (1 _ {\mathrm{E}} - b (u) ^ {*} b (u)) ^ {1 / 2} = f _ {\lambda} (b (u))
+\]
+
+其中 \(f_{\lambda}\) 是在 \(\overline{\mathrm{D}}\) 上由 \(z \mapsto z - \lambda (1 - |z|^2)^{1/2}\) 定义的连续函数。自同态 \(f_{\lambda}(b(u))\) 是双射的，当且仅当它的谱不含 0。由于 \(\mathrm{Sp}(f_{\lambda}(b(u))) = f_{\lambda}(\mathrm{Sp}(b(u)))\)（I，第 111 页，命题 7，推论 2），此事成立当且仅当 0 不属于集合 \(f_{\lambda}(\mathrm{Sp}(b(u)))\)。于是，\(\lambda \in \mathrm{Sp}(u)\) 当且仅当存在 \(z \in \mathrm{Sp}(b(u)) \cap \overline{\mathrm{D}}\) 使得
+
+\[
+z - \lambda (1 - | z | ^ {2}) ^ {1 / 2} = 0.
+\]
+
+此等式若成立，便蕴含 \(z \in D\)，且意味着 \(\lambda = \beta^{-1}(z)\)。我们得出结论 \(\operatorname{Sp}(u) = \beta^{-1}(\operatorname{Sp}(b(u)) \cap D)\)，正如所述。
+
+设 u 是 E 上的正规部分算子。设 \(f \in \mathcal{K}(\mathrm{Sp}(u))\)。映射 \(z \mapsto f(\beta^{-1}(z))\)（从 \(\mathrm{Sp}(b(u)) \cap D\) 到 C 中的）连续且具有紧支集；于是唯一的映射 \(f_{\beta}\)（从 \(\mathrm{Sp}(b(u))\) 到 C 中、用零延拓它的）是连续的。
+
+定义 3. --- 对每个函数 \(f \in \mathcal{K}(\mathrm{Sp}(u))\)，我们定义 E 的自同态 \(f(u)\) 如下：\(f(u) = f_{\beta}(b(u))\)。
+
+映射 \(f \mapsto f_{\beta}\) 是从 \(\mathcal{K}(\mathrm{Sp}(u))\) 到 \(\mathcal{C}(\mathrm{Sp}(b(u)))\) 中的复代数同态，故映射 \(f \mapsto f(u)\) 是从 \(\mathcal{K}(\mathrm{Sp}(u))\) 到 \(\mathcal{L}(\mathrm{E})\) 中的复代数同态。我们有 \(\overline{f}(u) = f(u)^*\)，因为 \(\overline{f}_{\beta} = \overline{f_{\beta}}\)。若 \(f \geqslant 0\)，则 \(f_{\beta} \geqslant 0\)，故 \(f(u)\) 是 E 的正自同态。
+
+注记。--- 设 u 是 E 的正规自同态，于是 \(\mathrm{Sp}(u)\) 是 C 的紧子集。由于有界变换 \(b(u)\) 与 \(\beta(u)\) 相合（公式 (5)），且 \(\mathrm{Sp}(b(u)) = \beta(\mathrm{Sp}(u))\)（I，第 111 页，命题 7，推论 2），\(b(u)\) 的谱是 D 的紧子集。对每个连续函数 \(f \in \mathcal{C}(\mathrm{Sp}(u))\)，函数 \(f_{\beta}\) 与 \(f \circ \beta^{-1}\) 到 \(\mathrm{Sp}(u)\) 上的限制相合。于是，\(f_{\beta}(\beta(u))\) 与由 u 的连续泛函演算所定义的自同态 \(f(u)\) 相合。因此上述定义与星代数 \(\mathcal{L}(\mathrm{E})\) 的连续泛函演算的定义相容。
+
+设 \(f\in \mathcal{K}(\mathrm{Sp}(u))\)。我们有
+
+\[
+\| f (u) \| \leqslant \| f _ {\beta} \| _ {\infty} = \| f \| _ {\infty},
+\]
+
+于是，对所有 \(x\) 与 \(y\)（E 中的），我们得到估计 \(|\langle x | f(u)y\rangle| \leqslant \|x\|\|y\|\|f\|_{\infty}\)。故映射 \(f \mapsto \langle x | f(u)y\rangle\) 是 \(\mathrm{Sp}(u)\) 上总质量 \(\leqslant \|x\|\|y\|\) 的有界测度（INT，IV，第 154 页，§ 4，第 7 目）。若 \(x = y\)，它是正测度，因为 \(f(u)\) 当 \(f \geqslant 0\) 时是正的。
+
+定义 4. --- 设 u 是复希尔伯特空间 E 上的正规部分算子。设 x 与 y 在 E 中。由 \(f \mapsto \langle x | f(u)y \rangle\)（\(f \in \mathcal{K}(\mathrm{Sp}(u))\)）定义的 Sp(u) 上的有界测度称为 \((x,y)\) 关于 \(u\) 的谱测度。当 \(x = y\) 时，我们称它为 \(x\) 关于 \(u\) 的谱测度。
+
+注记。--- 1) 当 u 连续时，此定义与 IV，第 190 页定义 2 相一致。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(j\) 是 \(\mathrm{Sp}(u)\) 到 \(\mathbf{C}\) 中的典范单射。由于 \(\mathrm{Sp}(u)\) 是闭的，映射 \(j\) 是 \(\mu\)-逆紧的，对每个有界测度 \(\mu\)（\(\mathrm{Sp}(u)\) 上的）（INT，V，第 68 页，§ 6，第 1 目，命题 1）。人们常把 \(u\) 的谱测度与 \(\mathbf{C}\) 上作为它们在 \(j\) 下的像的测度等同起来（参见 INT，V，第 84 页，§ 7，第 2 目）。
+\end{enumerate}
+
+从 E×E 到巴拿赫空间 \(\mathcal{M}^{1}(\mathrm{Sp}(u))\) 中把 \((x,y)\) 映为 \((x,y)\) 关于 u 的谱测度的映射是半双线性的，并且是范数 \(\leqslant 1\) 的连续映射。
+
+引理 4. --- 设 X 是局部紧拓扑空间，\(\mu\) 是 X 上的正测度，\(g\) 是 X 上 \(\mu\)-可测的函数。设 \(m_g\) 是乘以 \(g\) 的乘法算子（\(\mathrm{L}^2 (\mathrm{X},\mu)\) 上的）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  映射 \(f\mapsto f(m_{g})\)（从 \(\mathcal{K}(\mathrm{Sp}(m_g))\) 到 \(\mathcal{L}(\mathrm{L}^{2}(\mathrm{X},\mu))\) 中的）由 \(f\mapsto m_{f\circ g}\) 给出；
+\item
+  对 \(f_1\) 与 \(f_2\)（\(\mathcal{L}^2(\mathrm{X},\mu)\) 中的，其类 \(\widetilde{f}_1\) 与 \(\widetilde{f}_2\) 在 \(\mathrm{L}^2(\mathrm{X},\mu)\) 中），\((\widetilde{f}_1,\widetilde{f}_2)\) 关于 \(m_g\) 的谱测度是限制到 \(\mathrm{Sp}(m_g)\) 上的像测度 \(g(\overline{f}_1f_2\cdot \mu)\)。
+\end{enumerate}
+
+部分算子 \(m_g\) 是正规的，且 \(b(m_g) = m_{\beta \circ g} = m_{g(1+|g|^2)^{-1/2}}\)（引理 2）。此外，\(\beta(g(x))\) 属于 \(\mathrm{Sp}(m_{\beta \circ g})\)，对每个 \(x\)（位于局部 \(\mu\)-零测集 \(Y \subset X\) 之外）（IV，第 252 页命题 22 与 IV，第 181 页引理 1）。由于 \(f_\beta(\beta(g(x))) = f(g(x))\) 对一切 \(x \in X - Y\) 成立，由定义 3 与 IV，第 187 页命题 6 的推论，我们推出 \(f(m_g) = m_{f \circ g}\)。
+
+设 \(f_1\) 与 \(f_2\) 是 \(\mathcal{L}^2(\mathrm{X},\mu)\) 中的元素，其类 \(\widetilde{f}_1\) 与 \(\widetilde{f}_2\) 在 \(\mathrm{L}^2(\mathrm{X},\mu)\) 中。由于测度 \(\nu = \overline{f}_1f_2\cdot \mu\) 有界，像测度 \(g(\nu)\) 有定义（INT，V，第 69 页，§ 6，第 1 目，注 1）。设 \(f\in \mathcal{K}(\mathrm{Sp}(m_g))\)。我们有 \(f(m_{g}) = m_{f\circ g}\)（由 \(a\)），于是
+
+\[
+\langle \widetilde {f} _ {1} \mid f (m _ {g}) \widetilde {f} _ {2} \rangle = \int_ {\mathrm{X}} \overline {{f}} _ {1} (f \circ g) f _ {2} d \mu = \int_ {\mathrm{X}} (f \circ g) (\overline {{f}} _ {1} f _ {2} d \mu) = \int_ {\mathbf {C}} f d \nu
+\]
+
+（INT，V，第 69 页，§ 6，第 1 目，公式 (1)），这就建立了断言 b)。
+
+例。--- 设 \(n \in \mathbf{N}\)。我们给 \(\mathbf{R}^{n}\) 赋以勒贝格测度，并按 II，第 236 页推论 3 把 \(\mathbf{R}^{n}\) 与它的对偶群等同起来。用 N 表示 \(\mathbf{R}^{n}\) 上的欧几里得范数，用 \(\mathcal{F}\) 表示 \(\mathcal{S}(\mathbf{R}^{n})\) 上与 \(\mathcal{S}'(\mathbf{R}^{n})\) 上的傅里叶变换（IV，第 217 页，第 12 目）。
+
+设 \(\Delta_{\mathcal{S}}\) 是 \(\mathrm{L}^2 (\mathbf{R}^n)\) 上以空间 \(\mathcal{S}(\mathbf{R}^n)\) 为定义域且满足
+
+\[
+\Delta_ {\mathcal {S}} (\varphi) = - \sum_ {i = 1} ^ {n} \partial_ {i} ^ {2} \varphi
+\]
+
+的部分算子，对一切 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) 成立。于是 \(\mathcal{F}(\Delta_{\mathcal{S}}(\varphi))=4\pi^{2}\mathrm{N}^{2}\mathcal{F}(\varphi)\)，对每个函数 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\)（IV，第 220 页，注 12）。由于傅里叶变换是 \(\mathcal{S}(\mathbf{R}^{n})\) 的自同构（IV，第 219 页，命题 18），这表明部分算子 \(u=\mathcal{F}\circ\Delta_{\mathcal{S}}\circ\mathcal{F}^{-1}\) 是乘法算子 \(m_{4\pi^{2}\mathrm{N}^{2}}\) 到空间 \(\mathcal{S}(\mathbf{R}^{n})\) 上的缩减。部分算子 \(u\) 可闭且对称；它的闭包是正的自伴部分算子 \(m_{4\pi^{2}\mathrm{N}^{2}}\)（IV，第 232 页命题 6，对空间 \(\mathcal{D}(\mathbf{R}^{n})\subset\mathcal{S}(\mathbf{R}^{n})\) 应用，并用到 IV，第 202 页命题 4）。因此，部分算子 \(\Delta_{\mathcal{S}}\) 本质自伴。我们用 \(\Delta\) 表示它的闭包；它是正的自伴算子，并且是 \(\mathbf{R}^{n}\) 上唯一的拉普拉斯算子（\(cf.\) IV，第 243 页第 6 目的例以及 IV，第 257 页命题 26 的推论）。
+
+由 IV，第 223 页命题 21，索伯列夫空间 \(\mathrm{H}^2 (\mathbf{R}^n)\) 是由 \(f\in \mathrm{L}^2 (\mathbf{R}^n)\)（使 \((1 + \mathrm{N}^2)\mathcal{F}(f)\) 属于 \(\mathrm{L}^2 (\mathbf{R}^n)\) 的）所成的集合，亦即使 \(\mathcal{F}(f)\) 属于 \(m_{4\pi^2\mathrm{N}^2}\) 的定义域。由于傅里叶变换是空间 \(\mathrm{L}^2 (\mathbf{R}^n)\) 到其自身上的等距同构（II，第 215 页，定理 1），拉普拉斯算子 \(\Delta\) 的定义域是 \(\mathrm{H}^2 (\mathbf{R}^n)\)。我们有 \(\Delta = \mathcal{F}^{-1}\circ m_{4\pi^2\mathrm{N}^2}\circ \mathcal{F}\)。特别地，\(\Delta\) 的谱等于 \(\mathbf{R}_{+}\)。
+% semantic-fragments: legacy-input-seam
+\relax{}

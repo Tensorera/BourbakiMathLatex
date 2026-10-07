@@ -1,0 +1,73 @@
+\subsection{不可约空间}
+
+定义 1. 若拓扑空间 X 的非空开集的每个有限交都非空，则称 X 为不可约的。
+
+考虑 X 的开集的空族即可看出，不可约空间是非空的；为使拓扑空间 X 不可约，必须且只需它是非空的，且 X 的两个非空开集的交总是非空的（或者等价地说，两个异于 X 的闭集的并总是异于 X 的）。
+
+命题 1. 设 X 是一个非空拓扑空间。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  \(\mathbf{X}\) 是不可约的；
+\item
+  \(\mathbf{X}\) 的每个非空开集在 \(\mathbf{X}\) 中稠密；
+\item
+  \(\mathbf{X}\) 的每个开集都是连通的。
+\end{enumerate}
+
+按定义，在 X 中稠密的集合是与每个非空开集都相交的集合，因此 (a) 与 (b) 等价。立刻可见 (c) 蕴含 (a)，因为若 \(U_{1}\) 与 \(U_{2}\) 是互不相交的非空开集，则 \(U_{1} \cup U_{2}\) 是一个不连通的开集。最后证明 (a) 蕴含 (c)：若 U 是一个不连通的开集，则它是两个互不相交的非空集合 \(U'\)、\(U''\) 的并，这两个集合在 U 中开，从而在 X 中也开，这蕴含 X 不是不可约的。
+
+一个 Hausdorff 空间仅当它由单个点组成时才可能是不可约的。
+
+拓扑空间 X 的子集 E 称为不可约集，如果 X 的子空间 E 是不可约的。为此，必须且只需对每对在 X 中开且与 E 相交的集合 U、V，\(U \cap V\) 也与 E 相交，或者（等价地）对每对在 X 中闭且满足 \(E \subset F \cup G\) 的集合 F、G，有 \(E \subset F\) 或 \(E \subset G\)。对 n 用归纳法，我们推出：若 \((\mathbf{F}_{i})_{1 \leq i \leq n}\) 是 X 的闭集的有限族且满足 \(E \subset \bigcup_{i=1}^{n} F_{i}\)，则存在指标 i 使 \(E \subset F_{i}\)。
+
+命题 2. 在拓扑空间 X 中，为使一个集合 E 不可约，必须且只需其闭包 \(\overline{E}\) 不可约。
+
+为使 X 的一个开集与 E 相交，必须且只需它与 \(\overline{E}\) 相交；于是命题由上面的注得出。
+
+命题 3. (i) 若 X 是不可约空间，则 X 的每个非空开子集都不可约。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \((\mathbf{U}_{\alpha})_{\alpha \in \mathbf{A}}\) 是拓扑空间 \(\mathbf{X}\) 的一个由开集组成的非空覆盖，使得 \(\mathbf{U}_{\alpha} \cap \mathbf{U}_{\beta} \neq \varnothing\) 对每对指标 \((\alpha, \beta)\) 都成立。若诸集合 \(\mathbf{U}_{\alpha}\) 不可约，则空间 \(\mathbf{X}\) 不可约。
+\end{enumerate}
+
+(i) 若 \(\mathbf{X}\) 不可约，\(\mathbf{U} \subset \mathbf{X}\) 在 \(\mathbf{X}\) 中非空且开，\(\mathbf{V} \subset \mathbf{U}\) 在 \(\mathbf{U}\) 中非空且开，则 \(\mathbf{V}\) 也在 \(\mathbf{X}\) 中开，从而在 \(\mathbf{X}\) 中稠密，更加在 \(\mathbf{U}\) 中稠密。于是 \(\mathbf{U}\) 不可约（命题 1）。
+
+(ii) 我们证明，对 X 中每个非空开集 V，\(V \cap U_{\alpha} \neq \varnothing\) 对一切 \(\alpha \in A\) 成立：由此按假设 \(V \cap U_{\alpha}\) 在 \(U_{\alpha}\) 中稠密，从而 V 在 X 中稠密，这证明 X 不可约（命题 1）。现在至少存在一个指标 \(\gamma\) 使 \(V \cap U_{\gamma} \neq \varnothing\)；由于 \(U_{\alpha} \cap U_{\gamma} \neq \varnothing\) 对一切 \(\alpha\) 成立，且 \(V \cap U_{\gamma}\) 在 \(U_{\gamma}\) 中稠密，故 \(U_{\alpha} \cap U_{\gamma} \cap V \neq \varnothing\)，更加有 \(U_{\alpha} \cap V \neq \varnothing\)，这就完成了 (ii) 的证明。
+
+命题 4. 设 X 与 Y 是两个拓扑空间，f 是从 X 到 Y 的一个连续映射。对 X 的每个不可约子集 E，\(f(E)\) 是 Y 的一个不可约子集。
+
+若 U、V 是 Y 的两个与 \(f(\mathrm{E})\) 相交的开集，则 \(\overline{f}^{-1}(\mathrm{U})\) 与 \(\overline{f}^{-1}(\mathrm{V})\) 是 X 的与 E 相交的开集。因此 \(\overline{f}^{-1}(\mathrm{U}) \cap \overline{f}^{-1}(\mathrm{V}) = \overline{f}^{-1}(\mathrm{U} \cap \mathrm{V})\) 与 E 相交，这蕴含 \(U \cap V\) 与 \(f(\mathrm{E})\) 相交，从而证明了命题。
+
+定义 2. 拓扑空间 X 的每个极大不可约子集称为 X 的一个不可约分支。
+
+由命题 2，\(\mathbf{X}\) 的每个不可约分支在 \(\mathbf{X}\) 中是闭的。
+
+命题 5. 设 X 是一个拓扑空间。X 的每个不可约子集都含于 X 的一个不可约分支中，且 X 是其诸不可约分支的并。
+
+为证第一个断言，凭 Zorn 引理，只需证明 \(\Im\)（即 \(X\) 的不可约子集之集）是归纳的。设 \(\mathfrak{G}\) 是 \(\Im\) 的一个按包含关系全序的子集；我们证明 \(E\)（诸集合 \(F \in \mathfrak{G}\) 的并）不可约。设 \(U\)、\(V\) 是 \(X\) 的两个与 \(E\) 相交的开集；由于 \(\mathfrak{G}\) 是全序的，存在与 U 和 V 都相交的集合 \(F \in \mathfrak{G}\)；由于 F 不可约，\(U \cap V\) 与 F 相交，从而也与 E 相交，这证明 E 不可约，从而 \(\mathfrak{G}\) 是归纳的。第二个断言由第一个得出，因为 X 的每个由单个点组成的子集都不可约。
+
+推论. 拓扑空间 X 的每个连通分支都是 X 的若干不可约分支的并。
+
+由命题 1，X 的每个不可约子空间都连通，从而含于 X 的一个连通分支中。
+
+注意，X 的两个不同的不可约分支可能有公共点（习题 11）。
+
+命题 6. 设 X 是一个拓扑空间，\((\mathrm{P}_{i})_{1\leq i\leq n}\) 是 X 的一个由不可约闭集组成的有限覆盖。则 X 的不可约分支是诸 \(P_{i}\) 的集合的（按包含关系的）极大元。
+
+我们可以限于诸 \(P_{i}\) 两两不可比较的情形。若 E 是 X 的一个不可约子集，则 \(E \subset \bigcup_{i=1}^{n} P_{i}\)，从而 E 含于某个闭集 \(P_{i}\) 之中；这证明诸 \(P_{i}\) 是 X 仅有的极大不可约子集。
+
+推论. 设 X 是一个拓扑空间，E 是一个只有有限多个不同不可约分支 \(Q_{i}\)（\(1 \leqslant i \leqslant n\)）的子空间；则 X 中闭包 \(\overline{E}\) 的不可约分支是诸 \(\overline{Q}_{i}\)（即 \(Q_{i}\) 的闭包，\(1 \leqslant i \leqslant n\)），且 \(\overline{Q}_{i} \neq \overline{Q}_{j}\) 对 \(i \neq j\) 成立。
+
+\(\overline{\mathbf{E}}\) 是诸 \(\overline{\mathbf{Q}}_i\) 的并，它们不可约（命题 2）；由于 \(\mathbf{Q}_i\) 在 \(\mathbf{E}\) 中闭，故 \(\overline{\mathbf{Q}}_i \cap \mathbf{E} = \mathbf{Q}_i\)；由于 \(\mathbf{Q}_i \not\subset \mathbf{Q}_j\) 对 \(i \neq j\) 成立，故 \(\overline{\mathbf{Q}}_i \not\subset \overline{\mathbf{Q}}_j\)，从而凭命题 6 得该推论。
+
+注. 设 X 只有有限多个不同的不可约分支 \(X_{i}\)（\(1 \leqslant i \leqslant n\)）；则 \(U_{i} = \complement\left(\bigcup_{j \neq i} X_{j}\right)\) 在 X 中开且在 \(X_{i}\) 中稠密，因为 \(X_{i} \not\subset \bigcup_{j \neq i} X_{j}\)；于是诸 \(U_{i}\)（\(1 \leqslant i \leqslant n\)）是 X 的非空开集，它们不可约（命题 2）、两两不相交，且它们的并在 X 中稠密。
+
+命题 7. 设 U 是拓扑空间 X 的一个开子集。映射 \(V \mapsto \overline{V}\)（闭包取在 X 中）是从 U 的在 U 中闭的不可约子集之集到 X 的在 X 中闭且与 U 相交的不可约子集之集上的双射；逆双射是 \(Z \mapsto Z \cap U\)。特别地，此双射把 U 的不可约分支之集映到 X 的与 U 相交的不可约分支之集上。
+
+若 V 在 U 中闭且不可约，则 \(\overline{V}\) 不可约（命题 2）且 \(V = \overline{V} \cap U\)。反之，若 Z 不可约、在 X 中闭且与 U 相交，则 \(Z \cap U\) 是 Z 的非空开子集，从而不可约（命题 3）且在 Z 中稠密；由于 Z 是闭的，\(Z = \overline{Z \cap U}\)。这就证明了命题。
+

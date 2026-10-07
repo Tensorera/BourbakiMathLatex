@@ -1,0 +1,90 @@
+\subsection{指数函数的导数；数 e}
+
+我们知道，加法群 R 到乘法群 \(R^{*}\) （由 \(\neq 0\) 的实数组成）中的每个连续同态都是形如 \(x \mapsto a^{x}\) 的函数（称为指数函数），其中 a 是一个 \textgreater{} 0 的数（TG, V, p.11）；它是 R 到乘法群 \(R_{+}^{*}\) （由 \textgreater{} 0 的数组成）上的同构（当 \(a \neq 1\) 时），而从 \(R_{+}^{*}\) 到 R 上的逆同构记作 \(\log_{a} x\) ，称为以 a 为底的对数。
+
+我们将看到，函数 \(f(x) = a^{x}\) 对每个 \(x \in R\) 都有形如 \(c.a^{x}\) 的导数（显然其中 \(c = f'(0)\) ）。这可由下面的一般定理推出：
+
+定理 1. 设 E 是域 R 上的一个完备赋范代数，具有单位元 e，并设 f 是加法群 R 到 E 的可逆元所成的乘法群 G 中的连续群同态。则映射 f 在每个 \(x \in R\) 处可导，并且
+
+\[
+\mathbf {f} ^ {\prime} (x) = \mathbf {f} (x) \mathbf {f} ^ {\prime} (0).\tag{1}
+\]
+
+首先注意，由于 E 是完备代数，G 在 E 中是开的（Gen.~Top., IX, p.~179, prop. 14）。考虑函数 \(\mathbf{g}(x) = \int_0^a \mathbf{f}(x + t) dt\) ，其中 \(a > 0\) 是一个稍后选定的数；由假设 \(\mathbf{f}(x + t) = \mathbf{f}(x) \mathbf{f}(t)\) ，我们有 \(\mathbf{g}(x) = \int_0^a \mathbf{f}(x) \mathbf{f}(t) dt = \mathbf{f}(x) \int_0^a \mathbf{f}(t) dt\) （I, p.~6, prop. 3）。取 \(\alpha > 0\) 使球 \(\| \mathbf{x} - \mathbf{e} \| \leqslant \alpha\) 含于 G 中；由于 \(\mathbf{f}(0) = \mathbf{e}\) 且由假设 \(\mathbf{f}\) 连续，可以认为 \(a\) 取得足够小，使得 \(\| \mathbf{f}(t) - \mathbf{e} \| \leqslant \alpha\) 在 {[}0, a{]} 上成立；于是（II, p.~61，公式 (16)）有
+
+\[
+\left\| \frac {1}{a} \int_ {0} ^ {a} \mathbf {f} (t) d t - \mathbf {e} \right\| \leqslant \alpha ,
+\]
+
+并且 \(\frac{1}{a}\int_{0}^{a}\mathbf{f}(t)dt\) 属于 G；换句话说，它是可逆的；于是 \(\mathbf{b}=\int_{0}^{a}\mathbf{f}(t)dt\) 也可逆，从而可以写 \(\mathbf{f}(x)=\mathbf{g}(x)\mathbf{b}^{-1}\) ；因此只需证明 g 可导；而由变量替换 \(x+t=u\) 我们有 \(\mathbf{g}(x)=\int_{x}^{x+a}\mathbf{f}(u)du\) ；由于 f 连续，g 对一切 \(x\in R\) 可导（II, p.~56, prop. 3），并且
+
+\[
+\mathbf {g} ^ {\prime} (x) = \mathbf {f} (x + a) - \mathbf {f} (x) = \mathbf {f} (x) (\mathbf {f} (a) - \mathbf {e}).
+\]
+
+由此 \(\mathbf{f}'(x) = \mathbf{g}'(x)\mathbf{b}^{-1} = \mathbf{f}(x)\mathbf{c}\) ，其中 \(\mathbf{c} = (\mathbf{f}(a) - \mathbf{e})\mathbf{b}^{-1}\) ，并且显然 \(\mathbf{f}'(0) = \mathbf{c}\) 。
+
+反之，可以直接地（III, p.~115, exerc. 1），或者借助线性微分方程理论（IV, p.~188）证明：每个可导映射 \(\mathbf{f}\) （\(\mathbf{R}\) 到完备赋范代数 E 中的），只要满足 \(\mathbf{f}'(x) = \mathbf{f}(x)\mathbf{c}\) 与 \(\mathbf{f}(0) = \mathbf{e}\) ，就是加法群 \(\mathbf{R}\) 到乘法群 G 中的同态。
+
+命题 1. 对每个数 a \textgreater{} 0 且 \(\neq 1\) ，指数函数 \(a^{x}\) 在每一点 \(x \in R\) 处有导数，等于 \((\log_{e}a)a^{x}\) ，其中 e 是一个 \textgreater{} 1 的数（与 a 无关）。
+
+把定理 1 应用于 E 就是域 R 本身的情形，便知 \(a^{x}\) 在每一点都有导数，等于 \(\varphi(a).a^{x}\) ，其中 \(\varphi(a)\) 是仅依赖于 a 的实数 \(\neq 0\) 。设 b 是第二个 \textgreater{} 0 且 \(\neq 1\) 的数；由上所述，函数 \(b^{x}\) 有导数，等于 \(\varphi(b).b^{x}\) ；另一方面，我们有 \(b^{x} = a^{x.\log_{a}b}\) ，于是（I, p.~9, prop. 5）\(b^{x}\) 的导数等于 \(\log_{a}b.\varphi(a)b^{x}\) ；比较这两个表达式便得
+
+\[
+\varphi (b) = \varphi (a). \log_ {a} b.\tag{2}
+\]
+
+由此推出，存在唯一的数 \(b\) 使 \(\varphi(b) = 1\) ；由 (2)，这一关系等价于 \(b = a^{1/\varphi(a)}\) 。习惯上把这样得到的实数记作 \(e\) ；由 (2) 有 \(\varphi(a) = \log_e a\) ，这就完成了命题 1 的证明。
+
+我们常以 \(\exp x\) 代替 \(e^x\) 。
+
+数 e 的定义表明
+
+\[
+\mathrm{D} (e ^ {x}) = e ^ {x}\tag{3}
+\]
+
+这证明 \(e^{x}\) 严格递增，从而 e \textgreater{} 1。
+
+在 §2（III, p.~105）中我们将看到如何计算 \(e\) 的任意接近的近似值。
+
+定义 1. 以 \(e\) 为底的对数称为纳皮尔对数（或自然对数）。
+
+在纳皮尔对数的记号中，我们通常省略底。除非另有说明，记号 \(\log x (x > 0)\) 都表示 x 的纳皮尔对数。采用这一记号，命题 1 可写成恒等式
+
+\[
+\mathrm{D} \left(a ^ {x}\right) = (\log a) a ^ {x}\tag{4}
+\]
+
+它对任何 a \textgreater{} 0 都成立（当 a = 1 时 \(\log a = 0\) ）。
+
+这一关系表明 \(a^x\) 有各阶导数，并且
+
+\[
+\mathrm{D} ^ {n} \left(a ^ {x}\right) = (\log a) ^ {n} a ^ {x}.\tag{5}
+\]
+
+特别地，对 a \textgreater{} 0 且 \(\neq 1\) ，有 \(\mathrm{D}^{2}(a^{x}) > 0\) 对一切 \(x \in R\) 成立，因而 \(a^{x}\) 在 R 上严格凸（I, p.~31，推论）。由此可推出下面的命题：
+
+命题 2（“几何平均不等式”）。对任意满足 \(z_{i} > 0\) （ \(1 \leqslant i \leqslant n\) ）的数以及数 \(p_{i} > 0\) （使 \(\sum_{i=1}^{n} p_{i} = 1\) ），有
+
+\[
+z _ {1} ^ {p _ {1}} z _ {2} ^ {p _ {2}} \dots z _ {n} ^ {p _ {n}} \leqslant p _ {1} z _ {1} + p _ {2} z _ {2} + \dots + p _ {n} z _ {n}.\tag{6}
+\]
+
+此外，(6) 的两端仅当诸 \(z_{i}\) 相等时才相等。
+
+令 \(z_{i} = e^{x_{i}}\) ；则不等式 (6) 可写成
+
+\[
+\exp \left(p _ {1} x _ {1} + p _ {2} x _ {2} + \dots + p _ {n} x _ {n}\right) \leqslant p _ {1} e ^ {x _ {1}} + p _ {2} e ^ {x _ {2}} + \dots + p _ {n} e ^ {x _ {n}}.\tag{7}
+\]
+
+于是，把 I, p.~26 的命题 1 应用于函数 \(e^x\) （它在 \(\mathbf{R}\) 上严格凸），即得本命题。
+
+我们把 (6) 的左端（相应地，右端）称为 n 个数 \(z_{i}\) 关于权 \(p_{i}\) （ \(1 \leqslant i \leqslant n\) ）的加权几何平均（相应地，加权算术平均）。若 \(p_{i} = 1/n\) 对 \(1 \leqslant i \leqslant n\) 成立，则称相应的算术平均与几何平均为 \(z_{i}\) 的通常算术平均与几何平均。此时不等式 (6) 可写成
+
+\[
+\left(z _ {1} z _ {2} \dots z _ {n}\right) ^ {1 / n} \leqslant \frac {1}{n} \left(z _ {1} + z _ {2} + \dots + z _ {n}\right).\tag{8}
+\]
+

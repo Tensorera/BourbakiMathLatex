@@ -1,0 +1,120 @@
+\subsection{测度的逆极限}
+
+设 X、Y 是两个紧空间，\(p : X \to Y\) 是一个连续映射；则 \(f \mapsto f \circ p\) 是 \(\mathcal{C}(Y; \mathbf{C})\) 到 \(\mathcal{C}(X; \mathbf{C})\) 中的一个连续线性映射，因为 \(\|f \circ p\| \leqslant \|f\|\) 对每个函数 \(f \in \mathcal{C}(Y; \mathbf{C})\) 都成立；我们把这个映射记作 \(p'\) 。于是它的转置 \(^{t}p' : M(X; C) \to M(Y; C)\) 具有如下性质：对 X 上的每个测度 \(\mu\) ，\(^{t}p'(\mu)\) 是 Y 上满足
+
+\[
+\langle^ {t} p ^ {\prime} (\mu), f \rangle = \langle \mu , f \circ p \rangle
+\]
+
+对每个函数 \(f \in \mathcal{C}(\mathrm{Y};\mathbf{C})\) 都成立的测度。注意，对每个 \(x \in \mathrm{X}\) ，有 \(^t p'(\varepsilon_x) = \varepsilon_{p(x)}\) ；为此，我们用 \(p_*(\mu)\) 表示测度 \(^t p'(\mu)\) ，它就这样延拓了 \(p\) ，当 \(\mathrm{X}\) （相应地 \(\mathrm{Y}\) ）典范地嵌入 \(\mathcal{M}(\mathrm{X};\mathbf{C})\) （相应地 \(\mathcal{M}(\mathrm{Y};\mathbf{C})\) ）时（§1, No.~9, 命题 13）；对每个测度 \(\mu\) （\(\mathrm{X}\) 上的），\(p_*(\mu)\) 是测度的像这一一般概念（我们将在 Ch. V, §6 中研究）的特例。由于我们上面已经看到 \(\| p' \| \leqslant 1\) ，故也有 \(\| ^t p' \| \leqslant 1\) ，从而
+
+\[
+\| p _ {*} (\mu) \| \leqslant \| \mu \|\tag{15}
+\]
+
+对每个测度 \(\mu \in \mathcal{M}(\mathrm{X};\mathbf{C})\) 成立。
+
+现在考虑一个有向预序集 I，以及一个逆系统（或称"射影系统"）\((\mathrm{X}_{\alpha}, p_{\alpha\beta})\) ，它由紧空间 \(X_{\alpha}\) （GT, I, §4, No.~4）组成，以 I 为指标集；已知逆极限空间 \(X = \varprojlim X_{\alpha}\) 是紧的（GT, I, §9, No.~6, 命题 8）；我们将用 \(p_{\alpha}\) 表示 X 到 \(X_{\alpha}\) 中的典范映射。
+
+显然，\((\mathcal{M}(\mathrm{X}_{\alpha};\mathbf{C}),(p_{\alpha\beta})_{*})\) 是向量空间的一个逆系统，而 \(((p_{\alpha})_{*})\) 是线性映射的一个逆系统，这就为下述定义提供了依据：
+
+定义 2. --- 设 \((\mu_{\alpha})_{\alpha \in I}\) 是一个族，其中对每个 \(\alpha \in I\) ，\(\mu_{\alpha}\) 是 \(X_{\alpha}\) 上的一个测度；若当 \(\alpha \leqslant \beta\) 时总有 \(\mu_{\alpha} = (p_{\alpha \beta})_{*}(\mu_{\beta})\) ，则称该族为测度的一个逆系统。测度 \(\mu\) （在 \(X = \varprojlim X_{\alpha}\) 上）称为逆系统 \((\mu_{\alpha})\) 的一个逆极限，如果 \(\mu_{\alpha} = (p_{\alpha})_{*}(\mu)\) 对每个 \(\alpha \in I\) 成立。
+
+命题 8. --- （i）若测度逆系统 \((\mu_{\alpha})\) （在诸 \(X_{\alpha}\) 上）有逆极限，则该逆极限是唯一的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  若逆系统 \((\mu_{\alpha})\) 有逆极限，则范数族 \((\| \mu_{\alpha}\|)\) 有界。
+\item
+  若诸 \(p_{\alpha\beta}\) 都是满射且族 ( \(\|\mu_{\alpha}\|\) ) 有界，则测度逆系统 ( \(\mu_{\alpha}\) ) 有逆极限。
+\item
+  若诸 \(p_{\alpha \beta}\) 都是满射，则每个正测度逆系统 \((\mu_{\alpha})\) 都有一个逆极限 \(\mu\) ，它是 \(X\) 上的正测度，且 \(\| \mu \| = \| \mu_{\alpha} \|\) 对所有 \(\alpha\) 成立。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  我们首先证明下述引理：
+\end{enumerate}
+
+引理 3. --- 设 F 是由具有下述性质的函数 \(f \in \mathcal{C}(\mathrm{X};\mathbf{C})\) 所成的集：存在 \(\alpha \in \mathrm{I}\) 和函数 \(f_{\alpha} \in \mathcal{C}(\mathrm{X}_{\alpha};\mathbf{C})\) 使 \(f = f_{\alpha} \circ p_{\alpha}\) 。则 F 是 \(\mathcal{C}(\mathrm{X};\mathbf{C})\) 的一个稠密线性子空间。
+
+我们首先注意，若 \(g = g_{\beta} \circ p_{\beta}\) 且 \(h = h_{\gamma} \circ p_{\gamma}\) ，其中 \(g_{\beta} \in \mathcal{C}(\mathrm{X}_{\beta}; \mathbf{C})\) ，\(h_{\gamma} \in \mathcal{C}(\mathrm{X}_{\gamma}; \mathbf{C})\) ，则存在 \(\alpha \in I\) 使 \(\alpha \geqslant \beta\) 且 \(\alpha \geqslant \gamma\) ，于是 \(p_{\beta} = p_{\beta\alpha} \circ p_{\alpha}\) ，\(p_{\gamma} = p_{\gamma\alpha} \circ p_{\alpha}\) ，由此可知
+
+\[
+g + h = \left(g _ {\beta} \circ p _ {\beta \alpha} + h _ {\gamma} \circ p _ {\gamma \alpha}\right) \circ p _ {\alpha}
+\]
+
+属于 F；同理可见 \(gh \in F\) ；于是 F 是 \(\mathcal{C}(\mathrm{X};\mathbf{C})\) 的一个 C-子代数，它包含常数，并且关系 \(f \in F\) 蕴涵 \(\overline{f} \in F\) 。最后，若 \(x \neq y\) 是 X 的两个点，则存在 \(\alpha \in I\) 使 \(p_{\alpha}(x) \neq p_{\alpha}(y)\) ，因而存在函数 \(f_{\alpha} \in \mathcal{C}(\mathrm{X}_{\alpha};\mathbf{C})\) 使 \(f_{\alpha}(p_{\alpha}(x)) \neq f_{\alpha}(p_{\alpha}(y))\) 。于是结论由 Stone--Weierstrass 定理（GT, X, §4, No.~4, 命题 7）得出。
+
+引理既已建立，设 \(\mu, \mu'\) 是 X 上两个使 \((p_{\alpha})_{*}(\mu) = (p_{\alpha})_{*}(\mu')\) 对所有 \(\alpha \in I\) 成立的测度；这就是说，对每个 \(\alpha \in I\) 和每个函数 \(f_{\alpha} \in \mathcal{C}(X_{\alpha}; \mathbf{C})\) ，有
+
+\[
+\left\langle f _ {\alpha}, \left(p _ {\alpha}\right) _ {*} (\mu) \right\rangle = \left\langle f _ {\alpha}, \left(p _ {\alpha}\right) _ {*} \left(\mu^ {\prime}\right) \right\rangle ,
+\]
+
+即 \(\langle f_{\alpha} \circ p_{\alpha}, \mu \rangle = \langle f_{\alpha} \circ p_{\alpha}, \mu' \rangle\) ；换句话说，\(\mu\) 与 \(\mu'\) 在 \(\mathcal{C}(\mathrm{X}; \mathbf{C})\) 的子空间 F 上一致，而由引理 3，F 是稠密的，因此 \(\mu = \mu'\) ，这就证明了（i）。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  把关系式 (15) 应用于 \(p_{\alpha}\) 就表明：若 \(\mu\) 是逆系统 \((\mu_{\alpha})\) 的逆极限，则必有
+\end{enumerate}
+
+\[
+\| \mu \| \geqslant \| \mu_ {\alpha} \|\tag{16}
+\]
+
+对所有 \(\alpha \in I\) 成立。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设诸 \(p_{\alpha \beta}\) 都是满射；已知诸 \(p_{\alpha}\) 此时也都是满射（GT, I, §9, No.~6, 命题 8）。考虑一个测度逆系统 \((\mu_{\alpha})\) ，我们先证明在 F 上（沿用引理 3 的记号）存在一个线性形式 \(\lambda\) ，使得对每个 \(\alpha \in \mathbf{I}\) 和每个 \(f_{\alpha} \in \mathcal{C}(\mathrm{X}_{\alpha}; \mathbf{C})\) ，有 \(\lambda(f_{\alpha} \circ p_{\alpha}) = \mu_{\alpha}(f_{\alpha})\) 。为此，设 \(\beta, \gamma\) 是 I 中两个指标，且 \(f_{\beta} \in \mathcal{C}(\mathrm{X}_{\beta}; \mathbf{C})\) 与 \(f_{\gamma} \in \mathcal{C}(\mathrm{X}_{\gamma}; \mathbf{C})\) 是满足 \(f_{\beta} \circ p_{\beta} = f_{\gamma} \circ p_{\gamma}\) 的两个函数；则存在指标 \(\alpha \in \mathbf{I}\) 使 \(\alpha \geqslant \beta\) 且 \(\alpha \geqslant \gamma\) ，因此
+\end{enumerate}
+
+\[
+p _ {\beta} = p _ {\beta \alpha} \circ p _ {\alpha}, p _ {\gamma} = p _ {\gamma \alpha} \circ p _ {\alpha} \quad \text {and} \quad (f _ {\beta} \circ p _ {\beta \alpha}) \circ p _ {\alpha} = (f _ {\gamma} \circ p _ {\gamma \alpha}) \circ p _ {\alpha};
+\]
+
+由于 \(p_{\alpha}\) 是满射，这就蕴涵 \(f_{\beta} \circ p_{\beta \alpha} = f_{\gamma} \circ p_{\gamma \alpha}\) ，因此
+
+\[
+\mu_ {\alpha} (f _ {\beta} \circ p _ {\beta \alpha}) = \mu_ {\alpha} (f _ {\gamma} \circ p _ {\gamma \alpha});
+\]
+
+但按定义，最后这个关系也可写成 \(\mu_{\beta}(f_{\beta}) = \mu_{\gamma}(f_{\gamma})\) ，即得我们的断言。
+
+在此条件下，假设存在一个有限数 \(a > 0\) 使 \(\| \mu_{\alpha}\| \leqslant a\) 对所有 \(\alpha \in \mathrm{I}\) 成立；则对每个函数 \(f_{\alpha} \in \mathcal{C}(\mathrm{X}_{\alpha};\mathbf{C})\) ，
+
+\[
+\left| \lambda (f _ {\alpha} \circ p _ {\alpha}) \right| = \left| \mu_ {\alpha} (f _ {\alpha}) \right| \leqslant a \| f _ {\alpha} \| = a \| f _ {\alpha} \circ p _ {\alpha} \|
+\]
+
+这是因为 \(p_{\alpha}\) 是满射。这表明线性形式 \(\lambda\) 在 \(\mathbf{F}\) 上连续，且由引理 3 可知，\(\lambda\) 可以延拓为测度 \(\mu\) （\(\mathbf{X}\) 上的），使 \((p_{\alpha})_{*}(\mu) = \mu_{\alpha}\) 对所有 \(\alpha \in \mathbf{I}\) 成立，这就证明了（iii）。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  为证明 \(\mu\) 的存在性，由（iii）只需验证范数族 ( \(\| \mu_{\alpha}\|\) ) 有界。但 \(\| \mu_{\alpha}\| = \mu_{\alpha}(1)\) ，且当 \(\alpha \leqslant \beta\) 时，关系 \(\mu_{\alpha} = (p_{\alpha \beta})_{*}(\mu_{\beta})\) 蕴涵 \(\mu_{\alpha}(1) = \mu_{\beta}(1)\) ；由于 I 是有向的，所有测度 \(\mu_{\alpha}\) 的总质量因此都相等，即得我们的断言。此外，子空间 F 显然满足 §1, No.~7, 命题 9 中的性质（P），因此逆极限测度 \(\mu\) （\((\mu_{\alpha})\) 的）是正测度。最后，关系 \(\mu_{\alpha} = (p_{\alpha})_{*}(\mu)\) 如上一样表明 \(\mu(1) = \mu_{\alpha}(1)\) 。
+\end{enumerate}
+
+例子. --- 设 \((\mathrm{X}_{\lambda})_{\lambda\in\mathrm{L}}\) 是紧空间的一个族；令 \(X=\prod_{\lambda\in L}X_{\lambda}\) ，且对 L 的每个有限子集 J，令 \(X_{J}=\prod_{\lambda\in J}X_{\lambda}\) ；用 \(pr_{J}:X\to X_{J}\) 与 \(pr_{J,K}:X_{K}\to X_{J}\) （对 \(J\subset K\) ）表示典范投影。我们知道 \((\mathrm{X}_{\mathrm{J}},\mathrm{pr}_{\mathrm{JK}})\) 是紧空间的一个逆系统，且连续映射系统 \((\mathrm{pr}_{\mathrm{J}})\) 的逆极限是 X 到逆极限空间 \(\varprojlim X_{J}\) 上的一个同胚，从而可以把这两个空间等同起来（GT, I, §4, No.~4 及 S, III, §7, No.~2, 注 3）。由于诸投影 \(pr_{J,K}\) 是满射，故由命题 8 可知，集合 \(\mathcal{M}(\mathrm{X};\mathbf{C})\) （相应地 \(\mathcal{M}_{+}(\mathrm{X})\) ）可以等同于逆系统 \((\mu_{\mathrm{J}})\) 中使范数族 \((\|\mu_{\mathrm{J}}\|)\) 有界的那些所成的集（相应地，使诸 \(\mu_{J}\) 全为正测度、从而总质量必然相同的那些所成的集）。
+
+我们特别考虑这样的情形：对每个 \(\lambda \in L\) ，给定测度 \(\mu_{\lambda}\) 于 \(X_{\lambda}\) 上，并令 \(\mu_{J} = \bigotimes_{\lambda \in J} \mu_{\lambda}\) 。若 \(J \subset K\) 是 I 的两个有限子集，则对每个函数 \(f_{J} \in \mathcal{C}(X_{J}; \mathbf{C})\) ，依据 No.~4 的公式 (14)，有
+
+\[
+\mu_ {K} \left(f _ {J} \circ \operatorname{pr} _ {J, K}\right) = \mu_ {J} \left(f _ {J}\right) \cdot \prod_ {\lambda \in K - J} \mu_ {\lambda} (1).\tag{17}
+\]
+
+因此，为使 \((\mu_{\mathrm{J}})\) 是测度逆系统，必须且只须：或者 \(\mu_{\lambda}=0\) 对所有 \(\lambda\in L\) 成立，或者 \(\mu_{\lambda}(1)=1\) 对所有 \(\lambda\in L\) 成立。
+

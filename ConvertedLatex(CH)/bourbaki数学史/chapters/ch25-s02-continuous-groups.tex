@@ -1,0 +1,102 @@
+\section{连续群与无穷小变换}
+
+1873 年秋，李突然重新拾起变换群的研究，并得到了决定性的结果。尽管只能在 1873-1874 年间给 A. 迈尔的几封信（{[}202{]}，vol.~5, pp.~585-608）中追寻他思想展开的脉络，仍可看出他从一个 n 个变量的变换的“连续群”出发
+
+\[
+x _ {i} ^ {\prime} = f _ {i} (x _ {1}, \dots , x _ {n}, a _ {1}, \dots , a _ {r}) (1 \leq i \leq n)\tag{25.4}
+\]
+
+该群实质上\(^{3}\)依赖 r 个参数 \(a_{1},\ldots,a_{r}\)；他观察到，若变换 (25.4) 当参数取值 \(a_{1}^{0},\ldots,a_{r}^{0}\) 时为恒等变换，\(^{4}\) 则诸 \(x_{i}\) 的限于首阶的泰勒展开式：
+
+\[
+f _ {i} \left(x _ {1}, \dots , x _ {n}, a _ {1} ^ {0} + z _ {1}, \dots , a _ {r} ^ {0} + z _ {r}\right) = x _ {i} + \sum_ {k = 1} ^ {r} z _ {k} X _ {k i} \left(x _ {1}, \dots , x _ {n}\right) + \dots (1 \leq i \leq n)\tag{25.5}
+\]
+
+给出一个线性地依赖 r 个参数 \(z_{j}\) 的“一般的”无限小变换
+
+\[
+d x _ {i} = \left(\sum_ {k = 1} ^ {r} z _ {k} X _ {k i} (x _ {1}, \dots , x _ {n})\right) d t (1 \leq i \leq n).\tag{25.6}
+\]
+
+像在他与克莱因合写的论文中那样进行，李积分了微分方程组
+
+\[
+\frac {d \xi_ {1}}{\sum_ {k} z _ {k} X _ {k 1} (\xi_ {1} , \dots , \xi_ {n})} = \dots = \frac {d \xi_ {n}}{\sum_ {k} z _ {k} X _ {k n} (\xi_ {1} , \dots , \xi_ {n})} = d t,\tag{25.7}
+\]
+
+由此，对每个点 \((z_{1},\ldots,z_{r})\)，他得到一个单参数群
+
+\[
+t \mapsto x _ {i} ^ {\prime} = g _ {i} (x _ {1}, \dots , x _ {n}, z _ {1}, \dots , z _ {r}, t) (1 \leq i \leq n)\tag{25.8}
+\]
+
+使得对每个 i 有 \(g_{i}(x_{1},\ldots,x_{n},z_{1},\ldots,z_{r},0)=x_{i}\)。他利用变换 (25.4) 组成一个对合成封闭的集合这一事实，以巧妙的方式证明了单参数群 (25.8) 是所给群的一个子群（{[}202{]}，vol.~5, Abh. VII, pp.~32-63）。新的想法——整个理论的关键——是在函数 (25.4) 的泰勒展开中继续推进到二阶。他的论证线索相当混乱且是启发式的（{[}202{]}，vol.~5, Abh. VII, pp.~32-63 以及 {[}202{]}，vol.~5, pp.~600-601）；可以把它整理如下。对于相当小的 \(z_{j}\)，可以在 (25.8) 中取 t=1，这样就得到了群的变换的新参数 \(z_{1},\ldots,z_{r}\)（事实上这是“典范参数”的首次出现）。根据定义，我们关于 (25.7) 有
+
+\[
+\frac {\partial g _ {i}}{\partial t} = \sum_ {k} z _ {k} X _ {k i} (x _ {1} ^ {\prime}, \dots , x _ {n} ^ {\prime}),
+\]
+
+由此
+
+\[
+\frac {\partial^ {2} g _ {i}}{\partial t ^ {2}} = \sum_ {k, j} z _ {k} \frac {\partial X _ {k i}}{\partial x _ {j}} (x _ {1} ^ {\prime}, \dots , x _ {n} ^ {\prime}) \frac {\partial x _ {j} ^ {\prime}}{\partial t} =
+\]
+
+\[
+\sum_ {k, j} z _ {k} \frac {\partial X _ {k i}}{\partial x _ {j}} (x _ {1} ^ {\prime}, \dots , x _ {n} ^ {\prime}) \left(\sum_ {h} z _ {h} X _ {h j} (x _ {1} ^ {\prime}, \dots , x _ {n} ^ {\prime})\right)
+\]
+
+于是得到
+
+\[
+\begin{array}{l} x _ {i} ^ {\prime} = x _ {i} + \left(\sum_ {k} z _ {k} X _ {k i} (x _ {1}, \dots , x _ {n})\right) t \\ \quad + \frac {1}{2} \left(\sum_ {k, h, j} z _ {k} z _ {h} \frac {\partial X _ {k i}}{\partial x _ {j}} (x _ {1}, \dots , x _ {n}) X _ {h j} (x _ {1}, \dots , x _ {n})\right) t ^ {2} + \dots , \end{array}
+\]
+
+由此，对 \(t = 1\)，得到关于参数 \(z_{j}\) 的泰勒展开式
+
+\[
+x _ {i} ^ {\prime} = x _ {i} + \left(\sum_ {k} z _ {k} X _ {k i}\right) + \frac {1}{2} \left(\sum_ {k, h, j} z _ {k} z _ {h} X _ {h j} \frac {\partial X _ {k i}}{\partial x _ {j}}\right) + \dots (1 \leq i \leq n).\tag{25.9}
+\]
+
+我们把这些关系简记为向量之间的 \(x' = G(x, z)\)
+
+\[
+\boldsymbol {x} = (x _ {1}, \dots , x _ {n}), \boldsymbol {x} ^ {\prime} = (x _ {1} ^ {\prime}, \dots , x _ {n} ^ {\prime}), z = (z _ {1}, \dots , z _ {r});
+\]
+
+这些变换的集合对合成封闭这一基本性质写作
+
+\[
+G (G (\boldsymbol {x}, \boldsymbol {u}), \boldsymbol {v}) = G (\boldsymbol {x}, H (\boldsymbol {u}, \boldsymbol {v}))\tag{25.10}
+\]
+
+其中 \(H = (H_{1},\ldots ,H_{r})\) 与 \(x\) 无关；立即有 \(H(u,0) = u,H(0,v) = v\)，由此得展开式
+
+\[
+H _ {i} (u, v) = u _ {i} + v _ {i} + \frac {1}{2} \sum_ {h, k} c _ {i k h} u _ {h} v _ {k} + \dots ,\tag{25.11}
+\]
+
+其中未写出的项对 u 或对 v 都是非线性的。借助 (25.9) 与 (25.11) 变换 (25.10)，然后比较两个成员中的 \(u_{h}v_{k}\) 项，李得到关系式
+
+\[
+\sum_ {j = 1} ^ {n} \left(X _ {h j} \frac {\partial X _ {k i}}{\partial x _ {j}} - X _ {k j} \frac {\partial X _ {h i}}{\partial x _ {j}}\right) = \sum_ {l = 1} ^ {r} c _ {l h k} X _ {l i} (1 \leq h, k \leq r, 1 \leq i \leq n).\tag{25.12}
+\]
+
+他在偏微分方程理论方面的造诣使他把这些条件写成更简单的形式：仿照 (25.1) 的模式，他对这 r 个无限小变换中的每一个——它们由在 (25.6) 中取 \(z_{k}=1\)、\(z_{h}=0\)（对 \(h\neq k\)）而得到——联系上微分算子
+
+\[
+A _ {k} (f) = \sum_ {i = 1} ^ {n} X _ {k i} \frac {\partial f}{\partial x _ {i}},\tag{25.13}
+\]
+
+并把条件 (25.12) 改写成形式
+
+\[
+[ A _ {h}, A _ {k} ] = \sum_ {l} c _ {l h k} A _ {l},\tag{25.14}
+\]
+
+这是他的理论的一块基石。在那之前，他不加区分地使用“无限小变换”与“无穷小变换”这两个术语（例如 {[}202{]}，vol.~5, Abh. I, pp.~1-4）；关系式 (25.14) 的简单性使他称算子 (25.13) 为无穷小变换 \(dx_{i} = X_{ki}dt\)（\(1 \leq i \leq n\)）的“符号”（{[}202{]}，vol.~5, Abh. III, pp.~42-75），而且很快，他称为“无穷小变换”的正是算子 (25.13) 本身（{[}202{]}，vol.~5, Abh. III, pp.~42-75 以及 {[}202{]}，vol.~5, p.~589）。
+
+接着他意识到了把“连续群”理论与他先前关于切触变换和偏微分方程的研究联系在一起的紧密纽带。这一联系使他充满热情：“我的旧工作可以说全都预先准备好了，足以为新的变换群理论奠基”，他于 1874 年这样给迈尔写道（{[}202{]}，vol.~5, p.~586）。
+
+在随后的岁月里，李继续研究变换群。除了这里（§ III）综述的一般定理外，他还得到了一些较为特殊的结果：直线与平面上变换群的确定，射影群中小余维数的子群，至多 6 个参数的群，等等。尽管如此，他并没有放弃微分方程。事实上，甚至可以说在他看来，变换群理论本应成为积分微分方程的一种工具，其中变换群所起的作用类似于代数方程的伽罗瓦群所起的作用。\(^{5}\) 我们注意到，这项研究同样引导他引入某些具有无穷多个参数的变换集合，他称之为“无限连续群”；\(^{6}\) 他把“有限连续群”这一名称保留给上面类型 (25.4) 的、具有有限多个参数的变换群。
+

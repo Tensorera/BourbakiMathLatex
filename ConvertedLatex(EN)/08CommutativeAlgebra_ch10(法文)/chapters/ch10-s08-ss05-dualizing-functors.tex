@@ -1,0 +1,150 @@
+\subsection{Dualizing functors}
+
+In this number, we fix a local Noetherian ring A. We assume given
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  for every A-module M of finite length, an A-module T(M) ;
+\item
+  for every A-linear map \(f: \mathrm{M} \to \mathrm{N}\) between A-modules of finite length, an A-linear map \(\mathrm{T}(f): \mathrm{T}(\mathrm{N}) \to \mathrm{T}(\mathrm{M})\) such that the following conditions are satisfied:
+\end{enumerate}
+
+FD 1) The maps \(f \mapsto \mathrm{T}(f)\) are A-linear.
+
+FD 2) For every A-module of finite length M, we have \(\mathrm{T}(1_{\mathrm{M}}) = 1_{\mathrm{T(M)}}\).
+
+FD 3) For every diagram M \(\xrightarrow{f}\) N \(\xrightarrow{g}\) P of A-modules of finite length and A-linear maps, we have T(g \(\circ\) f) = T(f) \(\circ\) T(g).
+
+FD 4) For any exact sequence \(M' \xrightarrow{u} M \xrightarrow{v} M''\) of finite-length A-modules, the sequence \(T(M'') \xrightarrow{T(v)} T(M) \xrightarrow{T(u)} T(M')\) is exact.
+
+FD 5) The A-module T(κA) has length 1.
+
+From FD 1) and FD 2), we deduce \(\mathrm{T}(a_{\mathrm{M}}) = a\mathrm{T}(1_{\mathrm{M}}) = a1_{\mathrm{T(M)}} = a_{\mathrm{T(M)}}\) for every \(a \in \mathrm{A}\). Taking \(\mathrm{M} = \{0\}\), we obtain \(0_{\mathrm{T(M)}} = 1_{\mathrm{T(M)}}\) , hence \(\mathrm{T}(\{0\}) = \{0\}\). It follows from this and FD 4) that for every injective (resp. surjective) linear map between A-modules of finite length, the map \(\mathrm{T}(f)\) is surjective (resp. injective).
+
+Let M be an A-module of finite length. Then T(M) is of finite length and one has \(\operatorname{long}_{\mathbf{A}}(\operatorname{T}(\mathbf{M})) = \operatorname{long}_{\mathbf{A}}(\mathbf{M})\): this follows in fact from FD 4) and FD 5) and from the fact that every module of finite length admits a composition series whose quotients are isomorphic to \(\kappa_{A}\).
+
+Let M be an A-module of finite length, and \((e_{\lambda})_{\lambda \in L}\) an orthogonal family of projectors of M; by FD 3), \((\mathrm{T}(e_{\lambda}))_{\lambda \in L}\) is an orthogonal family of projectors of T(M). Consequently, if M is the direct sum of a family of submodules \((\mathrm{M}_{\lambda})_{\lambda \in L}\) and if \(p_{\lambda}\) denotes the projection of M onto \(M_{\lambda}\), the homomorphism \(\sum_{\lambda \in L} \mathrm{T}(p_{\lambda}) : \bigoplus_{\lambda \in L} \mathrm{T}(\mathrm{M}_{\lambda}) \longrightarrow \mathrm{T}(\mathrm{M})\) is an isomorphism.
+
+Examples.--- 1) Let J be a Matlis A-module. Set T(M) = Hom\_A(M, J) for every A-module M of finite length and T(f) = Hom\_A(f, 1\_J) for every A-linear map f between A-modules of finite length. Then conditions FD 1) through FD 5) are satisfied. We shall see below (th. 3) that every construction satisfying conditions FD 1) through FD 5) is obtained in this way.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let C be an injective complex of A-modules and let d be an integer such that \(\mathrm{H}^{i}(\mathrm{Homgr}_{\mathrm{A}}(\kappa_{\mathrm{A}},\mathrm{C}))\) be zero for \(i \neq d\) and is of length 1 for i = d. For every A-module M of finite length, we have \(\mathrm{H}^{i}(\mathrm{Homgr}_{\mathrm{A}}(\mathrm{M},\mathrm{C})) = 0\) for \(i \neq d\); let us indeed reason by induction on the length of M, assumed \textgreater{} 0; there exists an exact sequence of A-modules \(0 \to \kappa_{A} \to M \to N \to 0\), which gives rise to an exact sequence of complexes
+\end{enumerate}
+
+\[
+0 \rightarrow \operatorname{Homgr} _ {\mathrm{A}} (\mathrm{N}, \mathrm{C}) \longrightarrow \operatorname{Homgr} _ {\mathrm{A}} (\mathrm{M}, \mathrm{C}) \longrightarrow \operatorname{Homgr} _ {\mathrm{A}} (\kappa_ {\mathrm{A}}, \mathrm{C}) \longrightarrow 0
+\]
+
+and the conclusion follows from the induction hypothesis applied to N.
+
+Set \(\mathrm{T}(\mathrm{M})=\mathrm{H}^{d}(\mathrm{Homgr}_{\mathrm{A}}(\mathrm{M},\mathrm{C}))\) for every A-module M of finite length, and \(\mathrm{T}(f)=\mathrm{H}^{d}(\mathrm{Homgr}_{\mathrm{A}}(f,1_{\mathrm{C}}))\) for every A-linear map f between A-modules of finite length; the conditions FD 1) through FD 5) are satisfied.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\item
+  Let \(\Omega\) be an A-module and \(d\) an integer \(\geqslant 0\) such that \(\mathrm{Ext}_{\mathrm{A}}^{i}(\kappa_{\mathrm{A}},\Omega)\) be zero for \(i\neq d\) and has length 1 for \(i = d\). Set \(\mathrm{T(M)} = \mathrm{Ext}_{\mathrm{A}}^{d}(\mathrm{M},\Omega)\) for every finite-length A-module M and \(\mathrm{T}(f) = \mathrm{Ext}_{\mathrm{A}}^{d}(f,1_{\Omega})\) for every A-linear map \(f\) between A-modules of finite length. We then have \(\mathrm{Ext}_{\mathrm{A}}^{i}(\mathrm{M},\Omega) = 0\) for every finite-length A-module M and every \(i\neq d\), and conditions FD 1) through FD 5) are satisfied: it suffices indeed to apply the preceding example to the case where C is the canonical injective resolution of \(\Omega\) .
+\item
+  If A is a Gorenstein ring, for example a regular ring, one can apply Example 3 by taking \(\Omega = A\) and \(d = \dim(A)\) ( \(\S\) 3, no. 7, prop. 11).
+\end{enumerate}
+
+For every integer \(n \geqslant 0\) , we set \(\mathrm{I}_{n} = \mathrm{T}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n})\). To show that \(m \geqslant n\) let us denote \(p_{mn}: \mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{m} \longrightarrow \mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n}\) the canonical surjection and \(i_{mn}: \mathrm{T}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n}) \longrightarrow \mathrm{T}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{m})\) the A-linear map \(\mathrm{T}(p_{mn})\). It is injective by FD 4) and one has \(i_{mn} \circ i_{np} = i_{mp}\) for \(m \geqslant n \geqslant p\) by FD 3). Let \(\mathrm{I} = \varinjlim \mathrm{T}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n})\), the inductive limit A-module of the system \(((\mathrm{I}_{n}), (i_{mn}))\). To show that \(n \geqslant 0\) , the canonical map \(\mathrm{I}_{n} \to \mathrm{I}\) is injective; we will identify \(\mathrm{I}_{n}\) to its image in I, so that I is the increasing union of the \(\mathrm{I}_{n}\) .
+
+Let M be a finitely generated A-module of finite length, and let n be an integer \(\geqslant0\) such that \(m_{A}^{n}M=0\) For \(x\in M\), let us denote by \(\varphi_{M,x}^{n}\) the A-linear map from \(A/m_{A}^{n}\) into M which maps the class of 1 to x. The map \(\mathrm{T}(\varphi_{\mathrm{M},x}^{n}):\mathrm{T}(\mathrm{M})\to\mathrm{I}_{n}\) is A-linear, and we have \(\mathrm{T}(\varphi_{\mathrm{M},ax}^{n})=a\mathrm{T}(\varphi_{\mathrm{M},x}^{n})\) for \(a\in A\) by FD 1). Consequently, the map \((x,u)\mapsto\mathrm{T}(\varphi_{\mathrm{M},x}^{n})(u)\) of \(M\times T(M)\) onto I is A-bilinear. It does not depend on the choice of the integer n: indeed, for every integer \(q\geqslant n\) and for every element x of M, we have \(\varphi_{M,x}^{q}=\varphi_{M,x}^{n}\circ p_{qn}\), whence by FD 3) \(\mathrm{T}(\varphi_{\mathrm{M},x}^{q})=i_{qn}\circ\mathrm{T}(\varphi_{\mathrm{M},x}^{n})\). From this we deduce an A-linear map
+
+\[
+\theta_ {\mathrm{M}}: \mathrm{T} (\mathrm{M}) \longrightarrow \operatorname{Hom} _ {\mathrm{A}} (\mathrm{M}, 1)
+\]
+
+satisfying \(\theta_{\mathrm{M}}(u)(x) = \mathrm{T}(\varphi_{\mathrm{M},x})(u)\) for \(u\in \mathrm{T}(\mathrm{M})\), \(x\in \mathrm{M}\)
+
+THEOREM 3.--- a) The A-module I is a Matlis module. For every integer \(m \geqslant 0\) , \(\mathrm{I}_{m}\) is the submodule of I consisting of the elements annihilated by \(\mathfrak{m}_{\mathrm{A}}^{m}\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  For every A-module M of finite length, the A-linear map \(\theta_{\mathrm{M}}: \mathrm{T}(\mathrm{M}) \longrightarrow \mathrm{Hom}_{\mathrm{A}}(\mathrm{M}, \mathrm{I})\) is bijective.
+\item
+  For any A-linear map \(f: \mathrm{M} \to \mathrm{N}\) between A-modules of finite length, we have \(\theta_{\mathrm{M}} \circ \mathrm{T}(f) = \operatorname{Hom}_{\mathrm{A}}(f, 1_{\mathrm{I}}) \circ \theta_{\mathrm{N}}\).
+\end{enumerate}
+
+Let us prove c). Let \(n\) be an integer and M, N finite-length A-modules annihilated by \(\mathfrak{m}_{\mathrm{A}}^{n}\). Let \(f: \mathrm{M} \to \mathrm{N}\) be an A-linear map. For \(u\) in T(N) and \(x\) in M, we have by FD 3)
+
+\[
+\begin{array}{r l} & {\theta_ {\mathrm{M}} (\mathrm{T} (f) (u)) (x) = \mathrm{T} (\varphi_ {\mathrm{M}, x} ^ {n}) \big (\mathrm{T} (f) (u) \big) = \mathrm{T} (f \circ \varphi_ {\mathrm{M}, x} ^ {n}) (u)} \\ & {\qquad = \mathrm{T} (\varphi_ {\mathrm{N}, f (x)} ^ {n}) (u) = \theta_ {\mathrm{N}} (u) (f (x)) = (\theta_ {\mathrm{N}} (u) \circ f) (x).} \end{array}
+\]
+
+This proves c).
+
+Let us prove b). First consider the particular case. \(M = A/m_{A}^{n}\). Then \(T(M)\) is by definition equal to \(I_{n}\). If a is an element of A, of class \(\bar{a}\) in M,, we have \(\varphi_{M,\bar{a}}^{n} = a1_{M}\) , whence \(T(\varphi_{M,\bar{a}}^{n}) = a1_{I_{n}}\) ; thus \(\theta_{M}: I_{n} \longrightarrow \operatorname{Hom}_{A}(A/m_{A}^{n}, I)\) is the canonical isomorphism that sends an element x of \(I_{n}\) onto the mapping \(\bar{a} \mapsto ax\). This proves b) in this case.
+
+Suppose now given an exact sequence
+
+\[
+\mathrm{P} \xrightarrow {u} \mathrm{N} \xrightarrow {v} \mathrm{M} \to 0
+\]
+
+of finite length A-modules annihilated by \(\mathfrak{m}_{\mathrm{A}}^{n}\) . Consider the diagram
+
+\[
+\begin{array}{c c c c c c} 0 \longrightarrow & \mathrm{T(M)} & \xrightarrow {\mathrm{T(v)}} & \mathrm{T(N)} & \xrightarrow {\mathrm{T(u)}} & \mathrm{T(P)} \\ & \theta_ {\mathrm{M}} \Bigg \downarrow & & \theta_ {\mathrm{N}} \Bigg \downarrow & & \theta_ {\mathrm{P}} \Bigg \downarrow \\ 0 \to & \operatorname{Hom} _ {\mathrm{A}} (\mathrm{M}, \mathrm{I}) & \xrightarrow {\operatorname{Hom} (v , 1)} & \operatorname{Hom} _ {\mathrm{A}} (\mathrm{N}, \mathrm{I}) & \xrightarrow {\operatorname{Hom} (u , 1)} & \operatorname{Hom} _ {\mathrm{A}} (\mathrm{P}, \mathrm{I}) \end{array} ;
+\]
+
+it is commutative by the beginning of the proof, and its rows are exact by FD 4). It follows that \(\theta_{\mathrm{M}}\) is bijective if \(\theta_{\mathrm{P}}\) and \(\theta_{\mathrm{N}}\) are. Applying this to a presentation
+
+\[
+\left(\mathrm{A} / \mathfrak {m} _ {\mathrm{A}} ^ {n}\right) ^ {r} \longrightarrow \left(\mathrm{A} / \mathfrak {m} _ {\mathrm{A}} ^ {n}\right) ^ {s} \longrightarrow \mathrm{M} \rightarrow 0
+\]
+
+of the A/m \(_{A}^{n}\)-module M, we deduce that \(\theta_{M}\) is bijective for every A-module of finite length annihilated by m \(_{A}^{n}\), whence b).
+
+Let us prove a). It follows from the preceding, applied to the A-module \(A/m_{A}^{n}\) that \(I_{n}\) is the set of elements of I that are annihilated by \(m_{A}^{n}\). By FD 5) the A-module \(I_{1} = T(\kappa_{A})\) is isomorphic to \(\kappa_{A}\); by prop. 2 of no. 2, it suffices to prove that, for every integer \(n \geqslant 0\) , the canonical A-linear map
+
+\[
+\beta : \mathrm{I} _ {n + 1} / \mathrm{I} _ {n} \longrightarrow \operatorname{Hom} _ {\mathrm{A}} \left(\mathfrak {m} _ {\mathrm{A}} ^ {n} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1}, \mathrm{I}\right)
+\]
+
+is bijective. Now from the exact sequence
+
+\[
+0 \longrightarrow \mathfrak {m} _ {\mathrm{A}} ^ {n} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1} \xrightarrow {u} \mathrm{A} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1} \xrightarrow {p _ {n + 1 , n}} \mathrm{A} / \mathfrak {m} _ {\mathrm{A}} ^ {n} \longrightarrow 0,
+\]
+
+one obtains an exact sequence
+
+\[
+0 \longrightarrow \mathrm{I} _ {n} \xrightarrow {i _ {n + 1 , n}} \mathrm{I} _ {n + 1} \xrightarrow {\mathrm{T} (u)} \mathrm{T} (\mathfrak {m} _ {\mathrm{A}} ^ {n} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1}) \longrightarrow 0.
+\]
+
+Composing \(\mathrm{T}(u)\) with \(\theta_{\mathfrak{m}_{\mathrm{A}}^{n} / \mathfrak{m}_{\mathrm{A}}^{n + 1}}\), one therefore obtains a surjective homomorphism
+
+\[
+\gamma : \mathrm{I} _ {n + 1} \longrightarrow \operatorname{Hom} _ {\mathrm{A}} (\mathfrak {m} _ {\mathrm{A}} ^ {n} / \mathfrak {m} _ {\mathrm{A}} ^ {n + 1}, \mathrm{I})
+\]
+
+with kernel \(I_{n}\) . By c), \(\gamma\) is the composite of the arrows \(\theta_{I_{n+1}}: I_{n+1} \to \mathrm{Hom}_{\mathrm{A}}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n+1}, \mathrm{I})\) and \(\mathrm{Hom}(u,1): \mathrm{Hom}_{\mathrm{A}}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n+1}, \mathrm{I}) \longrightarrow \mathrm{Hom}_{\mathrm{A}}(\mathfrak{m}_{\mathrm{A}}^{n}/\mathfrak{m}_{\mathrm{A}}^{n+1}, \mathrm{I})\) ; as \(\theta_{I_{n+1}}\) is the linear map associated with multiplication \(A/m_{A}^{n+1} \times I_{n+1} \longrightarrow I\) , the isomorphism \(I_{n+1}/I_{n} \longrightarrow \mathrm{Hom}_{\mathrm{A}}(\mathfrak{m}_{\mathrm{A}}^{n}/\mathfrak{m}_{\mathrm{A}}^{n+1}, \mathrm{I})\) deduced from \(\gamma\) coincides with \(\beta\) , which completes the proof.
+
+Examples. 5) Let us return to the hypotheses and notation of Example 1. Then \(\mathrm{T}(\mathrm{A} / \mathfrak{m}_{\mathrm{A}}^{n}) = \mathrm{Hom}_{\mathrm{A}}(\mathrm{A} / \mathfrak{m}_{\mathrm{A}}^{n},\mathrm{J})\) is identified with the submodule \(\mathrm{J}_n\) of J consisting of the elements annihilated by \(\mathfrak{m}_{\mathrm{A}}^{n}\); by passing to the inductive limit we obtain a canonical isomorphism from I to J.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Let us take up the hypotheses and notations of Example 3. We obtain that \(I = \varinjlim \operatorname{Ext}_{\mathrm{A}}^{d}(A / \mathfrak{m}_{\mathrm{A}}^{n}, \Omega)\) is a Matlis A-module. For every finite-length A-module M, there is a canonical A-isomorphism
+\end{enumerate}
+
+\[
+\theta_ {\mathrm{M}}: \mathrm{Ext} _ {\mathrm{A}} ^ {d} (\mathrm{M}, \Omega) \longrightarrow \mathrm{Hom} _ {\mathrm{A}} (\mathrm{M}, \mathrm{I});
+\]
+
+moreover this isomorphism is \(\operatorname{End}_{\mathrm{A}}(\mathrm{M})\) -linear (th. 3, c)).
+
+In particular, if the ring A is Gorenstein of dimension d, the A-module \(\lim\operatorname{Ext}_{\mathrm{A}}^{d}(\mathrm{A}/\mathfrak{m}_{\mathrm{A}}^{n},\mathrm{A})\) is a Matlis module.
+

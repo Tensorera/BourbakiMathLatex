@@ -1,0 +1,134 @@
+\subsection{二项展开}
+
+设 \(m\) 是任意实数。对 \(x > 0\) 我们有
+
+\[
+\mathrm{D} ^ {n} (x ^ {m}) = m (m - 1) \dots (m - n + 1) x ^ {m - n};
+\]
+
+把 \(n\) 阶泰勒公式（关于点 \(x = 0\) ）应用于函数 \((1 + x)^m\) ，便知对每个 \(x > -1\)
+
+\[
+(1 + x) ^ {m} = 1 + \binom {m} {1} x + \binom {m} {2} x ^ {2} + \dots + \binom {m} {n} x ^ {n} + r _ {n} (x)\tag{19}
+\]
+
+其中
+
+\[
+r _ {n} (x) = \frac {m (m - 1) \dots (m - n)}{n !} \int_ {0} ^ {x} \left(\frac {x - t}{1 + t}\right) ^ {n} (1 + t) ^ {m - 1} d t
+\]
+
+其中令 \(\binom{m}{n} = \frac{m(m-1)\ldots(m-n+1)}{n!}\) 。当 m 是整数 \textgreater{} 0 且 \(n \geqslant m\) 时，公式 (19) 就化为二项式公式（Alg., I, p.~99）；通过推广，我们仍称它为二项式公式，并称系数 \(\binom{m}{n}\) 为二项式系数，这里 m 是任意实数而 n 是任意整数 \textgreater{} 0 。
+
+(19) 的余项与 \(\binom{m}{n+1}\) 同号（当 \(x > 0\) 时），且与 \((-1)^{n+1}\binom{m}{n+1}\) 同号（当 \(-1 < x < 0\) 时）。由于 \(\left|\frac{x-t}{1+t}\right| \leqslant |x|\) 对 \(t > -1\) （在以 0 与 \(x\) 为端点的区间中）成立，故对任意的 \(m\) 、\(n\) 与 \(x > -1\) ，余项满足下面的界：
+
+\[
+\begin{array}{r l} \left| \frac {m (m - 1) \dots (m - n)}{n !} \int_ {0} ^ {x} \left(\frac {x - t}{1 + t}\right) ^ {n} (1 + t) ^ {m - 1} d t \right| & \\ & \leqslant \left| \binom {m - 1} {n} x ^ {n} ((1 + x) ^ {m} - 1) \right|. \end{array}\tag{20}
+\]
+
+若设 \(x \geqslant 0\) 且 \(n \geqslant m - 1\) ，则在积分区间上 \((1 + t)^{n - m + 1} \geqslant 1\) ，于是
+
+\[
+0 \leqslant \int_ {0} ^ {x} \frac {(x - t) ^ {n}}{(1 + t) ^ {n - m + 1}} d t \leqslant \int_ {0} ^ {x} (x - t) ^ {n} d t = \frac {x ^ {n + 1}}{n + 1}
+\]
+
+由此得到估计式
+
+\[
+\left| r _ {n} (x) \right| \leqslant \left| \binom {m} {n + 1} \right| x ^ {n + 1} \quad (x \geqslant 0, n \geqslant m - 1)\tag{21}
+\]
+
+它是对余项的估计。另一方面，设 \(-1 \leqslant m < 0\) ；若在积分 (19) 中作变量替换 \(u = \frac{x - t}{x(1 + t)}\) ，则得
+
+\[
+r _ {n} (x) = \frac {m (m - 1) \dots (m - n)}{n !} (1 + x) ^ {m} x ^ {n + 1} \int_ {0} ^ {1} \frac {u ^ {n} d u}{(1 + u x) ^ {m + 1}}.\tag{22}
+\]
+
+为对 x \textgreater{} -1 的情形估计该积分，我们注意到：由于 \(m + 1 < 1\) ，积分 \(\int_{0}^{1}\frac{u^{n}du}{(1-u)^{m+1}}\) 收敛，且因 \(1+ux > 1-u\) ，它控制 (22) 的右端。而对 -1 \textless{} x \textless{} 0 ，关于 m 的假设蕴含 (19) 右端出现的所有项 \(\binom{m}{1}x,\binom{m}{2}x^{2},\ldots,\binom{m}{n}x^{n}\) 均 \(\geqslant 0\) ，故 \(r_{n}(x) \leqslant (1+x)^{m}\) ；用 \((1+x)^{m}\) 除之，即得
+
+\[
+\frac {m (m - 1) \dots (m - n)}{n !} x ^ {n + 1} \int_ {0} ^ {1} \frac {u ^ {n} d u}{(1 + u x) ^ {m + 1}} \leqslant 1.
+\]
+
+此外，当 \(-1 < x < 0\) 时积分号前的因子 \(\geqslant 0\) ，故令 \(x\) 趋于 \(-1\) ，便得
+
+\[
+\left| \frac {m (m - 1) \dots (m - n)}{n !} \int_ {0} ^ {1} \frac {u ^ {n} d u}{(1 - u) ^ {m + 1}} \right| \leqslant 1
+\]
+
+因而当 \(-1 \leqslant m < 0\) 且 \(x > -1\) 时有
+
+\[
+\left| r _ {n} (x) \right| \leqslant (1 + x) ^ {m} | x | ^ {n + 1}.\tag{23}
+\]
+
+首先，从这些不等式可以推出：当 \(|x| < 1\) 时有
+
+\[
+(1 + x) ^ {m} = \sum_ {n = 0} ^ {\infty} \binom {m} {n} x ^ {n}\tag{24}
+\]
+
+其右端（称为二项级数）在 {]} - 1, +1{[} 的每个紧子集上绝对且一致收敛。事实上，可以写出
+
+\[
+\binom {m} {n} = (- 1) ^ {n} \left(1 - \frac {m + 1}{1}\right) \left(1 - \frac {m + 1}{2}\right) \dots \left(1 - \frac {m + 1}{n}\right)\tag{25}
+\]
+
+由此得
+
+\[
+\left| \binom {m} {n} \right| \leqslant \left(1 + \frac {| m + 1 |}{1}\right) \left(1 + \frac {| m + 1 |}{2}\right) \dots \left(1 + \frac {| m + 1 |}{n}\right).
+\]
+
+若 \(|x| \leqslant r < 1\) ，则存在 \(n_0\) 使得 \(1 + \frac{|m|}{n_0} < \frac{1}{r'}\) ，其中 \(r < r' < 1\) ；由此，令
+
+\[
+k = \left(1 + \frac {| m |}{1}\right) \left(1 + \frac {| m |}{2}\right) \dots \left(1 + \frac {| m |}{n _ {0}}\right)
+\]
+
+便有
+
+\[
+\left| \binom {m - 1} {n} x ^ {n} \right| \leqslant k | x | ^ {n _ {0}} \left(\frac {r}{r ^ {\prime}}\right) ^ {n - n _ {0}},
+\]
+
+这就证明了该命题。另一方面，对 x \textgreater{} 1 ，若 m 不是整数 \(\geqslant 0\) ，则级数 (24) 通项的绝对值随 n 无限增大；事实上，由 (25) 知，对 \(n > n_{1} \geqslant |m + 1|\) 有
+
+\[
+\begin{array}{r l} \left| \binom {m} {n} \right| & \geqslant \left| \left(1 - \frac {m + 1}{1}\right) \left(1 - \frac {m + 1}{2}\right) \dots \left(1 - \frac {m + 1}{n _ {1}}\right) \right| \\ & \quad \left(1 - \frac {| m + 1 |}{n _ {1} + 1}\right) \dots \left(1 - \frac {| m + 1 |}{n}\right). \end{array}
+\]
+
+取 \(n_0 \geqslant n_1\) 使得当 \(n \geqslant n_0\) 时 \(1 - \frac{|m + 1|}{n} > \frac{1}{x'}\) ，其中 \(1 < x' < x\) 。若令
+
+\[
+k ^ {\prime} = \left| \left(1 - \frac {m + 1}{1}\right) \dots \left(1 - \frac {m + 1}{n _ {1}}\right) \right| \left(1 - \frac {| m + 1 |}{n _ {1} + 1}\right) \dots \left(1 - \frac {| m + 1 |}{n _ {0}}\right)
+\]
+
+则当 \(n > n_0\) 时
+
+\[
+\left| \binom {m} {n} x ^ {n} \right| \geqslant k ^ {\prime} | x | ^ {n _ {0}} \left(\frac {x}{x ^ {\prime}}\right) ^ {n - n _ {0}}
+\]
+
+命题由此得证。
+
+我们注意到，当 \(m = -1\) 时，代数恒等式
+
+\[
+\frac {1}{1 + x} = 1 - x + x ^ {2} - \dots + (- 1) ^ {n - 1} x ^ {n - 1} + (- 1) ^ {n} \frac {x ^ {n}}{1 + x}\tag{26}
+\]
+
+无需积分便给出了普遍公式 (19) 中余项的表达式；这时公式 (23) 化为几何级数（或等比数列）求和的表达式（Gen.~Top., IV, p.~364）。
+
+其次，我们来研究二项级数当 \(x = 1\) 或 \(x = -1\) 时的收敛性（排除平凡情形 \(m = 0\) ）：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(m \leqslant -1\) 。通项为 \(1 - \frac{m + 1}{n}\) 的乘积趋于 \(+\infty\) （若 \(m < -1\) ），趋于 1 （若 \(m = -1\) ），故由 (25) 知，当 \(x = \pm 1\) 时二项级数的通项不趋于 0。
+\item
+  -1 \textless{} m \textless{} 0。这时通项为 \(1 - \frac{m + 1}{n}\) 的乘积趋于 0 ，故不等式 (21) 表明 \(r_{n}(1)\) 趋于 0。于是二项级数在 x = 1 处收敛且和为 \(2^{m}\) ；此外，由前文所见及 (21) ，二项级数在每个区间 \([x_{0}, 1]\) （ \(-1 < x_{0} \leqslant 1\) ）上一致收敛。另一方面，当 x = -1 时 (24) 右端所有的项都 \(\geqslant 0\) ；倘若这级数收敛，便可推出二项级数在 \([-1, 1]\) 上正规收敛，从而其和是该区间上的连续函数，而这是荒谬的，因为 \((1 + x)^{m}\) 在 \([-1, 1]\) 上无界（当 m \textless{} 0 时）。由此断定，二项级数在 x = 1 处同样不是绝对收敛的。
+\item
+  m \textgreater{} 0。\(r_{n}(x)\) 的定义表明，当 x 趋于 -1 时 \(r_{n}(x)\) 趋于极限 \(r_{n}(-1)\) ；在 (20) 中取极限便可断定 \(|r_{n}(-1)| \leqslant \left|\binom{m-1}{n}\right|\) ，又因 m - 1 \textgreater{} -1 ，可见二项级数在 x = -1 处收敛。此外，当 \(n > m + 1\) 时该级数所有的项同号；因而二项级数在区间 \([-1, 1]\) 上正规收敛，且在该区间上的和为 \((1 + x)^{m}\) 。
+\end{enumerate}
+

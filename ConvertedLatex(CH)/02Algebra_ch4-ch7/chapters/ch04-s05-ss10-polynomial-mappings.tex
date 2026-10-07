@@ -1,0 +1,92 @@
+\subsection{多项式映射}
+
+定义 4. --- 设 M 和 N 为 A-模，并假设 M 是自由的。设 \(\operatorname{Map}(M, N)\) 为从 M 到 N 的所有映射组成的 A-模。子模 \(\sum_{q > 0} \operatorname{Pol}_{A}^{q}(M, N)\) （\(\operatorname{Map}(M, N)\) 的）用 \(\operatorname{Pol}_{A}(M, N)\) 或简记作 \(\operatorname{Pol}(M, N)\) 表示；
+
+其元素称为从 M 到 N 的多项式映射。
+
+设 \((e_{i})_{i\in I}\) 是 M 的一组基，并假设 I 是有限的；由命题 13（IV，第 54 页），从 M 到 N 的映射 f 是多项式的当且仅当存在一个关于未定元 \(X_{i}\) 的、系数在 N 中的多项式 F，使得
+
+\[
+f \left(\sum_ {i \in I} x _ {i} e _ {i}\right) = F (\mathbf {x})
+\]
+
+对每个族 \(\mathbf{x} = (x_i)_{i\in I}\) （\(\mathbf{A}^{(I)}\) 中的）。该性质与为 \(\mathbf{M}\) 所选取的基无关，并且它证明了“多项式映射”这一术语的合理性。
+
+命题 17. --- 设 M 为自由 A-模，B 为结合、交换且含单位的 A-代数。则 \(\operatorname{Pol}_{\mathbf{A}}(\mathbf{M}, \mathbf{B})\) 是代数 \(\operatorname{Map}(\mathbf{M}, \mathbf{B})\) 的一个子 B-代数。
+
+这由定义 4 及命题 13 (iv)（IV，第 54 页）得出。
+
+命题 18. --- 设 M、N、P 为 A-模，并假设 M 和 N 是自由的。若 \(f \in \operatorname{Pol}(M, N)\) ，\(g \in \operatorname{Pol}(N, P)\) ，则 \(g \circ f \in \operatorname{Pol}(M, P)\) 。
+
+我们可以立即化简到存在整数 q 使得 \(g \in \text{Pol}^{q}(N, P)\) 的情形；则存在一个从 \(N^{q}\) 到 P 的 q-线性映射 h，使得 \(g(y) = h(y, y, \ldots, y)\) （对所有 \(y \in N\) ）。把 f 写成齐次多项式映射之和，我们便归结为证明映射
+
+\[
+x \mapsto h (f _ {1} (x), f _ {2} (x), \dots , f _ {q} (x))
+\]
+
+（从 M 到 P 中的），其中 \(f_{i} \in \operatorname{Pol}^{q_{i}}(\mathbf{M}, \mathbf{N})\) ，是多项式的。对 \(i = 1, \ldots, q\) ，存在一个 \(q_{i}\) -线性映射 \(l_{i}\) （从 \(M^{q_{i}}\) 到 N 中的），使得 \(f_{i}(x) = l_{i}(x, x, \ldots, x)\) （对所有 \(x \in M\) ）。因此
+
+\[
+h \left(f _ {1} (x), f _ {2} (x), \dots , f _ {q} (x)\right) = h \left(l _ {1} (x, \dots , x), \dots , l _ {q} (x, \dots , x)\right),
+\]
+
+由此，我们的论断得证。
+
+引理2. --- 设 N 是一个 A-模，n 是一个整数 ≥0，且
+
+\[
+f = m _ {0} + m _ {1} \mathrm{X} + \dots + m _ {n} \mathrm{X} ^ {n} \in \mathrm{N} [ \mathrm{X} ].
+\]
+
+假设存在 \(\alpha_{0}, \alpha_{1}, \ldots, \alpha_{n} \in A\) 使得 \(f(\alpha_{0}) = \cdots = f(\alpha_{n}) = 0\) ，并且使得对 \(i \neq j\) ，N 中比率为 \(\alpha_{i} - \alpha_{j}\) 的位似是单射，则 f = 0。
+
+（此引理推广了 IV 第 16 页的推论。）
+
+引理对 \(n = 0\) 显然成立；我们将对 \(n\) 作归纳来证明它。我们有
+
+\[
+f (\mathbf {X}) = f (\mathbf {X}) - f \left(\alpha_ {0}\right) = \sum_ {i = 1} ^ {n} m _ {i} \left(\mathbf {X} ^ {i} - \alpha_ {0} ^ {i}\right) = \left(\mathbf {X} - \alpha_ {0}\right) g (\mathbf {X})
+\]
+
+其中 g 是 N{[}X{]} 的一个形如 \(m_{0}^{\prime} + m_{1}^{\prime} X + \cdots + m_{n-1}^{\prime} X^{n-1}\) 的元素。引理的假设蕴含 \(g(\alpha_{1}) = \cdots = g(\alpha_{n}) = 0\) ，因此由归纳假设得 g = 0，从而 f = 0。
+
+命题 19. --- 设 M 为自由 A-模，N 为 A-模，G 为 A 的一个无限加法子群，并假设由 G 的非零元素定义的 N 的位似都是单射。则 \(\operatorname{Pol}(M,N)\) 是诸 \(\operatorname{Pol}^{q}(M,N)\) 的直和。
+
+设 \(f_{0}, f_{1}, \ldots, f_{n}\) 满足 \(f_{i} \in \operatorname{Pol}^{i}(\mathbf{M}, \mathbf{N})\) ，并且假设有关系 \(f_{0} + \cdots + f_{n} = 0\) 。设 \(x \in \mathbf{M}\) ，则对所有 \(\lambda \in G\) 我们有
+
+\[
+0 = \sum_ {i = 0} ^ {n} f _ {i} (\lambda x) = \sum_ {i = 0} ^ {n} \lambda^ {i} f _ {i} (x).
+\]
+
+根据引理 2 应用于多项式 \(\sum_{i=0}^{n} f_i(x) X^i\) ，我们有
+
+\[
+f _ {0} (x) = \dots = f _ {n} (x) = 0.
+\]
+
+推论. --- 假设 A 是一个无限整环；设 M 是一个自由 A-模，N 是一个无挠 A-模。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  我们有 \(\operatorname{Pol}(\mathbf{M},\mathbf{N}) = \bigoplus_{q\geqslant 0}\operatorname{Pol}^q (\mathbf{M},\mathbf{N})\) 且每个 \(\operatorname{Pol}^q (\mathbf{M},\mathbf{N})\) 可以
+\end{enumerate}
+
+典范地等同于 \(\operatorname{Hom}(\mathbf{TS}^q(\mathbf{M}),\mathbf{N})\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(f \in \operatorname{Pol}(M, N)\) ，且 \((e_i)_{i \in I}\) 是 \(M\) 的一组基。存在唯一的族 \((u_\nu)_{\nu \in \mathbb{N}^{(I)}}\) （由 \(N\) 的元素组成），使得 \(f\left(\sum_{i \in I} \lambda_i e_i\right) = \sum_{\nu \in \mathbb{N}^{(I)}} \lambda^\nu u_\nu\) （对所有
+\end{enumerate}
+
+\[
+\left(\lambda_ {i}\right) \in \mathbf {A} ^ {(I)}
+\]
+
+成立。断言 (i) 由命题 16 和 19 得出，(ii) 由 (i) 及命题 16 的推论得出。
+% semantic-fragments: legacy-input-seam
+\relax{}

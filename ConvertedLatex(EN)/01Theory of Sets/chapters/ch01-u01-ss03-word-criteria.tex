@@ -1,0 +1,98 @@
+\subsection{CHARACTERIZATION OF SIGNIFICANT WORDS}
+
+A word \(A \in \mathbf{L}_0(\mathbf{S})\) is said to be balanced if it has the following two properties:
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  \(l(A) = n(A) + 1\) (which implies that \(A\) is not empty).
+\item
+  For every proper initial segment \(B\) of \(A\) , \(l(B) \leqslant n(B)\) .
+\end{enumerate}
+
+PROPOSITION 2. A word is significant if and only if it is balanced.
+
+Let \(A\) be a significant word belonging to a significant sequence
+
+\[
+A _ {1}, A _ {2}, \dots , A _ {n}.
+\]
+
+We shall show by induction on k that each \(A_{k}\) is balanced. Suppose that this has been established for the \(A_{j}\) with index j \textless{} k, and let us show that it is true for \(A_{k}\) . If \(A_{k}\) is a sign of weight 0 (which is the only possibility when k = 1), \(A_{k}\) is balanced because
+
+\[
+l (A _ {k}) = 1 \quad \text { and } \quad n (A _ {k}) = 0.
+\]
+
+If \(A_{k}\) is not a sign of weight 0, then \(A_{k} = fB_{1}B_{2}\ldots B_{p}\) , where \(f\) is a sign of weight \(p\) , and the \(B_{j}\) are of the form \(A_{i_{j}}\) , where \(i_{j} < k\) , and are therefore balanced words by the inductive hypothesis. We have
+
+\[
+\begin{array}{r l} l (A _ {k}) & = 1 + l (B _ {1}) + l (B _ {2}) + \dots + l (B _ {p}) \\ & = 1 + (n (B _ {1}) + 1) + (n (B _ {2}) + 1) + \dots + (n (B _ {p}) + 1) \\ & = 1 + p + n (B _ {1}) + n (B _ {2}) + \dots + n (B _ {p}) \\ & = 1 + n (A _ {k}). \end{array}
+\]
+
+Let \(C\) be a proper initial segment of \(A\) , and let \(q\) be the largest of the integers \(m < p\) such that \(B_{m}\) is a segment of \(C\) , so that
+
+\[
+C = f B _ {1} B _ {2} \dots B _ {q} D,
+\]
+
+where D is a proper initial segment of \(B_{q+1}\) . Then
+
+\[
+\begin{array}{r l} & l (C) = 1 + l (B _ {1}) + l (B _ {2}) + \dots + l (B _ {q}) + l (D) \\ & \leqslant 1 + (n (B _ {1}) + 1) + (n (B _ {2}) + 1) + \dots + (n (B _ {q}) + 1) + n (D) \\ & \leqslant p + n (B _ {1}) + \dots + n (B _ {q}) + n (D) = n (C). \end{array}
+\]
+
+Hence \(A_{k}\) is balanced.
+
+To prove that, conversely, every balanced word is significant, we need the following two lemmas:
+
+LEMMA 1. Let \(A\) be a balanced word. Then for each integer \(k\) such that \(0 \leqslant k < l(A)\) there exists exactly one balanced segment \(S\) of \(A\) which begins at the \((k + 1)\) th place.
+
+The uniqueness of S is an immediate consequence of the following remark: if T is a balanced word, then by definition no proper initial segment of T is balanced. Let us prove the existence of S. Write A = BC where \(l(B) = k\) . For each i such that \(0 \leqslant i \leqslant q = l(C)\) , let \(C_i\) be the initial segment of C of length i. Since B is a proper initial segment of A, we have
+
+\[
+l (C _ {q}) = l (A) - l (B) \geqslant n (A) + 1 - n (B) = n (C _ {q}) + 1.
+\]
+
+On the other hand, we have \(0 = l(C_0) \leqslant n(C_0) = 0\) . Let \(i\) be the largest of the integers \(j < q\) such that \(l(C_h) \leqslant n(C_h)\) for \(0 \leqslant h \leqslant j\) ; then we have \(l(C_i) \leqslant n(C_i)\) and \(l(C_{i+1}) \geqslant n(C_{i+1}) + 1\) . We show that \(C_{i+1}\) is balanced: the condition relating to proper initial segments is satisfied by reason of the definition of \(i\) ; on the other hand, we have
+
+\[
+n (C _ {i + 1}) + 1 \leqslant l (C _ {i + 1}) = l (C _ {i}) + 1 \leqslant n (C _ {i}) + 1 \leqslant n (C _ {i + 1}) + 1,
+\]
+
+so that \(l(C_{i+1}) = n(C_{i+1}) + 1\) , and the proof of Lemma 1 is complete.
+
+LEMMA 2. Every balanced word A can be put in the form
+
+\[
+A = f A _ {1} A _ {2} \dots A _ {p},
+\]
+
+where the \(A_{i}\) are balanced and \(n(f) = p\) .
+
+Let \(f\) be the initial sign of \(A\) . By Lemma 1, \(A\) can be written as
+
+\[
+f A _ {1} A _ {2} \dots A _ {p},
+\]
+
+where the \(A_{i}\) are balanced: we need only define \(A_{i}\) inductively as the balanced segment of A which begins at the \(k(i)\) th place, where
+
+\[
+k (i) = 2 + \sum_ {j <   i} l (A _ {j}).
+\]
+
+Moreover, we have
+
+\[
+\begin{array}{r l} 1 + l (A _ {1}) + \dots + l (A _ {p}) & = l (A) = n (A) + 1 \\ & = n (f) + n (A _ {1}) + \dots + n (A _ {p}) + 1 \\ & = n (f) + (l (A _ {1}) - 1) + \dots + (l (A _ {p}) - 1) + 1, \end{array}
+\]
+
+from which it follows that \(n(f) = p\) .
+
+Now that the two lemmas have been proved, it is obvious by induction on the length of A that every balanced word A is significant, by reason of Lemma 2 and Proposition 1.
+
+COROLLARY 1. Let \(A\) be a significant word. For each integer \(k\) such that \(0 \leqslant k < l(A)\) there is exactly one significant segment of \(A\) which begins at the \((k + 1)\) th place.
+
+COROLLARY 2. Every significant word may be written in exactly one way in the form \(fA_{1}A_{2}\ldots A_{p}\) , where the \(A_{i}\) are significant and \(n(f) = p\).*
+

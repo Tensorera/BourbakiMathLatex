@@ -1,0 +1,30 @@
+\subsection{用自同构刻画可分性}
+
+定理 4. --- 设 \(\Omega\) 是域 \(K\) 的一个代数闭扩张， \(L\) 是 \(\Omega\) 的一个子扩张。则以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  L在K上可分。
+\item
+  \(\Omega\) -代数同态（\(\Omega \otimes_{K} L\) 到 \(\Omega\) 中的）的核的交集化为 0。
+\item
+  对于 L 中在 K 上线性无关的任意元素 \(a_1, \ldots, a_n\) ，存在 K-自同构 \(\sigma_1, \ldots, \sigma_n\) （\(\Omega\) 的）使得 \(\det(\sigma_i(a_j)) \neq 0\) 。
+\item
+  设 V 是 L 的一个有限维向量子 K-空间。V 到 \(\Omega\) 中的每个 K-线性映射都是 \(\Omega\) 的 K-自同构在 V 上的限制（系数取自 \(\Omega\) ）的线性组合。
+\end{enumerate}
+
+\(d) \Rightarrow c)\) ：设 \(a_1, \ldots, a_n\) 是 L 中在 K 上线性无关的元素，并设 V 为 L 中由 \(a_1, \ldots, a_n\) 生成的向量子 K-空间。映射 \(f \mapsto (f(a_1), \ldots, f(a_n))\) 是一个 \(\Omega\) -线性双射，将 \(\mathrm{Hom}_{\mathbf{K}}(\mathbf{V}, \Omega)\) 映到 \(\Omega^n\) 上。假设 \(d)\) 成立，则存在 K-自同构 \(\sigma_1, \ldots, \sigma_n\) （\(\Omega\) 的），使得元素 \((\sigma_i(a_1), \ldots, \sigma_i(a_n))\) 属于 \(\Omega^n\) （对于 \(1 \leqslant i \leqslant n\) ）并构成 \(\Omega^n\) 的一组基。因此我们有 \(\det(\sigma_i(a_j)) \neq 0\) ，所以 \(d)\) 蕴含 \(c)\) 。
+
+\(c) \Rightarrow b)\) ：假设 \(c)\) 成立，并令 \(x\) 属于 \(\Omega \otimes_{\mathbb{K}} L\) 。我们把 \(x\) 写成形式 \(\sum_{j=1}^{n} x_j \otimes a_j\) ，其中 \(x_1, \ldots, x_n\) 在 \(\Omega\) 中，且元素 \(a_1, \ldots, a_n\) 属于 \(L\) ，在 K 上
+
+线性无关。选取 K-自同构 \(\sigma_{1},\ldots,\sigma_{n}\) （\(\Omega\) 的）使得行列式 \(\sigma_{i}(a_{j})\neq0\) ；设 \(\chi_{1},\ldots,\chi_{n}\) 为 \(\Omega\) -同态（\(\Omega\otimes_{K}L\) 到 \(\Omega\) 中的），满足 \(\chi_{i}(a\otimes b)=a\cdot\sigma_{i}(b)\) （对于 \(a\in\Omega\) 和 \(b\in L\) ）。假设 \(\chi_{i}(x)=0\) （\(1\leqslant i\leqslant n\) ），换言之， \(\sum_{j=1}^{n}x_{j}\cdot\sigma_{i}(a_{j})=0\) （\(1\leqslant i\leqslant n\) ）。由于我们已假设矩阵 \((\sigma_{i}(a_{j}))\) 具有非零行列式，我们有 \(x_{i}=0\) （\(1\leqslant i\leqslant n\) ），从而 \(x=0\) 。
+
+\(b) \Rightarrow a)\) : 由于特征为 0 的域的每个扩张都是可分扩张（V，第 122 页，定理 1），只需考察 K 的特征为 \(p \neq 0\) 的情形。设 X 为 \(\Omega\) -代数同态（\(\Omega \otimes_{K} L\) 到 \(\Omega\) 中的）的全体， \(f\) 为 \(\Omega \otimes_{K} L\) 到 \(\Omega^{X}\) 中的同态，由 \(f(u) = (\chi(u))_{\chi \in X}\) （对于 \(u \in \Omega \otimes_{K} L\) ）定义。条件 \(b)\) 意味着 \(f\) 是单射，从而蕴含环 \(\Omega \otimes_{K} L\) 是既约的。因此定理 2（V，第 122 页）的条件 \(b)\) 在 \(K' = \Omega\) 时满足，所以 L 在 K 上可分。
+
+\(a) \Rightarrow d)\) ：假设 L 在 K 上是可分的。设 V 是 L 的有限维向量子 K-空间， \(V_{(\Omega)} = \Omega \otimes_K V\) 是由 V 通过标量扩张得到的向量 \(\Omega\) -空间， \(f_0\) 是 \(V_{(\Omega)}\) 上的线性形式，满足 \(f_0(x \otimes y) = xy\) （对于 \(x \in \Omega\) ， \(y \in V\) ）。设 G 为 \(\Omega\) 的 K-自同构群；对于 \(\sigma \in G\) 我们令 \(\sigma_V = \sigma \otimes Id_V\) 和 \(g_\sigma = \sigma \circ f_0 \circ \sigma_V^{-1}\) 。
+
+对于每个 \(\sigma \in G\) ，映射 \(g_{\sigma}\) （\(\mathbf{V}_{(\Omega)}\) 到 \(\Omega\) 中的）是 \(\Omega\) -线性的，且将 \(x \otimes y\) 映为 \(x \cdot \sigma(y)\) （对于 \(x \in \Omega\) ， \(y \in V\) ）。因此核 \(\mathbf{N}_{\sigma}\) （\(g_{\sigma}\) 的）是 \(\mathbf{V}_{(\Omega)}\) 的一个向量子空间，且同样的结论对 \(\mathbf{N} = \bigcap_{\sigma \in G} \mathbf{N}_{\sigma}\) 成立。若 \(p\) 是 K 的特征
+
+指数，则 G 在 \(\Omega\) 中的不变量域等于 \(\mathbf{K}^{p^{-\infty}}\) （V，第 112 页，命题 10）。我们显然有 \(\sigma_{\mathsf{V}}(\mathbf{N}) = \mathbf{N}\) 对所有 \(\sigma \in \mathbf{G}\) ；因此（V，第 63 页，推论）向量 \(\Omega\) -空间 N 由 \(\mathbf{N}_0 = \mathbf{N} \cap (\mathbf{K}^{p^{-\infty}} \otimes \mathbf{V})\) 生成。由于 L 在 K 上可分，域 \(\mathbf{K}^{p^{-\infty}}\) 与 L 在 K 上线性不相交（V，第 123 页，推论 1）；我们有 \(\mathbf{K}^{p^{-\infty}} \otimes_{\mathbb{K}} \mathbf{V} \subset \mathbf{K}^{p^{-\infty}} \otimes_{\mathbb{K}} \mathbf{L}\) ，且 \(f_0(x \otimes y) = xy\) （对于 \(x \in \Omega\) 和 \(y \in \mathbf{V}\) ）。由此可知， \(f_0\) 在 \(\mathbf{K}^{p^{-\infty}} \otimes_{\mathbb{K}} \mathbf{V}\) 上的限制是单射。现在 \(f_0 = g_1\) 在 N 上为零，从而更在 \(\mathbf{N}_0 \subset \mathbf{K}^{p^{-\infty}} \otimes_{\mathbb{K}} \mathbf{V}\) 上为零。因此我们有 \(\mathbf{N}_0 = 0\) ，从而 \(\mathbf{N} = 0\) 。由于 V 在 K 上是有限维的， \(\mathbf{V}_{(\Omega)}\) 在 \(\Omega\) 上是有限维的；线性形式 \(g_\sigma\) 的核的交集为零，因此（II，第 301 页，定理 7）族 \((g_\sigma)_{\sigma \in G}\) 生成 \(\mathbf{V}_{(\Omega)}\) 的对偶。现在设 \(u\) 是 V 到 \(\Omega\) 中的一个 K-线性映射；设 \(\tilde{u}\) 是 \(\mathbf{V}_{(\Omega)}\) 上的线性形式，它将 \(x \otimes y\) 映为 \(x u(y)\) （对于 \(x \in \Omega\) 和 \(y \in V\) ）。根据前述讨论，存在元素 \(\sigma_1, ..., \sigma_n\) （属于 G）和元素 \(\lambda_1, ..., \lambda_n\) （属于 \(\Omega\) ），使得 \(\tilde{u} = \sum_{i=1}^{n} \lambda_i g_{\sigma_i}\) ，从而 \(u(y) = \sum_{i=1}^{n} \lambda_i \sigma_i(y)\) 对所有 \(y \in V\) 。于是我们证明了 \(a)\) 蕴含 \(d)\) 。
+

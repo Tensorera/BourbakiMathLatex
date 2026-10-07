@@ -1,0 +1,115 @@
+\subsection{\texorpdfstring{微分与 \(p\)-基}{微分与 p-基}}
+
+设 K 是一个域（特征为 p），V 是 K 上的一个向量空间。我们回顾（III，第552页），K 到 V 的一个导子是指满足下列关系的、从 K 到 V 的映射 D：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\begin{array}{r l} \mathrm{D} (x + y) & = \mathrm{D} (x) + \mathrm{D} (y) \\ \mathrm{D} (x y) & = x \mathrm{D} (y) + y \mathrm{D} (x) \end{array}\tag{2}
+\]
+
+对 \(x, y \in \mathbf{K}\) 成立。由此可得 \(\mathrm{D}(1) = 0\) ，且 \(\mathrm{D}(x^n) = nx^{n-1}\mathrm{D}(x)\) 对所有 \(x \neq 0\) 以及所有 \(n \in \mathbf{Z}\) 成立（III，第557和558页）。由于 \(\mathbf{K}\) 的特征为 \(p\) ，故对所有 \(x \in \mathbf{K}\)
+
+\[
+\mathrm{D} \left(x ^ {p}\right) = 0.\tag{3}
+\]
+
+此外（III，第558页），对 \(x\) , \(y \in \mathbf{K}\) , \(y \neq 0\) ，我们有
+
+\[
+\mathrm{D} (x / y) = \left(y \mathrm{D} (x) - x \mathrm{D} (y)\right) / y ^ {2}.\tag{4}
+\]
+
+由上述公式，D 的核是 K 的一个包含 \(K^{p}\) 的子域 E。设 M 为 K 的一个子域；若 D 是 M-线性的，我们就说 D 是一个 M-导子；由 (2)，这等价于假设 D 在 M 上的限制为零。
+
+我们已在（III，第570页）定义了 K 的 M-微分模 \(\Omega_{\mathrm{M}}(\mathbf{K})\) ，以及典范 M-导子 \(d = d_{\mathrm{K / M}}\) （从 K 映入 \(\Omega_{\mathrm{M}}(\mathbf{K})\) ）。 \(d_{\mathrm{K / M}}\) 的像生成向量 K-空间 \(\Omega_{\mathrm{M}}(\mathbf{K})\) 。 K 到 V 的映射 D 是 M-导子的充要条件是：存在 K-线性映射 \(u: \Omega_{\mathrm{M}}(\mathbf{K}) \to \mathbf{V}\) 使得 \(\mathbf{D} = u \circ d_{\mathrm{K / M}}\) ；该映射 \(u\) 是唯一确定的。
+
+命题5. --- 设 K 是一个域，L 是 K 的由元素 x 生成的扩张，满足 \(x \notin K\) , \(x^{p} \in K\) 。设 V 是 L 上的一个向量空间， \(\Delta\) 是 K 到 V 的一个导子，使得 \(\Delta(x^{p}) = 0\) 。则存在唯一的从 L 到 V 的导子 D，它延拓 \(\Delta\) 并且满足 D(x) = 0。
+
+由 V 第 24 页命题 1， \(\{1, x, \ldots, x^{p-1}\}\) 是 L 在 K 上的一组基。对 L 的每个元素 \(u = a_{0} + a_{1}x + \cdots + a_{p-1}x^{p-1}\) （其中 \(a_{0}, \ldots, a_{p-1}\) 属于 K ），我们令 \(\mathrm{D}(u) = \Delta(a_{0}) + x\Delta(a_{1}) + \cdots + x^{p-1}\Delta(a_{p-1})\) 。显然 D 延拓 \(\Delta\) 并满足 (1)；因此只需证明关系式
+
+\[
+\mathrm{D} (u v) = u \cdot \mathrm{D} (v) + v \cdot \mathrm{D} (u)
+\]
+
+当 \(u\) 具有形式 \(ax^i\) 且 \(v\) 具有形式 \(bx^j\) （其中 \(a, b\) 属于 \(\mathbf{K}\) , \(0 \leqslant i < p\) 且 \(0 \leqslant j < p\) ）时成立。
+
+当 \(i + j < p\) 时，我们有 \(uv = x^{i + j} \cdot ab\) ，从而 \(D(uv) = x^{i + j}\Delta(ab)\) 。否则我们有 \(0 \leqslant i + j - p < p\) ，因此 \(uv = x^{i + j - p}(abx^p)\) ，其中 \(abx^p \in K\) ，但由于 \(\Delta(x^p) = 0\) ，我们有 \(\Delta(abx^p) = x^p\Delta(ab)\) ，由此再次得到 \(D(uv) = x^{i + j}\Delta(ab)\) 。因此在所有情形下均有
+
+\[
+\begin{array}{r l} \mathrm{D} (u v) & = x ^ {i + j} \Delta (a b) = x ^ {i} x ^ {j} (a \cdot \Delta (b) + b \cdot \Delta (a)) \\ & = (a x ^ {i}) x ^ {j} \cdot \Delta (b) + (b x ^ {j}) \cdot x ^ {i} \cdot \Delta (a) = u \cdot \mathrm{D} (v) + v \cdot \mathrm{D} (u). \end{array}
+\]
+
+推论1. --- 设 K 为一个域，L 为 K 的一个高度 ≤ 1 的 p-根式扩张，V 为 L 上的一个向量空间。 K 到 V 的每个在 L \(^{p}\) 上取零值的导子 Δ 都可延拓为 L 到 V 的一个导子。
+
+由佐恩引理（E，III，第20页），存在 \(\Delta\) 到一个导子 \(D_0: L_0 \to V\) 的极大延拓，其中 \(L_0\) 是 \(L\) 的一个包含 \(K\) 的子域。设 \(x \in L\) ；我们有 \(x^p \in L_0\) ，且 \(\Delta(x^p) = 0\) ，从而 \(D_0(x^p) = 0\) 。根据命题5，
+
+\(D_{0}\) 延拓为定义在 \(L_{0}(x)\) 上的一个导子；由 \(D_{0}\) 的极大性，我们有 \(L_{0}(x) = L_{0}\) ，由此 \(x \in L_{0}\) 。由于 x 是任意的，我们得出结论 \(L_{0} = L\) 。
+
+推论 2. --- 设 L 是域 K 的一个高度 ≤ 1 的 p-根式扩张，E 是 L 的一个子扩张。设 U 是 \(\Omega_{\mathrm{K}}(\mathrm{L})\) 的由 E 中元素的微分生成的子空间。则 E 恰由 L 中微分属于 U 的那些元素组成。特别地，我们有 \(d_{L/K}x \neq 0\) ，对所有 \(x \in L - K\) 成立。
+
+设 \(x\) 为 \(L\) 中不属于 \(E\) 的一个元素，则 \(\{1, x, \ldots, x^{p-1}\}\) 是 \(E(x)\) 在 \(E\) 上的一组基。设 \(\Delta\) 为一个 \(E\) -线性的、从 \(E(x)\) 到 \(L\) 的映射，使得 \(\Delta(x^i) = ix^i\) 对 \(0 \leqslant i < p\) 成立。我们立即验证 \(\Delta\) 是一个 \(E\) -导子（从 \(E(x)\) 到 \(L\) ），特别地是一个 \(K\) -导子。由命题5的推论1，存在一个 \(K\) -导子 \(D\) （从 \(L\) 到 \(L\) ），它延拓 \(\Delta\) 。由 \(\Omega_K(L)\) 的泛性质，存在一个线性形式 \(u\) ，它定义在这个向量 \(L\) -空间上，使得 \(D = u \circ d_{L/K}\) 。我们有 \(D(x) = x\) 且 \(D|E = 0\) ；因此 \(u(d_{L/K}x) \neq 0\) 且 \(u|U = 0\) ，从而 \(d_{L/K}x \notin U\) 。
+
+最后一个断言是 E = K 的特殊情形；此时我们有 U = 0。
+
+定理 1. --- 设 L 是域 K 的高度 ≤ 1 的 p-根式扩张，且 \((a_{i})_{i \in I}\) 是 L 的一个元素族。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  为使 \((x_{i})_{i\in I}\) 是 \(p\) -自由的（相对于 \(\mathbf{K}\) ），充要条件是族 \((dx_{i})_{i\in I}\) 在向量 \(\mathbf{L}\) -空间 \(\Omega_{\mathbf{K}}(\mathbf{L})\) 中是自由的。
+\item
+  为使 \((x_{i})_{i\in I}\) 在 K 上生成 L，充要条件是族 \((dx_{i})_{i\in I}\) 生成向量 L-空间 \(\Omega_{\mathbf{K}}(\mathbf{L})\) 。
+\item
+  为使 \((x_{i})_{i\in I}\) 是一个 \(p\) -基（ \(\mathbf{L}\) 相对于 \(\mathbf{K}\) 的），充要条件是族 \((dx_{i})_{i\in I}\) 是向量 \(\mathbf{L}\) -空间 \(\Omega_{\mathbf{K}}(\mathbf{L})\) 的一组基。
+\end{enumerate}
+
+首先我们指出，微分 \(dx\) （这里 x 是域 \(\mathrm{K}((x_i)_{i \in I})\) 中的元素）是带有 \(L\) 中系数的、诸微分 \(dx_i\) （ \(i \in I\) ）的线性组合。为使族 \((x_i)_{i \in I}\) 是 \(p\) -自由的，充要条件是 \(x_i \notin \mathrm{K}(x_j)_{j \in I - \{i\}}\) 对所有 \(i \in I\) 成立（V，第99页，命题2）。根据命题5的推论2，这表明 \(dx_i\) 不是诸 \(dx_j\) （ \(j \neq i\) ，在 \(I\) 中）的线性组合。断言 \(a)\) 由此得出。而 \(b)\) 由命题5的推论2立得， \(c)\) 由 \(a)\) 与 \(b)\) 得出。
+
+以下推论使命题5的推论1更加具体：
+
+推论. --- 设 \((x_{i})_{i\in I}\) 是 L 在 K 上的一个 p-基。设 V 是 L 上的一个向量空间， \(\Delta\) 是 K 到 V 的一个在 \(L^{p}\) 上为零的导子，且 \((u_{i})_{i\in I}\) 是 V 的一个元素族。则存在 L 到 V 中的唯一导子 D，它延拓 \(\Delta\) 并且把 \(x_{i}\) 映为 \(u_{i}\) ，对所有 \(i\in I\) 。
+
+由命题5的推论1，存在一个导子 \(D_{0}\) （从 L 到 V，且延拓 \(\Delta\) ）。 L 到 V 中的延拓 \(\Delta\) 的导子恰是形如 \(D = D_{0} + u \circ d_{L/K}\) 的映射，其中 u 是 \(\Omega_{\mathrm{K}}(\mathrm{L})\) 到 V 中的一个 L-线性映射。我们有 \(\mathrm{D}(x_{i}) = u_{i}\) 当且仅当线性映射 u 满足条件 \(u(dx_{i}) = u_{i} - \mathrm{D}_{0}(x_{i})\) 。由于族 \(dx_{i}\) 是 \(\Omega_{\mathrm{K}}(\mathrm{L})\) 的一组基，这便唯一确定了 u，从而推论得证。
+
+设 L 是 K 的一个高度 \(\leqslant1\) 的 p-根式扩张，且 \((x_{i})_{i\in I}\) 是 L 在 K 上的一个 p-基。由定理1的推论，对每个 \(i\in I\) 存在一个 K-导子 \(D_{i}\) （从 L 到 L），它由 \(\mathrm{D}_{i}(x_{j})=\delta_{ij}\) （克罗内克符号）刻画； \(D_{i}\) 有时称为关于 \(x_{i}\) 的偏导数。当 I 有限时，族 \((\mathrm{D}_{i})_{i\in I}\) 是由 L 到 L 的 K-导子组成的 L 上向量空间的一组基。
+
+定理 1 使得对 p-基的研究可以归结为对向量空间基的研究。例如，我们有以下结果：
+
+定理 2. --- 设 L 是域 K 的高度 ≤1 的 p-根式扩张。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  存在 L 在 K 上的 p-基。更确切地说，若 S 是 L 在 K 上的一个 p-自由子集，且 T 是 L 的一个子集，满足 \(S \subset T\) 且 \(L = K(T)\) ，则存在 L 在 K 上的一个 p-基 B，使得 \(S \subset B \subset T\) 。
+\item
+  两个 \(p\) -基（ \(\mathbf{L}\) 相对于 \(\mathbf{K}\) 的）具有相同的基数。
+\item
+  为使 \([L:K]\) 有限，充要条件是向量空间 \(\Omega_{K}(L)\) 在 L 上是有限维的，且此时我们有
+\end{enumerate}
+
+\[
+[ \mathrm{L}: \mathrm{K} ] = p ^ {[ \Omega_ {\mathrm{K}} (\mathrm{L}): \mathrm{L} ]}.\tag{5}
+\]
+
+断言 a) 与 b) 是直接的（II，第292页）。若 {[}L:K{]} 有限，则由 a) 存在 L 在 K 上的一个有限 \(p\) -基 \((x_1, \ldots, x_n)\) ；于是单项式 \(x_1^{\alpha_1} \ldots x_n^{\alpha_n}\) （其中 \(0 \leqslant \alpha_i < p\) ， \(1 \leqslant i \leqslant n\) ）构成 L 在 K 上的一组基，而微分 \(dx_1, \ldots, dx_n\) 构成 \(\Omega_K(L)\) 在 L 上的一组基。于是我们有 \([L:K] = p^n\) 与 \([\Omega_K(L):L] = n\) 。反之，若 \(\Omega_K(L)\) 在 L 上是有限维的，则存在 L 在 K 上的一个有限 \(p\) -基（V，第102页，定理1），且 {[}L:K{]} 有限。
+
+推论. --- 对每个 \(x \in L - K\) ，存在 L 在 K 上的一个包含 x 的 p-基。
+
+由于 \(\{x\}\) 是一个 \(p\) -自由子集（ \(\mathbf{L}\) 相对于 \(\mathbf{K}\) ），故只需应用定理2的 \(a\) )。设 \(\mathbf{K}\) 为一个域， \(\mathbf{L}\) 为 \(\mathbf{K}\) 的一个扩张。若 \(\mathbf{D}\) 是一个 \(\mathbf{K}\) -导子（ \(\mathbf{L}\) 的、取值在一个向量 \(\mathbf{L}\) -空间中），则我们有 \(\mathrm{D}(x^p) = 0\) ，对所有 \(x \in \mathbf{L}\) 成立，从而 \(\mathbf{D}\) 是一个 \(\mathrm{K}(\mathrm{L}^p)\) -导子；由此得出 \(\Omega_{\mathrm{K}}(\mathrm{L}) = \Omega_{\mathrm{K}(\mathrm{L}^p)}(\mathrm{L})\) 。由于 \(\mathbf{L}\) 是一个 \(p\) -根式扩张（高度 \(\leqslant 1\) ，相对于 \(\mathrm{K}(\mathrm{L}^p)\) ），我们可以应用上述结果。例如，由定理1的 \(c\) ) 我们推出如下结论：设 \((x_i)_{i \in I}\) 是 \(\mathbf{L}\) 中元素的一个族；为使 \((dx_i)_{i \in I}\) 是向量 \(\mathbf{L}\) -空间 \(\Omega_{\mathrm{K}}(\mathrm{L})\) 的一组基，充要条件是 \((x_i)_{i \in I}\) 是一个 \(p\) -基（ \(\mathbf{L}\) 相对于 \(\mathrm{K}(\mathrm{L}^p)\) 的）。类似地，命题5的推论2蕴含：
+
+命题6. --- 设 K 是一个域（特征为 p），L 是 K 的一个扩张。a) 设 \(x \in L\) ；微分 \(d_{L/K}x\) 为零，当且仅当 x 属于 \(\mathrm{K}(\mathrm{L}^{p})\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  \(\Omega_{\mathbf{K}}(\mathbf{L}) = 0\) 当且仅当 \(\mathbf{L} = \mathbf{K}(\mathbf{L}^p)\) 。
+\item
+  假设 \(\mathbf{L}\) 是 \(p\) -根式的（相对于 \(\mathbf{K}\) ，且高度有限）；则 \(\Omega_{\mathbf{K}}(\mathbf{L}) = 0\) 当且仅当 \(\mathbf{L} = \mathbf{K}\) 。
+\end{enumerate}
+

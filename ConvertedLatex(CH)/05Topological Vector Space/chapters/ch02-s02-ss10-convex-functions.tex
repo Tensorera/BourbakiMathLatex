@@ -1,0 +1,20 @@
+\subsection{开凸集上的凸函数}
+
+命题 21. --- 设 f 是定义在拓扑向量空间 E 中非空开凸集 X 上的凸函数。则 f 连续，当且仅当它限制在 X 的某个非空开子集 U 上时有上界。
+
+条件显然是必要的，我们证明它是充分的。设 \(x_{0} \in X\) 是使 f 在 \(x_{0}\) 的某邻域 V 中有上界的一点；我们先证明 \(f\) 在 \(x_0\) 处连续。通过平移，我们可以限于 \(x_0 = 0\) 且 \(f(x_0) = 0\) 的情形；此外还可设邻域 \(V\) 是均衡的（I, 第 7 页, prop. 4）。设 \(f(x) \leqslant a\) 在 \(V\) 中成立；对每个 \(\varepsilon, 0 < \varepsilon < 1\)，我们注意到若 \(x \in \varepsilon V\)，则 \(x / \varepsilon \in V\) 且 \(-x / \varepsilon \in V\)。把 II, 第 16 页 的不等式 (1) 应用于点 \(x / \varepsilon\)、0 及数 \(\lambda = \varepsilon\)，得 \(f(x) \leqslant \varepsilon f(x / \varepsilon) \leqslant \varepsilon a\)；把它应用于点 \(x\)、\(-x / \varepsilon\) 及数 \(\lambda = 1 / (1 + \varepsilon)\)，得 \(f(x) \geqslant -\varepsilon f(-x / \varepsilon) \geqslant -\varepsilon a\)。于是 \(f(x)\) 在 \(\varepsilon V\) 中任意小（若 \(\varepsilon\) 充分小），故 \(f\) 在 \(x = 0\) 处连续。
+
+现在设 \(y\) 是 \(X\) 中任意一点；由于 \(X\) 是开的，存在数 \(\rho > 1\) 使得 \(z = \rho y\) 属于 \(X\)。设 \(g\) 是位似变换 \(x \mapsto \lambda x + (1 - \lambda)z\)（以 \(z\) 为中心、\(\lambda = 1 - \frac{1}{\rho}\) 为比，它把 0 变为 \(y\)）；对每点 \(g(x) \in g(V)\)，由 (1) 有
+
+\[
+f (g (x)) \leqslant \lambda f (x) + (1 - \lambda) f (z) \leqslant \lambda a + (1 - \lambda) f (z).
+\]
+
+于是 \(f\) 在 \(y\) 的一个邻域中有上界，从而由第一部分知其在 \(y\) 处连续。命题得证。
+
+推论. --- 每个凸函数 \(f\)（定义在开凸集 \(X\)（\(\mathbf{R}^n\) 中的）上的）都在 \(X\) 中连续。
+
+我们可以设 X 非空。于是在 X 中存在 \(n + 1\) 个仿射无关的点 \(a_{i}\)（\(0 \leqslant i \leqslant n\)），且这些点的凸包 S 包含由点 \(\sum_{i=0}^{n} \lambda_{i} a_{i}\)（\(0 < \lambda_{i} < 1\)（对所有 i）且 \(\sum_{i=0}^{n} \lambda_{i} = 1\)）组成的非空开集。由 II, 第 17 页, prop. 20，f 在 S 中有上界，因此是连续的。
+
+在无穷维拓扑向量空间中，一般存在不连续的线性型（II, 第 80 页, exerc. 25），从而存在在任何点都不连续的凸函数。
+

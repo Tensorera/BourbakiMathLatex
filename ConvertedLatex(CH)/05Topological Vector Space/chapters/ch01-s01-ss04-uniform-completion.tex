@@ -1,0 +1,34 @@
+\subsection{拓扑向量空间的一致结构与完备化}
+
+由于拓扑向量空间 E 的拓扑与 E 上的加法群结构相容，它在 E 上定义了一个一致结构 (GT, III, § 3)；当我们谈到拓扑向量空间的一致结构时，除非另有明确说明，指的总是这个结构。拓扑向量空间 E 到拓扑向量空间 F 中的每个连续线性映射都是一致连续的 (GT, III, § 3.1, prop. 3)；E 到自身中每个形如 \(x \mapsto ax + b\) 的映射都是一致连续的。E 到 F 中的线性映射的一个等度连续集是一致等度连续的 (GT, X, § 2.2, prop. 5)。
+
+注记. --- 1) 若 B 是 K 的预紧集，则对 E 中 0 的每个邻域 V，存在 E 中 0 的一个邻域 U，使得 BU ⊂ V。因为，若 W 是 E 中 0 的一个邻域使得 W + W ⊂ V，则由 (EVT \(_{III}\) )，存在 K 中 0 的一个邻域 T \(_{0}\) 和 E 中 0 的一个邻域 U \(_{0}\)，使得 T \(_{0}\) U \(_{0}\) ⊂ W。由于 B 是预紧的，存在有限多个点 \(\lambda_{i} \in \mathbf{B}\) ( \(1 \leqslant i \leqslant n\) ) 使诸 \(\lambda_{i} + T_{0}\) 覆盖 B；由 (EVT \(_{II}\) ) 推出，存在 E 中 0 的一个邻域 U ⊂ U \(_{0}\)，使对所有 i 有 \(\lambda_{i}\) U ⊂ W；显然 U 具有所需的性质。类似地（用 (EVT \(_{I}\) ) 代替 (EVT \(_{II}\) )）可以证明：若 H 是 E 的预紧集，则对 E 中 0 的每个邻域 V，存在 K 中 0 的一个邻域 T，使得 TH ⊂ V。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  由 1) 推出，若 B 是 K 的预紧集而 H 是 E 的预紧集，则映射 \((\lambda, x) \mapsto \lambda x\) 限制在 \(\mathbf{B} \times \mathbf{H}\) 上是一致连续的。因为，若 V 是 E 中 0 的一个邻域，则存在 K 中 0 的邻域 T 和 E 中 0 的邻域 U，使得 \(\mathrm{TH} + \mathrm{BU} \subset \mathrm{V}\)。由于可以写 \(\lambda x - \lambda' x' = (\lambda - \lambda') x + \lambda'(x - x')\)，我们看到，当 \(\lambda, \lambda'\) 属于 B，\(x, x'\) 属于 H，且 \(\lambda - \lambda' \in \mathrm{T}\) 及 \(x - x' \in \mathrm{U}\) 时，有 \(\lambda x - \lambda' x' \in \mathrm{V}\)，这就证明了我们的断言。
+\end{enumerate}
+
+拓扑向量空间称为完备的，如果就其一致结构考虑，它是一个完备一致空间。
+
+定义 2. --- 非离散赋值除环上的完备赋范空间称为 Banach 空间。
+
+例. --- 若 K 是非离散赋值除环，则空间 \(\mathcal{B}(\mathrm{I};\mathrm{K})\) (I, 第 4 页, 例) 是完备的 (GT, X, § 3.1, cor. 1)。对于空间 \(\ell_{\mathbf{K}}^{1}(\mathrm{I})\) (I, 第 4 页, 例)，带范数 \(\| x\| _1 = \sum_{\iota \in \mathrm{I}}|\xi_\iota |:\) 情形也是如此：因为，若 \(x_{n}\) 是该空间中的一个 Cauchy 序列且 \(x_{n} = (\xi_{n\iota})_{\iota \in \mathrm{I}}\)，则对所有 \(\iota \in \mathrm{I}\)
+
+\[
+\left| \xi_ {m\iota} - \xi_ {n\iota} \right| \leqslant \left\| x _ {m} - x _ {n} \right\| _ {1};
+\]
+
+于是，对每个 \(\iota \in I\)，序列 \((\xi_{n\iota})_{n\geqslant 1}\) 在 K 中收敛于一个极限 \(\xi_{\iota}\)。此外，对 I 的每个有限子集 J
+
+\[
+\sum_ {\iota \in J} | \xi_ {m\iota} - \xi_ {n\iota} | \leqslant \| x _ {m} - x _ {n} \| _ {1};
+\]
+
+由此立即推出，存在一个常数 \(a > 0\)（与 J、\(m, n\) 无关），使得 \(\sum_{\iota \in \mathbf{J}} |\xi_{m\iota} - \xi_{n\iota}| \leqslant a\)。令 \(m\) 趋于 \(+\infty\)，我们推出 \(\sum_{\iota \in \mathbf{J}} |\xi_{\iota} - \xi_{n\iota}| \leqslant a\)，由此得 \(\sum_{\iota \in \mathbf{I}} |\xi_{\iota}| \leqslant a + \| x_n\|_1\)，这表明 \(z = (\xi_{\iota})_{\iota \in \mathbf{I}}\) 属于 \(\ell_{\mathbf{K}}^1 (\mathbf{I})\)；此外，对所有 \(\varepsilon > 0\)，存在 \(n_0\)，使得当 \(n \geqslant n_0\) 且 J 为 I 的任意有限子集时，有 \(\sum_{\iota \in \mathbf{J}} |\xi_{\iota} - \xi_{n\iota}| \leqslant \varepsilon\)；关于 I 的有限子集所成的定向集取极限，我们看出 \(\| z - x_n\| _1\leqslant \varepsilon\) 对 \(n\geqslant n_0\) 成立，这表明 \(z\) 是序列 \((x_{n})\) 在赋范空间 \(\ell_{\mathbf{K}}^{1}(\mathrm{I})\) 中的极限
+
+设 K 是 Hausdorff 拓扑除环，E 是 K 上的拓扑向量空间，并设完备化环 \(\hat{K}\) 是一个除环（当 K 是赋值除环时即是如此，GT, IX, § 3.3），则 E 的分离完备化 \(\hat{E}\) 具有 \(\hat{K}\) 上完备拓扑向量空间的结构 (GT, III, § 6.5)；我们说带有这一结构的 \(\hat{E}\) 是拓扑向量空间 E 的分离完备化，而当 E 是 Hausdorff 时简称其为 E 的完备化。
+

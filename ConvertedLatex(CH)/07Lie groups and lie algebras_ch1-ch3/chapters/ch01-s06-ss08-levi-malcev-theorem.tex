@@ -1,0 +1,134 @@
+\subsection{Levi--Malcev 定理}
+
+设 E 是 R 上的完备赋范向量空间，u 是 E 的连续自同态。我们已经看到（《实变函数》，第四章，§ 2，第 6 号），序列 \(\frac{u^{n}}{n!}\) 在 \(\mathcal{L}(E)\) 中可求和，并记为
+
+\[
+e ^ {u} = \exp u = \sum_ {n = 0} ^ {\infty} \frac {u ^ {n}}{n !}.
+\]
+
+现在设 E 是域 K 上的向量空间，u 是 E 的幂零自同态。级数 \(\sum_{n=0}^{\infty}\frac{u^{n}}{n!}\) 只有有限个非零项，因此可写为
+
+\[
+e ^ {u} = \exp u = \sum_ {n = 0} ^ {\infty} \frac {u ^ {n}}{n !}.
+\]
+
+若 K = R 且 E 是完备赋范的，这一定义与上述定义一致。若 v 是 E 的另一个幂零自同态，且与 u 可交换，则：
+
+\[
+\begin{array}{l} e ^ {u} e ^ {v} = \left(\sum_ {n = 0} ^ {\infty} \frac {u ^ {n}}{n !}\right) \left(\sum_ {p = 0} ^ {\infty} \frac {v ^ {p}}{p !}\right) = \sum_ {n, p = 0} ^ {\infty} \frac {u ^ {n} v ^ {p}}{n ! p !} \\ = \sum_ {q = 0} ^ {\infty} \frac {1}{q !} \left(\sum_ {n + p = q} \binom {q} {n} u ^ {n} v ^ {p}\right) = \sum_ {q = 0} ^ {\infty} \frac {1}{q !} (u + v) ^ {q} = e ^ {u + v}. \end{array}\tag{3}
+\]
+
+特别地，\(e^u e^{-u} = e^{-u}e^u = e^0 = 1\)，因此 \(e^u\) 总是 E 的自同构。
+
+此外，若 E 是一个（不必结合的）代数，而 u 是 E 的（幂零）导子，则 \(e^{u}\) 是代数 E 的自同构。因为若 \(x, y \in E\)，则
+
+\[
+u ^ {p} (x y) = \sum_ {r + s = p} \binom {p} {r} u ^ {r} (x) u ^ {s} (y)
+\]
+
+对每个整数 \(p \geqslant 0\) 都成立（Leibniz 公式）。由此
+
+\[
+\begin{array}{r l} e ^ {u} (x y) & = \sum_ {p \geqslant 0} \frac {1}{p !} u ^ {p} (x y) = \sum_ {p \geqslant 0} \sum_ {r + s = p} \frac {u ^ {r} (x)}{r !} \frac {u ^ {s} (y)}{s !} \\ & = \sum_ {r, s = 0} ^ {\infty} \frac {u ^ {r} (x)}{r !} \frac {u ^ {s} (y)}{s !} = e ^ {u} (x) e ^ {u} (y) \end{array}
+\]
+
+从而得到所述断言。
+
+现在设 g 是李代数。若 x 属于 g 的幂零根，则 g 的导子 \(ad_{g}x\) 是幂零的。因此可作如下定义：
+
+定义 6. g 的特殊自同构是形如 \(e^{ad_{\mathfrak{g}} x}\) 的 g 的自同构，其中 x 属于 g 的幂零根。
+
+显然，特殊自同构使 g 的每个理想保持稳定。
+
+定义 7. 设 \(\mathfrak{g}\) 是李代数，\(\mathfrak{r}\) 是其根基。\(\mathfrak{g}\) 的 Levi 子代数是 \(\mathfrak{g}\) 中任意一个以 \(\mathfrak{r}\) 为补的子代数。
+
+Levi 子代数同构于 \(\mathfrak{g} / \mathfrak{r}\)，因而是半单的。半单子代数与 \(\mathfrak{r}\) 的交只有 0；因此，任意半单子代数 \(\mathfrak{h}\)，只要满足 \(\mathfrak{g} = \mathfrak{r} + \mathfrak{h}\)，就是 Levi 子代数；所以，Levi 子代数在满同态下的像仍是 Levi 子代数。
+
+定理 5 (Levi--Malcev). 李代数 g 总有一个 Levi 子代数 s。g 的每个 Levi 子代数都是 s 在某个特殊自同构下的像。
+
+令 r 表示 g 的根基。我们先处理两种特殊情形。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  \([g, r] = \{0\}\) .
+\end{enumerate}
+
+根据命题 5，此时 g 是其中心 r 与半单的 Dg 的乘积。因此 Dg 是 Levi 子代数。此外，若 \(s'\) 是半单子代数，则 \(s' = Ds'\)（定理 1），从而 \(s' \subset Dg\)；因此 Dg 是 g 的唯一 Levi 子代数。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \([\mathfrak{g},\mathfrak{r}]\neq \{0\}\)，且 \(\mathfrak{g}\) 中包含于 \(\mathfrak{r}\) 的理想只有 \(\{0\}\) 和 \(\mathfrak{r}\)。
+\end{enumerate}
+
+于是 \([\mathfrak{g},\mathfrak{r}] = \mathfrak{r}\)，\([\mathfrak{r},\mathfrak{r}] = \{0\}\)，且 \(\mathfrak{g}\) 的中心为零。令 M（分别为 N）为 \(\mathcal{L}(\mathfrak{g})\) 的子空间，由 \(\mathfrak{g}\) 映入 \(\mathfrak{r}\) 的线性映射组成；这些映射在 \(\mathfrak{r}\) 上的限制分别为数乘变换（分别为零），故 N 在 M 中余维为 1。对于 \(m\in M\)，令 \(\lambda (m)\) 表示 \(\mathfrak{r}\) 上由 \(m\) 定义的数乘变换的比值。令 \(\sigma\) 为 \(\mathfrak{g}\) 在 \(\mathcal{L}(\mathfrak{g})\) 上由伴随表示规范导出的表示；回忆有 \(\sigma (x).u = [\mathrm{ad}_{\mathfrak{g}}x,u]\)，其中 \(x\in \mathfrak{g}\) 且 \(u\in \mathcal{L}(\mathfrak{g})\)。
+
+\[
+\mathcal{L}(\mathfrak{g}) \supset \mathrm{M} \supset \mathrm{N} \supset \mathrm{P}
+\]
+显然，\(\sigma (x)(\mathrm{M})\subset \mathrm{N}\) 对所有 \(x\in \mathfrak{g}\) 都成立。此外，若 \(x\in \mathfrak{r},y\in \mathfrak{g}\) 且 \(u\in \mathrm{M}\)，则\\
+（4）\((\sigma (x).u)(y) = [x,u(y)] - u([x,y]) = -\lambda (u)[x,y]\)，因为 \([\mathfrak{r},\mathfrak{r}] = \{0\}\)；式（4）可写为：\\
+（5）\(\sigma (x).u = -\mathrm{ad}(\lambda (u).x)\)。
+
+由于 g 的中心为零，映射 \(x \mapsto ad_{g}x\) 定义了一个双射 \(\phi\)，把 r 映到 \(\mathcal{L}(\mathfrak{g})\) 的一个子空间 P 上。这个子空间在 \(\sigma(\mathfrak{g})\) 下稳定，并包含于 N 中，因为 r 是交换理想；由（5）可知，\(\sigma(x)(\mathrm{M}) \subset \mathrm{P}\) 对 \(x \in \mathfrak{r}\) 成立。由 \(\sigma\) 在 M/P = V 上导出的表示因此在 r 上为零，并定义了半单代数 g/r 在 V 上的表示 \(\sigma'\)。对于所有 \(y \in g/r\)，空间 \(\sigma'(y)(V)\) 包含于 N/P 中，后者在 V 中余维为 1。因此（第 2 号，引理 3），存在 \(u_{0} \in M\)，使 \(\lambda(u_{0}) = -1\)，且 \(\sigma(x).u_{0} \in P\) 对所有 \(x \in g\) 都有。映射 \(x \mapsto \phi^{-1}(\sigma(x).u_{0})\) 是从 \(x \in g\) 到 r 的线性映射。根据（5），它在 r 上的限制是 r 的恒等映射。因此它的核是 g 中以 r 为补的子空间 s。由于 s 正是满足 \(\sigma(x).u_{0} = 0\) 的 x 的集合，所以 s 是 g 的子代数，因而是 g 的 Levi 子代数。
+
+令 \(\mathfrak{s}'\) 是另一个 Levi 子代数。对每个 \(x \in \mathfrak{s}'\)，令 \(h(x)\) 为 \(\mathfrak{r}\) 中满足 \(x + h(x) \in \mathfrak{s}\) 的唯一元素。由于 \(\mathfrak{s}\) 是子代数且 \(\mathfrak{r}\) 交换，对于 \(x, y\)（属于 \(\mathfrak{s}'\)），有：
+
+\[
+[ x + h (x), y + h (y) ] = [ x, y ] + [ x, h (y) ] + [ h (x), y ] \in \mathfrak {s}
+\]
+
+因此
+
+\[
+h ([ x, y ]) = (\operatorname{ad} x). h (y) - (\operatorname{ad} y). h (x).
+\]
+
+根据第 2 号的备注 2，存在 \(a \in \mathfrak{r}\)，使 \(h(x) = -[x, a]\) 对所有 \(x \in \mathfrak{s}'\) 成立。于是：
+
+\[
+x + h (x) = x + [ a, x ] = (1 + \operatorname{ad} a). x.\tag{6}
+\]
+
+由于 \(\mathfrak{r}\) 交换，\((\operatorname{ad} a)^2 = 0\)，所以 \(1 + \operatorname{ad} a = e^{\operatorname{ad} a}\)。由于 \(\mathfrak{r} = [\mathfrak{s}, \mathfrak{r}]\)，\(e^{\operatorname{ad} a}\) 是 \(\mathfrak{g}\) 的特殊自同构。根据（6），此特殊自同构把 \(\mathfrak{s}'\) 映到 \(\mathfrak{s}\)。
+
+\textbf{(c) 一般情形：}
+
+我们对根基的维数 \(n\) 作归纳。当 \(n = 0\) 时无事可证，因此可假设定理对根基维数小于 \(<\dim \mathfrak{r}\) 的李代数成立。由（a），只需考虑 \([\mathfrak{g}, \mathfrak{r}] \neq \{0\}\) 的情形。由于 \([\mathfrak{g}, \mathfrak{r}]\) 是幂零的（第 4 号，命题 6），其中心 \(\mathfrak{c}\) 是非零的，即满足 \(\neq \{0\}\)。令 \(\mathfrak{m}\) 为 \(\mathfrak{g}\) 中包含于 \(\mathfrak{c}\) 的极小非零理想。若 \(\mathfrak{m} = \mathfrak{r}\)，则为情形（b）。因此设 \(\mathfrak{m} \neq \mathfrak{r}\)，并令 \(f\) 为从 \(\mathfrak{g}\) 映到 \(\mathfrak{g}' = \mathfrak{g}/\mathfrak{m}\) 的典范映射。\(\mathfrak{g}'\) 的根基是 \(\mathfrak{r}' = \mathfrak{r}/\mathfrak{m}\)。由归纳假设，\(\mathfrak{g}'\) 有 Levi 子代数 \(\mathfrak{h}'\)。于是 \(\mathfrak{h} = f^{-1}(\mathfrak{h}')\) 是 \(\mathfrak{g}\) 的子代数，包含 \(\mathfrak{m}\)，且 \(\mathfrak{h}/\mathfrak{m} = \mathfrak{h}'\) 是半单的，因而其根基为 \(\mathfrak{m}\)。由归纳假设，\(\mathfrak{h} = \mathfrak{m} + \mathfrak{s}\)，其中 \(\mathfrak{s}\) 是半单子代数。等式 \(\mathfrak{g}' = \mathfrak{r}' + \mathfrak{h}'\) 蕴含 \(\mathfrak{g} = \mathfrak{r} + \mathfrak{h} = \mathfrak{r} + \mathfrak{m} + \mathfrak{s} = \mathfrak{r} + \mathfrak{s}\)，从而 \(\mathfrak{s}\) 是 \(\mathfrak{g}\) 的 Levi 子代数。
+
+令 \(\mathfrak{s}'\) 是 \(\mathfrak{g}\) 的另一个 Levi 子代数。则 \(f(\mathfrak{s})\) 和 \(f(\mathfrak{s}')\) 是 \(\mathfrak{g}'\) 的两个 Levi 子代数；由归纳假设，存在 \(a' \in [\mathfrak{g}', \mathfrak{r}']\)，使 \(e^{\mathrm{ad} a'}(f(\mathfrak{s}')) = f(\mathfrak{s})\)。若存在 \(a \in [\mathfrak{g}, \mathfrak{r}]\) 使 \(f(a) = a'\)，则可得：
+
+\[
+\mathfrak {s} _ {1} = e ^ {\mathrm{ad} a} \left(\mathfrak {s} ^ {\prime}\right) \subset \mathfrak {m} + \mathfrak {s} = \mathfrak {h}.
+\]
+
+于是 \(\mathfrak{s}_1\) 和 \(\mathfrak{s}\) 是 \(\mathfrak{h}\) 的两个 Levi 子代数。由归纳假设，存在 \(b\in \mathfrak{m}\)，使 \(e^{\mathrm{ad}b}(\mathfrak{s}_1) = \mathfrak{s}\)。因此 \(\mathfrak{s} = e^{\mathrm{ad}b}.e^{\mathrm{ad}a}(\mathfrak{s}')\)。最后，由于 \(\mathfrak{m}\) 位于 \([\mathfrak{g},\mathfrak{r}]\) 的中心，\(e^{\mathrm{ad}b}.e^{\mathrm{ad}a} = e^{\mathrm{ad}(b + a)}\)，且 \(b + a\in [\mathfrak{g},\mathfrak{r}]\)，这就完成了证明。
+
+推论 1. 设 \(\mathfrak{s}\) 是 \(\mathfrak{g}\) 的 Levi 子代数，\(\mathfrak{h}\) 是 \(\mathfrak{g}\) 的半单子代数。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  存在 \(\mathfrak{g}\) 的一个特殊自同构，把 \(\mathfrak{h}\) 映到 \(\mathfrak{s}\) 的一个子代数上。
+\item
+  \(\mathfrak{h}\) 包含于 \(\mathfrak{g}\) 的某个 Levi 子代数中。
+\end{enumerate}
+
+令 \(\mathfrak{r}\) 为 \(\mathfrak{g}\) 的根基，令 \(\mathfrak{a} = \mathfrak{h} + \mathfrak{r}\)；它是 \(\mathfrak{g}\) 的子代数。于是 \(\mathfrak{a}/\mathfrak{r}\) 是半单的，而 \(\mathfrak{r}\) 可解，所以 \(\mathfrak{r}\) 是 \(\mathfrak{a}\) 的根基，且 \(\mathfrak{h}\) 是 \(\mathfrak{a}\) 的 Levi 子代数。另一方面，\(\mathfrak{a} \cap \mathfrak{s} = \mathfrak{h}'\) 以 \(\mathfrak{r}\) 为补，是 \(\mathfrak{a}\) 中的一个子代数，因而也是 \(\mathfrak{a}\) 的 Levi 子代数。于是（定理 5）存在 \(a \in [\mathfrak{a}, \mathfrak{r}]\)，使 \(e^{\mathrm{ad} a}\) 把 \(\mathfrak{h}\) 映到 \(\mathfrak{h}'\)。现在 \(a \in [\mathfrak{g}, \mathfrak{r}]\)；\(e^{\mathrm{ad} a}\) 把 \(\mathfrak{h}\) 映到 \(\mathfrak{s}\) 的一个子代数中，而 \(e^{-\mathrm{ad} a}(\mathfrak{s})\) 是 \(\mathfrak{g}\) 的 Levi 子代数，包含 \(\mathfrak{h}\)。
+
+推论 2. 对于子代数 \(\mathfrak{h}\)，要成为 \(\mathfrak{g}\) 的 Levi 子代数，充要条件是它成为 \(\mathfrak{g}\) 的极大半单子代数；换言之，\(\mathfrak{h}\) 是 \(\mathfrak{g}\) 中的极大半单子代数。
+
+这直接由推论 1 得到。
+
+推论 3. 设 g 是李代数，m 是 g 的理想，且 g/m 是半单的。则 g 含有一个在 g 中以 m 为补的子代数。换句话说，半单李代数的每个扩张都是非本质的。
+
+令 \(\mathfrak{s}\) 为 \(\mathfrak{g}\) 的 Levi 子代数（定理 5）。它在 \(\mathfrak{g}/\mathfrak{m}\) 中的典范像是一个 Levi 子代数，因而等于 \(\mathfrak{g}/\mathfrak{m}\)，从而 \(\mathfrak{g} = \mathfrak{s} + \mathfrak{m}\)。于是，\(\mathfrak{s}\) 中的一个理想，在 \(\mathfrak{s}\) 中以 \(\mathfrak{m} \cap \mathfrak{s}\) 为补，是 \(\mathfrak{g}\) 中以 \(\mathfrak{m}\) 为补的子代数，且位于 \(\mathfrak{g}\) 中。
+
+推论 4. 设 g 是李代数，r 是其根基，s 是 g 的 Levi 子代数，m 是 g 的理想。则 m 是 m ∩ r（它是 m 的根基）与 m ∩ s（它是 m 的 Levi 子代数）的直和。
+
+我们知道 \(\mathfrak{m} \cap \mathfrak{s}\) 是 \(\mathfrak{m}\) 的根基（§ 5，第 5 号，命题 5 的推论 3）。令 \(\mathfrak{h}\) 为 \(\mathfrak{m}\) 的 Levi 子代数，令 \(\mathfrak{s}'\) 为 \(\mathfrak{g}\) 中包含 \(\mathfrak{h}\) 的 Levi 子代数（推论 1）。代数 \(\mathfrak{m} \cap \mathfrak{s}'\) 是 \(\mathfrak{s}'\) 的理想，因而是半单的；它包含 \(\mathfrak{h}\)，所以等于 \(\mathfrak{h}\)。于是 \(\mathfrak{m}\) 是 \(\mathfrak{m} \cap \mathfrak{r}\) 与 \(\mathfrak{m} \cap \mathfrak{s}'\) 的直和。存在特殊自同构把 \(\mathfrak{s}'\) 映到 \(\mathfrak{s}\)；该自同构保持 \(\mathfrak{r}\) 和 \(\mathfrak{m}\) 不变；因此 \(\mathfrak{m}\) 是 \(\mathfrak{m} \cap \mathfrak{r}\) 与 \(\mathfrak{m} \cap \mathfrak{s}\) 的直和，而 \(\mathfrak{m} \cap \mathfrak{s}\) 是 \(\mathfrak{m}\) 的 Levi 子代数。
+

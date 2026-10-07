@@ -1,0 +1,114 @@
+\subsection{Characterisation of maximal ordered fields. Euler-Lagrange Theorem}
+
+The property expressed by Prop. 6 of VI, p.~25 characterises maximal ordered fields. More precisely :
+
+THEOREM 3 (Euler-Lagrange). --- Let K be an ordered field. Then the following three properties are equivalent :
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  The field \(\mathbf{K}(i)\) is algebraically closed (where \(i\) denotes a square root of \(-1\) ).
+\item
+  The ordered field \(\mathbf{K}\) is maximal.
+\item
+  Every positive element of \(\mathbf{K}\) is a square, and every polynomial of odd degree in \(\mathbf{K}[\mathbf{X}]\) has a root in \(\mathbf{K}\) .
+\end{enumerate}
+
+It is clear that \(a)\) implies \(b)\) : indeed \(K\) has only two algebraic extensions up to isomorphism, the field \(K\) itself and \(K(i)\) , which cannot be ordered since \(-1\) is a square.
+
+The fact that \(b)\) implies \(c)\) is nothing other than Prop. 6 of VI, p.~25.
+
+It remains for us to prove that \(c)\) implies \(a)\) . That will follow from the next two propositions.
+
+PROPOSITION 7. --- Let K be an ordered field in which every positive element is a square. Then every element of K(i) is a square, and every polynomial of degree 2 over K(i) has a root in K(i).
+
+Let us show first that the second assertion reduces to the first. One can put the second degree polynomial \(aX^{2} + bX + c\) ( \(a \neq 0\) ) in the following form, often called the canonical trinomial form:
+
+\[
+a \left(\left(X + (b / 2 a)\right) ^ {2} - \left(b ^ {2} - 4 a c\right) / 4 a ^ {2}\right).
+\]
+
+If \(d\) is a square root of \((b^2 - 4ac) / 4a^2\) , then \(d - (b / 2a)\) is a root of the quadratic polynomial under consideration.
+
+Now we show that every element \(a + bi\) ( \(a \in \mathbf{K}\) , \(b \in \mathbf{K}\) ) is a square; we are looking for an element \(x + yi\) such that
+
+\[
+(x + y i) ^ {2} = a + b i;
+\]
+
+this translates into \(x^{2} - y^{2} = a\) and \(2xy = b\) . From this we deduce that
+
+\[
+(x ^ {2} + y ^ {2}) ^ {2} = a ^ {2} + b ^ {2}.
+\]
+
+Let \(c\) denote the positive square root of \(a^2 + b^2\) ; then \(c \geqslant |a|\) , \(c \geqslant |b|\) and \(x^2 + y^2 = c\) . Whence \(x^2 = (c + a)/2\) and \(y^2 = (c - a)/2\) . Since \(c \geqslant |a|\) these equations are soluble in K, and if \(x_0\) and \(y_0\) are two solutions then \(x_0^2 - y_0^2 = a\) and \(2x_0y_0 = \pm b\) . We obtain the desired square root by taking \(x = x_0\) and \(y = b/2x_0\) .
+
+PROPOSITION 8. --- Let K be a commutative field (of arbitrary characteristic) and let \(\mathbf{K}'\) be a splitting field for the polynomial \(\mathbf{X}^2 + 1 \in \mathbf{K}[\mathbf{X}]\) (V, p.~21). Suppose :
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  every polynomial in K{[}X{]} of odd degree has a root in K';
+\item
+  every polynomial in \(\mathbf{K}'[\mathbf{X}]\) of degree 2 has a root in \(\mathbf{K}'\) . Then \(\mathbf{K}'\) is algebraically closed.
+\end{enumerate}
+
+Note first that it is enough to prove that every non-constant polynomial in K{[}X{]} has a root in K': this is indeed clear if \(K' = K\) ; if \(K' \neq K\) then \([K': K] = 2\) ; let \(a \mapsto \bar{a}\) denote the unique K-automorphism of \(K'\) distinct from the identity map; if \(f \in K'[X]\) and if \(\bar{f}\) denotes the polynomial obtained by applying \(a \mapsto \bar{a}\) to the coefficients of f, then \(f\bar{f} \in K[X]\) ; if \(a \in K'\) is a root of \(f\bar{f}\) then a is either a root of f or of \(\bar{f}\) ; thus either a or \(\bar{a}\) is a root of f.
+
+Thus let f be a polynomial over K of degree \(2^{n}p\) , p odd. We will proceed by induction on n, the property being true for n = 0 by hypothesis a). Let E be an extension of K in which f splits into linear factors:
+
+\[
+f (\mathbf {X}) = \prod_ {i} \left(\mathbf {X} - a _ {i}\right).
+\]
+
+Let \(b \in K\) ; put \(y_{ij} = a_i + a_j + ba_i a_j \in E\) and
+
+\[
+h (\mathbf {X}) = \prod_ {i <   j} \left(\mathbf {X} - y _ {i j}\right) \in \mathrm{E} [ \mathbf {X} ].
+\]
+
+The coefficients of this polynomial are symmetric functions in the \(a_i\) , with coefficients in \(\mathbf{K}\) ; it therefore belongs to \(\mathbf{K}[\mathbf{X}]\) (IV, p.~62, Th. 1); since it has degree \(2^n p(2^n p - 1)/2 = 2^{n-1}p'\) ( \(p'\) odd), it has a root \(y_{ij}\) in \(\mathbf{K}'\) by inductive hypothesis. If we note that this holds for all \(b \in \mathbf{K}\) , and that \(\mathbf{K}\) is an infinite field (indeed a finite field, which has monogenous extensions of arbitrarily large odd degree (V, p.~94, Prop. 3), cannot satisfy \(a\) )), then we can deduce the existence of at least one pair \((i,j)\) such that
+
+\[
+a _ {i} + a _ {j} + b a _ {i} a _ {j} \in \mathbf {K} ^ {\prime} \quad \text { and } \quad a _ {i} + a _ {j} + b ^ {\prime} a _ {i} a _ {j} \in \mathbf {K} ^ {\prime},
+\]
+
+with \(b \neq b'\) . Then \(a_i + a_j\) and \(a_i a_j\) are elements of \(K'\) , hence so are \(a_i\) and \(a_j\) , since they are the roots of the quadratic equation
+
+\[
+x ^ {2} - \left(a _ {i} + a _ {j}\right) x + a _ {i} a _ {j} = 0.\tag{Q.E.D.}
+\]
+
+For a generalisation and an alternative proof of Prop. 8, based on Galois theory, see VI, p.~46, Ex. 33.
+
+Let K be an ordered field and let \(\mathbf{K}^{\prime} = \mathbf{K}(i)\) ; for every element \(z = a + bi\) of \(K^{\prime}\) , the norm \(z\overline{z} = a^{2} + b^{2}\) of z relative to K (III, p.~544, example 1) is a positive element of K, which vanishes only for z = 0. If every positive element in K is a square (in particular if K is a maximal ordered field), then the positive square root of the norm \(z\overline{z}\) is called the absolute value of z, and is written \(|z|\) . Since \(|zz^{\prime}|^{2} = |z|^{2} |z^{\prime}|^{2}\) we have \(|zz^{\prime}| = |z| \cdot |z^{\prime}|\) .
+
+Moreover, the triangle inequality
+
+\[
+\left| z + z ^ {\prime} \right| \leqslant \left| z \right| + \left| z ^ {\prime} \right|
+\]
+
+holds for every pair of elements \(z, z'\) of \(\mathbf{K}'\) . Indeed, if \(z = a + bi\) and \(z' = a' + b'i\) , then this inequality is equivalent to
+
+\[
+(a + a ^ {\prime}) ^ {2} + (b + b ^ {\prime}) ^ {2} \leqslant a ^ {2} + b ^ {2} + a ^ {\prime 2} + b ^ {\prime 2} + 2 \sqrt {(a ^ {2} + b ^ {2}) (a ^ {\prime 2} + b ^ {\prime 2})}
+\]
+
+and hence also to
+
+\[
+(a a ^ {\prime} + b b ^ {\prime}) ^ {2} \leqslant (a ^ {2} + b ^ {2}) (a ^ {\prime 2} + b ^ {\prime 2})
+\]
+
+which can be written \((ab' - ba')^2 \geqslant 0\) .
+
+Th. 3 enables us to determine all the irreducible polynomials over a maximal ordered field :
+
+PROPOSITION 9. --- If K is a maximal ordered field, then the only irreducible polynomials in K{[}X{]} are the first degree polynomials, and the second degree polynomials \(aX^{2} + bX + c\) such that \(b^{2} - 4ac < 0\) .
+
+Since \(\mathbf{K}(i)\) is algebraically closed, every algebraic extension of K, and hence also every irreducible polynomial over K, has degree 1 or 2. To see which second degree polynomials are irreducible, it is enough to consider the canonical form \(a((\mathbf{X} + (b/2a))^2 - (b^2 - 4ac)/4a^2)\) (cf.~VI, p.~26, Prop. 7).
+
+Remark. --- Translating into the canonical trinomial form yields this stronger result: a necessary and sufficient condition for the polynomial \(aX^{2} + bX + c\) over a given ordered field K to have constant sign in K is that \(b^{2} - 4ac < 0\) , and then the sign of the polynomial is that of a.
+

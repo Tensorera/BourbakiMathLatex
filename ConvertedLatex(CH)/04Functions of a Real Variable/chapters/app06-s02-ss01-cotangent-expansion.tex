@@ -1,0 +1,104 @@
+\subsection{\texorpdfstring{\(\cot z\) 的欧拉展开}{cot z 的欧拉展开}}
+
+由 VI, p.~275 的公式 (20)，诸数 \(b_{n} / n!\) 是 \(S / (e^{S} - 1)\) 的形式级数展开中的系数；我们将在本节中证明，函数 \(z / (e^{z} - 1)\) 在 \(\mathbf{C}\) 中 0 的某个邻域上等于一个绝对收敛的幂级数的和；于是由 VI, p.~280 的引理可知，该级数的系数就是诸数 \(b_{n} / n!\) ，由此我们将导出伯努利数 \(b_{n}\) 的估计式。
+
+首先我们注意
+
+\[
+{\frac {z}{e ^ {z} - 1}} = - {\frac {z}{2}} + {\frac {z}{2}} {\frac {e ^ {z} + 1}{e ^ {z} - 1}} = - {\frac {z}{2}} + {\frac {i z}{2}} \cot {\frac {i z}{2}}.\tag{1}
+\]
+
+下面我们将得到 \(\cot z\) 的一个级数展开，它对每个 \(z\) （只要不是 \(\pi\) 的整数倍）都成立。
+
+命题 1. 对每个复数 \(z\) 和每个整数 \(n\) ，有
+
+\[
+\sin n z = 2 ^ {n - 1} \sin z \sin \left(z + \frac {\pi}{n}\right) \sin \left(z + \frac {2 \pi}{n}\right) \dots \sin \left(z + \frac {(n - 1) \pi}{n}\right).\tag{2}
+\]
+
+事实上，可以写
+
+\[
+\begin{array}{l} \sin n z = \frac {e ^ {n i z} - e ^ {- n i z}}{2 i} = \frac {e ^ {- n i z} (e ^ {2 n i z} - 1)}{2 i} \\ \quad = \frac {e ^ {- n i z} (e ^ {2 i z} - 1) (e ^ {2 i z} - e ^ {- 2 i \pi / n}) \dots (e ^ {2 i z} - e ^ {- 2 (n - 1) i \pi / n})}{2 i} \\ \quad = A \sin z \sin \left(z + \frac {\pi}{n}\right) \sin \left(z + \frac {2 \pi}{n}\right) \dots \sin \left(z + \frac {(n - 1) \pi}{n}\right) \end{array}
+\]
+
+其中
+
+\[
+\mathrm{A} = (2 i) ^ {n - 1} e ^ {- \frac {i \pi}{n} (1 + 2 + \dots + (n - 1))} = (2 i) ^ {n - 1} e ^ {- i (n - 1) \frac {\pi}{2}} = 2 ^ {n - 1}.
+\]
+
+推论 1. 对每个整数 n ，有
+
+\[
+\sin \frac {\pi}{n} \sin \frac {2 \pi}{n} \dots \sin \frac {(n - 1) \pi}{n} = \frac {n}{2 ^ {n - 1}}.\tag{3}
+\]
+
+只需把 (2) 的两边除以 \(\sin z\) 并让 z 趋于 0 。
+
+推论 2. 对每个奇整数 \(n = 2m + 1\) 以及每个使 nz 不是 \(\pi\) 整数倍的复数 z ，有
+
+\[
+\cot n z = (- 1) ^ {m} \cot z \cot \left(z + \frac {\pi}{n}\right) \dots \cot \left(z + \frac {(n - 1) \pi}{n}\right).\tag{4}
+\]
+
+事实上，\(\sin n\left(z + \frac{\pi}{2}\right) = \sin \left(nz + \frac{\pi}{2} + m\pi\right) = (-1)^m\cos nz\) ，由此，在 (2) 中把 \(z\) 换成 \(z + \frac{\pi}{2}\) ，
+
+\[
+\cos n z = (- 1) ^ {m} 2 ^ {n - 1} \cos z \cos \left(z + \frac {\pi}{n}\right) \dots \cos \left(z + \frac {(n - 1) \pi}{n}\right)\tag{5}
+\]
+
+当 \(\sin nz \neq 0\) 时，把公式 (2) 与 (5) 逐项相除即得 (4)。
+
+在后面我们总假设 \(n = 2m + 1\) 是奇整数；公式 (4) 也可以写成
+
+\[
+\cot n z = (- 1) ^ {m} \prod_ {k = - m} ^ {m} \cot \left(z - \frac {k \pi}{n}\right).
+\]
+
+因为，有
+
+\[
+\cot \left(z - \frac {k \pi}{n}\right) = \frac {1 + \tan z \tan \frac {k \pi}{n}}{\tan z - \tan \frac {k \pi}{n}}
+\]
+
+（对 \(\tan z\) 有限的情形）；于是 \(\cot nz\) 是 \(u = \tan z\) 的有理函数，其分子次数为 n - 1，分母次数为 n 且以 \(\tan k\pi/n\) 这 n 个数为单根；把它分解为简单分式即得
+
+\[
+\cot n z = \sum_ {k = - m} ^ {m} \frac {\mathrm{A} _ {k}}{u - \tan \frac {k \pi}{n}}\tag{6}
+\]
+
+其中
+
+\[
+\begin{array}{l}\mathrm{A} _ {k} = \lim _ {z \rightarrow k \pi / n} \cot n z \left(\tan z - \tan \frac {k \pi}{n}\right) = \lim _ {z \rightarrow k \pi / n} \frac {\cos n z}{\sin n z} \frac {\sin \left(z - \frac {k \pi}{n}\right)}{\cos z \cos \frac {k \pi}{n}}\\= \lim _ {h \rightarrow 0} \frac {\cos n h}{\cos \frac {k \pi}{n} \cos \left(h + \frac {k \pi}{n}\right)} \frac {\sin h}{\sin n h} = \frac {1}{n \cos^ {2} \frac {k \pi}{n}}\end{array}
+\]
+
+于是，把 (6) 中对应于 k = 0 的项单独分出，把对应于 k 的相反值的诸项合并，并把 z 换成 z/n ，
+
+\[
+\cot z = \frac {1}{n \tan \frac {z}{n}} + \sum_ {k = 1} ^ {m} \frac {2 n \tan \frac {z}{n}}{\cos^ {2} \frac {k \pi}{n} \left(n \tan \frac {z}{n}\right) ^ {2} - \left(n \sin \frac {k \pi}{n}\right) ^ {2}}\tag{7}
+\]
+
+它对每个复数 \(z\) （不是 \(\pi / 2\) 的整数倍的）成立。可以把这个公式写成
+
+\[
+\cot z = \frac {1}{n \tan \frac {z}{n}} + \sum_ {k = 1} ^ {\infty} v _ {k} (n, z)
+\]
+
+其中 \(v_{k}(n,z) = 0\) （对 \(k > m\) ），而
+
+\[
+v _ {k} (n, z) = \frac {2 n \tan \frac {z}{n}}{\cos^ {2} \frac {k \pi}{n} \left(n \tan \frac {z}{n}\right) ^ {2} - \left(n \sin \frac {k \pi}{n}\right) ^ {2}}
+\]
+
+对 \(1 \leqslant k \leqslant m\) 。我们将看到，对每个包含于 C 的紧子集 K 中的 \(z\) （K 不含 \(\pi\) 的任何整数倍），以及每个充分大的奇数 \(n\) ，以 \(v_{k}(n,z)\) 为通项的级数正规收敛。事实上，当 \(n\) 趋于 \(+\infty\) 时，\(\tan \frac{z}{n}\) 在 K 上一致趋于 \(\frac{z}{n}\) ，故存在数 M \textgreater{} 0 ，使得 \(\left| n \tan \frac{z}{n} \right| \leqslant M\) （对每个充分大的 \(m\) 和每个 \(z \in K\) ）。另一方面，对 \(0 \leqslant x \leqslant \pi/2\) 有 \(\sin x/x \geqslant 1 - \frac{x^2}{6} \geqslant \frac{1}{2}\) ，故对 \(1 \leqslant k \leqslant m\) 有 \(n \sin \frac{k\pi}{n} \geqslant k\pi/2\) ；因此，当 \(m\) 充分大时，对每个整数 \(k\) （满足 \(k\pi / 2 > \mathbf{M}\) 的）有 \(|v_k(n, z)| \leqslant \frac{8\mathbf{M}}{k^2\pi^2 - 4\mathbf{M}^2}\) ，这就证明了我们的断言。对固定的 \(k\) ，\(v_k(n, z)\) （在 \(\mathbf{K}\) 上一致）趋于 \(\frac{2z}{z^2 - k^2\pi^2}\) （当 \(n\) 趋于 \(+\infty\) 时）。于是：
+
+定理 1. 对每个不是 \(\pi\) 整数倍的复数 z ，有
+
+\[
+\cot z = \frac {1}{z} + \sum_ {n = 1} ^ {\infty} \frac {2 z}{z ^ {2} - n ^ {2} \pi^ {2}}\tag{8}
+\]
+
+右端的级数在每个紧子集 \(K \subset C\) （不含 \(\pi\) 的任何整数倍）上正规收敛（\(\cot z\) 的欧拉展开）。
+

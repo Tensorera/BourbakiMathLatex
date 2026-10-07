@@ -1,0 +1,66 @@
+\appendixitem{FORESTS AND TREES}
+
+Let \(\Gamma = (\mathrm{A},\mathrm{S})\) be a graph. A circuit of \(\Gamma\) is a sequence
+
+\[
+(x _ {1}, \ldots , x _ {n})
+\]
+
+of distinct vertices of \(\Gamma\) such that \(n \geqslant 3\) , \(x_{i}\) is joined to \(x_{i+1}\) for \(1 \leqslant i < n\) and \(x_{n}\) is joined to \(x_{1}\) . \(\Gamma\) is called a forest if there is no circuit in \(\Gamma\) ; every subgraph of \(\Gamma\) is then also a forest. A connected forest is called a tree; the connected components of a forest are thus trees.
+
+PROPOSITION 2. Let \(\Gamma = (\mathrm{A},\mathrm{S})\) be a forest having only a finite number of vertices.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  If \(\Gamma\) has at least one vertex, it has a terminal vertex.
+\item
+  If \(\Gamma\) has at least two vertices, there is a partition \((\mathbf{S}', \mathbf{S}'')\) of its set of vertices into two non-empty subsets such that two distinct vertices that both belong to \(\mathbf{S}'\) or both belong to \(\mathbf{S}''\) are never joined.
+\end{enumerate}
+
+Suppose that \(\Gamma\) has at least one vertex and let \((x_{0},\ldots,x_{n})\) be an injective path of maximal length in \(\Gamma\) . The vertex \(x_{0}\) cannot be joined to a vertex y distinct from \(x_{0},x_{1},\ldots,x_{n}\) , since otherwise there would exist an injective path in \(\Gamma\) of length \(n+1\) , namely \((y,x_{0},\ldots,x_{n})\) . The vertex \(x_{0}\) is not joined to any vertex \(x_{i}\) with \(2\leqslant i\leqslant n\) , since otherwise \((x_{0},x_{1},\ldots,x_{i})\) would be a circuit in the forest \(\Gamma\) . Thus, \(x_{0}\) is terminal.
+
+We shall prove (ii) by induction of the number \(m\) of vertices of \(\Gamma\) , the case \(m = 2\) being trivial. Suppose then that \(m \geqslant 3\) and that assertion (ii) is proved for graphs with \(m - 1\) vertices. Let \(a\) be a terminal vertex of \(\Gamma\) (cf.~(i)). We apply the induction hypothesis to the full subgraph of \(\Gamma\) whose vertices are the vertices \(x \neq a\) of \(\Gamma\) . Thus, there exist two non-empty disjoint subsets \(S_1'\) and \(S_1''\) of \(S\) with \(S_1' \cup S_1'' = S - \{a\}\) , and such that two distinct vertices in \(S_1'\) (resp. \(S_1''\) ) are never joined. Since \(a\) is joined to at most one vertex of \(\Gamma\) , we can suppose for example that it is not joined to any vertex in \(S_1'\) . The partition \((S_1', S_1'' \cup \{a\})\) then has the required property. Q.E.D.
+
+For any integer \(n \geqslant 1\) , denote by \(A_{n}\) the graph whose vertices are the integers \(1, 2, \ldots, n\) and whose edges are the pairs \(\{i, j\}\) with \(i - j = \pm 1\) :
+
+1
+
+2
+
+3
+
+n---1
+
+n
+
+○
+
+○
+
+○
+
+\ldots\ldots{}
+
+○
+
+A graph \(\Gamma\) is said to be a chain of length \(m \geqslant 0\) if it is isomorphic to \(A_{m+1}\) . This is equivalent to the existence in \(\Gamma\) of an injective path \((x_{0}, \ldots, x_{m})\) containing all the vertices, the vertices \(x_{i}\) and \(x_{j}\) not being joined if \(|i-j| > 1\) .
+
+PROPOSITION 3. A graph is a chain if and only if its number of vertices is finite and non-zero and it is a tree with no ramification point.
+
+Suppose that the graph \(\Gamma\) is a chain \((x_0, \ldots, x_m)\) with the properties listed before the statement of Prop. 3. It is clear that any vertex of \(\Gamma\) is joined to at most two vertices. If \(i < j\) the path \((x_i, \ldots, x_j)\) extracted from the path \((x_0, \ldots, x_m)\) joins \(x_i\) to \(x_j\) ; thus, \(\Gamma\) is connected. Finally, let \((x_{p_1}, \ldots, x_{p_n})\) be a circuit in \(\Gamma\) , and let \(p_k\) be the smallest of the distinct integers \(p_1, \ldots, p_n\) . There exist distinct indices \(i\) and \(j\) such that \(x_{p_k}\) is joined to \(x_{p_i}\) and \(x_{p_j}\) : this follows from the definition of a circuit. Since \(p_k < p_i\) and \(p_k < p_j\) , we necessarily have \(p_i = p_j = p_k + 1\) , which is a contradiction since \(p_1, \ldots, p_n\) are distinct. Thus, there is no circuit in \(\Gamma\) .
+
+Conversely, let \(\Gamma\) be a tree with no ramification point and with a finite non-zero number of vertices, and let \((x_0, \ldots, x_m)\) be an injective path of maximal length in \(\Gamma\) . Denote by T the set of vertices other than \(x_0, \ldots, x_m\) . A vertex \(b \in T\) cannot be joined to any vertex \(x_i\) , for we would have either
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(i = 0\) , but then \((b, x_0, \ldots, x_m)\) would be an injective path of length \(m + 1\) in \(\Gamma\) , or
+\item
+  \(i = m\) , but then \((x_0, \ldots, x_m, b)\) would be an injective path of length \(m + 1\) in \(\Gamma\) , or
+\item
+  \(0 < i < m\) , but then \(x_{i}\) would be joined to three distinct vertices \(x_{i-1}\) , \(x_{i+1}\) and \(b\) .
+\end{enumerate}
+
+Since \(\Gamma\) is connected, \(T\) is empty by Cor. 1 of Prop. 1. Moreover, if there were \(i,j\) with \(j - i > 1\) and \(x_{i}, x_{j}\) joined, there would be a circuit \((x_{i}, x_{i+1}, \ldots, x_{j})\) in \(\Gamma\) . Thus, \(\Gamma\) is a chain. Q.E.D.
+

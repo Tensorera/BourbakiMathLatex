@@ -1,0 +1,122 @@
+\subsection{离散群的分类空间}
+
+设 G 是一个拓扑群；记其单位元为 e。记 G* 为所有映射 \(h\colon[0,1[ \to G\) 的集合，其中存在一个有限序列 \((t_{i})_{0\leqslant i\leqslant n}\)，满足 \(0=t_{0}<t_{1}<\cdots<t_{n}=1\)，使得 h 在区间 \([t_{i-1},t_{i}[\) 上为常值（其中 \(1\leqslant i\leqslant n\)）。这样的序列称为适合 h 的序列。对于 G* 的每个有限子集，都存在一个适合其中每个元素的序列。
+
+集合 \(G^{*}\) 是 \(G^{[0,1[}\) 的子群。我们记其单位元为 \(e^{*}\)；元素 \(h \in G^{*}\) 的逆元是映射 \(t \mapsto h(t)^{-1}\)，记为 \(h^{-1}\)。
+
+设 V 是 G 中 \(e\) 的一个邻域。设 \(h \in \mathbf{G}^*\)，并设 \((t_i)_{0 \leqslant i \leqslant n}\) 是适合 \(h\) 的序列。满足 \(t \in [0,1[\) 且 \(h(t) \notin \mathbf{V}\) 的 t 的集合，是若干区间 \([t_{i-1}, t_i[\) 的并；这些区间的长度 \(t_i - t_{i-1}\) 之和不依赖于所选的序列 \((t_i)_{0 \leqslant i \leqslant n}\)；将其记为 \(p_{\mathrm{V}}(h)\)。对于每个实数 \(\varepsilon\)，若 \(\varepsilon > 0\)，记 \(\mathrm{V}_{\varepsilon}^*\) 为所有 \(h \in \mathbf{G}^*\) 且满足 \(p_{\mathrm{V}}(h) < \varepsilon\) 的元素所成的集合。
+
+命题 5. --- 在与群结构相容的拓扑中，G* 存在唯一拓扑，使得集合 V* 构成单位元的邻域基。
+
+我们来验证集合 \(V_{\varepsilon}^{*}\) 满足 TG, III, p. 4 中的公理 \((\mathrm{GV}_{\mathrm{I}}^{\prime})\)、\((\mathrm{GV}_{\mathrm{II}}^{\prime})\) 和 \((\mathrm{GV}_{\mathrm{III}}^{\prime})\)。
+
+设 V 是 G 中 \(e\) 的一个邻域，且 \(\varepsilon\) 是严格正实数。设 W 是 G 中 \(e\) 的一个邻域，使得 \(\mathrm{W} \cdot \mathrm{W} \subset \mathrm{V}\)。设 \(h\) 和 \(h'\) 是 \(\mathbf{G}^*\) 中的元素。若 \(t \in [0,1[\) 满足 \(h(t)h'(t) \notin \mathrm{V}\)，则 \(h(t) \notin \mathrm{W}\) 或 \(h'(t) \notin \mathrm{W}\)。因此 \(p_{\mathrm{V}}(hh') \leqslant p_{\mathrm{W}}(h) + p_{\mathrm{W}}(h')\)。于是，\(\mathrm{W}_{\varepsilon/2}^* \cdot \mathrm{W}_{\varepsilon/2}^* \subset \mathrm{V}_{\varepsilon}^*\)，这就证明了公理（\(\mathrm{GV}_I'\)）。
+
+设 W 是 G 中 e 的一个邻域，使得 \(W^{-1} \subset V\)。则 \((\mathrm{W}_{\varepsilon}^{*})^{-1} = (\mathrm{W}^{-1})_{\varepsilon}^{*} \subset \mathrm{V}_{\varepsilon}^{*}\)，从而得到公理 \((\mathrm{GV}_{\mathrm{II}}^{\prime})\)。
+
+设 \(k\) 是 \(\mathbf{G}^*\) 中的一个元素；由于函数 \(k\) 只取有限个值，存在 G 中 \(e\) 的一个邻域 W，使得 \(k(t)\mathrm{W}k(t)^{-1}\subset \mathrm{V}\) 对所有 \(t\in [0,1[\) 都成立。设 \(h\) 是 \(\mathbf{G}^*\) 中的一个元素。对于 \(t\in [0,1[\)，若 \(k(t)h(t)k(t)^{-1}\not\in\mathrm{V}\)，则 \(h(t)\not\in\mathrm{W}\)。因此，\(p_{\mathrm{V}}(khk^{-1})\leqslant p_{\mathrm{W}}(h)\)。这证明了 \(k\mathrm{W}_{\varepsilon}^{*}k^{-1}\subset\mathrm{V}_{\varepsilon}^{*}\)，从而得到公理（\(\mathrm{GV}_{\mathrm{III}}'\)）。
+
+命题 6. --- 空间 G* 是可缩的，并且在其每一点处局部可缩。
+
+对于 \(h \in \mathbf{G}^*\) 和 \(t \in \mathbf{I}\)，记 \(\sigma(h, t)\) 为从 [0,1[ 到 G 的映射，它由 \(\sigma(h, t)(x) = h(x)\)（当 \(0 \leqslant x < t\) 时）以及 \(\sigma(h, t) = e\)（其他情形）给出。
+
+我们来证明这样定义的映射 \(\sigma\colon\mathbf{G}^{*}\times\mathbf{I}\to\mathbf{G}^{*}\) 是连续的。事实上，设 \(k\in\mathbf{G}^{*}, u\in\mathbf{I}\)，并设 V 是 G 中 \(e\) 的一个邻域，且 \(\varepsilon\) 是严格正实数。元素 \(\sigma(h,t)\sigma(k,u)^{-1}\) 属于 \(\mathbf{G}^{*}\)，它是从 [0,1[ 到 G 的映射 \(f\)，由下式给出
+
+\[
+f (x) = \left\{ \begin{array}{l l} h (x) k (x) ^ {- 1} & \text { if } 0 \leqslant x <   \min (t, u); \\ h (x) & \text { if } u \leqslant x <   t; \\ k (x) ^ {- 1} & \text { if } t \leqslant x <   u; \\ e & \text { otherwise. } \end{array} \right.
+\]
+
+因此，
+
+\[
+p _ {\mathrm{V}} (\sigma (h, t) \sigma (k, u) ^ {- 1}) \leqslant p _ {\mathrm{V}} (h k ^ {- 1}) + | t - u |;
+\]
+
+换言之，对于 \(\sigma(h,t) \in V_{\varepsilon}^{*}\sigma(k,u)\)，只要 \(|t-u| \leqslant \frac{\varepsilon}{2}\) 且 \(h \in V_{\varepsilon/2}^{*}k\) 即可；这证明了 \(\sigma\) 在 \((k,u)\) 处连续。对于所有 \(h \in G^{*}\)，\(\sigma(h,0)\) 是像为 \(\{e\}\) 的常值映射，而 \(\sigma(h,1)=h\)。此外，\(\sigma(e,t)=e\) 对于所有 \(t \in I\) 成立。因此，\(\sigma\) 是在 \(e \in G^{*}\) 处的基点同伦，它将像为 \(\{e\}\) 的常值映射与 \(G^{*}\) 的恒等映射联系起来。这证明了 \(G^{*}\) 可缩到 \(e^{*}\)。
+
+此外，对于 G 中 e 的每个邻域 V 和每个实数 \(\varepsilon > 0\)，有 \(\sigma(\mathrm{V}_{\varepsilon}^{*} \times \mathbf{I}) \subset \mathrm{V}_{\varepsilon}^{*}\)。因此，\(V_{\varepsilon}^{*}\) 也可缩到 \(e^{*} \in G^{*}\)，所以 \(G^{*}\) 在 \(e^{*}\) 处局部可缩。
+
+由于 G* 是一个拓扑群，所以它在其每一点处都是可缩且局部可缩的。
+
+令 \(\iota\) 为从 G 到 \(\mathrm{G}^*\) 的映射，它把 \(g\in \mathrm{G}\) 对应到从 [0,1[ 到 G 的像为 \(\{g\}\) 的常值映射。映射 \(\iota\) 是单射群同态。设 V 是 G 中 \(e\) 的一个邻域，且 \(\varepsilon\) 是严格正实数。我们有 \(\iota^{-1}(\mathrm{V}_{\varepsilon}^{*}) = \mathrm{V}\)（当 \(\varepsilon \leqslant 1\) 时），而当其他情形时 \(\iota^{-1}(\mathrm{V}_{\varepsilon}^{*}) = \mathrm{G}\)。单位元 \(\mathrm{G}^*\) 的邻域的逆像是 G 的单位元的邻域，从而 \(\iota\) 连续。此外，\(\iota(\mathrm{V}) = \mathrm{V}_1^* \cap \iota(\mathrm{G})\) 对于 G 中 \(e\) 的每个邻域 V 都成立。因此，\(\iota\) 定义了从 G 到其像的拓扑群同构。
+
+注记 1. --- 若 G 是一个分离拓扑群，则 \(\iota(\mathrm{G})\) 是 \(\mathrm{G}^*\) 中的闭集。
+
+事实上，设 \(h \in \mathbf{G}^*\)，且 \(h \notin \iota(\mathbf{G})\)；设 \((t_i)_{0 \leqslant i \leqslant n}\) 是适合 \(h\) 的序列，并置 \(\varepsilon = \min_{1 \leqslant i \leqslant n} (t_i - t_{i-1})\)。设 \(V\) 是 \(e\) 在 \(G\) 中的一个邻域，使得 \(h(t_i)^{-1}h(t_j) \notin V\) 对每一对整数 \((i,j)\)（满足 \(0 \leqslant i, j \leqslant n-1\) 且 \(h(t_i) \neq h(t_j)\)）都成立；由于 \(G\) 是分离的，这样的邻域存在。设 \(W\) 是 \(e\) 在 \(G\) 中的一个邻域，使得 \(W \cdot W^{-1} \subset V\)。我们证明 \(hW_\varepsilon^*\) 不与 \(\iota(G)\) 相交。
+
+反设 \(f\) 是 \(W_{\varepsilon}^{*}\) 中的元素，\(g\) 是 \(G\) 中的元素，且 \(hf = \iota(g)\)。因此有 \(f(t) = h(t)^{-1}g\)，对所有 \(t \in [0,1[\) 成立，所以序列 \((t_i)\) 也适合函数 \(f\)。若 \(f\) 在区间 \([t_{i-1}, t_i[\) 上所取的值不属于 \(W\)，则有 \(t_i - t_{i-1} < \varepsilon\)，因为 \(f \in W_{\varepsilon}^{*}\)。但根据 \(\varepsilon\) 的定义，这个不等式不可能成立；因此都有 \(f(t) \in W\)，对于所有 \(t \in [0,1[\) 成立。于是取 \(i\) 和 \(j\) 为 \(\{0, \ldots, n-1\}\) 中的元素，使得 \(h(t_i) \neq h(t_j)\)；我们有
+
+\[
+h (t _ {i}) ^ {- 1} h (t _ {j}) = f (t _ {i}) g ^ {- 1} g f (t _ {j}) ^ {- 1} = f (t _ {i}) f (t _ {j}) ^ {- 1} \in \mathrm{W} \cdot \mathrm{W} ^ {- 1},
+\]
+
+因此，子群 \(\iota(G)\) 是 \(G^{*}\) 中的闭子群。
+
+设 G 是一个可度量化拓扑群，并令 d 为定义其拓扑的度量。设 h 和 \(h' \in G^{*}\) 是元素，并设 \((t_{i})_{0 \leqslant i \leqslant n}\) 是适合 h 和 \(h'\) 的序列。实数
+
+\[
+\sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) d \bigl (h (t _ {i - 1}), h ^ {\prime} (t _ {i - 1}) \bigr)
+\]
+
+不依赖于所选的序列 \((t_{i})\)；将其记为 \(d^{*}(h,h')\)。
+
+我们来证明 \(d^{*}\) 是 \(\mathbf{G}^{*}\) 上的距离。我们有 \(d^{*}(h,h^{\prime}) = d^{*}(h^{\prime},h)\)，对于 \(h, h^{\prime} \in \mathbf{G}^{*}\) 成立；并且 \(d^{*}(h,h) = 0\)，对于所有 \(h \in \mathbf{G}^{*}\) 成立。反之，设 \(h\) 和 \(h^{\prime}\) 是 \(\mathbf{G}^{*}\) 中的元素，且 \(d^{*}(h,h^{\prime}) = 0\)。设 \((t_{i})_{0\leqslant i\leqslant n}\) 是适合 \(h\) 和 \(h'\) 的序列。由于
+
+\[
+0 = d ^ {*} (h, h ^ {\prime}) = \sum_ {i = 1} ^ {n} \left(t _ {i} - t _ {i - 1}\right) d \left(h \left(t _ {i - 1}\right), h ^ {\prime} \left(t _ {i - 1}\right)\right)
+\]
+
+并且由于这个和式的所有项都为正或为零，都有 \(d(h(t_{i-1}), h'(t_{i-1})) = 0\)，对于所有 \(i \in \{1, \ldots, n\}\) 成立，从而 \(h = h'\)。最后，设 \(h\)、\(h'\)、\(h''\) 是 \(\mathbf{G}^*\) 中的元素，并设 \((t_i)_{0 \leqslant i \leqslant n}\) 是适合它们中每一个的序列。于是，
+
+\[
+\begin{array}{l} d ^ {*} (h, h ^ {\prime \prime}) = \sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) d \big (h (t _ {i - 1}), h ^ {\prime \prime} (t _ {i - 1}) \big) \\ \leqslant \sum_ {i = 1} ^ {n} (t _ {i} - t _ {i - 1}) \left(d \big (h (t _ {i - 1}), h ^ {\prime} (t _ {i - 1}) \big) + d \big (h (t _ {i - 1}), h ^ {\prime \prime} (t _ {i - 1}) \big)\right) \\ = d ^ {*} (h, h ^ {\prime}) + d ^ {*} (h, h ^ {\prime \prime}), \end{array}
+\]
+
+因此 \(d^{*}\) 满足三角不等式。
+
+若 d 具有平移不变性，则这个距离 \(d^{*}\) 在右平移（分别为左平移）下不变。
+
+命题 7. --- 设 G 是一个可度量化拓扑群。则拓扑群 G* 是可度量化的。更确切地，若 d 是定义 G 拓扑的有界度量，则 G* 的拓扑由度量 d* 定义。
+
+设 \(d\) 是定义 G 拓扑的度量。则 \(d'\) 是由 \(d'(h,h') = \inf (d(h,h'),1)\) 给出的一个有界度量，并且它也定义 G 的拓扑（TG, IX, p. 3）。因此，只需证明 \(d^{*}\) 定义 \(G^{*}\) 的拓扑，假设 \(d\) 有界。
+
+设 V 是 G 中 e 的一个邻域，且 \(\varepsilon\) 是严格正实数。设 \(\delta\) 是严格正实数，使得 V 包含球 \(\mathrm{B}(e,\delta)\)。设 \(h \in G^{*}\)，并设 \((t_{i})_{0 \leqslant i \leqslant n}\) 是适合 h 的序列。
+
+于是，
+
+\[
+\begin{aligned} p_{\mathrm{V}}(h) & = \sum_{\substack{i = 1\\ h(t_{i - 1})\not\in\mathrm{V}}}^{n}(t_{i} - t_{i - 1})\\ & \leqslant \sum_{\substack{i = 1\\ d(h(t_{i - 1}),e)\geqslant \delta}}^{n}(t_{i} - t_{i - 1})\frac{d(h(t_{i - 1}),e)}{\delta}\\ & \leqslant \frac{d^{*}(h,e^{*})}{\delta}. \end{aligned}
+\]
+
+因此，球 \(\mathrm{B}(e^{*},\varepsilon\delta)\) 在 \(G^{*}\) 中包含于 \(V_{\varepsilon}^{*}\)。
+
+反之，设 \(\delta\) 是严格正实数，并令 \(\Delta\) 为 G 的直径的一个严格正上界。设 V 是 \(e\) 在 G 中的一个邻域，且包含于球 B \((e,\delta/2)\) 中。对于函数 \(h\in\mathrm{G}^{*}\) 以及序列 \((t_{i})_{0\leqslant i\leqslant n}\)，该序列适合 \(h\)，我们有
+
+\[
+\begin{array}{l}d^{*}(h,e^{*}) = \sum_{i = 1}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ = \sum_{\substack{i = 1\\ d(h(t_{i - 1}),e)\leqslant \delta /2}}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ +\sum_{\substack{i = 1\\ d(h(t_{i - 1}),e) > \delta /2}}^{n}(t_{i} - t_{i - 1})d(h(t_{i - 1}),e)\\ \\ \leqslant \frac{\delta}{2} +\Delta \sum_{\substack{i = 1\\ h(t_{i - 1})\not\in\mathrm{V}}}^{n}(t_{i} - t_{i - 1})\\ \\ \leqslant \frac{\delta}{2} +\Delta p_{\mathrm{V}}(h). \end{array}
+\]
+
+前一不等式意味着，对于每个元素 \(h\)（属于 \(\mathrm{V}_{\delta/2\Delta}^{*}\)），有 \(d^{*}(h,e^{*})\leqslant\delta\)。因此，\(\mathrm{G}^{*}\) 中关于距离 \(d^{*}\) 的每个球都包含单位元的一个邻域。
+
+注记。 --- 2) 设 d 是定义 G 拓扑的有界度量。当赋予拓扑群 \(G^{*}\) 度量 \(d^{*}\) 时，同态 \(\iota: G \to G^{*}\) 是等距映射。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+假设 G 是离散拓扑群。于是子群 \(\iota(\mathrm{G})\) 是 \(G^{*}\) 的离散子群。事实上，G 的拓扑由 G 上的度量 d 定义，其中 \(d(g,g') = 1\) 当 \(g \neq g'\) 时，而 \(d(g, g') = 0\) 在其他情形下；该断言由前一注记推出。
+\end{enumerate}
+
+定理 2. --- 设 G 是一个离散拓扑群。令 G 通过右作用 h · g = hι(g) 作用于 G* 上，并记 B = G*/G 为商拓扑空间。
+
+空间 G* 是以 G 为群的 B 的覆盖空间；它是单道路连通的。
+
+空间 B 是一个可度量化、道路连通且局部可缩的拓扑空间，并且它在每一点处的庞加莱群同构于 G。
+
+因此，空间 B 是群 G 的分类空间。
+
+群 G* 可缩到其单位元（IV, p. 450, prop. 6）。特别地，它是道路连通的（III, p. 260）且单道路连通的（IV, p. 340）。
+
+群 \(\iota(\mathrm{G})\) 在 \(\mathrm{G}^*\) 中是闭的；因此空间 \(\mathrm{G}^*/\mathrm{G}\) 是可度量化的（TG, III, p. 13, prop. 18 and TG, IX, p. 25, prop. 4）。它也是道路连通的（III, p. 258, prop. 3）。由于群 \(\iota(\mathrm{G})\) 是离散的，由 Corollary 2 of I, p. 100 可得，\(\mathrm{G}^*\) 是 B 上的主 G-丛。带基点的覆盖 \((\mathrm{G}^*, e^*)\) 因而是以 \(e^*\) 的像为基点的空间 B 的万有覆盖；B 的庞加莱群（在其每一点处）同构于 G。
+

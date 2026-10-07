@@ -1,0 +1,131 @@
+\subsection{矩阵与线性映射}
+
+设 A 是一个环，E 是一个具有基 \((e_i)_{i\in I}\) 的（右或左）A-模。对每个元素 \(x\in E\) ， \(x\) 关于基 \((e_i)\) 的矩阵，记作 \(M(x)\) 或 \(\mathbf{x}\) （当不致引起混淆时有时也简记为 \(x\) ），是由分量 \(x_i\) ( \(i\in I\) )（即 \(x\) 关于 \((e_i)\) 的分量）组成的列矩阵（ \(\S 1\) ，第 11 号）；在计算中，为了记住指标 \(i\) 是行指标，有时方便给它添上一个只取一个值的列指标，并把矩阵 \(M(x)\) 写成 \((x_{i0})\) 。
+
+我们现在考虑两个（左或右）A-模 E 与 F，分别带有基 \((e_{i})_{i\in I}\) 与 \((f_{k})_{k\in K}\) ；令 \((f_{k}^{*})\) 为对应于 \((f_{k})\) 的坐标形式族。对 E 到 F 的线性映射 u，我们将在以下每种情形定义 u 关于基 \((e_{i})\) , \((f_{k})\) 的矩阵：
+
+\begin{enumerate}
+\def\labelenumi{(\Alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  E和F是右A模，u是A线性的。
+\item
+  E和F是左A模，u是A线性的。
+\end{enumerate}
+
+在下文中，我们将字母(D)（相应地(G)）附加到适用于右（相应地左）模的公式上。
+
+定义 3. 在上述两种情形的每一种中， \(u\) 关于基 \((e_i), (f_k)\) 的矩阵是矩阵 \(M(u) = (u_{ki})_{(k,i) \in K \times I}\) ，使得
+
+\[
+u _ {k i} = f _ {k} ^ {*} (u (e _ {i}))\tag{14}
+\]
+
+分别写为
+
+\[
+u _ {k i} = \langle f _ {k} ^ {*}, u (e _ {i}) \rangle\tag{14 D}
+\]
+
+\[
+u _ {k i} = \langle u (e _ {i}), f _ {k} ^ {*} \rangle .\tag{14 G}
+\]
+
+于是 \(M(u)\) 的指标为 i 的列等于 \(M(u(e_{i}))\) 。
+
+显然，若 u, v 是 E 到 F 的两个线性映射，而 \(M(u)\) , \(M(v)\) 是它们关于同一组基的矩阵，则
+
+\[
+M (u + v) = M (u) + M (v)\tag{15}
+\]
+
+和
+
+\[
+M (\gamma u) = \gamma M (u)\tag{16}
+\]
+
+对每个元素 \(\gamma\) （属于 A 的中心 \(\Gamma\) ）公式 (16) 成立。换言之，一旦基 \((e_i)\) , \((f_k)\) 固定，映射 \(u \mapsto M(u)\) 就是一个 \(\Gamma\) -模同构，从 \(\operatorname{Hom}_{\mathbf{A}}(\mathbf{E}, \mathbf{F})\) 映到集合 \(\mathbf{A}^{\mathbf{K} \times \mathbf{I}}\) 的一个子集上，该子集等于 \(\mathbf{A}^{\mathbf{K} \times \mathbf{I}}\) （若 \(\mathbf{K}\) 有限）。
+
+命题 2. 设 I 与 K 有限。对每个元素 \(x \in \mathbf{E}\) ，矩阵 \(M(u(x))\) 关于基 \((f_k)\) 由以下公式给出
+
+\[
+M (u (x)) = M (u). M (x)\tag{17 D}
+\]
+
+\[
+{ } ^ { t } M ( u ( x ) ) = { } ^ { t } M ( x ) . { } ^ { t } M ( u ) .\tag{17 G}
+\]
+
+我们例如验证 (17 G)。设 \(x = \sum_{i} x_{i0} e_i\) , \(u(x) = \sum_{k} y_{k0} f_k\) ，其中 \(x_{i0} \in \mathbf{A}\) , \(y_{k0} \in \mathbf{A}\) ；于是 \(u(x) = u\left(\sum_{i} x_{i0} e_i\right) = \sum_{i} x_{i0} u(e_i) = \sum_{i, k} x_{i0} u_{ki} f_k\) ；由此 \(y_{k0} = \sum_{i} x_{i0} u_{ki}\) 。为把两个指标 \(i\) 并排放在一处，我们考虑转置矩阵 \(^t M(x) = (x'_{0i})\) ，其中 \(x'_{0i} = x_{i0}\) ，以及
+
+\[
+{ } ^ { t } M ( u ) = \left( u _ { i k } ^ { \prime } \right) ,
+\]
+
+其中 \(u_{ik}' = u_{ki}\) ；于是 \(y_{k0} = \sum_{i} x_{0i}' u_{ik}'\) ，而右边是单行矩阵中指标为 \(k\) 的元素（该矩阵为 \(^t M(x).^t M(u)\) ），由此得 (17 G)。
+
+当 A 交换时，(17 G) 由第 2 号的公式 (4) 化为 (17 D)。
+
+推论。设 E, F, G 是环 A 上的三个右（相应地左）模， \((e_{i})_{i\in I}\) , \((f_{k})_{k\in K}\) , \((g_{l})_{l\in L}\) 分别是 E、F、G 的有限基， \(u:E\to F\) , \(v:F\to G\) 是两个线性映射， \(M(u)\) 是 u 关于基 \((e_{i})\) , \((f_{k})\) 的矩阵， \(M(v)\) 是 v 关于基 \((f_{k})\) , \((g_{l})\) 的矩阵，而 \(M(v\circ u)\) 是 \(v\circ u\) 关于基 \((e_{i})\) , \((g_{l})\) 的矩阵；则
+
+\[
+M (v \circ u) = M (v) M (u)\tag{18 D}
+\]
+
+\[
+{ } ^ { t } M ( v \circ u ) = { } ^ { t } M ( u ) { } ^ { t } M ( v ) .\tag{18 G}
+\]
+
+我们以(18 G)为例来证明。对所有 \(x \in \mathbf{E}\) ，由(17 G)：
+
+\(^{t}M(x).^{t}M(v\circ u)=^{t}M(v(u(x)))=^{t}M(u(x)).^{t}M(v)=^{t}M(x).^{t}M(u).^{t}M(v)\) 根据结合性；然后推论由第3号命题1得出，因为矩阵 \(^{t}M(x)\) 只有一行，是任意的。
+
+注 (1)。公式 (17 D) 可视为 (18 D) 的特例。因为对每个 \(x \in \mathbf{E}\) ，典范地对应着线性映射 \(\theta_x: \mathbf{A}_d \to \mathbf{E}\) ，它把每个 \(\alpha \in \mathbf{A}\) 映为 \(x\alpha\) （§ 2，第 1 号）。立即可见，矩阵 \(M(\theta_x)\) （关于 \(\mathbf{A}_d\) 的基 1 以及基 \((e_i)\) （ \(\mathbf{E}\) 的） ）正是矩阵 \(M(x)\) ；类似地 \(M(\theta_{u(x)}) = M(u(x))\) ，因此公式 (17 D) 可视为关系式
+
+\[
+\theta_ {u (x)} = u \circ \theta_ {x}.
+\]
+
+命题 3. 设 E、F 是两个右（相应地左）A-模，且 \((e_i)_{i\in I}, (f_k)_{k\in K}\) 分别是 E 与 F 的有限基。对 E 到 F 的每个线性映射 \(u\) ，设 \(M(u)\) 是 \(u\) 关于基 \((e_i)\) 与 \((f_k)\) 的矩阵。则 \(^t u: F^* \to E^*\) 关于对偶基 \((f_k^*)\) 与 \((e_i^*)\) 的矩阵等于 \(^t M(u)\) 。
+
+E 典范地等同于它的双对偶 \(E^{**}\) ，且 \((e_{i})\) 等同于 \((e_{i}^{*})\) 的对偶基；于是（例如设 E 与 F 是右模）
+
+\[
+\langle^ {t} u (f _ {k} ^ {*}), e _ {i} \rangle = \langle f _ {k} ^ {*}, u (e _ {i}) \rangle ,
+\]
+
+由此得出该命题。
+
+注记。(2) 设 E 与 F 是两个左 A-模，分别具有基 \((e_{i})_{i\in\mathbf{I}}\) 与 \((f_{k})_{k\in\mathbf{K}}\) 。对每个 A-线性映射 \(u:E\to F\) ，由 (14 G) 有 \(u(e_{i})=\sum_{k}u_{ki}f_{k}\) ；这些关系也可这样解释：元素属于 F 的列矩阵 \((u(e_{i})_{i\in\mathbf{I}})\) 等于乘积 \({}^{t}\mathbf{M}(u).(f_{k})\) ，其中 \((f_{k})_{k\in\mathbf{K}}\) 被看作元素属于 F 的列矩阵，且乘积是对映射 \(A\times F\to F\) （它定义 A-模 F 上的作用律，第 2 号）计算的。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+设 A、B 是两个交换环， \(\sigma: A \to B\) 是一个环同态。在命题 3 的记号下， \((e_i \otimes 1)\) 与 \((f_k \otimes 1)\) 分别是 \(E_{(B)} = E \otimes_A B\) 与 \(F_{(B)} = F \otimes_A B\) 的基（ \(\S 5\) ，第 1 号，命题 4）；此外，若 \((e_i^*)\) 与 \((f_k^*)\) 分别是 \((e_i)\) 与 \((f_k)\) 的对偶基，则 \((e_i^* \otimes 1)\) 与 \((f_k^* \otimes 1)\) 分别是 \((e_i \otimes 1)\) 与 \((f_k \otimes 1)\) 的对偶基（ \(\S 5\) ，第 4 号）。对每个 A-线性映射 \(u: E \to F\) ，设 \(M(u)\) 与 \(M(u \otimes 1)\) 分别是 \(u\) 关于 \((e_i)\) 与 \((f_k)\) 的矩阵以及 B-线性映射 \(u \otimes 1\) 关于 \((e_i \otimes 1)\) 与 \((f_k \otimes 1)\) 的矩阵。由 \(\S 5\) 第 4 号公式 (20) 可知
+\end{enumerate}
+
+\[
+M (u \otimes 1) = \sigma (M (u)).
+\]
+
+考虑一个含有限个未知量的、由有限个右纯量线性方程组成的方程组
+
+\[
+\sum_ {i \in I} a _ {k i} x _ {i} = b _ {k} \quad (k \in K)\tag{19}
+\]
+
+其中 \(a_{ki}\) , \(x_{i}\) , \(b_{k}\) 属于 A。
+
+设 \((e_i)_{i\in I}, (f_k)_{k\in K}\) 是 \(\mathbf{E} = \mathbf{A}_d^{\mathrm{I}}\) 与 \(\mathbf{F} = \mathbf{A}_d^{\mathrm{K}}\) 的典范基；方程组 (19) 等价于方程 \(u(x) = b\) ，其中 \(x = \sum_{i} e_i x_i\) , \(b = \sum_{k} f_k b_k\) ，而 \(u: \mathbf{E} \to \mathbf{F}\) 是使矩阵 \(M(u)\) （关于基 \((e_i)\) 与 \((f_k)\) ）等于 \(\mathbf{A} = (a_{ki})_{(k,i)\in K\times I}\) 的线性映射。这个矩阵称为线性方程组 (19) 的矩阵。回顾（§2，第 8 号，注记 2 与 3），若记 \(c_i = \sum_{k} f_k a_{ki}\) ，则方程组 (19) 等价于唯一的向量方程
+
+\[
+\sum_ {i} c _ {i} x _ {i} = b,\tag{20}
+\]
+
+且由于 \(c_{i}\) 是矩阵 A 中指标为 i 的列，可见说方程组 (19) 有解就等于说单列矩阵 \(b = (b_{k0})\) 是矩阵 A 的各列的线性组合。
+
+我们把对左线性方程组作相应定义和注记的任务留给读者。
+

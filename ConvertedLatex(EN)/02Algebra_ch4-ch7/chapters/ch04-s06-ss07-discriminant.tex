@@ -1,0 +1,276 @@
+\subsection{The discriminant}
+
+DEFINITION 2. --- Let f be a monic polynomial of A{[}X{]} of degree m, and denote by E the A-algebra A{[}X{]}/(f) and by x the canonical image of X in E. We define the discriminant of f, written dis(f), as the discriminant \(D_{E/A}(1, x, \ldots, x^{m-1})\) of the basis \((1, x, \ldots, x^{m-1})\) of the A-algebra E.
+
+For every positive integer k we write \(p_{k} = \mathrm{Tr}_{\mathrm{E}/\mathrm{A}}(x^{k})\) . By III, p.~549, Def. 2 amounts to the formula
+
+\[
+\operatorname{dis} (f) = \det \left(p _ {i + j}\right) _ {0 \leqslant i, j <   m}.\tag{45}
+\]
+
+Examples. --- 1) If \(f\) is a monic polynomial of degree 0 or 1, we have \(\operatorname{dis}(f) = 1\) , by (45).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(f(\mathbf{X}) = \mathbf{X}^2 + \alpha \mathbf{X} + \beta\) be a monic polynomial of degree 2. Newton's relations may be written in the form (IV, p.~75)
+\end{enumerate}
+
+\[
+\begin{array}{c} p _ {0} = 2 \\ p _ {1} + \alpha = 0 \\ p _ {2} + \alpha p _ {1} + 2 \beta = 0, \end{array}
+\]
+
+whence \(p_1 = -\alpha\) , \(p_2 = \alpha^2 - 2\beta\) . It follows that we have
+
+\[
+\operatorname{dis} (f) = \det \left( \begin{array}{c c} 2 & - \alpha \\ - \alpha & \alpha^ {2} - 2 \beta \end{array} \right) = \alpha^ {2} - 4 \beta .
+\]
+
+Let B be a commutative ring, \(\rho\) a homomorphism from A to B and \(\xi_{1}, \ldots, \xi_{m}\) elements of B such that
+
+\[
+{ } ^ { \rho } f ( \mathbf { X } ) = ( \mathbf { X } - \xi _ { 1 } ) \dots ( \mathbf { X } - \xi _ { m } ) .
+\]
+
+Let us write \(M\) for the matrix \((\rho(p_{i+j}))_{0 \leqslant i,j < m}\) and \(D\) for the Van der Monde matrix \((\xi_{i+1}^{j})_{0 \leqslant i,j < m}\) . By Example 4 of IV, p.~75 we have
+
+\[
+\rho (p _ {k}) = \xi_ {1} ^ {k} + \dots + \xi_ {m} ^ {k},
+\]
+
+whence \(M = {}^t D \cdot D\) ; by III, p.~532 we have \(\det D = \prod_{i > j} (\xi_i - \xi_j)\) and det \(M = (\det D)^2\) , that is
+
+\[
+\rho (\operatorname{dis} (f)) = \prod_ {i <   j} \left(\xi_ {i} - \xi_ {j}\right) ^ {2}.\tag{46}
+\]
+
+Moreover (on writing D for the derivation \(\frac{d}{d\mathbf{X}}\) ) we have
+
+\[
+D (^ {\rho} f) (\xi_ {i}) = (\xi_ {i} - \xi_ {1}) \dots (\xi_ {i} - \xi_ {i - 1}) (\xi_ {i} - \xi_ {i + 1}) \dots (\xi_ {i} - \xi_ {m})
+\]
+
+for \(1 \leqslant i \leqslant m\) , whence
+
+\[
+\rho (\operatorname{dis} (f)) = (- 1) ^ {m (m - 1) / 2} \prod_ {i \neq j} (\xi_ {i} - \xi_ {j}) = (- 1) ^ {m (m - 1) / 2} \prod_ {i = 1} ^ {m} D (^ {\rho} f) (\xi_ {i}).
+\]
+
+By Cor. 1 of IV, p.~80 applied to the universal decomposition of \(f\) , we finally obtain
+
+\[
+\operatorname{res} (f, \mathrm{D} f) = \operatorname{res} (\mathrm{D} f, f) = (- 1) ^ {m (m - 1) / 2} \operatorname{dis} (f).\tag{47}
+\]
+
+PROPOSITION 10. --- Let \(m \geqslant 1\) . There exists a unique polynomial \(\Delta \in \mathbf{Z}[\mathbf{A}_1, \ldots, \mathbf{A}_m]\) with the following property: for any commutative ring A and monic polynomial \(f = \mathbf{X}^m + \sum_{i=1}^{m} a_i \mathbf{X}^{m-i}\) in A{[}X{]} we have
+
+\[
+\operatorname{dis} (f) = \Delta \left(a _ {1}, \dots , a _ {m}\right).\tag{48}
+\]
+
+Moreover \(\Delta\) is of degree \(\leqslant 2m - 2\) and if we assign weight \(i\) to \(\mathbf{A}_i\) then \(\Delta\) is isobaric of weight \(m(m - 1)\) .
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Uniqueness of \(\Delta\) : if \(\Delta\) satisfies (48), we have in particular \(\Delta = \text{dis}(F)\) , where \(F\) is the polynomial \(X^{m} + \sum_{i=1}^{m} A_{i} X^{m-i}\) with coefficients in \(\mathbf{Z}[A_{1}, \ldots, A_{m}]\) .
+\item
+  Existence of \(\Delta\) : let \(s_1, \ldots, s_m\) be the elementary symmetric polynomials in the indeterminates \(\mathbf{X}_1, \ldots, \mathbf{X}_m\) . There exists a polynomial \(\Delta \in \mathbf{Z}[\mathbf{A}_1, \ldots, \mathbf{A}_m]\) , isobaric of weight \(m(m-1)\) , such that
+\end{enumerate}
+
+\[
+\Delta \left(- s _ {1}, s _ {2}, \dots , (- 1) ^ {m} s _ {m}\right) = \prod_ {i <   j} \left(\mathrm{X} _ {i} - \mathrm{X} _ {j}\right) ^ {2};\tag{49}
+\]
+
+for the right-hand side is a symmetric polynomial P, homogeneous of degree \(m(m-1)\) in \(Z[X_{1},\ldots,X_{m}]\) (IV, p.~62, Th. 1). Now formula (46) means that \(\text{dis}(f)=P(f)\) , in the notation of IV, p.~74, and (48) follows directly from this.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Degree of \(\Delta\) : the relation (47) and the definition of the resultant (IV, p.~76) imply the formula
+\end{enumerate}
+
+\[
+(- 1) ^ {m (m - 1) / 2} \Delta = \det \left(a _ {i j}\right) _ {0 \leqslant i, j \leqslant 2 m - 2}\tag{50}
+\]
+
+with the following values of the \(a_{ij}\)
+
+\[
+\begin{array}{l l} a _ {0 0} = 1, \quad a _ {0, m - 1} = m, & a _ {0 j} = 0 \quad \text {if} \quad j \neq 0, \quad j \neq m - 1 \\ a _ {i j} = \mathbf {A} _ {i - j} & \text {for} \quad 1 \leqslant i \leqslant 2 m - 2, \quad 0 \leqslant j \leqslant m - 2 \\ a _ {i j} = (j - i + 1) \mathbf {A} _ {m + i - j - 1} & \text {for} \quad 1 \leqslant i \leqslant 2 m - 2, \quad m - 1 \leqslant j \leqslant 2 m - 2. \end{array}
+\]
+
+In these formulae it is understood that \(A_{0}=1\) and \(A_{i}=0\) for i\textless0 or i\textgreater m. Now (50) shows at once that \(\Delta\) is of degree \(\leqslant2m-2\) , as we had to prove.
+
+Prop. 10 allows us to extend the definition of the discriminant to non-monic polynomials. Let \(m \geqslant 1\) be an integer, then there exists a unique homogeneous polynomial of degree \(2m - 2\) , \(\tilde{\Delta}\) say, in \(\mathbf{Z}[\mathbf{A}_0, \mathbf{A}_1, \ldots, \mathbf{A}_m]\) such that
+
+\[
+\Delta \left(\mathrm{A} _ {1}, \dots , \mathrm{A} _ {m}\right) = \tilde {\Delta} \left(1, \mathrm{A} _ {1}, \dots , \mathrm{A} _ {m}\right);\tag{51}
+\]
+
+for, since \(\Delta\) is of degree \(\leqslant 2m - 2\) , the rational fraction
+
+\[
+\mathbf {A} _ {0} ^ {2 m - 2} \Delta (\mathbf {A} _ {1} / \mathbf {A} _ {0}, \dots , \mathbf {A} _ {m} / \mathbf {A} _ {0})
+\]
+
+belongs to the subring \(\mathbf{Z}[\mathbf{A}_0, \mathbf{A}_1, \ldots, \mathbf{A}_m]\) of \(\mathbf{Q}(\mathbf{A}_0, \mathbf{A}_1, \ldots, \mathbf{A}_m)\) . If \(\mathbf{A}_i\) has weight \(i\) for \(0 \leqslant i \leqslant m\) , then \(\tilde{\Delta}\) is isobaric of weight \(m(m - 1)\) . If \(f\) is a polynomial of degree \(\leqslant m\) , say
+
+\[
+f = a _ {0} \mathrm{X} ^ {m} + a _ {1} \mathrm{X} ^ {m - 1} + \dots + a _ {m - 1} \mathrm{X} + a _ {m},
+\]
+
+we shall put
+
+\[
+\operatorname{dis} _ {m} (f) = \tilde {\Delta} \left(a _ {0}, a _ {1}, \dots , a _ {m}\right).\tag{52}
+\]
+
+When \(m = \deg f\) , we shall simply write \(\operatorname{dis}(f)\) for \(\operatorname{dis}_m(f)\) ; if \(f\) is monic, \(\operatorname{dis}(f)\) agrees with the discriminant defined in Def. 2, by (48), (51) and (52).
+
+PROPOSITION 11. --- Let \(f\) in A{[}X{]} be of degree \(\leqslant m\) .
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  If \(\rho: \mathbf{A} \to \mathbf{B}\) is a ring homomorphism, we have \(\mathrm{dis}_m({}^{\rho}f) = \rho(\mathrm{dis}_m(f))\) .
+\item
+  Let \(\lambda, \alpha_{1}, \ldots, \alpha_{m}\) be elements of A. If \(f = \lambda(X - \alpha_{1}) \ldots (X - \alpha_{m})\) ; then we have
+\end{enumerate}
+
+\[
+\operatorname{dis} _ {m} (f) = \lambda^ {2 m - 2} \prod_ {i <   j} (\alpha_ {i} - \alpha_ {j}) ^ {2}.\tag{53}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Let \(a_0\) be the coefficient of \(\mathbf{X}^m\) in \(f\) ; then we have
+\end{enumerate}
+
+\[
+\operatorname{res} _ {m, m - 1} (f, \mathbf {D} f) = \operatorname{res} _ {m - 1, m} (\mathbf {D} f, f) = (- 1) ^ {m (m - 1) / 2} a _ {0} \operatorname{dis} _ {m} (f).\tag{54}
+\]
+
+Assertion (i) is clear.
+
+Since \(\tilde{\Delta}\) is homogeneous of degree \(2m - 2\) , we have
+
+\[
+\operatorname{dis} _ {m} (\lambda f) = \lambda^ {2 m - 2} \operatorname{dis} _ {m} (f)\tag{55}
+\]
+
+for every polynomial \(f \in \mathbf{A}[\mathbf{X}]\) of degree \(\leqslant m\) . Assertion (ii) now follows from formulae (46) and (55).
+
+When f is monic of degree m, we have \(a_{0} = 1\) and Assertion (iii) is reduced to formula (47). Bearing in mind (55) and the relation
+
+\[
+\operatorname{res} _ {m, n} (\lambda f, \mu g) = \lambda^ {n} \mu^ {m} \operatorname{res} _ {m, n} (f, g),\tag{56}
+\]
+
+(IV, p.~77), we can pass from there to the case where \(a_0\) is invertible in A. Now the general case follows by Prop. 11, (i) and Lemma 5 (IV, p.~79).
+
+COROLLARY 1. --- Let \(g \in A[X]\) and let \(n\) be a positive integer such that \(\deg g \leqslant n\) . We have
+
+\[
+\operatorname{dis} _ {m + n} (f g) = \operatorname{dis} _ {m} (f) \cdot \operatorname{dis} _ {n} (g) \cdot \operatorname{res} _ {m, n} (f, g) ^ {2}.\tag{57}
+\]
+
+By reasoning as before we are reduced to the case where f and g are monic of degrees m and n respectively. Now put \(B = E_{f} \otimes E_{g}\) , where \(E_{f}\) (resp. \(E_{g}\) ) is the universal decomposition algebra of \(f(\text{resp. } g)\) (IV, p.~73). Then A is a subring of B, and in B{[}X{]} we have the decompositions
+
+\[
+f = \prod_ {i = 1} ^ {m} \left(\mathrm{X} - \alpha_ {i}\right), \quad g = \prod_ {j = 1} ^ {n} \left(\mathrm{X} - \beta_ {j}\right).
+\]
+
+Hence we have
+
+\[
+f g = \prod_ {k = 1} ^ {m + n} \left(\mathbf {X} - \gamma_ {k}\right),
+\]
+
+with \(\gamma_{i} = \alpha_{i}\) for \(1 \leqslant i \leqslant m\) and \(\gamma_{m + j} = \beta_{j}\) for \(1 \leqslant j \leqslant n\) . We have the obvious identity
+
+\[
+\prod_ {k <   k ^ {\prime}} \left(\gamma_ {k} - \gamma_ {k ^ {\prime}}\right) = \prod_ {i <   i ^ {\prime}} \left(\alpha_ {i} - \alpha_ {i ^ {\prime}}\right) \cdot \prod_ {j <   j ^ {\prime}} \left(\beta_ {j} - \beta_ {j ^ {\prime}}\right) \cdot \prod_ {i, j} \left(\alpha_ {i} - \beta_ {j}\right).
+\]
+
+On squaring this relation we obtain (57), by (40) and (46).
+
+COROLLARY 2. --- If \(a_{0}\) is the coefficient of \(\mathbf{X}^{m}\) in \(f\) , we have
+
+\[
+\operatorname{dis} _ {m + 1} (f) = a _ {0} ^ {2} \operatorname{dis} _ {m} (f).\tag{58}
+\]
+
+This follows from Cor. 1 on taking \(n = 1\) , \(g = 1\) , by the formula \(\operatorname{res}_{m,1}(f,1) = a_0\) (IV, p.~76, Example 1).
+
+COROLLARY 3. --- Let A be a field, and let f be a non-constant polynomial in A{[}X{]}. For f and Df to be relatively prime, it is necessary and sufficient that \(\text{dis}(f) \neq 0\) .
+
+This follows from Prop. 11, (iii) and Cor. 2 of IV, p.~78.
+
+Remark. --- A double application of Cor. 2 above shows that we have \(\mathrm{dis}_{m}(f)=0\) for every polynomial f of degree \(\leqslant m-2\) .
+
+Examples. --- 3) Let \(m = 2\) . By Example 2 (IV, p.~81) we have \(\Delta(\mathbf{A}_1, \mathbf{A}_2) = \mathbf{A}_1^2 - 4\mathbf{A}_2\) , whence \(\tilde{\Delta}(\mathbf{A}_0, \mathbf{A}_1, \mathbf{A}_2) = \mathbf{A}_1^2 - 4\mathbf{A}_0\mathbf{A}_2\) . In other words, we have
+
+\[
+\operatorname{dis} _ {2} \left(a _ {0} \mathbf {X} ^ {2} + a _ {1} \mathbf {X} + a _ {2}\right) = a _ {1} ^ {2} - 4 a _ {0} a _ {2}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Consider the polynomial
+\end{enumerate}
+
+\[
+\mathbf {F} = \mathbf {A} _ {0} \mathbf {X} ^ {3} + 3 \mathbf {A} _ {1} \mathbf {X} ^ {2} + 3 \mathbf {A} _ {2} \mathbf {X} + \mathbf {A} _ {3}
+\]
+
+with coefficients in \(\mathbf{Q}[\mathbf{A}_0,\mathbf{A}_1,\mathbf{A}_2,\mathbf{A}_3]\) . We have
+
+\[
+\mathbf {D F} = 3 \left(\mathbf {A} _ {0} \mathbf {X} ^ {2} + 2 \mathbf {A} _ {1} \mathbf {X} + \mathbf {A} _ {2}\right),
+\]
+
+\[
+\mathrm{F} - 1 / 3 \mathrm{X}. \mathrm{DF} = \mathrm{A} _ {1} \mathrm{X} ^ {2} + 2 \mathrm{A} _ {2} \mathrm{X} + \mathrm{A} _ {3}.
+\]
+
+By the formulae (54) (IV, p.~84) and (29) (IV, p.~77) we have
+
+\[
+\mathrm{A} _ {0} \cdot \operatorname{dis} _ {3} (\mathrm{F}) = - \operatorname{res} _ {2, 3} (\mathrm{DF}, \mathrm{F}) = - \operatorname{res} _ {2, 3} (\mathrm{DF}, \mathrm{F} - 1 / 3 \mathrm{X}. \mathrm{DF}).
+\]
+
+Applying Cor. 2 of IV, p.~80 we finally obtain
+
+\[
+\operatorname{dis} _ {3} (\mathrm{F}) = - 2 7 \operatorname{res} _ {2, 2} \left(\mathrm{A} _ {0} \mathrm{X} ^ {2} + 2 \mathrm{A} _ {1} \mathrm{X} + \mathrm{A} _ {2}, \mathrm{A} _ {1} \mathrm{X} ^ {2} + 2 \mathrm{A} _ {2} \mathrm{X} + \mathrm{A} _ {3}\right).
+\]
+
+By Example 3 of IV, p.80 we thus have
+
+\[
+\tilde {\Delta} \left(\mathrm{A} _ {0}, 3 \mathrm{A} _ {1}, 3 \mathrm{A} _ {2}, \mathrm{A} _ {3}\right) = - 2 7 \left(\mathrm{A} _ {0} \mathrm{A} _ {3} - \mathrm{A} _ {1} \mathrm{A} _ {2}\right) ^ {2} - 1 0 8 \left(\mathrm{A} _ {1} \mathrm{A} _ {3} - \mathrm{A} _ {2} ^ {2}\right) \left(\mathrm{A} _ {1} ^ {2} - \mathrm{A} _ {0} \mathrm{A} _ {2}\right).
+\]
+
+After some calculations we find, that if \(f = a_0\mathbf{X}^3 + a_1\mathbf{X}^2 + a_2\mathbf{X} + a_3\) , we have
+
+\[
+\operatorname{dis} _ {3} (f) = a _ {1} ^ {2} a _ {2} ^ {2} + 1 8 a _ {0} a _ {1} a _ {2} a _ {3} - 4 a _ {1} ^ {3} a _ {3} - 4 a _ {0} a _ {2} ^ {3} - 2 7 a _ {0} ^ {2} a _ {3} ^ {2}.
+\]
+
+In particular, we have
+
+\[
+\operatorname{dis} \left(\mathbf {X} ^ {3} + p \mathbf {X} + q\right) = - \left(4 p ^ {3} + 2 7 q ^ {2}\right).
+\]
+

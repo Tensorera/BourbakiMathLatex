@@ -1,0 +1,42 @@
+\subsection{连续延拓；二重极限}
+
+定理 1. 设 X 是一个拓扑空间，A 是 X 的一个稠密子集，\(f: \mathbf{A} \to \mathbf{Y}\) 是 A 到正则空间 Y 中的一个映射。\(f\) 可延拓为连续映射 \(\overline{f}: \mathbf{X} \to \mathbf{Y}\) 的一个必要充分条件是：对每个 \(x \in \mathbf{X}\)，\(f(y)\) 当 \(y\) 趋于 \(x\) 且保持属于 A 时在 Y 中趋于一个极限。这时连续延拓 \(\overline{f}\)（把 \(f\) 延拓到 X 上）是唯一的。
+
+\(\vec{f}\) 的唯一性由恒等延拓原理（第 1 目，命题 2，推论 1）得出。显然该条件是必要的，因为若 \(\vec{f}\) 在 X 上连续，则对每个 \(x \in X\) 我们有
+
+\[
+\overline {{f}} (x) = \lim _ {y > x, y \in \mathbf {A}} \overline {{f}} (y) = \lim _ {y > x, y \in \mathbf {A}} f (y)
+\]
+
+（§ 7，第 5 目）。反之，设该条件成立，并定义
+
+\[
+\overline {{f}} (x) = \lim _ {y \rightarrow x, y \in \mathbf {A}} f (y)
+\]
+
+（对每个 \(x \in X\)）；\(\overline{f}(x)\) 是 Y 中一个完全确定的元素，因为 Y 是豪斯多夫的。我们必须证明 \(\overline{f}\) 在每个点 \(x \in X\) 处连续。于是设 \(V'\) 是 \(\overline{f}(x)\) 在 Y 中的一个闭邻域；则由假设，存在 x 在 X 中的一个开邻域 V，使得 \(f(V \cap A) \subset V'\)。既然 V 是它的每一点的邻域，我们就有
+
+\[
+\overline {{f}} (z) = \lim _ {y > z, y \in \mathrm{V} \cap \mathrm{A}} f (y)
+\]
+
+（对每个 \(z \in \mathbf{V}\)）；由此得出 \(\overline{f}(z) \in f(\mathbf{V} \cap \mathbf{A}) \subset \mathbf{V}'\)，因为 \(\mathbf{V}'\) 是闭的。于是结论由 \(f(x)\) 的诸闭邻域构成 \(f(x)\) 在 \(\mathbf{Y}\) 中的一个基本邻域系这一事实得出。
+
+映射 \(\bar{f}\) 称为由 f 连续延拓到 X 上而得到的映射。
+
+在定理 1 的陈述中，Y 是正则的这一假设不能减弱，除非对 X、A 或 f 附加额外的限制（习题 19）。
+
+推论. 设 \(\mathfrak{F}_1\) 是集合 \(X_1\) 上的一个滤子，\(\mathfrak{F}_2\) 是集合 \(X_2\) 上的一个滤子；设 \(\mathfrak{F}_1 \times \mathfrak{F}_2\) 是 \(X = X_1 \times X_2\) 上的积滤子（§ 6，第 7 目），并设 \(f\) 是 \(X\) 到正则空间 \(Y\) 中的一个映射。假设
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(\lim_{\mathfrak{F}_1\times \mathfrak{F}_2}f\) 存在。
+\item
+  \(\lim_{x_2, \mathfrak{F}_2} f(x_1, x_2) = g(x_1)\) 对所有 \(x_1 \in \mathbf{X}_1\) 存在。
+\end{enumerate}
+
+则 \(\lim_{x_1, \mathfrak{F}_1} g(x_1)\) 存在且等于 \(\lim_{\mathfrak{F}_1 \times \mathfrak{F}_2} f\)。
+
+设 \(X_1' = X_1 \cup \{ \omega_1 \}\)（相应地，\(X_2' = X_2 \cup \{ \omega_2 \}\)）是伴随于滤子 \(\mathfrak{F}_1\)（相应地，\(\mathfrak{F}_2\)）的拓扑空间（§ 6，第 5 目，例）。在积空间 \(X' = X_1' \times X_2'\) 中，设 \(X''\) 是子空间 \(X_1 \times X_2'\) 与 \(\{ (\omega_1, \omega_2) \}\) 的并。显然 \(X\) 是 \(X''\) 的稠密子空间，且诸假设蕴含：\(f(y_1, y_2)\) 当 \((y_1, y_2)\) 趋于任一点 \((x_1, x_2)\)（在 \(X''\) 中）且保持属于 \(X\) 时趋于一个极限。于是由定理 1 得出 \(f\) 连续延拓到 \(X''\) 上的存在性。又因为 \((\omega_1, \omega_2)\) 属于 \(X_1 \times \{ \omega_2 \}\) 关于 \(X''\) 的闭包，结论立即得出（§ 7，第 5 目）。
+

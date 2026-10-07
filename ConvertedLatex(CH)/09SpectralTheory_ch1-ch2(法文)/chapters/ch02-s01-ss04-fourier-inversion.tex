@@ -1,0 +1,79 @@
+\subsection{Fourier 反演公式}
+
+回忆 A(G) 的每个元素 \(f\) 都是一个唯一的连续函数的类（II，第 210 页，命题 7, b)）。对 \(x \in \mathrm{G}\)，我们将用 \(f(x)\) 表示这个函数在 \(x\) 处的值。
+
+命题 11.　设 \(f \in \mathrm{A}(\mathrm{G})\)。则 \(\mathcal{F}(f) \in \mathrm{L}^1(\widehat{\mathrm{G}})\)，且对每个 \(x \in \mathrm{G}\) 有
+
+\[
+f (x) = \int_ {\widehat {G}} \langle \widehat {x}, x \rangle \mathcal {F} (f) (\widehat {x}) d \widehat {x}.\tag{25}
+\]
+
+换句话说，对 \(f \in \mathrm{A}(\mathrm{G})\) 有
+
+\[
+f = \overline {{\mathcal {F}}} _ {\widehat {\mathrm{G}}} (\mathcal {F} _ {\mathrm{G}} (f)) \circ \eta ,\tag{26}
+\]
+
+其中 \(\eta\) 表示从 G 到二重对偶群 \(\widehat{\widehat{G}}\) 中的典范映射。
+
+由 II，第 213 页，引理 4 与 II，第 214 页，命题 9，\(\mathcal{F}(f) \in \mathrm{L}^1(\widehat{\mathrm{G}})\) 对每个函数 \(f \in \mathrm{A}(\mathrm{G})\) 成立。由 Plancherel 公式 (24)，对诸 \(f\) 与 \(g\)（在 \(\mathrm{L}^2(\mathrm{G})\) 中）有
+
+\[
+(f * \widetilde {g}) (e) = \int_ {\widehat {\mathrm{G}}} \mathcal {F} (f) (\chi) \overline {{\mathcal {F} (g) (\chi)}} d \widehat {x} (\chi).\tag{27}
+\]
+
+设 \(f\) 与 \(g\) 属于 \(\mathrm{L}^1(\mathrm{G}) \cap \mathrm{L}^2(\mathrm{G})\)，并设 \(h = f * \widetilde{g} \in \mathrm{A}(\mathrm{G})\)。由于 Fourier 变换是一个对合态射，公式 (27) 就是断言 (25) 对函数 \(h\) 在点 \(x = e\) 处的情形。由线性性，我们推出公式 (25) 在点 \(x = e\) 处对每个函数 \(h \in \mathrm{A}(\mathrm{G})\) 成立。
+
+设 \(x \in G\) 与 \(h \in A(G)\)。设 \(h_{1} = \varepsilon_{x^{-1}} * h\)。则 \(h_{1} \in A(G)\) 且 \(h_{1}(e) = h(x)\)。此外，由于 \(\mathcal{F}(h_{1})(\chi) = \overline{\langle\chi, x\rangle}\mathcal{F}(f)(\chi)\) 对所有 \(\chi \in \widehat{G}\) 成立（参见 II，第 208 页，公式 (11)），把公式 (25) 应用于函数 \(h_{1}\) 在点 e 处便得到公式 (25) 对 h 在点 x 处成立。
+
+引理 6.　设 \(\varphi\in\mathrm{L}^{1}(\widehat{\mathrm{G}})\cap\mathrm{L}^{2}(\widehat{\mathrm{G}})\)。则 \(f=\overline{\mathcal{F}}_{\widehat{\mathrm{G}}}(\varphi)\circ\eta\) 属于 \(\mathrm{L}^{2}(\mathrm{G})\)，且 \(\mathcal{F}_{\mathrm{G}}(f)=\varphi\) 在 \(\mathrm{L}^{2}(\widehat{\mathrm{G}})\) 中成立。
+
+函数 \(f\) 在 \(G\) 上连续且有界，因为 \(\varphi \in L^{1}(\widehat{G})\)。对每个函数 \(g \in L^{1}(G) \cap L^{2}(G)\) 有
+
+\[
+\begin{array}{r} \int_ {\mathrm{G}} g (x) f (x) d x = \int_ {\mathrm{G}} g (x) \Big (\int_ {\widehat {\mathrm{G}}} \langle \chi , x \rangle \varphi (\chi) d \widehat {x} (\chi) \Big) d x \\ = \int_ {\widehat {\mathrm{G}}} \overline {{\mathcal {F}}} _ {\mathrm{G}} (g) (\chi) \varphi (\chi) d \widehat {x} (\chi), \end{array}\tag{28}
+\]
+
+这是对函数 \((x,\chi)\mapsto g(x)\varphi(\chi)\langle\chi,x\rangle\) 应用 Lebesgue–Fubini 定理（INT，V，§8，第 4 节，定理 1, a)）得到的，该函数在 \(G\times\widehat{G}\) 上关于乘积测度 \(dx\otimes d\widehat{x}\) 可积。由此推出
+
+\[
+\left| \int_ {\mathrm{G}} g (x) f (x) d x \right| \leqslant \| \overline {{{\mathcal {F}}}} _ {\mathrm{G}} (g) \| _ {2} \| \varphi \| _ {2} = \| g \| _ {2} \| \varphi \| _ {2},
+\]
+
+这由 Plancherel 公式得出。于是线性形式 \(g \mapsto \int_{G} fg\) 在 \(\mathrm{L}^{1}(\mathrm{G}) \cap \mathrm{L}^{2}(\mathrm{G})\) 上连续，且由于 \(\mathrm{L}^{1}(\mathrm{G}) \cap \mathrm{L}^{2}(\mathrm{G})\) 在 Hilbert 空间 \(\mathrm{L}^{2}(\mathrm{G})\) 中稠密，我们推出 f 属于 \(\mathrm{L}^{2}(\mathrm{G})\)。
+
+另一方面，应用 II，第 215 页，定理 1，我们得到
+
+\[
+\begin{array}{r} \int_ {\mathrm{G}} g (x) f (x) d x = \int_ {\widehat {\mathrm{G}}} \overline {{\mathcal {F} _ {\mathrm{G}} (\overline {{g}}) (\chi)}} \mathcal {F} _ {\mathrm{G}} (f) (\chi) d \widehat {x} (\chi) \\ = \int_ {\widehat {\mathrm{G}}} \overline {{\mathcal {F}}} _ {\mathrm{G}} (g) (\chi) \mathcal {F} _ {\mathrm{G}} (f) (\chi) d \widehat {x} (\chi) \end{array}
+\]
+
+对所有 \(g \in \mathrm{L}^{2}(\mathrm{G})\) 成立。与 (28) 比较，我们得出 \(\varphi = \mathcal{F}_{\mathrm{G}}(f)\) 在 \(\mathrm{L}^{2}(\widehat{\mathrm{G}})\) 中成立，因为 \(\mathrm{A}(\mathrm{G})\) 含于 \(\mathrm{L}^{1}(\mathrm{G}) \cap \mathrm{L}^{2}(\mathrm{G})\) 且 \(\widehat{\mathrm{A}}(\mathrm{G})\) 在 \(\mathrm{L}^{2}(\widehat{\mathrm{G}})\) 中稠密（II，第 215 页，引理 5）。
+
+命题 12（Fourier 反演公式）
+
+设 \(f \in \mathrm{L}^2(\mathrm{G})\) 满足 \(\mathcal{F}_{\mathrm{G}}(f) \in \mathrm{L}^1(\widehat{\mathrm{G}})\)。则 \(f = \overline{\mathcal{F}}_{\widehat{\mathrm{G}}}(\mathcal{F}_{\mathrm{G}}(f)) \circ \eta\) 在 \(\mathrm{L}^2(\mathrm{G})\) 中成立。换句话说，对几乎所有 \(x \in \mathrm{G}\) 有
+
+\[
+f (x) = \int_ {\widehat {G}} \langle \widehat {x}, x \rangle \mathcal {F} _ {G} (f) (\widehat {x}) d \widehat {x}.
+\]
+
+函数 \(\varphi = \mathcal{F}_{\mathrm{G}}(f)\) 属于 \(\mathrm{L}^1 (\widehat{\mathrm{G}})\cap \mathrm{L}^2 (\widehat{\mathrm{G}})\)，应用该引理即得所需公式。
+
+推论 1.　对 \(\widehat{\mathbf{G}}\) 的每个闭子集 P 与每个不属于 P 的 \(\chi \in \widehat{\mathbf{G}}\)，存在一个函数 \(f \in \mathrm{L}^{1}(\mathrm{G})\)，使得 \(\mathcal{F}(f)\) 在 P 上为零而在 \(\chi\) 处非零。
+
+由于由 (12) 有 \(\mathcal{F}(\chi f) = \varepsilon_{\chi} * \mathcal{F}(f)\) 对所有 \(\chi \in \widehat{\mathrm{G}}\)，只需考虑 \(\chi\) 是 \(\widehat{\mathrm{G}}\) 的单位元的情形。
+
+设 U 为 \(e \in \widehat{G}\) 的一个紧对称邻域，使得 \(U^{2} \cap P = \varnothing\)。设 \(\varphi\) 为 \(\widehat{G}\) 上的一个连续正函数，在 U 外为零且满足 \(\varphi(e) = 1\)。于是函数 \(\varphi_{1} = \varphi * \varphi\) 在 P 上为零且 \(\varphi_{1}(e) > 0\)。因此只需证明 \(\varphi_{1}\) 属于 \(L^{1}(G)\) 上 Fourier 变换的像。此外，\(\varphi\) 与 \(\varphi_{1}\) 都属于 \(L^{1}(\widehat{G}) \cap L^{2}(\widehat{G})\)。令 \(f = \overline{\mathcal{F}}(\varphi) \circ \eta\) 与 \(f_{1} = \overline{\mathcal{F}}(\varphi_{1}) \circ \eta\)。引理 6 蕴含 f 与 \(f_{1}\) 属于 \(L^{2}(G)\) 且满足 \(\varphi = \mathcal{F}(f)\) 与 \(\varphi_{1} = \mathcal{F}(f_{1})\)。此外
+
+\[
+f _ {1} = \overline {{\mathcal {F}}} (\varphi * \varphi) \circ \eta = (\overline {{\mathcal {F}}} (\varphi) \circ \eta) ^ {2} = f ^ {2},
+\]
+
+从而 \(f_{1} \in \mathrm{L}^{1}(\mathrm{G})\)。于是 \(\varphi_{1} = \mathcal{F}(f_{1})\) 确实属于 \(\mathrm{L}^{1}(\mathrm{G})\) 在 Fourier 变换下的像。
+
+推论 2.　Banach 代数 L \(^{1}\) (G) 是正则的（I，第 89 页，定义 1）。
+
+由 I，第 88 页，命题 1 以及 L \(^{1}\) (G) 的 Gelfand 变换与 G 的 Fourier 余变换的等同，这由前一个推论得出。
+% semantic-fragments: legacy-input-seam
+\relax{}

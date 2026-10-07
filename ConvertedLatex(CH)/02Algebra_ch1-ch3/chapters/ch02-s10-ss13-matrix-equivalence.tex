@@ -1,0 +1,96 @@
+\subsection{域上矩阵的等价}
+
+命题13. 设 E、F 是域 K 上的两个有限维向量空间。若 \(u: \mathbf{E} \to \mathbf{F}\) 是一个秩为 \(r\) 的线性映射，则存在 E 和 F 的基，使得关于这些基，
+
+\[
+M (u) = \left( \begin{array}{c c} I _ {r} & 0 \\ 0 & 0 \end{array} \right).\tag{55}
+\]
+
+每个类型为 \((m, n)\) （域 \(\mathbf{K}\) 上的）且秩为 \(r\) 的矩阵都等价于形如 (55) 的一个矩阵。
+
+第二个断言显然等价于第一个断言。为证明后者，令 \(\dim \mathbf{E} = n\) , \(\dim \mathbf{F} = m\) 。核 \(\mathbf{N} = \bar{u}^{1}(0)\) 的维数为 \(n - r\) （ \(\S 7\) ，第 4 号，公式 (11)）；设 \(\mathbf{V}\) 为 \(\mathbf{N}\) 在 \(\mathbf{E}\) 中的一个补子空间，并设 \((e_i)_{1 \leqslant i \leqslant n}\) 为 \(\mathbf{E}\) 的一个基，使得 \((e_i)_{1 \leqslant i \leqslant r}\) 是 \(\mathbf{V}\) 的基而 \((e_i)_{r + 1 \leqslant i \leqslant n}\) 是 \(\mathbf{N}\) 的基。于是诸 \(u(e_j)\) （ \(1 \leqslant j \leqslant r\) ）构成 \(u(\mathbf{E})\) 的一个基；因此存在一个基 \((f_j)_{1 \leqslant j \leqslant m}\) （ \(\mathbf{F}\) 的），使得 \(f_j = u(e_j)\) （对 \(1 \leqslant j \leqslant r\) ） （ \(\S 7\) ，第 1 号，定理 2）
+
+并且显然关于基 \((e_{i})\) 和 \((f_{j})\) ，矩阵 \(M(u)\) 由 (55) 给出。
+
+推论. 域上两个类型为 \((m, n)\) 的矩阵要等价，必要且充分的条件是它们具有相同的秩。
+
+我们现在用另一种更明确的方法重新得到命题 13。对每个环 A、每个 \(\lambda \in \mathbf{A}\) 、每个整数 \(m > 1\) 以及每对互不相同的有序整数对 \(i, j\) （属于 \([1, m]\) ），我们记
+
+\[
+B _ {i j} (\lambda) = I _ {m} + \lambda E _ {i j}\tag{56}
+\]
+
+一个 \(m\) 阶的可逆矩阵（由第 8 号）。
+
+引理1. 设 \(X = (\xi_{ij})\) 是类型为 \((m, n)\) 的一个矩阵（环 \(A\) 上的）。假设 \(m \geqslant 2\) ，并且存在一个元素 \(\xi_{i1}\) 位于 \(X\) 的第一列中且在 \(A\) 中可逆。则存在两个可逆方阵 \(P \in \mathbf{M}_m(A)\) , \(Q \in \mathbf{M}_n(A)\) 以及一个矩阵 \(Y\) （类型为 \((m - 1, n - 1)\) ，环 \(A\) 上的），使得 \(P\) （相应地 \(Q\) ）是形如 \(B_{ij}(\lambda)\) 的 \(m\) 阶（相应地 \(n\) 阶）矩阵的乘积，且
+
+\[
+P X Q = \left( \begin{array}{c c c c} 1 & 0 & \ldots & 0 \\ 0 & & \\ \vdots & & Y \\ 0 & & \end{array} \right).\tag{57}
+\]
+
+矩阵 \(B_{ij}(\lambda)X\) 是由 \(X\) 的第 \(i\) 行加上第 \(j\) 行左乘 \(\lambda\) 而得到的（第 9 号，例 2）；若 \(\xi_{i1}\) 可逆，则存在 \(\lambda \in A\) 使得，对矩阵 \(X' = B_{1i}(\lambda)X = (\xi_{kl}')\) 而言， \(\xi_{11}' = 1\) ；将 \(X'\) 左乘适当选取的矩阵 \(B_{k1}(\mu_k)\) （ \(m\) 阶的，对于 \(1 \leqslant k \leqslant m\) ），就得到一个矩阵 \(X'' = (\xi_{kl}')\) ，使得 \(\xi_{j1}' = 1\) , \(\xi_{k1}'' = 0\) （对 \(k \neq 1\) ）。然后将所得矩阵依次右乘适当选取的矩阵 \(B_{1j}(\nu_j)\) （ \(n\) 阶的， \(2 \leqslant j \leqslant n\) ），便得到形如 (57) 的矩阵。
+
+命题14. 设 X 是一个类型为 \((m, n)\) 的矩阵，其元素属于域 K。若 X 的秩为 r，则存在两个可逆方阵 \(P \in \mathbf{M}_{m}(\mathbf{K})\) , \(Q \in M_{n}(\mathbf{K})\) 使得 P（相应地 Q）是阶为 m（相应地 n）的如下形式矩阵的乘积： \(B_{ij}(\lambda)\) 和
+
+\[
+P X Q = \left( \begin{array}{c c c c c c c} 1 & 0 & \dots & 0 & 0 & \dots & 0 \\ 0 & 1 & \dots & 0 & 0 & \dots & 0 \\ \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\ 0 & 0 & \dots & \delta_ {r} & 0 & \dots & 0 \\ 0 & 0 & \dots & 0 & 0 & \dots & 0 \\ \cdot & \cdot & \cdot & \cdot & \cdot & \cdot & \cdot \\ 0 & 0 & \dots & 0 & 0 & \dots & 0 \end{array} \right)\tag{58}
+\]
+
+（矩阵 \((\eta_{ij})\) 的所有各项均为零，除了诸 \(\eta_{ii}\) （ \(1 \leqslant i \leqslant r\) ）以外，其中 \(\eta_{ii} = 1\) （对 \(1 \leqslant i \leqslant r - 1\) ）, \(\eta_{rr} = \delta_r \neq 0\) ）。如果 \(r \neq m\) 或 \(r \neq n\) ，还可以进一步假设 \(\delta_r = 1\) 。
+
+若 X = 0，命题显然成立；因此假设 \(X \neq 0\) 。若 m = n = 1，命题是显然的（取 \(P = I_{m}\) , \(Q = I_{n}\) ， \(\delta_{1} \neq 0\) 任意）。若 n = 1， \(m \geqslant 2\) ，则可应用引理 1（因为 \(X \neq 0\) ），它给出所要的形式 (58)，其中 r = 1， \(\delta_{r} = 1\) 。我们对 n \textgreater{} 1 作归纳论证；X 中存在一个元素 \(\xi_{ij} \neq 0\) ；若 j = 1，则可应用引理 1，并把问题归结为 X 具有形式 (57) 的情形。然后归纳假设应用于 Y，于是存在可逆矩阵
+
+\[
+P ^ {\prime} \in \mathbf {M} _ {m - 1} (\mathbf {K}), \quad Q ^ {\prime} \in \mathbf {M} _ {n - 1} (\mathbf {K})
+\]
+
+它们是形如 \(B_{ij}(\lambda)\) 的 m - 1 阶（相应地，n - 1 阶）矩阵的乘积，使得 \(P^{\prime}YQ^{\prime}\) 具有形式 (58)。但是，如果 \(B_{ij}(\lambda)\) 例如属于 \(\mathbf{M}_{m-1}(\mathbf{K})\) ，则
+
+\[
+\left( \begin{array}{c c} 1 & 0 \\ 0 & B _ {i j} (\lambda) \end{array} \right) = B _ {i + 1, j + 1} (\lambda);
+\]
+
+于是公式 (58) 由分块乘积的公式得出，写出
+
+\[
+P = \left( \begin{array}{c c} 1 & 0 \\ 0 & P ^ {\prime} \end{array} \right) \quad \text { and } \quad Q = \left( \begin{array}{c c} 1 & 0 \\ 0 & Q ^ {\prime} \end{array} \right).
+\]
+
+最后，若 \(j \neq 1\) ，只需考虑矩阵 \(XB_{j1}(1)\) 即可将其归结为上述情形。
+
+命题 14 立即重新导出命题 13。
+
+推论1. 若 \(X\) 是一个 \(n\) 阶可逆方阵（域 \(\mathbf{K}\) 上的），则存在三个可逆矩阵 \(P, Q, D\) （ \(n\) 阶的），使得 \(X = PDQ\) ，其中 \(P\) 和 \(Q\) 是形如 \(B_{ij}(\lambda)\) 的矩阵的乘积，而 \(D\) 是形如
+
+\[
+D = \operatorname{diag} (1, 1, \dots , \delta),
+\]
+
+其中 \(\delta \neq 0\) （参见习题 13）。
+
+推论2. 对每个域 K，可逆矩阵群 \(\mathbf{GL}(n,\mathbf{K})\) 由置换矩阵（第 7 号，例 2）、对角矩阵 \(\text{diag}(a,1,\ldots,1)\) （ \(a\neq0\) 在 K 中）以及矩阵 \(B_{12}(\lambda)\) （ \(\lambda\in K\) ）生成。
+
+已经看到（第 9 号），用一个适当的对换矩阵右乘（相应地，左乘）一个矩阵会交换任意两列（相应地，两行）。于是矩阵 \(\text{diag}(1, \ldots, 1, a)\) 等于 \(\text{diag}(a, 1, \ldots, 1)\) 与置换矩阵的乘积，且每个矩阵 \(B_{ij}(\lambda)\) 等于 \(B_{12}(\lambda)\) 与置换矩阵的乘积，由此即得该推论。
+
+注. (1) 在第三章中我们将看到，若 \(m = n = r\) 且 \(K\) 交换，则对满足命题 14 条件的 \(P\) 和 \(Q\) 的所有选择，元素 \(\delta_r\) 总是相同的，并且等于 \(X\) 的行列式（III, § 8, 第 6 号）。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  命题 14 的论证稍作修改后表明，存在一个置换矩阵 \(R\) ，使得（对 \(P\) 加相同的条件）
+\end{enumerate}
+
+\[
+P X R = \left( \begin{array}{c c} I _ {r} & N \\ 0 & 0 \end{array} \right)
+\]
+
+若 \(m = n = r\) 不成立，则
+
+\[
+P X R = \operatorname{diag} (1, \dots , 1, \delta)
+\]
+
+否则。还要指出，证明的方法在 X 明确给出时给出了矩阵 P、Q、R 的一个显式确定。
+

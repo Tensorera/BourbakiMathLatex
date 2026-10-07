@@ -1,0 +1,3363 @@
+\exercisesection{Fourier 变换}
+
+在第 II 章的所有习题中，我们按照 II，第 236 页推论 3，把 \(R^{n}\)（相应地，\((\mathbf{R}/\mathbf{Z})^{n}\)、\(Z^{n}\)）的对偶与 \(R^{n}\)（相应地，\(Z^{n}\)、\((\mathbf{R}/\mathbf{Z})^{n}\)）等同。对 \(R^{n}\) 中的 x 与 y，我们记 \(x \cdot y = \sum_{i} x_{i} y_{i}\)。我们置 T = R/Z，并给 T 赋以其实 Lie 群结构（LIE，III，第 105 页，命题 11）。我们常把函数 f 的 Fourier 变换记作 \(\widehat{f}\)。
+
+对每个非零实数 t，我们记 \(s(t) = t/|t|\)，并置 \(s(0) = 0\)（符号函数）。
+
+若 E 是一个拓扑向量空间，\((x_{h})_{h\in\mathbf{Z}}\) 是 E 的元素的一个族，我们称通项为 \(x_{h}\) 的级数在 E 中对称收敛到 \(x\in E\)，如果序列 \((s_{n})_{n\geqslant1}\)（由
+
+\[
+s _ {n} = \sum_ {- n \leqslant h \leqslant n} x _ {h}
+\]
+
+所定义）在 E 中收敛到 \(x\)。
+
+局部紧拓扑空间 X 上的概率测度是总质量为 1 的正测度。我们用 \(\mathcal{P}(\mathrm{X})\) 表示 X 上概率测度所成的集合。
+
+除另有说明外，G 表示一个局部紧交换拓扑群。
+% semantic-fragments: legacy-input-seam
+\relax{}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \(\omega, p, q \in \mathbf{R}\) 满足 \(p \leqslant q\)。我们置 \(f(x) = e^{i\omega x}\)（当 \(p \leqslant x \leqslant q\) 时），\(f(x) = 0\)（当 \(x > q\) 或 \(x < p\) 时）。则对 \(y \in \mathbf{R}\)，有
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\mathcal {F} (f) (y) = i \frac {e ^ {i p (\omega - 2 \pi y)} - e ^ {i q (\omega - 2 \pi y)}}{\omega - 2 \pi y}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+    设 \(\omega \in \mathbf{R}\)，\(\beta > 0\)。我们置 \(f(x) = e^{(-\beta + i\omega)x}\)（当 \(x \geqslant 0\) 时），\(f(x) = 0\)（当 \(x < 0\) 时）。则对 \(y \in \mathbf{R}\)，有
+\end{enumerate}
+
+\[
+\mathcal {F} (f) (y) = \frac {i}{\omega - 2 \pi y + i \beta}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+    设 \(a > 0\)。我们置 \(f(x) = \frac{1}{a} e^{-a|x|}\)（\(x \in \mathbf{R}\)）。则对 \(y \in \mathbf{R}\)，有
+\end{enumerate}
+
+\[
+\mathcal {F} (f) (y) = \frac {2}{4 \pi^ {2} y ^ {2} + a ^ {2}}.
+\]
+
+\(d)\) 我们置 \(f(x) = e^{-\pi x^2}\)（\(x \in \mathbf{R}\)）。则对 \(y \in \mathbf{R}\)，有 \(\mathcal{F}(f)(y) = e^{-\pi y^2}\)。（求出 \(f\) 的 Fourier 变换所满足的一阶线性微分方程，并利用 FVR，VII，§1，第 3 节的公式 \(\int_0^{+\infty} e^{-t^2} dt = \frac{1}{2} \sqrt{\pi}\)。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+    设 \(n \in N\)，并设 Q 是 \(R^{n}\) 上的一个正定二次型。设 \(\sigma\) 是 \(R^{n}\) 上满足 \(\mathrm{Q}(x) = \| \sigma(x) \|^{2}\) 的线性映射。设 \(Q^{*}\) 是满足 \(\mathrm{Q}^{*}(y) = \|^{t} \sigma^{-1}(y) \|^{2}\)（对所有 \(y \in R^{n}\)）的正定二次型。设 \(z \in C\) 是满足 \(\mathcal{I}(z) > 0\) 的复数。从 \(R^{n}\) 到 C 的、由 \(f(x) = \exp(i\pi z\mathrm{Q}(x))\) 定义的函数 f 属于 \(\mathcal{S}(\mathbf{R}^{n})\)，且我们有
+\end{enumerate}
+
+\[
+\mathscr {F} (f) (y) = | \det (\sigma) | ^ {- 1} \left(\frac {i}{z}\right) ^ {n / 2} \exp (i \pi z ^ {- 1} Q ^ {*} (y))
+\]
+
+对所有 \(y \in R^{n}\) 成立。
+
+\(f)\) 设 \(f \in \mathcal{C}(\mathbf{R})\) 为由 \(f(x) = (\sin(\pi x)/(\pi x))^2\)（当 \(x \neq 0\) 时）与 \(f(0) = 1\) 所定义的函数。我们有 \(\mathcal{F}(f)(y) = 0\)（当 \(|y| > 1\) 时），否则 \(\mathcal{F}(f)(y) = 1 - |y|\)。设 \(g(x) = xf(x)\)。我们有 \(\mathcal{F}(g)(y) = 0\)（当 \(|y| > 1\) 时），否则 \(\mathcal{F}(g)(y) = s(y)/(2i\pi)\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们用典范投影把区间 {[}0,1{[} 与 \(\mathbf{T} = \mathbf{R} / \mathbf{Z}\) 等同。设 \(0 \leqslant a < b < 1\)。设 \(f\) 是从 \(\mathbf{R} / \mathbf{Z}\) 到 \(\mathbf{R}\) 中的连续函数，满足 \(f(x) = 0\)（当 \(x \notin [a,b]\) 时）、\(f((a + b) / 2) = 1\)，且 \(f\) 在区间 \([a, (a + b) / 2]\) 与 \([(a + b) / 2, b]\) 上是仿射的。
+\end{enumerate}
+
+计算 \(f\) 的 Fourier 变换，并证明存在常数 \(C \geqslant 0\) 使得
+
+\[
+| \widehat {f} (n) | \leqslant \inf \left(b - a, \frac {\mathrm{C}}{n ^ {2}}\right)
+\]
+
+对所有 \(n \in \mathbf{Z} - \{0\}\) 成立。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    函数 \(t \mapsto t^n e^{-\pi t^2}\)（\(n\) 为整数 \(\geqslant 0\)）在 \(L^2(\mathbf{R})\) 中构成一个完全集。（设 \(f \in L^2(\mathbf{R})\) 是与诸 \(t^n e^{-\pi t^2}\) 正交的一个元素。对 \(z \in \mathbf{C}\)，置 \(F(z) = \int_{-\infty}^{+\infty} f(t)e^{-\pi t^2}e^{2i\pi tz}dt\)，并证明 \(F\) 是一个整函数，其在 0 处的各阶导数全为零。由此推出函数 \(t \mapsto f(t)e^{-\pi t^2}\) 在 \(\mathbf{R}\) 上的 Fourier 变换为零。）
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  对 \(k \in N\)，有 \(\partial_{t}^{k}(e^{-2\pi t^{2}}) = \mathrm{P}_{k}(t)e^{-2\pi t^{2}}\)，其中 \(P_{k}\) 是一个 k 次多项式，首项系数为 \((-4\pi)^{k}\)。
+\item
+  设 \(k \in N\)、\(P \in C[t]\) 非零，并设 \(\alpha\) 为 P 的首项系数。则
+\end{enumerate}
+
+\[
+\int_ {\mathbf {R}} \mathrm{P} _ {k} (t) e ^ {- 2 \pi t ^ {2}} \mathrm{P} (t)   d t = \left\{ \begin{array}{l l} 0 & \text {if} \deg (\mathrm{P}) <   k \\ (- 1) ^ {k} k! 2 ^ {- 1 / 2} \alpha & \text {if} \deg (\mathrm{P}) = k. \end{array} \right.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  对 \(k \in \mathbf{N}\) 与 \(t \in \mathbf{R}\)，我们置：
+\end{enumerate}
+
+\[
+\mathcal {H} _ {k} (t) = (- 1) ^ {k} \frac {2 ^ {1 / 4 - k}}{\sqrt {\pi^ {k} k !}} e ^ {\pi t ^ {2}} \partial_ {t} ^ {k} (e ^ {- 2 \pi t ^ {2}})
+\]
+
+（“Hermite 函数”）。族 \((\mathcal{H}_{k})\) 是空间 \(\mathrm{L}^{2}(\mathbf{R})\) 的一个标准正交基。（利用 a)、b)、c)。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  我们有 \(\mathcal{F}(\mathcal{H}_k) = (-i)^k\mathcal{H}_k\)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \(\alpha > 0\)、\(h > 0\)，并设 \(f: \mathbf{R} \to \mathbf{R}\) 是在区间 \([- \alpha, \alpha[\) 之外为零、在 \([- \alpha, 0]\) 与 \([0, \alpha]\) 上线性、在 0 处等于 \(h\) 的连续函数。我们有：
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\mathcal {F} (f) (t) = \frac {h}{\alpha \pi^ {2}} \frac {\sin^ {2} (\pi \alpha t)}{t ^ {2}}
+\]
+
+对 \(t \in R^{*}\) 成立。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathbf{N} \in \mathbf{N}\)。置 \(g(x) = \sum_{n=-\mathbf{N}}^{\mathbf{N}} f(x + n)\)。则：
+\end{enumerate}
+
+\[
+\mathcal {F} (g) (t) = \frac {h}{\alpha \pi^ {2}} \frac {\sin^ {2} (\pi \alpha t)}{t ^ {2}} \frac {\sin ((2 N + 1) \pi t)}{\sin (\pi t)}
+\]
+
+对 \(t\in \mathbf{R}^*\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  我们选取序列 \((\alpha_{i})_{i\geqslant1}\)、\((h_{i})_{\geqslant1}\)、\((\mathrm{N}_{i})_{i\geqslant1}\)，从而对每个整数 i，得到一个按 b) 的程序构造的函数 \(g_{i}\)。若 \(\sum_{i} h_{i} < +\infty\)，则级数 \(\sum_{i} g_{i}\) 一致收敛到 R 上的一个连续函数 G。
+\item
+  若
+\end{enumerate}
+
+\[
+\sum_ {i} \alpha_ {i} h _ {i} \mathrm{N} _ {i} <   + \infty , \quad \sum_ {i} \frac {h _ {i}}{\alpha_ {i}} \log \mathrm{N} _ {i} <   + \infty , \quad \sum_ {i} h _ {i} \mathrm{N} _ {i} = + \infty ,
+\]
+
+则 G 与 \(\mathcal{F}(\mathrm{G})\) 在 \(\mathbf{R}\) 上可积，但
+
+\[
+\sum_ {n = - \infty} ^ {+ \infty} \mathrm{G} (n) = + \infty .
+\]
+
+证明存在这类序列的例子。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\item
+  设 \(\mu \in \mathcal{M}^1 (\mathrm{G})\)。假设 \(\mathcal{F}(\mu)\in \mathrm{L}^1 (\widehat{\mathrm{G}})\)。则 \(\mu\) 是以 G 上的 Haar 测度为基的测度（INT，V，§5，第 2 节，定义 2），并且关于它具有一个连续密度。（利用 II，第 211 页命题 8 的滤子基 \(\mathfrak{B}\)。证明对淡拓扑有 \(\lim_{\varphi ,\mathfrak{B}}\varphi *\mu = \mu\)，且当 \(\varphi\) 属于 \(\mathfrak{B}\) 的一个元素时，有 \(\mathcal{F}(\varphi *\mu) = \mathcal{F}(\varphi)\mathcal{F}(\mu)\)；但 \(\mathcal{F}(\mu)\in \mathrm{L}^1 (\widehat{\mathrm{G}})\)，故 \(\varphi *\mu = \overline{\mathcal{F}} (\mathcal{F}(\varphi *\mu))\) 趋于 \(\overline{\mathcal{F}} (\mathcal{F}(\mu))\)（在 \(\mathcal{C}_0(\mathrm{G})\) 中）。于是 \(d\mu (x) = f(x)dx\)，其中 \(f = \overline{\mathcal{F}} (\mathcal{F}(\mu))\)。
+\item
+  设 H 是 G 的一个子群，并设 \(\mu \in \mathcal{M}^{1}(\widehat{\mathrm{G}})\)。要使 \(\mathcal{F}(\mu)\) 在 H 的元素给出的平移下不变，必须且只需 \(\mu\) 的支集含于 \(H^{\perp}\)。
+\item
+  设 \(f \in \mathrm{L}^1(\mathrm{G})\)。设 \(\mathrm{F}\) 是在开集 \(\mathrm{U}\)（\(\mathbf{C}\) 中的）内定义的全纯函数。假设 \(\mathrm{U}\) 包含 \(\mathcal{F}(f)\) 的值集，且当 \(\mathrm{G}\) 非离散时，再假设 \(0 \in \mathrm{U}\) 且 \(\mathrm{F}(0) = 0\)。
+\end{enumerate}
+
+则存在 \(g \in \mathrm{L}^{1}(\mathrm{G})\) 使 \(\mathrm{F} \circ \mathcal{F}(f) = \mathcal{F}(g)\)（利用全纯函数演算。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  设 \(p \in [1,2]\) 与 \(q \in [2, +\infty]\) 满足 \(1/p + 1/q = 1\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(f \in \mathcal{K}(G)\)。证明 \(\|\mathcal{F}(f)\|_{q} \leqslant \|f\|_{p}\)（这一不等式对 p = 1 与 p = 2 成立。一般情形，利用 M. Riesz 不等式（INT，IV，§6，习题 18）。）
+\item
+  由此推出 \(\mathcal{F}\) 在 \(\mathcal{K}(\mathrm{G})\) 上的限制可延拓为从 \(\mathrm{L}^p (\mathrm{G})\) 到 \(\mathrm{L}^q (\widehat{\mathrm{G}})\) 中的一个连续线性映射，它在 \(\mathrm{L}^p (\mathrm{G})\cap \mathrm{L}^1 (\mathrm{G})\) 上以及 \(\mathrm{L}^p (\mathrm{G})\cap \mathrm{L}^2 (\mathrm{G})\) 上都与 Fourier 变换相一致。
+\end{enumerate}
+
+9) 设 G 是一个局部紧群（不必交换），赋以一个左 Haar 测度。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  若 \(f \in \mathrm{L}^{1}(\mathrm{G})\)，则存在 \(f_{1}\) 与 \(f_{2}\)（属于 \(\mathrm{L}^{1}(\mathrm{G})\)）使 \(f_{1} * f_{2} = f\)（利用 I，第 185 页习题 30。）
+\item
+  设 \(f_{1}, f_{2} \in \mathrm{L}^{1}(\mathrm{G})\) 满足 \(f_{1} \geqslant 0, f_{2} \geqslant 0\)。证明 \(f_{1} * f_{2}\) 几乎处处等于一个下半连续函数。（把 \(f_{1}\) 看作由 \(\geqslant 0\) 的 \(\mathrm{L}^{\infty}(\mathrm{G})\) 中函数组成的一个递增序列的简单极限。）
+\item
+  取 G = R。对每个开区间 I = {]}a, b{[}，置
+\end{enumerate}
+
+\[
+\mathrm{A} (\mathrm{I}) = ] a, a + (b - a) / 6 [, \quad \mathrm{A} ^ {\prime} (\mathrm{I}) = ] a + 5 (b - a) / 6, b [.
+\]
+
+定义区间 \(I_{n}\)（对 \(n \geqslant 1\)）与 \(I_{n}^{\prime}\)（对 \(n \geqslant 0\)）如下：\(I_{0}^{\prime} = ]0, 1[\) 以及
+
+\[
+\mathrm{I} _ {n} = \mathrm{A} (\mathrm{I} _ {n - 1} ^ {\prime}), \qquad \mathrm{I} _ {n} ^ {\prime} = \mathrm{A} ^ {\prime} (\mathrm{I} _ {n - 1} ^ {\prime})
+\]
+
+对 \(n \geqslant 1\) 成立。设 F 是诸区间 \(\mathrm{I}_n\)（\(n \geqslant 1\)）的并。不存在子集偶 \((\mathrm{F}_1, \mathrm{F}_2)\)（\(\mathbf{R}\) 的）使 \(\mathrm{F}_1 + \mathrm{F}_2 = \mathrm{F}\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  若 f 是 R 上的一个连续函数 \(\geqslant 0\) 且满足 \(F = \{x \in \mathbf{R} | f(x) > 0\}\)，则不存在函数偶 \((f_{1}, f_{2})\)（属于 \(L^{1}(\mathbf{R})\)）满足 \(f_{1} \geqslant 0\)、\(f_{2} \geqslant 0\) 且 \(f = f_{1} * f_{2}\)。（假设这样一个等式成立。设 \(E_{i}\) 为 \(x \in R\) 中使 \(f_{i}(x) > 0\) 者所成的集。设 \(F_{i}\) 为 \(E_{i}\) 的密度点所成的集（INT，V，§6，习题 15）。证明 \(F = F_{1} + F_{2}\)。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\item
+  设 \(k \in Z\)。映射 \(x \mapsto x^{k}\)（从 G 到 G 的映射）是单射，当且仅当 \(\chi \mapsto \chi^{k}\)（\(\widehat{G}\) 到 \(\widehat{G}\) 的映射）是满射。
+\item
+  设 G 是一个有限交换群，d 是一个整数 \(\geqslant 1\)。证明对所有 \(x \in G\) 及每个 \(\chi \in \widehat{G}\)，有
+\end{enumerate}
+
+\[
+\sum_{\substack{y\in \mathrm{G}\\ y^{d} = x}}\chi (y) = \sum_{\substack{\eta \in \widehat{\mathrm{G}}\\ \eta^{d} = \chi}}\eta (x).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\item
+  设 \((\mathrm{G}_{i})_{i\in\mathrm{I}}\) 是一个局部紧交换群族。对每个 \(i\in I\)，设 \(H_{i}\) 是 \(G_{i}\) 的一个紧开子群。设 G 是诸 \(G_{i}\) 关于诸 \(H_{i}\) 的局部直积。对每个 \(\chi\in\widehat{G}\)，设 \(\chi_{i}\) 是 \(\chi\) 在 \(G_{i}\) 上的限制。证明 \(\chi\mapsto(\chi_{i})_{i\in\mathrm{I}}\) 是拓扑群 \(\widehat{G}\) 到诸 \(\widehat{G}_{i}\) 关于诸 \(H_{i}^{\perp}\) 的局部直积上的一个同构。
+\item
+  设 \(G_{d}\) 是赋以离散拓扑的群 G，并设 \(\chi\) 是 \(G_{d}\) 的一个酉特征标。对每个整数 \(n \geqslant 1\)、所有元素 \(x_{1}, \ldots, x_{n} \in G\) 及每个 \(\varepsilon > 0\)，存在 \(\widehat{x} \in \widehat{G}\) 使 \(|\langle\widehat{x}, x_{i}\rangle - \chi(x_{i})| \leqslant \varepsilon\)（对 \(1 \leqslant i \leqslant n\)）。（\(G_{d}\) 到 G 中的典范单射的对偶是 \(\widehat{G}\) 到 \(\widehat{G}_{d}\) 中的一个态射，其像由 II，第 229 页推论 5 是稠密的。）
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    空间 \(\mathrm{L}^{1}(\mathrm{G})\) 是 \(\mathcal{M}^{1}(\mathrm{G})\) 的一个闭理想，因而 \(\widehat{G}\) 可等同于 \(\mathsf{X}(\mathcal{M}^{1}(\mathrm{G}))\) 的一个开子集（参看 I，第 169 页习题 17）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathcal{M}_{d}(\mathrm{G})\)（相应地，\(\mathcal{M}_{a}(\mathrm{G})\)）为 \(\mu\in\mathcal{M}^{1}(\mathrm{G})\) 中弥散（相应地，原子）者所成的集。则 \(\mathcal{M}_{d}(\mathrm{G})\) 是 \(\mathcal{M}^{1}(\mathrm{G})\) 的一个闭理想，而 \(\mathcal{M}_{a}(\mathrm{G})\) 是 \(\mathcal{M}^{1}(\mathrm{G})\) 的一个闭子代数。
+\end{enumerate}
+
+15) 对每个整数 \(k \geqslant 1\)、E 中所有两两不同的元素 \(x_1, \ldots, x_k\) 以及所有整数 \(n_1, \ldots, n_k\)，关系 \(x_1^{n_1} \cdots x_k^{n_k} = e\) 蕴含 \(x_1^{n_1} = \cdots = x_k^{n_k} = e\)。我们称 E 是 Kronecker 集，如果 E 上每个绝对值为 1 的连续复值函数都是 G 的酉特征标在 E 上的一致极限。若 \(q\) 是一个整数 \(\geqslant 1\) 且 G = (Z/qZ) \(^{\mathbf{N}}\)，我们称 E 是 K \(_q\) 型的，如果每个从 E 到单位的 \(q\) 次根所成集合中的连续映射都在 E 上与 G 的一个酉特征标相一致。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 P 是一个紧 Kronecker 集。若 \(\mu \in \mathcal{M}^1 (\mathrm{G})\) 集中在 P 上，我们有 \(\| \mathcal{F}(\mu)\|_{\infty} = \| \mu \|\)。由此推出：每个在 P 上连续的复函数都是某个元素 \(f\in \mathrm{L}^{1}(\widehat{\mathrm{G}})\) 的 Fourier 变换的限制。
+\item
+  设 \(E \subset G\) 是一个有限独立集。设 f 是 E 上绝对值为 1 的一个复值函数。假设 \(f(x)^{q} = 1\)（当 \(x \in E\) 的阶为 q 时）。函数 f 是 G 的酉特征标在 E 上的一致极限。（利用习题 13。）
+\item
+  每个 Kronecker 集都是独立的，且只含无限阶的元素。
+\item
+  每个 \(K_{q}\) 型的集都是独立的。
+\item
+  设 \(k \geqslant 1\) 是整数，并设 \(V_{1}, \ldots, V_{k}\) 是 G 的非空两两不相交的开子集。若 e 在 G 中的每个邻域都含一个无限阶的元素，则存在 \(x_{i} \in V_{i}\)（对 \(1 \leqslant i \leqslant k\)）使 \(\{x_{1}, \ldots, x_{k}\}\) 是一个 Kronecker 集。若 \(\mathrm{G} = (\mathbf{Z}/q\mathbf{Z})^{\mathbf{N}}\)，则存在 \(x_{i} \in V_{i}\) 使 \(\{x_{1}, \ldots, x_{k}\}\) 是 \(K_{q}\) 型的。
+\item
+  设 \(E \subset G\) 是一个紧独立集，\(F = E \cup E^{-1}\)。设 \(\mu\) 是 G 上的一个有界弥散测度，集中在 F 上。则诸测度 \(\mu^{n}\)（\(n \geqslant 0\)）两两不相交，其中置 \(\mu^{0} = \varepsilon_{e}\) 与 \(\mu^{n} = \mu * \mu^{n-1}\)（对 \(n \geqslant 1\)）。（证明：若 m \textless{} n，则由 \((x_{1}, \ldots, x_{n}) \in G^{n}\) 中使 \(x_{1} \ldots x_{n} \in F^{m}\) 者所成的集对 \(\mu \otimes \cdots \otimes \mu\) 是可忽略的。）由此推出：若 \(\mu \geqslant 0\)，则有 \(\| \sum_{k=0}^{n} \alpha_{k} \mu^{k} \| = \sum_{k=0}^{n} |\alpha_{k}| \| \mu \|^{k}\)（不论复数 \(\alpha_{0}, \ldots, \alpha_{n}\) 如何）。
+\end{enumerate}
+
+\(g)\) 设 \(r \geqslant 1\) 是整数。设 E \(\subset\) G 是一个紧独立集，\(\mu_1, \ldots, \mu_r\) 是 \(\geqslant 0\) 的、质量为 1 的测度，集中在 E 的互不相交部分 E \(_1, \ldots, \text{E}_r\) 上。设 \(z_1, \ldots, z_r \in \mathbf{C}\) 满足 \(|z_i| \leqslant 1\)（对一切 \(i\)）。存在特征标 \(\chi\)（\(\mathcal{M}^1(\text{G})\) 的）使 \(\chi(\mu_i) = z_i\)（对 \(1 \leqslant i \leqslant r\)）。（首先按 \(f\) ) 中的推理证明：若 \((n_1, \ldots, n_r) \neq (m_1, \ldots, m_r)\)，则测度 \(\mu_1^{m_1} * \cdots * \mu_r^{m_r}\) 与 \(\mu_1^{n_1} * \cdots * \mu_r^{n_r}\) 不相交。其次，假设 \(|z_i| = 1\)（对一切 \(i\)），证明 \(\varepsilon_e + \overline{z}_1 \mu_1 + \cdots + \overline{z}_r \mu_r\) 的谱半径是 \(r+1\)，由此得到特征标 \(\chi\)（\(\mathcal{M}^1(\text{G})\) 的）使 \(\chi(\varepsilon_e + \overline{z}_1 \mu_1 + \cdots + \overline{z}_r \mu_r) = r+1\)；这一特征标即回答了问题。一般情形，写 \(z_i = \frac{1}{2}(z_i' + z_i'')\)（其中 \(|z_i'| = |z_i''| = 1\)），并写 \(\mu_i = \frac{1}{2}(\mu_i' + \mu_i'')\)，其中 \(\mu_1', \mu_1'', \ldots, \mu_r', \mu_r''\) 满足与 \(\mu_1, \ldots, \mu_r\) 相同的假设。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  设 \(\mathcal{M}_{d}(\mathrm{E})\) 是集中在 E 上的弥散测度所成的 Banach 空间。范数 \(\leqslant 1\) 的每个连续线性型（\(\mathcal{M}_{d}(\mathrm{E})\) 上的）都可延拓为 \(\mathcal{M}^{1}(\mathrm{G})\) 的一个特征标（利用 g)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{15}
+\tightlist
+\item
+  对每个复数 \(s\)（满足 \(\mathcal{R}(s) > 1\)），我们记
+\end{enumerate}
+
+\[
+\zeta (s) = \sum_ {n \geqslant 1} \frac {1}{n ^ {s}}
+\]
+
+（“Riemann ζ 函数”）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  函数 \(\zeta\) 在 \(\mathbf{C}\) 的由复数 \(s\)（满足 \(\mathcal{R}(s) > 1\)）所组成的开集上是全纯的。
+\item
+  对 \(y\in \mathbf{R}_+^*\)，置
+\end{enumerate}
+
+\[
+\theta (y) = \sum_ {n \in {\bf Z}} e ^ {- \pi n ^ {2} y};
+\]
+
+此级数在 \(R_{+}^{*}\) 的紧子集上绝对且一致收敛。对每个满足 \(\mathcal{R}(s)>1\) 的 s，有
+
+\[
+\pi^ {- s / 2} \Gamma (s / 2) \zeta (s) = \frac {1}{2} \int_ {0} ^ {+ \infty} \theta (y) y ^ {s / 2} \frac {d y}{y}
+\]
+
+（关于复平面中的 Γ 函数，参看 FVR，VII，第 10 页。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  对每个 \(y \in R_{+}^{*}\)，有 \(\theta(y^{-1}) = \sqrt{y}\theta(y)\)。（利用 Poisson 公式与习题 1。）
+\item
+  对每个 \(s\)（满足 \(\mathcal{R}(s) > 1\)），有
+\end{enumerate}
+
+\[
+\pi^ {- s / 2} \Gamma (s / 2) \zeta (s) = \frac {1}{s (s - 1)} + \frac {1}{2} \int_ {1} ^ {+ \infty} (\theta (y) - 1) (y ^ {s / 2} + y ^ {(1 - s) / 2}) \frac {d y}{y}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\item
+  存在唯一的在 \(\mathbf{C} = \{1\}\) 上的全纯函数，它在实部 \(>1\) 的复数所成的开集上的限制与 \(\zeta\) 相一致。这个函数仍记作 \(\zeta\)，满足 \((s - 1)\zeta(s) \to 1\)（当 \(s \to 1\) 时）（*换言之，它在 \(s = 1_*\) 处有一个留数为 1 的单极点。）
+\item
+  由下式定义的函数 \(\Lambda\)
+\end{enumerate}
+
+\[
+\Lambda (s) = \pi^ {- s / 2} \Gamma (s / 2) \zeta (s)
+\]
+
+在 \(\mathbf{C} = \{0,1\}\) 上是全纯的；它在 \(s = 0\) 与 \(s = 1\) 处有留数为 1 的单极点。我们有 \(\Lambda(1 - s) = \Lambda(s)\)（对所有 \(s \in \mathbf{C} = \{0,1\}\)）。
+
+\(g)\) 证明对所有 \(s \in \mathbf{C}\)（满足 \(\mathcal{R}(s) > 1\)），有
+
+\[
+\zeta (s) = \prod_ {p} (1 - p ^ {- s}) ^ {- 1},
+\]
+
+其中乘积取遍素数集合，且绝对收敛（“Euler 乘积”）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  当 \(\sigma > 1\) 趋于 1 时，我们有
+\end{enumerate}
+
+\[
+\sum_ {p} p ^ {- \sigma} = \log \left(\frac {1}{\sigma - 1}\right) + O (1),
+\]
+
+其中求和取遍素数。
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\tightlist
+\item
+  每个 \(s \in C - \{1\}\)（满足 \(\zeta(s) = 0\)）或者形如 \(s = -2k\)（其中 \(k \geqslant 1\) 是整数），或者满足 \(0 \leqslant \mathcal{R}(s) \leqslant 1\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  我们有 \(\zeta(s) \neq 0\)（若 \(\mathcal{R}(s) = 1\) 且 \(s \neq 1\)）。（利用 Euler 乘积证明
+\end{enumerate}
+
+\[
+\zeta (\sigma) ^ {3} \zeta (\sigma + i t) ^ {4} \zeta (\sigma + 2 i t) \geqslant 1
+\]
+
+对所有 \(\sigma > 1\) 与 \(t \in \mathbf{R}\) 成立，然后考察 \(t\)（满足 \(\zeta(1 + it) = 0\)）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  设 \(q \geqslant 1\) 是整数，并设 \(a \geqslant 1\) 是与 \(q\) 互素的整数。设 \(\widetilde{\chi}\) 是群 \((\mathbf{Z}/q\mathbf{Z})^*\) 的一个特征标。用 \(\chi\) 表示从 \(\mathbf{Z}\) 到 \(\mathbf{C}\) 中的这样一个映射：\(\chi(n) = 0\)（若 \(n\) 与 \(q\) 不互素），而在相反的情形 \(\chi(n) = \widetilde{\chi}(n \pmod{q})\)（“Dirichlet 特征”）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  假设 \(\widetilde{\chi}\) 非平凡。由下式定义的函数
+\end{enumerate}
+
+\[
+\mathrm{L} (s, \chi) = \sum_ {n \geqslant 1} \chi (n) n ^ {- s}
+\]
+
+在 C 的由满足 \(\mathcal{R}(s) > 1\) 的复数组成的开集 U 上是全纯的，且在 \(\mathcal{R}(s) > 0\) 上存在唯一的与之在 U 上相一致的全纯函数。我们有
+
+\[
+\mathrm{L} (s, \chi) = \prod_ {p} (1 - \chi (p) p ^ {- s}) ^ {- 1}
+\]
+
+对 \(s \in U\)，其中乘积取遍素数，且在 U 的紧子集上绝对且一致收敛（“Dirichlet L 函数”）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  假设 \(\widetilde{\chi}^{2}\) 非平凡。我们有 \(L(1,\chi)\neq0\)。（改编上一习题问题 j) 的方法。）
+\item
+  假设 \(\widetilde{\chi}\) 的阶为 2。对每个整数 \(n \geqslant 1\)，我们记
+\end{enumerate}
+
+\[
+r _ {\chi} (n) = \sum_ {d | n} \chi (d)
+\]
+
+其中求和取遍 n 的因子 \(d \geqslant 1\)。存在实数 c \textgreater{} 0，使得对每个 \(x \geqslant 2\)，有
+
+\[
+\sum_ {n \leqslant x} \frac {r _ {\chi} (n)}{\sqrt {n}} \geqslant c \log (x)
+\]
+
+（注意映射 \(r_{\chi}\) 是 \(\geqslant 0\) 的且是可乘的，即若 n 与 m 互素，则 \(r_{\chi}(nm) = r_{\chi}(n)r_{\chi}(m)\)；并注意若 n 是一个整数的平方，则 \(r_{\chi}(n) \geqslant 1\)。）
+
+\(d)\) 仍假设 \(\widetilde{\chi}\) 的阶为 2。我们有
+
+\[
+\sum_ {n \leqslant x} \frac {r _ {\chi} (n)}{\sqrt {n}} = \frac {1}{2} \mathrm{L} (1, \chi) x ^ {1 / 2} + \mathrm{O} (1)
+\]
+
+当 \(x \to +\infty\) 时。由此推出 \(\mathrm{L}(1, \chi) \neq 0\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  当 \(\sigma > 1\) 趋于 1 时，有
+\end{enumerate}
+
+\[
+\sum_ {p \equiv a \text {mod.} q} p ^ {- \sigma} = \frac {1}{\varphi (q)} \sum_ {p} p ^ {- \sigma} + \mathrm{O} (1),
+\]
+
+其中 \(\varphi(q)\) 是 \(q\) 的 Euler 指示函数（A，V，第 76 页）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  存在无穷多个与 a 模 q 同余的素数（“Dirichlet 算术级数定理”）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \(n \in N\)，并设 \(f \in \mathcal{S}(\mathbf{R}^{n})\)。从 \(R \times R^{n}\) 到 C 的、由下式定义的函数
+  \end{enumerate}
+\end{enumerate}
+
+\[
+u (t, x) = \int_ {\mathbf {R} ^ {n}} \widehat {f} (y) \exp (2 \pi i x \cdot y - 4 \pi^ {2} t \| y \| ^ {2}) d y
+\]
+
+对 \((t,x)\in\mathbf{R}\times\mathbf{R}^{n}\) 满足
+
+\[
+\left\{ \begin{array}{l} u (0, x) = f (0, x) \\ \partial_ {t} u = i \Delta_ {2} u, \end{array} \right.\tag{1}
+\]
+
+（“Schrödinger 方程”）其中
+
+\[
+\Delta_ {2} u = \sum_ {i = 1} ^ {n} \partial_ {x _ {i}} ^ {2} u.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  函数 \(u\) 是 (1) 的唯一解，使得 \(t \mapsto (x \mapsto u(t,x))\) 属于 \(\mathcal{C}^{\infty}(\mathbf{R},\mathcal{S}(\mathbf{R}^{n}))\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{18}
+\item
+  设 \(n \in N\)，并设 \(f \in \mathrm{L}^{1}(\mathbf{R}^{n})\)（相应地，\(\mathrm{L}^{2}(\mathbf{R}^{n})\)）满足 \(f \circ \sigma = f\)（对 \(\sigma\)，即特殊正交群 \(\mathrm{SO}(n, \mathbf{R})\) 的每个元素）。则 f 的 Fourier 变换 \(\widehat{f}\) 满足 \(\widehat{f}(\sigma(y)) = \widehat{f}(y)\)（对所有 \(\sigma \in \mathrm{SO}(n, \mathbf{R})\) 及每个 \(y \in R^{n}\)；相应地，对几乎每个 \(y \in R^{n}\)）。
+\item
+  设 \(n \geqslant 1\) 是整数。我们把 \(R_{+}^{*} \times S_{n}\) 与 \(R^{n+1} - \{0\}\) 借助映射 \((t, z) \mapsto tz\) 等同。设 \(\omega\) 是球面 \(S_{n} \subset R^{n+1}\) 上在 \(\mathbf{O}(n + 1, \mathbf{R})\) 下不变的唯一测度，使得测度 \(t^{n}dt \otimes \mu\) 与 \(R^{n+1} - \{0\}\) 上的 Lebesgue 测度等同（参看 INT，VII，第 116 页，习题 8）。设 \(\mu\) 是 \(R^{n+1}\) 上测度 \(\omega\) 在 \(S_{n}\) 到 \(R^{n+1}\) 中的单射下的像测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  我们有 \(\mu (\mathbf{S}_n) = 2\pi^{(n + 1) / 2}\Gamma (\frac{n + 1}{2})^{-1}\)（参看 INT，V，§8，第 7 节）。
+\item
+  对每个实数 \(k \geqslant 0\)，用下式定义函数 \(J_{k} \colon R_{+} \to C\)：
+\end{enumerate}
+
+\[
+\mathrm{J} _ {k} (t) = \frac {(t / 2) ^ {k}}{\Gamma (k + \frac {1}{2}) \Gamma (\frac {1}{2})} \int_ {- 1} ^ {1} e ^ {i u t} (1 - u ^ {2}) ^ {k - 1 / 2} d u
+\]
+
+对 \(t \in R_{+}\)（“第一类 Bessel 函数”）。对每个 \(x \in R^{n+1}\)，有
+
+\[
+\mathcal {F} (\mu) (x) = \frac {2 \pi}{\| x \| ^ {(n - 1) / 2}} \mathrm{J} _ {(n - 1) / 2} (2 \pi \| x \|)
+\]
+
+其中 \(\|x\|\) 是 Euclid 范数。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  若 \(k\in \mathbf{N}\)，有
+\end{enumerate}
+
+\[
+\mathrm{J} _ {k} (t) = \frac {1}{2 \pi} \int_ {0} ^ {2 \pi} \cos (t \sin (u) - k u) d u
+\]
+
+对所有 \(t \in R_{+}\) 成立。
+
+\(d)\) 若 \(n\) 为偶数，证明 \(\mathcal{F}(\mu)(x)\) 是 \(\| x\|^{\pm 1/2}\)、\(\cos(2\pi \| x\|)\) 与 \(\sin(2\pi \| x\|)\) 的多项式；对 \(n=2\)，有
+
+\[
+\mathcal {F} (\mu) (x) = \frac {\sin (2 \pi \| x \|)}{2 \pi \| x \|}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 g 是 \(R_{+}^{*}\) 中具有紧支集的连续函数。置 \(f(x) = g(\|x\|^{2}) \|x\|^{1-n/2}\)（对所有 \(x \in R^{n}\)）。则我们有 \(\widehat{f}(y) = h(\|y\|^{2}) \|y\|^{1-n/2}\)（对 \(y \in R^{n}\)），其中
+\end{enumerate}
+
+\[
+h (s) = \pi \int_ {0} ^ {+ \infty} g (t) \mathrm{J} _ {n / 2 - 1} (2 \pi \sqrt {t s}) d t
+\]
+
+对所有 \(s \in \mathbf{R}_{+}\)（“Hankel 变换”）。
+
+21) 设 H 是 G 的闭子群，f 是 L¹(G) 中使 \(\mathcal{F}(f)\) 在 H⊥ 上为零的元素。设 \(\varepsilon > 0\)。存在集中在 H 上的测度 \(\mu \in \mathcal{M}^1(G)\) 使得 \(\| \mu \| \leqslant 2\)、\(\| f * \mu \| \leqslant \varepsilon\)，且使 \(\mathcal{F}(\mu) = 1\) 在 H⊥ 的一个邻域内等于 1。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{21}
+\tightlist
+\item
+  设 \(p\) 是素数。设 \(K\) 是 \(\mathbf{Q}_p\)（\(p\) 进数域）的一个有限扩张；它是一个局部紧非离散域。设 \(t: K \to \mathbf{Q}_p\) 是迹映射。用 \(\lambda: \mathbf{Q}_p \to \mathbf{Q}\) 表示 II，第 237 页命题 20 中定义的映射。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  K 的加法群借助映射 \((x,y)\mapsto\exp(2i\pi\lambda(t(xy)))\) 与自身对偶。我们用这个映射把 K 与其对偶等同。
+\end{enumerate}
+
+对每个整数 \(n \geqslant 1\)，我们用 \(\mathcal{S}(\mathrm{K}^{n})\) 表示从 \(K^{n}\) 到 C 的局部常值且具有紧支集的函数所成的复向量空间。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Fourier 变换在 \(\mathcal{S}(K^{n})\) 上的限制是一个自同构，其逆是 Fourier 余变换的限制。
+\item
+  对每个实数 \(p \in [1, +\infty[\)，空间 \(\mathcal{S}(\mathrm{K}^n)\) 在 \(\mathrm{L}^p (\mathrm{K}^n)\) 中稠密。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{22}
+\tightlist
+\item
+  设 \(p \geqslant 3\) 是素数，\(k \geqslant 1\) 是整数。我们记 \(G = F_{p}^{k}\)。给 G 赋以总质量为 1 的 Haar 测度，并把 \(\widehat{G}\) 与 G 借助下述映射等同：该映射把 \(n = (n_{1}, \ldots, n_{k}) \in G\) 映为特征标
+\end{enumerate}
+
+\[
+e _ {n} \colon x \mapsto \exp \left(\frac {2 i \pi}{p} \sum_ {j = 1} ^ {k} n _ {j} x _ {j}\right).
+\]
+
+对函数 \(f_{1}, f_{2}, f_{3}\)（从 G 到 \(\mathbf{C}\)），我们记
+
+\[
+\Lambda (f _ {1}, f _ {2}, f _ {3}) = \frac {1}{p ^ {2 k}} \sum_ {x \in \mathrm{G}} \sum_ {h \in \mathrm{G}} f _ {1} (x) f _ {2} (x + h) f _ {3} (x + 2 h).
+\]
+
+我们用 \(\| f\|\) 表示 \(f\) 在 \(\mathrm{L}^2 (\mathrm{G})\) 中的范数。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+我们有
+\end{enumerate}
+
+\[
+\Lambda (1, f _ {2}, f _ {3}) = \left(\frac {1}{p ^ {k}} \sum_ {x \in \mathrm{G}} f _ {2} (x)\right) \left(\frac {1}{p ^ {k}} \sum_ {x \in \mathrm{G}} f _ {3} (x)\right)
+\]
+
+以及
+
+\[
+\Lambda (1, 1, f _ {3}) = \frac {1}{p ^ {k}} \sum_ {x \in \mathrm{G}} f _ {3} (x).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+我们有
+\end{enumerate}
+
+\[
+\Lambda (f _ {1}, f _ {2}, f _ {3}) = \sum_ {t \in \mathrm{G}} \widehat {f} _ {1} (t) \widehat {f} _ {2} (- 2 t) \widehat {f} _ {3} (t),
+\]
+
+以及
+
+\[
+| \Lambda (f _ {1}, f _ {2}, f _ {3}) | \leqslant \| f _ {1} \| \| f _ {2} \| \| \widehat {f _ {3}} \| _ {\infty}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(f \colon \mathbf{G} \to \mathbf{R}\) 是满足 \(\sum f(x) = 0\) 的函数。存在一个仿射超平面 \(\mathrm{H} \subset \mathrm{G}\) 使得
+\end{enumerate}
+
+\[
+\frac {1}{p ^ {k - 1}} \sum_ {x \in \mathrm{H}} f (x) \geqslant \frac {1}{2} \| \widehat {f} \| _ {\infty}
+\]
+
+（证明存在元素 \(t \in \mathbf{G}\) 与 \(\theta \in \mathbf{R}\)，使得 \(p^{-k} \sum_{x} f(x)(e_t(x) \exp(i\theta) + 1)\) 的实部等于 \(\| \widehat{f} \|_{\infty}\)。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 A ⊂ G 不含长度为 3 的算术级数，即不存在 x ∈ A 与 h ∈ G = \{0\} 使得 x + h 与 x + 2h 也属于 A。证明存在一个仿射超平面 H ⊂ G 使得
+\end{enumerate}
+
+\[
+\frac {\operatorname{Card} (\mathrm{A} \cap \mathrm{H})}{\operatorname{Card} (\mathrm{H})} \geqslant \frac {\operatorname{Card} (\mathrm{A})}{\operatorname{Card} (\mathrm{G})} + \frac {1}{2} \left(\left(\frac {\operatorname{Card} (\mathrm{A})}{\operatorname{Card} (\mathrm{G})}\right) ^ {2} - \frac {1}{p ^ {k}}\right)
+\]
+
+（把前面的问题应用于 \(f = \varphi_{A} - |A|/p^{k}\)，其中 \(\varphi_{A}\) 是 A 的特征函数。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 A ⊂ G 不含长度为 3 的算术级数。证明 \(\text{Card}(A) \leqslant 3p^{k}/k\)（“关于 \(F_{p}^{k}\) 的 Roth 定理 »）。
+\end{enumerate}
+
+24) a) 设 δ \textgreater{} 0。若 p 是一个充分大的素数，且 A 是 Z/pZ 的子集并满足 Card(A) ≥ δp，则 A 含一个长度为 3 的算术级数。（改编前一习题的方法。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\delta > 0\)。若 N 是充分大的整数且 A \(\subset \{1, \ldots, N\}\) 满足 \(\operatorname{Card}(A) \geqslant \delta N\)，则 A 含一个长度为 3 的算术级数。（适当选取 \(p\)（作为 N 的函数）化归为前一问题的情形。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{24}
+\tightlist
+\item
+  我们用 \(\mu_{G}\) 表示 G 上给定的 Haar 测度。设 \(\mu\) 是 G 上的一个复测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(\mu\) 的 Fourier 变换的像是有限的，当且仅当 \(\mu\) 是幂等测度的一个线性组合，即测度 \(\nu\)（满足 \(\nu * \nu = \nu\)）的线性组合。
+\item
+  \(\mathcal{F}_{\mathrm{G}}(\mu)\) 的支集是有限的，当且仅当 \(\mu\) 是测度 \(\widehat{x}\mu_{G}\) 的一个有限线性组合（其中 \(\widehat{x} \in \widehat{G}\)）。
+\item
+  我们用 \(A_{\mu}\) 表示形如 \(\widehat{x}\mu\)（\(\widehat{x}\in\widehat{G}\)）的测度所成的集。\(\nu\in A_{\mu}\) 中满足 \(\nu(\mathrm{G})\neq0\) 的测度所成的集是有限的，当且仅当存在 G 的一个闭子群 H、一个有限集 K、特征标 \(\widehat{x}_{k}\)（对 \(k\in K\)）与复数 \(t_{k}\)（对 \(k\in K\)）使得
+\end{enumerate}
+
+\[
+\nu = \Bigl (\sum_ {k \in \mathrm{K}} t _ {k} \widehat {x} _ {k} \Bigr) i (\mu_ {\mathrm{H}})
+\]
+
+其中 i 表示 H 到 G 中的典范包含映射。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{25}
+\tightlist
+\item
+对每个紧交换群 H，我们用 \(\mu_{H}\) 表示 H 上的规范化 Haar 测度。
+\end{enumerate}
+
+假设 G 是紧的。我们用 \(E_{G}\) 表示 G 上由这样的复测度 \(\mu\) 组成的集：\(\mu\) 的 Fourier 变换取整数值。它是 \(\mathcal{M}^{1}(G)\) 的一个交换子群，且包含 Haar 测度 \(\mu_{G}\)。我们用 \(F_{G}\) 表示 \(E_{G}\) 的由诸测度 \(\widehat{x} i_{\mathrm{H}}(\mu_{\mathrm{H}})\) 生成的子群，其中 H 取遍 G 的闭子群（\(i_{H}\) 表示 H 到 G 中的典范包含），而 \(\widehat{x}\) 取遍 \(\widehat{G}\)。
+
+  这个习题的目标是证明 \(E_{G} = F_{G}\)（Cohen 幂等元定理）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(\varphi\colon\mathrm{G}_{1}\to\mathrm{G}_{2}\) 是紧交换群的一个态射。映射 \(\mu\mapsto\varphi(\mu)\) 是从 \(\mathrm{E}_{\mathrm{G}_{1}}\) 到 \(\mathrm{E}_{\mathrm{G}_{2}}\) 中的一个群同态。
+\item
+  对每个 \(\mu \in \mathrm{E}_{\mathrm{G}}\) 与每个 \(\widehat{x} \in \widehat{\mathrm{G}}\)，有 \(\widehat{x}\mu_{\mathrm{G}} \in \mathrm{E}_{\mathrm{G}}\)。
+\end{enumerate}
+
+  设 \(\mu\) 是 G 上的一个复测度。我们用 \(\theta\) 表示 G 上满足 \(\mu = \theta |\mu|\) 的函数。用 \(\mathrm{A}_{\mu} \subset \mathcal{M}^{1}(\mathrm{G})\) 表示形如 \(\widehat{x}\mu\) 的测度所成的集。设 \(\nu\) 是 \(\mathrm{A}_{\mu}\) 在 \(\mathcal{M}^{1}(\mathrm{G})\) 中的一个附着点。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  若 \(\nu\) 不属于 \(\mathrm{A}_{\mu}\)，则 \(\nu\) 关于 \(\mu_{\mathrm{G}}\) 是奇异的。\\
+\item
+  设 \(\varepsilon > 0\)。设 \(f \in \mathcal{C}(\mathrm{G})\) 是范数 \(\leqslant 1\) 且满足 \(\nu(f) > (1 - \varepsilon)\|\mu\|\) 的函数，并设 \(\widehat{x} \in \widehat{\mathrm{G}}\) 满足 \(\mathcal{R}(\mu(\widehat{x} f)) > (1 - \varepsilon)\|\mu\|\)。证明
+\end{enumerate}
+
+\[
+\int_ {\mathrm{G}} | 1 - f \widehat {x} \theta | d | \mu | \leqslant 3 \varepsilon^ {1 / 2} \| \mu \|.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\item
+  假设 \(\mu \in \mathrm{E}_{\mathrm{G}}\)。证明 \(\| \nu \| \leqslant \| \mu \| - 1 / (36 \| \mu \|)\)。（把前一问题应用于两个特征标 \(\widehat{x}_1\) 与 \(\widehat{x}_2\)（满足 \(\widehat{x}_1 \mu \neq \widehat{x}_2 \mu\)），并注意 \(\| \widehat{x}_1 \mu - \widehat{x}_2 \mu \| \geqslant 1\)。）
+\item
+  由此得出 \(E_{G} = F_{G}\)，且更精确地，每个测度 \(\mu\)（\(E_{G}\) 中的）都可写成
+\end{enumerate}
+
+\[
+\mu = \sum_ {k \in \mathrm{K}} n _ {k} \widehat {x} _ {k} i (\mu_ {\mathrm{H} _ {k}})
+\]
+
+其中集合 K 是有限的，\(n_{k} \in Z\)，\(\widehat{x}_{k} \in \widehat{G}\)，且诸测度 \(i(\mu_{\mathrm{H}_{k}})\) 两两不相交。（设 \(\mu \in E_{G}\)；证明存在测度 \(\nu \neq 0\)（在 \(\{\nu \in A_{\mu} \mid \nu(G) \neq 0\}\) 的闭包中且范数最小）；然后利用 e) 证明 \(\{\widehat{x} \in \widehat{G} \mid \nu(\widehat{x}) \neq 0\}\) 是有限集，并应用前一习题。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{26}
+\tightlist
+\item
+  设 \(f\) 是 \(\mathcal{S}(\mathbf{R})\) 中的一个函数，其 \(\mathrm{L}^2\) 范数等于 1。我们有（不确定性原理）不等式
+\end{enumerate}
+
+\[
+\left(\int_ {\mathbf {R}} x ^ {2} | f (x) | ^ {2} d x\right) \left(\int_ {\mathbf {R}} t ^ {2} | \widehat {f} (t) | ^ {2} d t\right) \geqslant \frac {1}{(4 \pi) ^ {2}}
+\]
+
+（注意到
+
+\[
+- \frac {1}{2} = \mathcal {R} \Bigl (\int_ {\mathbf {R}} x f (x) \overline {{f ^ {\prime} (x)}} d x \Bigr),
+\]
+
+并应用 Cauchy–Schwarz 不等式。）确定等号成立的情形。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{27}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+  设 \(\delta > 0\) 是实数。不存在可积、非零且具有紧支集的函数 \(f: \mathbf{R} \to \mathbf{C}\)，使得 \(\widehat{f}(y) = \mathrm{O}(\exp(-\delta|y|))\)（当 \(|y| \to +\infty\) 时）（特别地，不存在使 \(\widehat{f}\) 也具有紧支集的这种函数。）
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \((\varrho_{n})_{n\geqslant1}\) 是一个严格正实数组成的可和序列。乘积
+\end{enumerate}
+
+\[
+g (x) = \prod_ {n \geqslant 1} \frac {\sin (\varrho_ {n} x)}{\varrho_ {n} x},
+\]
+
+（在 x = 0 处定义为等于 1）在 R 的每个紧子集上绝对且一致收敛。它定义了一个连续、非零、偶的函数，使得 \(g \in \mathrm{L}^{1}(\mathbf{R})\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(\varrho\) 是级数 \(\sum \varrho_{n}\) 的和。\(g\) 的 Fourier 变换的支集含于 \([- \varrho, \varrho]\)。
+\end{enumerate}
+
+\(d)\) 设 \(r > 0\) 是实数。设 \(\delta: \mathbf{R}_{+} \to \mathbf{R}_{+}^{*}\) 是一个递减函数，满足 \(\delta(y) \to 0\)（当 \(y \to +\infty\) 时）；\(y \mapsto \delta(y)/y\) 关于 Lebesgue 测度在 \([1, +\infty[\) 上可积；且 \(y\delta(y) \to +\infty\)（当 \(y \to +\infty\) 时）。存在连续函数 \(f \in \mathrm{L}^{1}(\mathbf{R})\)，其紧支集含于 \([-r, r]\)，使得
+
+\[
+\widehat {f} (y) = \mathrm{O} (\exp (- \delta (| y |) | y |))
+\]
+
+当 \(|y| \to +\infty\) 时（首先证明存在一个由严格正实数组成的递减可和序列 \((\varrho_n)\)，使得 \(\varrho \leqslant r\) 且 \(\varrho_n \geqslant e\delta(n)n^{-1}\)（对所有充分大的 \(n\)）。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{28}
+\tightlist
+\item
+  设 \(f\in \mathrm{L}^2 (\mathbf{R})\) 满足
+\end{enumerate}
+
+\[
+\int_ {\mathbf {R}} | f (x) | ^ {2} e ^ {x ^ {2}} d x \leqslant 1, \quad \int_ {\mathbf {R}} | \widehat {f} (y) | ^ {2} e ^ {y ^ {2}} d y \leqslant 1.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+对每个整数 \(n \in \mathbf{N}\)，由下式定义的函数 \(g_n\)
+\end{enumerate}
+
+\[
+g _ {n} (z) = \left(\int_ {\mathbf {R}} f (x) x ^ {n} \exp (- z x ^ {2} / 2) d x\right) ^ {2}
+\]
+
+在开集 \(\mathrm{U} = \{z \in \mathbf{C} \mid \mathcal{R}(z) > -1\}\)（\(\mathbf{C}\) 的）中是全纯的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+对每个整数 \(n \in \mathbf{N}\)，由下式定义的函数 \(h_n\)
+\end{enumerate}
+
+\[
+h _ {n} (z) = \frac {(- 1) ^ {n}}{z ^ {2 n + 1}} \left(\int_ {\mathbf {R}} \widehat {f} (y) y ^ {n} \exp (- y ^ {2} / (2 z)) d y\right) ^ {2}
+\]
+
+在开集 \(\mathrm{V} = \{z \in \mathbf{C} \mid \mathcal{R}(z^{-1}) > -1\} = \{z \in \mathbf{C} \mid |z + 1/2| > 1/2\}\)（\(\mathbf{C}\) 的）中是全纯的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+存在一个全纯函数 \(k_{0}\)（在 \(U \cup V = C - \{-1\}\) 中）使得 \(k_{0}|U = g_{0}\) 且 \(k_{0}|V = h_{0}\)。
+\item
+  函数 \(k_{0}\) 为零。（证明存在 \(c \in C\) 使得 \(|k_{0}(z)| \leqslant c/|z+1|\)（对所有 \(z \in C - \{-1\}\)），并对 \(z \mapsto (z+1)k_{0}(z).\) 应用 Liouville 定理。）
+\item
+    对 \(n \in \mathbf{N}\) 用归纳法证明：存在一个全纯函数 \(k_n\)（取值于 \(\mathrm{U} \cup \mathrm{V} = \mathbf{C} - \{-1\}\) 中），使得 \(k_n | \mathrm{U} = g_n\) 且 \(k_n | \mathrm{V} = h_n\)；然后证明 \(k_n = 0\) f) 我们有 \(f = 0\)。
+\item
+  设 \(a, b > 0\) 满足 \(ab \geqslant 1\)。若 \(f \in \mathrm{L}^2(\mathbf{R})\) 满足
+\end{enumerate}
+
+\[
+\int_ {\mathbf {R}} | f (x) | ^ {2} e ^ {a x ^ {2}} d x <   + \infty , \qquad \int_ {\mathbf {R}} | \widehat {f} (y) | ^ {2} e ^ {b y ^ {2}} d y <   + \infty ,
+\]
+
+则 \(f = 0\)（“Hardy 不确定性原理”）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{29}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    对每个 \(x_0 \in \mathbf{T}\)，存在 \(f \in \mathcal{C}(\mathbf{T})\)，使得 \(f\) 的 Fourier 级数在点 \(x_0\) 处不对称地收敛于 \(f(x_0)\)。（设 \(s_n(f)\) 为 \(f\) 的 Fourier 级数的对称部分和；考察线性映射 \(f \mapsto s_n(f)(x_0)\) 并应用 Banach–Steinhaus 定理。）
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  存在 \(f \in \mathrm{L}^{1}(\mathbf{T})\)，使得 f 的 Fourier 级数在 \(\mathrm{L}^{1}(\mathbf{T})\) 中不对称地收敛到 f。
+\item
+  Fourier 变换从 \(\mathrm{L}^{1}(\mathbf{T})\) 到由在无穷远处趋于 0 的序列 \((c_{n})_{n\in\mathbf{Z}}\) 所成的 Banach 空间中不是满射。（应用 EVT，I，第 19 页推论 1。）
+\end{enumerate}
+
+\(d)\) 假设 \(f \in \mathcal{C}^1(\mathbf{T})\)。序列 \(s_n(f)\) 收敛到 \(f\)（在 \(\mathcal{C}(\mathbf{T})\) 中）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{30}
+\tightlist
+\item
+  设 \(r \geqslant 1\) 为整数。我们用 \(\mathcal{S}(\mathbf{T}^r)\) 表示 \(\mathbf{T}^r\) 上无穷次可微函数所成的复向量空间，并用 \(\mathcal{S}(\mathbf{Z}^r)\) 表示由满足如下条件的函数 \(f\colon \mathbf{Z}^r \to \mathbf{C}\) 所成的复向量空间：对每个实数 \(A > 0\)，有 \(f(n) = O(\|n\|^{-A})\)（当 \(\|n\| \to +\infty\) 时）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  赋以半范数
+\end{enumerate}
+
+\[
+p _ {\mathrm{A}} (f) = \sup _ {n \in \mathbf {Z} ^ {r}} \| n \| ^ {\mathrm{A}} | f (n) |,
+\]
+
+时，空间 \(\mathcal{S}(\mathbf{Z}^{r})\) 是一个 Fréchet 空间。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  对每个实数 \(p \in [1, +\infty[\)，空间 \(\mathcal{S}(\mathbf{Z}^{r})\)（相应地，空间 \(\mathcal{S}(\mathbf{T}^{r})\)）在 \(\mathrm{L}^{p}(\mathbf{Z}^{r})\)（相应地，在 \(\mathrm{L}^{p}(\mathbf{T}^{r})\) 中）稠密。
+\item
+  \(T^{r}\) 的 Fourier 变换在 \(\mathcal{S}(\mathbf{T}^{r})\) 上的限制是一个从 \(\mathcal{S}(\mathbf{T}^{r})\) 到 \(\mathcal{S}(\mathbf{Z}^{r})\) 中的同构，其逆是 Fourier 余变换的限制。
+\end{enumerate}
+
+\(d)\) 拓扑向量空间 \(\mathcal{S}(\mathbf{Z}^{r})\) 同构于 \(\mathcal{S}(\mathbf{R}^{n})\)，特别地，\(c\) 是一个 Montel 空间。（利用习题 3。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{31}
+\tightlist
+\item
+  设 G 是一个有限交换群。我们给 G 赋以总质量为 1 的 Haar 测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明若 f 非零，则
+\end{enumerate}
+
+\[
+\operatorname{Card} (\operatorname{Supp} (f)) \operatorname{Card} (\operatorname{Supp} (\widehat {f})) \geqslant \operatorname{Card} (\mathrm{G})
+\]
+
+不确定性原理；注意
+
+\[
+\| \widehat {f} \| _ {\infty} \leqslant \frac {1}{\mathrm{Card(G)}} \sum_ {x \in \mathrm{G}} | f (x) |
+\]
+
+并应用 Cauchy–Schwarz 不等式与 Plancherel 公式。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  确定等号成立的情形。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{32}
+\tightlist
+\item
+  对每个整数 \(r \geqslant 1\)，我们用 \(\mathrm{V}_{r} = \det((x_{i}^{j})_{\substack{1 \leqslant i \leqslant r \\ 0 \leqslant j < r}}) \in \mathbf{Z}[x_{1}, \ldots, x_{r}]\) 表示 Vandermonde 行列式（A，III，第 99 页，例 1）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(f_{1}, \ldots, f_{r}\) 是 R 上无穷次可微的函数。对所有实数 \(x_{1} < \cdots < x_{r}\)，存在实数 \((t_{0}, \ldots, t_{r-1})\)（含于 \([x_{1}, x_{r}]\) 中）使得
+\end{enumerate}
+
+\[
+\det (f_{i}(x_{j})) = \frac{1}{1!2!\cdots(r - 1)!}\mathrm{V}_{r}(x_{1},\ldots ,x_{r})\det ((f_{j}^{(i)}(t_{i}))_{\substack{1\leqslant i\leqslant r\\ 0\leqslant j <   r}})
+\]
+
+（参看 FVR，I，第 48 页，习题 11）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(r\) 为一个正整数，\(m_1, \ldots, m_r\) 为正整数。设
+\end{enumerate}
+
+\[
+\Delta_ {r} = \det ((x _ {i} ^ {m _ {j}}) _ {1 \leqslant i, j \leqslant r}) \in \mathbf {Z} [ x _ {1}, \dots , x _ {r} ].
+\]
+
+多项式 \(\Delta_r\) 可被 \(V_r\) 整除（在 \(\mathbf{Z}[x_1, \ldots, x_r]\) 中）。我们记 \(F_r = \Delta_r / V_r\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 p 是一个素数。假设
+\end{enumerate}
+
+\[
+0 \leqslant m _ {1} <   m _ {2} <   \dots <   m _ {r} \leqslant p - 1.
+\]
+
+设 \(\xi_{1},\ldots,\xi_{r}\) 是互不相同的 \(p\) 次单位根。我们有
+
+\[
+\mathrm{F} _ {r} (\xi_ {1}, \ldots , \xi_ {r}) \neq 0.
+\]
+
+（“Chebotarev 定理”；设 \(\xi\) 是一个本原的 \(p\) 次单位根；我们有 \(\mathrm{F}_r(\xi_1, \ldots, \xi_r) = \mathrm{P}(\xi)\)，其中由分圆多项式的不可约性，\(\mathrm{P} \in \mathbf{Z}[x]\) 的次数为 \(\leqslant p - 1\)；条件 \(\mathrm{F}_r(\xi_1, \ldots, \xi_r) = 0\) 将蕴涵 \(\mathrm{F}_r(1, \ldots, 1)\) 被 \(p\) 整除；利用 \(a\)（令 \(x_i \to 1\)）来证明情况并非如此。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 G = Z/pZ。对每个从 G 到 C 的函数 \(f \neq 0\)，我们有
+\end{enumerate}
+
+\[
+\operatorname{Card} (\operatorname{Supp} (f)) + \operatorname{Card} (\operatorname{Supp} (\widehat {f})) \geqslant p + 1.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  对 G 的所有非空子集 A 与 B（满足
+\end{enumerate}
+
+\[
+\operatorname{Card} (\mathrm{A}) + \operatorname{Card} (\mathrm{B}) \geqslant p + 1,
+\]
+
+），存在函数 \(f \colon \mathbf{G} \to \mathbf{C}\)，其支集为 A，且使得 \(\widehat{f}\) 的支集是 B。（首先考虑 \(\operatorname{Card}(\mathrm{A}) + \operatorname{Card}(\mathrm{B}) = p + 1\) 的情形。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  设 A 与 B 是 G 的任意子集。我们有
+\end{enumerate}
+
+\[
+\operatorname{Card} (\mathrm{A} + \mathrm{B}) \geqslant \inf (\operatorname{Card} (\mathrm{A}) + \operatorname{Card} (\mathrm{B}) - 1, p)
+\]
+
+（根据 Cauchy–Davenport 定理；把前一问题应用于 (A, C) 与 (B, D)，其中 C 与 D 是基数分别为 \(p + 1 - \text{Card}(A)\) 与 \(p + 1 - \text{Card}(B)\) 的子集，且使 \(C \cap D\) 具有基数 \(\sup(\text{Card}(A) + \text{Card}(B) - p, 1)\)。）
+
+\(g)\) 设 \((a_{1},\ldots ,a_{2p - 1})\) 是 \(\mathbf{F}_p\) 中元素组成的一个族。存在一个子集 \(\mathrm{I}\subset \{1,\dots ,2p - 1\}\)（其基数为 \(p\)），使得
+
+\[
+\sum_ {i \in \mathrm{I}} a _ {i} = 0.
+\]
+
+这一性质对 \(F_{p}^{2p-2}\) 中的族一般不成立。（设 \(0 \leqslant b_{1} \leqslant \cdots \leqslant b_{2p-1} < p\) 为诸整数，其模 p 的约化构成 \((a_{1}, \ldots, a_{2p-1})\) 的一个排列；直接处理存在 i 使 \(a_{i} = a_{i+p-1}\) 的情形，在相反的情形应用前一问题。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  设 \(k \geqslant 1\) 是一个整数。设 \(\nu \geqslant 0\) 是使 \(k = p^{\nu}r\) 成立的整数，其中 p 不整除 r。用 \(\gamma\) 表示整数
+\end{enumerate}
+
+\[
+\gamma = \left\{ \begin{array}{l l} \nu + 1 & \text { if } p \geqslant 3 \\ \nu + 2 & \text { otherwise. } \end{array} \right.
+\]
+
+若 \(\ell \geqslant 4k\) 是一个整数，则存在整数 \((n_1, \ldots, n_\ell)\)，使得 \(p\) 不整除所有的 \(n_i\)，并且使得
+
+\[
+n _ {1} ^ {k} + \dots + n _ {\ell} ^ {k} \equiv 0 \mathrm{mod.} p ^ {\gamma}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{33}
+\tightlist
+\item
+  对每个紧交换群 G，我们用 \(\mu_{G}\) 表示 G 上的规范化 Haar 测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 G 是一个紧交换群。设 \((\nu_{n})_{n\in\mathbf{N}}\) 是 G 上的一个测度序列，满足 \(\nu_{n}(\mathrm{G})=1\)（对每个 n）。则 \((\nu_{n})\) 淡收敛于 \(\mu_{G}\)，当且仅当 \(\nu_{n}(\widehat{x})\) 收敛到 0（对 G 的每个特征标 \(\widehat{x}\neq1\)）（“Weyl 一致分布判据”）。
+\item
+  设 \(r \geqslant 1\) 是一个整数，并设 \(x = (x_{1}, \ldots, x_{r}) \in \mathbf{T}^{r}\)。对 \(n \geqslant 0\)，我们用 \(\nu_{n}\) 表示 \(T^{r}\) 上满足下式的测度：
+\end{enumerate}
+
+\[
+\nu_ {n} (f) = \frac {1}{n} \sum_ {k = 0} ^ {n - 1} f (k x)
+\]
+
+（对 \(f \in \mathcal{C}(\mathbf{T}^r)\)）。序列 \((\nu_n)\) 淡收敛到规范化 Haar 测度 \(\mu_{\mathrm{H}}\)，其中 H 是 \(\mathbf{T}^r\) 中集合 \(\{kx \mid k \in \mathbf{Z}\}\) 的闭包。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(y_{i}\) 为实数，使得 \(x_{i}\) 是 \(y_{i}\) 的类。若族 \((1, y_{1}, \ldots, y_{n})\) 在 Q 上线性无关，则我们有 H = T \(^{r}\)（“Kronecker 定理”。）
+\end{enumerate}
+
+\(d)\) 设 P 为素数所成的集，并设 \(\mathrm{G} = \mathbf{U}^{\mathrm{P}}\)。对每个实数 \(\mathrm{T} > 0\)，用 \(\lambda_{\mathrm{T}}\) 表示测度 \(\mathrm{T}^{-1}\lambda\)（在 \([0,\mathrm{T}]\) 上），其中 \(\lambda\) 是 \(\mathbf{R}\) 上的 Lebesgue 测度。用 \(\nu_{\mathrm{T}}\) 表示 \(\lambda_{\mathrm{T}}\) 在连续映射 \(t\mapsto (p^{it})_{p\in \mathrm{P}}\)（从 \([0,\mathrm{T}]\) 到 G 中的）下的像测度。当 \(\mathrm{T}\to +\infty\) 时，族 \((\nu_{\mathrm{T}})\) 淡收敛于 \(\mu_{\mathrm{G}}\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{34}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    对每个整数 \(N \geqslant 1\)、每个复数族 \((a_{n})_{1 \leqslant n \leqslant N}\) 以及每个整数 \(H \geqslant 1\)，有
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\left|\sum_{n = 1}^{N}a_{n}\right|^{2}\leqslant \left(1 + \frac{N + 1}{H}\right)\sum_{|h| <   H}\left(1 - \frac{|h|}{H}\right)\sum_{\substack{1\leqslant n\leqslant N\\ 1\leqslant n + h\leqslant N}}a_{n + h}\overline{a}_{n}
+\]
+
+（“van der Corput 不等式”。）（置 \(a_{n}=0\)（若 \(n\) 不介于 1 与 N 之间）；写 \(\sum_{n}a_{n}=\sum_{n}a_{n+h}\)（对 \(0\leqslant h<\mathrm{H}\)），对 \(h\) 求和，然后应用 Cauchy–Schwarz 不等式。）
+
+我们用 \(\pi\colon\mathbf{R}\to\mathbf{R}/\mathbf{Z}\) 表示典范投影。称实数的序列 \((x_{n})\) 是模 1 一致分布的，如果测度序列 \((\nu_{n})\)（在 \(\mathbf{R}/\mathbf{Z}\) 上，由下式定义）
+
+\[
+\nu_ {n} (f) = \frac {1}{n} \sum_ {k = 1} ^ {n} f (\pi (x _ {k})), \quad f \in \mathscr {C} (\mathbf {R} / \mathbf {Z})
+\]
+
+淡收敛到 R/Z 上总质量为 1 的 Haar 测度。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  若对每个整数 \(h \geqslant 1\)，序列 \((x_{n+h} - x_n)_n\) 是模 1 一致分布的，则 \((x_n)\) 是模 1 一致分布的。（利用前一习题与 van der Corput 不等式。）
+\item
+  设 \(d \geqslant 1\) 是整数，并设 \(P = \alpha_{d} X^{d} + \cdots + \alpha_{0} \in R[X]\) 是一个多项式，满足 \(\alpha_{d} \notin Q\)。则序列 \((\mathrm{P}(n))\) 是模 1 一致分布的。（对 \(d \geqslant 1\) 用归纳法推理。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{35}
+\tightlist
+\item
+  设 \(\sigma\) 是一个正实数。我们用 \(\mathcal{E}_{\sigma}\) 表示由满足如下条件的整函数 \(f\)（在 \(\mathbf{C}\) 上）所成的复向量空间：对每个实数 \(\varepsilon > 0\)，有
+\end{enumerate}
+
+\[
+| f (z) | = \mathrm{O} (e ^ {2 \pi (\sigma + \varepsilon) | z |}), \quad \text { as } | z | \to + \infty .
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  假设 \(\sigma > 0\)。设 \(g \in \mathrm{L}^2([- \sigma, \sigma])\)。函数
+\end{enumerate}
+
+\[
+f (z) = \int_ {- \sigma} ^ {\sigma} g (x) e ^ {- 2 i \pi x z} d x
+\]
+
+属于 \(\mathcal{E}_{\sigma}\)。\(f\) 在 \(\mathbf{R}\) 上的限制属于 \(\mathrm{L}^2 (\mathbf{R})\)。
+
+设 \(f \in \mathcal{E}_{\sigma}\)，使得 \(f\) 在 \(\mathbf{R}\) 上的限制属于 \(\mathrm{L}^2(\mathbf{R})\)。设 \(g \in \mathrm{L}^2(\mathbf{R})\) 是 \(f\) 在 \(\mathbf{R}\) 上的限制的 Fourier 变换。本习题的目标是证明 \(g\) 的支集含于 \([-\sigma, \sigma]\)；由问题 \(a\))，这就给出了空间 \(\mathcal{E}_{\sigma}\) 的一个刻画（“Paley–Wiener 定理”）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  对每个实数 \(\theta\)，函数
+\end{enumerate}
+
+\[
+h _ {\theta} (z) = e ^ {- i \theta} \int_ {0} ^ {+ \infty} f (r e ^ {- i \theta}) \exp (- 2 \pi z r e ^ {- i \theta}) d r
+\]
+
+在 C 的半平面 \(H_{\theta}\) 中是全纯的，该半平面由不等式
+
+\[
+\mathcal {R} (z) \cos (\theta) + \mathcal {I} (z) \sin (\theta) > \sigma .
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  若 \(\theta_{1}\) 与 \(\theta_{2}\) 满足 \(|\theta_{1} - \theta_{2}| < \pi\)，则 \(h_{\theta_1}|\mathrm{H}_{\theta_1} \cap \mathrm{H}_{\theta_2} = h_{\theta_2}|\mathrm{H}_{\theta_2} \cap \mathrm{H}_{\theta_1}\)。（应用 Cauchy 公式。）
+\item
+  函数 \(h_{0}\)（相应地，\(h_{\pi}\)）在由 \(z \in C\)（满足 \(\mathcal{R}(z) > 0\)，相应地，\(\mathcal{R}(z) < 0\)）所组成的开集中是全纯的。
+\item
+  设 \(U = C - i[-\sigma, \sigma]\)。存在 U 上唯一的全纯函数 h，使得 \(h(z) = h_{0}(z)\)（当 \(\mathcal{R}(z) > 0\) 时），且 \(h(z) = h_{\pi}(z)\)（当 \(\mathcal{R}(z) < 0\) 时）。
+\item
+  当 \(x \rightarrow 0\)（沿 \textgreater{} 0 的值）时，诸函数
+\end{enumerate}
+
+\[
+y \mapsto h _ {0} (x + i y) - h _ {\pi} (- x + i y)
+\]
+
+收敛到 \(g\)（在 \(\mathrm{L}^2 (\mathbf{R})\) 中）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  由此得出 g 在 \([-\sigma, \sigma]\) 之外几乎处处为零。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{36}
+\tightlist
+\item
+  我们沿用前一习题的记号。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(f\colon\mathbf{C}\to\mathbf{C}\) 是 \(\mathcal{E}_{1/2}\) 的一个元素，使得 \(f\) 在 \(\mathbf{R}\) 上的限制属于 \(\mathrm{L}^{2}(\mathbf{R})\)。对每个 \(z\in\mathbf{C}-\mathbf{Z}\)，有
+\end{enumerate}
+
+\[
+f (z) = \frac {\sin (\pi z)}{\pi} \sum_ {n \in \mathbf {Z}} (- 1) ^ {n} \frac {f (n)}{z - n}.
+\]
+
+利用 Paley–Wiener 定理和习题 1 的公式 \(a\))。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(f \colon \mathbf{C} \to \mathbf{C}\) 是 \(\mathcal{E}_{1/2}\) 中的一个元素，使得 \(f\) 在 \(\mathbf{R}\) 上有界。对每个 \(z \in \mathbf{C} - \mathbf{Z}\)，有
+\end{enumerate}
+
+\[
+f (z) = f (0) + \frac {\sin (\pi z)}{\pi} \Big (f ^ {\prime} (0) + \sum_ {n \in \mathbf {Z} - \{0 \}} (- 1) ^ {n} z \frac {f (n) - f (0)}{n (z - n)} \Big)
+\]
+
+（把前一问题应用于由 \(z \mapsto (f(z) - f(0)) / z\)（对 \(z \neq 0\)）所定义的、且把 0 映为 \(f'(0)\) 的函数。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(f\) 是 \(\mathcal{E}_{1/2}\) 中在 \(\mathbf{R}\) 上有界的一个元素。则 \(f'\) 在 \(\mathbf{R}\) 上有界，且我们有
+\end{enumerate}
+
+\[
+\sup _ {x \in \mathbf {R}} | f ^ {\prime} (x) | \leqslant 2 \sup _ {x \in \mathbf {R}} | f (x) |
+\]
+
+（“Bernstein 不等式”；化归为对 \(|f'(1/2)|\) 的界的估计并应用前一公式。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 f 是 \(E_{1/2}\) 的一个元素，使得 f 在 R 上的限制属于 \(L^{2}(\mathbf{R})\)。设 u 与 v 是 R 上由下式定义的 1-周期函数：
+\end{enumerate}
+
+\[
+u (t) = \widehat {f} (t) + \widehat {f} (t - 1), \quad v (t) = 2 i \pi (t \widehat {f} (t) + (t - 1) \widehat {f} (t - 1))
+\]
+
+（对 \(0 \leqslant t < 1\)）。对几乎每个 \(t \in [-1, 1]\)，有
+
+\[
+\widehat {f} (t) = (1 - | t |) u (t) + (2 i \pi) ^ {- 1} \mathrm{s} (t) v (t),
+\]
+
+且 u 与 v 的 Fourier 级数的系数分别是 \(f(-n)\) 与 \(f'(-n)\)（对 \(n \in Z\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 \(f \in \mathcal{E}_{1/2}\) 同前一问题。对所有 \(z \in \mathbf{C}\)，我们有公式
+\end{enumerate}
+
+\[
+f (z) = \Big (\frac {\sin (\pi z)}{\pi} \Big) ^ {2} \Big \{\sum_ {n \in \mathbf {Z}} \frac {f (n)}{(z - n) ^ {2}} + \sum_ {n \in \mathbf {Z}} \frac {f ^ {\prime} (n)}{z - n} \Big \},
+\]
+
+其中级数在 \(\mathcal{O}(\mathbf{C})\) 中对称地收敛，即在 \(\mathbf{C}\) 的紧子集上一致收敛。（利用习题 1 的问题 \(f\)) 的公式。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{37}
+\tightlist
+\item
+  对每个 \(n \in Z\)，我们用 \(e_{n}\) 表示 T 的特征标 \(x \mapsto e^{2i\pi nx}\)。我们用 P 表示 \(\mathcal{C}(\mathbf{T})\) 中由诸 \(e_{n}\) 生成的子空间。
+\end{enumerate}
+
+  设 \(a = (a_h)_{h \in \mathbf{Z}}\) 是一个复数族。共轭调和族是指族 \(\widetilde{a} = (-i\mathrm{s}(h)a_h)_{h \in \mathbf{Z}}\)，其中 \(\mathrm{s}(h)\) 表示符号函数。
+
+  对 \(f \in \mathrm{P}\)，我们用 \(\widetilde{f} \in \mathrm{P}\) 表示 \(\mathbf{T}\) 上满足 \(\mathcal{F}(\widetilde{f}) = \widetilde{\mathcal{F}(f)}\) 的函数（\(f\) 的共轭调和函数）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(f \in P\) 满足 \(\mathcal{F}(f)(0) = 0\) 且 f 取实值。对每个整数 \(k \geqslant 1\)，存在一个常数 \(C_k\)（与 f 无关），使得
+\end{enumerate}
+
+\[
+\| \widetilde {f} \| _ {2 k} \leqslant \mathrm{C} _ {k} \| f \| _ {2 k}.
+\]
+
+  （注意 \(g = f + i\tilde{f}\) 的 Fourier 系数的支集含于 \(N^{*}\)，写
+
+\[
+\mathcal {R} \left(\int_ {\mathbf {T}} g (x) ^ {2 k} d x\right) = 0
+\]
+
+并用二项式公式展开。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(1 < p < +\infty\)。P 到 P 的映射 \(f \mapsto \widetilde{f}\) 具有唯一的从 \(\mathrm{L}^p(\mathbf{T})\) 到 \(\mathrm{L}^p(\mathbf{T})\) 中的连续线性延拓，使得 \(\mathcal{F}(\widetilde{f}) = \widetilde{\mathcal{F}(f)}\)（对所有 \(f \in \mathrm{L}^p(\mathbf{T})\)）（参看习题 8）。（对 \(p \geqslant 2\)，利用前一问题与 Riesz 不等式（INT，IV，§6，习题 18）；对 \(1 < p < 2\)，利用对偶性。）
+\item
+  前一问题的结论不能推广到 p = 1 的情形。（利用习题 30 的 b)。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{38}
+\tightlist
+\item
+  设 \(\nu \in \mathcal{P}(\mathbf{R})\) 是 \(\mathbf{R}\) 上的一个概率测度。\(\nu\) 的特征函数是函数 \(\varphi_{\nu}\)（从 \(\mathbf{R}\) 到 \(\mathbf{C}\) 中的），它满足
+\end{enumerate}
+
+\[
+\varphi_ {\nu} (x) = \int_ {\mathbf {R}} e ^ {i t x} d \nu (t)
+\]
+
+（对所有 \(x \in R\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对 \(\nu_{1},\nu_{2}\)（在 \(\mathcal{P}(\mathbf{R})\) 中），有 \(\nu_{1} = \nu_{2}\)，当且仅当 \(\varphi_{\nu_1} = \varphi_{\nu_2}\)
+\item
+  对 \(\nu_{1},\nu_{2}\)（在 \(\mathcal{P}(\mathbf{R})\) 中），有 \(\nu_{1}*\nu_{2}\in \mathcal{P}(\mathbf{R})\) 且 \(\varphi_{\nu_1*\nu_2} = \varphi_{\nu_1}\varphi_{\nu_2}\)。
+\item
+  设 \(\nu \in \mathcal{P}(\mathbf{R})\)。函数 \(\varphi_{\nu}\) 在 \(\mathbf{R}\) 上有界且一致连续。
+\end{enumerate}
+
+\(d)\) 设 \(\nu \in \mathcal{P}(\mathbf{R})\)。对所有实数 \(a < b\)，有
+
+\[
+\nu (] a, b [) + \frac {1}{2} \nu (\{a, b \}) = \lim _ {\mathrm{T} \rightarrow + \infty} \frac {1}{2 \mathrm{T}} \int_ {- \mathrm{T}} ^ {\mathrm{T}} \varphi_ {\nu} (x) \frac {e ^ {- i x a} - e ^ {- i x b}}{i x} d x,
+\]
+
+从而特别地，该极限总存在。此外，对每个 T \textgreater{} 0，我们有
+
+\[
+\nu ([ - 2 \mathrm{T} ^ {- 1}, 2 \mathrm{T} ^ {- 1} ]) \leqslant \frac {1}{\mathrm{T}} \int_ {- \mathrm{T}} ^ {\mathrm{T}} \left(1 - \mathcal {R} (\varphi_ {\nu} (x))\right) d x.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 \((\nu_{n})_{n\in\mathbf{N}}\) 是 R 上的一个概率测度序列，它窄收敛（INT，IX，第 59 页，定义 1）到一个测度 \(\nu\)；则 \(\nu\in\mathcal{P}(\mathbf{R})\)，且 \(\varphi_{\nu_{n}}(x)\) 收敛到 \(\varphi_{\nu}(x)\)（对所有 \(x\in R\)）。
+\end{enumerate}
+
+设 \((\nu_{n})_{n\in\mathbf{N}}\) 是 R 上的一个概率测度序列。假设对每个 \(x\in\mathbf{R}\)，序列 \((\varphi_{\nu_{n}}(x))_{n}\) 收敛到一个复数 \(\varphi(x)\)，且函数 \(x\mapsto\varphi(x)\) 在 0 处连续。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  设 \(\varepsilon > 0\)。存在 \(a > 0\) 使得
+\end{enumerate}
+
+\[
+\nu_ {n} ([ - a, a ]) \geqslant 1 - \varepsilon
+\]
+
+（对每个整数 \(n \in N\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{6}
+\item
+  序列 \((\nu_{n})\) 关于窄拓扑是相对紧的。
+\item
+  序列 \((\nu_{n})\) 窄收敛到一个概率测度 \(\nu\)（其特征函数为 \(\varphi\)）（“P. Lévy 连续性定理”）。
+\item
+  存在 R 上的概率测度序列 \((\nu_{n})\)，不紧收敛到任何概率测度，使得 \(\varphi_{\nu_{n}}(x)\) 对所有 \(x \in R\) 收敛。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{39}
+\tightlist
+\item
+  设 \(\nu\) 是 \(\mathbf{R}\) 上的一个概率测度，使得恒等函数 \(x\)（\(\mathbf{R}\) 的）属于 \(\mathrm{L}^2 (\nu)\)。记 \(m = \nu (x)\in \mathbf{R}\)，并设 \(\sigma \geqslant 0\) 满足 \(\sigma^2 = \nu ((x - m)^2)\)。我们假设 \(\sigma >0\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(f(t) = (t - m) / \sigma\)。像测度 \(\mu = f(\nu)\) 属于 \(\mathcal{P}(\mathbf{R})\)，它满足 \(\mu(x) = 0\) 且 \(\mu(x^2) = 1\)。
+\item
+  对 \(n \geqslant 1\)，设 \(\mu^{n} = \mu * \cdots * \mu\) 是 \(\mu\) 的 n 次卷积幂。序列 \((\mu^{n})_{n \geqslant 1}\) 窄收敛到具有密度的概率测度
+\end{enumerate}
+
+\[
+\frac {1}{\sqrt {2 \pi}} e ^ {- x ^ {2} / 2}
+\]
+
+（关于 R 上的 Lebesgue 测度），称为“标准 Gauss 律”（“概率论的基本极限定理”；应用前一习题）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(d \geqslant 2\) 是整数。对每个整数 \(n \geqslant 1\)，我们用 \(s_{n}\) 表示从 {[}0, 1{]} 到 \(\{0, \ldots, d - 1\}\) 中的这样一个映射：它把 x 映为 x 的 d 进展开（若唯一）的第 n 项，否则映为 x 的 d 进有限展开的第 n 项（TG，IV，第 43 页，第 5 节）。
+\end{enumerate}
+
+设 \(\lambda\) 是 \([0,1]\) 上的 Lebesgue 测度。记 \(m_d = (d - 1)/2\) 与 \(\sigma_d = \sqrt{(d^2 - 1)/12}\)。对所有实数 \(a < b\)，有
+
+\[
+\begin{array}{r l} \lim _ {n \to + \infty} \lambda \Big (\Big \{x \in [ 0, 1 ] \mid a <   \frac {s _ {1} (x) + \cdots + s _ {n} (x) - n m _ {d}}{\sigma_ {d} \sqrt {n}} <   b \Big \} \Big) \\ & = \frac {1}{\sqrt {2 \pi}} \int_ {a} ^ {b} e ^ {- x ^ {2} / 2} d x. \end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{40}
+\tightlist
+\item
+  设 \(\lambda \in \mathbf{R}_{+}^{*}\)。我们用 \(\varpi_{\lambda}\) 表示 \(\mathbf{R}\) 上的离散测度（支集含于 \(\mathbf{N}\)），它满足
+\end{enumerate}
+
+\[
+\varpi_ {\lambda} (k) = e ^ {- \lambda} \frac {\lambda^ {k}}{k !}
+\]
+
+（“参数为 λ 的 Poisson 律”）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  测度 \(\varpi_{\lambda}\) 是一个概率测度。计算 \(\varpi_{\lambda}\) 的特征函数；证明 R 的恒等函数 x 属于 \(\mathrm{L}^{2}(\mathbf{R},\varpi_{\lambda})\)，并计算 \(\varpi(x)\)、\(\varpi(x^{2})\)。
+\item
+  测度族
+\end{enumerate}
+
+\[
+\frac {\varpi_ {\lambda} - \lambda}{\sqrt {\lambda}}
+\]
+
+当 \(\lambda\to+\infty\) 时窄收敛到标准 Gauss 测度（参看前一习题 \(b\)）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{41}
+\tightlist
+\item
+  设 \(n \geqslant 2\) 是整数。我们用 G 表示群 \(S_{n}\)，赋以总质量为 1 的 Haar 测度 \(\mu_{n}\)。设 \(\varpi: S_{n} \to \mathbf{R}\) 是这样一个映射：它把 \(\sigma\) 映为 \(a + b\)，其中 \(a\) 是 \(\sigma\) 分解为不相交循环之积的分解中循环的个数（A，I，第 60 页，命题 7），而 \(b\) 是 \(\sigma\) 的不动点的个数。我们用 \(\nu_{n}\) 表示像测度 \(\nu_{n} = \varpi(\mu_{n})\)（在 \(\mathbf{R}\) 上）。它是一个概率测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  特征函数 \(\varphi_{n}\)（\(\nu_{n}\) 的）满足
+\end{enumerate}
+
+\[
+\varphi_ {n} (t) = \prod_ {j = 1} ^ {n} \left(1 - \frac {1}{j} + \frac {e ^ {i t}}{j}\right)
+\]
+
+（对所有 \(t \in R\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\varpi_{n}\) 是参数为 \(\log(n)\) 的 Poisson 律，\(\psi_{n}\) 是它的特征函数。当 \(n \to +\infty\) 时，有
+\end{enumerate}
+
+\[
+\varphi_ {n} (t) = \frac {1}{\Gamma (i t)} \psi_ {n} (t) (1 + o (1))
+\]
+
+（对 \(t \in R\)）一致地成立。（利用 Γ 函数的 Gauss 公式，参看 FVR，VII，第 11 页，公式 (3)。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(f_{n}(x) = (x - \log(n))/\sqrt{\log(n)}\)（对 \(x \in R\)）。测度序列 \(f_{n}(\mu_{n})\) 当 \(n \to +\infty\) 时窄收敛到标准 Gauss 律。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{42}
+\tightlist
+\item
+  设 \(k \geqslant 1\) 是整数。我们用 \(\lambda\) 表示 \(R^{k}\) 上的 Lebesgue 测度。设 \((\mu_{n})_{n \in \mathbf{N}}\) 是 \(R^{k}\) 上的一个概率测度序列，并设 \(\mu\) 是 \(R^{k}\) 上的一个概率测度。假设下列条件满足：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\mu\) 的 Fourier 变换属于 \(\mathrm{L}^1 (\mathbf{R}^k)\)；
+\item
+  存在 \((\sigma_{n})\)（在 \(\mathrm{GL}(k,\mathbf{R})\) 中）使得像测度序列 \((\sigma_{n}(\mu_{n}))\) 窄收敛到 \(\mu\)；
+\item
+  对每个正实数 \(\tau\)，用 \(\varphi_{n,\tau}\) 表示由 \(t \in \mathbf{R}^k\)（满足 \(\|^{t} \sigma_{n}(t) \| \leqslant \tau\) 者）组成的集的特征函数。我们有
+\end{enumerate}
+
+\[
+\lim _ {a \to + \infty} \sup _ {n \in \mathbf {N}} \int_ {\| t \| \geqslant a} | \widehat {\mu} _ {n} (^ {t} \sigma_ {n} (t)) | \varphi_ {n, \tau} (t) d t = 0.
+\]
+
+由习题 5，条件 (i) 蕴涵测度 \(\mu\) 关于 Lebesgue 测度具有一个连续密度 \(\psi\)。我们记 \(\alpha = \psi(0)\)。\(a)\) 设 \(f \in \mathcal{C}_b(\mathbf{R}^k)\) 是一个可积函数，使得 \(\widehat{f}\) 具有紧支集。我们有
+
+\[
+\lim _ {n \to + \infty} \frac {1}{| \det (\sigma_ {n}) |} \int_ {\mathbf {R} ^ {k}} f \mu_ {n} = \alpha \int_ {\mathbf {R} ^ {k}} f.
+\]
+
+（应用 Fourier 变换的转置公式。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  前一问题的公式当 \(f \in \mathcal{K}(\mathbf{R}^{k})\) 时成立。对每个有界可测子集 \(B \subset R^{k}\)（B 的边界关于 Lebesgue 测度可忽略），我们有
+\end{enumerate}
+
+\[
+\lim _ {n \to + \infty} \frac {1}{| \det (\sigma_ {n}) |} \mu_ {n} (\mathrm{B}) = \alpha \lambda (\mathrm{B}).
+\]
+
+（对每个函数 \(f \in \mathcal{H}_{\mathbf{R}}(\mathbf{R}^k)\) 以及每个 \(\varepsilon > 0\)，存在可积函数 \(f_1\) 与 \(f_2\)（其 Fourier 变换具有紧支集），使得 \(f_1 \leqslant f \leqslant f_2\) 且 \(\int (f_2 - f_1) \leqslant \varepsilon\)。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  假设 \(\sigma_{n}^{-1}\to 0\)（在型为 \((k,k)\) 的实矩阵所成的空间中）且存在连续函数 \(\Phi \colon \mathbf{R}^k\to \mathbf{C}^*\) 使得
+\end{enumerate}
+
+\[
+\widehat {\mu} _ {n} \cdot \Phi^ {- 1} \cdot (\widehat {\mu} \circ {} ^ {t} \sigma_ {n} ^ {- 1}) ^ {- 1} \to 1
+\]
+
+（在 \(R^{k}\) 的紧子集上一致）。则上述条件满足。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  取 k = 1。设 \(\mu\) 是 R 上以 Lebesgue 测度为基底的概率测度，使得 R 的恒等函数 x 属于 \(L^{2}(\nu)\)，且 \(\mu(x) = 0\)。设 \(\sigma \geqslant 0\) 使得 \(\sigma^{2} = \mu(x^{2})\)。我们假设 \(\sigma > 0\)。对每个整数 \(n \geqslant 1\)，设 \(\mu^{n}\) 是 \(\mu\) 的 n 次卷积幂。对每个有界可测子集 \(B \subset R\)（其边界关于 Lebesgue 测度的测度为零），我们有
+\end{enumerate}
+
+\[
+\lim _ {n \rightarrow + \infty} \sigma \sqrt {n} \mu^ {n} (\mathrm{B}) = \frac {1}{2 \sqrt {\pi}} \lambda (\mathrm{B})
+\]
+
+（“基本局部极限定理”）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{43}
+\tightlist
+\item
+  设 I = {[}a, b{]} 是 R 的一个紧区间。设 f 是从 I 到 \(R^{2}\) 中的连续映射，它在 I 的内部是单射，并且是分段 \(C^{1}\) 的（即存在 I 分成区间 J 的一个有限划分，使得 f\textbar J 可微，且 \(f(f|\mathrm{J})'\) 连续）。我们称 \(f\) 是平面中的一条参数化曲线。我们说
+\end{enumerate}
+
+\[
+\ell (f) = \int_ {\mathrm{I}} | f ^ {\prime} (t) | d t
+\]
+
+（其中 \(f'(t)\) 等同于一个复数）是参数化曲线 \(f\) 的长度。若此外 \(f(a) = f(b)\)，我们称 \(f\) 定义一条 Jordan 曲线。于是存在 \(\mathbf{R}^2 - f(\mathrm{I})\) 的唯一的有界连通分量 C（TA，待出版）。C 的 Lebesgue 测度称为 Jordan 曲线 \(f\) 所围的面积，记作 \(\mathrm{A}(f)\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+    假设 \(f\) 是一条 Jordan 曲线。对每个 \(t \in I\)，限制 \(f_t\)（\(f\) 在 \([a, t]\) 上的）是一条参数化曲线，且函数 \(s: t \mapsto \ell(f_t)\) 是从 I 到 \(J = [0, \ell(f)]\) 中的一个严格递增双射。函数 \(g = f \circ s^{-1}: J \to \mathbf{R}^2\) 是一条 Jordan 曲线，且对每个 \(t \in J\)，有 \(\ell(g_t) = t\)。b) 设 \(f = (f_1, f_2)\) 是一条 Jordan 曲线。我们有
+\end{enumerate}
+
+\[
+\mathrm{A} (f) = \frac {1}{2} \int_ {\mathrm{I}} (f _ {1} f _ {2} ^ {\prime} - f _ {2} f _ {1} ^ {\prime}),
+\]
+
+其中积分关于 I 上的 Lebesgue 测度取。（应用 Stokes 公式。）此外，我们有 \(A(g) = A(f)\)，其中 g 是问题 a) 中的函数。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  我们有 \(4\pi\mathrm{A}(f)\leqslant\ell(f)^{2}\)（“平面等周不等式”）。（化归到 \(\ell(f)=1\) 的情形；考察 g 的实部与虚部的 Fourier 级数，并证明 \(|g'(t)|^{2}=1\)（对 \(t\in J\)）。）
+\end{enumerate}
+
+\(\text{d)}\quad\text{若 }4\pi\mathrm{A}(f)=\ell(f)^{2},\text{ 则 }f\text{ 的像是一个圆，位于 }\mathbf{R}^{2}.\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{44}
+\tightlist
+\item
+  对每个实数 \(h > 0\)，设 \(\Delta_h\) 是 \(\mathbf{R}\) 上满足下述条件的连续函数：\(\Delta_h(t) = 0\)（当 \(|t| > h\) 时），且 \(\Delta_h(t) = 1 - |t| / h\)（对 \(t \in [-h, h]\)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  \(\mathcal{C}([0,1])\) 中由函数 \(f_{0}=1\)、\(f_{1}:t\mapsto t\) 以及诸函数
+\end{enumerate}
+
+\[
+f _ {k, l} \colon t \mapsto \Delta_ {2 ^ {- k}} \left(t - \frac {2 l + 1}{2 ^ {k}}\right)
+\]
+
+（对 \(k \geqslant 1\) 与 \(0 \leqslant l < 2^{k-1}\)）是 Banach 空间 \(\mathcal{C}([0,1])\) 的一个 Banach 基（参看 EVT，IV，第 70 页，习题 14）。更精确地，对每个 \(f \in \mathcal{C}([0,1])\)，有
+
+\[
+\begin{array}{l} f = f (0) f _ {0} + (f (1) - f (0)) f _ {1} + \\ \sum_ {k \geqslant 1} \sum_ {0 \leqslant l <   2 ^ {k - 1}} \left(f \left(\frac {2 l + 1}{2 ^ {k}}\right) - \frac {1}{2} \left(f \left(\frac {l}{2 ^ {k - 1}}\right) + f \left(\frac {l + 1}{2 ^ {k - 1}}\right)\right)\right) f _ {k, l} \end{array}
+\]
+
+在 \(\mathcal{C}([0,1])\) 中。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  函数族 \(t \mapsto e^{2i\pi ht}\)（对 \(h \in Z\)）不是由函数 \(f \in \mathcal{C}([0,1])\)（满足 \(f(0) = f(1)\)）所组成的空间的 Schauder 基。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{45}
+\tightlist
+\item
+  对每个整数 \(k \geqslant 0\)，设 \(\mathrm{D}_k \subset [0,1]\) 是由数 \(j/2^k\)（对整数 \(0 \leqslant j \leqslant 2^k\)）组成的集。设 D 是诸集 \(\mathrm{D}_k\)（对 \(k \geqslant 0\)）的并。对每个 \(k \geqslant 1\) 以及每个 \(t \in \mathrm{D}_{k+1} - \mathrm{D}_k\)，设 \(t_+\)（相应地，\(t_-\)）是 \(\mathrm{D}_{k+1}\) 中满足 \(t < t_+\) 的最小元素（相应地，\(\mathrm{D}_{k+1}\) 中满足 \(t_- < t\) 的最大元素）；\(t_+\) 与 \(t_-\) 属于 \(\mathrm{D}_k\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(\sigma\colon\mathrm{D}\to[0,1]\) 是一个严格递增函数，满足 \(\sigma(0)=0\) 与 \(\sigma(1)=1\)，且其像在 \([0,1]\) 中稠密。则存在唯一的从 \([0,1]\) 到自身中的递增同胚，它延拓 \(\sigma\)。
+\end{enumerate}
+
+设 \(f\colon [0,1]\to \mathbf{R}\) 是一个连续函数。我们称 \(k\) 级的草图（关于 \(f\) 的）是指一个严格递增映射 \(\sigma \colon \mathrm{D}_k\to [0,1]\)，它满足 \(\sigma (0) = 0\)、\(\sigma (1) = 1\)，且对每个整数 \(j\)（满足 \(0\leqslant j < 2^k\)），下列条件之一成立：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(f(\sigma(j/2^{k})) \neq f(\sigma((j+1)/2^{k}))\) ;
+\item
+  存在含于 \(\sigma(j/2^{k}), \sigma(j+1)/2^{k}\) 之间的开区间 I，使得对每个 \(t \in I\)，有
+\end{enumerate}
+
+\[
+f (t) = f (\sigma (j / 2 ^ {k})).
+\]
+
+我们用 \(t_{\sigma}\) 表示 \(D_{k}\) 中最小的严格正元素，它满足
+
+\[
+\inf _ {t ^ {\prime} <   t _ {\sigma}} | \sigma (t _ {\sigma}) - \sigma (t ^ {\prime}) | = \sup _ {t \in \mathrm{D} _ {k}} \inf _ {t ^ {\prime} <   t} | \sigma (t) - \sigma (t ^ {\prime}) |.
+\]
+
+我们称草图 \(\tau\)（\(k + 1\) 级的）是草图 \(\sigma\)（\(k\) 级的）的一个好延伸，如果 \(\tau\) 延拓 \(\sigma\)，且对每个 \(t \in \mathrm{D}_{k+1} - \mathrm{D}_k\)，有
+
+\[
+f (\tau (t)) = \frac {1}{2} (f (\sigma (t _ {-})) + f (\sigma (t _ {+})))
+\]
+
+若 \(t_{-}\neq t_{\sigma}\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  存在递增同胚 \(\sigma\)（从 \([0,1]\) 到自身的），使得
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对每个整数 \(k \geqslant 1\)，限制 \(\sigma_{k}\)（\(\sigma\) 在 \(\mathrm{D}_{k}\) 上的）是一个 \(k\) 级草图；
+\item
+  对每个整数 \(k \geqslant 1\)，映射 \(\sigma_{k+1}\) 是 \(\sigma_{k}\) 的一个好延伸。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  假设 \(f(0) = f(1)\)。用 \(\sigma\) 表示 {[}0,1{]} 的递增同胚，它由满足前一问题条件的映射 \(\sigma: D \to [0,1]\) 所定义。存在常数 \(C \geqslant 0\)，使得连续函数 \(f \circ \sigma\)（视为 T 上的一个连续函数）满足
+\end{enumerate}
+
+\[
+| \widehat {(f \circ \sigma)} (n) | \leqslant \frac {\mathrm{C}}{| n |}
+\]
+
+（对所有 \(n \in Z - \{0\}\)）（“Sahakyan 定理”；利用 II，第 262 页习题 2 以及前一习题。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  存在 \(\sigma\)（{[}0, 1{]} 到自身中的一个递增同胚），使得 \(f \circ \sigma\) 的 Fourier 级数在 \(\mathcal{C}(\mathbf{T})\) 中对称收敛（“Bohr–Pál 定理”）。
+\item
+  Sahakyan 定理对复值连续函数是否成立？
+\item
+  是否存在函数 \(f: R/Z \to C\)，其像有非空的内部，且满足条件 \(\sup_{h \in Z - \{0\}} |h||\widehat{f}(h)| < +\infty\)？
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{46}
+\tightlist
+\item
+  设 X 是一个局部紧拓扑空间，\(\mu\) 是 X 上的一个概率测度。设 \((f_n)_{n\in \mathbf{N}^*}\) 是 \(\mathrm{L}^2 (\mathrm{X},\mu)\) 中的一个规范正交族。设 \((a_{n})_{n\in \mathbf{N}^{*}}\) 是一个复数序列，使得族 \((a_{n}\log (n))_{n\in \mathbf{N}^{*}}\) 属于 \(\ell^2 (\mathbf{N}^*)\)。
+\end{enumerate}
+
+对整数的每个有限集 I，我们用
+
+\[
+s _ {\mathrm{I}} = \sum_ {n \in \mathrm{I}} a _ {n} f _ {n},
+\]
+
+我们也写 \(s_{n} = s_{\{1,\ldots,n\}}\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(N \geqslant 1\)。存在 \(\{1, \ldots, N\}\) 的非空区间的一个族 I 以及一个与 N 无关的常数 \(C \geqslant 0\)，满足下列条件：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\{1, \ldots, N\}\) 的每个形如 \(I = \{1, \ldots, M\}\) 的区间都是 \(\mathcal{I}\) 中至多 C log(M + 1) 个区间的不相交并；
+\item
+  每个整数 \(n \in \{1, \ldots, N\}\) 至多属于 I 中的 \(C \log(N + 1)\) 个区间。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  存在常数 C \textgreater{} 0，使得对所有 \(N \in N^{*}\)，有
+\end{enumerate}
+
+\[
+\int_ {X} \left(\sup _ {1 \leqslant n \leqslant N} | s _ {n} | ^ {2}\right) d \mu \leqslant C \sum_ {n = 1} ^ {N} | a _ {n} | ^ {2}.
+\]
+
+（设 \(\tau(x)\) 是 \(\leqslant\) N 的最小整数，满足 \(\sup_{1\leqslant n\leqslant N}|s_n(x)| = |s_{\tau(x)}(x)|\)，并设 \(S(x) = s_{\tau(x)}(x)\)。设 \(\mathcal{I}\) 是如前一问题中的区间族；写
+
+\[
+\mathrm{S} = \sum_ {\mathrm{I} \in \mathcal {J}} s _ {\mathrm{I}}
+\]
+
+其中 J 是 I 中区间的一个不相交族，然后应用 Cauchy–Schwarz 不等式。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  对 \(j\in \mathbf{N}^*\)，置
+\end{enumerate}
+
+\[
+\mathrm{S} _ {j} = \sum_ {2 ^ {j} <   n \leqslant 2 ^ {j + 1}} a _ {n} f _ {n}.
+\]
+
+通项为 \((j+1)|S_{j}|^{2}\) 的级数在 X 中 \(\mu\)-几乎处处收敛。
+
+\(d)\) 序列 \((s_{2^j}(x))_{j\in \mathbf{N}^*}\) 对 \(\mu\)-几乎所有的 \(x\in X\) 是一个 Cauchy 序列。用 \(f(x)\) 表示其极限，它 \(\mu\)-几乎处处有定义。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  序列 \((s_n(x))_{n\in \mathbf{N}^*}\) 收敛到 \(f(x)\)（对 \(\mu\)-几乎所有的 \(x\in X\)）。
+\end{enumerate}
+
+\(f)\) 设 \(f\in \mathrm{L}^1 (\mathbf{T})\) 满足
+
+\[
+\sum_ {h \in \mathbf {Z}} \log (| h | + 1) ^ {2} | \widehat {f} (h) | ^ {2} <   + \infty .
+\]
+
+对几乎所有 \(x\)，\(f\) 的 Fourier 级数在 \(x\) 处对称地收敛到 \(f(x)\)（“Rademacher–Menshov 定理”）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{47}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \(p \in [1, +\infty[\)。\(L^p(\mathbf{R})\) 的子集 X 是相对紧的，当且仅当它有界并满足条件
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\lim _ {y \to 0} \sup _ {f \in X} \| \boldsymbol {\gamma} (y) f - f \| _ {p} = 0
+\]
+
+\[
+\lim _ {\mathrm{R} \to + \infty} \sup _ {f \in \mathrm{X}} \| (1 - \varphi_ {\mathrm{R}}) f \| _ {p} = 0,
+\]
+
+其中 \(\varphi_{R}\) 是区间 \([-R,R]\) 的特征函数（参看 INT，VIII，第 205 页，习题 26）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 X 是 \(\mathrm{L}^{2}(\mathbf{R})\) 的一个有界子集。证明 X 是预紧的，当且仅当
+\end{enumerate}
+
+\[
+\lim _ {\mathrm{R} \to + \infty} \sup _ {f \in \mathrm{X}} \int_ {\mathbf {R}} (1 - \varphi_ {\mathrm{R}}) (| f | ^ {2} + | \widehat {f} | ^ {2}) d x = 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \((f_{n})\) 是 \(\mathrm{L}^{2}(\mathbf{R})\) 中的一个序列，在 \(\mathrm{L}^{2}(\mathbf{R})\) 中规范正交，且使得 \(\sup_{n}|f_{n}|\) 属于 \(\mathrm{L}^{2}(\mathbf{R})\)。则 \(\sup_{n}|\widehat{f_{n}}|\) 不属于 \(\mathrm{L}^{2}(\mathbf{R})\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{48}
+\tightlist
+\item
+  设 \(k\) 是特征为 \(p\)、基数为 \(q\) 的有限域。我们给 \(k\) 赋以计数测度，并用 \(\widehat{f}\) 表示函数 \(f: k \to \mathbf{C}\) 的逆 Fourier 变换。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(\chi\) 是 \(k^{*}\) 的一个非平凡特征标。我们延拓 \(\chi\) 到 \(k\)，置 \(\chi(0) = 0\)。证明 \(|\widehat{\chi}(\psi)| = \sqrt{q}\)（对所有 \(\psi \in \widehat{k}\)（满足 \(\psi \neq 1\)））。（“Gauss 和”。）
+\item
+  设 \(d \mid q - 1\) 是整数。证明对每个特征标 \(\psi \neq 1\)（\(k\) 的），有
+\end{enumerate}
+
+\[
+\left| \sum_ {x \in k} \psi (x ^ {d}) \right| \leqslant (d - 1) \sqrt {q},
+\]
+
+当 d = 2 时取等号。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(\chi_{1}\) 与 \(\chi_{2}\) 是 \(k^{*}\) 的非平凡特征标，如问题 a) 中那样用 0 延拓到 k。我们置
+\end{enumerate}
+
+\[
+\mathrm{J} \left(\chi_ {1}, \chi_ {2}\right) = \sum_ {x \in k} \chi_ {1} (x) \chi_ {2} (1 - x)
+\]
+
+（“Jacobi 和”）。若 \(\chi_1\chi_2\neq 1\)，则对每个特征标 \(\psi \neq 1\)（\(k\) 的），有
+
+\[
+\mathrm{J} (\chi_ {1}, \chi_ {2}) = \frac {\widehat {\chi} _ {1} (\psi) \widehat {\chi} _ {2} (\psi)}{\widehat {\chi_ {1} \chi_ {2}} (\psi)}, \qquad | \mathrm{J} (\chi_ {1}, \chi_ {2}) | = \sqrt {q}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  假设 p 是模 4 同余于 1 的素数。存在整数 a 与 b 使得 \(a^{2} + b^{2} = p\)（“Fermat 二平方定理”）。（对 \(F_{p}^{*}\) 的适当选取的阶的特征标考察一个 Jacobi 和。）
+\item
+  假设 p 是奇素数。设 \(\lambda \in \widehat{k}^{*}\) 是唯一的 2 阶特征标（“Legendre 特征”）。设 \(\chi\) 是 \(k^{*}\) 的一个非平凡特征标，并置 \(\eta = \chi^{2}\)。证明对 k 的每个特征标 \(\psi \neq 1\)，我们有
+\end{enumerate}
+
+\[
+\widehat {\eta} (\psi) \widehat {\lambda} (\psi) = \chi (4) \widehat {\chi} (\psi) \widehat {\chi \lambda} (\psi)
+\]
+
+（“Hasse–Davenport 公式”）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  假设 p 是奇数。设 \(N_{p}\) 是 \((x,y)\in\mathbf{F}_{p}\times\mathbf{F}_{p}\) 中满足 \(y^{2}=x^{4}+1\) 者的个数。我们有
+\end{enumerate}
+
+\[
+\left| \mathrm{N} _ {p} - p \right| \leqslant 2 \sqrt {p}.
+\]
+
+（当 \(p\) 模 4 同余于 3 时，证明 \(\mathrm{N}_p = p\)；否则，验证 \(\mathrm{N}_p - p = -\sum_x \lambda(x^4 + 1)\)，其中 \(\lambda\) 是模 \(p\) 的 Legendre 特征，并用 Jacobi 和表示这个和。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  把这些公式与 Γ 函数所满足的公式相比较（FVR，VII）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{49}
+\tightlist
+\item
+  设 \(k\) 是特征为 \(p \neq 2\)、基数为 \(q\) 的有限域。我们给 \(k\) 赋以计数测度，并用 \(\widehat{f}\) 表示函数 \(f: k \to \mathbf{C}\) 的逆 Fourier 变换。我们给 \(k^*\) 赋以计数测度，并固定一个非平凡特征标 \(\psi\)（\(k\) 的）。用 \(\lambda\) 表示 \(k^*\) 的唯一的 2 阶特征标，把它延拓到 \(k\)，置 \(\lambda(0) = 0\)。
+\end{enumerate}
+
+对每个 \(a \in k^{*}\)，置
+
+\[
+\mathrm{S} (a) = \sum_ {x \in k ^ {*}} \lambda (x) \psi (a x + x ^ {- 1})
+\]
+
+（“Salié 和”）。我们用 \(\mathcal{F}(\mathrm{S})\) 表示函数 S 在 \(k^{*}\) 上的 Fourier 变换。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(\chi \in \widehat{k}^*\)，并置 \(\eta = \chi^2\)。我们有
+\end{enumerate}
+
+\[
+\mathcal {F} (\mathrm{S}) (\chi) = \widehat {\overline {{\chi}}} (\psi) \widehat {\overline {{\chi}}} \lambda (\psi) = \chi (4) \widehat {\lambda} (\psi) \widehat {\overline {{\eta}}} (\psi)
+\]
+
+（利用 Hasse–Davenport 公式）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  由此推出
+\end{enumerate}
+
+\[
+\operatorname{S}(a) = \lambda (a)\widehat{\lambda} (\psi)\sum_{\substack{y\in k^{*}\\ y^{2} = 4a}}\psi (y),\quad |\operatorname{S}(a)|\leqslant 2\sqrt{q}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  与 Bessel 函数 \(J_{k+1/2}\)（习题 20）的类似（对 \(k \in N\)）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{50}
+\tightlist
+\item
+  我们把 \(\mathbf{T}\) 与区间 {[}0,1{[} 等同。对 \(n \in \mathbf{Z}\)，设 \(e_n\) 是 \(\mathbf{T}\) 的由 \(t \mapsto \exp(2i\pi nt)\) 定义的酉特征标。对每个测度 \(\mu \in \mathcal{M}^1(\mathbf{T})\) 与每个整数 \(m \geqslant 1\)，我们用
+\end{enumerate}
+
+\[
+\mathrm{S} _ {m} (\mu) = \sum_ {h = - m} ^ {m} \widehat {\mu} (h) e _ {h} \in \mathcal {C} (\mathbf {T})
+\]
+
+\(\mu\) 的 Fourier 级数的第 m 个对称部分和。
+
+实数的一个有限族 \((y_{1},\ldots,y_{k})\) 称为 T-无关的，如果 \((1,y_{1},\ldots,y_{k})\) 在 Q 上线性无关。这等价于说方程
+
+\[
+\sum_ {j = 1} ^ {k} m _ {j} y _ {j} = 0
+\]
+
+到 \(\mathbf{T}\) 中（其中 \(m_j \in \mathbf{Z}\)）以零族为其唯一解。对 \(t \in \mathbf{R}\)，我们用 \(t - (y_1, \ldots, y_k)\) 表示族 \((t - y_j)_j\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(n \geqslant 10^{6}\) 是整数。存在实数 \(x_{1}, \ldots, x_{n}\)（属于 {[}0,1{]}），使得
+\end{enumerate}
+
+\[
+\left| x _ {j} - j / n \right| \leqslant 1 0 ^ {- 4} n ^ {- 1}
+\]
+
+且使族 \(\mathrm{E}_{n}=(x_{1},\ldots,x_{n})\) 是 T-无关的。
+
+我们记
+
+\[
+\mu_ {n} = \frac {1}{n} \sum_ {j = 1} ^ {n} \varepsilon_ {x _ {j}}.
+\]
+
+这是 T 上的一个概率测度。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(t\in \mathbf{R}\)。我们有
+\end{enumerate}
+
+\[
+\frac {1}{n} \sum_ {j = 1} ^ {n} \frac {1}{| \sin (\pi (t - x _ {j})) |} \geqslant \frac {1}{5} \log n.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(t \in R\) 使得族 \(t - E_{n}\) 是 T-无关的。存在 \(m \in N^{*}\) 使得
+\end{enumerate}
+
+\[
+| \mathrm{S} _ {m} (\mu_ {n}) (t) | \geqslant \frac {2}{1 5} \log n.
+\]
+
+（应用 Kronecker 定理，参看习题 34）。
+
+\(d)\) 设 \(t \in \mathbf{R}\) 使得族 \(t - \mathrm{E}_n\) 不是 \(\mathbf{T}\)-无关的，并设 \(m_1, \ldots, m_n\) 是不全为零的整数，使得
+
+\[
+\sum_ {j = 1} ^ {n} m _ {j} (t - x _ {j}) = 0
+\]
+
+（在 T 中）。若整数 \(m_{j}\) 中有两个非零，则存在 \(m \geqslant 0\) 使得
+
+\[
+| \mathrm{S} _ {m} (\mu_ {n}) (t) | \geqslant \frac {1}{1 0} \log n
+\]
+
+（取 j 使得 \(m_{j} \neq 0\) 且 \(|x_{j} - t|\) 最大；注意族 \(t - (x_{i})_{i \neq j}\) 是 T-无关的，并应用 Kronecker 定理）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  我们保留前一问题的假设，但设系数 \(m_{j}\) 中只有一个非零，且 \(t \notin E_{n}\)。存在 \(m \geqslant 0\) 使得
+\end{enumerate}
+
+\[
+| \mathrm{S} _ {m} (\mu_ {n}) (t) | \geqslant \frac {1}{1 0} \log n
+\]
+
+（注意族 \(m_{j}(t - x_{i})_{i \neq j}\) 是 T-无关的，并应用 Kronecker 定理）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  假设 \(t \in E_{n}\)。存在 \(m \geqslant 0\) 使得
+\end{enumerate}
+
+\[
+| \mathrm{S} _ {m} (\mu_ {n}) (t) | \geqslant \frac {1}{1 0} \log n
+\]
+
+（族 \((x_{i})_{x_{i}\neq t}\) 是 T-无关的）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  存在整数 \(\mathrm{M} \geqslant 0\) 使得对每个 \(t \in \mathbf{T}\)，有
+\end{enumerate}
+
+\[
+\sup _ {0 \leqslant m \leqslant \mathrm{M}} | \mathrm{S} _ {m} (\mu_ {n}) (t) | \geqslant \frac {1}{2 0} \log n.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  存在函数 \(f_{n}\in\mathcal{C}^{\infty}(\mathbf{T})\) 与整数 \(\mathrm{M}\geqslant0\) 使得
+\end{enumerate}
+
+\[
+\begin{array}{c} \operatorname{Supp} (f _ {n}) \subset \bigcup_ {j = 1} ^ {n} \Bigl [ \frac {j}{n} - \frac {2}{1 0 ^ {4} n}, \frac {j}{n} + \frac {2}{1 0 ^ {4} n} \Bigr ] \\ \int_ {j / n - 2 / (1 0 ^ {4} n)} ^ {j / n + 2 / (1 0 ^ {4} n)} f _ {n} = \frac {1}{n}, \qquad 1 \leqslant j \leqslant n \\ \sup _ {0 \leqslant m \leqslant M} | S _ {m} (f _ {n}) (t) | \geqslant \frac {1}{4 0} \log n, \qquad \text { for all } t \in \mathbf {T}. \end{array}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\tightlist
+\item
+  存在 \(M \geqslant 1\) 与复数的一个有限族 \((a_{n})_{|n| \leqslant M}\)，使得函数
+\end{enumerate}
+
+\[
+g _ {\mathrm{M}} (t) = \sum_ {k = - \mathrm{M}} ^ {\mathrm{M}} a _ {k} e _ {k} n
+\]
+
+满足
+
+\[
+\int_ {\mathbf {T}} | g _ {\mathrm{M}} (t) | d t \leqslant 2, \quad \inf _ {t \in \mathbf {T}} \sup _ {0 \leqslant m \leqslant \mathrm{M}} | \mathrm{S} _ {m} (g _ {\mathrm{M}}) (t) | \geqslant \frac {1}{4 0} \log n.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  存在 \(\varphi\in\mathrm{L}^{1}(\mathbf{T})\) 使得 \(\widehat{\varphi}(h)=0\)（当 \(h<0\) 时），且使得级数
+\end{enumerate}
+
+\[
+\sum_ {h \geqslant 1} \widehat {\varphi} (h) e _ {h} (t)
+\]
+
+对每个 \(t \in \mathbf{T}\) 发散（“Kolmogorov 定理”）。
+
+\[
+g _ {k} = \sum_ {n = - \mathrm{N} _ {k}} ^ {\mathrm{N} _ {k}} a _ {k, n} e _ {n}
+\]
+
+（存在整数的一个序列 \(\mathbf{N}_k\) 以及一个函数序列
+
+满足 \(\| g_k\| _1\leqslant 2\) 且
+
+\[
+\inf _ {t \in \mathbf {T}} \sup _ {0 \leqslant m \leqslant \mathrm{N} _ {k}} | \mathrm{S} _ {m} (g _ {k}) (t) | \geqslant 2 ^ {2 k}.
+\]
+
+设 \(\widetilde{g}_k = e_{\mathrm{M}_k}g_k\)，其中 \(\mathrm{M}_k\) 是一个充分大的整数；置 \(\varphi = \sum_{k\geqslant 1}2^{-k}\widetilde{g}_k.\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{51}
+\tightlist
+\item
+  设 H 是一个可数离散群，不必交换。a) 群 H 是顺从的（EVT，IV，第 73 页，习题 4）当且仅当存在 H 的有限子集的一个递增序列 \((\mathrm{F_N})_{\mathrm{N}}\)，使得对每个 \(x \in \mathrm{H}\)，有
+\end{enumerate}
+
+\[
+\lim _ {N \to + \infty} \frac {1}{\operatorname{Card} (F _ {N})} \operatorname{Card} ((F _ {N} - x F _ {N}) \cup (x F _ {N} - F _ {N})) = 0
+\]
+
+（“Følner 序列”）。若 H 交换，则它是顺从的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 G 是一个紧交换群。取定有限子集的一个序列 \((\mathrm{F}_{\mathrm{N}})_{\mathrm{N}\geqslant1}\)（离散群 \(\widehat{G}\) 的，如 a) 中那样），并用 \(\varphi_{N}\) 表示 \(F_{N}\) 的特征函数。置
+\end{enumerate}
+
+\[
+\psi_ {\mathrm{N}} = \frac {1}{\operatorname{Card} \left(\mathrm{F} _ {\mathrm{N}}\right)} \varphi_ {\mathrm{N}} * \widetilde {\varphi} _ {\mathrm{N}}.
+\]
+
+函数 \(\psi_{N}\) 具有有限支集，它满足 \(0 \leqslant \psi_{N} \leqslant 1\)，且
+
+\[
+\lim _ {\mathrm{N} \to + \infty} \psi_ {\mathrm{N}} (\chi) = 1
+\]
+
+（对所有 \(\chi\in\widehat{\mathbf{G}}\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(\mu_{\mathrm{N}}\) 是 G 上的以连续映射
+\end{enumerate}
+
+\[
+\sum_ {\chi \in \widehat {\mathrm{G}}} \psi_ {\mathrm{N}} (\chi) \chi .
+\]
+
+测度序列 \((\mu_{\mathrm{N}})_{\mathrm{N}\geqslant1}\) 收敛到 \(\varepsilon_{e}\)（在 \(\mathcal{M}^{1}(\mathrm{G})\) 中，赋以在 \(\mathcal{C}(\mathrm{G})\) 中紧收敛的拓扑）。（应用 INT，VIII，§2，第 7 节，引理 4。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 \(f\in \mathcal{C}(\mathrm{G})\)。于是我们有
+\end{enumerate}
+
+\[
+f = \lim _ {N \to \infty} \sum_ {\chi \in \widehat {G}} \psi_ {N} (\chi) \mathcal {F} (f) (\chi) \chi
+\]
+
+（在 \(\mathcal{C}(\mathrm{G})\) 中）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  把 Fejér 定理（II，第 242 页命题 23）作为这一命题的特殊情形重新得出。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{52}
+\tightlist
+\item
+  设 \(f\in \mathcal{L}^1 (\mathbf{T})\)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(k \geqslant 1\) 是整数，并假设 \(f \in \mathcal{C}^{k}(\mathbf{T})\)。f 的 Fourier 级数在 \(\mathcal{C}^{k-1}(\mathbf{T})\) 中收敛到 f。若 \(k \geqslant 2\)，则 f 的 Fourier 级数在 \(\mathcal{C}(\mathbf{T})\) 中绝对收敛到 f。
+\item
+  对每个整数 \(N \geqslant 1\)，设 \(f_{N}\) 是 T 上满足下式的函数：
+\end{enumerate}
+
+\[
+f_{\mathrm{N}}(t) = \sum_{\substack{h\in \mathbf{Z}\\ |h|\leqslant \mathrm{N}}}\widehat{f} (h)e^{2i\pi ht}\Bigl (1 - \frac{|h|}{\mathrm{N}}\Bigr)
+\]
+
+（对 \(t \in T\)）。设 \(X \subset T\) 是一个使 f 在其上的限制连续的集合。证明 \(f_{N}\) 在 X 上一致收敛到 f。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(X \subset T\) 是一个开集，使得 f 在 X 上的限制是 \(C^{1}\) 类的。证明 f 的 Fourier 级数在 X 上对称地一致收敛到 f。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{53}
+\tightlist
+\item
+  假设 G 不是紧的。设 \(\widehat{G}_{d}\) 是赋以离散拓扑的对偶群 \(\widehat{G}\)，而 \(\widetilde{G}\) 是 \(\widehat{G}_{d}\) 的对偶群；它是一个紧拓扑群。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  使 \(x \in \mathrm{G}\) 对应特征标 \(\chi \mapsto \chi(x)\) 的映射是 \(\mathrm{G}\) 到 \(\widetilde{\mathrm{G}}\) 中的一个连续单同态；其像在 \(\widetilde{\mathrm{G}}\) 中稠密。
+\end{enumerate}
+
+从现在起我们把 G 等同于 \(\widetilde{G}\) 的一个子集。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 K 是一个紧拓扑群，\(\varphi\colon\mathrm{G}\to\mathrm{K}\) 是一个连续同态。存在唯一的同态 \(\widetilde{\varphi}\)（从 \(\widetilde{\mathrm{G}}\) 到 K 中的），它延拓 \(\varphi\)。
+\item
+  设 \(f \in \mathcal{C}_b(\mathrm{G})\)。下列条件等价：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  存在函数 \(\widetilde{f} \in \mathcal{C}(\widetilde{\mathrm{G}})\)，它延拓 \(f\)；
+\item
+  函数 \(f\) 属于 \(\mathcal{C}(\mathrm{G})\) 中子空间（\(\mathcal{C}(\mathrm{G})\) 中由特征标 \(\chi\in\widehat{\mathrm{G}}\) 生成的）的闭包；
+\item
+  由 \(\gamma(x)f\)（对 \(x\in G\)）组成的集在 \(\mathcal{C}(G)\) 中是预紧的。
+\end{enumerate}
+
+（为验证 (iii) 蕴涵 (i)，证明 \(f\) 是一致连续的。然后考察诸 \(\pmb{\gamma}(x)f\) 的闭包；这是一个紧度量空间 K。证明 \(\varrho \colon x \mapsto \pmb{\gamma}(x)\) 是 G 到 K 的等距同构群中的一个连续同态；然后应用问题 \(b)\) 把 \(\varrho\) 延拓为 \(\widetilde{\varrho}\)，并置 \(\widetilde{f}(x) = (\widetilde{\varrho}(x)f)(e).\)）
+
+我们称满足这些等价条件的函数 \(f \in \mathcal{C}_b(\mathrm{G})\) 是概周期的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  设 f 是 G 上的一个概周期函数。对每个 \(\varepsilon > 0\) 以及 G 的每个紧子集 F，存在 \(x \in G - F\) 使得 \(\|\boldsymbol{\gamma}(x)f - f\| \leqslant \varepsilon\)。
+\item
+  G 上的概周期函数所成的集是 \(\mathcal{C}_{b}(\mathrm{G})\) 的一个星子代数。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{54}
+\tightlist
+\item
+  我们沿用前一习题的记号。我们给 \(\widetilde{G}\) 赋以规范化 Haar 测度 \(\nu\)。设 f 是 G 上的一个概周期函数，而 \(\widetilde{f}\)
+\end{enumerate}
+
+是它到 \(\widetilde{\mathrm{G}}\) 上的延拓。我们置
+
+\[
+\mathrm{A} (f) = \int_ {\widetilde {\mathrm{G}}} \widetilde {f} (x) \nu (x).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(\chi \in \widehat{\mathbf{G}}\)。函数 \(\overline{\chi} f\) 是概周期的。我们于是定义 \(\mathcal{P}(f)(\chi) = \mathrm{A}(\overline{\chi} f)\)。我们有
+\end{enumerate}
+
+\[
+\mathrm{A} (| f | ^ {2}) = \sum_ {\chi \in \widehat {\mathrm{G}}} | \mathcal {P} (f) (\chi) | ^ {2}
+\]
+
+    从而特别地，\(A(\overline{\chi}f)=0\) 除去对可数多个 \(\chi\) 外均为 0。b) 设 f 是 R 上的一个概周期函数。对每个 \(y \in R\)，有
+
+\[
+\mathcal {P} (f) (y) = \lim _ {\mathrm{T} \to + \infty} \frac {1}{2 \mathrm{T}} \int_ {- \mathrm{T}} ^ {\mathrm{T}} f (x) e ^ {- 2 i \pi x y} d x.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(\Lambda\) 是 \(\mathbf{R}\) 的一个有限子集。在 \(\mathbf{R}\) 上由下式定义的函数
+\end{enumerate}
+
+\[
+f (x) = \sum_ {\lambda \in \Lambda} e ^ {i \lambda x}
+\]
+
+在 \(\mathbf{R}\) 上是概周期的；试作为 \(\Lambda\) 的函数确定由 \(y \in \mathbf{R}\)（满足 \(\mathcal{P}(f)(y) \neq 0\)）组成的集。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{55}
+\tightlist
+\item
+  我们置
+\end{enumerate}
+
+\[
+k (z) = \left(\frac {\sin (\pi z)}{\pi z}\right) ^ {2}
+\]
+
+（若 \(z \in \mathbf{C} - \mathbf{Z}\)）且 \(k(z) = 1\)（若 \(z \in \mathbf{Z}\)）。函数 \(k\) 属于空间 \(\mathcal{E}_{1/2}\)（习题 36）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  对每个复数 \(z \in \mathbf{C} - \mathbf{Z}\)，有
+\end{enumerate}
+
+\[
+\sum_ {n \in {\bf Z}} \frac {1}{(z - n) ^ {2}} = \left(\frac {\pi}{\sin (\pi z)}\right) ^ {2}
+\]
+
+（应用 Poisson 公式）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  对 \(z \in \mathbf{C} - \mathbf{Z}\)，我们定义
+\end{enumerate}
+
+\[
+h (z) = \Big (\frac {\sin (\pi z)}{\pi} \Big) ^ {2} \Big \{\sum_ {n \in \mathbf {Z}} \frac {\mathrm{s} (n)}{(z - n) ^ {2}} + \frac {2}{z} \Big \},
+\]
+
+其中 \(s(n)\) 表示符号函数。函数 h 延拓为一个属于空间 \(E_{2}\) 的整函数。我们置 \(b = h + k\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  对每个 \(x \in \mathbf{R}\)，有 \(1 - k(x) \leqslant h(x) \leqslant 1\)。
+\item
+  对每个 \(x \in R\)，有 \(|\mathrm{s}(x) - h(x)| \leqslant k(x)\)。
+\item
+    我们有 \(b \geqslant s\)；函数 b−s 在 R 上可积且满足 \(\int(b - s) = 1\)。f) 设 \(\alpha < \beta\) 是实数，\(\varphi\) 是区间 \([\alpha, \beta]\) 的特征函数。函数 \(f_{\alpha,\beta}(z) = \frac{1}{2}(b(\beta - z) + b(z - \alpha))\) 满足 \(\varphi \leqslant f_{\alpha,\beta}\) 且 \(\int_{\mathbf{R}}(f_{\alpha,\beta} - \varphi) = 1\)。
+\end{enumerate}
+
+\(g)\) *存在整函数 \(\sigma\) 使得 \(f_{\alpha,\beta}(x)=|\sigma(x)|^{2}\)（对所有 \(x\in\mathbf{R}\)）。\(\sigma\) 在 \(\mathbf{R}\) 上的限制的 Fourier 变换的支集含于 \([-1/2,1/2].*\)*
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{56}
+\tightlist
+\item
+  我们沿用前一习题的记号。设 M 与 \(N \geqslant 1\) 是整数，\((a_{n})_{\mathrm{M} < n \leqslant \mathrm{M} + \mathrm{N}}\) 是复数的一个族。设 \(\delta > 0\) 是一个实数，\(R \geqslant 1\) 是一个整数，\((\xi_{r})_{1 \leqslant r \leqslant \mathrm{R}}\) 是实数的一个族，满足 \(\inf_{h \in \mathbf{Z}} |\xi_{r} - \xi_{r'} - h| \geqslant \delta\)（对所有 \(r \neq r'\)）。
+\end{enumerate}
+
+对每个 \(x\in \mathbf{R}\)，置
+
+\[
+\mathrm{S} (x) = \sum_ {n = \mathrm{M} + 1} ^ {\mathrm{M} + \mathrm{N}} a _ {n} e ^ {2 i \pi n x}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  我们有
+\end{enumerate}
+
+\[
+\sum_ {r = 1} ^ {\mathrm{R}} | \mathrm{S} (\xi_ {r}) | ^ {2} \leqslant (\mathrm{N} + \delta^ {- 1} - 1) \sum_ {n = \mathrm{M} + 1} ^ {\mathrm{M} + \mathrm{N}} | a _ {n} | ^ {2}
+\]
+
+（“大筛法不等式”）。
+
+考察函数 \(\tau\colon z\mapsto\sigma(\delta z)\)，其中 \(\sigma\) 是前一习题的问题 \(f\)) 与 \(g\))（对区间 \([\alpha,\beta]=[ \delta(M+1),\delta(M+N)]\)）中的函数；置
+
+\[
+\mathrm{S} ^ {*} (x) = \sum_ {n = \mathrm{M} + 1} ^ {\mathrm{M} + \mathrm{N}} a (n) \tau (n) ^ {- 1} e ^ {2 i \pi n x}
+\]
+
+并注意
+
+\[
+\mathrm{S} (x) = \int_ {- \delta / 2} ^ {\delta / 2} \widehat {\tau} (t) \mathrm{S} ^ {*} (t + x) d t.
+\]
+
+置 \(x = \xi_r\)，应用 Cauchy–Schwarz 不等式并对 \(r\) 求和。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  常数 \(N + \delta^{-1} - 1\) 是最优的。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{57}
+\tightlist
+\item
+  对每个非零实数 \(\lambda\)，我们用 \(\mu_{\lambda}\) 表示 \(\mathbf{R}\) 上的离散概率测度，它满足 \(\mu_{\lambda}(\lambda) = \mu_{\lambda}(-\lambda) = \frac{1}{2}\)。
+\end{enumerate}
+
+我们取定 \(\lambda \in ]0,1[\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  我们置 \(\nu_0 = \mu_1\) 与 \(\nu_{n+1} = \mu_{\lambda^{n+1}} * \nu_n\)（对每个整数 \(n \geqslant 0\)）。序列 \((\nu_n)_{n \in \mathbf{N}}\) 收敛到一个概率测度 \(\nu_\lambda\)（\(\mathbf{R}\) 上的）。\(\nu_\lambda\) 的特征函数是 \(\mathbf{R}\) 上由下式定义的函数
+\end{enumerate}
+
+\[
+\varphi_ {\lambda} (x) = \prod_ {n = 0} ^ {+ \infty} \cos (\lambda^ {n} x).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  测度 \(\nu_{\lambda}\) 是 R 上唯一的总质量为 1 的正测度 \(\nu\)，使得
+\end{enumerate}
+
+\[
+\nu = \frac {1}{2} \ell_ {1} (\nu) + \frac {1}{2} \ell_ {2} (\nu),
+\]
+
+其中 \(\ell_{1}\)（相应地，\(\ell_{2}\)）是从 R 到 R 中的映射 \(x \mapsto \lambda x - 1\)（相应地，\(x \mapsto \lambda x + 1\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  若测度 \(\nu_{\lambda}\) 不是基底为 Lebesgue 测度的测度，则 \(\nu_{\lambda}\) 关于 Lebesgue 测度是奇异的。（考察 \(\nu_{\lambda}\) 关于 Lebesgue 测度的 Lebesgue 分解，参看 INT，V，§5，第 7 节，定理 3。）
+\item
+  若 \(0 < \lambda < \frac{1}{2}\)，则测度 \(\nu_{\lambda}\) 关于 Lebesgue 测度是奇异的。
+\item
+  若 \(\lambda = \frac{1}{2}\)，则测度 \(\nu_{\lambda}\) 等于 {[}-2, 2{]} 上的均匀测度。若 \(\lambda > 1/2\)，则 \(\nu_{\lambda}\) 的支集是区间 \([-(1-\lambda)^{-1}, (1-\lambda)^{-1}]\)。
+\item
+  Pisot 数是指这样的实代数整数 \(x\)：所有共轭数 \(y \in \mathbf{C}\)（\(x\) 的、异于 \(x\) 的）都满足 \(|y| < 1\)。若 \(\lambda^{-1}\) 是一个 Pisot 数，则函数 \(\varphi_{\lambda}\) 在无穷远处不趋于 0。特别地，测度 \(\nu_{\lambda}\) 关于 Lebesgue 测度是奇异的。
+\item
+  存在 \(\lambda > 1/2\) 使得 \(\nu_{\lambda}\) 关于 Lebesgue 测度是奇异的。
+\end{enumerate}
+% semantic-fragments: legacy-input-seam
+\relax{}
+我们现在假设 \(\varphi_{\lambda}\) 在无穷远处不趋于 0，并记 \(\theta = 1 / \lambda\)。对每个实数 \(x\)，记 \(\langle x\rangle\) 为 \([0,1[\) 中满足 \(x - \langle x\rangle \in \mathbf{Z}\) 的唯一实数。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{7}
+\item
+  存在实数 \(u \neq 0\)，使得通项为 \(\sin(u\theta^{n})^{2}\) 的级数收敛；且通项为 \(\langle u\theta^{n}\rangle\) 的级数收敛。
+\item
+  对每个 \(n \in N\)，设 \(c_{n}\) 为满足 \(|u\theta^{n} - c_{n}| \leqslant \frac{1}{2}\) 的整数。形式级数 \(g(z) = \sum c_{n}z^{n}\) 是一个有理函数。（利用 A，IV，第 85 页，练习 1 中的判别法以及 Hadamard 不等式（EVT，V，第 37 页，推论 3），证明所出现的那些 Hankel 行列式趋于 0；再注意到这些行列式都是整数，由此得出结论。）
+\item
+  存在整系数多项式 \(f_1\) 与 \(f_2\)，使得 \(g = f_1 / f_2\) 且 \(f_2(0) = 1\)。
+\item
+  数 \(\theta\) 是一个 Pisot 数（“Salem 定理”）。（注意 \(f_{2}(\lambda)=0\)，并且 \(f_{2}\) 的其余根的模均 \textgreater1。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{58}
+\tightlist
+\item
+  设 \(n \geqslant 1\) 为整数，并为 \(R^{n}\) 配备 Euclid 范数。我们用 \(\mu\) 表示 \(R^{n}\) 上的 Lebesgue 测度。
+\end{enumerate}
+
+设 r \textgreater{} 0。\(R^{n}\) 中半径为 r 的球堆积是指由 \(R^{n}\) 的两两不相交的子集组成的一个集合 P，使得每个 \(S \in P\) 都是半径为 r 的闭球。我们称 P 是周期的，如果存在一个格 \(\Lambda \subset R^{n}\)，使得 \(S + h \in P\) 对所有 \(S \in P\) 以及每个 \(h \in \Lambda\) 都成立。
+
+设 \(A _{P}\) 为 P 的诸元素之并。它是一个可测集。我们称 P 的密度为实数
+
+\[
+\Delta (\mathcal {P}) = \limsup _ {\mathrm{R} \to + \infty} \frac {\mu (\mathrm{A} _ {\mathcal {P}} \cap \mathrm{B} _ {\mathrm{R}})}{\mu (\mathrm{B} _ {\mathrm{R}})}
+\]
+
+其中 \(B_{R}\) 是 \(R^{n}\) 中半径为 R 的闭球。我们记 \(\Delta_{n} = \sup_{\mathcal{P}} \Delta(\mathcal{P})\)。a) 我们有
+
+\[
+\Delta_ {n} = \sup _ {\mathcal {P} \text {   periodic }} \Delta (\mathcal {P}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 P 为一个周期的球堆积，它在格 \(\Lambda\) 下不变。设 \(C \subset R^{n}\) 为诸球 \(S \in P\) 的中心模 \(\Lambda\) 的一个代表集。我们有
+\end{enumerate}
+
+\[
+\Delta (\mathcal {P}) = \mu (\mathrm{B} _ {1}) \frac {r ^ {n} \operatorname{Card} (\mathrm{C})}{\mathrm{V} (\Lambda)}
+\]
+
+其中 V(Λ) 是 Λ 的余体积。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(a > 0\) 为一个实数。设 \(f: \mathbf{R}^{n} \to \mathbf{R}\) 为一个 Schwartz 函数，使得
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  我们有 \(f(x) \leqslant 0 \text{ 若 } \|x\| \geqslant 2a\)；
+\item
+  \(f\) 的 Fourier 变换取实值且为正，并满足 \(\widehat{f}(0)>0\)。
+\end{enumerate}
+
+则我们有
+
+\[
+\Delta_ {n} \leqslant \mu (\mathrm{B} _ {1}) a ^ {n} \frac {f (0)}{\widehat {f} (0)}.
+\]
+
+（只需考虑半径为 \(a\) 的周期球堆积；设 \(\mathcal{P}\) 为其中之一，并设 \(\Lambda\) 与 \(C \subset \mathbf{R}^n\) 如上一问题中那样；利用 Poisson 公式证明
+
+\[
+\sum_ {(c, d) \in \mathrm{C} ^ {2}} \sum_ {n \in \Lambda} f (d - c + n) = \frac {1}{\mathrm{V} (\Lambda)} \sum_ {h \in \Lambda^ {*}} \left| \sum_ {c \in \mathrm{C}} e ^ {2 i \pi c \cdot h} \right| ^ {2} \widehat {f} (h),
+\]
+
+其中 \(\Lambda^{*}\) 是相伴的格，然后得出结论。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{59}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \(\mathbf{H} \subset \mathbf{C}\) 为由复数 \(z\)（满足 \(\mathcal{I}(z) > 0\)）组成的开集。函数
+  \end{enumerate}
+\end{enumerate}
+
+\[
+\Theta (z) = \sum_ {n \in \mathbf {Z}} e ^ {2 i \pi n ^ {2} z}
+\]
+
+在 H 上全纯，且它满足 \(\Theta(z) = (z/i)^{-1/2}\Theta(-1/z)\)（对 \(z\in\mathrm{H}\)），其中 \(z\mapsto(z/i)^{1/2}\) 是 H 上延拓函数 \(iy\mapsto\sqrt{y}\) 的唯一的全纯函数。（利用练习 16，b)。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 m 与 n 为严格正的整数。我们有
+\end{enumerate}
+
+\[
+\frac {1}{\sqrt {m}} \sum_ {k = 0} ^ {m - 1} e ^ {2 i \pi k ^ {2} n / m} = \frac {e ^ {i \pi / 4}}{\sqrt {2 n}} \sum_ {k = 0} ^ {2 n - 1} e ^ {- 2 i \pi k ^ {2} m / (2 n)}.
+\]
+
+（在上一问题的关系式中取 \(z = -2in / m + iy\)，并令 \(y \to 0\)。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  对每个整数 \(m \geqslant 1\) 以及每个 \(n \in Z\)，置
+\end{enumerate}
+
+\[
+\tau (n, m) = \sum_ {k = 0} ^ {m - 1} e ^ {2 i \pi k ^ {2} n / m}.
+\]
+
+对所有严格正的整数 \(m_{1}\) 与 \(m_{2}\)，我们有
+
+\[
+\tau (1, m _ {1} m _ {2}) = \tau (m _ {2}, m _ {1}) \tau (m _ {1}, m _ {2}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  若 m 为奇数，我们有 \(\tau(1,m)=i^{((m-1)/2)^{2}}\sqrt{m}\)。（利用 a)。
+\item
+  若 p 是一个奇素数，则 \(\tau(n,p)=\ell_{p}(n)\tau(1,p)\)，其中 \(\ell_{p}\) 是 \((\mathbf{Z}/p\mathbf{Z})^{*}\) 的唯一的 2 阶特征标，被延拓到 \(Z/pZ\)（通过置 \(\ell_{p}(0)=0\)）。
+\item
+  设 \(p \neq q\) 为两个奇素数。我们有
+\end{enumerate}
+
+\[
+\ell_ {p} (q) \ell_ {q} (p) = \frac {\tau (1 , p q)}{\tau (1 , p) \tau (1 , q)}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  由此给出二次互反律的一个新证明（参看 A，V，第 156 页，练习 23）：对所有满足 \(p \neq q\) 的奇素数，有
+\end{enumerate}
+
+\[
+\ell_ {p} (q) \ell_ {q} (p) = (- 1) ^ {(p - 1) (q - 1) / 4}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{60}
+\tightlist
+\item
+  设 \(r \geqslant 1\) 为整数。设 \(A = (a_{i,j})\) 为一个 \((r, r)\) 型的整系数对称正定矩阵，并设 \(N \geqslant 1\) 为使得矩阵 \(A^* = NA^{-1}\) 也有整系数的整数。我们用 Q（相应地，\(\widetilde{Q}\)）表示与 A（相应地，与 \(A^{-1}\)）相伴的整二次型，也就是说，\(Q(x) = {}^t xAx\) 对所有 \(x \in \mathbf{Z}^r\) 成立。我们用 \((a, b) \mapsto \langle a|b \rangle_A\) 表示与 A 相伴的双线性型，于是 \(\langle a|b \rangle_A = {}^t aAb\)。
+\end{enumerate}
+
+我们用 H 表示由复数 z（满足 \(\mathcal{I}(z)>0\)）组成的集合。它是 C 的一个开子集。我们用 log: \(H\to C\) 表示对数的主值分支在 H 上的限制（FVR，III，第 10 页）。设 \(k\in N\) 为奇整数。对 \(z\in H\)，我们记 \(z^{k}=\exp(k\log(z))\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  群 \(\mathrm{SL}_2(\mathbf{Z})\) 按下式传递地作用于 \(\mathbf{H}\)：
+\end{enumerate}
+
+\[
+\left( \begin{array}{c c} a & b \\ c & d \end{array} \right) \cdot z = \frac {a z + b}{c z + d}, \qquad \left( \begin{array}{c c} a & b \\ c & d \end{array} \right) \in \mathrm{SL} _ {2} (\mathbf {Z})
+\]
+
+  （参看 TA，I，第 150 页，练习 5）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  对每个复数 \(z \in \mathbf{H}\) 以及每个 \(x \in \mathbf{Z}^r\)，级数
+\end{enumerate}
+
+\[
+\sum_{\substack{m\in \mathbf{Z}^{r}\\ m\equiv x\bmod \mathrm{N}}}\exp (i\pi \mathrm{Q}(m)z)
+\]
+
+绝对收敛且在紧集上一致收敛。
+
+我们用 \(\theta_{\mathrm{A}}(z;x)\) 或 \(\theta_{\mathrm{Q}}(z;x)\) 表示这个级数的和（“与 Q 相伴的 θ 函数”）。它是 \(\mathbf{H}\) 上的一个全纯函数。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  对每个 \(y \in \mathbf{Z}^r\)，有
+\end{enumerate}
+
+\[
+\sum_ {m \in {\bf Z} ^ {r}} \exp (i \pi Q (m + y) z) = \frac {1}{\sqrt {\det (A)}} \Bigl (\frac {i}{z} \Bigr) ^ {r / 2} \sum_ {m \in {\bf Z} ^ {r}} \exp \Bigl (- i \pi \frac {\widetilde {Q} (m)}{z} + m \cdot y \Bigr),
+\]
+
+（应用 Poisson 公式与练习 1。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  我们用 H 表示 \((\mathbf{Z}/\mathrm{NZ})^{r}\) 的由元素 \(\alpha\in(\mathbf{Z}/\mathrm{NZ})^{r}\)（满足 \(A\alpha=0\)，在 Z/NZ 中）组成的子群。群 H 的基数为 det(A)。H 的每个特征标都具有如下形式
+\end{enumerate}
+
+\[
+\psi_ {\beta} (\alpha) = \exp \Bigl (2 i \pi \frac {\langle \alpha | \beta \rangle_ {\mathrm{A}}}{\mathrm{N} ^ {2}} \Bigr),
+\]
+
+其中 \(\beta\in\mathrm{H}\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\item
+  对每个 \(\alpha \in \mathrm{H}\) 与 \(z\in \mathbf{H}\)，有 \(\theta_{\mathrm{Q}}(z + 2;\alpha) = \exp \bigl (\frac{2i\pi\mathrm{Q}(\alpha)}{\mathrm{N}^2}\bigr)\theta_{\mathrm{Q}}(z;\alpha)\)。
+\item
+  对每个 \(\alpha \in \mathrm{H}\) 与 \(z\in \mathbf{H}\)，有
+\end{enumerate}
+
+\[
+\theta_ {\mathrm{Q}} \Bigl (- \frac {1}{z}; \alpha \Bigr) = \frac {1}{\sqrt {\det (\mathrm{A})}} (- i z) ^ {r / 2} \sum_ {\beta \in \mathrm{H}} \psi_ {\beta} (\alpha) \theta_ {\mathrm{Q}} (z; \beta).
+\]
+
+\(g)\) 设 \(g = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \in \mathrm{SL}_2(\mathbf{Z})\) 满足 \(c \neq 0\)、\(d > 0\) 且 \(b \equiv c \equiv 0 \mod 2\)。对 \(\alpha \in \mathrm{H}\) 与 \(z \in \mathbf{H}\)，有
+
+\[
+\theta_ {\mathrm{Q}} (g \cdot z; \alpha) = \frac {1}{d ^ {r / 2} \det (\mathrm{A})} (c z + d) ^ {r / 2} \sum_ {\beta \in \mathrm{H}} \Phi (\alpha , \beta) \theta_ {\mathrm{Q}} (z; \beta),
+\]
+
+其中
+
+\[
+\Phi (\alpha ,\beta) = \sum_{\gamma \in \mathrm{H}}\psi_{\gamma}(\alpha)\Bigl (\sum_{\substack{\delta \text{mod.} d\mathrm{N}\\ \delta \equiv \alpha \text{mod.}\mathrm{N}}}\exp \Bigl (\frac{i\pi}{d\mathrm{N}^{2}} (b\mathrm{Q}(\delta) + 2\langle \gamma |\delta \rangle_{\mathrm{A}} - c\mathrm{Q}(\gamma))\Bigr)\Bigr)
+\]
+
+（先考虑 \(\theta_{\mathrm{Q}}(\widetilde{g} \cdot z; \alpha)\)，其中 \(\widetilde{g} = g\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\)。注意公式 \(d\widetilde{g} \cdot z = b - (dz - c)^{-1}\) 并应用上一问题；注意 \(\Phi(\alpha, \beta)\) 只依赖于 \(\beta\) 模 N 的值。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  再设 \(c \equiv 0 \mod. 2\mathrm{N}\)。则
+\end{enumerate}
+
+\[
+\theta_ {\mathrm{Q}} (g \cdot z; x) = \frac {\tau}{d ^ {r / 2}} (c z + d) ^ {k} \theta_ {\mathrm{Q}} (z; a \alpha),
+\]
+
+其中
+
+\[
+\tau = \sum_{\substack{\delta \text{mod.} d\mathrm{N}\\ \delta \equiv x\text{mod.}\mathrm{N}}}\exp \Bigl (\frac{i\pi b\mathrm{Q}(\delta)}{d\mathrm{N}^{2}}\Bigr).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\tightlist
+\item
+  再设 \(d\) 为奇数。我们有 \(\tau = \exp \left(\frac{i\pi abQ(\alpha)}{N^2}\right)\tau_Q(c;d)\)，其中
+\end{enumerate}
+
+\[
+\tau_ {\mathrm{Q}} (c, d) = \sum_ {x \in (\mathbf {Z} / d \mathbf {Z}) ^ {r}} e \left(- \frac {i \pi c \mathrm{Q} (x)}{d}\right)
+\]
+
+（“Gauss 和”。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  设 \(d = p_{1} \cdots p_{k}\)，其中 \(p_{1}, \ldots, p_{k}\) 为素数。我们置
+\end{enumerate}
+
+\[
+\left(\frac {n}{d}\right) = \prod_ {i = 1} ^ {k} \ell_ {p _ {i}} (n)
+\]
+
+其中，对每个奇素数 \(p\)，我们用 \(\ell_p\) 表示 \((\mathbf{Z}/p\mathbf{Z})^*\) 的唯一的 2 阶特征标，它被延拓到 \(\mathbf{Z}/p\mathbf{Z}\)（通过置 \(\ell_p(0) = 0\)；“Jacobi 符号”）。若 \(d\) 与 \(2c\det(\mathrm{A})\) 互素，则
+
+\[
+\tau_ {\mathrm{Q}} (c, d) = \Big (\frac {\det (\mathrm{A})}{d} \Big) \Big (\overline {{\varepsilon}} _ {d} \Big (\frac {2 c}{d} \Big) \sqrt {d} \Big) ^ {r},
+\]
+
+其中
+
+\[
+\varepsilon_ {d} = \left\{ \begin{array}{l l} 1 & \text { if } d \equiv 1 \bmod . 4 \\ i & \text { if } d \equiv - 1 \bmod . 4. \end{array} \right.
+\]
+
+（将二次型对角化并利用上一练习。）
+
+\(k)\) 若 \(g\) 模 4N 与单位矩阵同余，则
+
+\[
+\theta_ {\mathrm{Q}} (g \cdot z; \alpha) = \left(\frac {2 c}{d}\right) ^ {r} (c z + d) ^ {k} \theta_ {\mathrm{Q}} (z; \alpha).
+\]
+
+\(^{*}\) 这意味着映射 \(z \mapsto \theta_{q}(z; \alpha)\) 是一个权为 r/2、水平为 4N 的全纯模形式。（FM，编写中。）\(^{*}\)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{61}
+\tightlist
+\item
+  我们把 \(\mathbf{T}\) 与区间 \([-1/2, 1/2]\) 等同。设 \(f\) 是 \(\mathbf{R}/\mathbf{Z}\) 上由 \(f(x) = s(x)\)（符号函数）定义的函数。设 \(s_n\) 为对称部分和
+\end{enumerate}
+
+\[
+s _ {n} (x) = \sum_ {h = - n} ^ {n} \widehat {f} (h) e ^ {2 i \pi h x}
+\]
+
+，即 f 的 Fourier 级数的对称部分和。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个 \(x \neq 0\)（在 \(\mathbf{T}\) 中），有 \(s_n(x) \to f(x)\)（当 \(n \to +\infty\)）。
+\item
+  设 \(n \geqslant 1\) 且 \(0 < x \leqslant 1/2\)。我们有
+\end{enumerate}
+
+\[
+s _ {2 n} (x) = \frac {\sin (2 \pi n x)}{2 \sin (\pi x)}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  我们有
+\end{enumerate}
+
+\[
+\lim _ {n \rightarrow + \infty} s _ {2 n} \left(\frac {1}{4 n}\right) = 2 \int_ {0} ^ {1 / 2} \frac {\sin (2 \pi x)}{\pi x} d x,
+\]
+
+并且这个极限属于区间 \(]1,2[\)（“Gibbs 现象”）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{62}
+\tightlist
+\item
+  设 G 为 \(T^{N}\) 的由元素 \(x = (x_{n})\)（满足：除至多有限多个例外，\(2x_{n} = 0\) 对所有 \(n \in N\) 成立）组成的子群。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对每个有限集 \(\Lambda \subset \mathbf{N}\)，设 \(\mathrm{U}_{\Lambda} \subset \mathrm{G}\) 为由满足下列条件的 \((x_{n})\) 组成的集合：\(x_{n} = 1\)（对 \(n \in \Lambda\)）且 \(2x_{n} = 0\)（对 \(n \notin \Lambda\)）。G 上存在一个拓扑群结构，使得集合族 \(U_{\Lambda}\) 构成 e 的开邻域基。
+\item
+  拓扑群 G 是局部紧的。
+\item
+  群 G 不是可除的。
+\end{enumerate}
+
+\(d)\) 对偶群 \(\widehat{\mathrm{G}}\) 是无挠的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{63}
+\tightlist
+\item
+  设 \(\mu\) 为 \(\mathbf{T}\) 上的一个测度。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  对每个 \(x \in \mathbf{T}\)，有
+\end{enumerate}
+
+\[
+\mu (\{x \}) = \lim _ {\mathrm{H} \rightarrow + \infty} \frac {1}{2 \mathrm{H} + 1} \sum_ {| h | \leqslant \mathrm{H}} \widehat {\mu} (h) e ^ {2 i \pi h x}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们置 \(\mu = \mu_d + \mu_a\)，其中 \(\mu_a\) 是原子测度，\(\mu_d\) 是弥散测度（INT，V，§5，第 10 节，命题 15）。设 S 为 \(\mu_a\) 的支集。我们有
+\end{enumerate}
+
+\[
+\lim _ {\mathrm{H} \to + \infty} \frac {1}{2 \mathrm{H} + 1} \sum_ {| h | \leqslant \mathrm{H}} | \widehat {\mu} (h) | ^ {2} = \sum_ {x \in \mathrm{S}} | \mu (\{s \}) | ^ {2}
+\]
+
+（考察 \((\mu * \widetilde{\mu})(\{0\})\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(\mu\) 为 \(\mathbf{T}\) 上的一个概率测度。下列条件等价：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  存在 \(x \in \mathbf{T}\) 使得 \(\mu = \varepsilon_x\)；
+\item
+  我们有 \(\lim_{|h|\to+\infty}|\widehat{\mu}(h)|^{2}=1\)；
+\item
+  我们有
+\end{enumerate}
+
+\[
+\lim _ {\mathrm{H} \rightarrow + \infty} \frac {1}{2 \mathrm{H} + 1} \sum_ {| h | \leqslant \mathrm{H}} | \widehat {\mu} (h) | ^ {2} = 1.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{64}
+\tightlist
+\item
+  设 G 是紧的，并配备其规范化 Haar 测度 \(\mu\)。设 \(f: G \to G\) 为一个连续且满射的同态。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  我们有 \(f(\mu) = \mu\)。
+\item
+  映射 \(f\) 是 \(\mu\)-遍历的（参看 I，第 190 页，练习 16）当且仅当不存在 G 的特征标 \(\chi \neq e_{\widehat{\mathrm{G}}}\) 与整数 \(n \geqslant 1\) 使得 \(\chi \circ f^n = \chi\)。
+\item
+  设 \(d \geqslant 1\) 为整数，a 为一个 \((d, d)\) 型的、行列式为 1 的整系数矩阵。映射 \(f_{a} \colon T^{d} \to T^{d}\)（由 \(f_{a}(x) = ax\) 对所有 \(x \in T^{d}\) 定义）关于 \(T^{d}\) 上的规范化 Haar 测度是遍历的，当且仅当矩阵 a 在 \(\mathcal{L}(\mathbf{C}^{n})\) 中的谱不含单位根。
+\end{enumerate}
+
+¶ 66) 我们用 \(e\colon \mathbf{T}\to \mathbf{C}^{*}\) 表示由特征标 \(x\mapsto e^{2i\pi x}\)（\(\mathbf{R}\) 的特征标）过渡到商而定义的特征标。
+
+设 \(d \geqslant 2\) 为整数。设 \(\alpha \in R\)，并设 \(g \in R[X]\) 为一个次数 \textless{} d 的多项式。设 a 与 q 为互素的整数，其中 \(q \neq 0\)，使得
+
+\[
+\left| \alpha - \frac {a}{q} \right| \leqslant \frac {1}{q ^ {2}}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  设 \(\alpha \notin \mathbf{Z}\)。设 N 与 M 为满足 \(\mathrm{M} \geqslant 0\) 的整数。我们有
+\end{enumerate}
+
+\[
+\Big | \sum_ {n = N} ^ {N + M} e ^ {2 i \pi \alpha n} \Big | \leqslant \frac {1}{| \sin (\pi \alpha) |}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们记 \(D = 2^{d-1}\)。对每个 \(\varepsilon > 0\)，存在实数 \(C(\varepsilon, d) \geqslant 0\)，使得对每个整数 \(P \geqslant 1\)，有
+\end{enumerate}
+
+\[
+\left| \sum_ {n = 1} ^ {\mathrm{P}} e ^ {2 i \pi (\alpha n ^ {d} + g (n))} \right| \leqslant \mathrm{C} (\varepsilon , d) \mathrm{P} ^ {1 + \varepsilon} \left(\mathrm{P} ^ {- 1 / \mathrm{D}} + q ^ {- 1 / \mathrm{D}} + \left(\frac {\mathrm{P} ^ {d}}{q}\right) ^ {- 1 / \mathrm{D}}\right).
+\]
+
+（对 d 用归纳法，把不等式左端的平方化为次数 \(\leqslant d - 1\) 的一族多项式；当 d = 2 时，应用 a)。可以证明并利用估计式
+
+\[
+d (n) = \mathrm{O} (n ^ {\varepsilon})
+\]
+
+（当 \(n \to +\infty\)），其中 \(n \geqslant 1\)，\(d(n)\) 是 n 在 N 中的因子的个数，且此式对每个实数 \(\varepsilon > 0\) 都成立。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  由此给出练习 35 的 c) 中断言的一个新证明。
+\end{enumerate}
+
+¶ 67) 设 \(k \geqslant 2\) 与 \(\ell > k\) 为自然数。对每个整数 \(N \geqslant 1\)，我们用 \(r_{k,\ell}(N)\) 表示满足下式的族 \((n_1, \ldots, n_\ell) \in \mathbf{N}^\ell\) 的个数
+
+\[
+n _ {1} ^ {k} + \dots + n _ {\ell} ^ {k} = \mathrm{N}.
+\]
+
+本练习的目标是证明：若 \(\ell\) 相对于 \(k\) 足够大，则 \(r_{k,\ell}(\mathrm{N}) \geqslant 1\)（“Waring 问题”）对每个 \(\mathrm{N} \geqslant 1\) 成立。
+
+我们用 \(e\colon\mathbf{T}\to\mathbf{C}^{*}\) 表示由特征标 \(x\mapsto e^{2i\pi x}\)（\(\mathbf{R}\) 的特征标）过渡到商而定义的特征标。
+
+设 P ≥ 1 为整数。我们用 S \(_{P}\) 表示 T 上满足下式的函数
+
+\[
+\mathrm{S} _ {\mathrm{P}} (x) = \sum_ {n = 1} ^ {\mathrm{P}} e (x n ^ {k}).
+\]
+
+我们用 \(dx\) 表示 \(\mathbf{T}\) 上的规范化 Haar 测度。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  若 \(\mathrm{P} > \mathrm{N}^{1 / k}\)，则我们有
+\end{enumerate}
+
+\[
+r _ {k, \ell} (\mathrm{N}) = \int_ {\mathbf {T}} \mathrm{S} _ {\mathrm{P}} (x) ^ {\ell} e (- \mathrm{N} x) d x.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\delta\) 为满足 \(0 < \delta < 1/3\) 的实数，并设 \(\mathrm{P} = [\mathrm{N}^{1/k}]\)。我们假设 N 充分大，使得 \(\mathrm{P} \geqslant 1\)。设 \(a\) 与 \(q\) 为满足 \(1 \leqslant q \leqslant \mathrm{P}^{\delta}\) 的互素整数。我们用 \(\mathrm{M}_{a,q}\) 表示开区间在 \(\mathbf{T}\) 中的像
+\end{enumerate}
+
+\[
+\left. \right] \frac {a}{q} - \frac {1}{\mathrm{P} ^ {k - \delta}}, \frac {a}{q} + \frac {1}{\mathrm{P} ^ {k - \delta}} \Big [.
+\]
+
+对 \(x\in \mathrm{M}_{a,q}\)，有
+
+\[
+\sum_ {n = 1} ^ {\mathrm{P}} e ^ {2 i \pi x n ^ {k}} = \frac {1}{q} \mathrm{S} (a; q) \mathrm{I} \Bigl (x - \frac {a}{q} \Bigr) + \mathrm{O} (\mathrm{P} ^ {2 \delta})
+\]
+
+（当 N → +∞），其中
+
+\[
+\mathrm{S} (a; q) = \sum_ {x = 1} ^ {q} e \left(\frac {a x ^ {k}}{q}\right), \quad \mathrm{I} (y) = \int_ {0} ^ {\mathrm{P}} e \left(y t ^ {k}\right) d t.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  我们用 M 表示诸集合 \(M_{a,q}\) 的并，其中 q 取遍满足 \(1 \leqslant q \leqslant P^{\delta}\) 的整数，a 取遍与 q 互素且满足 \(1 \leqslant a < q\) 的整数。若 \(\delta < 1/5\)，则存在实数 \(\delta' > 0\) 使得
+\end{enumerate}
+
+\[
+\int_ {\mathrm{M}} \mathrm{S} _ {\mathrm{P}} (x) ^ {\ell} e (- \mathrm{N} x) d x = \mathrm{P} ^ {\ell - k} \mathfrak {S} (\mathrm{P} ^ {\delta}, \mathrm{N}) \mathrm{J} (\mathrm{P} ^ {\delta}) + \mathrm{O} (\mathrm{P} ^ {\ell - k - \delta^ {\prime}})
+\]
+
+（当 N → +∞），其中我们对 Q ≥ 1 置
+
+\[
+\mathfrak{S}(\mathrm{Q},\mathrm{N}) = \sum_{1\leqslant q\leqslant \mathrm{Q}}\sum_{\substack{a = 1\\ (a,q) = 1}}^{q}\Big(\frac{1}{q}\mathrm{S}(a;q)\Big)^{\ell}e\Big(-\frac{aN}{q}\Big)
+\]
+
+\[
+\mathrm{J(Q)} = \int_ {- \mathrm{Q}} ^ {\mathrm{Q}} \Bigl (\int_ {0} ^ {1} e (y t ^ {k}) d t \Bigr) ^ {\ell} e (- y) d y.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  我们有
+\end{enumerate}
+
+\[
+\mathrm{J} (\mathrm{Q}) = \frac {\Gamma (1 + 1 / k) ^ {\ell}}{\Gamma (\ell / k)} + \mathrm{O} (\mathrm{Q} ^ {- (\ell / k - 1)})
+\]
+
+（当 Q → +∞）。（首先证明
+
+\[
+\mathrm{J} (\mathrm{Q}) = \frac {1}{k ^ {\ell}} \int_ {\mathrm{X} _ {\ell}} (y _ {1} \dots y _ {\ell - 1} (1 - y _ {1} - \dots - y _ {\ell - 1})) ^ {- 1 + 1 / k} d y + \mathrm{O} (\mathrm{Q} ^ {- (\ell / k - 1)})
+\]
+
+其中
+
+\[
+\mathrm{X} _ {\ell} = \left\{\left(y _ {1}, \dots , y _ {\ell - 1}\right) \in \left(\mathbf {R} _ {+} ^ {*}\right) ^ {\ell - 1} \mid y _ {1} + \dots + y _ {\ell - 1} <   1 \right\},
+\]
+
+然后计算这个积分；参看 FVR VII，第 8 页，命题 4。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  设 \(\ell >\delta^{-1}k2^{k}\)。存在 \(\delta^{\prime} > 0\) 使得
+\end{enumerate}
+
+\[
+\int_ {\mathbf {T - M}} | \mathrm{S} _ {\mathrm{P}} (x) | ^ {\ell} e (- \mathrm{N} x) d x = \mathrm{O} (\mathrm{P} ^ {\ell - k - \delta^ {\prime}})
+\]
+
+（当 \(N \rightarrow +\infty\)）。（若 N 充分大且 \(x \in R\) 的像位于 T-M 中，则存在互素的整数 a 与 q，使得
+
+\[
+\mathrm{P} ^ {\delta} \leqslant q \leqslant \mathrm{P} ^ {k - \delta}, \quad \left| x - \frac {a}{q} \right| \leqslant \frac {1}{q ^ {2}}.
+\]
+
+然后利用练习 66。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  对每个素数 p 以及每个整数 \(m \geqslant 1\)，置
+\end{enumerate}
+
+\[
+\mathrm{A}(p^{m}) = \sum_{\substack{a = 1\\ (a,q) = 1}}^{p^{m}}\Big(\frac{1}{p^{m}}\mathrm{S}(a;p^{m})\Big)^{\ell}e\Big(-\frac{a\mathrm{N}}{p^{m}}\Big)
+\]
+
+以及
+
+\[
+\mathrm{N} (p ^ {m}) = \operatorname{Card} \left(\left\{\left(x _ {1}, \dots , x _ {\ell}\right) \in (\mathbf {Z} / p ^ {m} \mathbf {Z}) ^ {\ell} \mid x _ {1} ^ {k} + \dots + x _ {\ell} ^ {k} = \mathrm{N mod.} p ^ {m} \right\}\right).
+\]
+
+当 \(\ell > 2^k\) 时，有
+
+\[
+1 + \sum_ {m = 1} ^ {+ \infty} \mathrm{A} (p ^ {m}) = \lim _ {m \to + \infty} \frac {\mathrm{N} (p ^ {m})}{p ^ {m (\ell - 1)}}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  当 \(\ell > 2^k\) 时，有 \(\mathfrak{S}(\mathrm{Q}, \mathrm{N}) = \mathfrak{S}(\mathrm{N}) + o(1)\)（当 \(\mathrm{Q} \to +\infty\)），其中
+\end{enumerate}
+
+\[
+\mathfrak {S} (\mathrm{N}) = \prod_ {p} \Bigl (1 + \sum_ {m \geqslant 1} \mathrm{A} (p ^ {m}) \Bigr),
+\]
+
+该乘积取遍所有素数，且是绝对收敛的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  设 p 为素数。设 \(\nu \geqslant 0\) 为使得 \(k = p^{\nu}r\)（其中 p 不整除 r）成立的整数。我们用 \(\gamma\) 表示整数
+\end{enumerate}
+
+\[
+\gamma = \left\{ \begin{array}{l l} \nu + 1 & \text { if } p \geqslant 3 \\ \nu + 2 & \text { otherwise. } \end{array} \right.
+\]
+
+若存在整数 \((n_1, \ldots, n_\ell)\) 使得 \(p\) 不整除所有的 \(n_i\)，并且使得
+
+\[
+x _ {1} ^ {k} + \dots + x _ {\ell} ^ {k} \equiv 0 \mathrm{mod.} p ^ {\gamma},
+\]
+
+则
+
+\[
+\lim _ {m \to + \infty} \frac {\mathrm{N} (p ^ {m})}{p ^ {m (\ell - 1)}} > 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\roman{enumi})}
+\tightlist
+\item
+  存在 \(\ell > k\) 使得：若 N 充分大，则 \(\mathfrak{S}(N) > 0\)。（利用上一小问以及练习 33 的 h)。）
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  存在整数 \(\ell > k\) 使得 \(r_{k,\ell}(\mathrm{N}) \geqslant 1\) 对每个整数 \(\mathrm{N} \geqslant 1\) 成立。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{67}
+\tightlist
+\item
+  我们把 G 的群运算写成加法。设 \(\Gamma\) 为 G 的一个离散子群，使得 \(G / \Gamma\) 是紧的。设 \(\Lambda = \Gamma^{\perp}\) 为 \(\Gamma\) 在 \(\widehat{G}\) 中的正交补；由于 \(\widehat{G / \Gamma}\) 与 \(\Lambda\) 等同（后者是 \(\widehat{G}\) 的离散子群），并且 \(\widehat{G} / \Lambda\) 是紧的（因为它的对偶与 \(\Gamma\) 等同）。
+\end{enumerate}
+
+我们假设 G 上的 Haar 测度如此选取，使得对偶测度 \(d\chi\) 在 \(\widehat{G}\) 上除以 \(\Lambda\) 上的计数测度所得之商，是 \(\widehat{G}/\Lambda\) 上的规范化 Haar 测度（INT，VII，§ 2，第 2 节，定义 1）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  存在 \(\Omega\)（\(\widehat{\mathbf{G}}\) 的一个可测子集），它与 \(\mathbf{G}\) 模 \(\Lambda\) 的每个类恰好交于一点；\(\Omega\) 的测度等于 1。
+\item
+  对 \(x\in \mathbf{G}\)，置
+\end{enumerate}
+
+\[
+\varphi (x) = \int_ {\Omega} \chi (x) d \chi .
+\]
+
+函数 \(\varphi\) 是连续的；它满足 \(\varphi(0) = 1\) 以及 \(\varphi(\gamma) = 0\)（对所有 \(\gamma \in \Gamma - \{0\}\)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  证明 \(\varphi\) 属于 \(\mathrm{L}^2 (\mathrm{G})\) 且 \(\| \varphi \| _2 = 1\)。对每个 \(\gamma \in \Gamma -\{e\}\)，有
+\end{enumerate}
+
+\[
+\int_ {\mathrm{G}} \varphi (x) \overline {{\varphi (\gamma - x)}} d x = 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  设 \(f \in \mathrm{L}^{2}(\mathrm{G})\) 满足：\(\mathcal{F}(f)\) 在 \(\Omega\) 之外几乎处处为零。证明
+\end{enumerate}
+
+\[
+f = \sum_ {\gamma \in \Gamma} f (\gamma) \boldsymbol {\delta} _ {\gamma} (\varphi)
+\]
+
+（在 \(\mathrm{L}^2 (\mathrm{G})\) 中），其中 \(\delta_{\gamma}(\varphi)(x) = \varphi (x - \gamma)\)。此外，我们有
+
+\[
+\int_ {\mathrm{G}} | f (x) | ^ {2} d x = \sum_ {\gamma \in \Gamma} | f (\gamma) | ^ {2}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  存在 G 上唯一的连续函数，它与 f 几乎处处相等。若 f 是连续的，则
+\end{enumerate}
+
+\[
+f = \sum_ {\gamma \in \Gamma} f (\gamma) \boldsymbol {\delta} _ {\gamma} (\varphi)
+\]
+
+（在 \(\mathcal{C}(\mathrm{G})\) 中）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  特殊化到 G = R 且 \(\Lambda = hZ\)（其中 h \textgreater{} 0）的情形，取 \(\Omega = [-h, h[\)。
+\end{enumerate}
+

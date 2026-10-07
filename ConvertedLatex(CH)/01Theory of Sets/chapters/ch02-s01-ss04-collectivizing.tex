@@ -1,0 +1,68 @@
+\subsection{集合化关系}
+
+设 R 是一个关系，x 是一个字母。如果 y 和 \(y'\) 表示不同于 x 且不出现在 R 中的字母，则关系
+
+\[
+(\exists y) (\forall x) ((x \in y) \leftrightarrow R), (\exists y ^ {\prime}) (\forall x) ((x \in y ^ {\prime}) \leftrightarrow R)
+\]
+
+由 CS8（第一章，§4，第1号），二者相同。如此定义的关系（其中不含 x）记为 Coll \(_{x}\) R.
+
+如果 \(\operatorname{Coll}_{\mathbf{x}} R\) 是理论 \(\mathcal{G}\) 中的一个定理，就称 \(R\) 关于 \(\mathbf{x}\) 在 \(\mathcal{G}\) 中是集合化的。在这种情况下，可以引入一个辅助常量 \(\mathbf{a}\) ，它异于 \(\mathbf{x}\) 和 \(\mathcal{G}\) 的各常量，且不出现在 \(\mathbf{R}\) 中，同时引入公理 \((\forall \mathbf{x}) ((\mathbf{x} \in \mathbf{a}) \Longleftrightarrow \mathbf{R})\) ；等价地，如果 \(\mathbf{x}\) 不是 \(\mathcal{G}\) 的常量，则引入 \((\mathbf{x} \in \mathbf{a}) \Longleftrightarrow \mathbf{R}\) .
+
+直观地说，说R在x中收集，就是说存在一个集合a，使得具有性质R的对象x恰好是a的元素。
+
+\minorheading{示例}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  关系 \(x \in y\) 显然关于 \(x\) 是集合化的.
+\item
+  关系 \(x \notin x\) 关于 \(x\) 不是集合化的；换言之，（非 \(\operatorname{Coll}_x(x \notin x)\) ) 是一个定理。用反证法证明：假设 \(x \notin x\) 是集合化的。设 \(a\) 为一个辅助常量，它异于 \(x\) 和该理论的各常量，并取引入公理
+\end{enumerate}
+
+\[
+(\forall x) ((x \notin x) \iff (x \in a)).
+\]
+
+那么关系
+
+\[
+(a \notin a) \iff (a \in a)
+\]
+
+根据 C30（第一章，第4节，第3小节）为真。分情形讨论的方法（第一章，第3节，第3小节）首先表明关系 \(\pmb{a} \notin \pmb{a}\) 为真，然后表明关系 \(\pmb{a} \in \pmb{a}\) 是真的，这很荒谬。
+
+C49. 设 R 为一个关系，x 为一个字母。若 R 在 x 上是集合化的，则关系 \((\forall x)((x \in y) \Longleftrightarrow R)\) ，其中 y 是一个与 x 不同的字母，且不出现在 R 中，在 y 上是泛函的。
+
+这直接从C48得出。
+
+在接下来的内容中，我们经常会遇到形如 \(Coll_{x}R\) 的定理。为了表示项
+
+\[
+\tau_ {y} (\forall x) ((x \in y) \iff R),
+\]
+
+（该术语不依赖于字母y的选择，其中y与x不同且不出现在R中），我们将引入一个函数符号 \(\mathcal{E}\mathbf{x}(\mathbf{R})\) ；相应的项不包含 X。此项记作“所有满足 R 的 x 的集合”。根据定义（第一章，§4，第 1 号），关系
+
+\[
+(\forall x) ((x \in \mathcal {E} x (R)) \iff R)
+\]
+
+恒同于 \(Coll_{x}R\) ；因此关系 R 等价于
+
+\[
+\boldsymbol {x} \in \mathcal {E} _ {\boldsymbol {x}} (\boldsymbol {R}).
+\]
+
+C50. 设 R、S 为两个关系，并设 x 为一个字母。若 R 和 S 在 x 上是集合化的，则关系 \((\forall x)(R \Longrightarrow S)\) 等价于
+
+\[
+\mathcal {E} _ {\boldsymbol {x}} (\boldsymbol {R}) \subset \mathcal {E} _ {\boldsymbol {x}} (\boldsymbol {S}),
+\]
+
+，且关系 \((\forall x)(R \Longleftrightarrow S)\) 等价于 \(\mathcal{E}_{x}(R) = \mathcal{E}_{x}(S)\) .
+
+这直接由前面的注记以及定义 1 和公理 A1 推出。
+

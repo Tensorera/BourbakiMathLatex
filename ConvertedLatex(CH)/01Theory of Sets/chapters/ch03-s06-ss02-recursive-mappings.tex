@@ -1,0 +1,50 @@
+\subsection{归纳定义映射}
+
+由于集合 N 是良序的，我们可以应用准则 C60（ \(\S2\) ，第2号），现在采取以下形式（使用相同的记号）：
+
+C62. 设 u 是一个字母，并设 \(T\{u\}\) 是一个项。则存在一个集合 U 和一个从 N 到 U 的满射 f，使得对每个整数 n，我们有 \(f(n)=T\{f^{(n)}\}\) ，其中 \(f^{(n)}\) 表示 {[}0, n{[} 到 \(f([0, n])\) 上的、在 {[}0, n{]} 上与 f 一致的映射。此外，集合 U 和映射 f 由该条件唯一确定。
+
+我们将由此推出以下准则：
+
+C63。设 \(S\{v\}\) 并且 \(a\) 是两个项。那么存在一个集合 \(V\) 以及一个映射 \(f\) （从 \(N\) 到 \(V\) 上）使得 \(f(0) = a\) 并且 \(f(n) = S\{f(n-1)\}\) 对于每个整数 \(n \geqslant 1\) 。此外，集合 \(V\) 与映射 \(f\) 由这些条件唯一确定。
+
+为了从C62 (*)推导出C63，令
+
+\[
+\mathrm{D} (u) = \mathcal {E} _ {x} (x \in \mathbf {N} \text {   且   } (\exists y) ((x, y) \in \operatorname{pr} _ {1} (\operatorname{pr} _ {1} (u))))
+\]
+
+对于每个字母 \(u\) 。如果 \(u\) 是从 \(\mathbf{N}\) 的某个子集到一个集合的映射，那么 \(\mathrm{D}(u)\) 正是 \(u\) 的定义域（第二章，§3，第1号）。设 \(\mathbf{M}(u)\) 为 \(\mathrm{D}(u)\) 在 \(\mathbf{N}\) 中的最小上界 ( \(\dagger\) ）。设 \(\varphi\) 为空映射，其中 \(\varnothing\) 作为源和目标，即（第二章，§3，第1号和第4号），三元组 \((\varnothing, \varnothing, \varnothing)\) ）并考虑关系
+
+\[
+(u = \varphi \text {   且   } y = a) \text {   或   } (u \neq \varphi \text {   且   } y = S \{u (M (u)) \})
+\]
+
+我们将其记为 \(\mathbf{R}\{y,u\}\) ；最后，令 \(\mathbf{T}\{u\}\) 为项 \(\tau_{y}(\mathbf{R}\{y,u\})\) 。将C62应用于项 \(\mathbf{T}\{u\}\) 。由于 \(f^{(0)}\) 等于 \(\varphi\) ，我们有 \(\mathbf{T}\{f^{(0)}\}=a\) ；因此 \(f(0)=a\) 。另一方面，如果 \(n>0\) ，我们有 \(\mathbf{D}(f^{(n)})=[0,n-1]\) 并且 \(\mathbf{M}(f^{(n)})=n-1\) ，由此
+
+\[
+\mathrm{T} \left\{f ^ {(n)} \right\} = \mathrm{S} \left\{f ^ {(n)} (n - 1) \right\} = \mathrm{S} \left\{f (n - 1) \right\}.
+\]
+
+示例
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  假设 \(a\) 是集合 \(\mathbf{E}\) 的一个元素，并且 \(S\{u\}\) 是项 \(g(u)\) ，其中 \(g\) 是 \(\mathbf{E}\) 到自身的一个映射（**）。然后通过对 \(n\) 进行归纳立即可见，对于所有 \(n \in \mathbf{N}\) 我们拥有 \(f(n) \in \mathbf{E}\) ；因此 \(f\) 是从 \(\mathbf{N}\) 到 \(\mathbf{E}\) 中的一个映射，使得 \(f(0) = a\) 并且 \(f(n + 1) = g(f(n))\) 对于所有整数 \(n\) .
+\end{enumerate}
+
+同样地，让 \(h\) 为从 \(\mathbf{N} \times \mathbf{E}\) 到 \(\mathbf{E}\) 中的一个映射，并且让 \(\psi\) 为 \(\mathbf{N} \times \mathbf{E}\) 到自身的、由 \(\psi(n, x) = (n + 1, h(n, x))\) 所定义的映射。根据前面的讨论，存在一个唯一的映射 \(g = (\theta, f)\) （从 \(\mathbf{N}\) 到 \(\mathbf{N} \times \mathbf{E}\) 中），使得 \(g(0) = (0, a)\) 并且 \(g(n + 1) = \psi(g(n))\) 对于所有 \(n\) ；由此可得出映射 \(f\) （从 \(\mathbf{N}\) 到 \(\mathbf{E}\) 中）的存在性与唯一性，使得 \(f(0) = a\) 并且 \(f(n + 1) = h(n, f(n))\) 对于每个整数 \(n\) .
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设X为一个集合，并设E为X到自身映射的集合。令e表示X到自身的恒等映射，并令f为E中的任意元素。取 \(S\{u\}\) 作为该项 \(f \circ u (*)\) 。通过应用C63，我们看到存在一个从N到E的唯一映射，记为 \(n \to f^n\) ，使得 \(f^0 = e\) 并且 \(f^{n+1} = f \circ f^n\) . 映射 \(f^n\) 被称为映射f的第n次迭代。
+\item
+  如果我们取 \(S \{u\}\) 作为该项 \(\mathfrak{P}(u)\) ，以及 \(a\) 是一个集合 \(E\) ，同样地，由此可知存在一个映射，记作 \(n \to \mathfrak{P}^n(E)\) （从 \(N\) 到一个集合 \(V(E)\) 中），使得 \(\mathfrak{P}^0(E) = E\) , \(\mathfrak{P}^1(E) = \mathfrak{P}(E)\) ，以及 \(\mathfrak{P}^{n+1}(E) = \mathfrak{P}(\mathfrak{P}^n(E))\) 对于每一个整数 \(n\) .
+\end{enumerate}
+
+备注。设E为一个集合，A为E的一个子集，g为从A到E的一个映射，且a为A中的一个元素。取S \(\{u\}\) 作为该项 \(g(u)\) 。准则C63适用，并证明了存在一个从N到集合V的满射映射f，使得 \(f(0) = a\) 并且 \(f(n+1) = g(f(n))\) 对每个整数n成立。可能发生的情况是 \(V \subset A\) ；如果不是，设p为满足条件 \(f([0, p]) \subset A\) 的最大的整数。然后 \(f(p+1) = g(p) \notin A\) ，以及 \(g(g(p))\) 是一个无法对其作任何断言的项。因此在这种情况下，f被认为仅定义在区间 \([0, p+1]\) 上（“受限归纳”）。
+

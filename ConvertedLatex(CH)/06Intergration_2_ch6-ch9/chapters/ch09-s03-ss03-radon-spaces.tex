@@ -1,0 +1,91 @@
+\subsection{Radon 空间}
+
+定义 2. --- 设 T 是拓扑空间。如果 T 是 Hausdorff 空间，并且定义在 T 的 Borel σ-集环 \(\mathfrak{B}(\mathrm{T})\) 上、取值于 \(\overline{R}_{+}\) 的每个可数可加且有界（相应地，局部有界）函数都是内正则的，则称 T 是 Radon（相应地，强 Radon）空间。
+
+例如，稍后我们将看到（Prop. 3），每个波兰空间都是强 Radon 空间。特别地，每个具有可数基的局部紧空间都是强 Radon 空间。
+
+存在不是强 Radon 空间的 Radon 空间。
+
+命题 1. --- 每个 Lindelöf \(^{(1)}\) Radon 空间都是强 Radon 空间。
+
+设 T 是 Radon 的 Lindelöf 空间，I 是定义在集环 \(\mathfrak{B}(T)\) 上的正的、可数可加且局部有界的集合函数。满足 \(\mathrm{I}(\mathrm{V}) < +\infty\) 的开集 V 覆盖 T，从中可以选出一个可数覆盖 \((\mathrm{V}_{n})_{n \in \mathbb{N}}\)。置 \(G_{n} = V_{0} \cup V_{1} \cup \cdots \cup V_{n}\) 对每个 \(n \in N\) 成立；置 \(H_{0} = G_{0}\)，并置 \(H_{n} = G_{n} - G_{n-1}\) 对 \(n \geqslant 1\) 成立；最后，令 \(I_{n}\) 为集合函数 \(A \mapsto \mathrm{I}(A \cap H_{n})\)，定义在 \(\mathfrak{B}(T)\) 上，它显然是可数可加且有界的。由于集合 \(H_{n}\) 构成 T 的一个分割，有 \(I = \sum_{n} I_{n}\)。因为空间 T 是 Radon 的，所以对于每个 \(n \in N\)，存在 T 上的有界测度 \(\mu_{n}\)，使得 \(\mu_{n}^{\bullet}(\mathrm{A}) = I_{n}(\mathrm{A})\) 对所有 \(A \in \mathfrak{B}(T)\) 成立；因而也有 \(\sum_{n} \mu_{n}^{\bullet}(\mathrm{A}) = I(\mathrm{A})\)。由于 I 局部有界，族 \((\mu_{n})\) 可求和（§1, No.~7, Prop. 7）；若以 \(\mu\) 表示 \(\sum_{n} \mu_{n}\)，则有 \(\mu^{\bullet}(\mathrm{A}) = I(\mathrm{A})\) 对所有 \(A \in \mathfrak{B}(T)\) 成立，由此 I 是内正则的。换言之，T 是强 Radon 的。
+
+回忆，若拓扑空间 T 的子集 A 对于 T 上的每个测度 \(\mu\) 都是 \(\mu\) -可测的，则称 A 是普遍可测的。这等价于说，对于 T 上每个具有紧支集的测度 \(\mu\)，A 都是 \(\mu\) -可测的（\(\S1\) , No.~8, Prop. 9）。
+
+命题 2. --- 设 X 是拓扑空间，T 是 X 的子空间。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  假设 \(\mathbf{T}\) 是 Radon 空间。则对于每个定义在 \(\mathfrak{B}(\mathbf{X})\) 上、正的、可数可加且有界的函数 I，都有
+\end{enumerate}
+
+\[
+\sup_{\substack{K\text{compact}\\ K\subset T}}I(K) = \inf_{\substack{B\in \mathfrak{B}(X)\\ B\supset T}}I(B).\tag{6}
+\]
+
+此外，\(\mathbf{T}\) 在 \(\mathbf{X}\) 中是普遍可测的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  反之，假设 X 是 Radon 空间且 T 在 X 中普遍可测；则 T 是 Radon 空间。
+\end{enumerate}
+
+我们来证明 \(a\)。记 (6) 的右端为 \(\alpha\)；对于每个 \(n \in \mathbf{N}\)，存在集合 \(C_n \in \mathfrak{B}(X)\)，包含 \(T\)，使得 \(I(C_n) \leqslant \alpha + 2^{-n}\)。置 \(C = \bigcap_{n} C_n\)，则 \(T \subset C\)，且 \(I(C) = \alpha\)。若 \(A \in \mathfrak{B}(T)\)，取 Borel 集 \(B\)（属于 \(X\)），使得 \(A = B \cap T\)（GT, I, §4, No.~5, Prop. 5），并置 \(J(A) = I(B \cap C)\)。这个数与 \(B\) 的选取无关，因为若 \(B'\) 是 \(X\) 中满足 \(A = B' \cap T\) 的另一个 Borel 集，则 \(B \cap C\) 和 \(B' \cap C\) 只相差一个 Borel 集 \(M\)；该集包含于 \(C - T\)，且 \(I(M) = 0\) 由 \(C\) 的构造而成立。显然，\(J(K) = I(K)\) 对每个紧集 \(K \subset T\) 成立。令 \((A_n)\) 是 \(T\) 的 Borel 集的两两不交序列，并且对于每个 \(n\)，令 \(B_n\) 是 \(X\) 的 Borel 集，使得 \(B_n \cap T = A_n\)。必要时将 \(B_n\) 替换为 \(B_n - \left( \bigcup_{k < n} B_k \right)\)，可以假设集合 \(B_n\) 两两不交。置 \(A = \bigcup_{n} A_n\) 和 \(B = \bigcup_{n} B_n\)；于是
+
+\[
+\mathrm{J} (\mathrm{A}) = \mathrm{I} (\mathrm{B} \cap \mathrm{C}) = \sum_ {n} \mathrm{I} (\mathrm{B} _ {n} \cap \mathrm{C}) = \sum_ {n} \mathrm{J} (\mathrm{A} _ {n});
+\]
+
+因此 J 是 \(\mathfrak{B}(\mathrm{T})\) 上的有界可数可加函数。由于根据假设 T 是 Radon 空间，存在 T 上的有界测度 \(\mu\)，使得 \(\mathrm{J}(\mathrm{A}) = \mu^{\bullet}(\mathrm{A})\) 对每个 \(\mathrm{A} \in \mathfrak{B}(\mathrm{T})\) 成立；于是
+
+\[
+\alpha = \mathrm{J} (\mathrm{T}) = \mu^ {\bullet} (\mathrm{T}) = \sup _ {\mathrm{K}} \mu^ {\bullet} (\mathrm{K}) = \sup _ {\mathrm{K}} \mathrm{J} (\mathrm{K}),
+\]
+
+根据 \(\mu^{\bullet}\) 的定义，公式 (6) 得证。
+
+现在证明 T 是普遍可测的。令 \(\lambda\) 是 X 上的有界测度；可以把前面的论证应用于集合函数 \(I: A \mapsto \lambda^{\bullet}(A)\)，定义在 \(\mathfrak{B}(X)\) 上，从而存在 T 的紧子集序列 \((K_{n})\)，使得（沿用上面的记号）
+
+\[
+\sup _ {n} \lambda^ {\bullet} (\mathrm{K} _ {n}) = \mathrm{J} (\mathrm{T}) = \lambda^ {\bullet} (\mathrm{C}).
+\]
+
+置 \(K' = \bigcup_{n \in \mathbf{N}} K_n\)；\(K'\) 是 \(X\) 中的 Borel 集，\(K' \subset T \subset C\)，\(\lambda^\bullet(K') = \lambda^\bullet(C)\)，因此这三个集合只相差 \(\lambda\) -可忽略集，从而 \(T\) 是 \(\lambda\) -可测的。这完成了 \(a\) 的证明。
+
+现在转到 \(b\)。假设 \(X\) 是 Radon 空间且 \(T\) 在 \(X\) 中普遍可测。令 \(I\) 是 \(\mathfrak{B}(T)\) 上的正、有界可数可加函数；于是定义在 \(A \mapsto I(A \cap T)\) 上的函数 \(\mathfrak{B}(X)\) 是正的、有界且可数可加的，因此存在 \(\nu\) 上的有界测度 \(X\)，使得 \(I(A \cap T) = \nu^{\bullet}(A)\) 对所有 \(A \in \mathfrak{B}(X)\) 成立。现在 \(T\) 是 \(\nu\) -可测的；前一个关系表明 \(\nu^{\bullet}(K) = 0\)，其中 \(K\) 遍历 \(X\) 中与 \(T\) 不交的紧集，因此 \(\nu\) 集中于 \(T\)。于是对于 \(A\) 的每个 Borel 集 \(X\)，有 \(I(A \cap T) = \nu^{\bullet}(A \cap T) = \mu^{\bullet}(A \cap T)\)，其中 \(\mu\) 是 \(\nu\) 在 \(T\) 上诱导的测度。最后可得，对于每个 \(I(B) = \mu^{\bullet}(B)\)，有 \(B \in \mathfrak{B}(T)\)，而 \(I\) 确实如此。
+
+推论。--- 如果 X 是 Radon 空间，则 X 的每个 Borel 子集 T 都是 Radon 空间。
+
+因为 \(\mathbf{T}\) 在 \(\mathbf{X}\) 中是普遍可测的。
+
+命题 3. --- 每个苏斯林空间（特别地，每个波兰空间或卢津空间）都是强 Radon 空间。
+
+设 T 是苏斯林空间；由于 T 是 Lindelöf 空间（TG, IX, Appendix I, Cor. of Prop. 1），\(^{(2)}\)，只需证明 T 是 Radon 空间（Prop. 1）。令 I 是定义在 \(\mathfrak{B}(T)\) 上的正的、可数可加且有界函数。我们把 I 延拓到 \(\mathfrak{P}(T)\)，规定对于 T 的每个子集 A，置
+
+\[
+\operatorname{I}(\mathbf{A}) = \inf_{\substack{\mathbf{B}\in \mathfrak{B}(\mathbf{T})\\ \mathbf{B}\supset \mathbf{A}}}\operatorname{I}(\mathbf{B}).
+\]
+
+我们来证明这个延拓是 T 上的容度（GT, IX, §6, No.~9）。显然，关系 \(\mathbf{A} \subset \mathbf{A}'\) 蕴含 \(\mathrm{I}(\mathbf{A}) \leqslant \mathrm{I}(\mathbf{A}')\)。令 \((\mathbf{A}_n)\) 是 T 的子集的递增序列，并令 \(\mathbf{A} = \bigcup_{n} \mathbf{A}_n\)。包含 \(\mathbf{A}_n\) 的 Borel 集所成的集合族对可数交稳定，因此对于每个 \(n\)，存在 Borel 集 \(\mathbf{B}_n\)，使得 \(\mathbf{A}_n \subset \mathbf{B}_n\) 且 \(\mathrm{I}(\mathbf{A}_n) = \mathrm{I}(\mathbf{B}_n)\)（参见 Prop. 2 的证明）。置 \(\mathbf{C}_n = \bigcap_{p \geqslant n} \mathbf{B}_p\)；\(\mathbf{C}_n\) 是 Borel 集，且 \(\mathbf{A}_n \subset \mathbf{C}_n \subset \mathbf{B}_n\)，因此 \(\mathrm{I}(\mathbf{A}_n) = \mathrm{I}(\mathbf{C}_n)\)。另一方面，序列 \((\mathbf{C}_n)\) 是递增的。令 \(\mathbf{C} = \bigcup_{n} \mathbf{C}_n\)；关系 \(\mathbf{A} \subset \mathbf{C}\) 蕴含
+
+\[
+\mathrm{I} (\mathrm{A}) \leqslant \mathrm{I} (\mathrm{C}) = \lim _ {n} \mathrm{I} (\mathrm{C} _ {n}) = \lim _ {n} \mathrm{I} (\mathrm{A} _ {n}),
+\]
+
+从而立即得到等式 \(\mathrm{I}(\mathrm{A})=\lim_{n}\mathrm{I}(\mathrm{A}_{n})\)。因此，I 是容度。
+
+如果 \((\mathbf{H}_{n})\) 是 T 中闭集的递减序列，则显然 \(\mathrm{I}\left(\bigcap_{n}\mathrm{H}_{n}\right)=\inf_{n}\mathrm{I}(\mathrm{H}_{n})\)。由此每个 T 的苏斯林子集 F 对于 I 都是可容的（TG, IX, §6, No.~10, Prop. 15）。特别地，T 的每个 Borel 集 A 都是可容的（loc. cit., §6, No.~3, Prop. 10）。\(^{(3)}\) 换言之，
+
+\[
+\mathrm{I} (\mathrm{A}) = \sup _ {\mathrm{K}} \mathrm{I} (\mathrm{K}),
+\]
+
+其中 K 遍历包含于 A 的紧集；我们已经证明 I 是内正则的。
+
+注记。--- 设 X 是卢津空间（特别地，任意波兰空间），f 是从 X 到（Lusin）正则空间 Y 的双射连续映射。已知（TG, IX, §6, No.~7, Prop. 14），映射 \(B \mapsto f^{-1}(B)\) 是从 Y 的 Borel σ-集环到 X 的 Borel σ-集环的双射。X 和 Y 都是卢津空间，因而都是强 Radon 空间（Prop. 3）。于是立即可知，映射 \(\mu \mapsto f(\mu)\) 是从 X 上有界测度所成的集合到 Y 上有界测度所成的集合的双射。\(^{(4)}\)
+

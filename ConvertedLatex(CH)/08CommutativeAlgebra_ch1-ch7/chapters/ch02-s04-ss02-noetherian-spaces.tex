@@ -1,0 +1,42 @@
+\subsection{Noether 拓扑空间}
+
+定义 3. 若拓扑空间 X 的闭子集的每个非空集合（按包含关系排序）都有极小元，则称 X 为 Noether 空间。
+
+这等价于说 X 的开子集的每个非空集合（按包含关系排序）都有极大元，或说闭（相应地，开）集的每个递减（相应地，递增）序列都是平稳的（《集合论》第 III 章 §6 第 5 节命题 6）。
+
+命题 8. (i) Noether 空间的每个子空间都是 Noether 的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \((\mathbf{A}_i)_{i\in I}\) 是拓扑空间 \(\mathbf{X}\) 的一个有限覆盖。若 \(\mathbf{A}_i\)（\(\mathbf{X}\) 的子空间）都是 Noether 的，则 \(\mathbf{X}\) 是 Noether 的。
+
+\end{enumerate}
+
+(i) 设 X 是一个 Noether 空间，A 是 X 的一个子空间，\((\mathbf{F}_{n})\) 是 A 的在 A 中闭的子集的一个递减序列；则 \(F_{n} = \overline{F}_{n} \cap A\)，且 \(\overline{F}_{n}\)（诸 \(F_{n}\) 在 X 中的闭包）构成 X 的闭子集的一个递减序列。由于该序列是平稳的，故序列 \((\mathbf{F}_{n})\) 也是平稳的。
+
+(ii) 设 \((\mathbf{G}_n)_{n\geqslant 0}\) 是 \(\mathbf{X}\) 的闭子集的一个递减序列；按假设，序列 \((\mathrm{G}_n\cap \mathrm{A}_i)_{n\geqslant 0}\) 都是平稳的。由于 I 有限，存在整数 \(n_0\)，使得对 \(n\geqslant n_0\)，\(\mathbf{G}_n\cap \mathbf{A}_i = \mathbf{G}_{n_0}\cap \mathbf{A}_i\) 对一切 \(i\in \mathbf{I}\) 成立。但
+
+\[
+\mathbf {G} _ {n} = \bigcup_ {i \in I} \left(\mathbf {G} _ {n} \cap \mathbf {A} _ {i}\right)
+\]
+
+因而序列 \((\mathbf{G}_n)\) 是平稳的，且 \(\mathbf{X}\) 是 Noether 的。
+
+命题 9. 为使拓扑空间 X 是 Noether 的，必须且只需 X 的每个开集都是拟紧的。
+
+为证该条件是必要的，凭命题 8，只需证明每个 Noether 空间 X 都是拟紧的。设 \((\mathbf{U}_{\iota})_{\iota\in\mathbf{I}}\) 是 X 的一个开覆盖；诸 \(U_{\iota}\) 的有限并组成的集合非空，从而有极大元 \(V=\bigcup_{\iota\in H}U_{\iota}\)，其中 H 是 I 的有限子集。按定义，\(V\cup U_{\iota}=V\) 对一切 \(\iota\in I\) 成立，因而 V=X。
+
+反之，设 X 的每个开集都是拟紧的，并设 \((\mathbf{U}_{n})\) 是 X 的开子集的一个递增序列。诸 \(U_{n}\) 的并 V 是开的从而拟紧；由于 \((\mathbf{U}_{n})\) 是 V 的开覆盖，\((\mathbf{U}_{n})\) 有一个有限子族覆盖 V，因而对某个指标 n 有 \(V = U_{n}\)，这证明序列 \((\mathbf{U}_{n})\) 是平稳的。
+
+引理 1（``Noether 归纳法原理''）. 设 E 是一个每个非空子集都有极小元的有序集。设 F 是 E 的具有下述性质的子集：若 \(a \in E\) 使得关系 \(x < a\) 蕴含 \(x \in F\)，则 \(a \in F\)。那么 \(F = E\)。
+
+设 \(\mathbf{F} \neq \mathbf{E}\)；那么 \(\complement\mathbf{F}\) 将有极小元 \(b\)。按定义，\(x \in \mathbf{F}\) 对一切 \(x < b\) 成立，这蕴含 \(b \in \mathbf{F}\)，矛盾。
+
+命题 10. 若 X 是一个 Noether 空间，则 X 的不可约分支之集（更加，X 的连通分支之集）是有限的。
+
+只需证明 X 是不可约闭子集的有限并（第 1 节命题 6）。我们证明 Noether 归纳法原理可以应用：取 E 为 X 的闭子集之集（按包含关系排序），F 为不可约闭子集的有限并组成的集。设 Y 是 X 的一个闭子集，使得 Y 的每个满足 \(\neq Y\) 的闭子集都属于 F。若 Y 不可约，则按定义 \(Y \in F\)；否则，Y 是两个异于 Y 的闭子集 \(Y_{1}, Y_{2}\) 的并。于是按假设 \(Y_{1} \in F\) 且 \(Y_{2} \in F\)，从而按 F 的定义 \(Y \in F\)。
+
+特别地，由此得出一个 Hausdorff 的 Noether 空间必然是有限的。
+

@@ -1,0 +1,50 @@
+\subsection{Polynomials over a Finite Field}
+
+THEOREM 1 (Chevalley-Warning). --- Let K be a finite commutative field of characteristic p.~Let n be an integer \(\geqslant 1\) and \((f_{i})_{i\in\mathrm{I}}\) a finite family of nonzero elements of \(\mathrm{K}[\mathrm{X}_{1},\ldots,\mathrm{X}_{n}]\) . Denote by Z the set of elements x of \(K^{n}\) such that we have \(f_{i}(\mathbf{x})=0\) for \(i\in I\) . If we have \(n>\sum_{i\in\mathrm{I}}\deg(f_{i})\) , then the cardinal of Z is divisible by p.
+
+Lemma 1. --- Let L be a field, G a finite group, and \(\chi\) a nontrivial homomorphism from G to the multiplicative group \(\mathrm{L}^*\) . We have \(\sum_{x\in \mathrm{G}}\chi (x) = 0\) .
+
+By assumption, there exists an element a of G such that \(\chi(a) \neq 1\) ; since multiplication by a is a permutation of G, we have
+
+\[
+\sum_ {x \in \mathrm{G}} \chi (x) = \sum_ {x \in \mathrm{G}} \chi (a x) = \chi (a) \sum_ {x \in \mathrm{G}} \chi (x);
+\]
+
+this gives Lemma 1.
+
+Lemma 2. --- Let q be the cardinal of K. For any integer \(m \geqslant 0\) , set \(S_{m} = \sum_{x \in K} x^{m}\) . We have \(S_{m} = -1\) if m is a nonzero multiple of q - 1 and \(S_{m} = 0\) in all other cases.
+
+Recall that \(0^0 = 1\) (I, §2, No.~1, p.~14). Suppose that \(m\) is a multiple of \(q - 1\) . Since the abelian group \(\mathrm{K}^*\) has order \(q - 1\) , we have \(x^m = 1\) for every \(x \in \mathrm{K}^*\) and \(\mathrm{S}_m = 0^m + (q - 1) \cdot 1\) , which gives the assertion in this case.
+
+Suppose that \(m\) is not a multiple of \(q - 1\) . Set \(\chi(x) = x^m\) for \(x \in \mathrm{K}^*\) . Since the multiplicative group \(\mathrm{K}^*\) is cyclic of order \(q - 1\) (V, §12, No.~1, p.~93, Proposition 1), there exists an element \(a\) of \(\mathrm{K}^*\) such that \(\chi(a) \neq 1\) . By Lemma 1 applied to \(\mathrm{G} = \mathrm{K}^*\) , we have
+
+\[
+\mathrm{S} _ {m} = 0 ^ {m} + \sum_ {x \in \mathrm{K} ^ {*}} \chi (x) = 0;
+\]
+
+this gives Lemma 2.
+
+Let us now prove Theorem 1. Let \(\mathbf{x} = (x_1, \ldots, x_n)\) be an element of \(\mathrm{K}^n\) . We have \(1 - f_i(\mathbf{x})^{q-1} = 0\) if \(f_i(\mathbf{x}) \neq 0\) and \(1 - f_i(\mathbf{x})^{q-1} = 1\) if \(f_i(\mathbf{x}) = 0\) . Set \(\mathrm{P} = \prod_{i=1}^{r}(1 - f_i^{q-1})\) . We have
+
+\[
+\mathrm{P} (\mathbf {x}) = \left\{ \begin{array}{l l} 1 & \text { if } \mathbf {x} \in \mathrm{Z}, \\ 0 & \text { if } \mathbf {x} \not \in \mathrm{Z}. \end{array} \right.\tag{1}
+\]
+
+Let us expand the polynomial P as \(\sum_{\alpha\in\mathbf{N}^{n}}c_{\alpha}\mathrm{X}^{\alpha}\) ; by assumption, it has degree \(< (q-1)n\) . Let \(\alpha\) be an element of \(N^{n}\) such that \(c_{\alpha}\) is nonzero. Since we have \(\alpha_{1}+\cdots+\alpha_{n}<(q-1)n\) , there exists an integer \(\ell\) such that \(1\leqslant\ell\leqslant n\) and \(0\leqslant\alpha_{\ell}<q-1\) . By Lemma 2, we then have \(\sum_{x\in K}x^{\alpha_{\ell}}=0\) , and therefore
+
+\[
+\sum_ {\mathbf {x} \in \mathrm{K} ^ {n}} \mathbf {x} ^ {\alpha} = \prod_ {j = 1} ^ {n} \left(\sum_ {x \in \mathrm{K}} x ^ {\alpha_ {j}}\right) = 0.
+\]
+
+We consequently have
+
+\[
+\sum_ {\mathbf {x} \in K ^ {n}} \mathrm{P} (\mathbf {x}) = \sum_ {\alpha \in \mathbf {N} ^ {n}} c _ {\alpha} \left(\sum_ {\mathbf {x} \in K ^ {n}} \mathbf {x} ^ {\alpha}\right) = 0.
+\]
+
+Now, by formula (1), we have \(\sum_{\mathbf{x}\in\mathrm{K}^{n}}\mathrm{P}(\mathbf{x})=\mathrm{Card}(\mathrm{Z})\cdot1\) , and therefore \(\mathrm{Card}(\mathrm{Z})\cdot1=0\) , which means that \(\mathrm{Card}(\mathrm{Z})\) is divisible by p.
+
+COROLLARY. --- Let V be a vector space of finite dimension n over K and I a finite set, and for each \(i \in I\) , let \(F_{i}: V \to K\) be a homogeneous polynomial mapping of degree \(d_{i} > 0\) . If we have \(\sum_{i \in I} d_{i} < n\) , then there exists a nonzero element x of V such that \(F_{i}(x) = 0\) for every \(i \in I\) .
+
+Let \((e_{1},\ldots,e_{n})\) be a basis of V over K. By the definition of homogeneous polynomial mappings (IV, §5, No.~9, p.~55, Definition 3), for every \(i\in I\) , there exists a homogeneous polynomial \(f_{i}\) in \(\mathrm{K}[\mathrm{X}_{1},\ldots,\mathrm{X}_{n}]\) of degree \(d_{i}\) such that we have \(\mathrm{F}_{i}(\xi_{1}e_{1},\ldots,\xi_{n}e_{n})=f_{i}(\xi_{1},\ldots,\xi_{n})\) . Let Z be the set of elements x of V such that \(\mathrm{F}_{i}(x)=0\) for every \(i\in I\) . By Theorem 1, the cardinal of Z is divisible by p, and since 0 belongs to S, we have \(\mathrm{Card}(\mathrm{Z})\geqslant p>1\) .
+

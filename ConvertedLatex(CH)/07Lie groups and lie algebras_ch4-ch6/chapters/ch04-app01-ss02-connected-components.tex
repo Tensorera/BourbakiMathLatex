@@ -1,0 +1,46 @@
+\appendixitem{图的连通分支}
+
+设 \(\Gamma = (\mathbf{A},\mathbf{S})\) 是一张图。若 \(a\) 和 \(b\) 是两个顶点，则连接 \(a\) 和 \(b\) 的路是顶点序列 \((x_0,\ldots ,x_n)\)，属于图 \(\Gamma\)，满足 \(x_0 = a,x_n = b\)，且顶点 \(x_{i}\) 和 \(x_{i + 1}\) 在 \(0\leqslant i < n\) 时相连；整数 \(n\geqslant 0\) 是该路的长度。路 \((x_0,\ldots ,x_n)\) 称为单射的，当 \(x_{i}\neq x_{j}\) 对 \(i\neq j\) 成立。若路 \((x_0,\ldots ,x_n)\) 连接 \(a\) 和 \(b\)，且在这类路中长度最小，则它必为单射的；否则就存在 i 和 j，满足 \(0 \leqslant i < j \leqslant n\) 且 \(x_{i} = x_{j}\)，于是序列
+
+\[
+\left(x _ {0}, \dots , x _ {i}, x _ {j + 1}, \dots , x _ {n}\right)
+\]
+
+则会是一条连接 a 和 b 的长度为 \textless{} n 的路。
+
+两个顶点 a 和 b 之间的关系 ``存在一条连接 a 和 b 的路'' 是 \(\Gamma\) 的一个等价关系 R，它定义在顶点集合 S 上。R 的等价类称为 \(\Gamma\) 的连通分支；如果 S 至多有一个连通分支，即 \(\Gamma\) 的任意两个顶点之间至少可以连一条路，则称 \(\Gamma\) 是连通的。
+
+命题 1. 设 \(\Gamma = (A, S)\) 是一张图，\((S_{\alpha})_{\alpha \in L}\) 是它的连通分支族。记 \(\Gamma_{\alpha}\) 为 \(\Gamma\) 的满子图，其顶点集合为 \(S_{\alpha}\)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对于 L 中任意 \(\alpha\)，图 \(\Gamma_{\alpha}\) 是连通的。
+\item
+  若 \(\Gamma' = (A', S')\) 是 \(\Gamma\) 的连通子图，则存在 L 中的 \(\alpha\)，使得 \(\Gamma' \subset \Gamma_{\alpha}\)。
+\item
+  若 \(\alpha \neq \beta\)，则 \(S_{\alpha}\) 的任何元素都不与 \(\Gamma\) 中 \(S_{\beta}\) 的任何元素相连（等价地，\(\Gamma\) 的每条边都是某个 \(\Gamma_{\alpha}\) 的边）。
+\item
+  设 \((\mathrm{S}_{\lambda}^{\prime})_{\lambda \in \mathbb{M}}\) 是 \(S\) 的一个划分，且若 \(\lambda \neq \mu\)，则 \(\mathrm{S}_{\lambda}^{\prime}\) 的任何元素都不与 \(\Gamma\) 中的 \(\mathrm{S}_{\mu}^{\prime}\) 的任何元素相连；则每个集合 \(\mathrm{S}_{\lambda}^{\prime}\) 都是 \(\Gamma\) 的连通分支的并集。
+\item
+  设 \(\alpha\) 属于 L，且 \(a\) 和 \(b\) 属于 \(S_{\alpha}\)。则存在一条路 \(c = (x_0, \ldots, x_n)\)，连接 \(a\) 和 \(b\)，位于 \(\Gamma\) 中。对于任意 \(i\)，满足 \(0 \leqslant i \leqslant n\)，路 \((x_0, \ldots, x_i)\) 连接 \(a\) 和 \(x_i\)，位于 \(\Gamma\) 中，所以 \(x_i \in S_{\alpha}\)。因此，\(c\) 是 \(\Gamma_{\alpha}\) 中连接 \(a\) 和 \(b\) 的一条路。由此 \(\Gamma_{\alpha}\) 是连通的。
+\item
+  设 \(\Gamma' = (A', S')\) 是 \(\Gamma\) 的一个非空连通子图，设 \(a\) 是 \(S'\) 的一个元素，且 \(S_{\alpha}\) 是 \(S\) 中包含 \(a\) 的连通分支。对于任意 \(b\)，它属于 \(S'\)，存在一条路 \(c\)，连接 \(a\) 和 \(b\)，位于 \(\Gamma'\) 中，从而 \(a\) 更不用说也位于 \(\Gamma\) 中。由此 \(S' \subset S_{\alpha}\)。
+\item
+  给定不同的元素 \(\alpha\) 和 \(\beta\)，它们属于 \(L\)，以及顶点 \(a \in S_{\alpha}\) 和 \(b \in S_{\beta}\)，不存在连接 \(a\) 和 \(b\) 的路，特别地，不存在连接 \(a\) 和 \(b\) 的边。
+\item
+  设 \(a\) 属于 \(S_{\lambda}'\)，且 \(S_{\alpha}\) 是 \(\Gamma\) 的连通分支，包含 \(a\)。于是，对于任意 \(b\)，它属于 \(S_{\alpha}\)，存在一条路 \((x_0, \ldots, x_n)\)，连接 \(a\) 和 \(b\)，位于 \(\Gamma\) 中。若 \(i\) 是满足 \(0 \leqslant i < n\) 的整数，且 \(x_i \in S_{\lambda}'\)，则 \(x_{i+1} \in S_{\lambda}'\)，因为 \(x_i\) 与 \(x_{i+1}\) 相连。由归纳法可知，\(x_i \in S_{\lambda}'\) 对 \(0 \leqslant i \leqslant n\) 成立，特别地，\(b = x_n\) 属于 \(S_{\lambda}'\)。因此，\(S_{\alpha} \subset S_{\lambda}'\)。
+\end{enumerate}
+
+推论 1. 图 \(\Gamma = (A, S)\) 连通，当且仅当不存在一个划分 \((S', S'')\)，将 \(S\) 分成两个非空子集，并且 \(S'\) 的任何元素都不与 \(\Gamma\) 中的 \(S''\) 的任何元素相连。
+
+假设 \(\Gamma\) 不连通，并令 \(S'\) 为其一个连通分支。集合 \(S'' = S - S'\) 根据命题 1 (i) 是非空的，并且根据命题 1 (iii)，\(S'\) 的任何元素都不与 \(S''\) 的任何元素相连。
+
+现在假设 \(\Gamma\) 连通，并设 \((S', S'')\) 是具有所述性质的一个划分。根据命题 1 (iv)，集合 \(S'\) 包含至少一个连通分支，因此 \(S' = S\) 且 \(S'' = \varnothing\)，矛盾。
+
+推论 2. 一个子集 \(S'\)（\(S\) 的子集）是连通分支的并集，当且仅当属于 \(S'\) 的任何顶点都不与属于 \(S - S'\) 的任何顶点相连。
+
+该条件由命题 1 (iv) 充分。由命题 1 (iii)，该条件也是必要的。
+
+% semantic-fragments: legacy-input-seam
+\relax{}

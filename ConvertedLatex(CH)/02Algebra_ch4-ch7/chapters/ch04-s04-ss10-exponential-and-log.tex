@@ -1,0 +1,93 @@
+\subsection{指数与对数}
+
+所谓指数幂级数，我们指的是元素 \(\sum_{n\geqslant 0}\frac{X^n}{n!}\) ，它属于 \(\mathbf{Q}[[\mathbf{X}]]\) ；它将记作 \(\exp X\) 或 \(e^X\) 。
+
+命题 13. --- 在 Q{[}{[}X, Y{]}{]} 中我们有 \(e^{X + Y} = e^X e^Y\) 。
+
+因为二项式公式给出
+
+\[
+\frac {(\mathbf {X} + \mathbf {Y}) ^ {n}}{n !} = \sum_ {i + j = n} \frac {\mathbf {X} ^ {i}}{i !} \frac {\mathbf {Y} ^ {j}}{j !}.
+\]
+
+因此
+
+\[
+\begin{array}{r l} e ^ {X} e ^ {Y} & = \left(\sum_ {i \geqslant 0} \frac {X ^ {i}}{i !}\right) \left(\sum_ {j \geqslant 0} \frac {Y ^ {j}}{j !}\right) = \sum_ {i, j \geqslant 0} \frac {X ^ {i}}{i !} \frac {Y ^ {j}}{j !} = \sum_ {n \geqslant 0} \sum_ {i + j = n} \frac {X ^ {i}}{i !} \frac {Y ^ {j}}{j !} \\ & = \sum_ {n \geqslant 0} \frac {(X + Y) ^ {n}}{n !} = e ^ {X + Y}. \end{array}
+\]
+
+我们将定义两个元素 \(e(\mathbf{X})\) 与 \(l(\mathbf{X})\) （属于 \(\mathbf{Q}[[\mathbf{X}]]\) ）如下
+
+\[
+e (\mathbf {X}) = e ^ {\mathbf {X}} - 1 = \sum_ {n \geqslant 1} \frac {\mathbf {X} ^ {n}}{n !}\tag{33}
+\]
+
+\[
+l (\mathbf {X}) = \sum_ {n \geqslant 1} (- 1) ^ {n - 1} \frac {\mathbf {X} ^ {n}}{n}.\tag{34}
+\]
+
+我们有
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{34}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+e (\mathbf {X} + \mathbf {Y}) = e (\mathbf {X}) + e (\mathbf {Y}) + e (\mathbf {X}) e (\mathbf {Y})
+\]
+
+\[
+\mathrm{D} (e ^ {\mathrm{X}}) = \mathrm{D} (e (\mathrm{X})) = e ^ {\mathrm{X}}\tag{36}
+\]
+
+\[
+\mathrm{D} (l (\mathbf {X})) = \sum_ {n \geqslant 0} (- \mathbf {X}) ^ {n} = (1 + \mathbf {X}) ^ {- 1}.\tag{37}
+\]
+
+命题 14. --- 我们有 \(l(e(\mathbf{X})) = e(l(\mathbf{X})) = \mathbf{X}\) 。
+
+级数 l 和 e 没有常数项，且它们的一次项都等于 X。根据 IV 第 37 页的命题 10，只需证明公式 \(l(e(X)) = X\) 。由公式 (36)、(37) 以及 IV 第 33 页的推论 3，我们有
+
+\[
+\mathrm{D} (l (e (\mathrm{X}))) = (1 + e (\mathrm{X})) ^ {- 1} \mathrm{D} (e (\mathrm{X})) = (e ^ {\mathrm{X}}) ^ {- 1} e ^ {\mathrm{X}} = 1
+\]
+
+由此 \(l(e(\mathbf{X})) = \mathbf{X}\) 。
+
+设 K 是一个 Q-代数，则 K{[}{[}I{]}{]} 中无常数项的元素在加法下构成一个交换群 E。K{[}{[}I{]}{]} 中常数项为 1 的元素在乘法下构成一个交换群 M（IV，第30页）。对每个 \(f \in E\) ，我们可以定义 E 的元素 \(e \circ f\) 与 \(l \circ f\) ，并且由上面的命题 14，映射 \(f \mapsto l \circ f\) 与 \(f \mapsto e \circ f\) 是 E 的互逆置换；显然它们是连续的。由于 \(\exp X = e(X) + 1\) ，我们看到指数映射 \(f \mapsto \exp f = e \circ f + 1\) 是从 E 到 M 上的连续双射。由 IV 第29页的公式 (4) 与命题 13，我们有 \(\exp(f + g) = (\exp f)(\exp g)\) 对 \(f, g \in E\) 。因此指数映射是拓扑群 E 到拓扑群 M 上的同构。
+
+从 \(\mathcal{M}\) 到 \(\mathcal{E}\) 上的逆同构称为对数，记作 \(g \mapsto \log g\) 。于是我们有 \(\log g = l(g - 1)\) （\(g\) 在 \(\mathcal{M}\) 中），特别地，
+
+\[
+\log (1 + \mathbf {X}) = l (\mathbf {X}).\tag{38}
+\]
+
+由于对数是从 \(\mathcal{M}\) 到 \(\mathcal{E}\) 的同态，公式 \((1 + \mathbf{X})(1 + \mathbf{Y}) = 1 + (\mathbf{X} + \mathbf{Y} + \mathbf{X}\mathbf{Y})\) 蕴含
+
+\[
+l (\mathbf {X}) + l (\mathbf {Y}) = l (\mathbf {X} + \mathbf {Y} + \mathbf {X Y}).\tag{39}
+\]
+
+设 \((u_{\lambda})_{\lambda \in L}\) 是 \(\mathcal{E}\) 中元素的一个可和族，则族 \((\exp u_{\lambda})_{\lambda \in L}\) 是可乘的，并且我们有
+
+\[
+\exp \left(\sum_ {\lambda \in L} u _ {\lambda}\right) = \prod_ {\lambda \in L} \exp u _ {\lambda}.\tag{40}
+\]
+
+同样地，如果 \((f_{\lambda})_{\lambda \in L}\) 是 \(\mathcal{M}\) 中元素的一个可乘族，则族 \((\log f_{\lambda})_{\lambda \in L}\) 可和，并且我们有
+
+\[
+\log \left(\prod_ {\lambda \in L} f _ {\lambda}\right) = \sum_ {\lambda \in L} \log f _ {\lambda}.\tag{41}
+\]
+
+设 \(g \in M\) ，并设 D 为 K{[}{[}I{]}{]} 的一个连续导子。我们有 \(\log g = l(g - 1)\) ，因此由 IV 第33页的推论 3 及 (37) 我们有
+
+\[
+\mathrm{D} \log g = \mathrm{D} (g) / g.\tag{42}
+\]
+
+表达式 \(D(g)/g\) 称为 g 的（关于 D 的）对数导数。
+

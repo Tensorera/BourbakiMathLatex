@@ -1,0 +1,96 @@
+\subsection{DISTRIBUTIVITY}
+
+DEFINITION 5. Let \(\mathbf{E}_1, \ldots, \mathbf{E}_n\) and \(\mathbf{F}\) be sets and \(u\) a mapping of \(\mathbf{E}_1 \times \cdots \times \mathbf{E}_n\) into \(\mathbf{F}\) . Let \(i \in [1, n]\) . Suppose \(\mathbf{E}_i\) and \(\mathbf{F}\) are given the structures of magmas. \(u\) is said to be distributive relative to the index variable \(i\) if the partial mapping
+
+\[
+x _ {i} \mapsto u (a _ {1}, \dots , a _ {i - 1}, x _ {i}, a _ {i + 1}, \dots , a _ {n})
+\]
+
+is a homomorphism of \(\mathbf{E}_i\) into \(\mathbf{F}\) for all fixed \(a_j\) in \(\mathbf{E}_j\) and \(j \neq i\) .
+
+If \(\top\) denotes the internal laws on \(\mathbf{E}_i\) and \(\mathbf{F}\) , the distributivity of \(u\) is given by the equations
+
+\[
+\begin{array}{r l} & u (a _ {1}, \dots , a _ {i - 1}, x _ {i} \top x _ {i} ^ {\prime}, a _ {i + 1}, a _ {n}) \\ & \quad = u (a _ {1}, \dots , a _ {i - 1}, x _ {i}, a _ {i + 1}, \dots , a _ {n}) \top u (a _ {1}, \dots , a _ {i - 1}, x _ {i} ^ {\prime}, a _ {i + 1}, \dots , a _ {n}) \end{array}\tag{1}
+\]
+
+for \(i = 1, 2, \ldots, n\) , \(a_1 \in \mathrm{E}_1, \ldots, a_{i-1} \in \mathrm{E}_{i-1}\) , \(x_i \in \mathrm{E}_i\) , \(x_i' \in \mathrm{E}_i\) , \(a_{i+1} \in \mathrm{E}_{i+1}, \ldots, a_n \in \mathrm{E}_n\) .
+
+Example. Let E be a monoid (resp. group) written multiplicatively. The mapping \((n, x) \mapsto x^{n}\) of \(N \times E\) (resp. \(Z \times E\) ) into E is distributive with respect to the first variable by the equation \(x^{m+n} = x^{m}x^{n}\) (with addition as law on N). If E is commutative, this mapping is distributive with respect to the second variable by the equation \((xy)^{n} = x^{n}y^{n}\) .
+
+PROPOSITION 1. Let \(\mathbf{E}_1, \mathbf{E}_2, \ldots, \mathbf{E}_n\) and \(\mathbf{F}\) be commutative monoids written additively and let \(u\) be a mapping of \(\mathbf{E}_1 \times \cdots \times \mathbf{E}_n\) into \(\mathbf{F}\) , which is distributive with respect to all the variables. For \(i = 1, 2, \ldots, n\) , let \(\mathbf{L}_i\) be a non-empty finite set and \((x_{i,\lambda})_{\lambda \in \mathbf{L}_i}\) a family of elements of \(\mathbf{E}_i\) . Let \(y_i = \sum_{\lambda \in \mathbf{L}_i} x_{i,\lambda}\) for \(i = 1, 2, \ldots, n\) . Then
+
+\[
+u (y _ {1}, \dots , y _ {n}) = \sum_ {\alpha} u (x _ {1, \alpha_ {1}}, \dots , x _ {n, \alpha_ {n}})\tag{2}
+\]
+
+the sum being taken over all sequences \(\alpha = (\alpha_{1},\ldots ,\alpha_{n})\) belonging to \(\mathbf{L}_1\times \dots \times \mathbf{L}_n\)
+
+We argue by induction on \(n\) , the case \(n = 1\) following from formula (2) of §1, no. 2. From the same reference
+
+\[
+u (y _ {1}, \dots , y _ {n - 1}, y _ {n}) = \sum_ {\alpha_ {n} \in L _ {n}} u (y _ {1}, \dots , y _ {n - 1}, x _ {n, \alpha_ {n}})\tag{3}
+\]
+
+for \(y_{n} = \sum_{\alpha_{n} \in \mathbf{L}_{n}} x_{n, \alpha_{n}}\) and the mapping \(z \mapsto u(y_{1}, \ldots, y_{n-1}, z)\) of \(\mathbf{E}_{n}\) into \(F\) is a magma homomorphism. By the induction hypothesis applied to the distributive mappings \((z_{1}, \ldots, z_{n-1}) \mapsto u(z_{1}, \ldots, z_{n-1}, x_{n, \alpha_{n}})\) from \(\mathbf{E}_{1} \times \cdots \times \mathbf{E}_{n-1}\) to \(F\) ,
+
+\[
+u (y _ {1}, \dots , y _ {n - 1}, x _ {n, \alpha_ {n}}) = \sum_ {\alpha_ {1}, \dots , \alpha_ {n - 1}} u (x _ {1, \alpha_ {1}}, \dots , x _ {n - 1, \alpha_ {n - 1}}, x _ {n, \alpha_ {n}}),\tag{4}
+\]
+
+the sum being taken over the sequences \((\alpha_{1},\ldots,\alpha_{n-1})\) belonging to \(M=L_{1}\times\cdots\times L_{n-1}\) . Now \(L_{1}\times\cdots\times L_{n}=M\times L_{n}\) ; writing
+
+\[
+t _ {\alpha_ {1}, \dots , \alpha_ {n}} = u (x _ {1, \alpha_ {1}}, \dots , x _ {n, \alpha_ {n}}),
+\]
+
+we have
+
+\[
+\sum_ {\alpha_ {1}, \dots , \alpha_ {n}} t _ {\alpha_ {1}, \dots , \alpha_ {n}} = \sum_ {\alpha_ {n}} \left(\sum_ {\alpha_ {1}, \dots , \alpha_ {n}} t _ {\alpha_ {1}, \dots , \alpha_ {n - 1}, \alpha_ {n}}\right)\tag{5}
+\]
+
+by formula (7) of § 1, no. 5. (2) follows immediately from (3), (4) and (5).
+
+Remark. If \(u(a_{1},\ldots ,a_{i - 1},0,a_{i + 1},\ldots ,a_{n}) = 0\) for \(i = 1,2,\dots,n\) and \(a_{j}\in \mathbf{E}_{j}\) ( \(j\neq i\) ), then formula (2) remains true for families \((x_{i,\lambda})_{\lambda \in \mathbf{L}_i}\) of finite support.
+
+A special case of Definition 5 is that where u is the law of action associated with the action of a set \(\Omega\) on a magma E. If u is distributive with respect to the second variable, it is also said that the action of \(\Omega\) on the magma E is distributive. In other words:
+
+DEFINITION 6. An action \(\alpha \mapsto f_{\alpha}\) of a set \(\Omega\) on a magma E is said to be distributive if, for all \(\alpha \in \Omega\) , the mapping \(f_{\alpha}\) is an endomorphism of the magma E.
+
+If \(\top\) denotes the law of the magma E and \(\bot\) the law of action associated with the action of \(\Omega\) on E, the distributivity of the latter is then expressed by the formula
+
+\[
+\alpha \perp (x \top y) = (\alpha \perp x) \top (\alpha \perp y) \quad (\text { for   } \alpha \in \Omega \text {   and   } x, y \in E).\tag{6}
+\]
+
+By an abuse of language, it is also said that the law \(\perp\) is distributive (or right distributive) with respect to the law \(\top\).
+
+Formula (2) of § 1, no. 2 shows that then, for every ordered sequence \((x_{\lambda})_{\lambda \in L}\) of elements of E and every \(\alpha \in \Omega\) ,
+
+\[
+\alpha \perp \left(\mathsf {T} _ {\lambda \in L} x _ {\lambda}\right) = \mathsf {T} _ {\lambda \in L} (\alpha \perp x _ {\lambda}).\tag{7}
+\]
+
+If an action \(\alpha\mapsto f_{\alpha}\) is distributive and an equivalence relation R on E is compatible with the law of composition of E and the action \(\alpha\mapsto f_{\alpha}\) , the quotient action on E/R is distributive.
+
+When the law on E is written multiplicatively, we often use the exponential notation \(x^{\alpha}\) for a law of action which is distributive with respect to this multiplication, so that distributivity is expressed by the identity \((xy)^{\alpha} = x^{\alpha}y^{\alpha}\) . If the law on E is written additively, we often use left (resp. right) multiplicative notation \(\alpha.x\) (resp. \(x.\alpha\) ) for a law of action which is distributive with respect to this addition, the distributivity being expressed by the identity
+
+\[
+\alpha (x + y) = \alpha x + \alpha y \quad (\text { resp. } (x + y) \alpha = x \alpha + y \alpha).
+\]
+
+We may also consider the case where \(\Omega\) has an internal law, denoted by \(\overline{\top}\) , and the law of action is distributive with respect to the first variable, which means that
+
+\[
+(\alpha \overline{\top} \beta) \perp x = (\alpha \perp x) \top (\beta \perp x)\tag{8}
+\]
+
+for all \(\alpha, \beta \in \Omega\) and \(x \in \mathbf{E}\) . Then, by formula (2) of §1, no. 2
+
+\[
+\left(\overline {{\mathsf {T}}} _ {\lambda \in L} \alpha_ {\lambda}\right) \perp x = \mathsf {T} _ {\lambda \in L} (\alpha_ {\lambda} \perp x)\tag{9}
+\]
+
+for every ordered sequence \((\alpha_{\lambda})_{\lambda \in L}\) of elements of \(\Omega\) and all \(x\in E\) .
+

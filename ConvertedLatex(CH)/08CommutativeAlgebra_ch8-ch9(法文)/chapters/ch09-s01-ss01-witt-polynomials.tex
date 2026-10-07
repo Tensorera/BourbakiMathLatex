@@ -1,0 +1,87 @@
+\subsection{Witt 多项式}
+
+  对于每个整数 \(n \geqslant 0\)，称元素 \(\Phi_n\) 为 \(\mathbf{Z}[X_0, ..., X_n]\) 中的第 \(n\) 个 Witt 多项式，其定义为
+
+\[
+\Phi_ {n} \left(\mathrm{X} _ {0}, \dots , \mathrm{X} _ {n}\right) = \sum_ {i = 0} ^ {n} p ^ {i} \mathrm{X} _ {i} ^ {p ^ {n - i}} = \mathrm{X} _ {0} ^ {p ^ {n}} + p \mathrm{X} _ {1} ^ {p ^ {n - 1}} + \dots + p ^ {n} \mathrm{X} _ {n}.\tag{1}
+\]
+
+显然有 \(\Phi_{0}=X_{0}\) 及递推关系
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\Phi_ {n + 1} \left(\mathrm{X} _ {0}, \dots , \mathrm{X} _ {n + 1}\right) = \Phi_ {n} \left(\mathrm{X} _ {0} ^ {p}, \dots , \mathrm{X} _ {n} ^ {p}\right) + p ^ {n + 1} \mathrm{X} _ {n + 1}\tag{3}
+\]
+
+\[
+\Phi_ {n + 1} \left(\mathrm{X} _ {0}, \dots , \mathrm{X} _ {n + 1}\right) = \mathrm{X} _ {0} ^ {p ^ {n + 1}} + p \Phi_ {n} \left(\mathrm{X} _ {1}, \dots , \mathrm{X} _ {n + 1}\right).
+\]
+
+将 \(X_{i}\) 的权赋为 \(p^{i}\) 时，多项式 \(\Phi_{n}\) 是权为 \(p^{n}\) 的等重多项式（A, IV, p.3）。
+
+命题 1. --- 设 A 为滤过环，\((\mathbf{J}_n)_{n\in \mathbb{Z}}\) 为其滤过。假设 \(\mathbf{J}_0 = \mathbf{A}\) 且 \(p\cdot 1_{\mathbf{A}}\in \mathbf{J}_{1}\)。设 m、n 为满足 \(m\geqslant 1\) 及 \(n\geqslant 0\) 的整数，并设 \(a_0,\dots,a_n,b_0,\dots,b_n\) 为 A 的元素。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  若有 \(a_i \equiv b_i \mod J_m\) 对 \(0 \leqslant i \leqslant n\) 成立，则有
+\end{enumerate}
+
+\[
+\Phi_ {i} (a _ {0}, \dots , a _ {i}) \equiv \Phi_ {i} (b _ {0}, \dots , b _ {i}) \bmod \mathrm{J} _ {m + i} \quad \text{当} \quad 0 \leqslant i \leqslant n.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  假设对于每个整数 \(k \geqslant 1\) 及所有 \(x \in \mathbf{A}\)，关系 \(p x \in \mathbf{J}_{k+1}\) 蕴含 \(x \in \mathbf{J}_k\)。若有 \(\Phi_i(a_0, ..., a_i) \equiv \Phi_i(b_0, ..., b_i) \mod \mathbf{J}_{m+i}\) 对 \(0 \leqslant i \leqslant n\) 成立，则有 \(a_i \equiv b_i \mod \mathbf{J}_m\) 对 \(0 \leqslant i \leqslant n\) 成立。
+\end{enumerate}
+
+引理 1. --- 若 x、y 为 A 中模 \(J_{m}\) 同余的两个元素，则有
+
+\[
+x ^ {p ^ {n}} \equiv y ^ {p ^ {n}} \bmod J _ {m + n}.
+\]
+
+对 \(n\) 作归纳，将问题归约到 \(n=1\) 的情形。令 P 表示多项式 \(\sum_{i=0}^{p-1} X^i Y^{p-1-i}\)，它属于 Z{[}X, Y{]}。根据对 \(x\) 和 \(y\) 所作的假设，有 P(x, y) \(\equiv\) P(x, x) \(\equiv\) p, \(x^{p-1}\) mod. J \(_m\)。但 J \(_m\) + p.A \(\subset\) J \(_1\)，所以 P(x, y) \(\in\) J \(_1\)。最后，\(x^p - y^p = (x - y)\) P(x, y) 属于 J \(_m\) J \(_1\) \(\subset\) J \(_{m+1}\)。
+
+我们对 n 作归纳来证明 a)。n = 0 的情形是直接的。假设 \(n \geqslant 1\)。在 a) 的假设下，有
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+\end{enumerate}
+
+\(a_{i}^{p}\equiv b_{i}^{p}\bmod \mathrm{J}_{m + 1}\quad \text{当}\quad 0\leqslant i\leqslant n - 1\quad \text{由引理 } 1.\)
+
+\[
+\Phi_ {n - 1} (a _ {0} ^ {p}, \dots , a _ {n - 1} ^ {p}) \equiv \Phi_ {n - 1} (b _ {0} ^ {p}, \dots , b _ {n - 1} ^ {p}) \pmod{J _ {m + n}}\tag{5}
+\]
+
+根据归纳假设（应用于 A 中的元素 \(a_0^p, \ldots, a_{n-1}^p, b_0^p, \ldots, b_{n-1}^p\)），以及
+
+\[
+\Phi_ {n} (a _ {0},..., a _ {n}) - p ^ {n}. a _ {n} \equiv \Phi_ {n} (b _ {0},..., b _ {n}) - p ^ {n}. b _ {n} \pmod{J _ {m + n}}\tag{6}
+\]
+
+根据公式 (2) 和 (5)。由于 \(a_{n}-b_{n}\) 属于 \(\mathbf{J}_{m}\)，元素 \(p^{n}a_{n}-p^{n}b_{n}\) 属于 \(\mathbf{J}_{m+n}\)，由 (6) 可推出同余关系
+
+\[
+\Phi_ {n} (a _ {0}, \dots , a _ {n}) \equiv \Phi_ {n} (b _ {0}, \dots , b _ {n}) \pmod{J _ {m + n}},
+\]
+
+从而得到 a)。
+
+  我们证明 \(b)\)，通过对 \(n\) 作归纳。\(n=0\) 的情形是直接的。假设 \(n\geqslant1\)。在 \(b)\) 的假设下，根据归纳假设，有 \(a_{i}\equiv b_{i}\) mod. \(\mathbf{J}_{m}\)（\(0\leqslant i\leqslant n-1\)），并像以前一样推出同余关系 (4)、(5) 和 (6)。但根据假设，\(\Phi_{n}(a_{0},...,a_{n})\) 与 \(\Phi_{n}(b_{0},...,b_{n})\) mod. \(\mathbf{J}_{m+n}\) 同余，因而有 \(p^{n}(a_{n}-b_{n})\in\mathbf{J}_{m+n}\)。由于关系 \(p x\in\mathbf{J}_{k+1}\) 蕴含 \(x\in\mathbf{J}_{k}\) 对每个 \(x\in\mathbf{A}\) 及每个 \(k\geqslant1\) 成立，故 \(a_{n}-b_{n}\in\mathbf{J}_{m}\)，证明完成。
+

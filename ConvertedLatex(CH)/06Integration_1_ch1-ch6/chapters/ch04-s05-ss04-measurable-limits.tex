@@ -1,0 +1,36 @@
+\subsection{可测函数的极限}
+
+定理 2（Egoroff）. --- 设 X 是一个局部紧空间，\(\mu\) 是 X 上的一个测度，A 是一个可数集，F 是 A 上具有可数基的一个滤子，而 \((f_{\alpha})_{\alpha\in\mathbb{A}}\) 是 X 到可度量化空间 F 中的可测映射的一个族。假设 \(\lim_{\mathfrak{F}} f_{\alpha}(x) = f(x)\) 在 X 的一个局部可忽略子集 N 的余集中存在。在这些条件下，
+
+\(1^{\circ}\) 函数 \(f\)（以任意方式延拓到 \(\mathbf{N}\) 上）是可测的；
+
+\(2^{\circ}\) 对 X 的每个紧子集 K 和每个 \(\varepsilon > 0\)，存在紧集 \(\mathrm{K}_{1} \subset \mathrm{K}\)，使得 \(|\mu| (\mathrm{K} - \mathrm{K}_{1}) \leqslant \varepsilon\)，且诸 \(f_{\alpha}\) 到 \(\mathrm{K}_{1}\) 上的限制都连续，且一致收敛于 \(f\)（在 \(\mathrm{K}_{1}\) 上）。
+
+第一个断言显然由第二个断言得出，我们来证明后者。存在紧集 \(K_{0} \subset K\)，使得 \(|\mu|(\mathrm{K} - \mathrm{K}_{0}) \leqslant \varepsilon/2\)，且在 \(K_{0}\) 上所有函数 \(f_{\alpha}\) 的限制都连续（No.~1, 命题 2）。设 \((\mathrm{A}_{n})\) 是滤子 F 的一个递减可数基；设 d 是 F 上与该拓扑相容的一个距离。对每对整数 \(n > 0\)、\(r > 0\)，设 \(\mathbf{B}_{n,r}\) 是点 \(x \in \mathrm{K}_0\)（使得至少有一对指标 \(\alpha, \beta\)（属于 \(\mathbf{A}_n\) 者）满足 \(d(f_{\alpha}(x), f_{\beta}(x)) \geqslant 1 / r\)）所成之集；对固定的 \(\alpha\) 与 \(\beta\)，\(x \in \mathrm{K}_0\)（使得 \(d(f_{\alpha}(x), f_{\beta}(x)) \geqslant 1 / r\) 者）所成之集在 \(\mathbf{K}_0\) 中是闭的，因而是紧的；于是，\(\mathbf{B}_{n,r}\) 是含于 \(\mathbf{K}_0\) 的紧集的一个可数并，从而是可积的（§4, No.~5, 命题 6 与 8）。若固定 \(r\)，则诸集合 \(\mathbf{B}_{n,r}\)（ \(n = 1,2,\ldots\) ）的递减序列的交测度为零，因为 \(f_{\alpha}(x)\) 趋于 \(f(x)\)（在 \(\mathbf{K}_0\) 中关于滤子 \(\mathfrak{F}\) 几乎处处）；于是 \(\lim_{n \to \infty} |\mu|(\mathbf{B}_{n,r}) = 0\)（§4, No.~5, 命题 7 的推论），从而存在整数 \(n_r\)，使得 \(|\mu|(\mathbf{B}_{n_r,r}) \leqslant \varepsilon / 2^{r+2}\)。设 \(B\) 是（对 \(r = 1,2,\ldots\) ）诸集合 \(\mathbf{B}_{n_r,r}\) 的并；\(B\) 是可积的，且
+
+\[
+| \mu | (\mathrm{B}) \leqslant \sum_ {r = 1} ^ {\infty} | \mu | (\mathrm{B} _ {n _ {r}, r}) \leqslant \varepsilon / 4
+\]
+
+（§4, No.~5, 命题 8 的推论）。设 C 是 B 在 \(K_{0}\) 中的余集；按构造，关于滤子 F，\(f_{\alpha}(x)\) 在 C 中一致收敛于 \(f(x)\)，且由于诸 \(f_{\alpha}\) 到 C 上的限制是连续的，f 到 C 上的限制也是连续的。于是只需取紧集 \(K_{1} \subset C\)，使得 \(|\mu|(\mathrm{C} - \mathrm{K}_{1}) \leqslant \varepsilon/4\)，即可满足陈述的条件，因为 \(|\mu|(\mathrm{K} - \mathrm{K}_{1}) = |\mu|(\mathrm{K} - \mathrm{K}_{0}) + |\mu|(\mathrm{B}) + |\mu|(\mathrm{C} - \mathrm{K}_{1}) \leqslant \varepsilon\)。
+
+若 F 不可度量化，定理 2 的结论未必成立（习题 1）。若 F 可度量化，且集合 A 不可数但滤子 \(\mathfrak{F}\) 具有可数基，则定理 2 的第一个结论仍然有效；因为若 \((\mathrm{A}_n)\) 是 \(\mathfrak{F}\) 的一个可数基，而 \(\alpha_{n}\) 是 \(\mathrm{A}_n\) 的一个元素，则 \(f\) 是序列 \((f_{\alpha_n})\) 局部几乎处处意义下的极限，从而是可测的；然而，定理 2 的第二个结论不再必然成立（参看习题 4）。
+
+推论 1. --- 设 \((f_n)\) 是数值函数（有限或非有限）的一个序列。若诸 \(f_n\) 可测，则函数 \(\sup_{n} f_n\)、\(\inf_{n} f_n\)、\(\limsup_{n \to \infty} f_n\) 与 \(\liminf_{n \to \infty} f_n\) 都是可测的。
+
+因为扩充实直线 \(\overline{\mathbf{R}}\) 同胚于 \(\mathbf{R}\) 的一个紧区间，故它是可度量化的。函数 \(\sup_{n} f_n\) 是递增函数序列 \(g_n = \sup(f_1, f_2, \ldots, f_n)\) 的逐点极限，而这些函数是可测的（No.~3, 定理 1 的推论 1）；类似地，\(\limsup_{n \to \infty} f_n\) 是递减函数序列 \(h_n = \sup_{p \geqslant 0} f_{n+p}\) 的逐点极限，其中每个函数由前所述是可测的。最后，由于 \(\inf_{n} f_n = -\sup_{n} (-f_n)\) 且 \(\liminf_{n \to \infty} f_n = -\limsup_{n \to \infty} (-f_n)\)，这些函数是可测的。
+
+推论 2. --- X 中的可测集构成一个 σ-集环（GT, IX, §6, No.~3）。
+
+因为若 M 与 N 可测，则函数
+
+\[
+\varphi_ {\mathrm{M} \cup \mathrm{N}} = \varphi_ {\mathrm{M}} + \varphi_ {\mathrm{N}} - \varphi_ {\mathrm{M}} \varphi_ {\mathrm{N}} \quad \text {and} \quad \varphi_ {\mathrm{M} \cap \mathbf {C N}} = \varphi_ {\mathrm{M}} - \varphi_ {\mathrm{M}} \varphi_ {\mathrm{N}}
+\]
+
+依据 No.~3 的定理 1 的推论 3 与推论 5 是可测的。若 \((\mathrm{M}_{n})\) 是可测集的一个序列而 M 是它们的并，则 \(\varphi_{M} = \sup_{n} \varphi_{M_{n}}\) 依据定理 2 的推论 1 是可测的，由此即得该推论。
+
+特别地，由于开集是可测的：
+
+推论 3. --- X 中的 Borel 集（GT, IX, §6, No.~3, 定义 4）对 X 上的每个测度 \(\mu\) 都是 \(\mu\)-可测的。
+

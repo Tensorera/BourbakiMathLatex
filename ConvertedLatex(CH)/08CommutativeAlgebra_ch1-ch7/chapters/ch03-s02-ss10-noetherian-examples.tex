@@ -1,0 +1,67 @@
+\subsection{应用：Noether 环的例子}
+
+		引理 1. 设 A 为 Z 型分次环，其分次（\(A_{n}\)）满足 \(A_{n} = 0\) 对所有 n \textless{} 0，或者 \(A_{n} = 0\) 对所有 n \textgreater{} 0。设 M 为 Z 型分次 A-模。M 是 Noether A-模的充要条件是 M 的每个分次子模都是有限生成的。
+
+	由于 \(n \mapsto -n\) 是群 \(\mathbf{Z}\) 的自同构，我们可以只考虑 \(A_n = 0\) 对所有 \(n > 0\) 的情形。令 \(A'\) 和 \(M'\) 分别表示带有与各自分次相伴的滤过的环 \(A\) 和模 \(M\)（第 1 节，例 1），这些滤过是穷竭且分离的；关于 \(A\) 的假设蕴含 \(A'\) 是离散的，因而是完备的。若 \(E\) 是 \(M\) 的一个 A-子模，则所得到的滤过 \(A'\)-模 \(E'\)（在 \(E\) 上赋予诱导滤过）是 Hausdorff 的，且其滤过是穷竭的；此外，\(\text{gr}(E')\) 可识别为 \(M = \text{gr}(M')\) 的一个分次 A-子模，因而由假设有限生成。结论于是由第 9 节命题 12 的推论 1 得出。
+
+	定理 2. 设 A 为 N 型分次环，M 为 N 型分次 A-模，\((\mathbf{A}_{n})\) 和 \((\mathbf{M}_{n})\) 分别为它们的分次。假设存在元素 \(a \in A_{1}\)，使得 \(A_{n} = A_{0}a^{n}\) 且 \(M_{n} = a^{n}M_{0}\) 对所有 n \textgreater{} 0 成立。那么，如果 \(M_{0}\) 是 Noether \(A_{0}\)-模，M 就是 Noether A-模。
+
+	由引理 1，只需证明 M 的每个分次子模 N 都是有限生成的。对所有 \(r \geqslant 0\)，令 \(\mathbf{N}_r = \mathbf{N} \cap \mathbf{M}_r\)，并令 \(\mathbf{L}_r\) 为 \(m \in \mathbf{M}_0\) 中满足 \(a^r m \in \mathbf{N}_r\) 的元素所成的集合。由于
+
+\[
+a ^ {r} \mathrm{A} _ {0} \subset \mathrm{A} _ {r} = \mathrm{A} _ {0} a ^ {r}, \quad a ^ {r} \mathrm{A} _ {0} \mathrm{L} _ {r} \subset \mathrm{A} _ {0} a ^ {r} \mathrm{L} _ {r} \subset \mathrm{A} _ {0} \mathrm{N} _ {r} \subset \mathrm{N} _ {r}
+\]
+
+	所以 \(L_{r}\) 是 \(A_{0}\)-模 \(M_{0}\) 的子模；此外，
+
+\[
+a \mathrm{N} _ {r} \subset \mathrm{N} \cap a \mathrm{M} _ {r} = \mathrm{N} \cap \mathrm{M} _ {r + 1} = \mathrm{N} _ {r + 1}
+\]
+
+	所以序列 \((\mathbf{L}_{r})_{r\geqslant0}\) 递增。假设蕴含存在整数 \(n\geqslant0\)，使 \(L_{r}=L_{n}\) 对 \(r\geqslant n\) 成立。对每个 \(r\leqslant n\)，令 \((m_{r,s})_{1\leqslant s\leqslant k_{r}}\) 为 \(A_{0}\)-模 \(L_{r}\) 的一组生成元。我们将证明，元素 \(a^{r}m_{r,s}\) 对 \(1\leqslant s\leqslant k_{r}, 0\leqslant r\leqslant n\) 构成 A-模 N 的一组生成元。由于 \(M_{r}=a^{r}M_{0}\) 对所有 r 成立，\(N_{r}=a^{r}L_{r}\) 对所有 r 成立，这是按 \(L_{r}\) 的定义。于是，当 \(r\leqslant n\) 时，
+
+\[
+\mathbf {N} _ {r} = a ^ {r} \mathbf {L} _ {r} = \sum_ {s = 1} ^ {k _ {r}} a ^ {r} \mathbf {A} _ {0} m _ {r, s} \subset \sum_ {s = 1} ^ {k _ {r}} \mathbf {A} _ {0} a ^ {r} m _ {r s},
+\]
+
+并且，对于 \(r > n\)，
+
+\[
+\mathrm{N} _ {r} = a ^ {r} \mathrm{L} _ {n} = \sum_ {s = 1} ^ {k _ {n}} a ^ {r} \mathrm{A} _ {0} m _ {n, s} \subset \sum_ {s = 1} ^ {k _ {n}} \mathrm{A} _ {0} a ^ {r} m _ {n, s} \subset \sum_ {s = 1} ^ {k _ {n}} \mathrm{A} _ {0} a ^ {r - n}. (a ^ {n} m _ {n, s})
+\]
+
+	这就完成了证明（参见~习题 10）。
+
+	推论 1（Hilbert 定理）。对于每个交换 Noether 环 C，多项式环 C{[}X{]} 都是 Noether 环（参见~习题 10）。
+
+	推论 2. 对于每个交换 Noether 环 C 以及每个整数 n \textgreater{} 0，多项式环 C{[}X₁, \ldots, Xₙ{]} 都是 Noether 环。
+
+	这是由推论 1 对 n 作归纳得到的。
+
+	推论 3. 若 C 是交换 Noether 环，则每个有限生成的交换 C-代数都是 Noether 环。
+
+	这样的代数同构于多项式代数 \(\mathbf{C}[\mathbf{X}_1,\ldots ,\mathbf{X}_n]\) 的一个商（第 1 节，第 1 节）。
+
+	推论 4. 设 A 为 N 型分次交换环，\((\mathbf{A}_{n})\) 为其分次。A 为 Noether 环的充要条件是 \(A_{0}\) 为 Noether 环且 A 是有限生成的 \(A_{0}\)-代数。
+
+	由推论 3，所述条件是充分的。反之，设 A 是 Noether 环；\(m = \sum_{n \geqslant 1} A_n\) 是 A 的一个理想，因而有限生成；于是 A 是有限生成的 \(A_0\)-代数（第 1 节，第 2 节，命题 1 的推论）；另一方面，\(A_0\) 同构于 A/m，是 Noether 环。
+
+	推论 5. 设 A 为交换环，m 为 A 的理想，且 A/m 是 Noether 环，m/m² 是有限生成的 (A/m)-模，并且 A 在 m-进拓扑下 Hausdorff 且完备。那么 gr(A) 和 A 都是 Noether 环。
+
+	\(\operatorname{gr}(\mathbf{A})\) 是由 \((\mathbf{A} / \mathfrak{m})\)-模 \(\mathfrak{m} / \mathfrak{m}^2\) 生成的（第 3 节，例 3），因而由推论 3，环 gr(A) 是 Noether 环。由此得到 A 本身是 Noether 环（第 9 节，命题 12 的推论 2）。
+
+	推论 6. 对于每个交换 Noether 环 C 以及每个整数 n \textgreater{} 0，形式幂级数环 C{[}{[}X₁, \ldots, Xₙ{]}{]} 都是 Noether 环。
+
+	这是由推论 5 以及第 6 节命题 6 的推论得到的，因为若 m 是 A = C{[}{[}X₁, \ldots, Xₙ{]}{]} 中由没有常数项的形式幂级数构成的理想，则 A/m 同构于 C，而 m/m² 同构于 C-模 Cⁿ。
+
+\textbf{注}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+	  推论 2、3 和 6 尤其适用于 C 为交换域的情形。
+\end{enumerate}
+
+	* (2) 设 g 为交换 Noether 环 C 上的李代数，并假设 g 是有限生成的 C-模。给 g 的包络代数 U 赋予第 3 节例 4 中定义的递增滤过 \((\mathbf{U}_{n})\)。在相应拓扑下，U 是离散的，因而 Hausdorff 且完备；相伴的分次环 gr(U) 是有限生成的 C-代数，因为它是对称代数 S(g) 的一个商，因而 gr(U) 是 Noether 环（推论 3），于是我们得到 U 是左、右 Noether 环（第 9 节，命题 12 的推论 2）。 *
+

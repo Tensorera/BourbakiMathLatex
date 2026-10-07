@@ -1,0 +1,156 @@
+\subsection{近似解的比较}
+
+在下面，I 与 H 仍如前分别表示 R 中所包含的一个区间与赋范空间 E 中的一个开集；\(t_{0}\) 是 I 的一点。
+
+定义 1. 给定定义在 I 上的正实函数 \(t \mapsto k(t)\)，称映射 \(\mathbf{f}\)（从 \(\mathrm{I} \times \mathrm{H}\) 到 E 中）关于函数 \(k(t)\) 是利普希茨的，如果对每个 \(\mathbf{x} \in \mathrm{H}\)，函数 \(t \mapsto \mathbf{f}(t, \mathbf{x})\) 在 I 上规则，并且对每个 \(t \in \mathrm{I}\) 与 H 中的每一对点 \(\mathbf{x}_1, \mathbf{x}_2\)，有（“利普希茨条件”）
+
+\[
+\left\| \mathbf {f} (t, \mathbf {x} _ {1}) - \mathbf {f} (t, \mathbf {x} _ {2}) \right\| \leqslant k (t) \left\| \mathbf {x} _ {1} - \mathbf {x} _ {2} \right\|.\tag{8}
+\]
+
+我们说 \(\mathbf{f}\) 在 \(\mathrm{I} \times \mathrm{H}\) 上（不加限定地说）是利普希茨的，如果它关于某个常数 \(k \geqslant 0\) 在该集合上是利普希茨的。显然，\(\mathrm{I} \times \mathrm{H}\) 上的利普希茨函数满足 IV 第 165 页引理 1 的假设（反之不真）；当 \(\mathbf{f}\) 在 \(\mathrm{I} \times \mathrm{H}\) 上是利普希茨的时，就称微分方程
+
+\[
+\mathbf {x} ^ {\prime} = \mathbf {f} (t, \mathbf {x})\tag{1}
+\]
+
+是利普希茨的（在 I × H 上）。
+
+例. 当 E = R 且 H 是 R 中的一个区间时，若函数 \(f(t, x)\) 具有偏导数 \(f_{x}^{\prime}\)（II，第 74 页），在 I × H 的每一点 \((t, x)\) 处，且在 I × H 上 \(|f_{x}^{\prime}(t, x)| \leqslant k(t)\)，则由中值定理，条件 (8) 得到满足；我们以后将看到这个例子怎样推广到 E 为任意赋范空间的情形。
+
+若 f 在 \(I \times H\) 上是利普希茨的，则对每个紧子区间 \(J \times S\) 与每个开球 \(J \subset I\)，f 在 \(S \subset H\) 上有界。于是可以应用命题 3（IV，第 166 页），它给出方程 (1) 的近似解的存在性。但我们还有下面的命题，它使我们可以比较两个近似解：
+
+命题 5. 设 \(k(t)\) 是实规则函数且在 I 上 \(>0\)，并设 \(\mathbf{f}(t, \mathbf{x})\) 是已定义且关于 \(k(t)\) 在 \(\mathrm{I} \times \mathrm{H}\) 上为利普希茨的函数。若 \(\mathbf{u}\) 与 \(\mathbf{v}\) 是 (1) 的两个近似解，其精确度分别为 \(\varepsilon_1\) 与 \(\varepsilon_2\)，都定义在 I 上且取值于 H 中，则对每个 \(t \in \mathrm{I}\)（只要 \(t \geqslant t_0\)），
+
+\[
+\left\| \mathbf {u} (t) - \mathbf {v} (t) \right\| \leqslant \left\| \mathbf {u} \left(t _ {0}\right) - \mathbf {v} \left(t _ {0}\right) \right\| \Phi (t) + \left(\varepsilon_ {1} + \varepsilon_ {2}\right) \Psi (t)\tag{9}
+\]
+
+其中
+
+\[
+\left\{ \begin{array}{l} \Phi (t) = 1 + \int_ {t _ {0}} ^ {t} k (s) \exp \left(\int_ {s} ^ {t} k (\tau) d \tau\right) d s \\ \Psi (t) = t - t _ {0} + \int_ {t _ {0}} ^ {t} (s - t _ {0}) k (s) \exp \left(\int_ {s} ^ {t} k (\tau) d \tau\right) d s. \end{array} \right.\tag{10}
+\]
+
+由关系式 \(\left\| \mathbf{u}'(t) - \mathbf{f}(t, \mathbf{u}(t)) \right\| \leqslant \varepsilon_1\)（它在某个可数集的补集上成立），借助中值定理推出
+
+\[
+\left\| \mathbf {u} (t) - \mathbf {u} (t _ {0}) - \int_ {t _ {0}} ^ {t} \mathbf {f} (s, \mathbf {u} (s)) d s \right\| \leqslant \varepsilon_ {1} (t - t _ {0})
+\]
+
+同理可得
+
+\[
+\left\| \mathbf {v} (t) - \mathbf {v} (t _ {0}) - \int_ {t _ {0}} ^ {t} \mathbf {f} (s, \mathbf {v} (s)) d s \right\| \leqslant \varepsilon_ {2} (t - t _ {0})
+\]
+
+由此得
+
+\[
+\begin{array}{l} \| \mathbf {u} (t) - \mathbf {v} (t) \| \leqslant \| \mathbf {u} (t _ {0}) - \mathbf {v} (t _ {0}) \| \\ \qquad + \left\| \int_ {t _ {0}} ^ {t} (\mathbf {f} (s, \mathbf {u} (s)) - \mathbf {f} (s, \mathbf {v} (s))) d s \right\| + (\varepsilon_ {1} + \varepsilon_ {2}) (t - t _ {0}). \end{array}
+\]
+
+由利普希茨条件 (8) 有
+
+\[
+\begin{array}{r l} \left\| \int_ {t _ {0}} ^ {t} (\mathbf {f} (s, \mathbf {u} (s)) - \mathbf {f} (s, \mathbf {v} (s))) d s \right\| & \leqslant \int_ {t _ {0}} ^ {t} \| \mathbf {f} (s, \mathbf {u} (s)) - \mathbf {f} (s, \mathbf {v} (s)) \| d s \\ & \leqslant \int_ {t _ {0}} ^ {t} k (s) \| \mathbf {u} (s) - \mathbf {v} (s) \| d s \end{array}
+\]
+
+由此，令 \(w(t) = \|\mathbf{u}(t) - \mathbf{v}(t)\|\)，即得
+
+\[
+w (t) \leqslant w \left(t _ {0}\right) + \left(\varepsilon_ {1} + \varepsilon_ {2}\right) \left(t - t _ {0}\right) + \int_ {t _ {0}} ^ {t} k (s) w (s) d s.\tag{11}
+\]
+
+因此本命题是下述引理的推论：
+
+引理 2. 若 \(w\) 是区间 \([t_0, t_1]\) 上的连续实函数且满足不等式
+
+\[
+w (t) \leqslant \varphi (t) + \int_ {t _ {0}} ^ {t} k (s) w (s) d s\tag{12}
+\]
+
+其中 \(\varphi\) 是规则函数 \(\geqslant 0\) 在 \([t_0, t_1]\) 上，则对 \(t_0 \leqslant t \leqslant t_1\)，
+
+\[
+w (t) \leqslant \varphi (t) + \int_ {t _ {0}} ^ {t} \varphi (s) k (s) \exp \left(\int_ {s} ^ {t} k (\tau) d \tau\right) d s.\tag{13}
+\]
+
+令 \(y(t) = \int_{t_0}^{t} k(s)w(s)ds\)；关系式 (12) 蕴含
+
+\[
+y ^ {\prime} (t) - k (t) y (t) \leqslant \varphi (t) k (t)\tag{14}
+\]
+
+在一个可数集的补集上。
+
+令 \(z(t) = y(t)\exp \left(-\int_{t_0}^t k(s)ds\right)\)；则 (14) 等价于
+
+\[
+z ^ {\prime} (t) \leqslant \varphi (t) k (t) \exp \left(- \int_ {t _ {0}} ^ {t} k (s) d s\right).
+\]
+
+对此不等式应用中值定理（I，第 15 页，定理 2），并注意到 \(z(t_0) = 0\)，便得到
+
+\[
+z (t) \leqslant \int_ {t _ {0}} ^ {t} \varphi (s) k (s) \exp \left(- \int_ {t _ {0}} ^ {s} k (\tau) d \tau\right) d s
+\]
+
+由此得
+
+\[
+y (t) \leqslant \int_ {t _ {0}} ^ {t} \varphi (s) k (s) \exp \left(\int_ {s} ^ {t} k (\tau) d \tau\right) d s
+\]
+
+又因 \(w(t) \leqslant \varphi(t) + y(t)\)，这样就得到 (13)。
+
+推论. 设 f 是关于常数 k \textgreater{} 0、定义在 I × H 上的利普希茨函数。若 u 与 v 是 (1) 的两个近似解，其精确度分别为 \(\varepsilon_{1}\) 与 \(\varepsilon_{2}\)，都定义在 I 上且取值于 H 中，则对一切 \(t \in I\)，
+
+\[
+\| \mathbf {u} (t) - \mathbf {v} (t) \| \leqslant \| \mathbf {u} (t _ {0}) - \mathbf {v} (t _ {0}) \| e ^ {k | t - t _ {0} |} + (\varepsilon_ {1} + \varepsilon_ {2}) \frac {e ^ {k | t - t _ {0} |} - 1}{k}.\tag{15}
+\]
+
+当 \(t \geqslant t_0\) 时，此不等式实际上是 (9) 的直接推论；要对 \(t \leqslant t_0\) 证明它，只需把它应用于方程
+
+\[
+{\frac {d \mathbf {x}}{d s}} = - \mathbf {f} (- s, \mathbf {x})
+\]
+
+它是通过变量代换 t = -s 从 (1) 得到的。
+
+注. 1) 当 k = 0 时，不等式 (15) 换成不等式
+
+\[
+\left\| \mathbf {u} (t) - \mathbf {v} (t) \right\| \leqslant \left\| \mathbf {u} \left(t _ {0}\right) - \mathbf {v} \left(t _ {0}\right) \right\| + \left(\varepsilon_ {1} + \varepsilon_ {2}\right) | t - t _ {0} |
+\]
+
+其证明是直接的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  当 E 是有限维且 f 在 \(I \times H\) 上是利普希茨的时候，可以不用选择公理（IV，第 199 页，习题 1 b)）来证明 (1) 的近似解的存在性（IV，第 166 页，命题 3）。
+\end{enumerate}
+
+命题 6. 设 f 与 g 是定义在 I × H 上的两个函数，它们满足 IV 第 165 页引理 1 的假设，并且在 I × H 上
+
+\[
+\left\| \mathbf {f} (t, \mathbf {x}) - \mathbf {g} (t, \mathbf {x}) \right\| \leqslant \alpha .\tag{16}
+\]
+
+再设 \(\mathbf{g}\) 是关于常数 \(k > 0\) 在 \(\mathrm{I} \times \mathrm{H}\) 上为利普希茨的函数。在这些条件下，若 \(\mathbf{u}\) 是 \(\mathbf{x}' = \mathbf{f}(t, \mathbf{x})\) 的精确到 \(\varepsilon_1\) 的近似解，它定义在 \(\mathrm{I}\) 上、取值于 \(\mathrm{H}\) 中，而 \(\mathbf{v}\) 是 \(\mathbf{x}' = \mathbf{g}(t, \mathbf{x})\) 的精确到 \(\varepsilon_2\) 的近似解，它定义在 \(\mathrm{I}\) 上、取值于 \(\mathrm{H}\) 中，则对一切 \(t \in \mathrm{I}\)
+
+\[
+\| \mathbf {u} (t) - \mathbf {v} (t) \| \leqslant \| \mathbf {u} (t _ {0}) - \mathbf {v} (t _ {0}) \| e ^ {k | t - t _ {0} |} + (\alpha + \varepsilon_ {1} + \varepsilon_ {2}) \frac {e ^ {k | t - t _ {0} |} - 1}{k}.\tag{17}
+\]
+
+的确
+
+\[
+\left| \left| \mathbf {u} ^ {\prime} (t) - \mathbf {g} (t, \mathbf {u} (t)) \right| \right| \leqslant \alpha + \varepsilon_ {1}
+\]
+
+此式对 I 中某个可数子集在 I 中的补集的所有 t 成立；换言之，u 是 \(\mathbf{x}^{\prime} = \mathbf{g}(t, \mathbf{x})\) 的精确到 \(\alpha + \varepsilon_{1}\) 的近似解，于是应用 IV 第 169 页的命题 5 即得不等式 (17)。
+

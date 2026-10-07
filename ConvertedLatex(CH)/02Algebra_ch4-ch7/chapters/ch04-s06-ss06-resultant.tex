@@ -1,0 +1,335 @@
+\subsection{结式}
+
+在本节中，我们假设给定了两个正整数 \(p, q\) 和两个多项式 \(f, g\) （在 \(\mathbf{A}[\mathbf{X}]\) 中），形如
+
+\[
+\begin{array}{r l} & {f = t _ {p} \mathbf {X} ^ {p} + t _ {p - 1} \mathbf {X} ^ {p - 1} + \dots + t _ {0}} \\ & {g = u _ {q} \mathbf {X} ^ {q} + u _ {q - 1} \mathbf {X} ^ {q - 1} + \dots + u _ {0}} \end{array}
+\]
+
+使得 \(\deg f \leqslant p\) ， \(\deg g \leqslant q\) 。对每个整数 \(n \geqslant 0\) ，我们用 \(S_n\) 表示 A{[}X{]} 的子 A-模，它由所有次数 \(< n\) 的多项式组成；它以族 \((X^i)_{0 \leqslant i < n}\) 为基，因此秩为 \(n\) 。
+
+我们给 \(\mathbf{S}_q\times \mathbf{S}_p\) 配备基
+
+\[
+\mathrm{B} _ {1} = \left(\left(\mathrm{X} ^ {q - 1}, 0\right), \dots , (\mathrm{X}, 0), (1, 0), \left(0, \mathrm{X} ^ {p - 1}\right), \dots , (0, \mathrm{X}), (0, 1)\right)
+\]
+
+以及给 \(\mathbf{S}_{p + q}\) 配备基
+
+\[
+\mathbf {B} _ {2} = \left(\mathbf {X} ^ {p + q - 1}, \dots , \mathbf {X}, 1\right).
+\]
+
+我们定义线性映射 \(\varphi : S_q \times S_p \to S_{p + q}\) 如下：
+
+\[
+\varphi (u, v) = u f + v g
+\]
+
+并且我们用 \(\mathbf{M}(f,g,p,q)\) 表示 \(\varphi\) 关于基 \(\mathbf{B}_1\) 与 \(\mathbf{B}_2\) 的矩阵。这是一个阶为 \(p + q\) 的方阵，其指标集合为 \(\{0,1,\dots,p + q - 1\}\) 。它的元素 \(a_{ij}\) 由以下规则给出：
+
+\[
+\begin{array}{l l} a) & a _ {i j} = t _ {p - i + j} \quad \text {for} \quad 0 \leqslant j \leqslant q - 1, \\ b) & a _ {i j} = u _ {j - i} \quad \text {for} \quad q \leqslant j \leqslant p + q - 1, \end{array}
+\]
+
+，其中 \(t_k\) 取为 0 （如果 \(k \notin [0, p]\) ），且 \(u_k = 0\) （如果 \(k \notin [0, q]\) ）。
+
+例如，当 \(p = 2\) 且 \(q = 3\) 时，我们有矩阵
+
+\[
+\left( \begin{array}{c c c c c} t _ {2} & 0 & 0 & u _ {3} & 0 \\ t _ {1} & t _ {2} & 0 & u _ {2} & u _ {3} \\ t _ {0} & t _ {1} & t _ {2} & u _ {1} & u _ {2} \\ 0 & t _ {0} & t _ {1} & u _ {0} & u _ {1} \\ 0 & 0 & t _ {0} & 0 & u _ {0} \end{array} \right).
+\]
+
+定义1. --- 在上述记号下，矩阵 \(\mathbf{M}(f,g,p,q)\) 的行列式称为对 \((f,g)\) 关于次数 p 和 q 的结式，或简称为 f 和 g 的结式，如果 \(p = \deg f\) 且 \(q = \deg g\) 。
+
+结式记为 \(\operatorname{res}_{p,q}(f,g)\) ，或简记为 \(\operatorname{res}(f,g)\) （当 \(p=\deg f\) , \(q=\deg g\) ）。
+
+例。--- 1) 给定 A 中的 \(\lambda\) , \(\mu\) ，我们有公式
+
+\[
+\begin{array}{l} \operatorname{res} _ {p, 0} (f, \lambda) = \lambda^ {p}, \quad \operatorname{res} _ {0, q} (\mu , g) = \mu^ {q} \\ \operatorname{res} _ {p, 1} (f, \lambda) = \lambda^ {p} t _ {p}, \quad \operatorname{res} _ {1, q} (\mu , g) = (- 1) ^ {q} \mu^ {q} u _ {q}, \end{array}
+\]
+
+其证明是直接的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  当 \(p = q = 1\) 时，我们有
+\end{enumerate}
+
+\[
+\operatorname{res} _ {1, 1} \left(t _ {1} \mathbf {X} + t _ {0}, u _ {1} \mathbf {X} + u _ {0}\right) = t _ {1} u _ {0} - t _ {0} u _ {1}.
+\]
+
+注。--- 1) 矩阵 \(\mathbf{M}(g, f, q, p)\) 是由 \(\mathbf{M}(f, g, p, q)\) 经 \(pq\) 次列的对换得到的，因此
+
+\[
+\operatorname{res} _ {q, p} (g, f) = (- 1) ^ {p q} \operatorname{res} _ {p, q} (f, g).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\rho: \mathbf{A} \to \mathbf{B}\) 是一个环同态。定义1直接蕴含公式
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q} \left({}^ {\rho} f, {}^ {\rho} g\right) = \rho \left(\operatorname{res} _ {p, q} (f, g)\right).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  给定 \(\lambda, \mu\) （在 A 中），我们有
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q} (\lambda f, \mu g) = \lambda^ {q} \mu^ {p} \operatorname{res} _ {p, q} (f, g).\tag{28}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  假设 \(p + q \geqslant 1\) 。根据III第532页公式(28)， \(\varphi\) 的像包含常数多项式 \(\operatorname{res}_{p,q}(f, g)\) 。因此存在一对多项式 \((u, v)\) （其中 \(u \in S_q\) , \(v \in S_p\) ），使得
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q} (f, g) = u f + v g,
+\]
+
+由此
+
+\[
+\operatorname{res} _ {p, q} (f, g) \in \mathrm{A} \cap (f, g).
+\]
+
+这一对 \((u, v)\) 是唯一的，当 \(\operatorname{res}_{p,q}(f, g)\) 在 \(\mathbf{A}\) 中可消去时：因为此时 \(\varphi\) 是单射（III，第524页，命题3）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  假设 \(p \geqslant q\) ，并设 \(h \in \mathbf{A}[\mathbf{X}]\) 是一个次数 \(\leqslant p - q\) 的多项式。让我们证明
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q} (f, g) = \operatorname{res} _ {p, q} (f + g h, g).\tag{29}
+\]
+
+因为如果我们写 \(\omega(u, v) = (u, uh + v)\) （对 \((u, v) \in S_q \times S_p\) ），则 \(\omega\) 是 A-模 \(S_q \times S_p\) 的一个自同构，并且我们有
+
+\[
+\omega^ {- 1} (u, v) = (u, - u h + v).
+\]
+
+\(\omega\) 关于基 \(B_{1}\) 的矩阵是下三角的，其对角元素等于 1。另一方面， \(\varphi \circ \omega\) 把 \((u, v)\) 映为 \(u(f + gh) + vg\) 。现在公式(29)意味着表示 \(\varphi\) 与 \(\varphi \circ \omega\) 的矩阵具有相同的行列式，而这由关系式 det \(\omega = 1\) 得出。
+
+假设 \(f\) 是次数为 \(p\) 的首一多项式；令 \(E = A[X]/(f)\) ，并用 \(x\) 表示 \(X\) 在 \(E\) 中的典范像。我们知道（IV，第11页）， \(E\) 是自由 \(A\) -模，以 \((1, x, ..., x^{p-1})\) 为基。于是我们可以定义范数 \(N_{E/A}(u)\) （对任意元素 \(u\) ，属于 \(E\) ）（III，第543页，定义2）。
+
+命题7. --- 假设 \(f\) 是次数为 \(p\) 的首一多项式；使用上述记号，我们有 \(^{1}\)
+
+\[
+\operatorname{res} _ {p, q} (f, g) = \mathrm{N} _ {\mathrm{E/A}} (g (x)).\tag{30}
+\]
+
+我们定义 A-线性映射 \(\theta\) ：从 \(S_q \times S_p\) 到 \(S_{p+q}\) ，由 \(\theta(u, v) = uf + v\) 。则 \(\theta\) 把基 \(B_1\) （属于 \(S_q \times S_p\) ）映为序列
+
+\[
+(f \mathbf {X} ^ {q - 1}, \dots , f \mathbf {X}, f, \mathbf {X} ^ {p - 1}, \dots , \mathbf {X}, 1)
+\]
+
+（其元素属于 \(S_{p+q}\) ）；因此矩阵 \(M_{\theta}\) （即 \(\theta\) 关于基 \(B_{1}\) , \(B_{2}\) 的矩阵）是下三角的，其对角元素等于 1，从而 det \(M_{\theta}=1\) 。
+
+由此可知 \(\theta\) 是双射，并且 \(\operatorname{res}_{p,q}(f,g)\) 等于自同态 \(\varphi' = \varphi \circ \theta^{-1}\) （属于 \(S_{p + q}\) ）的行列式。具体地，我们有
+
+\[
+\varphi^ {\prime} (u f + v) = u f + v g\tag{31}
+\]
+
+（对任意一对 \((u,v)\) ，属于 \(S_{q}\times S_{p}\) ）。现在我们有 \(A[X]=S_{p+q}+(f)\) 且 \(fS_{q}=S_{p+q}\cap(f)\) ，因此 \(S_{p+q}\) 到 A{[}X{]} 中的典范单射通过取商定义了一个同构 \(\gamma\) （从 \(S_{p+q}/fS_{q}\) 到 E 上）。设 \(\psi\) 为 E 中乘以 \(g(x)\) 的映射。公式 (31) 表明 \(\varphi'\) 在 \(fS_{q}\) 上诱导恒等映射，且 \(\gamma^{-1}\psi\gamma\) 在 \(S_{p+q}/fS_{q}\) 上亦然。于是我们有 det \(\varphi'=\det\psi\) ，从而 (30) 成立，因为 det \(\varphi'=\operatorname{res}_{p,q}(f,g)\) 且 det \(\psi=N_{E/A}(g(x))\) （根据定义）。
+
+推论1. --- 设 \(f \in \mathbf{A}[\mathbf{X}]\) 是一个首一多项式；对每个多项式 \(g \in \mathbf{A}[\mathbf{X}]\) ，以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  res \((f,g)\) 在 A 中可逆；
+\item
+  存在多项式 \(u, v\) （在 \(\mathbf{A}[\mathbf{X}]\) 中），使得 \(uf + vg = 1\) ；
+\item
+  \(g(x)\) 在代数 \(\mathbf{A}[\mathbf{X}] / (f)\) 中可逆。
+\end{enumerate}
+
+(i) 与 (iii) 的等价性由III第545页命题3及命题7得出；(ii) 与 (iii) 的等价性则是平凡的。
+
+推论2. --- 假设 A 是一个域，并设 \(f, g \in A[X]\) ，则当 \(f, g\) 非零时以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\operatorname{res}(f, g) \neq 0\) ;
+\item
+  多项式 \(f\) 与 \(g\) 在 \(\mathbf{A}[\mathbf{X}]\) 中互素；
+\end{enumerate}
+
+(iii) 对 A 的任意扩域 L，多项式 f 和 g 在 L 中没有公共根。
+
+我们可以立即化简到 \(f\) 是首一的情形（IV，第77页，注记3）。(i) 与 (ii) 的等价性不过是推论1依IV第12页定义1的翻译；(ii) 与 (iii) 的等价性不过是IV第13页推论7。
+
+推论3. --- 对每个 \(\lambda \in A\) ，我们有
+
+\[
+\operatorname{res} _ {p, 1} (f, \lambda - X) = f (\lambda), \quad \operatorname{res} _ {1, q} (X - \lambda , g) = g (\lambda).\tag{32}
+\]
+
+当 \(f(\mathbf{X}) = \mathbf{X} - \lambda\) 时，代数 E 等于 A，并且我们有 \(x = \lambda\) ；第二个公式 (32) 于是由命题7（IV，第77页）得出。根据注记1和3（IV，第76、77页），我们得出结论
+
+\[
+\operatorname{res} _ {p, 1} (f, \lambda - \mathbf {X}) = (- 1) ^ {p} \operatorname{res} _ {1, p} (\lambda - \mathbf {X}, f) = (- 1) ^ {p + p} \operatorname{res} _ {1, p} (\mathbf {X} - \lambda , f) = f (\lambda).
+\]
+
+现在假设 f 和 g 都是首一的。我们用 F 表示 A-代数 \(\mathrm{A}[\mathrm{X},\mathrm{Y}]/(f(\mathrm{X}),g(\mathrm{Y}))\) ，并用 x（相应地， y）表示 X（相应地， Y）在 F 中的典范像。
+
+命题8. --- 设 \(f\) 与 \(g\) 分别是次数 \(p\) 与 \(q\) 的首一多项式。在上述记号下，A-模 \(F\) 是自由的，以 \((x^i y^j)_{0 \leq i < p, 0 \leq j < q}\) 为基，并且我们有
+
+\[
+\operatorname{res} (f, g) = \mathrm{N} _ {\mathrm{F/A}} (x - y).\tag{33}
+\]
+
+令 \(E = A[X]/(f)\) ，且 \(E' = A[Y]/(g)\) 。由II第253页推论1，同态 \(\sigma\) （从 \(E \otimes E'\) 到 F 中，由典范同态 \(A[X] \otimes A[Y] \to A[X,Y]\) 导出）是双射；这就证明了关于 F 的基的断言。我们现在把 E 与它在 F 中在 \(\sigma\) 下的像等同起来。于是，把 Y 映为 y 的、从 \(E[Y]/(g(Y))\) 到 F 中的 E-代数同态是一个同构。
+
+由范数的传递性（III，第546页），我们有
+
+\[
+\mathrm{N} _ {\mathrm{F/A}} (x - y) = \mathrm{N} _ {\mathrm{E/A}} (\mathrm{N} _ {\mathrm{F/E}} (x - y)).\tag{34}
+\]
+
+由命题7（IV，第77页）， \(\mathbf{N}_{\mathrm{F / E}}(x - y)\) 是多项式 \(g(\mathbf{Y})\) 与 \(x - \mathbf{Y}\) （在 E{[}Y{]} 中）的结式，因此等于 \(g(x)\) （IV，第78页，推论3）。由公式（34）和命题7（IV，第77页），我们因此有
+
+\[
+\mathrm{N} _ {\mathrm{F/A}} (x - y) = \mathrm{N} _ {\mathrm{E/A}} (g (x)) = \operatorname{res} (f, g).
+\]
+
+命题9. --- 设 \(p_1\) 与 \(q_1\) 为正整数， \(f_1, g_1\) 为 A{[}X{]} 中的多项式，使得 \(\deg f_1 \leqslant p_1\) , \(\deg g_1 \leqslant q_1\) ；于是我们有
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{34}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q + q _ {1}} (f, g g _ {1}) = \operatorname{res} _ {p, q} (f, g) \cdot \operatorname{res} _ {p, q _ {1}} (f, g _ {1})\tag{36}
+\]
+
+\[
+\operatorname{res} _ {p + p _ {1}, q} (f f _ {1}, g) = \operatorname{res} _ {p, q} (f, g) \cdot \operatorname{res} _ {p _ {1}, q} (f _ {1}, g).
+\]
+
+我们有 \(\operatorname{res}_{p,q}(f,g)=(-1)^{pq}\operatorname{res}_{q,p}(g,f)\) （IV，第76页）；因此只需证明 (35)。同样，注记3（同处）表明，若公式 (35) 对某个多项式 f 成立，则它对所有形如 \(\lambda f\) （其中 \(\lambda\in A\) ）的多项式也成立。最后，当 f 是 p 次首一多项式时，公式 (35) 由命题7（IV，第77页）及公式 \(\mathrm{N}_{\mathrm{E}/\mathrm{A}}(ab)=\mathrm{N}_{\mathrm{E}/\mathrm{A}}(a)\cdot\mathrm{N}_{\mathrm{E}/\mathrm{A}}(b)\) 得出。总之，我们得出结论：当系数 \(t_{p}\) （即 f 中 \(X^{p}\) 的系数）可逆时，(35) 成立。
+
+引理5. --- 设 t 是 A 的一个元素。存在一个交换环 C（以 A 为子环）、C 的一个子环 B（包含 A）、一个在 C 中可逆的元素 \(\tau\) （属于 B），以及一个环同态 \(\rho: B \to A\) ，使得 \(\rho(\tau) = t\) 且 \(\rho\) 在 A 上的限制等于 \(Id_{A}\) 。
+
+只需对 B 取幺半群 N 的代数 \(\mathbf{A}^{(\mathbf{N})}\) ，即多项式代数 \(A[\tau]\) （单个未定元 \(\tau\) 的），对 C 取群 Z 的代数 \(\mathbf{A}^{(\mathbf{Z})}\) ，对 \(\rho\) 取同态 \(P \mapsto P(t)\) （从 \(\mathbf{A}[\tau]\) 到 A 中）。
+
+采用引理 5 的记号，其中我们已取 \(t = t_p\) ，令
+
+\[
+\mathbf {F} = \tau \mathbf {X} ^ {p} + t _ {p - 1} \mathbf {X} ^ {p - 1} + \dots + t _ {1} \mathbf {X} + t _ {0}\tag{37}
+\]
+
+在 B{[}X{]} 中。 \(\mathbf{X}^p\) 在 F 中的系数在 C 内可逆；若我们把 F、 \(g\) 、 \(g_1\) 视为 C{[}X{]} 的多项式，则根据前述内容，我们有
+
+\[
+\operatorname{res} _ {p, q + q _ {1}} (\mathrm{F}, g g _ {1}) = \operatorname{res} _ {p, q} (\mathrm{F}, g) \cdot \operatorname{res} _ {p, q _ {1}} (\mathrm{F}, g _ {1})\tag{38}
+\]
+
+由前述内容。若我们把 F、g 及 \(g_{1}\) 视为 B{[}X{]} 中的多项式，则结式保持不变。由于 \( {}^{\rho}F = f\) , \( {}^{\rho}g = g\) , \( {}^{\rho}g_{1} = g_{1}\) ，公式(35)由(38)及注记2（IV，第77页）得出。
+
+推论1. --- (i) 设 \(\lambda, \alpha_{1}, \ldots, \alpha_{p}\) 为 A 的元素，并假设 \(f(\mathbf{X}) = \lambda(\mathbf{X} - \alpha_{1}) \ldots (\mathbf{X} - \alpha_{p})\) 。我们有
+
+\[
+\operatorname{res} _ {p, q} (f, g) = \lambda^ {q} g (\alpha_ {1}) \dots g (\alpha_ {p}).\tag{39}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mu, \beta_1, \ldots, \beta_q\) 为 \(A\) 的元素，并进一步假设 \(g(X) = \mu(X - \beta_1) \ldots (X - \beta_q)\) 。于是我们有
+\end{enumerate}
+
+\[
+\operatorname{res}_{p,q}(f,g) = \lambda^{q}\mu^{p}\prod_{\substack{1\leqslant i\leqslant p\\ 1\leqslant j\leqslant q}}\left(\alpha_{i} - \beta_{j}\right).\tag{40}
+\]
+
+断言(i)直接由公式(28)、(32)和(36)得出。现在断言(ii)由(i)得出。
+
+推论2. --- 对每个整数 \(r \geqslant 0\) ，我们有
+
+\[
+\operatorname{res} _ {p, q + r} (f, g) = t _ {p} ^ {r} \cdot \operatorname{res} _ {p, q} (f, g).\tag{41}
+\]
+
+考虑到例1（IV，第76页），我们只需在 (35) 中取 \(q_{1} = r\) , \(g_{1} = 1\) 。
+
+假设 \(f\) 是首一的，并令 \(\rho: \mathbf{A} \to \mathbf{B}\) 为一个环同态，且 \(\xi_{1}, \ldots, \xi_{p}\) 为 \(\mathbf{B}\) 的元素，使得我们有分解
+
+\[
+{ } ^ { p } f ( \mathbf { X } ) = ( \mathbf { X } - \xi _ { 1 } ) \dots ( \mathbf { X } - \xi _ { p } ) .
+\]
+
+根据注记2（IV，第77页）及上述推论1，我们有
+
+\[
+\rho (\operatorname{res} (f, g)) = g (\xi_ {1}) \dots g (\xi_ {p}).
+\]
+
+这一注记特别适用于 \(f(\mathrm{IV}, \mathrm{p.~73})\) 的泛分解，且由于此时 \(\rho\) 是单射的，这提供了一种计算 \(\operatorname{res}(f, g)\) 的方法。
+
+例3. --- 让我们证明公式
+
+\[
+\begin{array}{r l} \operatorname{res} _ {2, 2} (a \mathbf {X} ^ {2} + b \mathbf {X} + c, a ^ {\prime} \mathbf {X} ^ {2} + b ^ {\prime} \mathbf {X} + c ^ {\prime}) & = \\ & = (a c ^ {\prime} - c a ^ {\prime}) ^ {2} + (b c ^ {\prime} - c b ^ {\prime}) (b a ^ {\prime} - a b ^ {\prime}). \end{array}\tag{42}
+\]
+
+如同命题9（IV，第79页）的论证，我们看到只需证明当a可逆时的公式即可。此时存在如下形式的分解
+
+\[
+a \mathbf {X} ^ {2} + b \mathbf {X} + c = a (\mathbf {X} - x) (\mathbf {X} - y)\tag{43}
+\]
+
+在 B{[}X{]} 中，其中 B 是一个包含 A 作为子环的适当环。根据上述推论1，所求的结式等于
+
+\[
+\mathbf {R} = a ^ {2} \left(a ^ {\prime} x ^ {2} + b ^ {\prime} x + c ^ {\prime}\right) \left(a ^ {\prime} y ^ {2} + b ^ {\prime} y + c ^ {\prime}\right).\tag{44}
+\]
+
+现在我们得到
+
+\[
+a x + a y = - b, \quad a x y = c
+\]
+
+由(43)，因此 \((ax)^2 + (ay)^2 = b^2 - 2ac\) 。
+
+由(44)我们有
+
+\[
+\begin{array}{r l} \mathrm{R} & = a ^ {\prime 2} (a x y) ^ {2} + a b ^ {\prime 2} (a x y) + a ^ {2} c ^ {\prime 2} + a ^ {\prime} b ^ {\prime} (a x y) (a x + a y) + \\ & \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad + a ^ {\prime} c ^ {\prime} ((a x) ^ {2} + (a y) ^ {2}) + a b ^ {\prime} c ^ {\prime} (a x + a y) \\ & = a ^ {\prime 2} c ^ {2} + a b ^ {\prime 2} c + a ^ {2} c ^ {\prime 2} - a ^ {\prime} b ^ {\prime} c b + a ^ {\prime} c ^ {\prime} (b ^ {2} - 2 a c) - a b ^ {\prime} c ^ {\prime} b \\ & = (a c ^ {\prime} - c a ^ {\prime}) ^ {2} + (a b ^ {\prime} - a ^ {\prime} b) (b ^ {\prime} c - c ^ {\prime} b), \end{array}
+\]
+
+由此所需结果成立。
+

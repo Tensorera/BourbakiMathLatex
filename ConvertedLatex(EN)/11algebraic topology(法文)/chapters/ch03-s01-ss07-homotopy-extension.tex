@@ -1,0 +1,183 @@
+\subsection{The homotopy extension property}
+
+DEFINITION 8. --- Let X be a topological space and let A be a subset of X. The pair (X,A) is said to have the homotopy extension property if, for every topological space Y, every continuous map \(f:\mathrm{X}\to\mathrm{Y}\), and every homotopy \(\sigma:\mathrm{A}\times\mathbf{I}\to\mathrm{Y}\) whose term is the map \(f|_{\mathrm{A}}\), there exists a homotopy \(\tau:\mathrm{X}\times\mathbf{I}\to\mathrm{Y}\) extending \(\sigma\) and whose term is the map f.
+
+Remark 1. --- Let X be a topological space and let A be a subset of X such that the pair (X,A) has the homotopy extension property. Let Y be a topological space, let \(f:\mathrm{X}\to\mathrm{Y}\) be a continuous map, and let \(\sigma:\mathrm{A}\times\mathrm{I}\to\mathrm{Y}\) be a homotopy whose origin is the map \(f|_{\mathrm{A}}\). The map \(\overline{\sigma}:\mathrm{A}\times\mathrm{I}\to\mathrm{Y}\) defined by \((a,t)\mapsto\sigma(a,1-t)\) is a homotopy with term \(f|_{\mathrm{A}}\); let \(\tau:\mathrm{X}\times\mathrm{I}\to\mathrm{Y}\) be a homotopy with term f which extends \(\overline{\sigma}\). The map \(\overline{\tau}:\mathrm{X}\times\mathrm{I}\to\mathrm{Y}\) given by \((x,t)\mapsto\tau(x,1-t)\) is then a homotopy extending \(\sigma\) and whose origin is the map f.
+
+Let X be a topological space, let A be a subspace of X, and let \(i: A \to X\) be the canonical injection. Denote by \(\alpha_{i}: A \times I \to \text{Cyl}(i)\) and \(\beta_{i}: X \to \text{Cyl}(i)\) the canonical maps. Let \(j: \text{Cyl}(i) \to X \times I\) be the unique continuous map such that \(j(\alpha_{i}(a, s)) = (i(a), s)\) and \(j(\beta_{i}(x)) = (x, 1)\) for \(a \in A\), \(s \in I\), and \(x \in X\). It is injective; its image is the subspace \((\mathbf{A} \times \mathbf{I}) \cup (\mathbf{X} \times \{1\})\) of \(X \times I\). The map j is closed if A is closed in X. It is not always strict (III, p. 325, exerc. 17).
+
+PROPOSITION 7. --- With the above notations, the following assertions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  The pair (X, A) has the homotopy extension property;
+\item
+  For every topological space Y and every continuous map \(g\colon \operatorname{Cyl}(i) \to \operatorname{Y}\), there exists a continuous map \(g'\colon X \times I \to Y\) such that \(g = g' \circ j\);
+\item
+  The injection j has a continuous retraction;
+\item
+  The map j is strict and there exists a contraction of X × I onto the image of j.
+\end{enumerate}
+
+Suppose that the pair (X,A) has the homotopy extension property. Let \(g:\operatorname{Cyl}(i)\to Y\) be a continuous map; set \(\sigma=g\circ\alpha_i\) and \(f=g\circ\beta_i\). The map \(f:X\to Y\) is continuous and \(\sigma:A\times I\to Y\) is a homotopy whose term is the map \(f|A\). There therefore exists a homotopy \(g':X\times I\to Y\) with term f which extends \(\sigma\). We have \(g'\circ j(\alpha_i(a,s))=g'(a,s)=\sigma(a,s)=g(\alpha_i(a,s))\) and \(g'\circ j(\beta_i(x))=g'(x,1)=f(x)=g(\beta_i(x))\) for \(a\in A\), \(s\in I\), and \(x\in X\). Consequently, \(g'\circ j=g\), whence (ii).
+
+Conversely, suppose that assertion (ii) holds and let us prove that the pair (X,A) has the homotopy extension property. Let Y be a topological space, let \(f:X\to Y\) be a continuous map and let \(\sigma:A\times I\to Y\) be a homotopy whose term is equal to \(f|A\). There exists a unique continuous map \(g:\mathrm{Cyl}(i)\to\mathrm{Y}\) such that \(g\circ\alpha_i=\sigma\) and \(g\circ\beta_i=f\) (III, p. 238, prop. 4). Every map \(g':\mathrm{X}\times\mathbf{I}\to\mathrm{Y}\) such that \(g=g'\circ j\) is then a homotopy with term f which extends \(\sigma\).
+
+  The equivalence of assertions (ii) and (iii) is a special case of lemma 1 of III, p. 235.
+
+Suppose that the injection \(j\colon \mathrm{Cyl}(i)\to \mathrm{X}\times \mathbf{I}\) admits a continuous retraction \(r\). The map \(j\) defines a homeomorphism from \(\mathrm{Cyl}(i)\) onto the subspace \(\mathrm{T} = (\mathrm{A}\times \mathbf{I})\cup (\mathrm{X}\times \{1\})\) of \(\mathrm{X}\times \mathbf{I}\) (loc. cit.). It is therefore strict.
+
+Let us set \(\rho = \mathrm{pr}_1\circ j\circ r\) and \(\theta = \mathrm{pr}_2\circ j\circ r\). If \(x\in \mathrm{A}\) or if \(s = 1\), we have \(\rho (x,s) = x\) and \(\theta (x,s) = s\). For \((x,s)\in \mathrm{X}\times \mathbf{I}\) and \(t\in \mathbf{I}\), set
+
+\[
+\sigma ((x, s), t) = (\rho (x, (1 - t) + s t), (1 - t) s + t \theta (x, s)).
+\]
+
+The map \(\sigma\colon(\mathrm{X}\times\mathbf{I})\times\mathbf{I}\to\mathrm{X}\times\mathbf{I}\) is continuous. For \((x,s)\in\mathrm{X}\times\mathbf{I}\) , we have
+
+\[
+\sigma ((x, s), 0) = (\rho (x, 1), s) = (x, s)
+\]
+
+and
+
+\[
+\sigma ((x, s), 1) = (\rho (x, s), \theta (x, s)) = j \circ r (x, s);
+\]
+
+For \(x\in \mathbf{X}\) and \(t\in \mathbf{I}\), we have
+
+\[
+\sigma ((x, 1), t) = (\rho (x, 1), (1 - t) + t \theta (x, 1)) = (x, 1),
+\]
+
+while, for \((x,s)\in\mathbf{A}\times\mathbf{I}\) and \(t\in\mathbf{I}\) , we have
+
+\[
+\sigma ((x, s), t) = (x, (1 - t) s + t s) = (x, s).
+\]
+
+Therefore, \(\sigma\) is a contraction of \(X\times I\) onto T. This shows that assertion (iii) implies assertion (iv).
+
+The implication (iv)⇒(iii) is evident.
+
+Remark 2. --- Let X be a separated topological space and let A be a subset of X such that the pair (X,A) has the homotopy extension property. Denote by \(i\colon A\to X\) the canonical injection. Let \(j\colon\operatorname{Cyl}(i)\to X\times\mathbf{I}\) be the canonical injection and let \(r\) be a continuous retraction of the map j. The subspace \(j(\operatorname{Cyl}(i))\) is equal to the set of pairs \((x,t)\in X\times\mathbf{I}\) such that \(j(r(x,t))=(x,t)\). Since the space \(X\times\mathbf{I}\) is separated, the subset \(j(\operatorname{Cyl}(i))\) is closed in \(X\times\mathbf{I}\). The set A, equal to the set of \(x\in X\) such that \((x,0)\in j(\operatorname{Cyl}(i))\), is then a closed subset of X.
+
+Lemma 3. --- Let X and Y be topological spaces, let \(p \colon X \to Y\) be a proper and open continuous map, and let \(f \colon X \to \mathbf{R}\) be a continuous map. The map \(g \colon Y \to \overline{\mathbf{R}}\) given by \(y \mapsto \sup_{x\in p^{-1}(y)} f(x)\) is continuous.
+
+Let \(b \in \mathbf{Y}\). Since \(p\) is proper, its fiber \(\overline{p}^1(b)\) is a quasi-compact space; we therefore have \(g(b) \in \mathbf{R} \cup \{-\infty\}\).
+
+Let \(m \in R\) be such that \(g(b) < m\). For all \(a \in \overline{p}^{1}(b)\), we have \(f(a) \leqslant g(b) < m\); let \(V_{a}\) be a neighborhood of a in X such that \(f(x) < m\) for all \(x \in V_{a}\). The union V of the sets \(V_{a}\) is a neighborhood of \(\overline{p}^{1}(b)\) in X. By lemma 5 (I, p. 75), there exists a neighborhood W of b in Y such that \(\overline{p}^{1}(W) \subset V\). For all \(y \in W\), we have \(g(y) \leqslant m\). This proves that g is upper semicontinuous at b.
+
+Let us now prove that \(g\) is lower semicontinuous at \(b\). We may assume \(g(b)\in\mathbf{R}\). Let \(m\in\mathbf{R}\) be such that \(m<g(b)\). Let \(a\in\overline{p}^1(b)\) such that \(m<f(b)\); let then V be a neighborhood of a in X such that \(f(x)>m\) for all \(x\in V\). It follows that \(g(y)>m\) for all \(y\in p(V)\). Since p is open, \(p(V)\) is a neighborhood of b, so that g is lower semicontinuous.
+
+The lemma is thus proved.
+
+THEOREM 1. --- Let X be a topological space and let A be a closed subspace of X; denote by i : A → X the canonical injection. The following assertions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  The pair (X, A) has the homotopy extension property;
+\item
+  There exists a continuous map \(\varphi\colon\mathrm{X}\to\mathbf{I}\) such that \(\mathrm{A}=\overline{\varphi}^{1}(0)\) and a homotopy \(\sigma\colon\mathrm{X}\times\mathbf{I}\to\mathrm{X}\) fixed on A whose term is the identity map of X and such that \(\sigma(x,0)\in\mathrm{A}\) for every point \(x\in\mathrm{X}\) such that \(\varphi(x)\neq1\).
+\item
+  There exists a continuous map \(\varphi\colon\mathbf{X}\to\mathbf{R}_{+}\) such that \(\mathrm{A}=\overline{\varphi}^{1}(0)\) and a homotopy \(\sigma\colon\overline{\varphi}^{1}(\mathbf{I})\times\mathbf{I}\to\mathrm{X}\), fixed on A, such that \(\sigma(x,1)=x\) and \(\sigma(x,0)\in\mathrm{A}\) for all \(x\in\overline{\varphi}^{1}(\mathbf{I})\).
+\item
+  There exists a continuous map \(\varphi\colon X\to\mathbf{R}_{+}\) such that \(A\subset\overline{\varphi}^{1}(0)\) and a continuous map
+\end{enumerate}
+
+\[
+\sigma \colon \{(x, t) \in \mathrm{X} \times \mathbf {I} \mid t + \varphi (x) \geqslant 1 \} \to \mathrm{X}
+\]
+
+such that \(\sigma(x,1) = x\) for all \(x \in X\) and \(\sigma(x,1 - \varphi(x)) \in A\) for all \(x \in X\) such that \(\varphi(x) \leqslant 1\).
+
+We denote by i the canonical injection of A into X, \(\alpha_{i}\colon A\times I\to\operatorname{Cyl}(i)\) and \(\beta_{i}\colon X\to\operatorname{Cyl}(i)\) the canonical maps, and by j the map from \(\operatorname{Cyl}(i)\) to \(X\times I\) such that \(j(\alpha_{i}(x,s))=(x,s)\) for \((x,s)\in A\times I\) and \(j(\beta_{i}(x))=(x,1)\) for \(x\in X\).
+
+Suppose that the pair (X,A) has the homotopy extension property and let \(r:X\times I\to\operatorname{Cyl}(i)\) be a continuous retraction of the map j (III, p. 241, prop. 7). Denote by \(\sigma\) the continuous map \(\operatorname{pr}_1\circ j\circ r\) from \(X\times I\) to X. For every \((x,t)\in X\times I\), we have \(|\operatorname{pr}_2(j(r(x,t)))-t|\leqslant1\). Since I is compact, the first projection \(\operatorname{pr}_1:X\times I\to X\) is a proper map; it is also open. By lemma 3, the map \(\varphi:X\to I\) given by
+
+\[
+x \mapsto \sup _ {t \in \mathbf {I}} \left(\left| \operatorname{pr} _ {2} (j (r (x, t))) - t \right|\right)
+\]
+
+is therefore continuous.
+
+For \(x \in \mathrm{X}\), we have \(\sigma(x,1) = x\). Let \(x \in \mathrm{X}\) such that \(\sigma(x,0) \notin \mathrm{A}\); then \(\mathrm{pr}_2(j(r(x,0))) = 1\) and \(\varphi(x) \geqslant 1\). For \(x \in \mathrm{A}\) and \(t \in \mathbf{I}\), we have \(j(r(x,t)) = (x,t)\); therefore, \(\sigma(x,t) = x\) and \(\varphi(x) = 0\). Conversely, let \(x \in \mathrm{X}\) such that \(\varphi(x) = 0\). We therefore have \(\mathrm{pr}_2(j(r(x,t)) \leqslant t\) for all \(t \in \mathbf{I}\); if \(t < 1\), this implies \(j(r(x,t)) \in \mathrm{A} \times \mathbf{I}\); since A is closed in X, we therefore have \(j(r(x,1)) \in \mathrm{A} \times \mathbf{I}\), and therefore \(x \in \mathrm{A}\).
+
+This shows that (i) implies (ii).
+
+Let \(\varphi\) and \(\sigma\) be maps satisfying the properties of assertion (ii). Set \(\varphi_1 = 2\varphi\) and let \(\sigma_1\) be the restriction of \(\sigma\) to \(\overline{\varphi}_1^1 (\mathbf{I})\times \mathbf{I}\). We have \(\overline{\varphi}_1^1 (0) = \mathrm{A}\); for \(a\in \mathrm{A}\), \(\sigma_1(a,t) = a\) for all \(a\in \mathrm{A}\). Let \(x\in \mathrm{X}\) such that \(\varphi_{1}(x)\leqslant 1\); we have \(\sigma_1(x,1) = x\); moreover, \(\varphi (x) = \varphi_{1}(x) / 2 < 1\), therefore \(\sigma_{1}(x,0)\in \mathrm{A}\). Thus, (ii) implies (iii).
+
+Let us prove that (iii) implies (iv). Let \(\varphi\colon X\to\mathbf{R}\) and \(\sigma\colon\overline{\varphi}^{1}(\mathbf{I})\times\mathbf{I}\to X\) as in the statement; set \(B=\overline{\varphi}^{1}(\mathbf{I})\) and \(C=\overline{\varphi}^{1}([1,+\infty[)\) .
+
+Let \(u_1\) be the map from B × I to X such that \(u_1(x,t) = \sigma(x,1 - (1 - t)/2\varphi(x))\) if \(t + 2\varphi(x) \geqslant 1\) and \(\varphi(x) > 0\), and \(u_1(x,t) = \sigma(x,0)\) otherwise. By Lemma 4 below, it is continuous.
+
+Let \(u_2\) be the map from B × I to X such that \(u_2(x,t)=\sigma(x,\sup(0,1-2(1-t)(1-\varphi(x))))\). It is continuous. For \(x\in\mathrm{B}\) such that \(\varphi(x)=1/2\) and \(t\in\mathbf{I}\), we have \(u_1(x,t)=\sigma(x,t)=u_2(x,t)\). Denote by \(u:\mathrm{B}\times\mathbf{I}\to\mathrm{X}\) the map such that \(u(x,t)=u_1(x,t)\) if \(\varphi(x)\leqslant1/2\) and \(u(x,t)=u_2(x,t)\) if \(1/2<x\leqslant1\); it is continuous because its restrictions to the closed subspaces \(\overline{\varphi}^{1}([0,1/2])\times\mathbf{I}\) and \(\overline{\varphi}^{1}([1/2,1])\times\mathbf{I}\) of B×I are continuous (TG, I, p. 19, prop. 4).
+
+For \(x\in X\) such that \(\varphi(x)=1\) and \(t\in\mathbf{I}\), we have \(u(x,t)=u_2(x,t)=\sigma(x,1)=x\). There therefore exists a unique map \(\tau:X\times I\to X\) which coincides with u on \(B\times I\) and with the map \(\mathrm{pr}_1\) on \(C\times I\); it is continuous (loc. cit.).
+
+Let \(x \in X\); one verifies that \(\tau(x,1) = 1\). If, moreover, \(x \in A\), then \(\varphi(x) = 0\), therefore \(\tau(x,t) = u_{1}(x,t) = \sigma(x,0) = x\). Finally, if \(2\varphi(x) \leqslant 1\), then \(\varphi(x) \leqslant 1/2\), therefore \(\tau(x,1 - 2\varphi(x)) = \sigma(x,0) \in A\).
+
+This proves that assertion (iv) holds.
+
+Finally, suppose assertion (iv) is satisfied and let us prove that the pair (X, A) has the homotopy extension property.
+
+Denote by \(C_{1}\) (resp. \(C_{2}\)) the set of pairs \((x,t)\in\mathbf{X}\times\mathbf{I}\) such that \(t+\varphi(x)\leqslant1\) (resp. \(t+\varphi(x)\geqslant1\)). These are closed sets. For \((x,t)\in\mathrm{C}_{1}\), we have \(\sigma(x,1-\varphi(x))\in\mathrm{A}\); let \(\rho_{1}\colon\mathrm{C}_{1}\to\mathrm{Cyl}(i)\) be the map given by \((x,t)\mapsto\alpha_{i}(\sigma(x,1-\varphi(x)),t+\varphi(x))\); it is continuous. Let also \(\rho_{2}\colon\mathrm{C}_{2}\to\mathrm{Cyl}(i)\) be the continuous map given by \((x,t)\mapsto\beta_{i}(\sigma(x,t))\). For \((x,t)\in\mathrm{C}_{1}\cap\mathrm{C}_{2}\), we have \(t+\varphi(x)=1\), therefore
+
+\[
+\rho_ {1} (x, t) = \alpha_ {i} (\sigma (x, 1 - \varphi (x)), 1) = \beta_ {i} (\sigma (x, 1 - \varphi (x)) = \rho_ {2} (x, t).
+\]
+
+There therefore exists a unique map \(\rho\colon X\times\mathbf{I}\to\mathrm{Cyl}(i)\) which coincides with \(\rho_{1}\) on \(C_{1}\) and with \(\rho_{2}\) on \(C_{2}\); it is continuous (TG, I, p. 19, prop. 4).
+
+For \(x \in A\) and \(t \in I\), we have \(\varphi(x) = 0\), therefore \(t + \varphi(x) \leqslant 1\).
+
+\[
+\rho (j (\alpha_ {i} (x, t))) = \rho (x, t) = \alpha_ {i} (\sigma (x, 1), t) = \alpha_ {i} (x, t).
+\]
+
+For \(x\in \mathrm{X}\) , we also have
+
+\[
+\rho (j (\beta_ {i} (x))) = \rho (x, 1) = \beta_ {i} (\sigma (x, 1)) = \beta_ {i} (x).
+\]
+
+As the images of the maps \(\alpha_{i}\) and \(\beta_{i}\) cover \(\mathrm{Cyl}(i)\), it follows that the map \(\rho\) is a continuous retraction of the map j. Consequently, the pair (X, A) has the homotopy extension property (III, p. 241, prop. 7), which concludes the proof of the theorem.
+
+Lemma 4. --- Let X and Y be topological spaces, let \(\varphi\colon\mathrm{X}\to\mathbf{R}_{+}\) be a continuous map, and set \(\mathrm{A}=\overline{\varphi}^{1}(0)\). Let \(\sigma\colon\mathrm{X}\times\mathbf{I}\to\mathrm{Y}\) be a homotopy that is fixed on A. The map \(\sigma'\colon\mathrm{X}\times\mathbf{I}\to\mathrm{Y}\) which maps \((x,s)\) to \(\sigma(x,s/\varphi(x))\) if \(s<\varphi(x)\) and to \(\sigma(x,1)\) if \(s\geqslant\varphi(x)\) is continuous.
+
+The map \(\sigma'\) is continuous at every point of the closed subset \(\overline{\varphi}^{1}([1, +\infty[)\times\mathbf{I}\); it therefore suffices to show that its restriction to \(\overline{\varphi}^{1}(\mathbf{I})\times\mathbf{I}\) is continuous. We may therefore assume that \(\varphi(\mathrm{X})\subset\mathbf{I}\). Let C and C' be the subspaces of X × I consisting of the pairs \((x,s)\) such that \(s\leqslant\varphi(x)\) and \(s\geqslant\varphi(x)\), respectively. They are closed and cover X × I. The map \(\sigma'\) is continuous on C'; let us prove that it is continuous on C.
+
+Let \(\alpha\colon\mathbf{X}\times\mathbf{I}\to\mathbf{X}\times\mathbf{I}\) be the continuous map given by \(\alpha(x,t)=(x,t\varphi(x))\). Its image is equal to C and \(\sigma'\circ\alpha\) is the continuous map \(\sigma\). Let us prove that \(\alpha\) is a proper map. Indeed, consider an ultrafilter \(\mathfrak{U}\) on \(\mathbf{X}\times\mathbf{I}\) and a point \((x,t)\in\mathbf{X}\times\mathbf{I}\) which is adherent to the ultrafilter base \(\alpha(\mathfrak{U})\). Since \(\mathrm{pr}_{1}\circ\alpha=\mathrm{pr}_{1}\), the ultrafilter base \(\mathrm{pr}_{1}(\mathfrak{U})\) on X converges to \(x\). Since I is compact, there exists a point \(s\in\mathbf{I}\) such that the ultrafilter base \(\mathrm{pr}_{2}(\mathfrak{U})\) converges to \(s\). Then \(\mathfrak{U}\) converges to \((x,s)\). Since \(\alpha\) is continuous, the ultrafilter base \(\alpha(\mathfrak{U})\) converges to \((x,s\varphi(x))\). Since I is separated, we have \(s\varphi(x)=t\), whence \(\alpha(x,s)=(x,t)\), so that \(\alpha\) is proper (TG, I, p. 75, th. 1). It then follows from I, p. 18, example 2 and prop. 9 that \(\sigma'\mid\mathrm{C}\) is continuous.
+
+COROLLARY 1. --- Let X be a normal topological space and let A be a closed subspace of X. Suppose there exists a neighborhood V of A in X and a contraction of V onto A, as well as a continuous map \(f: \mathrm{X} \to \mathbf{R}\) such that \(f^{-1}(0) = \mathrm{A}\). Then the pair (X,A) has the homotopy extension property.
+
+Let \(\rho\colon V \times I \to V\) be a contraction of \(V\) onto \(A\). By definition of a normal space (TG, IX, p. 41, definition 1), there exists a continuous map \(g\colon X \to I\) that takes the value 0 on \(A\) and 1 at every point of \(X - V\). Let \(\varphi\colon X \to R\) be the map given by \(\varphi(x) = |f(x)| + g(x)\) for \(x \in X\); it is continuous. We have \(\overline{\varphi}^{1}(0) = A\) and \(\overline{\varphi}^{1}(I) \subset V\). Let \(\sigma\) be the map from \(\overline{\varphi}^{1}(I) \times I\) to \(X\) given by \(\sigma(x,t) = \rho(x,1-t)\) for \(x \in \overline{\varphi}^{1}(I)\) and \(t \in I\). For \(x \in \overline{\varphi}^{1}(I)\), we have \(\sigma(x,1) = \rho(x,0) = x\) and \(\sigma(x,0) = \rho(x,1) \in A\).
+
+The maps \(\varphi\) and \(\sigma\) satisfy the conditions of assertion (iii) of Theorem 1 in III, p. 243; consequently, the pair (X,A) has the homotopy extension property.
+
+Example 1. --- Take as the space X the ball \(\mathbf{B}_{n}\) and for subspace A the sphere \(\mathbf{S}_{n-1}\). If \(V = X - \{0\}\), there exists a strong contraction of V onto \(\mathbf{S}_{n-1}\) (III, p. 237, example). Consequently, the pair \((\mathbf{B}_{n}, \mathbf{S}_{n-1})\) has the homotopy extension property.
+
+COROLLARY 2. --- Let X and Y be topological spaces, let A be a closed subspace of X, and let B be a closed subspace of Y. If the pairs (X,A) and (Y,B) have the homotopy extension property, then so does the pair (X × Y, (X × B) ∪ (A × Y)).
+
+Let \(\varphi\colon X\to\mathbf{R}_{+}\) and \(\sigma\colon\overline{\varphi}^{1}(\mathbf{I})\times\mathbf{I}\to X\), and let \(\varphi^{\prime}\colon Y\to\mathbf{R}_{+}\) and \(\sigma^{\prime}\colon\overline{\psi}^{1}(\mathbf{I})\times\mathbf{I}\to Y\), be maps satisfying the conditions of assertion (iv) of Theorem 1 for the pair (X,A) and, respectively, for the pair (Y,B). Let \(\psi\colon X\times Y\to\mathbf{R}_{+}\) be the map given by \((x,y)\mapsto\inf(\varphi(x),\varphi^{\prime}(x))\); it is continuous; we also have \(\psi(x,y)=0\) for all \((x,y)\in X\times Y\) such that \(x\in A\) or \(y\in B\). For \((x,y,t)\in X\times Y\times I\) such that \(t+\psi(x)\geqslant1\), we have \(t+\varphi(x)\geqslant1\) and \(t+\varphi^{\prime}(x)\geqslant1\). One thus defines a continuous map
+
+\[
+\tau \colon \{(x, y, t) \in \mathrm{X} \times \mathrm{Y} \times \mathbf {I} \mid t + \psi (x) \geqslant 1 \} \rightarrow \mathrm{X} \times \mathrm{Y}
+\]
+
+by setting \(\tau(x,y,t) = (\sigma(x,t),\sigma'(y,t))\). For all \((x,y)\in X\times Y\), we have \(\tau(x,y,1) = (\sigma(x,1),\sigma'(y,1)) = (x,y)\). If, moreover, \(\psi(x,y)\leqslant 1\), then \(\varphi(x)\leqslant 1\) or \(\varphi'(y)\leqslant 1\), so that \(\sigma(x,1)\in A\) or \(\sigma'(y,1)\in B\); this implies that \(\tau(x,y,1 - \psi(x))\) belongs to \((A\times Y)\cup (X\times B)\). This verifies assertion (iv) of Theorem 1, whence the corollary.
+
+Example 2. --- *Here are other cases where the pair (X, A) possesses the homotopy extension property.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  The space X is a paracompact differentiable manifold of class C \(^{1}\) and A a closed submanifold of X. In view of Corollary \(^{1}\), this follows from the fact that X is perfectly normal (IX, p. 103, exerc. 11) and that A has a tubular neighborhood in X;
+\item
+  The space X is a cell complex and A a subcomplex relative to a given cell decomposition of X.*
+\end{enumerate}
+% semantic-fragments: legacy-input-seam
+\relax{}

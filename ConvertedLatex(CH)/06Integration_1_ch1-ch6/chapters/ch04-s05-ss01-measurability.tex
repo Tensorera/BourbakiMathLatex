@@ -1,0 +1,42 @@
+\subsection{可测函数与可测集的定义}
+
+定义 1. --- 设 X 是一个局部紧空间，\(\mu\) 是 X 上的一个测度。称 X 到拓扑空间 F 中的映射 f 关于测度 \(\mu\) 是可测的（或称 \(\mu\)-可测的），如果对 X 的每个紧子集 K，存在一个 \(\mu\)-可忽略集 \(N \subset K\) 以及由紧集组成的一个（有限或无限的）序列（ \(K_{n}\) ）所构成的 K - N 的一个分割，使得 f 在每个 \(K_{n}\) 上的限制是连续的。
+
+显然，X 到 F 中的每个连续映射都是可测的。
+
+注意，若 \(\mu\) 与 \(\nu\) 是 X 上的两个测度，且每个 \(\mu\)-可忽略集都是 \(\nu\)-可忽略的，则每个 \(\mu\)-可测函数也是 \(\nu\)-可测的（参看 Ch. V, §5, No.~5, 6）。
+
+定义 1 可以转化为如下的判别法：
+
+命题 1. --- 要使 X 到 F 中的映射 f 可测，必须且只需：对每个紧集 \(K \subset X\) 和每个数 \(\varepsilon > 0\)，存在紧集 \(K_{1} \subset K\)，使得 \(|\mu|(\mathrm{K} - \mathrm{K}_{1}) \leqslant \varepsilon\) 且 f 到 \(K_{1}\) 上的限制是连续的。
+
+若此条件满足，我们可以递归地定义两两不相交的紧集 \(K_{n} \subset K\) 的一个序列，使得 \(|\mu|(\mathrm{K} - \bigcup_{i=1}^{n} \mathrm{K}_{i}) \leqslant 1/n\) 且 f 到每个 \(K_{n}\) 上的限制是连续的（§4, No.~6, 定理 4）；于是诸 \(K_{n}\) 的并关于 K 的余集是可忽略的（§4, No.~5, 命题 7 的推论），从而 f 可测。反之，设存在可忽略集 \(N \subset K\) 以及由紧集组成的一个分割 \((\mathrm{K}_{n})\)（K - N 的分割），使得 f 到每个 \(K_{n}\) 上的限制是连续的；对每个 \(\varepsilon > 0\)，存在整数 n，使得若 \(H = \bigcup_{i=1}^{n} K_{i}\)，则 \(|\mu|(\mathrm{K} - \mathrm{H}) \leqslant \varepsilon\)（§4, No.~5, 命题 7 的推论）；集合 H 是紧的，诸 \(K_{i}\)（ \(1 \leqslant i \leqslant n\) ）构成 H 分成紧集的一个有限分割，且 f 到每个 \(K_{i}\) 上的限制是连续的；因此 f 到 H 上的限制是连续的。
+
+命题 2. --- 设 \((\mathrm{F}_{n})\) 是拓扑空间的一个序列，且对每个 n，设 \(f_{n}\) 是 X 到 \(F_{n}\) 中的可测映射。对每个紧集 \(K \subset X\) 和每个 \(\varepsilon > 0\)，存在紧集 \(K_{0} \subset K\)，使得 \(|\mu|(\mathrm{K} - \mathrm{K}_{0}) \leqslant \varepsilon\)，且在 \(K_{0}\) 上每个函数 \(f_{n}\) 的限制都是连续的。
+
+对每个整数 \(n \geqslant 1\)，存在紧集 \(K_{n} \subset K\)，使得 \(|\mu|(\mathrm{K} - \mathrm{K}_{n}) \leqslant \varepsilon/2^{n}\) 且 \(f_{n}\) 到 \(K_{n}\) 上的限制是连续的。集合 \(K_{0} = \bigcap_{n=1}^{\infty} K_{n}\) 是紧的，在 \(K_{0}\) 上所有函数 \(f_{n}\) 的限制都是连续的，并且由于 \(K - K_{0}\) 含于诸 \(K - K_{n}\) 的并，有 \(|\mu|(\mathrm{K} - \mathrm{K}_{0}) \leqslant \sum_{n=1}^{\infty} \varepsilon/2^{n} = \varepsilon\)。
+
+定义 2. --- 称 X 的子集 A 是可测的，如果它的特征函数 \(\varphi_{A}\) 是可测的。
+
+鉴于定义 1，这等于说：可测集 A 是这样一个集合，即对每个紧集 K，存在可忽略集 \(N \subset K\) 以及由紧集序列构成的 K - N 的一个分割 \((K_{n})\)，其中每个紧集或含于 \(K \cap A\)，或含于 \(K \cap C A\)。
+
+这个定义立即给出如下的判别法：
+
+命题 3. --- 要使集合 A 可测，必须且只需：对每个紧集 K，A∩K 是可积的。
+
+条件是必要的，因为可积集序列 \(A_{n}\) 的并在 \(\sum_{n}|\mu|(\mathrm{A}_{n})\) 有限时是可积的（ \(\S4\) , No.~5, 命题 8 的推论）。条件是充分的，因为对每个可积集 B，存在可忽略集 \(N \subset B\) 以及 B - N 分成紧集序列的一个分割（ \(\S4\) , No.~6, 定理 4 的推论 2）。
+
+推论 1. --- 开集与闭集都是可测的。
+
+特别地，整个空间 \(\mathrm{X}\) 是可测的。
+
+推论 2. --- 若 X 是可度量化的，则 X 的每个 Souslin 子集 A（GT, IX, §6, No.~2）对 X 上的每个测度 μ 都是 μ-可测的。
+
+依据命题 3，只需验证每个相对紧的 Souslin 集 A 是 \(\mu\)-可积的。而这样的集合 A 对 \(|\mu|^*\) 是可容的（GT, IX, §6, No.~9, 定理 5）。因此，对每个 \(\varepsilon > 0\)，存在 A 的紧子集 K，使得 \(|\mu|^*(A) \leqslant |\mu|^*(K) + \varepsilon = |\mu|(K) + \varepsilon\)。设 U 是 X 中包含 A 的相对紧开集，使得
+
+\[
+| \mu | (\mathrm{U}) = | \mu | ^ {*} (\mathrm{U}) \leqslant | \mu | ^ {*} (\mathrm{A}) + \varepsilon .
+\]
+
+那么 \(|\mu|^*(\mathrm{U} - \mathrm{K}) = |\mu|(\mathrm{U}) - |\mu|(\mathrm{K}) \leqslant 2\varepsilon\)，因此 \(|\mu|^*(\mathrm{A} - \mathrm{K}) \leqslant 2\varepsilon\)，这就证明了 A 是 \(\mu\)-可积的（§4, No.~6, 定理 4 的推论 1）。
+

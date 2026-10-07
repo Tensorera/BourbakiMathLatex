@@ -1,0 +1,203 @@
+\subsection{行列式的展开}
+
+设 I 是一个全序的有限指标集。对 I 的每个子集 H，令 \(H'\) 表示补集 I - H。令 \(X = (\xi_{ji})\) 是一个 (I, I) 型方阵，它可视为 M = A \(^{I}\) 的某个自同态 u 关于 M 的典范基 \((e_{i})_{i \in I}\) 的矩阵。设 n = Card(I)，并设 H 是 I 的含 \(q \leqslant n\) 个元素的子集，K 是 I 的含 n - q 个元素的子集；那么我们可以写出（第 5 号，命题 10）
+
+\[
+\begin{array}{r l} (\bigwedge^ {q} (u)) (e _ {\mathrm{H}}) & = \sum_ {\mathbf {R}} \det (X _ {\mathbf {R}, \mathrm{H}}) e _ {\mathbf {R}} \\ (\bigwedge^ {n - q} (u)) (e _ {\mathbf {K}}) & = \sum_ {\mathbf {S}} \det (X _ {\mathbf {S}, \mathbf {K}}) e _ {\mathbf {S}} \end{array}
+\]
+
+其中 R（相应地，S）遍历 I 的具有 q（相应地，n - q）个元素的子集组成的集合。由 §7 第 8 号的公式 (19) 和 (20) 可知
+
+\[
+e _ {\mathbf {R}} \wedge e _ {\mathbf {S}} = 0
+\]
+
+除非 \(\mathbf{S} = \mathbf{R}'\) ，由此得到公式
+
+\[
+\left(\bigwedge^ {q} (u) \left(e _ {\mathrm{H}}\right)\right) \wedge \left(\bigwedge^ {n - q} (u) \left(e _ {\mathrm{K}}\right)\right) = \sum_ {\mathbf {R}} \rho_ {\mathbf {R}, \mathbf {R} ^ {\prime}} \det \left(X _ {\mathbf {R}, \mathbf {H}}\right) \det \left(X _ {\mathbf {R} ^ {\prime}, \mathbf {K}}\right) e _ {\mathbf {I}}\tag{20}
+\]
+
+其中 R 遍历集合 \(\mathfrak{F}_{q}(\mathbf{I})\) ，即 I 的具有 q 个元素的子集组成的集合。
+
+若取 \(\mathbf{K} = \mathbf{H}'\) ，则由 \(\bigwedge^{n}(u)\) 的定义（ \(\S 7\) ，第 2 号，公式 (4)）以及 \(\S 7\) 第 3 号命题 5 的推论 1 可知，(20) 的右端为 \(\rho_{\mathrm{H},\mathrm{H}'}\bigwedge^{n}(u)(e_{\mathrm{I}})\) 。因此（第 1 号，公式 (1) 以及 \(\S 7\) ，第 2 号，公式 (4)）
+
+\[
+\det (X) = \rho_ {\mathrm{H}, \mathrm{H} ^ {\prime}} \sum_ {\mathbf {R} \in \mathfrak {F} _ {q} (\mathbf {I})} \rho_ {\mathrm{R}, \mathrm{R} ^ {\prime}} \det (X _ {\mathbf {R}, \mathrm{H}}) \det (X _ {\mathbf {R} ^ {\prime}, \mathrm{H} ^ {\prime}}).\tag{21}
+\]
+
+另一方面，若 \(\mathbf{K} \neq \mathbf{H}'\) ，则 \(\mathbf{H} \cap \mathbf{K} \neq \varnothing\) ；由于 (20) 的左端为 \(\pm \bigwedge^{n}(u)(e_{\mathbf{H}} \wedge e_{\mathbf{K}})\) ，它为零，从而
+
+\[
+\sum_ {\mathbf {R}} \rho_ {\mathbf {R}, \mathbf {R} ^ {\prime}} \det (X _ {\mathbf {R}, \mathbf {H}}) \det (X _ {\mathbf {R} ^ {\prime}, \mathbf {K}}) = 0 \quad \text { for } \mathbf {K} \neq \mathbf {H} ^ {\prime}.\tag{22}
+\]
+
+(21) 的右端称为矩阵 \(X\) 的行列式按 \(q\) 列（其指标属于 \(\mathbf{H}\) ）与 \(n - q\) 列（其指标属于 \(\mathbf{H}'\) ，即 \(\mathbf{H}\) 的补集）的拉普拉斯展开。子式 \(\det(X_{\mathbf{R},\mathbf{H}})\) 与 \(\det(X_{\mathbf{R}',\mathbf{H}'})\) 有时称为互补的。
+
+拉普拉斯展开的一个重要而简单的情形是 \(\mathbf{I} = [1, n]\) 且 \(q = 1\) ，从而 \(\mathrm{H} = \{i\}\) ；于是对每个仅含一个元素的子集 \(\mathbf{R} = \{j\}\) （ \(\mathbf{I}\) 的），有 \(\det X_{\mathbf{R},\mathbf{H}} = \xi_{ji}\) 。 \(\det X_{\mathbf{R}',\mathbf{H}'}\) 的子式是由 \(X\) 中删去指标为 \(j\) 的行与指标为 \(i\) 的列所得的矩阵典范地（第 5 号）导出的方阵的行列式。我们把这个方阵记作 \(X^{ji}\) 。显然 \(\rho_{\mathrm{H},\mathrm{H}'} = (-1)^{i-1}\) 且 \(\rho_{\mathrm{R},\mathrm{R}'} = (-1)^{j-1}\) ；因此在此情形下 (21) 变为
+
+\[
+\det X = \sum_ {j = 1} ^ {n} (- 1) ^ {i + j} \xi_ {j i} \det (X ^ {j i})\tag{23}
+\]
+
+并且我们类似地从 (22) 得到
+
+\[
+\sum_ {j = 1} ^ {n} (- 1) ^ {j} \xi_ {j i} \det (X ^ {j k}) = 0 \quad \text { for } k \neq i.\tag{24}
+\]
+
+公式 (23) 称为 X 的行列式按指标为 i 的列的展开。标量 \((-1)^{i+j}\det(X^{ji})\) 称为 X 中指标为 j 和 i 的代数余子式（或者，滥用术语，称为 \(\xi_{ji}\) 的代数余子式）。
+
+X 的代数余子式矩阵是矩阵
+
+\[
+Y = ((- 1) ^ {i + j} \det (X ^ {j i}))\tag{25}
+\]
+
+其第 j 行第 i 列的元素是指标为 j 和 i 的代数余子式。公式 (23) 和 (24) 等价于公式
+
+\[
+{ } ^ { t } Y . X = ( \operatorname * { d e t } X ) I _ { n } .\tag{26}
+\]
+
+因此：
+
+命题 12. 对每个可逆方阵 \(X\) （型为 \((n, n)\) ）， \(X\) 的逆由公式给出
+
+\[
+X ^ {- 1} = (\det X) ^ {- 1}. ^ {t} Y\tag{27}
+\]
+
+其中 Y 是 X 的代数余子式矩阵。
+
+通过考虑 X 的转置并利用第 5 号的命题 8，可以得到关于两组互补的行集合的拉普拉斯展开，特别是 det X 按某一行展开的展开式，从而有与
+
+\[
+X. ^ {t} Y = (\det X) I _ {n},\tag{28}
+\]
+
+在上述记号中等价的公式。
+
+容易验证，若 X 是维数为 n 的自由 A-模 M 的自同态 u 关于基 \((e_{i})_{1\leq i\leq n}\) 的矩阵，则 \(^{t}Y\) 是 M 的自同态 \(\tilde{u}\) 的矩阵，后者由下列条件定义：对 M 中每一组 n 个元素 \(x, y_{2}, \ldots, y_{n}\) ，
+
+\[
+\tilde {u} (x) \wedge y _ {2} \wedge \dots \wedge y _ {n} = x \wedge u (y _ {2}) \wedge \dots \wedge u (y _ {n}).
+\]
+
+\(\tilde{u}\) 称为 u 的余转置（参见 §11，第 11 号，命题 13 的推论）。
+
+例。（1）范德蒙德行列式。给定序列 \((\zeta_{i})_{1\leqslant i\leqslant n}\) （ \(n\) 个 A 的元素），该序列的范德蒙德行列式是行列式
+
+\[
+\mathrm{V} (\zeta_ {1}, \zeta_ {2}, \dots , \zeta_ {n}) = \left| \begin{array}{c c c c} 1 & 1 & \dots & 1 \\ \zeta_ {1} & \zeta_ {2} & \dots & \zeta_ {n} \\ \zeta_ {1} ^ {2} & \zeta_ {2} ^ {2} & \dots & \zeta_ {n} ^ {2} \\ \cdot & \cdot & \cdot & \cdot \\ \zeta_ {1} ^ {n - 1} & \zeta_ {2} ^ {n - 1} & \dots & \zeta_ {n} ^ {n - 1} \end{array} \right|
+\]
+
+我们将证明
+
+\[
+\mathrm{V} \left(\zeta_ {1}, \zeta_ {2}, \dots , \zeta_ {n}\right) = \prod_ {i <   j} \left(\zeta_ {j} - \zeta_ {i}\right).\tag{29}
+\]
+
+由于该命题对 \(n = 1\) 是显然的，我们对 \(n\) 作归纳论证。
+
+对于每个指标 \(k \geqslant 2\) ，我们从指标为 k 的行中减去指标为 k - 1 的行乘以 \(\zeta_{1}\) ；行列式的值不变，因此
+
+\[
+\mathrm{V} \left(\zeta_ {1}, \zeta_ {2}, \dots , \zeta_ {n}\right) = \left| \begin{array}{c c c c c c c c c} 1 & 1 & & \dots & 1 \\ 0 & \zeta_ {2} - \zeta_ {1} & & \dots & \zeta_ {n} - \zeta_ {1} \\ 0 & \zeta_ {2} \left(\zeta_ {2} - \zeta_ {1}\right) & & \dots & \zeta_ {n} \left(\zeta_ {n} - \zeta_ {1}\right) \\ . & . & . & . & . & . & . & . & . \\ 0 & \zeta_ {2} ^ {n - 2} \left(\zeta_ {2} - \zeta_ {1}\right) & & \dots & \zeta_ {n} ^ {n - 2} \left(\zeta_ {n} - \zeta_ {1}\right) \end{array} \right|
+\]
+
+由此，先按第一列展开，再从如此得到的子式的指标为 k-1 的列中取出因子 \(\zeta_{k}-\zeta_{1}\) （ \(2\leqslant k\leqslant n\) ），得到
+
+\[
+\mathrm{V} \left(\zeta_ {1}, \dots , \zeta_ {n}\right) = \left(\zeta_ {2} - \zeta_ {1}\right) \left(\zeta_ {3} - \zeta_ {1}\right) \dots \left(\zeta_ {n} - \zeta_ {1}\right) V \left(\zeta_ {2}, \dots , \zeta_ {n}\right)
+\]
+
+这通过归纳法确立了 (29)。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  考虑一个 n 阶方阵，它以“矩阵的上三角矩阵”形式呈现（II，§ 10，第 7 号，例 IV）
+\end{enumerate}
+
+\[
+X = \left( \begin{array}{c c} Y & T \\ 0 & Z \end{array} \right)
+\]
+
+我们证明
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{29}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\det X = (\det Y) (\det Z).
+\]
+
+设 \(n\) 是矩阵 \(X, h\) 的阶，即 \(Y, (e_i)_{1 \leqslant i \leqslant n}\) （ \(A^n\) 的典范基）的阶， \(x_i\) （ \(1 \leqslant i \leqslant n\) ）是 \(X\) 的列；假设蕴含列 \(x_1, \ldots, x_h\) 属于 \(A^n\) 的以 \(e_1, \ldots, e_h\) 为基的子模，于是由定义（第 3 号，公式 (6)）
+
+\[
+x _ {1} \wedge x _ {2} \wedge \dots \wedge x _ {h} = (\det Y) e _ {1} \wedge e _ {2} \wedge \dots \wedge e _ {h}.
+\]
+
+另一方面，对每个指标 i \textgreater{} h，我们可以写出 \(x_{i} = y_{i} + z_{i}\) ，其中 \(y_{i}\) 是 \(e_{1}, e_{2}, \ldots, e_{h}\) 的线性组合， \(z_{i}\) 是 \(e_{h+1}, \ldots, e_{n}\) 的线性组合。由 (30)， \(x_{1} \wedge x_{2} \wedge \cdots \wedge x_{h} \wedge y_{i} = 0\) 对所有 i \textgreater{} h 成立，因此
+
+\[
+x _ {1} \wedge x _ {2} \wedge \dots \wedge x _ {n} = (\det Y) e _ {1} \wedge e _ {2} \wedge \dots \wedge e _ {h} \wedge z _ {h + 1} \wedge \dots \wedge z _ {n}.
+\]
+
+但根据定义
+
+\[
+z _ {h + 1} \wedge z _ {h + 2} \wedge \dots \wedge z _ {n} = (\det Z) e _ {h + 1} \wedge e _ {h + 2} \wedge \dots \wedge e _ {n}
+\]
+
+由此得出公式(30)。
+
+通过对 \(p\) 作归纳可知，若 \(X\) 具有矩阵的上三角矩阵的形式：
+
+\[
+X = \left( \begin{array}{c c c c c} X _ {1 1} & X _ {1 2} & \ldots & X _ {1 p} \\ 0 & X _ {2 2} & \ldots & X _ {2 p} \\ \cdot & \cdot & \cdot & \cdot & \cdot \\ 0 & 0 & \ldots & X _ {p p} \end{array} \right)\tag{31}
+\]
+
+\[
+\det X = (\det X _ {1 1}) (\det X _ {2 2}) \dots (\det X _ {p p}).
+\]
+
+这尤其可以应用于三角矩阵（其中所有 \(X_{ii}\) 均为 1 阶）以及更特别地对角矩阵：
+
+\[
+\det (\operatorname{diag} \left(\alpha_ {1}, \alpha_ {2}, \dots , \alpha_ {n}\right)) = \alpha_ {1} \alpha_ {2} \dots \alpha_ {n}.\tag{32}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设M、M'为两个自由A-模，维数分别为n、 \(n'\) ，u为M的一个自同态， \(u'\) 为M'的一个自同态。则
+\end{enumerate}
+
+\[
+\det (u \otimes u ^ {\prime}) = (\det u) ^ {n ^ {\prime}} (\det u ^ {\prime}) ^ {n}.\tag{33}
+\]
+
+因为我们可以写出 \(u \otimes u' = (u \otimes 1_{\mathbf{M}'}) \circ (1_{\mathbf{M}} \otimes u')\) ，然后就归结到两个自同态 \(u, u'\) 之一为恒等映射的情形。例如，若 \(u' = 1_{\mathbf{M}'}\) 且 \(X\) 是 \(u\) 关于一个基 \((e_i)\) （ \(\mathbf{M}\) 的）的矩阵，则 \(u \otimes 1_{\mathbf{M}'}\) 关于 \((e_i)\) 与 \(\mathbf{M}'\) 的一组基的张量积的矩阵，可以写成一个矩阵（具有 \(n'\) 行和 \(n'\) 列），其元素是具有 \(n\) 行和 \(n\) 列的矩阵
+
+\[
+\left( \begin{array}{c c c c} X & 0 & \ldots & 0 \\ 0 & X & \ldots & 0 \\ \cdot & \cdot & \cdot & \cdot \\ 0 & 0 & \ldots & X \end{array} \right)
+\]
+
+因此，根据例2，
+
+\[
+\det (u \otimes 1 _ {\mathbf {M} ^ {\prime}}) = (\det X) ^ {n ^ {\prime}} = (\det u) ^ {n ^ {\prime}}
+\]
+
+这立即给出公式(33)。
+

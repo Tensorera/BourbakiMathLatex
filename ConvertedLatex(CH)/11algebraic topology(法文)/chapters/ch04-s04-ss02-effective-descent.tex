@@ -1,0 +1,44 @@
+\subsection{有效下降数据}
+
+设 X 和 Y 是拓扑空间，\(f: X \to Y\) 是连续映射，且 \((Z, p)\) 是 X-空间。令 \(\tau\) 为关于 f 在 \((Z, p)\) 上的下降数据，令 \(R_{\tau}\) 为相伴的等价关系，并令 \(g: Z \to Z/R_{\tau}\) 为规范映射。由于关系 \(R_{\tau}\) 与映射 \(f \circ p\) 相容，存在唯一的连续映射 \(q: Z/R_{\tau} \to Y\)，使得图表
+
+\[
+\begin{array}{c} \mathrm{Z} \xrightarrow {g} \mathrm{Z} / \mathrm{R} _ {\tau} \\ p \Biggl \downarrow \qquad \qquad \qquad \qquad \qquad \qquad \qquad \Biggl \downarrow q \\ \mathrm{X} \xrightarrow {f} \mathrm{Y} \end{array}\tag{1}
+\]
+
+Y-空间 \((\mathrm{Z}/\mathrm{R}_{\tau}, q)\) 称为 \((\mathrm{Z}, p)\) 关于下降数据 \(\tau\) 的商空间。记 \(h: Z \to X \times_{Y} (Z/R_{\tau})\) 为由 \(h(z) = (p(z), g(z))\) 定义的映射，其中 \(z \in Z\)。它是连续的。令 \((x, u) \in X \times_{Y} (Z/R_{\tau})\)，取 \(z \in Z\) 使得 \(g(z) = u\)；则 \((z, x) \in Z \times_{Y} X\)，且点 \(z' = \tau(z, x)\) 是 Z 中满足 \(h(z') = (x, u)\) 的唯一元素；因此，映射 h 是双射。
+
+称下降数据 \(\tau\) 关于 f 在 \((\mathrm{Z},p)\) 上有效，是指图表 (1) 是笛卡尔方块，也就是说，连续双射 h 是同胚。下降数据 \(\tau\) 有效的充要条件是：集合 \(p^{-1}(\mathrm{U})\cap \mathrm{V}\)，其中 U 是 X 的开子集，V 是 Z 中关于 \(R_{\tau}\) 饱和的开子集，构成 Z 的拓扑基。特别地，关于 f 的下降数据的有效性是 Y 上的局部性质。
+
+例。--- 1) 设 X 和 Y 是拓扑空间，\(f\colon X\to Y\) 是连续映射。设 \((T,q)\) 是 Y-空间。令 Z 为 X-空间 \(X\times_Y T\)，赋予映射 \(\mathrm{pr}_{1}\)；记 \(\tau\) 为其关于 f 的规范下降数据（IV, 第~383~页，例 1）。Z 中形如 \(X\times_Y V\) 的子集（其中 V 是 T 的开子集）是开集，并且关于关系 \(\mathrm{R}_{\tau}\) 饱和（同上）。根据积拓扑的定义，集合 \(U\times_Y\overline{\mathrm{pr}}_{2}^{-1}(V)\)（其中 U 在 X 中开且 V 在 T 中开）构成 \(X\times_Y Z\) 的拓扑基。因此，纤维积 \(X\times_Y T\) 上的规范下降数据是有效的。
+
+规范映射 \(Z/R_{\tau} \rightarrow T\) 是单射且连续的。然而，它不一定是满射，也不一定严格（IV, 第~462~页，习题 1）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  记住例 2 的记号（IV, 第~383~页）。拓扑空间 \(Z/R_{\tau}\) 就是将空间 \(Z_{i}\) 沿 \(p_{i}^{-1}(V_{i} \cap V_{j})\) 通过双射 \(\tau_{i,j}\) 粘合得到的拓扑空间。因此，若对于每个 \(i \in I\)，集合 \(V_{i}\) 在 Y 中开（分别为闭），则集合 \(g(Z_{i})\) 在 \(Z/R_{\tau}\) 中开（分别为闭），且 g 在 \(Z_{i}\) 上的限制诱导出从 \(Z_{i}\) 到 \(g(Z_{i})\) 的同胚（TG, I, 第~17~页，命题 9）。空间 Z 是空间 \(Z_{i}\) 的和空间；空间 \(X \times_{Y}(Z/R_{\tau})\) 是空间 \(V_{i} \times_{Y}(Z/R_{\tau}) = g(Z_{i})\) 的直和空间。映射 h 可识别为映射 \(g|Z_{i}: Z_{i} \to g(Z_{i})\) 的和映射。因此它是同胚，这证明下降数据 \(\tau\) 是有效的。
+\end{enumerate}
+
+不对集合 \(V_{i}\) 作任何特别假设时，g 到 \(Z_{i}\) 的限制不一定诱导出从 \(Z_{i}\) 到其像的同胚；在这种情况下，下降数据 \(\tau\) 不是有效的（IV, 第~462~页，习题 2）。
+
+命题 1. --- 设 X 和 Y 是拓扑空间，\(f: X \to Y\) 是连续映射。假设 Y 的每一点都有一个邻域，在其上存在映射 f 的连续截面。那么，关于 f 在 X-空间上的每个下降数据都是有效的。
+
+设 \((Z,p)\) 是 X-空间，且 \(\tau\) 是关于 f 在 \((Z,p)\) 上的下降数据。断言 \(\tau\) 是有效下降数据是 Y 上的局部断言，因此可以假设映射 f 有连续截面 s。令 \(g: Z \to Z/R_{\tau}\) 和 \(q: Z/R_{\tau} \to Y\) 为规范映射，并令 \(h: Z \to X \times_{Y} (Z/R_{\tau})\) 为由 \(z \mapsto (p(z), g(z))\) 给出的映射。映射 h 是连续双射；只需证明它是同胚。
+
+从 Z 到 Z 的映射把 z 送到 \(\tau(z,s(f(p(z))))\)，它是连续的，并把 Z 的每个元素送到 Z 中唯一的元素 \(z'\)：该元素与之关于关系 \(R_{\tau}\) 等价，且 \(p(z')\) 属于 s 的像。因此，它通过商定义出连续映射 \(t:Z/R_{\tau}\to Z\)，这是映射 g 的截面。特别地，有 \(f\circ p\circ t=q\circ g\circ t=q\)。
+
+对于每个 \((x,u)\in\mathrm{X}\times_{\mathrm{Y}}(\mathrm{Z}/\mathrm{R}_{\tau})\)，有 \(f(p(t(u)))=f(x)\)；置 \(h'(x,u)=\tau(t(u),x)\)。如此定义的映射 \(h'\) 从 \(X\times_{Y}(Z/R_{\tau})\) 到 Z 是连续的。对于每个 \((x,u)\in\mathrm{X}\times_{\mathrm{Y}}(\mathrm{Z}/\mathrm{R}_{\tau})\)，有
+
+\[
+\begin{array}{r l} h (h ^ {\prime} (x, u)) & = (p (h ^ {\prime} (x, u)), g (h ^ {\prime} (x, u))) \\ & = (p (\tau (t (u), x)), g (\tau (t (u), x))) \\ & = (x, u), \end{array}
+\]
+
+因为 \(\tau(t(u), x)\) 与 \(t(u)\) 关于关系 \(\mathrm{R}_{\tau}\) 等价。由此，映射 \(h \circ h'\) 是 \(\mathrm{X} \times_{\mathrm{Y}} (\mathrm{Z}/\mathrm{R}_{\tau})\) 的恒等映射。对于 \(z \in \mathrm{Z}\)，有 \(t(g(z)) = \tau(z, s(f(p(z))))\) 和 \(f(p(t(g(z)))) = f(p(z))\)，从而有 \(z = \tau(t(g(z)), p(z))\)，这是根据等价关系 \(\mathrm{R}_{\tau}\) 的定义。因此 \(h'(h(z)) = z\) 且 \(h' \circ h = \mathrm{Id}_{\mathrm{Z}}\)。映射 \(h\) 因而是同胚，这正是要证明的结论。
+
+命题 2. --- 设 \(f\colon X \to Y\) 是连续映射，\((Z,p)\) 是 X-空间，且 \(\tau\) 是关于 f 在 \((Z,p)\) 上的下降数据。若 f 是逆紧的，则等价关系 \(R_{\tau}\) 是闭的；若 f 是开的，则它是开的。
+
+映射 \(\widetilde{\tau}\colon\mathbf{Z}\times_{\mathrm{Y}}\mathbf{X}\to\mathbf{X}\times_{\mathrm{Y}}\mathbf{Z}\) 由 \((z,x)\mapsto(p(z),\tau(z,x))\) 给出，是同胚，其逆映射为 \((x,z)\mapsto(\tau(z,x),p(z)).\) 有 \(\tau=\mathrm{pr}_{2}\circ\widetilde{\tau}\)，其中 \(\mathrm{pr}_{2}\colon\mathbf{X}\times_{\mathrm{Y}}\mathbf{Z}\to\mathbf{Z}\) 是第二投影。若 f 是逆紧的，则 \(\mathrm{pr}_{2}\) 是逆紧的；若 f 是开的，则 \(\mathrm{pr}_{2}\) 是开的（I, 第~17~页，命题 8）。因此，若 f 具有相应性质，\(\tau\) 也是逆紧的（分别为开的）。关于关系 \(\mathrm{R}_{\tau}\)，Z 的子集 A 的饱和是 \(\mathbf{A}\times_{\mathrm{Y}}\mathbf{X}\) 在 \(\tau\) 下的像。因此，若 f 是逆紧的，则闭集的饱和是闭的；若 f 是开的，则开集的饱和是开的。
+

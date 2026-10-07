@@ -1,0 +1,70 @@
+\subsection{积分号下求导}
+
+我们固定一个局部紧拓扑空间 X 和 X 上的一个测度 \(\nu\) 。设 E 是巴拿赫空间。
+
+命题 2. --- 设 I 是 \(\mathbf{R}\) 的区间，f 是从 X × I 到 E 中的映射，满足
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对每个 \(t \in I\) ，从 X 到 E 中的映射 \(x \mapsto f(x, t)\) 是 \(\nu\)-可积的；
+\item
+  对每个 \(x \in X\) ，从 I 到 E 中的映射 \(t \mapsto f(x, t)\) 有导数，记作 \(t \mapsto f'(x, t)\) ；
+\item
+  存在 X 上的正的 \(\nu\)-可积函数 g，使得 \(\|f'(x,t)\| \leqslant g(x)\) 对所有 \((x,t) \in \mathrm{X} \times \mathrm{I}\) 成立。
+\end{enumerate}
+
+那么由
+
+\[
+\mathrm{F} (t) = \int_ {\mathrm{X}} f (x, t) d \nu (x)
+\]
+
+定义的从 I 到 E 中的映射 F 在 I 中可微，且对每个 \(t \in \mathrm{I}\) ，我们有
+
+\[
+\mathrm{F} ^ {\prime} (t) = \int_ {\mathrm{X}} f ^ {\prime} (x, t) d \nu (x).
+\]
+
+设 \(t_0 \in \mathrm{I}\) ，\(\mathrm{J}\) 是 \(\mathbf{R}\) 的区间，含于 \(\mathrm{I}\) ，且是 \(t_0\) 在 \(\mathrm{I}\) 中的邻域。设 \(h: \mathrm{X} \times \mathrm{J} \to \mathrm{E}\) 是由 \((x, t) \mapsto (f(x, t) - f(x, t_0)) / (t - t_0)\) （对 \((x, t) \in \mathrm{X} \times (\mathrm{J} - \{t_0\})\) ）以及 \((x, t_0) \mapsto f'(x, t_0)\) （对 \(x \in \mathrm{X}\) ）所定义的映射。设 \(x \in \mathrm{X}\) 。我们有 \(\|h(x, t_0)\| \leqslant g(x)\) ，且对所有 \(t \neq t_0\) ，可得 \(\|h(x, t)\| \leqslant g(x)\) 。依据 FVR, I, p. 23 的定理 2。由导数的定义，命题由应用于映射 \(h\) 的 INT, IV, p. 144, § 4, no. 3 的推论 1 得出。
+
+我们采用 VAR, R1, 2.4, p. 19 中关于偏导数的记号。
+
+推论 1. --- 设 U 是 \(\mathbf{R}^{n}\) 的开子集。设 \(k \in \mathbf{N}\) ，\(f\) 是从 \(\mathrm{X} \times \mathrm{U}\) 到 E 中的映射，满足下列条件：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对每个 \(t \in U\) ，从 X 到 E 中的映射 \(x \mapsto f(x, t)\) 是 \(\nu\)-可积的；
+\item
+  对每个 \(x \in X\) ，从 U 到 E 中的映射 \(t \mapsto f(x, t)\) 是 \(C^{k}\) 类的，其偏导数（记作 \(\partial^{\alpha}f(x, t)\) ，对每个 \(\alpha \in \mathbf{N}^{n}\) 满足 \(|\alpha| \leqslant k\) ）；
+\item
+  存在 \(\nu\)-可积的函数 \(g\) （X 上的），使得对每个 \(\alpha \in \mathbf{N}^n\) （满足 \(|\alpha| \leqslant k\) ）以及每个 \((x,t) \in \mathrm{X} \times \mathrm{U}\) ，有 \(\|\partial^\alpha f(x,t)\| \leqslant g(x)\) 。
+\end{enumerate}
+
+那么由
+
+\[
+\mathrm{F} (t) = \int_ {\mathrm{X}} f (x, t) d \nu (x)
+\]
+
+定义的从 U 到 E 中的映射 F 在 U 中是 \(C^{k}\) 类的，且对每个 \(\alpha\in \mathbf{N}^{n}\) （满足 \(|\alpha|\leqslant k\) ）及每个 \(t\in U\) ，我们有
+
+\[
+\partial^ {\alpha} \mathrm{F} (t) = \int_ {\mathrm{X}} \partial^ {\alpha} f (x, t) d \nu (x).
+\]
+
+这由命题对 k 作归纳得出。
+
+推论 2. --- 设 k 是自然数。设 \(f \in \mathcal{L}^1(\mathbf{R}^n, \mu)\) ，\(g \in \mathcal{C}^k(\mathbf{R}^n)\) 。假设对每个 \(\alpha \in \mathbf{N}^n\) （满足 \(|\alpha| \leqslant k\) ），函数 \(\partial^\alpha g\) 都有界。那么卷积 \(f * g\) 属于 \(\mathcal{C}^k(\mathbf{R}^n)\) ，且对每个 \(\alpha\) （满足 \(|\alpha| \leqslant k\) ），有 \(\partial^\alpha(f * g) = f * \partial^\alpha g\) 。
+
+我们可以对赋勒贝格测度的空间 \(X = \mathbf{R}^{n}\) 以及由 \((x, t) \mapsto f(x)g(t - x)\) 定义的从
+
+\(\mathbf{R}^{n} \times \mathbf{R}^{n}\) 到 \(\mathbf{C}\) 中的映射 h 应用推论 1；事实上，对每个 \(\alpha \in \mathbf{N}^{n}\) （满足 \(|\alpha| \leqslant k\) ），我们有不等式
+
+\[
+| \partial^ {\alpha} h (x, t) | \leqslant \Bigl (\sup _ {| \beta | \leqslant k} \sup _ {y \in \mathbf {R} ^ {n}} | \partial^ {\beta} g (y) | \Bigr) | f (x) |
+\]
+
+其右端是 \(R^{n}\) 上的可积函数。
+

@@ -1,0 +1,50 @@
+\subsection{有限域上的多项式}
+
+定理 1（谢瓦莱–瓦宁）. —— 设 K 是一个特征为 p 的有限交换域。设 n 是一个 \(\geqslant 1\) 的整数，\((f_{i})_{i\in\mathrm{I}}\) 是 \(\mathrm{K}[\mathrm{X}_{1},\ldots,\mathrm{X}_{n}]\) 中非零元素的一个有限族。用 Z 表示 \(K^{n}\) 中使 \(f_{i}(\mathbf{x})=0\)（对 \(i\in I\)）的元素 x 所成之集。若我们有 \(n>\sum_{i\in\mathrm{I}}\deg(f_{i})\)，则 Z 的基数被 p 整除。
+
+引理 1. —— 设 L 是一个体，G 是一个有限群，\(\chi\) 是从 G 到乘法群 \(\mathrm{L}^*\) 的一个非平凡同态。我们有 \(\sum_{x\in \mathrm{G}}\chi (x) = 0\)。
+
+由假设，存在 G 的一个元素 a 使 \(\chi(a) \neq 1\)；由于用 a 作乘法是 G 的一个置换，我们有
+
+\[
+\sum_ {x \in \mathrm{G}} \chi (x) = \sum_ {x \in \mathrm{G}} \chi (a x) = \chi (a) \sum_ {x \in \mathrm{G}} \chi (x);
+\]
+
+这就给出引理 1。
+
+引理 2. —— 设 q 是 K 的基数。对任意整数 \(m \geqslant 0\)，令 \(S_{m} = \sum_{x \in K} x^{m}\)。若 m 是 q - 1 的非零倍数，我们有 \(S_{m} = -1\)；在所有其他情形，\(S_{m} = 0\)。
+
+回顾 \(0^0 = 1\)（I, §2, No.~1, 第 14 页）。假设 \(m\) 是 \(q - 1\) 的倍数。由于交换群 \(\mathrm{K}^*\) 的阶为 \(q - 1\)，我们有 \(x^m = 1\)（对每个 \(x \in \mathrm{K}^*\)），且 \(\mathrm{S}_m = 0^m + (q - 1) \cdot 1\)，这给出了该情形下的断言。
+
+假设 \(m\) 不是 \(q - 1\) 的倍数。令 \(\chi(x) = x^m\)（对 \(x \in \mathrm{K}^*\)）。由于乘法群 \(\mathrm{K}^*\) 是 \(q - 1\) 阶循环群（V, §12, No.~1, 第 93 页，命题 1），存在一个元素 \(a\)（属于 \(\mathrm{K}^*\)）使 \(\chi(a) \neq 1\)。把引理 1 应用于 \(\mathrm{G} = \mathrm{K}^*\)，我们有
+
+\[
+\mathrm{S} _ {m} = 0 ^ {m} + \sum_ {x \in \mathrm{K} ^ {*}} \chi (x) = 0;
+\]
+
+这就给出引理 2。
+
+我们现在证明定理 1。设 \(\mathbf{x} = (x_1, \ldots, x_n)\) 是 \(\mathrm{K}^n\) 的一个元素。我们有 \(1 - f_i(\mathbf{x})^{q-1} = 0\)（若 \(f_i(\mathbf{x}) \neq 0\)），且 \(1 - f_i(\mathbf{x})^{q-1} = 1\)（若 \(f_i(\mathbf{x}) = 0\)）。令 \(\mathrm{P} = \prod_{i=1}^{r}(1 - f_i^{q-1})\)。我们有
+
+\[
+\mathrm{P} (\mathbf {x}) = \left\{ \begin{array}{l l} 1 & \text { if } \mathbf {x} \in \mathrm{Z}, \\ 0 & \text { if } \mathbf {x} \not \in \mathrm{Z}. \end{array} \right.\tag{1}
+\]
+
+把多项式 P 展开为 \(\sum_{\alpha\in\mathbf{N}^{n}}c_{\alpha}\mathrm{X}^{\alpha}\)；由假设，它的次数 \(< (q-1)n\)。设 \(\alpha\) 是 \(N^{n}\) 的一个使 \(c_{\alpha}\) 非零的元素。由于我们有 \(\alpha_{1}+\cdots+\alpha_{n}<(q-1)n\)，故存在一个整数 \(\ell\) 使得 \(1\leqslant\ell\leqslant n\) 且 \(0\leqslant\alpha_{\ell}<q-1\)。于是由引理 2，我们有 \(\sum_{x\in K}x^{\alpha_{\ell}}=0\)，因而
+
+\[
+\sum_ {\mathbf {x} \in \mathrm{K} ^ {n}} \mathbf {x} ^ {\alpha} = \prod_ {j = 1} ^ {n} \left(\sum_ {x \in \mathrm{K}} x ^ {\alpha_ {j}}\right) = 0.
+\]
+
+因而我们有
+
+\[
+\sum_ {\mathbf {x} \in K ^ {n}} \mathrm{P} (\mathbf {x}) = \sum_ {\alpha \in \mathbf {N} ^ {n}} c _ {\alpha} \left(\sum_ {\mathbf {x} \in K ^ {n}} \mathbf {x} ^ {\alpha}\right) = 0.
+\]
+
+现在，由公式 (1)，我们有 \(\sum_{\mathbf{x}\in\mathrm{K}^{n}}\mathrm{P}(\mathbf{x})=\mathrm{Card}(\mathrm{Z})\cdot1\)，因而 \(\mathrm{Card}(\mathrm{Z})\cdot1=0\)，这表明 \(\mathrm{Card}(\mathrm{Z})\) 被 p 整除。
+
+推论. —— 设 V 是 K 上一个维数为 n 的向量空间，I 是一个有限集，且对每个 \(i \in I\)，设 \(F_{i}: V \to K\) 是一个次数为 \(d_{i} > 0\) 的齐次多项式映射。若我们有 \(\sum_{i \in I} d_{i} < n\)，则存在 V 的一个非零元素 x，使得 \(F_{i}(x) = 0\)（对每个 \(i \in I\)）。
+
+设 \((e_{1},\ldots,e_{n})\) 是 V 在 K 上的一组基。由齐次多项式映射的定义（IV, §5, No.~9, 第 55 页，定义 3），对每个 \(i\in I\)，存在一个齐次多项式 \(f_{i}\)（属于 \(\mathrm{K}[\mathrm{X}_{1},\ldots,\mathrm{X}_{n}]\)，次数为 \(d_{i}\)），使得我们有 \(\mathrm{F}_{i}(\xi_{1}e_{1},\ldots,\xi_{n}e_{n})=f_{i}(\xi_{1},\ldots,\xi_{n})\)。设 Z 是 V 中使 \(\mathrm{F}_{i}(x)=0\)（对每个 \(i\in I\)）的元素 x 所成的集。由定理 1，Z 的基数被 p 整除，且由于 0 属于 S，我们有 \(\mathrm{Card}(\mathrm{Z})\geqslant p>1\)。
+

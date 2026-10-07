@@ -1,0 +1,78 @@
+\subsection{有限覆叠}
+
+若一个覆叠的所有纤维的基数都是有限的，则称它是局部有限的。若一个覆叠的纤维的诸基数所成之集以某个有限基数为上界，则称它是有限的。
+
+定理 1. --- 设 E、B 为拓扑空间，\(p\colon\mathrm{E}\to\mathrm{B}\) 为映射。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  赋以映射 p 的空间 E 是 B 的局部有限覆叠；
+\item
+  映射 p 是平展的、逆紧的且分离的；
+\item
+  映射 p 是连续的、开的且分离的，其纤维是有限的，且数值函数 \(b \mapsto \text{Card}(\overline{p}^{1}(b))\) 在 B 上是上半连续的 (TG, IV, p. 28)。
+\end{enumerate}
+
+在证明中将用到下面的引理：
+
+引理. — 设 X 与 Y 为拓扑空间。映射 \(f: X \to Y\) 是闭映射，当且仅当对 Y 的每一点 y 与纤维 \(f^{-1}(y)\) 的每一邻域 W，存在 y 的邻域 V，使得 W 包含 \(f^{-1}(V)\) 。
+
+在此陈述中，可以只考虑 \(f^{-1}(y)\) 的那些开的邻域 W。用 F 表示 W 在 X 中的补集，便可将该陈述改述如下：映射 \(f: X \to Y\) 是闭映射，当且仅当对 X 的每个闭子集 F 与 Y 的每个不属于 \(f(F)\) 的点 y，y 有与 \(f(F)\) 不相交的邻域 V。而这一断言由闭映射的定义 (TG, I, p. 30, def. 1) 立即得出。
+
+现在来证明定理 1。三个条件中的每一个都蕴含映射 p 是连续的、开的且分离的，并且 p 的纤维是有限的。在假设 (i) 与 (iii) 之下这是显然的；在假设 (ii) 之下，p 的纤维是离散的 (I, p. 29, remark 2) 且拟紧的 (TG, I, p. 75, th. 1)，因而是有限的 (TG, I, p. 60, example 1)。
+
+(i)⇒(ii)：只须证明 p 是逆紧的；为此，只须证明：对覆叠 (E,p) 可在其上平凡化的每个开集 U，映射 \(p_{\mathrm{U}}\colon \overline{p}^{1}(\mathrm{U})\to\mathrm{U}\) 是逆紧的 (TG, I, p. 72, prop. 3)。
+
+由于 \(p_{U}\) 的诸纤维是有限的，这最后的断言由 TG, I, p. 77 的推论 5 得出。
+
+(ii)⇒(iii)：设 b 为 B 的一点，并对每个 \(x \in \overline{p}^{1}(b)\)，设 \(W_{x}\) 为 x 在 E 中的开邻域，使得 \(p \mid W_{x}\) 是单射。集合 \(W = \bigcup_{x \in \overline{p}^{1}(b)} W_{x}\) 是 \(\overline{p}^{1}(b)\) 的开邻域。由于映射 p 是闭的，由上面的引理，存在 b 的开邻域 U，使得 \(\overline{p}^{1}(U) \subset W\)。对所有 \(a \in U\)，有 \(\overline{p}^{1}(a) \subset W\)；由于 p 在每个 \(W_{x}\) 上的限制是单射，由此得 \(\text{Card}(\overline{p}^{1}(a)) \leqslant \text{Card}(\overline{p}^{1}(b))\)，这就证明了映射 \(a \mapsto \text{Card}(\overline{p}^{1}(a))\) 的上半连续性。
+
+(iii)⇒(i)：设 b 为 B 的一点。由于纤维 \(E_{b} = \overline{p}^{1}(b)\) 是有限的且映射 p 是分离的，可以对每个 \(x \in E_{b}\) 选取 x 的开邻域 \(V_{x}^{\prime}\)，使得诸 \(V_{x}^{\prime}\) 两两不相交 (I, p. 26, Remark 4)。由于映射 p 是开的且集 \(E_{b}\) 是有限的，集 \(U^{\prime} = \bigcap_{x \in E_{b}} p(V_{x}^{\prime})\) 是 b 在 B 中的开邻域。设 U 为 b 在 B 中的开邻域，含于 \(U^{\prime}\) 且使得对所有 \(a \in U\) 有 \(\text{Card}(E_{a}) \leqslant \text{Card}(E_{b})\)。对所有 \(x \in E_{b}\)，令 \(V_{x} = V_{x}^{\prime} \cap \overline{p}^{1}(U)\)。设 a 为 U 的一点；诸集 \(E_{a} \cap V_{x}\) （对 \(x \in E_{b}\)）非空且两两不相交。因而这些集中每一个都恰含一个元素，并组成 \(E_{a}\) 的一个分拆。这就证明了对每个 \(x \in E_{b}\)，映射 \(p | V_{x}\) 是单射，并且有 \(\overline{p}^{1}(U) = \bigcup_{x \in E_{b}} V_{x}\)。由于映射 p 是开的，它诱导 \(V_{x}\) 到 U 上的同胚，从而 (E, p) 是 B 的覆叠 (I, p. 70, cor. 1 of prop. 1)。
+
+注. --- 一个连续、分离、开、逆紧且纤维有限的映射未必是覆叠。例如映射 \(x \mapsto x^{2}\) （从 R 到 \([0; +\infty[\) 的）就是这种情形。
+
+推论 1. --- 设 E 与 B 为拓扑空间，\(p\colon\mathrm{E}\to\mathrm{B}\) 为逆紧且分离的映射。B 中使 p 在纤维 \(\mathrm{E}_{b}\) 的每一点处都是平展的那些点 b 所成的集 U 在 B 中是开的。由 (E,p) 在 U 上诱导的 U-空间是局部有限覆叠。
+
+使映射 p 不平展的 E 的点所成的集 F 在 E 中是闭的 (I, p. 29, remark 1)。由于映射 p 是逆紧的，其像 \(p(\mathrm{F})\) 是闭的；于是 \(p(\mathrm{F})\) 的补集 U 是开的。映射 \(p_{U}\) 是分离的 (I, p. 27, prop. 4) 且逆紧的 (TG, I, p. 72, prop. 3)。按构造，映射 \(p_{\mathrm{U}}\) 是平展的；因此它满足定理 1 的条件 (ii)。
+
+推论 2. — 设 B 为分离的拓扑空间，E 为 B-空间。设 E 是紧的且其投影 p: E → B 是平展的。则 E 是 B 的有限覆叠。
+
+映射 \(p\) 是分离的 (I, p. 26, remark 2) 且逆紧的 (TG, I, p. 76, cor. 2)。于是由推论 1，E 是 B 的局部有限覆叠。由于 E 是紧的，\(p(\mathrm{E})\) 是 B 的拟紧子集；从 \(p(\mathrm{E})\) 到 \(\mathbb{N}\) 中的由 \(b \mapsto \operatorname{Card} \overline{p}^1(b)\) 给出的映射是局部常值的，因而有上界 (TG, IV, p. 30, corollary)。
+
+推论 3. --- 设 B 为拓扑空间，(E,p) 与 (E',p') 为 B-空间，f: E' → E 为 B-态射。设 E' 是 B 的局部有限覆叠。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  若映射 p 是平展且分离的，则 E-空间 (E', f) 是覆叠。
+\item
+  若映射 f 是满的且使空间 E' 成为 E 的覆叠，则 E 是 B 的覆叠。
+\end{enumerate}
+
+在假设 \(a\) 之下，映射 \(p\) 与 \(p'\) 都是平展且分离的，且映射 \(p'\) 是逆紧的（定理 1）。于是映射 \(f\) 是平展的 (I, p. 30, cor. 1 of prop. 6)、分离的 (I, p. 25, prop. 2 b)) 且逆紧的 (I, p. 28, prop. 5)。由定理 1，\((\mathrm{E}', f)\) 是 E 的覆叠。
+
+现在设 \(f\) 是满的，并设 \((\mathrm{E}', f)\) 是 E 的覆叠。于是它是局部有限的，故映射 \(f\) 是逆紧且满的（定理 1）。由 I, p. 25, prop. 2, c)，映射 \(p\) 是分离的，因为 \(p' = p \circ f\) 且 \(p'\) 是分离的。映射 \(p\) 是平展的 (I, p. 29, prop. 6, d))、逆紧的 (TG, I, p. 73, prop. 5, b))，且其纤维是有限的。由定理 1，B-空间 \((\mathrm{E}, p)\) 这时是 B 的覆叠。
+
+推论 4. --- 设
+
+\[
+\begin{array}{c} \mathrm{E} ^ {\prime} \xrightarrow {f ^ {\prime}} \mathrm{E} \\ \Big \downarrow p ^ {\prime} \\ \mathrm{B} ^ {\prime} \xrightarrow {f} \mathrm{B} \end{array}
+\]
+
+为一个笛卡尔方块。设 \((\mathrm{E}^{\prime}, p^{\prime})\) 是 \(B^{\prime}\) 的局部有限覆叠，且映射 f 是普遍严格且满的。则 \((\mathrm{E}, p)\) 是 B 的局部有限覆叠。
+
+事实上，映射 p 是平展的 (I, p. 31, prop. 8)、逆紧的 (I, p. 21, prop. 11) 且分离的 (I, p. 27, prop. 4)。
+
+推论 5. --- 设 B 为连通的拓扑空间，(E, p) 为 B 的有限覆叠。空间 E 只有有限多个连通分支，且其中每一个都是 B 的覆叠。
+
+若 B 是空的，结果成立；以下设 B 非空。若 X 是 E 的开闭子集，则 p 在 X 上的限制是分离的映射 (I, p. 25, prop. 2, a) 与 I, p. 26, remark 1)、平展且逆紧的 (TG, I, p. 74, corollary 1)；由定理 1，(X, p) 是 B 的局部有限覆叠。由于 B 是连通的，这个覆叠有有限次数。若 X 异于 E，则存在点 \(b \in B\) 使得 \(X_{b} \subsetneq E_{b}\)，从而 \([X:B] < [E:B]\)。由于 B 是连通的，由此得出 E 中开闭集的每个递降序列都是平稳的。
+
+设 \(x \in E\)；于是存在含 x 的最小的开且闭的子集 X (E, III, p. 51, prop. 6)。这样的集 X 是连通的；因此它是 x 在 E 中的连通分支。这表明 E 的连通分支都是开且闭的，且其中每一个都是 B 的覆叠。由于 B 是连通的，E 的每个连通分支都与 p 的每个纤维相交；因而 E 的连通分支个数是有限的。
+
+命题 5. — 设 B 为拓扑空间，E 与 E′ 为 B-空间，f: E′ → E 为 B-态射。设 E 是局部有限覆叠，而赋以映射 f 的空间 E′ 是局部平凡的 E-纤维空间（相应地，是覆叠）。则 E′ 是局部平凡的 B-纤维空间（相应地，是覆叠）。
+
+用 \(p\) 与 \(p'\) 分别表示 B-空间 E 与 E' 的投影。设 \(b\) 为 B 的一点。存在 \(b\) 在 B 中的开邻域 U 以及有限分拆 \((\mathrm{V}_i)_{i\in \mathrm{I}}\) （\(\overline{p}^1 (\mathrm{U})\) 的、由 E 的开集组成的），使得对每个 \(i\in \mathrm{I}\)，映射 \(p\) 诱导 \(\mathrm{V}_i\) 到 U 上的同胚。令 \(\mathrm{V}_i' = f^{-1}(\mathrm{V}_i)\)。诸集 \(\mathrm{V}_i'\) 在 E' 中是开的，组成 \(\overline{p'}^{1}(\mathrm{U})\) 的分拆，且从 \(\mathrm{V}_i'\) 到 U 中的、由 \(p'\) 通过子空间诱导的映射使 \(V_i'\) 成为局部平凡的 U-纤维空间。由此得出，空间 \(\overline{p'}^{1}(\mathrm{U})\) 赋以映射 \(p_U': \overline{p'}^{1}(\mathrm{U}) \to U\) 后是局部平凡的 U-纤维空间 (I, p. 69, remark 2)。若 \((E', f)\) 是 E 的覆叠，则 \(p_U'\) 的纤维是离散的，因为它们与诸开集 \(V_i'\) 中每一个的交都是离散的。证明完毕。
+
+注. --- 若 (E, p) 是 B 的覆叠且 (E', f) 是 E 的覆叠，则映射 \(p \circ f\) 是平展的 (I, p. 29, prop. 6, a)) 且分离的 (I, p. 25, prop. 2, a))。但可能发生这样的情形（见 I, p. 146 的习题 5, b)）：赋以映射 \(p \circ f\) 的空间 E′ 不是 B 的覆叠。不过参见 IV, p. 342, prop. 3。
+

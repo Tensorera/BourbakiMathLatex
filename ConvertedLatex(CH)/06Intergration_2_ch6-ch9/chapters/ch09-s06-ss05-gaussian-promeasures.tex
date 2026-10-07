@@ -1,0 +1,155 @@
+\subsection{高斯前测度与测度}
+
+命题 4. --- 设 E 是局部凸空间。对 \(E'\) 上的每个正二次型 Q，存在且仅存在一个 E 上的前测度 \(\Gamma_{Q}\)，使得 \(F\Gamma_{Q}=e^{-Q/2}\)。\(\Gamma_{Q}\) 的总质量等于 1。
+
+\(\Gamma_{Q}\) 的唯一性由第 3 号命题 3 得出。\(\Gamma_{Q}\) 的总质量等于 \((\mathcal{F}\Gamma_{\mathrm{Q}})(0)=e^{-\mathrm{Q}(0)/2}=1\)。我们将分阶段证明存在性。
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  E 为 n 维，且 Q 非退化。
+\end{enumerate}
+
+由第 4 号引理 2，测度 \(\gamma_{1}\) 在 R 上具有密度 \(t \mapsto (2\pi)^{-1/2}e^{-t^{2}/2}\)，有界且总质量为 1。置 \(\gamma = \gamma_{1} \otimes \cdots \otimes \gamma_{1}\)（n 个因子）。由第 4 号引理 2，得到
+
+\[
+\begin{array}{r l} & {\int_ {\mathbf {R} ^ {n}} e ^ {i (a _ {1} t _ {1} + \dots + a _ {n} t _ {n})} d \gamma (t _ {1}, \ldots , t _ {n}) = \prod_ {j = 1} ^ {n} \int_ {\mathbf {R}} e ^ {i a _ {j} t} d \gamma_ {1} (t)} \\ & {\qquad = \prod_ {j = 1} ^ {n} (2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {i a _ {j} t} e ^ {- t ^ {2} / 2} d t} \\ & {\qquad = \prod_ {j = 1} ^ {n} e ^ {- a _ {j} ^ {2} / 2}} \\ & {\qquad = \exp \big (- \frac {1}{2} (a _ {1} ^ {2} + \dots + a _ {n} ^ {2}) \big).} \end{array}
+\]
+
+由于 Q 正且非退化，存在一个基 \((e_{1}^{\prime},\ldots,e_{n}^{\prime})\)，属于 \(E^{\prime}\)，且关于 Q 是正交规范的（Alg., 第 IX 章 §7, No.~1）。记从 E 到 \(x\mapsto(e_{1}^{\prime}(x),\ldots,e_{n}^{\prime}(x))\) 的同构 \(R^{n}\) 为 f，并以 \(\Gamma_{Q}\) 表示测度 \(f^{-1}(\gamma)\)（定义在 E 上）。设 \(x^{\prime}=a_{1}e_{1}^{\prime}+\cdots+a_{n}e_{n}^{\prime}\) 属于 \(E^{\prime}\)；则 \(x^{\prime}\big(f^{-1}(t_{1},\ldots,t_{n})\big)=\sum_{j=1}^{n}t_{j}a_{j}\) 对实数 \(t_{1},\ldots,t_{n}\) 成立，从而
+
+\[
+\begin{array}{l} \int_ {\mathbf {E}} e ^ {i \langle x, x ^ {\prime} \rangle} d \Gamma_ {\mathbf {Q}} (x) = \int_ {\mathbf {R} ^ {n}} e ^ {i (a _ {1} t _ {1} + \dots + a _ {n} t _ {n})} d \gamma (t _ {1}, \ldots , t _ {n}) \\ \qquad = \exp \big (- \frac {1}{2} (a _ {1} ^ {2} + \dots + a _ {n} ^ {2}) = \exp \big (- \frac {1}{2} \mathbf {Q} (x ^ {\prime}) \big). \end{array}
+\]
+
+因此，\(\mathcal{F}\Gamma_{\mathrm{Q}} = e^{-\mathrm{Q} / 2}\)。
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  E 有限维。
+\end{enumerate}
+
+令 N 为由 \(E'\) 中的 \(x'\)（满足 \(Q(x') = 0\)）所成的线性子空间。记 N 在 E 中的正交补为 M，记从 M 到 E 的典范嵌入为 j。线性映射 \({}^{t}j : E' \to M'\) 是满射，核为 N，因此在 \(M'\) 上存在非退化正二次型 q，使得 \(Q = q \circ {}^{t}j\)。由前面所述，在 M 上存在有界测度 \(\Gamma\)，使得 \(F\Gamma = e^{-q/2}\)。置 \(\Gamma_{Q} = j(\Gamma)\)，则有
+
+\[
+\mathcal {F} \Gamma_ {\mathrm{Q}} = (\mathcal {F} \Gamma) \circ {} ^ {t} j = \exp (- q \circ {} ^ {t} j / 2) = e ^ {- \mathrm{Q} / 2}
+\]
+
+由第 3 号的公式 (4)。
+% semantic-fragments: legacy-input-seam
+\relax{}
+C) 一般情形.
+
+令 \(V \in \mathcal{F}(E)\) 。记 \(p_V\) 为 E 到 E/V 的典范映射，并记 \(Q_V\) 为正二次型 \(Q \circ {}^t p_V\)，它定义在 \((E/V)'\) 上；最后，令 \(\mu_V\) 为 E/V 上傅里叶变换为 \(e^{-Q_V/2}\) 的测度（参见 B)）。如果 \(W \in \mathcal{F}(E)\) 包含于 V，则 \(p_V = p_{\text{VW}} \circ p_W\)，因而 \(Q_V = Q_W \circ {}^t p_{\text{VW}}\)；由第~3号的公式 (4)，测度 \(p_{\text{VW}}(\mu_W)\) 的傅里叶变换是函数 \((e^{-Q_W/2}) \circ {}^t p_{\text{VW}} = e^{-Q_V/2}\)，所以它等于 \(\mu_V\)。因此，族 \((\mu_V)_{V \in \mathcal{F}(E)}\) 是 E 上的投影测度 \(\mu\)。第~3号的公式 (5) 表明 \(\mathcal{F}\mu\) 等于 \(e^{-Q/2}\)。
+
+定义 2. --- 设 E 是一个局部凸空间。对于 \(E'\) 上的每个正二次型 Q，其傅里叶变换等于 \(e^{-Q/2}\) 的 E 上的投影测度称为 E 上方差为 Q 的高斯投影测度，记作 \(\Gamma_{Q}\)。如果有一个 E 上的投影测度 \(\mu\)，使得存在 \(E'\) 上的正二次型 Q 满足 \(\mu = \Gamma_{Q}\)，则称其为高斯投影测度。
+
+借用术语，如果 E 上的有界测度 \(\mu\) 所对应的投影测度 \(\widetilde{\mu}\) 等于 \(\Gamma_{Q}\)，则称其为方差为 Q 的高斯测度。
+
+备注. --- 1) 设 E 是有限维向量空间，\(\mu\) 是 E 上总质量为 1 的正测度，并且 E 上的每个线性形式都属于 \(\mathcal{L}^{2}(\mathrm{E},\mu)\)。由下列公式定义 E 中的一个元素 \(m\) 以及 \(\mathrm{E}'\) 上的一个正二次型 V：
+
+\[
+\langle m, x ^ {\prime} \rangle = \int_ {\mathbb {E}} \langle x, x ^ {\prime} \rangle d \mu (x), \quad \mathrm{V} (x ^ {\prime}) = \int_ {\mathbb {E}} \langle x - m, x ^ {\prime} \rangle^ {2} d \mu (x).
+\]
+
+在概率论的传统术语中，m 称为均值，V 称为 \(\mu\) 的方差；当 m = 0 时称 \(\mu\) 为中心化的。
+
+现在设 \(a\) 是 \(\mathbf{E}\) 中的一个元素，\(\mathbf{Q}\) 是 \(\mathbf{E}'\) 上的正二次型。记 \(\Gamma_{a,\mathbf{Q}}\) 为测度 \(\Gamma_{\mathbf{Q}}\) 在平移 \(x \mapsto x + a\) 下的像。容易看出，\(\Gamma_{a,\mathbf{Q}}\) 是 \(\mathbf{E}\) 上总质量为 1 的正测度，其傅里叶变换为 \(x' \mapsto e^{i\langle a,x'\rangle - \frac{1}{2}\mathbf{Q}(x')}\)，均值为 \(a\)。此外，下面的命题 6 蕴含 \(\mathbf{Q}\) 是 \(\Gamma_{a,\mathbf{Q}}\) 的方差。通常称 \(\Gamma_{a,\mathbf{Q}}\) 为均值为 \(a\)、方差为 \(\mathbf{Q}\) 的高斯测度，并称 \(\Gamma_{\mathbf{Q}} = \Gamma_{0,\mathbf{Q}}\) 为方差为 \(\mathbf{Q}\) 的中心化高斯测度。由于我们只考虑中心化高斯测度，故省略这一限定语。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 \(\mathbf{Q}\) 是 \(\mathbf{E}'\)（局部凸空间 \(\mathbf{E}\) 的对偶）上的二次型。如果 \(\mathbf{E}\) 上存在傅里叶变换为 \(e^{-\mathbf{Q} / 2}\) 的投影测度，则二次型 \(\mathbf{Q}\) 必为正的：因为函数 \(e^{-\mathbf{Q} / 2}\) 在 \(\mathbf{E}'\) 上有界；因此，对于每个 \(x' \in \mathbf{E}'\)，函数 \(t \mapsto e^{-t^2\mathbf{Q}(x') / 2} = e^{-\mathbf{Q}(tx') / 2}\) 在 \(\mathbf{R}\) 上有界，从而 \(\mathbf{Q}(x') \geqslant 0\)。
+\item
+  \(\mathbf{R}\) 的对偶典范同构于 \(\mathbf{R}\)，而 \(\mathbf{R}\) 上的正二次型是形如 \(t \mapsto at^2\) 且 \(a \geqslant 0\) 的函数。因此，对于每个 \(a \geqslant 0\)，存在唯一一个有界测度 \(\gamma_a\)，它定义在 \(\mathbf{R}\) 上，其傅里叶变换等于函数 \(t \mapsto e^{-at^2/2}\)；借用术语，称 \(\gamma_a\) 为 \(\mathbf{R}\) 上方差为 \(a\) 的高斯测度。
+\end{enumerate}
+
+ \(\gamma_0\) 的傅里叶变换是常值 1，因此 \(\gamma_0 = \varepsilon_0\)（\(\mathbf{R}\) 原点处的单位质量）。设 \(a > 0\)，并记 \(u_a\) 为线性映射 \(x \mapsto a^{1/2}x\)；于是 \(\mathcal{F}\gamma_a = \mathcal{F}\gamma_1 \circ {}^t u_a\)，从而 \(\gamma_a = u_a(\gamma_1)\)。引理 2 表明，\(\gamma_1\) 是相对于勒贝格测度密度为 \(x \mapsto (2\pi)^{-1/2} e^{-x^2/2}\) 的测度；由此容易推出
+
+\[
+d \gamma_ {a} (x) = (2 \pi a) ^ {- 1 / 2} e ^ {- x ^ {2} / 2 a} d x.\tag{15}
+\]
+
+高斯投影测度在连续线性映射下的像仍是高斯投影测度。更精确地，有如下结果：
+
+命题 5. --- 设 E 和 \(E_{1}\) 是两个局部凸空间，u 是从 E 到 \(E_{1}\) 的连续线性映射。设 Q 是 \(E'\) 上的正二次型，\(Q_{1}\) 是正二次型 \(Q \circ {}^{t}u\)，它定义在 \(E_{1}'\) 上。则 \(u(\Gamma_{Q}) = \Gamma_{Q_{1}}\)。
+
+置 \(\mu = u(\Gamma_{\mathbb{Q}})\)。由第~3号的公式 (4)，
+
+\[
+\mathcal {F} \mu = \left(\mathcal {F} \Gamma_ {\mathrm{Q}}\right) \circ {} ^ {t} u = e ^ {- \mathrm{Q} / 2} \circ {} ^ {t} u = e ^ {- \mathrm{Q} _ {1} / 2} = \mathcal {F} \Gamma_ {\mathrm{Q} _ {1}},
+\]
+
+因此由第~3号的命题 3，\(\mu = \Gamma_{\mathbf{Q}_1}\)。
+
+推论. --- 设 E 是局部凸空间，Q 是 \(E'\) 上的正二次型。对于每个 \(x' \in E'\)，\(\Gamma_{Q}\) 在 \(x'\) 下的像是 R 上方差为 \(\mathrm{Q}(x')\) 的高斯测度。
+
+命题 6. --- 设 E 是局部凸空间，\(\mu\) 是 E 上方差为 Q 的高斯测度。对于每个整数 \(n \geqslant 0\) 和每个 \(x' \in \mathbf{E}'\)，有如下关系：
+
+\[
+\int_ {\mathrm{E}} | \langle x, x ^ {\prime} \rangle | ^ {n} d \mu (x) = \pi^ {- 1 / 2} 2 ^ {n / 2} \Gamma \Big (\frac {n + 1}{2} \Big) \mathrm{Q} (x ^ {\prime}) ^ {n / 2}\tag{16}
+\]
+
+\[
+\int_ {\mathrm{E}} \langle x, x ^ {\prime} \rangle^ {2 n} d \mu (x) = \frac {(2 n) !}{2 ^ {n} n !} \mathrm{Q} (x ^ {\prime}) ^ {n}\tag{17}
+\]
+
+\[
+\int_ {\mathrm{E}} \langle x, x ^ {\prime} \rangle^ {2 n + 1} d \mu (x) = 0.\tag{18}
+\]
+
+特别地，
+
+\[
+\int_ {\mathrm{E}} \langle x, x ^ {\prime} \rangle^ {2} d \mu (x) = \mathrm{Q} (x ^ {\prime}) \qquad (x ^ {\prime} \in \mathrm{E} ^ {\prime}).\tag{19}
+\]
+
+如果这些公式对 \(x'\)（\(E'\) 中的一个元素）成立，那么对它的所有倍数 \(t \cdot x'\)（其中 t 为实数）也成立。因此，只需在 \(\mathrm{Q}(x')\) 等于 0 或 1 时证明它们。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  假设 \(\mathrm{Q}(x') = 0\)。测度 \(x'(\mu)\) 等于 \(\gamma_{0} = \varepsilon_{0}\)，因此 \(x'\) 在 \(\mu\)-几乎处处为零；公式 (16) 至 (19) 随即显然成立。
+\item
+  假设 \(\mathrm{Q}(x') = 1\)，因而 \(x'(\mu) = \gamma_{1}\)。于是
+\end{enumerate}
+
+\[
+\int_ {\mathbf {E}} | \langle x, x ^ {\prime} \rangle | ^ {n} d \mu (x) = \int_ {\mathbf {R}} | t | ^ {n} d \gamma_ {1} (t) = (2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} | t | ^ {n} e ^ {- t ^ {2} / 2} d t
+\]
+
+由 (6)（第 4 号，引理 1）立即得到 (16)。类似地，公式 (17) 和 (18) 由 (7) 和 (8) 得到。最后，在 (17) 中取 \(n = 1\) 即得 (19)。
+
+现在可以证明命题 5 的推论的逆命题。
+
+命题 7. --- 设 E 是局部凸空间，\(\mu\) 是 E 上的投影测度。假设 \(x'(\mu)\) 是 R 上的高斯测度，对每个 \(x' \in E'\) 都如此。则 \(\mu\) 是 E 上的高斯投影测度。
+
+对于每个 \(x' \in \mathrm{E}'\)，令 \(\mathbf{Q}(x')\) 为高斯测度 \(x'(\mu)\)（定义在 \(\mathbf{R}\) 上）的方差。则 \(x'(\mu) = \gamma_{\mathbf{Q}(x')}\)，从而
+
+\[
+(\mathcal {F} \mu) (x ^ {\prime}) = \int_ {\mathbf {R}} e ^ {i t \cdot 1} d \gamma_ {Q (x ^ {\prime})} (t) = e ^ {- Q (x ^ {\prime}) \cdot 1 ^ {2} / 2}
+\]
+
+根据 \(\mathcal{F}\mu\) 的定义（第~3号的公式 (2)）。换句话说，\(\mathcal{F}\mu = e^{-Q/2}\)，还需证明 \(Q\) 是 \(E'\) 上的正二次型。
+
+对于 E 的每个有限余维闭线性子空间 V，记 \(p_{V}\) 为 E 到 E/V 的典范映射，记 \(\mu_{V}\) 为 E/V 上的测度 \(p_{\mathrm{V}}(\mu)\)，并置 \(Q_{V} = Q \circ {}^{t} p_{V}\)。由于 \(E' = \bigcup_{V \in \mathcal{F}(E)} \operatorname{Im}({}^{t} p_{V})\)，且 \({}^{t} p_{V}\) 是单射，只需证明 \(Q_{V}\) 是 \((\mathrm{E}/\mathrm{V})'\) 上的正二次型。
+
+令 \(u \in (\mathrm{E}/\mathrm{V})'\)，且 \(x' = {}^{t} p_{\mathrm{V}}(u)\)。有
+
+\[
+u (\mu_ {\mathrm{V}}) = u \big (p _ {\mathrm{V}} (\mu) \big) = x ^ {\prime} (\mu) = \gamma_ {\mathrm{Q} (x ^ {\prime})};
+\]
+
+于是命题 6 蕴含
+
+\[
+\mathrm{Q} _ {\mathrm{V}} (u) = \mathrm{Q} (x ^ {\prime}) = \int_ {\mathbf {R}} t ^ {2} d \gamma_ {\mathrm{Q} (x ^ {\prime})} (t) = \int_ {\mathrm{E} / \mathrm{V}} u (x) ^ {2} d \mu_ {\mathrm{V}} (x),
+\]
+
+所以 \(Q_V\) 是 \((E/V)'\) 上的正二次型。
+

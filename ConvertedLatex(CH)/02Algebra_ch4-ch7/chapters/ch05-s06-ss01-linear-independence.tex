@@ -1,0 +1,34 @@
+\subsection{同态的线性无关性}
+
+设L是K的一个扩域，V是K上的一个向量空间。在本段中，我们将用 \(\operatorname{Hom}_{\mathbf{K}}(\mathbf{V},\mathbf{L})\) 表示 V 到 L 的所有 K-线性映射的集合，并赋予其 L 上的向量空间结构，使得：
+
+\[
+(f + g) (x) = f (x) + g (x), \quad (\alpha f) (x) = \alpha f (x)\tag{1}
+\]
+
+对 \(x \in \mathbf{V}\) ， \(\alpha \in \mathbf{L}\) 及 \(f, g\) 属于 \(\operatorname{Hom}_{\mathbf{K}}(\mathbf{V}, \mathbf{L})\) 。设 \(\mathbf{V}_{(\mathbf{L})} = \mathbf{L} \otimes_{\mathbf{K}} \mathbf{V}\) 为 \(\mathbf{L}\) 上的由 \(\mathbf{V}\) 通过标量扩张导出的向量空间，并设 \((\mathbf{V}_{(\mathbf{L})})^*\) 为其对偶。由 II，第277页，我们有一个典范同构 \(u \mapsto \tilde{u}\) ，它是 \(\mathbf{L}\) 上向量空间从 \((\mathbf{V}_{(\mathbf{L})})^*\) 到 \(\operatorname{Hom}_{\mathbf{K}}(\mathbf{V}, \mathbf{L})\) 上的同构，使得 \(\tilde{u}(x) = u(1 \otimes x)\) （其中 \(x \in \mathbf{V}\) ， \(u\) 属于 \((\mathbf{V}_{(\mathbf{L})})^*\) ）。若 \(\mathbf{V}\) 具有有限维数 \(n\) （在 \(\mathbf{K}\) 上），则向量空间 \((\mathbf{V}_{(\mathbf{L})})\) （在 \(\mathbf{L}\) 上）的维数为 \(n\) ，其对偶 \((\mathbf{V}_{(\mathbf{L})})^* = \mathbf{V}_{(\mathbf{L})}^*\) 亦然，由此得到公式
+
+\[
+[ \operatorname{Hom} _ {K} (V, L): L ] = [ V: K ].\tag{2}
+\]
+
+定理1. --- 设 L 是域 K 的扩张，A 是 K 上的代数；设 H 是 A 到 L 的所有 K-代数同态的集合。则 H 是向量空间 \(\operatorname{Hom}_{K}(A, L)\) （在 L 上）的一个自由子集。
+
+我们通过对整数 \(n \geqslant 0\) 进行归纳来证明每个序列 \((u_1, \ldots, u_n)\) （由 \(\mathcal{H}\) 的不同元素组成）是自由的。情形 \(n = 0\) 是平凡的，因此我们今后可以假设 \(n \geqslant 1\) ；设 \(\alpha_1, \ldots, \alpha_n\) 为 \(L\) 的元素，使得 \(\sum_{i=1}^{n} \alpha_i u_i = 0\) 。对 \(x, y\) （在 \(A\) 中）我们有
+
+\[
+\sum_ {i = 1} ^ {n - 1} \alpha_ {i} [ u _ {i} (x) - u _ {n} (x) ] \cdot u _ {i} (y) = \sum_ {i = 1} ^ {n} \alpha_ {i} u _ {i} (x y) - u _ {n} (x) \sum_ {i = 1} ^ {n} \alpha_ {i} u _ {i} (y) = 0,
+\]
+
+由此 \(\sum_{i=1}^{n-1} \alpha_i [u_i(x) - u_n(x)] \cdot u_i = 0\) 。根据归纳假设，元素
+
+\(u_{1}, \ldots, u_{n-1}\) （\(\mathscr{H}\) 的）是线性无关的，因此 \(\alpha_{i}[u_{i}(x) - u_{n}(x)] = 0\) （对 \(1 \leqslant i \leqslant n-1\) 及对 A 中所有 x 成立）。由于这些 \(u_{i}\) 互不相同，这蕴含 \(\alpha_{i} = 0\) （对 \(i \neq n\)），从而 \(\alpha_{n}u_{n} = 0\) ，于是 \(\alpha_{n} = \alpha_{n}u_{n}(1) = 0\) （用 1 表示 A 的单位元）。这样我们已证明 \(\alpha_{1}, \ldots, \alpha_{n-1}, \alpha_{n}\) 均为零，这就证明了该定理。
+
+推论1. — 设 \(\Gamma\) 为一个幺半群，L 为一个域，X 为从 \(\Gamma\) 到 L 的乘法幺半群中的同态组成的一个集合。则 X 是向量 L-空间 \(L^{\Gamma}\) （从 \(\Gamma\) 到 L 的映射所成的）的一个自由子集。
+
+设 A 为幺半群 \(\Gamma\) 的系数在 L 中的代数，并设 \((e_{\gamma})_{\gamma \in \Gamma}\) 为 A 在 L 上的典范基（III，第446页）。对每个将 A 映入 L 的 L-线性映射 \(u\) ，我们记 \(\tilde{u}(\gamma) = u(e_{\gamma})\) （对 \(\gamma \in \Gamma\) ）；则映射 \(u \mapsto \tilde{u}\) 是向量 L-空间从 \(\operatorname{Hom}_{L}(A, L)\) 到 \(L^{\Gamma}\) 上的一个同构，它把 A 到 L 的 L-代数同态的集合映到 X 上。现在只需取 \(K = L\) 应用定理 1。
+
+推论2（戴德金定理）。--- 设E和L是K的两个扩张。从E到L的K-同态集合在L上是自由的。若E在K上的次数有限，则从E到L的K-同态个数至多等于 {[}E:K{]}。
+
+最后一个断言由第一个断言结合公式(2)得出。
+

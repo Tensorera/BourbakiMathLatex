@@ -1,0 +1,76 @@
+\subsection{同伦延拓}
+
+命题 1. --- 设 X' 是正规拓扑空间，X 是 X' 的子空间，A 是包含于 X 中的 X' 的闭子空间，U 是 X 中 A 的一个邻域。
+
+记 \(i_{A}\) 为 A 到 X 的典范嵌入，\(i_{U}\) 为 U 到 X 的典范嵌入；记 \(j_{A}\) 和 \(j_{U}\) 为相应的从 \(\mathrm{Cyl}(i_{\mathrm{A}})\) 和 \(\mathrm{Cyl}(i_{\mathrm{U}})\) 到 \(X \times I\) 的嵌入。
+
+存在连续映射 \(r \colon \mathrm{X} \times \mathbf{I} \to \operatorname{Cyl}(i_{\mathrm{U}})\)，满足 \(j_{\mathrm{U}} \circ r(x) = x\) 对 \(x \in j_{\mathrm{A}}(\operatorname{Cyl}(i_{\mathrm{A}}))\) 中的每个点成立。
+
+设 U' 是 X' 的一个开子集，使 A ⊂ X ∩ U' ⊂ U。根据正规空间的定义（TG, IX, p. 41），存在 A 在 X' 中的一个开邻域 V'，使 A ⊂ V' ⊂ \(\overline{V'}\) ⊂ U'，以及一个连续函数 φ': X' → I，它在 A 的每一点取值为 1，在 CV' 的每一点取值为 0。置 φ = φ' \textbar{} X 且 V = X ∩ V'。还记 α: U × I → Cyl(i\_U) 和 β: X → Cyl(i\_U) 为典范映射（III, p. 238）。
+
+令 \(r\) 为从 \(\mathrm{X} \times \mathbf{I}\) 到 \(\operatorname{Cyl}(i_{\mathrm{U}})\) 的映射，由下式给出
+
+\[
+r (x, t) = \left\{ \begin{array}{l l} \alpha (x, 1 - (1 - t) \varphi (x)) & \text { for } (x, t) \in \mathrm{U} \times \mathbf {I}, \\ \beta (x) & \text { otherwise }. \end{array} \right.
+\]
+
+映射 \(r\) 在 \(\mathrm{U} \times \mathbf{I}\) 上连续。对于每个点 \((x, t) \in \mathrm{U} \times \mathbf{I}\)，若 \(x \notin \mathrm{V}\)，则有 \(\varphi(x) = 0\)，从而 \(r(x, t) = \alpha(x, 1) = \beta(x)\)。因此，映射 \(r\) 与 \(\beta \circ \mathrm{pr}_1\) 在 \((\mathrm{X} - \mathrm{V}) \times \mathbf{I}\) 上一致，这表明 \(r\) 在该子空间上连续。由于 U 与 \(\mathrm{X} - \mathrm{V}\) 的内部覆盖 X，映射 \(r\) 连续。
+
+设 \(y\) 是 \(\mathrm{Cyl}(i_{\mathrm{A}})\) 中的一点，并置 \((x,t) = j_{\mathrm{A}}(y)\)。若 \(x \in \mathrm{A}\)，则 \(\varphi(x) = 1\) 且 \(r(x,t) = \alpha(x,t)\)，从而 \(j_{\mathrm{U}}(r(x,t)) = (x,t)\)。否则 \(t = 1\)，有 \(r(x,t) = \alpha(x,1)\)（当 \(x \in \mathrm{U}\) 时），否则 \(r(x,t) = \beta(x)\)；因此在此情形下 \(j_{\mathrm{U}}(r(x,t)) = (x,t)\)。这说明 \(j_{\mathrm{U}} \circ r\) 将 \(j_{\mathrm{A}}(\mathrm{Cyl}(i_{\mathrm{A}}))\) 中的每一点映到自身，故命题得证。
+
+推论 1. --- 设 X 是正规拓扑空间，f 是从 X 到拓扑空间 Z 的连续映射。设 A 是 X 的闭子空间，U 是 X 中 A 的一个邻域，且 σ: U × I → Z 是一条同伦，其终映射为映射 f \textbar{} U。存在同伦 \(\widetilde{\sigma}\colon\mathbf{X}\times\mathbf{I}\to\mathbf{Z}\)，其终映射为 \(f\)，并且与 \(\sigma\) 在 \(\mathbf{A}\times\mathbf{I}\) 上一致。
+
+置 \(X' = X\)，并令 \(r: X \times I \to \text{Cyl}(i_{\text{U}})\) 为命题 1 给出的连续映射。利用本命题证明中引入的记号，存在唯一的连续映射 \(F: \text{Cyl}(i_{\text{U}}) \to Z\)，使得 \(\text{F}(\alpha(x,t)) = \sigma(x,t)\) 对 \((x,t) \in \text{U} \times \text{I}\) 成立，且 \(\text{F}(\beta(x)) = f(x)\) 对 \(x \in X\) 成立（III, p. 238, prop. 4）。映射 \(F \circ r: X \times I \to Z\) 是一条同伦；其终映射将 \(x \in X\) 中的一点送到 \(\text{F}(r(x,1)) = \text{F}(\beta(x)) = f(x)\)。若 \((x,t) \in A \times I\)，则 \(\text{F}(r(x,t)) = \text{F}(\alpha(x,t)) = \sigma(x,t)\)；因此该同伦与 \(\sigma\) 在 \(A \times I\) 上一致。
+
+推论 2. --- 设 X 是正规拓扑空间，A 是 X 的闭子空间，U 是 X 中 A 的一个邻域。设 f 和 f' 是从 U 到拓扑空间 Z 的连续同伦映射。若 f 可连续延拓到 X，则映射 f' \textbar{} A 也可如此。
+
+设 F 是从 X 到 Z 的连续映射，满足 \(F \textbar{} U = f\)。选取同伦 \(\sigma\colon A \times I \to Z\)，它连接 f'	extbar{} A 与 f	extbar{} A。由 Cor. 1，存在同伦 \(\widetilde{\sigma}\colon X \times I \to Z\)，其终映射为 F，并且延拓 \(\sigma\)。于是，\(\widetilde{\sigma}\) 的初映射是从 X 到 Z 的连续映射，并且在 A 上与 \(f'\) 一致。
+
+推论 3. — 设 X 是正规拓扑空间，A 是 X 的闭子空间，U 是 X 中 A 的一个邻域。设 Z 是与一点同伦等价的拓扑空间，且 g: U → Z 是连续映射。存在连续映射 \(\widetilde{g}\) : X → Z，在 A 上与 g 一致。
+
+由于 Z 与一点同伦等价，映射 g 同伦于常值映射 f。映射 f 可连续延拓到 X；因此断言由推论 2 得出。
+
+推论 4. --- 设 X 是仿紧拓扑空间，A 是 X 的闭子空间。设 n 是满足 ≥ 0 的整数，V 是 R \(^{n}\) 的开子集。设 f: X → V 是连续映射，且 σ: A × I → V 是以 f \textbar{} A 为终映射的同伦。存在同伦 \(\widetilde{\sigma}\): X × I → V，其终映射为 f，并且延拓 σ。
+
+记 \(i_{\mathrm{A}}\) 为 A 到 X 的典范嵌入，\(\alpha_{\mathrm{A}}: \mathrm{A} \times \mathbf{I} \to \operatorname{Cyl}(i_{\mathrm{A}})\) 和 \(\beta_{\mathrm{A}}: \mathrm{X} \to \operatorname{Cyl}(i_{\mathrm{A}})\) 为典范映射，并记 \(j_{\mathrm{A}}: \operatorname{Cyl}(i_{\mathrm{A}}) \to \mathrm{X} \times \mathbf{I}\) 为典范嵌入。由于 A 在 X 中闭，\(j_{\mathrm{A}}\) 定义了从 \(\mathrm{Cyl}(i_{\mathrm{A}})\) 到闭子空间 \((\mathrm{A}\times\mathbf{I})\cup(\mathrm{X}\times\{1\})\) 的同胚，该子空间是 \(X\times I\) 的闭子空间。令 \(\widetilde{\sigma}_{0}\) 为从 \(\mathrm{Cyl}(i_{\mathrm{A}})\) 到 V 的唯一映射，使 \(\widetilde{\sigma}_{0}\circ\alpha_{A}=\sigma\) 且 \(\widetilde{\sigma}_{0}\circ\beta_{A}=f\)；它是连续的（III, p. 238, prop. 4）。
+
+由于 X 是仿紧的且 I 是紧的，空间 \(X \times I\) 是仿紧的（TG, I, p. 70, prop. 17），因而是正规的（TG, IX, p. 49, prop. 4）。因此存在连续映射 \(k: X \times I \to R^{n}\)，满足 \(k \circ j_{A} = \widetilde{\sigma}_{0}\)（TG, IX, p. 45, corollary）。
+
+集合 U 由满足 \(x \in X\) 且 \(k(x, t) \in V\)（对所有 \(t \in I\)）的点 x 所成，它在 X 中是开集（IV, p. 439, lemma 1）。因此它是 A 的一个邻域。由推论 1 将映射 f 和同伦 \(k | U \times I\) 应用于该情形，存在同伦 \(\widetilde{\sigma} \colon X \times I \to V\)，其初映射为 f，并且与 k（从而与 \(\sigma\)）在 \(A \times I\) 上一致。
+
+引理 1. — 设 Z 是拓扑空间，K 是紧拓扑空间，W 是 Z × K 的开子集。集合 U 由满足 \{z\} × K 包含于 W 的点 z ∈ Z 所成，它在 Z 中是开集。
+
+第一投影 \(pr_{1}: Z \times K \to Z\) 是逆紧的（TG, I, p. 77, cor. 5），因而是闭的。因此，\(\mathbb{C}U = \mathrm{pr}_{1}(\mathbb{C}W)\) 在 Z 中是闭的，而 U 是开集。
+
+推论 5. --- 设 X' 是正规拓扑空间，X 是 X' 的子空间，A 是包含于 X 中的 X' 的闭子空间，U 是 X 中 A 的一个邻域。
+
+设 Y 和 Z 是拓扑空间；令 \(f\colon X \times \{1\} \times Y \to X \times \{1\} \times Z\) 为一个 \(X \times \{1\}\)-态射，并令 \(g\colon U \times I \times Y \to U \times I \times Z\) 为一个 \(U \times I\)-态射，且 \(f\) 在 \(U \times \{1\} \times Y\) 上与它一致。
+
+于是存在一个 \(X \times I\)-态射 \(h: X \times I \times Y \to X \times I \times Z\)，它在 \(X \times \{1\} \times Y\) 上与 f 一致，并在 \(A \times I \times Y\) 上与 g 一致。
+
+此外，若 f 和 g 是同胚，则可以选取具有所需性质的同胚 h。
+
+取 X' 中 A 的一个开邻域 U'，使 U'∩X ⊂ U。由于空间 X' 是正规的，存在 X' 中 A 的一个开邻域 V'，使 A ⊂ V' ⊂ \(\overline{V'}\) ⊂ U'（TG, IX, p. 41）。必要时以 \(\overline{V'}\) ∩ X 替换 U，于是可设 U 在 X 中是闭的。现在继续使用命题 1 及其证明中的记号；令 \(r: X \times I \to \text{Cyl}(i_{\text{U}})\) 为连续映射，使 \(j_{\text{U}} \circ r(x) = x\) 对 \(x \in j_{\text{A}}(\text{Cyl}(i_{\text{A}}))\) 中的每个点成立。
+
+再置 \(f' = pr_{3} \circ f\) 和 \(g' = pr_{3} \circ g\)。由于 \(f'\) 与 \(g'\) 在 \(U \times \{1\} \times Y\) 上一致，存在唯一映射
+
+\[
+\varphi \colon \operatorname{Cyl} (i _ {\mathrm{U}}) \times \mathrm{Y} \to \operatorname{Cyl} (i _ {\mathrm{U}}) \times \mathrm{Z}
+\]
+
+使得 \(\varphi(\alpha(x,t),y) = (\alpha(x,t),g'(x,t,y))\) 对 \((x,t,y) \in \mathrm{U} \times \mathbf{I} \times \mathrm{Y}\) 成立，且 \(\varphi(\beta(x),y) = (\beta(x),f'(x,1,y))\) 对 \((x,y) \in \mathrm{X} \times \mathrm{Y}\) 成立。由于 U 在 X 中闭，典范满射 \(\pi\) 从 \((\mathrm{U} \times \mathbf{I}) \cup \mathrm{X}\) 到 \(\mathrm{Cyl}(i_{\mathrm{U}})\) 是普遍严格的（III, p. 239, remark 2）。由于映射 \(\varphi \circ (\pi \times \mathrm{Id}_{\mathrm{Y}})\) 连续，映射 \(\varphi\) 连续。因此，它是 \(\mathrm{Cyl}(i_{\mathrm{U}})\)-空间的态射；若 \(f\) 和 \(g\) 是同胚，它甚至是同构。
+
+现在令 \(h \colon \mathrm{X} \times \mathbf{I} \times \mathrm{Y} \to \mathrm{X} \times \mathbf{I} \times \mathrm{Z}\) 为映射 \(r^*(\varphi)\)，它由 \(\varphi\) 通过换基 \(r\) 得到。它由 \(h(x,t,y) = (x,t,\mathrm{pr}_2(\varphi(r(x,t),y)))\) 给出，对 \((x,t,y) \in \mathrm{X} \times \mathbf{I} \times \mathrm{Y}\) 成立。它是 \(\mathrm{X} \times \mathbf{I}\)-空间的态射；若 \(\varphi\) 是同构，它甚至是同构。若 \((x,t,y) \in \mathrm{A} \times \mathbf{I} \times \mathrm{Y}\)，则有 \(r(x,t) = (x,t)\)，从而
+
+\[
+h (x, t, y) = (x, t, \mathrm{pr} _ {2} (\varphi (x, t, y))) = (x, t, g ^ {\prime} (x, t, y)) = g (x, t, y),
+\]
+
+同样，对于 \(x \in X\) 和 \(y \in Y\)，有 \(r(x,1) = (x,1)\)，因此
+
+\[
+h (x, 1, y) = (x, 1, \operatorname{pr} _ {2} (\varphi (x, 1, y))) = (x, 1, f ^ {\prime} (x, 1, y)) = f (x, 1, y)
+\]
+
+所以 h 在 \(X \times \{1\} \times Y\) 上与 f 一致。推论得证。
+

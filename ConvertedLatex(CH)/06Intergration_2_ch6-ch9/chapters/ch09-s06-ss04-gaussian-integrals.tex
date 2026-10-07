@@ -1,0 +1,118 @@
+\subsection{高斯积分的计算}
+
+引理 1. --- 对每个整数 \(n \geqslant 0\)，
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\int_ {\mathbf {R}} | x | ^ {n} e ^ {- x ^ {2} / 2} d x = 2 ^ {\frac {n + 1}{2}} \Gamma \left(\frac {n + 1}{2}\right)\tag{7}
+\]
+
+\[
+\int_ {\mathbf {R}} x ^ {2 n} e ^ {- x ^ {2} / 2} d x = (2 \pi) ^ {1 / 2} \frac {(2 n) !}{2 ^ {n} n !}\tag{8}
+\]
+
+\[
+\int_ {\mathbf {R}} x ^ {2 n + 1} e ^ {- x ^ {2} / 2} d x = 0.
+\]
+
+回忆公式
+
+\[
+\Gamma (s) = \int_ {0} ^ {\infty} u ^ {s - 1} e ^ {- u} d u\tag{9}
+\]
+
+该公式对每个实数 \(s > 0\) 都成立（FRV, VII, §1, No.~3, 命题 3）。作变量代换 \(x = (2u)^{1/2}\)，由 (9) 得到
+
+\[
+\int_ {0} ^ {\infty} x ^ {n} e ^ {- x ^ {2} / 2} d x = \int_ {0} ^ {\infty} (2 u) ^ {n / 2} e ^ {- u} \frac {1}{2} 2 ^ {1 / 2} u ^ {- 1 / 2} d u = 2 ^ {\frac {n - 1}{2}} \Gamma \left(\frac {n + 1}{2}\right),
+\]
+
+从而得到公式 (6)，因为
+
+\[
+\int_ {\mathbf {R}} | x | ^ {n} e ^ {- x ^ {2} / 2} d x = 2 \int_ {0} ^ {\infty} x ^ {n} e ^ {- x ^ {2} / 2} d x.
+\]
+
+公式 (7) 由 (6) 及关系
+
+\[
+\Gamma \left(n + \frac {1}{2}\right) = \pi^ {1 / 2} \frac {(2 n) !}{2 ^ {2 n} n !}.\tag{10}
+\]
+
+当 \(n = 0\) 时，该关系化为 \(\Gamma(\frac{1}{2}) = \pi^{1/2}\)，即 FRV, VII, §1, No.~3 的公式 (21)。一般情形则对 \(n\) 作归纳，并利用关系 \(\Gamma(x + 1) = x \cdot \Gamma(x)\) 得到（同上，§1, No.~1）。
+
+最后，公式 (8) 由函数 \(x \mapsto x^{2n+1}e^{-x^2/2}\) 为奇函数这一事实得出。
+
+引理 2. --- 对每个复数 y，
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} e ^ {i x y} d x = e ^ {- y ^ {2} / 2}.\tag{11}
+\]
+
+特别地，
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} d x = 1.
+\]
+
+作变量代换 \(x \mapsto -x\)，得到
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} e ^ {i x y} d x = (2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} e ^ {- i x y} d x;
+\]
+
+由于 \(\cos u = \frac{e^{iu} + e^{-iu}}{2}\) 对每个复数 \(u\) 成立，所以
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} e ^ {i x y} d x = (2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} \cos x y d x.\tag{12}
+\]
+
+对每个整数 \(n \geqslant 0\)，置
+
+\[
+g _ {n} (x) = (- 1) ^ {n} (2 \pi) ^ {- 1 / 2} \frac {(x y) ^ {2 n}}{(2 n) !} e ^ {- x ^ {2} / 2}.
+\]
+
+由 (7)，
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\int_ {\mathbf {R}} | g _ {n} (x) | d x = \frac {1}{n !} \biggl (\frac {| y | ^ {2}}{2} \biggr) ^ {n}\tag{14}
+\]
+
+\[
+\int_ {\mathbf {R}} g _ {n} (x) d x = \frac {1}{n !} \Big (- \frac {y ^ {2}}{2} \Big) ^ {n},
+\]
+
+从而
+
+\[
+\sum_ {n = 0} ^ {\infty} \int_ {\mathbf {R}} | g _ {n} (x) | d x = e ^ {| y | ^ {2} / 2} <   + \infty .
+\]
+
+此外，
+
+\[
+(2 \pi) ^ {- 1 / 2} e ^ {- x ^ {2} / 2} \cos x y = \sum_ {n = 0} ^ {\infty} g _ {n} (x),
+\]
+
+这个等式可以逐项积分，从而得到
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} \cos x y d x = \sum_ {n = 0} ^ {\infty} \int_ {\mathbf {R}} g _ {n} (x) d x = e ^ {- y ^ {2} / 2}
+\]
+
+根据 (14)，公式 (11) 随即由 (12) 得出。
+

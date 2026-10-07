@@ -1,0 +1,215 @@
+\subsection{对偶性；自反模}
+
+回忆，从现在起假设整环 A 是 Noether 且整闭的，并且 P(A)（或简称 P）表示 A 的高度为 1 的素理想集合。关于 A 的每个格都是有限生成的 A-模（第 1 节，命题 1 的推论）。
+
+设 V 是 K 上的有限秩向量空间，V* 是其对偶，V** 是其二重对偶；借助典范映射 \(c_{V}\)（代数，第二章，§ 7，第 5 节，定理 6），我们把 V 与 V** 识别。设 M 是 V 的格；回忆，M 的对偶 A-模 M* 可典范地识别为 M 的对偶格，即由满足对所有  都有  的 \(x^{*} \in V^{*}\) 组成的集合；因此，M 的二重对偶 A-模 M** 是 V 的一个包含 M 的格。此外 M*** = M*，因为关系 \(\langle x, x^{*} \rangle \in A\)\(x \in M\)\(M \subset M**\) 蕴含 \((\mathbf{M}^{**})^{*} \subset \mathbf{M}^{*}\)，而另一方面由上面可知 \(M^{*} \subset (\mathbf{M}^{*})^{**}\)（参见集合论，第三章，§ 1，第 5 节，命题 2）。
+
+若 p 是素理想，将命题 5 应用于 N = A，得到关系 \((\mathbf{M}^{*})_{\mathfrak{p}} = (\mathbf{M}_{\mathfrak{p}})^{*}\)，这说明可以对两项都使用记号 \(M_{p}^{*}\)。
+
+定理 1. 若 \(\mathbf{M}\) 是 \(\mathbf{V}\) 的格，则 \(\mathbf{M}^{*} = \bigcap_{\mathfrak{p} \in \mathbb{P}} \mathbf{M}_{\mathfrak{p}}^{*}\)。
+
+显然，\(\mathbf{M}^*\) 包含于每个 \(\mathbf{M}_{\mathfrak{p}}^{*}\)\(x^{*} \in \bigcap_{\mathfrak{p} \in \mathbf{P}} \mathbf{M}_{\mathfrak{p}}^{*}\)。反之，设 ；若 \(x \in \mathbf{M}\)，则 \(\langle x, x^{*} \rangle \in \bigcap_{\mathfrak{p} \in \mathbf{P}} \mathbf{A}_{\mathfrak{p}}\)，而由于 \(\mathbf{A} = \bigcap_{\mathfrak{p} \in \mathbf{P}} \mathbf{A}_{\mathfrak{p}}\)（§ 1，第 6 节，定理 4），有 \(x^{*} \in \mathbf{M}^{*}\)。
+
+推论。\(\mathbf{M}^{**} = \bigcap_{p \in P}\mathbf{M}_{p}\)
+
+将定理 1 应用于 \(\mathbf{M}^*\)，得到 \(\mathbf{M}^{**} = \bigcap_{\mathfrak{p}\in \mathbb{P}}\mathbf{M}_{\mathfrak{p}}^{**}\)。但是，由于 \(\mathbf{A}_{\mathfrak{p}}\) 是主理想整环（§ 1，第 6 节，定理 4），\(\mathbf{M}_{\mathfrak{p}}\) 是有限生成的自由 \(\mathbf{A}_{\mathfrak{p}}\)-模，因而 \(\mathbf{M}_{\mathfrak{p}}^{**}\) 可典范地识别为 \(\mathbf{M}_{\mathfrak{p}}\)（代数，第二章，§ 2，第 7 节，命题 14），推论得证。
+
+对于关于 A 的任意格 M，典范映射 \(c_{M}: M \to M^{**}\)（代数，第二章，§2，第 7 节）把 \(x \in M\) 中的元素  与其自身识别，因为 x 是 \(V = V^{**}\) 中满足对所有  都有 \(\langle x, x^{*} \rangle = \langle y, x^{*} \rangle\) 的唯一元素 y，这是由于 \(x^{*} \in M^{*}\)\(M^{*}\) 生成 \(V^{*}\)。若 \(M^{**} = M\)（同上），则称 M 是自反的。由于如上所见 \(M^{*} = (M^{*})^{**}\)，可见任意格的对偶总是自反的。
+
+注（1）。设 M 是有限生成的 A-模；显然，M 的对偶 M*（识别为 \(\operatorname{Hom}_{\mathbf{A}}(\mathbf{M}, \mathbf{K})\) 的一个子-A-模）是 K-向量空间 \(\operatorname{Hom}_{\mathbf{A}}(\mathbf{M}, \mathbf{K})\) 的格；特别地，每个有限生成的自反 A-模都同构于某个合适 K-向量空间的格。
+
+定理 2. 若 M 是 V 的格，则下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  M 是自反的。
+\item
+  \(\mathbf{M} = \bigcap_{\mathfrak{p}\in \mathbb{P}}\mathbf{M}_{\mathfrak{p}}.\)
+\item
+  \(\operatorname{Ass}(\mathbf{V} / \mathbf{M})\subset \mathbf{P}\)
+\end{enumerate}
+
+条件 (a) 与 (b) 的等价性由定理 1 的推论得到。若 (b) 成立，则 V/M 可典范地识别为乘积 \(\prod_{\mathfrak{p} \in \mathbb{P}} (\mathrm{V} / \mathrm{M}_{\mathfrak{p}})\) 的一个子-A-模；但事实上，它包含于直和 \(\bigoplus_{\mathfrak{p} \in \mathbb{P}} (\mathrm{V} / \mathrm{M}_{\mathfrak{p}})\)：因为若 \(\mathbf{L} \subset \mathbf{M}\) 是一个自由格，且 \((e_i)_{1 \leq i \leq n}\) 是 \(\mathbf{L}\) 的一个基，则点 \(x_i\)\(x \in \mathbf{V}\) 关于 \((e_i)\) 的每个坐标 ，除有限多个  外，都属于 \(\mathbf{A}_{\mathfrak{p}}\)。于是关系 \(\mathfrak{p} \in \mathbb{P}\)\(\mathrm{V} / \mathrm{M} \subset \bigoplus_{\mathfrak{p} \in \mathbb{P}} (\mathrm{V} / \mathrm{M}_{\mathfrak{p}})\) 推出：
+
+\[
+\operatorname{Ass} (\mathrm{V} / \mathrm{M}) \subset \bigcap_ {\mathfrak {p} \in \mathrm{P}} \operatorname{Ass} (\mathrm{V} / \mathrm{M} _ {\mathfrak {p}}).
+\]
+
+由于 \(V / M_{p}\) 是 \(A_{p}\)-模，\(A - p\) 中的元素不能湮灭 \(\neq 0\)\(V / M_{p}\) 的非零元，因为 \(A - p\) 中的元素在 \(A_{p}\) 中都是可逆的；因此 \(\operatorname{Ass}(V / M_{p})\) 中的元素都包含于 \(p\)，且都不等于 \(\neq 0\)，因为 \(V / M_{p}\) 是挠 \(A_{p}\)-模；由于 \(p\) 的高度为 1，若 ，则必有 \(\operatorname{Ass}(V / M_{p}) = \{p\}\)，而若 \(V / M_{p} \neq \{0\}\)，则 \(\operatorname{Ass}(V / M_{p}) = \varnothing\)；因此 \(V / M_{p} = \{0\}\)\(\operatorname{Ass}(V / M) \subset P\)。
+
+最后，若条件 (c) 成立，则
+
+\[
+\operatorname{Ass} (\mathbf {M} ^ {* *} / \mathbf {M}) \subset \operatorname{Ass} (\mathbf {V} / \mathbf {M}) \subset \mathbf {P}.
+\]
+
+另一方面，若 \(\mathfrak{p} \in \mathbf{P}\)，则在定理 1 的推论的证明中已经看到 \(\mathbf{M}_{\mathfrak{p}}^{**} = \mathbf{M}_{\mathfrak{p}}\)，从而 \(\mathfrak{p} \notin \operatorname{Ass}(\mathbf{M}^{**}/\mathbf{M})\)（第四章，§ 1，第 3 节，命题 7 的推论 1）。我们得出 \(\operatorname{Ass}(\mathbf{M}^{**}/\mathbf{M}) = \varnothing\)，从而 \(\mathbf{M}^{**} = \mathbf{M}\)（第四章，§ 1，第 1 节，命题 2 的推论 1）。
+
+推论。设 M、N 是 V 关于 A 的两个格，且 N 是自反的。要有 \(M \subset N\)，充要条件是对所有 \(p \in P\)，都有 \(M_{p} \subset N_{p}\)。
+
+该条件显然必要；若它满足，则
+
+\[
+\bigcap_ {p \in P} M _ {p} \subset \bigcap_ {p \in P} N _ {p} = N.
+\]
+
+由于 \(\mathbf{M} \subset \mathbf{M}^{**} = \bigcap_{\mathfrak{p} \in \mathbb{P}} \mathbf{M}_{\mathfrak{p}}\)，当然有 \(\mathbf{M} \subset \mathbf{N}\)。
+
+例子
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  每个自由格都是自反的。
+\item
+  取 \(\mathbf{V} = \mathbf{K}\)。 的分式理想 \(\mathfrak{a}\) 成为自反格的充要条件，是它为除性理想；这是由定理 2 的条件 (b) 以及 §1，第 4 节，命题 5 和命题 7 得出的。\(\mathbf{K}\)
+\item
+  设 M 是关于 A 的格；若 S 是 A 中不含 0 的乘性子集，则第 1 节命题 5 表明 \(\mathrm{S}^{-1}(\mathbf{M}^{*}) = (\mathrm{S}^{-1}\mathrm{M})^{*}\)；若 M 是自反的，则 \(S^{-1}M\) 因而是关于 \(S^{-1}A\) 的自反格。
+\end{enumerate}
+
+命题 6. (i) 若 \(\mathbf{M}_1\) 和 \(\mathbf{M}_2\) 是 \(\mathbf{V}\) 的自反格，则 \(\mathbf{M}_1 \cap \mathbf{M}_2\) 也是自反格。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  若 \(\mathbf{W}\) 是 \(\mathbf{V}\) 的向量子空间，且 \(\mathbf{M}\) 是 \(\mathbf{V}\) 的自反格，则 \(\mathbf{M} \cap \mathbf{W}\) 是 \(\mathbf{W}\) 的自反格。
+\item
+  设 V、W 是 K 上的两个有限秩向量空间，M（相应地 N）是 V（相应地 W）的格。若 N 是自反的，则 \(\operatorname{Hom}_{\mathbb{K}}(\mathrm{V}, \mathrm{W})\) 的格 N: M（第 1 节，命题 3）是自反的。
+\item
+  对所有 ，\((\mathbf{M}_1 \cap \mathbf{M}_2)_p = (\mathbf{M}_1)_p \cap (\mathbf{M}_2)_p\)（第二章，§ 2，第 4 节，定理 1）。若 \(p \in P\)\(\mathbf{M}_1 = \bigcap_{p \in P} (\mathbf{M}_1)_p\) 且 \(\mathbf{M}_2 = \bigcap_{p \in P} (\mathbf{M}_2)_p\)，则
+\end{enumerate}
+
+\[
+\mathrm{M} _ {1} \cap \mathrm{M} _ {2} = \bigcap_ {\mathfrak {p} \in \mathrm{P}} (\mathrm{M} _ {1} \cap \mathrm{M} _ {2}) _ {\mathfrak {p}}
+\]
+
+因此由定理 2 得出结论。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  同样，\((\mathbf{M} \cap \mathbf{W})_{\mathfrak{p}} = \mathbf{M}_{\mathfrak{p}} \cap \mathbf{W}_{\mathfrak{p}} = \mathbf{M}_{\mathfrak{p}} \cap \mathbf{W}\)，因此
+\end{enumerate}
+
+\[
+\mathbf {M} \cap \mathbf {W} = \bigcap_ {\mathfrak {p} \in \mathbf {P}} (\mathbf {M} \cap \mathbf {W}) _ {\mathfrak {p}},
+\]
+
+这证明了 (ii)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  由于 \(\mathbf{M}\) 是有限生成的，由第 1 节命题 5 得 \((\mathbf{N}:\mathbf{M})_{\mathfrak{p}} = \mathbf{N}_{\mathfrak{p}}:\mathbf{M}_{\mathfrak{p}}\)；此外，关系 \(\mathbf{N} = \bigcap_{\mathfrak{p}\in P}\mathbf{N}_{\mathfrak{p}}\) 推出：
+\end{enumerate}
+
+\[
+\mathbf {N}: \mathbf {M} = \bigcap_ {\mathfrak {p} \in \mathbf {P}} \left(\mathbf {N} _ {\mathfrak {p}}: \mathbf {M} _ {\mathfrak {p}}\right).
+\]
+
+因为若 \(f \in \bigcap_{\mathfrak{p} \in \mathbb{P}} (\mathbf{N}_{\mathfrak{p}}: \mathbf{M}_{\mathfrak{p}})\) 且 \(x \in \mathbf{M}\)，则 \(f(x) \in \bigcap_{\mathfrak{p} \in \mathbb{P}} \mathbf{N}_{\mathfrak{p}} = \mathbf{N}\)，从而 \(f \in \mathbf{N}: \mathbf{M}\)；这说明 \(\mathbf{N}: \mathbf{M}\) 是自反的。
+
+\textbf{注}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  若 \(\mathbf{M}_1\) 和 \(\mathbf{M}_2\) 是 \(\mathbf{V}\) 的自反格，则格 \(\mathbf{M}_1 + \mathbf{M}_2\) 不一定自反（参见 § 1，习题 2）。
+\item
+  若 M 是有限生成的 A-模，T 是其挠子模，则 M 的对偶 \(M^{*}\) 与 M/T 的对偶相同，因为对于 M 上的每个线性形式 f，\(f(T)\) 是 A 的挠子模，因而为零。由于 M/T 同构于某个 K-向量空间的格，可见每个有限生成 A-模的对偶都是自反的。
+\end{enumerate}
+
+命题 7. 设 \(0 \to M \to N \to Q \to 0\) 是 A-模的正合列。设 \(N\) 是有限生成且无挠的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+若 \(\mathbf{M}\) 是自反的，则 \(\operatorname{Ass}(\mathbf{Q}) \subset \mathbf{P} \cup \{\{0\}\}\)（换言之，\(\mathbf{Q}\) 的每个伴随理想要么是 (0)，要么高度为 1）。
+\item
+  反之，若 N 是自反的且 \(\operatorname{Ass}(\mathbf{Q}) \subset \mathbf{P} \cup \{\{0\}\}\)，则 M 是自反的。
+\end{enumerate}
+
+由于 A 是 Noether 环，M 也是有限生成的；若写成 \(V = M_{(K)}\)、\(W = N_{(K)}\)，则 M（相应地 N）可典范地识别为 V（相应地 W）的格（第 1 节，命题 1）。考虑两个正合列：
+
+\[
+0 \rightarrow \mathrm{V} / \mathrm{M} \rightarrow \mathrm{W} / \mathrm{M} \rightarrow \mathrm{W} / \mathrm{V} \rightarrow 0
+\]
+
+\[
+0 \rightarrow Q \rightarrow W / M \rightarrow W / N \rightarrow 0.
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  我们得到（第四章，§ 1，第 1 节，命题 3）：
+\end{enumerate}
+
+\[
+\operatorname{Ass} (Q) \subset \operatorname{Ass} (W / M) \subset \operatorname{Ass} (V / M) \cup \operatorname{Ass} (W / V).
+\]
+
+若 M 是自反的，则 \(\operatorname{Ass}(V/M) \subset P\)（定理 2）；另一方面，显然 \(\operatorname{Ass}(W/V)\) 要么为空，要么简化为 \(\{0\}\)；因此得到 (i)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  同样：
+\end{enumerate}
+
+\[
+\operatorname{Ass} (\mathbf {V} / \mathbf {M}) \subset \operatorname{Ass} (\mathbf {W} / \mathbf {M}) \subset \operatorname{Ass} (\mathbf {Q}) \cup \operatorname{Ass} (\mathbf {W} / \mathbf {N}).
+\]
+
+因此假设推出 \(\operatorname{Ass}(\mathbf{V} / \mathbf{M}) \subset \mathbf{P} \cup \{\{0\}\}\)。但是 \(\mathbf{V} / \mathbf{M}\) 是挠 A-模，故 \(\{0\} \notin \operatorname{Ass}(\mathbf{V} / \mathbf{M})\)；于是定理 2 表明 \(\mathbf{M}\) 是自反的。
+
+命题 8. 设 R、S 是两个交换环，\(\rho: \mathrm{R} \to \mathrm{S}\) 是环同态，M 是有限生成的 R-模。设 R 是 Noether 环且 S 是平坦 R-模。则若 M 是自反的，S-模 \(\mathrm{M}_{(\mathrm{S})} = \mathrm{M} \otimes_{\mathrm{R}} \mathrm{S}\) 也是自反的。
+
+我们知道（第一章，§ 2，第 10 节，命题 11）存在典范同构 \(\omega_{\mathbf{M}}\colon (\mathbf{M}^{*})_{(\mathbf{S})}\to (\mathbf{M}_{(\mathbf{S})})^{*}\)，使得
+
+\[
+\langle x \otimes 1, \omega_ {\mathrm{M}} (x ^ {*} \otimes 1) \rangle = \rho (\langle x, x ^ {*} \rangle)
+\]
+
+对于 \(x \in \mathbf{M}\)、\(x^{*} \in \mathbf{M}^{*}\)。由于 \(\mathbf{M}\) 是有限生成自由 R-模 \(\mathbf{L}\) 的商，\(\mathbf{M}^{*}\) 同构于对偶 \(\mathbf{L}^{*}\) 的一个子-R-模，而 \(\mathbf{L}^{*}\) 是自由且有限生成的；由于 \(\mathbf{R}\) 是 Noether 环，\(\mathbf{M}^{*}\) 因而也是有限生成的 R-模，从而有同构 \(\omega_{\mathbf{M}^{*}}: (\mathbf{M}^{**})_{(\mathbf{S})} \to ((\mathbf{M}^{*})_{(\mathbf{S})})^{*}\)，使得
+
+\[
+\langle x ^ {*} \otimes 1, \omega_ {M ^ {*}} (x ^ {* *} \otimes 1) \rangle = \rho (\langle x ^ {*}, x ^ {* *} \rangle)
+\]
+
+对于 \(x^{*} \in \mathbf{M}^{*}\) 和 \(x^{**} \in \mathbf{M}^{**}\)。另一方面，存在同构 \(^t\omega_{\mathbf{M}}: (\mathbf{M}_{(\mathbf{S})})^{**} \to ((\mathbf{M}^{*})_{(\mathbf{S})})^{*}\)，从而通过复合得到典范同构：
+
+\[
+\phi = \left(^ {t} \omega_ {\mathrm{M}} ^ {- 1}\right) \circ (\omega_ {\mathrm{M} ^ {*}}): (\mathrm{M} ^ {* *}) _ {(\mathrm{S})} \rightarrow (\mathrm{M} _ {(\mathrm{S})}) ^ {* *}
+\]
+
+使得在上述记号下：
+
+\[
+\langle \omega_ {M} (x ^ {*} \otimes 1), \phi (x ^ {* *} \otimes 1) \rangle = \rho (\langle x ^ {*}, x ^ {* *} \rangle).\tag{1}
+\]
+
+现在考虑典范同态 \(c_{\mathbf{M}}: \mathbf{M} \to \mathbf{M}^{**}\)，并证明复合同态：
+
+\[
+\psi : \mathrm{M} _ {(\mathbf {S})} \xrightarrow [ c _ {\mathbf {M}} \otimes 1 ]{} (\mathrm{M} ^ {* *}) _ {(\mathbf {S})} \longrightarrow (\mathrm{M} _ {(\mathbf {S})}) ^ {* *}\tag{2}
+\]
+
+正是典范同态 \(c_{\mathbf{M}_{(\mathbf{S})}}\)。这立即由（1）给出的关系得到：
+
+\[
+\begin{array}{r l} \langle \omega_ {\mathrm{M}} (x ^ {*} \otimes 1), \psi (x \otimes 1) \rangle = & \rho (\langle x ^ {*}, c _ {\mathrm{M}} (x) \rangle) \\ & = \rho (\langle x, x ^ {*} \rangle) = \langle x \otimes 1, \omega_ {\mathrm{M}} (x ^ {*} \otimes 1) \rangle \end{array}
+\]
+
+并且 \(\omega_{\mathbf{M}}(x^{*}\otimes 1)\) 这些元素生成 \((\mathbf{M}_{(\mathbf{S})})^{*}\)。既然如此，\(\mathbf{M}\) 自反这一假设意味着 \(c_{\mathbf{M}}\) 是双射，因而 \(c_{\mathbf{M}}\otimes 1\) 也是双射，所以 \(\psi = c_{\mathbf{M}_{(\mathbf{S})}}\) 是双射，这就证明了命题。
+

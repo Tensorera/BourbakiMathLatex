@@ -1,0 +1,110 @@
+\subsection{伽罗瓦下降}
+
+在本小节中，我们用 N 表示一个域，\(\Gamma\) 表示 N 的一个自同构群，\(\varepsilon\) 表示 \(\Gamma\) 的单位元，K 表示 \(\Gamma\) 的不变量域。
+
+设 \(\mathbf{V}\) 是 \(\mathbf{N}\) 上的一个向量空间。我们回忆（II，第 317 页），\(\mathbf{V}\) 上的一个 K-结构是指一个向量子 K-空间 \(\mathbf{V}_0\) （\(\mathbf{V}\) 的），它使得 K-线性映射 \(\varphi: \mathbf{N} \otimes_{\mathbf{K}} \mathbf{V}_0 \to \mathbf{V}\) （把 \(\lambda \otimes x\) 映到 \(\lambda x\) ）是双射。设 \(\mathbf{V}_0\) 是这样一个 K-结构；对每个 \(\sigma \in \Gamma\) ，令 \(u_\sigma = \varphi \circ (\sigma \otimes \mathrm{Id}_{\mathbf{V}_0}) \circ \varphi^{-1}\) ；则我们有 \(u_\sigma \left( \sum_{i \in I} \lambda_i e_i \right) = \sum_{i \in I} \sigma(\lambda_i) e_i\)
+
+对元素族 \(\lambda_{i}\) （\(\mathbf{N}\) 中的）与元素族 \(e_i\) （\(\mathbf{V}_0\) 中的），由此得到关系式
+
+\[
+u _ {\sigma} (x + y) = u _ {\sigma} (x) + u _ {\sigma} (y)\tag{1}
+\]
+
+\[
+u _ {\sigma} (\lambda x) = \sigma (\lambda) u _ {\sigma} (x)\tag{2}
+\]
+
+\[
+u _ {\sigma} \circ u _ {\tau} = u _ {\sigma \tau}\tag{3}
+\]
+
+\[
+u _ {\varepsilon} = \operatorname{Id} _ {\mathrm{V}}\tag{4}
+\]
+
+（对 \(\sigma, \tau\) （\(\Gamma\) 中的）、\(x, y\) （\(\mathbf{V}\) 中的）以及 \(\lambda\) （\(\mathbf{N}\) 中的）。）
+
+命题 6.——a) 设 V 是 N 上的一个带 K-结构的向量空间。向量 \(x \in V\) 在 K 上有理，当且仅当 \(u_{\sigma}(x) = x\) （对所有 \(\sigma \in \Gamma\) ）。V 的向量子 N-空间 W 在 K 上有理，当且仅当 \(u_{\sigma}(W) \subset W\) （对所有 \(\sigma \in \Gamma\) ）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(V_{1}\) 与 \(V_{2}\) 是 N 上的两个向量空间，各带一个 K-结构。\(V_{1}\) 到 \(V_{2}\) 中的一个线性映射在 K 上有理，当且仅当 \(f(u_{\sigma}(x)) = u_{\sigma}(f(x))\) （对所有 \(\sigma \in \Gamma\) 及所有 \(x \in V_{1}\) ）。
+\end{enumerate}
+
+显然，K 是由这样的 \(x \in N\) 组成的集：\(\sigma(xy) = x\sigma(y)\) 对所有 \(\sigma \in \Gamma\) 及所有 \(y \in N\) 成立。因此该命题由定理 1（II，第 324 页）得出。
+
+推论.——设 \(V_{0}\) 是 K 上的一个向量空间，W 是 \(N \otimes_{K} V_{0}\) 的一个向量子 N-空间。假设 W 在所有映射 \(\sigma \otimes Id_{V_{0}}\) （\(\sigma \in \Gamma\) ）下稳定。设 \(W_{0}\) 为由这样的 \(x \in V_{0}\) 组成的集：\(1 \otimes x \in W\) ；则 \(W_{0}\) 是 \(V_{0}\) 的唯一使 \(W = N \otimes_{K} W_{0}\) 的向量子 K-空间。
+
+只需指出，形如 \(1 \otimes x\) （ \(x \in \mathbf{V}_0\) ）的元素组成的集是 \(\mathbf{N} \otimes_{\mathbf{K}} \mathbf{V}_0\) 上的一个 K-结构，对此结构我们有 \(u_\sigma = \sigma \otimes \mathrm{Id}_{\mathbf{V}_0}\) （对 \(\sigma \in \Gamma\) ）。
+
+命题 7.——设 V 是 N 上的一个向量空间，\((u_{\sigma})_{\sigma \in \Gamma}\) 是 V 到自身的、满足 (1) 至 (4) 的一族映射，\(V_{0}\) 是由这样的 \(x \in V\) 组成的集：\(u_{\sigma}(x) = x\) （对所有 \(\sigma \in \Gamma\) ）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(\mathbf{V}_0\) 是 \(\mathbf{V}\) 的一个向量子 K-空间，且 K-线性映射 \(\varphi\) （\(\mathbf{N} \otimes_{\mathbf{K}} \mathbf{V}_0\) 到 \(\mathbf{V}\) 中的，它把 \(\lambda \otimes x\) 映到 \(\lambda x\) ）是单射。
+\item
+  若 \(\Gamma\) 有限，则 \(\varphi\) 是双射，且 \(\mathbf{V}_0\) 是 \(\mathbf{V}\) 上的一个 K-结构。
+\end{enumerate}
+
+显然 \(\mathbf{V}_0\) 是 \(\mathbf{V}\) 的一个向量子 K-空间。
+
+公式 \(u_{\sigma} \circ \varphi = \varphi \circ (\sigma \otimes \operatorname{Id}_{\mathbf{V}_{0}})\) 表明 \(\varphi\) 的核 W 在映射 \(\sigma \otimes \operatorname{Id}_{\mathbf{V}_{0}}\) 下稳定；于是由命题 6 的推论，存在一个子空间 \(W_{0}\) （\(V_{0}\) 的）使得 \(W = N \otimes_{K} W_{0}\) 。若 x 属于 \(W_{0}\) ，则我们有 \(x = \varphi(1 \otimes x) = 0\) ，故 \(W_{0} = 0\) ，从而 W = 0。这就证明了 a)。
+
+现在设 \(\Gamma\) 有限；我们要证明 \(\varphi\) 是满射，或等价地，\(V_0\) 生成向量 N-空间 V。设 \(f\) 是 V 上的一个 N-线性型，它在 \(V_0\) 上的限制为零。设 \(x \in V\) ；对每个 \(\lambda \in N\) ，V 的元素 \(y_\lambda = \sum_{\sigma \in \Gamma} u_\sigma(\lambda x)\) 显然属于 \(V_0\) ，从而 \(f(y_\lambda) = 0\) ，即
+
+\(\sum_{\sigma \in \Gamma}f(u_{\sigma}(x))\sigma (\lambda) = 0\) 。于是由戴德金定理（V，第 27 页，推论 2），我们有
+
+\(f(u_{\sigma}(x)) = 0\) （对每个 \(\sigma \in \Gamma\) ）；特别地，取 \(\sigma = \varepsilon\) 便得 \(f(x) = 0\) ，这表明 \(f = 0\) 。这就证明了 \(b\) )。
+
+设 \(\mathbf{M}\) 是 \(\mathbf{N}\) 上的一个向量空间；对每个 \(\sigma \in \Gamma\) ，令 \(\mathbf{M}^{\sigma}\) 为 \(\mathbf{N}\) 上的、以 \(\mathbf{M}\) 的同一加法群为基础群、外运算律为 \((\lambda, x) \mapsto \sigma(\lambda)x\) 的向量空间。记 \(\mathbf{V} = \prod_{\sigma \in \Gamma} \mathbf{M}^{\sigma}\) ；\(\mathbf{V}\) 的基础加法群是
+
+\(\Gamma\) 到 \(\mathbf{M}\) 中的全体映射所成的群，其外运算律由下式定义：
+
+\[
+(\lambda . h) (\sigma) = \sigma (\lambda) h (\sigma) \quad (\lambda \in \mathrm{N}, h \in \mathrm{V}, \sigma \in \Gamma).\tag{5}
+\]
+
+（乘积 \(\sigma(\lambda) h(\sigma)\) 是在向量空间 M 中计算的。）进而，我们用下式在 \(\mathbf{N} \otimes_{\mathbf{K}} \mathbf{M}\) 上定义一个 \(\mathbf{N}\) 上的向量空间结构：
+
+\[
+\lambda \left(\sum_ {i} \mu_ {i} \otimes x _ {i}\right) = \sum_ {i} \lambda \mu_ {i} \otimes x _ {i}.
+\]
+
+最后，我们用 \(\psi\) 表示 \(\mathbf{N} \otimes_{\mathbf{K}} \mathbf{M}\) 到 \(\mathbf{V}\) 中的、由下述关系刻画的 K-线性映射：
+
+\[
+\psi (\lambda \otimes x) (\sigma) = \sigma (\lambda). x\tag{6}
+\]
+
+（对 \(\lambda \in \mathbf{N}\) 、\(x \in \mathbf{M}\) 及 \(\sigma \in \Gamma\) 。）显然 \(\psi\) 是 N-线性的。
+
+命题 8.——N-线性映射 \(\psi\) （\(\mathbf{N} \otimes_{\mathbf{K}} \mathbf{M}\) 到 \(\mathbf{V} = \prod_{\sigma \in \Gamma} \mathbf{M}^{\sigma}\) 中的）是
+
+单射，且当 \(\Gamma\) 有限时是双射。
+
+对每个 \(\sigma\in\Gamma\) ，我们用下式定义 V 到 V 的一个映射 \(u_{\sigma}\) ：
+
+\[
+\left(u _ {\sigma} h\right) (\tau) = h (\tau \sigma)\tag{7}
+\]
+
+（对 \(h \in \mathbf{V}\) 与 \(\tau \in \Gamma\) 。）(1) 至 (4) 的验证是直接的。用 \(\mathbf{V}_0\) 表示由这样的 \(h \in \mathbf{V}\) 组成的集：\(u_{\sigma}(h) = h\) （对所有 \(\sigma \in \Gamma\) ）。对每个 \(x \in \mathbf{M}\) ，令 \(\theta(x)\) 为 \(\Gamma\) 到 \(\mathbf{M}\) 中的、以 \(x\) 为值的常值映射；则 \(\theta\) 是 \(\mathbf{M}\) 到 \(\mathbf{V}_0\) 上的一个 K-同构。若如上定义同态 \(\varphi: \mathbf{N} \otimes_{\mathbf{K}} \mathbf{V}_0 \to \mathbf{V}\) ，则我们有 \(\psi = \varphi \circ (\mathrm{Id}_{\mathbf{N}} \otimes \theta)\) ，于是命题 8 由命题 7 得出。
+
+推论.——设 \(\psi\) 是 N \(\otimes_{K}\) N 到积向量空间 \(N^{\Gamma}\) 中的 K-线性映射，它使 \(\psi(x \otimes y) (\sigma) = \sigma(x)y\) （对 N 中的 x, y 及 \(\sigma \in \Gamma\) ）。则 \(\psi\) 是单射，且当 \(\Gamma\) 有限时是双射。
+
+这是命题 8 当 \(\mathbf{M} = \mathbf{N}\) 时的特殊情形。
+
+注.——1) 设 F 是 K 的一个扩张，N 是 F 的一个子扩张，并设 \(\Gamma\) 是 N 的一个有限自同构群，其不变量域为 K。命题 8 蕴含存在一个 K-代数同构 \(\theta: \mathbf{N} \otimes_{\mathbf{K}} \mathbf{F} \to \mathbf{F}^{\Gamma}\) ，它由 \(\theta(x \otimes y)\) ( \(\sigma\) ) = \(\sigma(x)y\) （对 \(x \in \mathbf{N}\) 、\(y \in \mathbf{F}\) 及 \(\sigma \in \Gamma\) ）刻画。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  记号 K、N 与 \(\Gamma\) 的含义同前。对每个整数 \(n \geqslant 1\) ，令 \(A_{n}\) 为 n 个都与 N 相同的 K-代数的张量积；令 \(B_{n}\) 为 \(\Gamma^{n-1}\) 到 N 中的映射组成的集。对 n 用归纳法，我们可以从命题 8 的推论推出存在一个同构 \(\varphi_{n}: A_{n} \to B_{n}\) ，它把 \(x_{1} \otimes \ldots \otimes x_{n}\) 映到函数 \((\sigma_{1}, \ldots, \sigma_{n-1}) \mapsto \sigma_{1}(x_{1}) \ldots \sigma_{n-1}(x_{n-1}) x_{n}\) 。
+\end{enumerate}
+

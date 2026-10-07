@@ -1,0 +1,127 @@
+\subsection{具有非超度量绝对值的域的结构}
+
+定理 1 （Gelfand-Mazur）. 设 \(\mathbf{K}\) 是域 \(\mathbf{R}\) 上的一个代数，具有下面两条性质：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  K 是一个（未必交换的）域。
+\item
+  K 上存在与 K 上的代数结构相容的范数 \(x \mapsto \| x \|\) （《一般拓扑学》第九章 § 3 第 7 节定义 9）。
+\end{enumerate}
+
+那么代数 \(\mathbf{K}\) 同构于代数 \(\mathbf{R},\mathbf{C}\) 或 \(\mathbf{H}\) 之一。
+
+回顾（同前），总可以假定对 K 中一切 x,y 有 \(\|xy\|\leqslant\|x\|. \|y\|\) 。我们将给 K 以由该范数定义的（与代数结构相容的）拓扑。
+
+\textbf{(A) 第一种情形：\(\mathbf{K}\) 是交换的且存在 \(j\in \mathbf{K}\) 使得 \(j^2 = -1\)}\par
+
+那么存在一个同构 \(\sigma\) ，它把域 \(\mathbf{C}\) 映到 \(\mathbf{K}\) 的一个子域上，使得 \(\sigma(\xi + i\eta) = \xi \cdot 1 + \eta \cdot j\) 对 \(\xi, \eta\) （在 \(\mathbf{R}\) 中）成立。我们将用反证法证明 \(\mathbf{K} = \sigma(\mathbf{C})\) 。于是设存在 \(x \in \mathbf{K} - \sigma(\mathbf{C})\) ；那么对一切 \(z \in \mathbf{C}, x - \sigma(z)\) 在 \(\mathbf{K}\) 中可逆；记 \(\mathrm{F}(z) = (x - \sigma(z))^{-1}\) ；由于 \(\sigma\) 连续且取逆在 \(\mathbf{K}\) 上连续（《一般拓扑学》第九章 §3 第 7 节命题 13 应用于 \(\mathbf{K}\) 的完备化代数），\(\mathbf{F}\) 是 \(\mathbf{C}\) 到 \(\mathbf{K}\) 的连续映射。此外，对 \(z \neq 0\) 可以写成
+
+\[
+\mathrm{F} (z) = (\sigma (z)) ^ {- 1} (x (\sigma (z)) ^ {- 1} - 1) ^ {- 1}.
+\]
+
+但由 \((\sigma(z))^{-1} = \sigma(z^{-1})\) 当 \(z\) 在 \(\mathbf{C}\) 中趋于无穷时趋于 0，可见 \(\mathbf{F}(z)\) 趋于 0；换言之，\(z \mapsto \| \mathbf{F}(z) \|\) 是连续的实值函数，\(\geqslant 0\) （在 \(\mathbf{C}\) 上），在无穷远点趋于 0，因而可以看作紧空间 \(\tilde{\mathbf{C}}\) （由 \(\mathbf{C}\) 添加一个无穷远点而得）上的连续函数。于是 \(\alpha\) （\(\| \mathbf{F} \|\) 在 \(\mathbf{C}\) 上的上确界）有限且 \(>0\) ，且集合 \(\mathrm{P}\) ——由复数 \(z\) （满足 \(\| \mathrm{F}(z) \| = \alpha\) ）组成的——是闭的且非空（《一般拓扑学》第四章 §6 第 1 节定理 1）。
+
+设 \(z \in \mathbf{P}\) ；记 \(y = x - \sigma(z)\) ，并设 \(t\) 是一个复数 \(\neq 0\) 使得 \(\| \sigma(t) \| < \alpha^{-1}\) ，于是 \(\| \sigma(t).y^{-1} \| < 1\) （由 \(\alpha\) 的定义）。因此，序列 \((\sigma(t)y^{-1})^n\) 与序列 \(n(\sigma(t)y^{-1})^n\) 在 \(K\) 中都趋于 0（当 \(n\) 趋于 \(+\infty\) 时），因为它们在 \(R\) 中的相应范数序列如此。另一方面注意，对每个多项式 \(\mathbf{H}(\mathbf{T}) = \prod_{k=1}^{p} (\mathbf{T} - \sigma(c_k))\) （其中诸 \(c_k\) 是互异的复数），在有理函数域 \(\mathbf{K}(\mathbf{T})\) 中
+
+\[
+\frac {\mathrm{H} ^ {\prime} (\mathrm{T})}{\mathrm{H} (\mathrm{T})} = \sum_ {k = 1} ^ {p} \frac {1}{\mathrm{T} - \sigma (c _ {k})}.\tag{5}
+\]
+
+把这个公式应用于多项式
+
+\[
+\mathrm{H} (\mathrm{T}) = \mathrm{T} ^ {n} - (\sigma (t)) ^ {n} = \prod_ {k = 0} ^ {n - 1} \left(\mathrm{T} - \sigma \left(\omega_ {n} ^ {k} t\right)\right),
+\]
+
+其中 \(\omega_{n}=\exp(2\pi i/n)\) ，并把 T 换成元素 \(y\in K\) ，它与所有 \(\sigma(\omega_{n}^{k}t)\) 都不同。由此（在交换域 K 中）得到
+
+\[
+\frac {n y ^ {n - 1}}{y ^ {n} - (\sigma (t)) ^ {n}} = \frac {1}{y - \sigma (t)} + \sum_ {k = 1} ^ {n - 1} \frac {1}{y - \sigma \left(\omega_ {n} ^ {k} t\right)}.\tag{6}
+\]
+
+考虑到 F 与 y 的定义，得到
+
+\[
+\begin{array}{r l} \mathrm{F} (z + t) + \sum_ {k = 1} ^ {n - 1} \mathrm{F} (z + \omega_ {n} ^ {k} t) - n \mathrm{F} (z) & \\ = \frac {n y ^ {n - 1}}{y ^ {n} - (\sigma (t)) ^ {n}} - \frac {n}{y} = \frac {1}{y} \cdot \frac {n (\sigma (t) y ^ {- 1}) ^ {n}}{1 - (\sigma (t) y ^ {- 1}) ^ {n}}. \end{array}\tag{7}
+\]
+
+但由 t 的选取及上面的注记，(7) 中的最后一个表达式当 n 趋于 \(+\infty\) 时趋于 0；从而
+
+\[
+\| \mathrm{F} (z + t) \| = \lim _ {n \to + \infty} \| n \mathrm{F} (z) - \sum_ {k = 1} ^ {n - 1} \mathrm{F} (z + \omega_ {n} ^ {k} t) \|.\tag{8}
+\]
+
+现在，\(\| \mathrm{F}(z)\| = \alpha\) 且 \(\| \mathrm{F}(z + \omega_n^kt)\| \leqslant \alpha\) （由 \(\alpha\) 的定义），于是
+
+\[
+\left\| n \mathrm{F} (z) - \sum_ {k = 1} ^ {n - 1} \mathrm{F} (z + \omega_ {n} ^ {k} t) \right\| \geqslant
+\]
+
+\[
+n \| \mathrm{F} (z) \| - \sum_ {k = 1} ^ {n - 1} \| \mathrm{F} (z + \omega_ {n} ^ {k} t) \| \geqslant n \alpha - (n - 1) \alpha = \alpha .
+\]
+
+因此由 (8)，令 \(n\) 趋于 \(+\infty\) ，得 \(\| \mathbf{F}(z + t) \| \geqslant \alpha\) ，再由 \(\alpha\) 的定义，这蕴含
+
+\[
+\| \mathrm{F} (z + t) \| = \alpha ,
+\]
+
+换言之 \(z + t \in P\) 。这证明集合 P 在 C 中是开的；由于它又是闭的且非空，而 C 是连通的，故 P = C ，于是 \(\|F\|\) 在 C 上是常数；由于这个函数在无穷远点趋于 0，在 C 中 \(\|F(z)\| = 0\) ，特别地 \(\|F(0)\| = \|x^{-1}\| = 0\) ，这是荒谬的。
+
+\textbf{(B) 第二种情形；\(\mathbf{K}\) 是交换的且 \(-1\) 不是 \(\mathbf{K}\) 中元素的平方}\par
+
+设 L 是由 K 添加 \(T^{2} + 1\) 的一个根 j 所得的交换域；L 是 K 上的向量空间，以 \((1, j)\) 为基，且 L 显然是 R 上的代数。显然，函数 \(x + yj \to \|x\| + \|y\|\) 是 L 上与其 R 上向量空间结构相容的范数；另一方面，对 L 中的 \(z = x + yj\) 、\(z' = x' + y'j\) ，
+
+\[
+\begin{array}{r l} \| z z ^ {\prime} \| & = \| x x ^ {\prime} - y y ^ {\prime} \| + \| x y ^ {\prime} + x ^ {\prime} y \| \leqslant \| x x ^ {\prime} \| + \| y y ^ {\prime} \| + \| x y ^ {\prime} \| + \| x ^ {\prime} y \| \\ & \leqslant \| x \| \cdot \| x ^ {\prime} \| + \| y \| \cdot \| y ^ {\prime} \| + \| x \| \cdot \| y ^ {\prime} \| + \| x ^ {\prime} \| \cdot \| y \| \\ & = (\| x \| + \| y \|) (\| x ^ {\prime} \| + \| y ^ {\prime} \|) = \| z \| \cdot \| z ^ {\prime} \|. \end{array}
+\]
+
+这样定义的范数因而与 L 上的 R-代数结构相容。由情形 (A)，L 是同构于 C 的 R-代数；而 C 的异于 C 的子 R-代数只有 R ，故 K 同构于 R 。
+
+\textbf{(C) 第三种情形：K 非交换}\par
+
+设 Z 是 K 的中心，x 是 K 中不属于 Z 的元素；K 的子域 \(Z(x)\) 是交换的，且由 K 上的范数诱导的范数与 \(Z(x)\) 上的 R-代数结构相容；由于 \(Z \neq Z(x)\) ，且由 (A) 与 (B)，Z 与 \(Z(x)\) 是同构于 R 或 C 的 R-代数，Z 必然同构于 R 而 \(Z(x)\) 同构于 C。于是对一切 \(x \in K\) ，\(Z(x)\) 在 Z 上的秩 \(\leqslant 2\) 。现在我们有下面的引理：
+
+引理 1. 设 D 是以 L 为中心的域，使得对一切 \(x \in \mathbf{D}\) ，\(\mathbf{L}(x)\) 是 L 的次数 \(\leqslant m\) 的扩张。那么 D 在 L 上的秩 \(\leqslant m^2\) 。
+
+显然可以只限于 \(D \neq L\) 的情形。那么 D 中存在 L 的一个次数 >1 的有限可分代数交换扩张 E （《代数》第八章 § 10 第 3 节引理 1）；由于对 E 中某个适当的 x 有 \(E = L(x)\) （《代数》第五章 § 7 第 7 节命题 12 及第七章 § 5 第 7 节），由假设 \([E: L] \leqslant m\) 。设取可分扩张 E 使 \([E: L]\) 有限且尽可能大，并考虑 E 在 D 中的中心化子 \(E' \supset E\) ，它是一个以 E 为中心的域，使得
+
+\[
+[ \mathbf {D} \colon \mathbf {E} ^ {\prime} ] = [ \mathbf {E} \colon \mathbf {L} ] \leqslant m
+\]
+
+（《代数》第八章 § 10 第 2 节定理 2）。若 \(\mathbf{E} \neq \mathbf{E}'\) ，则 \(\mathbf{E}'\) 中会存在一个有限可分代数扩张 \(\mathbf{F}\) （\(\mathbf{E}\) 的扩张），次数 \(>1\) （《代数》第八章 § 10 第 3 节引理 1）；于是 \(\mathbf{F}\) 会是 \(\mathbf{L}\) 的次数 \(>[\mathrm{E:L}]\) 的有限可分代数扩张（《代数》第五章 § 7 第 4 节命题 7），这与 \(\mathbf{E}\) 的定义矛盾；因此 \(\mathbf{E}' = \mathbf{E}\) ，从而 \([\mathrm{D:L}] = [\mathrm{D:E}][\mathrm{E:L}] \leqslant m^2\) 。
+
+把这条引理以 m = 2 应用于 K，可见 K 是 R 的有限秩非交换扩张域，因而同构于四元数体 H （《代数》第八章 § 11 第 2 节定理 2）。
+
+注 (1) 在讨论赋范代数的那一章中，我们将给出 Gelfand-Mazur 定理的一个较短的证明，它对 R 上每个 Hausdorff 局部凸拓扑代数 K 都成立，其原理如下：归结为（如在情形 (B) 与 (C) 中那样）K 是 C 上交换代数的情形；若 \(x \in K - C.1\) ，我们如上考虑 C 到 K 的映射 \(z \mapsto (x - z.1)^{-1}\) ，它在 C 上连续且可微。对每个元素 \(x'\) （属于局部凸空间 K 的对偶 \(K'\) ），\(z \mapsto \langle(x - z.1)^{-1}, x' \rangle\) 是 C 上的有界整函数，因而由 Liouville 定理是常数，于是如定理 1 的证明中 (A) 部分那样，可以断定这必然蕴含 \(\langle(x - z.1)^{-1}, x' \rangle = 0\) 对一切 \(z \in C\) 与一切 \(x' \in K'\) ；Hahn-Banach 定理表明这个结论是荒谬的，因为 \((x - z.1)^{-1} \neq 0\) 。注意，定理 1 证明中 (A) 部分的论证与上面的论证只是表面不同，因为这个论证只是用来证明解析函数最大模原理的论证的一个特例，对单位根求和并取极限等价于沿中心为 0 的圆计算积分 \(\int_{\gamma} \frac{F(z + t) dt}{t}\) ，而这里由于函数 F 的特殊形式，避免了使用 Cauchy 公式。
+
+定理 2 （Ostrowski）. 设 K 是一个（未必交换的）域，f 是 \(\mathcal{V}(\mathbf{K})\) 中一个不是超度量绝对值的元素。那么存在唯一的实数 s > 0 以及 K 到域 R 、 C 或 H 之一的一个处处稠密子域上的同构 j ，使得 \(f(x) = |j(x)|^{s}\) 对一切 \(x \in K (*)\) 成立。f 是 K 上的绝对值，当且仅当 \(s \leqslant 1\) 。
+
+由第 2 节命题 3 的推论，K 的特征为 0，因而是 Q 上的代数；对一切 \(x \in Q\) 记 \(h(x) = f(x.1)\) ；显然 \(h \in \mathcal{V}(\mathbf{Q})\) ，因此可以应用第 3 节命题 4；该命题陈述中的情形 (i) 与 (ii) 都不能出现，因为那将蕴含 \(f(n.1) \leqslant 1\) 对每个整数 n > 0 成立，从而由第 2 节命题 3，f 是超度量绝对值。于是存在实数 \(s > 0\) 使得 \(h(x) = |x|^s\) 对一切 \(x \in \mathbf{Q}\) 成立，即 \(f(x,1) = |x|^s\) ；记 \(g = f^{1 / s}\) 。那么 \(g \in \mathcal{V}(\mathbf{K})\) 且 \(g(n,1) = n\) 对每个整数 \(n\) 成立；因此第 1 节命题 2 表明 \(g\) 是 \(\mathbf{K}\) 上的绝对值。
+
+对 \(x \in \mathbf{Q}\) 与 \(y \in \mathbf{K}\) ，有 \(g(xy) = |x|g(y)\) ，因而 \(g\) 是 \(\mathbf{K}\) 上与其 \(\mathbf{Q}\) -代数结构相容的范数（\(\mathbf{Q}\) 上取通常绝对值）。于是完备化 \(\hat{\mathbf{K}}\) （即 \(\mathbf{K}\) 的完备化）是 \(\hat{\mathbf{Q}} = \mathbf{R}\) 上的赋范代数（《一般拓扑学》第九章 § 3 第 7 节）；设 \(\hat{g}\) 是 \(\hat{\mathbf{K}}\) 上作为 \(g\) 的连续延拓的范数。由于 \(g\) 是 \(\mathbf{K}\) 上的绝对值，\(\hat{\mathbf{K}}\) 是域且 \(\hat{g}\) 是 \(\hat{\mathbf{K}}\) 上的绝对值（《一般拓扑学》第九章 § 3 第 3 节命题 6）。由定理 1，存在一个 \(\mathbf{R}\) -代数同构 \(j\) ，它把 \(\hat{\mathbf{K}}\) 映到域 \(\mathbf{R}\) 、\(\mathbf{C}\) 或 \(\mathbf{H}\) 之一上，于是 \(g'(x) = |j(x)|\) 是 \(\hat{\mathbf{K}}\) 上的绝对值；由于 \(\hat{\mathbf{K}}\) 在 \(\mathbf{R}\) 上有限维，且 \(g'\) 与 \(\hat{g}\) 在子域 \(\mathbf{R}\) . 1 （\(\hat{\mathbf{K}}\) 的）上一致，由下面的引理得 \(g' = \hat{g}\) ：
+
+引理 2. 设 L 是一个（未必交换的）域，K 是 L 的子域，使得 L 是 K 上有限维左向量空间。设 g 是 L 上的绝对值，f 是它在 K 上的限制。若 K 关于 f 是完备的且非离散的，则 L 关于 g 是完备的；若进一步 \(g'\) 是 L 上另一个在 K 上有同一限制 f 的绝对值，则 \(g' = g\) 。
+
+由于由 g 定义的拓扑是 Hausdorff 的且与 L 上的左向量 K-空间结构相容，第一个断言由《拓扑向量空间》第一章 § 2 第 3 节定理 2 得出。此外，由 g 与 \(g'\) 在 L 上定义的拓扑相同（同前）；因此存在实数 s > 0 使得 \(g' = g^{s}\) （《一般拓扑学》第九章 § 3 第 2 节命题 5）。设 x 是 K 中使 \(f(x) \neq 1\) 的元素；方程 \(g'(x) = g(x)\) 表明 s = 1 。
+
+回到定理 2 的证明，可见若 \(j\) 表示 \(\hat{j}\) 在 \(\mathbf{K}, j\) 上的限制，则它是 \(\mathbf{K}\) 到 \(\mathbf{R}\) 、\(\mathbf{C}\) 或 \(\mathbf{H}\) 的一个处处稠密子域上的同构，且 \(g(x) = |j(x)|\) 对 \(x \in \mathbf{K}\) 成立，从而 \(f(x) = |j(x)|^s\) 。
+
+最后注意，若 \(f\) 是 \(\mathbf{K}\) 上的绝对值，则 \(h\) 是 \(\mathbf{Q}\) 上的绝对值，且由第 3 节命题 4 有 \(s \leqslant 1\) ；反之，若 \(s \leqslant 1\) ，则 \(f = g^s\) 是 \(\mathbf{K}\) 上的绝对值，因为 \(g\) 是绝对值（《一般拓扑学》第九章 § 3 第 2 节）；这就证明了陈述中的最后一个断言。
+
+\textbf{注}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  若 K 是域又是 R 上的赋范代数，其范数未必是 K 上的绝对值；例如，\(\xi + i\eta \to |\xi| + |\eta|\) 是 C 上与其 R-代数结构相容的范数。
+\item
+  定理 1 情形 (C) 的一个不使用《代数》第八章一般结果的证明，见习题 2。
+\end{enumerate}
+

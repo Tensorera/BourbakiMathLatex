@@ -1,0 +1,66 @@
+\subsection{集合的内部、闭包、边界；稠密集}
+
+定义 9. 在拓扑空间 X 中，点 x 称为 X 的子集 A 的内点，如果 A 是 x 的邻域。A 的内点所成之集称为 A 的内部，记作 \(\mathring{A}\)。
+
+根据定义 9 与定义 4，点 x 是 A 的内点，如果存在包含在 A 中且包含 x 的开集；由此可知 \(\mathring{A}\) 是包含在 A 中的所有开集之并，因而是包含在 A 中的最大开集：换言之，若 B 是包含在 A 中的开集，则 B ⊂ \(\mathring{A}\)。从而，若 A 与 B 是 X 的两个子集且 B ⊂ A，则 \(\mathring{B} \subset \mathring{A}\)；并且 A 是 B 的邻域当且仅当 B ⊂ \(\mathring{A}\)。
+
+注. 非空集合的内部可以是空集；例如，由单独一点（该点不是开集）组成的集合就是这种情形，比如在有理直线上 * （或实直线上） *。
+
+第 2 目的命题 1 可以改述如下：
+
+一个集合是开集当且仅当它与自己的内部相重合。
+
+第 2 目的性质 \((V_{II})\) 蕴含：凡是两个子集 A 与 B 中每一个的内点的点，都是 \(A \cap B\) 的内点；从而
+
+\[
+\mathring {\mathbf {A} \cap \mathbf {B}} = \mathring {\mathbf {A}} \cap \mathring {\mathbf {B}}.\tag{1}
+\]
+
+凡是集合 A 的余集的内点的点称为 A 的外点，这些点所成之集称为 A 在 X 中的外部；因此，点 \(x \in X\) 是 A 的外点这一事实可由下述性质刻画：x 有一个不与 A 相交的邻域。
+
+定义 10. 拓扑空间 X 的子集 A 的闭包是指由所有这样的点 \(x \in X\) 组成的集合：x 的每个邻域都与 A 相交；闭包记作 \(\overline{A}\)。
+
+这个定义可以改述为：点 x 位于集合 A 的闭包中，如果 A 中存在与 x 要多接近就有多接近的点。
+
+凡不属于 A 的闭包的点都是 A 的外点，反之亦然；于是我们有下列（互为对偶的）公式
+
+\[
+\mathbf {C} \overline {{\mathbf {A}}} = \mathring {\mathbf {C} \mathbf {A}}, \quad \mathbf {C} \mathring {\mathbf {A}} = \overline {{\mathbf {C} \mathbf {A}}}.\tag{2}
+\]
+
+因此，由对偶性，关于集合内部的每个命题都对应一个关于闭包的命题，反之亦然。特别地，集合 A 的闭包是包含 A 的最小闭集；换言之，若 B 是使 \(A \subset B\) 成立的闭集，则 \(\overline{A} \subset B\)。若 A 与 B 是 X 的两个子集且 \(A \subset B\)，则 \(\overline{A} \subset \overline{B}\)。
+
+一个集合是闭集当且仅当它与自己的闭包相重合。
+
+公式 (1) 的对偶是
+
+\[
+\overline {{{\mathbf {A} \cup \mathbf {B}}}} = \overline {{{\mathbf {A}}}} \cup \overline {{{\mathbf {B}}}}.\tag{3}
+\]
+
+命题 5. 设 A 是 X 中的开集；则对 X 的每个子集 B，我们有
+
+\[
+\mathbf {A} \cap \overline {{\mathbf {B}}} \subset \overline {{\mathbf {A} \cap \mathbf {B}}}.\tag{4}
+\]
+
+因为设 \(x \in A \cap \overline{B}\)；则若 V 是 x 的任一邻域，\(V \cap A\) 是 x 的邻域（因 A 是开集）；于是 \(V \cap A \cap B\) 非空，从而 x 位于 \(A \cap B\) 的闭包中。
+
+如果 \(x\) 位于 \(A\) 的闭包中但不属于 \(A\)，则 \(x\) 的每个邻域都包含 \(A\) 中一个异于 \(x\) 的点；但若 \(x \in A\)，则可能发生这样的情形：\(x\) 有一个邻域，它不含 \(A\) 的任何异于 \(x\) 的点。这时我们说 \(x\) 是 \(A\) 的孤立点。特别地，\(x\) 在整个空间 \(X\) 中是孤立点当且仅当 \(\{x\}\) 是开集。
+
+没有孤立点的闭集称为完备集。
+
+定义 11. 在拓扑空间 X 中，点 x 称为集合 A 的边界点，如果 x 既位于 A 的闭包中又位于 CA 的闭包中。A 的边界点所成之集称为 A 的边界。
+
+于是 A 的边界是集合 \(\overline{A} \cap \overline{\complement A}\)，它是闭集。A 的边界点 x 可由下述性质刻画：x 的每个邻域至少包含 A 的一个点和 CA 的一个点；x 可以属于 A 也可以不属于 A。A 的边界与 CA 的边界相同。A 的内部、A 的外部与 A 的边界两两不相交，其并是整个空间 X。
+
+定义 12. 拓扑空间 X 的子集 A 称为在 X 中稠密（若关于 X 不会引起混淆，就简称稠密），如果 \(\overline{A} = X\)，亦即如果 X 的每个非空开集 U 都与 A 相交。
+
+例。* 我们将在第四章 § 1 中看到，有理数集及其余集在实直线上都稠密。*
+
+在离散空间 X 中，X 的唯一稠密子集是 \(X^{*}\) 自身。另一方面，在 X 上以 \(\varnothing\) 与 X 为仅有开集的拓扑中，X 的每个非空子集都稠密。
+
+命题 6. 如果 \(\mathfrak{B}\) 是拓扑空间 \(X\) 的拓扑的一个拓扑基，则存在一个稠密集 \(D\)（在 \(X\) 中），使得 \(\operatorname{Card}(D) \leqslant \operatorname{Card}(\mathfrak{B})\)。
+
+我们可以限于 \(\mathfrak{B}\) 中没有集合是空集的情形（\(\mathfrak{B}\) 的非空集合已经构成 \(\mathbf{X}\) 的拓扑的一个拓扑基）。对每个 \(\mathbf{U} \in \mathfrak{B}\)，设 \(x_{\mathbf{U}}\) 是 \(\mathbf{U}\) 的一个点；由第 3 目的命题 3 可知，集合 \(\mathbf{D}\)（由诸点 \(x_{\mathbf{U}}\) 组成）在 \(\mathbf{X}\) 中稠密，并且我们有 Card \((\mathbf{D}) \leqslant\) Card \((\mathfrak{B})\)（《集合论》，第三章，§ 3，第 2 目，命题 3）。
+

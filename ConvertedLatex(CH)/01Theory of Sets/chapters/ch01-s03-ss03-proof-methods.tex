@@ -1,0 +1,94 @@
+\subsection{证明方法}
+
+I. 辅助假设法。这基于以下规则：
+
+C14（演绎准则）。设A是C中的一个关系，且设 \(C'\) 为将A加入C的公理后所得的理论。若B是 \(C'\) 中的定理，那么 \(A \Longrightarrow B\) 是C中的一个定理。
+
+设 \(B_1, B_2, \ldots, B_n\) 是 \(\mathfrak{C}'\) 中的一个证明，在其中 \(B\) 出现。我们将逐步证明这些关系 \(A \Longrightarrow B_k\) 是 \(\mathfrak{C}\) 中的定理。假设这一点对于先于 \(B_i\) 的关系已经成立，且让我们证明 \(A \Longrightarrow B_i\) 是 \(\mathfrak{C}\) 中的定理 。如果 \(B_i\) 是 \(\mathfrak{C}'\) 的公理，那么 \(B_i\) 是 \(\mathfrak{C}\) 的公理，或者是 \(A\) 。在两种情况下， \(A \Longrightarrow B_i\) 是 \(\mathfrak{C}\) 中的定理 ，通过应用C9或C8。如果 \(B_i\) 前面有关系 \(B_j\) 和 \(B_j \Longrightarrow B_i\) ，我们知道 \(A \Longrightarrow B_j\) 和 \(A \Longrightarrow (B_j \Longrightarrow B_i)\) 是 \(\mathfrak{C}\) 中的定理。因此 \((B_j \Longrightarrow B_i) \Longrightarrow (A \Longrightarrow B_i)\) 是 \(\mathfrak{C}\) 中的定理 ，由C13。因此，由C6， \(A \Longrightarrow (A \Longrightarrow B_i)\) ，也就是说“（非 \(A\) ) 或 \((A \Longrightarrow B_i)\) ”是 \(\mathfrak{C}\) 中的定理，因此“ \((A \Longrightarrow B_i)\) 或（非 \(A\) ）”由S3也是定理。现在， \((\text{非 } A) \Longrightarrow ((\text{非 } A) \text{ 或 } B_i)\) ，也就是说 \((\text{非 } A) \Longrightarrow (A \Longrightarrow B_i)\) 是 \(\mathfrak{C}\) 中的定理，由S2。通过应用S4，我们于是看到
+
+\[
+((\mathbf {A} \Rightarrow \mathbf {B} _ {i}) \text {   或   (非   } \mathbf {A})) \Rightarrow ((\mathbf {A} \Rightarrow \mathbf {B} _ {i}) \text {   或   } (\mathbf {A} \Rightarrow \mathbf {B} _ {i}))
+\]
+
+是 \(\mathfrak{C}\) 中的定理 ，从而“ \((A \Longrightarrow B_i)\) 或 \((A \Longrightarrow B_i)\) ”是 \(\mathfrak{C}\) 中的一个定理。由S1我们得出结论 \(A \Longrightarrow B_i\) 是 \(\mathfrak{C}\) 中的定理 .
+
+在实践中，我们通过诸如“假设A为真”这样的短语来表明我们将使用这一准则。这个短语意味着，在目前阶段，推理将在理论 \(C'\) 中进行，直到关系B已被证明。当这一点实现时，就已经确立了 \(A \Longrightarrow B\) 是C中的一个定理，此后人们继续在C中进行推理，通常不再指明已经放弃了理论 \(C'\) 。作为新公理引入的关系 A 被称为辅助假设。 * 例如，当我们说“设 x 为实数”时，我们正在构建一个理论，其中关系“x 是实数”是一个辅助假设。 *
+
+\begin{enumerate}
+\def\labelenumi{\Roman{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  归谬法。其依据如下规则：
+\end{enumerate}
+
+C15. 设 A 是 C 中的一个关系，且令 \(C'\) 为将公理“非A”加入C的公理后得到的理论。如果 \(C'\) 是矛盾的，则A是C中的一个定理。
+
+因为 A 是 \(C'\) 中的定理；因此（辅助假设的方法）“（非 \(A\) ) \(\Longrightarrow\) \(A\) ”是C中的一个定理。根据S4，
+
+\[
+(A \text {   或   (非   } A)) \Longrightarrow (A \text {   或   } A)
+\]
+
+是 \(\mathfrak{C}\) 中的定理 ；根据C10，“ \(A\) 或 \(A\) ”是 \(\mathfrak{C}\) 中的定理。现在使用S1。
+
+在实践中，我们通过诸如“假设A为假”这样的表述来表明我们将使用这一准则。这句话意味着，在当前阶段，推理将在理论 \(C'\) 中进行，直到两个形如 B 和“非 B”的定理被证明为止。当这一点实现后，便确立了 A 是 C 中的定理，这通常用诸如“现在这是（即在前述记号中，B 和‘非 B’）荒谬的；因此 A 为真”这样的短语来表示。然后人们继续在原始理论 C 中进行。
+
+¶ 作为这些方法的首次应用，让我们确立以下判据：
+
+C16. 如果 \(A\) 是 \(\mathfrak{C}\) 中的一个关系，则（非非 \(A\) ) \(\Longrightarrow A\) 是 \(\mathfrak{C}\) 中的定理 .
+
+假设“非非A”为真；那么我们必须证明A。假设A为假。在如此定义的理论中，“非非A”和“非A”都是定理，这是荒谬的；因此A为真。
+
+C17. 如果A和B是 \(\mathfrak{G}\) 中的关系，那么
+
+\[
+((\text { 非 } B) \Longrightarrow (\text { 非 } A)) \Longrightarrow (A \Longrightarrow B)
+\]
+
+是 \(\mathfrak{C}\) 中的定理 .
+
+因为假设 \((\text{非 } B) \Longrightarrow (\text{非 } A)\) 是真的。我们必须证明 \(A \Longrightarrow B\) 是真的。假设A为真，让我们证明B为真。假设“非 \(B\) ”为真。那么“非A”为真，这是荒谬的。
+
+\begin{enumerate}
+\def\labelenumi{\Roman{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  分情况讨论法。这基于以下规则：
+\end{enumerate}
+
+C18。设 \(A, B, C\) 是 \(\mathfrak{G}\) 中的关系。如果“\(A\) 或 \(B\)”，\(A \Longrightarrow C\) ，以及 \(B \Longrightarrow C\) 是 \(\mathfrak{G}\) 中的定理，那么 \(C\) 是 \(\mathfrak{G}\) 中的定理 .
+
+因为，根据S4，“(A或B)⇒(A或C)”和“(C或A)⇒(C或C)”是C中的定理。由S3和S1，可得(A或B)⇒C是C中的定理；因此结论成立。
+
+因此，为了证明C，当我们手头有一个定理“A或B”时，只需先将A加入G的公理中证明C，然后再将B加入G的公理中证明C即可。这一方法的有趣之处在于，如果“A或B”为真，我们通常不能断言A为真或B为真。
+
+特别地，根据C10，如果`` \(A \Rightarrow C\) '' 和 ``（非 \(A) \Rightarrow C\) '' 都是 \(\mathfrak{C}\) 中的定理，那么 \(C\) 是 \(\mathfrak{C}\) 中的定理 .
+
+\begin{enumerate}
+\def\labelenumi{\Roman{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  辅助常量法。此法基于以下规则：
+\end{enumerate}
+
+C19. 设 x 为一个字母，且 A 与 B 为 \(\mathfrak{G}\) 中的关系，使得：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  字母 \(\pmb{x}\) 不是 \(\mathfrak{C}\) 的常量，且不出现在 \(\pmb{B}\) 中；
+\item
+  存在一项 \(\pmb{T}\)（在 \(\mathfrak{C}\) 中），使得 \((\pmb{T}|\pmb{x})\pmb{A}\) 是 \(\mathfrak{C}\) 中的定理 .
+\end{enumerate}
+
+设 \(\mathfrak{C}'\) 为通过将 \(A\) 附加到 \(\mathfrak{C}\) 的公理而得到的理论。如果 \(B\) 是 \(\mathfrak{C}'\) 中的定理 ，那么 \(B\) 是 \(\mathfrak{C}\) 中的定理 .
+
+确实如此， \(A \Longrightarrow B\) 是 \(\mathcal{C}\) 中的定理 （演绎准则）。由于 \(x\) 不是 \(\mathcal{C}\) 的常量， \((T|x)(A \Longrightarrow B)\) 是 \(\mathcal{C}\) 中的定理 ，根据C3。由于 \(x\) 不出现在 \(B\) 中， \((T|x)(A \Longrightarrow B)\) 与 \(((T|x)A) \Longrightarrow B\) 相同，由CS5（§1，第2号）可知。最后， \((T|x)A\) 是 \(\mathcal{C}\) 中的定理 ，因此也是 \(B\) .
+
+直观地说，该方法在于，为了证明B，使用一个任意对象x（辅助常量），该对象被假定具有某些性质，记为A。* 例如，在涉及一条直线D的几何证明中，我们可以“取”该直线上的一点x；此时关系A就是 \(x \in D\) 。* 为了在证明过程中能够使用一个具有某些性质的对象，显然必须保证这样的对象存在。定理 \((T|x)A\) ，称为合法化定理，保证了这种存在性。
+
+在实践中，我们通过诸如“设 \(\pmb{x}\) 为一个使得 \(A\) 成立的对象”这样的短语来表示我们将使用这种方法。与辅助假设方法相比，该论证的结论并不涉及 \(\pmb{x}\) .
+

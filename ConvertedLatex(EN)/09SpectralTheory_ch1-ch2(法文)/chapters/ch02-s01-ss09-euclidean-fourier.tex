@@ -1,0 +1,222 @@
+\subsection{Euclidean Fourier transform and Fourier series}
+
+* Let \(n \in \mathbf{N}\) . We identify \(\mathbf{R}^n\) and its dual as in Cor. 3 of II, p.~236. The dual measure of the Lebesgue measure is then the Lebesgue measure. We equip \(\mathbf{R}^n\) with the Euclidean norm. For every multi-index \(\alpha \in \mathbf{N}^n\) , and every \(x = (x_1, \ldots, x_n) \in \mathbf{R}^n\) , we shall denote by \(x^\alpha = x_1^{\alpha_1} \cdots x_n^{\alpha_n}\) , and we denote by \(\mathrm{X}^\alpha\) the function \(x \mapsto x^\alpha\) on \(\mathbf{R}^n\) .
+
+Let \(m \in R^{m}\) . Every continuous homomorphism of commutative groups from \(R^{m}\) into \(R^{n}\) is a linear map \(\sigma \in \mathcal{L}(\mathbf{R}^{n}, \mathbf{R}^{m})\) (TG, VII, p.~11, prop. 1). The dual homomorphism \(\widehat{\sigma}\) is identified with the linear map \(^{t}\sigma\) .
+
+The Fourier transform in \(\mathbf{R}^n\) takes on a particularly convenient form in the context of the Schwartz function space and its dual (IV, to appear). We summarize here the main results.
+
+Let \(\mathcal{S}(\mathbf{R}^{n})\) be the space of infinitely differentiable functions \(\varphi\) on \(\mathbf{R}^{n}\) with complex values, such that, for every multi-index \(\alpha\in\mathbf{N}^{n}\) and every integer \(k\in\mathbf{N}\) , the function
+
+\[
+x \mapsto \| x \| ^ {k} \partial^ {\alpha} \varphi (x)
+\]
+
+is bounded on \(\mathbf{R}^{n}\) . We endow \(\mathcal{S}(\mathbf{R}^{n})\) with the locally convex topology defined by the seminorms
+
+\[
+p _ {k, \alpha} \colon \varphi \mapsto \sup _ {x \in \mathbf {R} ^ {n}} \| x \| ^ {k} | \partial^ {\alpha} \varphi (x) |.
+\]
+
+We say that \(\mathcal{S}(\mathbf{R}^{n})\) is the space of Schwartz functions on \(\mathbf{R}^{n}\) .
+
+For every \(\alpha \in \mathbf{N}^n\) , the maps \(\varphi \mapsto \partial^\alpha \varphi\) and \(\varphi \mapsto \mathrm{X}^\alpha \varphi\) are continuous from \(\mathcal{S}(\mathbf{R}^n)\) into itself. The space \(\mathcal{S}(\mathbf{R}^n)\) is a topological algebra; it is a Fréchet space and a Montel space (EVT IV, p.~18, def. 4). For every \(p \in [1, +\infty]\) , the space \(\mathcal{S}(\mathbf{R}^n)\) is contained in \(\mathcal{L}^p (\mathbf{R}^n)\) and the canonical injection of \(\mathcal{S}(\mathbf{R}^n)\) into \(\mathcal{L}^p (\mathbf{R}^n)\) is continuous. The image of \(\mathcal{S}(\mathbf{R}^n)\) into \(\mathrm{L}^p (\mathbf{R}^n)\) is dense if \(p \neq +\infty\) .
+
+Since every Schwartz function \(\varphi\) is integrable on \(\mathbf{R}^n\) it admits a Fourier transform denoted \(\widehat{\varphi}\) which is identified with the continuous function on \(\mathbf{R}^n\) defined by
+
+\[
+y \mapsto \int_ {\mathbf {R} ^ {n}} \varphi (x) \exp (- 2 i \pi x \cdot y) d x.
+\]
+
+The Fourier cotransform of \(\varphi\) is identified, in turn, with the continuous function defined by
+
+\[
+y \mapsto \int_ {\mathbf {R} ^ {n}} \varphi (x) \exp (2 i \pi x \cdot y) d x.
+\]
+
+Let \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) . Let \(\alpha\in\mathbf{N}^{n}\) be a multi-index. We have
+
+\[
+\mathcal {F} (\partial^ {\alpha} \varphi) = (2 i \pi) ^ {| \alpha |} \mathrm{X} ^ {\alpha} \mathcal {F} (\varphi),
+\]
+
+\[
+\mathcal {F} (\mathrm{X} ^ {\alpha} \varphi) = (- 2 i \pi) ^ {- | \alpha |} \partial^ {\alpha} (\mathcal {F} (\varphi)).
+\]
+
+Proposition 21. — The restriction to \(\mathcal{S}(\mathbf{R}^{n})\) of the Fourier transform is an automorphism of topological vector spaces whose inverse is the restriction of the Fourier cotransform.
+
+Let \(\Lambda \subset \mathbf{R}^n\) be a lattice (TG, VII, p.~4), and let \(\Lambda^{*} \subset \mathbf{R}^{n}\) be the associated lattice (TG, VII, p.~6), also sometimes called the dual lattice.
+
+We call the measure of \(\mathbf{R}^n/\Lambda\) for the Haar measure induced by the Lebesgue measure on \(\mathbf{R}^n\) the covolume of the lattice \(\Lambda\), and denote it by \(V(\Lambda)\) (cf. INT, VIII, §5, no. 5, example). For every function \(f \in \mathcal{S}(\mathbf{R}^n)\) and every \(y \in \mathbf{R}^n\) we have the Poisson formula
+
+\[
+\sum_ {x \in \Lambda} f (x + y) = \frac {1}{\mathrm{V} (\Lambda)} \sum_ {z \in \Lambda^ {*}} \widehat {f} (z) \exp (2 i \pi y \cdot z).
+\]
+
+Remarks. --- 1) More generally, by the corollary of Proposition 15 of II, p.~230, this formula holds for any complex function integrable on \(\mathbf{R}^n\) such that
+
+\[
+\sum_ {x \in \Lambda} | f (x + y) | <   + \infty ,
+\]
+
+for all \(y \in R^{n}\) and such that the function on \(T^{n}\) defined by
+
+\[
+y \mapsto \sum_ {x \in \Lambda} f (x + y)
+\]
+
+is continuous and admits an absolutely convergent Fourier series (cf. below).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  There exist functions \(f \in \mathrm{B}(\mathbf{R})\) such that the series \(\sum_{n \in \mathbf{Z}} f(n)\) diverge (exercise 4 of II, p.~263).
+\end{enumerate}
+
+Example. --- Let Q be a positive definite quadratic form on \(R^{n}\). The function defined by \(\varphi(x)=\exp(-\pi\mathrm{Q}(x))\) belongs to \(\mathcal{S}(\mathbf{R}^{n})\) . There exists \(\sigma\in\mathrm{GL}(n,\mathbf{R})\) such that \(\mathrm{Q}(x)=\|\sigma(x)\|^{2}\) for all \(x\in R^{n}\). The Fourier transform of \(\varphi\) is given for all \(y\in R^{n}\) by
+
+\[
+\widehat {\varphi} (y) = \frac {1}{| \det (\sigma) |} \exp (- \pi \mathrm{Q} ^ {*} (y))
+\]
+
+where \(\mathrm{Q}^{*}(y)=\|^{t}\sigma^{-1}(y)\|^{2}\) (cf. INT, IX, §6, nos. 4–5 and exercise 1, c) of II, p. 262).
+
+DEFINITION 6. --- We call the space of tempered distributions on \(\mathbf{R}^{n}\) the dual space of \(\mathcal{S}(\mathbf{R}^{n})\) endowed with the topology of bounded convergence. It is denoted \(\mathcal{S}'(\mathbf{R}^{n})\) .
+
+Since \(\mathcal{S}(\mathbf{R}^n)\) is bornological, the space \(\mathcal{S}'(\mathbf{R}^n)\) is complete and bornological (EVT, III, p.~24, cor. 1 and 2). Since \(\mathcal{S}(\mathbf{R}^n)\) is a Montel space, so is \(\mathcal{S}'(\mathbf{R}^n)\) (EVT, IV, p.~19, prop. 9).
+
+Let \(\alpha\in\mathbf{N}^{n}\) . We still denote by \(f\mapsto\mathrm{X}^{\alpha}f\) the transpose of the endomorphism \(\varphi\mapsto\mathrm{X}^{\alpha}\varphi\) of \(\mathcal{S}(\mathbf{R}^{n})\) , and we denote by \(f\mapsto\partial^{\alpha}f\) the endomorphism of \(\mathcal{S}'(\mathbf{R}^{n})\) defined by
+
+\[
+\langle \partial^ {\alpha} f, \varphi \rangle = (- 1) ^ {| \alpha |} \langle f, \partial^ {\alpha} \varphi \rangle
+\]
+
+for \(f\in \mathcal{S}'(\mathbf{R}^n)\) and \(\varphi \in \mathcal{S}(\mathbf{R}^n)\) .
+
+Let \(f\) be a linear map from \(\mathcal{S}(\mathbf{R}^{n})\) into \(\mathbf{C}\) . Then \(f\) is a tempered distribution if, and only if, for every family \((\mathrm{M}_{k,\alpha})_{(k,\alpha)\in\mathbf{N}\times\mathbf{N}^{n}}\) in \(\mathbf{R}_{+}\), the linear form \(f\) is bounded on the set of functions \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) such that for all \((k,\alpha)\in\mathbf{N}\times\mathbf{N}^{n}\) , one has \(p_{k,\alpha}(\varphi)\leqslant\mathrm{M}_{k,\alpha}\) .
+
+A sequence \((f_{m})_{m\in\mathbf{N}}\) of tempered distributions converges to a tempered distribution f if, and only if, one has \(\langle f_{m},\varphi\rangle\to\langle f,\varphi\rangle\) for all \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) .
+
+Example. --- A measure \(\nu\) on \(\mathbf{R}^n\) is said to be tempered if there exists a positive integer \(r\) such that the continuous map \(x \mapsto (1 + \|x\|)^{-r}\) is \(\nu\)-integrable on \(\mathbf{R}^n\). The restriction of \(\nu\) to \(\mathcal{S}(\mathbf{R}^n)\) is a tempered distribution. It is zero if and only if the measure \(\nu\) is zero.
+
+Let \(p \in [1, +\infty]\) and \(f \in \mathcal{L}^{p}(\mathbf{R}^{n})\). Then the measure \(f \cdot dx\) of density f with respect to Lebesgue measure is tempered. In particular, Lebesgue measure \(\mu\) on \(R^{n}\) is tempered, and every bounded measure on \(R^{n}\) is tempered.
+
+For every \(p \in [1, +\infty]\) one can identify \(\mathrm{L}^{p}(\mathbf{R}^{n})\) with a subspace of \(\mathcal{S}'(\mathbf{R}^{n})\) by the linear map \(f \mapsto f \cdot dx\) ; this map is continuous.
+
+DEFINITION 7. --- We call the transpose of the Fourier transform on \(\mathcal{S}(\mathbf{R}^n)\) (respectively, of the Fourier cotransform) the Fourier transform (respectively, Fourier cotransform) on \(\mathcal{S}'(\mathbf{R}^n)\), and denote them by \(\mathcal{F}\) and \(\overline{\mathcal{F}}\), respectively.
+
+For \(f \in \mathcal{S}'(\mathbf{R}^n)\) , the tempered distribution \(\mathcal{F}(f)\) (resp. \(\overline{\mathcal{F}}(f)\) ) is defined by \(\varphi \mapsto \langle f, \mathcal{F}(\varphi) \rangle\) for \(\varphi \in \mathcal{S}(\mathbf{R}^n)\) (resp. by \(\varphi \mapsto \langle f, \overline{\mathcal{F}}(\varphi) \rangle\) ).
+
+The Fourier transform on \(\mathcal{S}'(\mathbf{R}^n)\) is an automorphism of topological vector spaces whose inverse is the Fourier cotransform \(\overline{\mathcal{F}}\) .
+
+PROPOSITION 22. --- Let f be a tempered distribution belonging to \(\mathcal{M}^{1}(\mathbf{R}^{n})\) (respectively to \(\mathrm{L}^{2}(\mathbf{R}^{n})\) ). The Fourier transform of \(f\) in \(\mathcal{S}'(\mathbf{R}^{n})\) is the tempered distribution associated with the Fourier transform of f in \(\mathcal{C}_{0}(\mathbf{R}^{n})\) (respectively in \(L^{2}(\mathbf{R}^{n})\) ). The same holds for the Fourier cotransform.
+
+Remark. --- The elementary formulas concerning the Fourier transform of measures remain valid for the Fourier transform of tempered distributions.
+
+Thus, if \(\alpha \in \mathbf{N}^n\) and \(f\in \mathcal{S}'(\mathbf{R}^n)\) , one has
+
+\[
+\mathcal {F} (\partial^ {\alpha} f) = (2 i \pi) ^ {| \alpha |} X ^ {\alpha} \mathcal {F} (f),
+\]
+
+\[
+\mathcal {F} (X ^ {\alpha} f) = (- 2 i \pi) ^ {- | \alpha |} \partial^ {\alpha} (\mathcal {F} (f)).
+\]
+
+Let \(y \in \mathbf{R}^n\) . Denote by \(\gamma(y)\) the endomorphism of \(\mathcal{S}'(\mathbf{R}^n)\) defined by
+
+\[
+\langle \boldsymbol {\gamma} (y) f, \varphi \rangle = \langle f, \boldsymbol {\gamma} (- y) \varphi \rangle
+\]
+
+for \(f \in \mathcal{S}'(\mathbf{R}^n)\) and \(\varphi \in \mathcal{S}(\mathbf{R}^n)\) . Denote by \(e_y\) the character of \(\mathbf{R}^n\) such that \(e_y(x) = \exp(2i\pi x \cdot y)\) . Then \(e_y \in \mathcal{S}'(\mathbf{R}^n)\) . We have \(\mathcal{F}(e_y) = \varepsilon_y\) and more generally
+
+\[
+\mathcal {F} (e _ {y} f) = \boldsymbol {\gamma} (y) \mathcal {F} (f)
+\]
+
+for all \(f \in \mathcal{S}'(\mathbf{R}^n)\) . *
+
+Let \(n \geqslant 1\) be an integer and \(G = T^{n}\) , equipped with the normalized Haar measure. The dual group of G is identified with \(Z^{n}\) by the map \(h \mapsto \chi_{h}\) , where \(\chi_{h}\) is the unitary character of \(T^{n}\) obtained by passing to the quotient from the character \(x \mapsto \exp(2i\pi h \cdot x)\) of \(R^{n}\) (corollary 3 of II, p.~236). The Fourier transform of a measure \(\mu\) on \(T^{n}\) is identified with the family \((\widehat{\mu}(h))_{h \in \mathbf{Z}^{n}}\) where
+
+\[
+\widehat {\mu} (h) = \int_ {\mathbf {T} ^ {n}} e ^ {- 2 i \pi h \cdot x} d \mu (x).
+\]
+
+The series
+
+\[
+\sum_ {h \in \mathbf {Z} ^ {n}} \widehat {\mu} (h) \chi_ {h}
+\]
+
+is called the Fourier series of μ.
+
+If \(f \in L^{1}(\mathbf{T}^{n})\) is such that its Fourier series converges absolutely in \(L^{1}(\mathbf{Z}^{n})\) , we then have \(f \in \mathcal{C}(\mathbf{T}^{n})\) and
+
+\[
+f (x) = \sum_ {h \in {\bf Z} ^ {n}} \widehat {f} (h) e ^ {2 i \pi h \cdot x}
+\]
+
+for all \(x \in \mathbf{T}^n\) (Theorem 3 of II, p.~222), where
+
+\[
+\widehat {f} (h) = \int_ {\mathbf {T} ^ {n}} f (x) e ^ {- 2 i \pi h \cdot x} d x, \qquad h \in \mathbf {Z} ^ {n}.
+\]
+
+For \(f \in \mathrm{L}^2(\mathbf{T}^n)\) , the Fourier inversion formula (prop. 12 of II, p.~219) states that, if the series with general term \(\widehat{f}(h)\) converges absolutely, we have
+
+\[
+f (x) = \sum_ {h \in \mathbf {Z} ^ {n}} \widehat {f} (h) e ^ {2 i \pi h \cdot x}
+\]
+
+for almost every x in \(T^{n}\) .
+
+However, even if f is continuous, the Fourier series of f does not in general converge to \(f(x)\) for all x (exerc. 30 of II, p.~274). The following result is all the more useful.
+
+PROPOSITION 23 (Fejér's Theorem). --- Let \(n \geqslant 1\) be an integer. For every \(h = (h_i) \in \mathbf{Z}^n\) , we denote by \(|h| = \sup_i |h_i|\) . Let \(f \in \mathcal{C}(\mathbf{T}^n)\) . For every integer \(N \geqslant 1\) , let \(f_N\) be the function on \(\mathbf{T}^n\) such that
+
+\[
+f_{\mathrm{N}}(x) = \sum_{\substack{h\in \mathbf{Z}^{n}\\ |h|\leqslant \mathrm{N}}}\widehat{f} (h)e^{2i\pi h\cdot x}\prod_{j = 1}^{n}\Bigl (1 - \frac{|h_{j}|}{\mathrm{N}}\Bigr)
+\]
+
+for \(x\in \mathbf{T}^n\). Then \(f_{\mathrm{N}}\) converges to \(f\) in \(\mathcal{C}(\mathbf{T}^n)\).
+
+Lemma 11. --- For every N ≥ 1, let \(\mu_{\mathrm{N}}\) be the measure on \(\mathbf{T}^{n}\) whose density is the continuous map
+
+\[
+\mathrm{F}_{\mathrm{N}}\colon x\mapsto \sum_{\substack{h\in \mathbf{Z}\\ |h|\leqslant \mathrm{N}}}e^{2i\pi h\cdot x}\prod_{j = 1}^{n}\Bigl (1 - \frac{|h_{j}|}{\mathrm{N}}\Bigr).
+\]
+
+The sequence of measures \((\mu_{\mathrm{N}})_{\mathrm{N}\geqslant1}\) converges to \(\varepsilon_{0}\) in the space \(\mathcal{M}^{1}(\mathbf{T}^{n})\) endowed with the topology of compact convergence in \(\mathcal{C}(\mathbf{T}^{n})\) .
+
+We reduce to the case n = 1 by noting that \(\mu_{N}\) is the product of measures of the same type for n = 1. It then suffices to verify that the sequence ( \(\mu_{N}\) ) satisfies the hypotheses of Lemma 4 of INT, VIII, §2, n°7 with a = 0.
+
+To this end, we first note that \(F_{N}\) is the Fourier cotransform of the map \(\varphi_{\mathrm{N}}\colon h\mapsto(1-|h|/\mathrm{N})\) on Z. This is written as \(\varphi_{N}=N^{-1}\psi_{N}*\widetilde{\psi}_{N}\) , where \(\psi_{N}\) is the characteristic function of the set defined by \(-N/2<|h|\leqslant N/2\) . Consequently, \(F_{N}=N^{-1}|\overline{\mathcal{F}}(\psi_{N})|^{2}\geqslant0\). Thus, \(\mu_{N}\) is a positive measure; we have \(\mu_{\mathrm{N}}(\mathbf{T})=1\), which proves (i) and (iii) in loc. cit.
+
+Let us prove condition (ii) of loc. cit. Let U be an open neighborhood of 0 in T. It suffices to show that \(\mu_{\mathrm{N}}(\mathrm{U}) \to 1\) when \(\mathrm{N} \to +\infty\). Let K be a compact symmetric neighborhood of 0 such that \(\mathrm{K}^2 \subset \mathrm{U}\) and \(\psi\) the characteristic function of K. Set \(\varphi = \psi * \psi\) . This is an element of A(T) with support contained in U. The real number \(m = \varphi(0)\) is the measure of the set K, and hence \(m > 0\). Moreover, we have \(0 \leqslant \varphi \leqslant m\) since \(\varphi(x)\) is the measure of the set K \(\cap x\) K. We have
+
+\[
+\mu_ {\mathrm{N}} (\mathrm{U}) \geqslant \frac {1}{m} \int_ {\mathbf {T}} \varphi (x) \mu_ {\mathrm{N}} (x) = \frac {1}{m} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) \varphi_ {\mathrm{N}} (h)
+\]
+
+by the transposition properties of the Fourier transform (prop. 13 of II, p.~221). Since \(\varphi \in \mathrm{A}(\mathbf{T})\) , its Fourier transform belongs to \(\mathrm{L}^1 (\mathbf{Z})\) and \(\varphi\) satisfies the Fourier inversion formula (prop. 11 of II, p.~217). Since \(\varphi_{\mathrm{N}}(h)\to 1\) for all \(h\in \mathbf{Z}\) and \(|\varphi_{\mathrm{N}}(h)|\leqslant 1\) , Lebesgue's theorem (INT, IV, §3, no. 7, th. 6) and the Fourier inversion formula imply that
+
+\[
+\begin{array}{r l} & {\underset {\mathrm{N} \to + \infty} {\liminf} \mu_ {\mathrm{N}} (\mathrm{U}) \geqslant \frac {1}{m} \underset {\mathrm{N} \to + \infty} {\lim} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) \varphi_ {\mathrm{N}} (h) =} \\ & {\qquad \qquad \qquad \qquad \frac {1}{m} \sum_ {h \in \mathbf {Z}} \mathcal {F} (\varphi) (h) = \frac {1}{m} \varphi (0) = 1.} \end{array}
+\]
+
+Let us prove the proposition. We have \(f * \mathrm{F}_{\mathrm{N}} = f_{\mathrm{N}}\) for \(\mathrm{N} \geqslant 1\) . The regular representation \(\gamma\) of \(\mathbf{T}^n\) into \(\mathcal{C}(\mathbf{T}^n)\) (INT, VIII, §2, no. 3) is continuous and satisfies \(f * \mathrm{F}_{\mathrm{N}} = \gamma(\mu_{\mathrm{N}})f\) (INT, VIII, §4, no. 5, prop. 5 (iv)). The map \(\mu \mapsto \gamma(\mu)f\) is continuous from \(\mathcal{M}^1(\mathbf{T}^n)\) into \(\mathcal{C}(\mathbf{T}^n)\) (INT, VI, §1, no. 6, prop. 14). By the lemma, we therefore have
+
+\[
+\lim _ {N \to + \infty} f _ {N} = \lim _ {N \to + \infty} f * F _ {N} = \lim _ {N \to + \infty} \gamma (\mu_ {N}) f = \gamma (\varepsilon_ {0}) (f) = f
+\]
+
+in \(\mathcal{C}(\mathbf{T}^n)\) .
+
+Note. --- There exist functions \(f \in \mathrm{L}^{1}(\mathbf{T})\) whose Fourier series diverges at every point \(x \in T\) (Kolmogorov's theorem, cf.~Exercise 51 of II, p.~289).
+
+A theorem of Carleson \(^{(1)}\) proves that the symmetric partial sums of the Fourier series of f converge to \(f(x)\) for almost all \(x \in T\) if \(f \in \mathcal{L}^{2}(T)\) .
+

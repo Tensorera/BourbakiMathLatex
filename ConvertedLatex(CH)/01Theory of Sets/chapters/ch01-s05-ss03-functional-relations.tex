@@ -1,0 +1,75 @@
+\subsection{函数关系}
+
+设R为一个组装，x为一个字母。设y和z为互不相同的字母，它们与x不同，并且不出现在R中。设 \(y'\) , \(z'\) 为另外两个具有相同性质的字母。根据CS8、CS9（§4，第1号）、CS2、CS5（§1，第2号）和CS6（§3，第4号），这些组装
+
+\[
+(\forall y) (\forall z) (((y | x) R \text { 且 } (z | x) R) \Longrightarrow (y = z))
+\]
+
+并且
+
+\[
+(\forall y ^ {\prime}) (\forall z ^ {\prime}) (((y ^ {\prime} | x) R \text { 且 } (z ^ {\prime} | x) R) \Longrightarrow (y ^ {\prime} = z ^ {\prime}))
+\]
+
+是相同的。如果R是G中的一个关系，则如此定义的组装是G中的一个关系，记为“至多存在一个x使得R”；字母x不出现于此关系中。当此关系在G中是一个定理时，称R在G中关于x是单值的。要证明R在理论G中是单值的，只需在将公理 \((y|x)R\) 和 \((z|x)R\) 加入G后所得的理论中证明y = z即可，其中 y 和 z 是与 x 不同的不同字母，且既不出现在 R 中，也不出现在 G 的显式公理中。
+
+C45. 设 R 是 C 中的一个关系，并设 x 是一个不属于 C 的常量的字母。若 R 在 C 中关于 x 是单值的，则 \(\mathbf{R} \Longrightarrow (\mathbf{x} = \tau_{\mathbf{x}}(\mathbf{R}))\) 是C中的一个定理。反之，如果对于C中某个不含x的项T， \(\mathbf{R} \Longrightarrow (\mathbf{x} = \mathbf{T})\) 是C中的一个定理，则R在C中关于x是单值的。
+
+假设R在T中关于x是单值的，且让我们证明
+
+\[
+R \Longrightarrow (x = \tau_ {x} (R))
+\]
+
+是 \(\mathcal{C}\) 中的定理 。添加假设 \(R\) 。然后 \((\tau_{x}(R)|x)R\) 由S5为真，因此“ \(R\) 并且 \((\tau_{x}(R)|x)R\) ”为真。现在，由于 \(R\) 在 \(x\) 中是单值的，
+
+\[
+(R \text {   且   } (\tau_ {x} (R) | x) R) \Longrightarrow (x = \tau_ {x} (R))
+\]
+
+是 \(\mathfrak{G}\) 中的定理 ，由C30（§4，第3号）。因此 \(x = \tau_x(R)\) 为真。¶ 反之，假设 \(R \Rightarrow (x = T)\) 是 \(\mathfrak{G}\) 中的定理 . 设 \(y, z\) 是互不相同的字母，且与 \(x\) 不同，并且既不出现在 \(R\) 中，也不出现在 \(\mathfrak{G}\) 的显式公理中。由于 \(x\) 不是 \(\mathfrak{G}\) 的常量，且不出现在 \(T\) 中，关系
+
+\[
+(y | x) R \Longrightarrow (y = T), \quad (z | x) R \Longrightarrow (z = T)
+\]
+
+是 \(\mathfrak{G}\) 中的定理。添加假设 \((y|x)R\) 和 \((z|x)R\) 。然后 \(y = T\) 和 \(z = T\) 为真，因此 \(y = z\) 为真。
+
+设R是C中的一个关系。关系
+
+``\((\exists x)R\) 和至多存在一个x使得R''
+
+记为“恰好存在一个x使得R”。如果这个关系在C中是定理，则称R在理论C中是关于x的函数关系。
+
+C46. 设 R 是 G 中的一个关系，并设 x 是一个不属于 G 的常量的字母。若 R 在 G 中关于 x 是函数性的，则 \(\mathbf{R} \Longleftrightarrow (\mathbf{x} = \tau_{\mathbf{x}}(\mathbf{R}))\) 是G中的一个定理。反之，若对于G中某个不含x的项T，
+
+\[
+\boldsymbol {R} \Longleftrightarrow (\boldsymbol {X} = \boldsymbol {T})
+\]
+
+是 \(\mathfrak{G}\) 中的定理 ，那么 \(\pmb{R}\) 关于 \(x\) 在 \(\mathfrak{G}\) 中是函数性的。
+
+假设R在C中关于x是函数性的，则 \(\boldsymbol{R} \Longrightarrow (\boldsymbol{x} = \tau_{\boldsymbol{x}}(\boldsymbol{R}))\) 根据C45，这是C中的一个定理。另一方面， \((\exists \boldsymbol{x})\boldsymbol{R}\) 是T中的一个定理。根据S6，该关系
+
+\[
+(x = \tau_ {x} (R)) \Longrightarrow (R \Longleftrightarrow (\exists x) R)
+\]
+
+是 \(\mathfrak{C}\) 中的定理 。如果我们附加假设 \(x = \tau_x(R)\) ，由此可得 \(R\) 成立。因此 \((x = \tau_x(R)) \Longrightarrow R\) 是 \(\mathfrak{C}\) 中的定理 。反之，若 \(R \Longleftrightarrow (x = T)\) 是 \(\mathfrak{C}\) 中的定理 ，那么 \(R\) 关于 \(x\) 在 \(\mathfrak{C}\) 中是单值的，根据C45。此外， \((T|x)R \Longleftrightarrow (T = T)\) 是 \(\mathfrak{C}\) 中的定理 ；因此 \((T|x)R\) 以及因此 \((\exists x)R\) 是 \(\mathfrak{C}\) 中的定理 .
+
+如果关系 R 在 T 中关于 x 是函数的，那么 R 等价于关系 \(\boldsymbol{x} = \tau_{\boldsymbol{x}}(\boldsymbol{R})\) ，后者通常更易于处理。一般会引入一个缩写符号 \(\Sigma\) 来表示项 \(\tau_{\boldsymbol{x}}(\boldsymbol{R})\) 。这样的符号称为 G 中的函数符号。
+
+直观上， \(\Sigma\) 表示具有由 \(R\) 所定义性质的唯一对象。 * 例如，在一个其中“ \(y\) 是实数 \(\geqslant 0\) ''是一个定理的理论中，关系“ \(x\) 是实数 \(\geqslant 0\) 和 \(y = x^{2}\) ”关于 \(x\) 是函数性的；相应的函数符号取为 \(\sqrt{y}\) 或 \(y^{1/2}\) . *
+
+C47. 设 x 是一个字母，它不是 \(\mathfrak{G}\) 的常量，并且设 \(R\{x\}\) 和 \(S\{x\}\) 为 \(\mathfrak{G}\) 中的两个关系。如果 \(R\{x\}\) 在 \(\mathfrak{G}\) 中关于x是函数性的，则关系 \(S\{\tau_{x}(R)\}\) 等价于 \((\exists x)(R\{x\}\) 和 \(S\{x\})\) .
+
+因为由C46和C43可得 \((\pmb{R}\{\pmb{x}\}\) 和 \(S\{\pmb{x}\})\) 等价于 \((\pmb{R}\{\pmb{x}\}\) 和 \(S\{\tau_{\pmb{x}}(\pmb{R})\}\) ；由于 \(S\{\tau_{\pmb{x}}(\pmb{R})\}\) 不包含 \(\pmb{x}\) ,
+
+\[
+(\exists x) (R \{x \} \text {   且   } S \{\tau_ {x} (R) \})
+\]
+
+等价于 \((S\{\tau_x(R)\}\) 和 \((\exists x)R)\) ，由C33（§4，第3号）可知；且结果由以下事实得出： \((\exists x)R\) 是真的，因为 \(R\) 在 \(x\) 中是函数性的。
+
+\clearpage

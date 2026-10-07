@@ -1,0 +1,36 @@
+\subsection{Trees}
+
+When one speaks of paths, or of connected components, of a graph, one means the paths or the connected components of the underlying quiver. Two vertices of a graph belong to the same connected component if and only if there exists a path connecting them.
+
+Let G be a graph. If \(c = (a_{0}, f_{1}, a_{1}, \ldots, f_{n}, a_{n})\) is a path in G, the sequence \(\overline{c} = (a_{n}, \overline{f_{n}}, \ldots, a_{1}, \overline{f_{1}}, a_{0})\) is a path in G, called the opposite path to c. Let c and \(c'\) be juxtaposable paths in G; then, \(\overline{c'}\) and \(\overline{c}\) are juxtaposable, and one has \(\overline{c * c'} = \overline{c'} * \overline{c}\) .
+
+A path c in G is said to be without backtracking if there is no pair of consecutive arrows of c that are opposite. Let \(c = (a_{0}, f_{1}, \ldots, f_{n}, a_{n})\) be a path in G connecting \(a_{0}\) and \(a_{n}\) . If, for an integer i such that \(1 \leqslant i < n\) , the arrows \(f_{i}\) and \(f_{i+1}\) are opposite, the path \((a_{0}, f_{1}, \ldots, a_{i-1}, f_{i+2}, \ldots, f_{n}, a_{n})\) is a path in G connecting \(a_{0}\) to \(a_{n}\) whose length is strictly less than that of the path c. By induction, there therefore exists a path without backtracking in G that connects \(a_{0}\) to \(a_{n}\) .
+
+DEFINITION 2. --- A forest is a graph in which every loop without backtracking is a constant loop. A tree is a connected forest.
+
+PROPOSITION 1. --- Let G be a graph. Every forest of G is contained in a maximal forest of G; in particular, there exists a maximal forest of G.
+
+For a forest of G to be maximal, it is necessary and sufficient that its vertex set be equal to the vertex set of G and that its connected components be those of G.
+
+Let \(A_{0}\) be a forest of G. The set of forests of G, equipped with the order relation “A is a subgraph of B,” is inductive. Consequently, there exists a maximal forest of G of which \(A_{0}\) is a subgraph (E, III, p. 21, cor. 1).
+
+The subgraph of G whose vertex set is \(\operatorname{Som}(G)\) and whose arrow set is empty is a forest of G. Hence there exists a maximal forest of G.
+
+Let A be a maximal forest of G. We prove that A and G have the same vertex set. The subgraph of G whose vertex set is \(\operatorname{Som}(G)\) and whose set of arrows is \(\operatorname{Fl}(A)\) is a forest and A is a subgraph of it. Thus we have \(\operatorname{Som}(A) = \operatorname{Som}(G)\) .
+
+We now prove that A and G have the same connected components. Since every arrow of A is an arrow of G, each connected component of A is contained in a connected component of G. Since A and G have the same vertex set, it suffices to show that two vertices of G lying in the same connected component of G lie in the same connected component of A. If this is not the case, the relation \(R_{A}\) , "being in the same connected component of A," is strictly finer than the relation \(R_{G}\) and there exist two vertices of G that are not in the same connected component of A but are nevertheless joined by an arrow f of G. Let B be the directed subgraph of G whose vertex set is \(\operatorname{Som}(G)\) and whose arrow set is \(\mathrm{Fl(A)} \cup \{f, \overline{f}\}\) . Let us prove that B is a forest of G. Let \(c = (a_{0}, f_{1}, \ldots, f_{n}, a_{n})\) be a nonconstant loop without backtracking in B of minimal length. Since A is a forest, the loop c is not a loop in A. Let i (resp. j) be the smallest (resp. the largest) integer of \(\{0, \ldots, n\}\) such that \(a_{0}\) and \(a_{i}\) (resp. \(a_{j}\) and \(a_{n}\) ) are not in the same connected component of A. This means that the arrows \(f_{i}\) and \(f_{j+1}\) are oriented arrows of B associated with the edge \(\{f, \overline{f}\}\) and that they are opposite. Since the loop c has no back-and-forth, \(f_{i+1} \neq \overline{f_{i}}\) , therefore \(i \neq j\) and the path \((a_{i}, f_{i+1}, a_{i+1}, \ldots, f_{j}, a_{j})\) is a non-constant loop without backtracking in B of length < n, contrary to the hypothesis that c is of minimal length. It follows that B is a forest. This contradicts the hypothesis that A is a maximal forest of G.
+
+Let now A be a forest of G such that \(\mathrm{Som}(\mathrm{A}) = \mathrm{Som}(\mathrm{G})\) and \(\pi_{0}(\mathrm{A}) = \pi_{0}(\mathrm{G})\) . Let us prove that this is a maximal forest of G. It suffices to show that if \(f \notin \mathrm{Fl}(\mathrm{A})\) , the subgraph B of G with vertex set \(\mathrm{Som}(\mathrm{G})\) and arrow set \(\mathrm{Fl}(\mathrm{A}) \cup \{f, \overline{f}\}\) is not a forest. By hypothesis, the points \(o(f)\) and \(t(f)\) lie in the same connected component of A; there therefore exists a path c without backtracking in A joining \(o(f)\) to \(t(f)\) . The path \(c * \overline{f}\) is then a loop without backtracking and non-constant in B, which shows that B is not a forest.
+
+COROLLARY. --- A maximal forest of a connected graph is a maximal tree thereof.
+
+Remark 1. --- In LIE, IV, p. 33, appendix, the notion of a combinatorial graph was defined as a pair (A, S), where S is a set and
+
+A a subset of \(\mathfrak{P}(S)\) consisting of two-element sets; the elements of S are called vertices, those of A edges, and two vertices \(x\) and \(y \in S\) are said to be linked if \(\{x, y\}\) is an edge.
+
+To such a combinatorial graph \(\Gamma = (\mathrm{A},\mathrm{S})\) , one associates a graph G whose vertex set is S and whose arrow set \(\widetilde{\mathrm{A}}\) is the subset of \(\mathrm{S}^2\) formed by the pairs of linked vertices, with the source map and the target map coinciding with the first and second projections of \(\mathrm{S}^2\) in S, and the involution \(f\mapsto \overline{f}\) being given by the restriction to \(\widetilde{\mathrm{A}}\) of the map \((x,y)\mapsto (y,x)\) of \(\mathrm{S}^2\) into itself. The map which to an edge \(\{f,\overline{f}\}\) of G associates the set \(\{o(f),t(f)\}\) is a bijection from the set of edges of G onto that of the edges of the combinatorial graph \(\Gamma\) .
+
+Conversely, every graph such that the source and target of every arrow are distinct, and such that an arrow is determined by its source and target, is of this form.
+
+The reader will verify that the notions of connectedness, tree, or forest for a combinatorial graph coincide with the corresponding notions for the graph associated with it.
+

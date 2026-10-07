@@ -1,0 +1,32 @@
+\subsection{SIEVES}
+
+DEFINITION 7. A sieve is a sequence \(\mathbf{C} = (\mathbf{C}_n, p_n)_{n \geqslant 0}\) such that, for each \(n\) , \(\mathbf{C}_n\) is a countable set and \(p_n\) is a surjection of \(\mathbf{C}_{n+1}\) onto \(\mathbf{C}_n\) .
+
+For each pair of integers \(m, n\) such that \(0 \leqslant m \leqslant n\) , let \(p_{mn}\) denote the identity mapping of \(C_m\) onto itself if \(m = n\) , and the surjection \(p_m \circ p_{m+1} \circ \cdots \circ p_{n-1}\) of \(C_n\) onto \(C_m\) if \(m < n\) . Clearly \(p_{mq} = p_{mn} \circ p_{ng}\) whenever \(m \leqslant n \leqslant q\) , and we may therefore consider the inverse limit \(L(C)\) of the family \((C_n)\) with respect to the family of mappings \((p_{mn})\) (Set Theory, Chapter III, § 7). If each \(C_n\) is endowed with the discrete topology, then \(L(C)\) is an inverse limit of topological spaces (Chapter I, § 4, no. 4); as such, \(L(C)\) is called the topological space associated with the sieve \(C\) . \(L(C)\) is a closed subspace of the topological product \(\prod_n C_n\) , and it follows immediately that \(L(C)\) is a zero-dimensional Polish space (no. 4).
+
+A sifting of a metric space X consists of a sieve \(\mathbf{C} = (\mathbf{C}_{n}, p_{n})\) and for each integer \(n \geqslant 0\) a mapping \(\varphi_{n}\) of \(C_{n}\) into the set of non-empty closed subsets of X of diameter \(\leqslant 2^{-n}\) , such that:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  X is the union of the sets \(\varphi_0(c)\) as \(c\) runs through \(\mathbf{C}_0\) ;
+\item
+  for each \(n\) and each \(c \in \mathbf{C}_n\) , \(\varphi_n(c)\) is the union of the sets \(\varphi_{n+1}(c')\) , where \(c'\) runs through \(\overline{\pmb{p}}_n(c)\) .
+\end{enumerate}
+
+A sifting is said to be strict if in addition, for each n, the sets \(\varphi_{n}(c)\) , as c runs through \(C_{n}\) , are mutually disjoint.
+
+LEMMA 3. Every metric space X of countable type possesses a sifting. If also X is zero-dimensional, then X has a strict sifting.
+
+Note first that if Y is a metric space of countable type and if \(\varepsilon\) is a real number \textgreater0, then there is a countable covering of Y by sets of diameter \(\leqslant\varepsilon\) (§2, no. 8, Proposition 13). If, moreover, Y is zero-dimensional, there is such a covering \((\mathbf{V}_{n})\) formed of sets which are both open and closed; if \(W_{n}\) is the intersection of \(V_{n}\) and \(\bigcap_{k<n}(\mathbf{Y}-\mathbf{V}_{k})\) , we see that the \(W_{n}\) are closed, of diameter \(\leqslant\varepsilon\) , pairwise disjoint and cover X. In any case, the closures of the non-empty sets of the covering form a countable covering of Y whose elements are non-empty closed sets of diameter \(\leqslant\varepsilon\) .
+
+Let X be a metric space of countable type. Let \(C_{0}\) be the set of indices of a countable covering of X formed of non-empty closed sets of diameter \(\leqslant I\) , which are pairwise disjoint if X is zero-dimensional; \(\varphi_{0}\) shall be the mapping which associates with each index \(c \in C_{0}\) the corresponding set of the covering. Suppose that we have already defined the \(C_{i}\) and the \(\varphi_{i}\) and the surjective mappings \(p_{i}: C_{i+1} \to C_{i}\) for \(i \leqslant n\) in such a way that condition b) is satisfied for these indices. If \(c \in C_{n}\) , the space \(\varphi_{n}(c)\) has a countable covering by non-empty closed sets of diameter \(\leqslant I/2^{n+1}\) , which are mutually disjoint if X {[}and therefore \(\varphi_{n}(c)\) {]} is zero-dimensional; if \(\mathrm{I}(c)\) denotes the index set of this covering, we take \(c_{n+1}\) to be the sum of the sets \(\mathrm{I}(c)\) as c runs through \(C_{n}\) ; for each \(c' \in C_{n+1}\) , let \(p_{n}(c')\) denote the element \(c \in C_{n}\) such that \(c' \in \mathrm{I}(c)\) , and let \(\varphi_{n+1}(c')\) denote the set with index \(c'\) in the covering of \(\varphi_{n}(c)\) under consideration. Clearly we thus define by induction a sifting of X, and this sifting is strict if X is zero-dimensional; hence Lemma 3.
+
+Now suppose that X is a complete metric space of countable type, and consider a sifting of X by a sieve C and mappings \(\varphi_{n}\) . If \(\gamma = (c_{n})\) is a point of the space \(\mathrm{L}(\mathrm{C})\) associated with C, the sequence \((\varphi_{n}(c_{n}))\) is a decreasing sequence of closed sets in X whose diameters tend to o; the intersection of this sequence of sets consists therefore of a single point, which we denote by \(f(\gamma)\) . Thus we have defined a mapping \(f: \mathrm{L}(\mathrm{C}) \to \mathrm{X}\) . If two points \(\gamma, \gamma'\) of \(\mathrm{L}(\mathrm{C})\) have the same i-th coordinates for \(i \leqslant n\) , it is clear that the distance between \(f(\gamma)\) and \(f(\gamma')\) is \(\leqslant 1/2^{n}\) , and therefore f is continuous, by virtue of the definition of the topology of \(\mathrm{L}(\mathrm{C})\) . For each \(x \in X\) it follows from the definition of a sifting that we can define by induction on n a sequence \(\gamma = (c_{n})\) such that \(x \in \varphi_{n}(c_{n})\) for each \(n \geqslant 0\) , and \(c_{n} = p_{n}(c_{n+1})\) ; hence \(x = f(\gamma)\) and so f is surjective. Furthermore, if the sifting is strict, the sequence \(\gamma = (c_{n})\) such that \(x = f(\gamma)\) is unique, and so in this case f is bijective. f is said to be the mapping induced by the sifting considered.
+
+PROPOSITION 13. If X is any Lusin (resp. Souslin) space, there exists a sieve C and a continuous bijection (resp. surjection) of L(C) onto X.
+
+Referring to the definition of a Lusin space (no. 4, Definition 6) {[}resp. a Souslin space (no. 2, Definition 2){]}, we reduce to the case where
+
+X is Polish and zero-dimensional (resp. Polish), and the preceding argument then proves the result.
+

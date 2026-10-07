@@ -1,0 +1,112 @@
+\subsection{单连通空间的同胚群}
+
+设 X 为非空连通拓扑空间，G 为从左边连续作用于 X 的离散群；以 e 表示 G 的单位元。设 M 为 X 的子集，使得 \(G \cdot M = X\) 。我们令
+
+\[
+\mathrm{S} = \{g \in \mathrm{G} \mid g \cdot \mathrm{M} \cap \mathrm{M} \neq \varnothing \}.
+\]
+
+我们有 \(e \in S\) 且 \(S = S^{-1}\) 。
+
+对每个 \(x \in X\) ，以 \(E_{x}\) 表示这样的 \(g \in G\) 所成的集：\(x \in g \cdot M\) 。设 \(g, h \in E_{x}\) ；则 \(g \cdot M \cap h \cdot M \neq \varnothing\) ，从而 \(g^{-1}h \in S\) 。特别地，对每个 \(x \in M\) ，我们有 \(e \in E_{x}\) ，于是 \(E_{x} \subset S\) 。
+
+我们作下列两个假设之一：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  集合 M 是开集；
+\item
+  集合 M 是闭集，且 X 的覆盖 \((g \cdot \mathrm{M})_{g \in \mathrm{G}}\) 是局部有限的。
+\end{enumerate}
+
+引理 2. —— 对每一点 \(x \in X\) ，映射 \(\mu_x: E_x \times M \to X\) （由 \((g, u) \mapsto g \cdot u\) 给出）是普遍严格的，且其像 \(E_x \cdot M\) 是 \(x\) 在 \(X\) 中的一个邻域。特别地，\(S \cdot M\) 是 \(M\) 的一个邻域。
+
+在假设 (i) 之下，映射 \(\mu_{x}\) 是开的，因为 \(E_{x} \times M\) 在 \(G \times M\) 中是开集。于是其像在 X 中是开集。
+
+现在假设 (ii) 成立。映射 \(\mu_x\) 是逆紧的（TG, I, 第 6 页, 命题 4, 以及第 75 页, 定理 1），因而是普遍严格的（I, 第 20 页, 推论 11）。此外，\((\mathrm{G} - \mathrm{E}_x) \cdot \mathrm{M}\) 是 X 的不包含 \(x\) 的闭子集，因此 \(\mathrm{E}_x \cdot \mathrm{M}\) 是 \(x\) 的一个邻域。
+
+最后一个断言由如下事实得出：\(E_{x} \subset S\) （若 \(x \in M\) ）。
+
+引理 3. —— 群 G 由 S 生成。
+
+设 H 为 G 的由 S 生成的子群。令 U = H·M ；注意 U 是形如 \(h \cdot (S \cdot M)\) （\(h \in H\) ）的子集的并。由于 S · M 是 M 的一个邻域（引理 2），集合 U 是 H · M = U 的一个邻域；由此可知 U 在 X 中是开集。设 \(g, g' \in G\) 使得 \(g \cdot U \cap g' \cdot U \neq \varnothing\) ；设 \(h, h' \in H\) 与 \(x, x' \in M\) 使得 \(gh \cdot x = g'h' \cdot x'\) ；则 \(h^{-1}g^{-1}g'h' \cdot x' = x\) ，从而 \(h^{-1}g^{-1}g'h' \in S\) ；特别地，\(g^{-1}g' \in H\) 。当 \(g\) 取遍模 \(H\) 的左陪集的代表系时，诸集合 \(g \cdot U\) 两两不交；由于 \(G \cdot M = X\) ，它们覆盖 \(X\) 。由于 \(X\) 连通，由此得出 \((G : H) = 1\) ，从而 \(H = G\) 。
+
+设 T 为 G 中元素之对 \((s,t)\) 所成的集，使得 \(M\cap s\cdot M\cap st\cdot M\neq\varnothing\) ；若 \((s,t)\in\mathrm{T}\) ，则 s、t 与 st 都属于 S。设 F 为群 \(\mathrm{F}(\mathrm{S},\mathbf{r})\) ，它由生成元集 S 与关系元 \(str^{-1}\) （对 \(r,s,t\in S\) ，满足 \((s,t)\in\mathrm{T}\) 且 r=st）所成的集 r 定义；以 \(\varepsilon\) 表示其单位元，以 \(\varphi\colon F\to G\) 表示典范同态（A, I, 第 86 页, 命题 9）。若 \(s\in S\) ，我们将以 \(x_{s}\) 表示 F 中的元素，即 s 在从 S 到 F 的典范映射下的像；对每个 \(s\in S\) ，有 \(\varphi(x_{s})=s\) 。于是同态 \(\varphi\) 是满射的（引理 3）。对 \((s,t)\in\mathrm{T}\) 与 r=st，有 \(x_{r}=x_{s}x_{t}\) ；从而有 \(x_{e}=\varepsilon\) ，因为 \((e,e)\in\mathrm{T}\) ；对每个 \(s\in S\) ，还有 \(x_{s^{-1}}=x_{s}^{-1}\) ，因为 \((s,s^{-1})\in\mathrm{T}\) 。
+
+给集合 F 赋予离散拓扑，并以 Z 表示拓扑空间 \(F \times M\) ，它带有由 \((\gamma, (g, x)) \mapsto (\gamma g, x)\) （对 \(\gamma\) 与 \(g \in F\) 以及 \(u \in M\) ）给出的 F 的作用。设 \((g_{1}, u_{1})\) 与 \((g_{2}, u_{2})\) 为 Z 的元素；我们说 \((g_{1}, u_{1})\) 与 \((g_{2}, u_{2})\) 同余，如果存在 \(s \in S\) 使得 \(g_{2} = g_{1} \cdot x_{s}\) 且 \(s \cdot u_{2} = u_{1}\) 。
+
+引理 4. —— 关系“ \((g_{1}, u_{1})\) 与 \((g_{2}, u_{2})\) 同余”是 Z 上的一个等价关系，且与 F 的作用相容。
+
+这个关系是自反的，因为我们有 \(x_e = \varepsilon\) 。设 \((g_1, u_1)\) 与 \((g_2, u_2)\) 为 Z 的元素，使得 \((g_1, u_1)\) 与 \((g_2, u_2)\) 同余。设 \(s \in S\) 使得 \(g_2 = g_1 x_s\) 且 \(s \cdot u_2 = u_1\) ；由于 \(x_{s^{-1}} = x_s^{-1}\) ，我们有 \(g_1 = g_2 x_{s^{-1}}\) 与 \(u_2 = s^{-1} \cdot u_1\) ，因此 \((g_2, u_2)\) 与 \((g_1, u_1)\) 同余；从而这个关系是对称的。最后来证明它是传递的。设 \((g_1, u_1)\) 、\((g_2, u_2)\) 与 \((g_3, u_3)\) 为 Z 的点，使得 \((g_1, u_1)\) 与 \((g_2, u_2)\) 同余，\((g_2, u_2)\) 与 \((g_3, u_3)\) 也同余。设 \(s\) 与 \(t\) 属于 S，使得一方面 \(g_2 = g_1 x_s\) 且 \(s \cdot u_2 = u_1\) ，另一方面 \(g_3 = g_2 x_t\) 且 \(t \cdot u_3 = u_2\) 。我们有 \(u_1 = s \cdot u_2 = st \cdot u_3\) ，因此 \(u_1 \in M \cap s \cdot M \cap st \cdot M\) ，这表明 \((s, t)\) 属于 T 且 \(st\) 属于 S。于是有 \(g_3 = g_2 x_t = g_1 x_s x_t = g_1 x_{st}\) 与 \(u_1 = st \cdot u_3\) ，因此 \((g_1, u_1)\) 与 \((g_3, u_3)\) 同余。这样一来，“同余”关系就是 Z 上的一个等价关系。它与 F 在 Z 上的作用相容。
+
+设 Y 为 Z 关于上述等价关系的商拓扑空间。以 \(\pi\colon\mathrm{Z}\to\mathrm{Y}\) 表示典范映射。
+
+我们还以 \(q \colon \mathrm{Z} \to \mathrm{X}\) 表示由 \((g, x) \mapsto \varphi(g) \cdot x\) 给出的映射；它是满射的（引理 3）。通过取商，映射 \(q\) 诱导一个连续且满射的映射 \(p \colon \mathrm{Y} \to \mathrm{X}\) ；由引理 4，F 在 Z 上的作用诱导 F 在 Y 上的一个连续作用，使得 \(p(g \cdot y) = \varphi(g) \cdot p(y)\) （对所有 \(g \in \mathrm{F}\) 与每一点 \(y \in \mathrm{Y}\) ）。特别地，群 \(\mathrm{N} = \mathrm{Ker}(\varphi)\) 连续地作用于 X-空间 \((\mathrm{Y}, p)\) 。
+
+引理 5. —— 若 M 连通，则空间 Y 连通。
+
+设 \(g \in F\) 与 \(s \in S\) 。设 u 与 v 为 M 的元素，使得 \(v = s \cdot u\) ；于是有 \(\pi(g, v) = \pi(gx_s, u)\) ，且 Y 的集合 \(\pi(\{g\} \times M)\) 与 \(\pi(\{gx_s\} \times M)\) 有一个公共点。由于它们都是连通的，它们含于 Y 的同一个连通分支。由于 S 是群 G 的对称子集，且 \(x_{s^{-1}} = x_s^{-1}\) （对所有 \(s \in S\) ），F 的每个元素 g 都形如 \(x_{s_1} \ldots x_{s_n}\) ，其中 \(n \in \mathbb{N}\) 且 \(s_1, \ldots, s_n\) 是 S 的元素。对 n 用归纳法，集合 \(\pi(\{e\} \times M)\) 与 \(\pi(\{g\} \times M)\) （对每个 \(g \in F\) ）含于 Y 的同一个连通分支。由此得出 Y 是连通的。
+
+引理 6. —— 对每个 \(x \in X\) ，群 N 忠实且传递地作用于纤维 \(p^{-1}(x)\) 上。
+
+由于 \(p\) 是满射的，纤维 \(p^{-1}(x)\) 非空。设 \(y, y' \in p^{-1}(x)\) ；我们来证明存在唯一的元素 \(n \in \mathrm{N}\) 使得 \(n \cdot y = y'\) 。设 \(g, h \in \mathrm{F}\) ，并设 \(u, v \in \mathrm{M}\) 使得 \(y = \pi(g, u)\) 与 \(y' = \pi(h, v)\) 。令 \(s = \varphi(g^{-1}h)\) 。由于 \(x = \varphi(g) \cdot u = \varphi(h) \cdot v\) ，我们有 \(u = s \cdot v\) ，从而 \(s \in \mathrm{S}\) 。由此得出 \(\varphi(h) = \varphi(gx_s)\) ，因此存在 \(n \in \mathrm{N}\) 使得 \(h = ngx_s\) 。于是，
+
+\[
+y ^ {\prime} = \pi (h, v) = \pi (n g x _ {s}, v) = n \cdot \pi (g x _ {s}, v) = n \cdot \pi (g, s \cdot v) = n \cdot y.
+\]
+
+设 \(n'\) 为 N 的元素，使得 \(n' \cdot y = y'\) 。我们有 \(n' \cdot \pi(g, u) = n \cdot \pi(g, u)\) ，从而 \(\pi(n'g, u) = \pi(ng, u)\) 。因此，存在 \(t \in S\) 使得 \(n'g = ngx_t\) ；这个关系蕴含 \(\varphi(x_t) = e\) ，从而 \(t = e\) 且 \(n = n'\) 。
+
+引理 7. —— 赋有 N 的作用的 X-空间 (Y,p) 是一个左主覆叠。它在 M 上是可平凡化的。
+
+设 \(x \in \mathrm{X}\) ；我们取定一个元素 \(g \in \mathrm{E}_x\) 以及一个元素 \(\overline{g} \in \mathrm{F}\) 使得 \(\varphi(\overline{g}) = g\) 。以 \(\mu_x \colon \mathrm{E}_x \times \mathrm{M} \to \mathrm{X}\) 表示由 \((h, u) \mapsto h \cdot u\) 给出的映射。
+
+设 \(n \in \mathrm{N}\) ，设 \(h, k \in \mathrm{E}_x\) ，并设 \(u, v \in \mathrm{M}\) 使得 \(h \cdot u = k \cdot v\) ；令 \(s = g^{-1}h\) ，\(t = h^{-1}k\) 与 \(r = st = g^{-1}k\) 。由于 \(x\) 属于 \(g \cdot M \cap h \cdot M \cap k \cdot M\) ，对 \((s, t)\) 属于 T，从而 \(x_s x_t = x_r\) 。于是我们有
+
+\[
+\pi (n \overline {{g}} x _ {r}, v) = \pi (n \overline {{g}} x _ {s} x _ {t}, v) = \pi (n \overline {{g}} x _ {s}, t \cdot v) = \pi (n \overline {{g}} x _ {s}, u).
+\]
+
+于是存在唯一的映射 \(\theta\colon\mathrm{N}\times(\mathrm{E}_{x}\cdot\mathrm{M})\to\mathrm{Y}\) ，使得 \(\theta(n,h\cdot u)=\pi(n\overline{g}x_{g^{-1}h},u)\) （对所有 \(n\in\mathrm{N}\) 、所有 \(h\in\mathrm{E}_{x}\) 与每个 \(u\in\mathrm{M}\) ）。我们有
+
+\[
+p (\theta (n, h \cdot u)) = p (\pi (n \overline {{g}} x _ {s}, u)) = q (n \overline {{g}} x _ {s}, u) = \varphi (n \overline {{g}} x _ {s}) \cdot u = g s \cdot u = h \cdot u.
+\]
+
+此外，对 \(n, n' \in \mathrm{N}\) 与 \(y \in \mathrm{E}_x \cdot \mathrm{M}\) ，我们有 \(\theta(n'n, y) = n' \cdot \theta(n, y)\) 。映射 \(\theta'\colon \mathrm{N} \times (\mathrm{E}_x \times \mathrm{M}) \to \mathrm{Y}\) （由 \(\theta'(n, (h, u)) = \theta(n, \mu_x(h, u))\) 给出）是连续的；由于映射 \(\mu_x\) 是普遍严格的（I, 第 133 页, 引理 2），映射 \(\theta\) 连续。它是从 \(\mathrm{N} \times (\mathrm{E}_x \cdot \mathrm{M})\) 到 Y 的子空间 \(\mathrm{Y} \times_{\mathrm{X}} (\mathrm{E}_x \cdot \mathrm{M})\) 上的双射（引理 6）。
+
+设 \(z = (\overline{k}, v) \in \mathbf{Z}\) 与 \((h, u) \in \mathrm{E}_x \times \mathrm{M}\) 使得 \(q(\overline{k}, v) = \mu_x(h, u)\) 。令 \(s = h^{-1}\varphi(\overline{k})\) ；由于 \(\varphi(\overline{k}) \cdot v = h \cdot u\) ，我们有 \(s \in S\) 。于是令 \(\lambda'(z, (h, u)) = \overline{k} x_s^{-1} x_{h^{-1}g} \overline{g}^{-1}\) ；我们有 \(\varphi(\lambda'(z, (h, u))) = \varphi(\overline{k}) s^{-1} h^{-1} gg^{-1} = e\) ，因此 \(\lambda'(z, (h, u)) \in \mathrm{N}\) 。这样就定义了一个连续映射 \(\lambda' \colon \mathbf{Z} \times_{\mathbf{X}} (\mathrm{E}_x \times \mathrm{M}) \to \mathrm{N}\) 。而且，对如上所述的每个 \(z\) 与 \((h, u)\) ，有
+
+\[
+\begin{array}{r l} & {\theta (\lambda^ {\prime} (z, (h, u)), h \cdot u) = \pi (\overline {{k}} x _ {s} ^ {- 1} x _ {h ^ {- 1} g} \overline {{g}} ^ {- 1} \overline {{g}} x _ {g ^ {- 1} h}, u)} \\ & {\qquad = \pi (\overline {{k}} x _ {s} ^ {- 1}, u) = \pi (\overline {{k}}, s ^ {- 1} \cdot u) = \pi (\overline {{k}}, v) = \pi (z),} \end{array}
+\]
+
+且 \(\lambda'(z,(h,u))\) 是 N 中唯一的元素 \(n\) ，使得 \(\theta(n,h\cdot u)=\pi(z)\) 。特别地，存在唯一的映射
+
+\[
+\lambda \colon Y \times_ {X} (E _ {x} \cdot M) \to N
+\]
+
+使得 \(\lambda(\pi(z), h \cdot u) = \lambda'(z, (h, u))\) （对所有 \(z \in \mathbf{Z}\) 与每个 \((h, u) \in \mathrm{E}_x \times \mathrm{M}\) ，满足 \(q(z) = h \cdot u\) ）。它是连续的，因为映射 \(\mu_x\) 是普遍严格的。由此得出，由 Y 换基而得的 \(\mathrm{E}_x \cdot \mathrm{M}\) -空间 \(\mathrm{Y}_{\mathrm{E}_x \cdot \mathrm{M}}\) ，赋有 N 的作用，是一个以 N 为群的主纤维丛，并且是可平凡化的。
+
+引理证毕。
+
+命题 10. —— 设 X 为非空连通拓扑空间，G 为从左边连续作用于 X 的离散群，M 为 X 的子集且 G · M = X。作下列两个假设之一：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  集合 M 是开集；
+\item
+  集合 M 是闭集，且 X 的覆盖 \((g \cdot \mathrm{M})_{g \in \mathrm{G}}\) 是局部有限的。
+\end{enumerate}
+
+设 S 为由元素 \(g \in G\) （满足 \(M \cap g \cdot M \neq \varnothing\) ）所成的集，T 为由对 \((s, t) \in S \times S\) （满足 \(M \cap s \cdot M \cap st \cdot M \neq \varnothing\) ）所成的集。设 F 为群 \(F(S, r)\) ，它由生成元集 S 与关系元 \(str^{-1}\) （对 \(r, s, t \in S\) ，满足 \((s, t) \in T\) 且 r = st）所成的集 r 定义；对 \(s \in S\) ，以 \(x_s\) 表示 s 在从 S 到 F 的典范映射下的像。存在唯一的群同态 \(\varphi: F \to G\) ，使得 \(\varphi(x_s) = s\) （对所有 \(s \in S\) ）。它是满射的；若空间 X 单连通，或者更一般地，若 X 的每个在 M 上可平凡化的覆叠都是可平凡化的，则它是同构。
+
+同态 \(\varphi\) 是满射的（I, 第 133 页, 引理 3）。用刚才引进的记号，X 的覆叠 Y 是可平凡化的，因为它在 M 上可平凡化。由引理 5，Y 连通。因此，\(p\colon\mathrm{Y}\to\mathrm{X}\) 是同胚且群 N 化为单位元。于是，同态 \(\varphi\colon\mathrm{F}\to\mathrm{G}\) 是群同构。
+
+命题 11. —— 设 X 为单连通拓扑空间，G 为从右边连续作用于 X 的离散群。若 G 的由 X 各点的稳定子群之并所生成的子群等于 G，则空间 X/G 是单连通的。
+
+设 (E, p) 为 X/G 的覆叠。我们需要证明，对 E 的每一点 x，存在 p 的连续截面 s 使得 \(s \circ p(x) = x\) （I, 第 70 页, 命题 1 的推论 2）。以 \(q: X \to X/G\) 表示典范映射，并选取 X 的一点 y 使得 \(q(y) = p(x)\) 。由于空间 X 单连通，存在连续映射 \(f: X \to E\) 使得 \(f(y) = x\) 且 \(p \circ f = q\) （I, 第 125 页, 命题 3）。设 z 为 X 的一点，g 为固定 z 的 G 的那个子群的元素。从 X 到 E 中的映射 \(t \mapsto f(t)\) 与 \(t \mapsto f(t \cdot g)\) 是映射 q 到 E 中的连续提升，且它们在 t = z 处相合。由于空间 X 连通，它们相等（I, 第 34 页, 命题 11 的推论 1）。由于 X 各点的稳定子群之并生成 G，我们有 \(f(t \cdot g) = f(t)\) （对所有 \(t \in X\) 与每个 \(g \in G\) ）。通过取商，我们从 f 导出连续映射 s: X/G → E，它是 p 的连续截面且满足 \(s(p(x)) = x\) 。
+

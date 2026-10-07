@@ -1,0 +1,48 @@
+\subsection{量词的定义}
+
+在§3中起作用的唯一逻辑符号是 \(\neg\) 和 \(\vee\) 。我们现在将要陈述的规则本质上涉及逻辑符号 \(\tau\) 和 \(\square\) 的使用。
+
+若R是一个组装，x是一个字母，则组装 \((\tau_{x}(R)|x)R\) 记作“存在x使得 \(R\) ”，或记作 \((\exists x)R\) 。下述组装
+
+\[
+\text {   ``非   } ((\exists x) \text {   非   } R)
+\]
+
+记作“对所有x，R”，或“任给x，R”，或 \((\forall x)R\) 。缩写符号 \(\exists\) 和 \(\forall\) 分别称为存在量词和全称量词。字母x不出现在 \(\tau_{x}(R)\) 所表示的组装中，因而也不出现在 \((\exists x)R\) 和 \((\forall x)R\) 所表示的组装中。
+
+CS8。设R为一个组装，x与 \(x'\) 为字母。若 \(x'\) 不出现在R中，则 \((\exists x)R\) 和 \((\forall x)R\) 分别与 \((\exists x')R'\) 和 \((\forall x')R'\) 相同，其中 \(R'\) 是 \((x'|x)R\) 。
+
+由CS1（§1，第2号），\((\tau_{\mathbf{x}}(\mathbf{R})|\mathbf{x})\mathbf{R}\) 与 \((\tau_{\mathbf{x}}(\mathbf{R})|\mathbf{x}')\mathbf{R}'\) 相同；由CS3（§1，第2号），\(\tau_{\mathbf{x}}(\mathbf{R})\) 与 \(\tau_{\mathbf{x}'}(\mathbf{R}')\) 相同。因此 \((\exists \mathbf{x})\mathbf{R}\) 与 \((\exists \mathbf{x}')\mathbf{R}'\) 相同。由此可知，\((\forall \mathbf{x})\mathbf{R}\) 与 \((\forall \mathbf{x}')\mathbf{R}'\) 相同。
+
+CS9. 设R和U为组装，x和y为不同的字母。若x不出现在U中，则 \((U|y)(\exists x)R\) 和 \((U|y)(\forall x)R\) 分别与 \((\exists x)R'\) 和 \((\forall x)R'\) 相同，其中 \(R'\) 是 \((U|y)R\) 。
+
+因为根据CS2（§1，第2号），\((\pmb{U}|\pmb{y})(\tau_{\pmb{x}}(\pmb{R})|\pmb{x})\pmb{R}\) 与下式相同：
+
+\[
+(T | \boldsymbol {x}) (U | \boldsymbol {y}) R,
+\]
+
+其中 \(T\) 是 \((U|y)\tau_x(R)\) ，即 \(\tau_x(R')\) （由CS4，§1，第2号可知）。因此 \((U|y)(\exists x)R\) 与 \((\exists x)R'\) 相同，进而 \((U|y)(\forall x)R\) 与 \((\forall x)R'\) 相同。
+
+CF11。如果R是理论C中的一个关系，且x是一个字母，则 \((\exists x)R\) 和 \((\forall x)R\) 是C中的关系。
+
+这直接从CF3、CF8和CF2（§1，第4号）得出。
+
+直观地，把R看作表达字母x所指对象的一种性质。由项 \(\tau_{x}(R)\) 的直观含义，断言 \((\exists x)R\) 表示存在一个具有性质R的对象。断言“非 \((\exists x)(\text{非 } R)\) ”表示不存在具有“非R”性质的对象，因而每个对象都具有性质R。
+
+在逻辑理论 \(\mathcal{C}\) 中，若有一个形如 \((\exists x)R\) 的定理，其中字母 \(x\) 不是 \(\mathcal{C}\) 的常量，那么这个定理可以在辅助常量法（ \(\S 3\) ，第3节）中充当合法化定理，因为它与 \((\tau_{x}(R)|x)R\) 相同。设 \(\mathcal{C}'\) 为把 \(R\) 添加到 \(\mathcal{C}\) 的公理中所得的理论。如果一个关系 \(S\) 不含 \(x\) ，并且能在理论 \(\mathcal{C}'\) 中得到证明，那么 \(S\) 是 \(\mathcal{C}\) 中的定理。
+
+C26。设 \(\mathfrak{G}\) 为一个逻辑理论，\(\pmb{R}\) 为 \(\mathfrak{G}\) 中的一个关系，\(\pmb{x}\) 为一个字母。那么关系 \((\forall x)\pmb{R}\) 和 \((\tau_{x}(\mathrm{not}\pmb{R})|\pmb{x})\pmb{R}\) 在 \(\mathfrak{G}\) 中等价。
+
+因为 \((\forall x)R\) 与“非 \((\tau_{x}(\text{非 } R)|x)(\text{非 } R)\) ”相同，因而与“非非 \((\tau_{x}(\text{非 } R)|x)R\) ”相同。
+
+C27. 若 R 是在逻辑理论 G 中的一个定理，且其中字母 x 不是常量，则 \((\forall x)R\) 是G中的一个定理。
+
+因为根据C3（§2，第3节），\((\tau_{\pmb{x}}(\text{非 } \pmb{R})|\pmb{x})\pmb{R}\) 是 \(\mathfrak{C}\) 中的定理。
+
+另一方面，如果x是G的一个常量，R的真并不蕴含 \((\forall x)R\) 的真。直观上，R 是 x 的一个真实性质，而 x 是 G 的一个确定对象，这一事实显然并不蕴含 R 是每个对象的真实性质。
+
+C28. 设 \(\mathfrak{G}\) 为一个逻辑理论，设 \(\pmb{R}\) 是 \(\mathfrak{G}\) 中的一个关系，并且设 \(\pmb{x}\) 为一个字母。那么关系“非 \((\forall x)\pmb{R}\)”和 \((\exists x)\) （非 \(\pmb{R}\) ）在 \(\mathfrak{G}\)
+
+中等价。因为“非 \((\forall x)R\) ”与“非非 \((\exists x)(\text{非 } R)\) ”相同。
+

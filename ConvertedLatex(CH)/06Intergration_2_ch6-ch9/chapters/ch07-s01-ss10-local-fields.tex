@@ -1,0 +1,139 @@
+\subsection{局部紧域}
+
+定义 6. --- 设 K 为局部紧域 \(^{(1)}\)。对于 \(a \in K^{*}\)，称 a 的模为 \(\operatorname{mod}_{\mathbf{K}}(a)\)，或简写为 \(\operatorname{mod}(a)\)；这里的模是自同构 \(x \mapsto ax\) 在 K 所含加法群 \(K^{+}\) 上的模；并令 \(\operatorname{mod}(0) = 0\)。
+
+例。--- 1) 设 \(\mathbf{K} = \mathbf{R}\)。若 \(s > 0\)，则 \(s \cdot [0,1] = [0,s]\)；若 \(s < 0\)，则 \(s \cdot [0,1] = [s,0]\)。因此 \(\operatorname{mod}_{\mathbf{R}} t = |t|\) 对所有 \(t \in \mathbf{R}\) 成立。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathbf{K} = \mathbf{Q}_p\)。若 \(s \in \mathbf{Q}_p^*\) 满足 \(|s|_p = p^{-n}\)，则 \(s\mathbf{Z}_p\) 是 \(x \in \mathbf{Q}_p\) 中满足 \(|x|_p \leqslant p^{-n}\) 的元素集合；因此，若 \(\mu\) 表示 \(\mathbf{Q}_p\) 上的归一化哈尔测度，则 \(\mu(s\mathbf{Z}_p) = p^{-n}\)。故 \(\operatorname{mod}_{\mathbf{Q}_p} t = |t|_p\) 对所有 \(t \in \mathbf{Q}_p\) 成立。
+\end{enumerate}
+
+命题 12. --- 函数 mod 在 K 上连续，并且对于 K 中所有 a、b，有 \(\text{mod}(ab) = \text{mod}(a)\text{mod}(b)\)。
+
+最后一个断言显然。第 4 号的命题 4 表明函数 mod 在 \(K^{*}\) 的每一点连续。只需证明它在 0 处连续。离散 K 的情形显然；因此设 K 非离散。令 \(\alpha\) 为 \(K^{+}\) 上的哈尔测度，并令 C 为 K 的紧子集，满足 \(\alpha(\mathrm{C}) > 0\)；对于 \(a \in K^{*}\)，有 \(\alpha(a\mathrm{C}) = \mathrm{mod}(a)\alpha(\mathrm{C})\)。
+
+由于 K 非离散，\(\alpha(\{0\}) = 0\)（第 2 号，命题 2）；因此对于每个 \(\varepsilon > 0\)，存在 0 的开邻域 U，使 \(\alpha(U) \leqslant \varepsilon\)。由于 K 中的乘法连续，当 a 充分接近 0 时 \(aC \subset U\)，于是 \(\text{mod}(a) \leqslant \varepsilon / \alpha(C)\)。
+
+命题 13. --- 对每个 M \textgreater{} 0，令 \(V_{M}\) 为 \(x \in K\) 中满足 \(\text{mod}(x) \leqslant M\) 的元素集合。若 K 非离散，则 \(V_{M}\) 构成 K 中 0 的紧邻域的基本系。
+
+\(V_{M}\) 由命题 12 是闭邻域。下面证明它们是紧的。设 U 是 0 的紧邻域。存在 K 中的 \(r \neq 0\)，使 \(\text{mod}(r) < 1\) 且 \(r^{n} \in U\) 对所有 n \textgreater{} 0 成立：这是因为，取 0 的邻域 W，使 \(WU \subset U\)；由命题 12，存在 K 中的 \(r \neq 0\)，使 \(\text{mod}(r) < 1\) 且 \(r \in U \cap W\)；于是 \(r^{2} \in WU \subset U\)，并且 \(r^{n} \in U\) 对所有 n \textgreater{} 0 成立（对 n 作归纳）。我们将证明 \(V_{M}\) 包含于有限个 \(r^{-q}U\) 的并中（其中 q 为整数且 \(\geqslant 0\)），由此可知 \(V_{M}\) 确实是紧的。若序列（\(r^{n}\)）有聚点 x，则 \(\text{mod}(x)\) 是序列（\(\text{mod}(r)^{n}\)）的聚点，从而 \(\text{mod}(x) = 0\)，x = 0；由于 U 是紧的，根据（GT, I, §9, No.~1, 定理 1 的推论），有 \(\lim_{n \to \infty} r^{n} = 0\)。现在令 \(a \in V_{M}\)。由于序列（\(r^{n}a\)） \(_{n \geqslant 0}\) 趋于 0，存在最小整数 \(n \geqslant 0\)，使 \(r^{n}a \in U\)。若 n \textgreater{} 0，则 \(r^{n-1}a \notin U\)，因此 \(r^{n}a \in U \cap C(rU)\)；集合 \(U \cap C(rU)\) 的闭包 X 是紧的，因为 U 是紧的，且它不含 0，因为 rU 是 0 的邻域；因此在 X 中，\(\text{mod}(x)\) 的下界是某个数 m \textgreater{} 0。于是，若 n \textgreater{} 0，有 \(m \leqslant \text{mod}(r^{n}a)\)，从而 \(\text{mod}(r^{-1})^{n} \leqslant M/m\)。由于 \(\text{mod}(r^{-1}) > 1\)，整数 n 只能取有限多个值，其数量与 a 无关，这就完成了断言的证明。
+
+既然如此，由于 \(\mathrm{V_M}\) 的交为 \(\{0\}\)，\(\mathrm{V_M}\) 构成 0 的邻域基本系（GT, I, §9, No.~2, 命题 1）。
+
+推论。--- 非离散局部紧域的拓扑有可数基。
+
+这是因为 K 是紧集 \(V_{1}, V_{2}, \ldots\) 的并。另一方面，根据 GT, IX, §3, No.~1 的命题 1，K 可度量化。因此 K 的拓扑有可数基（同上，§2, No.~9, 命题 16 的推论）。
+
+命题 14. --- 设 \(\alpha\) 是 \(\mathbf{K}^{+}\) 上的哈尔测度。则测度 \(\beta = (\mathrm{mod}_{\mathbf{K}})^{-1} \cdot \alpha\) 定义在 \(\mathbf{K}^{*}\) 上，并且是乘法群 \(\mathbf{K}^{*}\) 上的左哈尔测度。
+
+这是因为，对于 \(b \in \mathbf{K}^*\)，映射 \(a \mapsto b^{-1}a\) 从 \(\mathbf{K}\) 到 \(\mathbf{K}\)，将 \(\alpha\) 变为 \((\mathrm{mod}_{\mathbf{K}}b)\alpha\)，从而将 \((\mathrm{mod}_{\mathbf{K}})^{-1} \cdot \alpha\) 变为自身，命题得证。
+
+推论。--- 设 f 是定义在 \(K^{*}\) 上、取值于 \(\overline{R}\) 或某个巴拿赫空间的函数。对于 f，它对 \(\beta\) 可积，当且仅当 \((\mathrm{mod}_K)^{-1}f\) 对 \(\alpha\) 可积；在此情形，
+
+\[
+\int_ {\mathrm{K} ^ {*}} f (x) d \beta (x) = \int_ {\mathrm{K} ^ {+}} \left(\mathrm{mod} _ {\mathrm{K}} (x)\right) ^ {- 1} f (x) d \alpha (x).
+\]
+
+这由命题 14、命题 13 的推论以及第五章，§5，第 3 号，定理 1 推出。
+
+命题 15. --- 设 K 为交换域。令 u 为向量空间 \(E = K^{n}\) 的一个自同构。则
+
+\[
+\operatorname{mod} _ {\mathbf {E}} u = \operatorname{mod} _ {\mathbf {K}} (\det u).
+\]
+
+只需在 \(u\) 遍历 \(\mathbf{GL}(\mathbf{E})\) 的一组生成元时验证该公式。现在，\(\mathbf{GL}(\mathbf{E})\) 由以下元素生成（A, II, §10, No.~13, 命题 14 的推论 2）：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  形如以下形式的元素 \(u_{1}\)
+\end{enumerate}
+
+\[
+\left(x _ {1}, \dots , x _ {n}\right) \mapsto \left(x _ {\sigma (1)}, \dots , x _ {\sigma (n)}\right),
+\]
+
+其中 \(\sigma \in \mathfrak{S}_n\)；
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  形如以下形式的元素 \(u_{2}\)
+\end{enumerate}
+
+\[
+\left(x _ {1}, \dots , x _ {n}\right) \mapsto \left(a x _ {1}, x _ {2}, \dots , x _ {n}\right)
+\]
+
+其中 \(a\in \mathbf{K}^*\)
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  形如以下形式的元素 \(u_{3}\)
+\end{enumerate}
+
+\[
+\left(x _ {1}, \dots , x _ {n}\right) \mapsto \left(x _ {1} + \sum_ {i = 2} ^ {n} c _ {i} x _ {i}, x _ {2}, \dots , x _ {n}\right).
+\]
+
+若 \(f \in \mathcal{K}(\mathbf{E})\)，并记 \(\alpha\) 为 \(\mathbf{K}^+\) 上的哈尔测度，则
+
+\[
+\begin{array}{l} \int \dots \int_ {\mathrm{K} ^ {n}} f (x _ {1} + \sum_ {i = 2} ^ {n} c _ {i} x _ {i}, x _ {2}, \ldots , x _ {n}) d \alpha (x _ {1}) d \alpha (x _ {2}) \ldots d \alpha (x _ {n}) \\ \quad = \int \dots \int_ {\mathrm{K} ^ {n - 1}} d \alpha (x _ {2}) \ldots d \alpha (x _ {n}) \int_ {\mathrm{K}} f (x _ {1} + \sum_ {i = 2} ^ {n} c _ {i} x _ {i}, x _ {2}, \ldots , x _ {n}) d \alpha (x _ {1}) \\ \quad = \int \dots \int_ {\mathrm{K} ^ {n - 1}} d \alpha (x _ {2}) \ldots d \alpha (x _ {n}) \int_ {\mathrm{K}} f (x _ {1}, x _ {2}, \ldots , x _ {n}) d \alpha (x _ {1}) \\ \quad = \int \dots \int_ {\mathrm{K} ^ {n}} f (x _ {1}, \ldots , x _ {n}) d \alpha (x _ {1}) \ldots d \alpha (x _ {n}), \end{array}
+\]
+
+另一方面，\(\mathrm{mod}_{\mathrm{K}}(\det u_{3})=\mathrm{mod}_{\mathrm{K}}(1)=1\)，故 \(u_{3}\) 的结论成立。\(u_{1}\) 和 \(u_{2}\) 的情形可类似证明。
+
+设 K 为交换局部紧域，E 为 K 上维数为 n 的向量空间。若 \(\varphi\) 是从向量空间 \(K^{n}\) 到向量空间 E 的同构，则 \(\varphi\) 将 \(K^{n}\) 的拓扑变为 E 上的拓扑，使 E 成为局部紧向量空间。这个拓扑（称为典范拓扑）与 \(\varphi\) 无关，因为向量空间 \(K^{n}\) 的每个自同构都是双连续的。在没有明确相反说明时，我们谈到 E 作为拓扑向量空间时，均理解为刚定义的拓扑。E 的每个自同构 u 都是双连续的，因此定义了 \(mod_{E}u\)。另一方面，若 u 是 E 的不可逆端同态，则令 \(mod_{E}u = 0\)。于是：
+
+推论 1. --- 设 K 为交换局部紧域，E 为 K 上的有限维向量空间，u 为向量空间 E 的一个端同态。则 \(\text{mod}_{\mathbf{E}}(u) = \text{mod}_{\mathbf{K}}(\det u)\)。
+
+若 \(u\) 可逆，这由命题 15 得出。若 \(u\) 不可逆，则 \(\det u = 0\)，因而 \(\operatorname{mod}_{\mathbf{K}}(\det u) = 0 = \operatorname{mod}_{\mathbf{E}}u\)。
+
+推论 2. --- 设 E 是 n 维实向量空间，\((e_{1}, e_{2}, \ldots, e_{n})\) 是 E 的一组基，P 是由满足 \(x = \sum_{i=1}^{n} \xi_{i} e_{i} \in E\) 且 \(0 \leqslant \xi_{i} \leqslant 1\) 对所有 i 成立的 x 组成的集合，\(\mu\) 是加法群 E 上满足 \(\mu(P) = 1\) 的唯一哈尔测度。设 \(x_{1}, \ldots, x_{n}\) 是 E 中的点，S 是 E 中集合 \(\{0, x_{1}, \ldots, x_{n}\}\) 的闭凸包。写成 \(x_{i} = \sum_{j=1}^{n} \alpha_{ij} e_{j}\)，则
+
+\[
+\mu (\mathrm{S}) = \mu (\stackrel {\circ} {\mathrm{S}}) = \frac {1}{n !} | \det (\alpha_ {i j}) |.
+\]
+
+我们将 E 与 \(R^{n}\) 相识别，所用同构把 \((e_{i})\) 变为 \(R^{n}\) 的典范基。于是 \(\mu\) 被识别为勒贝格测度 \(\mu_{n}\) 定义在 \(R^{n}\) 上。
+
+首先设 \(x_{i} = e_{i}\) 对所有 \(i\) 成立。此时 \(S\) 是集合 \(S_{n}\)，它由满足以下条件的 \(x = (\xi_{i})\)（属于 \(\mathbf{R}^n\)）构成：
+
+\[
+\xi_ {i} \geqslant 0 \text {   for   all   } i \quad \text { and } \quad \xi_ {1} + \dots + \xi_ {n} \leqslant 1.
+\]
+
+令 \(\mu_n(S_n) = a_n\)。令 \(\lambda \in \mathbf{R}\)。将 \(\mathbf{R}^n\) 与 \(\mathbf{R}^{n-1} \times \mathbf{R}\) 识别后，可将 \(C_\lambda\) 看作 \(S_n\) 在 \(\lambda\) 处的截面。若 \(\lambda < 0\) 或 \(\lambda > 1\)，该截面为空；若 \(0 \leqslant \lambda \leqslant 1\)，则 \(C_\lambda\) 是由 \((\xi_1, \ldots, \xi_{n-1}) \in \mathbf{R}^{n-1}\) 中满足以下条件的点组成的集合：
+
+\[
+\xi_ {1} \geqslant 0, \dots , \xi_ {n - 1} \geqslant 0, \quad \xi_ {1} + \dots + \xi_ {n - 1} \leqslant 1 - \lambda ,
+\]
+
+因此它可由 \(S_{n-1}\) 经比为 \(1-\lambda\) 的位似变换得到，从而 \(\mu_{n-1}(C_{\lambda})=(1-\lambda)^{n-1}a_{n-1}\)。根据勒贝格--富比尼定理，
+
+\[
+a _ {n} = \int_ {0} ^ {1} (1 - \lambda) ^ {n - 1} a _ {n - 1} d \lambda = \frac {1}{n} a _ {n - 1}.
+\]
+
+由于 \(a_1 = 1\)，可见 \(a_n = \frac{1}{n!}\)。
+
+回到推论的一般情形。令 u 为 \(R^{n}\) 上的端同态，使 \(u(e_{i}) = x_{i}\) 对所有 i 成立。则 \(u(S_{n}) = S\)。若 u 可逆，命题 15 证明
+
+\[
+\mu_ {n} (\mathrm{S}) = \frac {1}{n !} | \det u | = \frac {1}{n !} | \det (\alpha_ {i j}) |.
+\]
+
+由于 \(S - \mathring{S}\) 包含于有限个超平面之中，\(\mu(\mathring{S}) = \mu(S)\)。最后，若 \(u\) 不可逆，则 \(S\) 包含于一个超平面中，所以 \(\mu(S) = 0 = \det(\alpha_{ij})\)。
+

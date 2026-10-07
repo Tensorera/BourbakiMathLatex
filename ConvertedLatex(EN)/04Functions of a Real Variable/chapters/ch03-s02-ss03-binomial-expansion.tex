@@ -1,0 +1,134 @@
+\subsection{THE BINOMIAL EXPANSION}
+
+Let \(m\) be an arbitrary real number. For \(x > 0\) we have
+
+\[
+\mathrm{D} ^ {n} (x ^ {m}) = m (m - 1) \dots (m - n + 1) x ^ {m - n};
+\]
+
+the Taylor formula of order \(n\) about the point \(x = 0\) for the function \((1 + x)^m\) shows that for every \(x > -1\)
+
+\[
+(1 + x) ^ {m} = 1 + \binom {m} {1} x + \binom {m} {2} x ^ {2} + \dots + \binom {m} {n} x ^ {n} + r _ {n} (x)\tag{19}
+\]
+
+with
+
+\[
+r _ {n} (x) = \frac {m (m - 1) \dots (m - n)}{n !} \int_ {0} ^ {x} \left(\frac {x - t}{1 + t}\right) ^ {n} (1 + t) ^ {m - 1} d t
+\]
+
+where we put \(\binom{m}{n} = \frac{m(m-1)\ldots(m-n+1)}{n!}\) . The formula (19) reduces to the binomial formula (Alg., I, p.~99) when m is an integer \textgreater{} 0 and \(n \geqslant m\) ; by extension, we again call it the binomial formula, and the coefficients \(\binom{m}{n}\) are called the binomial coefficients, when m is an arbitrary real number and n is an arbitrary integer \textgreater{} 0.
+
+The remainder in (19) has the same sign as \(\binom{m}{n+1}\) if \(x > 0\) , and the sign of \((-1)^{n+1}\binom{m}{n+1}\) if \(-1 < x < 0\) . Since \(\left|\frac{x-t}{1+t}\right| \leqslant |x|\) for \(t > -1\) in the interval with endpoints 0 and \(x\) , we have the following bound for the remainder, for \(m\) and \(n\) arbitrary and \(x > -1\) :
+
+\[
+\begin{array}{r l} \left| \frac {m (m - 1) \dots (m - n)}{n !} \int_ {0} ^ {x} \left(\frac {x - t}{1 + t}\right) ^ {n} (1 + t) ^ {m - 1} d t \right| & \\ & \leqslant \left| \binom {m - 1} {n} x ^ {n} ((1 + x) ^ {m} - 1) \right|. \end{array}\tag{20}
+\]
+
+If we suppose \(x \geqslant 0\) , and \(n \geqslant m - 1\) , then \((1 + t)^{n - m + 1} \geqslant 1\) on the interval of integration, so
+
+\[
+0 \leqslant \int_ {0} ^ {x} \frac {(x - t) ^ {n}}{(1 + t) ^ {n - m + 1}} d t \leqslant \int_ {0} ^ {x} (x - t) ^ {n} d t = \frac {x ^ {n + 1}}{n + 1}
+\]
+
+which gives the estimate
+
+\[
+\left| r _ {n} (x) \right| \leqslant \left| \binom {m} {n + 1} \right| x ^ {n + 1} \quad (x \geqslant 0, n \geqslant m - 1)\tag{21}
+\]
+
+for the remainder. On the other hand, suppose that \(-1 \leqslant m < 0\) ; if one makes the change of variable \(u = \frac{x - t}{x(1 + t)}\) in the integral (19) one obtains
+
+\[
+r _ {n} (x) = \frac {m (m - 1) \dots (m - n)}{n !} (1 + x) ^ {m} x ^ {n + 1} \int_ {0} ^ {1} \frac {u ^ {n} d u}{(1 + u x) ^ {m + 1}}.\tag{22}
+\]
+
+To estimate the integral for x \textgreater{} -1 we remark that, since \(m + 1 < 1\) , the integral \(\int_{0}^{1}\frac{u^{n}du}{(1-u)^{m+1}}\) converges and bounds the right-hand side of (22) since \(1+ux > 1-u\) . Now, for -1 \textless{} x \textless{} 0 the hypothesis on m implies that all the terms \(\binom{m}{1}x,\binom{m}{2}x^{2},\ldots,\binom{m}{n}x^{n}\) which appear in the right-hand side of (19) are \(\geqslant 0\) , and hence \(r_{n}(x) \leqslant (1+x)^{m}\) , from which, on dividing by \((1+x)^{m}\) ,
+
+\[
+\frac {m (m - 1) \dots (m - n)}{n !} x ^ {n + 1} \int_ {0} ^ {1} \frac {u ^ {n} d u}{(1 + u x) ^ {m + 1}} \leqslant 1.
+\]
+
+Moreover, for \(-1 < x < 0\) the factor in front of the integral is \(\geqslant 0\) , so, letting \(x\) approach \(-1\) ,
+
+\[
+\left| \frac {m (m - 1) \dots (m - n)}{n !} \int_ {0} ^ {1} \frac {u ^ {n} d u}{(1 - u) ^ {m + 1}} \right| \leqslant 1
+\]
+
+and consequently for \(-1 \leqslant m < 0\) and \(x > -1\) we have
+
+\[
+\left| r _ {n} (x) \right| \leqslant (1 + x) ^ {m} | x | ^ {n + 1}.\tag{23}
+\]
+
+From these inequalities we can, for a start, deduce that for \(|x| < 1\) we have
+
+\[
+(1 + x) ^ {m} = \sum_ {n = 0} ^ {\infty} \binom {m} {n} x ^ {n}\tag{24}
+\]
+
+the right-hand side (called the binomial series) being absolutely and uniformly convergent on every compact subset of {]} - 1, +1{[}. Indeed one can write
+
+\[
+\binom {m} {n} = (- 1) ^ {n} \left(1 - \frac {m + 1}{1}\right) \left(1 - \frac {m + 1}{2}\right) \dots \left(1 - \frac {m + 1}{n}\right)\tag{25}
+\]
+
+whence
+
+\[
+\left| \binom {m} {n} \right| \leqslant \left(1 + \frac {| m + 1 |}{1}\right) \left(1 + \frac {| m + 1 |}{2}\right) \dots \left(1 + \frac {| m + 1 |}{n}\right).
+\]
+
+If \(|x| \leqslant r < 1\) there is an \(n_0\) such that \(1 + \frac{|m|}{n_0} < \frac{1}{r'}\) , where \(r < r' < 1\) ; whence, putting
+
+\[
+k = \left(1 + \frac {| m |}{1}\right) \left(1 + \frac {| m |}{2}\right) \dots \left(1 + \frac {| m |}{n _ {0}}\right)
+\]
+
+we have
+
+\[
+\left| \binom {m - 1} {n} x ^ {n} \right| \leqslant k | x | ^ {n _ {0}} \left(\frac {r}{r ^ {\prime}}\right) ^ {n - n _ {0}},
+\]
+
+which proves the proposition. On the other hand, for x \textgreater{} 1, the absolute value of the general term of the series (24) increases indefinitely with n if m is not an integer \(\geqslant 0\) ; indeed, from (25), we have for \(n > n_{1} \geqslant |m + 1|\)
+
+\[
+\begin{array}{r l} \left| \binom {m} {n} \right| & \geqslant \left| \left(1 - \frac {m + 1}{1}\right) \left(1 - \frac {m + 1}{2}\right) \dots \left(1 - \frac {m + 1}{n _ {1}}\right) \right| \\ & \quad \left(1 - \frac {| m + 1 |}{n _ {1} + 1}\right) \dots \left(1 - \frac {| m + 1 |}{n}\right). \end{array}
+\]
+
+Let \(n_0 \geqslant n_1\) be such that for \(n \geqslant n_0\) we have \(1 - \frac{|m + 1|}{n} > \frac{1}{x'}\) , where \(1 < x' < x\) . If we put
+
+\[
+k ^ {\prime} = \left| \left(1 - \frac {m + 1}{1}\right) \dots \left(1 - \frac {m + 1}{n _ {1}}\right) \right| \left(1 - \frac {| m + 1 |}{n _ {1} + 1}\right) \dots \left(1 - \frac {| m + 1 |}{n _ {0}}\right)
+\]
+
+then, for \(n > n_0\) ,
+
+\[
+\left| \binom {m} {n} x ^ {n} \right| \geqslant k ^ {\prime} | x | ^ {n _ {0}} \left(\frac {x}{x ^ {\prime}}\right) ^ {n - n _ {0}}
+\]
+
+from which the proposition follows.
+
+We remark that for \(m = -1\) the algebraic identity
+
+\[
+\frac {1}{1 + x} = 1 - x + x ^ {2} - \dots + (- 1) ^ {n - 1} x ^ {n - 1} + (- 1) ^ {n} \frac {x ^ {n}}{1 + x}\tag{26}
+\]
+
+gives the expression for the remainder in the general formula (19) without having to integrate; the formula (23) reduces in this case to the expression for the sum of the geometric series (or progression) (Gen.~Top., IV, p.~364).
+
+In the second place let us study the convergence of the binomial series for \(x = 1\) or \(x = -1\) (excluding the trivial case \(m = 0\) ):
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(m \leqslant -1\) . The product with general term \(1 - \frac{m + 1}{n}\) converges to \(+\infty\) if \(m < -1\) , to 1 if \(m = -1\) , so it follows from (25) that for \(x = \pm 1\) the general term of the binomial series does not tend to 0.
+\item
+  -1 \textless{} m \textless{} 0. This time the product with general term \(1 - \frac{m + 1}{n}\) converges to 0, so the inequality (21) shows that \(r_{n}(1)\) tends to 0. Thus the binomial series converges for x = 1 and has sum \(2^{m}\) ; moreover, the binomial series is uniformly convergent on every interval \([x_{0}, 1]\) with \(-1 < x_{0} \leqslant 1\) , by virtue of what we saw above and of (21). On the other hand, for x = -1 all the terms on the right-hand side of (24) are \(\geqslant 0\) ; if this series were convergent one could deduce that the binomial series would be normally convergent on \([-1, 1]\) and so would have for its sum a continuous function on this interval, which is absurd because \((1 + x)^{m}\) is not bounded on \([-1, 1]\) for m \textless{} 0. We conclude that also for x = 1 the binomial series is not absolutely convergent.
+\item
+  m \textgreater{} 0. The definition of \(r_{n}(x)\) shows that \(r_{n}(x)\) tends to the limit \(r_{n}(-1)\) when x tends to -1; on passing to the limit in (20) one concludes that \(|r_{n}(-1)| \leqslant \left|\binom{m-1}{n}\right|\) , and since m - 1 \textgreater{} -1 we see that for x = -1 the binomial series is convergent. Furthermore, for \(n > m + 1\) all the terms of this series have the same sign; thus the binomial series is normally convergent on the interval \([-1, 1]\) and has sum \((1 + x)^{m}\) on this interval.
+\end{enumerate}
+

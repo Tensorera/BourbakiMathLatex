@@ -1,0 +1,62 @@
+\subsection{用多项式逼近连续函数}
+
+给定定义在集合 X 上的实值函数所成之集 H，我们称定义在 X 上的实值函数是 H 中函数的实系数多项式（相应地，无常数项的实系数多项式），如果它形如 \(x \to g(f_{1}(x), f_{2}(x), \ldots, f_{n}(x))\) ，其中 g 是 n 个未定元（n 任意）的实系数多项式（相应地，无常数项的多项式），且 \(f_{i}\) ( \(1 \leqslant i \leqslant n\) )属于 H。
+
+定理 3（魏尔斯特拉斯–斯通）. 设 X 是紧空间，H 是 X 上分离 X 的点的连续实值函数所成之集。则 X 上的每个连续实值函数都可用 H 中函数的（实系数）多项式一致逼近。
+
+这个定理的一个等价陈述是：\(\mathcal{C}(\mathbf{X};\mathbf{R})\) 的任一包含常数函数且分离 \(\mathbf{X}\) 的点的子代数在 \(\mathcal{C}(\mathbf{X};\mathbf{R})\) 中稠密。
+
+设 \(H_{0}\) 是 H 中函数的多项式全体所成之集，并设 \(\overline{H}_{0}\) 是 \(H_{0}\) 在 C 中的闭包。若 g 是 n 个变量的任一实系数多项式，则 \((u_{1}, u_{2}, \ldots, u_{n}) \to g(u_{1}, u_{2}, \ldots, u_{n})\) 是 \(C^{n}\) 到 C 中的连续映射，它把 \(H_{0}^{n}\) 映入 \(H_{0}\) ，从而把 \(\overline{H}_{0}^{n}\) 映入 \(\overline{H}_{0}\) （第 I 章，§ 2，第 1 号，定理 1）。特别地，\(\overline{H}_{0}\) 是 C 的向量子空间，并且显然满足定理 2 的第一个与第三个条件；我们将证明它也满足第二个条件，这就证明了 \(\overline{H}_{0} = C\) 。
+
+由于每个函数 \(u \in \overline{\mathbf{H}}_0\) 在 \(\mathbf{X}\) 上有界，只需证明下面的引理：
+
+引理 1. 对每个实数 \(\varepsilon > 0\) 与每个紧区间 \(\mathbf{I} \subset \mathbf{R}\) ，存在无常数项的多项式 \(p(t)\) 使得 \(|p(t) - |t|| \leqslant \varepsilon\) 对一切 \(t \in \mathbf{I}\) 成立。
+
+只需对形如 \(\mathbf{I} = [-a, +a]\) 的区间证明引理，从而（把 \(t\) 换成 \(at\) ）只需对区间 \(\mathbf{I} = [-1, +1]\) 证明。由于 \(|t| = \sqrt{t^2}\) ，引理 1 是下列结果的推论：
+
+引理 2. 设 \((P_n)\) 是由下式定义的无常数项多项式的序列
+
+\[
+p _ {0} (t) = 0, \quad p _ {n + 1} (t) = p _ {n} (t) + \frac {1}{2} (t - (p _ {n} (t)) ^ {2}), \quad n \geqslant 0.\tag{1}
+\]
+
+在区间 {[}0, 1{]} 中，序列 \((p_n)\) 递增且一致收敛于 \(\sqrt{t}\) 。
+
+为证明引理 2，只需证明对一切 \(t \in [0, 1]\) 有
+
+\[
+0 \leqslant \sqrt {t} - p _ {n} (t) \leqslant \frac {2 \sqrt {t}}{2 + n \sqrt {t}},\tag{2}
+\]
+
+因为 (2) 蕴涵 \(0 \leqslant \sqrt{t} - p_n(t) \leqslant 2 / n\) 。
+
+我们对 \(n\) 用归纳法证明 (2) 。它对 \(n = 0\) 成立。若 \(n \geqslant 0\) ，由归纳假设 (2) 得 \(0 \leqslant \sqrt{t} - p_n(t) \leqslant \sqrt{t}\) ，从而 \(0 \leqslant p_n(t) \leqslant \sqrt{t}\) ，于是由 (1) 有
+
+\[
+\sqrt {t} - p _ {n + 1} (t) = (\sqrt {t} - p _ {n} (t)) \left(1 - \frac {1}{2} (\sqrt {t} + p _ {n} (t))\right),
+\]
+
+因而 \(\sqrt{t} - p_{n+1}(t) \geqslant 0\) ，并且由 (2)
+
+\[
+\begin{array}{r l} \sqrt {t} - p _ {n + 1} (t) & \leqslant \frac {2 \sqrt {t}}{2 + n \sqrt {t}} \left(1 - \frac {\sqrt {t}}{2}\right) \leqslant \frac {2 \sqrt {t}}{2 + n \sqrt {t}} \left(1 - \frac {\sqrt {t}}{2 + (n + 1) \sqrt {t}}\right) \\ & = \frac {2 \sqrt {t}}{2 + (n + 1) \sqrt {t}}. \end{array} \tag {Q.E.D.}
+\]
+
+若 X 不紧，定理 3 的结论未必成立。例如，R 上有界且非常数的连续实值函数不能在 R 中用多项式一致逼近（参见习题 6）。
+
+命题 3. 设 \((\mathbf{K}_t)_{t \in \mathbf{I}}\) 是 \(\mathbf{R}\) 的紧区间的一个族，\(\mathbf{K} = \prod_{t \in \mathbf{I}} \mathbf{K}_t\) 是它们的乘积，并设 \(\mathbf{X}\) 是 \(\mathbf{K}\) 的一个紧子空间。则 \(\mathbf{X}\) 上的每个连续实值函数都可用坐标 \(x_t = \mathrm{pr}_t x\) 的多项式一致逼近。
+
+因为若 \(x = (x_{t})\) 与 \(y = (y_{t})\) 是 X 的两个不同点，则至少存在一个指标 t 使得 \(x_{t} \neq y_{t}\) ；因而连续函数族 \(pr_{t}\) 满足定理 3 的条件。
+
+命题 4. 设 X 是紧空间，A 是 X 的闭子空间，H 是 X 上分离 \(\mathbb{C}A\) 的点的连续实值函数所成之集，并且当 u 跑遍 H 时，A 是诸集 \(\overline{u}^{1}(0)\) 的交。则 X 上在 A 上为零的每个连续实值函数都可用 H 中函数的无常数项多项式一致逼近。
+
+先考虑 A 仅由一点 \(x_{0}\) 组成的特殊情形。这时诸假设蕴涵 H 分离 X 的点；因为若 \(x \neq x_{0}\) ，则由假设存在函数 \(u \in H\) 使得 \(u(x) \neq 0 = u(x_{0})\) 。于是，对每个 \(\varepsilon > 0\) 与每个满足 \(f(x_{0}) = 0\) 的 X 上的连续实值函数 f，存在（定理 3）H 中函数的一个多项式 g，使得 \(|f(x) - g(x)| \leqslant \varepsilon\) 对一切 \(x \in X\) 成立。特别地 \(|g(x_{0})| \leqslant \varepsilon\) ，从而
+
+\[
+\left| f (x) - \left(g (x) - g \left(x _ {0}\right)\right) \right| \leqslant 2 \varepsilon
+\]
+
+对一切 \(x \in \mathbf{X}\) 成立；又由于 \(g(x) - g(x_0)\) 是 \(\mathbf{H}\) 中函数的一个无常数项多项式，该情形的结论得证。
+
+在一般情形，考察 X 上的等价关系 R，它的类是集合 A 与诸集 \(\{x\}\) ( \(x \notin A\) )。商空间 X/R 是豪斯多夫的（第 I 章，§ 8，第 6 号，命题 15），从而是紧的。设 \(\varphi: X \to X/R\) 是典范映射。X 上每个在 A 上为零的连续实值函数 f 都可写成 \(f = f_{1} \circ \varphi\) 的形式，其中 \(f_{1}\) 是 X/R 上在点 \(x_{0}' = \varphi(A)\) 处为零的连续实值函数。把已证的结果应用于空间 X/R 与点 \(x_{0}'\) ，即得最终结论。
+

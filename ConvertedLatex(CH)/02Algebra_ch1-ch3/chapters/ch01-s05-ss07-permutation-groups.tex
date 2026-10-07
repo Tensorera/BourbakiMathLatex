@@ -1,0 +1,116 @@
+\subsection{有限集合的置换群}
+
+若 E 是含 n 个元素的有限集，则对称群 \(S_{E}\) （§ 4，第 1 号）是阶为 \(n!\) 的有限群。当 E 是自然数集 N 的区间 \([1, n]\) 时，相应的对称群记为 \(S_{n}\) ；任何含 n 个元素的集合的对称群都同构于 \(S_{n}\) 。
+
+定义 8. 设 E 为有限集， \(\zeta \in \mathfrak{S}_{\mathrm{E}}\) 为 E 的一个置换， \(\bar{\zeta}\) 为 \(\mathfrak{S}_{\mathrm{E}}\) 中由 \(\zeta\) 生成的子群。\(\zeta\) 称为轮换，如果在 \(\bar{\zeta}\) 于 E 的作用下恰存在一条不缩减为单个元素的轨道。这条轨道称为 \(\zeta\) 的支集。
+
+设 \(\zeta\) 为一个轮换。支集 \(\operatorname{supp}(\zeta)\) （即 \(\zeta\) 的支集）是由 \(x \in E\) 中满足 \(\zeta(x) \neq x\) 的元素组成的集合。
+
+轮换 \(\zeta\) 的阶等于其支集的基数。子群 \(\bar{\zeta}\) 由 \(\zeta\) 生成，它在 \(\operatorname{supp}(\zeta)\) 上传递且忠实地作用。由于 \(\zeta\) 是交换的， \(\operatorname{supp}(\zeta)\) 是 \(\bar{\zeta}\) 下的一个主集（第 6 号，例 2），因此 \(\operatorname{Card}(\operatorname{supp}(\zeta)) = \operatorname{Card}(\bar{\zeta})\) 。
+
+引理 1. 设 \((\zeta_{i})_{i\in I}\) 是一族支集两两不相交的轮换。则诸 \(\zeta_{i}\) 两两可交换。设 \(\sigma = \prod_{i\in I}\zeta_{i}\) ， \(\overline{\sigma}\) 为由 \(\sigma\) 生成的子群。则 \(\sigma(x) = \zeta_{i}(x)\) 对 \(x\in S_{i}, i\in I\) 成立，而 \(\sigma(x) = x\) 对 \(x\notin \bigcup_{i\in I}S_{i}\) 成立。映射 \(i\mapsto S_i\) 是 I 到不由单个元素组成的 \(\overline{\sigma}\) -轨道所成集合上的一个双射。
+
+设 \(\zeta\) 和 \(\zeta'\) 是两个支集不相交的轮换。如果
+
+\[
+x \notin \operatorname{supp} (\zeta) \cup \operatorname{supp} \left(\zeta^ {\prime}\right),
+\]
+
+则 \(\zeta\zeta'(x) = \zeta'\zeta(x) = x\) 。若 \(x\) 属于 \(\zeta\) 的支集，则 \(\zeta'(x) = x\) 且 \(\zeta(x)\) 属于 \(\zeta\) 的支集，因此 \(\zeta\zeta'(x) = \zeta'\zeta(x) = \zeta(x)\) 。类似地，当 \(x\) 属于 \(\zeta'\) 的支集时， \(\zeta'\zeta(x) = \zeta\zeta'(x) = \zeta'(x)\) 。因此 \(\zeta\zeta' = \zeta'\zeta\) 。于是诸 \(\zeta_i\) 两两可交换，且对于 \(i \in I\) 和 \(x \in S_i\) , \(\sigma(x) = \zeta_i(x) \in S_i\) 。映射 \(\sigma\) 与 \(\zeta_i\) 在 \(S_i\) 上重合，故 \(S_i\) 在 \(\sigma\) 下稳定，且 \(\mathfrak{S}_{S_i}\) 中由 \(\sigma\) 在 \(S_i\) 上的限制所生成的子群在 \(S_i\) 上传递地作用；因此 \(S_i\) 是一条 \(\overline{\sigma}\) -轨道。由于诸 \(S_i\) 非空且两两不相交，映射 \(i \mapsto S_i\) 是单射。由于 \(\bigcup_{i} S_i\) 是 \(x\) 满足 \(\sigma(x) \neq x\) 的那些元素组成的集合，每条不由单个元素组成的 \(\overline{\sigma}\) -轨道都是某个 \(S_i\) 。
+
+命题 7. 设 E 是一个有限集，且 \(\sigma\) 是 E 的一个置换。存在唯一的由轮换组成的有限集 C，满足以下两个条件：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  C 中元素的支集两两不相交；
+\item
+  \(\sigma = \prod_{\zeta \in C} \zeta\) （由引理 1 ， \(C\) 的元素两两可交换）。设 \(\bar{\sigma}\) 为由 \(\sigma\) 生成的子群， \(S\) 为不由单个元素组成的 \(\bar{\sigma}\) -轨道所成的集合。对 \(s \in S\) ，令 \(\zeta_s(x) = \sigma(x)\) （若 \(x \in s\) ），并令 \(\zeta_s(x) = x\) （若 \(x \notin s\) ）。对所有 \(s \in S\) , \(\zeta_s\) 是支集为 \(s\) 的一个轮换，且 \(\sigma = \prod_{s \in S} \zeta_s\) ，这只需把两边作用于 \(E\) 的任意元素即可看出。\(C\) 的唯一性由引理 1 可得。
+\end{enumerate}
+
+定义 9. 2 阶轮换称为对换。
+
+设 \(x\) 和 \(y\) 是 \(E\) 的两个不同元素。用 \(\tau_{x,y}\) 表示支集为 \(\{x, y\}\) 的唯一的对换。
+
+对 E 的每个置换 \(\sigma\) ，置换 \(\sigma. \tau_{x,y}. \sigma^{-1}\) 是支集为 \(\{\sigma(x), \sigma(y)\}\) 的一个对换。因此：
+
+\[
+\sigma . \tau_ {x, y}. \sigma^ {- 1} = \tau_ {\sigma (x), \sigma (y)}.\tag{4}
+\]
+
+于是，对换在群 \(\mathfrak{S}_{\mathbb{E}}\) 中构成一个共轭类。
+
+命题 8. 设 E 为有限集。群 \(\mathfrak{S}_{\mathrm{E}}\) 由对换生成。
+
+对每个置换 \(\sigma\) ，令 \(F_{\sigma}\) 为由 \(x \in E\) 中满足 \(\sigma(x) = x\) 的元素组成的集合。我们对 \(p\) 作递降归纳来证明：每个置换 \(\sigma\) ，只要 \(\operatorname{Card}(F_{\sigma}) = p\) ，就是对换之积。若 \(p \geqslant \operatorname{Card}(E)\) ，则置换 \(\sigma\) 是 \(E\) 的恒等映射；它是对换的空族之积。若 \(p < \operatorname{Card}(E)\) ，设性质已对每个置换 \(\sigma'\) （ \(\operatorname{Card}(F_{\sigma'}) > p\) ）证明。现在 \(E - F_{\sigma} \neq \varnothing\) ；取 \(x \in E - F_{\sigma}\) 及 \(y \in \sigma(x)\) 。则 \(y \neq x\) 且 \(y \in E - F_{\sigma}\) 。令 \(\sigma' = \tau_{x,y} \cdot \sigma\) 。集合 \(F_{\sigma'}\) 包含 \(F_{\sigma}\) 与 \(x\) ，故 \(\operatorname{Card}(F_{\sigma'}) > \operatorname{Card}(F_{\sigma}) = p\) 。由归纳假设， \(\sigma'\) 是对换之积，从而 \(\sigma = \tau_{x,y} \cdot \sigma'\) 是对换之积。
+
+命题 9. 设 \(n\) 为整数 \(\geqslant 0\) 。群 \(\mathfrak{S}_n\) 由诸对换 \((\tau_{i,i+1})_{1\leqslant i\leqslant n-1}\) 生成。
+
+根据命题 8 ，只需证明每个对换 \(\tau_{p,q}\) （ \(1 \leqslant p < q \leqslant n\) ）属于由诸 \(\tau_{i,i+1}\) （ \(1 \leqslant i \leqslant n-1\) ）生成的子群 H 。我们对 \(q-p\) 作归纳来证明这一点。对 \(q-p=1\) ，这是显然的。若 \(q-p>1\) ，则（公式 (4)） \(\tau_{p,q} = \tau_{q-1,q}\tau_{p,q-1}\tau_{q-1,q}\) 。由归纳假设 \(\tau_{p,q-1} \in H\) ，从而 \(\tau_{p,q} \in H\) 。
+
+若 \(\sigma \in \mathfrak{S}_n\) ，则每个有序对 \((i,j)\) （ \([1,n]\) 的元素，满足 \(i < j\) 且 \(\sigma(i) > \sigma(j)\) ）称为 \(\sigma\) 的一个逆序。用 \(\nu(\sigma)\) 表示 \(\sigma\) 的逆序的个数。
+
+设 P 为从 \(Z^{n}\) 到 Z 的映射所成的加法群。对 \(f \in P\) 与 \(\sigma \in S_{n}\) ，令 \(\sigma f\) 为 P 中由下式定义的元素
+
+\[
+\sigma f (z _ {1}, \dots , z _ {n}) = f (z _ {\sigma (1)}, \dots , z _ {\sigma (n)}).\tag{5}
+\]
+
+这样定义的 \(\mathfrak{S}_n\) 在 \(\mathbf{P}\) 上的作用是一个群作用；对所有 \(\sigma, \tau \in \mathfrak{S}_n\) 和 \(f \in \mathbf{P}, ef = f\) 且
+
+\[
+\begin{array}{r l} \left(\tau (\sigma f)\right) (z _ {1}, \dots , z _ {n}) & = \sigma f (z _ {\tau (1)}, \dots , z _ {\tau (n)}) = f (z _ {\tau \sigma (1)}, \dots , z _ {\tau \sigma (n)}) \\ & = ((\tau \sigma) f) (z _ {1}, \dots , z _ {n}). \end{array}
+\]
+
+公式 (5) 表明 \(\sigma(-f) = -\sigma f\) 对 \(\sigma \in \mathfrak{S}_n\) 和 \(f \in P\) 成立。
+
+设 \(p\) 为 P 中由下式定义的元素
+
+\[
+p (z _ {1}, \dots , z _ {n}) = \prod_ {i <   j} (z _ {j} - z _ {i}).\tag{6}
+\]
+
+引理 2. \(p \neq 0\) ，且 \(\sigma p = (-1)^{\nu(\sigma)}\) 对 \(\sigma \in \mathfrak{S}_n\) 成立。
+
+\(p(1,2,\ldots,n) = \prod_{i < j}(j - i)\neq 0\) ，因此 \(p\neq 0\) 。另一方面，若 \(\sigma \in \mathfrak{S}_n\) ，则
+
+\[
+\sigma p (z _ {1}, \dots , z _ {n}) = p (z _ {\sigma (1)}, \dots , z _ {\sigma (n)}) = \prod_ {i <   j} (z _ {\sigma (j)} - z _ {\sigma (i)}).
+\]
+
+设 C 为有序对 \((i,j)\) 所成的集合，满足 \(1 \leqslant i \leqslant n\) , \(1 \leqslant j \leqslant n\) ， i \textless{} j 。在 C 上定义置换 \(\theta\) 如下：令 \(\theta(i,j) = (\sigma(i), \sigma(j))\) 若 \((i,j)\) 不是逆序；令 \(\theta(i,j) = (\sigma(j), \sigma(i))\) 若 \((i,j)\) 是逆序。由此可得 \(\sigma p = (-1)^{\nu(\sigma)} p\) 。
+
+定理 2. 设 E 是一个有限集。存在唯一的同态 \(\varepsilon\) ：从 \(\mathfrak{S}_n\) 到乘法群 \(\{-1, +1\}\) ，使 \(\varepsilon(\tau) = -1\) 对每个对换 \(\tau\) 成立。
+
+唯一性由命题 8 得出。我们证明存在性。通过结构转移，可设 \(\mathbf{E} = [1, n]\) 。采用上述记号，令 \(\varepsilon(\sigma) = (-1)^{\nu(\sigma)}\) 。则（引理 2）
+
+\[
+\sigma (\sigma^ {\prime} p) = \sigma (\varepsilon (\sigma^ {\prime}) p) = \varepsilon (\sigma^ {\prime}) (\sigma p) = \varepsilon (\sigma^ {\prime}) \varepsilon (\sigma) p.
+\]
+
+另一方面，
+
+\[
+\sigma (\sigma^ {\prime} p) = (\sigma \sigma^ {\prime}) p = \varepsilon (\sigma \sigma^ {\prime}) p.
+\]
+
+由于 \(p \neq -p\) ，由此可得 \(\varepsilon(\sigma\sigma') = \varepsilon(\sigma)\varepsilon(\sigma')\) ，故 \(\varepsilon\) 是一个同态。我们现在证明，对每个对换 \(\tau, \varepsilon(\tau) = -1\) 。\(\nu(\tau_{n-1,n}) = 1\) ，故 \(\varepsilon(\tau_{n-1,n}) = -1\) 。由于每个对换 \(\tau\) 都与 \(\tau_{n-1,n}\) 共轭，且群 \(\{-1, +1\}\) 是交换的，故 \(\varepsilon(\tau) = \varepsilon(\tau_{n-1,n}) = -1\) 。
+
+定义 10. 在定理 2 的记号下，数 \(\varepsilon(\sigma)\) （也记作 \(\varepsilon_{\sigma}\) ）称为置换 \(\sigma\) 的符号。同态 \(\varepsilon\) 的核称为 E 的交错群。
+
+\(\sigma\) 称为偶置换（相应地，奇置换），如果 \(\varepsilon(\sigma) = 1\) （相应地， \(\varepsilon(\sigma) = -1\) ）。E 的交错群记为 \(\mathfrak{A}_{\mathbb{E}}\) 。它是 \(\mathfrak{S}_{\mathbb{E}}\) 的一个正规子群。当 \(\mathbf{E} = [1, n]\) 时，简记为 \(\mathfrak{A}_{n}\) 。当 E 的基数 \(n\) 为 \(\geqslant 2\) 时，它是指数为 2 的子群，因此阶为 \(n! / 2\) 。可以证明，对 \(n = 3\) 或 \(n \geqslant 5\) ，群 \(\mathfrak{A}_{n}\) 是单群（参见习题 16）。
+
+例。若 \(\sigma\) 是一个阶为 \(d\) 的轮换，则
+
+\[
+\varepsilon (\sigma) = (- 1) ^ {d - 1}.
+\]
+
+置换的逆序数
+
+\[
+(1, 2, 3, \dots , d) \mapsto (d, 1, 2, \dots , d - 1)
+\]
+
+等于 \(d - 1\) 。
+

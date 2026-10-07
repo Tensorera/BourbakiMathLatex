@@ -1,0 +1,34 @@
+\subsection{* 弱紧集的凸包}
+
+定理 3 (Krein). --- 设 E 是一个 Hausdorff 且拟完备的局部凸空间，T 是 E 上与 E 和 E′ 之间的对偶相容的一个拓扑。设 A 是 E 的一个对于 T 紧的子集。那么 A 的闭均衡凸包 C 对于 T 是紧的。
+
+我们先作若干约化。
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\item
+  集 C 对于 \(\mathcal{T}\) 预紧 (II, 第 25 页, 命题 3)，且 A 对于 \(\sigma(\mathrm{E}, \mathrm{E}')\) 紧。根据命题 1 (IV, 第 32 页)，只需证明 C 对于 \(\sigma(\mathrm{E}, \mathrm{E}')\) 紧，于是我们已约化到 \(\mathcal{T} = \sigma(\mathrm{E}, \mathrm{E}')\) 的情形。
+\item
+  由于 C 对于 \(\sigma(\mathrm{E}, \mathrm{E}')\) 预紧且闭，它对于 E 的初始拓扑有界且闭 (III, 第 3 页, 命题 2 与 IV, 第 1 页, 命题 1)；从而由于 E 拟完备，它是完备的。换句话说，C 是 A 在 E 的完备化 \(\hat{\mathbf{E}}\) 中的闭均衡凸包。由于拓扑 \(\sigma (\hat{\mathbf{E}},\mathrm{E}^{\prime})\) 在 E 上诱导 \(\sigma (\mathrm{E},\mathrm{E}^{\prime})\)，我们已约化到 E 完备的情形。
+\item
+  设 \(\Gamma\) 是 A 的均衡凸包。那么 C 是 \(\Gamma\) 对于 \(\sigma(E, E')\) 的闭包。由 Eberlein 定理 (IV, 第 35 页, 定理 1)，只需证明点的每个序列 \((x_n)_{n \in \mathbf{N}}\)（点取自 \(\Gamma\)）在 E 中对于 \(\sigma(E, E')\) 有一个极限点。但 \(x_n\) 属于 A 的有限子集 \(\mathbf{B}_n\) 的均衡凸包。设 F 是由可数集 \(\mathbf{B} = \bigcup_{n} \mathbf{B}_n\) 生成的 E 的闭向量子空间。那么 F 完备，F 上的拓扑 \(\sigma(F, F')\) 由 \(\sigma(E, E')\) 诱导，且我们有 \(x_n \in F\)（对所有 \(n \in \mathbf{N}\)）。因而只需证明 \((x_n)_{n \in \mathbf{N}}\) 对于 \(\sigma(F, F')\) 有一个极限点，这就给出了到 E 中存在可数稠密集的情形的约化。
+\end{enumerate}
+
+设 A 赋以由 \(\sigma(E, E')\) 诱导的拓扑，这使它成为一个紧空间。我们定义一个线性映射 \(u: E' \to \mathcal{C}(A)\) 如下
+
+\[
+u (x ^ {\prime}) (a) = \langle a, x ^ {\prime} \rangle \quad (a \in \mathrm{A}, x ^ {\prime} \in \mathrm{E} ^ {\prime}).\tag{7}
+\]
+
+设 \((x_{n}^{\prime})_{n\in\mathbb{N}}\) 是 E′ 中的一个等度连续序列，它对于 \(\sigma(\mathrm{E}^{\prime},\mathrm{E})\) 收敛到 0。那么函数序列 \(u(x_{n}^{\prime})\) 在 \(\mathcal{C}(\mathrm{A})\) 中有界且简单收敛到 0。对每个 \(\mu\in\mathcal{C}(\mathrm{A})^{\prime}\)，由引理 2 (IV, 第 37 页)，我们有 \(\lim_{n\to\infty}\mu(u(x_{n}^{\prime}))=0\)。根据 III, 第 21 页 的注记中给出的判别法，E′ 上的线性型 \(\mu\circ u\) 于是对于 \(\sigma(\mathrm{E}^{\prime},\mathrm{E})\) 连续（对每个 \(\mu\in\mathcal{C}(\mathrm{A})^{\prime}\)）。因此存在一个线性映射 \(v:\mathcal{C}(\mathrm{A})^{\prime}\to\mathrm{E}\) 满足关系式
+
+\[
+\langle u (x ^ {\prime}), \mu \rangle = \langle v (\mu), x ^ {\prime} \rangle \quad \left(x ^ {\prime} \in \mathrm{E} ^ {\prime}, \mu \in \mathcal {C} (\mathrm{A}) ^ {\prime}\right).\tag{8}
+\]
+
+显然，\(v\) 是连续的，若 \(\mathcal{C}(\mathbf{A})'\) 赋以拓扑 \(\sigma(\mathcal{C}(\mathbf{A})', \mathcal{C}(\mathbf{A}))\)，而 \(E\) 赋以拓扑 \(\sigma(E, E')\)。
+
+Banach 空间 \(\mathcal{C}(\mathrm{A})\) 的（闭）单位球 B 对于拓扑 \(\sigma(\mathcal{C}(\mathrm{A})', \mathcal{C}(\mathrm{A}))\) 是紧的 (III, 第 17 页, 推论 3)。于是，\(v(\mathrm{B})\) 是 E 的一个对于 \(\sigma(\mathrm{E}, \mathrm{E}')\) 的凸均衡紧子集。对每个 \(a \in A\)，连续线性型 \(\varepsilon_a : f \mapsto f(a)\)（\(\mathcal{C}(\mathrm{A})\) 上的连续线性型）属于 B，且由公式 (7) 与 (8) 我们有 \(v(\varepsilon_a) = a\)。因此，\(A \subset v(\mathrm{B})\)，从而 \(C \subset v(\mathrm{B})\)。这就证明了 C 对于 \(\sigma(\mathrm{E}, \mathrm{E}')\) 是紧的。
+
+证毕。
+

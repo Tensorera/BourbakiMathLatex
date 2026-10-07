@@ -1,0 +1,46 @@
+\subsection{逆极限}
+
+设I是一个预有序集，并设 \((\mathbf{E}_{\alpha})_{\alpha\in\mathbf{I}}\) 是由I指标化的一族集合。对于每一对 \((\alpha,\beta)\) （I中满足 \(\alpha\leqslant\beta\) 的元素），让 \(f_{\alpha\beta}\) 为从 \(E_{\beta}\) 到 \(E_{\alpha}\) 中的一个映射。假设 \(f_{\alpha\beta}\) 满足以下条件：
+
+\((\mathbf{LP}_{\mathbf{I}})\) 关系 \(\alpha \leqslant \beta \leqslant \gamma\) 蕴含 \(f_{\alpha \gamma} = f_{\alpha \beta} \circ f_{\beta \gamma}\) .
+
+\((\mathbf{LP}_{\mathbf{II}})\) 对于每一个 \(\alpha \in \mathbf{I}\) , \(f_{\alpha \alpha}\) 是 \(\mathbf{E}_{\alpha}\) 的恒等映射.
+
+让 \(G = \prod_{\alpha \in I} E_{\alpha}\) 是集合族 \((E_{\alpha})_{\alpha \in I}\) 的乘积，并设E表示G中满足每一个关系
+
+\[
+\operatorname{pr} _ {\alpha} x = f _ {\alpha \beta} (\operatorname{pr} _ {\beta} x)\tag{1}
+\]
+
+对于每一对指标 \((\alpha, \beta)\) （满足 \(\alpha \leqslant \beta\) ）的x所组成的子集。称 E 是集合族 \((\mathbf{E}_{\alpha})_{\alpha \in \mathbf{I}}\) 关于映射族 \((f_{\alpha \beta})\) 的逆极限，记作 \(\mathbf{E} = \lim (\mathbf{E}_{\alpha}, f_{\alpha \beta})\) ；没有混淆之虞时简记为 \(\mathbf{E} = \lim \mathbf{E}_{\alpha}\) 。稍微滥用语言，把二元组 \(((\mathbf{E}_{\alpha}), (f_{\alpha \beta}))\) （通常记为 \((\mathbf{E}_{\alpha}, f_{\alpha \beta}))\) 称为关于指标集 I 的集合逆系统。\(f_{\alpha}\) （投影 \(\mathrm{pr}_{\alpha}\) 在 \(\mathbf{E}\) 上的限制）称为从 \(\mathbf{E}\) 到 \(\mathbf{E}_{\alpha}\) 的典范映射，并且有关系式
+
+\[
+f _ {\alpha} = f _ {\alpha \beta} \circ f _ {\beta}\tag{2}
+\]
+
+每当 \(\alpha \leqslant \beta\) ；这仅仅是定义E的关系式(1)的转写。
+
+示例
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  假设 I 上的序关系就是相等关系。那么二元组 \((\alpha, \beta)\) （满足 \(\alpha \leqslant \beta\) ）只有 \((\alpha, \alpha)\) （其中 \(\alpha \in I\) ）；又由于 \(f_{\alpha \alpha}\) 是恒等映射，关系式(1)对所有 \(x \in G\) 都成立；换言之，此时 \(\varprojlim E_{\alpha}\) 就是乘积 \(\prod_{\alpha \in I} E_{\alpha}\) .
+\item
+  假设 I 是右有向的，设 \(E_{\alpha}\) 对所有 \(\alpha \in I\) 而言都是同一个集合 F ，并且 \(f_{\alpha\beta}\) 在 \(\alpha \leqslant \beta\) 时是 F 到自身的恒等映射。则 \(E = \varprojlim E_{\alpha}\) 是对角线 \(\Delta\) （乘积 \(\prod_{\alpha \in I} E_{\alpha} = F^{I}\) 的对角线）。事实上，显然每个 \(x \in \Delta\) 满足关系式 (1)。反之，设 x 为 E 的一个元素，我们来证明对每一对指标 \((\alpha, \beta)\) 我们有 \(\mathrm{pr}_{\alpha}x = \mathrm{pr}_{\beta}x\) 。根据假设，存在一个指标 \(\gamma \in I\) 使得 \(\alpha \leqslant \gamma\) 并且 \(\beta \leqslant \gamma\) ；因此由 (1) 我们有 \(\mathrm{pr}_{\alpha}x = f_{\alpha \gamma}(\mathrm{pr}_{\gamma}x) = \mathrm{pr}_{\gamma}x\) ，并且类似地 \(\mathrm{pr}_{\beta}x = \mathrm{pr}_{\gamma}x\) ，这证明了我们的断言。
+\end{enumerate}
+
+应当指出， \(E = \varprojlim E_{\alpha}\) 可以是空的，即使当所有 \(E_{\alpha}\) 都非空且所有映射 \(f_{\alpha\beta}\) 是满射的（练习4；见第4号）。
+
+显然，对于 \(I\) 的每个子集 \(J\) ，由子族 \((\mathbf{E}_{\alpha})_{\alpha \in J}\) 以及该族 \((f_{\alpha \beta})\) （其中 \(\alpha \in J\) , \(\beta \in J\) ，以及 \(\alpha \leqslant \beta\) ）构成的对再次是相对于 \(J\) 的集合逆系统；称其为通过将指标集限制到 \(J\) 而得到的系统。设 \(E\) 和 \(E'\) 分别表示族 \((\mathbf{E}_{\alpha})_{\alpha \in I}\) 和 \((\mathbf{E}_{\alpha})_{\alpha \in J}\) 的逆极限。对于每一个 \(x \in E\) ，该元素
+
+\[
+g (x) = \left(f _ {\alpha} (x)\right) _ {\alpha \in J}\tag{3}
+\]
+
+属于 \(\mathbf{E}'\) （根据（2））；如此定义的映射 \(g: \mathbf{E} \to \mathbf{E}'\) 称为典范的。若 \(\mathbf{J}'\) 是 \(\mathbf{J}\) 的一个子集， \(\mathbf{E}''\) 是族 \((\mathbf{E}_{\alpha})_{\alpha \in \mathbf{J}'}\) 的逆极限，并且 \(g': \mathbf{E}' \to \mathbf{E}''\) 和 \(g'': \mathbf{E} \to \mathbf{E}''\) 是典范映射，则根据定义我们有
+
+\[
+g ^ {\prime \prime} = g ^ {\prime} \circ g.\tag{4}
+\]
+

@@ -1,0 +1,54 @@
+\subsection{集环与加性集函数}
+
+定义 3. --- 一个非空集 \(\Phi\)（集合 \(A\) 的子集所成之集）称为集环，如果存在一个代数 \(\mathcal{A}\)（ \(\mathbf{R}\) 上的），它由定义在 \(A\) 上的实值函数组成，使得关系 \(M \in \Phi\) 与 \(\varphi_{M} \in \mathcal{A}\) 等价。
+
+例. --- 若 \(\mu\) 是局部紧空间 X 上的一个测度，则可积集的特征函数以实数为系数的线性组合构成一个代数 A，因为对任意两个可积集 M、N，函数 \(\varphi_{M}\varphi_{N} = \varphi_{M\cap N}\) 是可积的（No.~5, 命题 7）；于是由定义 2 与定义 3 得出，X 的可积子集所成之集是一个集环。
+
+命题 17. --- 为使集合 A 的子集所成的非空集 \(\Phi\) 是一个集环，其充要条件是它满足下列条件：
+
+\begin{enumerate}
+\def\labelenumi{(\Roman{enumi})}
+\setcounter{enumi}{149}
+\tightlist
+\item
+  对属于 \(\Phi\) 的每对集合 M、N，集合 \(M\cup N\) 与 \(M\cap CN\) 属于 \(\Phi\)。¹
+\end{enumerate}
+
+这条件是必要的，这由关系式
+
+\[
+\varphi_ {\mathrm{M} \cup \mathrm{N}} = \varphi_ {\mathrm{M}} + \varphi_ {\mathrm{N}} - \varphi_ {\mathrm{M}} \varphi_ {\mathrm{N}}, \quad \varphi_ {\mathrm{M} \cap \mathbf {C N}} = \varphi_ {\mathrm{M}} - \varphi_ {\mathrm{M}} \varphi_ {\mathrm{N}}.
+\]
+
+为证明它是充分的，我们首先注意到它蕴涵：对 \(\Phi\) 中任意两个集合 M、N，M∩N 属于 \(\Phi\)，因为 \(M\cap N=M\cap\mathbb{C}(M\cap\mathbb{C}N)\)。设 \(\mathcal{E}(\Phi)\) 是 \(\Phi\) 中集合的特征函数以实数为系数的线性组合所成之集。由于 \(\varphi_{M}\varphi_{N}=\varphi_{M\cap N}\)，\(\mathcal{E}(\Phi)\) 是一个代数。问题归结为证明：若 M 是 A 的一个子集，使得 \(\varphi_{M}=\sum_{i}c_{i}\varphi_{M_{i}}\) （其中 \(M_{i}\) 属于 \(\Phi\)），则 \(M\in\Phi\)。这将由下面的引理得出：
+
+引理. --- 设 \(\Phi\) 是 A 的子集所成的一个满足公理 (CL) 的非空集。给定一个有限族 \((\mathrm{M}_i)_{1 \leqslant i \leqslant n}\)（由 \(\Phi\) 中的集合组成），存在一个有限族 \((\mathbf{N}_j)_{1\leqslant j\leqslant m}\)（由 \(\Phi\) 中两两不相交的集合组成），使得每个 \(\mathbf{M}_i\) 都是若干个 \(\mathbf{N}_j\) 的并。
+
+因为，考虑 \(2^{n} - 1\) 个形如 \(\bigcap_{i=1}^{n} \mathrm{P}_{i}\) 的集合，其中 \(\mathrm{P}_{i} = \mathrm{M}_{i}\)（对某些指标 \(i\)），\(\mathrm{P}_{i} = \complement \mathrm{M}_{i}\)（对其余的指标），且至少有一个 \(\mathrm{P}_{i}\) 等于 \(\mathrm{M}_{i}\)。设 \((\mathrm{N}_{j})_{1 \leqslant j \leqslant m}\) 是这些集合按某个次序排成的序列；它们两两不相交且属于 \(\Phi\)；另一方面，每个集合 \(\mathrm{M}_{k}\) 是诸集合 \(\mathrm{N}_{j} = \bigcap_{i=1}^{n} \mathrm{P}_{i}\)（对应于族 \((\mathrm{P}_{i})\)，其中 \(\mathrm{P}_{k} = \mathrm{M}_{k}\)）的并，这就证明了引理。
+
+引理证毕，每个形如 \(\sum_{i=1}^{n} c_i \varphi_{\mathrm{M}_i}\) （其中 \(\mathrm{M}_i \in \Phi\)）的函数都可写成 \(\sum_{j=1}^{m} d_j \varphi_{\mathrm{N}_j}\) 的形式，其中 \(\mathrm{N}_j\) 属于 \(\Phi\) 且两两不相交；若 \(\varphi_{\mathrm{M}} = \sum_{j=1}^{m} d_j \varphi_{\mathrm{N}_j}\)，则必有 \(d_j = 0\) 或 \(d_j = 1\)（对每个指标 \(j\)），从而 \(\mathrm{M}\) 是若干个 \(\mathrm{N}_j\) 的并，因此属于 \(\Phi\)。
+
+A 的子集的每个集环 \(\Phi\) 都含有 A 的空子集 \(\varnothing\)；因为至少存在一个子集 \(M \in \Phi\)，因此 \(M - M = \varnothing\) 属于 \(\Phi\)。还应注意，由单独一个子集 \(\varnothing\) 组成的 A 的子集所成之集是一个集环。
+
+定义 4. --- 给定集合 A 的子集所成的一个集环 \(\Phi\) 与一个 Banach 空间 F，我们把阶梯函数\(^{2}\)（在 \(\Phi\) 的集合上的、取值于 F 的；或称 \(\Phi\)-阶梯函数）理解为每个形如 \(\sum_{i} \mathbf{a}_{i} \varphi_{\mathrm{M}_{i}}\) 的函数，其中 \(\mathbf{a}_{i}\) 属于 F，而 \(\mathrm{M}_{i}\) 属于 \(\Phi\)。
+
+显然，集 \(\mathcal{E}_{\mathrm{F}}(\Phi)\)（取值于 F 的 \(\Phi\)-阶梯函数所成之集）是 R 或 C 上的一个向量空间。我们刚才在命题 17 中看到，集 \(\mathcal{E}(\Phi)\)（实值 \(\Phi\)-阶梯函数所成之集）是 R 上的一个代数；它也是 \(R^{A}\) 的由 \(\Phi\) 中集合的特征函数生成的线性子空间。
+
+由该引理，\(\mathcal{E}_{\mathrm{F}}(\Phi)\) 中的每个函数都可写成 \(f = \sum_{j} c_{j} \varphi_{N_{j}}\)，其中 \(N_{j} \in \Phi\) 两两不相交；由此得出 \(|f| = \sum_{j} |c_{j}| \varphi_{N_{j}}\) 属于 \(\mathcal{E}(\Phi)\)。特别地，\(\mathcal{E}(\Phi)\) 是一个 Riesz 空间，因为 \(\mathcal{E}(\Phi)\) 中两个函数的上包络属于 \(\mathcal{E}(\Phi)\)。
+
+注. --- 容易看出，定义 4 等价于下述说法：取值于 F 的 \(\Phi\)-阶梯函数是这样一种函数 f：它只取有限多个值，并且对 F 中每个 \(a \neq 0\)，集合 \(\mathbf{f}^{-1}(a)\) 属于 \(\Phi\)。
+
+定义 5. --- 实值函数 \(\lambda\)（定义在一个集环 \(\Phi\)——集合 \(A\) 的子集所成之集——上）称为加性的，如果对每对不相交的集合 \(M, N\)（它们属于 \(\Phi\)），有 \(\lambda(M \cup N) = \lambda(M) + \lambda(N)\)。
+
+特别地，由这个定义得出 \(\lambda(\varnothing)=0\)。
+
+命题 18. --- 设 \(\lambda\) 是定义在集环 \(\Phi\) 上的一个加性集函数。存在且仅存在一个线性形式（仍记作 \(\lambda\)），它定义在向量空间 \(\mathcal{E}(\Phi)\)（实值 \(\Phi\)-阶梯函数所成的）上，使得 \(\lambda(\varphi_{\mathrm{M}}) = \lambda(\mathrm{M})\) 对每个集合 \(\mathrm{M} \in \Phi\) 成立；此外，若 \(\lambda(\mathrm{M}) \geqslant 0\) 对每个 \(\mathrm{M} \in \Phi\) 成立，则 \(\lambda\) 是 \(\mathcal{E}(\Phi)\) 上的一个正线性形式。
+
+线性形式 \(\lambda\) 的唯一性是明显的，因为 \(\Phi\) 中集合的特征函数生成向量空间 \(\mathcal{E}(\Phi)\)。为证明 \(\lambda\) 的存在性，只需证明关系 \(\sum_{i} c_i \varphi_{\mathrm{M}_i} = 0\) （其中 \(\mathrm{M}_i\) 是属于 \(\Phi\) 的非空集合）蕴涵 \(\sum_{i} c_i \lambda(\mathrm{M}_i) = 0\)。现在，由该引理，存在两两不相交的非空集合的一个有限族 \((\mathrm{N}_j)\)（它们属于 \(\Phi\)），使得对每个指标 \(i\)，有 \(\varphi_{\mathrm{M}_i} = \sum_{j} a_{ij} \varphi_{\mathrm{N}_j}\)，其中 \(a_{ij} = 0\) 或 \(a_{ij} = 1\)。关系 \(\sum_{i} c_i \varphi_{\mathrm{M}_i} = 0\) 可写成 \(\sum_{j} \left( \sum_{i} c_i a_{ij} \right) \varphi_{\mathrm{N}_j} = 0\)，因此它蕴涵 \(\sum_{i} c_i a_{ij} = 0\) 对每个指标 \(j\) 成立。于是由定义 5，我们有
+
+\[
+\sum_ {i} c _ {i} \lambda (\mathrm{M} _ {i}) = \sum_ {j} \left(\sum_ {i} c _ {i} a _ {i j}\right) \lambda (\mathrm{N} _ {j}) = 0,
+\]
+
+这就证明了 \(\lambda\) 的存在性。最后，假设 \(\lambda(M) \geqslant 0\) 对每个 \(M \in \Phi\) 成立；对每个函数 \(f \in \mathcal{E}(\Phi)\)，可写 \(f = \sum_{i} c_i \varphi_{M_i}\)，其中 \(M_i \in \Phi\) 两两不相交；若 \(f \geqslant 0\)，则由此得出，\(c_i \geqslant 0\) 对每个指标 \(i\)（使得 \(M_i\) 非空者）成立，从而 \(\lambda(f) = \sum_{i} c_i \lambda(M_i) \geqslant 0\)。
+

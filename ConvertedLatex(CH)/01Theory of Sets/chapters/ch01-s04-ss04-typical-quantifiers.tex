@@ -1,0 +1,120 @@
+\subsection{典型的量词}
+
+设 \(\pmb{A}\) 和 \(\pmb{R}\) 为组装，并设 \(\pmb{x}\) 是一个字母。我们将组装 \((\exists x)(\pmb{A}\) 和 \(\pmb{R})\) 记为 \((\exists_{\pmb{A}}x)\pmb{R}\) ，并将组装
+
+\[
+\text {   ``非   } (\exists_ {A} x) \text {   (非   } R)
+\]
+
+记为 \((\forall_{A}x)R\) 。缩写符号 \(\exists_{A}\) 和 \(\forall_{A}\) 称为典型量词。注意字母 x 不出现在由 \((\exists_{A}x)R\) , \((\forall_{A}x)R\)
+
+所表示的组装中。CS10. 设 A 和 R 为组装，并设 x 和 \(x'\) 为字母。如果 \(x'\) 既不出现在 R 中也不出现在 A 中，则 \((\exists_{A}x)R\) 和 \((\forall_{A}x)R\) 分别与 \((\exists_{A'}x')R'\) 和 \((\forall_{A'}x')R'\) 相同，其中 \(R'\) 是 \((x'|x)R\) ， \(A'\) 是 \((x'|x)A\) .
+
+CS11. 设 \(A, R, U\) 为组装，且设 \(x, y\) 为互不相同的字母。若 \(x\) 不出现在 \(U\) 中，则组装 \((U|y)(\exists_A x)R\) 和 \((U|y)(\forall_A x)R\) 分别与 \((\exists_{A'}x)R'\) 和 \((\forall_{A'}x)R'\) 相同，其中 \(R'\) 是 \((U|y)R\) ， \(A'\) 是 \((U|y)A\) .
+
+这些规则是准则 CS8、CS9（第 1 节）、CS5（§1，第 2 节）和 CS6（§3，第 4 节）的直接推论。
+
+CF12. 设 A 和 R 为 G 中的关系，并设 x 为一个字母。则
+
+\[
+(\exists_ {A} x) R \quad \text{且} \quad (\forall_ {A} x) R
+\]
+
+是 \(\mathfrak{C}\) 中的关系 .
+
+这直接由 CF11（第 1 节）、CF9（§3，第 4 节）和 CF2（§1，第 4 节）得出。
+
+直观地说，将 A 和 R 视为关于 x 的性质。在一系列证明中，我们可能只关心满足 A 的对象。说存在一个满足 A 的对象使得 R 成立，意味着存在一个对象使得“A 且 R”；由此得到 \(\exists_{A}\) 的定义。说所有满足 \(A\) 的对象都具有性质 \(R\) ，意味着不存在满足 \(A\) 的对象使得“非 \(R\)”；由此得到 \(\forall_{A}\) 的定义。在实践中，这些符号根据关系 \(A\) 的性质被各种短语所替代。* 例如：“对所有整数 \(x\) ， \(R\)”；“存在集合 E 的元素 \(x\) 使得 \(R\)”；等等。*
+
+C35. 设 A 与 R 为 G 中的关系，且 x 为一个字母。则关系 \((\forall_{A}x)R\) 和 \((\forall x)(A\Longrightarrow R)\) 在 G 中等价。
+
+因为关系 \((\forall_{A}x)R\) 与下式相同：
+
+\[
+\text{``非 } (\exists x) (A \text{ 且 } (\text{非 } R))\text{''}.
+\]
+
+现在，“A且（非R）”在 \(C_{0}\) 中等价于“非 \((A \Longrightarrow R)\) ”；因此，“非 \((\exists x)(A \text{ 且 (非 } R))\) ”在 \(C_{0}\) 中等价于
+
+\[
+\text{``非 } (\exists x) (\text{非 } (A \Rightarrow R))\text{''},
+\]
+
+由C31（第3条）得到，且后一关系与 \((\forall x)(A \Rightarrow R)\) 相同。因此该判据在 \(\mathfrak{G}_0\) 中成立，从而在 \(\mathfrak{G}\)
+
+中也成立。我们常常需要证明形如 \((\forall_{A}x)R\) 的关系；通常我们将使用以下两个判据之一：
+
+C36. 设A和R为C中的关系，并设x为一个字母。设 \(C'\) 为由将 A 添加到 C 的公理中所得的理论。如果 x 不是 C 的常量，并且 R 是 \(C'\) 中的定理，那么 \((\forall_{A}x)R\) 是C中的一个定理。
+
+根据演绎准则，\(A \Longrightarrow R\) 是 \(\mathfrak{C}\) 中的定理；因此由C27（第1号）和C35，\((\forall_A x) R\) 是 \(\mathfrak{C}\) 中的定理。
+
+在实践中，我们通过诸如“设 \(\pmb{x}\) 为任意满足 \(A\)的元素”这样的短语来表明我们将使用此规则。在理论 \(\mathfrak{C}'\) 如此定义后，我们试图证明 \(R\) 。当然，我们不能断言 \(R\) 本身是 \(\mathfrak{C}\) 中的定理 .
+
+C37. 设 A 和 R 是 C 中的关系，并设 x 为一个字母。设 \(C'\) 是通过将关系 A 和“非 R”附加到 C 的公理上而得到的理论。如果 x 不是 C 的常量，且 \(C'\) 是矛盾的，则 \((\forall_{A}x)R\) 是C中的一个定理。
+
+因为理论 \(\mathfrak{C}'\) 等价于通过将“非 \((A \Longrightarrow R)\)”附加到 \(\mathfrak{C}\) 的公理而得到的理论。根据归谬法， \(A \Longrightarrow R\) 是 \(\mathfrak{C}\) 中的定理 ，因此 \((\forall_A x)R\) 也是，由 C27（第 1 号）和 C35 得出。
+
+在实践中我们说：“假设存在一个对象 \(x\) 满足 \(A\) 而 \(R\) 为假”，并试图建立一个矛盾。
+
+典型量词的性质与量词的性质类似：
+
+C38. 设 A 与 R 为 G 中的关系，且 x 为一个字母。则关系
+
+\[
+\begin{array}{l} \text { 非 } (\forall_ {A} x) R \Longleftrightarrow (\exists_ {A} x) (\text { 非 } R), \\ \text { 非 } (\exists_ {A} x) R \Longleftrightarrow (\forall_ {A} x) (\text { 非 } R) \end{array}
+\]
+
+是 \(\mathfrak{C}\) 中的定理 .
+
+C39. 设 A、R 与 S 为 C 中的关系，且 x 为不是 C 的常量的一个字母。若关系 \(A \Longrightarrow (R \Longrightarrow S)\) {[}相应地 \(A \Longrightarrow (R \Longleftrightarrow S)\) {]} 是C中的一条定理，则这些关系
+
+\[
+\begin{array}{c c} (\exists_ {A} x) R \Longrightarrow (\exists_ {A} x) S, & (\forall_ {A} x) R \Longrightarrow (\forall_ {A} x) S \\ \text{[分别 } (\exists_ {A} x) R \Longleftrightarrow (\exists_ {A} x) S, & (\forall_ {A} x) R \Longleftrightarrow (\forall_ {A} x) S \text{]} \end{array}
+\]
+
+是 \(\mathfrak{C}\) 中的定理 .
+
+C40. 设 A、R 和 S 为 C 中的关系，且 x 为一个字母。则关系
+
+\[
+\begin{array}{c} (\forall_ {A} x) (R \text {   且   } S) \iff ((\forall_ {A} x) R \text {   且   } (\forall_ {A} x) S), \\ (\exists_ {A} x) (R \text {   或   } S) \iff ((\exists_ {A} x) R \text {   或   } (\exists_ {A} x) S) \end{array}
+\]
+
+是 \(\mathfrak{C}\) 中的定理 .
+
+C41。设A、R和S为C中的关系，并设x为不出现在R中的字母。则关系
+
+\[
+\begin{array}{l} (\forall_ {A} x) (R \text {   或   } S) \iff (R \text {   或   } (\forall_ {A} x) S), \\ (\exists_ {A} x) (R \text {   且   } S) \iff (R \text {   且   } (\exists_ {A} x) S) \end{array}
+\]
+
+是 \(\mathfrak{C}\) 中的定理 .
+
+C42. 设 A、B、R 为 C 中的关系，且 x 与 y 为字母。若 x 不出现在 B 中，且 y 不出现在 A 中，则关系
+
+\[
+\begin{array}{l} (\forall_ {A} x) (\forall_ {B} y) R \iff (\forall_ {B} y) (\forall_ {A} x) R, \\ (\exists_ {A} x) (\exists_ {B} y) R \iff (\exists_ {B} y) (\exists_ {A} x) R, \\ (\exists_ {A} x) (\forall_ {B} y) R \implies (\forall_ {B} y) (\exists_ {A} x) R \end{array}
+\]
+
+是 \(\mathfrak{C}\) 中的定理 .
+
+作为示例，让我们证明C42的一部分。关系
+
+\[
+(\exists_ {A} x) (\exists_ {B} y) R
+\]
+
+与 \((\exists x)(A\) 且 \((\exists y)(B\) 且 \(R)\) 相同；因此，因为 \(y\) 不出现在 \(A\) 中，它在 \(\mathcal{T}_0\) 中等价于
+
+\[
+(\exists x) (\exists y) (A \text {   且   } (B \text {   且   } R))
+\]
+
+由C33和C31得到。同样地， \((\exists_{B}x)(\exists_{A}y)R\) 等价于
+
+\((\exists y)(\exists x)(B\) 和 \((A\) 和 \(R)\) .
+
+现在应用C31和C34（第3条）。
+
+* 作为这些判据应用的一个例子，考虑以下关系：“实值函数序列 \((f_{n})\) 在 {[}0, 1{]}中一致收敛到0”。这意味着“对于每个 \(\varepsilon > 0\) 存在一个整数n，使得对于每个 \(x \in [0, 1]\) 以及每个整数 \(m \geqslant n\) 我们拥有 \(|f_{m}(x)| \leqslant \varepsilon\) ”。假设我们希望取这个关系的否定（例如，为了通过反证法获得证明）；准则C38表明，这个否定等价于以下关系：“存在一个 \(\varepsilon > 0\) 使得对于每个整数n，存在一个 \(x \in [0, 1]\) 和一个 \(m \geqslant n\) 使得 \(|f_{m}(x)| > \varepsilon\) ”.
+

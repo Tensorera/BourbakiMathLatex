@@ -1,0 +1,60 @@
+\subsection{向量函子}
+
+本号以及其后的三个 7.7 至 7.9 号中，字母 I 表示一个有限集，它是两个不交子集 \(I_+\) 和 \(I_-\) 的并。我们用 \(\mathcal{V} = (\mathrm{V}_{i})_{i\in I}\)（\(\mathcal{V}'\)、\(\mathcal{V}''\)、\ldots）也同样表示一个由 I 编号的巴拿赫空间族。我们用 \(\operatorname{Hom}(\mathcal{V},\mathcal{V}')\) 表示巴拿赫空间 \(\prod_{i\in I_+}\mathcal{L}(\mathrm{V}_i;\mathrm{V}_i')\times \prod_{i\in I_-}\mathcal{L}(\mathrm{V}_i';\mathrm{V}_i)\)。我们用 \(\mathbf{f} = (f_i)\) 表示 \(\operatorname{Hom}(\mathcal{V},\mathcal{V}')\) 的一个元素。将 \(\mathrm{Id}_{\mathcal{V}}\) 记为元素 \((\mathrm{Id}_{\mathrm{V}_i})_{i\in I}\)，它属于 \(\operatorname{Hom}(\mathcal{V},\mathcal{V})\)。对于 \(\mathbf{f}\in \operatorname{Hom}(\mathcal{V},\mathcal{V}')\) 和 \(\mathbf{f}'\in \operatorname{Hom}(\mathcal{V}',\mathcal{V}'')\)，用 \(\mathbf{f}'\circ \mathbf{f}\) 表示 \(\operatorname{Hom}(\mathcal{V},\mathcal{V}'')\) 中的元素，其分量由下式给出：
+
+\[
+\begin{array}{l l} (\mathbf {f} ^ {\prime} \circ \mathbf {f}) _ {i} = f _ {i} ^ {\prime} \circ f _ {i} & \text { if } \quad i \in \mathrm{I} _ {+} \\ (\mathbf {f} ^ {\prime} \circ \mathbf {f}) _ {i} = f _ {i} \circ f _ {i} ^ {\prime} & \text { if } \quad i \in \mathrm{I} _ {-}. \end{array}
+\]
+
+7.6.1. 类型为 I 且类为 \(\mathbf{C}^r\) 的向量函子（分别为有限维向量函子）是由如下数据组成的：对于每个由巴拿赫空间（分别为 K 上的有限维向量空间）组成的族 \(\mathcal{V} = (\mathrm{V}_i)_{i\in I}\)，给定一个巴拿赫空间 \(\tau(\mathcal{V})\)；对于每个 \(\mathbf{f}\in\mathrm{Hom}(\mathcal{V},\mathcal{V}')\)，给定一个元素 \(\tau(\mathbf{f})\in\mathcal{L}(\tau(\mathcal{V});\tau(\mathcal{V}'))\)；这些数据满足以下两个条件：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  有 \(\tau (\mathrm{Id}_{\mathcal{V}}) = \mathrm{Id}_{\tau (\mathcal{V})}\)，且 \(\tau (\mathbf{f}'\circ \mathbf{f}) = \tau (\mathbf{f}')\circ \tau (\mathbf{f}).\)
+\item
+  映射 \(\tau : \operatorname{Hom}(\mathcal{V}, \mathcal{V}') \to \mathcal{L}(\tau(\mathcal{V}); \tau(\mathcal{V}'))\) 的类为 \(C'\)。
+\end{enumerate}
+
+7.6.2. 设 \(\mathcal{M} = (\mathbf{M}^i)_{i\in I}\) 是以 B 为基底的向量丛族。对 \(b\in \mathbf{B}\)，置 \(\mathcal{M}_b = (\mathbf{M}_b^i)_{i\in I}\)。设 \(\tau\) 是一个向量函子，并用 \(\tau (\mathcal{M})\) 表示所有 \(\tau(\mathcal{M}_{b})\) 的不交并，其中 \(b\in\mathbf{B}\)。
+
+在 \(\tau(\mathcal{M})\) 上存在唯一一个向量丛结构（以 B 为基底，相对于映射 \(\pi\)，该映射从 \(\tau(\mathcal{M})\) 到 B），使得对每个 \(b\in\mathbf{B}\)，都有 \(\tau(\mathcal{M}_{b})=\pi^{-1}(b)\)，并且具有以下性质：
+
+设 U 是 B 的一个开子集，并且对每个 i，设 \(t^{i} = (\mathrm{U}, \varphi_{i}, \mathrm{F}_{i})\) 是定义域为 U 的 \(M^{i}\) 的向量丛图；置 \(\mathcal{F} = (\mathrm{F}_{i})_{i \in I}\)，并令 \(\psi_{b}\) 为 \(\operatorname{Hom}(\mathcal{M}_{b}, \mathcal{F})\) 中的元素，满足 \((\psi_{b})_{i} = (t_{b}^{i})^{-1}\) 对 \(i \in I_{+}\) 成立，且 \((\psi_{b})_{i} = t_{b}^{i}\) 对 \(i \in I_{-}\) 成立；对 \(x \in \pi^{-1}(\mathrm{U})\)，置 \(\psi(x) = (\pi(x), \tau(\psi_{\pi(x)})(x))\)。则三元组 \((\mathrm{U}, \psi, \tau(\mathcal{F}))\) 是向量丛 \(\tau(\mathcal{M})\) 的一个向量丛图。
+
+赋予这个结构后，\(\tau(\mathcal{M})\) 称为由向量丛族 \(\mathcal{M}\) 通过向量函子 \(\tau\) 导出的向量丛。
+
+7.6.3. 设 \(f\) 是从 \(\mathbf{B}\) 到流形 \(\mathbf{B}'\) 的态射。设 \(\mathcal{M} = (\mathbf{M}^i)\)（分别 \(\mathcal{M}' = (\mathbf{M}'^i)\)）是由 \(\mathbf{I}\) 编号的、以 \(\mathbf{B}\)（分别 \(\mathbf{B}'\)）为基底的向量丛族。对每个 \(i \in \mathbf{I}_+\)，设 \(g_i\) 是一个 \(f\)-态射，从 \(\mathbf{M}^i\) 到 \(\mathbf{M}'^i\)；对每个 \(i \in \mathbf{I}_-\)，设 \(g_i\) 是一个 \(f\)-余态射，从 \(\mathbf{M}'^i\) 到 \(\mathbf{M}^i\)。置 \(\mathbf{g} = (g_i)_{i \in I}\)，并对 \(b \in B\) 置 \(\mathbf{g}_b = ((g_i)_b)_{i \in I}\)（参见 7.2.1 和 7.2.6）。存在一个 \(f\)-态射，记为 \(\tau(\mathbf{g})\)，从 \(\tau(\mathcal{M})\) 到 \(\tau(\mathcal{M}')\)，且唯一，使得 \(\tau(\mathbf{g})_b = \tau(\mathbf{g}_b)\) 对所有 \(b \in B\) 都成立。
+
+特别地，若 \(M^{i}=f^{*}M^{'i}\)，且 \(g_{i}\) 是典范态射或余态射，则从 \(\tau(\mathcal{M})\) 到 \(f^{*}\tau(\mathcal{M}')\) 的 B-态射由 \(\tau(\mathbf{g})\)（7.2.4）定义，是一个同构；这个事实表述为 \(\tau\) 与逆像可交换。
+
+特别地，设 B' 是 B 的子流形，并置 \(\mathcal{M}|B' = (M^{i}|B')_{i\in I}\)。则向量丛 \(\tau(\mathcal{M})|B'\) 与 \(\tau(\mathcal{M}|B')\) 典范地 B'-同构。
+
+7.6.4. 设 \(\tau, \tau_1, \ldots, \tau_d\) 是向量函子（类型为 I 且类为 \(C'\)）。一个 \(d\)-线性态射 \(\theta\)，从 \((\tau_1, \ldots, \tau_d)\) 到 \(\tau\)，是如下数据：对于每个由 I 编号的巴拿赫空间族 \(\mathcal{V}\)，给定一个连续 \(d\)-线性映射 \(\theta_{\mathcal{V}}\)，从 \(\tau_1(\mathcal{V}) \times \cdots \times \tau_d(\mathcal{V})\) 到 \(\tau(\mathcal{V})\)，这些数据满足以下条件：对每个 \(f \in \text{Hom}(\mathcal{V}, \mathcal{V}')\)，有
+
+\[
+\tau (\mathbf {f}) \circ \theta_ {\mathcal{V}} = \theta_ {\mathcal{V}^{\prime}} \circ (\tau_ {1} (\mathbf {f}) \times \dots \times \tau _{d} (\mathbf {f})).
+\]
+
+当 \(d = 1\) 时，简称为从 \(\tau_1\) 到 \(\tau\) 的态射。
+
+现在设 \(\mathcal{M}\) 是由 I 编号的、以 B 为基底的向量丛族。存在唯一一个 B-态射 \(\theta_{\mathcal{M}}\)，从 \(\tau_{1}(\mathcal{M}) \times_{\mathbf{B}} \cdots \times_{\mathbf{B}} \tau_{d}(\mathcal{M})\) 到 \(\tau(\mathcal{M})\)，它是 d-线性的，并且满足 \((\theta_{\mathcal{M}})_{b} = \theta_{\mathcal{M}_{b}}\) 对所有 \(b \in \mathbf{B}\) 都成立。
+
+采用 7.6.3 的记号，有
+
+\[
+\tau (\mathbf {g}) \circ \theta_ {\mathcal {M}} = \theta_ {\mathcal {M} ^ {\prime}} \circ (\tau_ {1} (\mathbf {g}) \times \dots \times \tau_ {d} (\mathbf {g})).
+\]
+
+若 \(d=1\) 且 \(\theta\) 是同构（即 \(\theta_{\mathcal{V}}\) 对每个族 \(\mathcal{V}\) 都是同构），则 \(\theta_{\mathcal{M}}\) 是同构。
+
+7.6.5. 7.6.2 至 7.6.4 号的定义和结果可推广到有限维向量函子的情形，条件是处处假定所给向量丛为有限秩。
+
+它们也可推广到如下情形：设 L 是带有有限维 K-代数结构的域；取 \(\tau\) 为 L 上的向量函子（即满足将 7.6.1 中的 K 换成 L 后所得假设的函子），并且只考虑 7.3.4 意义下 L 上的向量丛。
+
+7.6.6. 如果一个函子对每个巴拿赫空间 V（分别每个 K 上的有限维向量空间）赋予一个巴拿赫空间 \(\tau(\mathrm{V})\)，并对从 V 到巴拿赫空间 V' 的每个同构 \(f\) 赋予一个同构 \(\tau(f)\)，其从 \(\tau(\mathrm{V})\) 到 \(\tau(\mathrm{V}')\)，且这些数据满足 7.6.1 的条件（a）和以下条件，则称该函子是关于同构的向量函子（分别有限维向量函子）：
+
+（b'）映射 \(f\mapsto\tau(f)\) 从由 V 到 V' 的同构组成的 \(\mathcal{L}(\mathrm{V};\mathrm{V}')\) 的开子集到 \(\mathcal{L}(\tau(\mathrm{V});\tau(\mathrm{V}'))\) 是 C' 类的。
+
+前面各号的定义和结果可推广到关于同构的向量函子的情形（令 \(I_{+} = \{1\}\) 且 \(I_{-} = \varnothing\)），但 7.6.3 号第一段中的定义和结果除外。
+

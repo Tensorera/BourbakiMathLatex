@@ -1,0 +1,50 @@
+\subsection{与主覆叠相伴的覆叠情形}
+
+设 B 为拓扑空间，G 为离散拓扑群，E 为以 G 为群的 B 的主覆叠。记 B-空间 E 的投影为 p。设 b 是 B 的一点，x 是 \(E_{b}\) 的一点。
+
+命题 5. --- 映射 \(h_{(\mathrm{E},x)}\) 从 \(\pi_1(\mathrm{B},b)\) 到 G 出发，将 \(\gamma \in \pi_1(\mathrm{B},b)\) 关联到 G 中的唯一元素 \(g\)，它满足 \(x \cdot g = x \cdot \gamma^{-1}\)，是一个群同态；其核是子群 \(p_*(\pi_1(\mathrm{E},x))\)，它是 \(\pi_1(\mathrm{B},b)\) 的子群。若 E 连通，该同态为满射。
+
+对于每个 \(g \in \mathrm{G}\)，都有 \(h_{(\mathrm{E},x \cdot g)} = \operatorname{Int}(g^{-1}) \circ h_{(\mathrm{E},x)}\)。
+
+设 E 是以 G 为群的 B 的主覆叠，设 x 是 \(E_{b}\) 的一点，并记 E 的投影为 p。对于每个 \(g \in G\)，映射 \(y \mapsto y \cdot g\) 都是 E 的 B-自同构。因此，对于每个 \(g \in G\)、每个 \(y \in E_{b}\) 以及每个 \(\gamma \in \pi_{1}(B, b)\)，都有关系 \((y \cdot g) \cdot \gamma = (y \cdot \gamma) \cdot g\)（参见 III，第 305 页，关系 (4)）。从而，对于 \(\gamma, \delta \in \pi_{1}(B, b)\)，有
+
+\[
+\begin{array}{r l} & {x \cdot h _ {(\mathrm{E}, x)} (\gamma \delta) = x \cdot \delta^ {- 1} \gamma^ {- 1}} \\ & {\qquad = (x \cdot h _ {(\mathrm{E}, x)} (\delta)) \cdot \gamma^ {- 1}} \\ & {\qquad = (x \cdot \gamma^ {- 1}) \cdot h _ {(\mathrm{E}, x)} (\delta)} \\ & {\qquad = x \cdot h _ {(\mathrm{E}, x)} (\gamma) h _ {(\mathrm{E}, x)} (\delta),} \end{array}
+\]
+
+这证明了 \(h_{(\mathrm{E},x)}\) 是群同态。
+
+其核是 \(x\) 在 \(\pi_1(\mathrm{B}, b)\) 的典范作用下的稳定子，因而根据 III 第 305 页的定理 1 等于 \(p_*(\pi_1(\mathrm{E}, x))\)。映射 \(g \mapsto x \cdot g\) 是从 G 到 \(\mathrm{E}_b\) 的双射。因此，同态 \(h_{(\mathrm{E}, x)}\) 的像是满足下述条件的 \(g \in \mathrm{G}\) 的集合：\(x \cdot g\) 属于 \(x\) 在此作用下的轨道。若 E 连通，则 \(\pi_1(\mathrm{B}, b)\) 在 \(\mathrm{E}_b\) 上传递作用（同上），从而同态 \(h_{(\mathrm{E}, x)}\) 为满射。
+
+令 \(g\in \mathbf{G}\)；对于每个 \(\gamma \in \pi_1(\mathrm{B},b)\)，有
+
+\[
+x \cdot g h _ {(\mathrm{E}, x \cdot g)} (\gamma) = (x \cdot g) \cdot \gamma^ {- 1} = (x \cdot \gamma^ {- 1}) \cdot g = x \cdot h _ {(\mathrm{E}, x)} (\gamma) g,
+\]
+
+所以 \(h_{(\mathrm{E},x\cdot g)}(\gamma)=g^{-1}h_{(\mathrm{E},x)}(\gamma)g\)。命题得证。
+
+例。--- 1) 设 F 是赋有 G 作用的离散集，令 \(X = E \times^{G} F\) 为与之相伴的 B 的覆叠。记 \(\varphi: E \times F \to X\) 为典范 B-态射。它是覆叠的态射。于是，对于每个 \(\gamma \in \pi_{1}(B, b)\) 和每个 \(f \in F\)，有
+
+\[
+\varphi (x, f) \cdot \gamma = \varphi (x \cdot \gamma , f) = \varphi (x \cdot h _ {(\mathrm{E}, x)} (\gamma) ^ {- 1}, f) = \varphi (x, h _ {(\mathrm{E}, x)} (\gamma^ {- 1}) \cdot f).\tag{5}
+\]
+
+若将 F 与 \(X_{b}\) 识别，其中所用双射为 \(f \mapsto \varphi(x, f)\)，则右作用 \(\pi_{1}(B, b) \to \operatorname{Aut}(X_{b})^{\circ}\) 是以下三个映射的复合：同态 \(h_{(E,x)}\)、G 到自身的反同态 \(g \mapsto g^{-1}\)，以及由 G 在 F 上的作用诱导的同态 G → Aut(F)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 H 是离散拓扑群，设 \(f\colon G\to H\) 是群同态。赋予 H 以 G 的左作用 \(g\cdot h=f(g)h\)，其中 \(g\in G\)、\(h\in H\)。令 \(\mathrm{E}^{\prime}=\mathrm{E}\times^{\mathrm{G}}\mathrm{H}\) 为相伴覆叠；它是以 H 为群的主覆叠（I，第 107 页，例 6）。记 \(q\colon E\times H\to E\times^{G}H\) 为典范映射，并置 \(x^{\prime}=q(x,e)\)。有 \(h_{(E^{\prime},x^{\prime})}=f\circ h_{(E,x)}\)。
+\end{enumerate}
+
+事实上，设 \(c\) 是 B 中以 \(b\) 为基点的圈，设 \(\gamma\) 是它在 \(\pi_1(B,b)\) 中的类，并令 \(g = h_{(E,x)}(\gamma)\)；于是有 \(x \cdot \gamma = x \cdot g^{-1}\)。设 \(\widetilde{c}\) 是 E 中起点为 \(x\) 的道路；则 \(t \mapsto q(\widetilde{c}(t), e)\) 是 E' 中起点为 \(x'\) 且提升 B 中道路 \(p \circ \widetilde{c}\) 的道路，所以
+
+\[
+x ^ {\prime} \cdot \gamma = q (x \cdot \gamma , e) = q (x \cdot g ^ {- 1}, e) = q (x, f (g) ^ {- 1}) = q (x, e) \cdot f (g) ^ {- 1},
+\]
+
+这证明了 \(h_{(\mathrm{E}', x')}(\gamma) = f(g)\)。
+

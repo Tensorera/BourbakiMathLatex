@@ -1,0 +1,335 @@
+\subsection{The resultant}
+
+In this No.~we assume as given two positive integers \(p, q\) and two polynomials \(f, g\) in \(\mathbf{A}[\mathbf{X}]\) of the form
+
+\[
+\begin{array}{r l} & {f = t _ {p} \mathbf {X} ^ {p} + t _ {p - 1} \mathbf {X} ^ {p - 1} + \dots + t _ {0}} \\ & {g = u _ {q} \mathbf {X} ^ {q} + u _ {q - 1} \mathbf {X} ^ {q - 1} + \dots + u _ {0}} \end{array}
+\]
+
+such that \(\deg f \leqslant p\) , \(\deg g \leqslant q\) . For every integer \(n \geqslant 0\) we denote by \(S_n\) the sub-A-module of A{[}X{]} consisting of all polynomials of degree \(< n\) ; it has the family \((X^i)_{0 \leqslant i < n}\) as basis, and hence is of rank \(n\) .
+
+We provide \(\mathbf{S}_q\times \mathbf{S}_p\) with the basis
+
+\[
+\mathrm{B} _ {1} = \left(\left(\mathrm{X} ^ {q - 1}, 0\right), \dots , (\mathrm{X}, 0), (1, 0), \left(0, \mathrm{X} ^ {p - 1}\right), \dots , (0, \mathrm{X}), (0, 1)\right)
+\]
+
+and \(\mathbf{S}_{p + q}\) with the basis
+
+\[
+\mathbf {B} _ {2} = \left(\mathbf {X} ^ {p + q - 1}, \dots , \mathbf {X}, 1\right).
+\]
+
+We define a linear mapping \(\varphi : S_q \times S_p \to S_{p + q}\) by
+
+\[
+\varphi (u, v) = u f + v g
+\]
+
+and we denote by \(\mathbf{M}(f,g,p,q)\) the matrix of \(\varphi\) with respect to the bases \(\mathbf{B}_1\) and \(\mathbf{B}_2\) . This is a square matrix of order \(p + q\) , indexed by the set \(\{0,1,\dots,p + q - 1\}\) . Its elements \(a_{ij}\) are given by the rules:
+
+\[
+\begin{array}{l l} a) & a _ {i j} = t _ {p - i + j} \quad \text {for} \quad 0 \leqslant j \leqslant q - 1, \\ b) & a _ {i j} = u _ {j - i} \quad \text {for} \quad q \leqslant j \leqslant p + q - 1, \end{array}
+\]
+
+where \(t_k\) is taken to be 0 if \(k \notin [0, p]\) and \(u_k = 0\) if \(k \notin [0, q]\) .
+
+For example, when \(p = 2\) and \(q = 3\) , we have the matrix
+
+\[
+\left( \begin{array}{c c c c c} t _ {2} & 0 & 0 & u _ {3} & 0 \\ t _ {1} & t _ {2} & 0 & u _ {2} & u _ {3} \\ t _ {0} & t _ {1} & t _ {2} & u _ {1} & u _ {2} \\ 0 & t _ {0} & t _ {1} & u _ {0} & u _ {1} \\ 0 & 0 & t _ {0} & 0 & u _ {0} \end{array} \right).
+\]
+
+DEFINITION 1. --- With the above notation the determinant of the matrix \(\mathbf{M}(f,g,p,q)\) is called the resultant of the pair \((f,g)\) for the degrees p and q, or simply the resultant of f and g if \(p = \deg f\) and \(q = \deg g\) .
+
+The resultant is denoted by \(\operatorname{res}_{p,q}(f,g)\) or simply \(\operatorname{res}(f,g)\) when \(p=\deg f\) , \(q=\deg g\) .
+
+Examples. --- 1) Given \(\lambda\) , \(\mu\) in A, we have the formulae
+
+\[
+\begin{array}{l} \operatorname{res} _ {p, 0} (f, \lambda) = \lambda^ {p}, \quad \operatorname{res} _ {0, q} (\mu , g) = \mu^ {q} \\ \operatorname{res} _ {p, 1} (f, \lambda) = \lambda^ {p} t _ {p}, \quad \operatorname{res} _ {1, q} (\mu , g) = (- 1) ^ {q} \mu^ {q} u _ {q}, \end{array}
+\]
+
+whose proof is immediate.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  When \(p = q = 1\) , we have
+\end{enumerate}
+
+\[
+\operatorname{res} _ {1, 1} \left(t _ {1} \mathbf {X} + t _ {0}, u _ {1} \mathbf {X} + u _ {0}\right) = t _ {1} u _ {0} - t _ {0} u _ {1}.
+\]
+
+Remarks. --- 1) The matrix \(\mathbf{M}(g, f, q, p)\) is obtained from \(\mathbf{M}(f, g, p, q)\) by \(pq\) transpositions of columns, whence
+
+\[
+\operatorname{res} _ {q, p} (g, f) = (- 1) ^ {p q} \operatorname{res} _ {p, q} (f, g).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(\rho: \mathbf{A} \to \mathbf{B}\) be a ring homomorphism. Def. 1 implies directly the formula
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q} \left({}^ {\rho} f, {}^ {\rho} g\right) = \rho \left(\operatorname{res} _ {p, q} (f, g)\right).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Given \(\lambda, \mu\) in A, we have
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q} (\lambda f, \mu g) = \lambda^ {q} \mu^ {p} \operatorname{res} _ {p, q} (f, g).\tag{28}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Suppose that \(p + q \geqslant 1\) . By III, p.~532, formula (28), the image of \(\varphi\) contains the constant polynomial \(\operatorname{res}_{p,q}(f, g)\) . Hence there exist a pair of polynomials \((u, v)\) , with \(u \in S_q\) , \(v \in S_p\) such that
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q} (f, g) = u f + v g,
+\]
+
+whence
+
+\[
+\operatorname{res} _ {p, q} (f, g) \in \mathrm{A} \cap (f, g).
+\]
+
+This pair \((u, v)\) is unique when \(\operatorname{res}_{p,q}(f, g)\) is cancellable in \(\mathbf{A}\) : for then \(\varphi\) is injective (III, p.~524, Prop. 3).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Suppose that \(p \geqslant q\) , and let \(h \in \mathbf{A}[\mathbf{X}]\) be a polynomial of degree \(\leqslant p - q\) . Let us show that
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q} (f, g) = \operatorname{res} _ {p, q} (f + g h, g).\tag{29}
+\]
+
+For if we write \(\omega(u, v) = (u, uh + v)\) for \((u, v) \in S_q \times S_p\) , then \(\omega\) is an automorphism of the A-module \(S_q \times S_p\) and we have
+
+\[
+\omega^ {- 1} (u, v) = (u, - u h + v).
+\]
+
+The matrix of \(\omega\) with respect to the basis \(B_{1}\) is lower triangular and its diagonal elements are equal to 1. On the other hand, \(\varphi \circ \omega\) maps \((u, v)\) to \(u(f + gh) + vg\) . Now formula (29) means that the matrices representing \(\varphi\) and \(\varphi \circ \omega\) have the same determinant and this follows from the relation det \(\omega = 1\) .
+
+Assume that \(f\) is monic of degree \(p\) ; put \(E = A[X]/(f)\) and denote by \(x\) the canonical image of \(X\) in \(E\) . We know (IV, p.~11) that \(E\) is a free \(A\) -module with basis \((1, x, ..., x^{p-1})\) . We can thus define the norm \(N_{E/A}(u)\) of any element \(u\) of \(E\) (III, p.~543, Def. 2).
+
+PROPOSITION 7. --- Assume that \(f\) is monic of degree \(p\) ; with the above notations we have \(^{1}\)
+
+\[
+\operatorname{res} _ {p, q} (f, g) = \mathrm{N} _ {\mathrm{E/A}} (g (x)).\tag{30}
+\]
+
+Let us define an A-linear mapping \(\theta\) of \(S_q \times S_p\) into \(S_{p+q}\) by \(\theta(u, v) = uf + v\) . Then \(\theta\) maps the basis \(B_1\) of \(S_q \times S_p\) into the sequence
+
+\[
+(f \mathbf {X} ^ {q - 1}, \dots , f \mathbf {X}, f, \mathbf {X} ^ {p - 1}, \dots , \mathbf {X}, 1)
+\]
+
+of elements of \(S_{p+q}\) ; hence the matrix \(M_{\theta}\) of \(\theta\) with respect to the bases \(B_{1}\) , \(B_{2}\) is lower triangular and its diagonal elements are equal to 1, whence det \(M_{\theta}=1\) .
+
+It follows that \(\theta\) is bijective and \(\operatorname{res}_{p,q}(f,g)\) is equal to the determinant of the endomorphism \(\varphi' = \varphi \circ \theta^{-1}\) of \(S_{p + q}\) . Explicitly, we have
+
+\[
+\varphi^ {\prime} (u f + v) = u f + v g\tag{31}
+\]
+
+for any pair \((u,v)\) in \(S_{q}\times S_{p}\) . Now we have \(A[X]=S_{p+q}+(f)\) and \(fS_{q}=S_{p+q}\cap(f)\) , hence the canonical injection of \(S_{p+q}\) into A{[}X{]} defines by the passage to quotients an isomorphism \(\gamma\) of \(S_{p+q}/fS_{q}\) onto E. Let \(\psi\) be the multiplication by \(g(x)\) in E. Formula (31) shows that \(\varphi'\) induces the identity on \(fS_{q}\) and \(\gamma^{-1}\psi\gamma\) on \(S_{p+q}/fS_{q}\) . We thus have det \(\varphi'=\det\psi\) , whence (30) follows, because det \(\varphi'=\operatorname{res}_{p,q}(f,g)\) and det \(\psi=N_{E/A}(g(x))\) , by definition.
+
+COROLLARY 1. --- Let \(f \in \mathbf{A}[\mathbf{X}]\) be a monic polynomial; for every polynomial \(g \in \mathbf{A}[\mathbf{X}]\) the following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  res \((f,g)\) is invertible in A;
+\item
+  there exist polynomials \(u, v\) in \(\mathbf{A}[\mathbf{X}]\) such that \(uf + vg = 1\) ;
+\item
+  \(g(x)\) is invertible in the algebra \(\mathbf{A}[\mathbf{X}] / (f)\) .
+\end{enumerate}
+
+The equivalence of (i) and (iii) follows from Prop. 3 of III, p.~545 and Prop. 7; that of (ii) and (iii) follows trivially.
+
+COROLLARY 2. --- Suppose that A is a field and let \(f, g \in A[X]\) , then the following conditions are equivalent when \(f, g\) are non-zero:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\operatorname{res}(f, g) \neq 0\) ;
+\item
+  the polynomials \(f\) and \(g\) are relatively prime in \(\mathbf{A}[\mathbf{X}]\) ;
+\end{enumerate}
+
+(iii) for any extension L of A the polynomials f and g have no common root in L.
+
+We can reduce at once to the case where \(f\) is monic (IV, p.~77, remark 3). The equivalence of (i) and (ii) is just a translation of Cor. 1, by Def. 1 of IV, p.~12; the equivalence of (ii) and (iii) is just Cor. 7 of IV, p.~13.
+
+COROLLARY 3. --- For every \(\lambda \in A\) we have
+
+\[
+\operatorname{res} _ {p, 1} (f, \lambda - X) = f (\lambda), \quad \operatorname{res} _ {1, q} (X - \lambda , g) = g (\lambda).\tag{32}
+\]
+
+When \(f(\mathbf{X}) = \mathbf{X} - \lambda\) , the algebra E is equal to A and we have \(x = \lambda\) ; the second formula (32) now follows from Prop. 7 (IV, p.~77). By remarks 1 and 3 (IV, p.~76, 77) we conclude
+
+\[
+\operatorname{res} _ {p, 1} (f, \lambda - \mathbf {X}) = (- 1) ^ {p} \operatorname{res} _ {1, p} (\lambda - \mathbf {X}, f) = (- 1) ^ {p + p} \operatorname{res} _ {1, p} (\mathbf {X} - \lambda , f) = f (\lambda).
+\]
+
+Suppose now that f and g are monic. We denote by F the A-algebra \(\mathrm{A}[\mathrm{X},\mathrm{Y}]/(f(\mathrm{X}),g(\mathrm{Y}))\) and denote by x (resp. y) the canonical image of X (resp. Y) in F.
+
+PROPOSITION 8. --- Suppose that \(f\) and \(g\) are monic of degrees \(p\) and \(q\) respectively. With the above notation, the A-module \(F\) is free with basis \((x^i y^j)_{0 \leq i < p, 0 \leq j < q}\) and we have
+
+\[
+\operatorname{res} (f, g) = \mathrm{N} _ {\mathrm{F/A}} (x - y).\tag{33}
+\]
+
+Put \(E = A[X]/(f)\) and \(E' = A[Y]/(g)\) . By II, p.~253, Cor. 1, the homomorphism \(\sigma\) of \(E \otimes E'\) into F derived from the canonical homomorphism \(A[X] \otimes A[Y] \to A[X,Y]\) is bijective; this proves the assertion about the basis of F. We now identify E with its image in F under \(\sigma\) . Then the E-algebra homomorphism of \(E[Y]/(g(Y))\) into F which maps Y to y is an isomorphism.
+
+By the transitivity of the norm (III, p.~546) we have
+
+\[
+\mathrm{N} _ {\mathrm{F/A}} (x - y) = \mathrm{N} _ {\mathrm{E/A}} (\mathrm{N} _ {\mathrm{F/E}} (x - y)).\tag{34}
+\]
+
+By Prop. 7 (IV, p.~77), \(\mathbf{N}_{\mathrm{F / E}}(x - y)\) is the resultant of the polynomials \(g(\mathbf{Y})\) and \(x - \mathbf{Y}\) in E{[}Y{]}, hence equal to \(g(x)\) (IV, p.~78, Cor. 3). By formula (34) and Prop. 7 (IV, p.~77) we thus have
+
+\[
+\mathrm{N} _ {\mathrm{F/A}} (x - y) = \mathrm{N} _ {\mathrm{E/A}} (g (x)) = \operatorname{res} (f, g).
+\]
+
+PROPOSITION 9. --- Let \(p_1\) and \(q_1\) be positive integers and \(f_1, g_1\) polynomials in A{[}X{]} such that \(\deg f_1 \leqslant p_1\) , \(\deg g_1 \leqslant q_1\) ; then we have
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{34}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\operatorname{res} _ {p, q + q _ {1}} (f, g g _ {1}) = \operatorname{res} _ {p, q} (f, g) \cdot \operatorname{res} _ {p, q _ {1}} (f, g _ {1})\tag{36}
+\]
+
+\[
+\operatorname{res} _ {p + p _ {1}, q} (f f _ {1}, g) = \operatorname{res} _ {p, q} (f, g) \cdot \operatorname{res} _ {p _ {1}, q} (f _ {1}, g).
+\]
+
+We have \(\operatorname{res}_{p,q}(f,g)=(-1)^{pq}\operatorname{res}_{q,p}(g,f)\) (IV, p.~76); so it is enough to prove (35). Likewise, Remark 3 (loc. cit.) shows that if formula (35) is established for a polynomial f, then it holds for all polynomials of the form \(\lambda f\) , where \(\lambda\in A\) . Finally, when f is monic of degree p, formula (35) follows from Prop. 7 (IV, p.~77) by the formula \(\mathrm{N}_{\mathrm{E}/\mathrm{A}}(ab)=\mathrm{N}_{\mathrm{E}/\mathrm{A}}(a)\cdot\mathrm{N}_{\mathrm{E}/\mathrm{A}}(b)\) . In all we conclude that (35) holds when the coefficient \(t_{p}\) of \(X^{p}\) in f is invertible.
+
+Lemma 5. --- Let t be an element of A. There exists a commutative ring C containing A as subring, a subring B of C containing A, an element \(\tau\) of B invertible in C and a ring homomorphism \(\rho: B \to A\) such that \(\rho(\tau) = t\) and the restriction of \(\rho\) to A is equal to \(Id_{A}\) .
+
+It suffices to take for B the algebra \(\mathbf{A}^{(\mathbf{N})}\) of the monoid N, that is, the polynomial algebra \(A[\tau]\) in one indeterminate \(\tau\) , for C the algebra \(\mathbf{A}^{(\mathbf{Z})}\) of the group Z and for \(\rho\) the homomorphism \(P \mapsto P(t)\) of \(\mathbf{A}[\tau]\) into A.
+
+With the notation of Lemma 5, where we have taken \(t = t_p\) , let us put
+
+\[
+\mathbf {F} = \tau \mathbf {X} ^ {p} + t _ {p - 1} \mathbf {X} ^ {p - 1} + \dots + t _ {1} \mathbf {X} + t _ {0}\tag{37}
+\]
+
+in B{[}X{]}. The coefficient of \(\mathbf{X}^p\) in F is invertible in C; if we consider F, \(g\) , \(g_1\) as polynomials of C{[}X{]} we thus have
+
+\[
+\operatorname{res} _ {p, q + q _ {1}} (\mathrm{F}, g g _ {1}) = \operatorname{res} _ {p, q} (\mathrm{F}, g) \cdot \operatorname{res} _ {p, q _ {1}} (\mathrm{F}, g _ {1})\tag{38}
+\]
+
+by what has been said. The resultants are unchanged if we consider F, g and \(g_{1}\) as polynomials in B{[}X{]}. Since \( {}^{\rho}F = f\) , \( {}^{\rho}g = g\) , \( {}^{\rho}g_{1} = g_{1}\) , formula (35) follows from (38) and Remark 2 (IV, p.~77).
+
+COROLLARY 1. --- (i) Let \(\lambda, \alpha_{1}, \ldots, \alpha_{p}\) be elements of A and suppose that \(f(\mathbf{X}) = \lambda(\mathbf{X} - \alpha_{1}) \ldots (\mathbf{X} - \alpha_{p})\) . We have
+
+\[
+\operatorname{res} _ {p, q} (f, g) = \lambda^ {q} g (\alpha_ {1}) \dots g (\alpha_ {p}).\tag{39}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(\mu, \beta_1, \ldots, \beta_q\) be elements of \(A\) and suppose further that \(g(X) = \mu(X - \beta_1) \ldots (X - \beta_q)\) . Then we have
+\end{enumerate}
+
+\[
+\operatorname{res}_{p,q}(f,g) = \lambda^{q}\mu^{p}\prod_{\substack{1\leqslant i\leqslant p\\ 1\leqslant j\leqslant q}}\left(\alpha_{i} - \beta_{j}\right).\tag{40}
+\]
+
+Assertion (i) follows directly from the formulae (28), (32) and (36). Now Assertion (ii) follows from (i).
+
+COROLLARY 2. --- For every integer \(r \geqslant 0\) we have
+
+\[
+\operatorname{res} _ {p, q + r} (f, g) = t _ {p} ^ {r} \cdot \operatorname{res} _ {p, q} (f, g).\tag{41}
+\]
+
+Bearing in mind Example 1 (IV, p.~76) we need only take \(q_{1} = r\) , \(g_{1} = 1\) in (35).
+
+Assume that \(f\) is monic, and let \(\rho: \mathbf{A} \to \mathbf{B}\) be a ring homomorphism and \(\xi_{1}, \ldots, \xi_{p}\) elements of \(\mathbf{B}\) such that we have the decomposition
+
+\[
+{ } ^ { p } f ( \mathbf { X } ) = ( \mathbf { X } - \xi _ { 1 } ) \dots ( \mathbf { X } - \xi _ { p } ) .
+\]
+
+By Remark 2 (IV, p.~77) and Cor. 1 above we have
+
+\[
+\rho (\operatorname{res} (f, g)) = g (\xi_ {1}) \dots g (\xi_ {p}).
+\]
+
+This remark applies in particular to the universal decomposition of \(f(\mathrm{IV}, \mathrm{p.~73})\) and since \(\rho\) is then injective, this provides a means of calculating \(\operatorname{res}(f, g)\) .
+
+Example 3. --- Let us prove the formula
+
+\[
+\begin{array}{r l} \operatorname{res} _ {2, 2} (a \mathbf {X} ^ {2} + b \mathbf {X} + c, a ^ {\prime} \mathbf {X} ^ {2} + b ^ {\prime} \mathbf {X} + c ^ {\prime}) & = \\ & = (a c ^ {\prime} - c a ^ {\prime}) ^ {2} + (b c ^ {\prime} - c b ^ {\prime}) (b a ^ {\prime} - a b ^ {\prime}). \end{array}\tag{42}
+\]
+
+Arguing as for Prop. 9 (IV, p.~79) we see that it is enough to prove the formula when a is invertible. There exists then a decomposition of the form
+
+\[
+a \mathbf {X} ^ {2} + b \mathbf {X} + c = a (\mathbf {X} - x) (\mathbf {X} - y)\tag{43}
+\]
+
+in B{[}X{]}, where B is an appropriate ring containing A as subring. By Cor. 1 above, the required resultant is equal to
+
+\[
+\mathbf {R} = a ^ {2} \left(a ^ {\prime} x ^ {2} + b ^ {\prime} x + c ^ {\prime}\right) \left(a ^ {\prime} y ^ {2} + b ^ {\prime} y + c ^ {\prime}\right).\tag{44}
+\]
+
+Now we have
+
+\[
+a x + a y = - b, \quad a x y = c
+\]
+
+by (43), whence \((ax)^2 + (ay)^2 = b^2 - 2ac\) .
+
+By (44) we have
+
+\[
+\begin{array}{r l} \mathrm{R} & = a ^ {\prime 2} (a x y) ^ {2} + a b ^ {\prime 2} (a x y) + a ^ {2} c ^ {\prime 2} + a ^ {\prime} b ^ {\prime} (a x y) (a x + a y) + \\ & \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad + a ^ {\prime} c ^ {\prime} ((a x) ^ {2} + (a y) ^ {2}) + a b ^ {\prime} c ^ {\prime} (a x + a y) \\ & = a ^ {\prime 2} c ^ {2} + a b ^ {\prime 2} c + a ^ {2} c ^ {\prime 2} - a ^ {\prime} b ^ {\prime} c b + a ^ {\prime} c ^ {\prime} (b ^ {2} - 2 a c) - a b ^ {\prime} c ^ {\prime} b \\ & = (a c ^ {\prime} - c a ^ {\prime}) ^ {2} + (a b ^ {\prime} - a ^ {\prime} b) (b ^ {\prime} c - c ^ {\prime} b), \end{array}
+\]
+
+from which the desired result follows.
+

@@ -1,0 +1,94 @@
+\subsection{子域与导子李代数之间的对应关系}
+
+我们用 E 表示一个域，用 g 表示 E 到自身的全体导子组成的集合。我们回顾，g 是 E 上的一个向量空间，其运算由下式定义：
+
+\[
+\left(\mathrm{D} + \mathrm{D} ^ {\prime}\right) (x) = \mathrm{D} (x) + \mathrm{D} ^ {\prime} (x), \quad (a \mathrm{D}) (x) = a. \mathrm{D} (x)\tag{6}
+\]
+
+（其中 D, D' 在 g 中，a, x 在 E 中）。此外，若 D 与 D' 是 E 到 E 的导子，则 \([D, D'] = DD' - D'D\) 也是（E 到 E 的导子）（III，第554页）。最后，莱布尼茨公式（III，第556页）给出
+
+\[
+\mathrm{D} ^ {p} (x y) = x \cdot \mathrm{D} ^ {p} (y) + \sum_ {j = 1} ^ {p - 1} \binom {p} {j} \mathrm{D} ^ {j} (x) \mathrm{D} ^ {p - j} (y) + \mathrm{D} ^ {p} (x) \cdot y
+\]
+
+（其中 x, y 在 E 中）；由于二项式系数 \(\binom{p}{j}\) （ \(1 \leqslant j \leqslant p - 1\) ）可被 p 整除（V，第4页，引理1），我们看出 \(D^{p}\) 是 E 到 E 的一个导子。我们立即得到关系式（对于 \(a, a' \in E\) ）
+
+\[
+\left[ a \mathrm{D}, a ^ {\prime} \mathrm{D} ^ {\prime} \right] = a a ^ {\prime} \cdot \left[ \mathrm{D}, \mathrm{D} ^ {\prime} \right] + \left(a \mathrm{D} \left(a ^ {\prime}\right)\right) \cdot \mathrm{D} ^ {\prime} - \left(a ^ {\prime} \mathrm{D} ^ {\prime} (a)\right) \cdot \mathrm{D}.\tag{7}
+\]
+
+特别地，映射 \((\mathrm{D},\mathrm{D}^{\prime})\mapsto [\mathrm{D},\mathrm{D}^{\prime}]\) （从 \(\mathfrak{g}\times \mathfrak{g}\) 到 \(\mathfrak{g}\) 中）是 \(E^p\) -线性的。
+
+我们用 \(\mathcal{C}\) 表示 E 的满足 \(E^p \subset K\) 且 \([E:K]\) 有限的子域 K 组成的集合；对每个 \(K \in \mathcal{C}\) ，我们用 \(\mathfrak{g}(K)\) 表示 E 的 K-导子组成的集合。进而，我们用 \(\mathcal{L}\) 表示满足下列条件的向量子空间 \(\mathfrak{h}\) （ \(\mathfrak{g}\) 中的）组成的集合：在 E 上有限维，且 \([D,D'] \in \mathfrak{h}\) 与 \(D^p \in \mathfrak{h}\) 对任意 D 与 \(D'\) （均在 \(\mathfrak{h}\) 中）成立；对每个 \(\mathfrak{h} \in \mathcal{L}\) ，我们用 \(I(\mathfrak{h})\) 表示由 \(x \in E\) （满足 \(D(x) = 0\) ，对所有 \(D \in \mathfrak{h}\) ）组成的集合。
+
+定理 3（雅各布森）。--- 映射 \(\mathbf{K} \mapsto \mathfrak{g}(\mathbf{K})\) 与 \(\mathfrak{h} \mapsto \mathrm{I}(\mathfrak{h})\) 分别是从 \(\mathcal{C}\) 到 \(\mathcal{L}\) 上和从 \(\mathcal{L}\) 到 \(\mathcal{C}\) 上的双射，且二者互逆。若 \(\mathbf{K} \in \mathcal{C}\) 与 \(\mathfrak{h} \in \mathcal{L}\) 相互对应，则 \([\mathrm{E}:\mathrm{K}] = p^{[\mathfrak{h}:\mathrm{E}]}\) 。
+
+证明需要几个预备引理。
+
+引理1. --- 设 L 是一个域，V 是 L 上的一个向量空间，u 是 V 的一个满足 \(u^p = u\) 的自同态。对每个 \(i \in \mathbf{F}_p\) ，令 \(\mathbf{V}_i\) 为 \(u - i\) 的核。则我们有
+
+\[
+\mathbf {V} = \bigoplus_ {i \in \mathbf {F} _ {p}} \mathbf {V} _ {i}.
+\]
+
+对每个 \(i \in \mathbf{F}_p\) ，用 \(P_i(\mathbf{X})\) 表示多项式 \(-\prod_{j \neq i} (\mathbf{X} - j)\) 。我们有
+
+\[
+(\mathbf {X} - i) \mathrm{P} _ {i} (\mathbf {X}) = \mathbf {X} - \mathbf {X} ^ {p}\tag{8}
+\]
+
+这由公式 (2)（V，第94页）得出。对所引公式 (2) 求导，我们得到
+
+\[
+\sum_ {i \in \mathbf {F} _ {p}} \mathrm{P} _ {i} (\mathrm{X}) = 1.\tag{9}
+\]
+
+公式 (8) 与 (9) 表明，自同态 \(\mathbf{P}_i(u)\) （ \(\mathbf{V}\) 的）把 \(\mathbf{V}\) 映入 \(\mathbf{V}_i\) ，且 \(\sum_{i\in \mathbf{F}_p}\mathbf{P}_i(u) = 1\) ，从而 \(\mathbf{V} = \sum_{i\in \mathbf{F}_p}\mathbf{V}_i\) 。剩下的只需证明该和是
+
+直和。对每个 \(i \in \mathbf{F}_p\) ，取 \(v_i \in \mathbf{V}_i\) ；显然 \(P_i(u)\) 零化 \(v_j\) ，对所有 \(j \neq i\) ，且我们有 \(P_i(u) v_i = av_i\) ，其中 \(a = -\prod_{n \in \mathbf{F}_p^*} n \neq 0\) 。于是关系式 \(\sum_{i \in \mathbf{F}_p} v_i = 0\)
+
+便推出 \(v_{i} = 0\) ，对所有 \(i \in \mathbf{F}_p\) 成立，故该和是直和。
+
+引理2. --- 设 D 是 E 的一个满足 \(D^{p} = D\) 的导子，并设 K 为 D 的核。假设 E 中存在非零元素 x 使得 \(D(x) = x\) 。则 K 是 E 的一个包含 \(E^{p}\) 的子域，且我们有 \([E : K] = p\) 。
+
+显然 K 是 E 的一个包含 \(E^{p}\) 的子域。用 \(K_{i}\) 表示 D - i 的核（对 \(i \in F_{p}\) ）。我们有 \(K_{0} = K\) ，且引理1表明 \(E = \bigoplus_{i \in F_{p}} K_{i}\) 。设 \(i \in F_{p}\) ，并设 u 属于 \(K_{i}\) ；我们有
+
+\[
+\mathrm{D} (x u) = \mathrm{D} (x). u + x. \mathrm{D} (u) = x u + x (i u) = (i + 1) x u
+\]
+
+由此 \(xu \in K_{i+1}\) 。由于 x 非零，乘以 x 是向量 K-空间 E 的一个自同构，它把 \(K_i\) 映到 \(K_{i+1}\) 上，对所有 \(i \in F_p\) 成立。由于 \([K_0 : K] = 1\) ，我们有 \([K_i : K] = 1\) ，对所有 \(i \in F_p\) ，由此 \([E : K] = p\) 。
+
+引理3. --- 设 \(\mathfrak{h} \in \mathcal{L}\) 在 E 上的维数为 \(s\) 。则 I(h) 属于 \(\mathcal{C}\) ，且我们有 {[}E : I(h){]} = \(p^s\) 。
+
+显然 \(I(\mathfrak{h})\) 是 E 的一个包含 \(E^{p}\) 的子域。对每个 \(x \in E\) ，令 \(f_{x}\) 为 h 上的 E-线性形式 \(D \mapsto D(x)\) 。由于这些线性形式的核的交等于 0，它们生成 h 的对偶向量空间（II，第301页，定理7）；因此存在 E 中的 \(x_{1}, \ldots, x_{s}\) ，使得线性形式 \(f_{x_{1}}, \ldots, f_{x_{s}}\) 构成该对偶的一组基。设 \((\Delta_{1}, \ldots, \Delta_{s})\) 为 h 的、由 \(\Delta_{i}(x_{j}) = f_{x_{j}}(\Delta_{i}) = \delta_{ij}\) 刻画的基。令 \(D_{i} = x_{i}\Delta_{i}\) ，则 \((D_{1}, \ldots, D_{s})\) 是 h 在 E 上的一组基，且我们有 \(D_{i}(x_{j}) = x_{i}\delta_{ij}\) 。导子 \(D_{i}^{p} - D_{i}\) 与 \([D_{i}, D_{j}]\) （对 i, j = 1, \ldots, s）属于 h 且零化 \(x_{1}, \ldots, x_{s}\) ；于是我们得到
+
+\[
+\mathrm{D} _ {i} ^ {p} = \mathrm{D} _ {i}, \quad [ \mathrm{D} _ {i}, \mathrm{D} _ {j} ] = 0.\tag{10}
+\]
+
+对 \(i\) （从 0 到 \(s\) ）的每个值，用 \(\mathbf{K}_i\) 表示导子 \(\mathrm{D}_j\) （ \(1 \leqslant j \leqslant i\) ）的核的交。则 \(\mathbf{K}_i\) 是 E 的一个子域，且我们有
+
+\[
+\mathrm{E} = {\mathrm{K}} _ {0} \supset \mathrm{K} _ {1} \supset \dots \supset \mathrm{K} _ {s - 1} \supset \mathrm{K} _ {s} = \mathrm{I} (\mathfrak {h}).
+\]
+
+设 \(i\) 介于 0 与 \(s-1\) 之间；则 \(\mathbf{K}_{i}\) 在 \(\mathbf{D}_{i+1}\) 下稳定，因为 \(\mathbf{D}_{i+1}\) 与 \(\mathbf{D}_{1}, \ldots, \mathbf{D}_{i}\) 交换。此外我们有 \(\mathbf{D}_{i+1}^{p} = \mathbf{D}_{i+1}, \mathbf{D}_{i+1}(x_{i+1}) = x_{i+1} \neq 0\) 且 \(x_{i+1} \in \mathbf{K}_{i}\) 。因此引理1蕴含 \([\mathbf{K}_{i}: \mathbf{K}_{i+1}] = p\) ，由此最终 \([\mathbf{E}: \mathbf{K}] = [\mathbf{K}_{0}: \mathbf{K}_{s}] = p^{s}\) 。
+
+现在我们来证明定理。设 \(\mathfrak{h} \in \mathcal{L}\) 的维数为 \(s\) （在 \(\mathbf{E}\) 上），并令 \(\mathbf{K} = \mathrm{I}(\mathfrak{h})\) ；则由引理3， \([\mathbf{E}:\mathbf{K}] = p^s\) ，从而 \([\Omega_{\mathbf{K}}(\mathbf{E}):\mathbf{E}] = s\) ，由 \(\mathcal{L}\) （V，第103页，
+
+定理2，c)）（V，第103页）。由微分模的泛性质，映射 \(u \mapsto u \circ d_{\mathrm{E} / \mathrm{K}}\) 是 \(\Omega_{\mathrm{K}}(\mathrm{E})\) 的对偶到 \(\mathfrak{g}(\mathbf{K})\) 上的一个同构，因此 \([\mathfrak{g}(\mathbf{K}) : \mathrm{E}] = s\) 。现在我们有 \([\mathfrak{h} : \mathrm{E}] = s\) 及 \(\mathfrak{h} \subset \mathfrak{g}(\mathbf{K})\) ，从而 \(\mathfrak{h} = \mathfrak{g}(\mathbf{K})\) ，即 \(\mathfrak{h} = \mathfrak{g}(\mathrm{I}(\mathfrak{h}))\) 。
+
+反之，对每个域 \(\mathbf{K} \in \mathcal{C}\) ，显然 \(\mathfrak{g}(\mathbf{K})\) 属于 \(\mathcal{L}\) （V，第103页，定理2，c)）。若 \(x\) 属于 \(\mathrm{I}(\mathfrak{g}(\mathbf{K}))\) ，则我们有 \(u(d_{\mathrm{E/K}} x) = 0\) ，对每个线性形式 \(u\) （在 \(\Omega_{\mathrm{K}}(\mathrm{E})\) 上）成立，从而 \(d_{\mathrm{E/K}} x = 0\) ，于是最终由命题5的推论2（V，第102页）得 \(x \in \mathbf{K}\) 。因此我们有 \(\mathbf{K} = \mathrm{I}(\mathfrak{g}(\mathbf{K}))\) 。
+
+注记。--- 1) 互逆双射 \(\mathbf{K} \mapsto \mathfrak{g}(\mathbf{K})\) 与 \(\mathfrak{h} \mapsto \mathrm{I}(\mathfrak{h})\) 反转包含关系；因此 \(\mathfrak{h} \mapsto \mathrm{I}(\mathfrak{h})\) 是有序集 \(\mathcal{L}\) 到 \(\mathcal{C}\) 的逆有序集上的一个同构。由此我们得到关系 \(\mathrm{I}(\mathfrak{h} \cap \mathfrak{h}') = \mathrm{E}^p(\mathrm{I}(\mathfrak{h}), \mathrm{I}(\mathfrak{h}'))\) ，对 \(\mathfrak{h}, \mathfrak{h}'\) （在 \(\mathcal{L}\) 中）成立，因为 \(\mathfrak{h} \cap \mathfrak{h}'\) 是 \(\mathcal{L}\) 中同时包含于 \(\mathfrak{h}\) 与 \(\mathfrak{h}'\) 的最大元素。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  可以证明，g 的每个在映射 \(D \mapsto D^{p}\) 下稳定的有限维子空间，在括号运算下也是稳定的。
+\end{enumerate}
+

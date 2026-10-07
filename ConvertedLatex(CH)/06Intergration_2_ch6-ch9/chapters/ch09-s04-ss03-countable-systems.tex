@@ -1,0 +1,46 @@
+\subsection{可数逆系统的情形}
+
+定理 2. --- 假设有向预序集 I 有一个可数共尾子集。设 \(\mathcal{T} = (\mathrm{T}_i, p_{ij})\) 是拓扑空间的逆系统，\(\mathrm{T} = \varprojlim \mathrm{T}_i\)，且 \(p_i\) 是从 \(\mathrm{T}\) 到 \(\mathrm{T}_i\) 的典范映射。则 \((\mu_i)_{i \in \mathrm{I}}\) 上的每个测度逆系统 \(\mathcal{T}\) 都有逆极限。
+
+先处理 I = N 的情形，置 \(q_{n} = p_{n,n+1}\)。令 \(\varepsilon > 0\)。递归定义紧集序列 \(L_{n} \subset T_{n}\) 如下：\(L_{0}\) 是 \(T_{0}\) 的紧子集，满足 \(\mu_{0}^{\bullet}(T_{0} - L_{0}) \leqslant \varepsilon / 2\)；并且对 \(n \geqslant 0\)，紧集 \(L_{n+1}\) 包含于 \(\overline{q}_{n}^{-1}(L_{n})\) 中并满足
+
+\[
+\mu_ {n + 1} ^ {\bullet} \big (\overline{q}_{n}^{-1} (\mathrm{L} _ {n}) - \mathrm{L} _ {n + 1} \big) \leqslant \varepsilon / 2 ^ {n + 2}.
+\]
+
+根据 §1 第 2 号备注 3，这一构造是可能的。我们有
+
+\[
+\begin{array}{r l} & {\mu_ {n + 1} ^ {\bullet} (\mathrm{T} _ {n + 1} - \mathrm{L} _ {n + 1}) = \mu_ {n + 1} ^ {\bullet} \big (\mathrm{T} _ {n + 1} - \overline{q}_{n}^{-1} (\mathrm{L} _ {n}) \big) + \mu_ {n + 1} ^ {\bullet} \big (\overline{q}_{n}^{-1} (\mathrm{L} _ {n}) - \mathrm{L} _ {n + 1} \big)} \\ & {\qquad \leqslant \mu_ {n + 1} ^ {\bullet} \big (\mathrm{T} _ {n + 1} - \overline{q}_{n}^{-1} (\mathrm{L} _ {n}) \big) + \varepsilon / 2 ^ {n + 2}} \\ & {\qquad = \mu_ {n} ^ {\bullet} (\mathrm{T} _ {n} - \mathrm{L} _ {n}) + \varepsilon / 2 ^ {n + 2}} \end{array}
+\]
+
+因为 \(\mu_{n} = q_{n}(\mu_{n + 1})\)；对 \(p\) 作归纳，得到
+
+\[
+\mu_ {p} ^ {\bullet} \left(\mathrm{T} _ {p} - \mathrm{L} _ {p}\right) \leqslant \varepsilon \left(1 - 1 / 2 ^ {p + 1}\right) \leqslant \varepsilon .
+\]
+
+由于 \(\mathbf{T}\) 是 \(\prod_{n\in \mathbf{N}}\mathrm{T}_n\) 的闭子空间，而积空间 \(\prod_{n\in \mathbf{N}}\mathrm{L}_n\) 是紧的，所以 \(\mathbf{L} = \mathbf{T}\cap \prod_{n\in \mathbf{N}}\mathrm{L}_n = \bigcap_{n\in \mathbf{N}}\overline{p}_n^1 (\mathrm{L}_n)\) 是 \(\mathbf{T}\) 的紧子集。取 \(n\in \mathbf{N}\)；有 \(p_n(\mathrm{L}) = \bigcap_{m\geqslant n}p_{nm}(\mathrm{L}_m)\)（GT, I, §9, No.~6, 命题 8），且 \(p_{nm}(\mathrm{L}_m)\supset p_{nm'}(\mathrm{L}_{m'})\) 对 \(m^{\prime}\geqslant m\geqslant n\) 成立，从而
+
+\[
+\mu_ {n} ^ {\bullet} \big (\mathrm{T} _ {n} - p _ {n} (\mathrm{L}) \big) = \lim _ {m \rightarrow \infty} \mu_ {n} ^ {\bullet} \big (\mathrm{T} _ {n} - p _ {n m} (\mathrm{L} _ {m}) \big).
+\]
+
+但是，对 \(m \geqslant n\)，测度 \(\mu_{n}\) 是 \(\mu_{m}\) 在 \(p_{nm}\) 下的像，从而
+
+\[
+\mu_ {n} ^ {\bullet} \left(\mathrm{T} _ {n} - p _ {n m} (\mathrm{L} _ {m})\right) = \mu_ {m} ^ {\bullet} \left(\mathrm{T} _ {m} - \bar {p} _ {n m} ^ {- 1} (p _ {n m} (\mathrm{L} _ {m}))\right) \leqslant \mu_ {m} ^ {\bullet} \left(\mathrm{T} _ {m} - \mathrm{L} _ {m}\right) \leqslant \varepsilon ;
+\]
+
+关于 \(m\) 取极限，得到 \(\mu_n^\bullet (\mathrm{T}_n - p_n(\mathrm{L})) \leqslant \varepsilon\)。换言之，Prokhorov 条件 (P) 得到满足，并且 T 上存在有界测度 \(\mu\)，使得 \(\mu_n = p_n(\mu)\) 对所有 \(n \in \mathbf{N}\) 成立（第 2 号定理 1）。
+
+现在处理一般情形：I 中存在递增的共尾序列 \((i_{n})_{n\in\mathbf{N}}\)。映射 \(t\mapsto\left(p_{i_{n}}(t)\right)_{n\in\mathbf{N}}\) 将 T 同胚映到逆系统 \((\mathrm{T}_{i_{n}},p_{i_{n}i_{m}})\) 的逆极限（GT, I, §4, No.~4）。由证明的第一部分，因而存在有界测度 \(\mu\) 定义在 T 上，使得 \(\mu_{i_{n}}=p_{i_{n}}(\mu)\) 对所有 \(n\in N\) 成立。取 \(i\in I\)；存在 \(n\in N\) 使得 \(i\leqslant i_{n}\)，从而
+
+\[
+p _ {i} (\mu) = p _ {i i _ {n}} \left(p _ {i _ {n}} (\mu)\right) = p _ {i i _ {n}} \left(\mu_ {i _ {n}}\right) = \mu_ {i}.\tag{Q.E.D.}
+\]
+
+定理 2 常用于如下情形：设 D 是可数集，\((\mathrm{X}_{t})_{t\in\mathrm{D}}\) 是拓扑空间族。令 F 为 D 的有限子集按包含关系构成的集合。对于 F 中的 J，置 \(X_{J}=\prod_{t\in J}X_{t}\)，而对 \(J\subset J'\)，令 \(p_{JJ'}\) 为从 \(X_{J'}\) 到部分积 \(X_{J}\) 的典范投影。再置 \(X=\prod_{t\in D}X_{t}\)，并记 \(p_{J}\) 为从 X 到部分积 \(X_{J}\) 的典范投影。容易证明（参见 S, III, §7, No.~2, 备注 3），族 \((p_{J})_{J\in\mathfrak{F}}\) 将 X 同胚映到 \(\varprojlim X_{J}\)。于是，测度逆系统就是定义在 \(\mu_{J}\) 上的有界测度族 \(X_{J}\)，满足 \(\mu_{J}=p_{JJ'}(\mu_{J'})\) 对 \(J\subset J'\) 成立。存在且仅存在一个定义在 X 上的有界测度 \(\mu\)，使得 \(\mu_{J}=p_{J}(\mu)\) 对 D 的每个有限子集 J 都成立（Kolmogoroff 定理）。有时称 \(\mu\) 为 \(\prod_{t\in D}X_{t}\) 上具有边缘测度 \(\mu_{J}\) 的测度。
+
+特别地，设对每个 \(t \in D\)，给定定义在 \(\nu_{t}\) 上且总质量为 1 的测度 \(X_{t}\)。对 D 的每个有限子集 J，置 \(\mu_{J} = \bigotimes_{t \in J} \nu_{t}\)。设 \(J \subset J'\) 是 D 的两个有限子集，并令 \(K = J' - J\)；将 \(X_{J'}\) 与 \(X_{J} \times X_{K}\) 视同，有 \(\mu_{J'} = \mu_{J} \otimes \mu_{K}\)，而由于测度 \(\mu_{K}\) 的总质量为 1，\(\mu_{J} \otimes \mu_{K}\) 在 \(X_{J}\) 上的投影等于 \(\mu_{J}\)。具有边缘测度 \(\mu_{J}\) 的 X 上测度记为 \(\bigotimes_{t \in D} \nu_{t}\)，称为族 \((\nu_{t})_{t \in D}\) 的积。当空间 \(X_{t}\) 紧时，我们得到第 III 章 §4 第 6 号的构造。
+

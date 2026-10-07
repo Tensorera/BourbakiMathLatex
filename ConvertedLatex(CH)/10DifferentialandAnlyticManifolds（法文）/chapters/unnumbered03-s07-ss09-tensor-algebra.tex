@@ -1,0 +1,50 @@
+\subsection{张量积、张量空间、外代数}
+
+保留 7.6 的记号。此外，记 L 为带有有限维 K-代数结构的交换域，并将以 B 为基底、局部有限秩的 L 上向量丛称为向量丛。
+
+7.9.1. 假设 \(\mathbf{I}_{-} = \emptyset\)。若 \(\mathcal{V}\) 和 \(\mathcal{V}'\) 是由 I 编号的两个有限维 L-向量空间族，则将 \(\tau(\mathcal{V})\) 记为 \(V_{i}\) 的张量积，其中 \(i \in \mathbf{I}\)（附录 A，第 II 节，第 71 页）；若 \(\mathbf{f} \in \operatorname{Hom}(\mathcal{V}, \mathcal{V}')\)，置 \(\tau(\mathbf{f}) = \otimes f_{i}\)。于是得到一个 L 上的有限
+
+维向量函子；若 \(\mathcal{M} = (\mathrm{M}_{i})_{i\in I}\) 是一个向量丛族，则将向量丛 \(\tau(\mathcal{M})\) 记为 \(\bigotimes_{i\in I}\mathrm{M}_{i}\)，称为 \(\mathrm{M}_{i}\) 的（L 上）张量积。
+
+若 \(s_i\) 是 \(\mathbf{M}_i\) 在 B 的开集 U 上的截面（\(i \in I\)），则映射 \(b \mapsto \bigotimes_{i \in I} s_i(b)\) 是 \(\bigotimes_{i \in I} \mathbf{M}_i\) 的一个截面，记为 \(\bigotimes_{i \in I} s_i\)。映射 \((s_i)_{i \in I} \mapsto \bigotimes_{i \in I} s_i\) 关于环 \(\mathcal{C}^r(\mathrm{U}; \mathrm{L})\) 是多线性的。
+
+7.9.2. 《代数论》第 II 章中定义的典范同构给出向量函子的同构。由 7.6.4 可知，因而得到向量丛的同构。例如，有典范同构：
+
+\[
+\begin{array}{c} (\mathrm{M} _ {1} \oplus \mathrm{M} _ {2}) \otimes \mathrm{M} _ {3} \longrightarrow (\mathrm{M} _ {1} \otimes \mathrm{M} _ {3}) \oplus (\mathrm{M} _ {2} \otimes \mathrm{M} _ {3}) \\ \mathrm{M} _ {1} ^ {*} \otimes \mathrm{M} _ {2} \longrightarrow \mathcal {L} (\mathrm{M} _ {1}; \mathrm{M} _ {2}) \end{array}
+\]
+
+等等。
+
+7.9.3. 设 M 是一个向量丛，I 和 J 是两个不交有限集。张量丛 \(\mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(\mathbf{M})\) 定义为张量积 \(\bigotimes_{\alpha\in\mathbf{I}\cup\mathbf{J}}\mathbf{M}_{\alpha}\)，其中 \(M_{\alpha}=M\)，当 \(\alpha\in I\)；而 \(M_{\alpha}=M^{*}\)，当 \(\alpha\in J\)，其中 \(M^{*}\) 表示 M 的对偶（附录 A，第 III 节，第 63 页）。这个丛在点 b 处的纤维 \(\mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(\mathbf{M})_{b}\) 等于《代数论》中上述位置定义的张量空间 \(\mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(\mathbf{M}_{b})\)。当 \(I=\{1,\ldots,p\}\) 且 \(J=\{p+1,\ldots,p+q\}\) 时，我们用 \(\mathsf{T}_{q}^{p}(\mathbf{M})\) 代替 \(\mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(\mathbf{M})\)；有
+
+\[
+\mathbf {T} _ {q} ^ {p} (\mathbf {M}) = (\bigotimes^ {p} \mathbf {M}) \otimes (\bigotimes^ {q} \mathbf {M} ^ {*}).
+\]
+
+I 和 J 上全序的数据定义了从 \(\mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(M)\) 到 \(\mathsf{T}_{q}^{p}(M)\) 的典范同构。
+
+7.9.4. 若 I（分别 J）是两个不交子集 I' 与 I''（分别 J' 与 J''）的并，则 \(\mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(M)\) 典范地与张量积 \(\mathsf{T}_{\mathbf{J}'}^{\mathbf{I}'}(M) \otimes \mathsf{T}_{\mathbf{J}''}^{\mathbf{I}''}(M)\) 认同。特别地，若 s'（分别 s''）是 \(\mathsf{T}_{\mathbf{J}'}^{\mathbf{I}'}(M)\)（分别 \(\mathsf{T}_{\mathbf{J}''}^{\mathbf{I}''}(M)\)）的一个截面，则张量积 s' \(\otimes\) s'' 可与 \(\mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(M)\) 的一个截面认同。
+
+\(\mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(\mathbf{M})\) 的对偶与 \(\mathsf{T}_{\mathbf{I}}^{\mathbf{J}}(\mathbf{M})\) 认同。
+
+7.9.6. 设 \(i \in I\) 且 \(j \in J\)。对每个 \(b \in B\)，指标 \(i\) 和 \(j\) 的缩并同态按定义给出（参见《代数论》上述位置）；它是一个同态 \((c_j^i)_b: \mathsf{T}_{\mathbf{J}}^{\mathbf{I}}(M_b) \to \mathsf{T}_{\mathbf{J}-\{j\}}^{\mathbf{I}-\{i\}}(M_b)\)。这些 \((c_j^i)_b\) 组成一个向量丛态射
+
+\[
+c _ {j} ^ {i}: \mathsf {T} _ {\mathbf {J}} ^ {\mathbf {I}} (\mathbf {M}) \to \mathsf {T} _ {\mathbf {J} - \{j \}} ^ {\mathbf {I} - \{i \}} (\mathbf {M}),
+\]
+
+仍称为指标 \(i\) 和 \(j\) 的缩并。I 的指标 \(i_{1},\ldots,i_{k}\) 与 J 的指标 \(j_{1},\ldots,j_{k}\) 的缩并类似地定义。
+
+7.9.7. 设 \(d\) 是满足 \(\geqslant 0\) 的整数；设 V 和 V' 是 L 上的两个有限维向量空间，且 \(f \in \mathrm{Hom}_{\mathrm{L}}(\mathrm{V}, \mathrm{V}')\)；置 \(\lambda_{d}(\mathrm{V}) = \bigwedge^{d}(\mathrm{V})\) 和 \(\lambda_{d}(f) = \bigwedge^{d}(f)\)。于是得到 L 上的有限维向量函子；若 M 是一个向量丛，则将向量丛 \(\lambda_{d}(\mathbf{M})\) 记为 \(\bigwedge^{d}(\mathbf{M})\)，称为 M 的（L 上）第 d 个外幂。
+
+从 \(\otimes^{d}\mathbf{V}\) 到 \(\bigwedge^{d}(\mathbf{V})\) 的典范满射定义了一个向量函子态射，因而得到一个从 \(\otimes^{d}\mathbf{M}\) 到 \(\bigwedge^{d}(\mathbf{M})\) 的态射，称为典范态射。这个态射是满射。
+
+交错 d-多线性映射空间到 \(\bigwedge^{d}(\mathrm{V}^{*})\) 或到 \((\bigwedge^{d}(\mathrm{V}))^{*}\) 的典范同构，给出了从 L 上的交错 d-多线性映射向量丛 \(\operatorname{Alt}^{d}(\mathbf{M};\mathbf{L})\) 到向量丛 \(\bigwedge^{d}(\mathbf{M}^{*})\) 或到 \((\bigwedge^{d}(\mathbf{M}))^{*}\) 的同构，这些同构称为典范同构。
+
+7.9.8. 现在置 \(\lambda(V) = \bigwedge(V)\) 和 \(\lambda(f) = \bigwedge(f)\)；于是再次得到 \(L\) 上的有限维向量函子。向量丛 \(\lambda(M)\) 记为 \(\bigwedge(M)\)。其纤维 \(\bigwedge(M)_b\) 在 \(b \in B\) 处是 \(L\) 上的纤维 \(M_b\) 的外代数。向量丛 \(\bigwedge(M)\) 是一个局部平凡的代数向量丛。
+
+《代数论》第 III 章第 3 版第 10 节中给出的内积的定义和性质立即推广到向量丛 \(\bigwedge(\mathbf{M})\) 和 \(\bigwedge(\mathbf{M}^{*})\) 的截面（另参见 7.8.2 至 7.8.4 号的公式（1）至（7））。
+
+7.9.9. 设 M 是一个向量丛。对每个整数 n，令 \(B_{n}\) 为由满足条件的点 \(b \in B\) 所成的（开）集，其中 \(M_{b}\) 的维数（在 L 上）等于 n。对 \(b \in B_{n}\)，置 \(N_{b} = \bigwedge^{n}(M_{b})\)，并令 N 为各 \(N_{b}\) 的不交并，其中 \(b \in B\)。N 上存在唯一一个向量丛结构，使得对每个 n，从 \(N|B_{n}\) 到 \(\bigwedge^{n}(M)|B_{n}\) 的显然映射是同构。赋予此结构后，每点秩为一的向量丛 N 记为 det(M)。
+

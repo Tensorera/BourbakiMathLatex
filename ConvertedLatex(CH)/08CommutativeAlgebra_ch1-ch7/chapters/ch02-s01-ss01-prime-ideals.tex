@@ -1,0 +1,34 @@
+\subsection{素理想的定义}
+
+定义 1. 环 A 的理想 p 称为素理想，如果环 A/p 是整环。
+
+依这个定义，环 A 的理想 p 是素的，如果下列两个条件成立：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  \(\mathfrak{p} \neq \mathbf{A}\) ；
+\item
+  若 \(x, y\) 是 \(A\) 的两个元素，使 \(x \notin p\) 且 \(y \notin p\) ，则 \(xy \notin p\) 。
+\end{enumerate}
+
+这些条件也可表述为：\(\mathbb{C}\mathfrak{p}\) 的元素的任意有限族的乘积属于 \(\mathbb{C}\mathfrak{p}\) ，因为把这个条件应用于空族便得 \(1\notin\mathfrak{p}\) 。
+
+A 的极大理想 m 是素的，因为 A/m 是域；于是由 Krull 定理（《代数学》第一章 §8 第 7 目，定理 2），每个理想（属于
+
+A 且异于 A 的）都包含在至少一个素理想中。特别地，为使环 A 中存在素理想，必须且只需 A 不化为 0。
+
+设 \(f: \mathbf{A} \to \mathbf{B}\) 是环同态， \(q\) 是 \(\mathbf{B}\) 的理想。置 \(p = \bar{f}^{-1}(q)\) ；同态 \(\overline{f}: \mathbf{A}/p \to \mathbf{B}/q\) ——它由 \(f\) 取商导出——是单射。假设 \(q\) 素；由于环 \(B/q\) 是整环， \(A/p\) ——它同构于 \(B/q\) 的一个子环——也是整环；因此理想 \(p = \bar{f}^{-1}(q)\) 是素的。特别地，设 \(A\) 是 \(B\) 的子环；对 B 的每个理想 \(q\) ， \(B, q \cap A\) 是一个素理想，属于 \(A\) 。若 \(f\) 满射，则 \(\overline{f}\) 是同构；这时`` \(p\) 素''与`` \(q\) 素''两个条件等价。因此，若 \(p\) 与 \(a\) 是 \(A\) 的理想且 \(a \subset p\) ，则 \(p\) 素的必要充分条件是 \(p/a\) 在 \(A/a\) 中素。
+
+命题 1. 设 A 是环， \(\mathfrak{a}_1, \mathfrak{a}_2, \ldots, \mathfrak{a}_n\) 是 A 的理想，p 是 A 的素理想。若 p 包含乘积 \(\mathfrak{a}_1\mathfrak{a}_2 \ldots \mathfrak{a}_n\) ，则它至少包含诸 \(\mathfrak{a}_t\) 之一。
+
+事实上设 \(\mathfrak{p}\) 不包含任何 \(a_{i}\) 。则对 \(1 \leqslant i \leqslant n\) 存在元素 \(s_{i} \in a_{i} \cap \mathbb{C}p\) ；于是 \(s = s_{1}s_{2} \ldots s_{n}\) 包含于 \(a_{1}a_{2} \ldots a_{n}\) 而不包含于 \(\mathfrak{p}\) ，这是荒谬的。
+
+推论. 设 \(\mathfrak{m}\) 是 \(\mathbf{A}\) 的极大理想；对每个整数 \(n > 0\) ，包含 \(\mathfrak{m}^n\) 的唯一素理想是 \(\mathfrak{m}\) 。
+
+这样的理想 \(\mathfrak{p}\) 必须包含 \(\mathfrak{m}\) ，这是把命题 1 应用于 \(a_{i} = \mathfrak{m}\) （ \(1 \leqslant i \leqslant n\) ）的结果；由于 \(\mathfrak{m}\) 极大， \(\mathfrak{p} = \mathfrak{m}\) 。
+
+命题 2. 设 A 是环，a 是 A 的对加法与乘法封闭的非空集合， \((\mathfrak{p}_{i})_{i\in I}\) 是 A 的理想的非空有限族。假设 a 包含于诸 \(p_{i}\) 的并，且诸 \(p_{i}\) 中至多两个不是素的。则 a 包含于某个 \(p_{i}\) 。
+
+我们对 \(n = \operatorname{Card}(\mathbf{I})\) 用归纳法论证；若 \(n = 1\) ，命题是平凡的。设 \(n \geqslant 2\) ；若存在指标 \(j\) 使 \(\mathfrak{a} \cap \mathfrak{p}_j \subset \bigcup_{i \neq j} \mathfrak{p}_i\) ，则集合 \(\mathfrak{a}\) ——它是诸 \(\mathfrak{a} \cap \mathfrak{p}_i\) （ \(i \in \mathbf{I}\) ）的并——包含于 \(\bigcup_{i \neq j} \mathfrak{p}_i\) ，从而依归纳假设包含于某个 \(\mathfrak{p}_i\) 。于是设这样的指标不存在；对每个 \(j \in \mathbf{I}\) ，设 \(y_j\) 是 \(\mathfrak{a} \cap \mathfrak{p}_j\) 的一个元素，它不属于任何 \(\mathfrak{p}_i\) （ \(i \neq j\) ）。设 \(k\) 是 \(\mathbf{I}\) 的元素，选法是：使 \(\mathfrak{p}_k\) 为素的（当 \(n > 2\) 时），而当 \(n = 2\) 时任意选取；设 \(z = y_k + \prod_{i \neq k} y_i\) 。则 \(z \in \mathfrak{a}\) ，因为 \(\mathfrak{a}\) 对加法与乘法封闭；若 \(j \neq k, \prod_{i \neq k} y_i\) 属于 \(\mathfrak{p}_j\) ，但 \(y_k \notin \mathfrak{p}_j\) ，于是 \(z \notin \mathfrak{p}_j\) 。另一方面， \(\prod_{i \neq k} y_i\) 不属于 \(\mathfrak{p}_k\) ，因为没有一个因子 \(y_i (i \neq k)\) 属于它，且 \(\mathfrak{p}_k\) 在 \(n - 1 > 1\) 时是素的；由于 \(y_k \in \mathfrak{p}_k\) ， \(z\) 不属于 \(\mathfrak{p}_k\) ，命题得证。
+

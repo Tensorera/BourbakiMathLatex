@@ -1,0 +1,87 @@
+\subsection{导群列，可解群}
+
+定义 7. 设 G 是一个群。G 的导群列是序列 \((\mathbf{D}^n (\mathbf{G}))_{n\in \mathbb{N}}\) ，归纳地定义如下：
+
+\[
+\mathbf {D} ^ {0} (\mathbf {G}) = \mathbf {G}; \quad \mathbf {D} ^ {n + 1} (\mathbf {G}) = \mathbf {D} (\mathbf {D} ^ {n} (\mathbf {G})) \quad \text { for } n \in \mathbf {N}.
+\]
+
+则 \(\mathbf{D}^0 (\mathbf{G}) = \mathbf{C}^1 (\mathbf{G}) = \mathbf{G},\mathbf{D}^1 (\mathbf{G}) = \mathbf{C}^2 (\mathbf{G}) = \mathbf{D}(\mathbf{G}) = (\mathbf{G},\mathbf{G}).\) 对所有 \(n \in \mathbf{N}, \mathrm{D}^n(\mathrm{G}) \subset \mathrm{C}^{2^n}(\mathrm{G})\) ，这可利用第 3 号的公式 (7) 对 \(n\) 作归纳看出。
+
+设 \(f: \mathbf{G} \to \mathbf{G}'\) 是群同态。对 \(n\) 作归纳可以看出， \(f(\mathbf{D}^n(\mathbf{G})) \subset \mathbf{D}^n(\mathbf{G}')\) ，且当 \(f\) 是满射时， \(f(\mathbf{D}^n(\mathbf{G})) = \mathbf{D}^n(\mathbf{G}')\) 。特别地，对所有 \(n \in \mathbf{N}\) , \(\mathbf{D}^n(\mathbf{G})\) 是 \(\mathbf{G}\) 的特征子群（从而是正规子群）。对所有 \(n \in \mathbf{N}\) ，群 \(\mathbf{D}^n(\mathbf{G}) / \mathbf{D}^{n+1}(\mathbf{G})\) 是 \(\mathbf{G} / \mathbf{D}^{n+1}(\mathbf{G})\) 的交换正规子群（但一般不是中心的）。
+
+设 \((\mathbf{G}_0, \mathbf{G}_1, \ldots)\) 是 \(\mathbf{G}\) 的子群的一个递减序列，满足：(1) \(\mathbf{G}_0 = \mathbf{G}\) ；(2) 对所有 \(i\) , \(\mathbf{G}_{i+1}\) 在 \(\mathbf{G}_i\) 中正规且 \(\mathbf{G}_i / \mathbf{G}_{i+1}\) 是交换的。则 \(\mathbf{D}^i(\mathbf{G}) \subset \mathbf{G}_i\) 对所有 \(i\) 成立，这可对 \(i\) 作归纳看出。
+
+定义 8. 群 G 称为可解的，如果存在整数 n 使得 \(\mathbf{D}^{n}(\mathbf{G})=\{e\}\) 。若 G 是可解群，则使 \(\mathbf{D}^{n}(\mathbf{G})=\{e\}\) 的最小整数 n 称为 G 的可解类。
+
+可解类为 n 的可解群称为 n 类可解群。若一个群是可解的，有时也称它具有有限可解类。
+
+例子。(1) 一个群是 0 类（相应地，类 \(\leqslant 1\) ）可解的，当且仅当它缩减为 \(\{e\}\) （相应地，是交换的）。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  每个 \(\leqslant 2^{n} - 1\) 类幂零群都是 \(\leqslant n\) 类可解群；这由上面证明的关系 \(\mathbf{D}^n (\mathbf{G})\subset \mathbf{C}^{2^n}(\mathbf{G})\) 得出。
+\item
+  设 G 是 \(\leqslant n\) 类可解群。G 的每个子群（相应地，商群）都是 \(\leqslant n\) 类可解的（证明与第 3 号例 3 的证明类似）。
+\item
+  若 \(\mathbf{G}\) 是类 \(p\) 的可解群， \(\mathbf{F}\) 是类 \(q\) 的可解群，则每个扩张 \(\mathbf{E}\) （ \(\mathbf{G}\) 被 \(\mathbf{F}\) 的扩张）都是类 \(\leqslant p + q\) 的可解群。因为，设 \(\pi: \mathbf{E} \to \mathbf{G}\) 为投影；则 \(\pi(\mathrm{D}^p(\mathbf{E})) \subset \mathrm{D}^p(\mathbf{G}) = \{e\}\) ，从而 \(\mathrm{D}^p(\mathbf{E}) \subset \mathbf{F}\) ；由此可得 \(\mathrm{D}^{p+q}(\mathbf{E}) = \mathrm{D}^q(\mathrm{D}^p(\mathbf{E})) \subset \mathrm{D}^q(\mathrm{F}) = \{e\}\) 。
+\item
+  对称群 \(\mathfrak{S}_n\) 是可解的当且仅当 \(n < 5\) （参见第 5 节，习题 10 和 16）。
+\item
+  *若 A 是交换环，则上三角群 T(n, A) 是可解的，但一般不是幂零的。*
+\end{enumerate}
+
+命题 10. 设 G 是一个群，n 是一个整数。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  G 是类 \(\leqslant n\) 的可解群。
+\item
+  存在 \(\mathbf{G}\) 的正规子群列
+\end{enumerate}
+
+\[
+\mathbf {G} = \mathbf {G} ^ {0} \supset \mathbf {G} ^ {1} \supset \dots \supset \mathbf {G} ^ {n} = \{e \}
+\]
+
+使得诸群 \(\mathbf{G}^k /\mathbf{G}^{k + 1}\) 都是交换的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  存在 \(\mathbf{G}\) 的子群列
+\end{enumerate}
+
+\[
+\mathbf {G} = \mathbf {G} ^ {0} \supset \mathbf {G} ^ {1} \supset \dots \supset \mathbf {G} ^ {n} = e
+\]
+
+使得对所有 \(k\) ， \(\mathbf{G}^{k+1}\) 是 \(\mathbf{G}^k\) 的正规子群，且 \(\mathbf{G}^k/\mathbf{G}^{k+1}\) 是交换的。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  存在正规交换子群 \(\mathbf{A}\) （ \(\mathbf{G}\) 的），使得 \(\mathbf{G} / \mathbf{A}\) 是类 \(\leqslant n - 1\) 的可解群。
+\end{enumerate}
+
+对 (i) \(\Rightarrow\) (ii)，只需取 \(\mathbf{G}^k\) 等于 \(\mathbf{D}^k (\mathbf{G})\) 。(ii) \(\Rightarrow\) (iii) 平凡。(iii) \(\Rightarrow\) (i)，因为 \(\mathbf{D}^k (\mathbf{G})\) 必然包含于 \(\mathbf{G}^k\) 。(ii) 与 (iv) 的等价性由对 \(n\) 作归纳立得。
+
+更简洁地说：一个群是类 \(\leqslant n\) 的可解群，如果它可由 n 个交换群经逐次扩张得到。
+
+推论. 设 G 是有限群，且
+
+\[
+\mathbf {G} = \mathbf {G} ^ {0} \supset \mathbf {G} ^ {1} \supset \dots \supset \mathbf {G} ^ {n} = \{e \}
+\]
+
+是 G 的一个 Jordan-Hölder 列。为使 G 可解，充要条件是诸商群 \(G^{k}/G^{k+1}\) 都是素数阶的循环群。
+
+若 G 的一个合成列的商群都是循环的从而是交换的，则由命题 10 可知 G 是可解的。反之，若 G 是可解的，则群 \(G^{k}/G^{k+1}\) 对所有 k 都是可解且单的（§4，第 7 号，命题 9）。现在，每个可解单群 H 都是素数阶循环群。因为 D(H) 是 H 的正规子群；D(H) = H 是不可能的，因为那样的话，对所有 k 有 \(D^{k}(H) = H\) ；于是 D(H) = \{e\}，从而 H 是交换的。该推论由 §4 第 10 号命题 20 的推论得出。
+

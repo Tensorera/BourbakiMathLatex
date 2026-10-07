@@ -1,0 +1,140 @@
+\subsection{群 R 的酉表示}
+
+在本节中，E 表示一个复希尔伯特空间。群 R 赋以勒贝格测度。
+
+引理 11. --- 设 u 是 E 上的一个自伴部分算子。对 \(t \in \mathbf{R}\)，令 \(\varrho(t) = e^{itu} \in \mathcal{L}(\mathrm{E})\)。则映射 \(\varrho\) 是 \(\mathbf{R}\) 的一个酉表示。
+
+算子 \(\varrho(t)\) 由普遍可测函数演算定义（IV, 第 272 页, 定义 5）；它是 E 的一个自同态，因为函数 \(x \mapsto e^{itx}\) 在 \(\mathrm{Sp}(u)\) 上有界（IV, 第 275 页, 命题 5, \(a\) )）。
+
+由 IV 第 275 页的命题 5，我们有 \(\varrho(0) = 1_{\mathrm{E}}\)，\(\varrho(t)^* = \varrho(-t)\) 对所有 \(t \in \mathbf{R}\)，且 \(\varrho(t_1 + t_2) = \varrho(t_1)\varrho(t_2)\) 对所有 \(t_1\) 与 \(t_2\)（都属于 \(\mathbf{R}\)）。特别地，自同态 \(\varrho(t)\) 对每个 \(t \in \mathbf{R}\) 都是酉的。对每个 \(x \in \mathrm{E}\)，从 \(\mathbf{R}\) 到 E 的由 \(x \mapsto \varrho(t)x\) 定义的映射在 \(t = 0\) 处连续（IV, 第 276 页, 命题 6），故 \(\varrho\) 是 \(\mathbf{R}\) 在 E 中的一个酉表示（V, 第 380 页, 引理 4）。
+
+引理 12. --- 设 \(\varrho\) 是 \(\mathbf{R}\) 在 E 中的一个酉表示。设 D 是 E 中由满足下列条件的元素 \(x\) 组成的集合：映射 \(\psi_x: t \mapsto \varrho(t)x\) 在 0 处可微。D 到 E 中的映射 \(u\) 由 \(x \mapsto i^{-1} \psi_x'(0)\) 给出，它定义了 E 上一个对称的部分算子。
+
+设 \(f \in \mathcal{D}(\mathbf{R})\) 且 \(x \in \mathrm{E}\)。令 \(y = \varrho(f)x\)。对每个 \(h \in \mathbf{R}\)，我们有
+
+\[
+\begin{array}{r l} & {\psi_ {y} (h) = \varrho (h) \varrho (f) x = \varrho (f) \varrho (h) x} \\ & {\qquad = \int_ {\mathbf {R}} f (t) \varrho (t + h) x d t = \int_ {\mathbf {R}} f (t - h) \psi_ {x} (t) d t.} \end{array}
+\]
+
+从 \(R^{2}\) 到 C 的由 \((t,h)\mapsto f(t-h)\) 定义的函数是无穷次可微的；它对 h 的导数是由 \((t,h)\mapsto -f'(t-h)\) 定义的函数，后者被 \(\|f'\|_{\infty}\) 所控制。当 h=0 时，这个导数在 t 属于一个紧集之外时为零。由于对所有 t 有 \(\|\psi_{x}(t)\|=\|x\|\)，由 IV 第 197 页的命题 2 推出，函数 \(\psi_{y}\) 在 0 处可微且其导数由下式给出
+
+\[
+\psi_ {y} ^ {\prime} (0) = - \int_ {\mathbf {R}} f ^ {\prime} (t) \psi_ {x} (t) d t = - \varrho (f ^ {\prime}) x.
+\]
+
+因此 \(y \in D\)。由于空间 \(\mathcal{D}(\mathbf{R})\) 在 \(\mathrm{L}^{1}(\mathbf{R})\) 中稠密，由 INT, VIII, 第 139 页, § 2, 第 7 目, 命题 10 以及（IV, 第 202 页, 命题 4）推出，空间 D 在 E 中稠密。
+
+设 \(x_{1}\) 与 \(x_{2}\) 属于 D。我们计算
+
+\[
+\begin{array}{c} \langle u (x _ {1}) \mid x _ {2} \rangle = \lim _ {h \to 0} \frac {i}{h} \langle (\varrho (h) - 1 _ {\mathrm{E}}) x _ {1} \mid x _ {2} \rangle \\ = \lim _ {h \to 0} \frac {i}{h} \langle x _ {1} \mid (\varrho (- h) - 1 _ {\mathrm{E}}) x _ {2} \rangle = \langle x _ {1} \mid u (x _ {2}) \rangle . \end{array}
+\]
+
+因此，部分算子 \(u\) 是对称的。
+
+定义 5. --- 设 \(\varrho\) 是 \(\mathbf{R}\) 在 E 中的一个酉表示。引理 12 中定义的对称部分算子称为 \(\varrho\) 的无穷小生成元。
+
+定理 1（斯通）. --- 映射 σ 把 R 在 E 中的每个酉表示 ρ 对应到其无穷小生成元 u，它定义了从 R 在 E 中的酉表示集合到 E 上自伴部分算子集合上的一个双射。逆双射 τ 把一个自伴部分算子对应到酉表示 \(t \mapsto e^{itu}\)。
+
+我们先证明几个引理。
+
+引理 13. --- 设 \(\varrho\) 是 \(\mathbf{R}\) 在 E 中的一个酉表示，\(u\) 是其无穷小生成元。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  u 的定义域是满足下列条件的 \(x \in E\) 组成的集合：映射 \(\psi_{x} \colon t \mapsto \varrho(t)x\) 在 R 上可微；
+\item
+  对每个 \(t \in \mathbf{R}\) 与每个 \(x \in \mathrm{dom}(u)\)，我们有 \(\varrho(t)x \in \mathrm{dom}(u)\) 且 \(\psi_x'(t) = i u(\varrho(t)x)\)；
+\item
+  部分算子 u 是本质自伴的。
+\end{enumerate}
+
+对每个 \(x \in \mathrm{E}\)，用 \(\psi_x\) 表示从 \(\mathbf{R}\) 到 \(\mathrm{E}\) 中的由 \(\psi_x(t) = \varrho(t)x\) 定义的映射。对每个 \(t \in \mathbf{R}\) 与每个 \(h \in \mathbf{R}\)，我们有
+
+\[
+\psi_ {x} (t + h) - \psi_ {x} (t) = \varrho (t) \big (\psi_ {x} (h) - \psi_ {x} (0) \big),
+\]
+
+这证明了 \(\operatorname{dom}(u)\) 是满足下列条件的元素 \(x \in E\) 组成的空间：\(\psi_{x}\) 在 R 上可微；并且确立了 \(\psi_{x}^{\prime}(t) = \varrho(t)\psi_{x}^{\prime}(0) = i\varrho(t)(u(x))\) 对所有 \(t \in R\)。
+
+设 \(x \in E\) 且 \(t \in R\)。我们有 \(\psi_{\varrho(t)x}(s) = \psi_x(s + t)\)，对所有 \(s \in R\)。于是我们有 \(\varrho(t)x \in \text{dom}(u)\)，只要 \(x \in \text{dom}(u)\)，而且由 a) 有 \(u(\varrho(t)x) = i^{-1}\psi_x'(t) = \varrho(t)u(x)\)。由此得到断言 b)。
+
+我们来证明 c)。设 \(x \in \text{Ker}(u^{*} - i1_{\text{E}})\)。我们来证明 x = 0。设 \(y \in \text{dom}(u)\)，并设 f 是 R 上由 \(f(t) = \langle \psi_{y}(t) | x \rangle\)（\(t \in R\)）定义的函数。函数 f 是有界的，因为 \(\| \psi_{y}(t) \| = \| y \|\) 对所有 \(t \in R\)；它在 R 上可微，且对每个 \(t \in R\)，断言 b) 蕴含
+
+\[
+\begin{array}{r l} f ^ {\prime} (t) = \langle \psi_ {y} ^ {\prime} (t) | x \rangle & = \langle i u (\varrho (t) y) | x \rangle \\ & = - i \langle \varrho (t) y | u ^ {*} (x) \rangle = - i \langle \psi_ {y} (t) | i x \rangle = f (t) \end{array}
+\]
+
+因为 \(u^{*}(x)=ix\)。因此我们有 \(f(t)=f(0)e^{t}\)，对所有 \(t\in R\)（FVR, IV, 第 27 页）。由于 f 有界，函数 f 为零，特别地我们有 \(\langle y|x\rangle=f(0)=0\)。由于空间 dom(u) 在 E 中稠密，我们得出 x=0。类似地，我们证明 \(\operatorname{Ker}(u^{*}+i1_{\mathrm{E}})\) 化为 0。由 IV 第 261 页的推论 3，部分算子 u 因此是本质自伴的。
+
+引理 14. --- 设 u 是 E 上的一个自伴部分算子，\(\varrho(t) = e^{itu}\) 是由 u 定义的 R 的酉表示。\(\varrho\) 的无穷小生成元等于 u。
+
+设 \(x \in \text{dom}(u)\)。令 \(\psi_{x}(t) = \varrho(t)x\)，对所有 \(t \in R\)。对每个非零实数 h，我们有
+
+\[
+\frac {1}{h} \left(\psi_ {x} (t + h) - \psi_ {x} (t)\right) = \left(\frac {1}{h} \left(e ^ {i h u} - 1 _ {\mathrm{E}}\right)\right) e ^ {i t u} x = \left(\frac {1}{h} \left(e ^ {i h u} - 1 _ {\mathrm{E}}\right)\right) \varrho (t) x.
+\]
+
+当 h 趋于 0 时，我们有
+
+\[
+\frac {1}{h} (e ^ {i h t} - 1) \rightarrow i t
+\]
+
+对所有 \(t \in R\) 成立。此外，
+
+\[
+\left| \frac {1}{h} (e ^ {i h t} - 1) \right| = | t | \left| \frac {1}{h} \int_ {0} ^ {h} e ^ {i t s} d s \right| \leqslant | t |.
+\]
+
+于是由 IV 第 276 页的命题 6 推出，函数 \(\psi_x\) 在 \(\mathbf{R}\) 上可微且满足 \(\psi_x'(t) = i u(\varrho(t)x)\)，对所有 \(t \in \mathbf{R}\)。因此，\(u\) 的定义域含于满足下列条件的 \(x \in E\) 组成的集合：\(\psi_x\) 在 0 处可微且此时有 \(\psi_x'(0) = i u(x)\)。按定义，这意味着 \(\varrho\) 的无穷小生成元是 \(u\) 的一个扩张。由于这两个算子都是对称的而 \(u\) 是自伴的（IV, 第 238 页, 注 5），它们因此相等。
+
+引理 15. --- 设 \(\varrho\) 是 \(\mathbf{R}\) 在 E 中的一个酉表示。则无穷小生成元 \(u\)（\(\varrho\) 的）是自伴的，且 \(\varrho(t) = e^{itu}\) 对所有 \(t \in \mathbf{R}\)。
+
+由引理 13(c)，部分算子 u 是本质自伴的。因此它的闭包 \(\overline{u}\) 是一个自伴算子。用 \(\pi\) 表示由 \(\pi(t) = e^{it\overline{u}}\) 定义的 R 的酉表示（引理 11）。
+
+对每个 \(x \in \mathrm{E}\)，用 \(\psi_x\)（相应地 \(\widetilde{\psi}_x\)）表示从 \(\mathbf{R}\) 到 \(\mathrm{E}\) 中的由 \(\psi_x(t) = \varrho(t)x\)（相应地由 \(\widetilde{\psi}_x(t) = \pi(t)x\)）定义的映射。
+
+由引理 13 的 a) 与 b) 两部分，空间 \(\mathrm{dom}(u)\) 是 E 中由满足下列条件的元素 \(x \in \mathrm{E}\) 组成的子空间：映射 \(\psi_x\) 在 \(\mathbf{R}\) 上可微，且对所有 \(x \in \mathrm{dom}(u)\) 与每个 \(t \in \mathbf{R}\)，我们有 \(\psi_x'(t) = i u (\psi_x(t))\)。同样，空间 \(\mathrm{dom}(\overline{u})\) 是 E 中由满足下列条件的元素 \(x \in \mathrm{E}\) 组成的子空间：映射 \(\widetilde{\psi}_x\) 在 \(\mathbf{R}\) 上可微，且对所有 \(x \in \mathrm{dom}(\overline{u})\) 与每个 \(t \in \mathbf{R}\)，我们有 \(\widetilde{\psi}_x'(t) = i \overline{u} (\widetilde{\psi}_x(t))\)。
+
+设 \(x \in \text{dom}(u) \subset \text{dom}(\overline{u})\)。令 \(f = \psi_x - \widetilde{\psi}_x\)。这是从 \(\mathbf{R}\) 到 E 中的一个可微函数。对每个 \(t \in \mathbf{R}\)，由此得出
+
+\[
+f ^ {\prime} (t) = i u (\psi_ {x} (t)) - i \overline {{u}} (\widetilde {\psi} _ {x} (t)) = i \overline {{u}} (f (t))
+\]
+
+因为 \(\psi_x(t) \in \mathrm{dom}(u)\) 且 \(u \subset \overline{u}\)。令 \(g = \|f\|^2\)；它是从 \(\mathbf{R}\) 到 \(\mathbf{R}\) 中的一个可微映射且满足 \(g(0) = 0\)。对 \(t \in \mathbf{R}\)，由 FVR, I, 第 28 页, 命题 2 得到
+
+\[
+\begin{array}{r l} g ^ {\prime} (t) & = \langle f ^ {\prime} (t) | f (t) \rangle + \langle f (t) | f ^ {\prime} (t) \rangle \\ & = \langle i \overline {{u}} (f (t)) | f (t) \rangle + \langle f (t) | i \overline {{u}} (f (t)) \rangle = 0 \end{array}
+\]
+
+因为 \(\overline{u}\) 是自伴的。因此 f = 0，故 \(\varrho(t)x = \pi(t)x\) 对所有 \(t \in R\)。E 的连续自同态 \(\varrho(t)\) 与 \(\pi(t)\) 在 dom(u) 上一致，因而对所有 \(t \in R\) 相等。于是我们有 \(\pi = \varrho\)；由于 \(\overline{u}\) 是 \(\pi\) 的无穷小生成元（引理 14），我们有 \(\overline{u} = u\)，这就证明了 u 是自伴的。
+
+现在我们可以证明定理 1 了。
+
+映射 \(\sigma\) 与 \(\tau\) 是完全有定义的（分别是引理 15 与引理 11）。
+
+设 \(\varrho\) 是 \(\mathbf{R}\) 的一个酉表示。用 \(u\) 表示它的无穷小生成元。关系式 \(\varrho(t) = e^{itu}\)（对所有 \(t \in \mathbf{R}\)）（引理 15）证明了 \(\tau \circ \sigma\) 是恒同映射。
+
+设 u 是 E 上的一个自伴部分算子。引理 14 表明酉表示 \(t \mapsto e^{itu}\) 的无穷小生成元等于 u，因而 \(\sigma \circ \tau\) 是恒同映射。
+
+设 u 是 E 上的一个自伴部分算子，\(\varrho(t) = e^{itu}\)（\(t \in R\)）是与之相伴的 R 在 E 中的酉表示。
+
+设 \(x \in \text{dom}(u)\)。此时所满足的方程 \(\partial_{t} \varrho(t)x = i u(\varrho(t)x)\)（引理 13, b)）称为薛定谔方程。
+
+推论. --- 设 \(\varrho\) 是 \(\mathbf{R}\) 在希尔伯特空间 E 中的一个酉表示。存在一个局部紧空间 X、X 上的一个正测度 \(\mu\) 以及 X 上的一个实值连续函数 \(g\)，使得 \(\varrho\) 同构于表示 \(\pi\)——\(\mathbf{R}\) 在 \(\mathrm{L}^2 (\mathrm{X},\mu)\) 中的——它由 \(\pi (t)f = e^{itg}f\) 定义（对所有 \(t\in \mathbf{R}\) 与每个 \(f\in \mathrm{L}^2 (\mathrm{X},\mu)\)）。
+
+设 \(u\) 是 E 上使得 \(\varrho(t) = e^{itu}\)（对所有 \(t \in \mathbf{R}\)）的自伴算子（定理 1）。存在一个局部紧空间 X、X 上的一个正测度 \(\mu\)、一个等距同构 \(\theta\)（\(L^2(X, \mu)\) 到 E 上的） 以及 X 上的一个实值连续函数 \(g\)，使得 \(u = \theta \circ m_g \circ \theta^{-1}\)（IV, 第 266 页, 定理 1）。断言由公式 \(e^{itu} = \theta \circ e^{itm_g} \circ \theta^{-1} = \theta \circ m_{e^{itg}} \circ \theta^{-1}\)（IV, 第 269 页, 引理 4）得出。
+
+注. --- 假设 u 是 E 的一个自同态。由 \(\varrho(t) = e^{itu}\) 定义的 R 在 E 中的酉表示此时满足不等式 \(\|\varrho(t) - 1_{\mathrm{E}}\| \leqslant |t||u\|\)，对所有 \(t \in R\)，且映射 \(\varrho\)（从 R 到巴拿赫空间 \(\mathcal{L}(\mathrm{E})\) 中的）是线性微分方程
+
+\[
+\frac {1}{i} \frac {d \varrho}{d t} = u \circ \varrho
+\]
+
+（参见 FVR, IV, 第 26 页, §6）的唯一解。
+
+例. --- 设 \(\varrho\) 是 \(\mathbf{R}\) 在 \(\mathrm{L}^2 (\mathbf{R})\) 中的正则表示。\(\varrho\) 的无穷小生成元是以 \(\mathcal{D}(\mathbf{R})\) 为定义域、由 \(f\mapsto -if'\) 定义的微分算子的闭包。
+

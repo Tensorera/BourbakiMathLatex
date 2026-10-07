@@ -1,0 +1,93 @@
+\subsection{Structure of flat modules}
+
+Lemma 2. --- Let I be a right-filtered ordered set, \((\mathrm{E}_{\alpha}, \varphi_{\beta\alpha})\) an inductive system of sets relative to I, E its inductive limit, and \(\varphi_{\alpha}: E_{\alpha} \to E\) , \(\alpha \in I\) , the canonical maps. Let \(f: I \to I\) be a map such that \(f(\alpha) > \alpha\) for \(\alpha \in I\) , and suppose given, for each \(\alpha \in I\) , a set \(L_{\alpha}\) and maps \(u_{\alpha}: E_{\alpha} \to L_{\alpha}\) and \(v_{\alpha}: L_{\alpha} \to E_{f(\alpha)}\) such that \(v_{\alpha} \circ u_{\alpha}' = \varphi_{f(\alpha),\alpha}\) . Let J be the ordered set obtained by endowing I with the relation “ \(\alpha \leqslant \beta\) if \(\alpha = \beta\) or \(f(\alpha) \leqslant \beta\) ”. If \(\alpha\) , \(\beta \in J\) with \(\alpha \leqslant \beta\) , let \(\psi_{\beta\alpha}: L_{\alpha} \to L_{\beta}\) be the map such that \(\psi_{\beta\alpha} = Id\) if \(\alpha = \beta\) , \(\psi_{\beta\alpha} = u_{\beta} \circ \varphi_{\beta,f(\alpha)} \circ v_{\alpha}\) if \(f(\alpha) \leqslant \beta\) . If \(\alpha \in J\) , let \(\psi_{\alpha}: L_{\alpha} \to E\) be the map \(\varphi_{f(\alpha)} \circ v_{\alpha}\) . Then the ordered set J is filtered, \((L_{\alpha}, \psi_{\beta\alpha})\) is an inductive system relative to J, \((\psi_{\alpha})\) is an inductive system of maps, and the map \(\psi: \varinjlim L_{\alpha} \to E\) deduced from the \(\psi_{\alpha}\) is bijective.
+
+It is clear that J is directed. If \(\alpha\) , \(\beta \in J\) with \(\alpha < \beta\) , we have
+
+\[
+\begin{array}{r l} \psi_ {\beta} \circ \psi_ {\beta \alpha} & = \varphi_ {f (\beta)} \circ v _ {\beta} \circ u _ {\beta} \circ \varphi_ {\beta , f (\alpha)} \circ v _ {\alpha} \\ & = \varphi_ {f (\beta)} \circ \varphi_ {f (\beta), \beta} \circ \varphi_ {\beta , f (\alpha)} \circ v _ {\alpha} = \varphi_ {f (\alpha)} \circ v _ {\alpha} = \psi_ {\alpha}; \end{array}
+\]
+
+likewise, if \(\alpha\) , \(\beta\) , \(\gamma \in J\) with \(\alpha < \beta < \gamma\) , we have
+
+\[
+\begin{array}{r l} \psi_ {\gamma \beta} \circ \psi_ {\beta \alpha} & = u _ {\gamma} \circ \varphi_ {\gamma , f (\beta)} \circ v _ {\beta} \circ u _ {\beta} \circ \varphi_ {\beta , f (\alpha)} \circ v _ {\alpha} \\ & = u _ {\gamma} \circ \varphi_ {\gamma , f (\beta)} \circ \varphi_ {f (\beta), \beta} \circ \varphi_ {\beta , f (\alpha)} \circ v _ {\alpha} = u _ {\gamma} \circ \varphi_ {\gamma , f (\alpha)} \circ v _ {\alpha} = \psi_ {\gamma \alpha}. \end{array}
+\]
+
+Let us prove the last assertion: for each \(\alpha \in J\) , we have
+
+\[
+\psi_ {\alpha} \circ u _ {\alpha} = \varphi_ {f (\alpha)} \circ v _ {\alpha} \circ u _ {\alpha} = \varphi_ {f (\alpha)} \circ \varphi_ {f (\alpha), \alpha} = \varphi_ {\alpha},
+\]
+
+hence \(\varphi_{\alpha}(\mathrm{E}_{\alpha}) = \psi_{\alpha}(u_{\alpha}(\mathrm{E}_{\alpha})) \subset \psi_{\alpha}(\mathrm{L}_{\alpha})\) , and \(\psi\) is surjective. Let \(\alpha \in \mathbf{J}\) and let \(x, y \in \mathrm{L}_{\alpha}\) with \(\psi_{\alpha}(x) = \psi_{\alpha}(y)\) , i.e. \(\varphi_{f(\alpha)}(v_{\alpha}(x)) = \varphi_{f(\alpha)}(v_{\alpha}(y))\) ; there exists \(\beta \in \mathrm{I}\) , \(\beta \geqslant f(\alpha)\) such that
+
+\[
+\varphi_ {\beta , f (\alpha)} (v _ {\alpha} (x)) = \varphi_ {\beta , f (\alpha)} (v _ {\alpha} (y)),
+\]
+
+hence
+
+\[
+\psi_ {\beta , \alpha} (x) = u _ {\beta} (\varphi_ {\beta , f (\alpha)} (v _ {\alpha} (x))) = u _ {\beta} (\varphi_ {\beta , f (\alpha)} (v _ {\alpha} (y))) = \psi_ {\beta , \alpha} (y).
+\]
+
+and ψ is injective.
+
+THEOREM 1 (D. Lazard). --- For every A-module E, the following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  E is flat.
+\item
+  For every finitely presented A-module P, the canonical homomorphism
+\end{enumerate}
+
+\[
+\operatorname{Hom} _ {\mathbf {A}} (\mathrm{P}, \mathrm{A}) \otimes_ {\mathbf {A}} \mathrm{E} \rightarrow \operatorname{Hom} _ {\mathbf {A}} (\mathrm{P}, \mathrm{E})
+\]
+
+is surjective.
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\item
+  For every finitely presented A-module P and every homomorphism \(u : P \to E\) there exists a finitely generated free A-module L and homomorphisms \(v : P \to L\) and \(w : L \to E\) such that \(u = w \circ v\) .
+\item
+  There exists a directed ordered set J, an inductive system of finitely generated free modules \((\mathbf{L}_{j})_{j\in\mathbf{J}}\) and an isomorphism from E to lim \(L_{j}\) .
+\item
+  (iv) \(\Rightarrow\) (i): this follows from prop. 4 (ii) of X, p.~8.
+\item
+  (i) \(\Rightarrow\) (ii): this follows from prop. 8b) of X, p.~12.
+\item
+  (ii) \(\Rightarrow\) (iii): let P be a finitely presented A-module and \(u: \mathbf{P} \to \mathbf{E}\) a homomorphism; by (ii), there exists \(v_1, \ldots, v_n \in \mathrm{Hom}_{\mathbf{A}}(\mathbf{P}, \mathbf{A})\) , \(w_1, \ldots, w_n \in \mathbf{E}\) such that \(u(x) = \sum v_i(x) w_i\) for all \(x \in \mathbf{P}\) ; if \(v: \mathbf{P} \to \mathbf{A}^n\) is the homomorphism with components \((v_i)\) and \(w: \mathbf{A}^n \to \mathbf{E}\) the homomorphism \((a_i) \mapsto \sum a_i w_i\) , we indeed have \(u = w \circ v\) .
+\item
+  (iii) \(\Rightarrow\) (iv): suppose (iii) holds, and let \((\mathbf{E}_{\alpha},\varphi_{\beta ,\alpha})\) be an inductive system, relative to a filtered set I, of finitely presented A-modules, with inductive limit E (X, p.~11, prop. 7). Replacing I, if necessary, by the lexicographic product I × N, with \(E_{(\alpha,n)} = E_{\alpha}\) for every n, we may assume that I has no greatest element. For each \(\alpha \in I\) , let \(L_{\alpha}\) be a finitely generated free A-module and \(u_{\alpha}: E_{\alpha} \to L_{\alpha}, v_{\alpha}': L_{\alpha} \to E\) homomorphisms such that \(v_{\alpha}' \circ u_{\alpha}\) is the canonical map \(\varphi_{\alpha}\) of \(E_{\alpha}\) into E; since \(L_{\alpha}\) is finitely generated and free, and I has no greatest element, there exists an index \(\beta > \alpha\) and a homomorphism \(v_{\alpha}'': L_{\alpha} \to E_{\beta}\) such that \(v_{\alpha}' = \varphi_{\beta} \circ v_{\alpha}''\) ; since \(\varphi_{\beta} \circ v_{\alpha}'' \circ u_{\alpha} = \varphi_{\beta} \circ \varphi_{\beta,\alpha}\) and that \(E_{\alpha}\) is finitely presented, it follows from prop. 8a) of X, p.~12, that there exists \(\gamma \geqslant \beta\) such that \(\varphi_{\gamma\beta} \circ v_{\alpha}'' \circ u_{\alpha} = \varphi_{\gamma\beta} \circ \varphi_{\beta\alpha} = \varphi_{\gamma\alpha}\) ; set \(\gamma = f(\alpha)\) and let \(v_{\alpha}\) be the homomorphism \(\varphi_{\gamma\beta} \circ v_{\alpha}''\) of \(L_{\alpha}\) to \(E_{f(\alpha)}\) ; we have \(v_{\alpha} \circ u_{\alpha} = \varphi_{f(\alpha),\alpha}\) . We may then apply Lemma 2, whence (iv).
+\end{enumerate}
+
+COROLLARY. — Suppose A is commutative. For every flat A-module E, the A-modules \(\mathbf{T}(\mathrm{E}),\mathbf{S}(\mathrm{E}),\symbf{\Lambda}(\mathrm{E}),\mathbf{T}^{n}(\mathrm{E}),\mathbf{S}^{n}(\mathrm{E}),\symbf{\Lambda}^{n}(\mathrm{E})\) are flat.
+
+Indeed, E is the inductive limit of a filtered system \((\mathbf{L}_{j})\) of finitely generated free A-modules, hence \(\mathbf{T}(\mathbf{E})\) (resp. \(\mathbf{S}(\mathbf{E})\) , etc.) is the inductive limit of the filtered system of free A-modules \(\mathbf{T}(\mathbf{L}_{j})\) (resp. \(\mathbf{S}(\mathbf{L}_{j})\) , etc.), hence is flat (cf.~III, p.~61, prop. 6, p.~62, th. 1, p.~73, prop. 8, p.~75, th. 1, p.~83, prop. 9, and p.~86, th. 1).
+
+Remark. --- Considering in (ii) a finite presentation \(A_{s}^{J} \xrightarrow{c} A_{s}^{I} \to P \to 0\) we obtain condition (ii'), still equivalent to the preceding ones:
+
+(ii') For every finite matrix \((c_{ij})_{i\in I,j\in J}\) of elements of A, every solution
+
+\[
+\pmb {e} = (e _ {i}) _ {i \in \mathbf {I}} \in \mathrm{E} ^ {\mathbf {I}}
+\]
+
+of the system of linear and homogeneous equations
+
+\[
+\sum_ {i \in \mathbf {I}} c _ {i j} e _ {i} = 0, \quad j \in \mathrm{J},
+\]
+
+can be written \(b_{1}z_{1}+\cdots+b_{n}z_{n}\) , where \(b_{1},\ldots,b_{n}\in E\) and where, for \(r=1,\ldots,n\) , \(z_{r}=(z_{r,i})_{i\in I}\) is a solution in \(A^{I}\) of the system of equations
+
+\[
+\sum_ {i \in \mathbf {I}} z _ {r, i} c _ {i j} = 0, \quad j \in \mathrm{J}.
+\]
+

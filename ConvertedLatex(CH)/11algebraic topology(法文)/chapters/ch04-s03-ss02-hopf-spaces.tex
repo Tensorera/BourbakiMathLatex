@@ -1,0 +1,52 @@
+\subsection{霍普夫空间}
+
+定义 2. --- 霍普夫空间是一个带基点拓扑空间 (X, e)，配备连续合成法则 m: X × X → X，使得
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(m(e, e) = e\) ;
+\item
+  存在以 \(e\) 为基点的同伦，将映射 \(x \mapsto m(x, e)\) 和 \(x \mapsto m(e, x)\) 与映射 \(\mathrm{Id}_{\mathrm{X}}\) 联系起来。
+\end{enumerate}
+
+有时把性质 (i) 和 (ii) 表述为：e 是合成法则 m 的同伦意义下的单位元。
+
+注意，在拓扑空间 X 上的连续合成法则 m 可能有多个同伦意义下的单位元。例如，当 \(X = \mathbf{R}\) 且 \(m(x, y) = (x + y)/2\) 时，每个 \(x \in \mathbf{R}\) 都是同伦意义下的单位元。
+
+例。--- 1) 设 G 是拓扑群，m 是其合成法则。G 的单位元 e 是同伦意义下的单位元，且 (G, e) 是霍普夫空间。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 X 是拓扑空间，x 是 X 中的一点。赋予带基点空间 \((\Omega_{x}(\mathrm{X}), e_{x})\) 以 x 处圈的拼接后，它是一个霍普夫空间。事实上，首先有 \(e_{x} * e_{x} = e_{x}\)。另一方面，设 \(\psi: I \to I\) 是如下定义的函数：\(\psi(t) = 2t\) 当 \(0 \leqslant t \leqslant \frac{1}{2}\) 时，并且 \(\psi(t) = 1\) 当 \(\frac{1}{2} \leqslant t \leqslant 1\) 时（参见 III, 第~291~页）；设 \(\sigma: I \times I \to I\) 是将 \(\psi\) 与 \(\mathrm{Id}_{\mathrm{I}}\) 连接起来的严格同伦（III, 第~289~页，例）。于是，对于每个圈 \(c \in \Omega_{x}(\mathrm{X})\)，映射 \(c \circ \sigma: I \times I \to X\) 是将 \(c * e_{x}\) 与 c 在 \(\Omega_{x}(\mathrm{X})\) 中连接起来的严格同伦。
+\end{enumerate}
+
+令 \(\tau\) 为映射 \(\Omega_x(\mathrm{X}) \times \mathbf{I} \to \Omega_x(\mathrm{X})\)，其定义为 \(\tau(c, s)(t) = c \circ \sigma(s, t)\)。证明 \(\tau\) 连续。根据 III, 第~257~页的命题 1，只需证明映射 \((c, s, t) \mapsto c(\sigma(s, t))\) 从 \(\Omega_x(\mathrm{X}) \times \mathbf{I} \times \mathbf{I}\) 到 X 连续；也就是说，由于 \(\mathbf{I} \times \mathbf{I}\) 紧，只需证明映射 \(c \mapsto c \circ \sigma\) 从 \(\mathcal{C}_c(\mathbf{I};\mathrm{X})\) 到 \(\mathcal{C}_c(\mathbf{I} \times \mathbf{I};\mathrm{X})\) 连续。最后一个断言由 I, 第~132~页的引理 b) 得出。因此，映射 \(\tau\) 是将映射 \(c \mapsto c * e_x\) 与 \(\Omega_x(\mathrm{X})\) 的恒等映射连接起来的同伦。映射 \(\tau(e_x, s)(t) = x\) 对所有 \(s, t \in I\) 都成立，所以 \(\tau\) 是在 \(e_x\) 处的带基点同伦。对映射 \(c \mapsto e_x * c\) 作同样论证。
+
+命题 3. — 设 (X, e) 是霍普夫空间，m: X × X → X 是其合成法则。对于 X 中在 e 处的任意圈 c、c′，有：
+
+\[
+c ^ {\prime} * c \sim c * c ^ {\prime} \sim m \circ (c, c ^ {\prime}),
+\]
+
+其中 ∼ 表示严格同伦关系。群 \(\pi_{1}(\mathrm{X},e)\) 的群法则是以下两个映射的复合：规范同构 \(\pi_{1}(\mathrm{X},e)\times\pi_{1}(\mathrm{X},e)\to\pi_{1}(\mathrm{X}\times\mathrm{X},(e,e))\)（III, 第~297~页，推论）和同态 \(\pi_{1}(m,(e,e))\)，后者从 \(\pi_{1}(\mathrm{X}\times\mathrm{X},(e,e))\) 到 \(\pi_{1}(\mathrm{X},e)\)。群 \(\pi_{1}(\mathrm{X},e)\) 是交换的。
+
+令 \(\mu\colon\pi_{1}(\mathrm{X},e)\times\pi_{1}(\mathrm{X},e)\to\pi_{1}(\mathrm{X},e)\) 为由规范同构 \(\pi_{1}(\mathrm{X},e)\times\pi_{1}(\mathrm{X},e)\) 到 \(\pi_{1}(\mathrm{X}\times\mathrm{X},(e,e))\) 与同态 \(\pi_{1}(m,(e,e))\) 的复合给出的群同态。还需证明：
+
+\[
+\mu (\gamma , \gamma^ {\prime}) = \gamma \gamma^ {\prime} = \gamma^ {\prime} \gamma\tag{1}
+\]
+
+对于所有 \(\gamma, \gamma' \in \pi_1(X, e)\)。根据 III, 第~297~页的注 2，有：
+
+\[
+\mu (\gamma , \gamma^ {\prime}) = \mu (\gamma , \varepsilon_ {e}) \mu (\varepsilon_ {e}, \gamma^ {\prime}) = \mu (\varepsilon_ {e}, \gamma^ {\prime}) \mu (\gamma , \varepsilon_ {e}).\tag{2}
+\]
+
+设 \(c \in \Omega_e(\mathrm{X})\) 是类为 \(\gamma\) 的圈，并将映射 \(m_1 \colon \mathrm{X} \to \mathrm{X}\) 记为由 \(m_1(x) = m(x, e)\) 定义的映射；于是，\(\mu(\gamma, \varepsilon_e)\) 是 \(m_1 \circ c\) 的类。根据霍普夫空间的定义，以 \(e\) 为基点的映射 \(m_1\) 和 \(\mathrm{Id_X}\) 在 \(e\) 处具有相同的带基点同伦类。因此，在 \(e\) 处的圈 \(m_1 \circ c\) 和 \(c\) 严格同伦（III, 第~296~页，命题 3 的推论 1），从而 \(\mu(\gamma, \varepsilon_e) = \gamma\)。同理可得 \(\mu(\varepsilon_e, \gamma') = \gamma'\)。关系式 (1) 随即由关系式 (2) 得出。
+
+注。--- 设 \((X,e)\) 是霍普夫空间。根据命题 3，道路类的合成映射 \(\pi_{1}(X,e)\times\pi_{1}(X,e)\to\pi_{1}(X,e)\) 是连续的，只要给 \(\pi_{1}(X,e)\) 赋予由 \(\Lambda_{e}(X)\) 上的紧收敛拓扑所诱导的商拓扑。事实上，这就是连续同构 \(\pi_{1}(X,e)\times\pi_{1}(X,e)\to\pi_{1}(X\times X,(e,e))\)（III, 第~298~页，注 3）与连续映射 \(m_{*}:\pi_{1}(X\times X,(e,e))\to\pi_{1}(X,e)\)（III, 第~294~页，注 1）的复合。
+

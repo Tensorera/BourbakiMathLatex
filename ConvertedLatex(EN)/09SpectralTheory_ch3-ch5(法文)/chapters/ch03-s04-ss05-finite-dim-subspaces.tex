@@ -1,0 +1,58 @@
+\subsection{Finite-dimensional vector subspaces of a normed space}
+
+The following statement will be proved in TA, forthcoming, as a corollary of the Borsuk–Ulam theorem.
+
+THEOREM 3. — Let n be a positive integer, V a real normed vector space of dimension \(n + 1\) and W a vector subspace of V of dimension n. Let S be the unit sphere of V. There does not exist a continuous map \(f: S \to W\) such that \(\|f(x) - x\| < 1\) for all \(x \in S\) .
+
+THEOREM 4 (Krein, Krasnoselskii, Milman). — Let E be a normed space, and let F and G be vector subspaces of E. Suppose that the dimension of G is finite and strictly less than that of F. There exists an element of F of norm 1 whose distance to G is equal to 1.
+
+It suffices to treat the case where the field K is equal to R. Let n be the dimension of G. By replacing F by a vector subspace of F of dimension \(n+1\) containing G, one reduces to the case where \(\dim(F)=n+1\) . Argue by contradiction by assuming that the conclusion of the theorem is not satisfied. Let S be the unit sphere of F. For every \(x\in S\) , the distance from x to G is then strictly less than \(\|x\|=1\) and one can choose an element \(y(x)\) of G for which one has \(\|x-y(x)\|<1\) . Denote by \(V_{x}\) the set of elements z of S such that \(\|z-y(x)\|<1\) ; this is an open neighborhood of x in S. There exists a locally finite continuous partition of unity \((\varphi_{x})_{x\in\mathrm{S}}\) on S subordinate to the covering \((\mathrm{V}_{x})_{x\in\mathrm{S}}\) of S (TG, IX, p. 46, prop. 3 and p. 51, prop. 6). Let \(f\colon S\to G\) be the continuous map given by
+
+\[
+f (z) = \sum_ {x \in \mathrm{S}} \varphi_ {x} (z) y (x).
+\]
+
+For all \(z \in S\), we have \(\varphi_x(z) \geqslant 0\) for all \(x \in S\), and there exists \(x \in S\) such that \(\varphi_x(z) > 0\) since \(\sum_{x \in S} \varphi_x(z) = 1\), hence
+
+\[
+\begin{array}{c} \| z - f (z) \| = \left\| \sum_ {x \in \mathrm{S}} \varphi_ {x} (z) (z - y (x)) \right\| \leqslant \sum_ {x \in \mathrm{S}} \varphi_ {x} (z) \| z - y (x) \| \\ <   \sum_ {x \in \mathrm{S}} \varphi_ {x} (z) = 1. \end{array}
+\]
+
+This property of f contradicts Theorem 3.
+
+PROPOSITION 9. — Let E and F be normed spaces, \(n \in N\) and let u be a continuous linear map from E into F whose kernel has dimension n. The conorm of u is equal to the distance d from u to the set of maps \(v \in \mathcal{L}(\mathrm{E};\mathrm{F})\) whose kernel has dimension at least \(n + 1\) .
+
+When \(u = 0\) , we have \(((u)) = +\infty\) and \(\dim(\mathrm{E}) = n\) , whence \(d = +\infty\) . Suppose henceforth that \(u\) is nonzero, and therefore \(((u)) < +\infty\) . Let \(v\) be an element of \(\mathcal{L}(\mathrm{E};\mathrm{F})\) such that \(\| u - v \| < ((u))\) and let us prove that its kernel has dimension \(\leqslant n\) . Let \(x\) be an element of norm 1 of \(\operatorname{Ker}(v)\) and \(y\) be its image in \(\operatorname{E}/\operatorname{Ker}(u)\) . We have (formula (5) of III, p. 61)
+
+\[
+((u)) \| y \| \leqslant \| u (x) \| = \| (u - v) (x) \| \leqslant \| u - v \| <   ((u))
+\]
+
+whence \(\|y\| < 1\) . Now \(\|y\|\) is the distance from x to \(\operatorname{Ker}(u)\) . Theorem 4 then implies that we have \(\dim \operatorname{Ker}(v) \leqslant \dim \operatorname{Ker}(u) = n\) . This proves the inequality \(((u)) \leqslant d\) . The reverse inequality \(d \leqslant ((u))\) follows from the more precise lemma below.
+
+Lemma 3. — Let c be a real number such that \(c > ((u))\) . There exists a continuous linear map \(h: E \to F\) , of rank 1 and of norm \textless{} c such that the kernel of \(u + h\) contains that of u and is of dimension \(n + 1\) .
+
+Denote by \(p\) the canonical mapping of E onto \(\mathrm{E} / \mathrm{Ker}(u)\) . There exists \(a \in \mathrm{E}\) such that \(\| p(a) \| = 1\) and \(\| u(a) \| < c\) (formula (6) of III, p. 61). By the Hahn--Banach theorem (EVT, II, p. 24, cor. 2), there exists a continuous linear form \(f\) on the normed space \(\mathrm{E} / \mathrm{Ker}(u)\) such that \(f(p(a)) = 1\) and \(\| f \| = 1\) . The linear map \(h: x \mapsto -(f \circ p)(x)u(a)\) from E into F is continuous, of rank 1, and we have \(\| h \| \leqslant \| f \| \| p \| \| u(a) \| < c\) . The kernel of the map \(u + h\) contains that of \(u\) and \(a\) ; since \(a \notin \mathrm{Ker}(u)\) , its dimension is at least \(n + 1\) . On the other hand, the linear map \(u\) induces, by passing to subspaces, a linear map from \(\mathrm{Ker}(u + h)\) into \(\mathrm{Im}(h)\) with kernel \(\mathrm{Ker}(u) \cap \mathrm{Ker}(u + h)\) , so that \(\dim(\mathrm{Ker}(u + h)) \leqslant \dim(\mathrm{Ker}(u)) + 1\) . The conclusion follows.
+
+COROLLARY 1. --- Let E and F be normed spaces, and let u, v be nonzero continuous linear maps from E into F whose kernels have the same finite dimension. Then we have
+
+\[
+\left| \left((u)\right) - ((v)) \right| \leqslant \| u - v \|.
+\]
+
+Denote by \(n\) the common dimension of the kernels of \(u\) and \(v\). Let A be the set of continuous linear maps from E to F whose kernel has dimension \(\geqslant n + 1\) . Since \(u \neq 0\) , we have \(\dim(\mathrm{E}) > n\) and the set A contains 0. By Proposition 9, \(((u))\) and \(((v))\) are respectively the distances from \(u\) and \(v\) to the set A in \(\mathcal{L}(\mathrm{E};\mathrm{F})\). It then suffices to apply the formula \(|d(u,\mathrm{A}) - d(v,\mathrm{A})| \leqslant \|u - v\|\) (cf. TG, IX, p. 13).
+
+COROLLARY 2. --- Let E and F be Banach spaces, and let u and v be nonzero continuous linear maps from E into F whose images have the same finite codimension in F. Then one has
+
+\[
+| ((u)) - ((v)) | \leqslant \| u - v \|.
+\]
+
+The morphism u is strict (III, p. 52, lemma 6). The kernel of the continuous linear map \({}^{t}u\) is the orthogonal \((\mathrm{Im}(u))^{\circ}\) of \(\mathrm{Im}(u)\) (EVT, IV, p. 27, prop. 2), hence \(\dim(\mathrm{Ker}({}^{t}u)) = \mathrm{codim}_{\mathrm{F}}(\mathrm{Im}(u))\) , and similarly \(\dim(\mathrm{Ker}({}^{t}v)) = \mathrm{codim}_{\mathrm{F}}(\mathrm{Im}(v))\) . The kernels of \({}^{t}u\) and \({}^{t}v\) therefore have the same finite dimension. Since
+
+\[
+\| ^ {t} u - ^ {t} v \| = \| u - v \|, \quad ((^ {t} u)) = ((u)), \quad ((^ {t} v)) = ((v))
+\]
+
+(EVT, IV, p. 7, prop. 8 and prop. 8 of III, p. 63), the assertion follows from corollary 1, applied to \(^{t}u\) and \(^{t}v\) .
+

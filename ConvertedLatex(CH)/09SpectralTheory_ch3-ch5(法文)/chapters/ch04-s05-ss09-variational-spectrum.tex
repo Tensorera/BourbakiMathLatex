@@ -1,0 +1,219 @@
+\subsection{正算子谱的变分原理}
+
+本条中，E 是一个非零复希尔伯特空间。
+
+命题 15. --- 设 u 是 E 上的自伴部分算子。假设 u 以 \(c \in \mathbf{R}\) 为下界（IV，第 237 页定义 7）。有
+
+\[
+\inf (\mathrm{Sp} (u)) = \inf _ {x \in \mathrm{dom} (u) - \{0 \}} \frac {\langle x \mid u (x) \rangle}{\| x \| ^ {2}} \in [ c, + \infty [.
+\]
+
+令 m 为待证等式的右端。设 \(x \in E\)，并令 \(\mu_{x}\) 为 x 关于 u 的谱测度。则有
+
+\[
+\begin{array}{r l} \langle x \mid u (x) \rangle & = \int_ {\mathrm{Sp} (u)} t d \mu_ {x} (t) \\ & \geqslant \inf (\mathrm{Sp} (u)) \int_ {\mathrm{Sp} (u)} d \mu_ {x} (t) = \inf (\mathrm{Sp} (u)) \| x \| ^ {2}, \end{array}
+\]
+
+（公式 (6)，第 271 页），故 \(\inf(\mathrm{Sp}(u)) \leqslant m\)。反之，部分算子 \(u - m\) 是正的，因此 \(\inf(\mathrm{Sp}(u)) - m = \inf(\mathrm{Sp}(u - m \cdot 1_{\mathrm{E}})) \geqslant 0\)（IV，第 248 页命题 17）。
+
+I 第 139 页的命题 9 对应于本命题在 u 是 \(\mathcal{L}(\mathrm{E})\) 的埃尔米特元素时的特殊情形，此时 u 必然下有界。在此情形下，我们还有
+
+\[
+\sup (\operatorname{Sp} (u)) = \sup _ {x \in \operatorname{dom} (u) - \{0 \}} \frac {\langle x \mid u (x) \rangle}{\| x \| ^ {2}}
+\]
+
+（同上）；若 u 不属于 \(\mathcal{L}(\mathrm{E})\)，则此上确界为 \(+\infty\)。
+
+定义 10. --- 设 u 是 E 上的正规部分算子。若复数 \(\lambda \in \mathrm{Sp}(u)\) 属于 \(u\) 的敏感谱，当且仅当 \(\lambda\) 是 \(\mathrm{Sp}(u)\) 的孤立点且 \(\lambda\) 是有限重数的特征值。
+
+记 \(\mathrm{Sp}_{\mathrm{s}}(u)\) 为 u 的敏感谱。它在 \(\mathrm{Sp}(u)\) 中的补集称为 u 的本质谱，记作 \(\mathrm{Sp}_{\mathrm{e}}(u)\)。
+
+E 上正规部分算子 u 的本质谱在 C 中是闭的，因为 \(\mathrm{Sp}(u)\) 在 C 中是闭的，而本质谱的补集在 \(\mathrm{Sp}(u)\) 中是开的。u 的敏感谱不一定在 C 中闭（IV，第 369 页习题 36）。
+
+引理 9. --- 设 E 是复希尔伯特空间，u 是 E 上的正规部分算子。设 \(\lambda \in \mathrm{Sp}(u)\)。有 \(\lambda \in \mathrm{Sp}_{\mathrm{s}}(u)\) 当且仅当存在 C 中 \(\lambda\) 的一个开邻域 V，使得由 V 定义的 u 的谱投影 \(p_{\mathrm{V}}\) 具有有限秩。
+
+设 \(\lambda \in \mathrm{Sp}_{\mathrm{s}}(u)\)。存在一个开邻域 \(V\)，它是 \(\lambda\) 在 \(\mathbf{C}\) 中的开邻域，使得 \(\mathrm{Sp}(u) \cap V = \{\lambda\}\)；于是谱投影 \(p_V = p_{\{\lambda\}}\) 具有有限秩（IV，第 278 页命题 9 的推论）。
+
+反之，假设存在 \(\lambda\) 的一个开邻域 V，使得谱投影 \(p_{V}\) 具有有限秩 \(n \in N\)。根据 IV 第 279 页命题 10 的推论，交集 \(V \cap \mathrm{Sp}(u)\) 至多含有 n 个元素，因而 \(\lambda\) 是 \(\mathrm{Sp}(u)\) 的孤立点。因此，根据 IV 第 278 页命题 9 的推论，它是 u 的一个谱重数至多为 n 的特征值。
+
+在本条的其余部分，我们假设 E 是无限维的；当 E 有限维时，下面结果的类似结论由 IV 第 153 页第 4 号推出。
+
+设 u 是 E 上下有界的自伴算子。令 c 为 u 的一个下界；u 的谱包含于 \([c, +\infty[\)（命题 15）。假设 u 的本质谱非空。记 \(\varrho_{e}\) 为 u 的本质谱的下界，于是 \(\varrho_{e} \geqslant c\)，且 \(\varrho_{e}\) 是算子 \(u\) 的谱中的一个元素。记 \(\mathrm{Sp}_{\mathrm{h}}(u) = \mathrm{Sp}(u) \cap [\varrho_{\mathrm{e}}, +\infty[\)；它是 \(\mathrm{Sp}(u)\) 的闭子集，因而也是 \(\mathbf{C}\) 的闭子集，并满足 \(\inf (\mathrm{Sp}_{\mathrm{h}}(u)) = \varrho_{\mathrm{e}}\)；称其为算子 \(u\) 的谱的上端。若算子 \(u\) 的本质谱为空，则记 \(\mathrm{Sp}_{\mathrm{h}}(u) = \varnothing\) 且 \(\varrho_{\mathrm{e}} = +\infty\)。
+
+交集 \(\mathrm{Sp}_{\mathrm{b}}(u) = \mathrm{Sp}(u) \cap [0, \varrho_{\mathrm{e}}[\) 包含于算子 \(u\) 的敏感谱中，因而其元素都是有限重数的孤立特征值；称其为算子 \(u\) 的谱的下端。令 \(\mathrm{E}_{\mathrm{b}}\) 为由对应于特征值 \(\lambda \in \mathrm{Sp}_{\mathrm{b}}(u)\) 的特征空间生成的 E 的闭子空间。根据 IV 第 278 页命题 9 的推论和第 278 页命题 8，空间 \(\mathrm{E}_{\mathrm{b}}\) 是谱投影 \(p_{\mathrm{Sp}_{\mathrm{b}}(u)}\)（由 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 定义）的像。由于 \(\mathrm{Sp}(u)\) 是 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 与 \(\mathrm{Sp}_{\mathrm{h}}(u)\) 的不交并，\(\mathrm{E}_{\mathrm{h}}\) 是 \(\mathrm{E}_{\mathrm{b}}\) 的正交补，也是谱投影 \(p_{\mathrm{Sp}_{\mathrm{h}}(u)}\)（由 \(\mathrm{Sp}_{\mathrm{h}}(u)\) 定义）的像。若 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 有限，则空间 \(\mathrm{E}_{\mathrm{b}}\) 是有限维的；由于假设 E 是无限维的，此时空间 \(\mathrm{E}_{\mathrm{h}}\) 非零。
+
+引理 10. --- 有
+
+\[
+\langle x \mid u (x) \rangle \geqslant \varrho_ {\mathrm{e}} \| x \| ^ {2}.\tag{18}
+\]
+
+对所有 \(x \in \mathrm{E}_{\mathrm{h}} \cap \operatorname{dom}(u)\)。
+
+若 \(x \in \mathrm{E}_{\mathrm{h}} \cap \mathrm{dom}(u)\)，则 x 的谱测度 \(\mu_{x}\)（即 \(x\) 关于 \(u\) 的谱测度）的支撑包含于区间 \([\varrho_{\mathrm{e}}, +\infty[\)（IV 第 278 页命题 9 \(a\)），故
+
+\[
+\langle x \mid u (x) \rangle = \int_ {\mathbf {R}} t d \mu_ {x} (t) \geqslant \varrho_ {\mathrm{e}} \| x \| ^ {2}.
+\]
+
+引理 11. --- 假设 \(E_{b}\) 是有限维的。则对每个实数 \(\varepsilon > 0\)，由区间 \([\varrho_{e}, \varrho_{e} + \varepsilon]\) 定义的 u 的谱投影的像都是无限维的。
+
+若 \(E_{b}\) 是有限维的，则 u 的本质谱非空，从而 \(\varrho_{e}\) 有限且属于 \(\mathrm{Sp}_{\mathrm{e}}(u)\)。此外，下谱 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 有限，故存在 \(\delta > 0\)，使得 \([\varrho_{e} - \delta, \varrho_{e} + \delta] \cap \mathrm{Sp}(u) \subset [\varrho_{e}, \varrho_{e} + \delta]\)。断言于是由引理 9 得出。
+
+命题 16. --- 集合 \(\mathrm{Sp}_{\mathrm{b}}(u) \subset [c, \varrho_{\mathrm{e}}[\) 是可数的、离散的，并且在 \([0, \varrho_{\mathrm{e}}[\) 中闭。它是正实数严格递增序列 \((\nu_{k})_{0 \leqslant k < \mathrm{Card}(\mathrm{Sp}_{\mathrm{b}}(u))}\) 的值集；若 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 无限，则序列 \((\nu_{k})\) 收敛到 \(\varrho_{\mathrm{e}}\)。
+
+令 \(\mathrm{T} = \mathrm{Sp}_{\mathrm{b}}(u) \cap [0, \varrho_{\mathrm{e}}[\)。按定义，它是 \([c, \varrho_{\mathrm{e}}[\) 的闭离散子集。对每个整数 \(i \geqslant 1\)，集合 \(\mathrm{Sp}_{\mathrm{b}}(u) \cap [c, \varrho_{\mathrm{e}} - 1/i]\) 是紧的且离散的，因而是有限的。由于 T 是这些集合（\(i \geqslant 1\)）的并，集合 T 是可数的。
+
+若 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 有限，证明即告完成。若 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 无限，则将 III 第 90 页引理 2 应用于 T 在映射 \(\lambda \mapsto \varrho_{e} - \lambda\) 下的像 S，即可得出结论。
+
+对每个整数 \(k\)，满足 \(0 \leqslant k < \text{Card}(\text{Sp}_b(u))\)，记 \(n_k \geqslant 1\) 为 u 的特征值 \(\nu_k\)（算子 \(u\)）的重数。记 \(\overline{\mathbf{N}} = \mathbf{N} \cup \{+\infty\} \subset \overline{\mathbf{R}}\)。令 \(\mathbf{M} \in \overline{\mathbf{N}}\) 为重数 \(n_k\) 之和。这是 \(\mathbf{E}_b\) 的希尔伯特维数；若约定无限希尔伯特维数的空间的维数为 \(+\infty \in \overline{\mathbf{N}}\)，则上述说法成立。
+
+对满足 \(0 \leqslant n < M\) 的每个整数 n，定义 \(\lambda_{n}(u) = \nu_{k}\)，其中 \(k \geqslant 0\) 是满足下式的唯一整数：
+
+\[
+n _ {0} + \dots + n _ {k - 1} \leqslant n <   n _ {0} + \dots + n _ {k}.
+\]
+
+若 \(n \in \mathbf{N}\) 满足 \(n \geqslant \mathrm{M}\)，则置 \(\lambda_n(u) = \varrho_{\mathrm{e}}\)。此情形只会在 \(\mathrm{Sp}_{\mathrm{b}}(u)\) 有限时发生；由于假设 E 是无限维的，此时 \(\varrho_{\mathrm{e}}\) 有限。
+
+按构造，序列 \((\lambda_{n}(u))_{n\in\mathbf{N}}\) 是递增的；对每个元素 \(\lambda\)（属于 \(\mathrm{Sp}_{\mathrm{b}}(u)\)），满足 \(\lambda_{n}(u)=\lambda\) 的整数 n 的个数等于 \(\lambda\) 作为 u 的特征值的重数。当且仅当 u 的本质谱为空时，序列 \((\lambda_{n}(u))_{n\in\mathbf{N}}\) 趋于 \(+\infty\)。
+
+对每个 \(n \in N\)，记 \(F_{n}\)（分别为 \(F_{n}^{u}\)）为所有维数为 n 的向量子空间 \(F \subset E\) 的集合（分别为所有维数为 n 的向量子空间 \(F \subset \text{dom}(u)\) 的集合）。
+
+设 \(n \in \mathbf{N}\) 满足 \(n < \mathrm{M}\)，且 \(\mathrm{F} \in \mathcal{F}_n^u\)。称 \(\mathrm{F}\) 适应于 \(u\)，如果 \(\mathrm{F}\) 有一个标准正交基 \((f_i)_{0 \leqslant i \leqslant n-1}\)，满足 \(u(f_i) = \lambda_i(u)f_i\)（\(0 \leqslant i \leqslant n-1\)）。
+
+设 \(F \in F_{n}^{u}\) 适应于 u。空间 F 包含于 \(E_{b}\)；它由对应于满足 \(\lambda \leqslant \lambda_{n-1}(u)\) 的特征值的 u 的特征向量生成，并包含对应于满足 \(\lambda < \lambda_{n-1}(u)\) 的特征值的特征空间。此外，对 \(\mathrm{Sp}(u)\) 的每个普遍可测子集 A，空间 F 在由 A 定义的谱投影 \(p_{A}\) 下稳定（IV，第 278 页命题 9，c）。
+
+引理 12. --- 设 \(F \in F_{n}^{u}\) 是适应于 u 的子空间。属于空间 \(F^{\circ} \cap E_{b}\) 的 u 的每个特征向量，其特征值都 \(\geqslant \lambda_{n}(u)\)。
+
+令 \(\ell\) 满足 \(\lambda_{n-1}(u) = \nu_{\ell}\)。设 \(x \in \mathrm{F}^{\circ} \cap \mathrm{E}_{\mathrm{b}}\) 是 \(u\) 关于特征值 \(\lambda\) 的一个特征向量，并令 \(k < \operatorname{Card}(\operatorname{Sp}_{\mathrm{b}}(u))\) 满足 \(\lambda = \nu_{k}\)。
+
+不可能有 \(k < \ell\)，因为 \(\nu_k < \nu_\ell\)，此时空间 F 将包含特征值 \(\nu_k\) 对应的特征空间，这与 \(x\) 正交于 F 矛盾。若 \(k = \ell\)，则 \(x\) 是特征值 \(\lambda_{n-1}(u)\) 的特征向量；由于 \(x \in \mathrm{F}^\circ\)，重数 \(n_k\) 严格大于满足 \(i < n\) 且 \(\lambda_i(u) = \nu_k\) 的整数 i 的个数，从而 \(\lambda_n(u) = \lambda_{n-1}(u)\)。最后，若 \(k > \ell\)，则 \(\lambda = \nu_k > \nu_\ell = \lambda_{n-1}(u)\)，故 \(\lambda \geqslant \lambda_n(u)\)。
+
+对 E 的每个子空间 F，记
+
+\[
+\widetilde{r}_{\mathrm{F}}(u) = \inf_{\substack{x\in \operatorname{dom}(u)\cap \mathrm{F}^{\circ}\\ x\neq 0}}\frac{\langle x\mid u(x)\rangle}{\|x\|^{2}},
+\]
+
+\[
+\widetilde{\mathrm{R}}_{\mathrm{F}}(u) = \sup_{\substack{x\in \operatorname{dom}(u)\cap \mathrm{F}\\ x\neq 0}}\frac{\langle x\mid u(x)\rangle}{\|x\|^ {2}}.
+\]
+
+命题 17. --- a) 对每个整数 \(n \in \mathbf{N}\)，有
+
+\[
+\lambda_ {n} (u) = \sup _ {\mathrm{F} \in \mathcal {F} _ {n}} \widetilde {r} _ {\mathrm{F}} (u) = \inf _ {\mathrm{F} \in \mathcal {F} _ {n + 1} ^ {u}} \widetilde {\mathrm{R}} _ {\mathrm{F}} (u);
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  对每个整数 \(n < \mathrm{M}\)，以及每个子空间 \(\mathrm{F} \in \mathcal{F}_n^u\)，若其适应于 \(u\)，则有 \(\lambda_n(u) = \widetilde{r}_{\mathrm{F}}(u)\)；
+\item
+  对每个整数 \(n < \mathrm{M}\)，以及每个子空间 \(\mathrm{F} \in \mathcal{F}_{n+1}^{u}\)，若其适应于 \(u\)，则有 \(\lambda_{n}(u) = \widetilde{\mathrm{R}}_{\mathrm{F}}(u)\)。
+\end{enumerate}
+
+存在一个标准正交基 \((e_{n})_{0\leqslant n<M}\)，它是空间 \(E_{b}\) 的基，使得 \(e_{n}\in\operatorname{dom}(u)\)，且 \(u(e_{n})=\lambda_{n}(u)e_{n}\) 对每个满足 \(0\leqslant n<M\) 的 n 都成立。因此，对每个 \(x\in E_{b}\cap\operatorname{dom}(u)\)，有
+
+\[
+\langle x \mid u (x) \rangle = \sum_ {0 \leqslant n <   M} \lambda_ {n} (u) | \langle e _ {n} \mid x \rangle | ^ {2}.
+\]
+
+ 对每个整数 \(n\)，满足 \(1 \leqslant n < M + 1\)，令 \(F_n\) 为维数为 \(n\) 的 \(E_b\) 中由 \((e_0, \ldots, e_{n-1})\) 生成的子空间。我们有 \(F_n \subset \text{dom}(u)\)，且 \(F_n\) 适应于 \(u\)。
+
+设 \(n \in \mathbf{N}\) 且 \(\mathrm{F} \in \mathcal{F}_n\)。我们来证明 \(\widetilde{r}_{\mathrm{F}}(u) \leqslant \lambda_n(u)\)，从而有
+
+\[
+\sup _ {\mathrm{F} \in \mathcal {F} _ {n}} \widetilde {r} _ {\mathrm{F}} (u) \leqslant \lambda_ {n} (u).\tag{19}
+\]
+
+若 \(0 \leqslant n < M\)，特别是当 M 无限时，E 到 F 的正交投影在 \(\mathrm{F}_{n+1}\) 上的限制不是单射，故存在向量 \(x \neq 0\)，属于 \(F_{n+1}\) 且与 F 正交。由于
+
+\[
+\langle x \mid u (x) \rangle = \sum_ {0 \leqslant i \leqslant n} \lambda_ {i} (u) | \langle e _ {i} \mid x \rangle | ^ {2} = \lambda_ {n} (u) | \langle e _ {n} \mid x \rangle | ^ {2} \leqslant \lambda_ {n} (u) \| x \| ^ {2},
+\]
+
+我们有 \(\widetilde{r}_{\mathrm{F}}(u) \leqslant \lambda_n(u)\)。
+
+若 \(M \in N\) 且 \(n \geqslant M\)，则对每个实数 \(\varepsilon > 0\)，存在 \(\text{dom}(u)\) 中范数为 1、与 F 正交的 x，使其谱测度 \(\mu_{x}\) 的支撑包含于 \([\varrho_{e}, \varrho_{e} + \varepsilon]\)（IV 第 278 页引理 11 和命题 9，a），于是
+
+\[
+\widetilde {r} _ {\mathrm{F}} (u) \leqslant \langle x \mid u (x) \rangle = \int_ {\operatorname{Sp} (u)} t d \mu_ {x} (t) \leqslant \varrho_ {\mathrm{e}} + \varepsilon = \lambda_ {n} (u) + \varepsilon
+\]
+
+按定义。由于 \(\varepsilon > 0\) 任意，因而 \(\widetilde{r}_{\mathrm{F}}(u) \leqslant \lambda_n(u)\)。不等式 (19) 得证。
+
+设 \(n \in \mathbf{N}\) 且 \(\mathrm{F} \in \mathcal{F}_{n+1}^{u}\)。我们来证明 \(\widetilde{\mathrm{R}}_{\mathrm{F}}(u) \geqslant \lambda_{n}(u)\)，从而有
+
+\[
+\inf _ {\mathrm{F} \in \mathcal {F} _ {n + 1} ^ {u}} \widetilde {\mathrm{R}} _ {\mathrm{F}} (u) \geqslant \lambda_ {n} (u).\tag{20}
+\]
+
+若 \(0 \leqslant n < M\)，注意到正交投影到 \(\mathrm{F}_n\) 在 F 上的限制不是单射，故存在向量 \(x \neq 0\)，属于 F 且与 \(\mathrm{F}_n\) 正交。置 \(x_{\mathrm{b}} = p_{\mathrm{Sp}_{\mathrm{b}}(u)}(x)\) 且 \(x_{\mathrm{h}} = p_{\mathrm{Sp}_{\mathrm{h}}(u)}(x)\)。于是 \(x = x_{\mathrm{b}} + x_{\mathrm{h}}\)。元素 \(x_{\mathrm{b}}\) 和 \(x_{\mathrm{h}}\) 属于 \(u\) 的定义域（IV 第 278 页命题 9，c），并且都与 \(\mathrm{F}_n\) 正交。我们有下界
+
+\[
+\langle x _ {\mathrm{b}} \mid u (x _ {\mathrm{b}}) \rangle = \sum_ {i \geqslant n} \lambda_ {i} (u) | \langle e _ {i} \mid x _ {\mathrm{b}} \rangle | ^ {2} \geqslant \lambda_ {n} (u) \| x _ {\mathrm{b}} \| ^ {2},
+\]
+
+且 \(\langle x_{\mathrm{h}}|u(x_{\mathrm{h}})\rangle \geqslant \varrho_{\mathrm{e}}\| x_{\mathrm{h}}\|^2\)（公式 (18)），于是
+
+\[
+\begin{array}{r l} & {\langle x \mid u (x) \rangle = \langle x _ {\mathrm{b}} \mid u (x _ {\mathrm{b}}) \rangle + \langle x _ {\mathrm{h}} \mid u (x _ {\mathrm{h}}) \rangle} \\ & {\qquad \geqslant \lambda_ {n} (u) \| x _ {\mathrm{b}} \| ^ {2} + \varrho_ {\mathrm{e}} \| x _ {\mathrm{h}} \| ^ {2} \geqslant \lambda_ {n} (u) \| x \| ^ {2}.} \end{array}
+\]
+
+若 M 有限且 \(n \geqslant M\)，则存在 F 中的 \(x \neq 0\)，与 \(E_{b}\) 正交，从而 \(x \in E_{h}\)，并且
+
+\[
+\langle x \mid u (x) \rangle \geqslant \varrho_ {\mathrm{e}} \| x \| ^ {2} = \lambda_ {n} (u) \| x \| ^ {2}
+\]
+
+由 (18) 可知。不等式 (20) 得证。
+
+现在证明断言 \(b\)）和 \(c\)），它们说明当 \(n < M\) 时不等式 (19) 和 (20) 都是等式。
+
+证明断言 \(b\)。设 \(\mathrm{F} \in \mathcal{F}_n^u\) 是适应于 \(u\) 的空间。我们有希尔伯特直和
+
+\[
+\mathrm{F}^{\circ} = \mathrm{E}_{\mathrm{h}}\oplus \bigoplus_{\substack{\lambda \in \operatorname{Sp}_{\mathrm{b}}(u)\\ \lambda >\lambda_{n - 1}(u)}}\operatorname{Ker}(u - \lambda \cdot 1_{\mathrm{E}})\oplus (\mathrm{F}^{\circ}\cap \operatorname{Ker}(u - \lambda_{n - 1}(u)\cdot 1_{\mathrm{E}})).
+\]
+
+设 \(x \in \mathrm{F}^{\circ} - \{0\}\)。写成 \(x = x_{\mathrm{h}} + y + z\)，其中 \(x_{\mathrm{h}} \in \mathrm{E}_{\mathrm{h}}\)，而 \(y\)（分别为 \(z\)）属于上述分解中的第二（分别为第三）个空间。再次利用 (18) 以及每个满足 \(\lambda > \lambda_{n-1}(u)\) 的特征值（关于算子 \(u\)）都 \(\geqslant \lambda_n(u)\) 这一事实，得到
+
+\[
+\begin{array}{r l} & {\langle x \mid u (x) \rangle = \langle x _ {\mathrm{h}} \mid u (x _ {\mathrm{h}}) \rangle + \langle y \mid u (y) \rangle + \langle z \mid u (z) \rangle} \\ & {\qquad \geqslant \varrho_ {\mathrm{e}} \| x _ {\mathrm{h}} \| ^ {2} + \lambda_ {n} (u) \| y \| ^ {2} + \lambda_ {n - 1} (u) \| z \| ^ {2}.} \end{array}
+\]
+
+若 \(z \neq 0\)，则由引理 12 有 \(\lambda_n(u) = \lambda_{n-1}(u)\)。因此得到 \(\langle x | u(x) \rangle \geqslant \lambda_n(u) \| x \|^2\)，从而 \(\widetilde{r}_{\mathrm{F}}(u) \geqslant \lambda_n(u)\)。结合 (19)，这就证明了断言 \(b\)）。
+
+证明断言 \(c\)。设 \(\mathrm{F} \in \mathcal{F}_{n+1}^{u}\) 是适应于 \(u\) 的子空间。设 \((f_{i})_{0 \leqslant i \leqslant n}\) 是 \(\mathrm{F}\) 的一个标准正交基，满足 \(u(f_{i}) = \lambda_{i}(u)f_{i}\)（\(0 \leqslant i \leqslant n\)）。对每个 \(x \in \mathrm{F}\)，有
+
+\[
+\langle x \mid u (x) \rangle = \sum_ {0 \leqslant i \leqslant n} \lambda_ {i} (u) | \langle f _ {i} \mid x \rangle | ^ {2} \leqslant \lambda_ {n} (u) \| x \| ^ {2},
+\]
+
+当 \(x = f_{n}\) 时取等号，故 \(\widetilde{\mathrm{R}}_{\mathrm{F}}(u) = \lambda_{n}(u)\)。
+
+最后证明当 \(n \geqslant M\) 时 (19) 和 (20) 是等式。在此情形下，M 有限，故 \(E_{b}\) 包含于 u 的定义域；此外，按定义有 \(\lambda_{n}(u) = \varrho_{\mathrm{e}}\)。
+
+ 存在 \(F \in F_{n}\)，包含 \(E_{b}\)。因此，每个元素 \(x \neq 0\)（属于 \(\text{dom}(u)\) 且与 F 正交）都与 \(E_{b}\) 正交，并满足
+
+\[
+\frac {\langle x \mid u (x) \rangle}{\| x \| ^ {2}} \geqslant \varrho_ {\mathrm{e}}
+\]
+
+（公式 (18)），故 \(\widetilde{r}_{\mathrm{F}}(u) \geqslant \varrho_{\mathrm{e}} = \lambda_n(u)\)，从而
+
+\[
+\sup _ {\mathrm{F} \in \mathcal {F} _ {n}} \widetilde {r} _ {\mathrm{F}} (u) \geqslant \lambda_ {n} (u).
+\]
+
+令 \(\varepsilon > 0\)。由于 \(\mathrm{E_b}\) 有限维，根据引理 11，存在 E 中的标准正交族 \((x_i)_{i \in \mathrm{I}}\)，使得由 \(\mathrm{E_b}\) 和 \((x_i)_{i \in \mathrm{I}}\) 生成的子空间 F 具有维数 \(n + 1\)，包含于 \(\operatorname{dom}(u)\)，并且满足 \(\langle x_{i} \mid u(x_{i})\rangle \leqslant \varrho_{\mathrm{e}} + \varepsilon\)（对所有 \(i \in I\)）。于是 \(\widetilde{\mathrm{R}}_{\mathrm{F}}(u) \leqslant \varrho_{\mathrm{e}} + \varepsilon\)。由于 \(\varepsilon > 0\) 任意，我们得到
+
+\[
+\inf _ {\mathrm{F} \in \mathcal {F} _ {n + 1} ^ {u}} \widetilde {\mathrm{R}} _ {\mathrm{F}} (u) \leqslant \varrho_ {\mathrm{e}} = \lambda_ {n} (u).
+\]
+
+命题得证。
+

@@ -1,0 +1,54 @@
+\subsection{关于向量测度的积分}
+
+设 \(\mathbf{m}\) 是 \(T\) 上取值于 \(F\) 的向量测度。对每个 \(\mathbf{z}' \in F'\) ，映射 \(\mathbf{z}' \circ \mathbf{m}\) 是 \(T\) 上的标量测度，且线性地依赖于 \(\mathbf{z}'\) 。若 \(f\) 是定义在 \(T\) 上的数值函数，我们约定（滥用语言）说偶 \((f, \mathbf{m})\) 具有性质 \(\boldsymbol{P}\) ，如果对每个 \(\mathbf{z}' \in F'\) ，偶 \((f, |\mathbf{z}' \circ \mathbf{m}|)\) 具有性质 \(\boldsymbol{P}\) 。例如，我们说 \(f\) 关于 \(\mathbf{m}\) 本质可积，意思是对每个 \(\mathbf{z}' \in F'\) ，函数 \(f\) 关于 \(|\mathbf{z}' \circ \mathbf{m}|\) 本质可积。这等价于说 \(f\) 关于测度 \((\mathbf{z}' \circ \mathbf{m})^+\) 与 \((\mathbf{z}' \circ \mathbf{m})^-\) 中的每一个都本质可积（Ch. V, §2, No. 2, 命题 3 的推论 2）。
+
+命题 1. --- 设 m 是 T 上取值于 F 的向量测度， f 是 T 上的数值函数，关于 m 本质可积。映射
+
+\[
+\mathbf {z} ^ {\prime} \mapsto \int f d (\mathbf {z} ^ {\prime} \circ \mathbf {m}) ^ {+} - \int f d (\mathbf {z} ^ {\prime} \circ \mathbf {m}) ^ {-}
+\]
+
+是 \(\mathbf{F}'\) 上的线性形式。
+
+用 \(\Phi\) 记这一映射，立即有 \(\Phi(\lambda\mathbf{z}') = \lambda\Phi(\mathbf{z}')\) （对一切 \(\lambda \in \mathbf{R}\) ）。一切归结为证明 \(\Phi(\mathbf{y}' + \mathbf{z}') = \Phi(\mathbf{y}') + \Phi(\mathbf{z}')\) 。令 \(\mu = |\mathbf{y}' \circ \mathbf{m}| + |\mathbf{z}' \circ \mathbf{m}|\) ；由 Lebesgue-Nikodym 定理，这时可以写 \(\mathbf{y}' \circ \mathbf{m} = g \cdot \mu\) 与 \(\mathbf{z}' \circ \mathbf{m} = h \cdot \mu\) ，其中 \(g\) 与 \(h\) 是两个有界且局部 \(\mu\)-可积的数值函数（Ch. V, §5, No. 5, 定理 2）；此外， \((\mathbf{y}' \circ \mathbf{m})^+ = g^+ \cdot \mu\) 与 \((\mathbf{y}' \circ \mathbf{m})^- = g^- \cdot \mu\) ，并且当把 \(\mathbf{y}'\) 换成 \(\mathbf{z}'\) （相应地， \(\mathbf{y}' + \mathbf{z}'\) ）、把 \(g\) 换成 \(h\) （相应地， \(g + h\) ）时，类似的关系式成立。在此条件下，立即看出 \(f\) 本质 \(\mu\)-可积（Ch. V, §2, No. 2, 命题 3 的推论 1），而要证明的关系式归结为 \((g + h)^+ - (g + h)^- = (g^+ - g^-) + (h^+ - h^-)\) ，这是显然的。
+
+定义 2. --- 设 m 是 T 上取值于 F 的向量测度， f 是 T 上的数值函数，关于 m 本质可积。把 f 关于 m 的积分（记作 \(\mathbf{m}(f)\) 或 \(\int f dm\) 或 \(\int f(t) dm(t)\) ）定义为 \(F'^{*}\) 中由下式给出的元素：
+
+\[
+\left\langle \mathbf {z} ^ {\prime}, \int f d \mathbf {m} \right\rangle = \int f d (\mathbf {z} ^ {\prime} \circ \mathbf {m}) ^ {+} - \int f d (\mathbf {z} ^ {\prime} \circ \mathbf {m}) ^ {-}.\tag{1}
+\]
+
+我们注意到，若 \(f \in \mathcal{K}(T)\) ，则如此定义的元素 \(\int f dm\) 与第 1 目中同样记号的元素一致，因为这时 (1) 的右端按定义就是 \(\int f d(\mathbf{z}' \circ \mathbf{m}) = \mathbf{z}'(\mathbf{m}(f))\) 。此外，若特别把定义 2 应用于 F = R 的情形，则可以看出，对每个 \(z' \in F'\) ， \(f\) 关于实测度 \(\mathbf{z}' \circ \mathbf{m}\) 本质可积，且 (1) 的右端可以写成 \(\int f d(\mathbf{z}' \circ \mathbf{m})\) 。
+
+现在设 \(f\) 关于 \(\mathbf{m}\) 本质可积，并令 \(\mathbf{z}' \in \mathbf{F}'\) 。令 \(\mu = |\mathbf{z}' \circ \mathbf{m}|\) ；由 Lebesgue-Nikodym 定理，可以写 \(\mathbf{z}' \circ \mathbf{m} = g \cdot \mu\) ，其中 \(g\) 局部 \(\mu\)-可积且 \(\| g \| \leqslant 1\) ，而命题 1 的证明表明 \(\int f d(\mathbf{z}' \circ \mathbf{m}) = \int fg d\mu\) 。由此，
+
+\[
+\left| \int f d (\mathbf {z} ^ {\prime} \circ \mathbf {m}) \right| \leqslant \int | f | d | \mathbf {z} ^ {\prime} \circ \mathbf {m} |.\tag{2}
+\]
+
+显然，关于 m 本质可积的有限数值函数所成之集是 R 上的向量空间；我们把这个空间记作 \(\mathcal{L}(\mathbf{m})\) ，赋以使所有线性形式 \(f \mapsto \int f d(\mathbf{z}' \circ \mathbf{m})\) （其中 \(z'\) 跑遍 \(F'\) ）都连续的最粗局部凸拓扑。注意，一般说来局部凸空间 \(\mathcal{L}(\mathbf{m})\) 不是 Hausdorff 的。
+
+例. --- 取 m 为 \(\mathcal{H}(\mathrm{T})\) 到自身的恒等映射。由于 \(\mathcal{H}(\mathrm{T})\) 的对偶是 T 上标量测度所成的空间 \(\mathcal{M}(\mathrm{T})\) ，故函数 \(f \in \mathcal{L}(\mathbf{m})\) 就是那些关于每个标量测度 \(\mu\) 都本质可积的函数（参见习题 1），而积分 \(\int f dm\) 是线性形式 \(\mu \mapsto \int f d\mu\) （ \(\mathcal{M}(\mathrm{T})\) 上的）。关系式 \(\int f d\mu = 0\) （对每个测度 \(\mu \in \mathcal{M}(\mathrm{T})\) ）仅当 \(f = 0\) 时成立，取 \(\mu = \varepsilon_t\) （其中 \(t\) 是 T 中任意的）即可看出；换言之，映射 \(f \mapsto \int f dm\) 是 \(\mathcal{L}(\mathbf{m})\) 到 \(\mathcal{M}(\mathrm{T})\) 的代数对偶中的单射，它延拓了 \(\mathcal{H}(\mathrm{T})\) 的恒等映射。因此，关系式 \(\int f dm \in \mathrm{F} = \mathcal{H}(\mathrm{T})\) 等价于 \(f \in \mathcal{H}(\mathrm{T})\) 。
+
+设 \(u\) 是 \(F\) 到 Hausdorff 局部凸空间 \(G\) 中的连续线性映射，我们仍用 \(u\) 表示它的经双重转置的延拓（ \(F'^*\) 到 \(G'^*\) 中的线性映射）（§1, No. 1）。在此约定下：
+
+命题 2. --- 每个数值函数 \(f\) （关于 \(\mathbf{m}\) 本质可积的）都关于 \(u \circ \mathbf{m}\) 本质可积，且 \(\int f d(u \circ \mathbf{m}) = u\left(\int f dm\right)\) 。
+
+鉴于等式 \(y'\circ u\circ m = {}^{t}u(y')\circ m\) （对一切 \(y \in G'\) ），命题是显然的。
+
+一般地，若 \(f \in \mathcal{L}(\mathbf{m})\) ，积分 \(\int f dm\) 属于 \(\mathbf{F}'*\) 而不属于 \(\mathbf{F}\) （见上面的例）。然而：
+
+命题 3. --- 若由 \(f \in \mathcal{K}(\mathbf{T})\) （满足 \(\sup_{t \in \mathbf{T}} |f(t)| \leqslant 1\) 者）所成之集在 m 下的像在 F 中相对弱紧，则 \(\int f dm \in \mathbf{F}\) （对每个有界的、关于 m 本质可积的数值函数 \(f\) ）。
+
+令 \(\mathbf{A}\) 为由 \(f\in \mathcal{L}(\mathbf{m})\) （满足 \(\sup_{t\in \mathrm{T}}|f(t)|\leqslant 1\) 者）所成之集，并令
+
+\(B = A \cap \mathcal{K}(T)\) ；按假设， \(\mathbf{m}(B)\) 在 \(F\) 中相对弱紧，因此只需证明 \(\mathbf{m}(A)\) 含于在 \(F'^*\) 中取的 \(\mathbf{m}(B)\) 的闭包（对拓扑 \(\sigma(F'^*, F')\) ）；由于 \(\mathbf{m}(B)\) 是凸的且平衡的，只需证明 \(\mathbf{m}(\mathrm{B})\) 在 \(\mathrm{F}'\) 中的极集含于 \(\mathbf{m}(\mathrm{A})\) 的极集（TVS, II, §6, No. 3, 定理 1）。而今，为使线性形式 \(\mathbf{z}' \in \mathrm{F}'\) 属于 \((\mathbf{m}(\mathrm{B}))^\circ\) ，必须且只需 \(|\langle \mathbf{z}', \mathbf{m}(g) \rangle| = |\int g d(\mathbf{z}' \circ \mathbf{m})| \leqslant 1\) （对每个函数 \(g \in \mathrm{B}\) ），这就意味着标量测度 \(|\mathbf{z}' \circ \mathbf{m}|\) 有界且范数 \(\leqslant 1\) （Ch. III, §1, No. 8）；但由 (2)，后一条件蕴含 \(|\langle \mathbf{z}', \mathbf{m}(f) \rangle| \leqslant 1\) （对每个函数 \(f \in \mathrm{A}\) ），从而 \(\mathbf{z}' \in (\mathbf{m}(\mathrm{A}))^\circ\) 。
+
+推论 1. --- 若对 T 的每个紧子集 K ，由 \(f \in \mathcal{K}(\mathrm{T},\mathrm{K})\) （满足 \(\sup_{t \in \mathrm{T}} |f(t)| \leqslant 1\) 者）所成之集在 m 下的像在 F 中相对弱紧，则 \(\int f dm \in \mathrm{F}\) （对每个有界且具有紧支集的函数 \(f \in \mathcal{L}(\mathbf{m})\) ），且 \(\int f dm \in \mathrm{F}''\) （对每个函数 \(f \in \mathcal{L}(\mathbf{m})\) ）。
+
+第一个断言可由命题 3 立即得出：若 \(f\) 有界且具有紧支集，且 \(U\) 是 \(f\) 的支集的一个相对紧开邻域，则 \(\mathbf{m}\) 在子空间 \(\mathcal{K}(U)\) 上的限制是一个测度 \(\mathbf{m}_U\) （ \(U\) 上的），它满足命题 3 的条件，且 \(\int f dm_U = \int f dm\) （Ch. V, §7, No. 1, 定理 1），因此 \(\int f dm \in F\) 。
+
+现在设 \(f\) 是 \(\mathcal{L}(\mathbf{m})\) 的任意元素；对每个紧子集 \(K\) （ \(T\) 的）与每个整数 \(n > 0\) ，令 \(f_{n,K}\) 为 \(T\) 上如下定义的数值函数：若 \(t \notin K\) ， \(f_{n,K}(t) = 0\) ；若 \(t \in K\) 且 \(|f(t) \leqslant n\) ， \(f_{n,K}(t) = f(t)\) ；最后，若 \(t \in K\) 且 \(|f(t)| > n\) ， \(f_{n,K}(t) = nf(t)/|f(t)|\) 。显然，对每个 \(t \in T\) ， \(f(t)\) 是 \(f_{n,K}(t)\) 关于 Fréchet 滤子与 \(T\) 的紧子集（递增有向）序集的截口滤子的乘积滤子的极限。由于 \(|f_{n,K}| \leqslant |f|\) ，把 Lebesgue 定理与 Ch. V, §1, No. 3 命题 10 应用于每个标量测度 \(|\mathbf{z}' \circ \mathbf{m}|\) ，便知 \(f_{n,K}\) 收敛于 \(f\) （在 \(\mathcal{L}(\mathbf{m})\) 中，关于上述滤子）。因此，积分 \(\int f dm\) 属于在 \(F'^*\) 中（对拓扑 \(\sigma(F'^*, F')\) ）取的集 \(M\) ——由诸 \(m(f_{n,K})\) 组成——的闭包。但推论的第一部分表明 \(M \subset F\) ，而且，对每个 \(z' \in F'\) 有 \(|\langle z', m(f_{n,K})\rangle| \leqslant \int |f| d|\mathbf{z}' \circ \mathbf{m}|\) ，这表明 \(M\) 在 \(F_\sigma\) 中有界，从而在 \(F\) 中也有界（TVS, IV, §1, No. 1, 命题 1）。于是 §1 第 2 目的引理 1 表明 \(\int f dm \in F''\) 。
+
+推论 2. --- 若 F 是半自反的，则 \(\int f dm \in F\) （对每个数值函数 \(f\) ——关于 \(\mathbf{m}\) 本质可积的）。
+

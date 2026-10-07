@@ -1,0 +1,87 @@
+\subsection{在紧集邻域中的流形嵌入}
+
+引理 1. 设 T 和 T' 是两个拓扑空间，A 和 A' 分别是 T 和 T' 的紧子集，W 是 T × T' 中 A × A' 的一个邻域。存在 T 中 A 的开邻域 U 和 T' 中 A' 的开邻域 U'，使得 U × U' ⊂ W。
+
+设 \(x \in \mathrm{A}\)；存在 \(\mathrm{U}_x\)（\(\mathrm{T}\) 的开子集）和 \(\mathrm{U}_x'\)（\(\mathrm{T}'\) 的开子集），使得 \(\{x\} \times \mathrm{A}' \subset \mathrm{U}_x \times \mathrm{U}_x' \subset \mathrm{W}\)：事实上，紧子集 \(\{x\} \times \mathrm{A}'\)（属于 \(\mathrm{T} \times \mathrm{T}'\)）可由有限个包含于 \(\mathrm{W}\) 中的开集覆盖，这些开集形如 \(\mathrm{U}_i \times \mathrm{U}_i'\)，且 \(x \in \mathrm{U}_i\)；只需取 \(\mathrm{U}_x = \bigcap_i \mathrm{U}_i\) 和 \(\mathrm{U}_x' = \bigcup_i \mathrm{U}_i'\) 即可。
+
+由于 A 紧，存在 A 中的点 \(x_{1},\ldots,x_{m}\)，使得 \(A\subset\bigcup_{i}U_{x_{i}}\)；置 \(U=\bigcup_{i}U_{x_{i}}\) 和 \(U'=\bigcap_{i}U'_{x_{i}}\)。于是 \(A\times A'\subset U\times U'\subset W\)，引理得证。
+
+本节余下部分中，Y 表示一个 \(C^{r}\) 类分离流形。
+
+命题 1. 设 \(\varphi : \mathrm{X} \to \mathrm{Y}\) 是一个 \(\mathbf{C}^r\) 类态射，A 是 \(\mathrm{X}\) 的紧子集。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\varphi\) 在 A 上的限制是单射，且 \(\varphi\) 在 A 的每一点处都是浸入；
+\item
+  存在 A 的一个开邻域 U，使得 \(\varphi\) 将 U 嵌入 Y 中。
+\end{enumerate}
+
+满足这些条件时，称 \(\varphi\) 在 A 的邻域中是嵌入。
+
+证明 (i) 蕴含 (ii)，反向显然。假设 (i)，则存在包含 A 的 X 的一个开邻域 V，使得 \(\varphi\) 在 V 上是浸入（Differentiable and Analytic Manifolds, Results, 5.7.1）。记 \(\Gamma\) 为点 \((x,y)\)（属于 \(V \times V\)）且满足 \(\varphi(x) = \varphi(y)\) 的集合，记 \(\Delta\) 为 \(V \times V\) 中的对角线。则 \(\Delta\) 是 \(\Gamma\) 的开子集：事实上，对于所有 \(x \in V\)，存在 x 的一个开邻域 \(U_x\)，使得 \(\varphi\) 在 \(U_x\) 上是单射，即 \(\Gamma \cap (\mathrm{U}_x \times \mathrm{U}_x) = \Delta \cap (\mathrm{U}_x \times \mathrm{U}_x)\)。
+
+由于 Y 是分离的，\(\varGamma\) 在 \(V \times V\) 中是闭的；因此 \(\varGamma - \varDelta\) 在 \(V \times V\) 中的补集 W 是开的。由假设，W 包含 \(A \times A\)；由引理 1，存在 V 中包含 A 的开子集 \(U'\)，使得 \(U' \times U' \subset W\)，也就是说，\(\varphi\) 在 \(U'\) 上的限制是单射。此外，存在 A 的一个开邻域 U，其闭包是紧的且包含于 \(U'\) 中（General Topology, Chap. I, §9, no. 7, Prop. 10）。于是 \(\varphi\) 诱导出从 \(\overline{U}\) 到 \(\varphi(\overline{U})\) 的同胚，因而也诱导出从 U 到 \(\varphi(U)\) 的同胚；由此 \(\varphi\) 在 U 上的限制是嵌入（Differentiable and Analytic Manifolds, Results, 5.8.3）。
+
+命题 2. 假设流形 Y 是仿紧的；设 A 是 X 的子集，且 \(\varphi : X \to Y\) 是一个 \(C^r\) 类态射，它诱导出从 A 到 \(\varphi(A)\) 的同胚，并且在 A 的每一点处都是局部微分同胚。则存在 A 的一个开邻域 U，使得 \(\varphi\) 诱导出从 U 到 Y 的一个开子流形的同构。
+
+必要时限制 X 和 Y 后，可假设 \(\varphi\) 是局部微分同胚且为满射。记 \(\sigma : \varphi(A) \to A\) 为 \(\varphi|A\) 的逆同胚。由于 Y 是可度量化的（Differentiable and Analytic Manifolds, Results, 5.1.6），\(\varphi(A)\) 有一个由仿紧邻域组成的基本邻域系；因此由 General Topology, Chap. XI，存在 Y 中 \(\varphi(A)\) 的一个开邻域 V 以及连续映射 \(s : V \to X\)，使得 s 与 \(\sigma\) 在 \(\varphi(A)\) 上一致，并且 \(\varphi(s(y)) = y\) 对所有 \(y \in V\) 成立。此外，s 在拓扑意义下是局部微分同胚的，故 \(s(V)\) 是包含 A 的开集 U。于是 \(\varphi\) 诱导出从 U 到 V 的同胚 \(\varphi'\)；由 Differentiable and Analytic Manifolds, Results, 5.7.8，\(\varphi'\) 是同构。
+
+本节余下部分中，假设 \(r \neq \omega\)。
+
+命题 3. 设 A 是 X 的紧子集。在 A 的邻域中为嵌入的态射 \(\varphi \in \mathcal{C}^{r}(X;Y)\) 所成的集合 P，在 \(\mathcal{C}^{r}(X;Y)\) 中关于紧 \(C^{r}\) 收敛的拓扑（\(\S\) 6, no. 4）下是开的。
+
+显然，只需对 \(r = 1\) 证明该命题。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  先证明 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\) 的子集 J 是开的，其中 J 由在 A 的每一点处为浸入的态射组成。考虑映射 \(j_{\mathrm{A}}:\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\times\mathrm{A}\to\mathrm{J}^{1}(\mathrm{X};\mathrm{Y})\)，满足 \(j_{\mathrm{A}}(\varphi,x)=j_{x}^{1}(\varphi)\)（Differentiable and Analytic Manifolds, Results, 12.1）。
+\end{enumerate}
+
+由 \(\mathcal{C}^1 (\mathrm{X};\mathrm{Y})\) 上拓扑的定义，映射 \(\tilde{j}_{\mathrm{A}}:\varphi \to j_{\mathrm{A}}(\varphi ,.)\) 从 \(\mathcal{C}^1 (\mathrm{X};\mathrm{Y})\) 到 \(\mathcal{C}(\mathrm{A};\mathrm{J}^1 (\mathrm{X};\mathrm{Y}))\) 是连续的；由此根据 General Topology, Chap. X, §3, no. 4, Th. 3，\(j_{\mathrm{A}}\) 是连续的。
+
+另一方面，设 M 是 \(\mathrm{J}^{1}(\mathrm{X};\mathrm{Y})\) 中的喷流 j 的集合，这些喷流的切映射 \(\mathrm{T}(j):\mathrm{T}_{\mathbf{s}(j)}(\mathrm{X})\to\mathrm{T}_{\mathbf{b}(j)}(\mathrm{Y})\)（Differentiable and Analytic Manifolds, Results, 12.3.4）是单射。集合 M 在 \(\mathrm{J}^{1}(\mathrm{X};\mathrm{Y})\) 中是开的；事实上，只需在 X 是有限维向量空间 E 的开子集且 Y 是 Banach 空间 F 的开子集时验证该断言；根据 Differentiable and Analytic Manifolds, Results, 12.3.1，这归结为证明单射连续线性映射的集合在 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 中是开的，而这由 Spectral Theory, Chap. III, §2, no. 7, Prop. 16 得到。
+
+由前述结果，集合 \(j_{\mathrm{A}}^{-1}(\mathrm{M})\) 在 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\times\mathrm{A}\) 中是开的，故其补集 F 是闭的。由于 A 紧，投影 \(\mathrm{pr}_{1}:\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\times\mathrm{A}\to\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\) 是真的态射，因而是闭映射；所以集合 J（等于 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})-\mathrm{pr}_{1}(\mathcal{F})\)）在 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\) 中是开的。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 H 是 \(J \times A \times A\) 的子集，由元素 \((f, x, y)\) 组成，满足 \(f(x) = f(y)\)。显然 H 包含 \(J \times \Delta\)，其中 \(\Delta\) 表示乘积 \(A \times A\) 中的对角线；我们证明 \(H' = H - (J \times \Delta)\) 在 \(J \times A \times A\) 中是闭的。由于 P 是 J 中 \(H'\) 在真的投影 \(pr_{1}: J \times A \times A \to J\) 下的像的补集，这将推出该命题。
+\end{enumerate}
+
+由于 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\) 的拓扑比紧收敛拓扑精细，映射 \((\varphi,x)\mapsto\varphi(x)\) 从 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\times\mathrm{A}\) 到 Y 是连续的（General Topology, Chap. X, §3, no. 4, Cor. 1 of Th. 3）；由此 H 在 \(J\times A\times A\) 中是闭的。因此只需证明 \(J\times\Delta\) 在 H 中是开的，换言之，对于所有 \(\varphi\in J\) 和所有 \(x\in A\)，存在一个邻域 \(\Omega\)（J 中 \(\varphi\) 的邻域）以及 X 中 x 的一个邻域 B，使得对于任意态射 \(\psi\)（属于 \(\Omega\)），\(\psi\) 在 \(A\cap B\) 上的限制是单射。
+
+因此，该命题由下列引理推出：
+
+引理 2. 设 x 是 X 的一点，\(\varphi: X \to Y\) 是一个 \(C^{1}\) 类态射，且在 x 处是浸入。存在一个邻域 \(\Omega\)（\(\varphi\) 在 \(\mathcal{C}^{1}(X;Y)\) 中的邻域）以及 X 中 x 的一个邻域 B，使得对于所有 \(\psi \in \Omega\)，\(\psi\) 在 B 上的限制是单射。
+
+设 U 是 x 的一个相对紧开邻域，它同构于某个有限维向量空间，并且 \(\varphi(\overline{\mathrm{U}})\) 包含于图册的定义域 V 中。由集合 \(\Omega_{0}\)（它由满足 \(\psi\in\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\) 且 \(\psi(\overline{\mathrm{U}})\subset\mathrm{V}\) 的态射组成）在 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\) 中是开的，且限制映射 \(\Omega_{0}\to\mathcal{C}^{1}(\mathrm{U};\mathrm{V})\) 是连续的；因此只需在 X=U 且 Y=V 时证明该引理，换言之，可假设 X 是有限维向量空间而 Y 是 Banach 空间。在 X 和 Y 上选取范数。
+
+线性映射 \(\mathrm{D}\varphi(x):\mathrm{X}\to\mathrm{Y}\) 是单射；记其余范数为 q（Spectral Theory, Chap. III, §2, no. 6），于是按定义，有 \(\|\mathrm{D}\varphi(x).t\|\geq q\|t\|\) 对所有 \(t\in X\) 成立。取 \(\varepsilon\in R\) 使得 \(0<\varepsilon<q/2\)，并取一个以 x 为中心的闭球 B，使得 \(\|\mathrm{D}\varphi(u)-\mathrm{D}\varphi(x)\|\leq\varepsilon\) 对所有 \(u\in B\) 成立。记 \(\Omega\) 为 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\) 中的态射 \(\psi\) 所成的子集，其中满足 \(\|\mathrm{D}\psi(u)-\mathrm{D}\varphi(u)\|\leq\varepsilon\) 对所有 \(u\in B\) 成立；按 \(\mathcal{C}^{1}(\mathrm{X};\mathrm{Y})\) 拓扑的定义，它是开的。对于 \(\psi\in\Omega\)，置 \(\psi_{0}=\psi-\mathrm{D}\varphi(x)\)。有 \(\|\mathrm{D}\psi_{0}(u)\|\leq2\varepsilon\) 对所有 \(u\in B\) 成立，因而有 \(\|\psi_{0}(u)-\psi_{0}(v)\|\leq2\varepsilon\|u-v\|\) 对 B 中所有 u 和 v 成立（Differentiable and Analytic Manifolds, Results, 2.2.3）。由此
+
+\[
+\| \psi (u) - \psi (v) \| \geq \| \mathrm{D} \varphi (x). (u - v) \| - \| \psi_ {0} (u) - \psi_ {0} (v) \| \geq (q - 2 \varepsilon) \| u - v \|.
+\]
+
+所以 \(\psi\) 在 B 上的限制是单射，引理得证。
+
+命题 4. 设 A 是 X 的紧子集。存在有限维向量空间 E 以及一个态射 \(\varphi \in \mathcal{C}^r (\mathrm{X};\mathrm{E})\)（\(r\neq \omega\)），使得它在 A 的邻域中是嵌入。
+
+设 \((\mathrm{U}_{i},\varphi_{i},\mathrm{E}_{i})_{i\in\mathrm{I}}\) 是 X 的一个有限图册族，其定义域覆盖 A。我们将 \(\varphi_{i}\) 延拓为从 X 到 \(E_{i}\) 的映射（仍记作 \(\varphi_{i}\)），规定 \(\varphi_{i}(x)=0\)（\(x\notin U_{i}\)）。设 \((\mathrm{V}_{i})_{i\in\mathrm{I}}\) 是由 X 的开子集组成的 A 的一个覆盖，使得 \(\overline{\mathrm{V}}_{i}\subset\mathrm{U}_{i}\) 对所有 \(i\in\mathrm{I}\) 成立（这种覆盖的存在性由 General Topology, Chap. IX, §4, no. 3, Cor. 1 of Th. 3 得到：将该结果应用于紧空间 \(X'\) 及 \(X'\) 的覆盖，后者由开集 \(U_{i}\)（\(i\in\mathrm{I}\)）和 \(X'-\mathrm{A}\) 组成；X' 是通过向 X 添加无穷远点得到的空间）。对于所有 \(i\in\mathrm{I}\)，取 \(\alpha_{i}\) 为 X 上的一个 \(C^{r}\) 类数值函数，它在 \(V_{i}\) 的每一点处等于 1，且其支集包含于 \(U_{i}\)（Differentiable and Analytic Manifolds, Results, 5.3.6）。
+
+考虑由下式定义的映射 \(\varphi : \mathrm{X} \to \bigoplus_{i \in \mathrm{I}} (\mathrm{E}_i \oplus \mathbf{R})\)
+
+\[
+\varphi (x) = (\alpha_ {i} (x) \varphi_ {i} (x), \alpha_ {i} (x)) _ {i \in I}.
+\]
+
+对于所有 \(i \in I\)，映射 \(\alpha_{i}\varphi_{i}\) 是 \(C^{r}\) 类的（因为它在 \(U_{i}\) 以及 \(\alpha_{i}\) 的支集的补集上的限制都是如此），且其在 \(V_{i}\) 上的限制是嵌入；由此 \(\varphi\) 是 \(C^{r}\) 类态射，并且在 A 的每一点处都是浸入。我们证明 \(\varphi\) 在 A 上的限制是单射。设 x、y 是 A 中满足 \(\varphi(x) = \varphi(y)\) 的两点，并取 \(i \in I\)，使得 \(x \in V_{i}\)。则 \(\alpha_{i}(x) = 1\)，所以 \(\alpha_{i}(y) = 1\)，这推出 \(y \in U_{i}\)；但还有 \(\varphi_{i}(x) = \varphi_{i}(y)\)，故 x = y，因为 \(\varphi_{i}\) 将 \(U_{i}\) 嵌入 \(E_{i}\)。
+
+可以证明 \(^{9}\)，每个分离的、无穷远可数且纯维数为 n 的流形都能嵌入 \(R^{2n}\)；较弱的结果见 cf.~Exercise 2。
+

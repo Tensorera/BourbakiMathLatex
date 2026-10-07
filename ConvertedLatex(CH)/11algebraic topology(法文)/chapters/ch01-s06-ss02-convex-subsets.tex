@@ -1,0 +1,72 @@
+\subsection{数值空间中的凸子集}
+
+设 E 为 n 维数值空间\(^{*}\)（或更一般地，R 上的拓扑向量空间）*。对 E 的点的每个偶 \((x,y)\) ，称形如 \(tx + (1-t)y\) （其中 \(t \in [0,1]\) ；相应地 \(t \in ]0,1[\) ）的点组成的集合为以 x 与 y 为端点的线段（相应地，开线段）（参见 EVT, II, 第 7 页）。设 A 为 E 的子集。若对 A 的点的每个偶 \((x,y)\) 以及每个 \(t \in I\) ，点 \(tx + (1-t)y\) 都属于 A，则称集合 A 是凸的。
+
+*凸子集是道路连通的。*
+
+引理 1. —— 设 E 为 n 维数值空间，A 为 E 的凸紧子集，且 0 是它的一个内点。对每个 \(x \in E\) ，以 \(p_{\mathrm{A}}(x)\) 表示在 \(\overline{R}\) 中所取的、由实数 \(t > 0\) （使 \(x \in tA\) ）组成的集合的下确界。
+
+映射 \(p_{A}\) 是有限的、连续的，且满足下列性质：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对每个 \(x \in E\) （满足 \(x \neq 0\) ），有 \(p_{\mathrm{A}}(x) > 0\) ；
+\item
+  对每个 \(s \in R_{+}\) 与每个 \(x \in E\) ，有 \(p_{\mathrm{A}}(sx) = sp_{\mathrm{A}}(x)\) 。
+\item
+  对一切 \(x\) 与 \(y \in \mathrm{E}\) ，有 \(p_{\mathrm{A}}(x + y) \leqslant p_{\mathrm{A}}(x) + p_{\mathrm{A}}(y)\) 。
+\item
+  为使 E 的点 \(x\) 属于 A，充要条件是 \(p_{\mathrm{A}}(x) \leqslant 1\) 。
+\end{enumerate}
+
+对 \(x \in E\) ，以 \(\|x\|\) 表示 x 的欧氏范数（TG, VI, 第 7 页）。由于 A 是紧的，存在实数 \(M > 0\)，使得 A 的每个点 x 满足 \(\|x\| \leqslant M\)。由于 0 是 A 的内点，存在实数 \(m > 0\)，使得 E 中满足 \(\|x\| \leqslant m\) 的每个点 x 都属于 A。于是有关系 \(\|x\|/\mathrm{M} \leqslant p_{\mathrm{A}}(x) \leqslant \|x\|/m\) （对每个 \(x \in E\)）。特别地，\(p_{\mathrm{A}}(0) = 0\) ，且 \(p_{\mathrm{A}}(x) \neq 0\) （若 \(x \neq 0\)）。
+
+断言 (ii) 与 (iv) 由映射 \(p_{A}\) 的定义立得。
+
+设 \(x\) 与 \(y\) 为 E 的点。设 \(x'\) 与 \(y'\) 为 A 中满足 \(x = p_{\mathrm{A}}(x)x'\) 与 \(y = p_{\mathrm{A}}(y)y'\) 的点。若 \(x\) 与 \(y\) 不全为零，则 \(p_{\mathrm{A}}(x) + p_{\mathrm{A}}(y) > 0\) ，且有
+
+\[
+\begin{array}{l} x + y = p _ {\mathrm{A}} (x) x ^ {\prime} + p _ {\mathrm{A}} (y) y ^ {\prime} \\ \qquad = (p _ {\mathrm{A}} (x) + p _ {\mathrm{A}} (y)) \left(\frac {p _ {\mathrm{A}} (x)}{p _ {\mathrm{A}} (x) + p _ {\mathrm{A}} (y)} x ^ {\prime} + \frac {p _ {\mathrm{A}} (y)}{p _ {\mathrm{A}} (x) + p _ {\mathrm{A}} (y)} y ^ {\prime}\right). \end{array}
+\]
+
+由于 A 是凸的，这表明 \(x + y\) 属于 \((p_{\mathrm{A}}(x) + p_{\mathrm{A}}(y))\mathrm{A}\) ，从而 \(p_{\mathrm{A}}(x + y) \leqslant p_{\mathrm{A}}(x) + p_{\mathrm{A}}(y)\) 。若 x = y = 0，此不等式仍成立，因为 \(p_{\mathrm{A}}(0) = 0\) 。这就证明了断言 (iii)。
+
+把此不等式应用于 \(x + y\) 与 -y，可得对 E 的点的每个偶 \((x, y)\) ，有
+
+\[
+| p _ {\mathrm{A}} (x + y) - p _ {\mathrm{A}} (x) | \leqslant \max (p _ {\mathrm{A}} (y), p _ {\mathrm{A}} (- y)) \leqslant m ^ {- 1} \| y \|.
+\]
+
+这就证明映射 \(p_{A}\) 是连续的，引理得证。
+
+映射 \(p_{A}\) 称为凸集 A 的规度。
+
+命题 2. —— 设 E 为 n 维数值空间，A 为 E 的凸紧子集，且 0 是它的一个内点。存在唯一的 E 到自身的双射 u 满足以下三条性质：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对每个 \(x \in E\) 与每个 \(t \in R_{+}\) ，\(u(tx) = tu(x)\) ；
+\item
+  对每个 \(x \in E\) ，存在 \(\lambda \in R_{+}\) 使得 \(u(x) = \lambda x\) ；
+\item
+  我们有 \(u(\mathrm{A}) = \mathbf{B}_n\)
+\end{enumerate}
+
+映射 u 是同胚，且通过过渡到子空间，诱导出 A 到 \(B_{n}\) 上的同胚、A 的内部到 \(B_{n}\) 的内部上的同胚，以及 A 在 E 中的边界到球面 \(S_{n-1}\) 上的同胚。
+
+设 \(p_{A}\) 为凸集 A 的规度。设 \(x \in E\) ，\(t \in R_{+}\) ；为使 \(x\) 属于 \(tA\) ，充要条件是 \(p_{\mathrm{A}}(x) \leqslant t\)。由于 A 是紧的，存在实数 M 使得 \(\|x\| \leqslant M\) 对一切 \(x \in A\) 成立。
+
+设 \(u\) 为满足命题条件的映射。我们有 \(u(0) = 0\)。设 \(x \in \mathrm{E}\setminus\{0\}\) ，\(\lambda \in \mathbf{R}_+\) 满足 \(u(x) = \lambda x\)。对一切 \(t \in \mathbf{R}_+\) （使 \(tx \in \mathrm{A}\) ），有 \(u(tx) = t\lambda x\)。由于 \(u\) 是单射，\(\lambda \neq 0\)。由于 \(u(\mathrm{A})\) 包含于 \(\mathbf{B}_n\) ，又有 \(\lambda \leqslant p_{\mathrm{A}}(x)/\|x\|\)。置 \(z = x/\|x\|\) ；它是 \(\mathbf{S}_{n-1}\) 的一点。为使 \(z\) 在 \(u\) 下有 A 中的原像，充要条件是点 \((\lambda \|x\|)^{-1}x\) 属于 A，亦即 \(\lambda \|x\| \geqslant p_{\mathrm{A}}(x)\)，也就是 \(\lambda \geqslant p_{\mathrm{A}}(x)/\|x\|\)。这就蕴含这样的映射 \(u\) 的唯一性。
+
+然后以 \(u\) 表示 E 到自身的、把 0 映到 0 、把 \(x\) 映到 \((p_{\mathrm{A}}(x) / \| x\|)x\) （对每个 \(x \in \mathrm{E}\setminus\{0\}\)）的映射。
+
+由引理 1，\(u\) 在 \(\mathrm{E}\setminus\{0\}\) 的每点处连续。我们有 \(\| u(x)\| = p_{\mathrm{A}}(x)\) （对一切 \(x\in \mathrm{E}\)），且 \(p_{\mathrm{A}}(x)\to 0\) 当 \(x\to 0\) 时（同前引）；因此，\(u\) 在 0 处连续。于是，\(u\) 是连续的。
+
+0 在 u 下唯一的原像是 0。设 \(y \in E\setminus\{0\}\)。为使 E 的元素 x 满足 \(u(x) = y\) ，充要条件是 \(x = (\|y\| / p_{\mathrm{A}}(y))y\)。由此可知 u 是 E 到自身的连续双射。其逆是映射 \(v: y \mapsto (\|y\| / p_{\mathrm{A}}(y))y\)。由于 \(p_{A}\) 连续且仅在 0 处取零值，映射 v 在 \(E\setminus\{0\}\) 的每点处连续；不等式 \(p_{\mathrm{A}}(y) \geqslant \|y\| / \mathrm{M}\) 蕴含 \(\|v(y)\| \leqslant \mathrm{M}\|y\|\) 对一切 \(y \in E\) 成立。由此得出 v 是连续的。于是，映射 u 是 E 到自身的同胚。由于关系 \(p_{\mathrm{A}}(x) \leqslant 1\) 与 \(x \in A\) 等价，我们又有 \(u(\mathrm{A}) = \mathbf{B}_{n}\) 。命题得证。
+
+例. —— 集合 \([0,1]^{n}\) 是 \(R^{n}\) 的内部非空的凸紧子集。由 I, 第 123 页命题 2，它同胚于闭欧氏球。更确切地说，对内部 \(]0,1[^{n}\) 的每个点 x 与开欧氏球的每个点 b，存在 \([0,1]^{n}\) 到 \(B_{n}\) 上的同胚，它把 x 映到 b，并通过过渡到子空间，诱导出 \(]0,1[^{n}\) 到开欧氏球上的同胚，以及 \([0,1]^{n}\) 的边界到球面 \(S_{n-1}\) 上的同胚。
+
+因此，\(R^{n}\) 的每个内部非空的凸紧子集都同胚于一个平行六面体（同前引）。
+

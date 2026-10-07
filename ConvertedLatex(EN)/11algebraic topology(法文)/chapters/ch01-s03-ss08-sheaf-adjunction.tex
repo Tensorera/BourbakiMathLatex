@@ -1,0 +1,187 @@
+\subsection{\texorpdfstring{The homomorphisms \(\alpha\) and \(\beta\) ; adjunction}{The homomorphisms alpha and beta ; adjunction}}
+
+Let A and B be topological spaces and let \(u\colon\mathrm{A}\to\mathrm{B}\) be a continuous map. Let \(\mathcal{G}\) be a presheaf on B. By definition of the direct image of presheaves, a section of the sheaf \(u_{*}u^{*}\mathcal{G}\) over an open set U of B is a section of the sheaf \(u^{*}\mathcal{G}\) over the open set \(u^{-1}(\mathrm{U})\) of A, that is, a B-morphism \(u^{-1}(\mathrm{U})\to\mathrm{E}_{\mathcal{G}}\) . One thus defines a morphism of sheaves \(\widetilde{\mathcal{G}}\to u_{*}u^{*}\mathcal{G}\) by associating to the section \(s\) of \(\mathrm{E}_{\mathcal{G}}\) over an open set U of B the section \(s\circ u\) of \(\mathrm{E}_{\mathcal{G}}\) over \(u^{-1}(\mathrm{U})\) . The composition of this morphism and the canonical morphism \(\sigma_{\mathcal{G}}\colon\mathcal{G}\to\widetilde{\mathcal{G}}\) (I, p.~53) is a morphism of presheaves \(\mathcal{G}\to u_{*}u^{*}\mathcal{G}\) which will be denoted by \(\beta_{\mathcal{G}}^{u}\) , or even \(\beta_{\mathcal{G}}\) if there is no ambiguity about the map \(u\) .
+
+Remarks. --- 1) Let A, B, C be topological spaces, let \(u\colon A \to B\) , \(v\colon B \to C\) be continuous maps; set \(w = v \circ u\) . Let \(\mathcal{G}\) be a presheaf on C.
+
+Let U be an open set of C and let s be a section of \(E_{G}\) over U. Then \(\beta_{\mathcal{G}}^{v}(s)\) is the section \(s \circ v\) of \(E_{G}\) over \(v^{-1}(U)\) , and \(v_{*}(\beta_{v^{*}\mathcal{G}}^{u})(\beta_{\mathcal{G}}^{v}(s))\) is the section \(s \circ v \circ u = s \circ w\) of \(E_{G}\) over \(u^{-1}(v^{-1}(U)) = w^{-1}(U)\) .
+
+It follows that \(\beta_{\mathcal{G}}^{w} = v_{*}(\beta_{v^{*}\mathcal{G}}^{u})\circ \beta_{\mathcal{G}}^{v}\) .
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  If \(\gamma\colon\mathcal{G}_{1}\to\mathcal{G}_{2}\) is a morphism of presheaves on B, the morphisms of presheaves \(\beta_{\mathcal{G}_{2}}\circ\gamma\) and \(u_{*}u^{*}(\gamma)\circ\beta_{\mathcal{G}_{1}}\) are equal. Indeed, if V is an open set of B and \(s\in\mathcal{G}_{1}(V)\) , \(\beta_{\mathcal{G}_{1}}(s)\) is the section \(t\) of A \(\times_{B}E_{\mathcal{G}_{1}}\) over \(u^{-1}(V)\) , defined by \(x\mapsto(x,[V,s,u(x)])\) . The image of \(t\) under \(u^{*}(\gamma)\) is thus the section of A \(\times_{B}E_{\mathcal{G}_{2}}\) over \(u^{-1}(V)\) given by \(x\mapsto(x,[V,\gamma(s),u(x)])\) . It follows that \(u_{*}u^{*}(\gamma)\circ\beta_{\mathcal{G}_{1}}(s)=\beta_{\mathcal{G}_{2}}(\gamma(s))\) .
+\end{enumerate}
+
+PROPOSITION 4. --- Let A and B be topological spaces, let \(u\colon A\to B\) be a continuous map, let \(\mathcal{G}\) be a presheaf on B, and let \(\mathcal{F}\) be a sheaf on A.
+
+For every morphism of presheaves \(\varphi\colon\mathcal{G}\to u_{*}\mathcal{F}\) , there exists a unique morphism of sheaves \(\psi\colon u^{*}(\mathcal{G})\to\mathcal{F}\) such that \(\varphi=u_{*}(\psi)\circ\beta_{\mathcal{G}}\) .
+
+In other words, the canonical map
+
+\[
+\operatorname{Mor} \left(u ^ {*} (\mathcal {G}), \mathcal {F}\right)\rightarrow \operatorname{Mor} \left(\mathcal {G}, u _ {*} (\mathcal {F})\right), \quad \psi \mapsto u _ {*} (\psi) \circ \beta_ {\mathcal {G}}
+\]
+
+is a bijection.
+
+Using the notation of Proposition 4, we will sometimes denote \(\psi = \varphi^{\sharp}\) and \(\varphi = \psi^{\flat}\) .
+
+Let us prove Proposition 4. By Remark 2 applied to the morphism \(\sigma_{\mathcal{G}}: \mathcal{G} \to \widetilde{\mathcal{G}}\) , the morphism \(\beta_{\mathcal{G}}\) is equal to the composition
+
+\[
+u _ {*} (u ^ {*} (\sigma_ {\mathcal {G}}) ^ {- 1}) \circ \beta_ {\widetilde {\mathcal {G}}} \circ \sigma_ {\mathcal {G}},
+\]
+
+where \(u^{*}(\sigma_{\mathcal{G}}) \colon u^{*}(\mathcal{G}) \to u^{*}(\widetilde{\mathcal{G}})\) is the canonical isomorphism of Remark I, p.~58. Let \(\widetilde{\varphi} \colon \widetilde{\mathcal{G}} \to u_{*}\mathcal{F}\) be the unique morphism of sheaves such that \(\widetilde{\varphi} \circ \sigma_{\mathcal{G}} = \varphi\) (I, p.~54, prop. 3). It then suffices to show that there exists a unique morphism of sheaves \(\widetilde{\psi} \colon u^{*}(\mathcal{G}) \to \mathcal{F}\) such that \(u_{*}(\widetilde{\psi}) \circ \beta_{\widetilde{\mathcal{G}}} = \widetilde{\varphi}\) .
+
+We may therefore assume that \(\mathcal{G}\) is a sheaf. For a morphism of sheaves \(\psi: u^{*}(\mathcal{G}) \to \mathcal{F}\) to satisfy the conclusion of Proposition 4, it is necessary and sufficient that for every open set V of B and every section \(t\) of \(\mathrm{E}_{\mathcal{G}}\) above V, one has
+
+\[
+\varphi_{\mathrm{V}}(t) = \psi_{u^{-1}(\mathrm{V})}(t \circ u \mid u^{-1}(\mathrm{V})).\tag{6}
+\]
+
+Let \(U_{0}\) be an open subset of A and \(s_{0}\) be an element of \(u^{*}(\mathcal{G})(\mathrm{U}_{0})\), in other words, a B-morphism from \(U_{0}\) into \(E_{\mathcal{G}}\) . Let \(\mathrm{S}(\mathrm{U}_{0}, s_{0})\) be the set of triples \((\mathrm{U}, \mathrm{V}, t)\) where U is an open subset of A contained in \(U_{0}\) , V is an open subset of B such that \(u(\mathrm{U}) \subset \mathrm{V}\), and let t be a section of \(E_{\mathcal{G}}\) above V such that one has
+
+\[
+t \circ u \mid \mathrm{U} = s _ {0} \mid \mathrm{U}.\tag{7}
+\]
+
+If \(U_{1}\) and \(U_{2}\) are open subsets of A with \(U_{1} \subset U_{2}\) , denote by \(f_{U_{1}U_{2}}\) the restriction map \(\mathcal{F}(U_{2}) \to \mathcal{F}(U_{1})\) . For every \((\mathrm{U}, \mathrm{V}, t) \in \mathrm{S}(\mathrm{U}_{0}, s_{0})\) we then have the relation
+
+\[
+\begin{array}{l} f_{\mathrm{U}\mathrm{U}_{0}}(\psi_{\mathrm{U}_{0}}(s_{0})) = \psi_{\mathrm{U}}(s_{0} \mid \mathrm{U}) \\ \qquad = \psi_{\mathrm{U}}(t \circ u \mid \mathrm{U}) \\ \qquad = f_{\mathrm{U}u^{-1}(\mathrm{V})}(\psi_{u^{-1}(\mathrm{V})}(t \circ u \mid u^{-1}(\mathrm{V}))). \end{array}
+\]
+
+Consequently, if \(\psi \colon u^{*}(\mathcal{G})\to \mathcal{F}\) satisfies (6), we have
+
+\[
+f_{\mathrm{U}\mathrm{U}_{0}}(\psi_{\mathrm{U}_{0}}(s_{0})) = f_{\mathrm{U}u^{-1}(\mathrm{V})}(\varphi_{\mathrm{V}}(t)).\tag{8}
+\]
+
+Let us prove that, for every point \(a\) of \(\mathrm{U}_0\) , there exists a triple \((\mathrm{U},\mathrm{V},t)\in \mathrm{S}(\mathrm{U}_0,s_0)\) such that \(a\in \mathrm{U}\). Indeed, let \(a\) be a point of \(\mathrm{U}_0\). There exists an open neighborhood V in B containing \(u(a)\) and a section \(t\) of the étale space \(\mathbf{E}_{\mathcal{G}}\) over V such that \(t(u(a)) = s_0(a)\) (I, p.~33, prop. 9). Let \(\mathrm{U}_1 = u^{-1} (\mathrm{V})\cap \mathrm{U}_0\) . The sections \(s_0\mid \mathrm{U}_1\) and \(t\circ u\mid \mathrm{U}_1\) of the étale space over \(\mathrm{U}_1\), \(\mathbf{E}_{\mathcal{G}}\times_{\mathrm{B}}\mathrm{U}_1\), coincide at the point \(a\). By Proposition 11, b) of I, p.~34, the set of points where they coincide is an open set U of \(\mathrm{U}_1\) which contains \(a\). The triple \((\mathrm{U},\mathrm{V},t)\) then belongs to \(\mathrm{S}(\mathrm{U}_0,s_0)\) .
+
+Formula (8) and the property \((\mathrm{F}_{1})\) of sheaves (I, p.~43) then imply the uniqueness of \(\psi\) .
+
+Let (U, V, t) and \((\mathrm{U}^{\prime}, \mathrm{V}^{\prime}, t^{\prime})\) be elements of \(\mathrm{S}(\mathrm{U}_{0}, s_{0})\) . By relation (7), the restrictions of t and \(t^{\prime}\) to \(u(\mathrm{U} \cap \mathrm{U}^{\prime})\) coincide. By prop. 11, b) of I, p.~34, there exists an open set W of B such that \(u(\mathrm{U} \cap \mathrm{U}^{\prime}) \subset \mathrm{W} \subset \mathrm{V} \cap \mathrm{V}^{\prime}\) and that \(t \mid W = t^{\prime} \mid W\) . We therefore have
+
+\[
+f_{u^{-1}(\mathrm{W})u^{-1}(\mathrm{V})}(\varphi_{\mathrm{V}}(t)) = \varphi_{\mathrm{W}}(t\mid \mathrm{W}) = \varphi_{\mathrm{W}}(t^{\prime}\mid \mathrm{W}) = f_{u^{-1}(\mathrm{W})u^{-1}(\mathrm{V}^{\prime})}(\varphi_{\mathrm{V}^{\prime}}(t^{\prime}))
+\]
+
+whence
+
+\[
+f_{(\mathrm{U}\cap\mathrm{U}^{\prime})u^{-1}(\mathrm{V})}(\varphi_{\mathrm{V}}(t)) = f_{(\mathrm{U}\cap\mathrm{U}^{\prime})u^{-1}(\mathrm{V}^{\prime})}(\varphi_{\mathrm{V}^{\prime}}(t^{\prime})).\tag{9}
+\]
+
+By the properties \((\mathrm{F}_{1})\) and \((\mathrm{F}_{2})\) for the sheaf F, there exists a unique element \(s'\) of \(\mathcal{F}(\mathrm{U}_{0})\) such that for every triple \((\mathrm{U},\mathrm{V},t)\) of
+
+\(\mathrm{S}(\mathrm{U}_{0},s_{0})\) one has:
+
+\[
+f_{\mathrm{U}\mathrm{U}_{0}}(s^{\prime}) = f_{\mathrm{U}u^{-1}(\mathrm{V})}(\varphi_{\mathrm{V}}(t)).\tag{10}
+\]
+
+Denote by \(\psi_{\mathrm{U}_{0}}(s_{0})\) this element.
+
+Let \(U_{1}\) be an open set contained in \(U_{0}\) and let \(s_{1}=s_{0}|U_{1}\) . If \((\mathrm{U},\mathrm{V},t)\in\mathrm{S}(\mathrm{U}_{1},s_{1})\) , then U is an open set contained in \(U_{0}\) and \(t\circ u|U=s_{1}|U=s_{0}|U\) , therefore \((\mathrm{U},\mathrm{V},t)\in\mathrm{S}(\mathrm{U}_{0},s_{0})\) , and relation (10) then implies that
+
+\[
+f_{\mathrm{U}\mathrm{U}_{1}}(f_{\mathrm{U}_{1}\mathrm{U}_{0}}(\psi_{\mathrm{U}_{0}}(s_{0}))) = f_{\mathrm{U}\mathrm{U}_{0}}(\psi_{\mathrm{U}_{0}}(s_{0})) = f_{\mathrm{U}u^{-1}(\mathrm{V})}(\varphi_{\mathrm{V}}(t)).
+\]
+
+By definition of \(\psi_{\mathrm{U}_{1}}(s_{1})\) , we therefore have \(\psi_{\mathrm{U}_{1}}(s_{1}) = f_{\mathrm{U}_{1}\mathrm{U}_{0}}(\psi_{\mathrm{U}_{0}}(s_{0}))\) . This proves that the family \(\psi = (\psi_{\mathrm{U}})\) is a morphism of sheaves from \(u^{*}(\mathcal{G})\) into \(\mathcal{F}\).
+
+Let us prove that \(\psi\) satisfies relation (6). Let V be an open subset of B and \(t\) be a section of \(\mathrm{E}_{\mathcal{G}}\) above V. If \(\mathrm{U} = u^{-1}(\mathrm{V})\) and if \(s = t \circ u \mid \mathrm{U}\) , the triple \((\mathrm{U}, \mathrm{V}, t)\) belongs to \(\mathrm{S}(\mathrm{U}, s)\) and relation (6) is an immediate consequence of relation (10), applied to \(\mathrm{U} = \mathrm{U}_0\) .
+
+PROPOSITION 5. — Let A and B be topological spaces and let u: A → B be a continuous map.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Let \(\mathcal{G}_1\) and \(\mathcal{G}_2\) be presheaves on B and let \(\gamma\colon\mathcal{G}_1\to\mathcal{G}_2\) be a morphism of presheaves. Let also \(\mathcal{F}\) be a sheaf on A and \(\varphi\colon\mathcal{G}_2\to u_*\mathcal{F}\) a morphism of presheaves. We have the equality
+\end{enumerate}
+
+\[
+(\varphi \circ \gamma) ^ {\sharp} = \varphi^ {\sharp} \circ u ^ {*} (\gamma).\tag{11}
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(\mathcal{F}_1\) and \(\mathcal{F}_2\) be sheaves on A and let \(\mathcal{G}\) be a presheaf on B. Let \(\varphi\colon\mathcal{F}_1\to\mathcal{F}_2\) be a morphism of sheaves and let \(\gamma\colon\mathcal{G}\to u_*\mathcal{F}_1\) be a morphism of presheaves. We have the relation
+\end{enumerate}
+
+\[
+(u _ {*} (\varphi) \circ \gamma) ^ {\sharp} = \varphi \circ \gamma^ {\sharp}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  By definition of \(\varphi^{\sharp}\) and Remark 2 of I, p.~60, we have
+\end{enumerate}
+
+\[
+\varphi \circ \gamma = u _ {*} (\varphi^ {\sharp}) \circ \beta_ {\mathcal {G} _ {2}} \circ \gamma = u _ {*} (\varphi^ {\sharp}) \circ u _ {*} u ^ {*} (\gamma) \circ \beta_ {\mathcal {G} _ {1}}.
+\]
+
+Therefore, \(\varphi \circ \gamma = u_{*}(\varphi^{\sharp}\circ u^{*}(\gamma))\circ \beta_{\mathcal{G}_{1}}\); whence relation (11).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  By definition of \(\gamma^{\sharp}\) , we have
+\end{enumerate}
+
+\[
+u _ {*} (\varphi) \circ \gamma = u _ {*} (\varphi) \circ u _ {*} (\gamma^ {\sharp}) \circ \beta_ {\mathcal {G}} = u _ {*} (\varphi \circ \gamma^ {\sharp}) \circ \beta_ {\mathcal {G}},
+\]
+
+whence the announced relation, taking into account the definition of \((u_{*}(\varphi)\circ\gamma)^{\sharp}\) .
+
+Set \(\alpha_{\mathcal{F}} = \mathrm{Id}_{u_*(\mathcal{F})}^\sharp\) ; it is the unique morphism of sheaves \(\rho \colon u^*(u_*(\mathcal{F})) \to \mathcal{F}\) such that
+
+\[
+\operatorname{Id} _ {u _ {*} (\mathcal {F})} = u _ {*} (\rho) \circ \beta_ {u _ {*} (\mathcal {F})}.
+\]
+
+Relation (11) applied to \(\mathcal{G}_2 = u_*(\mathcal{F})\) and to the morphism \(\varphi = \mathrm{Id}_{u_*(\mathcal{F})}\) yields, for every morphism of presheaves \(\gamma\colon\mathcal{G}\to u_*(\mathcal{F})\), the factorization
+
+\[
+\gamma^ {\sharp} = \alpha_ {\mathcal {F}} \circ u ^ {*} (\gamma).
+\]
+
+It then follows from Proposition 4 that for every morphism of sheaves \(\psi\) from \(u^{*}(\mathcal{G})\) into \(\mathcal{F}\) , \(\psi^{\flat}\) is the unique morphism \(\varphi\colon\mathcal{G}\to u_{*}(\mathcal{F})\) such that \(\psi=\alpha_{\mathcal{F}}\circ u^{*}(\varphi)\) .
+
+Examples. --- 1) Consider a topological space B, a subspace A of B, and denote by \(i\colon A \to B\) the canonical injection. Let \((E,p)\) and \((E',p')\) be B-spaces. Take for \(\mathcal{G}\) the sheaf \(\underline{\mathcal{M}or}_{B}(E;E')\) (I, p.~45, Example 4) and for \(\mathcal{F}\) the sheaf \(\underline{\mathcal{M}or}_{A}(E_{A};E_{A}')\) . For every open set V of B and every V-morphism \(f\colon E_{V} \to E_{V}'\) , set \(\varphi_{V}(f) = f_{V \cap A}\) , where \(f_{V \cap A}\) is the \((V \cap A)\) -morphism from \(E_{V \cap A}\) into \(E_{V \cap A}'\) induced by \(f\) . The family \(\varphi = (\varphi_{V})\) thus defined is a morphism of sheaves from \(\mathcal{G}\) into \(i_*\mathcal{F}\) . By Proposition 4, there exists a unique morphism of sheaves \(\psi\colon \underline{\mathcal{M}or}_{B}(E;E')_{A} \to \underline{\mathcal{M}or}_{A}(E_{A};E_{A}')\) such that one has
+
+\[
+\psi_ {\mathrm{V} \cap \mathrm{A}} (\sigma_ {\mathcal {G}} (\mathrm{V}, f) \mid \mathrm{V} \cap \mathrm{A}) = f _ {\mathrm{V} \cap \mathrm{A}}\tag{12}
+\]
+
+for every open set V of B and every \(f \in \mathcal{C}_{\mathrm{V}}(\mathrm{E}_{\mathrm{V}}; \mathrm{E}_{\mathrm{V}}^{\prime})\) . The morphism \(\psi\) is called the canonical morphism from \(\underline{\mathcal{M}or_{B}}(\mathrm{E}; \mathrm{E}^{\prime})_{\mathrm{A}}\) into \(\underline{\mathcal{M}or_{A}}(\mathrm{E}_{\mathrm{A}}; \mathrm{E}_{\mathrm{A}}^{\prime})\) .
+
+If A is reduced to a single point \(a\) , this morphism is identified with the morphism from the stalk at \(a\) of the sheaf \(\underline{\mathcal{M}or}_{\mathrm{B}}(\mathrm{E};\mathrm{E}^{\prime})\) into the set \(\mathcal{C}(\mathrm{E}_a;\mathrm{E}_a')\) .
+
+By passing to subsheaves, the morphism \(\psi\) induces a canonical morphism of \(\mathcal{I}som_{\mathrm{B}}(\mathrm{E};\mathrm{E}')_{\mathrm{A}}\) into \(\mathcal{I}som_{\mathrm{A}}(\mathrm{E}_{\mathrm{A}};\mathrm{E}_{\mathrm{A}}^{\prime})\) .
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let A, B, C be topological spaces and let \(u\colon A\to B\) , \(v\colon B\to C\) be continuous maps; set \(w=v\circ u\) . Let E and E' be C-spaces. The canonical morphism of \(\underline{\mathcal{M}or}_{C}(E;E')_{A}\) into \(\underline{\mathcal{M}or}_{A}(E_{A};E'_{A})\) is the composite of the morphism \(\underline{\mathcal{M}or}_{C}(E;E')_{A}\to\underline{\mathcal{M}or}_{B}(E_{B};E'_{B})_{A}\) deduced from the canonical morphism of \(\underline{\mathcal{M}or}_{C}(E;E')_{B}\) into \(\underline{\mathcal{M}or}_{B}(E_{B};E'_{B})\) and the canonical morphism of \(\underline{\mathcal{M}or}_{B}(E_{B},E'_{B})_{A}\) into \(\underline{\mathcal{M}or}_{A}(E_{A},E'_{A})\) .
+\end{enumerate}
+% semantic-fragments: legacy-input-seam
+\relax{}

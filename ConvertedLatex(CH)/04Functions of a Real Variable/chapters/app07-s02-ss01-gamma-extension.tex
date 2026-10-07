@@ -1,0 +1,66 @@
+\subsection{Γ 函数到 C 上的延拓}
+
+我们回到魏尔斯特拉斯公式，它给出表达式
+
+\[
+\frac {1}{\Gamma (x)} = x e ^ {\gamma x} \prod_ {n = 1} ^ {\infty} \left(1 + \frac {x}{n}\right) e ^ {- x / n}\tag{1}
+\]
+
+\(1 / \Gamma (x)\) （对一切实数 \(x\) ）；现考虑以 \(\left(1 + \frac{z}{n}\right)e^{-z / n}\) 为通项、以任意复数 \(z\) 为变量的无穷乘积。可以写 \(e^{-z / n} = 1 - \frac{z}{n} + h(z)\) ，其中 \(|h(z)| \leqslant \frac{|z|^2}{2n^2} e^{|z / n|}\) （III, p.~106, 公式 (8)），于是
+
+\[
+\left(1 + \frac {z}{n}\right) e ^ {- z / n} = 1 + v _ {n} (z)
+\]
+
+其中 \(|v_{n}(z)| \leqslant \frac{|z|^{2}}{n^{2}}\left(1 + \frac{e^{|z|}}{2}(1 + |z|)\right)\) ；因此所考虑的无穷乘积在 C 的每个紧子集上绝对且一致收敛；而且，它的值仅在点 z = -n 处为零（Gen.~Top., IX, p.~214, corollary）。鉴于 VII, p.~315 的公式 (1) ，对每个复数 z ，令
+
+\[
+\frac {1}{\Gamma (z)} = z e ^ {\gamma z} \prod_ {n = 1} ^ {\infty} \left(1 + \frac {z}{n}\right) e ^ {- z / n}.\tag{2}
+\]
+
+这样，函数 \(\Gamma(z)\) 对每个点 \(z \in \mathbf{C}\) （除点 \(-n\) （ \(n \in \mathbf{N}\) ）以外）都有定义；它在这个集合上连续，并且 \((z + n)\Gamma(z) \sim \frac{(-1)^n}{n!}\) （在 \(-n\) 的一个邻域中）。公式 (2) 表明，有 \(\Gamma(\overline{z}) = \overline{\Gamma(z)}\) （对每个异于负整数的 \(z\) ）。
+
+从高斯公式（VII, p.~307, 公式 (8)）过渡到魏尔斯特拉斯公式的论证，将其中的步骤倒转，也适用于复数 \(z\) ，并且表明，对 \(z \neq -n\) （ \(n \in \mathbf{N}\) ），有
+
+\[
+\Gamma (z) = \lim _ {n \rightarrow \infty} \frac {n ^ {z} n !}{z (z + 1) \dots (z + n)}\tag{3}
+\]
+
+这里约定取 \(n^z = e^{z\log n}\) 。由于
+
+\[
+\frac {n ^ {z + 1} n !}{(z + 1) (z + 2) \dots (z + n + 1)} = z \frac {n}{n + 1 + z} \frac {n ^ {z} n !}{z (z + 1) \dots (z + n)}
+\]
+
+取极限，再次得到基本泛函方程
+
+\[
+\Gamma (z + 1) = z \Gamma (z)\tag{4}
+\]
+
+对每个 \(z \neq -n (n \in \mathbf{N})\) 成立。
+
+设 \(p\) 是任意整数 \(> 0\) ，\(\mathrm{K}_p\) 为开圆盘 \(|z| < p\) ；对每个 \(z \in \mathrm{K}_p\) 与每个整数 \(n > p\) ，\(1 + \frac{z}{n}\) 不是负实数，故 \(\log \left(1 + \frac{z}{n}\right)\) 有定义，且由上所述，以 \(\log \left(1 + \frac{z}{n}\right) - \frac{z}{n} (n > p)\) 为通项的级数在 \(\mathrm{K}_p\) 上正规收敛；对通项微分有限次所得的级数也同样如此，因为有
+
+\[
+\left| \frac {1}{n} - \frac {1}{z + n} \right| \leqslant \frac {p}{n (n - p)} \quad \text { and } \quad \left| \frac {1}{(z + n) ^ {k}} \right| \leqslant \frac {1}{(n - p) ^ {k}} \quad (k > 1)
+\]
+
+对 \(z \in \mathbf{K}_p\) 与 \(n > p\) 成立。于是可以看出（cf.~II, p.~59, 注 3），\(\Gamma(z)\) 在所有点 \(z \in \mathbf{C}\) （除诸点 \(-n\) 以外）处无穷次可导，且在这些点处有
+
+\[
+{\frac {\Gamma^ {\prime} (z)}{\Gamma (z)}} = - \gamma - {\frac {1}{z}} + \sum_ {n = 1} ^ {\infty} \left({\frac {1}{n}} - {\frac {1}{z + n}}\right)\tag{5}
+\]
+
+\[
+\mathrm{D} ^ {k - 1} \left(\frac {\Gamma^ {\prime} (z)}{\Gamma (z)}\right) = \sum_ {n = 0} ^ {\infty} \frac {(- 1) ^ {k} (k - 1) !}{(z + n) ^ {k}} \quad \text { for } \quad k \geqslant 2,\tag{6}
+\]
+
+其中 (5) 与 (6) 的右端在 \(\mathbf{C}\) 的每个不含任何整数 \(\leqslant 0\) 的紧子集上正规收敛。此外，可以写
+
+\[
+\log \Gamma (z) \equiv - \gamma z - \log z + \sum_ {n = 1} ^ {\infty} \left(\frac {z}{n} - \log \left(1 + \frac {z}{n}\right)\right) \pmod {2 \pi i}\tag{7}
+\]
+
+这里约定：当此公式中的某个对数是负实数的对数时，就在该点处取相差 \(2\pi i\) 的 \(\log z\) 的这一个或那一个极限值；于是 (7) 右端的级数在 C 的每个不含任何整数 \(\leqslant 0\) 的紧子集上正规收敛。
+

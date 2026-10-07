@@ -1,0 +1,184 @@
+\subsection{欧拉积分}
+
+为简便起见，我们称一个函数 \(f\) （定义在区间 \(I \subset \mathbf{R}\) 上，且在此区间上 \(> 0\) ）在 \(I\) 上是对数凸的，如果 \(\log f\) 在 \(I\) 上是凸的。\(\Gamma(x)\) 的定义表明这个函数在 \(]0, +\infty[\) 上是对数凸的。
+
+显然，I 上两个对数凸函数的乘积在 I 上也是对数凸的。此外：
+
+引理 1. 设 \(f\) 与 \(g\) 是开区间 I 上两个 \(> 0\) 且两次可导的函数。若 \(f\) 与 \(g\) 都是 I 上的对数凸函数，则 \(f + g\) 在 I 上也是对数凸的。
+
+关系式 \(\mathrm{D}^{2}\left(\log f(x)\right) \geqslant 0\) 可以写成 \(f(x)f''(x) - \left(f'(x)\right)^{2} \geqslant 0\) 。于是只需证明：关系式 a \textgreater{} 0、\(a' > 0\)、\(ac - b^{2} \geqslant 0\)、\(a'c' - b'^{2} \geqslant 0\) 蕴含 \((a + a')(c + c') - (b + b')^{2} \geqslant 0\) ；而当 a \textgreater{} 0 时，关系式 \(ac - b^{2} \geqslant 0\) 等价于二次型 \(ax^{2} + 2bxy + cy^{2}\) 为 \(\geqslant 0\) （在 \(R^{2}\) 上）这一事实，且显然，若
+
+\[
+a x ^ {2} + 2 b x y + c y ^ {2} \geqslant 0 \quad \text { and } \quad a ^ {\prime} x ^ {2} + 2 b ^ {\prime} x y + c ^ {\prime} y ^ {2} \geqslant 0
+\]
+
+在 \(\mathbf{R}^{2}\) 上成立，则 \((a + a')x^{2} + 2(b + b')xy + (c + c')y^{2} \geqslant 0\) 在 \(\mathbf{R}^{2}\) 上也成立。
+
+引理 2. 设 \(f\) 是一个有限实值函数，\(>0\) ，在积 \(I \times J\) （\(\mathbf{R}\) 中两个开区间之积）上有定义且连续，并使得对每个 \(t \in J\) ，函数 \(x \mapsto f(x,t)\) 在 \(I\) 上是对数凸的且两次可导。在这些假设下，若积分 \(g(x) = \int_{J} f(x,t) dt\) 对每个 \(x \in I\) 收敛，则 \(g\) 在 \(I\) 上是对数凸的。
+
+首先证明，对每个紧区间 \(K \subset J\) ，函数 \(g_{K}(x) = \int_{K} f(x, t) dt\) 是对数凸的。事实上，若 \(K = [a, b]\) ，则函数序列
+
+\[
+g _ {n} (x) = \frac {b - a}{n} \sum_ {k = 0} ^ {n - 1} f \left(x, a + k \frac {b - a}{n}\right)
+\]
+
+在 I 上简单收敛于 \(g_{K}(x)\) （II, p.~57, prop. 5），因而 \(\log g_{n}\) 简单收敛于 \(\log g_{K}\) ；由 VII, p.~310 的引理 1，\(\log g_{n}\) 在 I 上是凸的，故（I, p.~27, prop. 4）\(\log g_{K}\) 也是凸的。
+
+另一方面，g 是 \(g_{K}\) 沿 I 的紧子区间所成的定向集的逐点极限（II, p.~64），故 \(\log g\) 是诸 \(\log g_{K}\) 的逐点极限；这些函数在 I 上都是凸的，因而 \(\log g\) 也是凸的（I, p.~27, prop. 4）。
+
+容易证明，即使不假设函数两次可导，引理 1 与引理 2 仍然成立（VII, p.~327, exerc. 5）。
+
+引理 3. 设 \(\varphi\) 是一个连续且 \(>0\) 的函数，定义在开区间 \(J\) （含于 \([0, +\infty[\) ）上。若 \(I\) 是使积分 \(g(x) = \int_{J} t^{x-1} \varphi(t) dt\) 对一切 \(x \in I\) 收敛的开区间，则 \(g\) 在 \(I\) 上是对数凸的。
+
+事实上，\(\log t^{x - 1} = (x - 1)\log t\) 作为 \(x\) 的函数，对一切 \(t > 0\) 是凸的且两次可导的，故引理 2 适用。
+
+命题 3. 对一切 \(x > 0\)
+
+\[
+\Gamma (x) = \int_ {0} ^ {\infty} e ^ {- t} t ^ {x - 1} d t\tag{14}
+\]
+
+（第二类欧拉积分）。
+
+现在，函数 \(g(x) = \int_0^\infty e^{-t} t^{x-1} dt\) 对一切 \(x > 0\) 有定义（V, p.~229）；于是由 VII, p.~311 的引理 3，它在 \(]0, +\infty[\) 上是对数凸的。此外，分部积分给出
+
+\[
+g (x + 1) = \int_ {0} ^ {\infty} e ^ {- t} t ^ {x} d t = - e ^ {- t} t ^ {x} \Big | _ {0} ^ {\infty} + x \int_ {0} ^ {\infty} e ^ {- t} t ^ {x - 1} d t = x g (x).
+\]
+
+换句话说，g 是 VII, p.~305 的方程 (1) 的一个解；最后，
+
+\[
+g (1) = \int_ {0} ^ {\infty} e ^ {- t} d t = 1;
+\]
+
+因而命题由 VII, p.~306 的 prop. 1 得出。
+
+由变量替换 \(e^{-t}=u\) ，从 (14) （VII, p.~311）推出公式
+
+\[
+\Gamma (x) = \int_ {0} ^ {1} \left(\log \frac {1}{t}\right) ^ {x - 1} d t.\tag{15}
+\]
+
+同样，由变量替换 \(u = t^{x}\) 得到
+
+\[
+x \Gamma (x) = \int_ {0} ^ {\infty} e ^ {- t ^ {1 / x}} d t
+\]
+
+或者再利用 (7) （VII, p.~3），得
+
+\[
+\Gamma \left(1 + \frac {1}{x}\right) = \int_ {0} ^ {\infty} e ^ {- t ^ {x}} d t\tag{16}
+\]
+
+而特别地，对 \(x = 2\) ，有
+
+\[
+\Gamma \left(\frac {3}{2}\right) = \frac {1}{2} \Gamma \left(\frac {1}{2}\right) = \int_ {0} ^ {\infty} e ^ {- t ^ {2}} d t.\tag{17}
+\]
+
+命题 4. 对 x \textgreater{} 0 与 y \textgreater{} 0 ，积分
+
+\[
+\mathbf {B} (x, y) = \int_ {0} ^ {1} t ^ {x - 1} (1 - y) ^ {y - 1} d t
+\]
+
+（第一类欧拉积分）取值
+
+\[
+\mathbf {B} (x, y) = \frac {\Gamma (x) \Gamma (y)}{\Gamma (x + y)}.\tag{18}
+\]
+
+事实上，这个积分对 \(x > 0\) 与 \(y > 0\) 收敛（V, p.~229）。由 VII, p.~311 的引理 3，函数 \(x \mapsto \mathbf{B}(x, y)\) 对 \(x > 0\) 是对数凸的。此外，
+
+\[
+\mathbf {B} (x + 1, y) = \int_ {0} ^ {1} (1 - t) ^ {x + y - 1} \left(\frac {t}{1 - t}\right) ^ {x} d t
+\]
+
+于是，由分部积分得
+
+\[
+\begin{array}{l} \mathbf {B} (x + 1, y) = - \frac {(1 - t) ^ {x + y}}{x + y} \left(\frac {t}{1 - t}\right) ^ {x} \Bigg | _ {0} ^ {1} \\ \qquad + \frac {x}{x + y} \int_ {0} ^ {1} (1 - t) ^ {x + y} \left(\frac {t}{1 - t}\right) ^ {x - 1} \frac {d t}{(1 - t) ^ {2}} = \frac {x}{x + y} \mathbf {B} (x, y). \end{array}
+\]
+
+由此推出，\(f(x) = \mathbf{B}(x, y) \Gamma(x + y)\) 满足 VII, p.~305 的恒等式 (1) 。而且，这个函数作为两个对数凸函数的乘积，是对数凸的。最后，有 \(f(1) = \mathbf{B}(1, y) \Gamma(y + 1)\) ，而 \(\mathbf{B}(1, y) = \int_{0}^{1} (1 - t)^{y - 1} dt = 1/y\) ，故 \(f(1) = \frac{1}{y} \Gamma(y + 1) = \Gamma(y)\) 。于是由 VII, p.~306 的 prop. 1，函数 \(f(x)/\Gamma(y)\) 等于 \(\Gamma(x)\) ，这就证明了 (18)。
+
+由变量替换 \(t = \frac{u}{u + 1}\) ，公式 (18) 变为
+
+\[
+\int_ {0} ^ {\infty} \frac {t ^ {x - 1}}{(1 + t) ^ {x + y}} d t = \frac {\Gamma (x) \Gamma (y)}{\Gamma (x + y)}\tag{19}
+\]
+
+而由变量替换 \(t = \sin^{2} \varphi\) ，得
+
+\[
+\int_ {0} ^ {\pi / 2} \sin^ {2 x - 1} \varphi \cos^ {2 y - 1} \varphi d \varphi = \frac {1}{2} \frac {\Gamma (x) \Gamma (y)}{\Gamma (x + y)}.\tag{20}
+\]
+
+在这最后一个公式中取 \(x = y = \frac{1}{2}\) ，便得
+
+\[
+\Gamma (\frac {1}{2}) = \sqrt {\pi}\tag{21}
+\]
+
+再由 (17) ，得
+
+\[
+\int_ {0} ^ {\infty} e ^ {- t ^ {2}} d t = \frac {1}{2} \sqrt {\pi}.\tag{22}
+\]
+
+由 VII, p.~307 的关系式 (7) ，有渐近展开
+
+\[
+\begin{array}{l} \Gamma (x) = \frac {1}{x} \Gamma (x + 1) \\ = \frac {1}{x} + \Gamma^ {\prime} (1) + \frac {1}{2 !} \Gamma^ {\prime \prime} (1) x + \dots + \frac {1}{n !} \Gamma^ {(n)} (1) x ^ {n - 1} + O (x ^ {n}) \end{array}\tag{23}
+\]
+
+这是 \(\Gamma(x)\) 在 0 的一个邻域中的渐近展开。
+
+同样，对每个固定的 y 且 \textgreater{} 0 ，可以写出
+
+\[
+\begin{array}{l} \frac {1}{\Gamma (x + y)} = \frac {1}{\Gamma (y)} + D \left(\frac {1}{\Gamma (y)}\right) x \\ \qquad + \frac {1}{2 !} D ^ {2} \left(\frac {1}{\Gamma (y)}\right) x ^ {2} + \dots + \frac {1}{n !} D ^ {n} \left(\frac {1}{\Gamma (y)}\right) x ^ {n} + O _ {1} (x ^ {n + 1}) \end{array}
+\]
+
+于是公式 (18) 给出，对固定的 y ，渐近展开
+
+\[
+\begin{array}{l} \mathbf {B} (x, y) = \frac {1}{x} + \left(\Gamma^ {\prime} (1) - \frac {\Gamma^ {\prime} (y)}{\Gamma (y)}\right) \\ \qquad + \left(\frac {\Gamma^ {\prime \prime} (1)}{2} - \Gamma^ {\prime} (1) \frac {\Gamma^ {\prime} (y)}{\Gamma (y)} + \frac {2 \Gamma^ {\prime 2} (y) - \Gamma (y) \Gamma^ {\prime \prime} (y)}{2 \Gamma^ {2} (y)}\right) x + O (x ^ {2}) \end{array}\tag{24}
+\]
+
+在 \(x = 0\) 的一个邻域中成立。
+
+此外，对 x \textgreater{} 0 与 y \textgreater{} 0 ，有
+
+\[
+\begin{array}{l} \mathbf {B} (x, y) = \int_ {0} ^ {1} \left(t ^ {x - 1} + t ^ {x} \frac {(1 - t) ^ {y - 1} - 1}{t}\right) d t \\ = \frac {1}{x} + \int_ {0} ^ {1} t ^ {x} \frac {(1 - t) ^ {y - 1} - 1}{t} d t. \end{array}\tag{25}
+\]
+
+函数 \(\varphi(t) = \frac{(1 - t)^{y - 1} - 1}{t}\) 在紧区间 {[}0, 1{]} 上连续；由于
+
+\[
+t ^ {x} = e ^ {x \log t} = 1 + x \log t + \frac {x ^ {2}}{2 !} (\log t) ^ {2} + \dots + \frac {x ^ {n}}{n !} (\log t) ^ {n} + r _ {n} (x, t)
+\]
+
+其中 \(|r_n(x,t)| \leqslant \frac{x^{n+1}}{(n+1)!} |\log t|^{n+1}\) （因为 \(\log t \leqslant 0\) 且 \(x > 0\) ），公式 (25) 给出渐近展开
+
+\[
+\begin{array}{l} \mathbf {B} (x, y) = \frac {1}{x} + \int_ {0} ^ {1} \varphi (t) d t + x \int_ {0} ^ {1} \varphi (t) \log t d t + \dots \\ \qquad + \frac {x ^ {n}}{n !} \int_ {0} ^ {1} \varphi (t) (\log t) ^ {n} d t + O _ {2} (x ^ {n + 1}) \end{array}
+\]
+
+这是 \(\mathbf{B}(x,y)\) 在 0 的一个邻域中的渐近展开。
+
+对 \(n = 1\) ，把这一展开与 (24) 等同起来，特别得到
+
+\[
+\Gamma^ {\prime} (1) - \frac {\Gamma^ {\prime} (y)}{\Gamma (y)} = \int_ {0} ^ {1} \frac {(1 - t) ^ {y - 1} - 1}{t} d t.
+\]
+
+此外，公式 (10) 给出 \(\Gamma'(1) = \Gamma'(1)/\Gamma(1) = -\gamma\) ，于是（高斯积分）
+
+\[
+\frac {\Gamma^ {\prime} (x)}{\Gamma (x)} + \gamma = \int_ {0} ^ {1} \frac {1 - (1 - t) ^ {x - 1}}{t} d t.\tag{26}
+\]
+

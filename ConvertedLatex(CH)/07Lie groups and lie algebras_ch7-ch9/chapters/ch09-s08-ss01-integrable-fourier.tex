@@ -1,0 +1,130 @@
+\subsection{可积函数的 Fourier 变换}
+
+本节回顾 Spectral Theories\(^{6}\) 中的一些定义和结果。
+
+记 \(\hat{\mathbf{G}}\) 为 \(\mathbf{G}\) 的不可约表示（作用在有限维复向量空间上）的等价类集合。对于所有 \(u\in \hat{\mathbf{G}}\)，记 \(\mathrm{E}_u\) 为 \(u\) 的表示空间，记 \(d(u)\) 为其维数。\(\mathrm{E}_u\) 上存在在 \(u\) 下不变的分离的正埃尔米特型，且任意两个这样的型成比例。相对于这些型中的一个，记 \(\mathrm{A}^*\)（相应地，\(\| \mathrm{A}\|_{\infty}\)）为元素 \(\mathrm{A}\) 在 \(\operatorname {End}(\mathrm{E}_u)\) 中的伴随（相应地，其范数）；对于所有 \(g\in \mathbf{G}\)，有 \(u(g)^{*} = u(g)^{-1} = u(g^{-1})\) 且 \(\| u(g)\|_{\infty} = 1\)；对于所有 \(x\in \mathfrak{g}\)，有 \(u(x)^{*} = -u(x) = u(-x)\)。
+
+在 \(\operatorname{End}(\mathbf{E}_u)\) 上赋予希尔伯特空间结构，使其内积为
+
+\[
+\langle \mathrm{A} | \mathrm{B} \rangle = d (u) \mathrm{Tr} (\mathrm{A} ^ {*} \mathrm{B}) = d (u) \mathrm{Tr} (\mathrm{BA} ^ {*}),\tag{1}
+\]
+
+并令
+
+\[
+\| \mathrm{A} \| _ {2} = \langle \mathrm{A} | \mathrm{A} \rangle^ {1 / 2} = (d (u) \mathrm{Tr} (\mathrm{A} ^ {*} \mathrm{A})) ^ {1 / 2}.\tag{2}
+\]
+
+有
+
+\[
+\sqrt {d (u)} \| \mathrm{A} \| _ {\infty} \leq \| \mathrm{A} \| _ {2} \leq d (u) \| \mathrm{A} \| _ {\infty},\tag{3}
+\]
+
+因此
+
+\[
+| \langle \mathrm{A} | \mathrm{B} \rangle | \leq d (u) ^ {2} \| \mathrm{A} \| _ {\infty} \| \mathrm{B} \| _ {\infty}.\tag{4}
+\]
+
+对于所有 \(g \in \mathrm{G}\)，有 \(\| u(g) \|_2 = d(u)\)。
+
+记 \(\mathrm{F}(\hat{\mathrm{G}})\) 为代数 \(\prod_{u\in \hat{\mathrm{G}}}\mathrm{End}(\mathrm{E}_u)\)。记 \(\mathrm{L}^2 (\hat{\mathrm{G}})\) 为希尔伯特空间 \(\mathrm{End}(\mathrm{E}_u)\) 的希尔伯特和；它是由族 \(\mathrm{A} = (\mathrm{A}_u)\in \mathrm{F}(\hat{\mathrm{G}})\) 构成的空间，其中满足 \(\sum_{u}\| \mathrm{A}_{u}\|_{2}^{2} < \infty\)，其内积为
+
+\[
+\langle \mathrm{A} | \mathrm{B} \rangle = \sum_ {u \in \hat {\mathrm{G}}} \langle \mathrm{A} _ {u} | \mathrm{B} _ {u} \rangle = \sum_ {u \in \hat {\mathrm{G}}} d (u) \operatorname{Tr} (\mathrm{A} _ {u} ^ {*} \mathrm{B} _ {u}).\tag{5}
+\]
+
+\(L^{2}(\hat{G})\) 上的希尔伯特范数也记作 \(\parallel\parallel_{2}\)，于是有 \(\|A\|_{2}^{2}=\sum_{u\in\hat{G}}\|A_{u}\|_{2}^{2}\)，其中 \(A\in L^{2}(\hat{G})\)。
+
+若 \(f\) 是 \(G\) 上的可积复函数，定义
+
+\[
+u (f) = \int_ {\mathrm{G}} f (g) u (g) d g \in \operatorname{End} (\mathrm{E} _ {u})\tag{6}
+\]
+
+对于所有 \(u \in \hat{\mathbf{G}}\)。有 \(\| u(f) \|_{\infty} \leq \int_{\mathbf{G}} |f(g)| dg = \| f \|_1\)。\(f\) 的 Fourier 余变换记为 \(\overline{\mathcal{F}}(f)\)，它是族 \((u(f))_{u \in \hat{\mathbf{G}}} \in \mathrm{F}(\hat{\mathbf{G}})\)。若 \(f \in \mathrm{L}^2(\hat{\mathbf{G}})\)，
+
+\[
+\| f \| _ {2} ^ {2} = \sum_ {u \in \hat {\mathsf {G}}} \langle u (f) | u (f) \rangle = \| \overline {{\mathcal {F}}} (f) \| _ {2} ^ {2},
+\]
+
+因此 \(\overline{F}\) 诱导出从希尔伯特空间 \(\mathrm{L}^{2}(\mathrm{G})\) 到希尔伯特空间 \(\mathrm{L}^{2}(\hat{\mathrm{G}})\) 的等距线性映射；换言之，对于 f 和 \(f'\) 属于 \(\mathrm{L}^{2}(\mathrm{G})\)，有
+
+\[
+\int_ {\mathrm{G}} \overline {{f (g)}} f ^ {\prime} (g) d g = \langle \overline {{\mathcal {F}}} (f) | \overline {{\mathcal {F}}} (f ^ {\prime}) \rangle = \sum_ {u \in \hat {\mathrm{G}}} d (u) \mathrm{Tr} (u (f) ^ {*} u (f ^ {\prime})).\tag{7}
+\]
+
+对于 \(f\) 和 \(f'\) 属于 \(\mathrm{L}^1(\mathrm{G})\)，\(f * f'\) 是 \(f\) 与 \(f'\) 的卷积积，定义为
+
+\[
+(f * f ^ {\prime}) (h) = \int_ {G} f (h g ^ {- 1}) f ^ {\prime} (g) d g = \int_ {G} f (g) f ^ {\prime} (g ^ {- 1} h) d g
+\]
+
+（该积分对几乎所有 \(h \in \mathbf{G}\) 都有意义）。
+
+有 \(f * f' \in L^{1}(G)\)，且对于所有 \(u \in \hat{G}\)，\(u(f * f') = u(f)u(f')\)，故
+
+\[
+\overline {{{{\mathcal {F}}}}} (f * f ^ {\prime}) = \overline {{{{\mathcal {F}}}}} (f). \overline {{{{\mathcal {F}}}}} (f ^ {\prime}).\tag{8}
+\]
+
+反之，设 \(\mathrm{A} = (\mathrm{A}_{u})_{u \in \hat{\mathrm{G}}}\) 是 \(\mathrm{F}(\hat{\mathrm{G}})\) 的一个元素；对于所有 \(u \in \hat{G}\)，令 \(F_{u}A\) 为 G 上由下式定义的（解析）函数
+
+\[
+(\mathcal {F} _ {u} \mathrm{A}) (g) = \langle u (g) | \mathrm{A} _ {u} \rangle = d (u) \mathrm{Tr} (\mathrm{A} _ {u} u (g) ^ {- 1}).\tag{9}
+\]
+
+若 \(\mathrm{A} \in \mathrm{L}^2(\hat{\mathrm{G}})\)，族 \((\mathcal{F}_u\mathrm{A})_{u \in \hat{\mathrm{G}}}\) 在 \(\mathrm{L}^2(\mathrm{G})\) 中可求和；\(\mathrm{A}\) 的 Fourier 变换记为 \(\mathcal{F}(\mathrm{A})\)，定义为该族之和。映射 \(\overline{\mathcal{F}}\) 和 \(\mathcal{F}\) 是希尔伯特空间 \(\mathrm{L}^2(\mathrm{G})\) 与 \(\mathrm{L}^2(\hat{\mathrm{G}})\) 之间的互逆同构。
+
+换言之：
+
+命题 1. 每个平方可积复函数 \(f\)（定义在 \(G\) 上）都是在希尔伯特空间 \(L^2(G)\) 中族 \((f_u)_{u\in \hat{G}}\) 的和，其中对于所有 \(h\in G\) 和所有 \(u\in \hat{G}\)，
+
+\[
+\begin{array}{l} f _ {u} (h) = \langle u (h) | u (f) \rangle \\ \qquad = d (u) \int_ {\mathrm{G}} f (g) \mathrm{Tr} (u (g h ^ {- 1}))   d g = d (u) \int_ {\mathrm{G}} f (g h) \mathrm{Tr} (u (g))   d g. \end{array}\tag{10}
+\]
+
+对于所有 \(u \in \hat{\mathrm{G}}\)，选取 \(\mathrm{B}_u\) 作为 \(\mathrm{E}_u\) 的一个规范正交基，并记 \((u_{ij}(g))\) 为此基下 \(u(g)\) 的矩阵。命题 1 还意味着，函数族 \(\sqrt{d(u)} u_{ij}\)（其中 \(u\) 属于 \(\hat{\mathrm{G}}\) 且 \(i,j\) 属于 \(\mathrm{B}_u\)）是空间 \(\mathrm{L}^2 (\mathrm{G})\) 的一个规范正交基。
+
+若 f 是 G 上的可积函数且族 \((f_{u})\) 一致可求和，则该族之和是一个几乎处处与 f 一致的连续函数；换言之，若再假定 f 连续，则对于所有 \(h \in G\)，
+
+\[
+f (h) = \sum_ {u \in \hat {\mathrm{G}}} d (u) \int_ {\mathrm{G}} f (g h) \mathrm{Tr} (u (g))   d g.\tag{11}
+\]
+
+反之，设 \(\mathrm{A} \in \mathrm{F}(\hat{\mathrm{G}})\)；若族 \((\mathcal{F}_u\mathrm{A})_{u \in \hat{\mathrm{G}}}\) 一致可求和，则函数
+
+\[
+g \mapsto \sum_ {u \in \hat {\mathrm{G}}} (\mathcal {F} _ {u} \mathrm{A}) (g) = \sum_ {u \in \hat {\mathrm{G}}} d (u) \mathrm{Tr} (\mathrm{A} _ {u} u (g) ^ {- 1})
+\]
+
+是 \(G\) 上的连续函数，其 Fourier 余变换为 \(A\)。
+
+设 \(f\) 是 \(\mathbf{G}\) 上的可积函数，且 \(s \in \mathbf{G}\)。记 \(\gamma(s)f\) 和 \(\delta(s)f\) 为 \(\mathbf{G}\) 上由 \(\gamma(s)f = \varepsilon_s * f\)、\(\delta(s)f = f * \varepsilon_{s^{-1}}\) 定义的函数，即
+
+\[
+(\gamma (s) f) (g) = f (s ^ {- 1} g), \quad (\delta (s) f) (g) = f (g s) \text { for } g \in \mathrm{G},
+\]
+
+(Chap. III, §3, no. 4 and Integration, Chap. VII, §1, no. 1). 有
+
+\[
+u (\gamma (s) f) = \int_ {\mathrm{G}} f (s ^ {- 1} g) u (g) d g = \int_ {\mathrm{G}} f (g) u (s g) d g,
+\]
+
+因此
+
+\[
+u (\gamma (s) f) = u (s) u (f),\tag{12}
+\]
+
+类似地
+
+\[
+u (\delta (s ^ {- 1}) f) = u (f) u (s).\tag{13}
+\]
+
+当 G 交换时，\(\hat{G}\) 是 G 的对偶群的底层集合（Spectral Theories, Chap. II, §1, no. 1），且 \(d(u) = 1\) 对所有 \(u \in \hat{G}\) 成立，于是我们得到 Spectral Theories, Chap. II 中给出的 Fourier 变换定义。
+

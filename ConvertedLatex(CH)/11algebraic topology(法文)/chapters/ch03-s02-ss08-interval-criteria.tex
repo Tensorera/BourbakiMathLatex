@@ -1,0 +1,120 @@
+\subsection{区间的刻画}
+
+引理 6. --- 设 D 是一个可数的全序集，不退化为单元素集，具有最小元和最大元。假设 D 无间隙（E, III, p.~73, 习题 19），即，每个开区间 {]}x, y{[}，其中 x 和 y 是 D 中满足 x \textless{} y 的元素，都非空。于是存在一个从 I ∩ Q 到 D 的有序集同构。
+
+令 \(a\) 为最小元，\(b\) 为最大元。依假设，有 \(b \neq a\)，且 \(]a\) , \(x[\neq \emptyset\) 对每个 \(x \in \mathrm{D} - \{a\}\) 成立。集合 \(\mathrm{D} - \{a\}\) 是全序的、非空且没有最小元；因此它是无限的（E, III, p.~34, 命题 3 的推论 1）。集合 \(\mathbf{I} \cap \mathbf{Q}\) 和 D 都是无限可数的，且与 \(\mathbf{N}\) 等势。
+
+选取双射 \(n \mapsto a_{n}\) 与 \(n \mapsto b_{n}\)，分别从 N 到 \(I \cap Q\) 和 D，使得 \(a_{0} = 0\)、\(a_{1} = 1\)、\(b_{0} = a\)、\(b_{1} = b\)。存在唯一一个严格递增映射 \(f: I \cap Q \to D\)，具有以下性质：\(f(0) = a\) 且 \(f(1) = b\)；当 \(n \geqslant 2\) 时，\(f(a_{n}) = b_{m}\)，其中 m 是使得从 \(\{a_{0}, \ldots, a_{n}\}\) 到 D 的、在 \(\{a_{0}, \ldots, a_{n-1}\}\) 上与 f 一致且将 \(a_{n}\) 映为 \(b_{m}\) 的映射严格递增的最小自然整数。这些性质确实通过对 n 归纳定义了 \(f(a_{n})\)，而整数 m 的存在性由 D 无间隙这一事实保证。
+
+由于映射 \(f\) 严格递增且 \(\mathbf{I} \cap \mathbf{Q}\) 是全序的，\(f\) 定义了从 \(\mathbf{I} \cap \mathbf{Q}\) 到其像的有序集同构（E, III, p.~14, 命题 11）。还需证明 \(f\) 是满射。为此，我们证明 \(b_{m}\) 属于 \(f\) 的像，对所有 \(m \in \mathbf{N}\) 成立。
+
+我们有 \(b_{0}=f(0)\) 和 \(b_{1}=f(1)\)。假设 \(m\geqslant2\)，并且对于 \(0\leqslant k\leqslant m-1\)，存在 \(c_{k}\in I\cap Q\) 使得 \(f(c_{k})=b_{k}\)。由于 f 是单射，有 \(c_{0}=0\) 和 \(c_{1}=1\)。考虑满足下列条件的最小整数 \(n\in N\)：\(a_{n}\) 不属于 \(\{c_{0},\ldots,c_{m-1}\}\)，并且从 \(\{c_{0},\ldots,c_{m-1},a_{n}\}\) 到 D 的、在 \(\{c_{0},\ldots,c_{m-1}\}\) 上与 f 一致且将 \(a_{n}\) 映为 \(b_{m}\) 的映射 g 严格递增；这样的整数存在，因为 \(I\cap Q\) 无间隙。令 \(f'\) 为从 \(\{a_{0},\ldots,a_{n}\}\) 到 D 的映射，它在 \(\{a_{0},\ldots,a_{n-1}\}\) 上与 f 一致，并将 \(a_{n}\) 映为 \(b_{m}\)。我们来证明它严格递增。令 \(j\in\{0,\ldots,n-1\}\)；由整数 n 的定义，存在 \(k\in\{0,\ldots,m-1\}\)，使得 \(a_{j}=c_{k}\)，或者 \(a_{j}<c_{k}\) 且 \(b_{m}\geqslant f(c_{k})\)，或者 \(a_{j}>c_{k}\) 且 \(b_{m}\leqslant f(c_{k})\)。假设 \(b_{k}<b_{m}\)；于是 \(g(c_{k})=f(c_{k})=b_{k}<b_{m}=g(a_{n})\)，从而由于 g 严格递增，有 \(c_{k}<a_{n}\)，进而 \(a_{j}\leqslant c_{k}<a_{n}\)；此外，\(f'(a_{j})=f(a_{j})\leqslant f(c_{k})=b_{k}<b_{m}=f'(a_{n})\)。同样，若 \(b_{k}>b_{m}\)，则有 \(a_{n}<c_{k}\leqslant a_{j}\)，且 \(f'(a_{j})=f(a_{j})\geqslant f(c_{k})=b_{k}>b_{m}=f'(a_{n})\)。由于 f 本身严格递增，映射 \(f'\) 也严格递增。
+
+若 \(m'\) 是满足 \(f(a_n) = b_{m'}\) 的整数，则根据 f 的定义，有 \(m' \leqslant m\)。若有 \(m' < m\)，则有 \(f(a_n) = b_{m'} = f(c_{m'})\)，从而由于 f 是单射，得到 \(a_n = c_{m'}\)，这与 \(a_n\) 的定义矛盾。因此 \(m' = m\) 且 \(f(a_n) = b_m\)，这证明了 \(b_m\) 属于 f 的像，并完成了对 f 为满射的归纳证明。
+
+命题 16. --- 设 E 是一个不退化为单元素集的全序集。假设 E 的每个子集都有最小上界，并且存在一个可数子集与形如 {]}x, y{[} 的每个开区间相交，其中 x 和 y 是 E 中满足 x \textless{} y 的元素。于是存在从 I 到 E 的有序集同构。
+
+由于 ∅ 和 E 在 E 中各自都有最小上界，E 具有最小元 a 和最大元 b。它们彼此不同，因为 E 不退化为单元素集。设 D' 是 E 的一个可数子集，与 E 中形如 {]}x, y{[} 且满足 x \textless{} y 的每个开区间相交。置 D = D' ∪ \{a, b\}。集合 D 是全序的且无间隙。由引理 6，存在从 I ∩ Q 到 D 的序集同构 f。
+
+对每个 \(t \in I\)，令 \(g(t)\) 为 \(f([0, t] \cap \mathbf{Q})\) 在 E 中的上界。对每个 \(x \in E\)，令 \(h(x)\) 为 \(f^{-1}([a, x] \cap D)\) 在 I 中的上界。如此定义的映射 \(g: I \to E\) 和 \(h: E \to I\) 都是递增的，g 在 \(I \cap Q\) 上与 f 一致，而 h 在 D 上与 \(f^{-1}\) 一致。
+
+因此有 \(g(h(y)) = y\)，对所有 \(y \in D\) 成立。令 \(x \in E\)。若有 \(g(h(x)) > x\)，则开区间 {]}x, \(g(h(x))[\) 将包含 D 中的某个点 y，而关系 \(g(h(y)) = y < g(h(x))\) 将与 \(g \circ h\) 递增这一事实矛盾。同样，不可能有 \(g(h(x)) < x\)。因此 \(g(h(x)) = x\)，这证明了 \(g \circ h\) 是 E 的恒等映射。类似地可证明 \(h \circ g\) 是 I 的恒等映射。因此，\(g: I \to E\) 与 \(h: E \to I\) 是互为逆的有序集同构。
+
+注. --- 设 E 是一个全序集。E 的开区间集合（有界或无界）对有限交稳定。它是 E 上拓扑 \(\mathcal{T}_{0}(\mathrm{E})\) 的一个基（TG, I, p.~91, 习题 5）。拓扑 \(\mathcal{T}_{0}(\mathbf{I})\) 与 \(\mathbf{I}\) 上由 \(\mathbf{R}\) 的拓扑诱导的拓扑相同。因此，在命题 16 中，从 \(\mathbf{I}\) 到 E 的每个有序集同构，都是从 \(\mathbf{I}\) 到赋予 E 以拓扑 \(\mathcal{T}_{0}(\mathrm{E})\) 所得拓扑空间的同胚。
+
+推论. --- 设 R 是 I 上的一个等价关系。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  R 的每个等价类都是 I 的一个闭区间，且不同于 I；
+\item
+  存在一个递增满射 \(u\colon\mathbf{I}\to\mathbf{I}\)，使得 R 是与 \(u\) 相伴的等价关系。
+\end{enumerate}
+
+这样的映射 u 一旦存在就是连续的，并且通过取商诱导出从 I/R 到 I 的同胚。
+
+记 \(p: I \rightarrow I/R\) 为典范满射。
+
+假设条件 (i) 成立。对于 R 的等价类 A 和 B，记 A \textless{} B，当有 a \textless{} b 对所有 \(a \in A\) 及每个 \(b \in B\) 时。在 I/R 中，关系“ A = B 或 A \textless{} B”是一种序关系。事实上，它是自反的；它是反对称的，因为不可能同时有 A \textless{} B 和 B \textless{} A；它是传递的，因为关系 A \textless{} B 和 B \textless{} C 蕴含 A \textless{} C。若 A 和 B 是 I/R 中彼此不同的元素，则它们是 I 的不交闭区间，因而 A \textless{} B 或 B \textless{} A。赋予 I/R 以上述定义的序关系后，I/R 因而是全序的。映射 \(p: I \to I/R\) 是递增的。
+
+由于 (i)，集合 I/R 不退化为单元素集。
+
+设 F 是 I/R 的一个子集。我们来证明 F 在 I/R 中有最小上界。置 \(F' = \overline{p}^{-1}(F)\)；记 a 为 \(F'\) 在 I 中的最小上界，记 A 为 a 关于 R 的等价类。由于 a 是 \(F'\) 在 I 中的上界，A 是 F 在 I/R 中的上界。反之，设 \(B \in I/R\) 是 F 的一个上界；置 \(b = \sup(B)\)。于是 \(F'\) 的每个元素都被 b 上界。因而有 \(a \leqslant b\)。由于 R 下的等价类是闭区间，a 属于 A，b 属于 B。因此有 \(A = p(a) \leqslant p(b) = B\)。这证明了 A 是 F 的最小上界。
+
+设 A 和 B 是 I/R 中满足 A \textless{} B 的元素。令 a 为 A 的最小上界，令 b 为 B 的最大下界。由于 \(a \in A\) 且 \(b \in B\)，有 a \textless{} b。{]}a, b{[} 中任一元素关于 R 的等价类，都是 I/R 的区间 {]}A, B{[} 中的元素。由于 \(I \cap Q\) 与 {]}a, b{[} 相交，其在 p 下的像与 {]}A, B{[} 相交。
+
+这样，我们证明了全序集 I/R 满足命题 16 的假设。因此存在一个有序集同构 \(f \colon \mathbf{I} / \mathrm{R} \to \mathbf{I}\)。映射 \(u = f \circ p\) 是从 I 到 I 的满射递增映射，而与 u 相伴的等价关系就是关系 R；这证明了条件 (ii) 成立。
+
+反之，假设条件 (ii) 成立。设 \(u: I \rightarrow I\) 是一个递增满射，且 R 是与 u 相伴的等价关系。
+
+令 \(a\) 为 \(\mathbf{I}\) 中的一点。集合 \(\mathrm{A} = \overline{u}^{-1}(a)\) 是 \(\mathbf{I}\) 的一个区间，因为映射 \(u\) 是递增的。由于 \(u\) 是满射，A 既非空也不等于 \(\mathbf{I}\)。令 \(b\) 为 A 在 \(\mathbf{I}\) 中的最小上界。有 \(u(b) \geqslant a\)。若 \(u(b) > a\)，存在 \(c \in ]a, u(b)[\) 及 \(d \in \mathbf{I}\)，使得 \(u(d) = c\)，因为 \(u\) 是满射。由于 \(u\) 是递增的且 \(a < u(d) < u(b)\)，\(d\) 是 A 的每个元素的上界，且有 \(d < b\)，这与 \(b\) 是 A 的上确界这一假设矛盾。因此 \(u(b) = a\)，即 \(b \in \mathrm{A}\)。类似地可证明 A 包含其下界。因此，集合 A 是 \(\mathbf{I}\) 的一个不同于 \(\mathbf{I}\) 的闭区间。这证明了条件 (i) 成立。
+
+现在证明映射 \(u\) 是连续的。只需证明，对每个 \(a \in \mathbf{I}\)，集合 \(\overline{u}^{-1}([a, \to[)\) 和 \(\overline{u}^{-1}([\leftarrow, a[)\) 都是开集。令 \(b\) 为 \(\overline{u}^{-1}(a)\) 的上界；有 \(u(b) = a\)。若 \(x \in \mathbf{I}\) 满足 \(u(x) > a\)，则必有 \(x > b\)；反之，若 \(x > b\)，则有 \(u(x) \geqslant a\)，并且 \(u(x) \neq a\)，因为 \(b\) 是 \(\overline{u}^{-1}(a)\) 的最小上界。因此有 \(\overline{u}^{-1}([a, \to[) = ]b, \to[\)，这表明 \(u\) 对区间 \(]a, \to[\) 的逆像是开集。类似地可证明 \(]\leftarrow, a[\) 的逆像是开集。由此映射 \(u\) 连续。
+
+映射 \(v \colon \mathbf{I} / \mathrm{R} \to \mathbf{I}\) 是由 \(u\) 取商得到的，于是是连续双射。由于 \(\mathbf{I}\) 是紧的，\(\mathbf{I} / \mathrm{R}\) 是拟紧的（TG, I, p.~62, 定理 2），且 \(v\) 是同胚（TG, I, p.~63, 推论 2）。
+
+命题 17. --- 设 X 是一个连通紧拓扑空间。设 a 是 X 中的一点，U 是 \(X - \{a\}\) 的一个非空开闭子集。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  U 在 X 中的闭包 \(\overline{U}\) 等于 \(U \cup \{a\}\)，并且是连通的。
+\item
+  设 \(a'\) 是 X 中异于 \(a\) 的一点，\(U'\) 是 \(X - \{a'\}\) 的一个非空开闭子集。若 \(a \notin U'\) 且 \(\overline{U} \cap \overline{U'} \neq \varnothing\)，则有 \(\overline{U'} \subset U\)。反之，若 \(a \in U'\) 且 \(X \neq U \cup U'\)，则有 \(\overline{U} \subset U'\)。
+\item
+  U 中存在一点 \(b\)，使得 \(X - \{b\}\) 连通。
+\end{enumerate}
+
+我们来证明断言 \(a\)。令 V 为 U 在 \(X - \{a\}\) 中的补集。由于 U 在 \(X - \{a\}\) 中是闭的，V 在 \(X - \{a\}\) 中是开的，从而在 X 中也是开的。因此有 \(U \subset \overline{\mathrm{U}} \subset X - V = U \cup \{a\}\)。同样，U 是 X 的开子集。由于 X 是连通的，U 在 X 中不是闭的，从而 \(\overline{\mathrm{U}} = U \cup \{a\}\)。类似地，有 \(\overline{\mathrm{V}} = V \cup \{a\}\)。
+
+设 F 和 G 是 \(\overline{U}\) 的不交闭子集，且 \(\overline{U} = F \cup G\)。假设 \(a \in G\)，我们来证明 F 为空；若 \(a \in F\)，论证相同。集合 \(G \cup V = G \cup \overline{V}\) 是 X 的闭子集，并且与 F 不交；此外有 \(X = \overline{U} \cup V = F \cup (G \cup V)\)。由于 X 连通且 G 非空，F 为空。这证明了 \(\overline{U}\) 是连通的。
+
+我们来证明 \(b\)。假设 \(a \notin \mathrm{U}'\) 且 \(\overline{\mathrm{U}} \cap \overline{\mathrm{U}'} \neq \emptyset\)。由断言 \(a\)，有 \(\overline{\mathrm{U}} = \mathrm{U} \cup \{a\}\) 和 \(\overline{\mathrm{U}'} = \mathrm{U}' \cup \{a'\}\)。由于 \(a \notin \mathrm{U}'\) 且 \(a \neq a'\)，集合 U 与 \(\overline{\mathrm{U}'}\) 有公共点。仍由 \(a\)，\(\overline{\mathrm{U}'}\) 是 X 的连通子集；由于它包含于 \(\mathrm{X} - \{a\}\) 且与开闭子集 U 相交，有 \(\overline{\mathrm{U}'} \subset \mathrm{U}\)，这正是所要证明的。第二个断言由第一个断言分别考虑 \(\overline{\mathrm{U}}\) 和 \(\overline{\mathrm{U}'}\) 在 X 中的补集而得。
+
+最后来证明断言 \(c\)。反设对每个 \(x \in \mathrm{U}\)，集合 \(\mathrm{X} - \{x\}\) 都不连通，并选取开且闭、彼此不交且非空的子集 \(\mathrm{U}_x\) 和 \(\mathrm{V}_x\)，它们属于 \(\mathrm{X} - \{x\}\)，使得 \(\mathrm{X} - \{x\} = \mathrm{U}_x \cup \mathrm{V}_x\) 且 \(a \in \mathrm{V}_x\)。根据断言 \(b\)，将 \(\mathrm{U}\) 和 \(\mathrm{U}_x\) 分别看作 \(\mathrm{X} - \{a\}\) 和 \(\mathrm{X} - \{x\}\) 中的开闭子集，得到 \(\overline{\mathrm{U}_x} \subset \mathrm{U}\)，对所有 \(x \in \mathrm{U}\) 成立。设 \(x\) 和 \(y\) 是 U 中满足 \(x \in \mathrm{U}_y\) 的点；于是 \(x \neq y\)。仍根据断言 \(b\)，将 \(\mathrm{U}_x\) 和 \(\mathrm{U}_y\) 分别看作 \(\mathrm{X} - \{x\}\) 和 \(\mathrm{X} - \{y\}\) 中的开闭子集，关系 \(x \in \mathrm{U}_y\) 蕴含关系 \(\overline{\mathrm{U}_x} \subset \overline{\mathrm{U}_y}\)。因此，关系 \(x \in \mathrm{U}_y\) 与 \(\overline{\mathrm{U}_x} \subset \overline{\mathrm{U}_y}\) 等价。
+
+由于空间 X 是紧的，U 的满足 \(\bigcap_{x\in\mathrm{S}}\overline{\mathrm{U}_{x}}\neq\varnothing\) 的子集 S 的集合具有有限特征（E, III, p.~34）。由 E, III, p.~35, 定理 1，存在 U 的一个极大子集 S，使得 \(\mathrm{C}=\bigcap_{x\in\mathrm{S}}\overline{\mathrm{U}_{x}}\) 非空。令 \(c\) 为 C 中的一点。对 S 的每个元素 \(x\)，都有 \(c\in\overline{\mathrm{U}_{x}}\)，从而 \(c\in\mathrm{U}\)；于是 \(\overline{\mathrm{U}_{c}}\subset\overline{\mathrm{U}_{x}}\)。因此有 \(\overline{\mathrm{U}_{c}}\subset\mathrm{C}\)；再由 S 的极大性，\(\mathrm{C}=\overline{\mathrm{U}_{c}}\)。对所有满足 \(x\in\mathrm{C}\) 且 \(x\neq c\) 的情形，还有 \(\overline{\mathrm{U}_{x}}\subset\overline{\mathrm{U}_{c}}\) 且 \(\overline{\mathrm{U}_{x}}\neq\overline{\mathrm{U}_{c}}\)。由 S 的极大性，\(\mathrm{C}=\{c\}\)，因而 \(\overline{\mathrm{U}_{c}}=\{c\}\)，这与 \(\mathrm{U}_{c}\) 是 \(\mathrm{X} - \{c\}\) 的非空开闭子集这一假设矛盾。
+
+推论. --- 设 X 是一个紧连通拓扑空间，N 是补集连通的 X 中各点组成的集合。集合 X 是包含 N 的唯一紧连通子集。
+
+设 S 是 X 的连通紧子集，满足 \(N \subset S\)。假设 \(S \neq X\)，并令 \(x \in X - S\)。根据假设，\(X - \{x\}\) 不连通；因此存在 \(X - \{x\}\) 中彼此不交且非空的开闭子集 U 和 V，使得 \(X - \{x\} = U \cup V\)。不妨设 \(S \subset V\)。有 \(\overline{U} = U \cup \{x\}\) 和 \(\overline{V} = V \cup \{x\}\)，且这些空间是连通的（III, p.~278, 命题 17, a)）。由本命题的断言 c)，存在 \(y \in U\)，使得 \(X - \{y\}\) 连通，这与包含关系 \(N \subset S \subset V\) 矛盾。
+
+引理 7. --- 设 T 是一个局部连通的拓扑空间。设 \(\mathcal{U}\) 是 T 的开子集的有向递增族，其并为 T。对于 \(t \in T\) 和 \(U \in \mathcal{U}\)，记 \(U_{t}\) 为 t 在 U 中的连通分支，若 \(t \in U\)；置 \(U_{t} = \varnothing\)，若 \(t \notin U\)。对所有 \(t \in T\)，\(\bigcup_{U \in \mathcal{U}} U_{t}\) 是 t 在 T 中的连通分支。
+
+对 \(t \in \mathrm{T}\)，置 \(\mathrm{C}_t = \bigcup_{\mathrm{U} \in \mathcal{U}} \mathrm{U}_t\)。有 \(t \in \mathrm{C}_t\)。集合 \(\mathrm{U}_t\) 是开且连通的，\(\mathrm{C}_t\) 也如此，因为有 \(t \in \mathrm{U}_t\)（当 \(\mathrm{U}_t \neq \varnothing\) 时）（TG, I, p.~81, 命题 2）。设 \(u\) 和 \(v\) 是 T 中满足 \(\mathrm{C}_u \cap \mathrm{C}_v \neq \varnothing\) 的点。令 \(t\) 为 \(\mathrm{C}_u \cap \mathrm{C}_v\) 中的一点；取 \(\mathrm{U} \in \mathcal{U}\) 使得 \(t \in \mathrm{U}_u\)，并取 \(\mathrm{V} \in \mathcal{U}\) 使得 \(v \in \mathrm{V}_v\)。由于 \(\mathcal{U}\) 按包含关系过滤递增，存在 \(\mathrm{W} \in \mathcal{U}\)，包含 \(\mathrm{U} \cup \mathrm{V}\)。于是 \(\mathrm{W}_u \cap \mathrm{W}_v \neq \varnothing\)，从而 \(\mathrm{W}_u = \mathrm{W}_v\)。更一般地，都有 \(\mathrm{W}_u' = \mathrm{W}_v'\)，对所有 \(\mathrm{W}' \in \mathcal{U}\) 满足 \(\mathrm{W} \subset \mathrm{W}'\) 的情形，从而 \(\mathrm{C}_u = \mathrm{C}_v\)。这表明，形如 \(\mathrm{C}_t\) 的集合构成 T 到连通开子集的一个划分。因此，对每个 \(t \in \mathrm{T}\)，\(\mathrm{C}_t\) 是 \(t\) 在 T 中的连通分支。
+
+定理 2. --- 设 X 是一个具有可数稠密子集的紧连通拓扑空间。设 a、b 是 X 中彼此不同的点。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  存在一个同胚 \(f\colon\mathbf{I}\to\mathbf{X}\)，使得 \(f(0)=a\) 且 \(f(1)=b\)；
+\item
+  每个包含 \(\{a, b\}\) 的 X 的连通子集都等于 X；
+\item
+  空间 X 是局部连通的，并且每个包含 \(\{a,b\}\) 的 X 的连通紧子集都等于 X；
+\item
+  对每个 \(x \in X - \{a, b\}\)，空间 \(X - \{x\}\) 都不连通。
+\end{enumerate}
+
+断言 (i) 蕴含其余所有断言。
+
+令 \(x\) 为 \(X - \{a, b\}\) 中的一点。由于 \(X - \{x\}\) 包含 \(\{a, b\}\)，断言 (ii) 蕴含它不是 \(X\) 的连通子集，故 (ii) 蕴含 (iv)。
+
+我们来证明 (iii) 蕴含 (iv)。假设 (iii) 的假设成立。令 \(x \in X - \{a, b\}\)，并假设 \(X - \{x\}\) 是连通的。令 T 为 \(X - \{x\}\) 这个空间，令 \(\mathcal{U}\) 为由形如 \(X - V\) 的 T 的子集组成的集合，其中 V 是 \(x\) 的一个紧邻域。由引理 7，存在 \(x\) 的一个紧邻域 V，使得 \(a\) 和 \(b\) 属于 \(X - V\) 的同一个连通分支。特别地，它们属于 \(X - \mathring{V}\) 的同一个连通分支；这个分支是 X 的一个紧连通子集，并且不同于 X，这与假设 (iii) 矛盾。
+
+还需证明断言 (iv) 蕴含条件 (i)。
+
+令 \(x\) 为 \(X - \{a, b\}\) 中的一点，令 U、V 为 \(X - \{x\}\) 的彼此不交且非空的开闭子集，使得 \(X - \{x\} = U \cup V\)。由 III, p.~278, 命题 17, c)，U（分别为 V）中存在一点，其在 X 中的补集是连通的。由于 X 中只有两个这样的点，即 \(a\) 和 \(b\)，其中一个——不妨设为 \(a\)——包含于 U，另一个包含于 V。由上引文，U 的一个非空开闭子集 \(U'\) 包含 \(\{a, b\}\) 中的一点，从而包含 \(a\)。将此应用于 \(U - U'\)，可知 \(U = U'\)。因此 U 是连通的；它是 \(a\) 在 \(X - \{x\}\) 中的连通分支。同样，V 是 \(b\) 在 \(X - \{x\}\) 中的连通分支。
+
+对每个 \(x \in X - \{a, b\}\)，令 \(U_x\) 和 \(V_x\) 分别表示 a 和 b 在 \(X - \{x\}\) 中的连通分支。根据上文，它们在 \(X - \{x\}\) 中是开闭的、彼此不交，且它们的并等于 \(X - \{x\}\)。
+
+按如下方式定义 X 上的关系 \(\preccurlyeq\)：一方面，有 \(a \preccurlyeq x\) 和 \(x \preccurlyeq b\)，对所有 \(x \in \mathrm{X}\) 成立；另一方面，若 \(x\) 和 \(y\) 属于 \(\mathrm{X} - \{a, b\}\)，则定义 \(x \preccurlyeq y\) 当 \(x \in \overline{\mathrm{U}_y}\) 时。对于 \(x\) 和 \(y\)，若它们属于 \(\mathrm{X} - \{a, b\}\)，子集 \(\mathrm{V}_x\) 和 \(\mathrm{V}_y\) 有公共点 b，并且关系 \(x \preccurlyeq y\) 实际上等价于断言 \(\overline{\mathrm{U}_x} \subset \overline{\mathrm{U}_y}\)（III, p.~278, 命题 17, b)）。由此关系 \(\preccurlyeq\) 是 X 上的一个序关系。
+
+设 \(x\) 和 \(y\) 是 X 中的点，且 \(x \preccurlyeq y\) 不成立。必有 \(x \neq a\) 且 \(y \neq b\)，并且 \(x \in V_y\)。若 \(x = b\) 或 \(y = a\)，则有 \(y \preccurlyeq x\)。现在假设 \(x\) 和 \(y\) 都异于 \(a\) 和 \(b\)。由于部分集 \(U_x\) 和 \(U_y\) 有公共点 a，有包含关系 \(\overline{V_x} \subset \overline{V_y}\)（上引文），从而取补集的闭包得到 \(\overline{U_y} \subset \overline{U_x}\)，进而 \(y \preccurlyeq x\)。因此，空间 X 中的关系 \(\preccurlyeq\) 是一个全序关系。此外，对每个 \(x \in X - \{a, b\}\)，有 \(U_x = ] \leftarrow, x[\) 和 \(V_x = ]x, \rightarrow[\)；对 \(x, y \in X - \{a, b\}\)，有 {]}x, y{[} = \(U_y \cap V_x\)。当 x 和 y 遍历 \(X - \{a, b\}\) 中的点时，集合 \(U_y \cap V_x\)、集合 \(U_y\) 以及集合 \(V_x\) 构成 X 上一个拓扑的基。记相应的拓扑空间为 \(\widetilde{X}\)，并令 i: \(X \to \widetilde{X}\) 为 X 的恒等映射。由于对每个 \(x \in X\)，集合 \(U_x\) 和 \(V_x\) 在 X 中是开的，映射 i 是连续的。
+
+空间 \(\widetilde{\mathbf{X}}\) 是分离的。事实上，设 \(x\) 和 \(y\) 是 \(\widetilde{\mathbf{X}}\) 中满足 \(x \preccurlyeq y\) 的彼此不同的点。集合 \(]\leftarrow, y[\) 和 \(]x, \rightarrow[\) 是 \(x\) 和 \(y\) 的开邻域；若它们有公共点 \(z\)，则 \(]\leftarrow, z[\) 和 \(]z, \rightarrow[\) 是 \(x\) 和 \(y\) 的不交开邻域。由于 X 是紧的，映射 \(i\) 因而是同胚（TG, I, p.~63, 推论 2）。
+
+因此，X 的一个可数稠密子集在 \(i\) 下的像与有序集 \((\mathrm{X}, \preccurlyeq)\) 的每个非空开区间相交。由此根据 III, p.~276 的命题 16，存在同构 \(c\)，它从有序集 \(\mathbf{I}\) 到 \((\mathrm{X}, \preccurlyeq)\)。根据该命题后的注，这个同构是从 \(\mathbf{I}\) 到拓扑空间 \(\widetilde{\mathrm{X}}\) 的同胚。于是映射 \(f = i^{-1} \circ c\) 是从 \(\mathbf{I}\) 到 X 的同胚，并将 0 映为 \(a\)、将 1 映为 \(b\)。
+

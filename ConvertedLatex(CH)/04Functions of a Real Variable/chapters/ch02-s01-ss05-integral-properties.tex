@@ -1,0 +1,106 @@
+\subsection{积分的性质}
+
+规则函数积分的性质，不过是把第一章中已经证明的导数性质翻译成适当的记号而已。
+
+首先，公式 (3) 表明，无论点 \(x, y, z\) 是 \(I\) 中怎样的点，均有
+
+\[
+\int_ {x} ^ {x} \mathbf {f} (t) d t = 0\tag{4}
+\]
+
+\[
+\int_ {x} ^ {y} \mathbf {f} (t) d t + \int_ {y} ^ {x} \mathbf {f} (t) d t = 0\tag{5}
+\]
+
+\[
+\int_ {x} ^ {y} \mathbf {f} (t) d t + \int_ {y} ^ {z} \mathbf {f} (t) d t + \int_ {z} ^ {x} \mathbf {f} (t) d t = 0\tag{6}
+\]
+
+由 II, p.~52 的命题 1，有
+
+\[
+\int_ {x _ {0}} (\mathbf {f} + \mathbf {g}) = \int_ {x _ {0}} \mathbf {f} + \int_ {x _ {0}} \mathbf {g}\tag{7}
+\]
+
+而且对每个数量 \(k\)
+
+\[
+\int_ {x _ {0}} k \mathbf {f} = k \int_ {x _ {0}} \mathbf {f}.\tag{8}
+\]
+
+设 \(E, F\) 是 \(\mathbf{R}\) 上的两个完备赋范空间，\(\mathbf{u}\) 是 \(E\) 到 \(F\) 中的连续线性映射。若 \(\mathbf{f}\) 是 \(I\) 上的规则函数且取值于 \(E\)，则 \(\mathbf{u} \circ \mathbf{f}\) 是 \(I\) 上的规则函数且取值于 \(F\)（II, p.~6, 推论 2），并且对 \(a, b \in I\) 有（I, p.~13, 命题 2）
+
+\[
+\int_ {a} ^ {b} \mathbf {u} (\mathbf {f} (t)) d t = \mathbf {u} \left(\int_ {a} ^ {b} \mathbf {f} (t) d t\right).\tag{9}
+\]
+
+现在设 E, F, G 是 R 上的三个完备赋范空间，\((\mathbf{x}, \mathbf{y}) \mapsto [\mathbf{x} \cdot \mathbf{y}]\) 是 \(E \times F\) 到 G 中的连续双线性映射。设 f 与 g 是定义在 I 上且连续的两个向量函数，分别取值于 E 与 F 中；再假设 f 与 g 是两个规则函数的原函数，我们（滥用语言的说法）把它们记作 \(f'\) 与 \(g'\)（除了在一个可数集的余集上之外，实际上并不能保证这些函数分别等于 f 与 g 的导数）。由 I, p.~6 的命题 3，函数 \(\mathbf{h}(x) = [\mathbf{f}(x) \cdot \mathbf{g}(x)]\) 在 I 的一个可数子集的余集的每一点处都有导数，等于 \([\mathbf{f}(x) \cdot \mathbf{g}'(x)] + [\mathbf{f}'(x) \cdot \mathbf{g}(x)]\)。又，由 {[}x.y{]} 的连续性及 II, p.~55 的推论 2，函数 \([f \cdot g']\) 与 \([f' \cdot g]\) 中的每一个都是 I 上的规则函数；于是有公式
+
+\[
+\int_ {a} ^ {b} [ \mathbf {f} ^ {\prime} (t). \mathbf {g} (t) ] d t = [ \mathbf {f} (t). \mathbf {g} (t) ] \big | _ {a} ^ {b} - \int_ {a} ^ {b} [ \mathbf {f} (t). \mathbf {g} ^ {\prime} (t) ] d t\tag{10}
+\]
+
+它称为分部积分公式，使我们能求出许多原函数。
+
+例如，分部积分公式给出下面的公式
+
+\[
+\int_ {x _ {0}} ^ {x} t \mathbf {f} ^ {\prime} (t) d t = t \mathbf {f} (t) \Big | _ {x _ {0}} ^ {x} - \int_ {x _ {0}} ^ {x} \mathbf {f} (t) d t
+\]
+
+从而把函数 \(\mathbf{f}(x)\) 与 \(x\mathbf{f}'(x)\) 两者之一的原函数的计算化为另一个的原函数的计算。
+
+同样，若 \(\mathbf{f}\) 与 \(\mathbf{g}\) 在区间 I 上 \(n\) 次可导，且 \(\mathbf{f}^{(n)}\) 与 \(\mathbf{g}^{(n)}\) 是 I 上的规则函数，则 I, p.~21 的公式 (5) 等价于下式：
+
+\[
+\begin{array}{l} \int_ {a} ^ {b} [ \mathbf {f} ^ {(n)} (t). \mathbf {g} (t) ] d t \\ = \left. \left(\sum_ {p = 0} ^ {n - 1} (- 1) ^ {p} [ \mathbf {f} ^ {(n - p - 1)} (t). \mathbf {g} ^ {(p)} (t) ]\right) \right| _ {a} ^ {b} + (- 1) ^ {n} \int_ {a} ^ {b} [ \mathbf {f} (t). \mathbf {g} ^ {(n)} (t) ] d t \end{array}\tag{11}
+\]
+
+我们把它称为 n 阶分部积分公式。
+
+现在来翻译复合函数的求导公式（I, p.~9, 命题 5）。设 \(f\) 是定义在 I 上且连续的实函数，它是 I 上某个规则函数的原函数（我们仍（滥用语言的说法）把它记作 \(f'\)）；再设 \(\mathbf{g}\) 是包含 \(f(\mathrm{I})\) 的某个开区间 J 上的连续向量函数（取值于完备赋范空间）；若 \(\mathbf{h}\) 表示 \(\mathbf{g}\) 在 J 上的任意一个原函数，则 \(\mathbf{h}\) 在 J 的每一点处有导数，等于 \(\mathbf{g}\)（II, p.~56, 命题 3）；于是复合函数 \(\mathbf{h} \circ f\) 在 I 的一个可数子集（相对于 I）的余集的所有点处有导数，等于 \(\mathbf{g}(f(x))f'(x)\)（I, p.~9, 命题 5）；由于函数 \(\mathbf{g}(f(x))f'(x)\) 是规则的（II, p.~55, 推论 2），我们可以写出公式
+
+\[
+\int_ {a} ^ {b} \mathbf {g} (f (t)) f ^ {\prime} (t) d t = \int_ {f (a)} ^ {f (b)} \mathbf {g} (u) d u\tag{12}
+\]
+
+它称为变量替换公式，同样有助于原函数的计算。
+
+例如，若取 \(f(x) = x^{2}\)，则可见公式 (12) 把函数 \(\mathbf{g}(x)\) 与 \(x\mathbf{g}(x^{2})\) 的原函数的计算由其中一个化为另一个。
+
+为了把中值定理（I, p.~14, 定理 1）翻译到实规则函数的原函数上，我们首先注意，紧区间 I 上的实规则函数 \(f\) 在 I 上有界；设 J 是 I 中使 \(f\) 连续的点所成的集，并令 \(m = \inf_{x \in \mathrm{J}} f(x)\)，\(\mathrm{M} = \sup_{x \in \mathrm{J}} f(x)\)；我们知道（II, p.~54, 定理 3）\(\mathrm{I} \cap \complement \mathrm{J}\) 是可数的；此外，若 B 是 I 的任意可数子集相对于 I 的余集，且 \(m' = \inf_{x \in \mathrm{B}} f(x)\)，\(\mathrm{M}' = \sup_{x \in \mathrm{B}} f(x)\)，则有 \(m' \leqslant m \leqslant M \leqslant M'\)：事实上，对每一点 \(x \in J\)，都存在 B 中任意接近 x 的点 y，于是 \(m' \leqslant f(y) \leqslant M'\)；由于 f 在点 x 连续，令 y 趋于 x（y 保持属于 B）便得 \(m' \leqslant f(x) \leqslant M'\)，这就证明了我们的断言。这样，把中值定理翻译过来便得下列命题：
+
+命题 6（中值定理）。设 \(f\) 是紧区间 \(\mathrm{I} = [a, b]\) 上的实规则函数；若 \(\mathrm{J}\) 是 \(\mathrm{I}\) 中使 \(f\) 连续的点所成的集，且 \(m = \inf_{x \in \mathrm{J}} f(x)\)，\(\mathrm{M} = \sup_{x \in \mathrm{J}} f(x)\)，则
+
+\[
+m <   \frac {1}{b - a} \int_ {a} ^ {b} \mathbf {f} (t) d t <   \mathbf {M}\tag{13}
+\]
+
+除非 \(f\) 在 \(\mathbf{J}\) 上取常值，此时 (13) 的三项相等。
+
+换言之，规则函数 \(f\) 在 I 中的平均值介于 \(f\) 在 I 中使 \(f\) 连续的子集上的各界之间。
+
+推论 1. 若一个实规则函数 \(f\) 在 \(I\) 上使得 \(f(x) \geqslant 0\)（在 \(f\) 连续的各点处），则 \(\frac{1}{b - a} \int_{a}^{b} f(t) dt > 0\)，除非 \(f(x) = 0\)（在 \(f\) 连续的各点处）。
+
+推论 2. 设 f 与 g 是 I 上的两个实规则函数，使得在 g 连续的各点处 \(g(x) \geqslant 0\)；若 m 与 M 是 f 在使 f 连续的点所成之集上的下确界与上确界，则
+
+\[
+\frac {m}{b - a} \int_ {a} ^ {b} g (t) d t \leqslant \frac {1}{b - a} \int_ {a} ^ {b} f (t) g (t) d t \leqslant \frac {\mathrm{M}}{b - a} \int_ {a} ^ {b} g (t) d t.\tag{14}
+\]
+
+除非 \(g(x)(f(x) - m) = 0\)（相应地，\(g(x)(f(x) - \mathbf{M}) = 0\)）在 \(f\) 与 \(g\) 连续的每一点处成立，否则前两项（相应地，后两项）不相等。
+
+对向量函数，中值定理（I, p.~15, 定理 2）给出下列命题：
+
+命题 7. 设 \(\mathbf{f}\) 是紧区间 \(\mathrm{I} = [a, b]\) 上的规则向量函数，取值于完备赋范空间 \(\mathrm{E}\)，并设 \(g\) 是 \(\mathrm{I}\) 上的实规则函数，使得 \(g(x) \geqslant 0\) 在 \(g\) 连续的各点处成立；在这些条件下
+
+\[
+\left\| \int_ {a} ^ {b} \mathbf {f} (t) g (t) d t \right\| \leqslant \int_ {a} ^ {b} \| \mathbf {f} (t) \| g (t) d t.\tag{15}
+\]
+
+特别地，
+
+\[
+\left\| \int_ {a} ^ {b} \mathbf {f} (t) d t \right\| \leqslant \int_ {a} ^ {b} \| \mathbf {f} (t) \| d t.\tag{16}
+\]
+

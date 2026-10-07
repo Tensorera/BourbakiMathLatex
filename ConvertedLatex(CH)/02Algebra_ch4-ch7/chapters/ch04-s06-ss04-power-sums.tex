@@ -1,0 +1,134 @@
+\subsection{幂的和}
+
+我们再次记 \(\mathbf{X} = (\mathbf{X}_{i})_{i \in I}\) ，表示一族未定元。对称形式幂级数 \(s_{k}\) 如前所定义，
+
+\[
+s _ {k} = \sum_ {\mathrm{H} \in \mathfrak {P} _ {k}} \prod_ {i \in \mathrm{H}} X _ {i} \quad (k \geqslant 1),\tag{16}
+\]
+
+，其中 \(P_{k}\) 是 I 的所有 k 元子集组成的集合。我们也记
+
+\[
+p _ {k} = \sum_ {i \in I} X _ {i} ^ {k} \quad (k \geqslant 1).\tag{17}
+\]
+
+这是一个对称形式幂级数，且是 k 次齐次的。
+
+引理4（“牛顿关系”）。--- 对每个整数 \(d \geqslant 1\) ，我们有
+
+\[
+p _ {d} = \sum_ {k = 1} ^ {d - 1} (- 1) ^ {k - 1} s _ {k} p _ {d - k} + (- 1) ^ {d + 1} d s _ {d}.\tag{18}
+\]
+
+我们定义连续导子 \(\Delta\) （作用于 \(\mathbf{A}[[\mathbf{X}]]\) ）如下： \(\Delta(u) = \sum_{n \geq 0} nu_n\) ，其中对每个 \(u\) （属于 \(\mathbf{A}[[\mathbf{X}]]\) ）， \(u_n\) 表示次数为 \(n\) 的齐次分量（属于 \(u\) ）。由(16)及IV第27页命题2，我们有
+
+\[
+1 + \sum_ {k \geqslant 1} s _ {k} = \prod_ {i \in I} (1 + X _ {i}).\tag{19}
+\]
+
+于是由IV第34页的命题9，我们有
+
+\[
+\left(\sum_ {k \geqslant 1} k s _ {k}\right) \cdot \left(1 + \sum_ {k \geqslant 1} s _ {k}\right) ^ {- 1} = \sum_ {i \in I} \Delta \left(\mathrm{X} _ {i}\right) / \left(1 + \mathrm{X} _ {i}\right).\tag{20}
+\]
+
+我们有 \(\Delta(X_i) = X_i\) ，且 \(X_i / (1 + X_i) = \sum_{k \geq 1} (-1)^{k-1} X_i^k\) 。因此(20)的右端等于 \(\sum_{k \geq 1} (-1)^{k-1} p_k\) 。于是由(20)，我们有
+
+\[
+\sum_ {k \geqslant 1} k s _ {k} = \left(1 + \sum_ {k \geqslant 1} s _ {k}\right) \cdot \left(\sum_ {k \geqslant 1} (- 1) ^ {k - 1} p _ {k}\right)
+\]
+
+于是，通过比较次数为 \(d\) 的齐次分量，即得引理4。
+
+注记。--- 使用上述证明中的记号，我们有
+
+\[
+\Delta u = \sum_ {i \in I} X _ {i} \cdot D _ {i} (u)
+\]
+
+(IV，第33页，推论1)。换言之，欧拉关系式（IV，第8页，命题6）可以推广到形式幂级数：若 \(u \in \mathbf{A}[\mathbf{X}]\) 是 \(n\) 次齐次的，则
+
+\[
+n \cdot u = \sum_ {i \in I} X _ {i} \cdot D _ {i} (u).\tag{21}
+\]
+
+当 I 是由 \(n\) 个元素组成的有限集时，我们有 \(s_k = 0\) 对 \(k > n\) 成立。于是牛顿关系式可以写成
+
+\[
+\begin{array}{l} p _ {2} = s _ {1} p _ {1} - 2 s _ {2} \\ p _ {3} = s _ {1} p _ {2} - s _ {2} p _ {1} + 3 s _ {3} \\ \dots \dots \\ p _ {n - 1} = s _ {1} p _ {n - 2} - s _ {2} p _ {n - 3} + \dots + (- 1) ^ {n - 1} s _ {n - 2} p _ {1} + (- 1) ^ {n} (n - 1) s _ {n - 1} \\ p _ {n} = s _ {1} p _ {n - 1} - s _ {2} p _ {n - 2} + \dots + (- 1) ^ {n} s _ {n - 1} p _ {1} + (- 1) ^ {n + 1} n s _ {n} \end{array}
+\]
+
+以及
+
+\[
+p _ {k} = s _ {1} p _ {k - 1} - s _ {2} p _ {k - 2} + \dots + (- 1) ^ {n + 1} s _ {n} p _ {k - n} \quad (\text { for } k > n).\tag{22}
+\]
+
+上述关系中的前 n 个对任意 I 均成立；例如我们得到
+
+\[
+p _ {1} = s _ {1}, \quad p _ {2} = s _ {1} ^ {2} - 2 s _ {2}, \quad p _ {3} = s _ {1} ^ {3} - 3 s _ {1} s _ {2} + 3 s _ {3}.
+\]
+
+更一般地，设 \(\mathbf{S} = (\mathbf{S}_n)_{n\geqslant 1}\) 为一族未定元。我们递归地定义多项式 \(\mathbf{P}_d\in \mathbf{Z}[\mathbf{S}_1,\dots ,\mathbf{S}_d]\) 如下： \(\mathbf{P}_1 = \mathbf{S}_1\) ，且
+
+\[
+\mathrm{P} _ {d} = \sum_ {k = 1} ^ {d - 1} (- 1) ^ {k - 1} \mathrm{S} _ {k} \mathrm{P} _ {d - k} + (- 1) ^ {d + 1} d \mathrm{S} _ {d} \quad (d \geqslant 2).
+\]
+
+于是我们有以下“普适公式” \(p_d = \mathrm{P}_d(s_1, \ldots, s_d)\) ，它们对任意环 A 及未定元族 X 均成立。
+
+设 \(\mathbf{P} = (\mathrm{P}_k)_{k\geqslant 1}\) 为一列未定元。由于 \(p_k\) 是 \(k\) 次齐次的（在 \(\mathbf{A}[[\mathbf{X}]]\) 中），因此恰好存在一个连续 A-代数同态
+
+\[
+\lambda_ {I}: \mathbf {A} [ [ \mathbf {P} ] ] \rightarrow \mathbf {A} [ [ \mathbf {X} ] ] ^ {\text { sym }}
+\]
+
+使得 \(\lambda_{I}(\mathbf{P}_{k}) = p_{k}\) （对每个整数 \(k \geqslant 1\) ）（IV，第28页）。若我们赋予 \(\mathbf{P}_{k}\) 权 \(k\) ，则 \(\lambda_{I}\) 把权为 \(n\) 的等权多项式（在 \(\mathbf{P}_{k}\) 中）变换为 \(n\) 次齐次的形式幂级数（在 \(\mathbf{X}_{i}\) 中）。
+
+命题3. --- a) 若 I 是含 n 个元素的有限集，且 \(n! \cdot 1\) 在 A 中可逆，则 \(\lambda_{I}\) 诱导出从 \(A[[P_{1}, ..., P_{n}]]\) 到 \(A[[X]]^{sym}\) 上的双连续同构。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  如果 I 是无限集且 A 是一个 Q-代数，那么 \(\lambda_{I}\) 是从 A{[}{[}P{]}{]} 到 A{[}{[}X{]}{]} \(^{\text{sym}}\) 上的双连续同构。
+\end{enumerate}
+
+我们将仅处理情形 a)，情形 b) 完全类似。
+
+由定理 2（IV，第68页），我们可以把 A{[}{[}X{]}{]} \(^{sym}\) 与形式幂级数代数 A{[}{[}S \(_1\) , \ldots，S \(_n\) {]}{]} 等同起来，其中 S \(_k\) 对应于 s \(_k\) 。根据IV第70页引理4，存在形式幂级数 g \(_1\) , \ldots，g \(_n\) ，其阶 \(\geqslant 2\) ，关于未定元 s \(_1\) , \ldots，s \(_n\) ，使得
+
+\[
+p _ {k} = (- 1) ^ {k + 1} k s _ {k} + g _ {k} (s _ {1}, \dots , s _ {n}) \quad (1 \leqslant k \leqslant n).
+\]
+
+由于 \(k!\) . 1 在 A 中可逆，IV第35页引理2证明了拓扑 A-代数 \(\mathbf{A}[[\mathbf{X}]]^{\mathrm{sym}}\) 的自同构 T 的存在性，它把 \(s_k\) 映为 \(p_k\) （对 \(1 \leqslant k \leqslant n\) ）。于是命题3 a) 是直接推论。
+
+推论。--- 设 \(\xi_1, \ldots, \xi_n, \eta_1, \ldots, \eta_n\) 是 A 的元素，并假设 A 是整环。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  如果 \(s_k(\xi_1, \ldots, \xi_n) = s_k(\eta_1, \ldots, \eta_n)\) 对 \(1 \leqslant k \leqslant n\) 成立，则存在一个置换 \(\sigma \in \mathfrak{S}_n\) ，使得 \(\eta_i = \xi_{\sigma(i)}\) 对 \(1 \leqslant i \leqslant n\) 成立。
+\item
+  假设 \(n!\) . \(1 \neq 0\) 在 A 中，且
+\end{enumerate}
+
+\[
+\xi_ {1} ^ {k} + \dots + \xi_ {n} ^ {k} = \eta_ {1} ^ {k} + \dots + \eta_ {n} ^ {k}\tag{23}
+\]
+
+对 \(1 \leqslant k \leqslant n\) 成立。则存在一个置换 \(\sigma \in \mathfrak{S}_n\) ，使得 \(\eta_i = \xi_{\sigma(i)}\) 对 \(1 \leqslant i \leqslant n\) 成立。
+
+在假设 \(a)\) 下，我们有 \(\prod_{i=1}^{n} (\mathbf{X} - \xi_i) = \prod_{i=1}^{n} (\mathbf{X} - \eta_i)\) 。如果我们以 \(\eta_n\) 代替 \(\mathbf{X}\) ，则得到 \(\prod_{i=1}^{n} (\eta_n - \xi_i) = 0\) ，且由于 \(\mathbf{A}\) 是整环，存在整数 \(\sigma(n)\) 使得 \(1 \leqslant \sigma(n) \leqslant n\) 且 \(\eta_n = \xi_{\sigma(n)}\) 。于是断言 \(a)\) 由归纳法容易得出，因为 \(\mathbf{A}[\mathbf{X}]\) 是整环。
+
+在假设 \(b)\) 下，由命题3，存在多项式 \(\Pi_1, \ldots, \Pi_n\) （在 \(n\) 个不定元中），其系数属于 \(A\) 的分式域，使得 \(s_k = \Pi_k(p_1, \ldots, p_n)\) 对 \(1 \leqslant k \leqslant n\) 成立。现在关系式(23)蕴含
+
+\[
+s _ {k} (\xi_ {1}, \dots , \xi_ {n}) = s _ {k} (\eta_ {1}, \dots , \eta_ {n})
+\]
+
+对 \(1 \leqslant k \leqslant n\) 成立，因而 \(b)\) 由 \(a)\) 得出。
+

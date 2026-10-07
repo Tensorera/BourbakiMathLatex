@@ -1,0 +1,117 @@
+\subsection{Properties of the characteristic polynomial: trace and determinant}
+
+Let E be a vector space of finite dimension n over a commutative field K, and let u be an endomorphism of E. By III, p.~541, the characteristic polynomial of u has the form :
+
+\[
+\chi_ {u} (\mathbf {X}) = \mathbf {X} ^ {n} - \operatorname{Tr} (u) \mathbf {X} ^ {n - 1} + \dots + (- 1) ^ {n} \det (u).\tag{5}
+\]
+
+PROPOSITION 10. --- Let E be a vector space of finite dimension n over a commutative field K, let u be an endomorphism of E, and let \(\chi_u(X) = \prod_{i=1}^{n}(X - \alpha_i)\) be a decomposition into linear factors of its characteristic polynomial
+
+(in a suitable extension of K, cf.~V, p.~21). If q is a polynomial with coefficients in K, then the characteristic polynomial of \(q(u)\) is given by
+
+\[
+\chi_ {q (u)} (\mathbf {X}) = \prod_ {i = 1} ^ {n} \left(\mathbf {X} - q \left(\alpha_ {i}\right)\right),\tag{6}
+\]
+
+and its trace and determinant are given by
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\operatorname{Tr} (q (u)) = \sum_ {i = 1} ^ {n} q (\alpha_ {i}),\tag{8}
+\]
+
+\[
+\det (q (u)) = \prod_ {i = 1} ^ {n} q (\alpha_ {i}).
+\]
+
+It is clear that (7) and (8) follow from (6) by virtue of (5). To prove the formula (6), we may assume that K is algebraically closed. We then take a basis for E with respect to which the matrix U of u is lower triangular (VII, p.~35, Cor. to Prop. 8); we will make use of the following easy lemma:
+
+Lemma 1. --- If B and C are lower triangular matrices of order n with diagonals \((\beta_{i})\) and \((\gamma_{i})\) , then the matrices \(B + C\) and BC are lower triangular with diagonals \((\beta_{i} + \gamma_{i})\) and \((\beta_{i}\gamma_{i})\) .
+
+Since the matrix U of u is lower triangular with diagonal \((\alpha_{i})\) say, it follows from Lemma 1 that \(q(U)\) is a lower triangular matrix with diagonal \((q(\alpha_{i}))\) . Then \(X \cdot I_{n} - q(U)\) is a lower triangular matrix with diagonal \((X - q(\alpha_{i}))\) , which proves (6).
+
+COROLLARY 1. --- For \(q(u)\) to be invertible, it is necessary and sufficient that \(q\) be coprime to \(\chi_u\) .
+
+Indeed, to say that q and \(\chi_{u}\) are coprime is equivalent to saying that they have no common root in an algebraically closed extension of K, in other words (8) that \(\det(q(u)) \neq 0\) .
+
+Remark 1. --- A polynomial is coprime to \(\chi_{u}\) if and only if it is coprime to the minimal polynomial of \(u\) (VII, p.~33, Cor. 2).
+
+COROLLARY 2. --- Let \(r \in K(X)\) be a rational function over \(K\) . Then \(u\) is substitutable (IV, p.21) in \(r\) if and only if each of its eigenvalues is. In this case the following formulae hold:
+
+\[
+\chi_ {r (u)} (\mathrm{X}) = \prod_ {i = 1} ^ {n} \left(\mathrm{X} - r \left(\alpha_ {i}\right)\right), \quad \operatorname{Tr} (r (u)) = \sum_ {i = 1} ^ {n} r \left(\alpha_ {i}\right), \quad \det (r (u)) = \prod_ {i = 1} ^ {n} r \left(\alpha_ {i}\right).
+\]
+
+Write r = p/q where p and q are coprime polynomials. Then u is substitutable in r if and only if \(\det(q(u)) \neq 0\) , so the first assertion follows from (8). By Cor. 1, we may suppose q coprime to \(\chi_{u}\) , so by the Bezout identity there exist polynomials g and h such that \(qg + h\chi_{u} = 1\) . Then \(q(\alpha_{i})g(\alpha_{i}) = 1\) and \(q(u)g(u) = 1\) by the Cayley-Hamilton theorem (III, p.~541). The stated formulae can then be obtained by applying formulae (6), (7) and (8) to \(p(u)g(u) = r(u)\) .
+
+COROLLARY 3. --- For each integer \(s \geqslant 0\) we have \(\operatorname{Tr}(u^s) = \sum_{i=1}^{n} \alpha_i^s\) . This formula is also valid for \(s < 0\) provided \(u\) is invertible.
+
+This is a special case of the previous corollary.
+
+COROLLARY 4. --- Suppose the field K is of characteristic zero; then the endomorphism u is nilpotent if and only if \(\operatorname{Tr}(u^{s}) = 0\) for \(1 \leqslant s \leqslant n\) .
+
+If \(u\) is nilpotent then the \(\alpha_{i}\) are all zero, and \(\operatorname{Tr}(u^{s}) = 0\) for all \(s > 0\) (Cor. 3). Conversely, if \(\operatorname{Tr}(u^{s}) = 0\) for \(1 \leqslant s \leqslant n\) , then the \(\alpha_{i}\) are all zero since \(K\) is of characteristic zero (IV, p.~72, Cor.), and \(u\) is nilpotent (VII, p.~33).
+
+COROLLARY 5. --- Let Y be an indeterminate and let \(\tilde{u}\) denote the endomorphism of the K(Y)-vector space K(Y) \(\otimes_{\mathbf{K}}\) E induced from \(u\) by extension of scalars from K to the field K(Y) of rational functions in Y with coefficients from K. Then the endomorphism Y . 1 - \(\tilde{u}\) is invertible. Moreover, if \(\chi_u'\) denotes the derivative of the polynomial \(\chi_u\) , then
+
+\[
+\operatorname{Tr} \left(\left(\mathrm{Y}. 1 - \tilde {u}\right) ^ {- 1}\right) = \chi_ {u} ^ {\prime} (\mathrm{Y}) / \chi_ {u} (\mathrm{Y}).
+\]
+
+The endomorphism Y.1 - \(\tilde{u}\) is invertible because its determinant is the nonzero element \(\chi_u(Y)\) of K(Y). It follows that \(\tilde{u}\) is substitutable in the rational function \(r(X) = (Y - X)^{-1}\) in K(Y)(X). The second assertion now follows from Cor. 2, by the relation
+
+\[
+\chi_ {u} ^ {\prime} (\mathrm{Y}) / \chi_ {u} (\mathrm{Y}) = \sum_ {i} \left(\mathrm{Y} - \alpha_ {i}\right) ^ {- 1} = \sum_ {i} r \left(\alpha_ {i}\right).
+\]
+
+COROLLARY 6. --- Suppose the field K is of characteristic zero. Then, in the ring K{[}{[}T{]}{]} of formal power series, we have
+
+\[
+- \mathrm{T} \frac {d}{d \mathrm{T}} \log \det (1 - \mathrm{Tu}) = \sum_ {m \geqslant 1} \operatorname{Tr} \left(u ^ {m}\right) \mathrm{T} ^ {m}.
+\]
+
+Let us first of all work in the field \(\mathrm{K}(\mathrm{T})\) of rational functions, and put \(\mathrm{P}(\mathrm{T}) = \det(\mathrm{I}_{n} - \mathrm{T} \cdot U)\) , where U is the matrix of u with respect to some basis of E. Then
+
+\[
+\mathrm{P} (\mathrm{T}) = \det \left(\mathrm{T} \left(\mathrm{T} ^ {- 1} \cdot I _ {n} - U\right)\right) = \mathrm{T} ^ {n} \chi_ {U} \left(\mathrm{T} ^ {- 1}\right),
+\]
+
+so \(\mathrm{P}'(\mathrm{T}) / \mathrm{P}(\mathrm{T}) = n / \mathrm{T} - \chi_u'(\mathrm{T}^{-1}) / \mathrm{T}^2\chi_u(\mathrm{T}^{-1})\) . Moreover, by Cor. 5 we have
+
+\[
+\chi_ {U} ^ {\prime} \left(\mathrm{T} ^ {- 1}\right) / \mathrm{T} \chi_ {U} \left(\mathrm{T} ^ {- 1}\right) = \operatorname{Tr} \left(\left(\mathrm{T} ^ {- 1} \cdot I _ {n} - U\right) ^ {- 1}\right) / \mathrm{T} = \operatorname{Tr} \left(\left(I _ {n} - \mathrm{T} \cdot U\right) ^ {- 1}\right).
+\]
+
+It follows that \(-\mathrm{TP}^{\prime}(\mathrm{T})/\mathrm{P}(\mathrm{T})=-n+\mathrm{Tr}\left((I_{n}-\mathrm{T}U)^{-1}\right)\) . The corollary is now obtained by expanding each side of this equation as a formal power series.
+
+Remark 2. --- By IV, p.~80, Cor. 1 and formula (8), we have, for each polynomial \(q \in \mathbf{K}[\mathbf{X}]\) , that
+
+\[
+\det q (u) = \operatorname{res} \left(\chi_ {u}, q\right),\tag{9}
+\]
+
+where \(\operatorname{res}(\chi_{u}, q)\) is the resultant of the polynomials \(\chi_{u}\) and q. In particular if we take \(q = \chi_{u}'\) we obtain
+
+\[
+\det \chi_ {u} ^ {\prime} (u) = (- 1) ^ {n (n - 1) / 2} \mathrm{dis} (\chi_ {u}),\tag{10}
+\]
+
+where \(\mathrm{dis}(\chi_{u})\) is the discriminant of the polynomial \(\chi_{u}\) (IV, p.~82, formula (47)). Furthermore:
+
+COROLLARY 7. --- We have \(\det\left(\operatorname{Tr}\left(u^{i+j}\right)_{0\leqslant i,j\leqslant n}\right)=\operatorname{dis}\left(\chi_{u}\right)\) .
+
+Let D be the Vandermonde matrix \((\alpha_j^{i-1})_{1 \leqslant i, j \leqslant n}\) . Then (III, p.~532, formula (29)):
+
+\[
+\det (D) ^ {2} = \prod_ {i <   j} (\alpha_ {i} - \alpha_ {j}) ^ {2} = \operatorname{dis} (\chi_ {u}).
+\]
+
+Moreover, the \((i,j)\) -th entry of \(D\cdot {}^t D\) is \(\sum_{k}\alpha_{k}^{i + j - 2} = \mathrm{Tr}(u^{i + j - 2})\) , and the corollary follows.
+

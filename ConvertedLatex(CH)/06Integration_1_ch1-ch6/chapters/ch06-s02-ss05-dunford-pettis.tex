@@ -1,0 +1,70 @@
+\subsection{Dunford--Pettis 定理}
+
+设 \(\mu\) 是 T 上的正测度。称 T 上取值于 F 的向量测度 \(\mathbf{m}\) 为标量地以 \(\mu\) 为基（或标量地以 \(\mu\) 为基），如果对每个 \(\mathbf{z}' \in \mathrm{F}'\) ，标量测度 \(\mathbf{z}' \circ \mathbf{m}\) 以 \(\mu\) 为基。若取值于 F 的向量测度 m 以 \(\mu\) 为基，则它标量地以 \(\mu\) 为基：因为若 \(m = f \cdot \mu\) ，则 \(z' \circ m = \langle z', f \rangle \cdot \mu\) （对每个 \(z' \in F'\) ）。但存在标量地以 \(\mu\) 为基而不以 \(\mu\) 为基的向量测度（习题 17），另一方面，也存在对任何正测度 \(\nu\) 都不标量地以 \(\nu\) 为基的向量测度；但注意，取值于赋范空间的每个可优超测度 m 依 Lebesgue--Nikodym 定理都标量地以 \(|m|\) 为基。
+
+例. --- 取 m 为 \(\mathcal{K}(\mathrm{T})\) 的恒等映射。说 m 标量地以 \(\mu\) 为基，就是说 T 上每个实测度都以 \(\mu\) 为基。特别地，点测度 \(\varepsilon_{t}\) ( \(t \in T\) ) 必须以 \(\mu\) 为基，这要求 \(\mu(\{t\}) > 0\) （对每个 \(t \in T\) ），并特别蕴含 T 的每个紧子集都可数。
+
+在本目中，我们将证明一个结果，它推广了 Lebesgue--Nikodym 定理的推论之一，即 \(\mathrm{L}^{1}(\mu)\) 的对偶是 \(\mathrm{L}^{\infty}(\mu)\) （Ch. V, §5, No. 8, 定理 4），并且给出标量地以 \(\mu\) 为基的向量测度以 \(\mu\) 为基的一个充分条件。
+
+设 \(\pi\) 是 \(\mathcal{L}^{\infty}(\mu)\) 到 \(\mathrm{L}^{\infty}(\mu)\) 上的典范映射。称线性子空间 \(\mathbf{G}\) （ \(\mathrm{L}^{\infty}\) 的）具有提升性质，如果存在线性映射 \(\rho\) （ \(\mathbf{G}\) 到 \(\mathcal{L}^{\infty}(\mu)\) 中的；称为 \(\mathbf{G}\) 的提升），使得 \(\pi \circ \rho\) 是 \(\mathbf{G}\) 上的恒等映射，且 \(|\rho(f)(t)| \leqslant \mathrm{N}_{\infty}(f)\) （对所有 \(t \in \mathrm{T}\) 与 \(f \in \mathrm{G}\) ）。
+
+可以证明，若 \(\mu\) 是 \(\mathbf{R}^n\) 上的 Lebesgue 测度，则整个空间 \(\mathrm{L}^{\infty}(\mathbf{R}^{n},\mu)\) 具有提升性质（习题 18）。
+
+引理 2. --- Banach 空间 \(\mathrm{L}^{\infty}(\mathrm{T},\mu)\) 的每个可分子空间 G 都具有提升性质。
+
+按假设，存在 G 的可数稠密子集 H ，它是关于有理数域 Q 的线性子空间；设 \((h_{n})\) 是 H 在 Q 上的一个（可数）基。对每个整数 n ，令 \(h_{n}^{\prime}\) 为 \(L^{\infty}\) 中满足 \(\pi(h_{n}^{\prime}) = h_{n}\) 的元素，令 \(\rho^{\prime}\) 为 H 到 \(L^{\infty}\) 中的由 \(\rho^{\prime}(h_{n}) = h_{n}^{\prime}\) 定义的 Q-线性映射；显然 \(\pi \circ \rho^{\prime}\) 是 H 上的恒等映射。此外，对每个 \(h \in H\) 有 \(|\rho^{\prime}(h)(t)| \leqslant N_{\infty}(h)\) ，但在局部可忽略集 A(h) 的点 t 处除外。令 A 为诸 A(h) （ \(h \in H\) ）的并，它也是局部可忽略的。对每个 \(h \in H\) ，用 \(\rho(h)\) 表示满足如下条件的函数 \(h^{\prime\prime} \in L^{\infty}\) ： \(h^{\prime\prime}(t) = \rho^{\prime}(h)(t)\) （若 \(t \notin A\) ），而 \(h^{\prime\prime}(t) = 0\) （若 \(t \in A\) ）。显然 \(\rho\) 是 H 到 \(L^{\infty}\) 中有界函数所成的子空间 B 中的 Q-线性映射，使得 \(\pi \circ \rho\) 是 H 上的恒等映射，且 \(|\rho(h)(t)| \leqslant N_{\infty}(h)\) （对所有 \(h \in H\) 与 \(t \in T\) ）。由于 B 对范数 \(\|f\| = \sup_{t \in T} |f(t)|\) （Ch. IV, §5, No. 4, 定理 2）是 Banach 空间，
+
+\(\rho\) 可以延拓为一个连续的 R-线性映射（仍记作 \(\rho\) ，由 G 到 B 中），它显然是 G 的一个提升。
+
+定义 5. --- 设 F 是 Hausdorff 局部凸空间， \(F_{s}^{\prime}\) 是它的对偶，赋以拓扑 \(\sigma(F^{\prime},F)\) 。我们用 \(L_{F_{s}^{\prime}}^{\infty}\) 表示 T 到 \(F_{s}^{\prime}\) 中的映射 f 所成的向量空间，其中 f 标量 \(\mu\)-可测，且标量地局部几乎处处（对 \(\mu\) ）等于一个 T 到 \(F^{\prime}\) 的等度连续子集中的映射。我们用 \(L_{F_{s}^{\prime}}^{\infty}\) 表示 \(L_{F_{s}^{\prime}}^{\infty}\) 关于标量局部 \(\mu\)-可忽略的 T 到 \(F_{s}^{\prime}\) 中的映射所成空间的商空间。
+
+当 F 满足 §1 第 5 目命题 13 的假设时， \(\mathcal{L}_{\mathrm{F}_s^\prime}^\infty\) 中的函数是 \(\mu\)-可测的（对弱拓扑 \(\sigma(\mathrm{F}',\mathrm{F})\) 而言），但对 \(\mathrm{F}'\) 上的强拓扑不必可测，即使 F 是 Banach 空间（§1, 习题 17）。在同样条件下，标量局部 \(\mu\)-可忽略的 T 到 \(\mathrm{F}_s^\prime\) 中的映射与局部 \(\mu\)-可忽略的 T 到 \(\mathrm{F}_s^\prime\) 中的映射相同（§1, 第 1 目的注记 2）。
+
+当 F 是可分赋范空间时， \(L_{F_{s}^{\prime}}^{\infty}\) 的元素是 T 到 \(F_{s}^{\prime}\) 中的映射 f ，其中 f 标量 \(\mu\)-可测且 \(|f|\) 依测度有界；这时可以在空间 \(L_{F_{s}^{\prime}}^{\infty}\) 上定义赋范空间结构，即赋以范数 \(N_{\infty}\) （Ch. IV, §6, No. 3）。
+
+引理 3. --- 设 F 是 Hausdorff 局部凸空间， f 是 \(\mathcal{L}_{\mathrm{F}_s^\prime}^\infty\) 的元素。对每个 \(\mathbf{z} \in \mathrm{F}\) ，有 \(\langle \mathbf{z}, \mathbf{f} \rangle \in \mathcal{L}^\infty\) ，且线性映射 \(z \mapsto \pi(\langle \mathbf{z}, \mathbf{f} \rangle)\) （F 到 \(\mathrm{L}^\infty\) 中的）连续；若进而 F 是赋范空间，则 \(\mathrm{N}_\infty(\langle \mathbf{z}, \mathbf{f} \rangle) \leqslant |\mathbf{z}| \cdot \sup_{t \in \mathrm{T}} |\mathbf{f}(t)|\) 。
+
+按定义显然 \(\langle z,f\rangle\) 是 \(\mu\)-可测的且依测度有界；若有必要，把 f 换成属于 \(L_{F_{s}}^{\infty}\) 中同一类的函数，则可以进而假设 \(\mathbf{f}(T)\subset V^{\circ}\) ，其中 V 是 F 中 0 的平衡凸邻域（这在至多一个局部可忽略集上不改变 \(\langle z,f\rangle\) ，该集依赖于 z）。这时关系式 \(z\in V\) 蕴含 \(|\langle z,f(t)\rangle|\leqslant1\) （对所有 \(t\in T\) ），这就证明了 \(\mathbf{z}\mapsto\pi(\langle\mathbf{z},\mathbf{f}\rangle)\) 的连续性。最后的断言是显然的。
+
+引理 4. --- 设 F 是 Hausdorff 局部凸空间， f 是 \(\mathcal{L}_{\mathrm{F}_s}^\infty\) 的元素。对每个数值函数 \(g \in \overline{\mathcal{L}}^1\) ，函数 gf 标量本质 \(\mu\)-可积，且 \(\int g\mathbf{f} d\mu \in \mathrm{F}'\) 。
+
+对每个 \(z \in F\) ， \(\langle z, f \rangle\) 属于 \(L^{\infty}\) ，由此得第一个断言。可以不改变 \(\int g f d\mu\) 而进而假设 \(\mathbf{f}(T) \subset V^{\circ}\) ，其中 V 是 F 中 0 的平衡凸邻域。这时关系式 \(z \in V\) 蕴含 \(|\langle z, f(t) \rangle| \leqslant 1\) （对所有 \(t \in T\) ），从而 \(|\langle z, \int g f d\mu \rangle| = |\int \langle z, f \rangle g d\mu| \leqslant \overline{N}_{1}(g)\) ，这证明了 \(\int g f d\mu \in F'\) 。
+
+定理 1. --- 设 F 是包含可数稠密集的 Hausdorff 局部凸空间。对每个函数 \(\mathbf{f} \in \mathcal{L}_{\mathrm{F}_s}^\infty\) 与每个 \(\mathbf{z} \in \mathbf{F}\) ，令 \(v_{\mathbf{f}}(\mathbf{z}) = \pi (\langle \mathbf{z}, \mathbf{f} \rangle) \in \mathrm{L}^{\infty}\) ；映射 \(\mathbf{f} \mapsto v_{\mathbf{f}}\) 经取商定义了 \(L_{F^{\prime}s}^{\infty}\) 到空间 \(\mathcal{L}(F;L^{\infty})\) （F 到 \(L^{\infty}\) 中的连续线性映射所成的空间）上的线性双射。若 F 是赋范空间，则此双射是等距的。
+
+鉴于引理 3，若能证明：对每个连续映射 \(u\) （ \(F\) 到 \(L^{\infty}\) 中的），存在函数 \(\mathbf{f} \in \mathcal{L}_{F_s'}^{\infty}\) 使得 \(\pi(\langle \mathbf{z}, \mathbf{f} \rangle) = u(\mathbf{z})\) （对所有 \(\mathbf{z} \in F\) ），且 \(\mathbf{f}\) 在 \(L_{F_s'}^{\infty}\) 中的类由该条件唯一确定，则第一个断言得证。第二点是直接的，因为若 \(\pi(\langle \mathbf{z}, \mathbf{f} \rangle) = \pi(\langle \mathbf{z}, \mathbf{f}_1 \rangle)\) （对所有 \(\mathbf{z} \in F\) ），则 \(\mathbf{f}_1 - \mathbf{f}\) 标量局部可忽略。另一方面，存在提升 \(\rho\) （ \(u(F)\) 到 \(\mathcal{L}^{\infty}\) 中的）（引理 2）。对每个 \(t \in T\) ，映射 \(\mathbf{z} \mapsto \rho(u(\mathbf{z}))(t)\) 是 \(F\) 上的连续线性形式，即一个元素 \(f(t)\) （ \(F'\) 的）。函数 \(\mathbf{f}\) 标量 \(\mu\)-可测，因为 \(\langle \mathbf{z}, \mathbf{f} \rangle = \rho(u(\mathbf{z})) \in \mathcal{L}^{\infty}\) （对每个 \(\mathbf{z} \in F\) ）；有 \(\pi(\langle \mathbf{z}, \mathbf{f} \rangle) = u(\mathbf{z})\) ；最后，对每个 \(t \in T\) 与每个 \(\mathbf{z}\) ——属于逆像 \(V\) （ \(u\) 下 \(L^{\infty}\) 的单位球的）者——，
+
+\[
+\left| \langle \mathbf {z}, \mathbf {f} (t) \rangle \right| = \left| \rho (u (\mathbf {z})) (t) \right| \leqslant N _ {\infty} (u (\mathbf {z})) \leqslant 1,
+\]
+
+这表明 \(\mathbf{f}(t) \in \mathrm{V}^{\circ}\) （对所有 \(t \in \mathrm{T}\) ）。
+
+若进而 F 是赋范空间，前面的论证表明
+
+\[
+\sup _ {t \in \mathrm{T}} | \mathbf {f} (t) | \leqslant \| u \|.
+\]
+
+但另一方面（引理 3）， \(\mathrm{N}_{\infty}(u(\mathbf{z})) \leqslant |\mathbf{z}| \cdot \sup_{t \in \mathrm{T}} |\mathbf{f}(t)|\) ，且当 f 在一个局部可忽略集上被任意修改时，该不等式继续成立。由此得出 \(\|u\| = \mathrm{N}_{\infty}(|\mathbf{f}|)\) 。
+
+推论 1. --- 设 F 是包含可数稠密集的 Hausdorff 局部凸空间。对每个函数 \(\mathbf{f} \in \mathcal{L}_{\mathrm{F}_s}^\infty\) 、每个 \(\mathbf{z} \in \mathrm{F}\) 与每个函数 \(g \in \mathcal{L}^1\) ，令 \(\Phi_{\mathbf{f}}(\mathbf{z}, \widetilde{g}) = \int \langle \mathbf{z}, \mathbf{f}(t) \rangle g(t) d\mu(t)\) 。映射 \(\mathbf{f} \mapsto \Phi_{\mathbf{f}}\) 经取商定义了 \(\mathrm{L}_{\mathrm{F}_s}^\infty\) 到空间 \(\mathcal{B}(\mathrm{F}, \mathrm{L}^1)\) （ \(\mathrm{F} \times \mathrm{L}^1\) 上连续双线性形式所成的空间）上的线性双射。若 \(\mathrm{F}\) 是赋范空间，则此双射是等距的。
+
+可以假设 \(\mathbf{f}(\mathrm{T})\) 是 \(F'\) 的等度连续子集。这时显然 \(\Phi_{f}\) 分别连续，且用定理 1 与附录的记号，有（考虑到 \(L^{\infty}\) 是 \(L^{1}\) 的对偶这一事实（Ch. V, §5, No. 8, 定理 4）） \(^{l}\Phi_{f}=v_{f}\) 。于是推论由上面的定理 1 以及附录第 1 目命题 1 及其推论得出。
+
+推论 2（Dunford--Pettis 定理）. --- 设 F 是包含可数稠密集的 Hausdorff 局部凸空间。对每个函数 \(f \in L_{F_{s}^{\infty}}\) 与每个函数 \(g \in L^{1}\) ，令 \(w_{\mathbf{f}}(\widetilde{g}) = \int g\mathbf{f} \, d\mu \in \mathbf{F}'\) （引理 4）。映射 \(f \mapsto w_{f}\) 经取商定义了 \(L_{F_{s}^{\prime}}^{\infty}\) 到空间 \(\mathcal{R}(L^{1}, F^{\prime})\) 上的线性双射，该空间由 \(L^{1}\) 到 \(F^{\prime}\) 中的线性映射 u 组成，使得 u 下 \(L^{1}\) 的单位球的像是 \(F^{\prime}\) 的等度连续子集。若 F 是赋范空间（这时 \(\mathcal{R}(L^{1}, F^{\prime})\) 是 \(L^{1}\) 到 F 的强对偶中的连续线性映射所成的空间），则双射 \(f \mapsto w_{f}\) 是等距的。
+
+考虑到 \(L^{\infty}\) 是 \(L^{1}\) 的对偶这一事实，这由前述推论以及附录第 1 目命题 1 及其推论得出。
+
+注记. --- 显然，映射 \(u \in \mathcal{R}(L^{1}, F')\) 对 \(F'\) 上每个 S-拓扑都连续（S 是 F 的由有界子集组成的覆盖）。反之，若进而假设 F 是桶式的，则 \(L^{1}\) 到赋以某 S-拓扑的 \(F'\) 中的每个连续线性映射都把 \(L^{1}\) 的单位球变成 \(F'\) 的有界子集，从而是等度连续的（TVS, III, §4, No. 2, 定理 1）。
+
+推论 3. --- 设 F 是包含可数稠密集的 Hausdorff 局部凸空间， m 是 T 上取值于 F 的弱对偶 F' 的向量测度。若函数集 B （ \(\mathcal{K}(T)\) 中的函数 g ，满足 \(\mu(|g|) \leqslant 1\) 者）在 m 下的像含于 F' 的一个闭凸等度连续子集 H' ，则 m 以 \(\mu\) 为基，且存在 m 关于 \(\mu\) 的密度 f ，使得对所有 t ∈ T 有 f(t) ∈ H'。
+
+假设蕴含：当 \(\mathcal{K}(T)\) 赋以 \(\mathcal{L}^{1}(\mu)\) 的拓扑诱导的拓扑（由半范数 \(N_{1}\) 定义）时，m 连续；因此它可延拓为 \(\mathcal{L}^{1}(\mu)\) 到 F 的弱对偶的完备化 G 中的连续线性映射 u；但由 \(H'\) 是 G 的紧子集且集合 \(\overline{B}\) ——由 \(f \in L^{1}\) （满足 \(\mathrm{N}_{1}(f) \leqslant 1\) 者）组成——在 u 下的像含于 \(H'\) 在 G 中的闭包，有 \(u(\overline{\mathrm{B}}) \subset \mathrm{H}'\) ，因此 u 把 \(L^{1}\) 映入 \(F'\) 。由于关系式 \(\mathrm{N}_{1}(f) \leqslant \varepsilon\) 蕴含 \(u(f) \in \varepsilon\mathrm{H}'\) ，故有 \(u(g) = 0\) （若 g \(\mu\)-可忽略），于是推论 2 可应用于由 u 经取商得到的 \(L^{1}\) 到 \(F'\) 中的映射；由此即得推论。
+
+推论 4. --- 设 F 是可分赋范空间， m 是 T 上取值于 F 的强对偶 F' 的测度，对 F' 的范数可优超。则 m 是以 \textbar m\textbar 为基的测度，且若 \(m = f \cdot |m|\) ，则 \(|f(t)| = 1\) 关于 \textbar m\textbar 局部几乎处处成立。
+
+按假设，对每个 \(\mathbf{z} \in \mathbf{F}\) （满足 \(|\mathbf{z}| \leqslant 1\) 者），有 \(|\langle \mathbf{z}, \mathbf{m}(g) \rangle| \leqslant |\mathbf{m}|(|g|)\) （对每个函数 \(g \in \mathcal{K}(\mathrm{T})\) ），从而 \(|\mathbf{m}(g)| \leqslant |\mathbf{m}|(|g|)\) （TVS, IV, §2, No. 4, 公式 (1)）。由于 \(\mathbf{F}'\) 中每个球都等度连续，推论 3 适用并表明 \(\mathbf{m}\) 以 \(|\mathbf{m}|\) 为基；此外，若 \(\mathbf{m} = \mathbf{f} \cdot |\mathbf{m}|\) ，则 \(\mathbf{f}\) 是 \(|\mathbf{m}|\)-可测的（对 \(\sigma(\mathrm{F}', \mathrm{F})\) 而言）（§1, 第 5 目，命题 13），且 \(|\mathbf{m}| = |\mathbf{f}| \cdot |\mathbf{m}|\) （第 4 目，命题 8），这就证明了推论（Ch. V, §5, No. 3, 命题 3 的推论 2）。
+
+若把这推论应用于 \(\mathbf{F}\) 为有限维的情形，就重新得到命题 9 的第一部分作为特例。
+

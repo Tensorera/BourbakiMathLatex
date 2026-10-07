@@ -1,0 +1,108 @@
+\subsection{泰勒公式}
+
+设 f 是定义在区间 \(I \subset R\) 上、取值于 R 上的赋范空间 E 中的向量函数；说 f 在一点 \(a \in I\) 有导数，意味着
+
+\[
+\lim _ {x \to a, x \in \mathrm{I}, x \neq a} \frac {\mathbf {f} (x) - \mathbf {f} (a) - \mathbf {f} ^ {\prime} (a) (x - a)}{x - a} = 0;\tag{6}
+\]
+
+或者换一种说法，即 \(\mathbf{f}\) “近似等于”线性函数 \(\mathbf{f}(a) + \mathbf{f}'(a)(x - a)\) （在 \(a\) 的一个邻域上；cf.~chap.~V，那里以一般的方式发展了这个概念）。我们将看到，\(n^{th}\) 阶导数（\(\mathbf{f}\) 在点 \(a\) 处的）的存在性，同样蕴含 \(\mathbf{f}\) “近似等于”一个 \(n\) 次（关于 \(x\) 的）、系数在 E 中的多项式（Gen.~Top., X, p.~315），在 \(a\) 的一个邻域上。确切地说：
+
+定理 1. 若函数 f 在点 a 有 \(n^{th}\) 阶导数，则
+
+\[
+\lim _ {x \to a, x \in \mathrm{I}, x \neq a} \frac {\mathbf {f} (x) - \mathbf {f} (a) - \mathbf {f} ^ {\prime} (a) \frac {(x - a)}{1 !} - \cdots - \mathbf {f} ^ {(n)} (a) \frac {(x - a) ^ {n}}{n !}}{(x - a) ^ {n}} = 0.\tag{7}
+\]
+
+我们对 n 用归纳法进行证明。定理对 n = 1 成立。对任意的 n，由归纳假设，可把它应用于 f 的导数 \(f'\) ：对任何 \(\varepsilon > 0\) 存在 h \textgreater{} 0，使得若令
+
+\[
+\mathbf {g} (x) = \mathbf {f} (x) - \mathbf {f} (a) - \mathbf {f} ^ {\prime} (a) \frac {(x - a)}{1 !} - \mathbf {f} ^ {\prime \prime} (a) \frac {(x - a) ^ {2}}{2 !} - \dots - \mathbf {f} ^ {(n)} (a) \frac {(x - a) ^ {n}}{n !}
+\]
+
+则当 \(|y - a| \leqslant h\) 且 \(y \in I\) 时，有
+
+\[
+\begin{array}{l} \left\| \mathbf {g} ^ {\prime} (y) \right\| = \left\| \mathbf {f} ^ {\prime} (y) - \mathbf {f} ^ {\prime} (a) - \mathbf {f} ^ {\prime \prime} (a) \frac {(y - a)}{1 !} - \dots - \mathbf {f} ^ {(n)} (a) \frac {(y - a) ^ {n - 1}}{(n - 1) !} \right\| \\ \leqslant \varepsilon | y - a | ^ {n - 1}. \end{array}
+\]
+
+我们把中值定理（I, p.~15, th. 2）应用于以 \(a\) 、\(x\) 为端点的区间（其中 \(|x - a| \leqslant h\) ）、向量函数 \(\mathbf{g}\) 以及等于 \(\varepsilon |y - a|^n / n\) （若 \(x > a\) ）或等于 \(-\varepsilon |y - a|^n / n\) （若 \(x < a\) ）的实值递增函数；由此得出 \(\| \mathbf{g}(x) \| \leqslant \varepsilon |x - a|^n / n\) ，定理得证。
+
+于是我们可以写成
+
+\[
+\begin{array}{c} \mathbf {f} (x) = \mathbf {f} (a) + \mathbf {f} ^ {\prime} (a) \frac {(x - a)}{1 !} + \mathbf {f} ^ {\prime \prime} (a) \frac {(x - a) ^ {2}}{2 !} + \dots \\ + \mathbf {f} ^ {(n)} (a) \frac {(x - a) ^ {n}}{n !} + \mathbf {u} (x) \frac {(x - a) ^ {n}}{n !} \end{array}\tag{8}
+\]
+
+其中 \(\mathbf{u}(x)\) 当 \(x\) 趋于 \(a\) 且保持属于 I 时趋于 0；这一公式称为 \(n\) 阶泰勒公式（在点 \(a\) 处的），且 (8) 的右边称为 \(n\) 阶泰勒展开（即函数 \(\mathbf{f}\) 在点 \(a\) 处的泰勒展开）。最后一项 \(\mathbf{r}_n(x) = \mathbf{u}(x)(x - a)^n / n!\) 称为 \(n\) 阶泰勒公式中的余项。
+
+当 f 在 I 上有 \(n + 1\) 阶导数时，可以在整个 I 上（而不只是在 a 的某个未定的邻域上）估计 \(\|\mathbf{r}_{n}(x)\|\) ，所借助的是这 \(n + 1^{th}\) 阶导数：
+
+命题 3. 若在 I 上 \(\left\| \mathbf{f}^{(n + 1)}(x)\right\| \leqslant \mathbf{M}\) ，则有
+
+\[
+\| \mathbf {r} _ {n} (x) \| \leqslant \mathrm{M} \frac {| x - a | ^ {n + 1}}{(n + 1) !}\tag{9}
+\]
+
+在 I 上成立。
+
+事实上，由 I, p.~15, th. 2，公式对 \(n = 0\) 成立。我们对 \(n\) 用归纳法证明它：把归纳假设应用于 \(\mathbf{f}'\) ，便有
+
+\[
+\left| \left| \mathbf {r} _ {n} ^ {\prime} (y) \right| \right| \leqslant \mathrm{M} \frac {| y - a | ^ {n}}{n !}
+\]
+
+再由中值定理（I, p.~23, th. 2）即得公式 (9)。
+
+推论. 设 \(f\) 是有限实函数，具有 \(n + 1\) 阶导数（在 \(\mathbf{I}\) 上）；若 \(m \leqslant f^{(n + 1)}(x) \leqslant \mathbf{M}\) 在 \(\mathbf{I}\) 上成立，则对所有 \(x \geqslant a\) （属于 \(\mathbf{I}\) 的），有
+
+\[
+m \frac {(x - a) ^ {n + 1}}{(n + 1) !} \leqslant r _ {n} (x) \leqslant \mathrm{M} \frac {(x - a) ^ {n + 1}}{(n + 1) !}\tag{10}
+\]
+
+且除非 \(f^{(n+1)}\) 在区间 \([a, x]\) 上是常数且等于 m（相应地，等于 M），第二个项不可能等于第一个项（相应地，第三个项）。
+
+证明以同样的方式进行，但应用 I, p.~14 的 th. 1。
+
+注。1) 我们在定理 1 的证明中已经注意到，若 f 在 I 上有 n 阶导数，且
+
+\[
+\mathbf {f} (x) = \mathbf {a} _ {0} + \mathbf {a} _ {1} (x - a) + \mathbf {a} _ {2} (x - a) ^ {2} + \dots + \mathbf {a} _ {n} (x - a) ^ {n} + \mathbf {r} _ {n} (x)\tag{11}
+\]
+
+是它的 \(n\) 阶泰勒展开（在点 \(a\) 处），则 \(n - 1\) 阶泰勒展开（\(\mathbf{f}'\) 的，在点 \(a\) 处的）是
+
+\[
+\mathbf {f} ^ {\prime} (x) = \mathbf {a} _ {1} + 2 \mathbf {a} _ {2} (x - a) + \dots + n \mathbf {a} _ {n} (x - a) ^ {n - 1} + \mathbf {r} _ {n} ^ {\prime} (x).\tag{12}
+\]
+
+我们说它是从 \(\mathbf{f}\) 的展开式 (11) 逐项微分得到的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在同一假设下，(11) 中的系数 \(\mathbf{a}_i\) 由下列关系式递归地确定
+\end{enumerate}
+
+\[
+\begin{array}{l} \mathbf {a} _ {0} = \mathbf {f} (a) \\ \mathbf {a} _ {1} = \lim _ {x \to a} \frac {\mathbf {f} (x) - \mathbf {f} (a)}{x - a} \\ \mathbf {a} _ {2} = \lim _ {x \to a} \frac {\mathbf {f} (x) - \mathbf {f} (a) - \mathbf {a} _ {1} (x - a)}{(x - a) ^ {2}} \\ \dots \\ \mathbf {a} _ {n} = \lim _ {x \to a} \frac {\mathbf {f} (x) - \mathbf {f} (a) - \mathbf {a} _ {1} (x - a) - \cdots - \mathbf {a} _ {n - 1} (x - a) ^ {n - 1}}{(x - a) ^ {n}}. \end{array}
+\]
+
+在 \(a = 0\) 的情形，特别地可以得出：若 \(\mathbf{f}(x^p)\) （ \(p\) 为整数 \(> 0\) ）在 0 的一个邻域上有 \(pn\) 阶导数，则此函数的 \(pn\) 阶泰勒展开就是
+
+\[
+\mathbf {f} (x ^ {p}) = \mathbf {a} _ {0} + \mathbf {a} _ {1} x ^ {p} + \mathbf {a} _ {2} x ^ {2 p} + \dots + \mathbf {a} _ {n} x ^ {n p} + \mathbf {r} _ {n} (x ^ {p})\tag{13}
+\]
+
+其中 \(\mathbf{r}_{n}(x^{p})\) 是展开式中的余项（cf.~V, p.~222）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  n 阶导数的定义以及前面的结果可立即推广到复变量的函数；我们在此不再进一步讨论这一课题；它将在本丛书中稍后的一卷里得到详细处理。
+\end{enumerate}
+

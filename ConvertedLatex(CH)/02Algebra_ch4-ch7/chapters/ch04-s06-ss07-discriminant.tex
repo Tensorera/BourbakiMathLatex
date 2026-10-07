@@ -1,0 +1,276 @@
+\subsection{判别式}
+
+定义2. --- 设 f 为 A{[}X{]} 中次数为 m 的首一多项式，并记 E 为 A-代数 A{[}X{]}/(f) ，用 x 表示 X 在 E 中的典范像。我们把 f 的判别式（记为 dis(f)）定义为判别式 \(D_{E/A}(1, x, \ldots, x^{m-1})\) （即 A-代数 E 的基 \((1, x, \ldots, x^{m-1})\) 的判别式）。
+
+对每个正整数 k，我们记 \(p_{k} = \mathrm{Tr}_{\mathrm{E}/\mathrm{A}}(x^{k})\) 。根据III第549页定义2，这等价于公式
+
+\[
+\operatorname{dis} (f) = \det \left(p _ {i + j}\right) _ {0 \leqslant i, j <   m}.\tag{45}
+\]
+
+例子。--- 1) 如果 \(f\) 是次数为 0 或 1 的首一多项式，则由（45）我们有 \(\operatorname{dis}(f) = 1\) 。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(f(\mathbf{X}) = \mathbf{X}^2 + \alpha \mathbf{X} + \beta\) 为次数为 2 的首一多项式。牛顿关系可以写成如下形式（IV，第75页）
+\end{enumerate}
+
+\[
+\begin{array}{c} p _ {0} = 2 \\ p _ {1} + \alpha = 0 \\ p _ {2} + \alpha p _ {1} + 2 \beta = 0, \end{array}
+\]
+
+从而 \(p_1 = -\alpha\) , \(p_2 = \alpha^2 - 2\beta\) 。由此可得我们有
+
+\[
+\operatorname{dis} (f) = \det \left( \begin{array}{c c} 2 & - \alpha \\ - \alpha & \alpha^ {2} - 2 \beta \end{array} \right) = \alpha^ {2} - 4 \beta .
+\]
+
+设 B 为一个交换环， \(\rho\) 为从 A 到 B 的同态，且 \(\xi_{1}, \ldots, \xi_{m}\) 为 B 的元素，使得
+
+\[
+{ } ^ { \rho } f ( \mathbf { X } ) = ( \mathbf { X } - \xi _ { 1 } ) \dots ( \mathbf { X } - \xi _ { m } ) .
+\]
+
+我们用 \(M\) 表示矩阵 \((\rho(p_{i+j}))_{0 \leqslant i,j < m}\) ，用 \(D\) 表示范德蒙德矩阵 \((\xi_{i+1}^{j})_{0 \leqslant i,j < m}\) 。由IV第75页例4，我们有
+
+\[
+\rho (p _ {k}) = \xi_ {1} ^ {k} + \dots + \xi_ {m} ^ {k},
+\]
+
+从而 \(M = {}^t D \cdot D\) ；由III第532页，我们有 \(\det D = \prod_{i > j} (\xi_i - \xi_j)\) 且 det \(M = (\det D)^2\) ，即
+
+\[
+\rho (\operatorname{dis} (f)) = \prod_ {i <   j} \left(\xi_ {i} - \xi_ {j}\right) ^ {2}.\tag{46}
+\]
+
+此外（用 D 表示导子 \(\frac{d}{d\mathbf{X}}\) ）我们有
+
+\[
+D (^ {\rho} f) (\xi_ {i}) = (\xi_ {i} - \xi_ {1}) \dots (\xi_ {i} - \xi_ {i - 1}) (\xi_ {i} - \xi_ {i + 1}) \dots (\xi_ {i} - \xi_ {m})
+\]
+
+对 \(1 \leqslant i \leqslant m\) ，从而
+
+\[
+\rho (\operatorname{dis} (f)) = (- 1) ^ {m (m - 1) / 2} \prod_ {i \neq j} (\xi_ {i} - \xi_ {j}) = (- 1) ^ {m (m - 1) / 2} \prod_ {i = 1} ^ {m} D (^ {\rho} f) (\xi_ {i}).
+\]
+
+根据IV第80页推论1（应用于 \(f\) 的泛分解），我们最终得到
+
+\[
+\operatorname{res} (f, \mathrm{D} f) = \operatorname{res} (\mathrm{D} f, f) = (- 1) ^ {m (m - 1) / 2} \operatorname{dis} (f).\tag{47}
+\]
+
+命题10. --- 设 \(m \geqslant 1\) 。存在唯一的多项式 \(\Delta \in \mathbf{Z}[\mathbf{A}_1, \ldots, \mathbf{A}_m]\) ，它具有如下性质：对任意交换环 A 及首一多项式 \(f = \mathbf{X}^m + \sum_{i=1}^{m} a_i \mathbf{X}^{m-i}\) （在 A{[}X{]} 中），我们有
+
+\[
+\operatorname{dis} (f) = \Delta \left(a _ {1}, \dots , a _ {m}\right).\tag{48}
+\]
+
+此外， \(\Delta\) 的次数 \(\leqslant 2m - 2\) ，并且若赋予权重 \(i\) 给 \(\mathbf{A}_i\) ，则 \(\Delta\) 是等权的，权为 \(m(m - 1)\) 。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(\Delta\) 的唯一性：若 \(\Delta\) 满足（48），则特别地有 \(\Delta = \text{dis}(F)\) ，其中 \(F\) 是多项式 \(X^{m} + \sum_{i=1}^{m} A_{i} X^{m-i}\) ，其系数在 \(\mathbf{Z}[A_{1}, \ldots, A_{m}]\) 中。
+\item
+  \(\Delta\) 的存在性：设 \(s_1, \ldots, s_m\) 为未定元 \(\mathbf{X}_1, \ldots, \mathbf{X}_m\) 的初等对称多项式。存在一个多项式 \(\Delta \in \mathbf{Z}[\mathbf{A}_1, \ldots, \mathbf{A}_m]\) ，它是权为 \(m(m-1)\) 的等权多项式，使得
+\end{enumerate}
+
+\[
+\Delta \left(- s _ {1}, s _ {2}, \dots , (- 1) ^ {m} s _ {m}\right) = \prod_ {i <   j} \left(\mathrm{X} _ {i} - \mathrm{X} _ {j}\right) ^ {2};\tag{49}
+\]
+
+因为右边是一个对称多项式 P，它是 \(m(m-1)\) 次齐次的，位于 \(Z[X_{1},\ldots,X_{m}]\) 中（IV，第62页，定理1）。现在，公式（46）表明在IV第74页的记号下有 \(\text{dis}(f)=P(f)\) ，由此直接得出(48)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \(\Delta\) 的次数：关系式(47)与结式的定义（IV，第76页）蕴含公式
+\end{enumerate}
+
+\[
+(- 1) ^ {m (m - 1) / 2} \Delta = \det \left(a _ {i j}\right) _ {0 \leqslant i, j \leqslant 2 m - 2}\tag{50}
+\]
+
+其中 \(a_{ij}\) 取值如下
+
+\[
+\begin{array}{l l} a _ {0 0} = 1, \quad a _ {0, m - 1} = m, & a _ {0 j} = 0 \quad \text {if} \quad j \neq 0, \quad j \neq m - 1 \\ a _ {i j} = \mathbf {A} _ {i - j} & \text {for} \quad 1 \leqslant i \leqslant 2 m - 2, \quad 0 \leqslant j \leqslant m - 2 \\ a _ {i j} = (j - i + 1) \mathbf {A} _ {m + i - j - 1} & \text {for} \quad 1 \leqslant i \leqslant 2 m - 2, \quad m - 1 \leqslant j \leqslant 2 m - 2. \end{array}
+\]
+
+在这些公式中，约定 \(A_{0}=1\) ，且 \(A_{i}=0\) （对 i\textless0 或 i\textgreater m）。现在(50)立即表明 \(\Delta\) 的次数 \(\leqslant2m-2\) ，这正是我们要证明的。
+
+命题10使我们能够把判别式的定义推广到非首一多项式。设 \(m \geqslant 1\) 为一个整数，则存在唯一的 \(2m - 2\) 次齐次多项式，记作 \(\tilde{\Delta}\) ，它属于 \(\mathbf{Z}[\mathbf{A}_0, \mathbf{A}_1, \ldots, \mathbf{A}_m]\) ，使得
+
+\[
+\Delta \left(\mathrm{A} _ {1}, \dots , \mathrm{A} _ {m}\right) = \tilde {\Delta} \left(1, \mathrm{A} _ {1}, \dots , \mathrm{A} _ {m}\right);\tag{51}
+\]
+
+这是因为，由于 \(\Delta\) 的次数 \(\leqslant 2m - 2\) ，有理分式
+
+\[
+\mathbf {A} _ {0} ^ {2 m - 2} \Delta (\mathbf {A} _ {1} / \mathbf {A} _ {0}, \dots , \mathbf {A} _ {m} / \mathbf {A} _ {0})
+\]
+
+属于子环 \(\mathbf{Z}[\mathbf{A}_0, \mathbf{A}_1, \ldots, \mathbf{A}_m]\) （即 \(\mathbf{Q}(\mathbf{A}_0, \mathbf{A}_1, \ldots, \mathbf{A}_m)\) 的子环）。若 \(\mathbf{A}_i\) 的权为 \(i\) （ \(0 \leqslant i \leqslant m\) ），则 \(\tilde{\Delta}\) 是等权的，权为 \(m(m - 1)\) 。若 \(f\) 是次数 \(\leqslant m\) 的多项式，设
+
+\[
+f = a _ {0} \mathrm{X} ^ {m} + a _ {1} \mathrm{X} ^ {m - 1} + \dots + a _ {m - 1} \mathrm{X} + a _ {m},
+\]
+
+我们令
+
+\[
+\operatorname{dis} _ {m} (f) = \tilde {\Delta} \left(a _ {0}, a _ {1}, \dots , a _ {m}\right).\tag{52}
+\]
+
+当 \(m = \deg f\) 时，我们将简单地用 \(\operatorname{dis}(f)\) 代替 \(\operatorname{dis}_m(f)\) ；若 \(f\) 是首一的，则由(48)、(51)和(52)， \(\operatorname{dis}(f)\) 与定义2中定义的判别式一致。
+
+命题11. --- 设 \(f\) 为 A{[}X{]} 中次数 \(\leqslant m\) 的多项式。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  若 \(\rho: \mathbf{A} \to \mathbf{B}\) 是一个环同态，则我们有 \(\mathrm{dis}_m({}^{\rho}f) = \rho(\mathrm{dis}_m(f))\) 。
+\item
+  设 \(\lambda, \alpha_{1}, \ldots, \alpha_{m}\) 为 A 的元素。如果 \(f = \lambda(X - \alpha_{1}) \ldots (X - \alpha_{m})\) ，则我们有
+\end{enumerate}
+
+\[
+\operatorname{dis} _ {m} (f) = \lambda^ {2 m - 2} \prod_ {i <   j} (\alpha_ {i} - \alpha_ {j}) ^ {2}.\tag{53}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 \(a_0\) 为 \(\mathbf{X}^m\) 在 \(f\) 中的系数，则我们有
+\end{enumerate}
+
+\[
+\operatorname{res} _ {m, m - 1} (f, \mathbf {D} f) = \operatorname{res} _ {m - 1, m} (\mathbf {D} f, f) = (- 1) ^ {m (m - 1) / 2} a _ {0} \operatorname{dis} _ {m} (f).\tag{54}
+\]
+
+断言(i)是显然的。
+
+由于 \(\tilde{\Delta}\) 是 \(2m - 2\) 次齐次的，我们有
+
+\[
+\operatorname{dis} _ {m} (\lambda f) = \lambda^ {2 m - 2} \operatorname{dis} _ {m} (f)\tag{55}
+\]
+
+对每个多项式 \(f \in \mathbf{A}[\mathbf{X}]\) （次数 \(\leqslant m\) ）成立。断言(ii)现在由公式(46)和(55)得出。
+
+当 f 是 m 次的首一多项式时，我们有 \(a_{0} = 1\) ，且断言(iii)归结为公式(47)。考虑到(55)以及关系式
+
+\[
+\operatorname{res} _ {m, n} (\lambda f, \mu g) = \lambda^ {n} \mu^ {m} \operatorname{res} _ {m, n} (f, g),\tag{56}
+\]
+
+（IV，第77页），我们可以从那里过渡到 \(a_0\) 在 A 中可逆的情形。一般情形则由命题11(i)与引理5（IV，第79页）得出。
+
+推论1. --- 设 \(g \in A[X]\) ，并设 \(n\) 为使 \(\deg g \leqslant n\) 成立的正整数。我们有
+
+\[
+\operatorname{dis} _ {m + n} (f g) = \operatorname{dis} _ {m} (f) \cdot \operatorname{dis} _ {n} (g) \cdot \operatorname{res} _ {m, n} (f, g) ^ {2}.\tag{57}
+\]
+
+通过与前面相同的推理，我们归结为 f 与 g 分别为 m 次和 n 次首一多项式的情形。现在令 \(B = E_{f} \otimes E_{g}\) ，其中 \(E_{f}\) （相应地， \(E_{g}\) ）是 \(f(\text{resp. } g)\) （IV，第73页）的泛分解代数。于是 A 是 B 的一个子环，并且在 B{[}X{]} 中我们有分解
+
+\[
+f = \prod_ {i = 1} ^ {m} \left(\mathrm{X} - \alpha_ {i}\right), \quad g = \prod_ {j = 1} ^ {n} \left(\mathrm{X} - \beta_ {j}\right).
+\]
+
+因此我们有
+
+\[
+f g = \prod_ {k = 1} ^ {m + n} \left(\mathbf {X} - \gamma_ {k}\right),
+\]
+
+其中 \(\gamma_{i} = \alpha_{i}\) （ \(1 \leqslant i \leqslant m\) ），且 \(\gamma_{m + j} = \beta_{j}\) （ \(1 \leqslant j \leqslant n\) ）。我们有明显的恒等式
+
+\[
+\prod_ {k <   k ^ {\prime}} \left(\gamma_ {k} - \gamma_ {k ^ {\prime}}\right) = \prod_ {i <   i ^ {\prime}} \left(\alpha_ {i} - \alpha_ {i ^ {\prime}}\right) \cdot \prod_ {j <   j ^ {\prime}} \left(\beta_ {j} - \beta_ {j ^ {\prime}}\right) \cdot \prod_ {i, j} \left(\alpha_ {i} - \beta_ {j}\right).
+\]
+
+将此关系式平方，并利用(40)和(46)，我们得到(57)。
+
+推论2. --- 若 \(a_{0}\) 是 \(\mathbf{X}^{m}\) 在 \(f\) 中的系数，则我们有
+
+\[
+\operatorname{dis} _ {m + 1} (f) = a _ {0} ^ {2} \operatorname{dis} _ {m} (f).\tag{58}
+\]
+
+在推论1中取 \(n = 1\) , \(g = 1\) ，并利用公式 \(\operatorname{res}_{m,1}(f,1) = a_0\) （IV，第76页，例1），即得结论。
+
+推论3. --- 设 A 为一个域， f 为 A{[}X{]} 中的非常数多项式。为使 f 与 Df 互素，必要且充分的是 \(\text{dis}(f) \neq 0\) 。
+
+这由命题11(iii)及IV第78页推论2得出。
+
+注记. --- 对上述推论2应用两次可知，我们有 \(\mathrm{dis}_{m}(f)=0\) （对每个次数 \(\leqslant m-2\) 的多项式 f）。
+
+例子. --- 3) 设 \(m = 2\) 。由例2（IV，第81页）我们有 \(\Delta(\mathbf{A}_1, \mathbf{A}_2) = \mathbf{A}_1^2 - 4\mathbf{A}_2\) ，从而 \(\tilde{\Delta}(\mathbf{A}_0, \mathbf{A}_1, \mathbf{A}_2) = \mathbf{A}_1^2 - 4\mathbf{A}_0\mathbf{A}_2\) 。换言之，我们有
+
+\[
+\operatorname{dis} _ {2} \left(a _ {0} \mathbf {X} ^ {2} + a _ {1} \mathbf {X} + a _ {2}\right) = a _ {1} ^ {2} - 4 a _ {0} a _ {2}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  考虑多项式
+\end{enumerate}
+
+\[
+\mathbf {F} = \mathbf {A} _ {0} \mathbf {X} ^ {3} + 3 \mathbf {A} _ {1} \mathbf {X} ^ {2} + 3 \mathbf {A} _ {2} \mathbf {X} + \mathbf {A} _ {3}
+\]
+
+其系数在 \(\mathbf{Q}[\mathbf{A}_0,\mathbf{A}_1,\mathbf{A}_2,\mathbf{A}_3]\) 中。我们有
+
+\[
+\mathbf {D F} = 3 \left(\mathbf {A} _ {0} \mathbf {X} ^ {2} + 2 \mathbf {A} _ {1} \mathbf {X} + \mathbf {A} _ {2}\right),
+\]
+
+\[
+\mathrm{F} - 1 / 3 \mathrm{X}. \mathrm{DF} = \mathrm{A} _ {1} \mathrm{X} ^ {2} + 2 \mathrm{A} _ {2} \mathrm{X} + \mathrm{A} _ {3}.
+\]
+
+由公式(54)（IV，第84页）和(29)（IV，第77页），我们有
+
+\[
+\mathrm{A} _ {0} \cdot \operatorname{dis} _ {3} (\mathrm{F}) = - \operatorname{res} _ {2, 3} (\mathrm{DF}, \mathrm{F}) = - \operatorname{res} _ {2, 3} (\mathrm{DF}, \mathrm{F} - 1 / 3 \mathrm{X}. \mathrm{DF}).
+\]
+
+应用IV第80页推论2，我们最终得到
+
+\[
+\operatorname{dis} _ {3} (\mathrm{F}) = - 2 7 \operatorname{res} _ {2, 2} \left(\mathrm{A} _ {0} \mathrm{X} ^ {2} + 2 \mathrm{A} _ {1} \mathrm{X} + \mathrm{A} _ {2}, \mathrm{A} _ {1} \mathrm{X} ^ {2} + 2 \mathrm{A} _ {2} \mathrm{X} + \mathrm{A} _ {3}\right).
+\]
+
+因此，由IV第80页例3，我们有
+
+\[
+\tilde {\Delta} \left(\mathrm{A} _ {0}, 3 \mathrm{A} _ {1}, 3 \mathrm{A} _ {2}, \mathrm{A} _ {3}\right) = - 2 7 \left(\mathrm{A} _ {0} \mathrm{A} _ {3} - \mathrm{A} _ {1} \mathrm{A} _ {2}\right) ^ {2} - 1 0 8 \left(\mathrm{A} _ {1} \mathrm{A} _ {3} - \mathrm{A} _ {2} ^ {2}\right) \left(\mathrm{A} _ {1} ^ {2} - \mathrm{A} _ {0} \mathrm{A} _ {2}\right).
+\]
+
+经过一些计算我们发现，如果 \(f = a_0\mathbf{X}^3 + a_1\mathbf{X}^2 + a_2\mathbf{X} + a_3\) ，则我们有
+
+\[
+\operatorname{dis} _ {3} (f) = a _ {1} ^ {2} a _ {2} ^ {2} + 1 8 a _ {0} a _ {1} a _ {2} a _ {3} - 4 a _ {1} ^ {3} a _ {3} - 4 a _ {0} a _ {2} ^ {3} - 2 7 a _ {0} ^ {2} a _ {3} ^ {2}.
+\]
+
+特别是，我们有
+
+\[
+\operatorname{dis} \left(\mathbf {X} ^ {3} + p \mathbf {X} + q\right) = - \left(4 p ^ {3} + 2 7 q ^ {2}\right).
+\]
+

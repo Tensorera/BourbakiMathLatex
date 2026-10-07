@@ -1,0 +1,166 @@
+\subsection{LINEAR DIFFERENTIAL EQUATIONS WITH CONSTANT COEFFICIENTS}
+
+Suppose again that E is an arbitrary complete normed space over R; let A be a continuous endomorphism of A, independent of t, and consider the homogeneous linear equation
+
+\[
+{\frac {d \mathbf {x}}{d t}} = A. \mathbf {x}.\tag{19}
+\]
+
+When \(\mathrm{E}\) is of finite dimension the equation (19) is equivalent to a homogeneous system (3) (IV, p.~183) of scalar differential equations, where the coefficients \(a_{ij}\) are constant.
+
+By th. 1 (IV, p.~179), every integral of (19) is defined on all of \(\mathbf{R}\) ; by th. 2 (IV, p.~179) the integral of (19) taking the value \(\mathbf{x}_0\) at a point \(t_0 \in \mathbf{R}\) can be written as \(C(t, t_0)\mathbf{x}_0\) , where \(C(t, t_0)\) is a bijective bicontinuous linear map of E onto itself that satisfies the equation
+
+\[
+\frac {d U}{d t} = A U\tag{20}
+\]
+
+and is such that \(C(t_0, t_0) = I\) . Moreover, we have the identity
+
+\[
+C (t + \tau , t _ {0} + \tau) = C (t, t _ {0})\tag{21}
+\]
+
+for any \(\tau \in \mathbf{R}\) : indeed, one has \(dC(s, t_0 + \tau) / ds = AC(s, t_0 + \tau)\) by (20), and since \(A\) is constant one also has
+
+\[
+\frac {d C (t + \tau , t _ {0} + \tau)}{d t} = A C (t + \tau , t _ {0} + \tau);
+\]
+
+moreover
+
+\[
+C (t _ {0} + \tau , t _ {0} + \tau) = I = C (t _ {0}, t _ {0}),
+\]
+
+whence we have the identity (21), since the integral of (20) equal to I at the point \(t_{0}\) is unique.
+
+If one puts \(C_0(t) = C(t, 0)\) then \(C(t, t_0) = C_0(t - t_0)\) ; moreover, for every \(\lambda \in \mathbf{R}\) , \(C_0(\lambda t)\) is identical to the integral of the equation
+
+\[
+\frac {d U}{d t} = \lambda A U\tag{22}
+\]
+
+which takes the value \(I\) at the point 0. We make the following definition:
+
+DEFINITION 1. Given a continuous endomorphism A of E we denote by \(e^{A}\) or exp A the automorphism of E equal to the value at the point t = 1 of the integral of the equation (20) which takes the value I at the point t = 0.
+
+With this notation the remarks preceding def. 1 show that
+
+\[
+C (t, t _ {0}) = \exp \left(A (t - t _ {0})\right).\tag{23}
+\]
+
+The exponential notation just introduced is justified by the following properties, which are entirely analogous to those of the function \(\exp z\) , for z real or complex (cf.~III, p.~98 and 106):
+
+PROPOSITION 7. \(1^{\circ}\) The map \(X \mapsto e^{X}\) is a continuous map of \(\mathcal{L}(\mathrm{E})\) into the group of automorphisms of \(\mathrm{E}\) (invertible elements of \(\mathcal{L}(\mathrm{E})\) ).
+
+\(2^{\circ}\) The map \(t\mapsto e^{Xt}\) of \(\mathbf{R}\) into \(\mathcal{L}(\mathrm{E})\) is differentiable, and
+
+\[
+\frac {d}{d t} \big (e ^ {X t} \big) = X e ^ {X t} = e ^ {X t} X.\tag{24}
+\]
+
+\(3^{\circ}\) For any \(X\in \mathcal{L}(\mathrm{E})\) one has
+
+\[
+e ^ {X} = \sum_ {n = 0} ^ {\infty} \frac {X ^ {n}}{n !}\tag{25}
+\]
+
+the right-hand side being absolutely and uniformly convergent on every bounded subset of \(\mathcal{L}(\mathrm{E})\) ; in particular, \(e^{It} = e^{t}I\) for \(t \in R\) .
+
+\(4^{\circ}\) If X and Y commute then Y and \(e^{Y}\) commute with \(e^{X}\) , and
+
+\[
+e ^ {X + Y} = e ^ {X} e ^ {Y}.\tag{26}
+\]
+
+The relation (24) follows from the expression (23) for \(C(t,0)\) and from the fact that this function is an integral of (20); by recursion on n one deduces from (24) that \(t \mapsto e^{Xt}\) is indefinitely differentiable on R and that
+
+\[
+\mathrm{D} ^ {n} \left(e ^ {X t}\right) = X ^ {n} e ^ {X t}.
+\]
+
+By Taylor's formula one thus can write
+
+\[
+e ^ {X} = I + \frac {X}{1 !} + \frac {X ^ {2}}{2 !} + \dots + \frac {X ^ {n}}{n !} + X ^ {n + 1} \int_ {0} ^ {1} \frac {(1 - t) ^ {n}}{n !} e ^ {X t} d t.\tag{27}
+\]
+
+On the other hand, cor. 3 of IV, p.~181 shows that \(\left\| e^{Xt}\right\| \leqslant \exp \left(\| X\| |t|\right)\) . Thus the remainder \(r_n(X) = X^{n + 1}\int_0^1\frac{(1 - t)^n}{n!} e^{Xt}dt\) in formula (27) satisfies the inequality
+
+\[
+\| r _ {n} (X) \| \leqslant \frac {\| X \| ^ {n + 1}}{(n + 1) !} e ^ {\| X \|}
+\]
+
+whence one deduces the formula (25), the series on the right-hand side being absolutely and uniformly convergent on every bounded subset of \(\mathcal{L}(\mathrm{E})\) . For every pair of elements X, T of \(\mathcal{L}(\mathrm{E})\) one thus has
+
+\[
+e ^ {X + T} - e ^ {X} = \sum_ {n = 1} ^ {\infty} \frac {1}{n !} \big ((X + T) ^ {n} - X ^ {n} \big).
+\]
+
+Now, one can write \((X + T)^n - X^n = \sum_{(V_i)} V_1 V_2 \ldots V_n\) , where the sum is taken over the \(2^n - 1\) sequences \((V_i)\) of elements of \(\mathcal{L}(\mathrm{E})\) such that \(V_i = X\) or \(V_i = T\) for \(1 \leqslant i \leqslant n\) , and at least one of the \(V_i\) is equal to \(T\) ; the inequality
+
+\[
+\left\| (X + T) ^ {n} - X ^ {n} \right\| \leqslant \left(\| X \| + \| T \|\right) ^ {n} - \| X \| ^ {n}
+\]
+
+follows immediately, whence
+
+\[
+\| \exp (X + T) - \exp X \| \leqslant \exp \left(\| X \| + \| T \|\right) - \exp \| X \|\tag{28}
+\]
+
+which establishes the continuity of the map \(X \mapsto \exp X\) .
+
+Finally, if X and Y commute, then Y commutes with \(e^{Xt}\) (IV, p.~181, prop. 2), so
+
+\[
+\frac {d}{d t} \big (e ^ {X t} e ^ {Y t} \big) = X e ^ {X t} e ^ {Y t} + e ^ {X t} (Y e ^ {Y t}) = (X + Y) e ^ {X t} e ^ {Y t}.
+\]
+
+Since, on the other hand, \(e^{Xt}e^{Yt}\) is equal to I for t = 0, one has \(e^{Xt}e^{Yt} = e^{(X+Y)t}\) , whence formula (26). From this latter, one deduces in particular that for arbitrary real s and t one has
+
+\[
+e ^ {X (s + t)} = e ^ {X s} e ^ {X t}\tag{29}
+\]
+
+and also that
+
+\[
+e ^ {- X} = \left(e ^ {X}\right) ^ {- 1}.\tag{30}
+\]
+
+On the contrary one notes that (26) need not remain valid if X and Y are no longer assumed to commute: indeed it would imply that \(\exp X\) and \(\exp Y\) always commute, which is not the case, as is shown by simple examples (IV, p.~204, exerc. 3).
+
+Now let us assume that E is a vector space of finite dimension over the field C, and A an endomorphism of E (for its vector space structure over C) which one can identify with its matrix with respect to a basis of E; then, for all \(t \in R\) , \(e^{At}\) is an automorphism of E for the same structure (IV, p.~181, prop. 2). Let \(r_k\) ( \(1 \leqslant k \leqslant q\) ) be the distinct roots (in C) of the characteristic polynomial \(\varphi(r) = \det(A - rI)\) of the endomorphism A (the ``characteristic roots'' of A); if \(n_k\) is the order of multiplicity of \(r_k\) then \(\sum_{k=1}^{q} n_k = n\) . One knows that (Alg., VII, 31, n° 3) to each root \(r_k\) there corresponds a subspace \(E_k\) of E, of dimension \(n_k\) , such that \(E_k\) is stable under A, and that E is the direct sum of the \(E_k\) : \(E_k\) can be defined as the subspace of vectors x such that
+
+\[
+(A - r _ {k} I) ^ {n _ {k}}. \mathbf {x} = 0.
+\]
+
+Let \(\mathbf{a}\) be any vector in E; one can write \(\mathbf{a} = \sum_{k=1}^{q} \mathbf{a}_k\) , where \(\mathbf{a}_k \in \mathrm{E}_k\) ; the integral of the equation (19) of IV, p.~188, taking the value \(\mathbf{a}\) at the point \(t = 0\) is thus given by
+
+\[
+\mathbf {u} (t) = e ^ {A t}. \mathbf {a} = \sum_ {k = 1} ^ {q} e ^ {A t}. \mathbf {a} _ {k} = \sum_ {k = 1} ^ {q} e ^ {r _ {k} t} e ^ {(A - r _ {k} I) t}. \mathbf {a} _ {k}.
+\]
+
+But since \(\mathbf{a}_k\in \mathrm{E}_k\) one has
+
+\[
+\begin{array}{c} e ^ {(A - r _ {k} I) t}. \mathbf {a} _ {k} = \mathbf {a} _ {k} + \frac {t}{1 !} (A - r _ {k} I). \mathbf {a} _ {k} + \frac {t ^ {2}}{2 !} (A - r _ {k} I) ^ {2}. \mathbf {a} _ {k} + \dots \\ + \frac {t ^ {n _ {k} - 1}}{(n _ {k} - 1) !} (A - r _ {k} I) ^ {n _ {k} - 1}. \mathbf {a} _ {k}. \end{array}\tag{31}
+\]
+
+Thus every integral of the equation (19) of IV, p.~188, can be written as
+
+\[
+\mathbf {u} (t) = \sum_ {k = 1} ^ {q} e ^ {r _ {k} t} \mathbf {p} _ {k} (t)\tag{32}
+\]
+
+where \(\mathbf{p}_{k}(t)\) is a polynomial in t, with coefficients in the vector space \(E_{k}\) , and of degree \(\leqslant n_{k}-1\) . In particular, if all the roots of the characteristic equation of A are simple, the spaces \(E_{k}\) ( \(1 \leqslant k \leqslant n\) ) are all of dimension 1 over the field C, so there exist n vectors \(c_{k}\) such that the n functions \(e^{r_{k}t}c_{k}\) ( \(1 \leqslant k \leqslant n\) ) form a fundamental system of integrals of the equation (19) of IV, p.~188.
+
+The characteristic roots of the endomorphism \(A\) are also called characteristic roots of the linear equation (19) of IV, p.~188. One may observe that one obtains the characteristic equation of \(A\) by writing that the function \(\mathbf{c}e^{rt}\) is an integral of (19) for a vector \(\mathbf{c} \neq 0\) .
+
+When one has determined the roots \(r_{k}\) ( \(1 \leqslant k \leqslant q\) ) explicitly, and thus the order of multiplicity \(n_{k}\) of \(r_{k}\) , in practice one obtains the integrals of (19) by writing that this equation is satisfied by the expression (32) of IV, p.~191, where \(p_{k}\) is an arbitrary polynomial of degree \(\leqslant n_{k}-1\) , with coefficients in E; on identifying the coefficients of \(e^{r_{k}t}\) (for \(1 \leqslant k \leqslant q\) ) in the two sides of the equation so obtained one obtains linear equations for the coefficients of the polynomials \(p_{k}\) : one establishes easily that these equations determine the terms of degree \textgreater0 of \(p_{k}\) as functions of the constant term, and that the latter is a solution of the equation \((A - r_{k}I)^{n_{k}}.x = 0\) , which defines the subspace \(E_{k}\) (method of ``undetermined coefficients'').
+
+Remark. When there exists a basis of E such that the matrix of A with respect to this basis has real elements (cf.~IV, p.~186, Remark 2), the characteristic equation of A has real coefficients. For every \(\mathbf{x} = (\xi_k)_{1 \leqslant k \leqslant n}\) of E, expressed in the basis under consideration, let \(\overline{x} = (\overline{\xi}_k)_{1 \leqslant k \leqslant n}\) ; the map \(x \mapsto \overline{x}\) is an antilinear involution of E. One knows (Alg., VII) that, if \(r_k\) is a non-real root of the characteristic equation, and \(E_k\) is the corresponding stable subspace, then \(\overline{r}_k\) is a characteristic root having the same multiplicity \(n_k\) as \(r_k\) , and the image \(E'_k\) of \(E_k\) under the map \(x \mapsto \overline{x}\) is the stable subspace corresponding to \(\overline{r}_k\) . One deduces from this that if \(u_j\) ( \(1 \leqslant j \leqslant n_k\) ) are \(n_k\) linearly independent integrals with values in \(E_k\) , then the \(2n_k\) integrals \(u_j + \overline{u}_j\) , \(i(\mathbf{u}_j - \overline{\mathbf{u}}_j)\) are linearly independent, and have, with respect to the chosen basis of E, components which are real functions of E. If \(r_k\) is a real characteristic root Remark 2 of IV, p.~186, shows that (with the same notation) there are \(n_k\) linearly independent integrals \(v_j\) ( \(1 \leqslant j \leqslant n_k\) ) with values in \(E_k\) whose components are real. That way one obtains a fundamental system of integrals of (19) whose components are all real.
+

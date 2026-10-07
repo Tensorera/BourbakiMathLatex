@@ -1,0 +1,72 @@
+\subsection{Valuation rings}
+
+THEOREM 1. Let K be a field and V a subring of K. The following conditions are equivalent:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  V is a maximal element of the set of local subrings of K, this set being ordered by the relation ``B dominates A'' between A and B.
+\item
+  There exists an algebraically closed field L and a homomorphism h from V to L which is maximal in the set of homomorphisms from subrings of K to L, ordered by the relation ``g is an extension of f'' between f and g.
+\item
+  If \(x \in \mathbf{K} - \mathbf{V}\) , then \(x^{-1} \in \mathbf{V}\) .
+\item
+  The field of fractions of \(\mathbf{V}\) is \(\mathbf{K}\) and the set of principal ideals of \(\mathbf{V}\) is totally ordered by the relation of inclusion.
+\item
+  The field of fractions of V is K and the set of ideals of V is totally ordered by the relation of inclusion.
+\end{enumerate}
+
+We shall show the theorem by proving the following implications
+
+\[
+(a) \Rightarrow (b) \Rightarrow (c) \Rightarrow (d) \Rightarrow (e) \Rightarrow (a).
+\]
+
+Suppose that (a) holds. Then V is a local ring. Let L be an algebraic closure of the residue field \(\kappa(V)\) and h the canonical homomorphism from V to L. Let \(V'\) be a subring of K containing V and \(h'\) a homomorphism from \(V'\) to L extending h. If \(p'\) is the kernel of \(h'\) , then \(p' \cap V = m(V)\) ; hence (no. 1, Example 2) \(V_{p'}'\) dominates V, which implies \(V_{p'}' = V\) and \(V' = V\) . Thus (b) holds.
+
+Suppose (b) holds. Let L be an algebraically closed field and h a homomorphism from V to L; suppose that h is maximal in the set of homomorphisms from subrings of K to L; let p be the kernel of h. The elements of \(h(V - p)\) being invertible in L, h can be extended to a homomorphism from \(V_{p}\) to L (Chapter II, §2, no. 1, Proposition 1); hence \(V = V_{p}\) , which shows that V is a local ring and that p is its maximal ideal. Let x be a non-zero element of K; we must show that one at least of the elements x, \(x^{-1}\) belongs to V, that is, by virtue of the maximal character of h, that h can be extended to V{[}x{]} or \(V[x^{-1}]\) . If x is integral over V, this follows from Chapter V, §2, no. 1, Corollary 4 to Theorem 1. If x is not integral over V, we shall use the following lemma:
+
+LEMMA 1. Let A be a subring of a ring B and x an element of B not integral over A; then the ring of fractions \(B_{x}\) (Chapter II, § 5, no. 1) is not reduced to 0 and there exists in the subring A{[}1/x{]} of \(B_{x}\) maximal ideals containing 1/x; moreover, if M is any of these maximal ideals, the inverse image of M in A is a maximal ideal.
+
+As \(x\) is not integral over \(A\) , it is not nilpotent and therefore \(B_x \neq 0\) ; moreover, \(x / 1 \notin A[1 / x]\) , otherwise there would be a relation of the form
+
+\[
+x / 1 = a _ {0} / 1 + a _ {1} / x + \dots + a _ {n} / x ^ {n}
+\]
+
+for some \(n \geqslant 0\) (where \(a_{i} \in \mathbf{A}\) for \(0 \leqslant i \leqslant n\) ), which is equivalent to
+
+\[
+x ^ {n + h} - a _ {0} x ^ {n + h - 1} - a _ {1} x ^ {n + h - 2} - \dots - a _ {n} x ^ {h - 1} = 0
+\]
+
+for some convenient \(h \geqslant 1\) ; but such a relation would imply that \(x\) is integral over \(A\) , contrary to the hypothesis. The existence of a maximal ideal of \(A[1/x]\) containing \(1/x\) therefore follows from the fact that \(1/x\) is not invertible in \(A[1/x]\) (Algebra, Chapter I, § 8, no. 7, Theorem 2).
+
+Then let \(\mathfrak{M}\) be a maximal ideal of A{[}1/x{]} containing 1/x; let \(\phi: \mathrm{A} \to \mathrm{A}[1/x]\) , \(p: \mathrm{A}[1/x] \to \mathrm{A}[1/x]/\mathfrak{M}\) be the canonical homomorphisms; then
+
+\[
+p (\mathrm{A} [ 1 / x ]) = p (\phi (\mathrm{A})) [ p (1 / x) ] = p (\phi (\mathrm{A}))
+\]
+
+since \(p(1/x) = 0\) ; this proves that \(p(\phi(A))\) is a field and hence the inverse image \(\overline{\phi}^{-1}(M)\) is a maximal ideal of A.
+
+We apply this lemma with A = V and B = K; then there is a maximal ideal M of \(V[x^{-1}]\) containing \(x^{-1}\) and \(M \cap V\) is a maximal ideal of V; then \(M \cap V = p\) since V is local; denoting by f the canonical homomorphism of \(V[x^{-1}]\) onto \(V[x^{-1}] / M\) , \(f(x^{-1}) = 0\) , whence \(V / p = f(V) = f(V[x^{-1}])\) ; as h defines by taking the quotient an injective homomorphism \(\bar{h}\) from V/p to L, \(\bar{h} \circ f\) is a homomorphism from \(V[x^{-1}]\) to L extending h. Hence (c) holds.
+
+Suppose now that (c) holds. Clearly K is the field of fractions of V. Let a and b be elements of V such that \(Va \notin Vb\) ; we show that \(Vb \subset Va\) . It is true if b = 0; otherwise the relation \(a \notin Vb\) implies \(b^{-1}a \notin V\) , whence by (c) \(a^{-1}b \in V\) and therefore \(Vb \subset Va\) . Hence (d) holds.
+
+Suppose that (d) holds. Let \(\mathfrak{a}\) and \(\mathfrak{b}\) be ideals of \(\mathbf{V}\) such that \(\mathfrak{a} \notin \mathfrak{b}\) . There exists \(a \in \mathfrak{a}\) such that \(a \notin \mathfrak{b}\) . For all \(b \in \mathfrak{b}\) , \(a \notin \mathbf{V}b\) , whence \(Va \notin Vb\) and therefore \(Vb \subset Va \subset \mathfrak{a}\) (by (c)) and \(b \in \mathfrak{a}\) . Then \(\mathfrak{b} \subset \mathfrak{a}\) , which shows that condition (e) is satisfied.
+
+Suppose finally that (e) holds. As V has a maximal ideal, it has only one and is therefore a local ring. Let \(V'\) be a local subring of K dominating V and let x be a non-zero element of \(V'\) ; we write \(x = ab^{-1}\) where \(a \in V\) , \(b \in V\) . One of the ideals Va, Vb is contained in the other. If Va ⊂ Vb, then \(x \in V\) . If Vb ⊂ Va, then \(x^{-1} \in V\) ; as the ideal \(V'm(V)\) does not contain 1 (no. 1, Proposition 1), \(x^{-1} \notin m(V)\) , whence again \(x \in V\) since \(V\) is local. Every element of \(V'\) therefore belongs to \(V\) ; we conclude that (a) holds.
+
+DEFINITION 2. In the notation of Theorem 1, V is called a valuation ring for the field K if the equivalent conditions (a), (b), (c), (d), (e) hold. A ring is called a valuation ring if it is an integral domain and it is a valuation ring for its field of fractions.
+
+THEOREM 2. Let K be a field and h a homomorphism from a subring A of K to an algebraically closed field L. Then there exist a valuation ring V for K and a homomorphism
+
+\(h^{\prime}\) from \(\mathbf{V}\) to \(\mathbf{L}\) such that \(\mathbf{V}\) contains \(\mathbf{A}\) , \(h^{\prime}\) extends \(h\) and \(h^{\prime}(0) = \mathfrak{m}(\mathbf{V})\) .
+
+Let \(\mathfrak{S}\) be the set of homomorphisms of subrings of K to L, ordered by the relation of extension. This set is inductive; for if \((h_{\alpha})_{\alpha \in I}\) is a non-empty totally ordered family of elements of \(\mathfrak{S}\) and \(B_{\alpha}\) is the defining ring of \(h_{\alpha}\) , the \(B_{\alpha}\) form a totally ordered family of subrings of K and their union B is therefore a subring of K; there therefore exists a unique mapping \(\bar{h}\) from B to L which extends the \(h_{\alpha}\) (Set Theory, Chapter II, § 4, no. 6, Proposition 7) and it is immediately seen that \(\bar{h}\) is a homomorphism from B to L. Zorn's Lemma then shows that there exists a maximal element \(h'\) of \(\mathfrak{S}\) which extends \(h\) . The defining ring V of \(h'\) is a valuation ring of K (Theorem 1); if \(p\) is the kernel of \(h'\) , \(h'\) can be extended to a homomorphism from \(V_p\) to L (Chapter II, § 2, no. 1, Proposition 1), whence \(V_p = V\) and \(p = m(V)\) .
+
+COROLLARY. Every local subring A of a field K is dominated by at least one valuation ring of K.
+
+Apply Theorem 2 to the canonical homomorphism \(h\) from \(\mathbf{A}\) to an algebraic closure \(\mathbf{L}\) of \(\mathbf{A} / \mathfrak{m}(\mathbf{A})\) .
+

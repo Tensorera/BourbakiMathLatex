@@ -1,0 +1,164 @@
+\subsection{一个预备性构造}
+
+在本节及下一节中，我们用 R 表示向量空间 V 中的一个既约根系，用 B 表示 R 的一个基。我们用 \((n(\alpha,\beta))_{\alpha,\beta\in\mathbb{B}}\) 表示相对于 B 的嘉当矩阵。回忆 \(n(\alpha,\beta)=\langle\alpha,\beta^{\vee}\rangle\) 。我们将证明 R 是某个分裂半单李代数的根系，且该李代数在同构意义下唯一。我们主要将考虑由命题 1 中的关系所定义的李代数。
+
+本节的构造适用于 k 上任何具非零行列式的方阵 \((n(\alpha,\beta))_{\alpha,\beta\in\mathbb{B}}\) ，只要 \(n(\alpha,\alpha)=2\) 对一切 \(\alpha\in B\) 成立（参见第六章 §1 第 10 节 公式 (14)）。
+
+设 E 是集合 B 在 k 上的自由结合代数。回忆 E 是 N-分次的（《代数》第三章 §3 第 1 节 例 3）。我们将对每个 \(\alpha\in B\) 联系向量空间 E 的自同态 \(X_{-\alpha}^{0}, H_{\alpha}^{0}, X_{\alpha}^{0}\) ，其次数分别为 1、0、-1。对 B 的元素组成的任何字 \((\alpha_{1},\ldots,\alpha_{n})\) ，置
+
+\[
+X _ {- \alpha} ^ {0} (\alpha_ {1}, \ldots , \alpha_ {n}) = (\alpha , \alpha_ {1}, \ldots , \alpha_ {n})\tag{7}
+\]
+
+\[
+H _ {\alpha} ^ {0} \left(\alpha_ {1}, \dots , \alpha_ {n}\right) = \left(- \sum_ {i = 1} ^ {n} n \left(\alpha_ {i}, \alpha\right)\right) \left(\alpha_ {1}, \dots , \alpha_ {n}\right).\tag{8}
+\]
+
+另一方面，\(X_{\alpha}^{0}(\alpha_{1},\ldots ,\alpha_{n})\) 借助下列公式对 \(n\) 用归纳法来定义
+
+\[
+X _ {\alpha} ^ {0} (\alpha_ {1}, \ldots , \alpha_ {n}) = (X _ {- \alpha_ {1}} ^ {0} X _ {\alpha} ^ {0} - \delta_ {\alpha , \alpha_ {1}} H _ {\alpha} ^ {0}) (\alpha_ {2}, \ldots , \alpha_ {n})\tag{9}
+\]
+
+其中 \(\delta_{\alpha, \alpha_1}\) 是 Kronecker 符号；约定 \(X_{\alpha}^{0}(\alpha_{1}, \ldots, \alpha_{n})\) 在 \((\alpha_{1}, \ldots, \alpha_{n})\) 为空字时为零。
+
+引理 1. 对一切 \(\alpha, \beta \in \mathbf{B}\) ，我们有
+
+\[
+[ X _ {\alpha} ^ {0}, X _ {- \alpha} ^ {0} ] = - H _ {\alpha} ^ {0}\tag{10}
+\]
+
+\[
+[ H _ {\alpha} ^ {0}, H _ {\beta} ^ {0} ] = 0\tag{11}
+\]
+
+\[
+[ H _ {\alpha} ^ {0}, X _ {\beta} ^ {0} ] = n (\beta , \alpha) X _ {\beta} ^ {0}\tag{12}
+\]
+
+\[
+[ H _ {\alpha} ^ {0}, X _ {- \beta} ^ {0} ] = - n (\beta , \alpha) X _ {- \beta} ^ {0}\tag{13}
+\]
+
+\[
+[ X _ {\alpha} ^ {0}, X _ {- \beta} ^ {0} ] = 0 \text {   if   } \alpha \neq \beta .\tag{14}
+\]
+
+事实上，关系式 (9) 可以写成
+
+\[
+(X _ {\alpha} ^ {0} X _ {- \alpha_ {1}} ^ {0}) (\alpha_ {2}, \ldots , \alpha_ {n}) = (X _ {- \alpha_ {1}} ^ {0} X _ {\alpha} ^ {0}) (\alpha_ {2}, \ldots , \alpha_ {n}) - \delta_ {\alpha , \alpha_ {1}} H _ {\alpha} ^ {0} (\alpha_ {2}, \ldots , \alpha_ {n})
+\]
+
+这证明了 (10) 与 (14)。关系式 (11) 是明显的。其次
+
+\[
+\begin{array}{r l} [ H _ {\alpha} ^ {0}, X _ {- \beta} ^ {0} ] (\alpha_ {1}, \ldots , \alpha_ {n}) & = H _ {\alpha} ^ {0} (\beta , \alpha_ {1}, \ldots , \alpha_ {n}) + \left(\sum_ {i = 1} ^ {n} n (\alpha_ {i}, \alpha)\right) (\beta , \alpha_ {1}, \ldots , \alpha_ {n}) \\ & = - n (\beta , \alpha) (\beta , \alpha_ {1}, \ldots , \alpha_ {n}) \\ & = - n (\beta , \alpha) X _ {- \beta} ^ {0} (\alpha_ {1}, \ldots , \alpha_ {n}) \end{array}
+\]
+
+从而得 (13)。最后，
+
+\[
+\begin{array}{l} 0 = [ H _ {\alpha} ^ {0}, [ X _ {\beta} ^ {0}, X _ {- \gamma} ^ {0} ] ] \quad \text { by (10), (11), (14)} \\ \qquad = [ [ H _ {\alpha} ^ {0}, X _ {\beta} ^ {0} ], X _ {- \gamma} ^ {0} ] + [ X _ {\beta} ^ {0}, [ H _ {\alpha} ^ {0}, X _ {- \gamma} ^ {0} ] ] \\ \qquad = [ [ H _ {\alpha} ^ {0}, X _ {\beta} ^ {0} ] - n (\gamma , \alpha) X _ {\beta} ^ {0}, X _ {- \gamma} ^ {0} ] \quad \text { by (13)} \\ \qquad = [ [ H _ {\alpha} ^ {0}, X _ {\beta} ^ {0} ] - n (\beta , \alpha) X _ {\beta} ^ {0}, X _ {- \gamma} ^ {0} ] \quad \text { by (14); } \end{array}\tag{15}
+\]
+
+而对空字加以考虑立即给出
+
+\[
+([ H _ {\alpha} ^ {0}, X _ {\beta} ^ {0} ] - n (\beta , \alpha) X _ {\beta} ^ {0}) (\emptyset) = 0
+\]
+
+故 (15) 蕴含
+
+\[
+\left(\left[ H _ {\alpha} ^ {0}, X _ {\beta} ^ {0} \right] - n (\beta , \alpha) X _ {\beta} ^ {0}\right) X _ {- \gamma_ {1}} ^ {0} X _ {- \gamma_ {2}} ^ {0} \dots X _ {- \gamma_ {n}} ^ {0} (\varnothing) = 0
+\]
+
+对一切 \(\gamma_1, \ldots, \gamma_n \in \mathrm{B}\) 成立；这就证明了 (12)。
+
+引理 2. 自同态 \(X_{\alpha}^{0}\) ，\(H_{\beta}^{0}\) ，\(X_{-\gamma}^{0}\) （其中 \(\alpha, \beta, \gamma \in \mathrm{B}\) ）线性无关。
+
+由于 \(X_{-\alpha}^{0}(\varnothing) = \alpha\) ，显然诸 \(X_{-\alpha}^{0}\) 线性无关。设 \(\sum_{\alpha} a_{\alpha} H_{\alpha}^{0} = 0\) ；则对一切 \(\beta \in B\) ，
+
+\[
+0 = \left[ \sum_ {\alpha} a _ {\alpha} H _ {\alpha} ^ {0}, X _ {- \beta} ^ {0} \right] = - \sum_ {\alpha} a _ {\alpha} n (\beta , \alpha) X _ {- \beta} ^ {0};
+\]
+
+由于 \(\operatorname{det}(n(\beta, \alpha)) \neq 0\) ，推出 \(a_{\alpha} = 0\) 对一切 \(\alpha\) 成立。设 \(\sum_{\alpha} a_{\alpha} X_{\alpha}^{0} = 0\) 。鉴于公式 (7)、(8)、(9)，
+
+\[
+X _ {\alpha} ^ {0} (\beta) = 0,
+\]
+
+\[
+X _ {\alpha} ^ {0} (\beta , \beta) = 2 \delta_ {\alpha \beta} \beta
+\]
+
+对一切 \(\beta \in \mathrm{B}\) 成立。由此推出 \(a_{\beta} = 0\) 对一切 \(\beta\) 成立。由于 \(X_{\alpha}^{0}\) ，\(H_{\alpha}^{0}\) ，\(X_{-\alpha}^{0}\) 的次数分别为 \(-1, 0, 1\) ，引理由前面所述即得。
+
+设 I 是集合 \(B \times \{-1,0,1\}\) 。置 \(x_{\alpha} = (\alpha, -1)\) ，\(h_{\alpha} = (\alpha, 0)\) ，以及 \(x_{-\alpha} = (\alpha, 1)\) 。设 a 是由生成族 I 与下列关系元集合 R 所定义的李代数：
+
+\[
+\begin{array}{l} \left[ h _ {\alpha}, h _ {\beta} \right] \\ \left[ h _ {\alpha}, x _ {\beta} \right] - n (\beta , \alpha) x _ {\beta} \\ \left[ h _ {\alpha}, x _ {- \beta} \right] + n (\beta , \alpha) x _ {- \beta} \\ \left[ x _ {\alpha}, x _ {- \alpha} \right] + h _ {\alpha} \\ \left[ x _ {\alpha}, x _ {- \beta} \right] \quad \text {if} \alpha \neq \beta \end{array}
+\]
+
+（参见第二章 §2 第 3 节）。由引理 1，存在唯一的线性表示 \(\rho\) （\(\mathfrak{a}\) 在 \(\mathrm{E}\) 上的），使得
+
+\[
+\rho (x _ {\alpha}) = X _ {\alpha} ^ {0}, \rho (h _ {\alpha}) = H _ {\alpha} ^ {0}, \rho (x _ {- \alpha}) = X _ {- \alpha} ^ {0}.
+\]
+
+鉴于引理 2，这就证明了下列结果：
+
+引理 3. \(\mathfrak{a}\) 中元素 \(x_{\alpha}, h_{\beta}, x_{-\gamma}\) （其中 \(\alpha, \beta, \gamma \in \mathrm{B}\) ）的典则像线性无关。
+
+在下文中，我们把 \(x_{\alpha}\) ，\(h_{\alpha}\) ，\(x_{-\alpha}\) 与它们在 a 中的典则像等同起来。
+
+引理 4. 存在唯一的对合自同构 \(\theta\) （\(\mathfrak{a}\) 的），使得
+
+\[
+\theta (x _ {\alpha}) = x _ {- \alpha}, \theta (x _ {- \alpha}) = x _ {\alpha}, \theta (h _ {\alpha}) = - h _ {\alpha}
+\]
+
+对一切 \(\alpha\in B\) 成立。
+
+事实上，自由李代数 \(L(I)\) 存在一个满足这些条件的对合自同构。它使 \(R \cup (-R)\) 稳定，因而通过过渡到商定义了 a 的一个满足引理条件的对合自同构。唯一性由 a 由元素 \(x_{\alpha}\) ，\(h_{\alpha}\) ，\(x_{-\alpha}\) （ \(\alpha \in B\) ）生成这一事实得出。
+
+这个自同构称为 a 的典则对合自同构。
+
+设 Q 是 R 的根权组成的集合；它是一个以 B 为基的自由 Z-模（第六章 §1 第 9 节）。在自由李代数 L(I) 上存在一个 Q 型分次，使 \(x_{\alpha}\) ，\(h_{\alpha}\) ，\(x_{-\alpha}\) 的次数分别为 \(\alpha\) ，0，- \(\alpha\) （第二章 §2 第 6 节）。而 R 的元素都是齐次的。因此，在 a 上存在唯一的、与 a 的李代数结构相容的 Q 型分次，使 \(x_{\alpha}\) ，\(h_{\alpha}\) ，\(x_{-\alpha}\) 的次数分别为 \(\alpha\) ，0，- \(\alpha\) 。对任何 \(\mu \in Q\) ，用 \(a^{\mu}\) 表示 a 中次数为 \(\mu\) 的齐次元素组成的集合。
+
+引理 5. 设 \(z \in \mathfrak{a}\) 。则 \(z \in \mathfrak{a}^{\mu}\) 当且仅当 \([h_{\alpha}, z] = \langle \mu, \alpha^{\vee} \rangle z\) 对一切 \(\alpha \in \mathrm{B}\) 成立。
+
+对 \(\mu \in \mathrm{Q}\) ，设 \(\mathfrak{a}^{(\mu)}\) 是 \(x \in \mathfrak{a}\) 中使 \([h_{\alpha}, x] = \langle \mu, \alpha^{\vee} \rangle x\) 对一切 \(\alpha \in \mathrm{B}\) 成立者组成的集合。诸 \(\mathfrak{a}^{(\mu)}\) 之和是直和。因此，为证明引理，只需证明 \(\mathfrak{a}^{\mu} \subset \mathfrak{a}^{(\mu)}\) 。设 \(\alpha \in \mathrm{B}\) 。自同态 \(u\) （向量空间 \(\mathfrak{a}\) 的，它使 \(u|\mathfrak{a}^{\mu} = \langle \mu, \alpha^{\vee} \rangle\) .1）是 \(\mathfrak{a}\) 的一个导子，它使 \(ux = (\operatorname{ad} h_{\alpha})\) . \(x\) 对 \(x = x_{\beta}\) ，\(x = h_{\beta}\) ，\(x = x_{-\beta}\) 成立；故 \(u = \operatorname{ad} h_{\alpha}\) ，这就证明了我们的断言。
+
+注. 由引理 5 推出 \(\mathfrak{a}\) 的每个理想都是齐次的，因为它在 ad \(h_{\alpha}\) 之下稳定。
+
+用 \(Q_{+}\) （相应地 \(Q_{-}\) ）表示 B 中元素的具正（相应地负）整系数、且不全为零的线性组合组成的集合。置 \(a_{+} = \sum_{\mu \in Q_{+}} a^{\mu}\) 与 \(a_{-} = \sum_{\mu \in Q_{-}} a^{\mu}\) 。由于 \(Q_{+} + Q_{+} \subset Q_{+}\) 且 \(Q_{-} + Q_{-} \subset Q_{-}\) ，\(a_{+}\) 与 \(a_{-}\) 是 a 的李子代数。
+
+命题 2. (i) 李代数 \(\mathfrak{a}_{+}\) 由族 \((x_{\alpha})_{\alpha \in \mathbb{B}}\) 生成。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  李代数 \(\mathfrak{a}_{-}\) 由族 \((x_{-\alpha})_{\alpha \in \mathrm{B}}\) 生成。
+\item
+  族 \((h_{\alpha})_{\alpha \in \mathrm{B}}\) 是向量空间 \(\mathfrak{a}^0\) 的一个基。
+\item
+  向量空间 \(\mathfrak{a}\) 是 \(\mathfrak{a}_{+},\mathfrak{a}^{0},\mathfrak{a}_{-}\) 的直和。
+\end{enumerate}
+
+设 \(\mathfrak{r}\) （相应地 \(\mathfrak{n}\) ）是 \(\mathfrak{a}\) 的由 \((x_{\alpha})_{\alpha \in \mathrm{B}}\) （相应地 \((x_{-\alpha})_{\alpha \in \mathrm{B}}\) ）生成的李子代数，并设 \(\mathfrak{h}\) 是 \(\mathfrak{a}\) 的由 \((h_{\alpha})_{\alpha \in \mathrm{B}}\) 生成的向量子空间。由于诸 \(x_{\alpha}\) 是 \(\mathfrak{a}_{+}\) 的齐次元素，\(\mathfrak{r}\) 是 \(\mathfrak{a}_{+}\) 的一个分次子代数；于是 \([\mathfrak{h},\mathfrak{r}]\subset \mathfrak{r}\) ，故 \(\mathfrak{h} + \mathfrak{r}\) 是 \(\mathfrak{a}\) 的一个子代数；由于
+
+\[
+[ x _ {- \alpha}, x _ {\beta} ] = \delta_ {\alpha \beta} h _ {\alpha},
+\]
+
+\([x_{-\alpha}, \mathfrak{r}] \subset \mathfrak{h} + \mathfrak{r}\) 对一切 \(\alpha \in B\) 成立。类似地，\(\mathfrak{n}\) 是 \(\mathfrak{a}_{-}\) 的一个分次子代数，有 \([\mathfrak{h}, \mathfrak{n}] \subset \mathfrak{n}\) ，\(\mathfrak{h} + \mathfrak{n}\) 是 \(\mathfrak{n}\) 的一个子代数，且 \([x_{\alpha}, \mathfrak{n}] \subset \mathfrak{h} + \mathfrak{n}\) 对一切 \(\alpha \in B\) 成立。置 \(a' = r + h + n\) 。前面的论证表明，\(a'\) 在 ad \(x_{\alpha}\) 、ad \(h_{\alpha}\) 与 ad \(x_{-\alpha}\) 之下对一切 \(\alpha \in B\) 稳定，从而是 a 的一个理想。由于 \(a'\) 包含 \(x_{\alpha}\) ，\(h_{\alpha}\) ，\(x_{-\alpha}\) 对一切 \(\alpha \in B\) 成立，故 \(a' = a\) 。由此推出包含关系 \(r \subset a_{+}\) ，\(h \subset a^{0}\) ，\(n \subset a_{-}\) 都是等式，这就证明了命题。
+
+命题 3. 李代数 \(\mathfrak{a}_{+}\) （相应地 \(\mathfrak{a}_{-}\) ）是以 \((x_{\alpha})_{\alpha \in \mathrm{B}}\) （相应地 \((x_{-\alpha})_{\alpha \in \mathrm{B}}\) ）为基础族的自由李代数（参见第二章 §2 第 3 节）。
+
+设 L 是 E 的由 B 生成的李子代数。由第二章 §3 定理 1，L 可与由 B 生成的自由李代数等同。E 在其自身上的左正则表示显然是单射的，且通过限制到 L 上定义了李代数 L 在 E 上的一个单射表示 \(\rho'\) 。设 \(\varphi\) 是从 L 到 \(\mathfrak{a}_{-}\) 的唯一的同态，它把 \(\alpha\) 映为 \(x_{-\alpha}\) 对一切 \(\alpha \in B\) 成立。则对一切 \(\alpha \in B\) ，\(\rho(\varphi(\alpha))\) 是 E 上用 \(\alpha\) 作左乘的自同态，故 \(\rho \circ \varphi = \rho'\) ，这证明 \(\varphi\) 是单射的。这样，\((x_{-\alpha})_{\alpha \in B}\) 是 \(\mathfrak{a}_{-}\) 的一个基础族。由于 \(\theta(x_{-\alpha}) = x_{\alpha}\) 对一切 \(\alpha\) 成立（参见引理 4），\((x_{\alpha})_{\alpha \in B}\) 是 \(\mathfrak{a}_{+}\) 的一个基础族。
+% semantic-fragments: legacy-input-seam
+\relax{}

@@ -1,0 +1,66 @@
+\subsection{EXTENDING THE GAMMA FUNCTION TO C}
+
+Let us return to Weierstrass' formula which gives the expression
+
+\[
+\frac {1}{\Gamma (x)} = x e ^ {\gamma x} \prod_ {n = 1} ^ {\infty} \left(1 + \frac {x}{n}\right) e ^ {- x / n}\tag{1}
+\]
+
+for \(1 / \Gamma (x)\) for all real \(x\) , and consider the infinite product with general term \(\left(1 + \frac{z}{n}\right)e^{-z / n}\) for arbitrary complex \(z\) . One can write \(e^{-z / n} = 1 - \frac{z}{n} + h(z)\) , with \(|h(z)| \leqslant \frac{|z|^2}{2n^2} e^{|z / n|}\) (III, p.~106, formula (8)), whence
+
+\[
+\left(1 + \frac {z}{n}\right) e ^ {- z / n} = 1 + v _ {n} (z)
+\]
+
+with \(|v_{n}(z)| \leqslant \frac{|z|^{2}}{n^{2}}\left(1 + \frac{e^{|z|}}{2}(1 + |z|)\right)\) ; thus the infinite product under consideration is absolutely and uniformly convergent on every compact subset of C; further, its value is zero only at the points z = -n (Gen.~Top., IX, p.~214, corollary). In view of the formula (1) of VII, p.~315, for every complex z one puts
+
+\[
+\frac {1}{\Gamma (z)} = z e ^ {\gamma z} \prod_ {n = 1} ^ {\infty} \left(1 + \frac {z}{n}\right) e ^ {- z / n}.\tag{2}
+\]
+
+The function \(\Gamma(z)\) is thus defined for every point \(z \in \mathbf{C}\) apart from the points \(-n\) ( \(n \in \mathbf{N}\) ); it is continuous on this set, and \((z + n)\Gamma(z) \sim \frac{(-1)^n}{n!}\) on a neighbourhood of \(-n\) . Formula (2) shows that one has \(\Gamma(\overline{z}) = \overline{\Gamma(z)}\) for every \(z\) different from a negative integer.
+
+The argument that allows one to pass from Gauss' formula (VII, p.~307, formula (8)) to Weierstrass' formula, on reversing the steps, applies also to complex \(z\) and shows that, for \(z \neq -n\) ( \(n \in \mathbf{N}\) ), one has
+
+\[
+\Gamma (z) = \lim _ {n \rightarrow \infty} \frac {n ^ {z} n !}{z (z + 1) \dots (z + n)}\tag{3}
+\]
+
+on agreeing to put \(n^z = e^{z\log n}\) . Since
+
+\[
+\frac {n ^ {z + 1} n !}{(z + 1) (z + 2) \dots (z + n + 1)} = z \frac {n}{n + 1 + z} \frac {n ^ {z} n !}{z (z + 1) \dots (z + n)}
+\]
+
+one again has, on passing to the limit, the fundamental functional equation
+
+\[
+\Gamma (z + 1) = z \Gamma (z)\tag{4}
+\]
+
+for every \(z \neq -n (n \in \mathbf{N})\) .
+
+Let \(p\) be an arbitrary integer \(> 0\) , and \(\mathrm{K}_p\) the open disc \(|z| < p\) ; for every \(z \in \mathrm{K}_p\) , and every integer \(n > p\) , \(1 + \frac{z}{n}\) is not a negative real number, so \(\log \left(1 + \frac{z}{n}\right)\) is defined, and it follows from the above that the series with general term \(\log \left(1 + \frac{z}{n}\right) - \frac{z}{n} (n > p)\) is normally convergent on \(\mathrm{K}_p\) ; the same holds for the series obtained by differentiating the general term a finite number of times, since one has
+
+\[
+\left| \frac {1}{n} - \frac {1}{z + n} \right| \leqslant \frac {p}{n (n - p)} \quad \text { and } \quad \left| \frac {1}{(z + n) ^ {k}} \right| \leqslant \frac {1}{(n - p) ^ {k}} \quad (k > 1)
+\]
+
+for \(z \in \mathbf{K}_p\) and \(n > p\) . One then sees (cf.~II, p.~59, Remark 3) that \(\Gamma(z)\) is indefinitely differentiable at all the points \(z \in \mathbf{C}\) apart from the points \(-n\) , and at these points one has
+
+\[
+{\frac {\Gamma^ {\prime} (z)}{\Gamma (z)}} = - \gamma - {\frac {1}{z}} + \sum_ {n = 1} ^ {\infty} \left({\frac {1}{n}} - {\frac {1}{z + n}}\right)\tag{5}
+\]
+
+\[
+\mathrm{D} ^ {k - 1} \left(\frac {\Gamma^ {\prime} (z)}{\Gamma (z)}\right) = \sum_ {n = 0} ^ {\infty} \frac {(- 1) ^ {k} (k - 1) !}{(z + n) ^ {k}} \quad \text { for } \quad k \geqslant 2,\tag{6}
+\]
+
+the right-hand sides of (5) and (6) being normally convergent on every compact subset of \(\mathbf{C}\) that does not contain any integer \(\leqslant 0\) . Further, one can write
+
+\[
+\log \Gamma (z) \equiv - \gamma z - \log z + \sum_ {n = 1} ^ {\infty} \left(\frac {z}{n} - \log \left(1 + \frac {z}{n}\right)\right) \pmod {2 \pi i}\tag{7}
+\]
+
+agreeing that when a logarithm in this formula is that of a real negative number it has one or the other limit values (differing by \(2\pi i\) ) of \(\log z\) at this point; the series on the right-hand side of (7) is then normally convergent on every compact subset of C not containing any integer \(\leqslant 0\) .
+

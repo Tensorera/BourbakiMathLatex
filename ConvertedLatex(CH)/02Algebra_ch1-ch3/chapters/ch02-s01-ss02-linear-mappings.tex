@@ -1,0 +1,116 @@
+\subsection{线性映射}
+
+定义 4. 设 E 和 F 是关于同一环 A 的两个（左）模。E 到 F 的线性映射（或 A-线性映射，或同态，或 A-同态）是指满足下列条件的任意映射 \(u: \mathbf{E} \to \mathbf{F}\) ：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+u (x + y) = u (x) + u (y) \quad for x \in \mathrm{E}, y \in \mathrm{E};\tag{4G}
+\]
+
+\[
+u (\lambda . x) = \lambda . u (x) \quad for \lambda \in \mathrm{A}, x \in \mathrm{E}.
+\]
+
+如果 E 和 F 是两个右 A-模，则线性映射 \(u: \mathbf{E} \to \mathbf{F}\) 是指满足 (3) 和
+
+\[
+u (x . \lambda) = u (x). \lambda \quad \text { for } \lambda \in \mathrm{A}, x \in \mathrm{E}.\tag{4D}
+\]
+
+注记。当 E 和 F 是两个交换群并被视为环 Z 上的模（第 1 号）时，群 E（不带算子）到群 F（不带算子）的每个同态 u 也是 E 到 F 的线性映射，因为对整数 n \textgreater0 ，关系式 \(u(n.x) = n.u(x)\) 由 \(u(x + y) = u(x) + u(y)\) 对 n 作归纳得出，而对 n = -m \textless{} 0 ，
+
+\[
+u (n. x) = u (- (m. x)) = - u (m. x) = - (m. u (x)) = n. u (x).
+\]
+
+例。(1) 设 E 是一个 A-模，a 是 E 的一个元素；映射 \(\lambda\mapsto\lambda a\) （A-模 \(A_{s}\) 到 E 的映射）是一个线性映射 \(\theta_{a}\) ，使得 \(\theta_{a}(1)=a\) 。
+
+*(2) 设 I 是实数直线 R 的一个开区间，E 是 I 上可微实值函数构成的向量空间，F 是定义在 I 上的所有实值函数构成的向量空间。映射 \(x \mapsto x'\) 将每个可微函数 x 与其导数相关联，是从 E 到 F 的线性映射。*
+
+注意，A-模 E 上的位似 \(x \mapsto \alpha x\) 不一定是线性映射：换言之，关系 \(\alpha(\lambda x) = \lambda(\alpha x)\) 不一定对所有 \(\lambda \in A\) 和 \(x \in E\) 成立。然而当 \(\alpha\) 属于 A 的中心时该关系成立；此时 \(x \mapsto \alpha x\) 称为中心位似（参见第 13 号）。
+
+若 \(u: \mathbf{E} \to \mathbf{F}\) 是线性映射，则对每个族 \((x_{i})_{i \in I}\) （元素取自 \(\mathbf{E}\) ）与每个族 \((\lambda_{i})_{i \in I}\) （元素取自 \(\mathbf{A}\) ），只要族 \((\lambda_{i}x_{i})_{i \in I}\) 的支集有限，便有
+
+\[
+u \left(\sum_ {i \in I} \lambda_ {i} x _ {i}\right) = \sum_ {i \in I} \lambda_ {i} u (x _ {i})\tag{5}
+\]
+
+这由 (3) 和 (4G) 对族 \((\lambda_{i}x_{i})\) 的支集的基数作归纳立即得出。
+
+命题 1. 设 E、F、G 为三个 A-模，u 为 E 到 F 的线性映射，v 为 F 到 G 的线性映射。则复合映射 \(v \circ u\) 是线性的。
+
+命题 2. 设 E、F 为两个 A-模。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  若 \(u: \mathbf{E} \to \mathbf{F}\) 和 \(v: \mathbf{F} \to \mathbf{E}\) 是两个线性映射，使得 \(v \circ u\) 是 \(\mathbf{E}\) 上的恒等映射且 \(u \circ v\) 是 \(\mathbf{F}\) 上的恒等映射，则 \(u\) 是 \(\mathbf{E}\) 到 \(\mathbf{F}\) 上的同构，而 \(v\) 是其逆同构。
+\item
+  每个双射线性映射 \(u: \mathbf{E} \to \mathbf{F}\) 都是 \(\mathbf{E}\) 到 \(\mathbf{F}\) 上的同构。
+\end{enumerate}
+
+这些命题直接由定义 4 得出。
+
+命题 1 和命题 2 表明，线性映射可以取作 A-模结构物种的态射（集合论，IV，§2，第 1 号）；今后我们总假定已作好态射的这一选取。
+
+给定两个左（相应地，右）A-模 E 和 F，用 \(\text{Hom}(E, F)\) 或 \(\text{Hom}_{A}(E, F)\) 表示 E 到 F 的线性映射的集合。
+
+集合 \(\operatorname{Hom}(\mathbf{E},\mathbf{F})\) 是乘积交换群 \(\mathbf{F}^{\mathbf{E}}\) （由 \(\mathbf{E}\) 到 \(\mathbf{F}\) 的全体映射组成）的一个子群，因而是一个交换群（I，§4，第 8 号）；回顾，对于两个元素 \(u\) , \(v\) （属于 \(\mathbf{F}^{\mathbf{E}}\) ）以及所有 \(x\in\mathbf{E}\) ，
+
+\[
+(u + v) (x) = u (x) + v (x), \quad (- u) (x) = - u (x)
+\]
+
+由此立即得出，若 u 和 v 是线性的，则 \(u + v\) 和 -u 也是线性的。若 G 是第三个左（相应地，右）A-模， \(f, f_{1}, f_{2}\) 是 Hom(E, F) 的元素，而 g, \(g_{1}, g_{2}\) 是 Hom(F, G) 的元素，则下列关系式可立即验证：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+g \circ (f _ {1} + f _ {2}) = g \circ f _ {1} + g \circ f _ {2}\tag{7}
+\]
+
+\[
+\left(g _ {1} + g _ {2}\right) \circ f = g _ {1} \circ f + g _ {2} \circ f\tag{8}
+\]
+
+\[
+g \circ (- f) = (- g) \circ f = - (g \circ f).
+\]
+
+特别地，合成律 \((f,g)\mapsto f\circ g\) （ \(\operatorname{Hom}(\mathbf{E},\mathbf{E})\) 上的）与上述加法群结构一起在 \(\operatorname{Hom}(\mathbf{E},\mathbf{E})\) 上定义了一个环结构，其单位元记作 \(1_{E}\) 或 \(Id_{E}\) ，即 E 上的恒等映射；E 到自身的线性映射也称为 A-模 E 的自同态，而环 \(\operatorname{Hom}(\mathbf{E},\mathbf{E})\) 也记作 \(\operatorname{End}(\mathbf{E})\) 或 \(\operatorname{End}_{\mathbf{A}}(\mathbf{E})\) 。A-模 E 的自同构正是 \(\operatorname{End}(\mathbf{E})\) 中的可逆元（命题 2）；它们构成一个乘法群，记作 \(\operatorname{Aut}(\mathbf{E})\) 或 \(\mathbf{GL}(\mathbf{E})\) ，也称为关于 E 的线性群。
+
+由 (6) 和 (7) 可知，对两个 A-模 E, F，Hom(E, F) 具有环 Hom(F, F) 上左模结构与环 Hom(E, E) 上右模结构的典范结构。
+
+设 E, F, E', F' 为四个（左）A-模， \(u: E' \to E\) 和 \(v: F \to F'\) 为 A-线性映射。若将每个元素 \(f \in \text{Hom}(E, F)\) 对应于元素 \(v \circ f \circ u \in \text{Hom}(E', F')\) ，则定义了一个映射
+
+\[
+\operatorname{Hom} (\mathbf {E}, \mathbf {F}) \rightarrow \operatorname{Hom} (\mathbf {E} ^ {\prime}, \mathbf {F} ^ {\prime})
+\]
+
+，它是 \(\mathbf{Z}\) -线性的，记作 \(\operatorname{Hom}(u,v)\) 或 \(\operatorname{Hom}_{\mathbf{A}}(u,v)\) 。若 \(u, u_1, u_2\) 属于 \(\operatorname{Hom}(\mathbf{E}', \mathbf{E})\) ，而 \(v, v_1, v_2\) 属于 \(\operatorname{Hom}(\mathbf{F}, \mathbf{F}')\) ，则
+
+\[
+\left\{ \begin{array}{l} \operatorname{Hom} (u _ {1} + u _ {2}, v) = \operatorname{Hom} (u _ {1}, v) + \operatorname{Hom} (u _ {2}, v) \\ \operatorname{Hom} (u, v _ {1} + v _ {2}) = \operatorname{Hom} (u, v _ {1}) + \operatorname{Hom} (u, v _ {2}) \end{array} \right.\tag{9}
+\]
+
+设 \(\mathbf{E}^{\prime \prime},\mathbf{F}^{\prime \prime}\) 是两个 A-模， \(u^{\prime}:\mathbf{E}^{\prime \prime}\to \mathbf{E}^{\prime}\) 和 \(v^{\prime}:\mathbf{F}^{\prime}\rightarrow \mathbf{F}^{\prime \prime}\) 是线性映射。则
+
+\[
+\operatorname{Hom} \left(u \circ u ^ {\prime}, v ^ {\prime} \circ v\right) = \operatorname{Hom} \left(u ^ {\prime}, v ^ {\prime}\right) \circ \operatorname{Hom} (u, v).\tag{10}
+\]
+
+若 \(u\) 是 \(\mathbf{E}'\) 到 \(\mathbf{E}\) 上的同构，而 \(v\) 是 \(\mathbf{F}\) 到 \(\mathbf{F}'\) 上的同构，则 \(\operatorname{Hom}(u, v)\) 是 \(\operatorname{Hom}(\mathbf{E}, \mathbf{F})\) 到 \(\operatorname{Hom}(\mathbf{E}', \mathbf{F}')\) 上的同构，由 (10)，其逆同构是 \(\operatorname{Hom}(u^{-1}, v^{-1})\) 。
+
+若 \(h\) （相应地 \(k\) ）是 \(\mathbf{E}\) （相应地 \(\mathbf{F}\) ）的一个自同态，则 \(\operatorname{Hom}(h, 1_{\mathbf{F}})\) （相应地 \(\operatorname{Hom}(1_{\mathbf{E}}, k)\) ）就是位似比为 \(h\) （相应地 \(k\) ）的位似，这里所说的位似是关于上文定义的环 \(\operatorname{End}(\mathbf{E})\) （相应地 \(\operatorname{End}(\mathbf{F})\) ）上右（相应地，左）模结构而言的。
+

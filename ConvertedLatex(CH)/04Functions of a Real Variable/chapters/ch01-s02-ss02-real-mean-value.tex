@@ -1,0 +1,105 @@
+\subsection{实值函数的中值定理}
+
+下述重要结果是命题 1 之推论的一个推论：若有 \(m \leqslant f'(x) \leqslant M\) （在 \(]a, b[\) 上），则也有 \(m \leqslant \frac{f(b) - f(a)}{b - a} \leqslant M\) 。换句话说，\(f'\) 的导数在以 \(a, b\) 为端点的整个区间上的一个界，蕴含 \(\frac{f(b) - f(a)}{b - a}\) 的同一界（即函数的“增量”与变量在该区间上的“增量”之比）。在后面我们将把这一基本结果弄得更精确，并加以推广。
+
+命题 2. 设 \(f\) 是实函数，在有界闭区间 \(I = [a, b]\) （其中 \(a < b\) ）上有限且连续，且在 \([a, b)\) 中该区间的一可数子集 \(A\) 的相对余集的各点处具有右导数（有限或无穷）。若 \(f_d'(x) \geqslant 0\) 在 \([a, b[\) 的每个不属于 \(A\) 的点处成立，则有 \(f(b) \geqslant f(a)\) ；若进而 \(f_d'(x) > 0\) 在 \([a, b[\) 的至少一个点处成立，则 \(f(b) > f(a)\) 。
+
+任取 \(\varepsilon > 0\) ，并用 \((a_n)_{n \geqslant 1}\) 表示把可数集 A 编列成表而得的一个序列。设 J 是由这样的点 \(y \in I\) 所成的集，使得
+
+\[
+f (x) - f (a) \geqslant - \varepsilon (x - a) - \varepsilon \sum_ {a _ {n} <   x} \frac {1}{2 ^ {n}}\tag{1}
+\]
+
+对所有的 \(x\) （\(a \leqslant x \leqslant y\) ）成立，其中右端第二项中的和是对所有下标 \(n\) （对这些下标有 \(a_n < x\) ）取的。我们将证明：若 \(f_d'(x) \geqslant 0\) 在 \([a, b[\) 的每个与诸 \(a_n\) 不同的点处成立，则 \(J = I\) 。
+
+显然 J 非空，因为 \(a \in J\) ；此外，此集的定义表明，若 \(y \in J\) 则 \(x \in J\) （对 \(a \leqslant x \leqslant y\) ），故 J 是以 a 为左端点的区间（Gen.~Top., IV, p.~336, prop. 1）；设 c 为其右端点。有 \(c \in J\) ；当 c = a 时这是显然的；否则，对每个 x \textless{} c 我们有不等式 (1)，从而更有
+
+\[
+f (x) - f (a) \geqslant - \varepsilon (c - a) - \varepsilon \sum_ {a _ {n} <   c} \frac {1}{2 ^ {n}}
+\]
+
+由此，在此不等式中让 \(x\) 趋于 \(c\) （由于 \(f\) 连续），便知 \(c\) 满足 (1)。
+
+这样，我们将看到必有 c = b。事实上，若 c \textless{} b，则当然有 \(c \notin A\) ；而今 \(f_{d}^{\prime}(c)\) 存在，且由于按假设 \(f_{d}^{\prime}(c) \geqslant 0\) ，故存在 y 使 \(c < y \leqslant b\) ，且对 \(c \leqslant x \leqslant y\) 有
+
+\[
+f (x) - f (c) \geqslant - \varepsilon (x - c)
+\]
+
+由此，考虑到 (1) （其中 x 换为 c），
+
+\[
+f (x) - f (a) \geqslant - \varepsilon (x - a) - \varepsilon \sum_ {a _ {n} <   c} \frac {1}{2 ^ {n}} \geqslant - \varepsilon (x - a) - \varepsilon \sum_ {a _ {n} <   x} \frac {1}{2 ^ {n}}
+\]
+
+这表明 \(y \in J\) ，与 c 的定义相矛盾。于是，对某个指标 k 有 \(c = a_{k}\) ；由于 f 在点 \(a_{k}\) 连续，存在 y 使 \(c < y \leqslant b\) ，且对 \(c < x \leqslant y\) 有
+
+\[
+f (x) - f (c) \geqslant - \frac {\varepsilon}{2 ^ {k}}
+\]
+
+由此，考虑到 (1) （其中 x 换为 c），
+
+\[
+f (x) - f (a) \geqslant - \varepsilon (c - a) - \varepsilon \sum_ {a _ {n} <   x} \frac {1}{2 ^ {n}} \geqslant - \varepsilon (x - a) - \varepsilon \sum_ {a _ {n} <   x} \frac {1}{2 ^ {n}}
+\]
+
+这又导致一个矛盾；从而 c = b，因而
+
+\[
+f (b) - f (a) \geqslant - \varepsilon (b - a) - \varepsilon \sum_ {a _ {n} <   b} \frac {1}{2 ^ {n}} \geqslant - \varepsilon (b - a) - \varepsilon .\tag{2}
+\]
+
+由于 \(\varepsilon > 0\) 是任意的，由 (2) 推出 \(f(b) \geqslant f(a)\) ，这就证明了命题的第一部分。
+
+我们现在指出，把这结果应用于区间 \([x, y]\) （\(a \leqslant x < y \leqslant b\) ）便证明 f 在 I 上递增；若 \(f(b) = f(a)\) ，则可推出 f 在 I 上是常数，从而 \(f_{d}'(x) = 0\) 在 \([a, b[\) 的每一点处成立；命题的第二部分由此得证。
+
+推论. 设 \(f\) 是 \([a, b]\) （其中 \(a < b\) ）上的有限连续实函数，且在 \([a, b[\) 中该区间的一可数子集 A 的余集的各点处具有右导数。\(f\) 在 I 上递增，当且仅当 \(f_d'(x) \geqslant 0\) 在 \([a, b[\) 的每个不属于 A 的点处成立；\(f\) 严格递增，当且仅当前述条件成立，并且诸点 \(x\) （满足 \(f_d'(x) > 0\) ）所成之集在 \([a, b]\) 中稠密。
+
+注。1) 当把区间 \([a, b[\) 换成 \(]a, b]\) 、把“右导数”一词换成“左导数”一词时，命题 2 仍然成立。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  在闭区间 I 上 \(f\) 的连续性假设（而不仅仅是右连续性 \(^{4}\) 在 \([a, b]\) 的每一点处成立）对于命题 2 的成立是必不可少的（cf.~I, p.~36, exerc. 8）。
+\item
+  若只假设“例外”点所成的集 A 在 I 中无处稠密但不可数，则命题 2 的结论并无保证（cf.~I, p.~37, exerc. 3）。
+\end{enumerate}
+
+命题 2 蕴含下面的基本定理（它看来更一般）：
+
+定理 1（中值定理）. 设 \(f\) 和 \(g\) 是定义在有界闭区间 \(I = [a, b]\) 上的两个有限连续实值函数，并在 {[}a, b{[} 中该区间的一可数子集的相对余集的各点处具有右导数（有限或无穷）。再设 \(f_d'(x)\) 与 \(g_r'(x)\) 除了在 I 的一可数子集的各点外不同时为无穷，并且存在有限数 \(m, M\) 使得
+
+\[
+m g _ {r} ^ {\prime} (x) \leqslant f _ {d} ^ {\prime} (x) \leqslant \mathrm{Mg} _ {r} ^ {\prime} (x)\tag{3}
+\]
+
+在 I 的一可数子集的各点处除外（\(\mathbf{M}g_{r}^{\prime}(x)\) （相应地，\(mg_{r}^{\prime}(x)\) ）代之以 0，当 M = 0（相应地，m = 0）且 \(g_{r}^{\prime}(x) = \pm\infty\) 时）。在这些条件下，有
+
+\[
+m (g (b) - g (a)) <   f (b) - f (a) <   \mathbf {M} (g (b) - f (a))\tag{4}
+\]
+
+除非有 \(f(x) = \mathrm{Mg}(x) + k\) ，或有 \(f(x) = mg(x) + k\) （k 为常数，对所有 \(x \in \mathbf{I}\) ）。
+
+只需对函数 Mg - f 与 f - mg 应用命题 2；在我们的假设下，这两个函数除在 I 的一可数子集的各点外都具有正的右导数。
+
+注. 若允许 \(f_{d}^{\prime}\) 与 \(g_{r}^{\prime}\) 在 I 的一个不可数子集上同时为无穷，定理 1 便不成立（cf.~I, p.~37, exerc. 3）。
+
+推论. 设 \(f\) 是 \([a, b]\) （其中 \(a < b\) ）上的有限连续函数，且在相对余集 \(\mathbf{B}\) （即 \([a, b[\) 中除去该区间的一可数子集所得的集）的各点处具有右导数（有限或无穷）。若 \(m\) 与 \(M\) 是 \(f_d'\) 在 \(B\) 上的下确界与上确界，则有
+
+\[
+m (b - a) <   f (b) - f (a) <   \mathrm{M} (b - a)\tag{5}
+\]
+
+若 \(f\) 不是仿射线性函数；若 \(f\) 是仿射线性的，则有
+
+\[
+m = \mathbf {M} = \frac {f (b) - f (a)}{b - a}.
+\]
+
+当 \(m\) 与 \(M\) 为有限时，不等式 (5) 是 (4) 的推论；这两个数之一为无穷的情形是显然的。
+
+注. 不等式 (5) 表明，一个连续函数不可能在某一区间的所有点上都有等于 \(+\infty\) 的右导数（cf.~I, p.~38, exerc. 6）。
+

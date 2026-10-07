@@ -1,0 +1,42 @@
+\subsection{Banach-Steinhaus 定理}
+
+定理 1. --- 设 E 是一个桶型空间，F 是一个局部凸空间。\(\mathcal{L}(\mathrm{E};\mathrm{F})\) 的每个简单有界子集 H 都是等度连续的。
+
+因为，设 \(p\) 是 \(\mathbf{F}\) 上的一个连续半范数；设 \(q = \sup_{u\in \mathbf{H}}(p\circ u)\)。由于 \(\mathbf{H}\) 是简单有界的，我们有 \(q(x) < +\infty\)（对所有 \(x \in E\)），且 \(q\) 是一个下半连续半范数，因为它是连续半范数的一个有限上包络。由于 \(E\) 是桶型的，\(q\) 是一个连续半范数，因此 \(H\) 是等度连续的。
+
+推论 1. --- 设 E 和 F 是两个 Banach 空间，H 是从 E 到 F 中的连续线性映射的一个族；若对所有 \(x \in E\)，我们有 \(\sup_{u \in H} \|u(x)\| < +\infty\)，则我们也有 \(\sup_{u \in H} \|u\| < +\infty\)。
+
+事实上，假设说的是 H 简单有界，结论说的是它等度连续。此外，每个 Banach 空间都是桶型的（III, 第 25 页）。
+
+推论 2. ---（Banach-Steinhaus 定理）. --- 设 E 是一个桶型空间，F 是一个局部凸 Hausdorff 空间，并设 \((u_n)\) 是从 E 到 F 中的连续线性映射的一个序列，它简单收敛到一个从 E 到 F 中的映射 u。则 \(u \in \mathcal{L}(\mathrm{E}; \mathrm{F})\)，且 \((u_{n})\) 在 E 的每个预紧子集上一致收敛于 u。
+
+事实上，序列 \((u_{n})\) 是简单有界的，因而是等度连续的，推论由 III, 第 18 页, 命题 5 的推论得出。
+
+评注. --- 1) 推论 2 所表达的性质并不蕴含 E 是桶型的：我们后面将看到，Fréchet 空间的强对偶具有这一性质，却未必是桶型的（IV, 第 23 页, 命题 2 的推论 及 第 58 页, 习题）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 E 和 F 是两个 Banach 空间，\((u_{n})\) 是从 E 到 F 中的连续线性映射的一个序列，使得 sup \(\|u_{n}\| = +\infty\)。则所有 \(x \in E\) 中使 sup \(\|u_{n}(x)\| = +\infty\) 者所成的集 X 在 E 中稠密，且是 E 中一列开集的交。因为，用 \(X_{k}\) 记所有 \(x \in E\) 中使 sup \(\|u_{n}(x)\| > k\) 者所成的集（k 为整数 \textgreater{} 0）。每个 \(X_{k}\) 是开集，且 X 是诸 \(X_{k}\) 的交。由于 E 是 Baire 空间，只需证明每个 \(X_{k}\) 在 E 中稠密。但是，若 \(X_{k}\) 的补集含有一个非空开集 U，我们将有 \(\|u_{n}(x)\| \leqslant 2k\)（对 \(x \in U - U\)），而由于 U - U 是 0 的一个邻域，我们将有 sup \(\|u_{n}\| < +\infty\)。
+\end{enumerate}
+
+推论 3. --- 设 E 是一个桶型空间，F 是一个局部凸 Hausdorff 空间，\(\Phi\) 是 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 上的一个滤子，它在 E 中简单收敛到一个从 E 到 F 中的映射 u。若 \(\Phi\) 含有 \(\mathcal{L}(\mathrm{E};\mathrm{F})\) 的一个简单有界子集，或若 \(\Phi\) 有一个可数基，则 u 是一个从 E 到 F 中的连续线性映射，且 \(\Phi\) 在 E 的每个预紧子集上一致收敛于 u。
+
+首先假设 \(\Phi\) 含有一个简单有界集 H；由于 H 等度连续（定理 1），推论由命题 5 的推论（III, 第 18 页）得出。若 \(\Phi\) 有一个可数基，则每个初等滤子 \(\Psi\)（相伴于一个序列 \(u_{n}\) 者，GT, I, § 6, No.~8）若细于 \(\Phi\)，便在 E 中简单收敛于 u，且由推论 2 可得：u 是一个从 E 到 F 中的连续线性映射，且 \(\Psi\) 在 E 的预紧子集上一致收敛拓扑下收敛于 u。因此对 \(\Phi\) 同样成立，因为后者是诸初等滤子的交，其中每个都细于 \(\Phi\)（GT, I, § 6, No.~8）。
+
+我们注意到，\(\mathcal{L}(\mathrm{E};\mathrm{F})\) 上一个简单收敛且有可数基的滤子未必含有一个简单有界集：为看出这一点，当 F 的拓扑可度量化、但不能由单个范数定义时，考虑 \(\mathcal{L}(\mathrm{K};\mathrm{F})\) 中 0 的邻域滤子这一例子。
+
+例. --- 设 E 是由 R 上周期为 1 的连续复函数所成的 Banach 空间（在 C 上），带范数 \(\|f\| = \sup |f(x)|\)。
+
+对每个整数 \(n \in \mathbf{Z}\) 和每个函数 \(f \in \mathrm{E}\)，设 \(c_{n}(f) = \int_{0}^{1} f(x)e^{-2i\pi nx} dx\)（f 的第 n 个 Fourier 系数）；映射 \(f \mapsto c_{n}(f)\) 中的每一个都是 E 上的一个连续线性型。设 \((\alpha_{n})\) 是复数的一个序列，使得对每个函数 \(f \in E\)，以 \(\alpha_{n}c_{n}(f) + \alpha_{-n}c_{-n}(f)\) 为通项的级数收敛。在这些条件下，映射 \(u: f \mapsto \alpha_{0}c_{0}(f) + \sum_{n \geqslant 1} [\alpha_{n}c_{n}(f) + \alpha_{-n}c_{-n}(f)]\) 是 E 上的一个连续线性型；* 换言之，存在一个测度 \(\mu\)（在 {[}0, 1{]} 上），使得 \(u(f) = \int f(x) d\mu(x)\) 对每个函数 \(f \in E\) 成立，且 \(\alpha_{n}\) 是第 n 个 Fourier 系数
+
+（\(\mu_{*}\) 的）。* 事实上，对每个整数 \(m > 0\)，映射 \(f \mapsto \sum_{k = -m}^{m} \alpha_k c_k(f)\) 是 E 上的一个连续线性型 \(u_{m}\)，且对所有 \(f \in E\)，序列 \((u_{m}(f))\) 收敛于 \(u(f)\)，由假设。于是断言由 Banach-Steinhaus 定理得出，因为 E 是桶型的。
+
+推论 4. --- 设 E 和 F 是两个局部凸空间，S 是 E 的一个由有界子集组成的覆盖。若 E 是桶型的且 F 是 Hausdorff 且拟完备的，则空间 \(\mathcal{L}_{\mathfrak{S}}(E;F)\) 是 Hausdorff 且拟完备的。
+
+事实上，\(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) 的每个有界闭子集都是简单有界的（因为 S 是 E 的覆盖），从而是等度连续的（III, 第 25 页, 定理 1），因此由于命题 11（III, 第 22 页）而是 \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) 的一个完备子空间。
+
+推论 5. --- 桶型空间的强对偶和弱对偶都是拟完备的。
+

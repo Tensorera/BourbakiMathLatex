@@ -1,0 +1,132 @@
+\subsection{拓扑群上的正定函数}
+
+在本节中，G 是拓扑群，其单位元记为 e。所考虑的希尔伯特空间都是复的。
+
+定义 4. --- 连续函数 \(\varphi\in\mathcal{C}(\mathrm{G})\) 称为 G 上的正定函数，如果函数 \(f\) 由 \(f(g,h)=\varphi(g^{-1}h)\) 定义在 \(\mathrm{G}\times\mathrm{G}\) 上，且是 \(\mathrm{G}\) 上的普遍正核。
+
+以 \(\operatorname{Pos}(\mathbf{G})\) 表示 G 上正定函数的集合，并以 \(\operatorname{Pos}_{1}(\mathbf{G})\)（分别以 \(\operatorname{Pos}_{\leqslant1}(\mathbf{G})\)）表示 \(\varphi\in\operatorname{Pos}(\mathbf{G})\) 中满足 \(\varphi(e)=1\)（分别满足 \(\varphi(e)\leqslant1\)）的函数所成的子集。
+
+例。--- 设 \(\varrho\) 是 G 在希尔伯特空间 E 上的酉表示，且 \(x \in \mathrm{E}\)。设 \(\varphi\) 是由 \(\varphi(g) = \langle x \mid \varrho(g)x \rangle\) 对所有 \(g \in \mathrm{G}\) 定义的对角矩阵系数；函数 \(\varphi\) 连续。由此可得
+
+\[
+\varphi (g ^ {- 1} h) = \langle x | \varrho (g) ^ {*} \varrho (h) x \rangle = \langle \varrho (g) x | \varrho (h) x \rangle
+\]
+
+对所有 \((g,h)\in\mathrm{G}\times\mathrm{G}\) 都成立。因此 \(\varphi\in\mathrm{Pos}(\mathrm{G})\)（V, p. 432, 定理 1, (iv)）。\(\varphi\in\mathrm{Pos}_{1}(\mathrm{G})\) 当且仅当 \(\|x\|=1\)。
+
+定义 5. --- 设 \(\varphi\) 是 G 上的正定函数。\(\varphi\) 的希尔伯特实现是一个对 \((\varrho, x)\)，其中 \(\varrho\) 是 G 在希尔伯特空间 E 上的酉表示，\(x \in \mathrm{E}\)，且 \(\varphi(g) = \langle x \mid \varrho(g)x \rangle\) 对所有 \(g \in \mathrm{G}\) 成立。
+
+若 x 是 \(\varrho\) 的循环向量，则称其为 \(\varphi\) 的循环希尔伯特实现。
+
+命题 9. --- 设 \(\varphi\in\mathcal{C}(\mathrm{G})\)。以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  函数 \(\varphi\) 是 G 上的正定函数；
+\item
+  存在 \(\varphi\) 的循环希尔伯特实现；
+\item
+  存在 \(\varphi\) 的希尔伯特实现。
+\end{enumerate}
+
+条件 (ii) 蕴含条件 (iii)，而由上述例子，条件 (iii) 蕴含条件 (i)。
+
+最后证明 (i) 蕴含 (ii)。设 (E, \(\gamma\) ) 是由 \(f(g,h)=\varphi(g^{-1}h)\) 定义的普遍正核（其中 \((g,h)\in\mathrm{G}\times\mathrm{G}\)）的循环希尔伯特实现。设 \(k\in\mathrm{G}\)。G 上的连续函数 \(\gamma_{k}:g\mapsto\gamma(kg)\) 满足
+
+\[
+\langle \gamma_ {k} (g) | \gamma_ {k} (h) \rangle = \langle \gamma (k g) | \gamma (k h) \rangle = f (k g, k h) = \varphi ((k h) ^ {- 1} k g) = f (g, h)
+\]
+
+对所有 \((g,h)\in\mathrm{G}\times\mathrm{G}\) 都成立，因此 \((\mathrm{E},\gamma_{k})\) 是 f 的希尔伯特实现。由 V, p. 434, 命题 1，存在唯一的酉算子 \(\varrho(k)\) 属于 \(\mathcal{L}(\mathrm{E})\)，使得 \(\gamma_{k}=\varrho(k)\circ\gamma\)。对每个 \(g\in G\) 以及每个 \((k_{1},k_{2})\in\mathrm{G}\times\mathrm{G}\)，可得
+
+\[
+\varrho (k _ {1} k _ {2}) (\gamma (g)) = \gamma (k _ {1} k _ {2} g) = \varrho (k _ {1}) (\varrho (k _ {2}) (\gamma (g))),
+\]
+
+从而 \(\varrho(k_1k_2) = \varrho(k_1)\varrho(k_2)\)，因为 \(\gamma\) 的像是 E 的全集。
+
+设 \(k \in G\)。对每个 \(g \in G\)，有 \(\varrho(g)(\gamma(k)) = \gamma(gk)\)，因此由 \(g \mapsto \varrho(g)(\gamma(k))\) 定义的从 G 到 E 的映射连续。由于自同态 \(\varrho(g)\) 是酉的，故可推出 \(\varrho\) 是 G 在 E 上的酉表示（V, p. 380, 引理 4）。再置 \(x = \gamma(e)\)。向量集 \(\varrho(g)x = \varrho(g)(\gamma(e)) = \gamma(g)\) 在 E 中是全的，其中 \(g\) 遍历 G，故 x 是 \(\varrho\) 的循环向量。由于
+
+\[
+\langle x \mid \varrho (g) x \rangle = f (e, g) = \varphi (g)
+\]
+
+对所有 \(g \in G\) 都成立，所以对 \((\varrho, x)\) 是 \(\varphi\) 的循环希尔伯特实现。
+
+命题 10. — 设 \(\varphi\) 是 G 上的正定函数，\((\varrho_{1}, x_{1})\) 和 \((\varrho_{2}, x_{2})\) 是 \(\varphi\) 的希尔伯特实现，且希尔伯特表示 \((\varrho_{1}, x_{1})\) 是循环的。存在唯一的等距 G-态射 \(u\)，从 \(\varrho_{1}\) 到 \(\varrho_{2}\)，使得 \(u(x_{1}) = x_{2}\)。若 \((\varrho_{2}, x_{2})\) 也是循环的，则 \(u\) 是同构。
+
+对 \(1 \leqslant j \leqslant 2\)，令 \(\mathrm{E}_j\) 为 \(\varrho_j\) 的空间，并令 \(\gamma_j\) 为 \(\mathbf{G}\) 上由 \(\gamma_j(g) = \varrho_j(g)x_j\) 对所有 \(g \in \mathbf{G}\) 定义的函数。对 \((\mathrm{E}_1, \gamma_1)\) 和 \((\mathrm{E}_2, \gamma_2)\) 是正定函数 \((g, h) \mapsto \varphi(g^{-1}h)\) 的希尔伯特实现，且 \((\mathrm{E}_1, \gamma_1)\) 是循环希尔伯特实现。由 V, p. 434, 命题 1，存在唯一的等距线性映射 \(u: \mathrm{E}_1 \to \mathrm{E}_2\)，使得 \(\gamma_2 = u \circ \gamma_1\)。特别地，有 \(x_2 = \gamma_2(e) = u(\gamma_1(e)) = u(x_1)\)。此外，对任意 \(g\) 和 \(h\) 属于 \(\mathbf{G}\)，有
+
+\[
+\varrho_ {2} (g) u \left(\gamma_ {1} (h)\right) = \varrho_ {2} (g) \gamma_ {2} (h) = \gamma_ {2} (g h) = u \left(\gamma_ {1} (g h)\right) = u \left(\varrho_ {1} (g) \gamma_ {1} (h)\right),
+\]
+
+由于元素 \(\gamma_{1}(h)\)（其中 \(h \in G\)）所成的集合在 \(E_{1}\) 中是全的，这意味着 u 是 G-态射。根据同上，若 \((\varrho_{2}, x_{2})\) 也是循环的，则 u 是等距同构。
+
+命题 11. — 设 \(\varphi \in \mathrm{Pos}_{1}(\mathrm{G})\)，且 \((\varrho, x)\) 是 \(\varphi\) 的循环希尔伯特实现。则 \(\varrho\) 是 G 的不可约表示，当且仅当 \(\varphi\) 是 \(\mathrm{Pos}_{1}(\mathrm{G})\) 的极点（EVT, II, p. 57, 定义 1）。
+
+令 E 为 \(\varrho\) 的空间。先设 \(\varrho\) 不是不可约的。令 F 是 E 的一个在 \(\varrho\) 下稳定的、非零且不同于 E 的闭子空间。写作 \(x = x_1 + x_2\)，其中 \(x_1 \in \mathrm{F}\)，\(x_2 \in \mathrm{F}^\circ\)。于是 \(1 = \|x\|^2 = \|x_1\|^2 + \|x_2\|^2\)。由 \(x_1\) 生成的 E 的子表示包含于 F 中，所以 \(x_1 \neq x\)，因为 \(x\) 是 \(\varrho\) 的循环向量，从而 \(x_2 \neq 0\)。同理可验证 \(x_1 \neq 0\)。
+
+对 \(j = 1\) 和 \(j = 2\)，令 \(\varphi_j\) 为 G 上满足
+
+\[
+\varphi_ {j} (g) = \frac {1}{\| x _ {j} \| ^ {2}} \langle x _ {j} | \varrho (g) x _ {j} \rangle
+\]
+
+对所有 \(g \in G\) 均成立。我们有 \(\varphi_{j} \in \mathrm{Pos}_{1}(G)\)（V, p. 443, 例）。由于 \(\varphi = \|x_{1}\|^{2}\varphi_{1} + \|x_{2}\|^{2}\varphi_{2}\)，只需验证 \(\varphi_{1} \neq \varphi_{2}\) 即可证明 \(\varphi\) 不是 \(\mathrm{Pos}_{1}(G)\) 的极点；为此只需证明 \(\varphi \neq \varphi_{1}\)。
+
+反证。假设 \(\varphi = \varphi_1\)。由于 \(\langle x_1 | \varrho(g)x_2 \rangle = 0\) 对所有 \(g \in G\) 成立，应有
+
+\[
+\frac {1}{\| x _ {1} \| ^ {2}} \langle x _ {1} | \varrho (g) x \rangle = \frac {1}{\| x _ {1} \| ^ {2}} \langle x _ {1} | \varrho (g) x _ {1} \rangle = \varphi_ {1} (g) = \varphi (g) = \langle x | \varrho (g) x \rangle
+\]
+
+对所有 \(g \in G\) 都成立，从而 E 的向量子空间中的每个元素 y 都满足 \(\langle x_{1} | y \rangle = \langle \|x_{1}\|^{2}x | y \rangle\)，其中该子空间由元素 \(\varrho(g)x\)（其中 \(g \in G\)）生成；因此对于所有 \(y \in E\)，由于 x 是 \(\varrho\) 的循环向量，这都成立。这将意味着 \(x_{1} = \|x_{1}\|^{2}x\) 也是 \(\varrho\) 的循环向量，矛盾，故断言成立。
+
+现在设 \(\varrho\) 不可约，并证明 \(\varphi\) 是 \(\mathrm{Pos}_1(\mathrm{G})\) 的极点。设 \(\varphi_1 \neq \varphi_2\) 是 \(\mathrm{Pos}_1(\mathrm{G})\) 中的元，且 \(t_1, t_2 \in [0,1]\) 满足 \(t_1 + t_2 = 1\) 和 \(\varphi = t_1\varphi_1 + t_2\varphi_2\)。对 \(j \in \{1,2\}\)，设 \((\varrho_j, x_j)\) 是 \(\varphi_j\) 的循环希尔伯特实现，并令 \(\mathrm{E}_j\) 为 \(\varrho_j\) 的空间。令 \(x_3 = t_1^{1/2}x_1 + t_2^{1/2}x_2\)。则 \((\varrho_1 \oplus \varrho_2, x_3)\) 是 \(\varphi\) 的希尔伯特实现。由于 \((\varrho, x)\) 是循环的，存在等距 G-态射 \(u: \mathrm{E} \to \mathrm{E}_1 \oplus \mathrm{E}_2\)，使得 \(u(x) = x_3\)（命题 10）。
+
+令 \(j = 1\) 或 \(j = 2\)。由于 \(\varrho\) 不可约，存在 \(\lambda_j \geqslant 0\)，使得 G-态射 \(u_j = \mathrm{pr}_j \circ u\) 从 E 到 \(E_j\) 满足
+
+\[
+\langle u _ {j} (y) \mid u _ {j} (y ^ {\prime}) \rangle = \lambda_ {j} \langle y \mid y ^ {\prime} \rangle
+\]
+
+对 E 中任意 \(y\) 和 \(y'\) 都成立（若 \(u_j \neq 0\)，这是 V, p. 388, 推论 5；否则可取 \(\lambda_j = 0\)）。对每个 \(g \in G\)，可得
+
+\[
+\begin{array}{r} t _ {j} \varphi_ {j} (g) = \langle t _ {j} ^ {1 / 2} x _ {j} | \varrho_ {j} (g) (t _ {j} ^ {1 / 2} x _ {j}) \rangle = \langle u _ {j} (x) | \varrho_ {j} (g) (u _ {j} (x)) \rangle \\ = \langle u _ {j} (x) | u _ {j} (\varrho (g) x) \rangle = \lambda_ {j} \varphi (g). \end{array}
+\]
+
+由于 \(\varphi_{j}(e) = \varphi(e) = 1\)，可推出 \(\varphi_{j} = \varphi\) 当 \(t_{j} \neq 0\) 时成立。因此假设 \(\varphi_{1} \neq \varphi_{2}\) 蕴含 \(t_{1}\) 或 \(t_{2}\) 必为零，这就证明了 \(\varphi\) 是 \(\mathrm{Pos}_{1}(\mathrm{G})\) 的极点。
+
+引理 4. --- 设 \(\varphi\in\mathrm{Pos}(\mathbf{G})\)。函数 \(\varphi\) 在 \(\mathbf{G}\) 上有界，且 \(\|\varphi\|_{\infty}=\varphi(e)\)。此外，有
+
+\[
+| \varphi (g ^ {- 1} h) - \varphi (h) | \leqslant \sqrt {2 \varphi (e) (\varphi (e) - \mathcal {R} (\varphi (g)))}\tag{1}
+\]
+
+对所有 \((g,h)\in \mathbf{G}\times \mathbf{G}\) 都成立。
+
+设 \((\varrho, x)\) 是 \(\varphi\) 的希尔伯特实现。有 \(\varphi(e) = \|x\|^2\)。因此对每个 \(g \in G\)，由柯西–施瓦茨不等式可得 \(|\varphi(g)| = |\langle x | \varrho(g)x\rangle| \leqslant \varphi(e)\)。这就证明了第一个断言。
+
+对每个 \((g,h)\in \mathrm{G}\times \mathrm{G}\)，有
+
+\[
+\varphi (g ^ {- 1} h) - \varphi (h) = \langle x | \varrho (g ^ {- 1} h) x \rangle - \langle x | \varrho (h) x \rangle = \langle \varrho (g) x - x | \varrho (h) x \rangle
+\]
+
+由于 \(\varrho\) 是酉的，从而
+
+\[
+| \varphi (g ^ {- 1} h) - \varphi (h) | \leqslant \| \varrho (g) x - x \| \| \varrho (h) x \| \leqslant \varphi (e) ^ {1 / 2} \| \varrho (g) x - x \|.
+\]
+
+注意到
+
+\[
+\| \varrho (g) x - x \| ^ {2} = 2 \| x \| ^ {2} - 2 \mathcal {R} (\langle x | \varrho (g) x \rangle) = 2 (\varphi (e) - \mathcal {R} (\varphi (g))).
+\]
+
+注。--- 集合 \(\operatorname{Pos}(G)\)（分别为 \(\operatorname{Pos}_{1}(G)\) 和 \(\operatorname{Pos}_{\leqslant1}(G)\)）是星代数 \(\mathcal{C}_{b}(G)\) 的凸自伴子集。它们在赋予逐点收敛拓扑的空间 \(\mathcal{C}_{b}(G)\) 中是闭的。集合 \(\operatorname{Pos}(G)\) 是实巴拿赫空间 \(\mathcal{C}_{b}(G)\) 中顶点为 0 的凸锥。
+

@@ -1,0 +1,48 @@
+\subsection{Z/nZ模的对偶性}
+
+在本号中，我们用 n 表示一个整数 \textgreater0 ，并用 T 表示一个 n 阶循环群。若 \(g^{n}=1\) 对所有 \(g\in G\) 成立，则称群 G 被 n 零化；此外，若 G 是交换群，则 G 的群结构之上存在唯一的 Z/nZ-模结构。
+
+对于每个群 G，我们用 \(\operatorname{Hom}(G, T)\) 表示从 G 到 T 的同态群；它是一个被 n 零化的交换群。
+
+命题 7. --- 设 G 是一个被 n 零化的交换群，H 是 G 的一个子群。则限制同态 \(\operatorname{Hom}(G, T) \to \operatorname{Hom}(H, T)\) 是满射。
+
+设 \(f:H\to T\) 为一个同态；我们将证明存在一个从 G 到 T 中的、延拓 f 的同态。首先假设 G 是循环群，由一个阶为 r（整除 n）的元素 g 生成；记 t 为 T 的一个生成元。存在 r 的一个因子 s，使得 H 由 \(g^{s}\) 生成（I，第50页，命题19），并且对每个 \(x \in Z\) 我们有 \(f(g^{sx}) = t^{ax}\) ，其中 a 是满足 n 整除 ar/s 的整数。则 \(a/s = (ar/ns)(n/r)\) 是一个整数，且同态 \(g^{x} \mapsto t^{(a/s)x}\) （ \(x \in Z\) ）从 G 到 T 中，延拓了 f。在一般情形，考虑二元组 \((\mathrm{H}', f')\) 的集合，其中 \(H'\) 是包含 H 的 G 的子群， \(f'\) 是 \(H'\) 到 T 中且延拓 f 的一个同态，并用关系 \((\mathrm{H}', f') \leqslant (\mathrm{H}'', f'')\) （若 \(H' \subset H''\) 且 \(f''\) 在 \(H'\) 上的限制是 \(f'\) ）给这个集合排序。根据集合论，III，第154页，定义3和定理2，该集合有一个极大元 \((\mathrm{H}_{1}, f_{1})\) ，且只需证明 \(H_{1} = G\) ；若非如此，则存在 \(g \in G\) , \(g \notin H_{1}\) ，于是只需证明 \(f_{1}\) 可以延拓为 G 的由 \(H_{1}\) 和 g 所生成的子群到 T 中的一个同态。现在若用 C 表示由 g 生成的循环群，则 \(f_{1}\) 在 \(C \cap H_{1}\) 上的限制可延拓为 C 到 T 中的一个同态 \(f_{2}\) ，且同态 \(xy \mapsto f_{1}(x) f_{2}(y)\) （ \(x \in H_{1}\) , \(y \in C\) ）从 \(H_{1}C\) 到 T 中，即为所求的映射。
+
+推论1. --- 若 G 是一个被 n 零化的交换群，且 \(G \neq \{1\}\) ，则 \(\operatorname{Hom}(G, T) \neq \{1\}\) 。
+
+为此只需注意，若 H 是 G 的一个异于 \(\{1\}\) 的循环子群，则 \(\operatorname{Hom}(H, T) \neq \{1\}\) ，并应用命题7。
+
+推论2. --- 若 G 是一个被 n 零化的有限交换群，则群 G 与 Hom(G, T) 有相同的阶。
+
+若 G 是阶为 r 的循环群，生成元为 g，则映射 \(f \mapsto f(g)\) 是 \(\operatorname{Hom}(G, T)\) 到 T 中满足 \(t^{r} = 1\) 的元素 t 组成的集合上的一个双射，因此在这种情形断言成立。另一方面，若 H 是 G 的一个循环子群，我们有 \(\operatorname{Card}(G) = \operatorname{Card}(H)\) . \(\operatorname{Card}(G/H)\) ；进一步，我们有一个正合序列
+
+\[
+\{1 \} \rightarrow \operatorname{Hom} (\mathrm{G} / \mathrm{H}, \mathrm{T}) \rightarrow \operatorname{Hom} (\mathrm{G}, \mathrm{T}) \rightarrow \operatorname{Hom} (\mathrm{H}, \mathrm{T}) \rightarrow \{1 \}
+\]
+
+（II，第227页，定理1及上文的命题7），因此
+
+\[
+\operatorname{Card} (\operatorname{Hom} (G, T)) = \operatorname{Card} (\operatorname{Hom} (H, T)). \operatorname{Card} (\operatorname{Hom} (G / H, T)).
+\]
+
+由于 \(\text{Card}(\text{Hom}(H, T)) = \text{Card}(H)\) ，对 G 或对 G/H 证明该推论是等价的。现在结果通过对 \(\text{Card}(G)\) 作归纳得出。
+
+现在设 G 和 H 为两个群，且 \(f: G \times H \to T\) 为一个双乘性映射，即对任意 \(g, g' \in G\) , \(h, h' \in H\) 我们有
+
+\[
+f (g g ^ {\prime}, h) = f (g, h) f (g ^ {\prime}, h), \quad f (g, h h ^ {\prime}) = f (g, h) f (g, h ^ {\prime}).
+\]
+
+我们定义群同态
+
+\[
+s _ {f} \colon \mathrm{G} \to \operatorname{Hom} (\mathrm{H}, \mathrm{T}), d _ {f} \colon \mathrm{H} \to \operatorname{Hom} (\mathrm{G}, \mathrm{T}),
+\]
+
+由 \(s_f(g)(h) = d_f(h)(g) = f(g, h)\) （参见II，第268页，命题1的推论，当G和H为交换群时）。
+
+命题8. --- 假设 G 和 H 是交换的且被 n 零化。若 \(s_{f}\) 是双射且 H 是有限的，则 \(d_{f}\) 是双射，并且我们有 \(\text{Card}(G) = \text{Card}(H)\) 。
+
+若 \(s_{f}\) 是双射且 H 有限，则由命题7的推论2我们有关系 \(\operatorname{Card}(G) = \operatorname{Card}(\operatorname{Hom}(H, T)) = \operatorname{Card}(H)\) ，因此 \(\operatorname{Card}(G)\) 是有限的，且再次应用该推论得 \(\operatorname{Card}(\operatorname{Hom}(G, T)) = \operatorname{Card}(H)\) 。于是只需证明 \(d_{f}\) 是单射。现在若 \(h \in \operatorname{Ker}(d_{f})\) ，则我们有 \(f(g, h) = 1\) （对所有 \(g \in G\) ），因此由于 \(s_{f}\) 是双射， \(\varphi(h) = 1\) （对所有 \(\varphi \in \operatorname{Hom}(H, T)\) ）；由命题7，这蕴含 \(\operatorname{Hom}(\operatorname{Ker}(d_{f}), T) = \{1\}\) ，从而由命题7的推论1得 \(\operatorname{Ker}(d_{f}) = \{1\}\) 。
+

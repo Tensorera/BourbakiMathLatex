@@ -1,0 +1,92 @@
+\subsection{代数的上同调}
+
+在本小节中，K 是一个交换环，A 是一个 K-代数，B 是 K-代数 \(A \otimes_{K} A^{\circ}\)，而 \(\varepsilon\) 是由 \(\varepsilon(x \otimes y) = xy\)（对 A 中的 x, y）定义的从 B 到 A 的 K-线性映射。对 \(n \in N\)，我们把 K-模 A 的 \(n + 2\) 个拷贝在 K 上的张量积记作 \(B_{n}\)。我们把它看作一个 (A, A)-双模（也看作一个 B-模）；我们赋予它由张量积第一个因子的左 A-模结构导出的左 A-模结构，以及由最后一个因子的右 A-模结构导出的右 A-模结构。特别地，\(B_{0}\) 就是 (A, A)-双模 B。
+
+对每个整数 \(n \geqslant 1\)，我们用下述公式定义双模同态 \(d_{n}^{i}\)（对 \(i \in [0, n]\)）与 \(d_{n}\)（从 \(B_{n}\) 到 \(B_{n-1}\)）
+
+\[
+d _ {n} ^ {i} (x _ {0} \otimes \dots \otimes x _ {n + 1}) = x _ {0} \otimes \dots \otimes x _ {i} x _ {i + 1} \otimes \dots \otimes x _ {n + 1}\tag{4}
+\]
+
+（对 \(i\in [0,n]\)）以及
+
+\[
+d _ {n} = \sum_ {i = 0} ^ {n} (- 1) ^ {i} d _ {n} ^ {i}.\tag{5}
+\]
+
+我们把映射 \(\varepsilon : \mathrm{B}_0 \to \mathrm{A}\) 记作 \(d_0 = d_0^0\)。
+
+设 \(n\) 是一个整数 \(\geqslant 1\)。对 \(0 \leqslant i < j \leqslant n\)，我们有
+
+\[
+d _ {n - 1} ^ {i} \circ d _ {n} ^ {j} = d _ {n - 1} ^ {j - 1} \circ d _ {n} ^ {i},\tag{6}
+\]
+
+由此我们推出
+
+\[
+\begin{array}{c} d _ {n - 1} \circ d _ {n} = \sum_ {0 \leqslant i <   j \leqslant n} (- 1) ^ {i + j} d _ {n - 1} ^ {i} \circ d _ {n} ^ {j} + \sum_ {0 \leqslant j \leqslant i \leqslant n - 1} (- 1) ^ {i + j} d _ {n - 1} ^ {i} \circ d _ {n} ^ {j} \\ = \sum_ {0 \leqslant i <   j \leqslant n} (- 1) ^ {i + j} d _ {n - 1} ^ {j - 1} \circ d _ {n} ^ {i} + \sum_ {0 \leqslant j \leqslant i \leqslant n - 1} (- 1) ^ {i + j} d _ {n - 1} ^ {i} \circ d _ {n} ^ {j} \end{array}
+\]
+
+从而
+
+\[
+d _ {n - 1} \circ d _ {n} = 0.\tag{7}
+\]
+
+设 P 是一个 (A,A)-双模。对任意整数 \(n \geqslant 0\)，我们把从 \(A^{n}\) 到 P 的 K-多重线性映射所成的 K-模记作 \(C^{n}(A,P)\)。映射 \(\alpha^{n}: C^{n}(A,P) \to \operatorname{Hom}_{\mathrm{B}}(\mathrm{B}_{n},\mathrm{P})\) 把 \(f \in \mathrm{C}^{n}(A,P)\) 映为同态 \(\alpha^{n}(f)\)，后者由下式刻画
+
+\[
+\alpha^ {n} (f) \left(x _ {0} \otimes \dots \otimes x _ {n + 1}\right) = x _ {0} f (x _ {1}, \ldots , x _ {n}) x _ {n + 1}\tag{8}
+\]
+
+是 K-模的一个同构。
+
+我们用 \(\partial^{n}\)（对 \(n \geqslant 0\)）表示从 \(\mathrm{C}^{n}(\mathrm{A},\mathrm{P})\) 到 \(\mathrm{C}^{n+1}(\mathrm{A},\mathrm{P})\) 的使下图交换的唯一的 K-线性映射：
+
+\[
+\begin{array}{c} \mathrm{C} ^ {n} (\mathrm{A}, \mathrm{P}) \xrightarrow {\partial^ {n}} \mathrm{C} ^ {n + 1} (\mathrm{A}, \mathrm{P}) \\ \Biggl \downarrow_ {\alpha^ {n}} \\ \mathrm{Hom} _ {\mathrm{B}} (\mathrm{B} _ {n}, \mathrm{P}) \xrightarrow {\mathrm{Hom} (d _ {n + 1} , 1 _ {\mathrm{P}})} \mathrm{Hom} _ {\mathrm{B}} (\mathrm{B} _ {n + 1}, \mathrm{P}). \end{array}
+\]
+
+因此，按定义我们有
+
+\[
+(\alpha^ {n + 1} \circ \partial^ {n}) (f) = \alpha^ {n} (f) \circ d _ {n + 1}\tag{9}
+\]
+
+对每个 \(f \in \mathrm{C}^n(\mathrm{A},\mathrm{P})\)。换言之，我们有
+
+\[
+\partial^ {n} (f) \left(x _ {0}, \dots , x _ {n}\right) = \alpha^ {n} (f) \left(d _ {n + 1} \left(1 \otimes x _ {0} \otimes \dots \otimes x _ {n} \otimes 1\right)\right)
+\]
+
+对 A 中的 \(x_0, \ldots, x_n\) 以及 \(f\)（在 \(\mathrm{C}^n(\mathrm{A}, \mathrm{P})\) 中）成立，也就是说，
+
+\[
+\begin{array}{r l} & {\partial^ {n} (f) (x _ {0}, \ldots , x _ {n}) = x _ {0} f (x _ {1}, \ldots , x _ {n})} \\ & {\qquad + \sum_ {i = 0} ^ {n - 1} (- 1) ^ {i + 1} f (x _ {0}, \ldots , x _ {i - 1}, x _ {i} x _ {i + 1}, x _ {i + 2}, \ldots , x _ {n})} \\ & {\qquad \qquad \qquad \qquad \qquad + (- 1) ^ {n + 1} f (x _ {0}, \ldots , x _ {n - 1}) x _ {n}.} \end{array}\tag{10}
+\]
+
+由 (7) 与 (9)，我们有
+
+\[
+\partial^ {n + 1} \circ \partial^ {n} = 0 \quad \text {   for   every   } n \geqslant 0.\tag{11}
+\]
+
+我们把 K-模 \(\operatorname{Ker} \partial^0\) 记作 \(\mathrm{H}^0(\mathrm{A},\mathrm{P})\)，而对 \(n \geqslant 1\)，把 K-模 \(\operatorname{Ker} \partial^n/\operatorname{Im} \partial^{n-1}\) 记作 \(\mathrm{H}^n(\mathrm{A},\mathrm{P})\)。我们把 K-模 \(\mathrm{C}^0(\mathrm{A},\mathrm{P})\) 与 \(\mathrm{P}\) 等同起来，并且我们有 \(\mathrm{C}^1(\mathrm{A},\mathrm{P}) = \operatorname{Hom}_\mathrm{K}(\mathrm{A},\mathrm{P})\)。诸映射 \(\partial^n\)（对 \(n \leqslant 2\)）由下述公式给出
+
+\[
+\partial^ {0} (p) (a) = a p - p a \qquad \mathrm{for\ every} p \in \mathrm{P},\tag{12}
+\]
+
+\[
+\partial^ {1} (f) \left(a, a ^ {\prime}\right) = a f \left(a ^ {\prime}\right) - f \left(a a ^ {\prime}\right) + f (a) a ^ {\prime} \quad \text { for } f \in \mathrm{C} ^ {1} (\mathrm{A}, \mathrm{P}),\tag{13}
+\]
+
+\[
+\partial^ {2} (f) \left(a, a ^ {\prime}, a ^ {\prime \prime}\right) = a f \left(a ^ {\prime}, a ^ {\prime \prime}\right) - f \left(a a ^ {\prime}, a ^ {\prime \prime}\right) + f \left(a, a ^ {\prime} a ^ {\prime \prime}\right) - f \left(a, a ^ {\prime}\right) a ^ {\prime \prime}\tag{14}
+\]
+
+对 \(f \in \mathrm{C}^2(\mathrm{A},\mathrm{P})\) 成立。
+
+于是 \(H^{0}(A,P)\) 是 P 的由满足对每个 \(a \in A\) 有 ap = pa 的元素 p 组成的 K-子模，而 \(H^{1}(A,P)\) 是从 A 到 P 的 K-导子所成的 K-模 \(\mathrm{Der}_{\mathrm{K}}(\mathrm{A},\mathrm{P})\)（III, §10, No.~2, 第 553 页）模去由形如 \(a \mapsto ap - pa\)（其中 \(p \in P\)）的导子组成的 K-子模所得的商（这些导子称为内导子）。
+

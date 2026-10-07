@@ -1,0 +1,401 @@
+\exercisegroup
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  向量空间 E 的子集 A 称为关于 0 的星形集，如果对每个 \(x \in \mathbf{A}\) 以及每个 \(\lambda\)（\(0 \leqslant \lambda < 1\)），点 \(\lambda x\) 都属于 A。设 A 是星形集，且对每个 \(x \in \mathbf{A}\)，存在 \(\mu > 1\) 使 \(\mu x \in \mathbf{A}\)。证明：若对 A 的每一对点 \(x, y\) 都有 \(\frac{1}{2}(x + y) \in \mathbf{A}\)，则 A 是凸的。给出一个非凸星形集 A 的例子，使 \(\frac{1}{2}(\mathbf{A} + \mathbf{A}) \subset \mathbf{A}\)。
+\item
+  设 A 是仿射空间 E 的一个凸子集，B 是包含 A 的一个集合。证明：在既包含 A 又含于 B 的那些凸集之中，至少存在一个极大集；给出一个其中存在多个互异极大集的例子。
+\item
+  设 A 与 B 是向量空间 E 中两个不相交的凸集。证明：存在 E 中两个不相交的凸集 C、D，使 \(A \subset C\)、\(B \subset D\) 且 \(C \cup D = E\)。（对由满足 \(A \subset M\) 与 \(B \subset N\) 的不相交凸集对 (M, N) 所成的集，应用 S, III, § 2.4 的 th. 2，并用关系 \(0 \notin M - N\) 表达 M 与 N 不相交这一事实。为证 \(C \cup D = E\)，假设 \(x_{0} \notin C \cup D\) 而得出矛盾；若 \(C'\)（相应地 \(D'\)）是 \(C \cup \{x_{0}\}\)（相应地 \(D \cup \{x_{0}\}\)）的凸包，则证明 \(C' \cap D \neq \varnothing\) 与 \(C \cap D' \neq \varnothing\) 不可能同时成立。）
+\item
+  设 C 是向量空间 E 中以 0 为顶点的凸锥；若 \((x_{i})_{1\leqslant i\leqslant n}\) 是 C 中点的有限族，使得 \(\sum_{i = 1}^{n}\lambda_{i}x_{i} = 0\) 对某一族数 \(\lambda_{i} > 0\) 成立，则 C 包含由诸 \(x_{i}\) 生成的 E 的向量子空间。
+\item
+  设向量空间 E 具有可数无穷基 \((e_{n})_{n\in\mathbb{N}}\)。设 C 是满足以下条件的点 \(x = \sum_{n} \xi_{n} e_{n}\) 所成的集：对使 \(\xi_{n} \neq 0\) 的最大指标 n，有 \(\xi_{n} > 0\)。证明：C 是尖凸锥，满足 \(C \cap (-C) = \{0\}\) 且 \(C \cup (-C) = E\)；由此推出，C 是 E 中关于某个序结构 \(\geqslant 0\) 的元素所成之集，该序结构与 E 的向量空间结构相容，且使 E 成为全序集。证明：在这个序向量空间上，仅有的正线性型是 0。
+\item
+  设 E 是维数 \(\geqslant 2\) 的仿射空间，f 是 E 到自身上的一个双射；证明：若 E 的每个凸子集在 f 下的像也是凸集，则 f 是仿射线性映射（考察 f 的逆映射，并注意闭线段是包含其两个端点的诸凸集之交；参见 A, II, § 9, 习题 7）。
+\item
+  给出两个凸集 \(\mathbf{A} \subset \mathbf{R}\)、\(\mathbf{B} \subset \mathbf{R}^2\) 的例子，使得凸集 \(\mathbf{A} \times \mathbf{B}\) 在双线性映射 \((\lambda, x) \mapsto \lambda x\)（由 \(\mathbf{R} \times \mathbf{R}^2\) 到 \(\mathbf{R}^2\) 中）下的像不是凸的。
+\item
+  设 \((\mathbf{A}_i)_{1 \leqslant i \leqslant p}\) 是向量空间 \(E\) 中凸子集的有限族；设 \(\mathbf{W}_i\) 是由 \(\mathbf{A}_i\) 生成的仿射线性流形经平移而得的子空间（\(1 \leqslant i \leqslant p\)）。若 \(\mathbf{W} = \sum_{i=1}^{p} \mathbf{W}_i\)，证明：凸集 \(\sum_{i=1}^{p} \lambda_i \mathbf{A}_i\)（其中诸 \(\lambda_i\) 是非零数）所生成的仿射线性流形可由 \(\mathbf{W}\) 经平移而得。
+\end{enumerate}
+
+¶ 9) 设 A 是空间 \(\mathbf{R}^n\) 的一个子集。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明：A 的凸包与形如 \(\sum_{i=0}^{n} \lambda_i x_i\) 的点所成之集一致，其中 \(x_i \in \mathbf{A}\)、\(\lambda_i \geqslant 0\)（对 \(0 \leqslant i < n\)），且 \(\sum_{i=0}^{n} \lambda_i = 1\)。（先建立下述引理：若 \(p + 1\) 个点 \(x_i\)（\(0 \leqslant i \leqslant p\)）构成一个仿射相关的系（也就是说，存在关系 \(\sum_{i=0}^{p} \beta_i x_i = 0\)，其中诸 \(\beta_i\) 不全为零，且 \(\sum_{i=0}^{p} \beta_i = 0\)），又若 \(x = \sum_{i=0}^{p} \alpha_i x_i\)，其中诸 \(\alpha_i\) 均 \(\geqslant 0\) 且 \(\sum_{i=0}^{p} \alpha_i = 1\)，则存在一个指标 \(k \leqslant p\) 与 \(p\) 个数 \(\gamma_i\)（\(0 \leqslant i \leqslant p\)，\(i \neq k\)），使得 \(\gamma_i \geqslant 0\) 对一切 \(i\) 成立、\(\sum_{i \neq k} \gamma_i = 1\)，且 \(x = \sum_{i \neq k} \gamma_i x_i\)；为此，比较诸 \(\alpha_i / \beta_i\) 中有定义的那些。）b) 设 \(a\) 是 A 的凸包中的一点，它不属于 A 的任何至多含 \(n\) 个点的子集的凸包。证明：此时 A 至少含有 \(n + 1\) 个连通分支。（不妨设 \(a = 0\)；设 \((b_i)_{0 \leqslant i \leqslant n}\) 是 A 中 \(n + 1\) 个仿射无关的点所成的族，使得 0 属于诸 \(b_i\) 的凸包（参见 a)）。对每个指标 \(i\)，设 \(C_i\) 为由诸 \(b_j\)（其中 \(j \neq i\)）生成的、以 0 为顶点的尖凸锥；证明 A 不与任何一个锥 - \(C_i\) 的边界相交。）c) 若 C 是 \(\mathbf{R}^n\) 中以 0 为顶点的尖锥，证明：C 的凸包是形如 \(\sum_{i=1}^{n} x_i\) 的点所成之集，其中 \(x_i \in C\)（\(1 \leqslant i \leqslant n\)）。
+\end{enumerate}
+
+¶ 10) 设 C 是 \(\mathbf{R}^n\) 的子集 A 的凸包，\(a\) 为 C 的一个内点。证明：存在 \(2n\) 个点 \(x_i \in \mathrm{A}\)（\(1 \leqslant i \leqslant 2n\)），使 \(a\) 是 \(\mathrm{C}_0\)（诸 \(x_i\) 的凸包）的内点。（设 \(a = 0\)，并对 \(n\) 作归纳，注意由习题 \(9a\) ) 知，存在 A 的 \(k + 1\) 个点 \(y_j\)（\(0 \leqslant j \leqslant k\)，\(1 \leqslant k \leqslant n\)）构成的仿射无关集，使得若 V 是由诸 \(y_j\) 生成的仿射线性流形，则 \(0 \in \mathrm{V}\)，且相对于 V，0 是诸 \(y_j\) 所成之集的凸包的内点。然后把 C 投影到 E/V 上，并证明 0 是该投影相对于 E/V 的内点。）证明：在上述命题中，\(2n\) 不能换成 \(2n - 1\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    证明：在空间 \(\mathbf{R}^n\) 中，每个凸集 \(\mathbf{A}\)（其维数为 \(n\)）至少包含一个内点（考察由 \(n + 1\) 个 \(\mathbf{A}\) 中的点组成的仿射无关系）。由此推出，若 \(\mathbf{A}\) 在 \(\mathbf{R}^n\) 中处处稠密，则 \(\mathbf{A} = \mathbf{R}^n\)。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 E 是赋范空间 \(l^1(\mathbf{N})\)（由实数 \(x = (\xi_n)\) 的绝对收敛级数组成；I, 第 4 页）；证明：由诸 \(x\)（\(\xi_n \geqslant 0\)，对每个指标 \(n\)）所成之集 P 是一个真凸锥，它生成 E 但不含任何内点。
+\item
+  设 E 是一个 Hausdorff 拓扑向量空间，其上存在一个不连续的线性型 \(f\)（参见 II, 第 86 页, 习题 17, a)）。证明：由关系 \(f(x) \geqslant 0\) 与 \(f(x) < 0\) 定义的集 A 与 B 都是凸的、非空的、互为余集的、处处稠密的，且它们各自（在代数意义上）生成 E。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\item
+  证明：在空间 \(R^{n}\) 中，凸集为闭集的充要条件是：它与每条直线的交是闭的（参见 II, 第 74 页, 习题 5）。
+\item
+  证明：在空间 \(\mathbf{R}^n\) 中，每个非空开凸集都同胚于 \(\mathbf{R}^n\)（利用 GT, VI, § 2, 习题 12）。
+\item
+  设 A 是 E（一个 Hausdorff 拓扑向量空间）中一个非空的闭凸子集。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：对每个 \(a \in \mathbf{A}\)，集 \(\bigcap_{\lambda > 0} \lambda(\mathbf{A} - a)\) 是 \(\mathbf{E}\) 中以 0 为顶点的闭凸锥，且与 \(a\) 无关。称它为 \(A\) 的渐近锥，记作 \(C_A\)。对每个 \(a \in A\)，集 \(a + C_A\) 是 \(\{a\}\) 与包含在 \(A\) 中且以 \(a\) 为端点的那些开半直线之并。
+\item
+  若 \(x, y\) 是 \(\mathbf{A}\) 中两点，使 \((x + \mathrm{C}_{\mathbf{A}}) \cap (y + \mathrm{C}_{\mathbf{A}})\) 是一个顶点 \(z \in \mathbf{A}\) 的锥，则此锥必为 \(z + \mathrm{C}_{\mathbf{A}}\)。
+\item
+  若 B 是 E 的另一个闭凸子集，使 \(A \cap B \neq \varnothing\)，则 \(C_{A \cap B} = C_{A} \cap C_{B}\)。d) 设 \(V_{A}\) 是含于 \(C_{A}\) 内的最大向量子空间（它在 E 中必然是闭的）。证明：若 \(\phi\) 是 E 到 \(E/V_{A}\) 上的典范同态，则 \(A = \phi^{-1}(A_{0})\)，其中 \(A_{0}\) 是 \(E/V_{A}\) 中一个不含任何直线的闭凸集。
+\item
+  在由 N 到 R 中的有界映射所成的 Banach 空间 \(\mathcal{B}(\mathbf{N})\)（I, 第 4 页）中，给出一个无界闭凸集 A 的例子，使 \(C_{A} = \{0\}\)，且使得对 E 中每个 \(b \neq 0\)，存在一个整数 k 使 \((\mathbf{A} + kb) \cap \mathbf{A} = \varnothing\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 A 是 Hausdorff 拓扑向量空间 E 的一个闭凸子集。若对某点 \(x_0 \in \mathbf{A}\)，存在 \(\mathbf{V}\)（\(x_0\) 在 \(\mathbf{E}\) 中的一个邻域），使 \(\mathbf{V} \cap \mathbf{A}\) 是紧的，则证明 \(\mathbf{A}\) 是局部紧的。由此推出：局部紧凸集在 \(\mathbf{E}\) 中的闭包是局部紧的。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 A 是 E 中局部紧但非紧的闭凸集；证明：渐近锥（习题 14）不是单点集 \(\{0\}\)。
+\end{enumerate}
+
+¶ 16) 设 A、B 是 Hausdorff 拓扑向量空间 E 的两个闭凸子集。再设 B 是局部紧的，且 \(C_A \cap C_B = \{0\}\)。证明：A - B 在 E 中是闭的。（设 \(b \in B\)，并设 W 是 E 中 0 的一个闭邻域，使 \(B \cap (b + W)\) 是紧的。设 \(c \in \overline{A - B}\)；对 E 中 0 的每个邻域 V，考察集 \(M_V\)——由 \(y \in B\) 中使 \(A \cap (c + y + V) \neq \emptyset\) 的那些 y 组成。分两种情形讨论：或者存在一个 V 使 \(M_V\) 相对紧，或者不存在这样的 V；在第二种情形，考察由诸集 \(P_{V,n} = M_V \cap \complement (b + nW)\) 组成的滤子基，其中 V 取遍 E 中 0 的闭邻域所成之集，n 取遍 N；作以 b 为顶点、由 \(P_{V,n}\) 生成的锥，以及它与 \(b + W\) 的边界的交。）
+
+¶ 17) 在 Hausdorff 拓扑向量空间 E 中，称闭凸集 A 为抛物的，如果对每个 \(z \notin A\)，每条以 \(z\) 为起点且含于 \(z + C_A\) 中的半直线都与 A 相交。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  给出 \(\mathbf{R}^2\) 中一个抛物凸集 A 的例子，使 \(C_A\) 不只是一条半直线。b) 设 A 是 E 中一个闭凸集，满足 \(C_A \neq \{0\}\)，但 A 不是抛物的。证明：若 \(z \notin A\) 使 \(z + C_A\) 含有一条以 \(z\) 为端点且不与 A 相交的半直线 D，则 \(A \cup \{z\}\) 的凸包与以 \(z\) 为顶点、由 A 生成的尖锥在 E 中都不是闭的。
+\end{enumerate}
+
+进一步，若 \(\mathbf{D}'\) 是以 \(z\) 为起点且与 \(\mathbf{D}\) 相反的闭半直线（于是 \(\mathbf{D} = 2z - \mathbf{D}'\)），则 \(\mathbf{D}' + \mathbf{A}\) 在 \(\mathbf{E}\) 中不是闭的，且存在一个平面 \(\mathbf{P}\)（包含 \(\mathbf{D}\)）与一个闭凸集 \(\mathbf{B} \subset \mathbf{P}\)，使 \(\mathbf{B} \cap \mathbf{A} = \varnothing\)，但 \(\mathbf{B}\) 与 \(\mathbf{P} \cap \mathbf{A}\) 的距离（关于 \(\mathbf{P}\) 上任一范数）为零。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  在 E 中，设 A 是局部紧且抛物的闭凸集；证明：若 \(\mathbf{B} \subset \mathbf{E}\) 是闭的且凸的，则 \(\mathbf{A} - \mathbf{B}\) 是闭的（与习题 16 同法）。
+\item
+  设 A、\(A'\) 是 E 中两个局部紧且抛物的闭凸子集；证明：\(A \cup A'\) 的凸包在 E 中是闭的（与习题 16 同法）。在 \(\mathbf{R}^2\) 中给出一个例子，其中 \(\mathbf{A}\) 是抛物的，\(\mathbf{A}'\) 非抛物，而 \(\mathbf{A} \cup \mathbf{A}'\) 的凸包在 \(\mathbf{R}^2\) 中不是闭的。
+\item
+  在 E 中，设 A 是局部紧且抛物的闭凸集；证明：对所有 \(z \notin \mathbf{A}\)，以 \(z\) 为顶点、由 A 生成的尖凸锥在 E 中是闭的（利用 \(d\)）。
+\end{enumerate}
+
+\(f\) ) 设 \(\mathbf{E}_1, \mathbf{E}_2\) 是两个 Hausdorff 拓扑空间，\(\mathbf{A}_1\)（相应地 \(\mathbf{A}_2\)）是 \(\mathbf{E}_1\)（相应地 \(\mathbf{E}_2\)）中的一个闭凸集，且是抛物的。证明：集 \(\mathbf{A}_1 \times \mathbf{A}_2\) 在 \(\mathbf{E}_1 \times \mathbf{E}_2\) 中是抛物的。
+
+* g) 证明：无穷维的桶型空间不包含既局部紧又非紧的抛物闭凸集。
+
+\(h\) ) 设 \(\mathrm{E}_0 = l^2 (\mathbf{N})\)；在 \(\dot{\mathrm{E}}_0\) 中，设 \(\mathbf{K}\) 是这样的点 \(x = (\xi_n)\) 所成之集：\(|\xi_n| \leqslant 1 / (n + 1)\) 对一切 \(n\) 成立；\(\mathbf{K}\) 是紧的。以 0 为顶点、由 \(\mathbf{K}\) 生成的锥 E 是 \(\mathrm{E}_0\) 的一个向量子空间，且 \(\mathbf{K}\) 在 E 中是吸收的。设 \(p\) 为 \(\mathbf{K}\) 在 E 中的度规；它是一个下半连续函数。在赋范乘积空间 \(\mathrm{E} \times \mathbf{R}\) 中，证明：由点 \((x, \zeta)\)（\(\zeta \geqslant (p(x))^2\)）所成的集 A 是闭的、凸的、抛物的且局部紧的。证明：\(\mathrm{A} + (-\mathrm{A})\) 与 \(\mathrm{A} \cup (-\mathrm{A})\) 的凸包都不是局部紧的。 *
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{17}
+\item
+  设 \(\mathbf{C}\) 是 \(\mathbf{R}^n\) 中以 0 为顶点的一个真闭凸锥。证明：集 \(\mathbf{C} \cap \mathbf{S}_{n-1}\) 在球面 \(\mathbf{S}_{n-1}\) 上的余集同胚于 \(\mathbf{R}^{n-1}\)（从 \(\mathbf{C} \cap \mathbf{S}_{n-1}\) 的一点出发作球极投影，并利用 GT, VI, § 2, 习题 12）。若 \(\mathbf{C}\) 含有一个内点，证明：\(\mathbf{C} \cap \mathbf{S}_{n-1}\) 同胚于闭球 \(\mathbf{B}_{n-1}\)（同法）。
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    设 \(\mathbf{A}\) 是 \(\mathbf{R}^n\) 中一个无界的闭凸集，它不含任何直线，但含有一个内点。证明：\(\mathbf{A}\) 的边界同胚于 \(\mathbf{R}^{n-1}\)（利用习题 15, b) 与 18）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在 Hausdorff 拓扑向量空间 E 中，设 A 是一个不含任何直线且维数 \(\geqslant 2\) 的闭凸集。证明：A 的边界是连通的（利用 a) 与 GT, VI, § 2, 习题 12）。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{19}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    在向量空间 E 中，设 A 是一个凸集，它生成 E，且与每条直线交成一个相对于该直线为闭的集。证明：下列条件等价：
+  \end{enumerate}
+\end{enumerate}
+
+\(\alpha)\) 存在一条直线 D，使 D 与 A 交成一个非空的紧线段。
+
+β) 存在一条直线 D，使每条与 D 平行的直线都与 A 交成一个紧线段。
+
+\(\gamma)\) A 异于 E，且不是由 \(\tilde{\mathbf{E}}\) 的一个超平面所确定的半空间。
+
+（为证 \((\gamma) \Rightarrow (\alpha)\)，利用 II, 第 67 页, 习题 14, \(d\) )，并化归到 \(\mathbf{E} = \mathbf{R}^2\) 的情形。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在 Hausdorff 拓扑向量空间 E 中，设 A 是一个含内点的闭凸集。证明：若 A 的边界是一个非空的线性流形，则 A 是一个闭半空间（利用 II, 第 67 页, 习题 14, d) 证明 A 的边界必为一个超平面，然后应用 a)）。
+\end{enumerate}
+
+¶ 21) a) 设 \(\mathrm{A}_i\)（\(1 \leqslant i \leqslant r\)，\(r > n + 1\)）是 \(\mathbf{R}^n\) 中凸子集的一个族，使得其中任何 \(r - 1\) 个 \(\mathrm{A}_i\) 都有非空的交；证明：这 \(r\) 个集 \(\mathrm{A}_i\) 有非空的交（Helly 定理）。（设 \(x_i\) 是诸 \(\mathrm{A}_j\)（其指标 \(j \neq i\)）的交中的一个点；
+
+存在 \(r\) 个数 \(\lambda_{i}\)，它们不全为零，且满足 \(\sum_{i=1}^{r} \lambda_{i} = 0\) 与 \(\sum_{i=1}^{r} \lambda_{i} x_{i} = 0\)；
+
+在最后这个等式中，把 \(\lambda_{i} \geqslant 0\) 的那些项移到一边，把 \(\lambda_{i} < 0\) 的那些项移到另一边。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  给定 \(\mathbf{R}^n\) 中紧凸集的一个族，证明：若该族中任意取出 \(n + 1\) 个集，其交都非空，则该族全部集的交非空。
+\item
+  在 \(\mathbf{R}^n\) 中，设 \(\mathbf{K}\) 是一个凸集，\((\mathbf{A}_i)_{1 \leqslant i \leqslant r}\) 是 \(r > n + 1\) 个凸集所成的族。假设对任意选取的 \(n + 1\) 个指标 \((i_k)\)（每个都小于或等于 \(r\)），存在 \(a \in \mathbf{R}^n\)，使 \(a + \mathbf{K}\) 包含每个 \(A_{i_k}\)。证明：此时存在 \(b \in \mathbf{R}^n\)，使 \(b + \mathbf{K}\) 包含所有的 \(\mathbf{A}_i\)。证明：若把“包含”换成“含于”或“交非空”，类似的结果仍成立。（对每个指标 \(i\)，考察集 \(\mathbf{C}_i\)：由那些 \(x \in \mathbf{R}^n\) 组成，它们使 \(x + \mathbf{K} \supset \mathbf{A}_i\)（或 \(x + \mathbf{K} \subset \mathbf{A}_i\)，或 \((x + \mathbf{K}) \cap \mathbf{A}_i \neq \emptyset\)）。推广到 \(\mathbf{R}^n\) 中紧凸集的任意族。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{21}
+\item
+  在 \(\mathbf{R}^2\) 中，考察由 \(2m\) 个形如 \((a_i, b_i')\)、\((a_i, b_i'')\) 的点所成的集，其中 \(b_i' \leqslant b_i''\)（\(1 \leqslant i \leqslant m\)）。设 \(n\) 是一个整数 \(< m - 2\)。为使存在一个多项式 \(\mathrm{P}(x)\)（次数 \(\leqslant n\)），满足 \(b_i' \leqslant \mathrm{P}(a_i) \leqslant b_i''\)（对 \(1 \leqslant i \leqslant m\)），只需：对每个族 \((i_k)_{1 \leqslant k \leqslant n + 2}\)（由 \(n + 2\) 个指标 \(i\) 组成），存在一个多项式 \(\mathrm{Q}(x)\)（次数 \(\leqslant n\)），使得 \(b_{i_k}' \leqslant \mathrm{Q}(a_{i_k}) \leqslant b_{i_k}''\) 对每个整数 \(k\)（\(1 \leqslant k \leqslant n + 2\)）成立。（利用习题 21, a)。）
+\item
+  证明：在拓扑向量空间中，开集的凸包是开集。
+\item
+  设 \(\mathbf{M}\) 是拓扑向量空间 \(\mathrm{E}\) 中一个处处稠密的凸集（参见 II, 第 66 页, 习题 11, c)）；证明：对每个闭超平面 \(\mathbf{H}\)（在 \(\mathbf{E}\) 中），集 \(\mathbf{H} \cap \mathbf{M}\) 在 \(\mathbf{H}\) 中稠密（对每个点 \(x_0 \in H\) 与 0 的每个均衡邻域 \(\mathbf{V}\)（在 \(\mathbf{E}\) 中），考察 \(x_0 + \mathbf{V}\) 与由 \(\mathbf{H}\) 确定的两个开半空间的交，并由此推出 \(x_0 + \mathbf{V} + \mathbf{V}\) 与 \(\mathbf{H} \cap \mathbf{M}\) 相交）。
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    证明：在拓扑向量空间中，每个有内点的凸集，其边界都是无处稠密的（利用 II, 第 14 页, prop. 16）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  在 Hausdorff 拓扑向量空间 E 中，设 A 是一个有内点的闭凸集，H 是包含 A 的一个内点的闭超平面。证明：H 与 A 的边界 F 的交是一个相对于 F 无处稠密的集（为证在 \(\mathbf{H} \cap \mathbf{F}\) 的每一点的每个邻域中都存在不属于 H 的 F 的点，化归到 E 为 2 维的情形）。
+\end{enumerate}
+
+¶ 26) 在 Hausdorff 拓扑向量空间 E 中，设 A 是一个连通的闭集，具有下列性质：对每个 \(x \in A\)，存在 \(x\) 在 E 中的一个闭邻域 V，使 V ∩ A 是凸的。证明：A 是凸的。为此，建立下列命题。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：A 的任意两点都可用 A 中的一条折线连接（与 GT, VI, § 1, 习题 6 同法）。
+\item
+  证明：若 A 中的两点可用 A 中一条含 n > 1 段的折线连接，则它们也可用 A 中一条含 n - 1 段的折线连接。（对 n 作归纳，化归到 n = 2 的情形，这等价于取 \(R^{2}\) 作为 E；设 T 是以 a、b、c 为顶点的三角形，使得闭线段 ac、bc 含于 A 中，而闭线段 ab 不含于 A 中；考察 \(\complement A\) 与 T 的内部之交的闭包中离直线 ab 最远的一点，并证明这样一个点的存在与假设矛盾。）
+\end{enumerate}
+
+¶ 27) a) 设 B 是 E（一个 Hausdorff 拓扑向量空间）中一个非空的闭凸子集，X 是 E 中一个非空的紧集。证明：若 A 是 E 的一个子集，使 \(A + X \subset B + X\)，则 \(A \subset B\)（若 \(a \in A\)，考察 X 的点列 \((x_{n})\)，它由关系 \(a + x_{n} = b_{n} + x_{n+1}\)（其中 \(b_{n} \in B\)）归纳地定义）。由此推出，若 A、B 是 E 的两个非空子集，则利用 E 中的距离与 GT, IX, § 2, 习题 6 的程序，证明 \(A + X = B + X\) 蕴含关系 A = B。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  设 E 是一个赋范空间，\(\sigma\) 是利用 E 中的距离以及 TG, IX, 第 91 页, 习题 6 的程序，在 E 的非空闭子集所成之集 \(\mathfrak{F}(E)\) 上定义的距离函数。证明：若 A、B、C 是 E 中三个非空紧凸集，则 \(\sigma(A+C, B+C)=\sigma(A, B)\)（若 \(S_{\lambda}\) 是由 \(\|x\|\leqslant\lambda\) 定义的球，注意 \(A+S_{\lambda}\) 与 \(B+S_{\lambda}\) 都是闭凸集，并用 a)）。
+\item
+  由 a) 与 b) 推出：赋范空间 E 的非空紧凸子集所成之集 \(\Re(\mathrm{E})\)，赋以距离 \(\sigma\) 后，可以等同于一个赋范空间中的一个锥，该空间的合成法则在 \(\Re(\mathrm{E})\) 上诱导出法则 \((\mathrm{A}, \mathrm{B}) \to \mathrm{A} + \mathrm{B}\) 与 \((\lambda, \mathrm{A}) \to \lambda\mathrm{A}\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{27}
+\tightlist
+\item
+  设 \(f\) 是定义在凸子集 \(A\)（向量空间 \(E\) 的）上的一个凸函数。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：若 \(\mathbf{A}\) 是吸收的且 \(f\) 不是常数，则 \(f\) 不能在点 0 处达到它在 \(\mathbf{A}\) 中的上确界。
+\item
+  证明：A 中使 \(f\) 达到其在 A 中下确界的那些点所成的子集是凸的。
+\end{enumerate}
+
+¶ 29) 设 E 是一个 Hausdorff 拓扑向量空间，C 是 E 中一个以 0 为顶点的非尖非空开凸锥。用 V 记 0 在 E 中的一个凸邻域。若 f 是在 C ∩ V 中定义且上有界的凸函数，证明：\(f(x)\) 当 x 趋于 0（其中 \(x \in C \cap V\)）时趋于一个有限极限。（设 \(\beta = \limsup_{x \to 0, x \in C \cap V} f(x)\)；设法得出矛盾，
+
+即假设对某个 \(\alpha > 0\) 与每个邻域 \(\mathbf{W}\)（\(0\) 的），存在一点 \(y \in \mathbf{C} \cap \mathbf{V} \cap \mathbf{W}\)，使 \(f(y) < \beta - \alpha\)。证明：存在 \(a \in \mathbf{C} \cap \mathbf{V}\)，使 \(f(\rho a) \geqslant \beta - \frac{1}{2}\alpha\) 对 \(0 < \rho \leqslant 1\) 成立；由此推出：在连接一点 \(\rho a\)（\(\rho\) 充分小）与一点 \(y\)（属于 \(\mathbf{C} \cap \mathbf{V}\)，满足 \(f(y) < \beta - \alpha\)，且充分接近 \(0\)）的直线上，存在 \(\mathbf{C} \cap \mathbf{V}\) 中的点，在该处 \(f\) 任意大。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{29}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    给出一个凸函数的例子：它定义在 \(R^{2}\) 的一个紧凸子集 K 上，在 K 中有界且下半连续，但在 K 的边界上一点处不连续（考察一个以 0 为边界点的圆盘的度规）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  由 \(a\) 推出一个凸函数的例子：它定义在一个开半平面 \(\mathbf{D}\)（\(\mathbb{R}^2\) 的）中，在 \(\mathbf{D}\) 中不上有界，且在 \(\mathbf{D}\) 的一个边界点处不趋于极限。
+\item
+  由 a) 推出一个下半连续凸函数的例子：它定义在 \(R^{2}\) 的一个紧凸子集 A 上，但在 A 中不上有界。（取 A 为由点 \((\xi, \eta)\) 所成之集，其中 \(\xi^{4} \leqslant \eta \leqslant 1\)（在 \(R^{2}\) 中）。）
+\end{enumerate}
+
+¶ 31) 设 \(x_0\) 是 A（Hausdorff 拓扑向量空间 E 的一个非空凸子集）的闭包中的一点。设 \(f\) 是定义在 A 上的一个凸函数。用 \(\mathfrak{D}\) 表示以 \(x_0\) 为起点的闭半直线 D 所成之集，其中 \(A \cap D\) 包含一个以 \(x_0\) 为端点的开线段。诸半直线 \(D \in \mathfrak{D}\) 之并 C 是一个以 \(x_0\) 为顶点的凸锥。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明：对每条固定的 \(\mathbf{D} \in \mathfrak{D}\)，当 \(x\) 趋于 \(x_0\)（\(x \in \mathbf{D} \cap \mathbf{A}\) 且 \(x \neq x_0\)）时，\(f(x)\) 或者趋于一个有限极限，或者趋于 \(+\infty\)。
+\item
+  设 \(\mathfrak{I}\) 是由那些 \(D \in \mathfrak{D}\) 组成的子集，对它们 \(f(x)\) 在 \(a\) 中的极限为 \(+\infty\)；若 \(x_0 \in A\)，则 \(\mathfrak{I}\) 为空。证明：\(\mathfrak{I}\) 不能包含两条相反的半直线；若 \(D\) 与 \(D'\) 是 \(\mathfrak{I}\) 中两条不同的半直线，而 \(P\) 是由 \(D\) 与 \(D'\) 确定的平面，那么，或者每条半直线 \(D''\)（\(\mathfrak{D}\) 中位于 \(P\) 内的）都属于 \(\mathfrak{I}\)，或者 \(D\) 与 \(D'\) 是 \(\mathfrak{I}\) 中位于 \(P\) 内仅有的两条半直线。由此推出：若 \(\mathfrak{I} \neq \mathfrak{D}\)，则没有一条半直线 \(D \in \mathfrak{I}\) 包含锥 \(C\) 相对于由 \(C\) 生成的向量子空间的代数内点（II, 第 26 页）。
+\item
+  设 \(\mathfrak{F}\) 是 \(\mathfrak{D}\) 中不属于 \(\mathfrak{I}\) 的半直线所成之集。证明：\(\mathfrak{F}\) 的诸半直线之并是一个凸锥，且对每条半直线 \(\mathrm{D} \in \mathfrak{F}\)，\(f(x)\)（在 \(a\) ) 中定义的）的极限与 \(\mathrm{D}\) 无关（利用上面的习题 29）；进一步，若 \(x_0 \in \mathrm{A}\)，则此极限 \(\leqslant f(x_0)\)，且它等于 \(f(x_0)\)（当 \(\mathfrak{F}\) 包含两条相反的半直线时）。
+\end{enumerate}
+
+\(d\) ) 设 \(f\) 是 \(\mathbf{E}\) 上一个不连续的线性型（参见 II, 第 86 页, 习题 17, \(a\) )），并取 \(\mathbf{A} = \mathbf{E}\)；证明：每条以 \(x_0\) 为起点的闭半直线都属于 \(\mathfrak{F}\)，但是
+
+\[
+\lim _ {x \to x _ {0}} \inf f (x) = - \infty \text { and } \lim _ {x \to x _ {0}} \sup f (x) = + \infty
+\]
+
+（利用 II, 第 18 页, prop. 21）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{31}
+\item
+  设 \(\mathbf{K}\) 是 Hausdorff 拓扑向量空间 \(\mathbf{E}\) 中一个紧凸集，\(f\) 是定义在 \(\mathbf{K}\) 上的一个上半连续凸函数。证明：\(f\) 在 \(\mathbf{K}\) 上有界。（首先注意 \(f\) 在 \(\mathbf{K}\) 中上有界；若 \(f\) 不是下有界的，证明 \(\liminf_{y\to x,y\neq x}f(y) = -\infty\) 对每一点 \(x\in \mathbf{K}\) 成立，而这与 Baire 定理矛盾。）给出一个 \(f\) 不连续的例子。
+\item
+  设 E 是一个有限维 Hausdorff 拓扑向量空间，K 是 E 的一个紧凸子集。证明：每个定义在 K 上的凸函数都在 K 中下有界（比较习题 31, d)）。
+\item
+  设 U、V 是 Hausdorff 拓扑向量空间 E 中两个开凸集，满足 \(\overline{V} \subset U\)，且 U 不含任何半直线。设 F 是在 \(\overline{U}\) 中定义的凸函数所成的一个集，在 U 的边界上一致上有界，在 V 的边界上一致下有界。证明：F 是等度连续的。
+\item
+  设 U 是 \(R^{n}\) 中一个非空开凸集，F 是定义在 U 上的凸函数所成的一个集。设 \(\Phi\) 是 F 上的一个滤子，它在 U 中逐点收敛于一个有限函数 \(f_{0}\)；证明：\(\Phi\) 在 U 的每个紧子集上一致收敛于 \(f_{0}\)（利用习题 34）。
+\item
+  设 A 是 \(\mathbf{R}^n\) 中一个紧凸集，B 是它在子空间 \(\mathbf{R}^{n-1}\)（等同于方程为 \(\xi_n = 0\) 的超平面）上的投影。证明：存在两个定义在 B 上的凸函数 \(f_1, f_2\)，使 A 与由点 \((x, \zeta)\)（\(\mathbf{R}^n\) 中满足 \(x \in \mathbf{B}, y \in \mathbf{R}\) 且 \(f_1(x) \leqslant \zeta \leqslant -f_2(x)\) 的）所成之集一致。
+\item
+  设 E 是一个向量空间；为使 \(E \times R\) 的凸集 F 由点对 \((x, \zeta)\)（满足 \(f(x) \leqslant \zeta\)（相应地 \(f(x) < \zeta\)））组成，其中 f 是定义在 E 的凸子集 X 上的凸函数，其充要条件是：F 在 E 上的投影等同于 X，且对所有 \(x \in X\)，F 中投影到 x 上的点所成之集 \(F(x)\) 是一个向右无界（即不上有界）的闭（相应地开）区间。
+\item
+  设 \(\mathbf{X}\) 是仿射空间 \(\mathbf{E}\) 的一个凸集，\(p\) 是 \(\mathbf{E}\) 到第二个仿射线性空间 \(\mathbf{E}_1\) 中的一个仿射线性映射。记 \(\mathbf{X}_1 = p(\mathbf{X})\)。对每个实值函数 \(f\)（定义在 \(\mathbf{X}\) 中）以及每个 \(x_1 \in \mathbf{X}_1\)，令
+\end{enumerate}
+
+\[
+f _ {1} (x _ {1}) = \inf _ {p (x) = x _ {1}} f (x).
+\]
+
+证明：若 \(f\) 是凸的，且 \(f_{1}(x_{1}) > -\infty\) 对所有 \(x_{1} \in X_{1}\) 成立，则 \(f_{1}\) 是凸函数。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{38}
+\tightlist
+\item
+  设 \(\mathbf{E}\) 是一个有限维 Hausdorff 拓扑向量空间。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  设 \(\mathfrak{F}(\mathrm{E})\) 是 E 的非空闭集所成的族，赋以由 E 的一致结构通过 GT, II, § 1, 习题 5, a) 的程序导出的一致结构。证明：E 的非空闭凸集所成之集 \(\mathfrak{C}(\mathrm{E})\) 在空间 \(\mathfrak{F}(\mathrm{E})\) 中是闭的。由此推出：若 K 是 E 中一个紧集，则 E 中含于 K 的非空闭凸集所成之集是 \(\mathfrak{C}(\mathrm{E})\) 中的一个紧集（参见 GT, § 4, 习题 11）。
+\item
+  设 \(\mathfrak{R}_0(\mathrm{E})\) 是 \(\mathrm{E}\) 中以 0 为内点的紧凸子集所成之集。对每个集 \(\mathrm{A} \in \mathfrak{R}_0(\mathrm{E})\)，设 \(p_{\mathrm{A}}\) 是 \(\mathrm{A}\) 的度规（II, 第 20 页）。证明：\(\mathrm{A} \mapsto p_{\mathrm{A}}\) 是 \(\mathfrak{R}_0(\mathrm{E})\)（\(\mathfrak{C}(\mathrm{E})\) 的一致子空间）到空间 \(\mathcal{C}_{c}(\mathrm{E};\mathbf{R})\)（\(\mathrm{E}\) 上连续实值函数的空间，赋以紧收敛的一致结构，GT, X, § 1.6）的一个子空间上的同构。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{39}
+\item
+  在拓扑向量空间 E 中，设 U 是 \(x_{0}\) 的一个凸邻域，f 是 U 中的一个实值连续凸函数。证明：存在一个凸邻域 \(V \subset U\)（\(x_{0}\) 的）以及 E 中一个凸连续函数 \(f_{1}\)，使 \(f_{1}|V = f|V\)。
+\item
+  设 H 是向量空间 E 中一个不含 0 的超平面，S 是含于 H 中的一个凸集。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  假设 S 与 H 中每条直线的交都是一个紧线段。设 \(a, b\) 是 E 中两个不同的点，使得存在两个数 \(\lambda > 0\)、\(\mu > 0\) 满足 \(b + \mu S \subset a + \lambda S\)；证明：若 \(c\) 是连接 \(a\) 与 \(b\) 的直线与平行于 H 且包含 \(a + \lambda S\) 的超平面 H' 的交点，则 \(c \in b + \mu S\)，且 \(b + \mu S\) 是 \(a + \lambda S\) 在以 \(c\) 为中心、把 \(a\) 变为 \(b\) 的位似下的像。（化归到 E 为 2 维的情形。）
+\item
+  在关于 S 的同样假设下，设 a、b 是 E 中两个不同的点，并假设存在一点 \(c \in E\) 与三个数 \(\lambda > 0\)、\(\mu > 0\)、\(v \geqslant 0\)，使 \((a + \lambda S) \cap (b + \mu S) = c + vS\)。证明：若 A（相应地 B）是以 a（相应地 b）为顶点、由 \(a + \lambda S\)（相应地 \(b + \mu S\)）生成的锥，而 \(H''\) 是过 c 且平行于 H 的超平面，则 \(H'' \cap A \cap B = \{c\}\)（利用 a)）。c) 假设 H 是由 S 生成的仿射线性流形。设 C 是以 0 为顶点、由 S 生成的锥。证明：下列两个条件等价：
+\end{enumerate}
+
+α) 对于 E 上以 C 为诸元素 ≥ 0 所成之集的那个序，E 是一个格。
+
+β) 对任意点 \(x, y\)（\(E\) 的）以及数 \(\lambda > 0\)、\(\mu > 0\)（使集 \((x + \lambda S) \cap (y + \mu S)\) 非空），存在 \(z \in E\) 与 \(\nu \geqslant 0\)，使这个集为 \(z + \nu S\)。
+
+（为证 \(\alpha\) ) 蕴含 \(\beta\) )，化归到 \(y = 0\) 的情形，并利用下述事实：若 \((s_i)\) 是 S 的点的一个有限族，\((\lambda_i)\) 是实数的一个族，使 \(\sum_{i} \lambda_i s_i = 0\)，则 \(\sum_{i} \lambda_i = 0\)。
+
+为证 \(\beta)\) 蕴含 \(\alpha)\)，利用 \(b)\)。
+
+当 S 满足等价条件 \(\alpha)\) 与 \(\beta)\) 时，我们说 S 是 E 中的一个单形。当 E 为有限维时，H 中仿射无关且生成 H 的有限点集的凸包是一个单形 *（逆命题亦真：参见 INT, II, 第 2 版, § 2, 习题 7)）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{41}
+\item
+  将 II, 第 16 页, prop. 18 推广到这样的有序集 E：它带有一个 Hausdorff 拓扑，使区间 \(\{a, \to (\text{和}) \gets, a\}\) 对所有 \(a \in E\) 都是闭的。
+\item
+  设 K 是一个完备赋值除环，其绝对值是超度的（ultrametric）。在 K 上的左向量空间 E 中，我们说集 A 是超凸的，如果关系 \(x \in A\)、\(y \in A\)、\(|\lambda| \leqslant 1\)、\(|\mu| \leqslant 1\) 蕴含 \(\lambda x + \mu y \in A\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  推广 II, 第 8 页与第 9 页的 prop. 1, 2, 5, 6, 7。证明：包含给定集 \(\mathbf{M}\) 的最小超凸集是线性组合 \(\sum_{\iota} \lambda_{\iota} x_{\iota}\) 所成之集，其中 \(x_{\iota} \in \mathbf{M}\) 且 \(|\lambda_{\iota}| \leqslant 1\)
+\end{enumerate}
+
+对所有 \(\iota\) 成立。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  假设 E 是 K 上的一个拓扑向量空间。证明：超凸集的闭包是超凸的，且有非空内部的超凸集是开集。
+\item
+  设 A 是 E 中一个吸收的且超凸的集。证明：若对所有 \(x \in E\) 令 \(p(x) = \inf_{x \in \mathbb{P}^{\mathbf{A}}} |\rho|\)，则 p 是 E 上的一个超半范数（II, 第 2 页）。把 II, 第 20 页, prop. 23 推广
+\end{enumerate}
+
+到 K 的绝对值由一个离散赋值给出的情形。
+

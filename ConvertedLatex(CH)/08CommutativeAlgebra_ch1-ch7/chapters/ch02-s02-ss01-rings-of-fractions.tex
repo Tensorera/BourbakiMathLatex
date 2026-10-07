@@ -1,0 +1,148 @@
+\subsection{分式环的定义}
+
+定义 1. 设 A 是环。若 A 的子集 S 使元素的每个有限乘积都属于 S，则称 S 为乘性子集。
+
+这等价于说 \(1 \in S\) 且 \(S\) 的两个元素的乘积属于 \(S\) 。
+% semantic-fragments: legacy-input-seam
+\relax{}
+\textbf{例}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  对每个 \(a \in \mathbf{A}\)，由 \(a^n\)（其中 \(n \in \mathbf{N}\)）所成的集合是 \(\mathbf{A}\) 的一个乘性子集。
+\item
+  设 \(\mathfrak{p}\) 是 \(\mathbf{A}\) 的一个理想。为使 \(\mathbf{A} - \mathfrak{p}\) 是 \(\mathbf{A}\) 的乘性子集，必须且只需 \(\mathfrak{p}\) 是素理想。
+\item
+  A 中不是零因子的元素所组成的集合是 A 的一个乘性子集。
+\item
+  若 S 与 T 是 A 的乘性子集，则由乘积 st（其中 \(s \in S\)，\(t \in T\)）组成的集合 ST 是一个乘性子集。
+\item
+  设 \(\mathfrak{S}\) 是 A 的乘性子集构成的一个（关于关系 \(\subset\) 的）定向集。则 \(T = \bigcup_{S \in \mathfrak{S}} S\) 是 A 的乘性子集，因为 T 的任意两个元素都属于某个子集 \(S \in \mathfrak{S}\)，从而其乘积属于 T。
+\item
+  A 的乘性子集的任意交都是乘性子集。
+\end{enumerate}
+
+对环 A 的任意子集 S，都存在包含 S 的 A 的乘性子集，例如 A 本身。所有这些子集的交是 A 的包含 S 的最小乘性子集；称它为由 S 生成的乘性子集。由此立即可知，它是由 S 的元素的一切有限乘积组成的集合。
+
+命题 1. 设 A 是环，S 是 A 的子集。存在一个环 A' 以及一个 A 到 A' 的同态 h，具有下列性质：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  \(h(\mathbf{S})\) 的元素在 \(\mathbf{A}'\) 中可逆；
+\item
+  对每个同态 \(u\)（\(\mathbf{A}\) 到环 \(\mathbf{B}\) 的同态），只要 \(u(\mathbf{S})\) 的元素在 \(\mathbf{B}\) 中可逆，就存在唯一的同态 \(u'\)（\(\mathbf{A}'\) 到 \(\mathbf{B}\)），使得 \(u = u' \circ h\)。
+\end{enumerate}
+
+换言之，\((A', h)\) 是泛映射问题（《集合论》第 IV 章，§ 3，第 1 节）在下列条件下的一个解：所考虑的结构种 \(\Sigma\) 是环的结构种，态射是环同态，而 \(\alpha\) -映射是 A 到某个环的同态，使得 S 在这样的同态下的像由可逆元组成。回忆（同前引），若 \((A', h)\) 与 \((A_{1}', h_{1})\) 都是该问题的解，则存在唯一的同构 \(j: A' \to A_{1}'\)，使得 \(h_{1} = j \circ h\)。
+
+设 \(\bar{S}\) 是由 S 生成的 A 的乘性子集。显然，上述泛映射问题的每个解也是把 S 换成 \(\bar{S}\) 后所得泛映射问题的解，反之亦然。
+
+在集合 \(\mathbf{A} \times \overline{\mathbf{S}}\) 中，考虑元素 \((a, s)\) 与 \((a', s')\) 之间的如下关系：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+ 「存在 \(t \in \overline{\mathbf{S}}\) 使得 \(t(sa' - s'a) = 0\)」。
+\end{enumerate}
+
+这一关系是一个等价关系：它显然是自反的、对称的；它也是传递的，因为若 \(t(sa' - s'a) = 0\) 且 \(t'(s'a'' - s''a') = 0\)，则 \(tt's'(sa' - s'a) = 0\) 且 \(tt's' \in \overline{\mathbb{S}}\)。设 \(A'\) 是 \(A \times \overline{S}\) 关于这一等价关系的商集；对每个有序对 \((a, s) \in A \times \overline{S}\)，我们用 \(a/s\) 表示 \((a, s)\) 在 \(A'\) 中的典范像，并且令 \(h(a) = a/1\)（对所有 \(a \in A\)）。我们将看到，可以在 \(A'\) 上定义一个环结构，使得有序对 \((A', h)\) 是该问题的解。
+
+设 \(x = a / s\) 与 \(y = b / t\) 是 \(A'\) 的两个元素。元素 \((ta + sb) / st\) 与 \(ab / st\) 只依赖于 \(x\) 和 \(y\)；因为若 \(x = a' / s'\)，则由假设存在 \(r \in \overline{\mathbb{S}}\) 使得 \(r(s'a - sa') = 0\)，由此
+
+\[
+r \left(s ^ {\prime} t (t a + s b) - s t \left(t a ^ {\prime} + s ^ {\prime} b\right)\right) = 0
+\]
+
+且 \(r(s'tab - sta'b) = 0\)。容易验证，合成律 \((x,y) \mapsto x + y = (ta + sb)/st\) 与 \((x,y) \mapsto xy = ab/st\) 在 \(A'\) 上定义了一个交换环结构，其中 0/1 是加法的中性元，1/1 是单位元。此外，立即可以看出 \(h\) 是环同态，且对所有 \(s \in S\)，\(s/1\) 在 \(A'\) 中可逆，其逆为 1/s。最后，设 B 是环，\(u: A \to B\) 是使 \(u(S)\) 的元素在 B 中可逆的同态；则存在唯一的映射 \(u': A' \to B\)，使得
+
+\[
+u ^ {\prime} (a / s) = u (a) (u (s)) ^ {- 1} \quad (a \in A, s \in \bar {S}).\tag{2}
+\]
+
+若 \(a / s = a' / s'\)，则存在 \(t \in \overline{S}\) 使得 \(t(sa' - s'a) = 0\)，由此 \(u(t)(u(s)u(a') - u(s'))u(a)) = 0\)，又因 \(u(t), u(s)\) 与 \(u(s')\) 可逆，故 \(u(a)(u(s))^{-1} = u(a')(u(s'))^{-1}\)。容易验证 \(u'\) 关于加法与乘法是同态；最后，显然 \(u' \circ h = u\)，且 \(u'\) 是满足这一关系的唯一同态，因为该关系蕴含
+
+\[
+u ^ {\prime} (a / s) = u ^ {\prime} ((a / 1) (1 / s)) = u ^ {\prime} (1 / s) u ^ {\prime} (a / 1) = u ^ {\prime} (1 / s) u (a)
+\]
+
+以及 \(1 = u'(1/1) = u'(s/1)u'(1/s) = u(s)u'(1/s)\)，由此即得公式 (2)。
+
+定义 2. 设 A 是环，S 是 A 的子集，\(\overline{\mathbf{S}}\) 是由 S 生成的乘性子集。由 S 定义的 A 的分式环，记作 \(\mathrm{A}[\mathrm{S}^{-1}]\)，是指 \(\mathrm{A} \times \overline{\mathrm{S}}\) 关于等价关系 (1) 的商集，并带有由下式定义的环结构
+
+\[
+(a / s) + (b / t) = (t a + s b) / s t, \quad (a / s) (b / t) = (a b) / (s t)
+\]
+
+其中 \(a, b\) 属于 A，\(s, t\) 属于 \(\bar{S}\)。A 到 A{[}S \(^{-1}\) {]} 的典范映射是同态 \(a \mapsto a/1\)，它使 A{[}S \(^{-1}\) {]} 成为 A 上的代数。
+
+本章中我们通常用 \(i_{A}^{S}\) 表示这一典范映射；命题 1 的证明表明，有序对 \((\mathrm{A}[\mathrm{S}^{-1}], i_{\mathrm{A}}^{\mathrm{S}})\) 满足该命题陈述中的条件。
+
+注
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  显然 \(\mathbf{A}[\overline{\mathbf{S}}^{-1}] = \mathbf{A}[\mathbf{S}^{-1}]\)。
+\item
+  A{[}S \(^{-1}\) {]} 的两个元素总可以写成 a/s 与 a'/s（a, a' 属于 A，s ∈ S）的形式，且具有相同的「分母」s；因为若 b/t 与 b'/t' 是 A{[}S \(^{-1}\) {]} 的两个元素，则 b/t = bt'/tt'，b'/t' = b't/tt'。
+\item
+  \(i_{\mathbf{A}}^{\mathbf{s}}\) 的核是由这样的 \(a \in \mathbf{A}\) 组成的集合：存在 \(s \in \overline{\mathbf{S}}\) 满足 \(sa = 0\)；为使 \(i_{\mathbf{A}}^{\mathbf{s}}\) 是单射，必须且只需 \(\mathbf{S}\) 不含 \(\mathbf{A}\) 中的任何零因子。
+\item
+  若 \(S\) 含有幂零元素，则 \(0 \in \overline{S}\)，而环 \(A[S^{-1}]\) 化为 0；这由定义 2 容易得出。
+\item
+  为使 \(i_{\mathbf{A}}^{\mathbf{S}}\) 是双射，必须且只需每个元素 \(s \in \mathbf{S}\) 都在 A 中可逆：该条件显然是必要的，因为 \(s/1\) 在 \(\mathrm{A}[\mathrm{S}^{-1}]\) 中可逆；它也是充分的，因为对所有 \(t \in \overline{\mathrm{S}}\)，\(t\) 都在 A 中可逆，从而 \(a/t = at^{-1}/1\) 在 \(\mathrm{A}[\mathrm{S}^{-1}]\) 中成立；因此 \(i_{\mathbf{A}}^{\mathbf{S}}\) 是满射，且由注 3 已知它是单射。于是把 A 与 \(\mathrm{A}[\mathrm{S}^{-1}]\) 借助 \(i_{\mathbf{A}}^{\mathbf{S}}\) 等同起来。
+\end{enumerate}
+
+例 (7). 若 R 是 A 中非零因子元素组成的集合，则环 \(\mathrm{A}[\mathrm{R}^{-1}]\) 正是我们所称的 A 的分式环（《代数学》第 I 章，§ 9，第 4 节）；为避免混淆，我们常称它为 A 的全分式环。特别地，若 A 是整环，则 \(\mathrm{A}[\mathrm{R}^{-1}]\) 是 A 的分式域（同前引）。
+
+命题 2. 设 A、B 是两个环，S 是 A 的子集，T 是 B 的子集，f 是 A 到 B 的同态且 \(f(S) \subset T\)。则存在唯一的同态 \(f'\)（从 A{[}S \(^{-1}\) {]} 到 B{[}T \(^{-1}\) {]}），使得 \(f'(a/1) = f(a)/1\) 对所有 \(a \in A\) 成立。
+
+进一步假设 \(\mathbf{T}\) 包含在 \(\mathbf{B}\) 的由 \(f(\mathbf{S})\) 生成的乘性子集之中。那么，若 \(f\) 是满射（相应地，单射），则 \(f'\) 亦然。
+
+第一个断言相当于说，存在唯一的同态 \(f'\)：\(A[S^{-1}] \to B[T^{-1}]\)，它给出一个交换图：
+
+\[
+\begin{array}{c} \mathrm{A} \xrightarrow {f} \mathrm{B} \\ i _ {\mathbf {A}} ^ {\mathbf {S}} \Biggl \downarrow \qquad \qquad \qquad \qquad \Biggl \downarrow i _ {\mathbf {B}} ^ {\mathbf {T}} \\ \mathrm{A} [ \mathrm{S} ^ {- 1} ] \xrightarrow [ f ^ {\prime} ]{} \mathrm{B} [ \mathrm{T} ^ {- 1} ] \end{array}
+\]
+
+而关系 \(f(\mathbf{S}) \subset \mathbf{T}\) 蕴含 \(i_{\mathbf{B}}^{\mathbf{T}}(f(s))\) 在 \(\mathbf{B}[\mathbf{T}^{-1}]\) 中对所有 \(s \in \mathbf{S}\) 可逆，故只需对 \(i_{\mathbf{B}}^{\mathbf{T}} \circ f\) 应用命题 1。由 (2) 容易得出，对所有 \(a \in \mathbf{A}\) 与 \(s \in \overline{\mathbf{S}}\)（\(\mathbf{A}\) 的由 \(\mathbf{S}\) 生成的乘性子集），
+
+\[
+f ^ {\prime} (a / s) = f (a) / f (s).\tag{3}
+\]
+
+假设 \(\mathbf{T}\) 包含在由 \(f(\mathbb{S})\) 生成的乘性子集中，后者正是 \(f(\overline{\mathbb{S}})\)。于是由 (3) 可知，若 \(f\) 是满射，则 \(f'\) 也是满射。
+
+现在设 \(f\) 是单射。设 \(a / s\) 是 \(f'\) 的核中的一个元素。由于由 \(T\) 生成的乘性子集是 \(f(\overline{S})\)，故存在元素 \(s_1 \in \overline{S}\) 使得 \(f(s_1)f(a) = 0\)，从而 \(f(s_1a) = 0\)，于是 \(s_1a = 0\)（因为 \(f\) 是单射）；于是 \(a / s = 0\)，这就证明了 \(f'\) 是单射。
+
+注 (6). 若 T 的元素都在 B 中可逆，则 \(B[T^{-1}]\) 可借助同构 \(i_{B}^{T}\) 与 B 等同，而 \(f'\) 于是就等同于唯一的同态 \(u'\)（\(A[S^{-1}]\) 到 B），使得 \(u' \circ i_{A}^{S} = f\)。
+
+推论 1. 设 A 是环，S 是 A 的子集，u 是 A 到某个环 B 的单同态，使得 \(u(S)\) 的元素在 B 中可逆。则唯一的同态 \(u'\)（\(\mathbf{A}[\mathbf{S}^{-1}]\) 到 B，满足 \(u' \circ i_{\mathbf{A}}^{\mathbf{S}} = u\)）是单射。
+
+这是命题 2 与注 6 的直接推论。
+
+推论 2. 设 A 是环，S 与 T 是 A 的两个子集，且 \(\mathbf{S} \subset \mathbf{T}\)。存在唯一的同态 \(i_{\mathbf{A}}^{\mathrm{T},\mathrm{S}}\)（从 \(\mathrm{A}[\mathrm{S}^{-1}]\) 到 \(\mathrm{A}[\mathrm{T}^{-1}]\)），使得 \(i_{\mathbf{A}}^{\mathrm{T}} = i_{\mathbf{A}}^{\mathrm{T},\mathrm{S}} \circ i_{\mathbf{A}}^{\mathrm{S}}\)。
+
+于是对所有 \(a \in \mathbf{A}\)，\(i_{\mathbf{A}}^{\mathbf{T},\mathbf{S}}\) 把元素 \(a / s\)（在 \(\mathbf{A}[\mathbf{S}^{-1}]\) 中）映为元素 \(a / s\)（在 \(\mathbf{A}[\mathbf{T}^{-1}]\) 中）。
+
+注 (7). 注意，若 \(i_{A}^{T}\) 是单射，则 \(i_{A}^{T,S}\) 也是单射（推论 1）。当 T 是 A 中非零因子元素组成的集合 R 时即是这种情形；这时可以把 \(A[S^{-1}]\) 与全分式环 \(A[R^{-1}]\) 中由 A 以及 S 的元素在 \(A[R^{-1}]\) 中的逆所生成的子环等同起来。
+
+推论 3. 设 A、B、C 是三个环，S（相应地，T、U）是 A（相应地，B、C）的乘性子集，\(f\colon A \to B\)、\(g\colon B \to C\) 是两个同态，\(h\colon A \to C\) 是复合同态 \(g \circ f\)；假设 \(f(S) \subset T\)，\(g(T) \subset U\)。设 \(f'\colon A[S^{-1}] \to B[T^{-1}]\)、\(g'\colon B[T^{-1}] \to C[U^{-1}]\)、\(h'\colon A[S^{-1}] \to C[U^{-1}]\) 是分别对应于 \(f\)、\(g\)、\(h\) 的同态；则 \(h' = g' \circ f'\)。
+
+这由定义容易得出。
+
+特别地，若 S、T、U 是 A 的三个乘性子集且 \(S \subset T \subset U\)，则 \(i_{A}^{U,S} = i_{A}^{U,T} \circ i_{A}^{T,S}\)。
+
+推论 4. 设 S 是环 A 的子集，B 是 A{[}S \(^{-1}\) {]} 的包含 \(i_{\text{A}}^{\text{S}}(\text{A})\) 的子环，S' 是集合 \(i_{\text{A}}^{\text{S}}(\text{A})\) 。设 j 是 B 到 A{[}S \(^{-1}\) {]} 的典范单射；从 B{[}S \(^{-1}\) {]} 到 A{[}S \(^{-1}\) {]} 的满足 \(g \circ i_{\text{A}}^{\text{S}} = j\) 的唯一同态 g 是同构。
+
+由推论 1，映射 g 是单射；环 \(g(\mathbf{B}[\mathbf{S}^{\prime-1}])\) 包含 \(i_{\mathbf{A}}^{\mathbf{s}}(\mathbf{A})\) 以及 \(S'\) 的元素的逆；因此它等于 \(A[S^{-1}]\)。
+
+若 A 是整环且 \(0 \notin S\)，则记号 \(A[S^{-1}]\) 与《代数学》第 IV 章 § 2 第 1 节中的记号一致；而且，若 S 是乘性的，则此时 \(A[S^{-1}]\) 与《代数学》第 I 章 § 1 第 1 节中记作 \(S^{-1}A\) 的集合相吻合。
+
+作为记号的推广，对环 A 的任意乘性子集 S，今后我们用 \(S^{-1}A\) 表示分式环 \(A[S^{-1}]\)。若 S 是 A 的素理想 p 的余集，我们就用 \(A_{p}\) 代替 \(S^{-1}A\)。
+
+若 A 是整环且 \(0 \notin S\)，则 \(S^{-1}A\) 总等同于 A 的分式域中包含 A 的一个子环（注 7）。
+

@@ -1,0 +1,125 @@
+\subsection{一些公式}
+
+在本号中，A 表示一个有单位元的结合代数。如果 \(x \in A\)，我们记 ad x 而不记 \(ad_{A}x\)。
+
+引理 2. 若 \(x, y \in \mathbf{A}\) 且 \(n \in \mathbf{N}\)，
+
+\[
+\frac {(\operatorname{ad} x) ^ {n}}{n !} y = \sum_ {p + q = n} (- 1) ^ {q} \frac {x ^ {p}}{p !} y \frac {x ^ {q}}{q !} = \sum_ {p + q = n} (- 1) ^ {q} x ^ {(p)} y x ^ {(q)}.\tag{11}
+\]
+
+事实上，若以 \(L_{x}\) 和 \(R_{x}\) 分别表示从 A 到 A 的映射 \(z \mapsto xz\) 和 \(z \mapsto zx\)，由于 \(L_{x}\) 与 \(R_{x}\) 对易，我们有
+
+\[
+\frac {1}{n !} (\mathrm{ad} x) ^ {n} = \frac {1}{n !} (\mathrm{L} _ {x} - \mathrm{R} _ {x}) ^ {n} = \sum_ {p + q = n} (- 1) ^ {q} \frac {1}{p !} \mathrm{L} _ {x} ^ {p} \frac {1}{q !} \mathrm{R} _ {x} ^ {q}.
+\]
+
+引理 3. 设 \(x, h \in \mathbf{A}\) 且 \(\lambda \in k\) 满足 (ad \(h)x = \lambda x\)。对于所有 \(n \in \mathbf{N}\) 及所有 \(\mathrm{P} \in k[\mathrm{X}]\)，有
+
+\[
+\mathrm{P} (h) x ^ {(n)} = x ^ {(n)} \mathrm{P} (h + n \lambda).\tag{12}
+\]
+
+由于 \(\operatorname{ad} h\) 是 \(A\) 的导子，且 \((\operatorname{ad} h)x\) 与 \(x\) 对易，我们有
+
+\[
+(\operatorname{ad} h) x ^ {n} = n x ^ {n - 1} ((\operatorname{ad} h) x) = n \lambda x ^ {n},\tag{13}
+\]
+
+所以
+
+\[
+(\operatorname{ad} h) x ^ {(n)} = n \lambda x ^ {(n)}.
+\]
+
+因此，公式 (12) 由特殊情形
+
+\[
+\mathrm{P} (h) x = x \mathrm{P} (h + \lambda)\tag{14}
+\]
+
+将 \(x\) 换为 \(x^{(n)}\)、将 \(\lambda\) 换为 \(n\lambda\) 即可。只需在 \(\mathrm{P} = \mathrm{X}^m\) 时证明 (14)，对 \(m\) 归纳即可。当 \(m = 0, 1\) 时显然。若 (14) 对 \(\mathrm{P} = \mathrm{X}^m\) 成立，则
+
+\[
+h ^ {m + 1} x = h. h ^ {m} x = h x (h + \lambda) ^ {m} = x (h + \lambda) ^ {m + 1}
+\]
+
+这就证明了 (12)。
+
+引理 4. 设 \(x, y, h \in \mathbf{A}\) 使得
+
+\[
+[ y, x ] = h, \quad [ h, x ] = 2 x, \quad [ h, y ] = - 2 y.\tag{15}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\tightlist
+\item
+  对于 \(m, n \in \mathbf{N}\)，有
+\end{enumerate}
+
+\[
+x ^ {(n)} y ^ {(m)} = \sum_ {p \geq 0} y ^ {(m - p)} \binom{m + n - p - 1 - h}{p} x ^ {(n - p)}.\tag{16}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  令 \(\mathbf{A}'\) 为一个 \(\mathbf{Z}\)-子代数，且包含于 \(\mathbf{A}\)，它由 \(x^{(m)}\) 和 \(y^{(m)}\)（\(m \in \mathbf{N}\)）生成。于是 \(\binom{h}{n} \in \mathbf{A}'\)，对所有 \(n \in \mathbf{N}\) 都成立。
+\end{enumerate}
+
+公式 (16) 可写成等价形式
+
+\[
+(\operatorname{ad} x ^ {(n)}) y ^ {(m)} = \sum_ {p \geq 1} y ^ {(m - p)} \binom {m + n - p - 1 - h} {p} x ^ {(n - p)}.\tag{$17_{m}$}
+\]
+
+\(m = 0\) 时这是显然的。我们对 \(m\) 归纳。由 \((17_{m})\) 得到
+
+\[
+\begin{array}{l} (m + 1) (\operatorname{ad} x ^ {(n)}) y ^ {(m + 1)} = (\operatorname{ad} x ^ {(n)}) y ^ {(m)}. y + y ^ {(m)}. (\operatorname{ad} x ^ {(n)}) y \\ = \sum_ {p \geq 1} y ^ {(m - p)} \binom {m + n - p - 1 - h} {p} x ^ {(n - p)} y + y ^ {(m)} (n - 1 - h) x ^ {(n - 1)} \end{array} \tag {18}
+\]
+
+（第 1 节，第 1 号，引理 1）。现在应用同一引理，再应用引理 3，得到
+
+\[
+\begin{array}{l} \binom {m + n - p - 1 - h} {p} x ^ {(n - p)} y \\ = \binom {m + n - p - 1 - h} {p} (y x ^ {(n - p)} + (n - p - 1 - h) x ^ {(n - p - 1)}) \\ = y \binom {m + n - p + 1 - h} {p} x ^ {(n - p)} \\ \qquad + \binom {m + n - p - 1 - h} {p} (n - p - 1 - h) x ^ {(n - p - 1)}. \end{array}
+\]
+
+将其代入 (18)，得到
+
+\[
+\begin{array}{l} (m + 1) (\operatorname{ad} x ^ {(n)}) y ^ {(m + 1)} \\ \qquad = \sum_ {p \geq 1} (m - p + 1) y ^ {(m - p + 1)} \binom {m + n - p + 1 - h} {p} x ^ {(n - p)} \\ \qquad + \sum_ {p \geq 1} y ^ {(m - p)} \binom {m + n - p - 1 - h} {p} (n - p - 1 - h) x ^ {(n - p - 1)} \\ \qquad + y ^ {(m)} (n - 1 - h) x ^ {(n - 1)} \\ \qquad = \sum_ {p \geq 1} (m - p + 1) y ^ {(m - p + 1)} \binom {m + n - p + 1 - h} {p} x ^ {(n - p)} \\ \qquad + \sum_ {p \geq 0} y ^ {(m - p)} \binom {m + n - p - 1 - h} {p} (n - p - 1 - h) x ^ {(n - p - 1)}. \end{array}
+\]
+
+在第二个和式中将 \(p\) 换为 \(p - 1\)，再重新组合各项，得到
+
+\[
+(m + 1) (\operatorname{ad} x ^ {(n)}) y ^ {(m + 1)} = \sum_ {p \geq 1} y ^ {(m - p + 1)} A _ {p} x ^ {(n - p)}\tag{19}
+\]
+
+其中
+
+\[
+A _ {p} = (m - p + 1) \binom{m + n - p + 1 - h}{p} + (n - p - h) \binom{m + n - p - h}{p - 1}.
+\]
+
+置 \(z = m + n - p - h\)，则也可写成
+
+\[
+\begin{array}{l} A _ {p} = \frac {1}{p !} (m - p + 1) (z + 1) z (z - 1) \dots (z - p + 2) \\ \qquad + \frac {1}{(p - 1) !} (z - m) z (z - 1) \dots (z - p + 2) \\ \qquad = \frac {1}{p !} z (z - 1) \dots (z - p + 2) [ (m - p + 1) (z + 1) + p (z - m) ] \\ \qquad = (m + 1) \binom {z} {p} = (m + 1) \binom {(m + 1) + n - p - 1 - h} {p}. \end{array}
+\]
+
+将其代入 (19)，得到 \((17_{m + 1})\)，因而 (i) 成立。
+
+假设 \(\binom{h}{p} \in \mathrm{A}'\) 对 \(p < n\) 成立。那么，对于所有 \(\mathrm{P} \in \mathbf{Q}[\mathrm{T}]\)（次数 \(< n\) 且满足 \(\mathrm{P}(\mathbf{Z}) \subset \mathbf{Z}\)），有 \(\mathrm{P}(h) \in \mathrm{A}'\)（第 4 号，命题 2 的推论）。因此，考虑 (16) 中 \(m = n\) 的情形，
+
+\[
+\begin{array}{c} (- 1) ^ {n} \binom{h}{n} = \binom{n - 1 - h}{n} \\ = - x ^ {(n)} y ^ {(n)} + \sum_ {p = 0} ^ {n - 1} y ^ {(n - p)} \binom{2 n - p - 1 - h}{p} x ^ {(n - p)} \in \mathrm{A} ^ {\prime}; \end{array}
+\]
+
+故 (ii) 由对 \(n\) 的归纳得到。
+

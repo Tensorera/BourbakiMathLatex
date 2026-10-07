@@ -1,0 +1,48 @@
+\subsection{Links between connectedness and path connectedness}
+
+A path-connected space is connected (III, p. 258, prop. 4). There exist connected spaces, even locally connected ones, that are not path-connected (cf. III, p. 331, exerc. 2 and 4). However:
+
+PROPOSITION 11. --- A connected and locally connected topological space, whose topology can be defined by a distance for which it is complete, is path-connected.
+
+Let X be a topological space. Call a train in X any nonempty finite sequence \(\mathrm{T} = (\mathrm{W}_{i})_{1 \leqslant i \leqslant n}\) of connected open subsets of X such that \(W_{i} \cap W_{i+1} \neq \varnothing\) for \(1 \leqslant i \leqslant n-1\). We say that n is the length of the train T and that the \(W_{i}\) are its cars. If X is equipped with a distance compatible with its topology, we call the width of the train T the maximum of the diameters of its cars. We say that the train joins a point a to a point b if a belongs to the first and b to the last car. We call a refinement of T any pair \((\mathrm{T}', f)\) formed by a train \(\mathrm{T}' = (\mathrm{W}_{j}')_{1 \leqslant j \leqslant m}\) and a strictly increasing map \(f: \{0, 1, \ldots, n\} \to \{0, 1, \ldots, m\}\) such that \(f(0) = 0\), \(f(n) = m\) and \(W_{j}' \subset W_{i}\) for \(1 \leqslant i \leqslant n\) and \(f(i-1) < j \leqslant f(i)\).
+
+Lemma 1. --- Let X be a connected and locally connected metric space, let a and b be points of X and let \(\varepsilon\) be a real number \(>0\) . There exists in X a train of width \(\leqslant \varepsilon\) joining a to b.
+
+More precisely, every train T joining a to b has a refinement \((\mathrm{T}^{\prime}, f)\), where \(T^{\prime}\) is a train of width \(\leqslant\varepsilon\) joining a to b.
+
+The relation “there exists a train of width \(\leqslant\varepsilon\) joining x to y” is an equivalence relation between x and y in X. The equivalence class of a point x contains every connected open neighborhood of x of diameter \(\leqslant\varepsilon\) and x possesses such a neighborhood since X is locally connected. The equivalence classes under this relation are therefore open, and consequently also closed. There is at most one of them, since X is connected. This proves the first assertion.
+
+Let \(\mathrm{T}=(\mathrm{W}_{i})_{1\leqslant i\leqslant n}\) be a train in X joining a to b. Set \(x_{0}=a\), \(x_{n}=b\) and choose for \(1\leqslant i\leqslant n-1\) a point \(x_{i}\) in the nonempty set \(W_{i}\cap W_{i+1}\). For \(1\leqslant i\leqslant n\), the open set \(W_{i}\) is connected and locally connected and \(x_{i-1}\), \(x_{i}\) are two of its points; by the preceding paragraph, there exists a train \((\mathrm{W}_{i,k})_{1\leqslant k\leqslant m_{i}}\) in \(W_{i}\) of width \(\leqslant\varepsilon\), joining \(x_{i-1}\) to \(x_{i}\).
+
+Let us set \(m = m_{1} + \cdots + m_{n}\) . For \(1 \leqslant j \leqslant m\) , set \(W_{j}^{\prime} = W_{i,k}\) , where \((i, k)\) is the unique pair of integers such that \(1 \leqslant i \leqslant n\) , \(1 \leqslant k \leqslant m_{i}\) and \(j = m_{1} + \cdots + m_{i-1} + k\) . For \(0 \leqslant i \leqslant n\) , set \(f(i) = m_{1} + \cdots + m_{i}\) . Then \(T^{\prime} = (W_{j}^{\prime})_{1 \leqslant j \leqslant m}\) is a train of width \(\leqslant \varepsilon\) in X joining a to b, and \((T^{\prime}, f)\) is a refinement of T.
+
+Let us now prove Proposition 11. Endow the connected and locally connected space X with a distance d, compatible with its topology, for which it is complete. Let a and b be points of X. Lemma 1 allows one to construct, by induction, sequences \((\mathrm{T}_s)_{s \geqslant 0}\) and \((f_s)_{s \geqslant 1}\) such that, for all \(s \geqslant 0\), \(\mathrm{T}_s = (\mathrm{W}_{s,i})_{1 \leqslant i \leqslant n_s}\) is a train of width \(\leqslant 2^{-s}\) joining a to b and \((\mathrm{T}_{s+1}, f_{s+1})\) is a refinement of \(\mathrm{T}_s\).
+
+We can choose by induction, for \(s \geqslant 0\), a strictly increasing map \(g_{s} \colon \{0,1,\ldots,n_{s}\} \to I\) such that \(g_{s}(0) = 0\) and \(g_{s}(n_{s}) = 1\), so that \(g_{s+1} \circ f_{s} = g_{s}\). Let us define, for \(s \geqslant 0\), a subset \(A_{s}\) of \(I \times X\) by setting
+
+\[
+\mathrm{A} _ {s} = \bigcup_ {1 \leqslant i \leqslant n _ {s}} ([ g _ {s} (i - 1), g _ {s} (i) ] \times \mathrm{W} _ {s, i}).
+\]
+
+The sequence \((\mathrm{A}_{s})_{s\geqslant0}\) is decreasing: indeed, for every integer \(j\in\{1,\ldots,n_{s+1}\}\) , there exists a unique integer \(i\in\{1,\ldots,n_{s}\}\) such that \(f_{s}(i-1)<j\leqslant f_{s}(i)\) and one has
+
+\[
+[ g _ {s + 1} (j - 1), g _ {s + 1} (j) ] \subset [ g _ {s} (i - 1), g _ {s} (i) ], \quad \mathrm{W} _ {s + 1, j} \subset \mathrm{W} _ {s, i}.
+\]
+
+Let \(t \in \mathbf{I}\) . For all \(s \geqslant 0\) , denote by \(\mathrm{A}_s(t)\) the set of \(x \in \mathrm{X}\) such that \((t, x) \in \mathrm{A}_s\) . The set \(\mathrm{A}_s(t)\) is either one of the cars, or the union of two consecutive cars of the train \(\mathrm{T}_s\) ; it is therefore a nonempty subset of \(\mathrm{X}\) , of diameter \(\leqslant 2^{1-s}\) . The sequence \((\mathrm{A}_s(t))_{s \geqslant 0}\) is decreasing. The set of its terms is a Cauchy filter base. This converges to a point \(c(t)\) since the metric space \(\mathrm{X}\) is complete.
+
+Since \(a\) belongs to each of the sets \(\mathrm{A}_s(0) = \mathrm{W}_{s,1}\), we have \(c(0) = a\); similarly, we have \(c(1) = b\). Let \(t \in \mathbf{I}\) and let \(s\) be an integer \(\geqslant 0\). The point \(t\) has in \(\mathbf{I}\) a neighborhood V of one of the following forms: \([g_s(0), g_s(1)[\), \(]g_s(i - 1), g_s(i + 1)[\) for an integer \(i\) such that \(1 \leqslant i \leqslant n_s - 1\), or \(]g_s(n_s - 1), g_s(n_s)]\). Depending on the case, the set \(c(\mathrm{V})\) is contained in the closure of the first car, of the union of two consecutive cars, or of the last car of the train \(\mathrm{T}_s\). It is therefore of diameter \(\leqslant 2^{1-s}\) and one has \(d(c(t), c(t')) \leqslant 2^{1-s}\) for \(t' \in \mathrm{V}\). This proves that the map \(c\colon \mathbf{I} \to \mathbf{X}\) is continuous. Thus \(c\) is a path in X joining \(a\) to \(b\), and X is path-connected.
+
+COROLLARY 1. --- A locally connected topological space whose topology can be defined by a distance for which it is complete is locally path-connected.
+
+Let X be such a space and let U be an open and connected subset of X. By Lemma 2 below, there exists a distance on U compatible with its topology for which U is complete. Since U is locally connected, it follows from Proposition 11 that U is path-connected.
+
+Lemma 2. --- Let X be a complete metric space and let U be an open subset of X. There exists a distance on U compatible with its topology for which U is complete.
+
+We shall take up the arguments of the proof of Prop. 2 of TG, IX, p. 57. We may assume U is distinct from X. Let V be the subset of the product \(\mathbf{R} \times \mathbf{X}\) formed by the points \((t,x)\) such that \(td(x,\mathrm{X}-\mathrm{U})=1\) ; the subspace V of \(\mathbf{R} \times \mathbf{X}\) is closed and the map \((t,x) \mapsto x\) from V to U is a homeomorphism (TG, IX, p. 13, Prop. 3). There exists on \(\mathbf{R} \times \mathbf{X}\) a distance \(d'\) compatible with its topology for which \(\mathbf{R} \times \mathbf{X}\) is complete (TG, IX, p. 15, Cor. 2 and TG, II, p. 17, Prop. 10). The space V is complete for the distance induced by \(d'\) (TG, II, p. 16, Prop. 8), whence the lemma.
+
+COROLLARY 2. --- A locally compact, locally connected, and metrizable topological space is locally path-connected. If it is connected, it is path-connected.
+
+It suffices to prove the first assertion (III, p. 260, Prop. 7). Let X be a locally compact and locally connected metric space. The open, connected, and relatively compact subsets of X form a base for the topology of X. Let U be such a set; since U is open in its closure, which is a compact, hence complete, metric space, there exists by Lemma 2 a distance on U compatible with its topology for which U is complete. It follows from Prop. 11 of III, p. 264 that U is path-connected, whence the corollary.
+

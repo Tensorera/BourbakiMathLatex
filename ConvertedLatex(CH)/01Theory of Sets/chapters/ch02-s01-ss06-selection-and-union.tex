@@ -1,0 +1,70 @@
+\subsection{选择与并集模式}
+
+选择与并集模式如下：
+
+S8. 设 R 为一个关系，设 x 和 y 为不同的字母，并设 X 和 Y 为不同于 x 和 y 且不出现在 R 中的字母。则关系
+
+\[
+(1) \quad (\forall y) (\exists X) (\forall x) (R \Longrightarrow (x \in X)) \Longrightarrow (\forall Y) \operatorname{Coll} _ {X} ((\exists y) ((y \in Y) \text {   且   } R))
+\]
+
+是一条公理。
+
+首先证明此规则确实是一个模式。设 \(S\) 表示关系（1），并将一个项 \(T\) 代入字母 \(z\) （在 \(S\) 中）；由 CS8（第一章，§4，第 1 号）可假设 \(x, y, X, Y\) 不同于 \(z\) 且不出现在 \(T\) 。然后 \((T|z)S\) 恒同于
+
+\[
+(\forall y) (\exists X) (\forall x) (R ^ {\prime} \Longrightarrow (x \in X)) \Longrightarrow (\forall Y) \operatorname{Coll} _ {X} ((\exists y) ((y \in Y) \text {   且   } R ^ {\prime})),
+\]
+
+其中 \(R'\) 表示 \((T|z)R\) .
+
+直观上，这个关系 \((\forall y)(\exists X)(\forall x)(R \Rightarrow (x \in X))\) 意味着对于每一个对象 \(y\) 存在一个集合 \(X\) （它可能依赖于 \(y\) 使得对象 \(x\) 处于关系中的 \(R\) 与给定对象 \(y\) 是...的元素 \(X\) （但不一定是 \(X\) 的全部）。选择与并集的公理模式断言：如果情况如此，且 \(Y\) 是任意集合，那么存在一个集合，其元素恰好是那些 \(x\) 处于关系中的 \(R\) ，其中至少有一个对象 \(y\) 该集合的 \(Y\) .
+
+C51. 设 P 为一个关系，A 为一个集合，且 x 为一个不出现在 A 中的字母。则关系“P 且 \(x \in A\) “'' 在 x 中是收集性的。”
+
+设 R 表示关系“P 且 x = y”，其中 y 是一个与 x 不同的字母，且 y 既不出现在 P 中也不出现在 A 中。关系
+
+\[
+(\forall x) (R \Longrightarrow (x \in \{y \}))
+\]
+
+由 C27（第一章，§4，第 1 号）为真。设 \(X\) 是一个与 \(x\) 并且 \(y\) 的字母，它不出现在 \(P\) 不同的字母。前面的关系与 \((\{y\}|X)((\forall x)(R \Longrightarrow (x \in X)))\) 相同（因为 \(x\) 是不同的 \(y\) ），因此该关系 \((\forall y)(\exists X)(\forall x)(R \Longrightarrow (x \in X))\) 由S5和C27（第一章，§4，第1和第2节）可知其为真。由S8和C30（第一章，§4，第3节）可推出该关系
+
+\[
+(A | Y) \operatorname{Coll} x (\exists y) (y \in Y \text {   且   } R)
+\]
+
+（其中 Y 是一个不出现在 R 中的字母）成立，且此关系与 \(\operatorname{Coll}_{\mathbf{x}}(\exists\mathbf{y})(\mathbf{y}\in\mathbf{A}\) 且 R）相同（因为 x 和 y 均不出现在 A 中）。最后，由 C43（第一章，§5，第 1 号），关系“ \(y\in A\) 且 R”与“x=y 且 \(x\in A\) 且 P”等价；由于 x 既不出现在 P 中也不出现在 A 中，关系
+
+\[
+(\exists y) (x = y \text {   且   } x \in A \text {   且   } P)
+\]
+
+等价于“((∃y)(x=y)) 且 x∈A 且 P”，根据 C33（第一章，§4，第3节），因此等价于“P 且 x∈A”，因为 (∃y)(x=y) 为真。
+
+集合 \(\mathcal{E}_{\pmb{x}}(\pmb{P}\) 并且 \(\pmb{x} \in \pmb{A})\) 被称为所有 \(\pmb{x} \in \pmb{A}\) 使得 \(\pmb{P}\) (* 因此，我们可以谈论所有满足以下条件的实数的集合 \(\pmb{P}_{*}\) ).
+
+C52. 设 R 为一个关系，A 为一个集合，且 x 为一个不出现在 A 中的字母。若该关系 \(R \Longrightarrow (x \in A)\) 是一个定理，则R在x上是集合化的。
+
+因为 R 此时等价于“R 且 \(x \in A\) ''.
+
+备注。设 R 关于 x 是集合化的，并设 S 满足： \((\forall x)(S \Longrightarrow R)\) 是一个定理。那么 S 关于 x 也是集合化的；因为 R 等价于 \(x \in \mathcal{E}_{x}(R)\) ，所以
+
+\[
+S \Longrightarrow (x \in \mathcal {E} _ {x} (R))
+\]
+
+是一个定理，且该断言由C52得出。另请注意，在这种情况下我们有 \(\mathcal{E}_{\pmb{X}}(\pmb{S}) \subset \mathcal{E}_{\pmb{X}}(\pmb{R})\) 由C50。
+
+C53. 设 T 为一个项，A 为一个集合，x 与 y 为不同的字母。假设 x 不出现在 A 中，且 y 既不出现在 A 中也不出现在 T 中。则关系 \((\exists x)(y = T \text{ 且 } x \in A)\) 关于 y 是集合化的。
+
+令 R 为关系 y = T。关系 \((\forall y)(R \Longrightarrow (y \in \{T\}))\) 为真，因而 \((\forall x)(\exists X)(\forall y)(R \Longrightarrow (y \in X))\) 也为真，其中 X 是一个异于 y 且不出现在 R 中的字母。根据 S8，关系 \((\exists x)(x \in A \text{ 且 } R)\) 关于 y 是集合化的，于是 C53 得证。
+
+关系 \((\exists x)(y = T\) 并且 \(x \in A)\) 通常读作如下形式：“y 可以写成 \(T\) ，对于某个 \(x\) 属于 \(A\)''。集合
+
+\[
+\mathcal {E} _ {\boldsymbol {y}} ((\exists \boldsymbol {x}) (\boldsymbol {y} = \boldsymbol {T} \text {   且   } \boldsymbol {x} \in A))
+\]
+
+通常被称为形如 T 的对象的集合，其中 \(x \in A\) 如此表示的集合既不包含x也不包含y，并且不依赖于满足C53条件的字母y的选择。
+

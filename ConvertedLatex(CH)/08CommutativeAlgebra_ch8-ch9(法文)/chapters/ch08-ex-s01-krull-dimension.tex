@@ -1,0 +1,222 @@
+\exercisesection{环的克鲁尔维数}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  令 X 为拓扑空间，Y 为 X 的子空间。若对于 X 的每个闭子集 F，F 都是 F ∩ Y 的闭包，则称 Y 在 X 中非常稠密。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  Y 在 X 中非常稠密的必要且充分条件是：对于 X 的每个非空局部闭子集 F，F ∩ Y 非空。
+\item
+  若 Y 在 X 中非常稠密，且 Z 是 Y 的在 X 中非常稠密的子空间，则 Z 在 X 中非常稠密。若 Y 在 X 中非常稠密，且 F 是 X 的局部闭子集，则 Y ∩ F 在 F 中非常稠密。
+\item
+  若 Y 在 X 中非常稠密，则有 \(\dim(\mathbf{Y}) = \dim(\mathbf{X})\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  令 A 为环，Specmax(A) 为 A 的极大理想集合。Specmax(A) 在 Spec(A) 中非常稠密的充要条件是 A 为 Jacobson 环（V, § 3, 第 4 号）。此时有 dim Specmax(A) = dim(A)。
+\item
+  证明：若 A 是 Jacobson 环，则 A{[}{[}X{]}{]} 不是 Jacobson 环。（比较 Specmax(A) 与 Specmax(A{[}{[}X{]}{]})。）
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    证明：可以唯一地给每个有序集 E 关联一个 \(\{-\infty\}\cup\mathbf{N}\cup\{+\infty\}\) 中的元素，记为 dev(E)（E 的偏差），使其满足下列性质：
+  \end{enumerate}
+\end{enumerate}
+
+\(\alpha)\) 有 \(\operatorname{dev}(\mathbf{E}) = -\infty\)，当且仅当关系 \(a \leqslant b\) 在 \(\mathbf{E}\) 中蕴含 \(a = b\)。
+
+β) 令 n 为正整数。E 的偏差 ≤ n，当且仅当对于 E 中元素的每个无限递减序列 \((a_{k})_{k\in\mathbb{N}}\)，当 k 充分大时都有 \(\text{dev}([a_{k}, a_{k-1}]) \leqslant n - 1\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  要有 \(\text{dev}(\mathbf{E}) \leqslant 0\)，必要且充分的是 E 中元素的每个严格递减序列都最终稳定。有 \(\text{dev}(\mathbf{N}) = 0\)，\(\text{dev}(\mathbf{Z}) = 1\)，\(\text{dev}(\mathbf{Q}) = +\infty\)。
+\item
+  若 E 和 F 是有序集，且 \(f: \mathbf{E} \to \mathbf{F}\) 是严格递增映射，则有 \(\operatorname{dev}(\mathbf{E}) \leqslant \operatorname{dev}(\mathbf{F})\)。并且有 \(\operatorname{dev}(\mathbf{E} \times \mathbf{F}) = \sup(\operatorname{dev}(\mathbf{E}), \operatorname{dev}(\mathbf{F}))\)。
+\item
+  令 S(E) 为 E 中元素的无限递增稳定序列集合，并按积序排序。则有 \(\operatorname{dev}(\mathbf{S}(\mathbf{E})) = \operatorname{dev}(\mathbf{E}) + 1\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  若 A 是环（不必交换），M 是左 A-模，则以 Kdev(M) 表示按包含关系排序的 M 的子模集合的偏差。规定 \(Kdev(A) = Kdev(A_s)\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  若 N 是 A-模 M 的子模，则有
+\end{enumerate}
+
+\[
+\operatorname{Kdev} (\mathbf {M}) = \sup (\operatorname{Kdev} (\mathbf {N}), \operatorname{Kdev} (\mathbf {M} / \mathbf {N}))  .
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  假设 A 交换。若 p 和 q 是 A 的两个素理想，满足 p ⊂ q 且 p ≠ q，则有 dev(A/p) \textgreater{} dev(A/q)。（使用理想 p + Ax，其中 x 是 q - p 中的元素。）推导出 dim(A) ≤ Kdev(A)。
+\item
+   假设 A 是交换诺特环。证明 dim(A) = Kdev(A)（对 dim(A) 作归纳，假设对于每个交换诺特环 B，只要 dim(B) \textless{} dim(A) 就有 Kdev(B) ≤ dim(B)；令 S 为 A 中不属于任何满足 dim(A) = dim(A/p) 的 A 的素理想 p 的元素 s 所成的集合；证明：对于每个有限生成 A-模 M，若 \(S^{-1}M = 0\)，则有 \(\mathrm{Kdev}(\bar{\mathrm{M}}) < \dim(\mathrm{A})\)；利用 \(S^{-1}A\) 为 Artin 环这一事实，从而推出 \(\mathrm{Kdev}(\mathrm{A}) \leqslant \dim(\mathrm{A})\)。证明对每个有限生成 A-模 M 都有 \(\dim(\mathrm{M}) = \mathrm{Kdev}(\mathrm{M})\)。
+\end{enumerate}
+
+6). a) 令 A 为诺特（交换）环，m 为包含于 A 的根基中的 A-理想，并令 gr(A) 为与 A 的 m-进滤过相关联的分次环。给 A 的每个理想关联 gr(A) 的一个理想，并由此推出 Kdev(A) ≤ Kdev(gr(A))（参见习题 4, c)）。因此有 dim(A) ≤ dim(gr(A))（习题 5, c)）。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  现在假设 m = xA，其中 x 属于 A 的根基。证明 gr(A) 同构于分次代数 (A/m)[T] 的一个商。证明 (A/m) {[}T{]} 的分次理想有序集 F 同构于 A/m 的递增理想序列集合；由此根据（习题 4, d)）得到 dev(F) = Kdev(A/(x)) + 1，进而 dim(A) ≤ dim(A/m) + 1。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  令 A 为 \(C^\infty\) 类函数在 \(\mathbf{R}_{+}\) 上于 0 处的芽环。我们拟证明环 A 的维数无穷。记 C 为 \(C^\infty\) 类函数在 \(\mathbf{R}_{+}\) 上的代数，并令 F 为由在 0 的某个邻域内恒为零的函数组成的理想，从而 \(A = C / F\)。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  令 \((x_{n})_{n\in \mathbb{N}}\) 为 \(\mathbf{R}_{+}\) 中严格递减且趋于 0 的序列，并令 \(\mathfrak{U}\) 为 \(\mathbf{N}\) 上比有限集补集滤子更细的超滤子。证明：集合 \(\mathbf{J}_1\) 由满足如下条件的 \(f\in \mathbf{C}\) 组成：对于 \(n\in \mathbf{N}\)，\(f(x_{n}) = 0\) 的那些 n 所成集合属于 \(\mathfrak{U}\)，并且是 \(\mathbf{C}\) 的素理想。
+\item
+  记 \(\tau_{n}(f)\) 为函数 \(x\mapsto f(x + x_{n})\)。证明：若 J 是 C 的素理想，则集合 \(\varphi(J)\) 由满足以下条件的 \(f\) 组成，并且是 C 的素理想：满足 \(n\in\mathbf{N}\) 且 \(\tau_{n}f\in\mathbf{J}\) 的 n 的集合属于 \(\mathfrak{U}\)。
+\item
+  定义 C 的理想序列 \(\mathbf{I}_n\)：\(\mathbf{I}_0 = \mathbf{J}_1\)，\(\mathbf{I}_{n+1} = \varphi(\mathbf{I}_n)\)。证明 \((\mathbf{I}_n)_{n\in\mathbb{N}}\) 是包含 F 的 C 的素理想严格递减序列。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{7}
+\item
+  令 X 为拓扑空间。证明映射 \(x \mapsto \dim_x(X)\) 从 X 到 \(\overline{\mathbf{R}}\) 是上半连续的。
+\item
+  令 A 为环，p 为 A 的素理想，M 为有限生成 A-模。证明有：
+\end{enumerate}
+
+\[
+\dim_ {\mathbf {A} _ {\mathfrak {p}}} (\mathbf {M} _ {\mathfrak {p}}) + \dim_ {\mathbf {A} / \mathfrak {p}} (\mathbf {M} / \mathfrak {p} \mathbf {M}) \leqslant \dim_ {\mathbf {A}} (\mathbf {M}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  如果 Spec(A) 的所有不可约分支都具有相同维数，则称环 A 为等维的。令 A 为环，n 为整数。以下条件等价：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  A 的每条素理想链都包含于一条长度为 n 的链中；
+\item
+  对 A 的每个极大理想 m，环 A \(_{m}\) 都是等维的、串联的，且维数为 n。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  令 \((\mathbf{A}_{i}, f_{ij})\) 为相对于滤序集 I 的环的归纳系统，其归纳极限为 A。证明有 \(\dim(\mathbf{A}) \leqslant \lim.\inf\dim(\mathbf{A}_{i})\)，并且当同态 \(f_{ij}\) 忠实平坦时取等号。举一个同态 \(f_{ij}\) 平坦但满足 \(\dim(\mathbf{A}) < \lim.\inf\dim(\mathbf{A}_{i})\) 的例子（取 I = N，\(A_{n} = Z[n^{-1}]\)，A = Q）。
+\end{enumerate}
+
+令 A 为环，I 和 J 为 A 的两个理想。假设对 A 的每个极大理想 m，都有 IA \(_{m}\) = JA \(_{m}\)。由此推出 I = J。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  令 A 为一个环，满足：对 A 的每个极大理想 m，环 \(\mathrm{A}_{\mathfrak{m}}\) 都是诺特环；并且对 A 的每个非零元素 \(f\)，包含 \(f\) 的 A 的极大理想只有有限多个。则 A 是诺特环。（令 \(a\) 为 A 的一个理想。我们首先证明，存在有限族 \((x_1, ..., x_n)\)，其元素属于 \(a\)，使得包含 \(\{x_1, ..., x_n\}\) 的 A 的极大理想都包含 \(a\)。然后我们构造有限族 \(y_1, ..., y_l\) 的元素，使得对 A 的每个极大理想 m，\(\{y_1, ..., y_l\}\) 生成理想 \(a\mathrm{A}_{\mathfrak{m}}\)，该理想属于 \(\mathrm{A}_{\mathfrak{m}}\)。最后使用 a) 得到结论。
+\item
+  令 A 为半局部环，且对每个极大理想 m，环 \(A_{m}\) 都是诺特环。则 A 是诺特环。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{12}
+\item
+  令 K 为域，\((n_{r})_{r\geqslant1}\) 为严格递增且 \textgreater0 的整数序列；对每个整数 \(i\geqslant0\)，记 \(p_{i}\) 为环 \(\mathrm{K}[(\mathrm{X}_{j})_{j\in\mathbb{N}}]\) 中由 \(X_{j}\)（其中 \(n_{1}+\cdots+n_{i}\leqslant j<n_{1}+\cdots+n_{i}+n_{i+1}\)）生成的理想，并令 S 为 \(\mathrm{K}[(\mathrm{X}_{j})]\) 中不属于任何一个 \(p_{i}\) 的元素所成的集合。则环 \(S^{-1}K[(X_{j})]\) 是诺特环且维数无穷（使用习题 12 证明 \(S^{-1}K[(X_{j})]\) 是诺特环）\(^{1}\)。
+\item
+  令 V 为离散赋值环，令 \(\pi\) 为 V 的一致化元。在环 V{[}T{]} 中，理想 \(m_1 = (\pi T - 1)\) 是高度为 1 的极大理想，理想 \(m_2 = (\pi) + (T)\) 是高度为 2 的极大理想。域 V{[}T{]}/ \(m_1\) 和 V{[}T{]}/ \(m_2\) 分别同构于 V 的分式域和剩余域。有 \(\dim(\mathrm{V}[T]) = 2\)，但 \(\dim(\mathrm{V}[T]/m_1) + \dim(\mathrm{V}[T]_{m_1}) = 1\)，且 \(\dim(\mathrm{gr}_{m_1}(\mathrm{V}[T])) = 1\)。
+\end{enumerate}
+
+  沿用前一习题的记号，假设环 V 的剩余域与分式域同构（例如，当 \(\mathrm{V} = k[[\mathrm{U}]]\) 时就是如此，其中域 \(k\) 是带有域中系数的无穷多个不定元形式幂级数环的分式域）。令 \(\sigma\) 为从 \(\mathrm{V[T] / m_1}\) 到 \(\mathrm{V[T] / m_2}\) 的同构。令 C 表示 \(\mathrm{V[T]} = \mathrm{E}\) 的子环，它由 E 中那些模 \(m_1\) 与 \(m_2\) 的类在 \(\sigma\) 下相互对应的元素组成。证明 C 是诺特环，且 \(m_1m_2 = m_1 \cap m_2\) 是 C 的极大理想。证明 E 是 C 的整闭包（注意 \(\mathrm{E} = \mathrm{C} + \mathrm{C}\cdot(\pi T - 1)\)，且 \((\pi T - 1)^2 + (\pi T - 1)\) 属于 C）。
+
+令 \(\mathring{\mathrm{A}}\) 为局部环 \(\mathbf{C}_{\mathfrak{m}_1\mathfrak{m}_2}\)。则 A 是维数为 2 的整环，因而是串联的；\(\mathbf{B} = \mathbf{E} \otimes_{\mathbb{C}} \mathbf{A}\) 是 \(\mathring{\mathrm{A}}\) 的整闭包，是半局部诺特环，恰有两个极大理想 \(\mathfrak{n}_1\) 和 \(\mathfrak{n}_2\)，并且有 \(\dim(\mathbf{B}_{\mathfrak{n}_1}) = 1\)，\(\dim(\mathbf{B}_{\mathfrak{n}_2}) = 2\)。
+
+¶ 16) 沿用前一习题的记号，并将 B 识别为多项式环 A{[}U{]} 对素理想 \(\mathfrak{p}\) 的商，该素理想由 \(U^2 + U - \pi T(\pi T - 1)\) 生成。令 \(\mathfrak{q}_i\) 为 A{[}U{]} 中满足 \(\mathfrak{n}_i = \mathfrak{q}_i/\mathfrak{p}\) 的理想。则 \(\operatorname{ht}(\mathfrak{q}_i) = 3\)，\(\operatorname{ht}(\mathfrak{p}) = 1\)，且链 \(\mathfrak{p} \subset \mathfrak{q}_1\) 是饱和的。特别地，A{[}U{]} 和 A{[}U{]}\(_{\mathfrak{q}_1}\) 不是串联的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    令 A 为整环且 \(f \in \mathrm{A}[\mathrm{T}], f \neq 0\)。证明存在 \(\mathrm{A}[\mathrm{T}]\) 的极大理想 m，使得 \(f \notin \mathfrak{m}\)（取一个包含 T.f-1 的极大理想）。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  令 A 为环。证明有 dim(Specmax(A{[}T{]})) \(\geqslant\) dim(A) + 1。（令 \(\mathfrak{p}_0\subset \mathfrak{p}_1\subset \cdots \subset \mathfrak{p}_n\) 为 A 的一条素理想链。考察链
+\end{enumerate}
+
+\[
+\mathfrak {p} _ {0} [ \mathrm{T} ] \subset \mathfrak {p} _ {1} [ \mathrm{T} ] \subset \mathfrak {p} _ {2} [ \mathrm{T} ] \dots \subset \mathfrak {p} _ {n} [ \mathrm{T} ] \subset (\mathfrak {p} _ {n}, \mathrm{T})
+\]
+
+它们是 A{[}T{]} 的素理想，并置
+
+\[
+\left\{ \begin{array}{l} \mathrm{U} _ {i} = \mathrm{V} (\mathfrak {p} _ {i} [ \mathrm{T} ]) \cap \operatorname{Specmax} (\mathrm{A} [ \mathrm{T} ]), \quad 0 \leqslant i \leqslant n \\ \mathrm{U} _ {n + 1} = \mathrm{V} (\mathfrak {p} _ {n}, \mathrm{T}) \cap \operatorname{Specmax} (\mathrm{A} [ \mathrm{T} ]). \end{array} \right.
+\]
+
+利用 \(a\) ) 证明 \((\mathrm{U}_i)_{0 \leqslant i \leqslant n+1}\) 是 Specmax (A{[}T{]}) 的不可约闭子集严格递增序列。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  令 \(k\) 为域，并令 S 为由 \(k[\mathrm{X}, \mathrm{Y}]\) 中形如 \(1 + \mathrm{X}g(\mathrm{X}, \mathrm{Y})\) 的元素组成的子集，令 \(\mathrm{A} = \mathrm{S}^{-1}k[\mathrm{X}, \mathrm{Y}]\)。
+\end{enumerate}
+
+证明有 dim(Specmax(A)) = 1 且 dim(Spec(A)) = 2。推广到含有多个不定元的情形。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  证明对于每一对整数 \(0 \leqslant n < m\)，存在诺特环 A，使得 \(\dim(\text{Specmax}(A)) = n\) 且 \(\dim(\text{Specmax}(A[T])) = m\)。
+\item
+  令 A 为习题 13 中定义的诺特环。证明有 dim(Specmax(A)) = 1 且 dim(Specmax(A{[}T{]})) = \(\infty\)。
+\end{enumerate}
+

@@ -1,0 +1,96 @@
+\subsection{由紧子集生成的群}
+
+引理 1.　设 H 是一个局部紧群，R 是群 R 或 Z 之一。设 \(\varphi\) 是从 R 到 H 中的一个连续态射。若 \(\varphi\) 不是从 R 到 H 的一个子群上的拓扑同构，则 R 在 H 中的像是相对紧的。
+
+设 I 是 \(\varphi\) 的像。把 H 换成 \(\bar{I}\)，我们可以假设 I 在 H 中稠密。于是须证明：若 \(\varphi\) 不是从 R 到 I 上的拓扑同构，则 H 是紧的。
+
+假设存在 H 中 \(e\) 的一个邻域 V 及一个整数 \(M > 0\)，使得对 R 中所有 \(t > \mathrm{M}\)，有 \(\varphi(t) \notin \mathrm{V}\)。则 \(\varphi\) 是单射：若 \(\varphi(u) = e\)，则有 \(\varphi(nu) = e\)（对每个整数 \(n \geqslant 1\)），于是集合 \(\mathbf{N}u\) 在 R 中有界，这意味着 \(u = 0\)。因此 \(\varphi\) 在 \([-M, M] \cap R\) 上的限制是到其像上的一个同胚，而该像包含 \(V \cap I\)。由于 \(\varphi^{-1}\) 在 \(V \cap I\) 上的限制连续，由此得出 \(\varphi\) 是从 R 到 I 上的一个拓扑同构。
+
+现在假设 \(\varphi\) 不是从 R 到 I 上的拓扑同构。设 W 是 H 中 \(e\) 的一个相对紧的开邻域，V 是 \(e\) 的一个对称邻域，满足 \(\mathrm{V}^2 \subset \mathrm{W}\)。对每个 \(x \in \mathrm{H} = \overline{\mathrm{I}}\)，存在一个元素 \(s \in \mathrm{R}\)，使得 \(x \in \varphi(s)\mathrm{V}\)。由上一段及关于 \(\varphi\) 的假设，存在 \(t \in \mathrm{R}\)，使得 \(t > |s|\) 且 \(\varphi(t) \in \mathrm{V}\)。于是我们有 \(x \in \varphi(t + s)\varphi(t)^{-1}\mathrm{V} \subset \varphi(t + s)\mathrm{W}\)，且 \(t + s > 0\)。因此，开集 \(\varphi(u)\mathrm{W}\)（对 \(u > 0\)）组成 H 的一个开覆盖。由于 W 相对紧，存在一个整数 \(n \geqslant 1\) 及 R 中严格为正的元素 \(u_1, \ldots, u_n\)，使得 \(\overline{\mathrm{W}} \subset \bigcup_{1 \leqslant i \leqslant n} \varphi(u_i)\mathrm{W}\)。设 U 是诸 \(u_i\) 中最大者。
+
+设 \(x \in \mathrm{H}\)，并令 \(s = \inf \{t \in \mathrm{R} | t \geqslant 0, \varphi(t)x^{-1} \in \overline{\mathrm{W}}\}\)。由于 \(\overline{\mathrm{W}}\) 是紧的，我们有 \(\varphi(s)x^{-1} \in \overline{\mathrm{W}}\)。存在一个整数 \(i\)，使得 \(\varphi(s)x^{-1} \in \varphi(u_i)\mathrm{W}\)，从而 \(\varphi(s - u_i)x^{-1} \in \overline{\mathrm{W}}\)。\(s\) 的定义蕴含 \(s - u_i < 0\)，于是 \(s \leqslant \mathrm{U}\)。由此得出 \(\mathrm{H} = \varphi([0,\mathrm{U}] \cap \mathrm{R})\overline{\mathrm{W}}\) 是紧的。
+
+引理 2.　若 G 由一个紧子集 V 生成，则存在一个整数 \(n \geqslant 0\) 及 G 的一个同构于 \(Z^{n}\) 的离散子群 D，使得 G/D 是紧的。
+
+把 V 换成 \(V \cup V^{-1}\)，我们可以假设 V 是对称的；于是假设意味着 G 是诸集合 \(V^{n}\)（\(n \in N\)）的并。
+
+由于 \(V^{2}\) 是紧的，存在一个整数 \(k \geqslant 1\) 及元素 \(x_{1}, \ldots, x_{k} \in G\)，使得 \(V^{2} \subset \bigcup_{1 \leqslant i \leqslant k} x_{i}V\)。设 \(D_{0}\) 是 G 中由族 \((x_{i})_{1 \leqslant i \leqslant k}\) 生成的子群。我们有 \(V^{2} \subset D_{0}V\)，从而由归纳法，\(V^{n} \subset D_{0}V\) 对每个整数 \(n \geqslant 1\) 成立，于是 \(G = D_{0}V\)，因为 V 生成 G。再设 J 是 \(\{1, 2, \ldots, k\}\) 的一个子集，使得由族 \((x_{i})_{i \in J}\) 生成的子群 D 拓扑同构于 \(\mathbf{Z}^{\mathrm{Card(J)}}\) 并对此性质为极大。我们来证明 G/D 是紧的。
+
+设 \(p\) 是从 G 到 G/D 上的典范满射。设 \(i \in \{1, 2, \ldots, k\} - J\)。若子群 \(H_i\)（G/D 中由 \(p(x_i)\) 生成的子群）拓扑同构于 \(Z\)，则 G 中由 D 与 \(x_i\) 生成的子群是离散的，且映射 \((d, n) \mapsto dx_i^n\) 是从 D × \(Z\) 到这个子群上的一个同构，这与 J 的极大性矛盾。因此引理 1 蕴含 \(\overline{H}_i\) 是紧的。于是 G/D = \((\prod_{i \not\in J} \overline{H}_i)p(V)\) 是紧的。
+
+引理 3.　设 A 与 B 是交换群，且 A 是可除的。设 C 是 B 的一个子群，\(\varphi\) 是从 C 到 A 中的一个态射。则存在一个从 B 到 A 中的态射延拓 \(\varphi\)。
+
+设 \(\mathcal{O}\) 是由二元组 \((\mathrm{X},f)\) 组成的集合，其中 \(\mathrm{X}\) 是 B 的包含 C 的子群，\(f\) 是从 \(\mathrm{X}\) 到 A 中的延拓 \(\varphi\) 的态射。用下列关系给 \(\mathcal{O}\) 排序：“ \(\mathrm{X} \subset \mathrm{X}'\) 且 \(f'\) 延拓 \(f\) ”。可以验证 \(\mathcal{O}\) 是归纳的。设 \((\mathrm{X},f)\) 是 \(\mathcal{O}\) 的一个极大元素（E，III，第 20 页，定理 2）。若 \(\mathrm{X} \neq \mathrm{B}\)，取 B-X 的一个元素 \(b\)，并设 \(\mathrm{X}'\) 是由 \(\mathrm{X}\) 与 \(b\) 生成的子群。B 的交换性表明 \(\mathrm{X}'\) 是形如 \(b^n x\)（\(n \in \mathbf{Z}\)，\(x \in \mathrm{X}\)）的元素所成的集合。首先假设 \(b^n \notin \mathrm{X}\)（对每个整数 \(n \neq 0\)）。把 \(f'\) 定义为从 \(\mathrm{X}'\) 到 A 中的一个态射：取一个任意元素 \(y \in \mathrm{A}\)，并令 \(f'(b^n x) = y^n f(x)\)（对所有 \(n \in \mathbf{Z}\) 与每个 \(x \in \mathrm{X}\)）。由于 A 交换，\(f'\) 是一个态射，且它延拓 \(f\)。现在假设存在 \(n \neq 0\) 使 \(b^n \in \mathrm{X}\)，并设 \(m > 0\) 满足 \(m\mathbf{Z} = \{n \in \mathbf{Z} \mid b^n \in \mathrm{X}\}\)。由于 A 可除，存在一个元素 \(y \in \mathrm{A}\) 使得 \(y^m = f(b^m)\)。于是把 \(f\) 延拓为从 \(\mathrm{X}'\) 到 A 中的一个态射：令 \(f'(b^n x) = y^n f(x)\)（对 \(n \in \{0,1,\ldots,m-1\}\) 与 \(x \in \mathrm{X}\)）。在这两种情形，\((\mathrm{X},f)\) 都不是极大的。因此 \(\mathrm{X} = \mathrm{B}\)，引理得证。
+
+注.　用范畴的语言，该引理断言可除群是交换群范畴中的内射对象；参看 A，VII，第 53 页，习题 3。
+
+命题 1.　下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  G 由一个紧子集生成；
+\item
+  存在正整数 p 与 q 以及一个紧群 K，使得 G 同构于 \(R^{p} \times Z^{q} \times K\)；
+\item
+  存在一个整数 \(n \geqslant 0\)，使得 \(\widehat{G}\) 局部同构于 \(R^{n}\)；
+\item
+  存在正整数 p 与 q 以及一个离散群 D，使得 \(\widehat{G}\) 同构于 \(R^{p} \times T^{q} \times D\)。
+\item
+  \(\Longrightarrow\) (iii)：若 G 具有性质 (i)，则存在一个整数 \(n \geqslant 0\) 及 G 的一个同构于 \(Z^{n}\) 的子群 D，使得 G/D 是紧的（引理 2）。这时 \(D^{\perp}\)——它与 G/D 的对偶等同——是离散的（II，第 226 页定理 4 及 II，第 233 页命题 18）。因此 \(\widehat{G}\) 局部同构于 \(\widehat{G}/D^{\perp}\)，也就是同构于 \(\widehat{D}\)，后者同构于 \(T^{n}\)（II，第 226 页定理 4 及 II，第 233 页命题 18）。而 \(T^{n}\) 局部同构于 \(R^{n}\)。
+\item
+  \(\Longrightarrow\) (iv)：若 \(\widehat{\mathbf{G}}\) 局部同构于 \(\mathbf{R}^n\)，则存在一个整数 \(p\)，\(0 \leqslant p \leqslant n\)，使得中性分支 \(\widehat{\mathbf{G}}_0\)（\(\widehat{\mathbf{G}}\) 的中性分支）是同构于 \(\mathbf{R}^p \times \mathbf{T}^{n-p}\) 的开子群（TG，VII，第 13 页，定理 1）。特别地，\(\widehat{\mathbf{G}}_0\) 是可除群。把引理 3 应用于子群 \(\widehat{\mathbf{G}}_0\)（\(\widehat{\mathbf{G}}\) 的子群）到可除群 \(\widehat{\mathbf{G}}_0\) 中的恒等映射，存在一个态射 \(\pi\)（从 \(\widehat{\mathbf{G}}\) 到 \(\widehat{\mathbf{G}}_0\) 中），它在 \(\widehat{\mathbf{G}}_0\) 上是恒等映射。于是我们有 \(\pi \circ \pi = \pi\)，即 \(\pi\) 是一个射影。它是连续的，因为它在开子群 \(\widehat{\mathbf{G}}_0\) 上的限制是连续的。因此 \(\widehat{\mathbf{G}}\) 是 \(\widehat{\mathbf{G}}_0\) 与子群 \(\overline{\pi}^{-1}(e)\) 的直积，后者是离散的，因为它同构于 \(\widehat{\mathbf{G}} / \widehat{\mathbf{G}}_0\)（TG，III，第 47 页，推论）。(iv) \(\Longrightarrow\) (ii)：由 II，第 206 页命题 2、II，第 233 页命题 18 及 II，第 236 页推论 3 得到。
+\item
+  \(\Longrightarrow\) (i)：对每个紧群 K，群 \(R^{p} \times Z^{q} \times K\) 由紧集 \([0,1]^{p} \times \{0,1\}^{q} \times K\) 生成。
+\end{enumerate}
+
+推论 1.　假设 G 由 e 的一个紧邻域生成。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  存在 G 的一个紧子群 K 及正整数 p 与 q，使得 G 同构于 \(R^{p} \times Z^{q} \times K\)。
+\item
+  反之，设 K 是一个紧群，p 与 q 是正整数，G 是同构于 \(R^{p} \times Z^{q} \times K\) 的群。则 K 是 G 的唯一极大紧子群，且整数 \((p,q)\) 由 G 唯一确定。
+\end{enumerate}
+
+断言 \(a\)) 由命题 1 得到。设 K 是一个紧群，\(p\)、\(q\) 是正整数。假设 G 同构于群 \(\mathbf{R}^{p} \times \mathbf{Z}^{q} \times \mathrm{K}\)，且我们把 G 与这个群等同。在 G 到 \(\mathbf{R}^{p} \times \mathbf{Z}^{q}\) 的典范投影下，G 的每个紧子群的像是 \(\mathbf{R}^{p} \times \mathbf{Z}^{q}\) 的紧子群；因而它化为单位元素。因此 \(\mathrm{K}' \subset \mathrm{K}\)，即 K 是 G 的最大紧子群。子群 \(\mathbf{R}^{p} \times \mathrm{K}\) 也是唯一的，因为 \(\mathbf{R}^{p}\) 是 G/K 的中性分支。考虑到 TG，VII，第 13 页，推论 3，整数 \(p\) 由 G 唯一确定。由于 \(\mathrm{G}/(\mathbf{R}^{p} \times \mathrm{K})\) 同构于 \(\mathbf{Z}^{q}\)，整数 \(q\) 也由 G 唯一确定。
+
+注记.　由对偶性，\(\hat{G}\) 同构于 \(R^{p} \times T^{q} \times D\)（命题 3 (iv)），其中子群 \(R^{p} \times T^{q}\) 与 \(T^{q}\) 以及整数 p 与 q 都唯一确定。
+
+推论 2.　下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  群 G 与 \(\hat{G}\) 都由紧子集生成；
+\item
+  存在正整数 n 与 m，使得 G 局部同构于 \(R^{m}\)，且 \(\hat{G}\) 局部同构于 \(R^{n}\)；
+\item
+  存在正整数 p、q 与 r 以及一个有限群 A，使得 G 同构于 \(R^{p} \times T^{q} \times Z^{r} \times A\)；
+\item
+  存在正整数 p、q 与 r 以及一个有限群 A，使得 \(\hat{G}\) 同构于乘积 \(R^{p} \times Z^{q} \times T^{r} \times A\)。
+\end{enumerate}
+
+由命题 1 有 (i) \(\Leftrightarrow\) (ii)，由对偶性有 (iii) \(\Leftrightarrow\) (iv)，从而有 (iii) \(\Rightarrow\) (i)。最后，若 (i) 为真，则 \(\widehat{\mathbf{G}}\) 同构于 \(\mathbf{R}^{p} \times \mathbf{T}^{r} \times \mathbf{D}\)，其中 D 是离散的（命题 1）。群 D 由一个紧子集生成，因而是有限的。于是存在 \(q \geqslant 0\)，使得 D 同构于 \(\mathbf{Z}^{q} \times \mathbf{A}\)，其中 A 是有限群（A，VII，第 22 页，定理 3）。
+
+注记.　采用推论 2 的记号，若把 G 与 \(R^{p} \times T^{q} \times Z^{r} \times A\) 等同，则子群 \(R^{p} \times T^{q}\) 是 G 的单位元连通分支，子群 \(T^{q} \times A\) 是它的最大紧子群，而 \(T^{q}\) 是后者的单位元连通分支；由上一个注记，整数 p、q、r 由 G 唯一确定，且群 A 在同构意义下由 G 确定。
+
+命题 2.　假设 G 是紧的。存在 G 的闭子群的一个递降滤过族 \((\mathrm{H}_{i})_{i\in\mathrm{I}}\)，使得
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  群 G 与诸 \(\mathrm{G / H_i}\) 的射影极限等同；
+\item
+  对每个 i，存在一个整数 \(q \geqslant 0\) 及一个有限群 A，使得 \(G/H_{i}\) 同构于 \(T^{q} \times A\)。
+\end{enumerate}
+
+事实上，\(\widehat{\mathbf{G}}\) 是离散的（II，第 233 页，命题 18），因而是有限生成子群的一个递增滤过族 \((\mathrm{D}_i)_{i\in \mathrm{I}}\) 的并。令 \(\mathrm{H}_i = \mathrm{D}_i^\perp\)；群 G 与诸 \(\mathrm{G / H_i}\) 的射影极限等同（II，第 234 页，推论 3），且 \((\mathrm{H}_i)\) 是一个递降滤过族。
+
+设 \(i \in I\)。存在一个整数 \(q \geqslant 0\) 及一个有限群 A，使得群 \(D_{i}\) 同构于 \(Z^{q} \times A\)（A，VII，第 22 页，定理 3），于是 \(G/H_{i}\) 同构于 \(T^{q} \times \widehat{A}\)（参看 II，第 232 页，推论 1）。
+
+推论.　如果群 G 由一个紧子集生成，那么它是同构于形如 \(R^{p} \times T^{q} \times Z^{r} \times A\) 的群的群的射影极限，其中 A 是有限群，p、q、r 是正整数。
+
+由 II，第 246 页，命题 1 的 (ii)，本推论可由命题 2 得出。
+

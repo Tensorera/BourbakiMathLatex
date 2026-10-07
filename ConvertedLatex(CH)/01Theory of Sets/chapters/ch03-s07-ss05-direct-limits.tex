@@ -1,0 +1,50 @@
+\subsection{直接极限}
+
+设 I 是一个（右）有向预序集，且设 \((\mathbf{E}_{\alpha})_{\alpha\in\mathbf{I}}\) 是由I指标化的一族集合。对于每一对 \((\alpha,\beta)\) （I中满足 \(\alpha\leqslant\beta\) 的元素），让 \(f_{\beta\alpha}\) 为从 \(E_{\alpha}\) 到 \(E_{\beta}\) 中的一个映射。假设 \(f_{\beta\alpha}\) 满足以下条件：
+
+(LI \(_{I}\) ) 这些关系 \(\alpha \leqslant \beta \leqslant \gamma\) 蕴含 \(f_{\gamma\alpha} = f_{\gamma\beta} \circ f_{\beta\alpha}\) .
+
+(LI \(_{II}\) ) 对于每个 \(\alpha \in I\) , \(f_{\alpha\alpha}\) 是 E 的恒等映射 \(_{\alpha}\) .
+
+设 G 为集合族 \((\mathbf{E}_{\alpha})_{\alpha\in\mathbf{I}}\) 之和所成的集合（第二章，§4，第8号）；为简便起见，我们将把 \(E_{\alpha}\) 与其在G中的典范像等同起来，并且对每个 \(x\in G\) 我们将用 \(\lambda(x)\) 表示唯一的指标 \(\alpha\in I\) 使得 \(x\in E_{\alpha}\) 。 设 \(R\{x,y\}\) 表示G中两个元素x、y之间的如下关系：“存在一个元素 \(\gamma\in I\) 使得 \(\gamma\geqslant\alpha=\lambda(x)\) 并且 \(\gamma\geqslant\beta=\lambda(y)\) 使得 \(f_{\gamma x}(x)=f_{\gamma\beta}(y)\) ”。则R是G上的一个等价关系。显然R在G上是自反且对称的。为证明R是传递的，设 \(x\in E_{\alpha}, y\in E_{\beta}, z\in E_{\gamma}\) ，并假设存在 \(\lambda\in I\) 使得 \(\lambda\geqslant\alpha,\lambda\geqslant\beta\) 并且 \(f_{\lambda\alpha}(x)=f_{\lambda\beta}(y)\) ，以及 \(\mu\in I\) 使得 \(\mu\geqslant\beta,\mu\geqslant\gamma\) ，以及 \(f_{\mu\beta}(y)=f_{\mu\gamma}(z)\) 。由于I是有向集，存在 \(v\in I\) 使得 \(v\geqslant\lambda\) 并且 \(v\geqslant\mu\) ;
+
+由 \((\mathbf{LI}_{\mathbf{I}})\) ，于是我们有
+
+\[
+\begin{array}{r l} f _ {\nu \alpha} (x) & = f _ {\nu \lambda} (f _ {\lambda \alpha} (x)) = f _ {\nu \lambda} (f _ {\lambda \beta} (y)) = f _ {\nu \beta} (y) \\ & = f _ {\nu \mu} (f _ {\mu \beta} (y)) = f _ {\nu \mu} (f _ {\mu \gamma} (z)) = f _ {\nu \gamma} (z), \end{array}
+\]
+
+这便确立了我们的断言。商集 \(\mathbf{E} = \mathbf{G} / \mathbf{R}\) 被称为族 \((\mathbf{E}_{\alpha})_{\alpha \in \mathbf{I}}\) 关于映射族 \((f_{\beta \alpha})\) 的直接极限，并记作 \(\mathbf{E} = \lim (\mathbf{E}_{\alpha}, f_{\beta \alpha})\) ，或简称为 \(\mathbf{E} = \lim \mathbf{E}_{\alpha}\) 当没有歧义风险时。通过语言的滥用，该对 \((\overrightarrow{(\mathbf{E}_{\alpha}), (f_{\beta \alpha})})\) （通常写作 \((\mathbf{E}_{\alpha}, f_{\beta \alpha}))\) 被称为相对于有向集 I 的集合直接系统。
+
+显然，只要其中至少一个 \(E_{\alpha}\) 非空，E 就非空。我们用 \(f_{\alpha}\) 表示将G映到E = G/R上的典范映射f在 \(E_{\alpha}\) 上的限制； \(f_{\alpha}\) 称为从 \(E_{\alpha}\) 到 E 中的典范映射。如果 \(\alpha \leqslant \beta\) ，我们有关系
+
+\[
+f _ {\beta} \circ f _ {\beta \alpha} = f _ {\alpha}\tag{22}
+\]
+
+因为对每个 \(x \in \mathbf{E}_{\alpha}\) 我们拥有 \(f_{\beta \beta}(f_{\beta \alpha}(x)) = f_{\beta \alpha}(x)\) 由 \((\mathrm{LI}_{\mathbf{I}})\) ；因此元素 \(x \in \mathbf{E}_{\alpha}\) 和 \(f_{\beta \alpha}(x) \in \mathbf{E}_{\beta}\) 模 \(\mathbf{R}\) 同余。
+
+示例
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  设A、B为两个集合，且令 \((\mathrm{V}_{\alpha})_{\alpha\in\mathbf{I}}\) 为A的子集族，其指标集I是有向的，且满足关系 \(\alpha\leqslant\beta\) 蕴含 \(V_{\beta}\subset V_{\alpha}\) . 设 \(E_{\alpha}\) 表示从 \(V_{\alpha}\) 到B中的所有映射的集合，并且对于每一对索引 \((\alpha,\beta)\) （使得 \(\alpha\leqslant\beta\) ）让 \(f_{\beta\alpha}\) 为从 \(E_{\alpha}\) 到 \(E_{\beta}\) 中的、把每个函数 \(u\in E_{\alpha}\) 映到它在 \(V_{\beta}\) 上的限制的映射。显然，条件 \((\mathrm{LI}_{\mathbf{I}})\) 并且 \((\mathrm{LI}_{\mathbf{II}})\) 得到满足，并且集合 \(E=\lim E_{\alpha}\) 被称为从 \(V_{\alpha}\) 到B的映射的芽集。*最常见的情形是 \((\mathrm{V}_{\alpha})\) 是拓扑空间A的子集的邻域族（一般拓扑学，第一章，第6节，第10号）。
+\item
+  假设对每个 \(\alpha \in I\) ， \(E_{\alpha}\) 都是同一个集合 \(F\) ，且每当 \(\alpha \leqslant \beta\) 时， \(f_{\beta \alpha}\) 都是 \(F\) 上的恒等映射。那么存在一个从 \(\lim E_{\alpha}\) 到 \(F\) 的典范双射。为定义 \(\lim E_{\alpha}\) ，必须构造集合 \(G\) ，即族 \((E_{\alpha})\) 的和；因此 \(G\) 是族 \((G_{\alpha})\) 的并，其中各集合两两不相交，且对每个 \(\alpha \in I\) 都有一个自然双射 \(h_{\alpha}: F \to G_{\alpha}\) 。接下来考虑等价关系 \(R\) （\(G\) 上的），它与划分 \((P_{y})_{y \in F}\) 对应，其中 \(P_{y}\) 由所有 \(h_{\alpha}(y)\) （当 \(\alpha\) 遍历 \(I\) ）组成。显然 \(y \to P_{y}\) 是一个双射，其逆映射就是所需的双射。以后总通过这一典范双射把 \(F\) 与 \(\lim E_{\alpha}\) 等同起来。
+\end{enumerate}
+
+引理1. 设 \((\mathbf{E}_{\alpha}, f_{\beta \alpha})\) 是一个集合直接系统， \(\mathbf{E} = \lim_{\rightarrow} \mathbf{E}_{\alpha}\) 为其直接极限，且对每个 \(\alpha \in \mathbf{I}\) 让 \(f_{\alpha}: \mathbf{E}_{\alpha} \to \mathbf{E}\) 为典范映射。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  让 \((x^{(i)})_{1\leqslant i\leqslant n}\) 是 E 的元素的一个有限组。则存在 \(\alpha \in I\) 以及元素的一个有限组 \((x_{\alpha}^{(i)})_{1\leqslant i\leqslant n}\) （\(\mathbf{E}_{\alpha}\) 的元素），使得 \(x^{(i)} = f_{\alpha}(x_{\alpha}^{(i)})\) 对于 \(1\leqslant i\leqslant n\) .
+\item
+  让 \((y_{\alpha}^{(i)})_{1\leqslant i\leqslant n}\) 为某个 \(\mathbf{E}_{\alpha}\) 的元素的一个有限组。如果 \(f_{\alpha}(y_{\alpha}^{(i)}) = f_{\alpha}(y_{\alpha}^{(j)})\) 对于每一对索引 \((i,j)\) ，那么存在 \(\beta \geqslant \alpha\) 使得 \(f_{\beta \alpha}(y_{\alpha}^{(i)}) = f_{\beta \alpha}(y_{\alpha}^{(j)})\) 对于每一对 \((i,j)\) .
+\item
+  根据E的定义，对于每一个 \(i\) 存在一个索引 \(\beta_{i} \in I\) 和一个元素 \(z_{\beta_{i}} \in E_{\beta_{i}}\) 使得 \(x^{(i)} = f_{\beta_{i}}(z_{\beta_{i}})\) 。取 \(\alpha\) 使得 \(\alpha \geqslant \beta_{i}\) 对于 \(1 \leqslant i \leqslant n\) ，以及 \(x_{\alpha}^{(i)} = f_{\alpha \beta_{i}}(z_{\beta_{i}})\) .
+\item
+  根据E的定义，对于每一对 \((i, j)\) 存在 \(\gamma_{ij} \in I\) 使得 \(\gamma_{ij} \geqslant \alpha\) 并且 \(f_{\gamma_{ij}\alpha}(y_{\alpha}^{(i)}) = f_{\gamma_{ij}\alpha}(y_{\alpha}^{(j)})\) 。取 \(\beta\) 使得 \(\beta \geqslant \gamma_{ij}\) 对于所有对 \((i, j)\) ，并利用关系 \(f_{\beta\alpha} = f_{\beta\gamma_{ij}} \circ f_{\gamma_{ij}\alpha}\) .
+\end{enumerate}
+

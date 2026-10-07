@@ -1,0 +1,45 @@
+\subsection{凸集的定义}
+
+对仿射空间 E 中任意两点 x、y，点 \(\lambda x + \mu y\)（其中 \(\lambda \geqslant 0\)、\(\mu \geqslant 0\)、\(\lambda + \mu = 1\)）组成的集，称为以 x 与 y 为端点的闭线段；当 x = y 时它退化为一个点。该线段中对 x 取补所得的集，称为以 x、y 为端点且在 x 处开、在 y 处闭的线段；当 x = y 时它是空集。最后，以 x、y 为端点的闭线段中对 \(\{x, y\}\) 取补所得的集，称为以 x、y 为端点的开线段；当 x = y 时它是空集。
+
+定义 1. --- 仿射空间 E 的子集 A 称为凸的，如果对 A 的任意两点 x、y，以 x、y 为端点的闭线段都包含在 A 中。
+
+由于 \((1 - \lambda)a + \lambda x = a + \lambda(x - a)\)，这个定义等价于下列定义：集 A 是凸的，如果对每点 \(a \in A\)，A 在以 a 为中心、以 \(\lambda\)（\(0 < \lambda < 1\)）为比的位似变换下的像包含在 A 中（换言之，A 对这些位似变换是稳定的）。
+
+例. --- 1) E 的每个线性仿射流形（特别地，空集）都是凸的。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  \(\mathbf{R}\) 中仅有的非空凸集是区间（GT, IV, § 2.4, prop. 1）。
+\item
+  设 E 是向量空间，\(\|x\|\) 是 E 上的一个范数；由满足 \(\| x\| \leqslant 1\) 的点 x 组成的单位球 B 是凸的，因为关系式 \(\| x\| \leqslant 1\)、\(\| y\| \leqslant 1\) 蕴含：当 \(0\leqslant \lambda \leqslant 1\) 时
+\end{enumerate}
+
+\[
+\left\| \lambda x + (1 - \lambda) y \right\| \leqslant \lambda \| x \| + (1 - \lambda) \| y \| \leqslant \lambda + (1 - \lambda) = 1.
+\]
+
+注记. --- 设 A 是向量空间 E 的一个凸子集；对任意标量 \(\alpha > 0\) 与 \(\beta > 0\)，我们有 \(\alpha A + \beta A = (\alpha + \beta) A\)。换言之，对任意 \(x \in A\)、\(y \in A\)，存在 \(z \in A\) 使得 \((\alpha + \beta) z = \alpha x + \beta y\)；事实上，这个关系式可写成 \(z = \frac{\alpha}{\alpha + \beta} x + \frac{\beta}{\alpha + \beta} y\)，而且我们有 \(\frac{\alpha}{\alpha + \beta} > 0\)、\(\frac{\beta}{\alpha + \beta} > 0\) 及 \(\frac{\alpha}{\alpha + \beta} + \frac{\beta}{\alpha + \beta} = 1\)，由此并利用定义 1 即得结论。
+
+命题 1. --- 设 \((x_{\iota})\) 是凸子集 A 中点的一个族；每个重心 \(\sum_{\iota} \lambda_{\iota} x_{\iota}\)（诸 \(x_{\iota}\) 以正质量 \(\lambda_{\iota}\) 构成的，满足 \(\sum_{\iota} \lambda_{\iota} = 1\)，且除有限多个指标外 \(\lambda_{\iota} = 0\)，cf.~A, II, §9.3）都属于 A。
+
+显然只需考虑指标为 1, 2, \ldots, p 且对每个 i 有 \(\lambda_{i} > 0\) 的情形；当 p = 1 时命题是平凡的；我们对 p 作归纳证明。置 \(\mu = \sum_{i=1}^{p-1} \lambda_{i} > 0\)，并置 \(y = \sum_{i=1}^{p-1} \frac{\lambda_{i}}{\mu} x_{i}\)；归纳假设蕴含 \(y \in A\)。现在由于 \(\lambda_{p} = 1 - \mu\) 且 \(\sum_{i=1}^{p} \lambda_{i} x_{i} = \mu y + (1 - \mu) x_{p}\)，由定义 1 得 \(\sum_{i=1}^{p} \lambda_{i} x_{i}\) 属于 A。
+
+命题 2. --- 设 E 与 F 是两个仿射空间，f 是 E 到 F 中的一个仿射线性映射；则 E 的凸子集在 f 下的像，以及 F 的凸子集在 f 下的原像，都是凸的。
+
+以 x、y 为端点的闭线段在 f 下的像是以 \(f(x)\)、\(f(y)\) 为端点的闭线段，由此得第一个结论。我们推出，F 的闭线段在 f 下的原像包含端点属于它的每个闭线段；由此得 prop. 2 的第二个结论。
+
+特别地，凸集在位似变换或平移下的像是凸集。
+
+命题 3. --- 在仿射空间 E 中，设 H 是由关系式 \(g(x) = 0\) 定义的超平面，其中 g 是 E 上的一个非常数仿射函数。则由关系式 \(g(x) \geqslant 0\)、\(g(x) \leqslant 0\)、\(g(x) > 0\)、\(g(x) < 0\) 定义的诸半空间都是凸的。
+
+因为它们都是 R 的区间在 g 下的原像，从而都是凸的。
+
+采用 prop. 3 的记号，仿射空间中子集 M 的各个点称为位于超平面 H 的同侧（相应地，严格同侧），如果 M 包含在由 \(g(x) \geqslant 0\)、\(g(x) \leqslant 0\)（相应地，\(g(x) > 0\) 或 \(g(x) < 0\)）定义的半空间之一中。
+
+命题 4. --- 仿射空间 E 的凸子集 A 的各个点严格位于超平面 H 的同侧，当且仅当 A 与 H 不相交。
+
+条件显然是必要的。反之，设条件满足，并设 \(g(x) = 0\) 是定义 H 的一个方程（g 是 E 到 R 中的一个仿射线性映射）。集 \(g(\mathbf{A})\) 在 R 中是凸的，因此是一个区间，且 \(0 \notin g(\mathbf{A})\)。故 \(g(x)\) 对所有 \(x \in A\) 具有固定的符号。
+

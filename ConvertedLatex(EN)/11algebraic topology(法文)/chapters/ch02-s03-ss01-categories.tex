@@ -1,0 +1,40 @@
+\subsection{Categories}
+
+DEFINITION 1. --- Let C be a quiver. Denote by J the set of pairs \((f,g)\) of arrows of C such that \(t(f)=o(g)\) . A composition law in C is a mapping \(m:J\to\mathrm{Fl}(\mathrm{C})\) such that, for every pair \((f,g)\in\mathrm{J}\) , the origin of the arrow \(m(f,g)\) is that of f and its target that of g.
+
+Let C be a quiver equipped with a composition law \(m\) . Two arrows \(f\) and \(g\) such that \(t(f) = o(g)\) are said to be composable; the arrow \(m(f, g)\) is called their composite, or their product, and is often denoted \(f \cdot g\) , or even \(fg\) .
+
+For every vertex \(a\) of C, the set \(\mathrm{C}_{a,a} = \mathrm{Fl}_{a,a}(\mathrm{C})\) , equipped with the map deduced from \(m\) by passing to subsets, is a magma (A, I, p. 1, def. 1).
+
+A family \((f_{i})_{i\in\mathrm{I}}\) of arrows of C, indexed by a finite nonempty totally ordered set I, is said to be composable if, for every pair \((i,j)\) of consecutive elements of I, the arrows \(f_{i}\) and \(f_{j}\) are composable. One defines the product \(\prod_{i\in\mathrm{I}}f_{i}\) of such a family by induction on the cardinality of I as follows (cf. A, I, p. 3):
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  if I has a single element \(\omega\) , \(\prod_{i\in I}f_i = f_\omega\) ;
+\item
+  if I has at least two elements and if \(\omega\) is the smallest element of I, we set \(\prod_{i\in I}f_i = f_\omega \cdot \prod_{i\in I - \{\omega \}}f_i\) .
+\end{enumerate}
+
+The composition law \(m\) is said to be associative if one has \(f \cdot (g \cdot h) = (f \cdot g) \cdot h\) for every composable triple \((f, g, h)\) of arrows of C. When the law \(m\) is associative, the product of a sequence \((f_1, \ldots, f_n)\) of \(n\) composable arrows, where \(n\) is an integer \(\geqslant 1\) , is denoted \(f_1 f_2 \ldots f_n\) .
+
+Let \(a\) be a vertex of C. We say that an arrow \(e \in \mathrm{C}_{a,a}\) is an identity element of \(m\) at \(a\) if one has \(ef = f\) for every arrow \(f\) with source \(a\) and \(ge = g\) for every arrow \(g\) with term \(a\) . There exists at most one identity element of \(m\) at \(a\) : if \(e\) and \(e'\) are two of them, one has \(e' = ee' = e\) . When such an identity element exists, it is often denoted \(e_a\) ; it is then an identity element of the magma \(\mathrm{C}_{a,a}\) (A, I, p. 12).
+
+DEFINITION 2. --- A category is a quiver equipped with an associative composition law for which there exists an identity element at each vertex.
+
+Examples. --- 1) Let C be a quiver. Denote by Ch(C) the set of paths in C and by o: Ch(C) → Som(C), t: Ch(C) → Som(C) the maps which, to a path, associate its origin and its terminus. The quadruple \(\Omega_{\mathrm{C}} = (\mathrm{Som}(\mathrm{C}), \mathrm{Ch}(\mathrm{C}), o, t)\) is a quiver. Equip it with the composition law defined by concatenation of paths. This composition law is associative; for every vertex a of C, the constant loop \(e_a = (a)\) with origin a is an identity element at a. Thus, \(\Omega_{\mathrm{C}}\) is a category. It is said to be the category of paths of the quiver C.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let \(\Sigma\) be a kind of structure in a theory \(\mathcal{T}\) stronger than set theory and let \(\sigma\{x,y,s,u\}\) be a term of \(\mathcal{T}\) satisfying conditions (MO \(_{\text{I}}\) ), (MO \(_{\text{II}}\) ) and (MO \(_{\text{III}}\) ) of E, IV, p. 11. Let S be a set; suppose that every element of S is a pair \((x,s)\), where \(x\) is a set and \(s\) is a structure of species \(\Sigma\) on \(x\) . Let F be the set of mappings \(f\) such that there exist \((x,s)\) and \((y,t)\) in S such that \(f\) is a \(\sigma\) -morphism from \(x\) , equipped with the structure \(s\) , to \(y\) , equipped with the structure \(t\) ; one then sets \(o(f) = (x,s)\) and \(t(f) = (y,t)\) . Endowed with the composition law given by \(m(f,g)=g\circ f\) , the quiver (S,F,o,t) is a category. In this context, the elements of S are rather called objects.
+\end{enumerate}
+
+Let C be a category.
+
+For every vertex \(a\) of C, the set \(\mathrm{C}_{a,a}\) , equipped with the composition law \((f,g)\mapsto fg\) , is a monoid with identity element \(e_a\) .
+
+We say that an arrow \(f\) of C is invertible if there exists an arrow \(g\) of C such that \(o(g) = t(f)\) , \(t(g) = o(f)\) and such that \(fg\) and \(gf\) are identity elements at \(o(f)\) and \(t(f)\) respectively. Such an arrow \(g\) is unique (if \(fg = e_{o(f)}\) and \(g'f = e_{t(f)}\) , we have \(g = e_{t(f)}g = (g'f)g = g'(fg) = g'e_{o(f)} = g'\) ) and is called the inverse of \(f\) ; the inverse of an invertible arrow \(f\) is denoted \(f^{-1}\) .
+

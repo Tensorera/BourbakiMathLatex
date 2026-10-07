@@ -1,0 +1,34 @@
+\subsection{递增映射}
+
+定义1. 设E和F为预序集（其中每个集中的预序关系均记为 \(\leqslant\) ）。从E到F的映射f被称为递增的（或保序的），如果关系 \(x \leqslant y\) 蕴含 \(f(x) \leqslant f(y)\) ；如果满足关系 \(x \leqslant y\) 蕴含 \(f(x) \geqslant f(y)\) ，则称其为递减（或反序）映射。从E到F的映射若为递增或递减，则称其为单调的。
+
+当我们将E或F上的一个预序替换为其相反预序时，从E到F的递增映射变为递减映射（反之亦然）。每个常值函数既是递增的又是递减的；该命题的逆命题通常不成立。
+
+例如，若集合E按相等关系排序，则E到自身的恒等映射既是递增的又是递减的，但当E含有多于一个元素时，它并非常值映射（参见习题7）。
+
+定义2. 设E和F是两个有序集。将E映入F的映射f称为严格递增（或严格保序）的，如果关系x \textless{} y 蕴含 \(f(x) < f(y)\) ；如果关系 x \textless{} y 蕴含 \(f(x) > f(y)\) ，则称其为严格递减（或严格反序）的。将E映入F的映射称为严格单调的，如果它要么严格递增，要么严格递减。
+
+示例
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  设 E 为一个集合。映射 \(X \rightarrow E - X\) 是 \(\mathfrak{P}(E)\) （按包含关系排序）到自身的严格递减映射。
+\item
+  设 E 是一个有序集。对于每个 \(x \in E\) ，设 \(U_x\) 为所有 \(y \in E\) 中使得 \(y \geqslant x\) 的元素所成的集合. 映射 \(x \to U_x\) 是 E 到 \(\mathfrak{P}(E)\) （按包含关系排序）的一个严格递减映射；事实上，关系 \(x \leqslant y\) 等价于 \(U_x \supset U_y\) .
+\end{enumerate}
+
+有序集E到有序集F的单调单射是严格单调的；其逆命题通常不成立，因为可能有 \(f(x) = f(y)\) 当关系 \(x \leqslant y\) , \(x \geqslant y\) 均不成立时（参见第12号，命题11）。
+
+一个双射映射 \(f\) （从有序集合 \(\mathbf{E}\) 到有序集合 \(\mathbf{E}'\) 上的双射）是 \(\mathbf{E}\) 到 \(\mathbf{E}'\) 上的一个同构（第3号），当且仅当 \(f\) 与其逆映射两者都是递增的。
+
+如果 I 是一个有序指标集，则一族子集 \((\mathbf{X}_t)_{i \in I}\) 称为集合 E 的递增族，如果 \(\iota \to \mathbf{X}_t\) 是从 I 到 \(\mathfrak{P}(\mathbf{E})\) （按包含关系排序）的递增映射（换言之，如果 \(\iota \leqslant x\) 蕴含 \(\mathbf{X}_t \subset \mathbf{X}_x\) ）。类似地，我们定义递减、严格递增或严格递减的子集族 \((\mathbf{X}_t)_{i \in I}\) 。
+
+命题 2. 设 E, E' 是两个有序集，并设 u: E → E' 与 v: E' → E 是两个递减映射，使得对所有 x ∈ E 和所有 x' ∈ E' 都有 v(u(x)) ≥ x 且 u(v(x')) ≥ x'。则
+
+\[
+u \circ v \circ u = u \quad \text{且} \quad v \circ u \circ v = v.
+\]
+
+由于关系 \(v(u(x)) \geqslant x\) 蕴含 \((u(v(u(x))) \leqslant u(x)\) ，因为 \(u\) 是递减的；另一方面，我们就有 \(u(v(u(x))) \geqslant u(x)\) ，这可通过将 \(x'\) 换为 \(u(x)\) 代入不等式 \(u(v(x')) \geqslant x'\) 而得。因此第一个等式成立；第二个等式的证明类似。
+

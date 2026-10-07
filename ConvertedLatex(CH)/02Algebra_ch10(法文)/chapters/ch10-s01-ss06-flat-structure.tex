@@ -1,0 +1,93 @@
+\subsection{平坦模的结构}
+
+引理 2. --- 设 I 为右有向有序集， \((\mathrm{E}_{\alpha}, \varphi_{\beta\alpha})\) 是相对于 I 的集合归纳系，E 为其归纳极限， \(\varphi_{\alpha}: E_{\alpha} \to E\) , \(\alpha \in I\) 为典范映射。设 \(f: I \to I\) 为一个映射使得 \(f(\alpha) > \alpha\) 当 \(\alpha \in I\) ，并假设对每个 \(\alpha \in I\) ，给定一个集合 \(L_{\alpha}\) 及映射 \(u_{\alpha}: E_{\alpha} \to L_{\alpha}\) 和 \(v_{\alpha}: L_{\alpha} \to E_{f(\alpha)}\) ，使得 \(v_{\alpha} \circ u_{\alpha}' = \varphi_{f(\alpha),\alpha}\) 。设 J 为通过赋予 I 关系“ \(\alpha \leqslant \beta\) 如果 \(\alpha = \beta\) 或 \(f(\alpha) \leqslant \beta\) ”而得到的有序集。若 \(\alpha\) , \(\beta \in J\) 且 \(\alpha \leqslant \beta\) ，设 \(\psi_{\beta\alpha}: L_{\alpha} \to L_{\beta}\) 为满足 \(\psi_{\beta\alpha} = Id\) 如果 \(\alpha = \beta\) , \(\psi_{\beta\alpha} = u_{\beta} \circ \varphi_{\beta,f(\alpha)} \circ v_{\alpha}\) 如果 \(f(\alpha) \leqslant \beta\) 如果 \(\alpha \in J\) ，设 \(\psi_{\alpha}: L_{\alpha} \to E\) 为映射 \(\varphi_{f(\alpha)} \circ v_{\alpha}\) 。则有序集 J 是有向的， \((L_{\alpha}, \psi_{\beta\alpha})\) 是相对于 J 的归纳系， \((\psi_{\alpha})\) 是映射的归纳系，且映射 \(\psi: \varinjlim L_{\alpha} \to E\) （由诸 \(\psi_{\alpha}\) 得出）是双射。
+
+显然 J 是有向的。若 \(\alpha\) , \(\beta \in J\) 且 \(\alpha < \beta\) ，我们有
+
+\[
+\begin{array}{r l} \psi_ {\beta} \circ \psi_ {\beta \alpha} & = \varphi_ {f (\beta)} \circ v _ {\beta} \circ u _ {\beta} \circ \varphi_ {\beta , f (\alpha)} \circ v _ {\alpha} \\ & = \varphi_ {f (\beta)} \circ \varphi_ {f (\beta), \beta} \circ \varphi_ {\beta , f (\alpha)} \circ v _ {\alpha} = \varphi_ {f (\alpha)} \circ v _ {\alpha} = \psi_ {\alpha}; \end{array}
+\]
+
+同样地，如果 \(\alpha\) , \(\beta\) , \(\gamma \in J\) 且 \(\alpha < \beta < \gamma\) ，我们有
+
+\[
+\begin{array}{r l} \psi_ {\gamma \beta} \circ \psi_ {\beta \alpha} & = u _ {\gamma} \circ \varphi_ {\gamma , f (\beta)} \circ v _ {\beta} \circ u _ {\beta} \circ \varphi_ {\beta , f (\alpha)} \circ v _ {\alpha} \\ & = u _ {\gamma} \circ \varphi_ {\gamma , f (\beta)} \circ \varphi_ {f (\beta), \beta} \circ \varphi_ {\beta , f (\alpha)} \circ v _ {\alpha} = u _ {\gamma} \circ \varphi_ {\gamma , f (\alpha)} \circ v _ {\alpha} = \psi_ {\gamma \alpha}. \end{array}
+\]
+
+让我们证明最后一个断言：对于每个 \(\alpha \in J\) ，我们有
+
+\[
+\psi_ {\alpha} \circ u _ {\alpha} = \varphi_ {f (\alpha)} \circ v _ {\alpha} \circ u _ {\alpha} = \varphi_ {f (\alpha)} \circ \varphi_ {f (\alpha), \alpha} = \varphi_ {\alpha},
+\]
+
+因此 \(\varphi_{\alpha}(\mathrm{E}_{\alpha}) = \psi_{\alpha}(u_{\alpha}(\mathrm{E}_{\alpha})) \subset \psi_{\alpha}(\mathrm{L}_{\alpha})\) ，且 \(\psi\) 是满射。设 \(\alpha \in \mathbf{J}\) 并设 \(x, y \in \mathrm{L}_{\alpha}\) 且 \(\psi_{\alpha}(x) = \psi_{\alpha}(y)\) ，即 \(\varphi_{f(\alpha)}(v_{\alpha}(x)) = \varphi_{f(\alpha)}(v_{\alpha}(y))\) ；存在 \(\beta \in \mathrm{I}\) , \(\beta \geqslant f(\alpha)\) 使得
+
+\[
+\varphi_ {\beta , f (\alpha)} (v _ {\alpha} (x)) = \varphi_ {\beta , f (\alpha)} (v _ {\alpha} (y)),
+\]
+
+因此
+
+\[
+\psi_ {\beta , \alpha} (x) = u _ {\beta} (\varphi_ {\beta , f (\alpha)} (v _ {\alpha} (x))) = u _ {\beta} (\varphi_ {\beta , f (\alpha)} (v _ {\alpha} (y))) = \psi_ {\beta , \alpha} (y).
+\]
+
+且ψ是单射。
+
+定理1（D. Lazard）。——对于每个A-模E，以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  E是平坦的。
+\item
+  对于每个有限表示的A-模P，典范同态
+\end{enumerate}
+
+\[
+\operatorname{Hom} _ {\mathbf {A}} (\mathrm{P}, \mathrm{A}) \otimes_ {\mathbf {A}} \mathrm{E} \rightarrow \operatorname{Hom} _ {\mathbf {A}} (\mathrm{P}, \mathrm{E})
+\]
+
+是满射。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\item
+  对于每个有限表示的 A-模 P 以及每个同态 \(u : P \to E\) ，存在一个有限生成的自由 A-模 L 以及同态 \(v : P \to L\) 和 \(w : L \to E\) ，使得 \(u = w \circ v\) 。
+\item
+  存在一个有向有序集 J，一个由有限生成自由模构成的归纳系 \((\mathbf{L}_{j})_{j\in\mathbf{J}}\) 以及一个从 E 到 lim \(L_{j}\) 的同构。
+\item
+  (iv) \(\Rightarrow\) (i)：这由X的命题4(ii)（第8页）得出。
+\item
+  (i) \(\Rightarrow\) (ii)：这由X的命题8b)得出，见第12页。
+\item
+  (ii) \(\Rightarrow\) (iii)：设 P 是有限表示的 A-模，且 \(u: \mathbf{P} \to \mathbf{E}\) 的一个同态；由 (ii)，存在 \(v_1, \ldots, v_n \in \mathrm{Hom}_{\mathbf{A}}(\mathbf{P}, \mathbf{A})\) , \(w_1, \ldots, w_n \in \mathbf{E}\) 使得 \(u(x) = \sum v_i(x) w_i\) 对所有 \(x \in \mathbf{P}\) 成立；若 \(v: \mathbf{P} \to \mathbf{A}^n\) 是分量为 \((v_i)\) 的同态，而 \(w: \mathbf{A}^n \to \mathbf{E}\) 是同态 \((a_i) \mapsto \sum a_i w_i\) ，则我们确实有 \(u = w \circ v\) 。
+\item
+  (iii) \(\Rightarrow\) (iv)：假设(iii)成立，并设 \((\mathbf{E}_{\alpha},\varphi_{\beta ,\alpha})\) 是一个归纳系，相对于有向集I，由有限表示的A-模组成，其归纳极限为E（X，第11页，命题7）。如有必要，将I替换为字典序积I × N，其中 \(E_{(\alpha,n)} = E_{\alpha}\) 对每个n成立，我们可以假设I没有最大元素。对每个 \(\alpha \in I\) ，设 \(L_{\alpha}\) 为一个有限生成的自由A-模，并且 \(u_{\alpha}: E_{\alpha} \to L_{\alpha}, v_{\alpha}': L_{\alpha} \to E\) 为同态，使得 \(v_{\alpha}' \circ u_{\alpha}\) 是典范映射 \(\varphi_{\alpha}\) （从 \(E_{\alpha}\) 到 E 中）；由于 \(L_{\alpha}\) 是有限生成且自由的，且 I 没有最大元，存在一个指标 \(\beta > \alpha\) 和一个同态 \(v_{\alpha}'': L_{\alpha} \to E_{\beta}\) 使得 \(v_{\alpha}' = \varphi_{\beta} \circ v_{\alpha}''\) ；由于 \(\varphi_{\beta} \circ v_{\alpha}'' \circ u_{\alpha} = \varphi_{\beta} \circ \varphi_{\beta,\alpha}\) 并且由于 \(E_{\alpha}\) 是有限表示的，根据X第12页命题8a），存在 \(\gamma \geqslant \beta\) 使得 \(\varphi_{\gamma\beta} \circ v_{\alpha}'' \circ u_{\alpha} = \varphi_{\gamma\beta} \circ \varphi_{\beta\alpha} = \varphi_{\gamma\alpha}\) ；令 \(\gamma = f(\alpha)\) ，并设 \(v_{\alpha}\) 为同态 \(\varphi_{\gamma\beta} \circ v_{\alpha}''\) （从 \(L_{\alpha}\) 到 \(E_{f(\alpha)}\) 中），我们有 \(v_{\alpha} \circ u_{\alpha} = \varphi_{f(\alpha),\alpha}\) ，于是我们可以应用引理2，从而得到(iv)。
+\end{enumerate}
+
+推论。—— 设A是交换的。对于每个平坦的A-模E，A-模 \(\mathbf{T}(\mathrm{E}),\mathbf{S}(\mathrm{E}),\symbf{\Lambda}(\mathrm{E}),\mathbf{T}^{n}(\mathrm{E}),\mathbf{S}^{n}(\mathrm{E}),\symbf{\Lambda}^{n}(\mathrm{E})\) 是平坦的。
+
+事实上，E 是一个有向系 \((\mathbf{L}_{j})\) 的归纳极限，其中该系由有限生成的自由 A-模组成，因此 \(\mathbf{T}(\mathbf{E})\) (相应地， \(\mathbf{S}(\mathbf{E})\) ，等等）是自由 A-模的有向系的归纳极限 \(\mathbf{T}(\mathbf{L}_{j})\) (相应地， \(\mathbf{S}(\mathbf{L}_{j})\) ，等等），因此是平坦的（参见III，第61页，命题6，第62页，定理1，第73页，命题8，第75页，定理1，第83页，命题9，以及第86页，定理1）。
+
+注记. --- 在 (ii) 中考虑一个有限表示 \(A_{s}^{J} \xrightarrow{c} A_{s}^{I} \to P \to 0\) ，我们便得到条件 (ii')，它仍与前面的条件等价：
+
+(ii') 对由 A 中元素组成的每个有限矩阵 \((c_{ij})_{i\in I,j\in J}\) ，每个解
+
+\[
+\pmb {e} = (e _ {i}) _ {i \in \mathbf {I}} \in \mathrm{E} ^ {\mathbf {I}}
+\]
+
+（即线性齐次方程组
+
+\[
+\sum_ {i \in \mathbf {I}} c _ {i j} e _ {i} = 0, \quad j \in \mathrm{J},
+\]
+
+的解）都可以写成 \(b_{1}z_{1}+\cdots+b_{n}z_{n}\) ，其中 \(b_{1},\ldots,b_{n}\in E\) ，并且其中，对于 \(r=1,\ldots,n\) , \(z_{r}=(z_{r,i})_{i\in I}\) 是 \(A^{I}\) 中下述方程组的解
+
+\[
+\sum_ {i \in \mathbf {I}} z _ {r, i} c _ {i j} = 0, \quad j \in \mathrm{J}.
+\]
+

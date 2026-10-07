@@ -1,0 +1,48 @@
+\subsection{超限归纳原理}
+
+引理2. 设E是一个良序集，S是E的一些段构成的集合，且满足以下性质：(1) 属于S的段的任意并仍属于S；(2) 若 \(S_{x} \in S\) ，那么 \(S_{x} \cup \{x\} \in S\) 。则E的每一个段都属于S。
+
+假设E中存在不属于S的段，并设S为其中最小的段（第1号，命题2）。若S没有最大元素，则S是S中不同于S本身的各段的并集，且根据S的定义，这些段都属于S；因此 \(S \in S\) ，这是荒谬的。另一方面，若S有最大元素a，则 \(S = S_{a} \cup \{a\}\) ，且由于 \(S_{a}\) 是 S 的一个不同于 S 的段，我们有 \(S_{a} \in S\) ；但随后也有 \(S \in S\) ，这同样是荒谬的。
+
+为方便起见，我们将置身于一个理论 \(\mathfrak{G}\) 中，在其中 \(\mathbf{E}\) 是一个被写作 \(x \leqslant y\) 的关系良序化的集合。于是我们有以下判据：
+
+C59.（超限归纳原理）。设 \(\mathbf{R}\{x\}\) 是 \(\mathfrak{G}\) 中的一个关系 ( \(x\) 不是 \(\mathfrak{G}\) 的常数 )，使得关系式
+
+\[
+(x \in \mathrm{E} \text { 且 } (\forall y) ((y \in \mathrm{E} \text { 且 } y <   x) \Longrightarrow \mathrm{R} \{\left. y \right\})) \Longrightarrow \mathrm{R} \{x \}
+\]
+
+在 \(\mathfrak{G}\) 中是定理。在这些条件下，关系 \((x\in \mathbf{E})\Rightarrow \mathbb{R}\{x\}\) 在 \(\mathfrak{G}\) 中是定理。
+
+设 \(\mathfrak{S}\) 是 E 中满足 \((y\in S)\Longrightarrow R\{y\}\) 的段 S 所成的集合。显然，属于 \(\mathfrak{S}\) 的段的每个并集也属于 \(\mathfrak{S}\) 。另一方面，如果 \(S_x\in \mathfrak{S}\) ，由假设我们有 \(R\{x\}\) ；因此 \((y\in S_x\cup \{y\})\Longrightarrow R\{y\}\) 通过分情形讨论的方法。因此（引理2） \(E\in \mathfrak{S}\) ，这证明了该判据。
+
+在C59的应用中，关系
+
+\[
+x \in \mathrm{E} \text {   且   } (\forall y) ((y \in \mathrm{E} \text {   且   } y <   x) \Longrightarrow \mathrm{R} \{y \})
+\]
+
+通常被称为“归纳假设”。
+
+在以下内容中，对于每一个映射 \(g\) ：它把段 \(S\) （\(E\) 的段）映入一个集合 \(F\) ，并且对于每个 \(x \in S\) ，我们将用 \(g^{(x)}\) 表示段 \(S_x = ] \leftarrow, x[\) （\(E\) 的段）到 \(g(S_x)\) 上的、与 \(g\) 在 \(S_x\) 上一致的映射。利用这个记号，我们有
+
+C60.（通过超限归纳定义映射。）设 \(u\) 为一个字母， \(T\{u\}\) 为理论 \(\mathfrak{G}\) 中的一个项。存在一个集合 \(U\) 以及一个映射 \(f\) ，它把 \(E\) 映到 \(U\) 上，使得对所有 \(x \in E\) 我们拥有 \(f(x) = T\{f^{(x)}\}\) 。此外，集合 \(U\) 与映射 \(f\) 由这些条件唯一确定。
+
+首先证明唯一性。假设 \(f'\) 与 \(U'\) 也满足该判据的条件。设 \(\mathfrak{S}\) 为这样的段 \(S\) （\(E\) 的段）所成的集合：\(f\) 和 \(f'\) 在 \(S\) 上重合。显然，属于 \(\mathfrak{S}\) 的段的每个并集也属于 \(\mathfrak{S}\) 。另一方面，如果 \(S_x \in \mathfrak{S}\) ，那么 \(f\) 和 \(f'\) 在 \(S_x\) 上重合，因此 \(f^{(x)} = f'^{(x)}\) ；因此
+
+\[
+f (x) = \mathrm{T} \left\{f ^ {(x)} \right\} = \mathrm{T} \left\{f ^ {\prime (x)} \right\} = f ^ {\prime} (x),
+\]
+
+这表明 \(\mathbf{S}_x\cup \{x\} \in \mathfrak{S}\) . 由此可知 \(\mathbf{E}\in \mathfrak{S}\) （引理2），因此 \(f^{\prime} = f\) 并且 \(\mathbf{U}' = f'(\mathbf{E}) = f(\mathbf{E}) = \mathbf{U}\) .
+
+现在令 \(\mathfrak{S}_1\) 表示 E 中满足如下条件的段 S 所成的集合：存在一个集合 \(U_S\) 以及一个映射 \(f_S\) （从S到 \(U_S\) 上），使得对所有 \(x \in S\) ，我们有 \(f_S(x) = T \{ f^{(x)} \}\) 。对于每一个 \(S \in S_1\) , \(f_S\) 和 \(U_S\) 由证明的第一部分可知是唯一确定的；特别地，如果 \(S'\) 与 \(S''\) 是属于 \(\mathfrak{S}_1\) 的两个段，使得 \(S' \subset S''\) ，那么 \(f_S'\) 是从 \(S'\) 到 \(f_{S'}(S')\) 上的、与 \(f_{S'}\) 在 \(S'\) 上一致的映射。由此注记可知，属于 \(\mathfrak{S}_1\) 的段的每个并集也属于 \(\mathfrak{S}_1\) （第二章，§4，第6号，命题7）。另一方面，如果 \(S_x \in \mathfrak{S}_1\) ，我们在 \(S = S_x \cup \{x\}\) 上定义一个函数 \(f_S\) （ \(f_{S_x}\) 的一个延拓），置
+
+\[
+f _ {\mathbf {S}} (x) = \mathrm{T} \left\{f _ {\mathbf {s} _ {x}} \right\}
+\]
+
+(第二章，§4，第7号，命题8)；因为 \(f_{\mathbb{S}}^{(x)} = f_{\mathbb{S}_x}\) ，显然 \(\mathbf{S}_x \cup \{x\} \in \mathfrak{S}_1\) 。因此（引理2） \(\mathbf{E} \in \mathfrak{S}_1\) ，证明完成。
+
+通常此判据应用于存在集合 F 的情形，使得对于将 E 的某一段映到 F 的子集的每个映射 h，均有 \(T\{h\}\in F\) 。于是，通过应用 C60 所得的集合 U 是 F 的子集。因为，沿用上述记号，设 \(S_{2}\) 为 \(S_{1}\) 的子集，由E中满足以下条件的段S组成： \(U_{S}\subset F\) 。显然，属于 \(S_{2}\) 的每一段之并集也属于 \(S_{2}\) ；另一方面，关于F的假设意味着如果 \(S_{x}\in S_{2}\) ，我们有 \(S_{x}\cup\{x\}\in S_{2}\) 。该断言现在由引理2得出。
+

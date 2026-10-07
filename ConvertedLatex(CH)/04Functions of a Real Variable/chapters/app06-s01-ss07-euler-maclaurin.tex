@@ -1,0 +1,40 @@
+\subsection{欧拉–麦克劳林求和公式}
+
+在 VI, p.~280 的公式 (35) 中，把 x 换成 0 ，h 换成 x；由于 \(\mathrm{B}_{m}(0)=b_{m}\) ，由 VI, p.~276 的关系 (24) 可知，对每个整数 p\textgreater0 可以写
+
+\[
+\begin{array}{l} f (x) = \int_ {x} ^ {x + 1} f (t) d t - \frac {1}{2} \big (f (x + 1) - f (x) \big) \\ \qquad + \sum_ {k = 1} ^ {p} \frac {b _ {2 k}}{(2 k) !} \left(f ^ {(2 k - 1)} (x + 1) - f ^ {(2 k - 1)} (x)\right) + \mathrm{R} _ {p} (x) \end{array}\tag{37}
+\]
+
+其中
+
+\[
+\mathrm{R} _ {p} (x) = - \frac {1}{(2 p + 1) !} \int_ {0} ^ {1} \mathrm{B} _ {2 p + 1} (t) f ^ {(2 p + 1)} (x + 1 - t) d t.\tag{38}
+\]
+
+在这个公式中，依次把 \(x\) 换成 \(x + 1, x + 2, \ldots, x + n\) ，并把所得的公式逐一合并；我们得到
+
+\[
+\left\{ \begin{array}{l} f (x) + f (x + 1) + \dots + f (x + n) \\ = \int_ {x} ^ {x + n + 1} f (t) d t - \frac {1}{2} \bigl (f (x + n + 1) - f (x) \bigr) \\ \quad + \sum_ {k = 1} ^ {p} \frac {b _ {2 k}}{(2 k) !} \bigl (f ^ {(2 k - 1)} (x + n + 1) - f ^ {(2 k - 1)} (x) \bigr) + \mathrm{T} _ {p} (x, n) \end{array} \right.\tag{39}
+\]
+
+其中
+
+\[
+\mathrm{T} _ {p} (x, n) = - \frac {1}{(2 p + 1) !} \int_ {0} ^ {1} \mathrm{B} _ {2 p + 1} (t) \left(\sum_ {k = 0} ^ {n} f ^ {(2 p + 1)} (x + k + 1 - t)\right) d t.\tag{40}
+\]
+
+这个公式中的余项 \(T_{p}(x,n)\) 可以改写成如下形式：用 \(\overline{\mathbf{B}}_{2p+1}(t)\) 表示以 1 为周期、等于 \(\mathbf{B}_{2p+1}(t)\) （在区间 {[}0, 1{[} 上）的周期函数。则
+
+\[
+\int_ {0} ^ {1} \mathrm{B} _ {2 p + 1} (t) f ^ {(2 p + 1)} (x + k + 1 - t) d t = \int_ {k} ^ {k + 1} \overline {{\mathrm{B}}} _ {2 p + 1} (1 - s) f ^ {(2 p + 1)} (x + s) d s
+\]
+
+因而
+
+\[
+\mathrm{T} _ {p} (x, n) = - \frac {1}{(2 p + 1) !} \int_ {0} ^ {n + 1} \overline {{\mathrm{B}}} _ {2 p + 1} (1 - s) f ^ {(2 p + 1)} (x + s) d s.\tag{41}
+\]
+
+公式 (39) 称为欧拉–麦克劳林求和公式；它适用于有连续的 \((2p+1)^{th}\) 阶导数（在区间 \([x_{0},+\infty[\) 上）的每个复值函数，对每个 \(x\geqslant x_{0}\) 都成立。我们将看到（VI, p.~288）如何估计这个公式中余项 \(T_{p}(x,n)\) 的界。
+

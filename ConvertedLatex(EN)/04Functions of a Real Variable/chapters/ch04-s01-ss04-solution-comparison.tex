@@ -1,0 +1,156 @@
+\subsection{COMPARISON OF APPROXIMATE SOLUTIONS}
+
+In what follows, I and H denote, as above, an interval contained in R and an open set in the normed space E, respectively; \(t_{0}\) is a point of I.
+
+DEFINITION 1. Given a positive real function \(t \mapsto k(t)\) defined on I, one says that a map \(\mathbf{f}\) from \(\mathrm{I} \times \mathrm{H}\) into E is Lipschitz with respect to the function \(k(t)\) if, for every \(\mathbf{x} \in \mathrm{H}\) , the function \(t \mapsto \mathbf{f}(t, \mathbf{x})\) is regulated on I, and if, for every \(t \in \mathrm{I}\) and every pair of points \(\mathbf{x}_1, \mathbf{x}_2\) of H, one has (the ``Lipschitz condition'')
+
+\[
+\left\| \mathbf {f} (t, \mathbf {x} _ {1}) - \mathbf {f} (t, \mathbf {x} _ {2}) \right\| \leqslant k (t) \left\| \mathbf {x} _ {1} - \mathbf {x} _ {2} \right\|.\tag{8}
+\]
+
+We shall say that \(\mathbf{f}\) is Lipschitz (without being more specific) on \(\mathrm{I} \times \mathrm{H}\) if it is Lipschitz on this set for some constant \(k \geqslant 0\) . It is immediate that a Lipschitz function on \(\mathrm{I} \times \mathrm{H}\) satisfies the hypotheses of lemma 1 of IV, p.~165 (the converse being false); when \(\mathbf{f}\) is Lipschitz (on \(\mathrm{I} \times \mathrm{H}\) ) one says that the differential equation
+
+\[
+\mathbf {x} ^ {\prime} = \mathbf {f} (t, \mathbf {x})\tag{1}
+\]
+
+is Lipschitz (on I × H).
+
+Example. When E = R and H is an interval in R, if the function \(f(t, x)\) admits a partial derivative \(f_{x}^{\prime}\) (II, p.~74) at every point \((t, x)\) of I × H, such that \(|f_{x}^{\prime}(t, x)| \leqslant k(t)\) on I × H, then condition (8) is satisfied, by the mean value theorem; we shall see later how this example generalizes to the case where E is an arbitrary normed space.
+
+If f is Lipschitz on \(I \times H\) then f is bounded on \(J \times S\) for every compact subinterval \(J \subset I\) and every open ball \(S \subset H\) . Thus prop. 3 (IV, p.~166) can be applied, and demonstrates the existence of approximate solutions of equation (1). But we also have the following proposition, which allows us to compare two approximate solutions:
+
+PROPOSITION 5. Let \(k(t)\) be a real regulated function and \(>0\) on I, and let \(\mathbf{f}(t, \mathbf{x})\) be a function that is defined and Lipschitz with respect to \(k(t)\) on \(\mathrm{I} \times \mathrm{H}\) . If \(\mathbf{u}\) and \(\mathbf{v}\) are two approximate solutions of (1), to within \(\varepsilon_1\) and \(\varepsilon_2\) respectively, defined on I with values in H, then, for all \(t \in \mathrm{I}\) such that \(t \geqslant t_0\) ,
+
+\[
+\left\| \mathbf {u} (t) - \mathbf {v} (t) \right\| \leqslant \left\| \mathbf {u} \left(t _ {0}\right) - \mathbf {v} \left(t _ {0}\right) \right\| \Phi (t) + \left(\varepsilon_ {1} + \varepsilon_ {2}\right) \Psi (t)\tag{9}
+\]
+
+where
+
+\[
+\left\{ \begin{array}{l} \Phi (t) = 1 + \int_ {t _ {0}} ^ {t} k (s) \exp \left(\int_ {s} ^ {t} k (\tau) d \tau\right) d s \\ \Psi (t) = t - t _ {0} + \int_ {t _ {0}} ^ {t} (s - t _ {0}) k (s) \exp \left(\int_ {s} ^ {t} k (\tau) d \tau\right) d s. \end{array} \right.\tag{10}
+\]
+
+From the relation \(\left\| \mathbf{u}'(t) - \mathbf{f}(t, \mathbf{u}(t)) \right\| \leqslant \varepsilon_1\) , valid on the complement of a countable set, one deduces, from the mean value theorem, that
+
+\[
+\left\| \mathbf {u} (t) - \mathbf {u} (t _ {0}) - \int_ {t _ {0}} ^ {t} \mathbf {f} (s, \mathbf {u} (s)) d s \right\| \leqslant \varepsilon_ {1} (t - t _ {0})
+\]
+
+and similarly
+
+\[
+\left\| \mathbf {v} (t) - \mathbf {v} (t _ {0}) - \int_ {t _ {0}} ^ {t} \mathbf {f} (s, \mathbf {v} (s)) d s \right\| \leqslant \varepsilon_ {2} (t - t _ {0})
+\]
+
+whence
+
+\[
+\begin{array}{l} \| \mathbf {u} (t) - \mathbf {v} (t) \| \leqslant \| \mathbf {u} (t _ {0}) - \mathbf {v} (t _ {0}) \| \\ \qquad + \left\| \int_ {t _ {0}} ^ {t} (\mathbf {f} (s, \mathbf {u} (s)) - \mathbf {f} (s, \mathbf {v} (s))) d s \right\| + (\varepsilon_ {1} + \varepsilon_ {2}) (t - t _ {0}). \end{array}
+\]
+
+By the Lipschitz condition (8) one has
+
+\[
+\begin{array}{r l} \left\| \int_ {t _ {0}} ^ {t} (\mathbf {f} (s, \mathbf {u} (s)) - \mathbf {f} (s, \mathbf {v} (s))) d s \right\| & \leqslant \int_ {t _ {0}} ^ {t} \| \mathbf {f} (s, \mathbf {u} (s)) - \mathbf {f} (s, \mathbf {v} (s)) \| d s \\ & \leqslant \int_ {t _ {0}} ^ {t} k (s) \| \mathbf {u} (s) - \mathbf {v} (s) \| d s \end{array}
+\]
+
+whence, putting \(w(t) = \|\mathbf{u}(t) - \mathbf{v}(t)\|\) ,
+
+\[
+w (t) \leqslant w \left(t _ {0}\right) + \left(\varepsilon_ {1} + \varepsilon_ {2}\right) \left(t - t _ {0}\right) + \int_ {t _ {0}} ^ {t} k (s) w (s) d s.\tag{11}
+\]
+
+The proposition is thus a consequence of the following lemma:
+
+Lemma 2. If \(w\) is a continuous real function on the interval \([t_0, t_1]\) and satisfies the inequality
+
+\[
+w (t) \leqslant \varphi (t) + \int_ {t _ {0}} ^ {t} k (s) w (s) d s\tag{12}
+\]
+
+where \(\varphi\) is a regulated function \(\geqslant 0\) on \([t_0, t_1]\) , then, for \(t_0 \leqslant t \leqslant t_1\) ,
+
+\[
+w (t) \leqslant \varphi (t) + \int_ {t _ {0}} ^ {t} \varphi (s) k (s) \exp \left(\int_ {s} ^ {t} k (\tau) d \tau\right) d s.\tag{13}
+\]
+
+Put \(y(t) = \int_{t_0}^{t} k(s)w(s)ds\) ; the relation (12) implies that
+
+\[
+y ^ {\prime} (t) - k (t) y (t) \leqslant \varphi (t) k (t)\tag{14}
+\]
+
+on the complement of a countable set.
+
+Put \(z(t) = y(t)\exp \left(-\int_{t_0}^t k(s)ds\right)\) ; then (14) is equivalent to
+
+\[
+z ^ {\prime} (t) \leqslant \varphi (t) k (t) \exp \left(- \int_ {t _ {0}} ^ {t} k (s) d s\right).
+\]
+
+On applying the mean value theorem (I, p.~15, th. 2) to this inequality, and noting that \(z(t_0) = 0\) , we obtain
+
+\[
+z (t) \leqslant \int_ {t _ {0}} ^ {t} \varphi (s) k (s) \exp \left(- \int_ {t _ {0}} ^ {s} k (\tau) d \tau\right) d s
+\]
+
+whence
+
+\[
+y (t) \leqslant \int_ {t _ {0}} ^ {t} \varphi (s) k (s) \exp \left(\int_ {s} ^ {t} k (\tau) d \tau\right) d s
+\]
+
+and since \(w(t) \leqslant \varphi(t) + y(t)\) one thus obtains (13).
+
+COROLLARY. Let f be a Lipschitz function for the constant k \textgreater{} 0, defined on I × H. If u and v are two approximate solutions of (1) to within \(\varepsilon_{1}\) and \(\varepsilon_{2}\) respectively, defined on I and taking their values in H, then, for all \(t \in I\) ,
+
+\[
+\| \mathbf {u} (t) - \mathbf {v} (t) \| \leqslant \| \mathbf {u} (t _ {0}) - \mathbf {v} (t _ {0}) \| e ^ {k | t - t _ {0} |} + (\varepsilon_ {1} + \varepsilon_ {2}) \frac {e ^ {k | t - t _ {0} |} - 1}{k}.\tag{15}
+\]
+
+This inequality is in fact an immediate consequence of (9) when \(t \geqslant t_0\) ; to prove it for \(t \leqslant t_0\) it suffices to apply it to the equation
+
+\[
+{\frac {d \mathbf {x}}{d s}} = - \mathbf {f} (- s, \mathbf {x})
+\]
+
+obtained from (1) by the change of variable t = -s.
+
+Remarks. 1) When k = 0 the inequality (15) is replaced by the inequality
+
+\[
+\left\| \mathbf {u} (t) - \mathbf {v} (t) \right\| \leqslant \left\| \mathbf {u} \left(t _ {0}\right) - \mathbf {v} \left(t _ {0}\right) \right\| + \left(\varepsilon_ {1} + \varepsilon_ {2}\right) | t - t _ {0} |
+\]
+
+whose proof is immediate.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  When E is of finite dimension, and f is Lipschitz on \(I \times H\) , one can show the existence of approximate solutions of (1) (IV, p.~166, prop. 3) without using the axiom of choice (IV, p.~199, exerc. 1 b)).
+\end{enumerate}
+
+PROPOSITION 6. Let f and g be two functions defined on I × H, satisfying the hypotheses of lemma 1 of IV, p.~165, and such that, on I × H,
+
+\[
+\left\| \mathbf {f} (t, \mathbf {x}) - \mathbf {g} (t, \mathbf {x}) \right\| \leqslant \alpha .\tag{16}
+\]
+
+Suppose further that \(\mathbf{g}\) is Lipschitz for the constant \(k > 0\) on \(\mathrm{I} \times \mathrm{H}\) . In these circumstances, if \(\mathbf{u}\) is an approximate solution of \(\mathbf{x}' = \mathbf{f}(t, \mathbf{x})\) to within \(\varepsilon_1\) , defined on \(\mathrm{I}\) , with values in \(\mathrm{H}\) , and \(\mathbf{v}\) is an approximate solution of \(\mathbf{x}' = \mathbf{g}(t, \mathbf{x})\) to within \(\varepsilon_2\) , defined on \(\mathrm{I}\) , with values in \(\mathrm{H}\) , then, for all \(t \in \mathrm{I}\)
+
+\[
+\| \mathbf {u} (t) - \mathbf {v} (t) \| \leqslant \| \mathbf {u} (t _ {0}) - \mathbf {v} (t _ {0}) \| e ^ {k | t - t _ {0} |} + (\alpha + \varepsilon_ {1} + \varepsilon_ {2}) \frac {e ^ {k | t - t _ {0} |} - 1}{k}.\tag{17}
+\]
+
+Indeed
+
+\[
+\left| \left| \mathbf {u} ^ {\prime} (t) - \mathbf {g} (t, \mathbf {u} (t)) \right| \right| \leqslant \alpha + \varepsilon_ {1}
+\]
+
+for all t in the complement in I of a countable subset of I; in other words, u is an approximate solution of \(\mathbf{x}^{\prime} = \mathbf{g}(t, \mathbf{x})\) to within \(\alpha + \varepsilon_{1}\) , so the inequality (17) follows on applying prop. 5 of IV, p.~169.
+

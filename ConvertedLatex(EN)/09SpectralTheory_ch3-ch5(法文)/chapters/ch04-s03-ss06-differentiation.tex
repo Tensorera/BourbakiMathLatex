@@ -1,0 +1,54 @@
+\subsection{Differentiation of distributions}
+
+Let \(\alpha \in \mathbf{N}^n\) . The linear map \(\varphi \mapsto \partial^\alpha \varphi\) is continuous from \(\mathcal{D}(\mathrm{U})\) into \(\mathcal{D}(\mathrm{U})\) . Its transpose \(^t\partial^\alpha\) is a continuous linear map from \(\mathcal{D}'(\mathrm{U})\) into \(\mathcal{D}'(\mathrm{U})\) (EVT, IV, p. 6, cor., \(b\) )).
+
+We denote \(\partial^{\alpha}\) the continuous linear map \((-1)^{|\alpha|}{}^{t}\partial^{\alpha}\) from \(\mathcal{D}'(\mathrm{U})\) into itself.
+
+DEFINITION 2. --- If \(f \in \mathcal{D}'(\mathrm{U})\) is a distribution, one says that \(\partial^{\alpha} f\) is the iterated partial derivative of order \(\alpha\) of \(f\) .
+
+Thus, by definition
+
+\[
+\langle \partial^ {\alpha} f, \varphi \rangle = (- 1) ^ {| \alpha |} \langle f, \partial^ {\alpha} \varphi \rangle
+\]
+
+for every function \(\varphi\in\mathcal{D}(\mathrm{U})\) . We have \(\partial^{\alpha+\beta}=\partial^{\alpha}\circ\partial^{\beta}\) for all \(\alpha\) and \(\beta\) in \(\mathbf{N}^{n}\) .
+
+If \(n=1\) , one also denotes \(f'\) the derivative of a distribution \(f\in\mathcal{D}'(U)\) . The definition is justified by the following lemma.
+
+Lemma 6. --- Let k be a natural integer. Let \(f \in \mathcal{C}^k(\mathrm{U})\) and let \(\lambda\) be the distribution associated with \(f\) . For every \(\beta \in \mathbf{N}^n\) such that \(|\beta| \leqslant k\) , the distribution \(\partial^\beta\lambda\) is the distribution associated with the function \(\partial^\beta f\) .
+
+By induction on \(k\) , it suffices to prove this property when \(\beta\) satisfies \(|\beta| = 1\) , and one may even assume that \(\beta = (0, \ldots, 0, 1)\) . Since distributions form a sheaf (prop. 5 of IV, p. 204), it suffices to verify the assertion when there exists an open set \(V \subset \mathbf{R}^{n-1}\) and an open interval \(I \subset \mathbf{R}\) such that \(U = V \times I\) .
+
+For every test function \(\varphi\in\mathcal{D}(\mathrm{U})\) , one has by definition
+
+\[
+\langle \partial^ {\beta} \lambda , \varphi \rangle = - \int_ {\mathrm{U}} f (x) \partial^ {\beta} \varphi (x) d x = - \int_ {\mathrm{V}} \Bigl (\int_ {\mathrm{I}} f (y, t) \partial^ {\beta} \varphi (y, t) d t \Bigr) d y
+\]
+
+by the Lebesgue--Fubini theorem (INT, V, p. 96, § 8, n° 4, th. 1). By integration by parts (FVR, II, p. 10), one has
+
+\[
+- \int_ {\mathrm{I}} f (y, t) \partial^ {\beta} \varphi (y, t) d t = \int_ {\mathrm{I}} \partial^ {\beta} f (y, t) \varphi (y, t) d t,
+\]
+
+since \(t \mapsto \varphi(y, t)\) is compactly supported in I. One therefore obtains
+
+\[
+\langle \partial^ {\beta} \lambda , \varphi \rangle = \int_ {V} \left(\int_ {I} \partial^ {\beta} f (y, t) \varphi (y, t) d t\right) d y = \langle \partial^ {\beta} f, \varphi \rangle .
+\]
+
+PROPOSITION 9 (Leibniz formula). --- Let f be a distribution on U and g an infinitely differentiable function on U. Let \(\alpha \in \mathbf{N}^n\) . One has the relation
+
+\[
+\partial^ {\alpha} (f g) = \sum_ {\beta \leqslant \alpha} \binom {\alpha} {\beta} \partial^ {\beta} f   \partial^ {\alpha - \beta} g.
+\]
+
+Proceeding by induction on \(|\alpha|\) as in the proof of FVR, I, p. 28, prop. 2, it suffices to consider the case where \(|\alpha|=1\) . The result then follows from the computation
+
+\[
+\begin{array}{c} \langle \partial^ {\alpha} (f g), \varphi \rangle = \langle f g, - \partial^ {\alpha} \varphi \rangle = \langle f, - g \partial^ {\alpha} \varphi \rangle \\ = \langle f, - \partial^ {\alpha} (g \varphi) + \varphi \partial^ {\alpha} g \rangle = \langle g \partial^ {\alpha} f + f \partial^ {\alpha} g, \varphi \rangle \end{array}
+\]
+
+valid for \(\varphi\in\mathcal{D}(\mathrm{U})\) .
+

@@ -1,0 +1,46 @@
+\subsection{INVERSE LIMITS}
+
+Let I be a preordered set and let \((\mathbf{E}_{\alpha})_{\alpha\in\mathbf{I}}\) be a family of sets indexed by I. For each pair \((\alpha,\beta)\) of elements of I such that \(\alpha\leqslant\beta\) , let \(f_{\alpha\beta}\) be a mapping of \(E_{\beta}\) into \(E_{\alpha}\) . Suppose that the \(f_{\alpha\beta}\) satisfy the following conditions:
+
+\((\mathbf{LP}_{\mathbf{I}})\) The relations \(\alpha \leqslant \beta \leqslant \gamma\) imply \(f_{\alpha \gamma} = f_{\alpha \beta} \circ f_{\beta \gamma}\) .
+
+\((\mathbf{LP}_{\mathbf{II}})\) For each \(\alpha \in \mathbf{I}\) , \(f_{\alpha \alpha}\) is the identity mapping of \(\mathbf{E}_{\alpha}\) .
+
+Let \(G = \prod_{\alpha \in I} E_{\alpha}\) be the product of the family of sets \((E_{\alpha})_{\alpha \in I}\) , and let E denote the subset of G consisting of all x which satisfy each of the relations
+
+\[
+\operatorname{pr} _ {\alpha} x = f _ {\alpha \beta} (\operatorname{pr} _ {\beta} x)\tag{1}
+\]
+
+for each pair of indices \((\alpha, \beta)\) such that \(\alpha \leqslant \beta\) . E is said to be the inverse limit of the family \((\mathbf{E}_{\alpha})_{\alpha \in \mathbf{I}}\) with respect to the family of mappings \((f_{\alpha \beta})\) , and we write \(\mathbf{E} = \lim (\mathbf{E}_{\alpha}, f_{\alpha \beta})\) or simply \(\mathbf{E} = \lim \mathbf{E}_{\alpha}\) when there is no risk of ambiguity. By abuse of language, the pair \(((\mathbf{E}_{\alpha}), (f_{\alpha \beta}))\) (usually denoted by \((\mathbf{E}_{\alpha}, f_{\alpha \beta}))\) is called an inverse system of sets, relative to the index set I. The restriction \(f_{\alpha}\) of the projection \(\mathrm{pr}_{\alpha}\) to \(\mathbf{E}\) is called the canonical mapping of \(\mathbf{E}\) into \(\mathbf{E}_{\alpha}\) , and we have the relation
+
+\[
+f _ {\alpha} = f _ {\alpha \beta} \circ f _ {\beta}\tag{2}
+\]
+
+whenever \(\alpha \leqslant \beta\) ; this is merely a transcription of the relations (1) which define E.
+
+Examples
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  Suppose that the order relation on I is the relation of equality. Then the only pairs \((\alpha, \beta)\) such that \(\alpha \leqslant \beta\) are the pairs \((\alpha, \alpha)\) where \(\alpha \in I\) ; and since \(f_{\alpha \alpha}\) is the identity mapping, the relation (1) is satisfied for all \(x \in G\) ; in other words, \(\varprojlim E_{\alpha}\) is then the product \(\prod_{\alpha \in I} E_{\alpha}\) .
+\item
+  Suppose that I is right directed, that \(E_{\alpha}\) is the same set F for all \(\alpha \in I\) , and that \(f_{\alpha\beta}\) is the identity mapping of F onto itself whenever \(\alpha \leqslant \beta\) . Then \(E = \varprojlim E_{\alpha}\) is the diagonal \(\Delta\) of the product \(\prod_{\alpha \in I} E_{\alpha} = F^{I}\) . Indeed, it is clear that each \(x \in \Delta\) satisfies the relations (1). Conversely, let x be an element of E, and let us show that for each pair of indices \((\alpha, \beta)\) we have \(\mathrm{pr}_{\alpha}x = \mathrm{pr}_{\beta}x\) . By hypothesis, there exists an index \(\gamma \in I\) such that \(\alpha \leqslant \gamma\) and \(\beta \leqslant \gamma\) ; hence by (1) we have \(\mathrm{pr}_{\alpha}x = f_{\alpha \gamma}(\mathrm{pr}_{\gamma}x) = \mathrm{pr}_{\gamma}x\) , and similarly \(\mathrm{pr}_{\beta}x = \mathrm{pr}_{\gamma}x\) , which proves our assertion.
+\end{enumerate}
+
+It should be noted that \(E = \varprojlim E_{\alpha}\) can be empty even when all the \(E_{\alpha}\) are non-empty and all the mappings \(f_{\alpha\beta}\) are surjective (Exercise 4; see no. 4).
+
+It is clear that for each subset \(J\) of \(I\) the pair consisting of the subfamily \((\mathbf{E}_{\alpha})_{\alpha \in J}\) and the family \((f_{\alpha \beta})\) , where \(\alpha \in J\) , \(\beta \in J\) , and \(\alpha \leqslant \beta\) , is again an inverse system of sets relative to \(J\) ; it is said to be obtained by restricting the index set to \(J\) . Let \(E\) and \(E'\) respectively denote the inverse limits of the families \((\mathbf{E}_{\alpha})_{\alpha \in I}\) and \((\mathbf{E}_{\alpha})_{\alpha \in J}\) . For each \(x \in E\) the element
+
+\[
+g (x) = \left(f _ {\alpha} (x)\right) _ {\alpha \in J}\tag{3}
+\]
+
+belongs to \(\mathbf{E}'\) by virtue of (2); the mapping \(g: \mathbf{E} \to \mathbf{E}'\) so defined is called canonical. If \(\mathbf{J}'\) is a subset of \(\mathbf{J}\) , and \(\mathbf{E}''\) the inverse limit of the family \((\mathbf{E}_{\alpha})_{\alpha \in \mathbf{J}'}\) , and if \(g': \mathbf{E}' \to \mathbf{E}''\) and \(g'': \mathbf{E} \to \mathbf{E}''\) are the canonical mappings, then by definition we have
+
+\[
+g ^ {\prime \prime} = g ^ {\prime} \circ g.\tag{4}
+\]
+

@@ -1,0 +1,212 @@
+\exercisesection{代数的维数}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  令 V 为离散赋值环，分式域为 K，并令 n 为整数。令 A 为多项式环 \(K[X_{1},...,X_{n}]\) 的子环，由常数项属于 V 的多项式组成。由 V 到 A 的典范同态满足性质 (PM)，且典范同态 \(V/m_{V} \rightarrow A/m_{V}A\) 是同构。此外，有 \(\dim(A) \geqslant n + 1\) 且 \(\dim(V) = 1\)。一旦 \(n \geqslant 1\)，因而有 \(\dim(A) > \dim(V) + \dim(A/m_{V}A)\)。证明 A 不是诺特环。利用形式级数，构造一个类似的例子，其中 A 是局部环且不是诺特环。
+\item
+  令 V 为离散赋值环，分式域为 K，剩余域为 k。记 A 为环 \(K \times k\)，记 \(\rho : V \to A\) 为由 V 到 K 和 k 的典范同态导出的同态。同态 \(\rho\) 是单射，映射 \(^{a}\rho : \text{Spec}(A) \to \text{Spec}(V)\) 是满射，A 是有限生成 V-代数，并且有 \(\dim(A) < \dim(V)\)。
+\item
+  令 A 为维数为 1 的整环，令 \(\mathfrak{p}_0 \subset \mathfrak{p}_1 \subset \mathfrak{p}_2\) 为 A{[}X{]} 的三个不同的非零素理想。证明有 \(\mathfrak{p}_0 \cap \mathbf{A} = \{0\}\)，\(\mathfrak{p}_1 = (\mathfrak{p}_1 \cap \mathbf{A})\cdot\mathrm{A}{[}X{]}\)，并且 \(\mathfrak{p}_2\) 是 A{[}X{]} 的极大理想。
+\item
+  令 A 为局部整闭环，\(m_A\) 为其极大理想，K 为其分式域。对于 K 的每个元素 x，记 A{[}x{]} 为 K 中由 x 生成的子 A-代数。令 x 为 K* 中满足 \(x^{-1}\) 不属于 A 的元素。令 A{[}X{]} 为以 A 为系数的单变量 X 多项式环，并令 \(\varphi\) 为取值映射 P \(\mapsto\) P(x)，其定义域为 A{[}X{]}，目标为 A{[}x{]}。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(\varphi\) 的核是理想 Q，它由形如 \(aX + b\) 的多项式生成，其中 \(a, b \in A\) 且 \(ax + b = 0\)。（若 \(\mathrm{P}(X) = \sum_{i=0}^{n} a_i X^i\) 满足 \(\mathrm{P}(x) = 0\)，注意此时 \(-b_0 = a_0 x\) 在 \(A\) 上整，因而属于 \(A\)。）
+\item
+  理想 \(m_A A[x]\) 是 \(A[x]\) 的素理想，并且当且仅当 \(x\) 属于 \(A\) 时它是极大理想。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\item
+  令 A 为整闭环，分式域为 K。给定 A 的素理想 p 以及 K 的元素 x，满足 \(x \notin A_{p}\) 且 \(x^{-1} \notin A_{p}\)，则 A{[} x{]} 的理想 pA{[}x{]} 是素理想；有：pA{[}x{]} ∩ A = p，且典范同态 (A/p){[}X{]} → A{[}x{]}/pA{[}x{]} 是同构。
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    利用前面的习题证明：若 A 是维数为 1 的整环，则 dim(A{[} X{]}) = 2，当且仅当 A 的整闭包在每个素理想处的局部化都是赋值环。
+  \end{enumerate}
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  证明若有 \(\dim(\mathbf{A}) = n\) 且 \(\dim(\mathbf{A}[\mathbf{X}]) > n + 1\)，则存在 A 的素理想 \(\mathfrak{p}\)，使得 \(\operatorname{ht}(\mathfrak{p}) = 1\)，并且或者 \(\dim(\mathbf{A}_{\mathfrak{p}}[\mathbf{X}]) > 2\)，或者 \(\dim((\mathbf{A}/\mathfrak{p})[\mathbf{X}]) > \dim(\mathbf{A}/\mathfrak{p}) + 1\)。
+\item
+  推出若 A 是 Prüfer 环（VII, § 2, 习题 12），则有 \(\dim(\mathbf{A}[\mathbf{X}_1, ..., \mathbf{X}_n]) = \dim(\mathbf{A}) + n\)，对每个整数 \(n \geqslant 0\) 都成立。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{6}
+\item
+  令 B 为整闭环，分式域为 L。置 \(d = \dim(B)\) 且 \(t = \dim(B[X])\)。令 L' 为 L 的一个非平凡扩张，并且 L 在 L' 中代数闭；令 V 为剩余域为 L' 的离散赋值环（不是域）。记 K 为 V 的分式域，记 A 为 V 中这样的元素的集合：它们在典范同态 V → L' 下的像属于 B。环 A 是整闭环，分式域为 K。令 p 表示满同态 A → B 的核。证明 A 的每个非零素理想都包含 p，从而 dim(A) = dim(B) + 1。取 V 中像不属于 L 的元素 x，证明分式环 A \(_{p}\) 不是赋值环，且 pA \(_{p}\) {[}x{]} 不是 A \(_{p}\) {[}x{]} 的非零素理想中极小的。利用习题 6 推出 dim(A{[}x{]}) ≥ t + 2。用直接论证得出 dim(A{[}x{]}) = t + 2。最后证明对于满足 d + 1 ≤ t ≤ 2d + 1 的每一对整数 (d, t)，存在维数为 d 的整环 A，使得 dim(A{[}X{]}) = t。
+\item
+  证明多项式环 A{[}X{]} 是忠实平坦的 A-模，对 A 的每个极大理想 m 都有 dim(A{[}X{]}/mA{[}X{]}) = 1，并由前一习题推出满足条件 (PM) 的环同态 \(\rho: A \to B\) 的存在性，使得 \(\dim(B) > \dim(A) + \inf_{\mathfrak{m}\in S}\dim(B/\mathfrak{m}B)\)（其中 S 是 A 的极大理想集合）。
+\item
+  令 A 为整环，B 为包含 A 且整于 A 的整环。令 p 为 A 的素理想，并假设分式环 \(A_{p}\) 的整闭包是局部环。对 B 中位于 p 之上的每个素理想 q，都有 ht(q) = ht(p)（使用 V, § 2, n° 1, 命题 2）。
+\end{enumerate}
+
+¶ 10) a) 令 A 为整环，K 为其分式域，m 为正整数。令 \(t_1, \ldots, t_m\) 为 K 中元素，并令 \(\varphi: \mathrm{A}[\mathrm{X}_1, \ldots, \mathrm{X}_m] \to \mathrm{A}[t_1, \ldots, t_m]\) 为满足 \(\varphi(\mathrm{X}_i) = t_i\) 的唯一 A-代数同态。证明 \(\varphi\) 的核理想的高度等于 m。b) 推出对于 K 中元素的每个 \(m\) -元组（\(t_1, \ldots, t_m\)），有 \(\dim(\mathrm{A}[t_1, \ldots, t_m]) \leqslant \dim(\mathrm{A}[\mathrm{X}_1, \ldots, \mathrm{X}_m]) - m\)。
+
+¶ 11) 令 A 为整环，K 为其分式域。令 \((0) \subset \mathfrak{p}_1 \subset \ldots \subset \mathfrak{p}_h\) 为 A 的一条素理想链。证明存在 K 的赋值环 V 以及 V 的一条素理想链 \((0) \subset \mathfrak{q}_1 \subset \ldots \subset \mathfrak{q}_h\)，使得 \(\mathfrak{q}_i \cap A = \mathfrak{p}_i\)。（对 \(h\) 作归纳，化归到 A 为局部环的情形；当 \(h = 1\) 时使用 VI, § 1 的习题 7。）
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  \begin{enumerate}
+  \def\labelenumii{\alph{enumii})}
+  \tightlist
+  \item
+    令 A 和 K 如上，令 B 为包含 A 且整于 A 的整环，令 L 为 B 的分式域。令 \(k \geqslant 0\) 为整数。若对 L 中元素的每个 \(m\)-元组 \((t_1, \ldots, t_m)\) 都有 \(\dim(A[t_1, \ldots, t_m]) \leqslant k\)，则对 L 中元素的每个 \(m\)-元组 \((u_1, \ldots, u_m)\) 都有 \(\dim(B[u_1, \ldots, u_m]) \geqslant k\)。b) 令 p 为 A 的素理想。证明：若对 K 中元素的所有 \(m\)-元组 \((t_1, \ldots, t_m)\) 都有 \(\dim(A[t_1, \ldots, t_m]) \leqslant k\)，则对 A/p 的分式域中的所有 \(m\)-元组 \((s_1, \ldots, s_m)\)，都有不等式 \(\dim((A/p)[s_1, \ldots, s_m]) \leqslant k - \text{ht}(p)\)。
+  \end{enumerate}
+\end{enumerate}
+
+¶ 13) 令 A 为整环，K 为其分式域。对于每个整数 \(k \geqslant 0\)，以下性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  K 中包含 A 的每个子环的维数都 \(\leqslant k\)。
+\item
+  K 中包含 A 的每个赋值环的维数都 \(\leqslant k\)。
+\item
+  对于任意 \(k\) 个元素 \(t_1, \ldots, t_k\)（均取自 \(\mathbf{K}\)），都有 \(\dim(A[t_1, \ldots, t_k]) \leqslant k\)。
+\item
+  有 \(\dim(A[X_1, ..., X_m]) \leqslant k + m\)，对每个整数 \(m \geqslant 0\) 都成立。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  令 A 为整环，分式域为 K，且 \(m \in N\)。证明有
+\end{enumerate}
+
+\[
+\dim (\mathrm{A} [ \mathrm{X} _ {1},..., \mathrm{X} _ {m} ]) = m + \sup \left\{\dim (\mathrm{A} [ t _ {1},..., t _ {m} ]) | t _ {i} \in \mathrm{K}, 1 \leqslant i \leqslant m \right\}.
+\]
+
+（我们将使用习题 10。）更一般地，若 F 是 K 的一个域扩张，证明有
+
+\[
+\dim \left(\mathrm{A} \left[ \mathrm{X} _ {1}, \dots , \mathrm{X} _ {m} \right]\right) = \sup \left\{\dim (\mathrm{A} \left[ t _ {1}, \dots , t _ {m} \right]) \mid t _ {i} \in \mathrm{F}, 1 \leqslant i \leqslant m \right\} + \sup (0, m - \deg . \operatorname{tr} _ {\mathbf {K}} (\mathrm{F})).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{14}
+\tightlist
+\item
+  采用前面习题的记号，证明：若对于某个整数 \(k \geqslant 0\)，有 \(\dim(A[X_1, ..., X_m]) \geqslant k + m + 1\) 对某个适当的整数 \(m\) 成立，则有不等式 \(\dim(A[X_1, ..., X_k]) \geqslant 2k + 1\)。
+\end{enumerate}
+
+  ¶ 16) 令 A 为整环，K 为其分式域。称 A 的赋值维数为实数 \(\dim_{\mathrm v}(\mathrm A)\)，它表示为 \(\sup_{A \subset V \subset K} \dim(V)\)，其中 V 遍历 K 中包含 A 的赋值环集合
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  证明有 \(\dim(\mathrm A) \leqslant \dim_{\mathrm v}(\mathrm A)\)（习题 11）。
+\item
+  若 A 是 Prüfer 环（VII, § 2, 习题 12），证明有 \(\dim(\mathrm A) = \dim_{\mathrm v}(\mathrm A)\)。
+\item
+  证明对于所有 \(m \in \mathbf{N}\)，都有
+\end{enumerate}
+
+\[
+\dim_ {\mathbf {v}} (\mathrm{A} [ \mathrm{X} _ {1},..., \mathrm{X} _ {m} ]) = \dim_ {\mathbf {v}} (\mathrm{A}) + m.
+\]
+
+（注意赋值环是 Prüfer 环，并将使用 b) 及习题 6，第~84页。）
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  证明若有 \(\dim_{\mathrm v}(\mathrm A) = s < \infty\)，则对于每个整数 \(m \geqslant s - 1\)，有等式
+\end{enumerate}
+
+\[
+\dim (\mathrm{A} [ \mathrm{X} _ {1},..., \mathrm{X} _ {m} ]) = m + s.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  令 \(s \in \mathbf{N}\)。证明 \(\dim_{\mathrm{v}}(\mathbf{A}) = s\) 当且仅当 \(\dim(\mathbf{A}[\mathbf{X}_1, ..., \mathbf{X}_s]) = 2s\)（使用 \(d\) ) 以及习题 13 和 14）。
+\end{enumerate}
+
+推出对于每个整诺特环 A，都有 \(\dim(\mathrm{A}) = \dim_{\mathrm{v}}(\mathrm{A})\)。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{16}
+\tightlist
+\item
+  令 A 为整环。置 \(n_k(A) = \dim(A[X_1, ..., X_k])\)，其中 \(k \geqslant 0\) 为整数。令 D 为整数序列 \((n_i)_{i \geqslant 0}\) 的集合：存在整环 A，使得 \(n_i = n_i(A)\) 对每个整数 \(i \geqslant 0\) 都成立。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  证明不等式
+\end{enumerate}
+
+\[
+\sup \left(n _ {0} (\mathrm{A}) + i + 1, n _ {i} (\mathrm{A}) + 1\right) \leqslant n _ {i + 1} (\mathrm{A}) \leqslant \inf \left(2 n _ {i} (\mathrm{A}) + 1, 2 ^ {i + 1} \left(n _ {0} (\mathrm{A}) + 1\right) - 1\right).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  证明以 1, 2 开头且属于 D 的整数序列只有序列 \(n_{i}=i+1\)。（令 A 满足 \(n_{0}(A)=1\)，\(n_{1}(A)=2\)。根据习题 6，第~84页，A 的整闭包是 Prüfer 环。使用习题 6, c)，第~84页得出结论。）\\
+\item
+  证明不等式
+\end{enumerate}
+
+\[
+n _ {0} (\mathrm{A}) + i \leqslant n _ {i} (\mathrm{A}) \leqslant (n _ {0} (\mathrm{A}) + 1) (i + 1) - 1.
+\]
+
+  由此推出，若 \(n_0(\mathbf{A}) = 0\)，则 \(n_i(\mathbf{A}) = i\) 对每个 \(i \in \mathbf{N}\) 都成立。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\item
+  证明差序列 \(n_{i+1}(\mathbf{A}) - n_i(\mathbf{A})\) 最终稳定。
+\item
+  采用习题 7，第~84页的记号。令 δ 为 L' 在 L 上的超越次数。则：
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  若 \(\delta = 0\)，则 \(n_i(A) = n_i(B) + 1\) 对每个 \(i\) 都成立。
+\item
+  若 \(1 \leqslant \delta < \infty\)，则 \(n_i(A) = n_i(B) + i + 1\) 对 \(0 \leqslant i \leqslant \delta\) 成立，并且 \(n_i(A) = n_i(B) + \delta + 1\) 对 \(i \geqslant \delta\) 成立。
+\item
+  若 \(\delta = \infty\)，则 \(n_i(A) = n_i(B) + i + 1\) 对每个 \(i\) 都成立。
+\end{enumerate}
+
+（关于 D 中元素的刻画，可参见 T. Parker，《Amer. J. Math.》97（1975），第 308–311 页。）
+
+* 18) 令 A（相应地，B）表示代数 C \(\{z_{1}, z_{2}, z_{3}\}\)（相应地，C \(\{u, v\}\)），即变量为 \(z_{1}, z_{2}, z_{3}\)（相应地，\(u, v\)）的收敛级数代数，并令 \(\varphi: A \to B\) 为满足 \(\varphi(z_{1}) = uv\)、\(\varphi(z_{2}) = v(e^{u} - 1)\)、\(\varphi(z_{3}) = v\) 的唯一代数同态。证明 \(\varphi\) 是单射，并且有 dim(A) = 3 以及 dim(B) = 2。 *
+

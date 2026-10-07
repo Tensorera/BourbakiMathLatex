@@ -1,0 +1,102 @@
+\subsection{主理想整环上有限长度模的对偶性}
+
+在本节中，A表示一个主理想整环，且不是域（因此至少有一个不可约元素），K表示A的分式域。对于每个A模M，令
+
+\[
+\mathrm{D} (\mathbf {M}) = \operatorname{Hom} _ {\mathbf {A}} (\mathbf {M}, \mathbf {K} / \mathbf {A});
+\]
+
+我们知道，D(M) 以自然的方式带有 A-模结构，即对每个同态 \(u: M \to K/A\) 以及每个 \(\alpha \in A\)，同态 \(\alpha u\) 把 x 映到 \(\alpha u(x) = u(\alpha x)\)。对每个 A-模同态 \(f: M \to N\)，都对应着一个同态 D(f): D(N) → D(M)，其中 D(f)(v) = v ∘ f（II，第 196 页）。对 \(x \in M\) 与 \(x' \in D(M)\)，我们置 \(\langle x, x' \rangle = x'(x) \in K/A\)；则 \((x, x') \mapsto \langle x, x' \rangle\) 是从 M × D(M) 到 K/A 的一个 A-双线性映射，称为典范映射。
+
+若 M 和 N 是两个 A-模，则对每个 A-双线性映射 \(\varphi: M \times N \to K/A\) 都对应着 A-线性映射 \(d_{\varphi}: N \to D(M)\) 与 \(s_{\varphi}: M \to D(N)\)，其中 \(d_{\varphi}(y)(x) = \varphi(x, y) = s_{\varphi}(x)(y)\)（II，第 268 页，命题 1 的推论）。特别地，典范 A-双线性映射 \(M \times D(M) \to K/A\) 定义了一个 A-线性映射（也称为典范映射）
+
+\[
+c _ {\mathbf {M}}: \mathbf {M} \rightarrow \mathbf {D} (\mathbf {D} (\mathbf {M}))
+\]
+
+使得 \(\langle x', c_{\mathbf{M}}(x) \rangle = \langle x, x' \rangle\)，其中 \(x \in \mathbf{M}\) 且 \(x' \in \mathrm{D}(\mathbf{M})\)。
+
+命题 10. —— 若 M 是一个有限长度的 A-模，则 D(M)（一般而言非典范地）同构于 M，且典范映射 \(c_{\mathbf{M}}: \mathbf{M} \to \mathbf{D}(\mathbf{D}(\mathbf{M}))\) 是同构。
+
+利用 VII，第 19 页，定理 2 和 II，第 203 页，推论 1，我们化归到 M 为循环模的情形。因此可以假设 M = A/tA，其中 \(t \neq 0\)。注意任何同态 \(u: A/tA \to K/A\) 完全由 \(\xi \in K/A\)（1 mod tA 的类 \(\varepsilon\) 在 u 下的像）所决定，且该元素必须满足关系 \(t\xi = 0\)；反之，对任意 \(\xi \in K/A\)（满足 \(t\xi = 0\) 的），存在同态 \(u: A/tA \to K/A\) 使得 \(u(\varepsilon) = \xi\)。由此可知 D(M) 同构于 \(t^{-1}A/A\)，并且由于比为 t 的位似变换在 K 上是双射，我们也有 D(M) 同构于 A/tA，这就证明了第一个断言。这证明 M 与 D(D(M)) 同构，从而二者有相同的长度；另一方面，\(c_{M}\) 是单射，因为若 \(y \in A\) 使得关系 \(tz \in A\)（对 \(z \in K\)）蕴含 \(yz \in A\)，则取 \(z = t^{-1}\) 便得 \(y \in tA\)。由此可知像 \(c_{M}(M)\) 必然等于 D(D(M))。
+
+推论. —— 设 M, N 是两个有限长度的 A-模，并设 \(\varphi\) 是从 \(M \times N\) 到 K/A 的一个 A-双线性映射，使得：1) 关系 \(\varphi(x, y) = 0\) 对所有 \(y \in N\) 蕴含 x = 0；且 2) 关系 \(\varphi(x, y) = 0\) 对所有 \(x \in M\) 蕴含 y = 0。则 A-线性映射 \(s_{\varphi}: M \to D(N)\) 与 \(d_{\varphi}: N \to D(M)\)（二者与 \(\varphi\) 相伴）都是同构。
+
+事实上，关于 \(\varphi\) 的假设意味着 \(s_{\varphi}\) 与 \(d_{\varphi}\) 都是单射；且由于 \(\text{long}(D(N)) = \text{long}(N)\)、\(\text{long}(D(M)) = \text{long}(M)\)（命题 10），这蕴含 \(\text{long}(M) = \text{long}(N)\)，从而 \(s_{\varphi}\) 与 \(d_{\varphi}\) 都是双射。
+
+命题11. --- 如果 \(M' \xrightarrow{u} M \xrightarrow{v} M''\) 是有限长度 A-模的正合序列，则序列 \(D(M'') \xrightarrow{D(v)} D(M) \xrightarrow{D(u)} D(M')\) 是正合的 \(^{1}\)。
+
+让我们首先证明，对给定的正合序列
+
+\[
+0 \rightarrow \mathbf {M} ^ {\prime} \rightarrow \mathbf {M} \rightarrow \mathbf {M} ^ {\prime \prime} \rightarrow 0\tag{1}
+\]
+
+相应的序列
+
+\[
+0 \rightarrow D (M ^ {\prime \prime}) \rightarrow D (M) \rightarrow D (M ^ {\prime}) \rightarrow 0
+\]
+
+是精确的；事实上我们知道序列
+
+\[
+0 \rightarrow \mathrm{D} (\mathbf {M} ^ {\prime \prime}) \rightarrow \mathrm{D} (\mathbf {M}) \rightarrow \mathrm{D} (\mathbf {M} ^ {\prime})
+\]
+
+是正合的（II，第 227 页，定理 1）；另一方面，由 (1) 可得
+
+\[
+\operatorname{long} (\mathbf {M}) = \operatorname{long} \left(\mathbf {M} ^ {\prime}\right) + \operatorname{long} \left(\mathbf {M} ^ {\prime \prime}\right)
+\]
+
+（II，第212页，命题16）；由命题10我们因此有
+
+\[
+\operatorname{long} \left(\mathrm{D} (\mathbf {M})\right) = \operatorname{long} \left(\mathrm{D} \left(\mathbf {M} ^ {\prime}\right)\right) + \operatorname{long} \left(\mathrm{D} \left(\mathbf {M} ^ {\prime \prime}\right)\right),
+\]
+
+换言之，long(D(M')) = long(D(M)/D(M''))。由于 D(M)/D(M'') 被自然等同于 D(M') 的一个子模，它必定等于 D(M')，这证明了我们的断言。
+
+这立即蕴含：若 \(u: \mathbf{M}' \to \mathbf{M}\) 是单射，则 \(D(u): D(\mathbf{M}) \to D(\mathbf{M}')\) 是满射；结论随后由 II，第 199 页，注记 4 得出。
+
+对每个 A-模 M，设 \(\mathfrak{S}(M)\) 表示 M 的子模集合。对 M 的每个子模 N（相应地，D(M) 的每个子模 \(N'\)），令 \(N^0\)（相应地 \(N'^0\)）表示 D(M)（相应地 M）的由那些 \(x' \in D(M)\)（相应地 \(x \in M\)）组成的子模，这些元素满足 \(\langle y, x' \rangle = 0\)（对所有 \(y \in N\)；相应地，满足 \(\langle x, y' \rangle = 0\)，对所有 \(y' \in N'\)）。
+
+命题12. —— 设 M 是一个有限长度的 A-模。则把 M 的每个子模 N 映到 \(N^{0}\) 的映射是从 \(\mathfrak{S}(M)\) 到 \(\mathfrak{S}(D(M))\) 的双射，其逆双射把 D(M) 的每个子模 \(N'\) 映到 M 的子模 \(N'^{0}\)；模 D(N) 被自然等同于 D(M)/ \(N^{0}\)，而 D(M/N) 被等同于 \(N^{0}\)。此外，对所有子模
+
+\[
+\left(\mathrm{N} _ {1} + \mathrm{N} _ {2}\right) ^ {0} = \mathrm{N} _ {1} ^ {0} \cap \mathrm{N} _ {2} ^ {0}, \quad \left(\mathrm{N} _ {1} \cap \mathrm{N} _ {2}\right) ^ {0} = \mathrm{N} _ {1} ^ {0} + \mathrm{N} _ {2} ^ {0}\tag{2}
+\]
+
+，其中 \(\mathbf{N}_1\) , \(\mathbf{N}_2\) 是 \(\mathbf{M}\) 的子模。
+
+对 M 的每个子模 N，存在正合序列
+
+\[
+0 \rightarrow \mathrm{N} \rightarrow \mathrm{M} \rightarrow \mathrm{M} / \mathrm{N} \rightarrow 0
+\]
+
+，从而（命题 11）有正合序列
+
+\[
+0 \rightarrow D (M / N) \rightarrow D (M) \rightarrow D (N) \rightarrow 0
+\]
+
+，并且由于 D(M/N) 在 D(M) 中的像显然是 \(N^{0}\)，我们看到（命题 10）\(\text{long}(N^{0}) = \text{long}(M) - \text{long}(N)\)；由于由命题 10，M 与 D(D(M)) 等同，我们类似地有
+
+\[
+\operatorname{long} \left(\mathbf {N} ^ {0 0}\right) = \operatorname{long} (\mathbf {M}) - \operatorname{long} \left(\mathbf {N} ^ {0}\right) = \operatorname{long} (\mathbf {N});
+\]
+
+此外显然有 \(N \subset N^{00}\)，所以 \(N^{00} = N\)。进一步地，(2) 中第一个关系是显然的，把它应用于 D(M) 的子模 \(N_{1}^{0}\) 与 \(N_{2}^{0}\)，便得到 \((\mathbf{N}_{1}^{0} + \mathbf{N}_{2}^{0})^{0} = \mathbf{N}_{1} \cap \mathbf{N}_{2}\)，所以 \(N_{1}^{0} + N_{2}^{0} = (\mathbf{N}_{1}^{0} + \mathbf{N}_{2}^{0})^{00} = (\mathbf{N}_{1} \cap \mathbf{N}_{2})^{0}\)。这就完成了命题的证明。
+
+例子。--- 1) 对 A = Z，有限长度的 Z-模恰好是有限阿贝尔群；此时 K = Q，所以 K/A = Q/Z。那么为了定义 D(M)，我们有时不取 Q/Z，而取一个与之同构的 Z-模，例如（V，第 79 页，命题 2）特征 0 的代数闭域中（乘法下的）单位根所成的群 R；此时我们令 D(M) = Hom \(_{Z}\) (M, R)。我们留给读者用相应的记号把前面的结果改写为这一特殊情形。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(a\) 是 A 的一个非零元素。映射 \(x \mapsto x/a\)（从 A 到 K）在商模上诱导出一个从 \(\mathbf{A}/(a)\) 到子模 \((\mathbf{K}/\mathbf{A})(a)\) 的同构，该子模由 K/A 中被 \(a\) 零化的元素组成。若 M 是一个被 \(a\) 零化的 A-模，或等价地说一个 \(\mathbf{A}/(a)\) -模，则 A-模 D(M) 被等同于 \(\operatorname{Hom}_{\mathbf{A}/(a)}(\mathbf{M}, \mathbf{A}/(a))\)。我们留给读者将前述结果改写为这一特殊情形下的相应记号（参见 V，第 86 页）。
+\end{enumerate}
+

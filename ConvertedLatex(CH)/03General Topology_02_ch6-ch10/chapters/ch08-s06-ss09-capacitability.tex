@@ -1,0 +1,62 @@
+\subsection{苏斯林集的可容性}
+
+定义 8. 设 X 是豪斯多夫拓扑空间。X 上的一个容度是 X 的所有子集所成的集 \(\mathfrak{P}(\mathbf{X})\) 到扩充实直线 \(\overline{\mathbf{R}}\) 中的一个映射 f ，满足下列条件：
+
+\((\mathbf{CA}_{\mathbf{I}})\) 若 \(\mathbf{A} \subset \mathbf{B}\) ，则 \(f(\mathbf{A}) \leqslant f(\mathbf{B})\) 。
+
+\((\mathbf{CA}_{\mathbf{II}})\) 若 \((\mathbf{A}_n)\) 是 \(\mathbf{X}\) 的子集的任意递增序列，则
+
+\[
+f \left(\bigcup_ {n} \mathrm{A} _ {n}\right) = \sup _ {n} f (\mathrm{A} _ {n}).
+\]
+
+\((\mathbf{CA}_{\mathbf{III}})\) 若 \((\mathbf{K}_n)\) 是 \(\mathbf{X}\) 的紧子集的任意递减序列，则
+
+\[
+f \left(\bigcap_ {n} \mathrm{K} _ {n}\right) = \inf _ {n} f (\mathrm{K} _ {n}).
+\]
+
+例。* 设 \(\mu\) 是局部紧空间 X 上的一个正测度；则对应的外测度 \(\mu^{*}\) 是 X 上的一个容度。可以证明，在欧氏空间 \(\mathbf{R}^{n}\) （ \(n \geqslant 3\) ）中，“牛顿外容度”是定义 8 意义下的容度。*
+
+定义 9. 设 \(f\) 是 \(\mathbf{X}\) 上的一个容度；子集 \(\mathbf{A}\) （ \(\mathbf{X}\) 的）称为可容的（关于 \(f\) ），如果 \(f(\mathbf{A}) = \sup_k f(\mathbf{K})\) ，其中 \(\mathbf{K}\) 跑遍 \(\mathbf{A}\) 的紧子集所成的集。
+
+* 例如，若 \(f\) 是一个外测度 \(\mu^{*}\) ，则每个开集都是可容的；满足 \(\mu^{*}(A) < +\infty\) 的可容集 A 恰是 \(\mu\) 可积集。*
+
+命题 14. 设 K 是紧空间，f 是 K 上的一个容度。若 A 是 K 的子集的递减序列 \((\mathbf{A}_{n})\) 的交，其中每个子集都是闭集的可数并，则 A 是可容的。
+
+只需证明，对每个 \(a < f(A)\) ，存在闭集 \(\mathbf{C} \subset \mathbf{A}\) 使 \(f(\mathbf{C}) \geqslant a\) 。首先证明存在闭集的一个序列 \((\mathbf{B}_n)_{n \geqslant 1}\) ，使得 \(\mathbf{B}_n \subset \mathbf{A}_n\) ，且使得序列 \((\mathbf{C}_n)\) 若由条件 \(\mathbf{C}_0 = \mathbf{A}\) 、\(\mathbf{C}_n = \mathbf{C}_{n-1} \cap \mathbf{B}_n\) （对 \(n \geqslant 1\) ）归纳地定义，则 \(f(\mathbf{C}_n) > a\) 对每个 \(n \geqslant 0\) 成立。设诸 \(\mathbf{B}_i\) 已对 \(i < n\) 定义；由假设我们有 \(\mathbf{C}_{n-1} \subset \mathbf{A} \subset \mathbf{A}_n\) 与 \(f(\mathbf{C}_{n-1}) > a\) ；由于 \(\mathbf{A}_n\) 是闭集的递增序列 \(\mathbf{D}_j\) 的并，由 \((\mathbf{CA}_{\mathbf{II}})\) 得
+
+\[
+f \left(\mathrm{C} _ {n - 1}\right) = \sup _ {j} f \left(\mathrm{C} _ {n - 1} \cap \mathrm{D} _ {j}\right).
+\]
+
+因此有一个指标 \(j\) 使 \(f(\mathbf{C}_{n-1} \cap \mathbf{D}_j) > a\) ，而我们可以取 \(\mathbf{B}_n = \mathbf{D}_j\) 。
+
+现在令 \(\mathbf{C} = \bigcap_{n}\mathbf{C}_{n}\) 。由于 \(\mathbf{A} = \bigcap_{n}\mathbf{A}_{n}\) 且 \(\mathbf{B}_n\subset \mathbf{A}_n\) ，我们有
+
+\[
+\mathrm{C} = \bigcap_ {n} \mathrm{B} _ {n};
+\]
+
+因此集 C 是紧的且含于 A 。
+
+令 \(B_n' = B_1 \cap B_2 \cap \cdots \cap B_n\) ；\((B_n')\) 是 K 的紧子集的递减序列；由于 \(C_n \subset C_i \subset B_i\) 对 i \textless{} n 成立，我们也有 \(C_n \subset B_n'\) 。由 \((CA_{III})\) ，\(f(C) = \inf_{n} f(B_n')\) ，且由于 \(C \subset C_n \subset B_n'\) 我们也有 \(f(C) = \inf_{n} f(C_n) \geqslant a\) 。这就完成了证明。
+
+定理 5. 设 X 是可度量化空间，Y 是 X 的相对紧苏斯林子空间。则 Y 关于 X 上的每个容度 f 都是可容的。
+
+我们已看到（第 2 号，命题 9），存在一个紧空间 K 、K 的子集的递减序列 \((\mathbf{A}_{n})\) （其中每个子集都是紧集的可数并）与一个连续映射 \(\varphi: K \to X\) ，使得 \(Y = \varphi\left(\bigcap_{n} A_{n}\right)\) 。由命题 14 ，\(\bigcap_{n} A_{n}\) 关于 K 上的每个容度都是可容的。因此定理 5 是下述命题的推论：
+
+命题 15. 设 \(\varphi\) 是豪斯多夫空间 K 到豪斯多夫空间 X 中的连续映射，\(f\) 是 X 上的一个容度。若对 K 的每个子集 A 令 \(g(A) = f(\varphi(A))\) ，则 \(g\) 是 K 上的一个容度；此外，若 A 关于 \(g\) 是可容的，则 \(\varphi(A)\) 关于 \(f\) 是可容的。
+
+显然 \(g\) 满足公理 \((\mathbf{CA}_{\mathbf{I}})\) 与 \((\mathbf{CA}_{\mathbf{II}})\) 。另一方面，设 \((\mathbf{C}_n)\) 是 \(\mathbf{K}\) 的紧子集的递减序列，并令 \(\mathbf{C} = \bigcap_{n} \mathbf{C}_n\) ；诸集 \(\varphi(\mathbf{C})\) 是紧的，它们的交是 \(\varphi(\mathbf{C})\) ；因为此交当然包含 \(\varphi(\mathbf{C})\) ，且若 \(x \in \varphi(\mathbf{C}_n)\) 对一切 \(n\) 成立，则诸集 \(\overline{\varphi}^1(x) \cap \mathbf{C}_n\) 构成 \(\mathbf{K}\) 的非空紧子集的递减序列，因此它们的交非空。于是我们有 \(f(\varphi(\mathbf{C})) = \inf_{n} f(\varphi(\mathbf{C}_n))\) ，即 \(g(\mathbf{C}) = \inf_{n} g(\mathbf{C}_n)\) ；这样 \(g\) 满足公理 \((\mathbf{CA}_{\mathbf{III}})\) ，因而是 \(\mathbf{K}\) 上的一个容度。
+
+现在设 A 是 K 的关于 g 可容的子集；若 \(a < f(\varphi(A)) = g(A)\) ，则存在紧集 \(C \subset A\) 使 \(g(C) \geqslant a\) ；这样 \(\varphi(C)\) 是含于 \(\varphi(A)\) 的紧集，且 \(f(\varphi(C)) \geqslant a\) 。这表明 \(\varphi(A)\) 关于 f 是可容的，并完成了命题 15 从而定理 5 的证明。
+
+注. * 若 \(\mu\) 是局部紧可度量化空间 X 上的一个正测度，则 X 的每个苏斯林子集 A 都是 \(\mu\) 可测的。因为若 K 是 X 的任意紧子集，则 K∩A 是相对紧苏斯林集，从而关于 \(\mu^{*}\) 是可容的，因而是 \(\mu\) 可积的。注意苏斯林集在 X 中的余集虽然一般不是苏斯林集，却是 \(\mu\) 可测的 *。
+
+\appendix
+\setcounter{chapter}{9}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\setcounter{subsection}{0}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+

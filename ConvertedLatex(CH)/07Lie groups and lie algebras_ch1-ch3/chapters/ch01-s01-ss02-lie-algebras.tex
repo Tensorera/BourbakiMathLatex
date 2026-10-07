@@ -1,0 +1,74 @@
+\subsection{李代数}
+
+定义 1. 如果 K 上的代数 g 的乘法（记作 \((x,y)\mapsto [x,y])\) 满足下列恒等式，则称 g 为 K 上的李代数：
+
+\[
+[ x, x ] = 0\tag{1}
+\]
+
+\[
+[ x, [ y, z ] ] + [ y, [ z, x ] ] + [ z, [ x, y ] ] = 0\tag{2}
+\]
+
+对 g 中所有 x, y, z 均成立。
+
+乘积 \([x, y]\) 称为 \(x\) 与 \(y\) 的括号。恒等式 (2) 称为 Jacobi 恒等式。
+
+括号 \([x, y]\) 是关于 \(x\) 和 \(y\) 的交错双线性函数。我们有恒等式：
+
+\[
+[ x, y ] = - [ y, x ]\tag{3}
+\]
+
+因此 Jacobi 恒等式可写为：
+
+\[
+[ x, [ y, z ] ] = [ [ x, y ], z ] + [ y, [ x, z ] ].\tag{4}
+\]
+
+李代数的每个子代数和商代数都是李代数。李代数的每个积代数也是李代数。若 g 是李代数，则逆代数 \(g^{0}\) 也是李代数，并且由恒等式 (3)，映射 \(x \mapsto -x\) 是从 g 到 \(g^{0}\) 的同构。
+
+例 1. 设 L 是 K 上的结合代数。括号 \([x, y] = xy - yx\) 是关于 \(x\) 和 \(y\) 的双线性函数。容易验证，在 K-模 L 上定义的复合律 \((x, y) \mapsto [x, y]\) 使 L 成为 K 上的李代数。
+
+例 2. 在例 1 中，取 L 为 K-模 E 的自同态组成的结合代数。得到 E 的自同态李代数，记作 \(\mathfrak{gl}(\mathbf{E})\)。（若 \(\mathbf{E} = \mathbf{K}^n\)，则李代数 \(\mathfrak{gl}(\mathbf{E})\) 记作 \(\mathfrak{gl}(n, \mathbf{K})\)。）
+
+\(\mathfrak{gl}(\mathbf{E})\) 的每个李子代数都是 K 上的李代数。特别地：
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  若 E 赋有（不必结合的）代数结构，则 E 的导子构成 K 上的李代数。
+\item
+  若 E 有限维，则 E 的零迹自同态构成 K 上的李代数，记作 \(\mathfrak{sl}(\mathbf{E})\)（或者记作 \(\mathfrak{sl}(n,\mathbf{K})\)，若 \(E = K^{n}\)）。
+\item
+  方阵集合 \(\mathbf{M}_n(\mathbf{K})\)（其阶为 \(n\)）可视为 K 上的李代数，并且与 \(\mathfrak{gl}(n, \mathbf{K})\) 有自然同构。令 \((E_{ij})\) 为 \(\mathbf{M}_n(\mathbf{K})\) 的典范基（Algebra, Chapter II, § 10, no. 3）。容易得到：
+\end{enumerate}
+
+\[
+\left\{ \begin{array}{l l} [ E _ {i j}, E _ {k l} ] = 0 & \text {if} j \neq k \quad \text {and} \quad i \neq l \\ {} [ E _ {i j}, E _ {j l} ] = E _ {i l} & \text {if} i \neq l \\ {} [ E _ {i j}, E _ {k i} ] = - E _ {k j} & \text {if} j \neq k \\ {} [ E _ {i j}, E _ {j i} ] = E _ {i i} - E _ {j j} \end{array} \right.\tag{5}
+\]
+
+由三角矩阵（分别为零迹三角矩阵、零对角线三角矩阵）组成的 \(\mathbf{M}_{n}(\mathbf{K})\) 的李子代数记作 \(t(n,\mathbf{K})\)（分别记作 \(\mathfrak{st}(n,\mathbf{K})\)、\(\mathfrak{n}(n,\mathbf{K})\)）（Algebra, Chapter II, § 10, no. 7）。
+
+*例 3. 设 V 是无穷可微实流形。具有无穷可微实系数的微分算子构成 R 上的结合代数，因此由例 1 得到 R 上的李代数 \(\Delta\)。V 上两个无穷可微向量场的括号仍是无穷可微向量场，所以 V 上的无穷可微向量场构成李子代数 \(\mathfrak{f}\)，它是 \(\Delta\) 的子代数。若 V 是实李群，则左不变向量场构成李子代数 \(\mathfrak{g}\)，它是 \(\mathfrak{f}\) 的子代数，称为 V 的李代数。向量空间 \(\mathfrak{g}\) 与 V 在 \(e\) 处的切空间相同（V 的单位元）。设 V' 是另一个实李群，\(e'\) 是其单位元，\(\mathfrak{g}'\) 是其李代数。V 到 V' 的每个解析同态都定义了从 V 在 \(e\) 处的切空间到 V' 在 \(e'\) 处的切空间的线性映射；该映射是从李代数 \(\mathfrak{g}\) 到李代数 \(\mathfrak{g}'\) 的同态。若 V 是有限维实向量空间 E 的线性群，则存在从 gl(E) 到 V 的李代数 \(\mathfrak{g}\) 的典范同构，在此同构下 \(\mathfrak{g}\) 与 gl(E) \(_*\) 相同。*
+
+定义 2. 设 g 是李代数，x 是 g 的元素。从 g 到 g 的线性映射 \(y \mapsto [x, y]\) 称为 x 的伴随线性映射，记作 \(ad_{g}x\) 或 ad x。
+
+命题 1. 设 \(\mathfrak{g}\) 是李代数。对所有 \(x \in \mathfrak{g}\)，ad \(x\) 都是导子。映射 \(x \mapsto \operatorname{ad} x\) 是从李代数 \(\mathfrak{g}\) 到导子李代数 \(\mathfrak{d}\)（由 \(\mathfrak{g}\) 的导子组成）的同态。若 \(\mathrm{D} \in \mathfrak{d}\) 且 \(x \in \mathfrak{g}\)，则 {[}D, ad \(x\) {]} = \(\operatorname{ad}(\mathrm{D}x)\)。
+
+恒等式 (4) 可写为：
+
+\[
+(\operatorname{ad} x). [ y, z ] = [ (\operatorname{ad} x). y, z ] + [ y, (\operatorname{ad} x). z ]
+\]
+
+或写为：
+
+\[
+(\operatorname{ad} [ x, y ]). z = (\operatorname{ad} x). ((\operatorname{ad} y). z) - (\operatorname{ad} y). ((\operatorname{ad} x). z)
+\]
+
+由此得到前两个断言。另一方面，若 \(\mathbf{D} \in \mathfrak{d}\)、\(x \in \mathfrak{g}\)、\(y \in \mathfrak{g}\)，则 \([\mathbf{D}, \operatorname{ad} x] \cdot y = \mathrm{D}([x, y]) - [x, \mathrm{D}y] = [\mathrm{D}x, y] = (\operatorname{ad} \mathrm{D}x) \cdot y\)，从而得到最后一个断言。
+
+映射 ad \(x\) 也称为由 \(x\) 定义的内导子。
+

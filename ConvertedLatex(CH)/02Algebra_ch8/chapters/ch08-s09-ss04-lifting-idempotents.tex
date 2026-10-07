@@ -1,0 +1,43 @@
+\subsection{幂等元的提升}
+
+引理 1. —— 设 a 是环 A 中一个使 \(a - a^{2}\) 幂零的元素。存在 \(\mathrm{X} + (\mathrm{X} - \mathrm{X}^{2})\mathbf{Z}[\mathrm{X}]\) 中的一个多项式 P，使得 \(\mathrm{P}(a)\) 在 A 中是幂等的。
+
+设 n 是一个使 \((a - a^{2})^{n} = 0\) 的严格正整数。令 \(\mathrm{P}(\mathrm{X}) = 1 - (1 - \mathrm{X}^{n})^{n}\)。多项式 \(\mathrm{P}(\mathrm{X})\) 是 \(X^{n}\) 的倍式，多项式 \(1 - \mathrm{P}(\mathrm{X})\) 是 \((1 - \mathrm{X})^{n}\) 的倍式，故 \(\mathrm{P}(\mathrm{X}) - \mathrm{P}(\mathrm{X})^{2}\) 是 \((\mathrm{X} - \mathrm{X}^{2})^{n}\) 的倍式，且我们有 \(\mathrm{P}(a) = \mathrm{P}(a)^{2}\)。此外，\(\mathrm{X} - \mathrm{P}(\mathrm{X})\) 同时是 X 与 1 - X 的倍式，因而是 \(X - X^{2}\) 的倍式。
+
+命题 7. —— 设 a 是 A 的一个双边诣零理想，\(\overline{e}\) 是环 A/a 中的一个幂等元。存在 A 中的一个幂等元 e，它在 A/a 中的典范像等于 \(\overline{e}\)。
+
+设 \(a\) 是 \(\overline{e}\) 在 \(\mathbf{A}\) 中的任意一个代表。元素 \(a - a^2\)（\(\mathbf{A}\) 的）是幂零的，因为它属于 \(\mathfrak{a}\)。选取一个满足引理 1 的条件的多项式 \(\mathrm{P} \in \mathbf{Z}[\mathrm{X}]\)。我们有 \(a - \mathrm{P}(a) \in \mathrm{A}(a - a^2)\)，故元素 \(e = \mathrm{P}(a)\)（\(\mathbf{A}\) 的）具有所要的性质。
+
+\pandocbounded{\includegraphics[keepaspectratio]{images/part001_2ad691f6.jpg}}
+
+设 \(\bar{e}\) 属于环 A/a 的中心。不一定存在 A 的中心 Z 中提升 \(\bar{e}\) 的幂等元 e（VIII, 第 172 页，习题 31）。然而，若 \(\bar{e}\) 属于 Z 在 A/a 中的像，则它可提升为 Z 中的一个幂等元，因为 \(Z \cap a\) 是 Z 的一个诣零理想。
+
+推论 1. —— 设 M 与 P 是 A-模，u 是从 P 到 M 的一个满 A-线性映射。设 P 是投射的，且存在 A 的一个幂零双边理想 \(\mathfrak{a}\)，使得 \(u\) 的核 N 包含于 \(\mathfrak{aP}\)。设 \(\mathrm{M}'\) 与 \(\mathrm{M}''\) 是 M 的子模，其直和为 M。则 P 是子模 \(\mathrm{P}'\) 与 \(\mathrm{P}''\) 的直和，使得 \(u(\mathrm{P}') = \mathrm{M}'\) 且 \(u(\mathrm{P}''') = \mathrm{M}''\)。
+
+用 B 表示 \(\operatorname{End}_{\mathrm{A}}(\mathrm{P})\) 中由满足 \(f(\mathrm{N}) \subset \mathrm{N}\) 的 P 的自同态 f 组成的子环。设 \(\overline{B}\) 是 M 的自同态环。对 \(f \in B\)，设 \(\overline{f}\) 是满足 \(\overline{f} \circ u = u \circ f\) 的 M 的唯一自同态。映射 \(f \mapsto \overline{f}\) 是从 B 到 \(\overline{B}\) 的一个环同态。由于模 P 是投射的，这个同态是满射；其核 b 由自同态 \(f \in B\)（满足 \(f(\mathrm{P}) \subset \mathrm{N}\)）组成。设 n 是一个使 \(a^{n} = 0\) 的自然数。我们有
+
+\[
+\mathrm{P} = \mathfrak {a} ^ {0} \mathrm{P} \supset \mathfrak {a} ^ {1} \mathrm{P} \supset \dots \supset \mathfrak {a} ^ {n - 1} \mathrm{P} \supset \mathfrak {a} ^ {n} \mathrm{P} = 0,
+\]
+
+且对每个 \(f \in b\) 与每个整数 \(j \geqslant 0\)，
+
+\[
+f (\mathfrak {a} ^ {j} \mathrm{P}) = \mathfrak {a} ^ {j} f (\mathrm{P}) \subset \mathfrak {a} ^ {j} \mathrm{N} \subset \mathfrak {a} ^ {j + 1} \mathrm{P}
+\]
+
+因为按假设 \(N \subset aP\)。于是我们有 \(f(P) \subset a^{j}P\)（对每个自然数 j 及每个 \(f \in b^{j}\)）。特别地，我们有 \(b^{n} = 0\)。
+
+设 \(\varepsilon'\) 是 M 的以 M' 为像、以 M'\,` 为核的投影算子。由把命题 7 应用于环 B 与幂零双边理想 b，存在 B 中的一个幂等元 \(e'\)，使得 \(\overline{e'} = \varepsilon'\)，即 \(\varepsilon' \circ u = u \circ e'\)。令 \(e'' = 1 - e'\)，\(\varepsilon'' = \overline{e''}\)，P' = \(e'(P)\)，P'\,' = \(e''(P)\)。则 P 是子模 P' 与 P'\,' 的直和，且我们有
+
+\[
+u (\mathrm{P} ^ {\prime}) = u (e ^ {\prime} (\mathrm{P})) = \varepsilon^ {\prime} (u (\mathrm{P})) = \varepsilon^ {\prime} (\mathrm{M}) = \mathrm{M} ^ {\prime};
+\]
+
+等式 \(u(\mathrm{P}'') = \mathrm{M}''\) 的证明是类似的。
+
+推论 2. —— 设 A 是一个环，a 是 A 的一个幂零双边理想。若 P 是一个投射 A-模，则 P/aP 是 A/a 上的一个投射模，且 A-模 P 是不可分解的当且仅当 A/a-模 P/aP 是不可分解的。
+
+设 P 是一个投射 A-模，\(\overline{P}\) 是 A/a-模 P/aP。A-模 P 为零当且仅当 \(\overline{P}\) 为零（VIII, 第 158 页，定理 2）。现在设 \(P \neq 0\)。由于 A/a-模 \(\overline{P}\) 同构于 \(\overline{A} \otimes_{A} P\)，它是投射的（II, §5, No.~1, 第 279 页，命题 4 的推论）。若 P 是不可分解的，则由推论 1，\(\overline{P}\) 也是不可分解的。反之，设 P 是可分解的且非零，并设 \(P'\) 与 \(P''\) 是 P 的两个非零子模，使得 \(P = P' \oplus P''\)。由中山引理（VIII, 第 158 页，定理 2），我们有 \(P' + aP \neq P\) 与 \(P'' + aP \neq P\)；若 \(\overline{P}'\) 与 \(\overline{P}''\) 是 \(P'\) 与 \(P''\) 在 \(\overline{P}\) 中的典范像，则我们有 \(\overline{P}' \neq \overline{P}\)，\(\overline{P}'' \neq \overline{P}\)，以及 \(\overline{P} = \overline{P}' \oplus \overline{P}''\)。这就证明 \(\overline{P}\) 是可分解的。
+% semantic-fragments: legacy-input-seam
+\relax{}

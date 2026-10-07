@@ -1,0 +1,118 @@
+\subsection{Calculation of Gaussian integrals}
+
+Lemma 1. --- For every integer \(n \geqslant 0\) ,
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{5}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\int_ {\mathbf {R}} | x | ^ {n} e ^ {- x ^ {2} / 2} d x = 2 ^ {\frac {n + 1}{2}} \Gamma \left(\frac {n + 1}{2}\right)\tag{7}
+\]
+
+\[
+\int_ {\mathbf {R}} x ^ {2 n} e ^ {- x ^ {2} / 2} d x = (2 \pi) ^ {1 / 2} \frac {(2 n) !}{2 ^ {n} n !}\tag{8}
+\]
+
+\[
+\int_ {\mathbf {R}} x ^ {2 n + 1} e ^ {- x ^ {2} / 2} d x = 0.
+\]
+
+Recall the formula
+
+\[
+\Gamma (s) = \int_ {0} ^ {\infty} u ^ {s - 1} e ^ {- u} d u\tag{9}
+\]
+
+valid for every real number \(s > 0\) (FRV, VII, §1, No.~3, Prop. 3). On making the change of variable \(x = (2u)^{1/2}\) , it follows from (9) that
+
+\[
+\int_ {0} ^ {\infty} x ^ {n} e ^ {- x ^ {2} / 2} d x = \int_ {0} ^ {\infty} (2 u) ^ {n / 2} e ^ {- u} \frac {1}{2} 2 ^ {1 / 2} u ^ {- 1 / 2} d u = 2 ^ {\frac {n - 1}{2}} \Gamma \left(\frac {n + 1}{2}\right),
+\]
+
+whence the formula (6) since
+
+\[
+\int_ {\mathbf {R}} | x | ^ {n} e ^ {- x ^ {2} / 2} d x = 2 \int_ {0} ^ {\infty} x ^ {n} e ^ {- x ^ {2} / 2} d x.
+\]
+
+The formula (7) follows from (6) and the relation
+
+\[
+\Gamma \left(n + \frac {1}{2}\right) = \pi^ {1 / 2} \frac {(2 n) !}{2 ^ {2 n} n !}.\tag{10}
+\]
+
+For \(n = 0\) , this relation reduces to \(\Gamma(\frac{1}{2}) = \pi^{1/2}\) , that is, to the formula (21) of FRV, VII, §1, No.~3. The general case then follows by induction on \(n\) , on taking into account the relation \(\Gamma(x + 1) = x \cdot \Gamma(x)\) (loc. cit., §1, No.~1).
+
+Finally, the formula (8) follows from the fact that the function \(x \mapsto x^{2n+1}e^{-x^2/2}\) is odd.
+
+Lemma 2. --- For every complex number y,
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} e ^ {i x y} d x = e ^ {- y ^ {2} / 2}.\tag{11}
+\]
+
+In particular,
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} d x = 1.
+\]
+
+The change of variable \(x \mapsto -x\) yields
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} e ^ {i x y} d x = (2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} e ^ {- i x y} d x;
+\]
+
+since \(\cos u = \frac{e^{iu} + e^{-iu}}{2}\) for every complex number \(u\) , it follows that
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} e ^ {i x y} d x = (2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} \cos x y d x.\tag{12}
+\]
+
+For every integer \(n \geqslant 0\) , set
+
+\[
+g _ {n} (x) = (- 1) ^ {n} (2 \pi) ^ {- 1 / 2} \frac {(x y) ^ {2 n}}{(2 n) !} e ^ {- x ^ {2} / 2}.
+\]
+
+By (7),
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{12}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\int_ {\mathbf {R}} | g _ {n} (x) | d x = \frac {1}{n !} \biggl (\frac {| y | ^ {2}}{2} \biggr) ^ {n}\tag{14}
+\]
+
+\[
+\int_ {\mathbf {R}} g _ {n} (x) d x = \frac {1}{n !} \Big (- \frac {y ^ {2}}{2} \Big) ^ {n},
+\]
+
+whence
+
+\[
+\sum_ {n = 0} ^ {\infty} \int_ {\mathbf {R}} | g _ {n} (x) | d x = e ^ {| y | ^ {2} / 2} <   + \infty .
+\]
+
+Since, moreover,
+
+\[
+(2 \pi) ^ {- 1 / 2} e ^ {- x ^ {2} / 2} \cos x y = \sum_ {n = 0} ^ {\infty} g _ {n} (x),
+\]
+
+this equality can be integrated term by term, whence
+
+\[
+(2 \pi) ^ {- 1 / 2} \int_ {\mathbf {R}} e ^ {- x ^ {2} / 2} \cos x y d x = \sum_ {n = 0} ^ {\infty} \int_ {\mathbf {R}} g _ {n} (x) d x = e ^ {- y ^ {2} / 2}
+\]
+
+by (14). The formula (11) then follows from (12).
+

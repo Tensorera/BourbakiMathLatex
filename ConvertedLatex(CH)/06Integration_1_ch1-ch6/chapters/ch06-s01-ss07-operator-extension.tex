@@ -1,0 +1,58 @@
+\subsection{应用：II. 取值于算子空间的连续函数到测度空间的延拓}
+
+设 G 为 Hausdorff 局部凸空间， H 为 Hausdorff 且拟完备的局部凸空间，并用 F 表示由 G 到 H 中的连续线性映射所成的空间 \(\mathcal{L}(\mathrm{G};\mathrm{H})\) ，赋以紧收敛拓扑。空间 F 未必拟完备，且若 \(t \mapsto U(t)\) 是 T 到 F 中的连续映射， \(\mu\) 是 T 上具有紧支集的正测度，则未必有 \(\int U d\mu \in F\) （习题 27）。然而，若对 T 的每个紧子集 K ， \(U(\mathrm{K})\) 都等度连续，则它在 F 中的平衡凸包络也等度连续（TVS, III, §3, No. 4），且由于 H 拟完备，这个平衡凸包络的闭包将是 F 的完备子集（TVS, III, §3, No. 8, 命题 11）；于是确实有 \(\int U d\mu \in F\) （No. 2, 命题 8）。
+
+加在 U 上的补充条件可以用别的方式表述：
+
+引理 3. --- 设 G , H 为两个局部凸空间， U 为局部紧空间 T 到 \(\mathcal{L}(\mathrm{G};\mathrm{H})\) 中的映射。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  映射 \((t,\mathbf{x})\mapsto U(t)\cdot \mathbf{x}\) （由 \(\mathrm{T}\times \mathrm{G}\) 到 H 中）是连续的。
+\item
+  对 T 的每个紧子集 K ， \(U(\mathbf{K})\) 等度连续，且存在完全集 \(D \subset G\) ，使得对每个 \(x \in D\) ，映射 \(t \mapsto U(t) \cdot x\) 在 T 上连续。
+\end{enumerate}
+
+此外，当 \(U\) 满足这些条件时， \(U\) 是 \(\mathrm{T}\) 到赋以紧收敛拓扑的 \(\mathcal{L}(\mathrm{G};\mathrm{H})\) 中的连续映射。
+
+为看出 a) 蕴含 b) ，我们注意到：对 H 中 0 的每个邻域 V 与每个 \(t \in \mathbf{K}\) ，按假设存在邻域 \(\mathrm{L}_t\) （ \(t\) 在 T 中的邻域）与 G 中 0 的邻域 \(\mathrm{W}_t\) ，使得关系 \(t' \in \mathrm{L}_t\) 与 \(\mathbf{x} \in \mathrm{W}_t\) 蕴含 \(U(t') \cdot \mathbf{x} \in \mathrm{V}\) 。只需用有限个邻域 \(\mathrm{L}_{t_i}\) 覆盖 K ，并取 \(\mathrm{W} = \bigcap_{i} \mathrm{W}_{t_i}\) ，就能有 \(U(t) \cdot \mathbf{x} \in \mathrm{V}\) （只要 \(t \in \mathrm{K}\) 与 \(\mathbf{x} \in \mathrm{W}\) ），这证明了 \(U(\mathrm{K})\) 的等度连续性。
+
+反之，设 b) 成立；只需证明对 T 的每个紧子集 K ，映射 \((t,\mathbf{x})\mapsto U(t)\cdot\mathbf{x}\) 在 \(K\times G\) 上连续。令 \(M=U(K)\) ；由于 M 等度连续，在 M 上， G 中逐点收敛拓扑与 D 中逐点收敛拓扑相同（GT, X, §2, No. 4, 定理 1）；因此假设 b) 蕴含 \(t\mapsto U(t)\) 是 K 到 \(\mathcal{L}(G;H)\) 中的连续映射（当 \(\mathcal{L}(G;H)\) 赋以逐点收敛拓扑时）。另一方面， \((A,\mathbf{x})\mapsto A\cdot\mathbf{x}\) 是 \(M\times G\) 到 H 中的连续映射（当 M 赋以逐点收敛拓扑时）（GT, X, §2, No. 1, 命题 1 的推论 4）。由于映射 \((t,\mathbf{x})\mapsto U(t)\cdot\mathbf{x}\) 可以分解为 \((t,\mathbf{x})\mapsto(U(t),\mathbf{x})\mapsto U(t)\cdot\mathbf{x}\) ，我们断定它是连续的。
+
+最后，引理的最后一个断言由如下事实得出：在 M 上，紧收敛拓扑与逐点收敛拓扑相同（GT, X, §2, No. 4, 定理 1）。
+
+于是，设 U 满足引理 3 的条件；那么（若 H 拟完备）可以像第 6 目中那样，定义一个线性映射 \(\lambda \mapsto \int U d\lambda\) （由 \(\mathcal{C}'(\mathrm{T})\) 到 \(\mathrm{F} = \mathcal{L}(\mathrm{G}; \mathrm{H})\) 中）。我们令 \(U(\lambda) = \int U d\lambda\) 。
+
+命题 16. --- 设 G , H 为两个 Hausdorff 局部凸空间，且假设 H 拟完备。设 U 为 T 到 \(\mathcal{L}(\mathrm{G};\mathrm{H})\) 中的映射，使得 \((t,\mathbf{x})\mapsto U(t)\cdot \mathbf{x}\) 是 \(\mathrm{T}\times \mathrm{G}\) 到 H 中的连续映射。则双线性映射 \((\lambda ,\mathbf{x})\mapsto U(\lambda)\cdot \mathbf{x}\) —— \(\mathcal{C}'(\mathrm{T})\times \mathrm{G}\) 到 H 中——关于 \(\mathcal{C}'(\mathrm{T})\) 的等度连续子集与 G 的紧子集是亚连续的（这蕴含线性映射 \(\lambda \mapsto U(\lambda)\) —— \(\mathcal{C}'(\mathrm{T})\) 到 F 中——是连续的）。
+
+\(\lambda \mapsto U(t)\) 作为 \(\mathcal{C}'(\mathrm{T})\) 到 \(\mathrm{F}\) 中的映射的连续性，由引理 3 及第 6 目命题 14 后的注记 2 得出。于是，剩下要证明：对每个闭、平衡、凸邻域 \(\mathrm{V}\) （ \(\mathrm{H}\) 中 0 的）与每个等度连续子集 \(\mathrm{N}\) （ \(\mathcal{C}'(\mathrm{T})\) 的），存在邻域 \(\mathrm{W}\) （ \(\mathrm{G}\) 中 0 的），使得关系 \(\mathbf{x} \in \mathrm{W}\) ， \(\lambda \in \mathrm{N}\) 蕴含 \(U(\lambda) \cdot \mathbf{x} \in \mathrm{V}\) 。可以假设 \(\mathrm{N} = \mathrm{S}^{\circ}\) ，其中 \(\mathrm{S}\) 是 \(\mathcal{C}(\mathrm{T})\) 中 0 的邻域，从而可以假设 \(\mathrm{S}\) 是由满足如下条件的函数 \(g \in \mathcal{C}(\mathrm{T})\) 所成的集：\(|g(t)| \leqslant 1\) 在某个紧子集 \(\mathrm{K}\) （ \(\mathrm{T}\) 的）上成立。只需证明 \(|\langle U(\lambda) \cdot \mathbf{x}, \mathbf{x}' \rangle| \leqslant 1\) （对 \(\mathbf{x} \in W\) ， \(\mathbf{x}' \in V^\circ\) 与 \(\lambda \in S^\circ\) ）。而今，由于 \(U(K)\) 等度连续，存在邻域 \(W\) （ \(G\) 中 0 的），使得关系 \(t \in K\) ， \(\mathbf{x} \in W\) 蕴含 \(U(t) \cdot \mathbf{x} \in V\) ；因此关系 \(\mathbf{x} \in W\) ， \(\mathbf{x}' \in V^\circ\) 蕴含函数 \(t \mapsto \langle U(t) \cdot \mathbf{x}, \mathbf{x}' \rangle\) 属于 \(S\) ，从而 \(|\langle U(t) \cdot \mathbf{x}, \mathbf{x}' \rangle| = |\int\langle U(t) \cdot \mathbf{x}, \mathbf{x}' \rangle d\lambda(t)| \leqslant 1\) （按 \(S^\circ\) 的定义）。
+
+现在假设 \(U\) 是 \(\mathrm{T}\) 到 \(\mathrm{F}\) 中的连续映射，而且 \(U(\mathrm{T})\) 等度连续。于是，与上面相同的论证表明（由于 \(\mathrm{H}\) 拟完备），对每个有界正测度 \(\mu\) （ \(\mathrm{T}\) 上的）， \(\int U d\mu \in \mathrm{F}\) 。因此可以像上面那样定义线性映射 \(\lambda \mapsto \int U d\lambda = U(\lambda)\) （ \(\mathcal{M}^1(\mathrm{T})\) 到 \(\mathrm{F}\) 中），它延拓了 \(\mathcal{C}'(\mathrm{T})\) 到 \(\mathrm{F}\) 中的类似映射。此外，对每个闭、平衡、凸邻域 \(\mathrm{V}\) （ \(\mathrm{H}\) 中 0 的），按假设存在邻域 \(\mathrm{W}\) （ \(\mathrm{G}\) 中 0 的），使得对每个 \(\mathbf{x} \in \mathrm{W}\) 与每个 \(t \in \mathrm{T}\) ，有 \(U(t) \cdot \mathbf{x} \in \mathrm{V}\) ，从而（由于 \(\mathrm{V}\) 弱闭） \(\int (U(t) \cdot \mathbf{x}) d\lambda(t) \in \| \lambda \| \cdot \mathrm{V}\) （No. 2, 命题 5）。换言之：
+
+命题 17. --- 设 G , H 为两个 Hausdorff 局部凸空间，且假设 H 拟完备。设 U 为 T 到 \(\mathcal{L}(G;H)\) 中的映射，使得 \((t,\mathbf{x})\mapsto U(t)\cdot \mathbf{x}\) 在 T×G 上连续，且 \(U(T)\) 等度连续。则当 \(\mathcal{M}^1 (T)\) 赋以它的 Banach 空间拓扑时，双线性映射 \((\lambda ,\mathbf{x})\mapsto U(\lambda)\cdot \mathbf{x}\) —— \(\mathcal{M}^1 (T)\times G\) 到 H 中——是连续的（特别地，这蕴含线性映射 \(\lambda \mapsto U(\lambda)\) —— \(\mathcal{M}^1 (T)\) 到 \(\mathcal{L}(G;H)\) 中——当 \(\mathcal{L}(G;H)\) 赋以有界收敛拓扑时是连续的）。
+
+命题 18. --- 设 \(G_{1}, G_{2}, H_{1}, H_{2}\) 为四个 Hausdorff 局部凸空间，其中 \(H_{1}\) 与 \(H_{2}\) 假设为拟完备的。令 \(A : G_{1} \to G_{2}\) 与 \(B : H_{1} \to H_{2}\) 为两个连续线性映射。令 \(U_{1} : T \to \mathcal{L}(G_{1}; H_{1})\) ， \(U_{2} : T \to \mathcal{L}(G_{2}; H_{2})\) 为两个满足命题 16（相应地，命题 17）条件的映射，并假设对每个 \(t \in T\) ， \(B \circ U_{1}(t) = U_{2}(t) \circ A\) 。则对 T 上每个具有紧支集的（相应地，有界的）测度 \(\lambda\) ， \(B \circ U_{1}(\lambda) = U_{2}(\lambda) \circ A\) 。
+
+事实上，对每个 \(x \in G_{1}\) ，有（No. 1, 命题 1）
+
+\[
+\begin{array}{c} \left(B \circ U _ {1} (\lambda)\right) \cdot \mathbf {x} = \int \Big (\left(B \circ U _ {1} (t)\right) \cdot \mathbf {x} \Big) d \lambda (t) \\ = \int \Big (\left(U _ {2} (t) \circ A\right) \cdot \mathbf {x} \Big) d \lambda (t) = U _ {2} (\lambda) \cdot (A \cdot \mathbf {x}). \end{array}
+\]
+
+注记. --- 1) 设 G 与 H 为 Banach 空间， U 为 T 到 \(\mathcal{L}(\mathrm{G};\mathrm{H})\) 中的映射，使得 \((t,\mathbf{x})\mapsto U(t)\cdot\mathbf{x}\) 在 \(T\times G\) 上连续。注意，这蕴含有限函数 \(t\mapsto\|U(t)\|\) 在 T 的每个紧子集上有界且在 T 上下半连续，因为它是连续函数 \(t \mapsto |U(t) \cdot \mathbf{x}|\) （x 跑遍球 \(|x| \leqslant 1\) ， G 中的）的上包络。令 \(h(t) = \|U(t)\|\) 。于是，对每个使 h 为 \(\mu\)-可积的正测度 \(\mu\) （ T 上），我们仍有 \(\int U d\mu \in \mathcal{L}(\mathrm{G};\mathrm{H})\) 。因为，测度 \(\nu = h \cdot \mu\) 按假设有界；因此存在 T 的一个分割，由一个 \(\nu\)-可忽略集 N 与紧子集序列 \((\mathrm{K}_{n})\) 组成。把本目开头所作的论证应用于测度 \(\varphi_{K_{n}} \cdot \mu\) ，便表明
+
+\[
+A _ {n} = \int \varphi_ {\mathrm{K} _ {n}} U d \mu \in \mathrm{F} = \mathcal {L} (\mathrm{G}; \mathrm{H}),
+\]
+
+而且（No. 2, 命题 6）， \(\| A_n\| \leqslant \int \varphi_{\mathrm{K}_n}\| U\| d\mu \leqslant \nu (\mathrm{K}_n)\) 。因此以 \(A_{n}\) 为通项的级数在 Banach 空间 \(\mathcal{L}(\mathrm{G};\mathrm{H})\) 中绝对收敛，并且立即可以看出其和为 \(\int Ud\mu\) ，且 \(\left\| \int Ud\mu \right\| \leqslant \int \| U\| d\mu\) 。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\mathrm{G} = \mathrm{H}\) 拟完备，且 \(U\) 满足命题 16 的假设。令 \(\mathbf{M}\) 为空间 \(\mathcal{C}'(\mathrm{T})\) 的一个稠密子集（对弱拓扑 \(\sigma\big(\mathcal{C}'(\mathrm{T}),\mathcal{C}(\mathrm{T})\big)\) 而言），令 \(\mathrm{X}\) 为 \(\mathrm{H}\) 的闭线性子空间，使得 \(U(\lambda)(\mathrm{X})\subset \mathrm{X}\) （对每个测度 \(\lambda \in \mathrm{M}\) ）。则也有 \(U(t)(\mathrm{X})\subset \mathrm{X}\) （对每个 \(t\in \mathrm{T}\) ）：事实上，对每个 \(\mathbf{x}\in \mathrm{X}\) 与每个 \(\mathbf{x}'\in \mathrm{H}'\) （与 \(\mathrm{X}\) 正交），按假设 \(\langle U(\lambda)\cdot \mathbf{x},\mathbf{x}'\rangle = 0\) （对所有 \(\lambda \in \mathrm{M}\) ），它可以写成 \(\int \langle U(t)\cdot \mathbf{x},\mathbf{x}'\rangle d\mu (t) = 0\) 。连续函数 \(t\mapsto \langle U(t)\cdot \mathbf{x},\mathbf{x}'\rangle\) 由于与 \(\mathrm{M}\) 正交而为 0 ，由此得到 \(\langle U(t)\cdot \mathbf{x},\mathbf{x}'\rangle = 0\) （对每个 \(\mathbf{x}'\in \mathrm{X}^\circ\) ），从而 \(U(t)\cdot \mathbf{x}\in \mathrm{X}\) （对所有 \(t\in \mathrm{T}\) 与 \(\mathbf{x}\in \mathrm{X}\) ），这就证明了我们的断言。
+\end{enumerate}
+

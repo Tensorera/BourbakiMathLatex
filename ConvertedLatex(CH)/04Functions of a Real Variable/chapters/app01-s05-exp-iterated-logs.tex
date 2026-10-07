@@ -1,0 +1,70 @@
+\section{指数函数与迭对数}
+
+我们已在 (V, p.~229) 定义了迭对数 \(l_n(x)\) ，由条件 \(l_0(x) = x\) ， \(l_n(x) = \log(l_{n-1}(x))\) （对 \(n \geqslant 1\) ）。同样，定义迭指数 \(e_n(x)\) ，由条件 \(e_0(x) = x\) ， \(e_n(x) = \exp(e_{n-1}(x))\) （对 \(n \geqslant 1\) ）。对 \(n\) 作归纳立即可见， \(l_n(x)\) 是 \(e_n(x)\) 的反函数（对 \(x > e_{n-1}(0)\) 有定义），且 \(e_m(e_n(x)) = e_{m+n}(x)\) ， \(l_m(l_n(x)) = l_{m+n}(x)\) 。由关系式 \(\log x \ll x^\mu \ll e^x\) （对每个 \(\mu > 0\) ），对 \(n \geqslant 1\) 有
+
+\[
+l _ {n} (x) \prec (l _ {n - 1} (x)) ^ {\mu} \quad \text {   for   every   } \mu > 0\tag{5}
+\]
+
+\[
+\begin{array}{c} e _ {n - 1} (x ^ {1 + \beta}) \prec \prec e _ {n} (x ^ {1 + \delta}) \prec \prec e _ {n} ((1 - \gamma) x) \prec \prec (e _ {n} (x)) ^ {\mu} \\ \prec \prec e _ {n} ((1 + \alpha) x) \prec \prec e _ {n} (x ^ {1 + \beta}) \end{array}\tag{6}
+\]
+
+其中 \(\mu > 0, \alpha > 0, \beta > 0, 0 < \gamma < 1, 0 < \delta < 1\) 皆为任意（其余方面任意的）数 (cf.~V, p.~218, prop. 11)。
+
+我们已看到 (V, p.~229)，对 \(n \geqslant 1\) 有
+
+\[
+{\frac {d}{d x}} \big (l _ {n} (x) \big) = \prod_ {i = 0} ^ {n - 1} {\frac {1}{l _ {i} (x)}}.\tag{7}
+\]
+
+同样，对 \(n\geqslant 1\) 有
+
+\[
+\frac {d}{d x} \big (e _ {n} (x) \big) = \prod_ {i = 1} ^ {n} e _ {i} (x).\tag{8}
+\]
+
+从而，由 V, p.~233 的命题 8，对每个 \(\mu > 0\) 有
+
+\[
+\int_ {a} ^ {x} e _ {n} (t ^ {\mu}) d t \sim \frac {x}{\mu} e _ {n} (x ^ {\mu}) \prod_ {i = 0} ^ {n - 1} \frac {1}{e _ {i} (x ^ {\mu})}\tag{9}
+\]
+
+\[
+\int_ {x} ^ {+ \infty} \frac {d t}{e _ {n} (t ^ {\mu})} \sim \frac {x}{\mu} \prod_ {i = 0} ^ {n} \frac {1}{e _ {i} (x ^ {\mu})}.\tag{10}
+\]
+
+可以证明，若 \(f\) 是任一满足 \(f \gg 1\) 的 (H) 函数，则存在两个整数 \(m\) 与 \(n\) ，使
+
+\[
+l _ {m} (x) \prec f (x) \prec e _ {n} (x)
+\]
+
+(V, p.~263, exerc. 1 and p.~264, exerc. 5) 另一方面，可以定义递增函数 \(g(x)\) （它们不再是 (H) 函数），使得 \(g(x) \gg e_n(x)\) 对每个 \(n > 0\) 成立，或者 \(1 \ll g(x) \ll l_m(x)\) 对每个 \(m > 0\) 成立 (V, p.~265, exerc. 8, 9 and 10)。
+
+借助迭对数我们将证明，可以定义一个由 (H) 函数组成的比较尺度 \(\mathcal{E}\) （对 \(x\) 趋于 \(+\infty\) 而言），这些函数 \(>0\) （在 \(+\infty\) 的某个邻域上）且满足下列条件：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  E 中任意两个函数的乘积属于 E；
+\item
+  \(f^{\mu} \in \mathcal{E}\) （对每个函数 \(f \in \mathcal{E}\) 与每个实数 \(\mu\) ）；
+\item
+  对每个函数 \(f \in \mathcal{E}\) ， \(\log f\) 是 \(\mathcal{E}\) 中有限个函数的线性组合；
+\end{enumerate}
+
+\(d\) ) 对每个函数 \(f \in \mathcal{E}\) （常数 1 除外）， \(e^f\) 等价于 \(\mathcal{E}\) 中的一个函数。
+
+首先考虑集 \(E_{0}\) （由形如 \(\prod_{m=0}^{\infty}\left(l_{m}(x)\right)^{\alpha_{m}}\) 的函数组成），其中诸 \(\alpha_{m}\) 为实数，且除有限个指标 m 外均为零；由 (5) (V, p.~253) 立即看出这些函数构成一个满足条件 a)、b)、c) 的比较尺度。现在对 n 作递归定义集 \(E_{n}\) （对 \(n \geqslant 1\) ）：它由常数 1 以及形如 \(\exp\left(\sum_{k=1}^{p}a_{k}f_{k}\right)\) 的函数组成，其中 p 是任意整数 \textgreater{} 0，诸函数 \(f_{k}\) （ \(1 \leqslant k \leqslant p\) ）是 \(E_{n-1}\) 中满足 \(f_{1} \gg f_{2} \gg \cdots \gg f_{p} \gg 1\) 的函数，诸 \(a_{k}\) 是 \(\neq 0\) 的实数；我们用归纳法证明 \(E_{n}\) 是一个满足 a)、b)、c) 且包含 \(E_{n-1}\) 的比较尺度。首先，关系 \(E_{n-1} \subset E_{n}\) 对 n = 1 成立，因为 \(E_{0}\) 中任一非常数函数的对数都具有形式 \(\sum_{k=1}^{p}a_{k}f_{k}\) ，其中诸 \(f_{k}\) 是迭对数，从而 \(\gg 1\) ；另一方面，若 \(E_{n-2} \subset E_{n-1}\) ，则由 \(E_{n}\) 的定义推出 \(E_{n-1} \subset E_{n}\) ；这个定义还表明 \(E_{n}\) 满足 a)、b) 和 c)。剩下要看出 \(E_{n}\) 是一个比较尺度：由于 \(E_{n}\) 中两个函数的商仍属于 \(E_{n}\) ，只需证明 \(E_{n}\) 中每个函数 f（常数 1 除外）不能等价于一个 \(\neq 0\) 的常数。而按构造有 \(\log f = \sum_{k=1}^{p}a_{k}f_{k} \sim a_{1}f_{1}\) ，且由于 \(f_{1} \gg 1\) ，log f 趋于 \(\pm\infty\) ，故当 x 趋于 \(+\infty\) 时 f 趋于 0 或 \(+\infty\) 。
+
+这样，若 E 是诸 \(E_{n}\) （ \(n \geqslant 0\) ）的并，则 E 是一个比较尺度，因为 E 中两个函数属于同一个尺度 \(E_{n}\) ；出于同样的理由，E 满足 a)，且显然它也满足 b) 和 c)。最后，若 \(f \in E\) ，则存在 n 使 \(f \in E_{n}\) ；若 f 不是常数 1，则 \(f(x)\) 趋于 0 或 \(+\infty\) （当 x 趋于 \(+\infty\) 时）；在第一种情形 \(e^{f} \sim 1\) ，在第二种情形， \(e^{f}\) 按定义属于 \(E_{n+1}\) ，从而属于 E。
+
+注. 尽管我们刚才定义的尺度 E 具有实际的用处，但很容易给出相对于 E 没有主部的 (H) 函数的例子。事实上，若 f 是一个 (H) 函数，满足 \(f \sim ag\) ，其中 a 是一个常数 \textgreater{} 0 且 \(g \in E\) ，则 \(\log f - \log g - \log a\) 随 1/x 趋于 0，故由性质 c)， \(\log f\) 相对于 E 有一个余项趋于 0 的渐近展开。而若考虑例如 (H) 函数 \(f(x) = e_{2}\left(x + \frac{1}{x}\right)\) ，则有 \(\log f(x) = \exp\left(x + \frac{1}{x}\right)\) ，于是 \(\log f\) 相对于 E 的渐近展开形如
+
+\[
+\log f (x) = e ^ {x} + \frac {e ^ {x}}{x} + \frac {1}{2 !} \frac {e ^ {x}}{x ^ {2}} + \dots + \frac {1}{n !} \frac {e ^ {x}}{x ^ {n}} + o \left(\frac {e ^ {x}}{x ^ {n}}\right) \quad (n \text {   an   integer   } > 0).
+\]
+
+显然这个展开的余项等价于 \(\frac{1}{(n+1)!}\frac{e^{x}}{x^{n+1}}\) ，故不趋于 0。因此 f 相对于 E 没有主部。
+

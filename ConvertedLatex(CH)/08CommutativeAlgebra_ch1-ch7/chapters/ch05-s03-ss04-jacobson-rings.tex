@@ -1,0 +1,71 @@
+\subsection{Jacobson 环}
+
+定义 1. 若环 \(\mathbf{A}\) 的每个素理想都是一族极大理想的交，则称 \(\mathbf{A}\) 为 Jacobson 环。
+
+\textbf{例子}\par
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\item
+  每个域都是 Jacobson 环。
+\item
+  环 Z 是 Jacobson 环，因为唯一不是极大理想的素理想 (0) 是 Z 的诸极大理想 \((p)\) 的交，其中 p 取遍素数集（参看命题 4）。
+\item
+  设 A 为 Jacobson 环，a 为 A 的理想。那么 A/a 是 Jacobson 环，因为 A/a 的理想都具有 b/a 的形式，其中 b 是 A 的包含 a 的理想，且 b/a 是素理想（相应地极大理想）当且仅当 b 是。
+\end{enumerate}
+
+命题 3. 要使环 A 是 Jacobson 环，必须且只需对 A 的每个理想 a，A/a 的 Jacobson 根等于其幂零根（第 II 章 § 2 第 6 节）。
+
+A/a 的 Jacobson 根（相应地幂零根）是 A/a 的极大理想（相应地素理想）的交（《代数》第 VIII 章 § 6 第 3 节定义 3 及《交换代数》第 II 章 § 2 第 6 节命题 13）。因此所述条件意味着：对 A 的每个理想 a，包含 a 的素理想之交等于包含 a 的极大理想之交。若 A 是 Jacobson 环，此条件显然对 A 的每个理想 a 成立；反之，若它对 A 的每个素理想成立，则按定义 A 是 Jacobson 环。
+
+推论. 设 A 为 Jacobson 环；对 A 的每个理想 a，a 的根是 A 的包含 a 的极大理想的交。
+
+只需注意 A/a 是 Jacobson 环即可。
+
+命题 4. 设 A 为一个主理想整环，\((p_{\lambda})_{\lambda \in L}\) 为 A 的极端元的一个代表系（《代数》第 VII 章 § 1 第 3 节定义 2）。要使 A 是 Jacobson 环，必须且只需 L 是无限的。
+
+A 的极大理想是诸 \(Ap_{\lambda}\)（同处第 2 节命题 2）。若 L 有限，它们的交是理想 Ax，其中 \(x = \prod_{\lambda \in L} p_{\lambda}\)（同处），因而异于 (0)；另一方面，若 L 无限，则诸 \(Ap_{\lambda}\) 的交是 (0)，因为 A 的每个 \(\neq 0\) 的元素只被有限多个极端元整除（同处第 3 节定理 2）。于是命题由 (0) 是 A 中唯一不是极大理想的素理想这一事实得出（《代数》第 VI 章 §1 第 13 节命题 14 (DIV)）。
+
+命题 5. 设 A 为环，B 为一个在 A 上整的 A-代数。若 A 是 Jacobson 环，则 B 亦然。
+
+把 A 换成它在 B 中的典范像，我们可设 \(A \subset B\)。设 \(p'\) 为 B 的一个素理想，并令 \(p = A \cap p'\)。按假设存在 A 的一族极大理想 \((m_{\lambda})_{\lambda \in L}\)，其交等于 p。对每个 \(\lambda \in L\)，存在 B 的一个极大理想 \(m_{\lambda}'\)，它位于 \(m_{\lambda}\) 之上且包含 \(p'\)（§ 2 第 1 节命题 1 及定理 1 的推论 2）。若记 \(q' = \bigcap_{\lambda \in L} m_{\lambda}'\)，则 \(q' \cap A = \bigcap_{\lambda \in L} m_{\lambda} = p\) 且 \(q' \supset p'\)，从而 \(q' = p'\)（§ 2 第 1 节命题 1 的推论 1）。
+
+定理 3. 设 A 为 Jacobson 环，B 为有限生成 A-代数，\(\rho: \mathbf{A} \to \mathbf{B}\) 为典范同态。那么：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  B 是 Jacobson 环。
+\item
+  对每个极大理想 \(\mathfrak{m}'\)（\(\mathbf{B}\) 的），\(\mathfrak{m} = \rho^{-1} (\mathfrak{m}')\) 是 \(\mathbf{A}\) 的极大理想，且 \(\mathbf{B} / \mathfrak{m}'\) 是 \(\mathbf{A} / \mathfrak{m}\) 的有限代数扩张。
+\end{enumerate}
+
+设 \(\mathfrak{p}'\) 为 B 的一个素理想，\(\mathfrak{p} = \rho^{-1} (\mathfrak{p}')\)。设 \(v\) 为一个 \(\neq 0\) 的元素（在 \(\mathrm{B / p'}\) 中）。
+
+由于 \(B/p'\) 是一个有限生成的整 \((A/p)\)-代数，且典范同态 \(\phi: A/p \to B/p'\) 是单射，故存在一个元素 \(u \neq 0\)（属于 \(A/p\)），使得：对每个同态 \(f\)（从 \(A/p\) 到代数闭域 \(L\)，其核不含 \(u\)），存在一个同态 \(g\)（从 \(B/p'\) 到 \(L\)），其核不含 \(v\) 且满足 \(f = g \circ \phi\)（第 1 节定理 1 的推论 3）。由于 \(A\) 是 Jacobson 环，存在一个极大理想 \(m\)（属于 \(A\)），它包含 \(p\) 且使 \(u \notin m/p\)。取 \(L\) 为 \(A/m\) 的一个代数闭包，取 \(f\) 为典范同态 \(A/p \to L\)；设
+
+\[
+g \colon \mathrm{B} / \mathfrak {p} ^ {\prime} \rightarrow \mathrm{L}
+\]
+
+为一个满足 \(f = g \circ \phi\) 且 \(g(v) \neq 0\) 的同态。那么
+
+\[
+\mathbf {A} / \mathfrak {m} \subset g (\mathbf {B} / \mathfrak {p} ^ {\prime}) \subset \mathbf {L},
+\]
+
+从而 \(g(\mathbf{B} / \mathfrak{p}')\) 是 \(\mathbf{K}\) 的一个子域（《代数》第 V 章 § 3 第 2 节命题 3），因此 \(g\) 的核是 \(\mathbf{B} / \mathfrak{p}'\) 的一个不含 \(v\) 的极大理想。于是可见 \(\mathbf{B} / \mathfrak{p}'\) 的诸极大理想之交化为 0，这就证明 \(\mathbf{B}\) 是 Jacobson 环。此外，若 \(\mathfrak{p}'\) 极大，则 \(g\) 必为单射，从而 \(\mathfrak{p} = \mathfrak{m}\) 极大；最后，此时 \(\mathbf{B} / \mathfrak{p}'\) 是域 \(\mathbf{A} / \mathfrak{m}\) 上的有限生成代数，从而是 \(\mathbf{A} / \mathfrak{m}\) 的有限扩张（第 1 节定理 1 的推论 2）。
+
+推论 1. Z 上的每个有限生成代数 A 都是 Jacobson 环；要使 A 的素理想 p 是极大的，必须且只需环 A/p 有限。
+
+若整环 A/p 有限，则它是一个域，因为对 A/p 中每个 \(u \neq 0\)，A/p 到自身的映射 \(v \mapsto uv\) 是单射，从而由于 A/p 有限而是双射。反之，对 A 的每个极大理想 m，m 在 Z 中的原像是一个极大理想 (p)，且由定理 3，A/m 在素域 \(\mathbf{Z}/(\mathfrak{p}) = \mathbf{F}_{\mathfrak{p}}\) 上有限。
+
+推论 2. 设 \((\mathbf{P}_{\lambda})_{\lambda \in \mathbf{L}}\) 为 \(\mathbf{Z}[\mathbf{X}_1,\ldots ,\mathbf{X}_n]\) 中的一个多项式族，并设 \(\mathbf{Q}\) 为 \(\mathbf{Z}[\mathbf{X}_1,\dots ,\mathbf{X}_n]\) 中的一个多项式，使得：对每个属于一个有限域的元素组 \((x_i)_{1\leqslant i\leqslant n}\)，若 \(\mathrm{P}_{\lambda}(x_1,\ldots ,x_n) = 0\)（对所有 \(\lambda\)），则也有 \(\mathrm{Q}(x_1,\ldots ,x_n) = 0\)。那么，若 \(\mathfrak{a}\) 是 \(\mathbf{Z}[\mathbf{X}_1,\ldots ,\mathbf{X}_n]\) 中由诸 \(\mathrm{P}_{\lambda}\) 生成的理想，则存在整数 \(m > 0\) 使 \(\mathbf{Q}^m\in \mathfrak{a}\)。此外，对每个约化环 R 与 R 中元素的每个组 \((y_i)_{1\leqslant i\leqslant n}\)，若 \(\mathrm{P}_{\lambda}(y_1,\ldots ,y_n) = 0\)（对所有 \(\lambda\)），则也有 \(\mathrm{Q}(y_1,\ldots ,y_n) = 0\)。
+
+第二个断言由第一个断言得出，因为 \(\mathbf{Z}[\mathrm{X}_1,\ldots ,\mathrm{X}_n]\) 的由多项式 \(\mathbf{P}\)（满足 \(\mathrm{P}(y_1,\dots,y_n) = 0\)）组成的理想包含 a。为证明第一个断言，只需注意：对 \(\mathbf{A} = \mathbf{Z}[\mathrm{X}_1,\dots,\mathrm{X}_n]\) 的每个包含 a 的极大理想 m，A/m 是一个有限域（推论 1），且假设蕴含 Q 在 A/m 中的典范像为零；于是 Q 属于 A 的包含 a 的诸极大理想之交，即 a 的根（命题 3 的推论）。
+
+推论 3. 设 A 为 Jacobson 环。若存在一个包含 A 且是域的有限生成 A-代数 B，则 A 是域而 B 是 A 的代数扩张。
+
+只需对 \(\mathfrak{m}' = (0)\) 应用定理 3 (ii)。
+
+

@@ -1,0 +1,120 @@
+\subsection{DEFINITION OF THE GAMMA FUNCTION}
+
+We have defined (Set Theory, III, p.~179) the function \(n!\) for every integer \(n \geqslant 0\) , as equal to the product \(\prod_{0 \leqslant k < n} (n - k)\) ; so \(0! = 1\) and \((n + 1)! = (n + 1)n!\) for \(n \geqslant 0\) .
+
+We set \(\Gamma(n)=(n-1)!\) for each integer \(n\geqslant1\) ; we propose to define, on the set of real numbers x\textgreater0, a continuous function \(\Gamma(x)\) extending the function \(\Gamma\) defined on the set of integers \(\geqslant1\) .
+
+It is clear that there are infinitely many such functions; since \(\Gamma(n+1)=n\Gamma(n)\) for every integer \(n\geqslant1\) we shall restrict ourselves to considering, among the continuous functions that extend \(\Gamma\) , those which satisfy the equation
+
+\[
+f (x + 1) = x f (x)\tag{1}
+\]
+
+for every \(x > 0\) .
+
+For a solution of this equation to be an extension of \(\Gamma(n)\) it is necessary and sufficient that it also satisfies \(f(1) = 1\) .
+
+If \(f\) satisfies (1) then, by recursion on \(n\) ,
+
+\[
+f (x + n) = x (x + 1) (x + 2) \dots (x + n - 1) f (x)\tag{2}
+\]
+
+for every integer n \textgreater{} 1 and for all x \textgreater{} 0. This relation shows, in particular, that the values of f on an interval \(]n, n + 1]\) (n an integer \(\geqslant 1\) ) are determined by its values on the interval \(]0, 1]\) . Conversely, let \(\varphi\) be a continuous function on \(]0, 1]\) satisfying only the conditions \(\varphi(1) = 1\) , \(\lim_{x \to 0} x \varphi(x) = 1\) ; for every integer \(n \geqslant 1\) let us define f on the interval \(]n, n + 1]\) by the relation
+
+\[
+f (x) = (x - 1) (x - 2) \dots (x - n) \varphi (x - n);
+\]
+
+it is clear that \(f\) is continuous on \(]0, +\infty[\) , satisfies the equation (1), and extends \(\Gamma(n)\) .
+
+If \(f\) is a continuous solution of (1) and takes values \(> 0\) on \(]0, 1]\) it takes values \(> 0\) on \(]0, +\infty[\) , by (2); the function \(g(x) = \log f(x)\) is then defined and continuous
+
+on {]}0, +∞{[} and satisfies the equation
+
+\[
+g (x + 1) - g (x) = \log x\tag{3}
+\]
+
+on this interval.
+
+If \(g_{1}\) is a second continuous solution of (3) on {]}0, +∞{[}, and if \(h = g_{1} - g\) , then one has \(h(x + 1) - h(x) = 0\) for every x \textgreater{} 0; in other words, h is a continuous periodic function of period 1, defined on {]}0, +∞{[}; conversely, for every h of this nature, \(g + h\) is a continuous solution of (3).
+
+PROPOSITION 1. There exists one and only one convex function g defined on \(]0, +\infty[\) that satisfies the equation (3) and takes the value 0 for x = 1.
+
+First we show that if there is a function g satisfying the conditions stated then it is well-determined on the interval \(]0, 1]\) , and consequently on the interval \(]0, +\infty[\) . Indeed, for every integer n \textgreater{} 1 the gradient of the line joining the point \((n, g(n))\) to the point \((x, g(x))\) is an increasing function of x, since g is convex (I, p.~27, prop. 5); one thus must have, for \(0 < x \leqslant 1\) ,
+
+\[
+\frac {g (n - 1) - g (n)}{(n - 1) - n} \leqslant \frac {g (n + x) - g (n)}{(n + x) - n} \leqslant \frac {g (n + 1) - g (n)}{(n + 1) - n}
+\]
+
+that is, by (3),
+
+\[
+x \log (n - 1) \leqslant g (x + n) - g (n) \leqslant x \log n.\tag{4}
+\]
+
+Now, by (3),
+
+\[
+g (x + n) - g (n) = g (x) + \log x + \sum_ {k = 1} ^ {n - 1} (\log (x + k) - \log k).
+\]
+
+Moreover, one can write \(\log n = \sum_{k=2}^{n} \log \frac{k}{k-1}\) so the inequality (4) can be written
+
+\[
+x \sum_ {k = 2} ^ {n - 1} \log \frac {k}{k - 1} \leqslant g (x) + \log x + \sum_ {k = 2} ^ {n} (\log (x + k - 1) - \log (k - 1))
+\]
+
+\[
+\leqslant x \sum_ {k = 2} ^ {n} \log \frac {k}{k - 1}.
+\]
+
+Let us put, for every \(n \geqslant 2\) ,
+
+\[
+u _ {n} (x) = x \log {\frac {n}{n - 1}} - \log (x + n - 1) + \log (n - 1)\tag{5}
+\]
+
+and
+
+\[
+g _ {n} (x) = - \log x + \sum_ {k = 2} ^ {n} u _ {k} (x).
+\]
+
+For \(0 < x \leqslant 1\) one then has
+
+\[
+g _ {n} (x) - x \log \frac {n}{n - 1} \leqslant g (x) \leqslant g _ {n} (x).\tag{6}
+\]
+
+Since \(\log \frac{n}{n - 1}\) tends to 0 as \(n\) tends to \(+\infty\) one deduces from (6) that if a solution \(g\) exists then it is necessarily equal, on \(]0, 1]\) , to the limit of the \(g_n(x)\) .
+
+Now one deduces immediately from (5) that for x fixed and \textgreater{} 0 one has
+
+\[
+u _ {n} (x) = - x \log \left(1 - \frac {1}{n}\right) - \log \left(1 + \frac {x - 1}{n}\right) + \log \left(1 - \frac {1}{n}\right) \sim \frac {x (x - 1)}{2 n ^ {2}}
+\]
+
+as \(n\) tends to \(+\infty\) , which proves that the series with general term \(u_{n}(x)\) converges for every \(x > 0\) . Each of the functions \(u_{n}(x)\) being convex on \(]0, +\infty[\) , as is \(-\log x\) , the function \(g(x) = -\log x + \sum_{n=2}^{\infty} u_{n}(x)\) is convex on this interval (I, p.~27, prop. 2 and prop. 4); finally, one has \(u_{n}(1) = 0\) , whence \(g(1) = 0\) , and
+
+\[
+u _ {n} (x + 1) = u _ {n + 1} (x) + x \left(\log \frac {n}{n - 1} - \log \frac {n + 1}{n}\right)
+\]
+
+whence
+
+\[
+g (x + 1) = - \log (x + 1) + x \log 2 + \sum_ {n = 3} ^ {\infty} u _ {n} (x) = \log x + g (x);
+\]
+
+in other words, g satisfies equation (3) of VII, p.~306.
+
+DEFINITION 1. We denote by \(\Gamma(x)\) the function \(>0\) which is defined on the interval \(]0, +\infty[\) , that satisfies the equation
+
+\[
+\Gamma (x + 1) = x \Gamma (x),\tag{7}
+\]
+
+and is such that \(\Gamma(1) = 1\) and that \(\log \Gamma(x)\) is convex on \(]0, +\infty[\) .
+

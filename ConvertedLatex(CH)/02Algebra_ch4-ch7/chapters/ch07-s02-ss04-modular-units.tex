@@ -1,0 +1,82 @@
+\subsection{应用：II. 整数模某数的单位乘法群}
+
+设 \(a\) 为一个有理整数 \(> 1\) ，并设 \((\mathbf{Z} / a\mathbf{Z})^*\) 为环 \(\mathbf{Z} / a\mathbf{Z}\) 的可逆元素的乘法群。若 \(a = \prod_{i} p_i^{n(i)}\) 是 \(a\) 分解为
+
+素因子的分解，则环 \(\mathbf{Z}/a\mathbf{Z}\) 同构于环 \(\mathbf{Z}/p_{i}^{n(i)}\mathbf{Z}\) 的乘积（VII，第 3 页，命题 4），且群 \((\mathbf{Z}/a\mathbf{Z})^{*}\) 同构于群 \((\mathbf{Z}/p_{i}^{n(i)}\mathbf{Z})^{*}\) 的乘积。因此我们归结为研究群 \((\mathbf{Z}/p^{n}\mathbf{Z})^{*}\) ，其中 \(p\) 是一个素数；回顾（V，第 80 页）， \(\varphi(p^{n})\) （ \((\mathbf{Z}/p^{n}\mathbf{Z})^{*}\) 的阶）是 \(p^{n}-p^{n-1}=p^{n-1}(p-1)\) .
+
+首先假设 \(p > 2\) ；自然同态 \(\mathbf{Z} / p^n\mathbf{Z} \to \mathbf{Z} / p\mathbf{Z}\) 限制为从 \((\mathbf{Z} / p^n\mathbf{Z})^*\) 到 \((\mathbf{Z} / p\mathbf{Z})^*\) 上的群同态，其核记为 \(\mathrm{U}(p^n)\) ；由 VII 第 3 页命题 3，模 \(p^n\) 的剩余类（整数 \(m\) 的）可逆当且仅当 \(m\) 与 \(p\) 互素，即当且仅当 \(m \mod p\) 的剩余类可逆。由此可知 \(\mathrm{U}(p^n)\) 由所有模 \(p^n\) 与 \(1 \mod p\) 同余的整数的剩余类组成，因此有 \(p^{n-1}\) 个元素，并且存在一个正合序列
+
+\[
+\{1 \} \rightarrow \mathrm{U} (p ^ {n}) \rightarrow (\mathbf {Z} / p ^ {n} \mathbf {Z}) ^ {*} \rightarrow (\mathbf {Z} / p \mathbf {Z}) ^ {*} \rightarrow \{1 \}.\tag{3}
+\]
+
+类似地，对于 \(n \geqslant 2\) ，令 \(U(2^n)\) 表示从 \((\mathbf{Z}/2^n\mathbf{Z})^*\) 到 \((\mathbf{Z}/4\mathbf{Z})^*\) 的自然同态的核；这是一个 \(2^{n-2}\) 阶的群，由所有模 \(2^n\) 与 1 模 4 同余的整数的剩余类组成，并且存在一个正合序列
+
+\[
+\{1 \} \rightarrow \mathrm{U} (2 ^ {n}) \rightarrow (\mathbf {Z} / 2 ^ {n} \mathbf {Z}) ^ {*} \rightarrow (\mathbf {Z} / 4 \mathbf {Z}) ^ {*} \rightarrow \{1 \}.\tag{4}
+\]
+
+引理 3. --- 设 \(x, y, k\) 为整数，满足 \(k \geqslant 0\) ，并设 \(p > 2\) 为素数。若 \(x \equiv 1 + py \mod p^2\) ，则 \(x^{p^k} \equiv 1 + p^{k+1}y \mod p^{k+2}\) 。若 \(x \equiv 1 + 4y \mod 8\) ，则 \(x^{2^k} \equiv 1 + 2^{k+2}y \mod 2^{k+3}\) .
+
+为证明第一个断言，只需证明：若 \(k \geqslant 1\) 且 \(x \equiv 1 + p^{k}y \mod p^{k+1}\) ，则 \(x^{p} \equiv 1 + p^{k+1}y \mod p^{k+2}\) ，然后对整数 k 作归纳论证。对所有 \(a \in Z\) 与 \(k \geqslant 1\) ，显然有
+
+\[
+(1 + p ^ {k} a) ^ {p} \equiv 1 + p ^ {k + 1} a \mod p ^ {k + 2},
+\]
+
+因此
+
+\[
+\begin{array}{r l} (1 + p ^ {k} y + p ^ {k + 1} z) ^ {p} & = (1 + p ^ {k} (y + p z)) ^ {p} \equiv \\ & \equiv 1 + p ^ {k + 1} (y + p z) \equiv 1 + p ^ {k + 1} y \mod p ^ {k + 2} \end{array}
+\]
+
+类似地，对于 \(k \geqslant 1\) 我们有
+
+\[
+(1 + 2 ^ {k + 1} a) ^ {2} \equiv 1 + 2 ^ {k + 2} a \mod 2 ^ {k + 3},
+\]
+
+所以
+
+\[
+(1 + 2 ^ {k + 1} y + 2 ^ {k + 2} z) ^ {2} \equiv 1 + 2 ^ {k + 2} y \mod 2 ^ {k + 3},
+\]
+
+由此根据对k的归纳即得第二个断言。
+
+命题 3. --- 设 p \textgreater{} 2 为素数， n \textgreater{} 0 为整数；则群 U(p\^{}n) 是 p\^{}\{n-1\} 阶的循环群；若 n ≥ 2，则与 1 模 p 同余的整数 x 的模 p\^{}n 剩余类是 U(p\^{}n) 的生成元，当且仅当 x 不同余于 1 模 p\^{}2。设 m \textgreater{} 1 为整数；则群 U(2\^{}m) 是 2\^{}\{m-2\} 阶的循环群；若 m ≥ 3，则与 1 模 4 同余的整数 x 的模 2\^{}m 剩余类是 U(2\^{}m) 的生成元，当且仅当 x 不同余于 1 模 8。
+
+由于 \(\mathrm{U}(p^{n})\) 的阶为 \(p^{n-1}\) ， \(\mathrm{U}(p^{n})\) 的每个元素 u 的阶都是 p 的幂，且 u 是 \(\mathrm{U}(p^{n})\) 的生成元当且仅当 \(u^{p^{n-2}} \neq 1\) 。现在若 u 是 \(x = 1 + py\) 的类，则 \(u^{p^{n-2}}\) 是 \(1 + p^{n-1}y\) 的类（由引理 3），因此 u 生成 \(\mathrm{U}(p^{n})\) 当且仅当 \(y \neq 0 \mod p\) ，换言之 \(x \neq 1 \mod p^{2}\) 。例如，类 \(1 + p\) 生成 \(\mathrm{U}(p^{n})\) 。类似地，x 模 \(2^{n}\) 的类 u 生成 \(\mathrm{U}(2^{n})\) 当且仅当 \(u^{2^{n-3}} \neq 1\) ，这意味着 x 不同余于 1 模 8（由引理 3）；x = 5 便满足这一点。
+
+引理4. --- 设 A 是一个主理想整环，且设 \(0 \rightarrow N \rightarrow M \rightarrow P \rightarrow 0\) 是 A-模的一个正合序列。假设存在互素元素 a, \(b \in A\) 使得aN = 0且bP = 0。则正合序列分裂。若此外N和P均为循环群，则M为循环群。
+
+模 M 是挠模，因为 abM = 0。第一个断言由 VII 第 9 页推论 3 得出。若 N 和 P 是循环模，则它们是有限生成的，因此 M 也是有限生成的（II 第 17 页推论 5）；由于 M 的每个 p-准素分量同构于 N 或 P 的某个 p-准素分量，由 VII 第 10 页注记 2 可知 M 是循环模。
+
+定理3. --- 若 \(a = \prod_{i} p_{i}^{n(i)}\) 是整数的质因数分解
+
+为 \textgreater{} 1，则环 Z/aZ 的可逆元素群 \((\mathbf{Z}/a\mathbf{Z})^{*}\) 同构于诸群 \((\mathbf{Z}/p_{i}^{n(i)}\mathbf{Z})^{*}\) 的乘积。如果 p \textgreater{} 2 是一个素数且 \(n \geqslant 1\) 是一个整数，则群 \((\mathbf{Z}/p^{n}\mathbf{Z})^{*}\) 是 \(p^{n-1}(p - 1)\) 阶的循环群。群 \((\mathbf{Z}/2\mathbf{Z})^{*}\) 是平凡的；对于 \(n \geqslant 2\) ，群 \((\mathbf{Z}/2^{n}\mathbf{Z})^{*}\) 是 \(2^{n-2}\) 阶循环群与 2 阶循环群的直积，前者由 5 模 \(2^{n}\) 的剩余类生成，后者由 1 和 -1 模 \(2^{n}\) 的剩余类组成。
+
+\(p^{n-1}\) （ \(U(p^n)\) 的阶）与 \(p-1\) （ \((\mathbf{Z}/p\mathbf{Z})^*\) 的阶）互素；由于 \(U(p^n)\) 与 \((\mathbf{Z}/p\mathbf{Z})^*\) 都是循环群（命题 3 及 V 第 78 页引理 1），群 \((\mathbf{Z}/p^n\mathbf{Z})^*\) 是循环群（将引理 4 应用于正合序列 (3)）。若 \(n \geqslant 2\) ，则同态 \(v: (\mathbf{Z}/2^n\mathbf{Z})^* \to (\mathbf{Z}/4\mathbf{Z})^*\) 在子群 \(\{1, -1\}\) 上的限制是双射；因此群 \((\mathbf{Z}/2^n\mathbf{Z})^*\) 是该子群与核 \(U(2^n)\) （ \(v\) 的）的直积；结论由命题 3 得出。
+
+注记. --- 设 p \textgreater{} 2 为素数，且设 x 为与 1 模 p 同余而不同余于 1 模 \(p^{2}\) 的整数；存在一个正合序列
+
+\[
+\{0 \} \rightarrow \mathbf {Z} / p ^ {n - 1} \mathbf {Z} \xrightarrow {u} (\mathbf {Z} / p ^ {n} \mathbf {Z}) ^ {*} \xrightarrow {v} (\mathbf {Z} / p \mathbf {Z}) ^ {*} \rightarrow \{1 \}\tag{5}
+\]
+
+的群，其中 v 是自然投影，而 u 在商上由映射 \(r \mapsto x^{r}\) 诱导。设 \(Z_{p}\) 为 p 进整数环（V，第 96 页），并令 x 为 \(Z_{p}\) 中满足 \(x - 1 \in pZ_{p}\) 与 \(x - 1 \notin p^{2}Z_{p}\) 的元素；通过取逆向极限，正合序列 (5) 诱导出一个正合序列
+
+\[
+\{0 \} \rightarrow \mathbf {Z} _ {p} \stackrel {u} {\rightarrow} \mathbf {Z} _ {p} ^ {*} \stackrel {v} {\rightarrow} (\mathbf {Z} / p \mathbf {Z}) ^ {*} \rightarrow \{1 \}
+\]
+
+，其中 \(v\) 是自然映射，且连续映射 \(u\) 延拓了映射 \(n \mapsto x^n\) ( \(n \in \mathbf{Z}\) ）。我们常设 \(x^n = u(x)\) ，其中 \(n \in \mathbf{Z}_p\) .
+
+类似地，如果 \(x \in \mathbf{Z}_2\) 满足 \(x - 1 \in 4\mathbf{Z}_2\) 且 \(x - 1 \notin 8\mathbf{Z}_2\) ，则存在一个分裂正合序列
+
+\[
+\{0 \} \rightarrow \mathbf {Z} _ {2} \stackrel {{u}} {{\rightarrow}} \mathbf {Z} _ {2} ^ {*} \stackrel {{v}} {{\rightarrow}} (\mathbf {Z} / 4 \mathbf {Z}) ^ {*} \rightarrow \{1 \},
+\]
+
+，其中 \(u\) 是映射 \(n \mapsto x^n\) 的一个连续延拓.
+

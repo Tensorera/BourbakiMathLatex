@@ -1,0 +1,66 @@
+\subsection{希尔伯特空间上的测度}
+
+设 E 是实希尔伯特空间，其内积记作 \((x|y)\)。存在从 E 到其对偶 \(E'\) 的同构 j，由公式 \(\langle x,j(y)\rangle=(x|y)\)（x,y 属于 E）刻画（TVS, V, §1，第~7号，定理 3）。我们借助 j 认同 E 和 \(E'\)。因此，E 上投影测度 \(\mu\) 的傅里叶变换是 E 上的函数 \(\mathcal{F}\mu\)；当 \(\mu\) 是
+
+测度时，有
+
+\[
+(\mathcal {F} \mu) (x) = \int_ {\mathrm{E}} e ^ {i (x | y)} d \mu (y) \quad (x \in \mathrm{E}).\tag{64}
+\]
+
+定理 3（Prokhorov--Sazonov） --- 设 E 是希尔伯特空间，\(E_{s}\) 是赋予弱化拓扑的空间 E。设 \(\mu\) 是 E 上的投影测度，\(\Phi\) 是其傅里叶变换。下列条件等价：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  函数 \(\Phi\) 关于萨佐诺夫拓扑在 \(\mathbf{E}\) 上连续。
+\item
+  对于每个 \(\varepsilon > 0\)，存在 \(\mathbb{Q}\) 上的核正二次型 \(\mathbf{E}\)，使得 \(\Phi(0) - \mathcal{R}\Phi \leqslant \varepsilon + \mathbb{Q}\)。
+\item
+  投影测度 \(\mu\) 是 \(\mathbf{E}_s\) 上的测度。
+\end{enumerate}
+
+\(b) \Rightarrow a)\)：这由第~8号的命题 8（参见不等式 (54)）得出。
+
+\(a) \Rightarrow c)\)：这由第~10号的定理 2 得出。
+
+\(c) \Rightarrow b)\)：假设 \(\mu\) 是 \(\mathbf{E}_s\) 上的测度。令 \(\varepsilon > 0\)。对于每个整数 \(n \geqslant 1\)，由范数 \(\mathrm{B}_n\) 的 \(x \in \mathbf{E}\) 组成的集合 \(\leqslant n\) 是 \(\mathbf{E}_s\) 的闭子集，且 \(\mathbf{E} = \bigcup_{n \geqslant 1} \mathrm{B}_n\)。因此存在整数 \(n \geqslant 1\)，使得
+
+\(\mu (\mathbf{E} - \mathbf{B}_n) <   \frac{\varepsilon}{2}.\) 该公式
+
+\[
+\mathrm{Q} (x) = \frac {1}{2} \int_ {\mathrm{B} _ {n}} (x | y) ^ {2} d \mu (y)\tag{65}
+\]
+
+由此在 \(\mathbf{Q}\) 上定义正二次型 \(\mathbf{E}\)。置 \(\mathrm{C} = \frac{n^2}{2}\mu (\mathrm{B}_n)\)。如果 \((e_1,\ldots ,e_p)\) 是 \(\mathbf{E}\) 中的有限正交规范序列，则
+
+\[
+\sum_ {j = 1} ^ {p} (e _ {j} | y) ^ {2} \leqslant \| y \| ^ {2} \leqslant n ^ {2}
+\]
+
+由 Bessel 不等式，对于每个 \(y \in \mathbf{B}_n\) 都有。积分得到
+
+\[
+\sum_ {j = 1} ^ {p} \mathrm{Q} (e _ {j}) = \frac {1}{2} \int_ {\mathrm{B} _ {n}} \sum_ {j = 1} ^ {p} (e _ {j} | y) ^ {2} d \mu (y) \leqslant \frac {n ^ {2}}{2} \mu (\mathrm{B} _ {n}) = \mathrm{C},
+\]
+
+因此 Q 是核的。
+
+此外，对于每个实数 \(1 - \cos t \leqslant \inf \left(2, \frac{t^2}{2}\right)\)，有 \(t\)，从而
+
+\[
+\begin{array}{r l} \Phi (0) - \mathcal {R} \Phi (x) & = \int_ {\mathrm{E}} \bigl (1 - \cos (x | y) \bigr) d \mu (y) \\ & \leqslant \int_ {\mathrm{B} _ {n}} \frac {1}{2} (x | y) ^ {2} d \mu (y) + \int_ {\mathrm{E} - \mathrm{B} _ {n}} 2 \cdot d \mu (y) \\ & <   \mathrm{Q} (x) + \varepsilon \end{array}
+\]
+
+对于所有 \(x \in \mathbf{E}\)。于是 b) 得证。\(b)\)
+
+证毕
+
+推论 1. --- 设 \(E_{1}\) 和 \(E_{2}\) 是两个希尔伯特空间，u 是从 \(E_{1}\) 到 \(E_{2}\) 的希尔伯特--施密特映射，\(\mu\) 是 \(E_{1}\) 上的投影测度。假设 \(\Phi\) 的傅里叶变换 \(\mu\) 在 \(E_{1}\) 上连续。则投影测度 \(\nu = u(\mu)\) 是赋予弱拓扑的 \(E_{2}\) 上的测度。
+
+借助本号中将 \(E_{1}\) 和 \(E_{2}\) 与其对偶作的认同，\(\nu\) 的傅里叶变换等于 \(\Phi\circ u^{*}\)，其中 \(u^{*}\) 是 u 的伴随。现在，\(u^{*}\) 是从 \(E_{2}\) 到 \(E_{1}\) 的希尔伯特--施密特映射（附录，第~2号），所以 \(y\mapsto\|u^{*}(y)\|^{2}\) 上的二次型 \(E_{2}\) 是核的。如果 \((\mathrm{E}_{2})_{\mathcal{S}}\) 表示赋予萨佐诺夫拓扑的 \(E_{2}\)，则 \(u^{*}\) 是从 \((\mathrm{E}_{2})_{\mathcal{S}}\) 到 \(E_{1}\) 的连续线性映射，且 \(\Phi_{\nu}=\Phi\circ u^{*}\) 在 \((\mathrm{E}_{2})_{\mathcal{S}}\) 上连续；于是定理 3 表明，\(\nu\) 是赋予弱拓扑的空间 \(E_{2}\) 上的测度。
+
+推论 2. --- 设 Q 是希尔伯特空间 E 上的核正二次型。E 上方差为 Q 的高斯投影测度 \(\Gamma_{Q}\) 是 \(E_{s}\) 上的测度。
+
+ \(\Phi\)\(\Gamma_{Q}\) 的傅里叶变换等于 \(e^{-\mathbb{Q} / 2}\)。现在，对于每个实数 ，有 \(e^t \geqslant 1 + t\)，从而 \(t\)\(\Phi(0) - \mathcal{R}\Phi \leqslant \mathbb{Q} / 2\)。因此定理 3 的 b) 条件得到验证，\(b)\)\(\Gamma_{Q}\) 是 \(\mathbf{E}_s\) 上的测度。
+

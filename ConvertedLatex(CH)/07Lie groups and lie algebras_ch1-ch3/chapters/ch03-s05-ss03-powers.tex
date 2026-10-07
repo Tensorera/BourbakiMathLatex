@@ -1,0 +1,171 @@
+\subsection{幂}
+
+考虑 \(j\) 个 \(\mathbf{G}\) 中的点：
+
+\[
+\begin{array}{l} x (1) = (x (1) _ {1}, x (1) _ {2}, \ldots , x (1) _ {n}) \\ x (2) = (x (2) _ {1}, x (2) _ {2}, \ldots , x (2) _ {n}) \\ \cdot \cdot \cdot \\ x (j) = (x (j) _ {1}, x (j) _ {2}, \ldots , x (j) _ {n}). \end{array}
+\]
+
+映射 \((x(1), x(2), \ldots, x(j)) \mapsto x(1).x(2) \ldots x(j)\) 在原点附近可展开为幂级数：
+
+\[
+x (1). x (2) \dots x (j) = \sum_ {\alpha (1), \alpha (2), \dots , \alpha (j) \in \mathbf {N} ^ {n}} a _ {\alpha (1), \dots , \alpha (j)} x (1) ^ {\alpha (1)} \dots x (j) ^ {\alpha (j)}\tag{14}
+\]
+
+其中 \(a_{\alpha(1), \ldots, \alpha(j)}\) 是 \(\mathbf{K}^n\) 的元素。对于 \(j = 0, 1, 2, \ldots\)，记
+
+\[
+\psi_ {j} (x) = \sum_ {\alpha (1) \neq 0, \dots , \alpha (j) \neq 0} a _ {\alpha (1), \dots , \alpha (j)} x ^ {\alpha (1) + \dots + \alpha (j)}\tag{15}
+\]
+
+其中右端是关于变量 \(x \in K^{n}\) 的收敛幂级数。这个级数由 (14) 中删去某个变量 \(x(1), \ldots, x(j)\) 未显式出现的项，然后令 \(x(1) = x(2) = \cdots = x(j) = x\) 而得到。
+
+若 \(t \in K\)，G 的所有 t 次幂映射在原点附近都有相同的幂级数展开，因为其中任意两个映射都在 0 的某个邻域上重合。将这个幂级数展开记为 \(x^{[t]}\)。
+
+命题 2. (i) \(\psi_{j} \equiv 0 \bmod \deg j\)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  若 \(t\in \mathbf{K}\)，则
+\end{enumerate}
+
+\[
+x ^ {[ t ]} = \sum_ {i = 1} ^ {\infty} \binom {t} {i} \psi_ {i} (x)\tag{16}
+\]
+
+其中右端的形式幂级数由 (i) 知是有意义的。
+
+（记
+
+\[
+\binom {t} {i} = \frac {t (t - 1) \dots (t - i + 1)}{i !}
+\]
+
+对所有 \(t\in \mathbf{K}.\)
+
+断言 (i) 由 \(\psi_{j}\) 的定义显然成立。
+
+当 t 为整数 \(\geqslant0\) 时，证明 (ii)。由 (14)，
+
+\[
+x ^ {[ t ]} = \sum_ {\alpha (1),\ldots,\alpha (t)\in(\mathbf{N}^{n})^{t}} a _ {\alpha (1), \dots , \alpha (t)} x ^ {\alpha (1) + \dots + \alpha (t)}.\tag{17}
+\]
+
+对于 \(\alpha = (\alpha(1),\ldots,\alpha(t))\in(\mathbf{N}^{n})^{t}\)，令 \(\sigma(\alpha)\) 表示由 \(j\in\{1,2,\ldots,t\}\) 组成的集合，其中 \(\alpha(j)\neq0\)。若在和式 (17) 中将 \(\sigma(\alpha)\) 相同的项归在一起，则
+
+\[
+x ^ {[ t ]} = \sum_ {\sigma \subset (1, t)} h _ {t, \sigma} (x)\tag{18}
+\]
+
+其中
+
+\[
+h _ {t, \sigma} (x) = \sum_ {\sigma (\alpha) = \sigma} a _ {\alpha (1), \dots , \alpha (t)} x ^ {\alpha (1) + \dots + \alpha (t)}.\tag{19}
+\]
+
+令 \(\sigma = \{j_1, j_2, \ldots, j_q\}\)，其中 \(j_1 < j_2 < \ldots < j_q\)。在 (14) 中（将 \(j\) 换成 \(t\)），对 \(x(k)\)，当 \(k \notin \sigma\) 时令其为 0；由于 0 是 G 的单位元，我们得到 \(x(j_1).x(j_2)..x(j_q)\) 在原点附近的幂级数展开：
+
+\[
+x (j _ {1}). x (j _ {2}) \dots x (j _ {q}) = \sum_ {\sigma (\alpha) \subset \sigma} a _ {\alpha (1), \dots , \alpha (t)} x (j _ {1}) ^ {\alpha (j _ {1})} x (j _ {2}) ^ {\alpha (j _ {2})} \dots x (j _ {q}) ^ {\alpha (j _ {q})}
+\]
+
+从而根据 \(\psi_q\) 的定义：
+
+\[
+\psi_ {q} (x) = \sum_ {\sigma (\alpha) = \sigma} a _ {\alpha (1), \dots , \alpha (t)} x ^ {\alpha (j _ {1}) + \dots + \alpha (j _ {q})}.\tag{20}
+\]
+
+由 (19) 和 (20) 可见，\(h_{t,\sigma}(x) = \psi_{\mathrm{Card}\sigma}(x)\)。于是 (18) 蕴含
+
+\[
+x ^ {[ t ]} = \sum_ {i = 0} ^ {t} \binom {t} {i} \psi_ {i} (x) = \sum_ {i = 0} ^ {\infty} \binom {t} {i} \psi_ {i} (x).
+\]
+
+于是记 \(x^{[t]} = \sum_{i=0}^{\infty} \binom{t}{i}\psi_i(x)\) 对所有 \(t\in\mathbf{K}\)。在幂级数 \(x^{[t]}\) 和 \(x^{[t']}\) 中，每个系数都是 \(t\) 的多项式函数。对于 \(x^{[t']}\)，这是显然的。至于 \(x^{[t]}\)，只需证明：对所有 \(u\in\mathrm{U}(G)\)，\(u\) 在映射 \(x\mapsto x^{[t]}\) 下的像是 \(t\) 的多项式函数。现在，对于 \(u\in\mathrm{U}^{m}(G)\)，这个像为 \(t^{m}u\)（§ 4, no. 3, Proposition 7 (iv)）。
+
+由于 \(x^{[t]} = x^{[t']}\) 对整数 \(t\) 满足 \(\geqslant 0\)，于是得到 \(x^{[t]} = x^{[t']}\) 对所有 \(t \in \mathbf{K}\) 都成立。
+
+注记。(1) 当 \(t\) 为整数 \(\geqslant 0\) 时，把命题 2 的条件 (ii) 写成：
+
+\[
+\begin{array}{r l} & 0 = \psi_ {0} (x) \\ & x = \psi_ {0} (x) + \psi_ {1} (x) \\ & x ^ {[ 2 ]} = \psi_ {0} (x) + 2 \psi_ {1} (x) + \psi_ {2} (x) \\ & \cdot \cdot \cdot . \end{array}
+\]
+
+这些公式足以确定 \(\psi_{i}\)。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  可见 \(\psi_0(x) = 0\)、\(\psi_1(x) = x\)、\(\psi_2(x) = x^{[2]} - 2x\)，
+\end{enumerate}
+
+\[
+x ^ {[ - 1 ]} = \sum_ {i = 1} ^ {\infty} (- 1) ^ {i} \psi_ {i} (x).
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  上述 \(\psi_{2}\) 的表达式和公式 (6) 证明
+\end{enumerate}
+
+\[
+\psi_ {2} (x) \equiv \mathrm{B} (x, x) \mod \deg 3.\tag{21}
+\]
+
+利用命题 2 的 (i) 和 (ii)，可得
+
+\[
+x ^ {[ t ]} \equiv t x + \binom {t} {2} \mathrm{B} (x, x) \mod \deg 3.\tag{22}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  令 \(\psi_{p,m}(x)\) 和 \(h_{t,m}(x)\) 表示 \(\psi_p(x)\) 和 \(x^{[t]}\) 的 \(m\) 次齐次分量。于是 \(\psi_{p,m} = 0\) 对 \(m < p\) 成立。另一方面，命题 2 (ii) 给出
+\end{enumerate}
+
+\[
+h _ {t, m} (x) = \sum_ {p \leqslant m} \frac {t (t - 1) \dots (t - p + 1)}{p !} \psi_ {p, m} (x)\tag{23}
+\]
+
+即
+
+\[
+h _ {t, m} (x) = \sum_ {1 \leqslant r \leqslant m} t ^ {r} \phi_ {r, m} (x)\tag{24}
+\]
+
+其中 \(\phi_{r,m}\) 是从 \(K^{n}\) 到 \(K^{n}\) 的 m 次齐次多项式映射。特别地，由 (23)，
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{24}
+\tightlist
+\item
+\end{enumerate}
+
+\[
+\phi_ {1, m} (x) = \sum_ {p \leqslant m} \frac {(- 1) ^ {p - 1}}{p} \psi_ {p, m} (x)\tag{25}
+\]
+
+\[
+\phi_ {m, m} (x) = \frac {1}{m !} \psi_ {m, m} (x).\tag{26}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  若 \(\mathbf{K}\) 的特征大于 \(>0\)，则第 1 号和第 2 号的结果仍然成立，条件是第 2 号中的 \(e_{\alpha}\) 定义为 \(\langle e_{\alpha}, \sum_{\beta} \lambda_{\beta} x^{\beta} \rangle = \lambda_{\alpha}\)。在第 3 号中，若按上述方式定义 \(\psi_j\)，则上述论证再次证明 \(x^{[t]} = \sum_{i=1}^{\infty} \binom{t}{i} \psi_i(x)\)，当 \(t \in \mathbf{N}\) 时。
+\end{enumerate}
+

@@ -1,0 +1,74 @@
+\subsection{等价矩阵；相似矩阵}
+
+定义5. 两个矩阵 \(X, X'\) （环上的， \(m\) 行 \(n\) 列）称为等价的，如果存在一个可逆方阵 \(P\) （\(m\) 阶）和一个可逆方阵 \(Q\) （\(n\) 阶），使得
+
+\[
+X ^ {\prime} = P X Q.\tag{40}
+\]
+
+显然，关系“X 与 \(X'\) 等价”是矩阵集合 \(A^{mn}\) （A 上的 \((m, n)\) 型）上的一个等价关系（集合论，II，§6，第 1 号），这就证明了该术语的合理性。
+
+根据这个定义，第 8 号的命题 6 可以表述为：当两个右 A-模 E、F（具有有限基）中的基改变时，线性映射 \(u \colon \mathbf{E} \to \mathbf{F}\) 关于新基的矩阵等价于 \(u\) 关于旧基的矩阵。
+
+反之，若关系式 (40) 成立且 \(u \colon \mathbf{A}_d^n \to \mathbf{A}_d^m\) 是一个线性映射，其矩阵为 \(X\) ，取关于各自的典范基 \((e_i)\) 和 \((f_j)\) （分别属于 \(\mathbf{A}_d^n\) 和 \(\mathbf{A}_d^m\) ），则 \(X'\) 是 \(u\) 关于基 \((e_i')\) 和 \((f_j')\) 的矩阵，其中 \(Q\) 是从 \((e_i)\) 到 \((e_i')\) 的过渡矩阵， \(P^{-1}\) 是从 \((f_j)\) 到 \((f_j')\) 的过渡矩阵。
+
+等价矩阵的例子。(1) 两个矩阵 \(X = (x_{ij})\) 和 \(X' = (x_{ij}')\) （ \(m\) 行 \(n\) 列）称为“仅行的顺序不同”，如果存在一个置换 \(\sigma\) ，它作用于区间 \([1, m]\) （ \(\mathbf{N}\) 中的）之上，使得对每个有序指标对 \((i,j)\) , \(x_{ij}' = x_{\sigma(i),j}\) 成立（我们也说 \(X'\) 是把置换 \(\sigma^{-1}\) 施行于 \(X\) 的行而得到的）。此时矩阵 \(X\) 和 \(X'\) 是等价的，因为 \(X' = PX\) ，其中 \(P\) 是置换 \(\sigma^{-1}\) 的矩阵（参见第 7 号，例 II）。
+
+类似地，称 X 和 \(X'\) 仅列的顺序不同，如果存在一个置换 \(\tau\) （ \([1, n]\) 上的），使得 \(x_{ij}' = x_{i,\tau(j)}\) 对每个有序指标对 \((i,j)\) 成立；此时 X 与 \(X'\) 也是等价的，因为 \(X' = XQ\) ，其中 Q 是置换 \(\tau\) 的矩阵。
+
+注意，在上述记号中， \(P\) 是从基 \((f_j)_{1 \leqslant j \leqslant m}\) 到基 \((f_\sigma^{-1}(j))_{1 \leqslant j \leqslant m}\) 的过渡矩阵， \(Q\) 是从基 \((e_i)_{1 \leqslant i \leqslant n}\) 到基 \((e_{\tau(i)})_{1 \leqslant i \leqslant n}\) 的过渡矩阵。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(j, k\) 是 \([1, n]\) 的两个不同元素，并设 \(a \in A\) 。
+\end{enumerate}
+
+假设对于 \(1 \leqslant i \leqslant m\) , \(x_{ij}' = x_{ij} + x_{ik}a\) ，且 \(x_{il}' = x_{il}\) （对于 \(j \neq l\) 和 \(1 \leqslant i \leqslant m\) ）；则称 \(X'\) 是由 \(X\) 这样得到的：将 \(X\) 的第 \(j\) 列加上第 \(k\) 列右乘 \(a\) 所得的结果。在这种情况下 \(X\) 和 \(X'\) 也是等价的：因为若 \(Q = I_n + aE_{kj}\) （如第 7 号中所见，这是一个可逆的三角矩阵），则 \(X' = XQ\) 。
+
+类似地，设 \(h, i\) 是 \([1, m]\) 的两个不同元素， \(a\) 是 \(A\) 的一个元素；若 \(X'\) 是由 \(X\) 通过将 \(X\) 的第 \(i\) 行加上第 \(h\) 行左乘 \(a, X\) 而得到的， X 与 \(X'\) 等价，因为 \(X' = PX\) ，其中 \(P = I_m + aE_{th}\) 。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  最后，如果对于给定的指标 \(j\) , \(x_{ij}' = x_{ij}c\) （对于 \(1 \leqslant i \leqslant m\) ），其中 \(c\) 可逆，并且 \(x_{il}' = x_{il}\) （对于 \(1 \leqslant i \leqslant m\) 和 \(l \neq j\) ），则 \(X\) 和 \(X'\) 等价；因为 \(X' = XQ\) ，其中 \(Q\) 是矩阵 \(\text{diag}(a_k)\) ，这里 \(a_j = c\) , \(a_k = 1\) （对于 \(k \neq j\) ）。此时称 \(X'\) 是由 \(X\) 通过将 \(X\) 的第 \(j\) 列右乘 \(a\) 而得到的。
+\end{enumerate}
+
+类似地，如果 \(X'\) 是由 \(X'\) 通过将 \(X\) 的第 \(i\) 行左乘一个可逆元素 \(c \in A\) 而得到的，则 \(X'\) 和 \(X\) 等价，因为 \(X' = PX\) ，其中 \(P\) 是矩阵 \(\text{diag}(b_h)\) ，这里 \(b_i = c\) , \(b_h = 1\) （对于 \(h \neq i\) ）。
+
+定义6. 两个方阵 \(X, X'\) （\(n\) 阶，元素属于环 \(A\) ）称为相似的，如果存在一个可逆方阵 \(P\) （\(n\) 阶），使得
+
+\[
+X ^ {\prime} = P X P ^ {- 1}\tag{41}
+\]
+
+显然，关系“X 与 \(X'\) 相似”是 \(\mathbf{M}_{n}(\mathbf{A})\) 上的一个等价关系，其含义是 X 与 \(X'\) 通过该环的一个内自同构相互变换。
+
+根据这一定义，第 8 号命题 6 的推论 1 可以表述为：当具有有限基的 A-模 E 的基改变时，自同态 u 关于新基的矩阵与 u 关于旧基的矩阵相似。
+
+注记。(1) 两个仅行顺序（或列顺序）不同的方阵是等价的，但一般并不相似。与方阵 \(X = (x_{ij})\) 相似的矩阵可以通过对行和列施行同一个置换 \(\sigma^{-1}\) 而得到，即考虑矩阵 \(X' = (x_{ij}')\) ，其中 \(x_{ij}' = x_{\sigma(i),\sigma(j)}\) 对每个有序指标对成立；因为若 \(X\) 是自同态 \(u\) 在 \(A_d^n\) 中关于基 \((e_i)_{1 \leq i \leq n}\) 的矩阵，则 \(X'\) 是 \(u\) 关于基 \((e_{\sigma(i)})_{1 \leq i \leq n}\) 的矩阵。
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(X\) 和 \(X'\) 是两个 \(n\) 阶方阵，它们可以写成方阵的对角矩阵的形式（第 7 号，例 IV）：
+\end{enumerate}
+
+\[
+X = \left( \begin{array}{c c c c} X _ {1} & 0 & \ldots & 0 \\ 0 & X _ {2} & \ldots & 0 \\ \cdot & \cdot & \cdot & \cdot \\ 0 & 0 & \ldots & X _ {p} \end{array} \right) \qquad X ^ {\prime} = \left( \begin{array}{c c c c} X _ {1} ^ {\prime} & 0 & \ldots & 0 \\ 0 & X _ {2} ^ {\prime} & \ldots & 0 \\ \cdot & \cdot & \cdot & \cdot \\ 0 & 0 & \ldots & X _ {p} ^ {\prime} \end{array} \right)
+\]
+
+对应于指标集 \([1, n]\) 关于 X 与 \(X'\) 的同一划分。如果对于 \(1 \leqslant i \leqslant p\) , \(X_i\) 和 \(X'_i\) 等价（相应地，相似），则 X 与 \(X'\) 等价（相应地，相似）：因为，若 \(X'_i = P_i X_i Q_i\) （对 \(1 \leqslant i \leqslant p\) ），则 \(X' = PXQ\) ，其中
+
+\[
+P = \left( \begin{array}{c c c c c} P _ {1} & 0 & \dots & 0 \\ 0 & P _ {2} & \dots & 0 \\ \cdot & \cdot & \cdot & \cdot & \cdot \\ 0 & 0 & \dots & P _ {p} \end{array} \right) \quad Q = \left( \begin{array}{c c c c c} Q _ {1} & 0 & \dots & 0 \\ 0 & Q _ {2} & \dots & 0 \\ \cdot & \cdot & \cdot & \cdot & \cdot \\ 0 & 0 & \dots & Q _ {p} \end{array} \right)
+\]
+
+由计算“块”乘积（第 6 号）得出。此外，如果 \(Q_{i} = P_{i}^{-1}\) 对所有 i 成立，则 \(Q = P^{-1}\) 。
+

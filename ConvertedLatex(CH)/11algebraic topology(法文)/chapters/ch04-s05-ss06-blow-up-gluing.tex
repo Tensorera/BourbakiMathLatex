@@ -1,0 +1,192 @@
+\subsection{拉开与粘合}
+
+设 C 是一个拓扑空间，并设 \((\mathrm{B}_{\ell})_{\ell\in\mathrm{L}}\) 是 C 的一族有限个两两不交的闭子集。设 B 是一个拓扑空间，并且对每个 \(\ell\in L\)，设 \(h_{\ell}\) 是从 B 到 \(B_{\ell}\) 的同胚。我们将 \(B_{L}\) 记为这族 \((\mathrm{B}_{\ell})_{\ell\in\mathrm{L}}\) 的并。我们假设 B 和 L 均非空。令 R 为 C 上如下定义的等价关系。对于元素 \(x\)（来自 \(C - B_L\)），其等价类为集合 \(\{x\}\)；若 \(x\) 是 \(B_\ell\) 中的元素，其中 \(\ell \in L\)，则 \(x\) 的等价类是元素 \(h_k(h_\ell^{-1}(x))\) 所成的集合，其中 \(k\) 遍历 \(L\)。记 A 为商拓扑空间 \(C/R\)，并令 \(f: C \to A\) 为典范满射。我们说，空间 A 是从空间 C 得到的，方法是识别各集合 \(B_\ell\)（借助同胚 \(h_\ell\)）。
+
+映射 \(f \circ h_{\ell}\) 从 B 到 A 与 L 中的元素 \(\ell\) 无关；它是闭映射且为单射，因而诱导出从 B 到 A 的一个闭子集的同胚。因此，我们将 B 与 \(f \circ h_{\ell}(\mathrm{B})\) 通过同胚 \(f \circ h_{\ell}\) 识别；映射 \(f\) 诱导出从 \(\mathrm{C} - \mathrm{B}_{\mathrm{L}}\) 到 \(\mathrm{A} - \mathrm{B}\) 的同胚。
+
+进一步假设存在 C 的一族两两不交的开子集 \((\mathrm{N}_{\ell})_{\ell\in\mathrm{L}}\)，使 \(N_{\ell}\) 包含 \(B_{\ell}\)，对所有 \(\ell\in L\) 均如此。族 \((f(\mathrm{N}_{\ell}))_{\ell\in\mathrm{L}}\) 的并 U 是 A 中包含 B 的开集。集合 U-B 是两两不交的开集 \(f(\mathrm{N}_{\ell}-\mathrm{B}_{\ell})\)（\(\ell\in L\)）的并。
+
+引理 2. --- 映射 f: C → A 是逆紧且分离的；其纤维是有限的。
+
+证明 \(f\) 是闭映射。设 X 是 C 的闭子集。我们证明它的像在 A 中是闭的。对每个 \(\ell \in L\)，\(X \cap B_{\ell}\) 在 \(B_{\ell}\) 中是闭的，因此空间 \(Y = \bigcup_{\ell \in L} h_{\ell}^{-1}(X \cap B_{\ell})\) 在 B 中是闭的，因为 L 是有限的。于是，X 关于等价关系 R 的饱和集 \(X^{*}\) 等于 \(X \cup \bigcup_{\ell \in L} h_{k}(Y)\)，所以它在 C 中是闭的。因而，\(f(X) = f(X^{*})\) 在 A 中是闭的，证毕。
+
+\(f\) 的纤维是关系 \(\mathbb{R}\) 的等价类；它们是有限的。因此，映射 \(f\) 是逆紧的（TG, I, p. 75, theorem 1）。
+
+最后证明 \(f\) 是分离的。设 \(x\) 和 \(y\) 是 C 中在 \(f\) 下具有相同像的不同点。因此存在一点 \(b \in \mathrm{B}\) 以及不同的元素 \(\ell\) 和 \(m \in \mathrm{L}\)，使得 \(x = h_{\ell}(b)\) 且 \(y = h_{m}(b)\)。于是，\(\mathrm{N}_{\ell}\) 和 \(\mathrm{N}_m\) 是 C 中分别含有 \(x\) 和 \(y\) 的不交邻域，所需断言由 prop. 1 of I, p. 25 得出。
+
+下面再作如下假设：
+
+- 空间 A 是可解圈的且连通；
+
+- 空间 C 是可解圈的；
+
+- 空间 B 连通且局部道路连通。
+
+置 I = \(\pi_{0}(C)\)；若 i 是 I 中的元素，记 C 中与 i 对应的连通分支为 \(C_{i}\)。记 \(\eta: L \rightarrow I\) 为如下映射：它将 \(\ell \in L\) 对应到包含 \(B_{\ell}\) 的 C 的连通分支。映射 \(\eta\) 是满射。事实上，反设存在一个与所有集合 \(B_{\ell}\) 都不相交的 C 的连通分支 X。它是 C 的开闭子集，并且关于等价关系 R 是饱和的。因此，其像 \(f(X)\) 是 A 中与 B 不相交的开闭子集。由于假设 A 连通且 B 非空，\(f(X)\) 为空，矛盾。
+
+令 \(\sigma\colon I\to L\) 为映射 \(\eta\) 的一个截面；置 \(\tau=\sigma\circ\eta\) 和 \(T=\sigma(I)\)。
+
+选取 \(b\) 作为 B 中的一点。对每个 \(\ell \in \mathrm{L}\)，置 \(b_{\ell} = h_{\ell}(b)\)，并选取道路类 \(\beta_{\ell}\)，即 C 中从 \(b_{\ell}\) 连接到 \(b_{\tau(\ell)}\) 的一条道路的道路类；若 \(\ell = \tau(\ell)\)，则将 \(\beta_{\ell}\) 取为像为 \(b_{\ell}\) 的常值道路的道路类。对所有 \(\ell \in \mathrm{L}\)，记 \(\vartheta_{\ell}\) 为从 \(\pi_1(\mathrm{B}, b)\) 到 \(\pi_1(\mathrm{C}, b_{\tau(\ell)})\) 的同态，其定义为
+
+\[
+\vartheta_ {\ell} (v) = \operatorname{Int} (\beta_ {\ell}) ^ {- 1} ((h _ {\ell}) _ {*} (v)) = \beta_ {\ell} ^ {- 1} (h _ {\ell}) _ {*} (v) \beta_ {\ell},
+\]
+
+对所有 \(v \in \pi_{1}(B, b)\) 成立。最后，固定 L 中的一个元素 \(\ell_{0}\)，满足 \(\ell_{0} = \tau(\ell_{0})\)。
+
+令 Q 为唯一的群同态
+
+\[
+\mathrm{Q} \colon \big (\underset {i \in \mathrm{I}} {*} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) * \mathrm{F} (\mathrm{L} - \mathrm{T}) \to \pi_ {1} (\mathrm{A}, b)
+\]
+
+使得 \(\mathsf{Q}(\ell) = f_{*}(\beta_{\ell})\) 对所有 \(\ell \in \mathrm{L} - \mathrm{T}\) 成立，并且与 \(\pi_1(f, b_{\sigma(i)})\) 在 \(\pi_1(\mathrm{C}_i, b_{\sigma(i)})\) 上一致，对所有 \(i \in \mathrm{I}\)。
+
+命题 5（范坎彭）. --- 群同态 Q 是满射；其核是包含下列元素的最小正规子群
+
+\[
+\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1} \quad \text { for } v \in \pi_ {1} (\mathrm{B}, b) \text { and } \ell \in \mathrm{T},
+\]
+
+\[
+\vartheta_ {\ell_ {0}} (v) \ell \vartheta_ {\ell} (v) ^ {- 1} \ell^ {- 1} \quad \text { for } v \in \pi_ {1} (\mathrm{B}, b) \text { and } \ell \in \mathrm{L} - \mathrm{T}.
+\]
+
+映射 \(f \colon \mathrm{C} \to \mathrm{A}\) 是逆紧且分离的，纤维有限（IV, p. 430, lemma 2）；空间 A 和 C 是可解圈的。此外，\(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 是对角线 \(\Delta_{\mathrm{C}}\) 与两两不交的子集 \(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{k} = (h_{\ell}, h_{k})(\mathrm{B})\) 的并，其中 \((\ell, k) \in \mathrm{L}^2\) 且 \(\ell \neq k\)。对于这样的对 \((\ell, k)\)，有 \(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{k} = \mathrm{N}_{\ell} \times_{\mathrm{A}} \mathrm{N}_{k}\)；因此，这个子集在 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 中既开又闭。于是对角线 \(\Delta_{\mathrm{C}}\) 是开集，并且它在 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 中的补集是有限个两两不交且同胚于 B 的子集之并，从而是局部连通的。这证明映射 \(f\) 满足性质 (VK)（case (ii) of IV, p. 405）。为了应用 th. 1 of IV, p. 408，我们将为 f 定义一个范坎彭数据。
+
+对每个 \(i \in \mathrm{I}\)，在 \(\mathrm{C}_i\) 中取点 \(\mathfrak{a}(i) = b_{\sigma(i)}\) 作为基点。
+
+令 J 为 \(C \times_{A} C\) 的道路连通分支所成的集合。集合 \(\Delta_{C_{i}}\)（\(i \in I\)）是对角线 \(\Delta_{C}\) 的连通分支，而后者在 \(C \times_{A} C\) 中既开又闭；因此这些集合属于 J。同样地，集合 \([\ell_{1}, \ell_{2}] = B_{\ell_{1}} \times_{A} B_{\ell_{2}}\)（其中 \(\ell_{1}\) 和 \(\ell_{2}\) 属于 L 且 \(\ell_{1} \neq \ell_{2}\)）属于 J。由于这些集合构成 \(C \times_{A} C\) 的一个划分，它们刻画了集合 J。
+
+设 \(j\) 是 J 中形如 \(\Delta_{\mathrm{C}_i}\) 的元素，其中 \(i \in \mathbf{I}\)。取点 \(\mathsf{b}(j)\) 为 \((\mathsf{a}(i), \mathsf{a}(i)) = (b_{\sigma(i)}, b_{\sigma(i)})\)，作为基点，并将 \(\beta_1(j)\) 和 \(\beta_2(j)\) 取为在 \(b_{\sigma(i)}\) 处的常值道路的道路类。若 \(j\) 是形如 \([\ell_1, \ell_2]\) 的 J 中元素，其中 \(\ell_1\) 和 \(\ell_2\) 是 L 中的不同元素，则置 \(\mathsf{b}([\ell_1, \ell_2]) = (b_{\ell_1}, b_{\ell_2})\)、\(\beta_1([\ell_1, \ell_2]) = \beta_{\ell_1}\) 和 \(\beta_2([\ell_1, \ell_2]) = \beta_{\ell_2}\)。
+
+\[
+\text { Let } \mathrm{K} = \pi_ {0} (\mathrm{C} \times_ {\mathrm{A}} \mathrm{C} \times_ {\mathrm{A}} \mathrm{C}).
+\]
+
+记 \(\Delta_{\mathrm{C}}^{\prime}\) 为 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 的对角线；它是 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 的闭子集（因为 \(f\) 是分离的），并且同胚于 C。对每个 \(i \in \mathrm{I}\)，也记 \(\Delta_{\mathrm{C}_i}^{\prime}\) 为 \(\mathrm{C}_i\) 在 C 到 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 的对角映射下的像；这些是 \(\Delta_{\mathrm{C}}^{\prime}\) 的开闭子集。对 L 中的每个三元组 \((\ell_1, \ell_2, \ell_3)\)，再置 \([\ell_1, \ell_2, \ell_3] = \mathrm{B}_{\ell_1} \times_{\mathrm{A}} \mathrm{B}_{\ell_2} \times_{\mathrm{A}} \mathrm{B}_{\ell_3}\)；这些是 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 的闭子集，同胚于 B。若集合 \(\{\ell_1, \ell_2, \ell_3\}\) 至少含有两个元素，则 \([\ell_1, \ell_2, \ell_3] = \mathrm{N}_{\ell_1} \times_{\mathrm{A}} \mathrm{N}_{\ell_2} \times_{\mathrm{A}} \mathrm{N}_{\ell_3}\)，这表明 \([\ell_1, \ell_2, \ell_3]\) 也是 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 中的开集。此外，\(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 是两两不交的子集 \(\Delta_{\mathrm{C}}^{\prime}\) 与 \([\ell_1, \ell_2, \ell_3]\) 的并，其中 \((\ell_1, \ell_2, \ell_3)\) 遍历 L 中不全相同的所有三元组。因此，\(\Delta_{\mathrm{C}}^{\prime}\) 以及 \(\Delta_{\mathrm{C}_i}^{\prime}\)（\(i \in \mathrm{I}\)）在 \(\mathrm{C} \times_{\mathrm{A}} \mathrm{C} \times_{\mathrm{A}} \mathrm{C}\) 中都是开闭的。这说明该空间的连通分支集合 K 是如下两个不交集合 \(\mathrm{K}_0\) 和 \(\mathrm{K}_1\) 的并。
+
+集合 \(K_{0}\) 是形如 \(\Delta_{C_{i}}^{\prime}\) 的分支所成。设 \(i \in I\)，并令 \(k = \Delta_{C_{i}}^{\prime}\)。置 \(\mathsf{c}(k) = (b_{\sigma(i)}, b_{\sigma(i)}, b_{\sigma(i)})\)。对于 \((s, t) \in \{(1,2), (2,3), (1,3)\}\)，将 \(\gamma_{st}(k)\) 取为在 \((b_{\sigma(i)}, b_{\sigma(i)})\) 处的常值道路的道路类。
+
+集合 \(K_{1}\) 由形如 \(k = [\ell_{1}, \ell_{2}, \ell_{3}]\) 的分支组成，其中 \(\ell_{1}, \ell_{2}, \ell_{3}\) 是 B 的三个元素，且集合 \(\{\ell_{1},\ell_{2},\ell_{3}\}\) 的基数为 \(\geqslant 2\)。置 \(c(k)=(b_{\ell_{1}},b_{\ell_{2}},b_{\ell_{3}})\)。令 \((s,t)\in\{(1,2),(1,3),(2,3)\}\)。若 \(\ell_{s}=\ell_{t}\)，则将 \(\gamma_{st}(k)\) 取为道路类 \((\beta_{\ell_{s}},\beta_{\ell_{t}})\)；若 \(\ell_{s}\neq\ell_{t}\)，则将 \(\gamma_{st}(k)\) 取为在 \((b_{\ell_{s}},b_{\ell_{t}})\) 处的常值道路的道路类。
+
+随后验证：对所有 \(k \in K\) 以及每个 \(s \in \{1,2,3\}\)，由 IV, p. 407 的 relation (2) 定义的圈类 \(\lambda_{s}(k)\) 是平凡的。
+
+框架 \(\Gamma\) 的一对群胚态射 \((\varpi(p_1), \varpi(p_2))\) 从 \(\varpi(\mathrm{C} \times_{\mathrm{A}} \mathrm{C})\) 到 \(\varpi(\mathrm{C})\)；它的顶点集是 I，定向边集是 J。若 \(i \in \mathrm{I}\)，箭 \(j = \Delta_{\mathrm{C}_i}\) 的起点和终点都是 \(i\)；若 \((\ell_1, \ell_2)\) 是 L 中两个不同元素组成的对，则箭 \(j = [\ell_1, \ell_2]\) 的起点为 \(\eta(\ell_1)\)，终点为 \(\eta(\ell_2)\)。
+
+令 \(\mathsf{T}\) 为 \(\Gamma\) 的子箭图，其顶点集为 I，箭为形如 \([\ell_0,\ell ]\) 的那些箭，其中 \(\ell \in \mathrm{T} - \{\ell_0\}\)。与 \(\mathsf{T}\) 相关的图是 \(\widetilde{\Gamma}\) 的一棵极大树。
+
+置 \(i_0 = \eta (\ell_0)\)。
+
+若 \(i \in \mathbf{I} - \{i_0\}\)，则 \(\mathsf{T}\) 中连接 \(i_0\) 与 \(i\) 的唯一道路是 \((i_0, [\ell_0, \sigma(i)], i)\)。在 p. 407 定义的、从 \(\mathrm{Grp}(\Gamma)\) 到 \(\varpi(\mathrm{Y})\) 的群胚态射（在 loc. cit. 中记为 \(\tau\)）将 \(j\) 送到单位元，当 \(j = \Delta_{\mathrm{C}_i}\) 且 \(i \in \mathrm{I}\) 时；若 \(j = [\ell_1, \ell_2]\)，则将其送到 \(f_*(\beta_{\ell_1})^{-1}f_*(\beta_{\ell_2})\)，其中 \(\ell_1\) 和 \(\ell_2\) 是不同元素。对每个 \(i \in \mathrm{I}\)，loc. cit. 中定义的道路类 \(\delta_i\) 连接 \(b = f(b_{\sigma(i_0)})\) 到 \(b = f(b_{\sigma(i)})\)，给出为
+
+\[
+\delta_ {i} = f _ {*} (\beta_ {\ell_ {0}}) ^ {- 1} f _ {*} (\beta_ {\sigma (i)}) = e,
+\]
+
+由于 \(\beta_{\ell} = e\)（当 \(\ell \in T\) 时）。
+
+因此，我们已经为映射 f 定义了一个范坎彭数据。于是考虑唯一的群同态
+
+\[
+\mathbf {Q} ^ {\prime} \colon \big (\ast_ {i \in \mathrm{I}} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) * \mathrm{F} (\mathrm{J}) \to \pi_ {1} (\mathrm{A}, b)
+\]
+
+它与 \(\pi_1(f, b_{\sigma(i)})\) 在 \(\pi_1(\mathrm{C}, b_{\sigma(i)})\) 上一致，并且满足
+
+\[
+\mathrm{Q} ^ {\prime} (j) = f _ {*} (\beta_ {1} (j)) ^ {- 1} f _ {*} (\beta_ {2} (j))
+\]
+
+对 \(j \in \mathrm{J}\) 成立。根据 IV, p. 408, th. 1，该同态是满射，其核是包含关系元 \(\mathsf{r}_1(j)\)（\(j \in \mathrm{Fl}(\mathsf{T})\)）、\(\mathsf{r}_2(j,v)\)（\(j \in \mathrm{J}\) 且 \(v \in \pi_1(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}, \mathsf{b}(j))\)）以及 \(\mathsf{r}_3(k)\)（\(k \in \mathrm{K}\)）的最小正规子群；这些关系元由 loc. cit. 中的方程 \((\mathrm{R}_1), (\mathrm{R}_2)\) 和 \((\mathrm{R}_3)\) 定义。
+
+令 \(q'\) 为从 F(L) 到 F(L-T) 的唯一同态，使得 \(q'(\ell) = \ell\)（若 \(\ell \in L - T\)）且 \(q'(\ell) = e\)（否则）。令
+
+\[
+q \colon \big (\underset {i \in \mathrm{I}} {\ast} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) \ast \mathrm{F(J)} \to \big (\underset {i \in \mathrm{I}} {\ast} \pi_ {1} (\mathrm{C} _ {i}, b _ {\sigma (i)}) \big) \ast \mathrm{F(L-T)}
+\]
+
+唯一的群同态在 \(\pi_{1}(\mathrm{C}_{i},b_{\sigma(i)})\) 上为恒等，对 \(i\in I\) 均如此，并且满足 \(q(j)=e\)（当 \(j=\Delta_{\mathrm{C}_{i}}\) 时）以及 \(q([\ell,\ell'])=q'(\ell)^{-1}q'(\ell')\)（当 \(\ell\) 和 \(\ell'\) 是 L 中的不同元素时）。同态 \(q\) 是满射。
+
+若 \(i \in \mathrm{I}\) 且 \(j = \Delta_{\mathrm{C}_i}\)，则有 \(\mathsf{Q}'(j) = e_b = \mathsf{Q}'(q(j))\)。若 \(j = [\ell, \ell']\)，对于 L 中不同的 \(\ell\) 和 \(\ell'\)，有
+
+\[
+\begin{array}{c} \mathsf {Q} ^ {\prime} (j) = f _ {*} (\beta_ {\ell}) ^ {- 1} f _ {*} (\beta_ {\ell^ {\prime}}) = \mathsf {Q} (q ^ {\prime} (\ell)) ^ {- 1} \mathsf {Q} (q ^ {\prime} (\ell^ {\prime})) \\ = \mathsf {Q} (q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} (\ell^ {\prime})) = \mathsf {Q} \circ q ([ \ell , \ell^ {\prime} ]). \end{array}
+\]
+
+因此，\(Q' = Q \circ q\)。从而，同态 Q 是满射，其核是 \(\left(\ast\pi_{1}(\mathrm{C}_{i}, b_{\sigma(i)})\right)\ast\mathrm{F}(\mathrm{L}-\mathrm{T})\) 中包含 q 下的关系元 \(r_{1}(j)\)（\(j \in \mathrm{Fl}(\mathsf{T})\)）、\(r_{2}(j, v)\)（\(j \in J\) 且 \(v \in \pi_{1}(\mathrm{C} \times_{\mathrm{A}} \mathrm{C}, \mathsf{b}(j))\)）以及 \(r_{3}(k)\)（\(k \in K\)）的最小正规子群。
+
+若 \(\ell\in\mathrm{T}-\{\ell_{0}\}\) 且 \(j=[\ell_{0},\ell]\)，则 \(\mathsf{r}_{1}(j)=j\) 且 \(q(\mathsf{r}_{1}(j))=e\)。
+
+设 \(k \in \mathrm{K}\)。有 \(r_3(k) = j_{12}(k)j_{23}(k)j_{13}(k)^{-1}\)。若 \(k = \Delta_{\mathrm{C}_i}'\)，其中 \(i \in \mathrm{I}\)，置 \(j = \Delta_{\mathrm{C}_i}\)；则有
+
+\[
+q (\mathsf {r} _ {3} (k)) = q (j j j ^ {- 1}) = q (j) = e.
+\]
+
+设 \(\ell\) 和 \(\ell'\) 是 L 中的不同元素。若 \(k = [\ell, \ell, \ell']\)，则有
+
+\[
+q (\mathsf {r} _ {3} (k)) = q \left(\Delta_ {\mathrm{C} _ {\eta (\ell)}} [ \ell , \ell^ {\prime} ] [ \ell , \ell^ {\prime} ] ^ {- 1}\right) = q \left(\Delta_ {\mathrm{C} _ {\eta (\ell)}}\right) = e.
+\]
+
+若 \(k = [\ell, \ell', \ell]\)，则有
+
+\[
+\begin{array}{c} q (\mathsf {r} _ {3} (k)) = q ([ \ell , \ell^ {\prime} ] [ \ell^ {\prime}, \ell ] \Delta_ {\mathrm{C} _ {\eta (\ell)}} ^ {- 1}) \\ = q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} (\ell^ {\prime}) q ^ {\prime} (\ell^ {\prime}) ^ {- 1} q ^ {\prime} (\ell) q (\Delta_ {\mathrm{C} _ {\eta} (\ell)}) ^ {- 1} = e. \end{array}
+\]
+
+此外，若 \(k = [\ell', \ell, \ell]\)，则有
+
+\[
+\begin{array}{r l} & q (\mathsf {r} _ {3} (k)) = q ([ \ell^ {\prime}, \ell ] \Delta_ {\mathrm{C} _ {\eta (\ell)}} [ \ell^ {\prime}, \ell ] ^ {- 1}) \\ & \qquad = q (\ell^ {\prime}) ^ {- 1} q (\ell) q (\Delta_ {\mathrm{C} _ {\eta (\ell)}}) q (\ell) ^ {- 1} q (\ell^ {\prime}) = e. \end{array}
+\]
+
+最后，若 \(k = [\ell_{1}, \ell_{2}, \ell_{3}]\)，其中 \(\ell_{1}, \ell_{2}, \ell_{3}\) 是 L 中两两不同的元素，则有
+
+\[
+q (\mathsf {r} _ {3} (k)) = q ([ \ell_ {1}, \ell_ {2} ]) q ([ \ell_ {2}, \ell_ {3} ]) q ([ \ell_ {1}, \ell_ {3} ]) ^ {- 1} = e.
+\]
+
+设 \(i \in I\)，并令 \(j = \Delta_{C_i}\)。由 \(\varphi_j\) 和 \(\psi_j\) 从 \(\pi_1(C \times_A C, \mathfrak{b}(j)) = \pi_1(C_i, \mathfrak{a}(i))\) 到 \(\pi_1(C, \mathfrak{a}(i))\) 的群同态（由 IV, p. 407 的 relation (1) 定义）分别等于 \((p_1)_*\) 和 \((p_2)_*\)。于是，对 \(v \in \pi_1(C_i, \mathfrak{a}(i))\)，有 \(r_2(j, v) = v j v^{-1} j^{-1}\)，从而 \(q(r_2(j, v)) = e\)。
+
+最后，设 \(j = [\ell, \ell']\)，其中 \(\ell\) 和 \(\ell'\) 是 L 中的不同元素。由 loc. cit. 定义的群同态 \(\varphi_j \colon \pi_1(\mathrm{B}_{\ell} \times_{\mathrm{A}} \mathrm{B}_{\ell'}) \to \pi_1(\mathrm{C}_{\eta(\ell)}, b_{\tau(\ell)})\) 是同态 \(\vartheta_\ell\)，而群同态 \(\psi_j\) 是同态 \(\vartheta_{\ell'}\)。于是，对 \(v \in \pi_1(\mathrm{B}_\ell \times_{\mathrm{A}} \mathrm{B}_{\ell'}, \mathfrak{b}(j))\)
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \vartheta_ {\ell} (v) q ^ {\prime} (\ell) ^ {- 1} q ^ {\prime} \left(\ell^ {\prime}\right) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} q ^ {\prime} \left(\ell^ {\prime}\right) ^ {- 1} q ^ {\prime} (\ell).
+\]
+
+下面区分四种情形。若 \(\ell\) 和 \(\ell'\) 都属于 T，则有
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \left. \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1}\right) ^ {- 1} \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1}\right). \right.
+\]
+
+当 \(\ell' = \ell_0\) 时，我们得到元素 \(\vartheta_{\ell_0}(v)\vartheta_\ell(v)^{-1}\) 的逆元。若 \(\ell \in \mathrm{T}\) 而 \(\ell' \notin \mathrm{T}\)，则有
+
+\[
+\begin{array}{r l} & q (\mathsf {r} _ {2} (j, v)) = \vartheta_ {\ell} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} (\ell^ {\prime}) ^ {- 1} \\ & \qquad = \left(\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell} (v) ^ {- 1}\right) ^ {- 1} \vartheta_ {\ell_ {0}} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} (\ell^ {\prime}) ^ {- 1}. \end{array}
+\]
+
+同样地，若 \(\ell\notin\mathrm{T}\) 且 \(\ell^{\prime}\in\mathrm{T}\)，则有
+
+\[
+\begin{array}{c} q (\mathsf {r} _ {2} (j, v)) = \vartheta_ {\ell} (v) \ell^ {- 1} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \ell \\ = \ell^ {- 1} \bigl (\vartheta_ {\ell_ {0}} (v) \ell \vartheta_ {\ell} (v) ^ {- 1} \ell^ {- 1} \bigr) ^ {- 1} \bigl (\vartheta_ {\ell_ {0}} (v) \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \bigr) \ell . \end{array}
+\]
+
+取 \(\ell' = \ell_0\) 时，我们得到与 \(\vartheta_{\ell_0}(v)\ell\vartheta_\ell(v)^{-1}\ell^{-1}\) 的逆元共轭的元素。最后，若 \(\ell\) 和 \(\ell'\) 均不属于 T，则有
+
+\[
+q \left(\mathrm{r} _ {2} (j, v)\right) = \left(\vartheta_ {\ell} (v) \ell^ {- 1} \vartheta_ {\ell_ {0}} (v) ^ {- 1} \ell\right) \ell^ {- 1} \left(\vartheta_ {\ell_ {0}} (v) \ell^ {\prime} \vartheta_ {\ell^ {\prime}} (v) ^ {- 1} \left(\ell^ {\prime}\right) ^ {- 1}\right) \ell .
+\]
+
+这些关系一方面表明命题中所述元素属于群同态 Q 的核，另一方面表明这些元素 \(q(\mathsf{r}_{2}(j,v))\) 全都属于包含命题所述元素的最小正规子群。因此命题得证。
+
+注. --- 设 A 是一个拓扑空间，B 是 A 的闭子集，U 是 A 中 B 的一个开邻域。假设集合 U-B 是有限族 \((\mathrm{M}_{\ell})_{\ell\in\mathrm{L}}\) 的并，且这些开集两两不交。对每个 \(\ell\in L\)，置 \(N_{\ell}^{\prime}=M_{\ell}\cup B\)。记 \(C^{\prime}\) 为空间 A-B 与 \(N_{\ell}^{\prime}\)（\(\ell\in L\)）的拓扑和；我们也将典范嵌入 \(\varphi:A-B\to C^{\prime}\) 与 \(\varphi_{\ell}:N_{\ell}^{\prime}\to C^{\prime}\)（\(\ell\in L\)）记为典范嵌入。令 C 为 C' 关于等价关系 S 的商拓扑空间；S 是使点 \(\varphi(x)\) 与 \(\varphi_{\ell}(x)\) 等价（对每个 \(\ell \in L\) 及每个 \(x \in M_{\ell}\)）的最细关系；令 \(\rho: C' \to C\) 为典范映射。
+
+我们证明可以从空间 C 恢复空间 A，方法是识别集合 \(B_{\ell}\)，所用同胚为 \(\rho \circ (\varphi_{\ell} \mid B)\)：\(B \to B_{\ell}\)。
+
+对每个 \(\ell \in L\)，集合 \(M_{\ell}\) 在 A-B 和 \(N_{\ell}'\) 中都是开集。映射 \(\rho \circ \varphi\) 和 \(\rho \circ \varphi_{\ell}\) 是从空间 A-B 和 \(N_{\ell}'\) 到 C 中开子集的同胚，对 \(\ell \in L\) 均如此。对每个 \(\ell \in L\)，集合 \(\varphi_{\ell}(B)\) 在 \(C'\) 中是闭的，并且关于等价关系 S 是饱和的。因此，集合 \(B_{\ell} = \rho(\varphi_{\ell}(B))\) 在 C 中是闭的，而映射 \(\rho \circ \varphi_{\ell}\) 诱导出从 B 到 \(B_{\ell}\) 的同胚（loc. cit.）。同样地，对每个 \(\ell \in L\)，集合 \(N_{\ell} = \rho(\varphi_{\ell}(N_{\ell}'))\) 是 \(B_{\ell}\) 的开邻域；集合 \(N_{\ell}\) 两两不交。
+
+通过商映射，取映射 \(f' \colon \mathrm{C}' \to \mathrm{A}\)，它由空间 A-B 和 \(\mathrm{N}_{\ell}'\)（\(\ell \in \mathrm{L}\)）到 A 的典范嵌入经商得到，并诱导出连续映射 \(f \colon \mathrm{C} \to \mathrm{A}\)。若 \(x\) 是 B 中的一点，则 \(f^{-1}(x)\) 的纤维是点 \(\rho(\varphi_{\ell}(x))\)（\(\ell \in \mathrm{L}\)）所成的集合。与映射 \(f\) 相伴的 C 上等价关系是本节开头定义的关系 R。我们将 \(\mathrm{B}_{\mathrm{L}}\) 记为族 \((\mathrm{B}_{\ell})_{\ell \in \mathrm{L}}\) 的并。按构造，映射 \(f\) 诱导出从 \(\mathrm{C} - \mathrm{B}_{\mathrm{L}}\) 到 \(\mathrm{A} - \mathrm{B}\) 的同胚，并且对 \(\ell \in \mathrm{L}\)，诱导出从 \(\mathrm{N}_{\ell}'\) 到 \(\mathrm{N}_{\ell}\) 的同胚。我们将证明映射 \(f\) 是闭的；因此，A 的拓扑将是 C 关于等价关系 R 的商拓扑（I, p. 18, example 2）。为此，证明如下：若 F 是 A 的子集，满足 \(\mathrm{F} \cap (\mathrm{A} - \mathrm{B})\) 在 \(\mathrm{A} - \mathrm{B}\) 中是闭的，且满足 \(\mathrm{F} \cap \mathrm{N}_{\ell}'\) 在 \(\mathrm{N}_{\ell}'\) 中是闭的（\(\ell \in \mathrm{L}\)），则 F 在 A 中是闭的。集合 U，即族 \((\mathrm{N}_{\ell}')_{\ell \in \mathrm{L}}\) 的并，是 A 中的开集；集合 \(\mathrm{N}_{\ell}'\)（\(\ell \in \mathrm{L}\)）构成它的有限闭覆盖。因此，集合 F∩U 在 U 中是闭的（TG, I, p. 18, prop. 3）。集合 U 和 A-B 构成 A 的一个开覆盖，所以 F 在 A 中是闭的（loc. cit.）。
+

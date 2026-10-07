@@ -1,0 +1,60 @@
+\subsection{商环}
+
+设 A 是一个环。若 a 是 A 的一个双边理想，则称 A 中两个元素 x 和 y 模 a 同余，记作 \(x \equiv y \pmod{a}\) 或 \(x \equiv y(a)\) ，如果 \(x - y \in a\) 。这是 A 上的一个等价关系。关系 \(x \equiv y(a)\) 和 \(x' \equiv y'(a)\) 蕴含 \(x + x' \equiv y + y'(a)\) ， \(xx' \equiv xy'(a)\) （因为 a 是左理想）且 \(xy' \equiv yy'(a)\) （因为 a 是右理想），从而 \(xx' \equiv yy'(a)\) 。反之，若 R 是 A 上与加法和乘法相容的等价关系，则由满足 \(x \equiv 0 \mod R\) 的 x 组成的集合 a 是一个双边理想，且 \(x \equiv y \mod R\) 等价于 \(x \equiv y \mod a\) 。
+
+设 A 是一个环，a 是 A 的一个双边理想。A/a 表示 A 关于等价关系 \(x \equiv y(a)\) 的商集，其加法和乘法是 A 上相应运算的商（§ 1，第 6 号，定义 11）。我们证明 A/a 是一个环：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  在加法下，A/a 是 A 的加法群关于子群 a 的商交换群。
+\item
+  在乘法运算下，A/a 是一个幺半群（§ 2，第 1 号）。
+\item
+  设 \(\xi, \eta, \zeta\) 位于 A/a 中，并令 \(\pi: \mathbf{A} \to \mathbf{A}/\mathfrak{a}\) 为典范映射；我们选取元素 \(x, y, z\) （A 中的），使得 \(\pi(x) = \xi, \pi(y) = \eta\) 和 \(\pi(z) = \zeta\) 。则
+\end{enumerate}
+
+\[
+\begin{array}{r l} \xi (\eta + \zeta) & = \pi (x) \pi (y + z) = \pi (x (y + z)) = \pi (x y + x z) \\ & = \pi (x) \pi (y) + \pi (x) \pi (z) = \xi \eta + \xi \zeta \end{array}
+\]
+
+以及关系 \((\xi + \eta)\zeta = \xi \zeta + \eta \zeta\) 类似地可证得。
+
+定义 6. 设 A 为一个环，a 为 A 的一个双边理想。A 关于 a 的商环，记作 A/a，是 A 关于等价关系 \(x \equiv y(a)\) 的商集，其加法和乘法是 A 上相应运算的商。
+
+环 A/\{0\} 同构于 A，且 A/A 是零环。
+
+定理 2. 设 A 是一个环，且 a 是 A 的一个双边理想。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  典范映射 \(\pi\) （从 A 到 A/a 上）是一个环同态。
+\item
+  设 \(\mathbf{B}\) 是一个环，且 \(f\) 是 \(\mathbf{A}\) 到 \(\mathbf{B}\) 中的一个同态。若 \(f(\mathfrak{a}) = \{0\}\) ，则存在且仅存在一个同态 \(\bar{f}\) （从 \(\mathbf{A} / \mathfrak{a}\) 到 \(\mathbf{B}\) 中），使得 \(f = \bar{f} \circ \pi\) 。
+\end{enumerate}
+
+根据构造， \(\pi(x + y) = \pi(x) + \pi(y)\) 和 \(\pi(xy) = \pi(x)\pi(y)\) 对 \(x, y\) （在 A 中）成立；且 \(\pi(1)\) 是 A/a 的单位元 \(\varepsilon\) ，从而得出 (a)。
+
+设 \(\mathbf{A}^{+}\) 是 \(\mathbf{A}\) 的加法群，而 \(\mathbf{B}^{+}\) 是 \(\mathbf{B}\) 的加法群；由于 \(f\) 是 \(\mathbf{A}^{+}\) 到 \(\mathbf{B}^{+}\) 中的、在子群 \(a\) （\(\mathbf{A}^{+}\) 的）上为零的同态，故存在（§ 4，第 4 号，命题 5）一个且仅一个同态 \(\bar{f}\) （从 \(\mathbf{A}^{+}/a\) 到 \(\mathbf{B}^{+}\) 中），使得 \(f = \bar{f} \circ \pi\) 。设 \(\xi, \eta\) 在 \(\mathbf{A}/a\) 中；选取 \(x, y\) （\(\mathbf{A}\) 中的），使得 \(\pi(x) = \xi\) 和 \(\pi(y) = \eta\) ；于是 \(\xi \eta = \pi(xy)\) ，因此
+
+\[
+\bar {f} (\xi \eta) = \bar {f} (\pi (x y)) = f (x y) = f (x). f (y) = \bar {f} (\xi). \bar {f} (\eta)
+\]
+
+和 \(\bar{f}(\varepsilon) = f(\pi(1)) = f(1)\) ，因此 \(\bar{f}\) 是一个环同态。
+
+定理 3. 设 A 和 B 为环，f 为 A 到 B 中的一个同态。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  f 的核 \(\mathfrak{a}\) 是 \(\mathbf{B}\) 的一个双边理想。
+\item
+  像 \(\mathbf{B}' = f(\mathbf{B})\) 是 \(\mathbf{B}\) 的一个子环。
+\item
+  设 \(\pi: \mathbf{A} \to \mathbf{A} / \mathfrak{a}\) 和 \(i: \mathbf{B}' \to \mathbf{B}\) 为典范态射。存在且仅存在一个态射 \(\bar{f}\) （从 \(\mathbf{A} / \mathfrak{a}\) 到 \(\mathbf{B}'\) 中），使得 \(f = i_{\circ} \bar{f} \circ \pi\) 且 \(\bar{f}\) 是一个同构。
+\end{enumerate}
+
+由于 \(f\) 是 \(\mathbf{A}\) 的加法群到 \(\mathbf{B}\) 的加法群中的态射， \(\mathfrak{a}\) 是 \(\mathbf{A}\) 的一个子群。若 \(x \in \mathfrak{a}\) 且 \(a \in \mathbf{A}\) ，则 \(f(ax) = f(a)f(x) = 0\) ，因此 \(ax \in \mathfrak{a}\) ，类似地 \(xa \in \mathfrak{a}\) ；因此 \(\mathfrak{a}\) 是 \(\mathbf{A}\) 的一个双边理想。断言 (b) 是显然的。由于 \(f\) 在 \(\mathfrak{a}\) 上为零，存在一个态射 \(\bar{f}\) （从 \(\mathbf{A} / \mathfrak{a}\) 到 \(\mathbf{B}'\) 中），使得 \(f = i \circ \bar{f} \circ \pi\) （定理 2）。 \(\bar{f}\) 的唯一性以及 \(\bar{f}\) 是一个同构这一事实由集合论，II，§ 6，第 4 号得出。
+

@@ -1,0 +1,136 @@
+\subsection{Jordan decomposition}
+
+DEFINITION 8. --- Let E be a finite dimensional vector space over a commutative field and let u be an endomorphism of E. Then a Jordan decomposition of u is a pair \((u_{s}, u_{n})\) , where \(u_{s}\) is a semi-simple endomorphism of E and \(u_{n}\) is a nilpotent endomorphism of E, such that \(u_{s}u_{n} = u_{n}u_{s}\) and \(u = u_{s} + u_{n}\) .
+
+THEOREM 1. --- Let E be a finite dimensional vector space over a commutative field K and let u be an endomorphism of E. Then u has a Jordan decomposition \((u_{s}, u_{n})\) if and only if the eigenvalues of u are separable over K. Moreover the decomposition is unique, the characteristic polynomials of u and \(u_{s}\) coincide, and there exist polynomials P, \(Q \in K[X]\) , with no constant terms, such that \(u_{s} = P(u)\) and \(u_{n} = Q(u)\) .
+
+\begin{enumerate}
+\def\labelenumi{\Alph{enumi})}
+\tightlist
+\item
+  Let us first of all prove the following special case:
+\end{enumerate}
+
+Lemma 4. --- Let E be a finite dimensional vector space over a commutative field K and let u be a triangularisable endomorphism of E. Then there exists a unique diagonalisable endomorphism v of E which commutes with u and is such that u - v is nilpotent. Moreover, under these conditions the characteristic polynomials of u and v coincide, and there exists a polynomial \(P \in K[X]\) such that \(v = P(u)\) .
+
+Let \(v\) be a diagonalisable endomorphism of \(E\) such that \(uv = vu\) and \(v - u\) is nilpotent; let \(\alpha\) be an eigenvalue of \(v\) and let \(V_{\alpha}\) be the corresponding eigenspace. By Lemma 3 (VII, p.~41), \(V_{\alpha}\) is closed under \(u\) , and the restriction of \(u - \alpha\) to \(V_{\alpha}\) is also the restriction of \(u - v\) , so is nilpotent; hence \(V_{\alpha}\) is contained in the subspace \(M_{\alpha}\) consisting of those \(x \in E\) which are annihilated by some power of \(u - \alpha\) . Since \(E\) is the direct sum of the \(V_{\alpha}\) and also of the \(M_{\alpha}\) (VII, p.~34, Prop. 7), this shows that \(V_{\alpha} = M_{\alpha}\) for all \(\alpha\) . By the corollary to Prop. 9 (VII, p.~36) it follows that \(\chi_u = \chi_v\) ; it also follows that \(v\) is uniquely determined by \(u\) ; its restriction to each \(M_{\alpha}\) is the homothety defined by \(\alpha\) .
+
+Conversely, let us define \(v\) by the above condition; it is clear that \(v\) is diagonalisable and that \(u - v\) is nilpotent. By Prop. 7 of VII, p.~34 there exist polynomials \(q_{\alpha}\) such that, for all \(x \in E\) , the component of \(x\) in \(M_{\alpha}\) is \(q_{\alpha}(u) \cdot x\) . Then \(v = \sum_{\alpha} \alpha q_{\alpha}(u)\) ; this implies that \(u\) and \(v\) commute and completes the proof
+% semantic-fragments: legacy-input-seam
+\relax{}
+\textbf{B) Now let us return to the proof of Th. 1.}\par
+
+First of all, suppose that \(u\) can be written in the form \(s + n\) , where \(s\) is absolutely semi-simple and \(n\) is nilpotent, and where \(s\) and \(n\) commute. Let \(\Omega\) be an algebraic closure of \(K\) ; then \(u_{(\Omega)} = s_{(\Omega)} + n_{(\Omega)}\) , where \(s_{(\Omega)}\) is diagonalisable and \(n_{(\Omega)}\) is nilpotent, and where \(s_{(\Omega)}\) and \(n_{(\Omega)}\) commute; by Lemma 4 it follows that \(s_{(\Omega)}\) , and so also \(s\) , is unique, that the polynomials \(\chi_{u_{(\Omega)}}\) and \(\chi_{s_{(\Omega)}}\) in \(\Omega[X]\) coincide, hence also the polynomials \(\chi_u\) and \(\chi_s\) , and that \(s\) can be expressed as a polynomial in \(u\) with coefficients in \(\Omega\) . This shows first of all that the eigenvalues of \(u\) are the same as those of \(s\) , so are separable over \(K\) (VII, p.~42, Prop. 15); in addition, since \(s\) is an \(\Omega\) -linear combination of powers of \(u\) , it is also a \(K\) -linear combination of these same powers (II, p.~311, Prop. 19), and there exists a polynomial \(P \in K[X]\) such that \(s = P(u)\) , hence \(n = Q(u)\) where \(Q(X) = X - P(X)\) . Now let us show that \(Q\) (and hence \(P\) ) may be chosen with no constant term. If \(u\) is invertible then its characteristic polynomial has a nonzero constant term, and the Cayley-Hamilton theorem (III, p.~541, Prop. 20) shows that 1 can be expressed as a polynomial in \(u\) with no constant term, so the assertion holds in this case. If \(u\) is not invertible, then its kernel \(W\) is nonzero and closed under \(n\) (VII, p.~41, Lemma 3); since the restriction of \(n\) to \(W\) is nilpotent, there exists a vector \(x \neq 0\) in \(W\) such that \(u(x) = n(x) = 0\) , which shows that \(Q\) cannot have a constant term.
+
+Conversely, suppose that the eigenvalues of \(u\) are separable over \(K\) , and let \(L\) be a finite Galois extension of \(K\) containing these eigenvalues. By Lemma 4 we can write \(u_{(L)} = v + w\) , where \(v\) is diagonalisable and \(w\) is nilpotent, and where \(vw = wv\) . Let \(B\) be a basis of \(E\) , let \(B'\) be the corresponding basis of \(L \otimes_K E\) , and let \(U, V, W\) be the matrices of \(u_{(L)}, v, w\) with respect to \(B'\) ; note that \(U\) is also the matrix of \(u\) with respect to \(B\) , so has entries in \(K\) . For every \(K\) -automorphism \(\sigma\) of \(L\) , and every matrix \(A\) with entries in \(L\) , let \(A^\sigma\) denote the matrix obtained by applying \(\sigma\) to the entries of \(A\) . Let \(\sigma\) be a \(K\) -automorphism of \(L\) ; then \(U = U^\sigma = (V + W)^\sigma = V^\sigma + W^\sigma\) , \(V^\sigma W^\sigma = (VW)^\sigma = (WV)^\sigma = W^\sigma V^\sigma\) ; since \(V^\sigma\) is the matrix of a diagonalisable endomorphism and \(W^\sigma\) is nilpotent, it follows from Lemma 4 that \(V^\sigma = V\) and \(W^\sigma = W\) . Since this is valid for all \(\sigma\) , the entries of V and W are in K; if \(u_{s}\) and \(u_{n}\) are the endomorphisms of E with matrices V and W with respect to B, then \((u_{s})_{(L)} = v\) and \((u_{n})_{(L)} = w\) . It follows that \(u_{s}\) is absolutely semi-simple, that \(u_{n}\) is nilpotent, that \(u_{s}\) and \(u_{n}\) commute, and that \(u = u_{s} + u_{n}\) . This completes the proof.
+
+Whenever an endomorphism \(f\) admits a Jordan decomposition, we write it \((f_s, f_n)\) , and the endomorphisms \(f_s\) and \(f_n\) are called the absolutely semi-simple component and the nilpotent component of \(f\) respectively. When \(K\) is perfect, every endomorphism has a Jordan decomposition; in this case also there is no distinction between absolutely semi-simple endomorphisms and semi-simple endomorphisms, and we sometimes say « semi-simple component » for « absolutely semi-simple component ».
+
+COROLLARY 1. --- Suppose u has a Jordan decomposition, and let L be an extension of K. Then \(u_{(L)}\) has a Jordan decomposition, with \((u_{(L)})_{s} = (u_{s})_{(L)}\) and \((u_{(L)})_{n} = (u_{n})_{(L)}\) .
+
+COROLLARY 2. --- Suppose u has a Jordan decomposition. Then every endomorphism of E which commutes with u also commutes with \(u_{s}\) and \(u_{n}\) .
+
+COROLLARY 3. --- Let u and v be two commuting endomorphisms of E which have Jordan decompositions.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  The endomorphisms \(u, v, u_s, v_s, u_n, v_n\) all commute.
+\item
+  The endomorphisms \(u + v\) and \(uv\) have Jordan decompositions with
+\end{enumerate}
+
+\[
+\begin{array}{c} (u + v) _ {s} = u _ {s} + v _ {s}, \quad (u + v) _ {n} = u _ {n} + v _ {n}, \quad (u v) _ {s} = u _ {s} v _ {s}, \\ (u v) _ {n} = u _ {s} v _ {n} + u _ {n} v _ {s} + u _ {n} v _ {n}. \end{array}
+\]
+
+Part a) follows from Cor. 2. To prove part b) it is enough to notice that \(u_{s} + v_{s}\) and \(u_{s}v_{s}\) are absolutely semi-simple (VII, p.~43, Cor.) and that \(u_{n} + v_{n}\) and \(u_{s}v_{n} + u_{n}v_{s} + u_{n}v_{n}\) are nilpotent (as sums of commuting nilpotent endomorphisms).
+
+COROLLARY 4. --- Suppose u has a Jordan decomposition, and let R be a polynomial in K{[}X{]}. Then the endomorphism \(\mathrm{R}(u)\) has a Jordan decomposition with \(\mathrm{R}(u)_{s} = \mathrm{R}(u_{s})\) .
+
+Remarks. --- 1) We have \(\det(u_s) = \det(u)\) and \(\operatorname{Tr}(u_s) = \operatorname{Tr}(u)\) .
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  A necessary and sufficient condition for u to be triangularisable is that u have a Jordan decomposition with \(u_{s}\) diagonalisable. Then there exists a basis of E with respect to which the matrix of u is lower triangular, and that of \(u_{s}\) is diagonal, with the same diagonal as the matrix of u (cf.~Lemma 4 and Prop. 19 below).
+\end{enumerate}
+
+Note however that if the matrix of u with respect to some basis is triangular, it does not in general follow that the matrix of \(u_{s}\) with respect to the same basis is diagonal.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  The notion of Jordan decomposition for a square matrix can be defined in an analogous manner. For example, for the Jordan matrix \(U_{m,\alpha}\) we have
+\end{enumerate}
+
+\[
+(U _ {m, \alpha}) _ {s} = \alpha . I _ {m}, (U _ {m, \alpha}) _ {n} = U _ {m, 0}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  If \(u\) is semi-simple but not absolutely semi-simple, then it has no Jordan decomposition.
+\end{enumerate}
+
+An endomorphism u of a vector space V over a commutative field is said to be unipotent if the endomorphism \(u - Id_{V}\) is nilpotent, that is if there exists an integer r such that \((u - Id_{V})^{r} = 0\) ; then u is an automorphism of V, since if \(u = Id_{V} - n\) with \(n^{r} = 0\) , then
+
+\[
+\left(\operatorname{Id} _ {\mathrm{V}} + n + \dots + n ^ {r - 1}\right) u = u \left(\operatorname{Id} _ {\mathrm{V}} + n + \dots + n ^ {r - 1}\right) = \operatorname{Id} _ {\mathrm{V}}.
+\]
+
+If V has finite dimension m, then u is unipotent if and only if \(\chi_{u}(X)=(X-1)^{m}\) (VII, p.~33, Cor. 3 to Prop. 5).
+
+PROPOSITION 17. --- Let E be a finite dimensional vector space over a commutative field, and let f be an endomorphism of E. Then the following conditions are equivalent :
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(f\) has a Jordan decomposition and is an automorphism;
+\item
+  \(f\) has a Jordan decomposition and \(f_{s}\) is an automorphism;
+\item
+  there exists an absolutely semi-simple automorphism \(a\) of \(E\) and a unipotent endomorphism \(u\) of \(E\) such that \(f = ua = au\) .
+\end{enumerate}
+
+Moreover, under these conditions, in the notation of (iii), we must have \(a = f_{s}\) and \(u = 1 + f_{s}^{-1}f_{n}\) .
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\Rightarrow\) (ii): this follows from Remark 1.
+\item
+  \(\Rightarrow\) (iii): take \(a = f_{s}\) and \(u = 1 + f_{s}^{-1}f_{n}\) ; then \(f = ua = au\) , while \(a\) is an absolutely semi-simple automorphism, and \(u\) is unipotent.
+\item
+  \(\Rightarrow\) (i): in the notation of (iii), take \(n = a(u - 1) = (u - 1)a\) . Then \(an = na\) and \(f = a + n\) , and \(n\) is nilpotent. It follows that \((a, n)\) is the Jordan decomposition of \(f\) . This implies (i) as well as the relations \(a = f_s\) and \(u = 1 + f_s^{-1}f_n\) .
+\end{enumerate}
+
+Put \(f_{u}=f_{s}^{-1}f=ff_{s}^{-1}=1+f_{s}^{-1}f_{n}\) , and call this the unipotent component of f.~The pair \((f_{s},f_{u})\) is often called the multiplicative Jordan decomposition of the automorphism f.
+
+PROPOSITION 18. --- Let E be a finite dimensional vector space over a commutative field K, let u be an endomorphism of E and let E' be a subspace of E closed under u. Let u' (resp. u'') be the endomorphism of E' (resp. E/E') induced by u. Then \(\chi_{u} = \chi_{u'} \cdot \chi_{u''}\) .
+
+For u to have a Jordan decomposition, it is necessary and sufficient that \(u'\) and \(u''\) have; moreover, if this holds then the absolutely semi-simple (resp. nilpotent) components of \(u'\) and \(u''\) are the endomorphisms of \(E'\) and \(E/E'\) induced by the absolutely semi-simple (resp. nilpotent) component of u.
+
+Let B be a basis of E containing a basis \(B'\) of \(E'\) , and let \(B''\) be the basis of
+
+\(E'' = E/E'\) which is the image of B - B'. Let U, \(U'\) , \(U''\) be the matrices of u, \(u'\) , \(u''\) with respect to B, \(B'\) , \(B''\) respectively. Then U has the form
+
+\[
+\left( \begin{array}{c c} U ^ {\prime} & Z \\ 0 & U ^ {\prime \prime} \end{array} \right)
+\]
+
+and \(\chi_{u} = \chi_{U} = \chi_{U'} \chi_{U''} = \chi_{u'} \chi_{u''}\) (cf.~III, p.~533, Ex. 2). We deduce that the set of eigenvalues of u is the union of the sets of eigenvalues of \(u'\) and \(u''\) . If \(u'\) and \(u''\) have Jordan decompositions then the eigenvalues of \(u'\) and \(u''\) are separable over K, hence so are the eigenvalues of u, and u has a Jordan decomposition (VII, p.~43, Th. 1). Conversely, if u has a Jordan decomposition (s, n) then s and n leave \(E'\) invariant because they are polynomials in u; let \(s', n', s'', n''\) denote the endomorphisms of \(E', E', E'', E''\) induced by s, n, s, n respectively. Then \(s'\) and \(s''\) are absolutely semi-simple, since their minimal polynomials divide that of s (VII, p.~42, Prop. 15); also \(n'\) and \(n''\) are nilpotent. Finally \(u' = s' + n', u'' = s'' + n'', s'n' = n's',\) and \(s''n'' = n''s''\) , which completes the proof.
+
+PROPOSITION 19. --- Let E be a finite dimensional vector space over a commutative field K, and let F be a set of commuting triangularisable endomorphisms of E. Then there exists a basis of E with respect to which the matrix of each element u of F is lower triangular and the matrix of \(u_{s}\) is diagonal, with the same diagonal elements as that of u.
+
+By Cor. 3 of VII, p.~45, the set \(\mathfrak{F}_s\) of absolutely semi-simple components of elements of \(\mathfrak{F}\) consists of diagonalisable elements which commute with one another, so is diagonalisable (VII, p.~41, Prop. 13), the set \(\mathfrak{F}_n\) of nilpotent components of elements of \(\mathfrak{F}\) consists of nilpotent elements which commute with one another, and each element of \(\mathfrak{F}_n\) commutes with each element of \(\mathfrak{F}_s\) . Arguing as in the proof of Prop. 13 (VII, p.~41), we see that there exists a decomposition of E as a direct sum of subspaces \(E_i\) , which are invariant under \(\mathfrak{F}_s\) and \(\mathfrak{F}_n\) , and such that the restriction of each element of \(\mathfrak{F}_s\) to each \(E_i\) is a homothety. Replacing E by each \(E_i\) in turn, we may assume that the elements of \(\mathfrak{F}_s\) are homotheties; it is enough to prove that there exists a basis of E with respect to which the elements of \(\mathfrak{F}_n\) are represented by lower triangular matrices with zero diagonals; we are thus reduced to the case where \(\mathfrak{F}\) consists of nilpotent elements.
+
+Now suppose \(E \neq 0\) , and let F be a nonzero subspace of E, invariant under F, of minimum dimension. Then for each \(u \in F\) , the kernel of the restriction of u to F is nonzero and invariant under F (VII, p.~41, Lemma 3); by the choice of F the restriction of u to F is thus zero for all \(u \in F\) . Let \(x \in F\) , \(x \neq 0\) ; then \(u(x) = 0\) for all \(u \in F\) ; arguing by induction on the dimension of E, we may suppose that there exists a basis \((\bar{e}_{1}, \ldots, \bar{e}_{n-1})\) of the quotient \(E' = E/Kx\) such that, for all \(u \in F\) , the endomorphism \(\bar{u}\) of \(E'\) induced by u has a matrix with respect to this basis which is lower triangular with zero diagonal; if \(e_{i} \in E\) projects onto \(\bar{e}_{i}\) for i = 1, \ldots, n - 1, then the basis \((e_{1}, \ldots, e_{n-1}, x)\) satisfies the required conditions.
+

@@ -1,0 +1,114 @@
+\subsection{李群的定义}
+
+设 \(G\) 为一个集合。如果 \(G\) 上的群结构与解析 K-流形结构满足以下条件，则称二者相容：
+
+(GL) 映射 \((g, h) \mapsto gh^{-1}\) 从 \(\mathbf{G} \times \mathbf{G}\) 到 \(\mathbf{G}\) 是解析的。
+
+定义 1. K 上的李群是一个带有群结构和解析 K-流形结构的集合 G，并且这两个结构相容。
+
+在 \(\mathbf{R}\) 上的李群称为实李群（相应地，在 \(\mathbf{C},\mathbf{Q}_p\) 上的称为复李群，在 \(p\) -进情形下称为相应的 p-进李群）。
+
+设 \(\mathbf{G}\) 为带有解析流形结构的群。对于 \(g, h, g_0, h_0\)，它们属于 \(\mathbf{G}\)，
+
+\[
+g h ^ {- 1} = (g _ {0} h _ {0} ^ {- 1}) h _ {0} ((g _ {0} ^ {- 1} g) (h _ {0} ^ {- 1} h) ^ {- 1}) h _ {0} ^ {- 1}.\tag{1}
+\]
+
+由此可知，当且仅当以下三个条件成立时，G 是李群：
+
+\((\mathbf{GL}_1)\) 对所有 \(g_0 \in \mathbf{G}\)，映射 \(g \mapsto g_0 g\) 从 \(\mathbf{G}\) 到 \(\mathbf{G}\) 是解析的；
+
+\((\mathrm{GL}_2)\) 对所有 \(g_0 \in \mathbf{G}\)，映射 \(g \mapsto g_0gg_0^{-1}\) 从 \(\mathbf{G}\) 到 \(\mathbf{G}\) 在 \(e\) 的某个开邻域内是解析的；
+
+\((\mathrm{GL}_3)\) 映射 \((g,h)\mapsto gh^{-1}\) 从 \(\mathbf{G}\times \mathbf{G}\) 到 \(\mathbf{G}\) 在 \((e,e)\) 的某个开邻域内是解析的。
+
+设 G 为李群。对于所有 \(g \in G\)，\(\gamma(g)\) 和 \(\delta(g)\) 都是 G 的底层流形的自同构。因此该流形是纯的（Differentiable and Analytic Manifolds, R, 5.1.7）。特别地，对于所有 \(g \in G\)，G 在 g 处的维数等于 dim G（回忆 dim G 是一个 \(\geqslant 0\) 的整数或 \(+\infty\)）。
+
+由于解析映射是连续的，李群是一个拓扑群，其底层拓扑是流形结构所给出的拓扑。设 G 为一个集合。如果 G 上的拓扑群结构与解析 K-流形结构相容，则称它们相容，并且 G 上的拓扑是流形结构的底层拓扑。
+
+引理 1. 设 G 为李群，U 为 e 的开邻域，E 为完备赋范空间，且 \(\phi: \mathrm{U} \to \mathrm{E}\) 是流形 G 的一个图。则存在包含于 U 中的 e 的某个邻域 W，使得 \(\phi \mid W\) 是 W（带右一致结构）到 \(\phi(W)\)（带由 E 上的一致结构诱导的一致结构）的同构。
+
+可假定 \(\phi(e) = 0\)。令 \(U' = \dot{\phi}(U)\)。令 \(\dot{\psi}: U' \to U\) 为 \(\dot{\phi}\) 的逆映射。取 \(V\) 为 \(e\) 的一个对称开邻域，使 \(V^2 \subset U\)，并令 \(V' = \dot{\phi}(V)\)。定义映射 \(\theta_1, \theta_2\)，它们从 \(V' \times V'\) 到 \(V' \times U'\)，如下：
+
+\[
+\begin{array}{l} \theta_ {1} (x, y) = (x, \phi (\psi (x) \psi (y) ^ {- 1})) \\ \theta_ {2} (x, y) = (x, \phi (\psi (y) ^ {- 1} \psi (x))). \end{array}
+\]
+
+直接验证可得，当 \(\theta_{2}(\theta_{1}(x,y)) = \theta_{1}(\theta_{2}(x,y)) = (x,y)\) 且 \(x\)、\(y\) 充分接近 0 时成立。另一方面，\(\theta_{1}\) 和 \(\theta_{2}\) 是解析的，因而在 \((0,0)\) 处严格可微。因此（Differentiable and Analytic Manifolds, R, 1.2.2），存在 0 的一个邻域 \(W'\)（在 \(V'\) 中）以及常数 \(a > 0\)、\(b > 0\)，使得
+
+\[
+\begin{array}{r l} a (\| x _ {1} - x _ {2} \| + \| \phi (\psi (x _ {1}) \psi (y _ {1}) ^ {- 1}) - \phi (\psi (x _ {2}) \psi (y _ {2}) ^ {- 1}) \|) \\ & \leqslant \| x _ {1} - x _ {2} \| + \| y _ {1} - y _ {2} \| \\ & \leqslant b (\| x _ {1} - x _ {2} \| + \| \phi (\psi (x _ {1}) \psi (y _ {1}) ^ {- 1}) - \phi (\psi (x _ {2}) \psi (y _ {2}) ^ {- 1}) \|) \end{array}
+\]
+
+对 \(x_1, x_2, y_1, y_2\) 在 \(W'\) 中均成立。令 \(x_1 = x_2 = y_2\)，得到
+
+\[
+a \| \phi (\psi (x _ {1}) \psi (y _ {1}) ^ {- 1}) \| \leqslant \| x _ {1} - y _ {1} \| \leqslant b \| \phi (\psi (x _ {1}) \psi (y _ {1}) ^ {- 1}) \|.\tag{2}
+\]
+
+对于 \(\delta > 0\)，令 \(\mathrm{N}_{\delta}\) 为 \((x,y)\in W'\times W'\) 中满足 \(\| x - y\| \leqslant \delta\) 的有序对。各 \(\mathrm{N}_{\delta}\) 构成 \(W'\) 中围的基本系。记 \(W = \psi(W')\)。令 \(\mathrm{M}_{\delta}\) 为 \((u,v)\in W\times W\) 中满足 \(\| \phi (u v^{-1})\| \leqslant \delta\) 的有序对。各 \(\mathrm{M}_{\delta}\) 构成带右一致结构的 \(W\) 中围的基本系。但关系 (2) 表明
+
+\[
+\mathrm{N} _ {\delta} \subset (\phi \times \phi) (\mathrm{M} _ {a ^ {- 1} \delta}), \quad (\phi \times \phi) (\mathrm{M} _ {\delta}) \subset \mathrm{N} _ {b \delta}
+\]
+
+因此 W 具有引理所述的性质。
+
+命题 1. 李群是完备可度量拓扑群。
+
+由于 \(e\) 有一个同胚于赋范空间开球的开邻域，\(e\) 有一个交为 \(\{e\}\) 的可数基本邻域系。因此 G 是可度量的（General Topology, Chapter III, § 1, Corollary to Proposition 2 and Chapter IX, § 3, Proposition 1）。由引理 1，存在 \(e\) 的一个邻域，它在右一致结构下是完备的，从而 G 是完备的（General Topology, Chapter III, § 3, Proposition 4。
+
+命题 2. 设 G 为李群。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  如果 \(\mathbf{K} = \mathbf{R}\) 或 \(\mathbf{C}\)，则 \(\mathbf{G}\) 局部连通。
+\item
+  如果 \(\mathbf{K}\) 不同于 \(\mathbf{R}\) 和 \(\mathbf{C}\)，则 \(\mathbf{G}\) 是零维的（General Topology, Chapter IX, § 6, Definition 5）。
+\item
+  设 K 局部紧。G 局部紧的充要条件是 G 是有限维的。
+\item
+  如果 \(\mathbf{G}\) 由一个拓扑具有可数基的子空间生成，则 \(\mathbf{G}\) 的拓扑具有可数基。
+\end{enumerate}
+
+令 U 为 \(e\) 的一个邻域。存在 \(\mathbf{U}_1\)，它是 \(e\) 的一个开邻域，包含于 U 中，且同胚于 K 上某个赋范空间 E 的开球。如果 \(\mathbf{K} = \mathbf{R}\) 或 \(\mathbf{C}\)，则 \(\mathbf{U}_1\) 是连通的，这证明了 (i)。设 K 是超度量的。存在 \(\mathbf{U}_2\)，它是 \(e\) 的一个邻域，在 G 中是闭的且满足 \(\mathbf{U}_2 \subset \mathbf{U}_1\)。于是存在 \(\mathbf{U}_3\)，它是 \(e\) 的一个邻域，满足 \(\mathbf{U}_3 \subset \mathbf{U}_2\)，且 \(\mathbf{U}_3\) 对 \(\mathbf{U}_1\) 是开且闭的。于是 \(\mathbf{U}_3\) 对 \(\mathbf{U}_2\) 是闭的，因而对 G 也是闭的；并且对 \(\mathbf{U}_1\) 是开的，因而对 G 也是开的。这证明了 (ii)。G 局部紧的充要条件是 E 局部紧；若 K 局部紧，这等价于 E 是有限维的（Topological Vector Spaces, Chapter I, § 2, Theorem 3），从而得到 (iii)。设 G 由子集 V 生成，并令 \(W = V \cup V^{-1}\)；于是
+
+\[
+G = W \cup W ^ {2} \cup W ^ {3} \cup \dots ;
+\]
+
+如果 V 中存在一个稠密序列，则可见 G 中存在一个稠密序列，而由于 G 是可度量的（命题 1），G 的拓扑具有可数基。
+
+推论。如果 K = R 或 C，且 G 连通并且有限维，则 G 局部连通且局部紧，并且其拓扑具有可数基。
+
+引理 2. 设 X 是 \(\mathbf{C}^r\) 类流形，\(e\) 是 X 中的一点，U、V 是 \(e\) 的开邻域，且 \(m\) 是一个 \(\mathbf{C}^r\) 类映射，从 \(\mathrm{U} \times \mathrm{U}\) 到 X，满足以下条件：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  \(m(e,x) = m(x,e) = x\) 对所有 \(x\in \mathbf{U}\) 成立；
+\item
+  \(\mathrm{V} \subset \mathrm{U}\)，\(m(\mathrm{V} \times \mathrm{V}) \subset \mathrm{U}\)，并且 \(m(m(x, y), z) = m(x, m(y, z))\) 对 \(x, y, z\) 属于 \(\mathrm{V}\) 时成立。
+\end{enumerate}
+
+则存在 \(e\) 的一个开邻域 W（在 V 中）以及 W 的一个流形自同构 \(\theta\)，使得 \(\theta(e) = e\)、\(\theta(\theta(x)) = x\)，并且 \(m(x, \theta(x)) = m(\theta(x), x) = e\) 对所有 \(x \in W\) 成立。
+
+\(m(e,y) = y\) 对所有 \(y \in \mathrm{U}\) 成立，因此由隐函数定理，存在一个开邻域 \(\mathrm{W}_1\)，它是 \(e\) 在 \(\mathrm{V}\) 中的邻域，并存在一个映射 \(\theta_1\)，它是一个 \(C^r\) 类映射，从 \(\mathrm{W}_1\) 到 \(\mathrm{V}\)，使得 \(\theta_1(e) = e\)，且 \(m(x,\theta_1(x)) = e\) 对所有 \(x \in \mathrm{W}_1\) 成立。类似地，存在一个开邻域 \(\mathrm{W}_2\)，它是 \(e\) 在 \(\mathrm{V}\) 中的邻域，并存在一个映射 \(\theta_2\)，它是一个 \(C^r\) 类映射，从 \(\mathrm{W}_2\) 到 \(\mathrm{V}\)，使得 \(\theta_2(e) = e\)，且 \(m(\theta_2(x),x) = e\) 对所有 \(x \in \mathrm{W}_2\) 成立。对于 \(x \in \mathrm{W}_1 \cap \mathrm{W}_2\)。
+
+\[
+\begin{array}{r l} \theta_ {2} (x) & = m (\theta_ {2} (x), e) = m (\theta_ {2} (x), m (x, \theta_ {1} (x))) \\ & = m (m (\theta_ {2} (x), x), \theta_ {1} (x)) = m (e, \theta_ {1} (x)) = \theta_ {1} (x). \end{array}
+\]
+
+令 \(\theta(x)\) 为 \(\theta_1(x)\) 与 \(\theta_2(x)\) 对于 \(x \in W_1 \cap W_2\) 的公共值。令 \(W\) 为 \(x \in W_1 \cap W_2\) 中满足 \(\theta(x) \in W_1 \cap W_2\) 的点的集合。集合 \(W\) 是开集。对于 \(x \in W\)，
+
+\[
+\theta (\theta (x)) = m (m (x, \theta (x)), \theta (\theta (x))) = m (x, m (\theta (x), \theta (\theta (x)))) = m (x, e) = x
+\]
+
+从而 \(\theta(x) \in W\)。可见 \(\theta \mid W\) 定义了流形 \(W\) 的一个自同构。
+
+命题 3. 设 \(\mathbf{X}\) 为解析流形，\(m\) 为 \(\mathbf{X}\) 上具有单位元的解析结合复合律。可逆元集合 \(\mathbf{G}\) 属于 \(\mathbf{X}\) 且在 \(\mathbf{X}\) 中是开集，并且 \(\mathbf{G}\) 配以 \(m \mid (\mathbf{G} \times \mathbf{G})\) 和由 \(\mathbf{X}\) 诱导的流形结构后是李群。
+
+由引理 2，G 是单位元的一个邻域。对于所有 \(g \in \mathbb{G}\)，映射 \(x \mapsto m(g, x)\) 是流形 X 的自同构。因此 G 在此映射下的像是 \(g\) 的一个邻域，显然包含于 G 中。所以 G 在 X 中是开集。显然条件 \((\mathrm{GL}_1)\) 和 \((\mathrm{GL}_2)\) 成立。条件 \((\mathrm{GL}_3)\) 由引理 2 得出。
+

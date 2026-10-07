@@ -1,0 +1,40 @@
+\subsection{范畴}
+
+定义 1. —— 设 C 为箭图。以 J 表示 C 中箭的偶 \((f,g)\) （满足 \(t(f)=o(g)\) ）所成的集。C 上的一个合成律是这样的映射 \(m:J\to\mathrm{Fl}(\mathrm{C})\) ：对每个偶 \((f,g)\in\mathrm{J}\) ，箭 \(m(f,g)\) 的起点是 f 的起点，其靶是 g 的靶。
+
+设 C 为带有一个合成律 \(m\) 的箭图。两个箭 \(f\) 与 \(g\) （满足 \(t(f) = o(g)\) ）称为可复合的；箭 \(m(f, g)\) 称为它们的复合，或它们的乘积，常记作 \(f \cdot g\) ，甚至记作 \(fg\) 。
+
+对 C 的每个顶点 \(a\) ，集合 \(\mathrm{C}_{a,a} = \mathrm{Fl}_{a,a}(\mathrm{C})\) 赋有由 \(m\) 过渡到子集而得的映射后，是一个群原（A, I, 第 1 页, 定义 1）。
+
+C 的箭的族 \((f_{i})_{i\in\mathrm{I}}\) ，以有限非空全序集 I 为指标集，若对 I 的每对相邻元素 \((i,j)\) ，箭 \(f_{i}\) 与 \(f_{j}\) 可复合，则称该族是可复合的。这样的族的乘积 \(\prod_{i\in\mathrm{I}}f_{i}\) 由对 I 的基数用归纳法定义如下（参见 A, I, 第 3 页）：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  若 I 只有一个元素 \(\omega\) ，则 \(\prod_{i\in I}f_i = f_\omega\) ；
+\item
+  若 I 至少有两个元素且 \(\omega\) 是 I 的最小元素，则令 \(\prod_{i\in I}f_i = f_\omega \cdot \prod_{i\in I - \{\omega \}}f_i\) 。
+\end{enumerate}
+
+合成律 \(m\) 称为结合的，若 \(f \cdot (g \cdot h) = (f \cdot g) \cdot h\) （对 C 的箭的每个可复合三元组 \((f, g, h)\) ）。当律 \(m\) 结合时，序列 \((f_1, \ldots, f_n)\) （\(n\) 个可复合箭的，其中 \(n\) 为整数 \(\geqslant 1\) ）的乘积记作 \(f_1 f_2 \ldots f_n\) 。
+
+设 \(a\) 为 C 的顶点。称箭 \(e \in \mathrm{C}_{a,a}\) 是 \(m\) 在 \(a\) 处的单位元，若 \(ef = f\) （对每个箭 \(f\) ，以 \(a\) 为源的），且 \(ge = g\) （对每个箭 \(g\) ，以 \(a\) 为终点的）。\(m\) 在 \(a\) 处至多有一个单位元：若 \(e\) 与 \(e'\) 是两个单位元，则有 \(e' = ee' = e\) 。当这样的单位元存在时，常记作 \(e_a\) ；它这时是群原 \(\mathrm{C}_{a,a}\) 的单位元（A, I, 第 12 页）。
+
+定义 2. —— 范畴是带有一个结合合成律的箭图，且在每个顶点处存在单位元。
+
+例. —— 1) 设 C 为箭图。以 Ch(C) 表示 C 中道路所成的集，以 o: Ch(C) → Som(C)、t: Ch(C) → Som(C) 表示把道路映为其起点与终点的映射。四元组 \(\Omega_{\mathrm{C}} = (\mathrm{Som}(\mathrm{C}), \mathrm{Ch}(\mathrm{C}), o, t)\) 是一个箭图。给它赋予由道路的衔接定义的合成律。这个合成律是结合的；对 C 的每个顶点 a，以 a 为起点的常值圈 \(e_a = (a)\) 是 a 处的单位元。这样，\(\Omega_{\mathrm{C}}\) 是一个范畴。称之为箭图 C 的道路范畴。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 \(\Sigma\) 为比集合论更强的理论 \(\mathcal{T}\) 中的一种结构，\(\sigma\{x,y,s,u\}\) 为 \(\mathcal{T}\) 中满足 E, IV, 第 11 页的条件 (MO \(_{\text{I}}\) )、(MO \(_{\text{II}}\) ) 与 (MO \(_{\text{III}}\) ) 的项。设 S 为集合；假设 S 的每个元素都是偶 \((x,s)\)，其中 \(x\) 是集合，\(s\) 是种 \(\Sigma\) 的结构（在 \(x\) 上的）。设 F 为这样的映射 \(f\) 所成的集：存在 S 中的 \((x,s)\) 与 \((y,t)\) ，使 \(f\) 是一个 \(\sigma\) -态射，从 \(x\) （赋有结构 \(s\) 的）到 \(y\) （赋有结构 \(t\) 的）；这时令 \(o(f) = (x,s)\) 与 \(t(f) = (y,t)\) 。赋有由 \(m(f,g)=g\circ f\) 给出的合成律后，箭图 (S,F,o,t) 是一个范畴。在这种语境下，S 的元素更常称为对象。
+\end{enumerate}
+
+设 C 为范畴。
+
+对 C 的每个顶点 \(a\) ，集合 \(\mathrm{C}_{a,a}\) 赋有合成律 \((f,g)\mapsto fg\) 后，是以 \(e_a\) 为单位元的幺半群。
+
+称 C 的箭 \(f\) 是可逆的，若存在 C 的箭 \(g\) ，使得 \(o(g) = t(f)\) 、\(t(g) = o(f)\) ，且 \(fg\) 与 \(gf\) 分别是 \(o(f)\) 与 \(t(f)\) 处的单位元。这样的箭 \(g\) 是唯一的（若 \(fg = e_{o(f)}\) 且 \(g'f = e_{t(f)}\) ，则有 \(g = e_{t(f)}g = (g'f)g = g'(fg) = g'e_{o(f)} = g'\) ），称为 \(f\) 的逆；可逆箭 \(f\) 的逆记作 \(f^{-1}\) 。
+

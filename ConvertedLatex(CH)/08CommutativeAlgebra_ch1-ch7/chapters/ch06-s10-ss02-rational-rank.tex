@@ -1,0 +1,69 @@
+\subsection{交换群的有理秩}
+
+定义 1. 交换群 G 的有理秩是向量 Q-空间 \(G \otimes_{\mathbf{Z}} \mathbf{Q}\) 的维数。
+
+这个维数也可定义为下述基数 r 的最小上界（有限或无限）：存在 G 的 r 个元素，它们在 Z 上线性无关（《代数》第二章 § 7 第 10 节命题 26）。当且仅当 G 是扭群时，G 的有理秩为零。对于加法群 \(R^{n}\) 的子群，有理秩的概念与《一般拓扑学》第七章 § 1 中定义的概念一致。
+
+在本段其余部分，我们用 \(r(G)\) 表示交换群 \(G\) 的有理秩。若 \(G'\) 是 \(G\) 的子群，则（由于 \(Q\) 是平坦的 \(Z\)-模）有加法等式
+
+\[
+r (\mathbf {G}) = r \left(\mathbf {G} ^ {\prime}\right) + r \left(\mathbf {G} / \mathbf {G} ^ {\prime}\right).\tag{4}
+\]
+
+命题 3. 设 G 是全序交换群，H 是 G 的子群。若 \(h(\mathbf{G})\) 和 \(h(\mathbf{H})\) 分别表示 G 和 H 的高（§ 4，第 4 节），则不等式
+
+\[
+h (\mathbf {G}) \leqslant h (\mathbf {H}) + r (\mathbf {G} / \mathbf {H})\tag{5}
+\]
+
+成立。
+
+事实上，设 \(G_{0} \subset G_{1} \subset \cdots \subset G_{n}\) 是 G 的严格递增孤立子群序列。必须证明不等式
+
+\[
+n \leqslant h (\mathrm{H}) + r (\mathrm{G} / \mathrm{H}).\tag{6}
+\]
+
+当 n = 0 时显然。设 \(n \geqslant 1\)，并对 n 作归纳。~应用归纳假设于群 \(G_{n-1}\) 及其子群 \(H \cap G_{n-1}\)，得到
+
+\[
+n - 1 \leqslant h (\mathrm{H} \cap \mathrm{G} _ {n - 1}) + r (\mathrm{G} _ {n - 1} / (\mathrm{H} \cap \mathrm{G} _ {n - 1})).\tag{7}
+\]
+
+然后我们区分两种情形：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  \(\mathbf{H} \cap \mathbf{G}_{n-1} = \mathbf{H}\)，换言之，\(\mathbf{H} \subset \mathbf{G}_{n-1}\)。不等式 (7) 可写成
+\end{enumerate}
+
+\[
+n \leqslant h (\mathrm{H}) + r (\mathrm{G} _ {n - 1} / \mathrm{H}) + 1.\tag{8}
+\]
+
+现在 \(\mathbf{G} / \mathbf{G}_{n - 1}\) 是一个不化为 0 的全序群；因而它不是扭群，且 \(r(\mathrm{G} / \mathrm{G}_{n - 1}) \geqslant 1\)。由 (4) 得 \(r(\mathrm{G} / \mathrm{H}) \geqslant r(\mathrm{G}_{n - 1} / \mathrm{H}) + 1\)。代入 (8)，我们必然得到所需不等式 (6)。
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \(\mathbf{H} \cap \mathbf{G}_{n-1} \neq \mathbf{H}\)。由于 \(\mathbf{H} \cap \mathbf{G}_{n-1}\) 是 \(\mathbf{H}\) 的孤立子群，我们得出 \(h(\mathbf{H}) \geqslant h(\mathbf{H} \cap \mathbf{G}_{n-1}) + 1\)。另一方面，显然 \(r(\mathbf{G}/\mathbf{H}) \geqslant r(\mathbf{G}_{n-1}/(\mathbf{H} \cap \mathbf{G}_{n-1}))\)。代入 (7)，再次得到 (6)。
+\end{enumerate}
+
+推论。对于每个全序交换群 \(\mathbf{G}\)，有 \(h(\mathbf{G}) \leqslant r(\mathbf{G})\)。
+
+在命题 3 中令 \(\mathbf{H} = \{0\}\)。
+
+命题 4. 设 G 是全序交换群。设 G 有限生成，且 \(h(\mathbf{G}) = r(\mathbf{G})\)。则 G 同构于按字典序排列的 \(\mathbf{Z}^{r(\mathbf{G})}\)。
+
+记 \(r = r(\mathbf{G}) = h(\mathbf{G})\)。若 \(r = 0\)，则 \(\mathbf{G} = \{0\}\)。若 \(r = 1\)，有限生成交换群的结构表明，存在一个同构 \(j\)，它把 \(\mathbf{G}\) 映到 \(\mathbf{Z}\) 上（《代数》第七章 § 4 第 6 节定理 3）。现在，\(\mathbf{Z}\) 只有两个与其群结构相容的全序，即通常序和反序。因此，\(j\) 或 \(-j\) 是把有序群 \(\mathbf{G}\) 同构到带通常序的 \(\mathbf{Z}\) 上的同构。
+
+现在设 \(r \geqslant 2\)，并对 \(r\) 作归纳。设 \(H\) 是 \(G\) 的高为 \(r - 1\) 的孤立子群。则 \(r(H) + r(G/H) = r\)（公式 (4)），\(r(H) \geqslant h(H) = r - 1\)，且 \(r(G/H) \geqslant h(G/H) = 1\)（命题 3 的推论），从而 \(r(H) = r - 1\) 且 \(r(G/H) = 1\)。归纳假设表明 \(H\) 同构于按字典序排列的 \(Z^{r-1}\)，而 \(r = 1\) 的情形表明 \(G/H\) 同构于 \(Z\)。由于 \(Z\) 是自由 \(Z\)-模，\(H\) 是 \(G\) 的直因子（《代数》第二章 § 1 第 11 节命题 21）。于是下述引理表明，\(G\) 同构（非典范地）于字典积 \(H \times (G/H)\)，从而完成证明。
+
+引理 2. 设 H 是全序交换群 G 的孤立子群。若 H 是 G 的直因子，则有序群 G 同构于按字典序排列的群 (G/H) × H。
+
+令 \(j\) 为从 \((\mathrm{G} / \mathrm{H}) \times \mathrm{H}\) 到 \(\mathbf{G}\) 的同构，使得 \(j(0, x) = x\) 对所有 \(x \in \mathrm{H}\) 成立，并且 \(j(y, x)\) 属于陪集 \(y\) 的 \(\mathrm{H}\)。由于 \((\mathrm{G} / \mathrm{H}) \times \mathrm{H}\) 是全序的，只需证明 \(j\) 是递增的（《集合论》第三章 § 1 第 12 节命题 11）。令 \((y, x)\) 为满足 \(\geqslant 0\) 的元素，它属于按字典序排列的 \((\mathrm{G} / \mathrm{H}) \times \mathrm{H}\)。若 \(y > 0\)，\(\mathrm{H}\) 的包含 \(j(y, x)\) 的陪集是一个 \(> 0\) 的元素，从而 \(j(y, x) > 0\)，因为否则 \(y \leqslant 0\)（§ 4 第 2 节命题 3）。若 \(y = 0\) 且 \(x \geqslant 0\)，则 \(j(y, x) = x \geqslant 0\)。因此 \(j\) 确为递增的。
+

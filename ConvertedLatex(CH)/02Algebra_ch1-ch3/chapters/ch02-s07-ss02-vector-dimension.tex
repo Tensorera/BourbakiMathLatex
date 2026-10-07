@@ -1,0 +1,72 @@
+\subsection{向量空间的维数}
+
+\BourbakiRunInHeading{定理3. 同一向量空间E在域K上的两个基是等势的。}
+
+我们首先注意到，若E具有无限基B，则由§1第12号命题23的推论2可知，E的任何其他基都与B等势。因此我们可把注意力局限于E具有含n个元素的有限基的情形。我们还注意到，K上每个不退化为0的单生成向量空间都是单K-模（I，§4，第4号，定义7），因为它由其每个 \(\neq0\) 元素生成，这依据关系 \(\mu a = (\mu \lambda)(\lambda^{-1}a)\)（对 \(\mu \in K\)、\(\lambda \in K\) 且 \(\lambda \neq 0\)）。因此，若 \((a_{i})_{1 \leqslant i \leqslant n}\) 是E的一组基，则 \(E = \bigoplus_{i=1}^{n} Ka_{i}\) 在同构意义下成立，且子空间 \(E_{k} = \bigoplus_{i=1}^{k} Ka_{i}\)（\(0 \leqslant k \leqslant n\)）构成E的一个Jordan-Hölder序列，\(E_{k}/E_{k-1}\) 与 \(Ka_{k}\) 同构。于是，在这种情形，定理3由Jordan-Hölder定理（I，§4，第7号，定理6）推出。
+
+可以给出一个不依赖于Jordan-Hölder定理的证明，即通过对 \(n\) 作归纳证明：若 \(E\) 承认包含 \(n\) 个元素的基，则任何其他基 \(B'\) 至多有 \(n\) 个元素。该命题对 \(n = 0\) 显然成立。若 \(n \geqslant 1\)，\(B'\) 非空；于是令 \(a \in B'\)。由定理2（第1号），存在一个子集 \(C\)，它含于 \(B\)，使得 \(\{a\} \cup C\) 是 \(E\) 的基且 \(a \notin C\)，因为 \(\{a\} \cup B\) 显然是 \(E\) 的生成系。由于 \(B\) 是 \(E\) 的基，\(C = B\) 不可能（第1号，定理2的推论），因此 \(C\) 至多有 \(n - 1\) 个元素。设 \(V\) 为由 \(C\) 生成的子空间，\(V'\) 为由 \(B' - \{a\}\) 生成的子空间；\(V\) 与 \(V'\) 都是子空间 \(Ka\) 在 \(E\) 中的补空间，因此同构（§1，第10号，命题13）。由于 \(V\) 承认至多含 \(n - 1\) 个元素的基，由归纳假设 \(B' - \{a\}\) 至多有 \(n - 1\) 个元素，因此 \(B'\) 至多有 \(n\) 个元素。
+
+定义1. 向量空间E在域K上的维数，记为dim \(_{K}\) E或 {[}E:K{]} （或简记为dim E），是E的任意一个基的基数。若M是E的子集，则M的秩（在K上），记为rg M或rg \(_{K}\) M，是E中由M生成的向量子空间的维数。
+
+称E是有限维的，等价于说E是有限长度的K-模，且 \(\dim_{K}E = long_{K}E\)。
+
+推论. 对E的每一个子集M，M的秩至多等于dim E。
+
+若V是由M生成的E的向量子空间，则M包含V的一组基 \(B'\)（第1号，定理2），且由于 \(B'\) 是E的自由子集，它含于E的一个基B中（第1号，定理2）；于是 \(\text{Card}(B') \leqslant \text{Card}(B)\)，由此得出推论。
+
+定理2和定理3直接蕴含以下命题：
+
+命题1. (i) \(\mathbf{K}\) 上的左向量空间具有有限维数 \(n\) 的充分必要条件是它同构于 \(\mathbf{K}_s^n\)。
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{1}
+\item
+  两个向量空间 \(\mathbf{K}_s^m\) 与 \(\mathbf{K}_s^n\)（\(m\)、\(n\) 为 \(\geqslant 0\) 的整数）同构的必要且充分条件是 \(m = n\)。
+\item
+  在向量空间 \(\mathbf{E}\)（有限维数 \(n\)）中，每个生成系至少含 \(n\) 个元素；\(\mathbf{E}\) 的含 \(n\) 个元素的生成系是 \(\mathbf{E}\) 的基。
+\item
+  在向量空间 \(\mathbf{E}\)（有限维数 \(n\)）中，每个自由子集至多含 \(n\) 个元素；含 \(n\) 个元素的自由子集是 \(\mathbf{E}\) 的基。
+\end{enumerate}
+
+命题2. 设 \((\mathbf{E}_i)_{i\in I}\) 是K上的一族向量空间。则
+
+\[
+\dim_ {\mathbb {K}} \left(\bigoplus_ {i \in I} E _ {i}\right) = \sum_ {i \in I} \dim_ {\mathbb {K}} E _ {i}.\tag{1}
+\]
+
+若 \(E_{i}\) 典范地等同于 \(E = \bigoplus_{i \in I} E_{i}\) 的子空间，且 \(B_{i}\) 是 \(E_{i} (i \in I)\) 的基，则 \(B = \bigcup_{i \in I} B_{i}\) 是E的一组基（§1，第11号，命题19）；由此得到关系式(1)，因为诸 \(B_{i}\) 两两不相交。
+
+注记. (1) 可以给出这样的例子：一个模具有两个有限基，但它们的元素个数不相同（§1，习题16(c)）。然而：
+
+命题3. 设A是一个环，且存在一个同态 \(\rho\) 将A映入一个域D；则对于每个自由A-模E，E的任意两个基都是等势的。
+
+考虑向量空间 \(\rho^{*}(\mathbf{E}) = \mathbf{D} \otimes_{\mathbf{A}} \mathbf{E}\)（\(\mathbf{D}\) 上的，由把标量环扩张到 \(\mathbf{D}\)（\(\S 5\)，第1号）而得），并令 \(\phi: x \mapsto 1 \otimes x\) 为 \(\mathbf{E}\) 到 \(\rho^{*}(\mathbf{E})\) 的典范映射；若 \((a_{\lambda})\) 是 \(\mathbf{E}\) 的基，则 \((\phi(a_{\lambda}))\) 是 \(\rho^{*}(\mathbf{E})\) 的基（\(\S 5\)，第1号，命题4）；该命题由定理3得出。
+
+推论. 若A是交换环 \(\neq0\) 且E为自由A-模，则E的任意两组基是等势的。
+
+A中至少存在一个极大理想m（I，§8，第6号，定理1），且由于A/m是域，命题3的条件得以满足。
+
+注记. (2) 当自由 A-模 E 使得 E 的任意两组基是等势的时，E 在 A 上的任意一组基的基数也称为 E 的维数或秩，并记为 \(\dim_{A}E\) 或 \(\dim E\) .
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  设 A 是一个环，使得自由 A-模的任意两组基都是等势的，并设 K 是 A 的一个子域，从而通过限制标量，A 可被视为 K 上的左向量空间。每个自由 A-模 E 同样可被视为 K 上的左向量空间，于是由 §1，第 13 号，命题 25 可知
+\end{enumerate}
+
+\[
+\dim_ {\mathbb {K}} \mathrm{E} = \dim_ {\mathbb {K}} \mathrm{E}. \dim_ {\mathbb {K}} \mathrm{A} _ {s ^ {*}}\tag{2}
+\]
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  在第八章中，我们将看到满足命题3结论但不满足其假设的环的例子。
+\end{enumerate}
+% semantic-fragments: legacy-input-seam
+\relax{}

@@ -1,0 +1,66 @@
+\subsection{互素理想}
+
+设 A 是环；A 的两个理想 a、b 称为互素的，如果 \(a + b = A\) 。为此，必须且只需 \(a + b\) 不包含于任何素理想（《代数学》第一章 §8 第 7 目，定理 2），换言之，没有素理想同时包含 a 与 b。两个不同的极大理想是互素的。
+
+若 A 是主理想整环（《代数学》第七章 §1），则由 Bezout 等式（同处第 2 目定理 1），为使 A 的两个元素 \(a\) 、 \(b\) 互素，必须且只需理想 \(Aa\) 与 \(Ab\) 互素。
+
+命题 3. 设 a 与 b 是环 A 的两个互素理想。设 a' 与 b' 是 A 的两个理想，使 a（相应地 b）的每个元素都有一个幂属于 a'（相应地 b'）。则 a' 与 b' 互素。
+
+在给定假设下，包含 \(a'\) 的每个素理想包含 a，包含 \(b'\) 的每个素理想包含 b。若一个素理想包含 \(a'\) 与 \(b'\) ，则它包含 a 与 b，这是荒谬的，因为 a 与 b 互素；因此 \(a'\) 与 \(b'\) 互素。
+
+命题 4. 设 \(\mathfrak{a}, \mathfrak{b}_1, \ldots, \mathfrak{b}_n\) 是环 \(\mathbf{A}\) 的理想。若 \(\mathfrak{a}\) 与每个 \(\mathfrak{b}_i (1 \leqslant i \leqslant n)\) 互素，则它与 \(\mathfrak{b}_1\mathfrak{b}_2 \ldots \mathfrak{b}_n\) 互素。
+
+设 \(\mathfrak{p}\) 是 \(\mathbf{A}\) 的素理想。若 \(\mathfrak{p}\) 包含 \(\mathfrak{a}\) 与 \(\mathfrak{b}_1\mathfrak{b}_2\ldots \mathfrak{b}_n\) ，则它包含某个 \(\mathfrak{b}_i\) （第 1 目，命题 1），这是荒谬的，因为 \(\mathfrak{a}\) 与 \(\mathfrak{b}_i\) 互素。
+
+命题 5. 设 \((a_{i})_{i\in I}\) 是环 A 的理想的非空有限族。下列性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  对 \(i \neq j\) ， \(\mathfrak{a}_i\) 与 \(\mathfrak{a}_j\) 互素。
+\item
+  典范同态 \(\phi: \mathbf{A} \to \prod_{i \neq j} (\mathbf{A} / a_i)\) （《代数学》第二章 §1 第 7 目）是满射。
+\end{enumerate}
+
+若这些性质成立，交 \(\mathfrak{a}\) （诸 \(\mathfrak{a}_i\) 的）等于它们的乘积，且典范同态 \(\psi: \mathbf{A} / \mathfrak{a} \to \prod_{i \in I} (\mathbf{A} / \mathfrak{a}_i)\) （《代数学》第二章 §1 第 7 目）是双射。
+
+我们对 I 的元素个数 n 用归纳法论证，n = 1 的情形是平凡的。先考虑 n = 2 的情形。这时 (a) 与 (b) 的等价性由序列的正合性得出
+
+\[
+0 \longrightarrow \mathrm{A} / (a _ {1} \cap a _ {2}) \stackrel {\psi} {\longrightarrow} (\mathrm{A} / a _ {1}) \oplus (\mathrm{A} / a _ {2}) \longrightarrow \mathrm{A} / (a _ {1} + a _ {2}) \longrightarrow 0
+\]
+
+（《代数学》第二章 §1 第 7 目，公式 (30)）。此外，存在 \(e_1 \in a_1\) 与 \(e_2 \in a_2\) 使 \(1 = e_1 + e_2\) ；于是，对所有 \(x \in a = a_1 \cap a_2\) ，有 \(x = xe_1 + xe_2\) ；但依定义 \(xe_1 \in a_1a_2\) 且 \(xe_2 \in a_1a_2\) ，因此 \(x \in a_1a_2\) ；从而 \(a \subset a_1a_2\) ，反向包含是明显的。
+
+在一般情形，设条件 (a) 成立，k 是 I 的元素，且 \(b_{k} = \bigcap_{i \neq k} a_{i}\) ；归纳假设蕴含 \(b_{k} = \prod_{i \neq k} a_{i}\) ，且由命题 4 推出 \(a_{k}\) 与 \(b_{k}\) 互素；于是
+
+\[
+a = \bigcap_ {i \in I} a _ {i} = a _ {k} \cap b _ {k} = a _ {k} b _ {k} = \prod_ {i \in I} a _ {i}
+\]
+
+由论证的第一部分且出于同样的理由，典范同态 \(\mathrm{A}/\mathfrak{a}\to(\mathrm{A}/\mathfrak{a}_{k})\times(\mathrm{A}/\mathfrak{b}_{k})\) 是双射；由归纳假设，典范同态 \(\mathrm{A}/\mathfrak{b}_{k}\to\prod_{i\neq k}(\mathrm{A}/\mathfrak{a}_{i})\) 是双射，于是复合同态
+
+\[
+\mathrm{A} / \mathfrak {a} \rightarrow (\mathrm{A} / \mathfrak {a} _ {k}) \times (\mathrm{A} / \mathfrak {b} _ {k}) \rightarrow (\mathrm{A} / \mathfrak {a} _ {k}) \times \prod_ {i \neq k} (\mathrm{A} / \mathfrak {a} _ {i}) = \prod_ {i \in \mathrm{I}} (\mathrm{A} / \mathfrak {a} _ {i})
+\]
+
+它正是 \(\psi\) ；也就是说 (b) 成立。反之，设 (b) 成立。我们证明诸 \(a_i\) 必定两两互素。否则，将存在理想 \(c \neq A\) 包含 \(a_i\) 与 \(a_j\) （对 \(i \neq j\) ）。置 \(a_h' = a_h\) ，其中 \(h\) 不等于 \(i\) 或 \(j\) ；并置 \(a_i' = a_j' = c\) ；典范同态 \(\phi': A \to \prod_{i \in I} (A / a_i')\) 可写成复合映射
+
+\[
+\mathrm{A} \xrightarrow {\phi} \prod_ {i \in \mathrm{I}} (\mathrm{A} / \mathfrak {a} _ {i}) \xrightarrow {f} \prod_ {i \in \mathrm{I}} (\mathrm{A} / \mathfrak {a} _ {i} ^ {\prime})
+\]
+
+其中 \(f\) 是诸典范同态 \(\mathbf{A} / \mathfrak{a}_i\to \mathbf{A} / \mathfrak{a}_i'\) 的乘积；显然 \(\phi^{\prime}\) 不是满射，因为 \(\phi^{\prime}(\mathbf{A})\) 到 \((\mathbf{A} / \mathfrak{a}_i')\times (\mathbf{A} / \mathfrak{a}_i')\) 上的投影是乘积 \((\mathbf{A} / \mathfrak{c})\times (\mathbf{A} / \mathfrak{c})\) 的对角线，而由于 \(\mathfrak{c}\neq \mathbf{A}\) 它异于该乘积。由于 \(f\) 满射，这表明 \(\phi\) 不满射。
+
+命题 6. 设 \((\mathfrak{a}_i)_{i\in I}\) 是环 A 的两两互素的理想的非空有限族；设 \(\mathfrak{a}\) 是诸 \(\mathfrak{a}_i\) 的交。对每个 A-模 M，典范映射 \(\mathbf{M} \to \prod_{i\in I} (\mathbf{M} / \mathfrak{a}_i\mathbf{M})\) 是满射且它的核是 \(\mathfrak{aM}\) 。
+
+显然 M 到 \(\prod_{i\in I}(\mathbf{M} / a_i\mathbf{M})\) 的典范映射在 aM 上为零；于是取商后，它定义一个同态 \(\lambda : \mathbf{M} / a\mathbf{M}\to \prod_{i\in I}(\mathbf{M} / a_i\mathbf{M})\) 。另一方面，由命题 5，典范同态
+
+\[
+\psi \colon \mathrm{A} / \mathfrak {a} \rightarrow \prod_ {i \in \mathrm{I}} (\mathrm{A} / \mathfrak {a} _ {i})
+\]
+
+是双射。于是 \(1_{M} \otimes \psi: M \otimes (A/a) \to M \otimes \prod_{i \in I} (A/a_i)\) 也是双射。现在 \(M \otimes (A/a)\) 等同于 \(M/aM\) ，而 \(M \otimes \prod_{i \in I} (A/a_i)\) 等同于 \(\prod_{i \in I} M \otimes (A/a_i)\) ，后者又等同于 \(\prod_{i \in I} (M/a_iM)\) 。立即可验证，上述等同把 \(1_M \otimes \psi\) 变成 \(\lambda\) ，命题得证。
+
+例. 设 K 是域， \(a_{i}\) ( \(1 \leqslant i \leqslant m\) ) 是 K 的互异元素，且对每个 \(i\) ，设 \(g_{i}\) 是 K{[}X{]} 中的多项式；主理想 (X - \(a_{i}\) ) = m 在 K{[}X{]} 中是极大的，因此，对系统 \((n_{i})_{1 \leqslant i \leqslant m}\) （它由 \(m\) 个整数 \(\geqslant 1\) 组成）的每个取法，诸理想 m \(_{i}^{n_{i}}\) 两两互素。于是由命题 5，存在多项式 \(f \in \mathrm{K}[\mathrm{X}]\) 使 \(f(\mathrm{X}) \equiv g_{i}(\mathrm{X})\) (mod. \((\mathrm{X} - a_{i})^{n_{i}}\) ) （对 \(1 \leqslant i \leqslant m\) ），两个这样的多项式之差被 \(\omega(\mathrm{X}) = \prod_{i=1}^{m} (\mathrm{X} - a_{i})^{n_{i}}\) 整除。若把所有 \(n_{i}\) 都取为 1，我们就得到由 Lagrange 插值公式显式解决的问题（《代数学》第四章 §2 第 4 目）。
+

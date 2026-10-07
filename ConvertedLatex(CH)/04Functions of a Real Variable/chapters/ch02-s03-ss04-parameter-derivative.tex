@@ -1,0 +1,60 @@
+\subsection{紧区间上积分对参数的导数}
+
+设 A 是域 R（相应地，域 C）中一点 \(\alpha_{0}\) 的紧邻域，I = {[}a, b{]} 是 R 中的紧区间，f 是 I × A 到 R（相应地，C）上的完备赋范空间 E 中的连续映射。我们已经看到（II, p.~69, 命题 2），在这些条件之下 \(\mathbf{g}(\alpha) = \int_{a}^{b} \mathbf{f}(t, \alpha) dt\) 是 A 上的连续函数。我们来寻求使 g 在点 \(\alpha_{0}\) 处有导数的充分条件。对 \(\alpha \neq \alpha_{0}\)，有
+
+\[
+\frac {\mathbf {g} (\alpha) - \mathbf {g} (\alpha_ {0})}{\alpha - \alpha_ {0}} = \int_ {a} ^ {b} \frac {\mathbf {f} (t , \alpha) - \mathbf {f} (t , \alpha_ {0})}{\alpha - \alpha_ {0}} d t
+\]
+
+因而（II, p.~69, 推论 2），若函数 \(x \mapsto \frac{\mathbf{f}(x, \alpha) - \mathbf{f}(x, \alpha_0)}{\alpha - \alpha_0}\) 在 I 上一致收敛于一个（必然连续的）函数 \(x \mapsto \mathbf{h}(x)\)（当 \(\alpha\) 趋于 \(\alpha_0\) 而保持 \(\neq \alpha_0\) 时），则 \(\mathbf{g}\) 有一个等于 \(\int_{a}^{b} \mathbf{h}(t) dt\) 的导数（在点 \(\alpha_0\) 处）；此外，对每个 \(x \in I\)，\(\frac{\mathbf{f}(x, \alpha) - \mathbf{f}(x, \alpha_0)}{\alpha - \alpha_0}\) 趋于 \(\mathbf{h}(x)\)，故 \(\mathbf{h}(x)\) 是在点 \(\alpha_0\) 处映射 \(\alpha \mapsto \mathbf{f}(x, \alpha)\) 的导数；我们把这个导数（称为 \(\mathbf{f}\) 关于 \(\alpha\) 的偏导数）记作 \(\mathbf{f}_{\alpha}'(x, \alpha_0)\)；我们所做的假设蕴含
+
+\[
+\mathbf {g} ^ {\prime} (\alpha_ {0}) = \int_ {a} ^ {b} \mathbf {f} _ {\alpha} ^ {\prime} (t, \alpha_ {0}) d t.\tag{12}
+\]
+
+下面的命题给出使公式 (12) 成立的一个非常简单的充分条件：
+
+命题 5. 假设偏导数 \(\mathbf{f}_{\alpha}^{\prime}(x,\alpha)\) 对所有 \(x\in \mathrm{I}\) 与所有 \(\alpha\)（属于 \(\mathbf{V}\)，即 \(\alpha_0\) 的一个开邻域）存在，并且对所有 \(\alpha \in \mathbf{V}\)，映射 \(x\mapsto \mathbf{f}_{\alpha}^{\prime}(x,\alpha)\) 在 \(\mathrm{I}\) 上是规则的。在这些条件之下，若 \(x\mapsto \mathbf{f}_{\alpha}^{\prime}(x,\alpha)\) 在 \(\mathrm{I}\) 上一致收敛于 \(x\mapsto \mathbf{f}_{\alpha}^{\prime}(x,\alpha_0)\)（当 \(\alpha\) 趋于 \(\alpha_0\) 时），则函数 \(\mathbf{g}(\alpha) = \int_{a}^{b}\mathbf{f}(t,\alpha)dt\) 有一个由公式 (12) 给出的导数（在点 \(\alpha_0\) 处）。
+
+事实上，对每个 \(\varepsilon > 0\)，由假设存在一个 \(r > 0\)，使得 \(|\alpha - \alpha_0| \leqslant r\) 蕴含 \(\left\| \mathbf{f}_{\alpha}'(x, \alpha) - \mathbf{f}_{\alpha}'(x, \alpha_0) \right\| \leqslant \varepsilon\)（对任何 \(x \in I\)）。由 I, p.~17 的命题 3 与命题 5，对 \(|\alpha - \alpha_0| \leqslant r\)（\(\alpha \neq \alpha_0\)）与所有 \(x \in I\)，有
+
+\[
+\left| \left| \frac {\mathbf {f} (x , \alpha) - \mathbf {f} (x , \alpha_ {0})}{\alpha - \alpha_ {0}} - \mathbf {f} _ {\alpha} ^ {\prime} (x, \alpha_ {0}) \right| \right| \leqslant \varepsilon
+\]
+
+这就证明了 \(\frac{\mathbf{f}(x,\alpha)-\mathbf{f}(x,\alpha_{0})}{\alpha-\alpha_{0}}\) 一致收敛于 \(\mathbf{f}_{\alpha}^{\prime}(x,\alpha_{0})\)（在 I 上，当 \(\alpha\) 趋于 \(\alpha_{0}\) 且保持 \(\neq\alpha_{0}\) 时），从而建立了公式 (12)。
+
+推论。若偏导数 \(\mathbf{f}_{\alpha}^{\prime}(x,\alpha)\) 在 I × V 上存在且是 \((x,\alpha)\) 在这个集合上的连续函数，则函数 g 在点 \(\alpha_{0}\) 处有一个由公式 (12) 给出的导数。
+
+事实上，若 W 是含于 V 的 \(\alpha_{0}\) 的紧邻域，则映射 \((x,\alpha)\mapsto\mathbf{f}_{\alpha}^{\prime}(x,\alpha)\) 在紧集 I × W 上一致连续，故 \(\mathbf{f}_{\alpha}^{\prime}(x,\alpha)\) 一致收敛于 \(\mathbf{f}_{\alpha}^{\prime}(x,\alpha_{0})\)（在 I 上，当 \(\alpha\) 趋于 \(\alpha_{0}\) 时）。
+
+由命题 5 可以推出一个更一般的命题，它使我们在被积函数 f 以及积分限都依赖于一个参数 \(\alpha\) 时也能求出积分的导数：
+
+命题 6. 在命题 5 的假设满足之下，设 \(a(\alpha)\)、\(b(\alpha)\) 是定义在 V 上、取值于 I 中的两个函数；若导数 \(a'(\alpha_0)\)、\(b'(\alpha_0)\) 存在且有限，则函数 \(\mathbf{g}(\alpha) = \int_{a(\alpha)}^{b(\alpha)} \mathbf{f}(t, \alpha) dt\) 在 \(\alpha_0\) 处有一个由下式给出的导数
+
+\[
+\mathbf {g} ^ {\prime} (\alpha_ {0}) = \int_ {a (\alpha_ {0})} ^ {b (\alpha_ {0})} \mathbf {f} _ {\alpha} ^ {\prime} (t, \alpha_ {0}) d t + b ^ {\prime} (\alpha_ {0}) \mathbf {f} (b (\alpha_ {0}), \alpha_ {0}) - a ^ {\prime} (\alpha_ {0}) \mathbf {f} (a (\alpha_ {0}), \alpha_ {0}).\tag{13}
+\]
+
+事实上，对所有 \(\alpha \in \mathbf{V}\)（异于 \(\alpha_0\)），可以写出
+
+\[
+\begin{array}{c} \frac {\mathbf {g} (\alpha) - \mathbf {g} (\alpha_ {0})}{\alpha - \alpha_ {0}} = \int_ {a (\alpha_ {0})} ^ {b (\alpha_ {0})} \frac {\mathbf {f} (t , \alpha) - \mathbf {f} (t , \alpha_ {0})}{\alpha - \alpha_ {0}} d t + \frac {1}{\alpha - \alpha_ {0}} \int_ {b (\alpha_ {0})} ^ {b (\alpha)} \mathbf {f} (t, \alpha) d t \\ - \frac {1}{\alpha - \alpha_ {0}} \int_ {a (\alpha_ {0})} ^ {a (\alpha)} \mathbf {f} (t, \alpha) d t. \end{array}
+\]
+
+由 II, p.~74 的命题 5，右端的第一个积分趋于 \(\int_{a(\alpha_0)}^{b(\alpha_0)} \mathbf{f}'_\alpha(t, \alpha_0) dt\)（当 \(\alpha\) 趋于 \(\alpha_0\) 时）。在第二个积分中，我们把 \(\mathbf{f}(t, \alpha)\) 换成 \(\mathbf{f}(b(\alpha_0), \alpha_0)\)，并证明其差趋于 0。令 \(\mathbf{M} = \operatorname{Max}\big( \| \mathbf{f}(b(\alpha_0), \alpha_0) \|, |b'(\alpha_0)| + 1 \big)\)；由于函数 \(b(\alpha)\) 在点 \(\alpha_0\) 连续，函数 \(\mathbf{f}\) 在点 \((b(\alpha_0), \alpha_0)\) 连续，故对每个 \(\varepsilon\)（满足 \(0 < \varepsilon < 1\)）存在一个 \(r > 0\)，使得关系 \(|\alpha - \alpha_0| \leqslant r\) 蕴含 \(\| \mathbf{f}(t, \alpha) - \mathbf{f}(b(\alpha_0), \alpha_0) \| \leqslant \varepsilon\)（对所有 \(t\)，它属于以 \(b(\alpha_0)\) 与 \(b(\alpha)\) 为端点的区间）；于是还可以假设关系 \(|\alpha - \alpha_0| \leqslant r\) 蕴含 \(\left| \frac{b(\alpha) - b(\alpha_0)}{\alpha - \alpha_0} - b'(\alpha_0) \right| \leqslant \varepsilon\)。
+
+于是，由中值公式（II, p.~62, 公式 (17)）有
+
+\[
+\left\| \frac {1}{\alpha - \alpha_ {0}} \int_ {b (\alpha_ {0})} ^ {b (\alpha)} \mathbf {f} (t, \alpha) d t - \frac {b (\alpha) - b (\alpha_ {0})}{\alpha - \alpha_ {0}} \mathbf {f} (b (\alpha_ {0}), \alpha_ {0}) \right\| \leqslant \left| \frac {b (\alpha) - b (\alpha_ {0})}{\alpha - \alpha_ {0}} \right| \varepsilon
+\]
+
+从而
+
+\[
+\left\| \frac {1}{\alpha - \alpha_ {0}} \int_ {b (\alpha_ {0})} ^ {b (\alpha)} \mathbf {f} (t, \alpha) d t - b ^ {\prime} (\alpha_ {0}) \mathbf {f} (b (\alpha_ {0}), \alpha_ {0}) \right\| \leqslant 2 \mathrm{M} \varepsilon
+\]
+
+这表明 \(\frac{1}{\alpha - \alpha_0} \int_{b(\alpha_0)}^{b(\alpha)} \mathbf{f}(t, \alpha) dt\) 趋于 \(b'(\alpha_0)\mathbf{f}(b(\alpha_0), \alpha_0)\)。同理可证 \(\frac{1}{\alpha - \alpha_0} \int_{a(\alpha_0)}^{a(\alpha)} \mathbf{f}(t, \alpha) dt\) 趋于 \(a'(\alpha_0)\mathbf{f}(a(\alpha_0), \alpha_0)\)。
+

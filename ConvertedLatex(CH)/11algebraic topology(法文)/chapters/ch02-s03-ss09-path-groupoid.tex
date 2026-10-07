@@ -1,0 +1,70 @@
+\subsection{图的道路类群胚}
+
+设 G 为图。以 \(\Omega_{\mathrm{G}}\) 表示 G 的底层箭图的道路范畴（II, 第 160 页, 例 1）。考虑 \(\mathcal{R}\) ，它是 \(\mathrm{Ch(G)}\) 中满足下列条件的最细等价关系：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对 G 的每一对顶点 \((a,b)\) 以及 G 中连接 a 与 b 的每条箭 f，道路 \((a,f,b,\overline{f},a)\) 与 \(e_{a}\) 模 R 等价；
+\item
+  若 \((c,d)\) 与 \((c',d')\) 是 G 中的可拼接道路对，使得 \(R\{c,c'\}\) 与 \(R\{d,d'\}\) 等价，则道路 \(c*d\) 与 \(c'*d'\) 模 R 等价。
+\end{enumerate}
+
+模 \(\mathcal{R}\) 等价的两条道路有相同的起点与相同的终点。映射 \(o\) 与 \(t\) （从 \(\mathrm{Ch(G)}\) 到 \(\mathrm{Som(G)}\) 的映射）通过取商，定义了映射 \(o'\) 与 \(t'\) （从 \(\mathrm{Ch(G)/\mathcal{R}}\) 到 \(\mathrm{Som(G)}\) ）。以 \(\varpi_{G}\) 表示箭图 (Som(G), Ch(G)/R, \(o', t'\) ) 。由 Som(G) 的恒同映射与 Ch(G) 到 Ch(G)/R 上的典范投射所组成的偶 \(\varphi\) 是从 \(\Omega_{G}\) 到 \(\varpi_{G}\) 的箭图态射。Ch(G) 中道路的拼接通过取商在 \(\varpi_{G}\) 中定义了一个合成法则。
+
+命题 4. —— 赋有此合成法则的 \(\varpi_{\mathrm{G}}\) 是一个群胚。
+
+按构造，我们有关系 \(\varphi(cc') = \varphi(c)\varphi(c')\) ，其中 \((c,c')\) 取遍 G 中的可拼接道路对。\(\varpi_{\mathrm{G}}\) 的每条箭都具有 \(\varphi(c)\) 的形式，其中 \(c\) 是 G 中的一条道路。由此推出 \(\varpi_{\mathrm{G}}\) 的合成法则是结合的，且 \(\varphi(e_a)\) 是 \(a\) 处的单位元——这里 \(a\) 取遍 \(\varpi_{\mathrm{G}}\) 的顶点。剩下要证 \(\varpi_{\mathrm{G}}\) 的每条箭都可逆。设 \(c\) 是 G 中的一条道路，我们对 \(c\) 的长度作归纳来证明 \(\varphi(c)\varphi(\overline{c}) = \varphi(e_{o(c)})\) 。当 \(c\) 的长度为 0 时此等式成立。若 \(c\) 的长度为 \(n \geqslant 1\) ，则可写 \(c = c_1c_2\) ，其中 \(c_1\) 的长度为 1，\(c_2\) 的长度为 \(n - 1\) 。于是 \(\overline{c} = \overline{c_2}\overline{c_1}\) ，从而有
+
+\[
+\begin{array}{c} \varphi (c) \varphi (\overline {{c}}) = \varphi (c _ {1}) \varphi (c _ {2}) \varphi (\overline {{c _ {2}}}) \varphi (\overline {{c _ {1}}}) = \varphi (c _ {1}) \varphi (e _ {o (c _ {2})}) \varphi (\overline {{c _ {1}}}) = \varphi (c _ {1}) \varphi (\overline {{c _ {1}}}) \\ = \varphi (c _ {1} \overline {{c _ {1}}}) = \varphi (e _ {o (c _ {1})}) \end{array}
+\]
+
+由关系 \(\mathcal{R}\) 的定义即得。
+
+把此等式应用于道路 \(\overline{c}\) ，即见 \(\varphi(\overline{c})\varphi(c)=\varphi(e_{t(c)})\) 。于是 \(\varphi(c)\) 可逆，其逆为 \(\varphi(\overline{c})\) 。
+
+关系 \(\mathcal{R}\) 的等价类称为图 G 中的道路类；群胚 \(\varpi_{\mathrm{G}}\) 称为图 G 的道路类群胚。它与 G 有相同的顶点集，其轨道是图 G 的连通分支。
+
+以 \(v\) 表示一个映射，它把 \(f\) （\(G\) 中的箭）对应到 \((o(f), f, t(f))\) （\(G\) 中的道路）的类。偶 \(j = (\mathrm{Id}_{\mathrm{Som}(G)}, v)\) 是从 \(G\) 到 \(\varpi_G\) 的箭图态射，称为典范态射。其像生成 \(\varpi_G\) ；设 \(f\) 为 \(G\) 的箭，则有 \(j(\overline{f}) = j(f)^{-1}\) 。
+
+设 G 与 \(G'\) 为图，设 \(\varphi\colon G \to G'\) 为图态射。以 \(j\colon G \to \varpi_{G}\) 与 \(j'\colon G' \to \varpi_{G'}\) 表示典范态射。若 \(c = (a_0, f_1, a_1, \ldots, a_n)\) 是 G 中的道路，则道路 \(\varphi(c) = (\varphi(a_0), \varphi(f_1), \varphi(a_1), \ldots, \varphi(a_n))\) 的类只依赖于 c 的类。于是通过取等价类定义了一个箭图态射 \(\varpi(\varphi)\colon\varpi_{\mathrm{G}}\to\varpi_{\mathrm{G}^{\prime}}\) ，使得 \(\varpi(\varphi)\circ j=j^{\prime}\circ\varphi\) 。它是群胚态射。
+
+命题 5. —— 设 G 为图；以 j 表示从 G 到 \(\varpi_{\mathrm{G}}\) 的典范箭图态射。设 \(\varphi\) 为从 G 到群胚 \(\mathrm{G}'\) 中的箭图态射，满足 \(\varphi(\overline{f}) = \varphi(f)^{-1}\) （对 G 的每条箭 \(f\) ）。则存在唯一的群胚态射 \(\varphi'\) ，它从 \(\varpi_{\mathrm{G}}\) 到 \(\mathrm{G}'\) ，使得 \(\varphi' \circ j = \varphi\) 。
+
+按下式定义映射 \(u\colon \mathrm{Ch}(\mathrm{G})\to \mathrm{Fl}(\mathrm{G}^{\prime})\) ：对 G 中的每条道路 \(c = (a_0,f_1,a_1,\ldots ,f_n,a_n)\) ，令 \(u(c) = e_{a_0}\varphi (f_1)\dots \varphi (f_n)\) 。对 G 中每一对可拼接的道路 \((c,c')\) ，我们有 \(u(cc^{\prime}) = u(c)u(c^{\prime})\) 。映射 \(u\) 与上面定义的等价关系 \(\mathcal{R}\) 相容，从而通过取商得到映射 \(u'\colon \mathrm{Ch}(\mathrm{G}) / \mathcal{R}\to \mathrm{Fl}(\mathrm{G}')\) 。于是令 \(\varphi ' = (\mathrm{Som}(\varphi),u')\) 。它是从 \(\varpi_{\mathrm{G}}\) 到 \(\mathrm{G}'\) 的群胚态射，满足 \(\varphi '\circ j = \varphi\) 。
+
+设 \(\psi\) 为从 \(\varpi_{\mathrm{G}}\) 到 \(\mathbf{G}'\) 的群胚态射，满足 \(\psi \circ j = \varphi\) 。\(\varphi'\) 与 \(\psi\) 的均衡子是 \(\varpi_{\mathrm{G}}\) 的一个子群胚，它包含 \(j(\mathrm{G})\) 。因此它等于 \(\varpi_{\mathrm{G}}\) ，因为 \(\varpi_{\mathrm{G}}\) 由 \(j(\mathrm{G})\) 生成且有 \(\psi = \varphi'\) 。
+
+推论 1. —— 在图中，每个道路类恰含一条无折返道路。
+
+设 G 为图。以 \(j\colon G\to\varpi_{G}\) 表示典范箭图态射。
+
+对 G 的每条道路 \(c\) ，都存在与之等价的无折返道路；这一点对 \(c\) 的长度作归纳立即得到（参看 II, 第 157 页）。
+
+设 A 为 G 的一个定向，G' 为与在 A 上构造的自由群 F(A) 相伴的群胚（II, 第 163 页, 例 1）。设 ψ 为从 G 到 G' 的箭图态射，使得对每个 \(f \in A\) ，\(\psi(f)\) 是 F(A) 的元素 f，而 \(\psi(\overline{f})\) 是 F(A) 的元素 \(f^{-1}\) 。设 ψ' 为从 \(\varpi_{G}\) 到 G' 的唯一群胚态射，满足 ψ' ∘ j = ψ。
+
+设 \(c\) 与 \(c'\) 为模 \(\mathcal{R}\) 等价的无折返道路。它们有相同的源与相同的靶。为证它们相等，只需证明它们的箭的序列 \((f_1, \ldots, f_n)\) 与 \((g_1, \ldots, g_m)\) 相等。在 \(\psi'\) 下，\(c\) 与 \(c'\) 的公共类的像等于 \(\psi(f_1) \ldots \psi(f_n)\) 且等于 \(\psi(g_1) \ldots \psi(g_m)\) 。而序列 \((\psi(f_1), \ldots, \psi(f_n))\) 与 \((\psi(g_1), \ldots, \psi(g_m))\) 的诸项属于 \(\mathrm{A} \cup \mathrm{A}^{-1}\) （\(\mathrm{F(A)}\) 的一个子集），且这些序列中相邻两项互不为逆。由 A, I, 第 84 页, 命题 7，此二序列相等。由此推出序列 \((f_{1},\ldots,f_{n})\) 与 \((g_{1},\ldots,g_{m})\) 相等，从而 \(c=c'\) ，唯一性得证。
+
+推论 2. —— 从 G 到 \(\varpi_{\mathrm{G}}\) 的典范态射是单射。
+
+这由推论 1 立即得到。
+
+推论 3. —— 设 G' 为 G 的子图。由 G' 到 G 中的单射所诱导的、从 \(\varpi_{\mathrm{G}'}\) 到 \(\varpi_{\mathrm{G}}\) 的态射是单射。
+
+以 \(i\) 表示 \(\mathbf{G}'\) 到 \(\mathbf{G}\) 中的内射态射，以 \(\varpi(i)\) 表示由它诱导的从 \(\varpi_{\mathbf{G}'}\) 到 \(\varpi_{\mathbf{G}}\) 的态射。映射 \(\operatorname{Som}(i)\) 与 \(\operatorname{Som}(\varpi(i))\) 相一致。此外，若 \(c\) 是 \(\mathbf{G}'\) 中的无折返道路，则道路 \(i(c)\) 是 \(\mathbf{G}\) 中的无折返道路。因而结论由推论 1 得出。
+
+推论 4. —— 非空图 G 是树，当且仅当群胚 \(\varpi_{\mathrm{G}}\) 是单传递的。
+
+设 \(a\) 为 G 的一点。由推论 1，下列性质等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\varpi_{\mathrm{G}}\) 在 \(a\) 处的迷向群退缩为单位元；
+\item
+  G 中以 \(a\) 为起点的无折返圈只有以 \(a\) 为基点的常值圈。
+\end{enumerate}
+
+群胚 \(\varpi_{G}\) 单传递，当且仅当它传递且对每个 a 具有性质 (i)。图 G 是树，当且仅当它连通且对每点 a 具有性质 (ii)。由于 \(\varpi_{G}\) 的轨道等同于 G 的连通分支，推论得证。
+

@@ -1,0 +1,150 @@
+\subsection{傅里叶变换}
+
+沿用前一号的记号。
+
+令 \(\pi \in \widehat{\mathbf{G}}\)。向量空间 \(\operatorname{End}(\mathrm{E}_{\pi})\) 赋予希尔伯特空间结构，其内积为
+
+\[
+\langle u _ {1} \mid u _ {2} \rangle = \dim (\pi) \operatorname{Tr} (u _ {1} ^ {*} u _ {2}) = \dim (\pi) \operatorname{Tr} (u _ {2} u _ {1} ^ {*})
+\]
+
+其中 \(u_{1}\)、\(u_{2}\) 属于 \(\operatorname{End}(\mathrm{E}_{\pi})\)（参见 EVT, V, 第 52 页定理 1）。
+
+记 \(\|u\|_{2} = \sqrt{\langle u|u\rangle}\) 为 \(\operatorname{End}(\operatorname{E}_{\pi})\) 中元素 u 的范数，其中 \(\pi \in \widehat{G}\)。对于每个 \(g \in G\)，有 \(\|\pi(g)\|_{2} = \dim(\pi)\)，因为 \(\pi(g)\) 是酉的。
+
+此处记作 \(\|u\|_{2}\) 的范数，与 EVT, V, 第 52 页定义的范数相差因子 \(\dim(\pi)\)；后者定义在 \(E_{\pi}\) 上的希尔伯特–施密特算子空间中。
+
+引理 4. --- 令 \(\pi\) 为 G 的不可约表示。映射 \(f \mapsto \pi(f)\) 通过取子空间定义了从 \(\varrho_{\mathrm{G}}(\overline{\pi})\) 到 \(\operatorname{End}(\operatorname{E}_{\pi})\) 的等距同构。
+
+置 \(\varepsilon_{\pi}(g,h)u = \pi(g)\circ u\circ\pi(h^{-1})\)，其中 \((g,h)\in\mathrm{G}\times\mathrm{G}\) 且 \(u\in\mathrm{End}(\mathrm{E}_{\pi})\)。映射 \(\varepsilon_{\pi}\) 是 \(\mathrm{G}\times\mathrm{G}\) 在 \(\mathrm{End}(\mathrm{E}_{\pi})\) 中的连续表示。它是酉的。事实上，由于 \(\pi\) 本身是酉的，有
+
+\[
+\begin{array}{c} \| \varepsilon_ {\pi} (g, h) u \| _ {2} ^ {2} = \dim (\pi) \operatorname{Tr} \Big ((\pi (g) u \pi (h ^ {- 1})) ^ {*} \pi (g) u \pi (h ^ {- 1}) \Big) \\ = \dim (\pi) \operatorname{Tr} (\pi (h) u ^ {*} u \pi (h) ^ {- 1}) = \dim (\pi) \operatorname{Tr} (u ^ {*} u) = \| u \| _ {2} ^ {2} \end{array}
+\]
+
+对所有 \((g,h)\in \mathrm{G}\times \mathrm{G}\) 及每个 \(u\in \operatorname {End}(\operatorname {E}_{\pi})\) 都成立。
+
+映射 \(\Psi\)，定义为 \(f\mapsto\pi(f)\)，是一个 \((G\times G)\)-态射，从 \(\varrho_{G}(\overline{\pi})\) 到 \(\operatorname{End}(E_{\pi})\)，因为
+
+\[
+\pi (\varrho_ {\mathrm{G}} (g, h) f) = \int_ {\mathrm{G}} f (g ^ {- 1} x h) \pi (x) d \mu (x) = \pi (g) \pi (f) \pi (h ^ {- 1})
+\]
+
+对所有 \((g,h)\in\mathrm{G}\times\mathrm{G}\) 及每个 \(f\in\varrho_{\mathrm{G}}(\overline{\pi})\) 都成立。由于 \(\varrho_{\mathrm{G}}(\overline{\pi})\) 是不可约表示（V, 第 462 页定理 1，\(a\)），存在 \(\lambda\in\mathbf{C}^{*}\)，使得映射 \(\lambda\Psi\) 为零映射或等距映射（V, 第 388 页推论 5，\(a\)）。令 \(f=\dim(\pi)\overline{\chi}_{\pi}\in\varrho_{\mathrm{G}}(\overline{\pi})\)。得到 \(\pi(f)=1_{\mathrm{E}_{\pi}}\)（V, 第 465 页推论 2），从而 \(\|\pi(f)\|_{2}=\dim(\pi)=\|f\|\)（V, 第 459 页推论 3）。因此，映射 \(\Psi\) 是等距的。由于 \(\varrho_{\mathrm{G}}(\overline{\pi})\) 与 \(\operatorname{End}(\mathrm{E}_{\pi})\) 维数相同，\(\Psi\) 是等距同构。
+
+记 \(\mathrm{F}^{2}(\widehat{\mathrm{G}})\) 为希尔伯特空间 \(\mathrm{End}(\mathrm{E}_{\pi})\) 的希尔伯特直和。元素 \(x \in \mathrm{F}^{2}(\widehat{\mathrm{G}})\) 的范数仍记为 \(\|x\|_{2}\)。
+
+在 LIE, IX, 第 79 页中，该空间记为 \(\mathrm{L}^{2}(\widehat{\mathrm{G}})\)；这里我们不采用这一记号，以免与空间 \(\ell^{2}(\widehat{\mathrm{G}})\) 混淆。令 \((u_{\pi})_{\pi\in\widehat{\mathrm{G}}}\) 为 \(\mathrm{F}^{2}(\widehat{\mathrm{G}})\) 的元素。由于
+
+\[
+\sum_ {\pi \in \widehat {G}} \| u _ {\pi} \| _ {2} ^ {2} = \sum_ {\pi \in \widehat {G}} \dim (\pi) \operatorname{Tr} (u _ {\pi} ^ {*} u _ {\pi}) <   + \infty
+\]
+
+并且 \(\|u_{\pi}\|^{2}\leqslant\mathrm{Tr}(u_{\pi}^{*}u_{\pi})\)（参见 EVT, V, 第 52 页公式 (33)），在 \(\mathcal{L}(\mathrm{E}_{\pi})\) 中自同态 \(u_{\pi}\) 的范数在无穷远处趋于 0。因此可以将 \(\mathrm{F}^{2}(\widehat{\mathrm{G}})\) 识别为 \(\mathrm{F}_{0}(\widehat{\mathrm{G}})\) 的子空间。
+
+令 \(\pi \in \widehat{\mathbf{G}}\) 且 \(u \in \mathrm{End}(\mathrm{E}_{\pi})\)。记 \(\mathcal{F}_{\pi}(u)\) 为 G 上由 \(\mathcal{F}_{\pi}(u)(g) = \langle \pi(g) | u \rangle = \dim(\pi) \mathrm{Tr}(\pi(g)^{*} u)\) 定义的函数（对所有 \(g \in \mathbf{G}\)）。它是 G 上的连续函数。若 G 是紧实李群，则函数 \(\mathcal{F}_{\pi}(u)\) 在 G 上解析（LIE, III, 第 8 节第 1 号定理 1）。
+
+由于 G 是紧的，可以将 \(L^{2}(G)\) 识别为 \(L^{1}(G)\) 的子空间。
+
+定理 2. --- G 的傅里叶余变换通过取子空间诱导出从 L²(G) 到 F²(Ĝ) 的等距同构。其逆 \(\mathcal{F}_{\mathrm{G}}\) 将 F²(Ĝ) 中的元素 \((u_{\pi})_{\pi \in \widehat{\mathrm{G}}}\) 对应于级数之和
+
+\[
+\sum_ {\pi \in \widehat {\mathrm{G}}} \mathcal {F} _ {\pi} (u _ {\pi}),
+\]
+
+该级数在 \(\mathrm{L}^2 (\mathrm{G})\) 中收敛。
+
+根据彼得–外尔定理（V, 第 462 页定理 1），希尔伯特空间 \(L^{2}(G)\) 是各空间 \(\varrho_{\mathrm{G}}(\overline{\pi})\)（\(\pi \in \widehat{G}\)）的希尔伯特直和。对于每个 \(\pi \in \widehat{G}\)，线性映射 \(f \mapsto \pi(f)\) 从 \(\varrho_{\mathrm{G}}(\overline{\pi})\) 到 \(\operatorname{End}(\operatorname{E}_{\pi})\) 是等距同构（引理 4）。因此，傅里叶余变换在 \(L^{2}(G)\) 上的限制定义了从 \(L^{2}(G)\) 到 \(F^{2}(\widehat{G})\) 的等距同构。
+
+令 \(f \in \mathrm{L}^2(\mathrm{G})\)。令 \(\pi \in \widehat{\mathrm{G}}\)，并令 \(f_{\overline{\pi}} \in \mathcal{C}(\mathrm{G})\) 为 \(f\) 在 \(\varrho_{\mathrm{G}}(\overline{\pi})\) 上的正交投影（V, 第 462 页定理 1）。由于该空间是 \(\overline{\pi}\)-同型分量，来自 \(\pmb{\delta}_{\mathrm{G}}\)（V, 第 463 页推论 4），由 V, 第 465 页推论 2，有 \(f_{\overline{\pi}} = \dim(\pi)\pmb{\delta}_{\mathrm{G}}(\chi_{\pi})(f)\)。于是对每个 \(x \in \mathrm{G}\)，有
+
+\[
+\begin{array}{r l} & {f _ {\overline {{\pi}}} (x) = \dim (\pi) \int_ {\mathrm{G}} \chi_ {\pi} (g) (\pmb {\delta} _ {\mathrm{G}} (g) f) (x) d \mu (g)} \\ & {\qquad = \dim (\pi) \int_ {\mathrm{G}} \chi_ {\pi} (g) f (x g) d \mu (g)} \\ & {\qquad = \dim (\pi) \int_ {\mathrm{G}} \chi_ {\pi} (x ^ {- 1} y) f (y) d \mu (y)} \\ & {\qquad = \dim (\pi) \mathrm{Tr} (\pi (x ^ {- 1}) \pi (f)) = \langle \pi (x) | \pi (f) \rangle ,} \end{array}
+\]
+
+即 \(f_{\overline{\pi}} = \mathcal{F}_{\pi}(\pi(f))\)。
+
+由于 \(f\) 在 \(\mathrm{L}^2 (\mathrm{G})\) 中是族 \((f_{\overline{\pi}})\) 的和，根据彼得–外尔定理，得到
+
+\[
+f = \sum_ {\pi \in \widehat {\mathrm{G}}} \mathcal {F} _ {\pi} (\pi (f))
+\]
+
+其中级数在 \(L^{2}(G)\) 中收敛。这就证明了定理。
+
+定义 2. --- \(\mathcal{F}_{\mathrm{G}}\) 是从 \(\mathrm{F}^2 (\widehat{\mathrm{G}})\) 到 \(\mathrm{L}^2 (\mathrm{G})\) 的等距同构，也是傅里叶余变换所诱导同构的逆；称其为 G 的傅里叶变换。称 \(\mathrm{F}^2 (\widehat{\mathrm{G}})\) 中元素的像为该元素的傅里叶变换。
+
+注记。--- 1) \((u_{\pi})_{\pi \in \widehat{\mathrm{G}}} \in \mathrm{F}^2(\widehat{\mathrm{G}})\) 的傅里叶变换因此是下列级数在 \(\mathrm{L}^2(\mathrm{G})\) 中的等价类
+
+\[
+g \mapsto \sum_ {\pi \in \widehat {\mathrm{G}}} \langle \pi (g) | u _ {\pi} \rangle = \sum_ {\pi \in \widehat {\mathrm{G}}} \dim (\pi) \operatorname{Tr} (u _ {\pi} \circ \pi (g) ^ {- 1}).
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  令 \(f \in \mathrm{L}^2(\mathrm{G})\)。于是有普朗歇雷尔公式
+\end{enumerate}
+
+\[
+\| f \| ^ {2} = \| \overline {{\mathcal {F}}} _ {\mathrm{G}} (f) \| ^ {2} = \sum_ {\pi \in \widehat {\mathrm{G}}} \| \pi (f) \| ^ {2}.
+\]
+
+此外，根据定理 2，\(f\) 是 \(\mathrm{L}^2 (\mathrm{G})\) 中族 \((f_{\pi})_{\pi \in \widehat{\mathrm{G}}}\) 的和，其中
+
+\[
+\begin{array}{l} f _ {\pi} (x) = \mathcal {F} _ {\pi} (\pi (f)) (x) \\ \qquad = \langle \pi (x) | \pi (f) \rangle = \dim (\pi) \int_ {\mathrm{G}} f (g) \chi_ {\pi} (x ^ {- 1} g) d \mu (g) \end{array}
+\]
+
+对所有 \(x \in G\) 及每个 \(\pi \in \widehat{G}\) 都成立。
+
+设 G 为交换群。由于 G 的不可约表示维数为 1（V, 第 390 页推论 7），且对偶群 \(\widehat{\mathbf{G}}\) 是离散的（II, 第 233 页命题 18），代数 \(\mathrm{F}_b(\widehat{\mathbf{G}})\) 和 \(\mathrm{F}_0(\widehat{\mathbf{G}})\) 分别识别为代数 \(\mathcal{C}_b(\widehat{\mathbf{G}})\)（在 \(\widehat{\mathbf{G}}\) 上的连续有界函数的代数）和代数 \(\mathcal{C}_0(\widehat{\mathbf{G}})\)（在 \(\widehat{\mathbf{G}}\) 上在无穷远处趋于 0 的连续函数的代数）。由于 G 是紧的，\(\widehat{\mathbf{G}}\) 上与 \(\mu\) 对偶的哈尔测度是计数测度 \(\widehat{\mu}\)（II, 第 233 页命题 18）。希尔伯特直和 \(\mathrm{F}^2 (\widehat{\mathrm{G}})\) 由各空间 \(\operatorname{End}(\mathrm{E}_{\pi})\)（\(\pi \in \widehat{\mathrm{G}}\)）组成，并识别为希尔伯特空间 \(\mathrm{L}^2 (\widehat{\mathrm{G}},\widehat{\mu})\)。
+
+令 \(\nu \in \mathcal{M}^1 (\mathrm{G})\)。于是对每个酉特征标 \(\chi \in \widehat{\mathrm{G}}\)，有
+
+\[
+\chi (\nu) = \int_ {\mathrm{G}} \chi \nu
+\]
+
+这证明了上面定义的傅里叶余变换与 II, 第 206 页定义的 G 的傅里叶余变换一致。
+
+每个 \(f \in \mathcal{L}^2(\mathrm{G})\) 都可积，而公式 \(\| \overline{\mathcal{F}}_{\mathrm{G}}(f)\| _2 = \| f\|\) 就是普朗歇雷尔公式（II, 第 215 页定理 1）。
+
+命题 10. --- 傅里叶余变换是从 \(\mathcal{M}^{1}(\mathrm{G})\) 到 \(\mathrm{F}_{b}(\widehat{\mathrm{G}})\) 的单射对合巴拿赫代数态射，并将 \(\mathrm{L}^{1}(\mathrm{G})\) 映入 \(\mathrm{F}_{0}(\widehat{\mathrm{G}})\)。
+
+由于 G 是紧的，空间 \(\mathcal{C}(\mathrm{G})\) 包含于 \(\mathcal{L}^{1}(\mathrm{G})\) 和 \(\mathcal{L}^{2}(\mathrm{G})\)，并且在二者中都稠密。
+
+令 \(\nu \in \mathcal{M}^1 (\mathrm{G})\) 满足 \(\overline{\mathcal{F}}_{\mathrm{G}}(\nu) = 0\)。于是对 G 上的每个连续函数 \(f\)，都有 \(\overline{\mathcal{F}}_{\mathrm{G}}(\nu *f) = 0\)。现在 \(\nu *f\) 属于 \(\mathcal{C}(\mathrm{G})\)（INT, VIII, 第 152 页，第 4 节第 2 号命题 3）。由于根据定理 2，傅里叶余变换在 \(\mathrm{L}^2 (\mathrm{G})\) 上是单射，因而在空间 \(\mathcal{C}(\mathrm{G})\) 上也是单射，所以 \(\nu *f = 0\) 对 \(f\in \mathcal{C}(\mathrm{G})\) 成立。特别地，可得
+
+\[
+\int_ {\mathrm{G}} f (x) d \nu (x) = (\nu * \check {f}) (e) = 0
+\]
+
+对每个函数 \(f \in \mathcal{C}(\mathrm{G})\) 都成立（INT, VIII, 上引处），所以测度 \(\nu\) 为零。
+
+傅里叶余变换下 \(\mathcal{C}(\mathrm{G})\) 的像包含于 \(\mathrm{F}^2 (\widehat{\mathrm{G}})\)，从而也包含于 \(\mathrm{F}_0(\widehat{\mathrm{G}})\)。由于 \(\mathrm{F}_0(\widehat{\mathrm{G}})\) 在 \(\mathrm{F}_b(\widehat{\mathrm{G}})\) 中是闭的，且 \(\mathcal{C}(\mathrm{G})\) 在 \(\mathrm{L}^1 (\mathrm{G})\) 中稠密，傅里叶余变换下 \(\mathrm{L}^1 (\mathrm{G})\) 的像也包含于 \(\mathrm{F}_0(\widehat{\mathrm{G}})\)。
+
+命题 11. --- a) 令 \(u = (u_{\pi})_{\pi \in \widehat{\mathbf{G}}}\) 为 \(\mathrm{F}(\widehat{\mathbf{G}})\) 中的元素。若族 \((\mathcal{F}_{\pi}(u_{\pi}))_{\pi \in \widehat{\mathbf{G}}}\) 在 \(\mathcal{C}(\mathbf{G})\) 中一致可求和，则其和 \(f\) 是 \(\mathbf{G}\) 上的连续函数，且其傅里叶余变换为 \(u\)；
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  令 \(f \in \mathrm{L}^1(\mathrm{G})\)。若族 \((\mathcal{F}_\pi(\pi(f)))_{\pi \in \widehat{\mathrm{G}}}\) 在 \(\mathcal{C}(\mathrm{G})\) 中一致可求和，则其和是 \(\mathrm{G}\) 上的连续函数，且它在 \(\mathrm{L}^1(\mathrm{G})\) 中的等价类等于 \(f\)。
+\end{enumerate}
+
+证明断言 \(a\)。由于 G 是紧的，\(f\) 是族 \((\mathcal{F}_{\pi}(u_{\pi}))\) 的和，属于 \(\mathrm{L}^2 (\mathrm{G})\)，且级数
+
+\[
+\sum_ {\pi \in \widehat {\mathrm{G}}} \mathcal {F} _ {\pi} (u _ {\pi})
+\]
+
+在 \(L^{2}(G)\) 中收敛于 f（INT, IV, 第 127 页，第 3 节第 3 号命题 4）。因此 \(\mathcal{F}_{\mathrm{G}}((u_{\pi})_{\pi}) = f\) 在 \(L^{2}(G)\) 中成立，从而 \((u_{\pi})_{\pi \in \widehat{\mathrm{G}}} = \overline{\mathcal{F}}_{\mathrm{G}}(f)\)（定理 2）。
+
+证明断言 b)。可以将断言 a) 应用于族 \((\pi(f))_{\pi \in \widehat{\mathrm{G}}}\)。族 \((\mathcal{F}_{\pi}(\pi(f)))_{\pi \in \widehat{\mathrm{G}}}\) 的和 g 是连续函数，因而属于 \(L^{2}(G)\)，并满足 \(\overline{\mathcal{F}}_{\mathrm{G}}(g) = (\pi(f))_{\pi \in \widehat{\mathrm{G}}}\)。由于 \(\overline{\mathcal{F}}_{\mathrm{G}}\) 在 \(L^{2}(G)\) 上是单射，所以在 \(L^{2}(G)\) 中 f = g，因而在 \(L^{1}(G)\) 中也有 f = g。
+
+将 \(\mathcal{C}(\widehat{\mathrm{G}})\) 识别为 \(\widehat{\mathrm{G}}\) 上复值函数的代数，它是代数 \(\mathrm{F}(\widehat{\mathrm{G}})\) 的中心：该映射将 \(f\colon \widehat{\mathrm{G}}\to \mathbf{C}\) 对应于中心元素 \((f(\pi)1_{\mathrm{E}_{\pi}})_{\pi \in \widehat{\mathrm{G}}}\)（属于 \(\mathrm{F}(\widehat{\mathrm{G}})\)）。记 \(\mathcal{M}^1 (\mathrm{G}^\sharp)\) 为 G 上中心有界测度的空间。它是巴拿赫代数 \(\mathcal{M}^1 (\mathrm{G})\) 的闭子空间。对于每个测度 \(\nu \in \mathcal{M}^1 (\mathrm{G}^\sharp)\) 和每个表示 \(\pi \in \widehat{\mathrm{G}}\)，有 \(\pi (\nu)\in \mathrm{End}_{\mathrm{G}}(\mathrm{E}_{\pi})\)，因而根据舒尔引理（V, 第 386 页命题 6），\(\pi (\nu)\) 是 \(\mathrm{E}_{\pi}\) 的恒等自同态的数量倍。傅里叶余变换在 \(\mathcal{M}^1 (\mathrm{G}^\sharp)\) 上的限制因而识别为从 \(\mathcal{M}^1 (\mathrm{G}^\sharp)\) 到 \(\mathcal{C}(\widehat{\mathrm{G}})\) 的含单位对合巴拿赫代数态射。该态射是单射；\(\mathrm{L}^1 (\mathrm{G}^\sharp)\) 的像包含于 \(\mathcal{C}_b(\widehat{\mathrm{G}})\)，而其在 \(\mathrm{L}^2 (\mathrm{G}^\sharp)\) 上的限制是到 \(\mathrm{L}^2 (\widehat{\mathrm{G}},\widehat{\mu})\) 的等距同构。
+

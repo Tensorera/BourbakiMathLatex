@@ -1,0 +1,68 @@
+\subsection{幂零根与极小素理想}
+
+在（交换）环 A 中，幂零元素组成的集合是一个理想，因为若 x、y 是 A 中满足 \(x^{m} = y^{n} = 0\) 的元素，则由二项式定理有 \((x + y)^{m+n} = 0\)。
+
+定义 4. （交换）环 A 的幂零元素组成的理想称为 A 的幂零根。若 a 是 A 的理想，则 A/a 的幂零根在典范映射 \(A \rightarrow A/a\) 下的原像称为 a 的根。
+
+我们常用 \(\mathbf{r}(\mathfrak{a})\) 表示 A 的理想 a 的根。
+
+因此，说元素 \(x \in A\) 属于 \(a\) 的根，就意味着存在整数 \(n > 0\) 使得 \(x^n \in a\)。若 \(f\) 是 \(A\) 到环 \(B\) 的同态且 \(b\) 是 \(B\) 的理想，则 \(f(b)\) 的根是在 \(f\) 之下 \(b\) 的根的原像，因为说 \(x^n \in f(b)\) 就意味着 \((f(x))^n \in b\)。
+
+环 A 的幂零根包含于其 Jacobson 根（《代数学》第 VIII 章，§ 6，第 3 节，定理 1 的推论 3），但可能与它不同；若 A 是 Artin 环，则二者总相等（《代数学》第 VIII 章，§ 6，第 4 节，定理 3）。
+
+我们称环 A 的素理想 p 为极小素理想，如果它在按包含关系排序的 A 的素理想集合中是极小的。
+
+命题 12. 设 \(\mathfrak{p}\) 是环 \(\mathbf{A}\) 的极小素理想。对所有 \(x \in \mathfrak{p}\)，存在 \(s \in \mathbf{A} - \mathfrak{p}\) 以及整数 \(k > 0\) 使得 \(sx^k = 0\)。
+
+形如 \(sx^{k}\)（k 为整数 \textgreater0，\(s \in A - p\)）的元素组成的集合 S 是 A 的乘性子集。若 \(0 \notin S\)，则存在一个不与 S 相交的素理想 \(p'\)（第 5 节，命题 11 的推论 2）。于是 \(p' \subset p\) 且 \(p' \neq p\)，因为 \(x \notin p'\)，这与 p 是极小的假设矛盾。
+
+命题 13. 环 A 的幂零根是 A 的所有素理想的交，它也是 A 的极小素理想的交。
+
+显然，若 \(x \in A\) 是幂零的，则它包含于 A 的每个素理想中（\(\S 1\)，第 1 节，定义 1）。反之，设 x 是 A 的非幂零元素；于是 \(x^{k}\)（k 为整数 \(\geqslant 0\)）组成的集合 S 是 A 的一个不含 0 的乘性子集，因而存在 A 的一个不与 S 相交的素理想 p（第 5 节，命题 11 的推论 2），更有 \(x \notin p\)；这就确立了第一个断言。为证明第二个断言，只需证明
+
+引理 2. 环 A 的每个素理想都包含 A 的一个极小素理想。
+
+由 Zorn 引理，只需证明素理想的集合 P 按关系 \(\supset\) 排序是归纳的。现在，若 G 是 P 的一个非空全序子集，则 \(p_{0}\)（即诸理想 \(p \in G\) 的交）也是素理想：因为若 \(x \notin p_{0}\) 且 \(y \notin p_{0}\)，则存在理想 \(p \in G\) 使得 \(x \notin p\) 且 \(y \notin p\)，从而 \(xy \notin p\)，更有 \(xy \notin p_{0}\)。
+
+注. 在 § 4 第 3 节命题 14 的推论 3 中，我们将证明在 Noether 环中极小素理想的集合是有限的；此外，我们后面将看到，Noether 环中素理想的每个递减序列都是稳定的。
+
+推论 1. 环 A 中理想 a 的根是包含 a 的素理想的交，它也是这一素理想集合的极小元素的交。
+
+推论 2. 对环 A 的理想 a，我们用 r(a) 表示 a 的根。于是，对 A 的两个理想 a、b，
+
+\[
+\mathfrak {r} (a \cap b) = \mathfrak {r} (a b) = \mathfrak {r} (a) \cap \mathfrak {r} (b);
+\]
+
+特别地，若 \(\mathfrak{a} \subset \mathfrak{b}\)，则 \(\mathfrak{r}(\mathfrak{a}) \subset \mathfrak{r}(\mathfrak{b})\)。
+
+为使素理想包含 \(\mathfrak{a} \cap \mathfrak{b}\)（或 \(\mathfrak{ab}\)），必须且只需它包含理想 \(\mathfrak{a}, \mathfrak{b}\) 之一（\(\S 1\)，第 1 节，命题 1）。
+
+命题 14. 为使环的两个理想 a、b 互素，必须且只需它们的根 r(a) 与 r(b) 互素。
+
+该条件的必要性是明显的，因为 \(a \subset \mathfrak{r}(a)\) 且 \(b \subset \mathfrak{r}(b)\)；该条件是充分的，这由 § 1 第 2 节命题 3 得出。
+
+命题 15. 在环 A 中，设 \(\mathfrak{a}\) 是理想，\(\mathfrak{b}\) 是包含于 \(\mathfrak{a}\) 的根中的有限生成理想。则存在整数 \(k > 0\) 使得 \(\mathfrak{b}^k \subset \mathfrak{a}\)。
+
+设 \((b_{i})_{1\leqslant i\leqslant n}\) 是 b 的一个生成系。由假设，存在整数 h 使得 \(b_{i}^{h}\in\mathfrak{a}\) 对 \(1\leqslant i\leqslant n\) 成立。若把 nh 个元素（每个都是 \(b_{i}\) 的系数在 A 中的线性组合）的乘积展开，则每一项都是 nh 个因子的乘积的倍数，其中每个因子都等于某个 \(b_{i}\)；在这些因子中，对某个 i 至少有 h 个具有相同的指标 i，因此该乘积属于 a，而 nh 就是所求的整数 k。
+
+推论. 在 Noether 环中，幂零根是幂零理想。
+
+命题 16. 设 B 是环，A 是 B 的子环。对 A 的每个极小素理想 p，存在 B 的极小素理想 q 使得 q ∩ A = p。
+
+我们记 \(S = A - p\)；于是环 \(A_p = S^{-1}A\) 与 \(S^{-1}B\) 的一个子环等同（第 1 节，命题 2），另一方面，\(A_p\) 只有唯一的素理想 \(p'\)，因为 \(p\) 是极小的（第 5 节，命题 11）。由于 \(S^{-1}B\) 不化为 0（因为它包含 \(A_p\)），它至少有一个素理想 \(r'\)，从而 \(r' \cap A_p = p'\)；若令 \(j = i_B^S\) 并记 \(r = j^{-1}(r')\)，则
+
+\[
+i _ {\mathbf {A}} ^ {\mathbf {S}} (\mathfrak {r} \cap \mathbf {A}) \subset \mathfrak {r} ^ {\prime} \cap \mathbf {A} _ {p} = p ^ {\prime}
+\]
+
+因而 \(\mathfrak{r} \cap \mathbf{A} \subset \mathfrak{p}\)，又因 \(\mathfrak{p}\) 是极小的，\(\mathfrak{r} \cap \mathbf{A} = \mathfrak{p}\)；此外，\(\mathfrak{r}\) 在 \(\mathbf{B}\) 中是素的；若 \(\mathfrak{q}\) 是 \(\mathbf{B}\) 的一个包含于 \(\mathfrak{r}\) 的极小素理想（引理 1），更有 \(\mathfrak{q} \cap \mathbf{A} = \mathfrak{p}\)，因为 \(\mathfrak{p}\) 是极小的。
+
+定义 5. 环 A 称为约化的，如果它的幂零根化为 0，换言之，如果 A 中没有元素 \(\neq 0\) 是幂零的。
+
+若 N 是环 A 的幂零根，则 A/N 是约化的，因为若元素 \(x \in A\) 的模 N 剩余类在 A/N 中是幂零的，这就意味着存在整数 h 使得 \(x^{h} \in N\)，从而存在整数 k 使得 \(x^{hk} = 0\)，于是 \(x \in N\)。
+
+命题 17. 设 A 是环，\(\mathfrak{A}\) 是它的幂零根。对 A 的每个乘性子集 S，\(S^{-1}\mathfrak{A}\) 是 \(S^{-1}A\) 的幂零根。特别地，若 A 是约化的，则 \(S^{-1}A\) 是约化的。
+
+若 \(x \in \mathbf{A}\)、\(s \in \mathbf{S}\) 满足 \((x / s)^n = x^n / s^n = 0\)，则存在 \(s' \in \mathbf{S}\) 使得 \(s' x^n = 0\)（第 1 节，注 3），更有 \((s' x)^n = 0\)，从而 \(s' x \in \mathfrak{N}\)，且 \(x / s = s' x / s' s \in \mathbf{S}^{-1} \mathfrak{N}\)；其逆是直接的。
+

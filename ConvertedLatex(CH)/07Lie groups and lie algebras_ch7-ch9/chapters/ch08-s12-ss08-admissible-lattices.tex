@@ -1,0 +1,142 @@
+\subsection{容许格}
+
+沿用向量空间中采用的术语，若模 M 的自同态 u 存在一组基，使得 u 关于这组基的矩阵为对角矩阵，则称 u 可对角化。
+
+引理 6. 设 M 是有限型自由 \(\mathbf{Z}\)-模，u 是 M 的自同态，v 是自同态 \(u \otimes 1\)，作用于 \(M \otimes_{\mathbf{Z}} \mathbf{Q}\)。假设 \(\binom{v}{n}(M) \subset M\) 对所有 \(n \in \mathbf{N}\) 成立。则 u 可对角化。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  对于任意多项式 \(\mathrm{P} \in \mathbf{Q}[\mathrm{T}]\)，若 \(\mathrm{P}(\mathbf{Z}) \subset \mathbf{Z}\)，则有 \(\mathrm{P}(v)(\mathrm{M}) \subset \mathrm{M}\)（第 4 号，命题 2 的推论），所以 det \(\mathrm{P}(v) \in \mathbf{Z}\)。
+\item
+  记 \(\chi_{v}(t)=t^{d}+\alpha_{1}t^{d-1}+\cdots\) 为 v 的特征多项式。令 \(k\in\mathbf{Z}, n\in\mathbf{N}\)。将 a) 应用于多项式 \(\binom{T-k}{n}\)，可知数
+\end{enumerate}
+
+\[
+\begin{array}{l} a _ {n} = \det \binom {v - k} {n} = \frac {1}{(n !) ^ {d}} \det (v - k) \det (v - k - 1) \dots \det (v - k - n + 1) \\ = \frac {(- 1) ^ {n}}{(n !) ^ {4}} \chi_ {v} (k) \chi_ {v} (k + 1) \dots \chi_ {v} (k + n - 1) \end{array}
+\]
+
+是一个整数。取 \(k - 1 < -\alpha_{1} / d\)。则
+
+\[
+\chi_ {v} (k + n - 1) = n ^ {d} + (\alpha_ {1} + (k - 1) d) n ^ {d - 1} + \dots
+\]
+
+以及
+
+\[
+| a _ {n} | = \frac {| \chi_ {v} (k + n - 1) |}{n ^ {d}} | a _ {n - 1} |;
+\]
+
+因此，若 \(a_{n} \neq 0\) 对所有 \(n \in \mathbf{N}\) 成立，则 \(|a_{n}|\) 的序列在 n 充分大时严格递减，这是荒谬的。由此 v 有一个整数特征值 \(\lambda\)。置 \(\mathrm{M}' = \mathrm{Ker}(u - \lambda.1)\)，并置 \(M'' = M/M'\)。则 \(M'\) 是 \(M \otimes_{\mathbf{Z}} \mathbf{Q}\) 的某个向量子空间与 M 的交，因此 \(\mathbf{Z}\)-模 \(M''\) 是有限型无挠模，因而是秩 \textless{} d 的自由模。对 d 归纳，并将归纳假设应用于由 u 在 \(M''\) 上诱导的自同态，可知 v 在 \(\mathbf{Q}\) 的一个代数闭扩张中的所有特征值都是整数。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  我们证明 \(v\) 可对角化。令 \(\lambda\) 为 \(v\) 的一个特征值，并令 \(x \in \mathrm{M} \otimes_{\mathbf{Z}} \mathbf{Q}\) 满足 \((v - \lambda)^2 x = 0\)。有 \(v(vx - \lambda x) = \lambda(vx - \lambda x)\)，所以
+\end{enumerate}
+
+\[
+\begin{array}{c} \frac {1}{n !} (v - \lambda - n + 1) (v - \lambda - n + 2) \ldots (v - \lambda - 1) (v - \lambda) x \\ = \frac {(- 1) ^ {n - 1}}{n} (v x - \lambda x). \end{array}
+\]
+
+根据 \(a\)，这意味着 \(vx - \lambda x \in n\mathbf{M}\) 对所有 \(n \in \mathbf{N}\) 成立，所以 \((v - \lambda)x = 0\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  令 \(\lambda\) 为 v 的一个特征值，并令 \((\lambda - a, \lambda + b]\) 为 \(\mathbf{Z}\) 中包含 v 的所有特征值的一个区间。考虑多项式
+\end{enumerate}
+
+\[
+\begin{array}{c} \mathrm{P(T)} = (- 1) ^ {b} \frac {(\mathrm{T} - \lambda - 1) (\mathrm{T} - \lambda - 2) \ldots (\mathrm{T} - \lambda - b)}{b !} \\ \times \frac {(\mathrm{T} - \lambda + 1) (\mathrm{T} - \lambda + 2) \ldots (\mathrm{T} - \lambda + a)}{a !}. \end{array}
+\]
+
+有 \(\mathrm{P}(\mathbf{Z})\subset\mathbf{Z},\mathrm{P}(\lambda)=1,\mathrm{P}(\mu)=0\)，其中 \(\mu\in\mathbf{Z}\cap(\lambda-a,\lambda+b)\) 且 \(\mu\neq\lambda\)。根据 a)，\(\mathrm{P}(v)(\mathrm{M})\subset\mathrm{M}\)。根据 c)，\(\mathrm{P}(v)\) 是从 \(M\otimes_{\mathbf{Z}}\mathbf{Q}\) 到对应于 \(\lambda\) 的特征子空间的投影。
+
+证毕。
+
+备注 1. 即使只假设 v 可对角化且特征值为整数，u 也不一定可对角化（例如，取 \(M = \mathbf{Z}^{2}\)，且 \(u(x, y) = (y, x)\) 对所有 \((x, y) \in M\) 成立）。
+
+令 \(\mathfrak{g},\mathfrak{h},\mathrm{R},\mathcal{H},\mathcal{G}^{\alpha},\mathcal{G},\mathcal{U}\) 如第 7 号中所述，并假设 \(\mathcal{G}\) 是 \((\mathfrak{g},\mathfrak{h})\) 中的谢瓦莱序。
+
+定义 3. 令 E 为一个 \(\mathfrak{g}\)-模。若 E 中的格 \(\mathcal{E}\) 满足以下条件，则称其为容许格（相对于 \(\mathcal{G}\)）：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  \(\mathcal{U}\) 将 \(\mathcal{E}\) 映到 \(\mathcal{E}\)；
+\item
+  \(\mathcal{E}\) 在 \(\binom{h}{n}\) 和 \(x^{(n)}\) 下稳定，对所有 \(\alpha \in \mathrm{R}, x \in \mathcal{G}^{\alpha}, n \in \mathbf{N}, h \in \mathcal{H}\) 成立。
+\end{enumerate}
+
+备注。2) 令 \(\rho\) 为 \(\mathfrak{g}\) 在 \(\mathrm{U}(\mathfrak{g})\) 上的伴随表示。令 \(\alpha, x, n, h\) 如上面 (ii) 中所述。由引理 2，有 \(\rho(x^{(n)})\) . \(\mathcal{U} \subset \mathcal{U}\)。另一方面，若 \(p \in \mathbf{N}\)，
+
+\[
+\rho \left(\binom{h}{p}\right) x ^ {(n)} = \binom{\operatorname{ad} h}{p} x ^ {(n)} = \binom{n \alpha (h)}{p} x ^ {(n)}
+\]
+
+（第 5 号，公式 (13)），所以 \(\rho\left(\binom{h}{p}\right). \mathcal{U} \subset \mathcal{U}\)。这证明 \(\mathcal{U}\) 是 \(\mathrm{U}(\mathfrak{g})\) 中的容许格，从而可知 \(\mathcal{G}\) 是 \(\mathfrak{g}\) 中的容许格（对于伴随表示）。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  令 E 为有限维 \(\mathfrak{g}\)-模，\(\mathcal{E}\) 为 E 中的容许格，\(\mathfrak{c}\) 为 \(\mathfrak{g}\) 的中心。根据引理 6，\(\mathfrak{c}\) 的每个元素都在 E 上定义一个可对角化的自同态。因此 E 是半单的（第 I 章，第 6 节，第 5 号，定理 4）。所以，E 是单 \(\mathcal{D}\mathfrak{g}\)-模的直和，且 \(\mathfrak{c}\) 在这些模上诱导数乘变换。根据引理 6，\(\mathcal{E}=\oplus(\mathcal{E}\cap\mathrm{E}^{\lambda})\)，并且对于 E 的所有权 \(\lambda\)，有
+\end{enumerate}
+
+\[
+\lambda (\mathcal {H}) \subset \mathbf {Z}.
+\]
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  若 \(\mathfrak{g}\) 是半单的且 \(\mathcal{H} = \mathrm{Q}(\mathrm{R}^{\vee})\)，则根据定理 3 (ii)，定义 3 的条件 (i) 和 (ii) 等价于
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \(\mathcal{E}\) 在 \(x^{(n)}\) 下稳定，对所有 \(\alpha \in \mathrm{R}, x \in \mathcal{G}^{\alpha}, n \in \mathbf{N}\) 成立。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  令 B 为 R 的一组基；在上面的条件 (i) 和 (ii) 中，`` \(\alpha \in R\) '' 可以替换为 `` \(\alpha \in B \cup (-B)\) ''（同上）。
+\end{enumerate}
+
+定理 4. 令 \(\mathbf{E}\) 为有限维 \(\mathfrak{g}\)-模。以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  E 有一个容许格；
+\item
+  \(\mathcal{H}\) 的每个元素都在 \(E\) 上定义一个具有整数特征值的可对角化自同态。
+\item
+  \(\Longrightarrow\) (ii)：这由备注 3 得到。
+\item
+  \(\Longrightarrow\) (i)：我们假设条件 (ii) 满足并证明 (i)。根据第 I 章第 6 节第 5 号的定理 4，可以假设 \(\mathfrak{c}\) 的元素在 E 上定义数乘变换，且 E 是单 \(\mathcal{D}\mathfrak{g}\)-模。令 B 为 \(\mathrm{R}\) 的一组基，并令 \(\mathfrak{g} = \mathfrak{n}_{-} \oplus \mathfrak{h} \oplus \mathfrak{n}_{+}\) 为 \(\mathfrak{g}\) 的相应分解。令 \(\lambda\) 为 \(\mathcal{D}\mathfrak{g}\)-模 E 的最高权，并令 \(e \in E^{\lambda} - \{0\}\)。置 \(\mathcal{E} = \mathcal{U}.e\)。显然 \(\mathcal{U}.\mathcal{E} \subset \mathcal{E}\)。由于 E 是单模，\(\mathrm{U}(\mathfrak{g})\) . e = E，从而 \(\mathcal{E}\) 作为 \(\mathbf{Q}\)-向量空间生成 E。对 \(h \in \mathcal{H}\) 和 \(n \in \mathbf{N}\)，有 \(\binom{h}{n} e = \binom{\lambda(h)}{n} e \in \mathbf{Z} e\)，所以
+\end{enumerate}
+
+\[
+(\mathcal {U} \cap \mathrm{U} (\mathfrak {h})). e = \mathbf {Z}   e.
+\]
+
+由于 \(\mathrm{U}(\mathfrak{n}_{+}).e=0\)，根据命题 3 有 \(\mathcal{E}=(\mathcal{U}\cap\mathrm{U}(\mathfrak{n}_{-}))\) .e。现在由定理 3 (iii) 可知，\(\mathcal{E}\) 是有限型 \(\mathbf{Z}\)-模。
+
+推论。若 \(\mathfrak{g}\) 是半单的且 \(\mathcal{H}=\mathrm{Q}(\mathrm{R}^{\vee})\)，则每个有限维 \(\mathfrak{g}\)-模都有一个容许格。
+

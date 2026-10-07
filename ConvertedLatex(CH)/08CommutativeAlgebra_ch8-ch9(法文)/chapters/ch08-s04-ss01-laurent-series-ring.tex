@@ -1,0 +1,90 @@
+\subsection{环 Z((T))}
+
+设 A 为一个环。赋予 A-模 \(\mathbf{A}^{\mathbf{Z}}\) 离散拓扑的乘积拓扑。所有 \((a_{n})\in\mathbf{A}^{\mathbf{Z}}\)，满足存在 \(n_{0}\in\mathbf{Z}\) 使 \(a_{n}=0\) 对 \(n<n_{0}\) 成立的元素组成 \(\mathbf{A}^{\mathbf{Z}}\) 的子模 B。若 \(a=(a_{n})\in\mathbf{B}\)、\(b=(b_{n})\in\mathbf{B}\)，并置 \(ab=c\)，其中 \(c_{n}=\sum_{i+j=n}a_{i}b_{j}\)，则在 B 上定义 A-代数结构。令 T 为 B 中的元素 \((\theta_{n})\)，满足 \(\theta_{n}=0\) 对 \(n\neq1\) 成立，且 \(\theta_{1}=1\)。则 T 在 B 中可逆；对于 B 的每个元素 \(a=(a_{n})\)，族 \((a_{n}\mathrm{T}^{n})_{n\in\mathbf{Z}}\) 在 \(\mathbf{A}^{\mathbf{Z}}\) 中可求和，并且有
+
+\[
+a = \sum_ {n \in \mathbf {Z}} a _ {n} \mathrm{T} ^ {n}.
+\]
+
+在本章余下部分，我们用 A((T)) 表示 A-代数 B；它包含形式级数代数 A{[}{[}T{]}{]} 和代数 A{[}T, T \(^{-1}\) {]} 作为子代数；它们的交是多项式代数 A{[}T{]}。
+
+备注。--- 环 A((T)) 自然地可识别为环 A{[}{[}T{]}{]} \(_{T}\) 的分式环，该分式环由环 A{[}{[}T{]}{]} 关于由 T 的幂组成的乘法子集定义。
+
+对于 \(n, p\)，其中二者属于 \(\mathbf{Z}\)，我们按下式定义整数 \(\begin{bmatrix} n \\ p \end{bmatrix}\)：
+
+\[
+\left\{ \begin{array}{l} {\left[ \begin{array}{l} n \\ p \end{array} \right] = 0 \quad \text {if} \quad p <   0 \quad \text {or} \quad p > n,} \\ {\left[ \begin{array}{l} n \\ p \end{array} \right] = \binom {n} {p} = \frac {n (n - 1) \dots (n - p + 1)}{p !} \quad \text {if} \quad 0 \leqslant p \leqslant n.} \end{array} \right.\tag{1}
+\]
+
+有 \(\begin{bmatrix} n \\ p \end{bmatrix} = \begin{bmatrix} n \\ n - p \end{bmatrix}\)，对于 \(n, p \in \mathbf{Z}\)。
+
+引理 1.--- \(\mathbf{Z}((\mathrm{T}))\) 的元素 1 - T 是可逆的。对于每个整数 \(r > 0\)，有
+
+\[
+(1 - \mathrm{T}) ^ {- r} = \sum_ {n \in \mathbf {Z}} \left[ \begin{array}{c} n + r - 1 \\ r - 1 \end{array} \right] \mathrm{T} ^ {n} = \sum_ {n \in \mathbf {N}} \binom {n + r - 1} {r - 1} \mathrm{T} ^ {n}.
+\]
+
+事实上，1 - T 在环 \(\mathbf{Z}[[\mathrm{T}]]\) 中可逆，其逆为 \(\sum_{m\geqslant 0}\mathbf{T}^m\)；因此有
+
+\[
+(1 - \mathrm{T}) ^ {- r} = (\sum_ {m \geqslant 0} \mathrm{T} ^ {m}) ^ {r} = \sum_ {m _ {1}, \dots , m _ {r} \geqslant 0} \mathrm{T} ^ {m _ {1} + m _ {2} + \dots + m _ {r}},
+\]
+
+所述公式由 E, III, p. 44, prop. 15 得出。
+
+令 \(\mathrm{Q}(\mathrm{T}) \in \mathbf{Z}[\mathrm{T}, \mathrm{T}^{-1}]\)，\(r\) 为整数 \(> 0\)，且 \(\mathrm{F} = (1 - \mathrm{T})^{-r}\mathrm{Q} \in \mathbf{Z}((\mathrm{T}))\)。置
+
+\[
+\mathrm{Q} (\mathrm{T}) = \sum_ {i \in \mathbf {Z}} a _ {i} \mathrm{T} ^ {i}, \quad \mathrm{F} = \sum_ {n \in \mathbf {Z}} \alpha_ {n} \mathrm{T} ^ {n}.
+\]
+
+于是由引理 1，有
+
+\[
+\alpha_ {n} = \sum_ {i \in \mathbf {Z}} a _ {i} \left[ \begin{array}{c} n - i + r - 1 \\ r - 1 \end{array} \right] = \sum_ {i \leqslant n} a _ {i} \binom {n - i + r - 1} {r - 1}.
+\]
+
+令 \(n_1\) 为 \(\overline{\mathbf{R}}\) 中满足 \(i \in \mathbf{Z}\) 且 \(a_i \neq 0\) 的整数所成集合的上确界。对于每个整数 \(n \geqslant n_1\)，有 \(\alpha_n = \tilde{\alpha}(n)\)，其中 \(\tilde{\alpha}\) 是 \(\mathbf{Q}[\mathbf{X}]\) 中由下式定义的多项式：
+
+\[
+\tilde {\alpha} (X) = \frac {1}{(r - 1) !} \sum_ {i \in \mathbf {Z}} a _ {i} \prod_ {j = 1} ^ {r - 1} (X - i + j).
+\]
+
+若置 \(c = \mathbf{Q}(1) = \sum_{i \in \mathbf{Z}} a_i\)，则有 \(\tilde{\alpha}(\mathbf{X}) = c\mathbf{X}^{r-1}/(r - 1)! + \theta(\mathbf{X})\)，其中 \(\theta\) 是次数 \(\leqslant r - 2\) 的多项式。因此有
+
+\[
+\alpha_ {n} = c \frac {n ^ {r - 1}}{(r - 1) !} + \rho_ {n} n ^ {r - 2},\tag{2}
+\]
+
+其中有理数 \(\rho_{n}\) 在 \(n\) 无限增大时趋于一个极限。由此得到关系
+
+\[
+\mathrm{Q} (1) = (r - 1)! \lim _ {n \rightarrow \infty} n ^ {1 - r} \alpha_ {n}.\tag{3}
+\]
+
+若 \(F = \sum_{n \in \mathbf{Z}} a_n T^n\) 和 \(G = \sum_{n \in \mathbf{Z}} b_n T^n\) 是 \(Z((T))\) 的两个元素，我们用“\(F \leqslant G\)”表示关系“\(a_n \leqslant b_n\) 对每个 \(n \in \mathbf{Z}\) 都成立”。这是一个与 \(Z((T))\) 的环结构相容的序关系（A, VI, p. 18, def. 1）。有 \((1 - T)^{-1} \geqslant 1\)。若 \(Q \in Z[T, T^{-1}]\) 满足 \(\geqslant 0\)，则整数 \(Q(1)\) 为正。
+
+引理 2. --- a) 设 F 是 \(\mathbf{Z}((\mathbf{T}))\) 的非零元素，且存在 \(r \in \mathbf{Z}\)，使 \((1 - \mathrm{T})^r\mathrm{F} \in \mathbf{Z}[\mathrm{T}, \mathrm{T}^{-1}]\)；则 F 可唯一写成 \(\mathrm{F} = (1 - \mathrm{T})^{-d}\) . Q 的形式，其中 \(\mathrm{Q} \in \mathbf{Z}[\mathrm{T}, \mathrm{T}^{-1}]\)、\(\mathrm{Q}(1) \neq 0\)，且 \(d \in \mathbf{Z}\)。若 \(\mathrm{F} \geqslant 0\)，则有 \(\mathrm{Q}(1) > 0\) 且 \(d \geqslant 0\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  设 Q、R 属于 Z{[}T, T \(^{-1}\) {]}，d、d' 属于 Z，且 Q(1) \textgreater{} 0。若
+\end{enumerate}
+
+\[
+(1 - \mathrm{T}) ^ {- d}. \mathrm{Q} \leqslant (1 - \mathrm{T}) ^ {- d ^ {\prime}}. \mathrm{R},
+\]
+
+则或者 \(d < d'\)，或者 \(d = d'\) 且 \(\mathbf{Q}(1) \leqslant \mathbf{R}(1)\)。
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  可以写成 \(F = (1 - T)^{-r} T^{n} P(T)\)，其中 r、\(n \in Z\)，且 \(P(T) \in Z[T]\)。通过欧几里得除法，可以写成 \(P(T) = (1 - T)^{p} R(T)\)，其中 \(R(T) \in Z[T]\) 且 \(R(1) \neq 0\)。因此 \(F = (1 - T)^{-(r-p)} Q(T)\)，其中 \(Q(T) = T^{n} R(T) \in Z[T, T^{-1}]\) 且 \(Q(1) \neq 0\)。这证明了 d 和 Q 的存在性。此外，若 \((1 - T)^{r} Q(T) = (1 - T)^{s} R(T)\)，其中 r \textgreater{} s 且 Q、R 属于 \(Z[T, T^{-1}]\)，则有 \(R(T) = (1 - T)^{r-s} Q(T)\)，从而 \(R(1) = 0\)；这证明了唯一性。假设 F \(\geqslant 0\)；若 d \textless{} 0，则有 \(F(1) = 0\)，这是不可能的，因为 F 非零且其所有系数均为正；所以 \(d \geqslant 0\)。若 d = 0，则 Q = F \(\geqslant 0\)，从而 Q(1) 为正。若 \(d \geqslant 1\)，则由公式 (3)，Q(1) 为正。这证明了 a)。
+\item
+  假设 \(d \geqslant d'\)。则 \((1 - T)^{-d}((1 - T)^{d - d'} R - Q) \geqslant 0\)；由于 \(S(T) = (1 - T)^{d - d'} R - Q\) 属于 \(Z[T, T^{-1}]\)，根据前述结果可知 \(S(1) \geqslant 0\)。若 \(d > d'\)，则有 \(S(1) = -Q(1) < 0\)，从而矛盾；若 \(d = d'\)，则有 \(S(1) = R(1) - Q(1)\)，从而 \(Q(1) \leqslant R(1)\)。
+\end{enumerate}
+

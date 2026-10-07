@@ -1,0 +1,42 @@
+\subsection{The Banach-Steinhaus theorem}
+
+THEOREM 1. --- Let E be a barrelled space, F a locally convex space. Every simply bounded subset H of \(\mathcal{L}(\mathrm{E};\mathrm{F})\) is equicontinuous.
+
+For, let \(p\) be a continuous semi-norm on \(\mathbf{F}\) ; let \(q = \sup_{u\in \mathbf{H}}(p\circ u)\) . Since \(\mathbf{H}\) is simply bounded, we have \(q(x) < +\infty\) for all \(x \in E\) and \(q\) is a lower semi-continuous semi-norm, being the finite superior envelope of continuous semi-norms. Since \(E\) is barrelled, \(q\) is a continuous semi-norm and therefore \(H\) is equicontinuous.
+
+COROLLARY 1. --- Let E and F be two Banach spaces, H a family of continuous linear mapping from E into F; if, for all \(x \in E\) , we have \(\sup_{u \in H} \|u(x)\| < +\infty\) , we also have \(\sup_{u \in H} \|u\| < +\infty\) .
+
+In fact, the hypothesis says that H is simply bounded and the conclusion that it is equicontinuous. In addition, every Banach space is barrelled (III, p.~25).
+
+COROLLARY 2. --- (Banach-Steinhaus theorem). --- Let E be a barrelled space, F a locally convex Hausdorff space, and let \((u_n)\) be a sequence of continuous linear mappings from E into F, which converges simply to a mapping u from E into F. Then \(u \in \mathcal{L}(\mathrm{E}; \mathrm{F})\) , and \((u_{n})\) converges to u uniformly on every precompact subset of E.
+
+The sequence \((u_{n})\) is, in fact, simply bounded, hence equicontinuous, and the corollary follows from the cor. of prop. 5 of III, p.~18.
+
+Remarks. --- 1) The property expressed by cor. 2 does not imply that E is barrelled: we shall see later that the strong dual of a Fréchet space possesses this property, while not necessarily being barrelled (IV, p.~23, cor. to prop. 2 and p.~58, exerc).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Let E and F be two Banach spaces, and \((u_{n})\) a sequence of continuous linear mappings from E into F such that sup \(\|u_{n}\| = +\infty\) . Then the set X of all \(x \in E\) such that sup \(\|u_{n}(x)\| = +\infty\) is dense in E and is the intersection of a sequence of open sets in E. For, let \(X_{k}\) denote the set of all \(x \in E\) such that sup \(\|u_{n}(x)\| > k\) (for k integer \textgreater{} 0). Each \(X_{k}\) is open and X is the intersection of the \(X_{k}\) . Since E is a Baire space, it is enough to show that each \(X_{k}\) is dense in E. But, if the complement of \(X_{k}\) contains a non-empty open set U, we would have \(\|u_{n}(x)\| \leqslant 2k\) for \(x \in U - U\) and, since U - U is a neighbourhood of 0, we would have sup \(\|u_{n}\| < +\infty\) .
+\end{enumerate}
+
+COROLLARY 3. --- Let E be a barrelled space, F a locally convex Hausdorff space and \(\Phi\) a filter on \(\mathcal{L}(\mathrm{E};\mathrm{F})\) which converges simply in E to a mapping u from E into F. If \(\Phi\) contains a simply bounded subset of \(\mathcal{L}(\mathrm{E};\mathrm{F})\) , or if \(\Phi\) has a countable base, then u is a continuous linear mapping from E into F and \(\Phi\) converges uniformly to u on every precompact subset of E.
+
+Suppose first that \(\Phi\) contains a simply bounded set H; since H is equicontinuous (th. 1), the corollary follows from the corollary of prop. 5 (III, p.~18). If \(\Phi\) has a countable base, every elementary filter \(\Psi\) associated with a sequence \(u_{n}\) (GT, I, § 6, No.~8) which is finer than \(\Phi\) is then simply convergent to u in E and it follows from cor. 2 that u is a continuous linear mapping from E into F, and that \(\Psi\) converges to u for the topology of uniform convergence on precompact subsets of E. Consequently, the same holds for \(\Phi\) , since the latter is the intersection of elementary filters, each finer than \(\Phi\) (GT, I, § 6, No.~8).
+
+We observe that a filter on \(\mathcal{L}(\mathrm{E};\mathrm{F})\) which converges simply and has a countable base does not necessarily contain a simply bounded set: to see this consider the example of the filter of neighbourhoods of 0 in \(\mathcal{L}(\mathrm{K};\mathrm{F})\) when the topology of F is metrizable, but cannot be defined by a single norm.
+
+Example. --- Let E be the Banach space (over C) consisting of continuous complex functions with period 1 in R, with the norm \(\|f\| = \sup |f(x)|\) .
+
+For every integer \(n \in \mathbf{Z}\) and every function \(f \in \mathrm{E}\) , let \(c_{n}(f) = \int_{0}^{1} f(x)e^{-2i\pi nx} dx\) (n-th Fourier coefficient of f); each of the mappings \(f \mapsto c_{n}(f)\) is a continuous linear form on E. Let \((\alpha_{n})\) be a sequence of complex numbers such that, for every function \(f \in E\) , the series with the general term \(\alpha_{n}c_{n}(f) + \alpha_{-n}c_{-n}(f)\) is convergent. Under these conditions, the mapping \(u: f \mapsto \alpha_{0}c_{0}(f) + \sum_{n \geqslant 1} [\alpha_{n}c_{n}(f) + \alpha_{-n}c_{-n}(f)]\) is a continuous linear form on E; * in other words, there exists a measure \(\mu\) on {[}0, 1{]} such that \(u(f) = \int f(x) d\mu(x)\) for every function \(f \in E\) , and \(\alpha_{n}\) is the n-th Fourier coefficient
+
+of \(\mu_{*}\) . * In fact, for every integer \(m > 0\) , the mapping \(f \mapsto \sum_{k = -m}^{m} \alpha_k c_k(f)\) is a continuous linear form \(u_{m}\) on E, and for all \(f \in E\) , the sequence \((u_{m}(f))\) converges to \(u(f)\) , by hypothesis. The assertion then follows from Banach-Steinhaus theorem, since E is barrelled.
+
+COROLLARY 4. --- Let E and F be two locally convex spaces, S a cover of E consisting of bounded subsets. If E is barrelled and F Hausdorff and quasi-complete, the space \(\mathcal{L}_{\mathfrak{S}}(E;F)\) is Hausdorff and quasi-complete.
+
+In fact, every bounded and closed subset of \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) is simply bounded (because S is a cover of E), hence equicontinuous (III, p.~25, th. 1) and consequently is a complete subspace of \(\mathcal{L}_{\mathfrak{S}}(\mathrm{E};\mathrm{F})\) because of prop. 11 (III, p.~22).
+
+COROLLARY 5. --- The strong dual and the weak dual of a barrelled space are quasi-complete.
+

@@ -1,0 +1,32 @@
+\subsection{可解性的判据}
+
+引理 2。设 \(x\) 是有限维向量空间 \(V\) 的自同态，\(s\)（分别 \(n\)）是其半单（分别幂零）分量（参见《代数》，第 VIII 章，§ 9，第 4 号，定义 4）。令 \(ad_x\)、\(ad_s\)、\(ad_n\) 分别为 \(x\)、\(s\)、\(n\) 在 \(gl(V)\) 的伴随表示下的像。则 \(ad_s\)（分别 \(ad_n\)）是 \(ad_x\) 的半单（分别幂零）分量，并且等于 \(ad_x\) 中系数在 \(K\) 内且无常数项的一个多项式。
+
+我们知道 \(\operatorname{ad} x = \operatorname{ad} s + \operatorname{ad} n\)，\([\operatorname{ad} s, \operatorname{ad} n] = 0\)，且 \(\operatorname{ad} n\) 是幂零的（§ 4，引理 1）。我们证明 \(\operatorname{ad} s\) 是半单的。只需在 \(\mathbf{K}\) 代数闭时证明即可（参见《代数》，第 VIII 章，§ 9，第 2 号，命题 3）。令 \((e_i)_{1 \leq i \leq n}\) 是 \(V\) 的一组基，满足 \(s(e_i) = \lambda_i e_i\)（\(\lambda_i \in K\)）。令 \((E_{ij})\) 是 \(\mathbf{M}_n(K) = \mathfrak{gl}(V)\) 的典范基。由 § 1 的公式 (5)，
+
+\[
+(\mathrm{ad} s). E _ {i j} = (\lambda_ {i} - \lambda_ {j}) E _ {i j}
+\]
+
+从而 ad s 是半单的。引理的最后一个断言由《代数》第 VIII 章 § 9 第 4 号命题 8 得到。
+
+引理 3。设 \(\mathbf{M}\) 是有限维向量空间，\(\mathbf{A}\)、\(\mathbf{B}\) 是 \(\mathfrak{gl}(\mathbf{M})\) 的两个向量子空间，满足 \(\mathbf{B} \subset \mathbf{A}\)，\(\mathbf{T}\) 是满足 \(t \in \mathfrak{gl}(\mathbf{M})\) 且 \([t, \mathbf{A}] \subset \mathbf{B}\) 的 t 的集合。若 \(z \in \mathbf{T}\) 且对所有 \(\operatorname{Tr}(zu) = 0\) 有 \(u \in \mathbf{T}\)，则 \(z\) 是幂零的。
+
+只需在 \(\mathbf{K}\) 代数闭时证明这一点，以下均作此假设。令 \(s\) 和 \(n\) 是 \(z\) 的半单分量和幂零分量，令 \((e_i)\) 是 \(\mathbf{M}\) 的一组基，满足 \(s(e_i) = \lambda_i e_i\)（\(\lambda_i \in \mathbf{K}\)）。令 \(\mathbf{V} \subset \mathbf{K}\) 是由 \(\mathbf{Q}\) 生成的、包含 \(\lambda_i\) 的向量空间。我们需要证明 \(\mathbf{V} = \{0\}\)。令 \(f\) 是 \(\mathbf{Q}\) 上的 \(\mathbf{V}\)-线性形式，令 \(t\) 是 \(\mathbf{M}\) 的自同态，满足 \(te_{i}=f(\lambda_{i})e_{i}\)。若 \((E_{ij})\) 是由 \(E_{ij}e_{k}=\delta_{jk}e_{i}\) 定义的 gl(M) 的典范基，则
+
+\[
+\begin{array}{l} (\mathrm{ad} s) E _ {i j} = (\lambda_ {i} - \lambda_ {j}) E _ {i j} \\ (\mathrm{ad} t) E _ {i j} = (f (\lambda_ {i}) - f (\lambda_ {j})) E _ {i j}. \end{array}
+\]
+
+存在一个无常数项且系数在 \(\mathbf{P}\) 中的多项式 \(\mathbf{K}\)，使得 \(\mathrm{P}(\lambda_i - \lambda_j) = f(\lambda_i) - f(\lambda_j)\) 对所有 \(i\) 和 \(j\) 成立（因为若 \(\lambda_i - \lambda_j = \lambda_h - \lambda_k\)，则 \(f(\lambda_i) - f(\lambda_j) = f(\lambda_h) - f(\lambda_k)\)），并且当 \(\lambda_i - \lambda_j = 0\) 时，\(f(\lambda_i) - f(\lambda_j) = 0\)。于是 \(t = \mathrm{P}(\mathrm{ad}s)\)。另一方面，ad \(s\) 是 ad \(z\) 中一个无常数项的多项式。现在 ad \(z\)(A) \(\subset \mathrm{B}\)，所以 ad \(t\)(A) \(\subset \mathrm{B}\)。根据假设 \(0 = \operatorname{Tr}(zt) = \sum_{\lambda_i} f(\lambda_i)\)，从而 \(0 = f(\operatorname{Tr}(zt)) = \sum f(\lambda_i)^2\)。由于 \(f(\lambda_i)\) 是有理数，\(f = 0\)，证明完成。
+
+定理 2（Cartan 判据）. 设 \(\mathfrak{g}\) 是李代数，\(\mathbf{M}\) 是有限维向量空间，\(\rho\) 是 \(\mathfrak{g}\) 在 \(\mathbf{M}\) 上的表示，\(\beta\) 是与 \(\mathfrak{g}\) 关联的 \(\rho\) 上的双线性形式。则 \(\rho(\mathfrak{g})\) 可解，当且仅当 \(\mathcal{D}\mathfrak{g}\) 关于 \(\mathfrak{g}\) 与 \(\beta\) 正交。
+
+显然可将问题化为 \(\mathfrak{g}\) 是 \(\mathfrak{gl}(\mathbf{M})\) 的李子代数且 \(\rho\) 是恒等映射的情形。若 \(\mathfrak{g}\) 可解，则由定理 1，\(\mathcal{D}\mathfrak{g}\) 包含于恒等表示的 \(\mathfrak{g}\) 的最大幂零理想中，因而是关于 \(\mathfrak{g}\) 与 \(\beta\) 正交（\(\S 4\)，命题 4 (d)）。假设 \(\mathcal{D}\mathfrak{g}\) 关于 \(\mathfrak{g}\) 与 \(\beta\) 正交。我们证明 \(\mathfrak{g}\) 可解。令 \(\mathrm{T}\) 为满足 \(t\in \mathfrak{gl}(\mathbf{M})\) 且 \([t,\mathfrak{g}]\subset \mathcal{D}\mathfrak{g}\) 的 t 的集合。若 \(t\in \mathrm{T}\) 且 \(x,y\) 属于 \(\mathfrak{g}\)，则 \([t,x]\in \mathcal{D}\mathfrak{g}\)，所以
+
+\[
+\operatorname{Tr} (t [ x, y ]) = \beta ([ t, x ], y) = 0
+\]
+
+由线性性，对所有 \(\mathrm{Tr}(tu) = 0\) 有 \(u\in \mathcal{D}\mathfrak{g}\)。显然 \(\mathcal{D}\mathfrak{g}\subset T\)。因此（引理 3），\(\mathcal{D}\mathfrak{g}\) 的每个元素都是幂零的。于是 \(\mathcal{D}\mathfrak{g}\) 是幂零的（§ 4，定理 1 的推论 3），从而 \(\mathfrak{g}\) 可解（第 3 号，定理 1 的推论 5）。
+

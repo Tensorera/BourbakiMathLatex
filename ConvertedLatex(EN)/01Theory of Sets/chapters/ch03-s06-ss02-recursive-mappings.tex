@@ -1,0 +1,50 @@
+\subsection{DEFINITION OF MAPPINGS BY INDUCTION}
+
+Since the set N is well-ordered, we may apply criterion C60 ( \(\S2\) , no. 2), which now takes the following form (with the same notation):
+
+C62. Let u be a letter and let \(T\{u\}\) be a term. Then there exists a set U and a mapping f of N onto U such that for each integer n we have \(f(n)=T\{f^{(n)}\}\) , where \(f^{(n)}\) denotes the mapping of {[}0, n{[} onto \(f([0, n])\) which agrees with f on {[}0, n{]}. Moreover, the set U and the mapping f are uniquely determined by this condition.
+
+We shall deduce from this the following criterion :
+
+C63. Let \(S\{v\}\) and \(a\) be two terms. Then there exists a set \(V\) and a mapping \(f\) of \(N\) onto \(V\) such that \(f(0) = a\) and \(f(n) = S\{f(n-1)\}\) for each integer \(n \geqslant 1\) . Moreover, the set \(V\) and the mapping \(f\) are uniquely determined by these conditions.
+
+To deduce C63 from C62 (*), let
+
+\[
+\mathrm{D} (u) = \mathcal {E} _ {x} (x \in \mathbf {N} \text {   and   } (\exists y) ((x, y) \in \operatorname{pr} _ {1} (\operatorname{pr} _ {1} (u))))
+\]
+
+for each letter \(u\) . If \(u\) is a mapping of a subset of \(\mathbf{N}\) into a set, then \(\mathrm{D}(u)\) is just the domain of \(u\) (Chapter II, §3, no. 1). Let \(\mathbf{M}(u)\) be the least upper bound of \(\mathrm{D}(u)\) in \(\mathbf{N}\) ( \(\dagger\) ). Let \(\varphi\) be the empty mapping, with \(\varnothing\) as source and target, i.e.~(Chapter II, §3, nos. 1 and 4), the triple \((\varnothing, \varnothing, \varnothing)\) ) and consider the relation
+
+\[
+(u = \varphi \text {   and   } y = a) \text {   or   } (u \neq \varphi \text {   and   } y = S \{u (M (u)) \})
+\]
+
+which we denote by \(\mathbf{R}\{y,u\}\) ; finally, let \(\mathbf{T}\{u\}\) be the term \(\tau_{y}(\mathbf{R}\{y,u\})\) . Apply C62 to the term \(\mathbf{T}\{u\}\) . Since \(f^{(0)}\) is equal to \(\varphi\) , we have \(\mathbf{T}\{f^{(0)}\}=a\) ; hence \(f(0)=a\) . If on the other hand \(n>0\) , we have \(\mathbf{D}(f^{(n)})=[0,n-1]\) and \(\mathbf{M}(f^{(n)})=n-1\) , whence
+
+\[
+\mathrm{T} \left\{f ^ {(n)} \right\} = \mathrm{S} \left\{f ^ {(n)} (n - 1) \right\} = \mathrm{S} \left\{f (n - 1) \right\}.
+\]
+
+Examples
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
+\item
+  Suppose that \(a\) is an element of a set \(\mathbf{E}\) and that \(S\{u\}\) is the term \(g(u)\) , where \(g\) is a mapping of \(\mathbf{E}\) into itself (**). Then it is immediately seen by induction on \(n\) that for all \(n \in \mathbf{N}\) we have \(f(n) \in \mathbf{E}\) ; consequently \(f\) is a mapping of \(\mathbf{N}\) into \(\mathbf{E}\) such that \(f(0) = a\) and \(f(n + 1) = g(f(n))\) for all integers \(n\) .
+\end{enumerate}
+
+Likewise, let \(h\) be a mapping of \(\mathbf{N} \times \mathbf{E}\) into \(\mathbf{E}\) , and let \(\psi\) be the mapping of \(\mathbf{N} \times \mathbf{E}\) into itself defined by \(\psi(n, x) = (n + 1, h(n, x))\) . By the preceding discussion there exists a unique mapping \(g = (\theta, f)\) of \(\mathbf{N}\) into \(\mathbf{N} \times \mathbf{E}\) such that \(g(0) = (0, a)\) and \(g(n + 1) = \psi(g(n))\) for all \(n\) , from which follows the existence and uniqueness of a mapping \(f\) of \(\mathbf{N}\) into \(\mathbf{E}\) such that \(f(0) = a\) and \(f(n + 1) = h(n, f(n))\) for each integer \(n\) .
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  Let X be a set and let E be the set of mappings of X into itself. Let e denote the identity mapping of X into itself, and let f be any element of E. Take \(S\{u\}\) to be the term \(f \circ u (*)\) . By applying C63 we see that there exists a unique mapping of N into E, denoted by \(n \to f^n\) , such that \(f^0 = e\) and \(f^{n+1} = f \circ f^n\) . The mapping \(f^n\) is called the nth iterate of the mapping f.
+\item
+  If we take \(S \{u\}\) to be the term \(\mathfrak{P}(u)\) , and \(a\) to be a set \(E\) , it follows likewise that there exists a mapping, denoted by \(n \to \mathfrak{P}^n(E)\) , of \(N\) into a set \(V(E)\) such that \(\mathfrak{P}^0(E) = E\) , \(\mathfrak{P}^1(E) = \mathfrak{P}(E)\) , and \(\mathfrak{P}^{n+1}(E) = \mathfrak{P}(\mathfrak{P}^n(E))\) for every integer \(n\) .
+\end{enumerate}
+
+Remark. Let E be a set, let A be a subset of E, let g be a mapping of A into E, and let a be an element of A. Take S \(\{u\}\) to be the term \(g(u)\) . Criterion C63 is applicable and proves the existence of a mapping f of N onto a set V such that \(f(0) = a\) and \(f(n+1) = g(f(n))\) for every integer n.~It may happen that \(V \subset A\) ; if not, let p be the largest integer such that \(f([0, p]) \subset A\) . Then \(f(p+1) = g(p) \notin A\) , and \(g(g(p))\) is a term about which nothing can be said. Hence in this case f is considered to be defined only on the interval \([0, p+1]\) (``restricted induction'').
+

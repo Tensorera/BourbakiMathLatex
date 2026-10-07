@@ -1,0 +1,112 @@
+\subsection{缓增广义函数的傅里叶变换}
+
+由于每个施瓦茨函数 \(\varphi\) 在 \(\mathbf{R}^n\) 上可积（IV, p. 213 的命题 13），它有傅里叶变换 \(\mathcal{F}(\varphi)\) （相应地，余傅里叶变换 \(\overline{\mathcal{F}}(\varphi)\) ），后者等同于 \(\mathbf{R}^n\) 上由下式定义的连续有界函数
+
+\[
+y \mapsto \int_ {\mathbf {R} ^ {n}} \varphi (x) \exp (- 2 i \pi x \cdot y) d \mu (x)
+\]
+
+（相应地，函数 \(y \mapsto \int_{\mathbf{R}^n} \varphi(x) \exp(2i\pi x \cdot y) d\mu(x)\) ）。
+
+引理 11. --- 设 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) 。函数 \(\mathcal{F}(\varphi)\) 在 \(\mathbf{R}^{n}\) 上是无穷次可微的，且我们有
+
+\[
+\mathcal {F} (\mathrm{X} ^ {\alpha} \varphi) = (- 2 i \pi) ^ {- | \alpha |} \partial^ {\alpha} (\mathcal {F} (\varphi)),
+\]
+
+\[
+\mathcal {F} (\partial^ {\alpha} \varphi) = (2 i \pi) ^ {| \alpha |} X ^ {\alpha} \mathcal {F} (\varphi)
+\]
+
+对所有 \(\alpha\) （属于 \(\mathbf{N}^n\) ）成立。
+
+不妨设 \(n \geqslant 1\) 。设 \(\varphi \in \mathcal{S}(\mathbf{R}^{n})\) 。由 \((x, y) \mapsto \varphi(x) \exp(2i\pi x \cdot y)\) （从 \(\mathbf{R}^{n} \times \mathbf{R}^{n}\) 到 \(\mathbf{C}\) 中的函数）对每个整数 k 满足 IV, p. 198 的推论 1 的假设。因此 \(\varphi\) 的傅里叶变换是无穷次可微的，且满足
+
+\[
+\partial^ {\alpha} (\mathcal {F} \varphi) (y) = (- 2 i \pi) ^ {| \alpha |} \int_ {\mathbf {R} ^ {n}} x ^ {\alpha} \varphi (x) \exp (- 2 i \pi x \cdot y) d \mu (x)
+\]
+
+对所有 \(y \in \mathbf{R}^{n}\) 成立，由此即得第一个公式。
+
+我们来证明第二个公式。对 \(|\alpha|\) 作归纳，只须处理 \(|\alpha| = 1\) 的情形，而易化为 \(\alpha = (1,0,\ldots,0)\) 的情形。把每个 \(x \in \mathbf{R}^n\) 写成 \(x = (x_1,x')\) 的形式，其中 \(x' \in \mathbf{R}^{n-1}\) ，并用 \(\mu_1\) （相应地， \(\mu'\) ）表示 \(\mathbf{R}^{n-1}\) （相应地， \(\mathbf{R}\) ）上的勒贝格测度。由勒贝格–富比尼定理（INT, V, p. 96, § 8, no. 4，定理 1），对每个 \(y = (y_1,y') \in \mathbf{R} \times \mathbf{R}^{n-1}\) ，得到
+
+\[
+\begin{array}{l} \mathcal {F} (\partial_ {1} \varphi) (y) = \int_ {\mathbf {R} ^ {n - 1}} \exp (- 2 i \pi   x ^ {\prime} \cdot y ^ {\prime}) \\ \qquad \times \Big (\int_ {\mathbf {R}} (\partial_ {1} \varphi) (x _ {1}, x ^ {\prime}) \exp (- 2 i \pi   x _ {1} y _ {1}) d \mu_ {1} (x _ {1}) \Big) d \mu^ {\prime} (x ^ {\prime}). \end{array}
+\]
+
+对每个紧区间 \([a,b]\) （R 中的）以及每个 \(x'\in R^{n-1}\) ，我们有
+
+\[
+\begin{array}{r l} & {\int_ {a} ^ {b} (\partial_ {1} \varphi) (x _ {1}, x ^ {\prime}) \exp (- 2 i \pi x _ {1} y _ {1}) d \mu_ {1} (x _ {1}) =} \\ & {\qquad \left[ \varphi (x _ {1}, x ^ {\prime}) \exp (- 2 i \pi x _ {1} y _ {1}) \right] _ {a} ^ {b}} \\ & {\qquad + 2 i \pi y _ {1} \int_ {a} ^ {b} \varphi (x _ {1}, x ^ {\prime}) \exp (- 2 i \pi x _ {1} y _ {1}) d \mu_ {1} (x _ {1})} \end{array}
+\]
+
+由分部积分（FVR, II, p. 10，公式 (10)）。当 \(a\) 趋于 \(-\infty\) 且 \(b\) 趋于 \(+\infty\) 时，右端第一项趋于 0，因为 \(\varphi \in \mathcal{S}(\mathbf{R}^n)\) 。第二项由勒贝格定理（INT, IV, p. 137, § 3, no. 7，定理 6）收敛于
+
+\[
+2 i \pi y _ {1} \int_ {\mathbf {R}} \varphi (x _ {1}, x ^ {\prime}) \exp (- 2 i \pi x _ {1} y _ {1}) d \mu_ {1} (x _ {1}),
+\]
+
+因为映射 \(x_{1} \mapsto \varphi(x_{1}, x')\) 在 R 上可积。由于 \(x_{1} \mapsto \partial_{1}\varphi(x_{1}, x')\) 也在 R 上可积，由此得出
+
+\[
+\begin{array}{r l r} & & {\int_ {\mathbf {R}} \partial_ {1} \varphi (x _ {1}, x ^ {\prime}) \exp (- 2 i \pi x _ {1} y _ {1}) d \mu_ {1} (x _ {1})} \\ & & {= 2 i \pi y _ {1} \int_ {\mathbf {R}} \varphi (x _ {1}, x ^ {\prime}) \exp (- 2 i \pi x _ {1} y _ {1}) d \mu_ {1} (x _ {1})} \end{array}
+\]
+
+最后，再次应用勒贝格–富比尼定理，我们得出
+
+\[
+\mathcal {F} (\partial_ {1} \varphi) (y) = 2 i \pi y _ {1} \int_ {\mathbf {R} ^ {n}} \varphi (x) \exp (- 2 i \pi x \cdot y) d \mu (x),
+\]
+
+这正是所要证明的。
+
+命题 18. --- 傅里叶变换在 \(\mathcal{S}(\mathbf{R}^{n})\) 上的限制是拓扑向量空间的一个自同构，其逆是余傅里叶变换的限制。
+
+设 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) 。由前一引理， \(\varphi\) 的傅里叶变换属于 \(\mathcal{C}^{\infty}(\mathbf{R}^{n})\) 。此外，对 \(\alpha\in\mathbf{N}^{n}\) 与 \(\beta\in\mathbf{N}^{n}\) ，我们有
+
+\[
+\begin{array}{r} \mathrm{X} ^ {\beta} \partial^ {\alpha} (\mathcal {F} (\varphi)) = (- 2 i \pi) ^ {| \alpha |} \mathrm{X} ^ {\beta} \mathcal {F} (\mathrm{X} ^ {\alpha} \varphi) \\ = (- 1) ^ {| \alpha |} (2 i \pi) ^ {| \alpha | - | \beta |} \mathcal {F} (\partial^ {\beta} (\mathrm{X} ^ {\alpha} \varphi)). \end{array}
+\]
+
+特别地，函数 \(\mathrm{X}^{\beta}\partial^{\alpha}(\mathcal{F}(\varphi))\) 有界。由于 \(\alpha\) 与 \(\beta\) 在 \(\mathbf{N}^{n}\) 中任意，这表明 \(\mathcal{F}(\varphi)\) 属于 \(\mathcal{S}(\mathbf{R}^{n})\) 。此外，这一计算蕴含
+
+\[
+q _ {\alpha , \beta} (\mathcal {F} (\varphi)) \leqslant (2 \pi) ^ {| \alpha | - | \beta |} \| \partial^ {\beta} (X ^ {\alpha} \varphi) \| _ {1}
+\]
+
+对 \((\alpha, \beta) \in \mathbf{N}^n \times \mathbf{N}^n\) 与 \(\varphi \in \mathcal{S}(\mathbf{R}^n)\) 成立。
+
+由于空间 \(\mathcal{S}(\mathbf{R}^{n})\) 在 \(\mathrm{L}^{1}(\mathbf{R}^{n})\) 中的包含映射是连续的（IV, p. 213 的命题 13），映射 \(q_{\alpha,\beta} \circ \mathcal{F}\) （从 \(\mathcal{S}(\mathbf{R}^{n})\) 到 \(\mathbf{R}\) 中的）是连续的。由此得出，傅里叶变换是从空间 \(\mathcal{S}(\mathbf{R}^{n})\) 到其自身的连续映射（参见 EVT, II, p. 7，命题 5, c)）。类似地可以验证，余傅里叶变换是从空间 \(\mathcal{S}(\mathbf{R}^{n})\) 到其自身的连续映射。由傅里叶反演公式（II, p. 222 的定理 3），傅里叶变换与余傅里叶变换是互逆的同构。
+
+定义 6. --- \(\mathcal{S}'(\mathbf{R}^n)\) 上的傅里叶变换（相应地，余傅里叶变换）称为 \(\mathcal{S}(\mathbf{R}^n)\) 上的傅里叶变换（相应地，余傅里叶变换）的转置。
+
+我们仍用 \(\mathcal{F}\) （相应地， \(\overline{\mathcal{F}}\) ）表示 \(\mathcal{S}'(\mathbf{R}^n)\) 上的傅里叶变换（相应地，余傅里叶变换）。 \(\mathcal{S}'(\mathbf{R}^n)\) 上的傅里叶变换于是是一个拓扑向量空间自同构，其逆是余傅里叶变换。对每个 \(f \in \mathcal{S}'(\mathbf{R}^n)\) ，缓增广义函数 \(\mathcal{F}(f)\) （相应地， \(\overline{\mathcal{F}}(f) )\) ）由下述公式定义
+
+\[
+\langle \mathcal {F} (f), \varphi \rangle = \langle f, \mathcal {F} (\varphi) \rangle \quad (\text { resp. } \langle \overline {{\mathcal {F}}} (f), \varphi \rangle = \langle f, \overline {{\mathcal {F}}} (\varphi) \rangle)
+\]
+
+对所有 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) 成立。
+
+命题 19. --- 设 f 是与有界测度 \(\nu \in \mathcal{M}^{1}(\mathbf{R}^{n})\) （相应地，与 \(g \in \mathrm{L}^{2}(\mathbf{R}^{n})\) ）相伴的缓增广义函数。 f 在 \(\mathcal{S}'(\mathbf{R}^{n})\) 中的傅里叶变换是与测度 \(\nu\) 的傅里叶变换（相应地，与 g 的傅里叶变换）相伴的缓增广义函数。
+
+设 \(\nu\) 是 \(\mathbf{R}^{n}\) 上的有界测度， f 是与 \(\nu\) 相伴的缓增广义函数。傅里叶变换 \(\mathcal{F}(\nu)\) 是 \(\mathbf{R}^{n}\) 上的连续有界函数（II, p. 207 的命题 3）。与这一函数相伴的缓增广义函数满足
+
+\[
+\langle \mathcal {F} (\nu), \varphi \rangle = \int_ {\mathbf {R} ^ {n}} \mathcal {F} (\nu) \varphi d \mu = \int_ {\mathbf {R} ^ {n}} \mathcal {F} (\varphi) d \nu = \langle f, \mathcal {F} (\varphi) \rangle = \langle \mathcal {F} (f), \varphi \rangle
+\]
+
+对所有 \(\varphi\in\mathcal{S}(\mathbf{R}^{n})\) 成立，其中第二个等式就是 II, p. 221 的命题 13，由于测度 \(\varphi\cdot\mu\) 有界，它在此适用。因此与 \(\mathcal{F}(\nu)\) 相伴的缓增广义函数是 \(\mathcal{F}(f)\) 。
+
+当 \(f\) 是与 \(g \in \mathrm{L}^2(\mathbf{R}^n)\) 相伴的缓增广义函数时，我们用完全类似的方法，借助 II, p. 221 的公式 (29) 处理。
+
+对余傅里叶变换也有类似的命题。
+
+注. --- 关于测度的傅里叶变换的初等公式对缓增广义函数的傅里叶变换仍然有效。例如，对 \(f \in \mathcal{S}'(\mathbf{R}^{n})\) 与 \(\alpha \in \mathbf{N}^{n}\) ，我们有
+
+\[
+\begin{array}{l} \mathcal {F} (\partial^ {\alpha} f) = (2 i \pi) ^ {| \alpha |} X ^ {\alpha} \mathcal {F} (f) \\ \mathcal {F} (X ^ {\alpha} f) = (- 2 i \pi) ^ {- | \alpha |} \partial^ {\alpha} (\mathcal {F} (f)) \end{array}
+\]
+
+这由引理 11 得出，
+

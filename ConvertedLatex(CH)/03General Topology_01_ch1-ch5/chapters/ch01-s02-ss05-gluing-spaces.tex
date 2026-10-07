@@ -1,0 +1,32 @@
+\subsection{拓扑空间的粘合}
+
+设 \((\mathbf{X}_{\lambda})_{\lambda \in L}\) 是一个集合族，且设 \(\mathbf{X}\) 为作为诸 \(\mathbf{X}_{\lambda}\) 之和的那个集合（《集合论》第二章，§ 4，第 8 目，定义 8）；我们将把每个 \(\mathbf{X}_{\lambda}\) 与 \(\mathbf{X}\) 的一个子集（借助典范单射 \(j_{\lambda}: \mathbf{X}_{\lambda} \to \mathbf{X}\)）等同起来。
+
+设 R 是 X 上的一个等价关系，使得 R 的每个等价类在每个 \(X_{\lambda}\) 中至多有一个元素；对每对指标 \((\lambda, \mu)\)，设 \(A_{\lambda\mu}\) 为 \(X_{\lambda}\) 的由这样的元素 x（存在属于 x 的等价类的元素 \(y \in X_{\mu}\)）组成的子集。显然，对每个 \(x \in A_{\lambda\mu}\)，对应着唯一的与 x 模 R 同余的 \(y \in A_{\mu\lambda}\)；如此定义的映射 \(h_{\mu\lambda}: A_{\lambda\mu} \to A_{\mu\lambda}\) 满足下列条件：
+
+\begin{enumerate}
+\def\labelenumi{(\roman{enumi})}
+\item
+  对每个 \(\lambda \in L\)，\(h_{\lambda \lambda}\) 是 \(\mathbf{A}_{\lambda \lambda} = \mathbf{X}_{\lambda}\) 上的恒等映射。
+\item
+  对指标的三元组 \((\lambda, \mu, \nu)\)（\(\mathbf{L}\) 中的三元组）以及每个 \(x \in \mathbf{A}_{\lambda \mu} \cap \mathbf{A}_{\lambda \nu}\)，我们有 \(h_{\mu \lambda}(x) \in \mathbf{A}_{\mu \nu}\)，并且
+\end{enumerate}
+
+\[
+h _ {\nu \lambda} (x) = h _ {\nu \mu} (h _ {\mu \lambda} (x)).\tag{1}
+\]
+
+反之，假设对每对指标 \((\lambda, \mu)\) 给定了一个子集 \(A_{\lambda \mu}\)（\(X_{\lambda}\) 的子集）和一个满足上述条件 (i) 与 (ii) 的映射 \(h_{\mu \lambda}: A_{\lambda \mu} \to A_{\mu \lambda}\)。首先，把 (ii) 应用于三元组 \((\lambda, \mu, \lambda)\) 与 \((\mu, \lambda, \mu)\) 可知，\(h_{\lambda \mu} \circ h_{\mu \lambda}\)（相应地，\(h_{\mu \lambda} \circ h_{\lambda \mu}\)）是 \(h_{\lambda \lambda}\)（相应地，\(h_{\mu \mu}\)）在 \(A_{\lambda \mu}\)（相应地，\(A_{\mu \lambda}\)）上的限制；于是由 (i) 推出，\(h_{\lambda \mu}\) 与 \(h_{\mu \lambda}\) 是互为逆映射的双射。现在设 \(R\{x, y\}\) 是关系"存在 \(\lambda, \mu\) 使得 \(x \in A_{\lambda \mu}, y \in A_{\mu \lambda}\) 且 \(y = h_{\mu \lambda}(x)\)"。由 (i) 以及前文可知 \(R\) 是自反的且对称的；另一方面，若 \(x \in A_{\lambda \mu}\)，
+
+\[
+y = h _ {\mu \lambda} (x) \in A _ {\mu \lambda} \cap A _ {\mu \nu} \quad \text { and } \quad z = h _ {\nu \mu} (y),
+\]
+
+则也有 \(x = h_{\lambda \mu}(y)\)，从而由 (ii) 得 \(x \in A_{\lambda \mu} \cap A_{\lambda \nu}\)；于是关系式 (1) 表明 \(R\) 是传递的，因此 \(R\) 是 \(X\) 上的一个等价关系。由 (i) 以及 \(R\) 的定义还可得出：模 \(R\) 的每个等价类在诸集合 \(X_{\lambda}\) 的每一个中至多有一个元素，并且 \(A_{\lambda \mu}\) 是由所有这样的 \(x \in X_{\lambda}\)（存在元素 \(y \in X_{\mu}\) 与 \(x \mod R\) 同余）组成的集合。我们说，商集 \(X / R\) 是把诸 \(X_{\lambda}\) 沿 \(A_{\lambda \mu}\) 借助诸双射 \(h_{\mu \lambda}\) 粘合在一起而得到的。若 \(\varphi: X \to X / R\) 是典范映射，则 \(\varphi\) 在每个 \(X_{\lambda}\) 上的限制是由 \(X_{\lambda}\) 到 \(\varphi(X_{\lambda})\) 上的一个双射。
+
+现在假设每个 \(X_{\lambda}\) 都是拓扑空间，并设 \(G_{\lambda}\) 为它的拓扑。设 G 为集合 X/R 上使诸映射 \(\varphi \circ j_{\lambda}\) 连续的最细拓扑；G 是 X 上作为诸拓扑 \(G_{\lambda}\) 之和的那个拓扑经 R 得到的商。我们说，拓扑空间 X/R（带拓扑 G）是把诸拓扑空间 \(X_{\lambda}\) 沿 \(A_{\lambda\mu}\) 借助诸双射 \(h_{\mu\lambda}\) 粘合在一起而得到的。于是，X/R 的开（相应地，闭）子集是 X 的子集 B（关于 R 饱和，且 \(B \cap X_{\lambda}\) 在 \(X_{\lambda}\) 中是开（相应地，闭）集（对每个 \(\lambda \in L\)））的典范像。
+
+由于 \(\varphi\) 在每个 \(\mathbf{X}_{\lambda}\) 上的限制是到子集 \(\mathbf{X}_{\lambda}^{\prime} = \varphi (\mathbf{X}_{\lambda})\)（\(\mathbf{X} / \mathbf{R}\) 的子集）上的一个双射，我们可以借助这个双射把拓扑 \(\mathfrak{C}_{\lambda}\) 搬运到 \(\mathbf{X}_{\lambda}^{\prime}\) 上，使 \(\mathbf{X}_{\lambda}^{\prime}\) 带有拓扑 \(\mathfrak{C}_{\lambda}^{\prime}\)；而拓扑 \(\mathfrak{C}\)（\(\mathbf{X} / \mathbf{R}\) 上的拓扑）是使典范单射 \(\mathbf{X}_{\lambda}^{\prime} \to \mathbf{X} / \mathbf{R}\) 连续的最细拓扑。一般地，\(\mathfrak{C}\) 在 \(\mathbf{X}_{\lambda}^{\prime}\) 上诱导的拓扑比 \(\mathfrak{C}_{\lambda}^{\prime}\) 粗，但与后者不恒等；即使诸 \(h_{\mu \lambda}\) 是同胚（§ 3，习题 15）亦然。然而，由第 4 目命题 8 可得，沿用前面的记号：
+
+命题 9. 假设诸 \(h_{\mu \lambda}\) 都是同胚，且每个 \(\mathbf{A}_{\lambda \mu}\) 在 \(\mathbf{X}_{\lambda}\) 中是开（相应地，闭）集；则每个 \(\varphi(\mathbf{X}_{\lambda})\) 在 \(\mathbf{X}/\mathbf{R}\) 中是开（相应地，闭）集，且 \(\varphi\) 在 \(\mathbf{X}_{\lambda}\) 上的限制是由 \(\mathbf{X}_{\lambda}\) 到子空间 \(\varphi(\mathbf{X}_{\lambda})\)（\(\mathbf{X}/\mathbf{R}\) 的子空间）上的一个同胚。
+

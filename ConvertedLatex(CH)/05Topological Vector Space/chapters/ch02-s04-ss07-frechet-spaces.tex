@@ -1,0 +1,44 @@
+\subsection{关于 Fréchet 空间的注记}
+
+我们将就局部凸空间的情形考虑 GT, IX, § 3.1 的 prop. 2。
+
+命题 11. --- 设 E 是一个可度量化局部凸空间。E 的拓扑可由一个平移不变的距离定义，且对这个距离开球都是凸的。
+
+设 \((p_{n})_{n\in\mathbf{N}}\) 是定义 E 的拓扑的一个半范数序列。设 \(d_{n}\) 是由 \(d_{n}(x,y)=\inf(p_{n}(x-y),1/n)\) （对 E 中的 x, y）定义的伪度量；它是平移不变的。对每个 \(n\geqslant0\) 及每个实数 \(R\geqslant0\) ，设 \(B_{n,R}\) 是由那些 \(x\in E\) （它们使 \(d_{n}(x,0)<R\) ）组成的集。若 \(R\geqslant1/n\) ，则 \(B_{n,R}=E\) ，而在另一情形，\(B_{n,R}\) 由那些 \(x\in E\) （它们满足 \(p_{n}(x)<R\) ）组成；在所有情形下 \(B_{n,R}\) 都是凸的。
+
+对 \(x, y\) （\(\mathbf{E}\) 中的）定义 \(d(x, y) = \sup_{n \in \mathbb{N}} d_n(x, y)\) 。我们立即看出 \(d\) 是 \(\mathbf{E}\) 上平移不变且定义 \(\mathbf{E}\) 的拓扑的一个距离。对 \(x_0 \in \mathbf{E}\) 及 \(\mathbf{R} \geqslant 0\) ，以 \(x_0\) 为中心、\(\mathbf{R}\) 为半径的开球（对距离 \(d\) ）等于 \(\bigcap_{n \in \mathbb{N}} (x_0 + B_{n,\mathbf{R}})\) ，因此它是凸的。
+
+命题 12. --- 设 E 和 F 是两个 Fréchet 空间，u 是 E 到 F 上的一个连续线性映射。则存在 u 的一个截面，它连续但未必线性。
+
+由 prop. 11，存在 E 上平移不变、定义 E 的拓扑且使开球为凸的一个距离 d。给定 F 中的 y 和 \(y'\) ，设 \(\delta(y, y')\) 是闭集 \(u^{-1}(y)\) 与 \(u^{-1}(y')\) 在 E 中之间的距离。由于 u 是一个严格态射 (I, 第 17 页, th. 1)，GT, IX, §3.1 的注记表明 \(\delta\) 是 F 上定义 F 的拓扑的一个距离。我们将归纳地构造 F 到 E 中的连续映射的一个序列 \((s_n)_{n \in \mathbf{N}}\) ，使对所有 \(y \in F\) 满足下列不等式：
+
+\[
+\delta (y, u (s _ {n} (y))) <   2 ^ {- n}\tag{2}
+\]
+
+\[
+d \left(s _ {n} (y), s _ {n - 1} (y)\right) <   2 ^ {- n + 1} \quad (\text { only   if } n \geqslant 1).\tag{3}
+\]
+
+于是假设或者 \(n = 0\) ，或者 \(n \geqslant 1\) 且 \(s_{n-1}\) 已经构造好。设 \(y_0 \in \mathbf{F}\) ；由于 \(u\) 是满射，集 \(u^{-1}(y_0)\) 非空，且对 \(n \geqslant 1\) ，由归纳假设有 \(d(u^{-1}(y_0), s_{n-1}(y_0)) < 2^{-n+1}\) 。因此存在一点 \(x_0\) （\(\mathbf{E}\) 中的），使 \(u(x_0) = y_0\) ，且对 \(n \geqslant 1\) ，\(d(x_0, s_{n-1}(y_0)) < 2^{-n+1}\) 。由于映射 \(s_{n-1}\) 连续，由那些点 \(y\) （\(\mathbf{F}\) 中的，满足不等式 \(\delta(y, y_0) < 2^{-n}\) 和 \(d(x_0, s_{n-1}(y)) < 2^{-n+1}\) ）所成的集是 \(y_0\) 的一个开邻域。因此存在一个开覆盖 \((\mathrm{V}_i)_{i \in \mathbf{I}}\) （\(\mathbf{F}\) 的）以及常值映射 \(s_{n,i}\) （\(\mathbf{F}\) 到 \(\mathbf{E}\) 中的），它们在 \(\mathrm{V}_i\) 中满足不等式 (2) 和 (3)（把其中的 \(s_n\) 换成 \(s_{n,i}\) ）。由于空间 \(\mathbf{F}\) 可度量化，存在一个连续的单位分解 \((f_i)_{i \in \mathbf{I}}\) ，它局部有限且从属于覆盖 \((\mathrm{V}_i)_{i \in \mathbf{I}}\) (GT, IX, § 4.5, th. 4 及 § 4.4, cor. 1)。对每个 \(y \in \mathbf{F}\) ，令 \(s_n(y) = \sum_{i \in \mathbf{I}} f_i(y) \cdot s_{n,i}(y)\) 。映射 \(s_n\) （\(\mathbf{F}\) 到 \(\mathbf{E}\) 中的）连续；由于开球在 \(\mathbf{E}\) 中和 \(\mathbf{F}\) 中都是凸的，映射 \(s_n\) 对所有 \(y \in \mathbf{F}\) 满足不等式 (2) 和 (3)。
+
+由不等式 (3)，诸映射 \(s_n: \mathrm{F} \to \mathrm{E}\) 对一致收敛构成一个 Cauchy 序列。由于 \(\mathrm{E}\) 完备，序列 \((s_n)_{n \in \mathbb{N}}\) 一致收敛到一个连续映射 \(s: \mathrm{F} \to \mathrm{E}\) (GT, X, § 1.6)；公式 (2) 表明 \(u \circ s\) 是 \(\mathrm{F}\) 的恒等映射，因此 \(s\) 是 \(u\) 的一个连续截面。
+
+推论. --- 若 L 是 F 中的一个紧集，则存在 E 中的一个紧集 K，使得 \(u(\mathbf{K}) = \mathbf{L}\) 。
+
+只须取 K = s(L)，其中 s 是 u 的一个连续截面。
+
+注记. --- 1) prop. 12 的推论也可以由 I, 第 17 页的 th. 1 及 GT, IX, § 2.10 的 prop. 18 推出。
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  我们沿用 prop. 12 的记号。设 \(p\) 是 \(E\) 上的一个连续半范数；
+\end{enumerate}
+
+对所有 \(y \in \mathbf{F}\) ，令 \(q(y) = \inf_{u(x) = y} p(x)\) ，则 \(q\) 是 \(\mathbf{F}\) 上的一个连续半范数 (II, 第 4 页)。设 \(\phi\) 是 \(F\) 到区间 \([0, +\infty[\) （\(\overline{\mathbf{R}}\) 的）中的一个下半连续映射。我们证明，存在一个连续截面 \(s\) （\(u\) 的），使得 \(p \circ s < q + \phi\) 。
+
+设 \(s_0\) 是 \(u\) 的一个连续截面 (prop. 12)，\(\mathbf{N}\) 是 \(u\) 的核。设 \(y_0 \in \mathbf{F}\) ，则存在 \(z_0 \in \mathbf{N}\) ，使 \(p(s_0(y_0) + z_0) < q(y_0) + \phi(y_0)\) 。存在一个开邻域 \(\mathbf{W}\) （\(y_0\) 在 \(\mathbf{F}\) 中的），使 \(p(s_0(y) + z_0) < q(y) + \phi(y)\) （对所有 \(y \in \mathbf{W}\) ）。于是存在一个开覆盖 \((\mathbf{W}_i)_{i \in \mathbf{I}}\) （\(\mathbf{F}\) 的）以及常值映射 \(t_i: \mathbf{F} \to \mathbf{N}\) ，使 \(p(s_0(y) + t_i(y)) < q(y) + \phi(y)\) （对所有 \(y \in \mathbf{W}_i\) ）。由于 \(\mathbf{F}\) 可度量化，存在从属于覆盖 \((\mathbf{W}_i)_{i \in \mathbf{I}}\) 的一个局部有限的连续单位分解 \((g_i)_{i \in \mathbf{I}}\) (GT, IX, § 4.5, th. 4 及 § 4.4, cor. 1)。映射 \(s\) （\(\mathbf{F}\) 到 \(\mathbf{E}\) 中的），由 \(s(y) = s_0(y) + \sum_{i \in \mathbf{I}} g_i(y). t_i(y)\) 定义，满足所述条件。
+

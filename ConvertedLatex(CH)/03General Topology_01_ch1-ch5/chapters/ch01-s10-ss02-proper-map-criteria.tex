@@ -1,0 +1,100 @@
+\subsection{用紧性刻画逆紧映射}
+
+在本小节中，我们用 P 表示由单独一点组成且带其唯一拓扑的空间。
+
+引理 1. 设 X 是一个拓扑空间，使得常值映射 \(X \rightarrow P\) 是逆紧的。则 X 是拟紧的。
+
+（稍后（定理 1，推论 1）我们将看到这个性质刻画了拟紧空间。）
+
+我们可以限于 X 非空的情形。设 F 是 X 上的一个滤子，\(X' = X \cup \{\omega\}\) 是与 F 相伴的拓扑空间（§ 6，第 5 目，例）。设 \(\Delta\) 是 \(X \times X'\) 的由所有 \((x, x)\)（其中 \(x \in X\)）组成的子集，并设 \(F = \overline{\Delta}\) 是 \(\Delta\) 在 \(X \times X'\) 中的闭包。鉴于关于 X 的假设，F 在投影 \(X \times X' \to X'\) 下的象在 \(X'\) 中是闭的；这个象包含 X，因此包含 \(\omega\)，后者属于 X 的闭包；换言之，存在一点 \(x \in X\)，使得 \((x, \omega) \in F\)。由 \(X \times X'\) 的拓扑的定义，这意味着对 x 在 X 中的每个邻域 V 及每个 \(M \in F\)，有 \((V \times M) \cap \Delta \neq \emptyset\)，即 \(V \cap M \neq \emptyset\)，故 x 是滤子 F 的一个聚点，因此 X 是拟紧的。
+
+证毕。
+
+定理 I. 设 \(f: \mathbf{X} \to \mathbf{Y}\) 是一个连续映射。则以下四个命题等价：
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(f\) 是逆紧的。
+\item
+  \(f\) 是闭的，且 \(\overline{f}^1(y)\) 对每个 \(y \in \mathbf{Y}\) 都是拟紧的。
+\item
+  若 \(\mathfrak{F}\) 是 \(\mathbf{X}\) 上的一个滤子，且 \(y\in \mathbf{Y}\) 是 \(f(\mathfrak{F})\) 的一个聚点，则存在一个聚点 \(x\)（\(\mathfrak{F}\) 的），使得 \(f(x) = y\)。
+\item
+  若 \(\mathfrak{U}\) 是 \(\mathbf{X}\) 上的一个超滤子，且 \(y\in \mathbf{Y}\) 是超滤子基 \(f(\mathfrak{U})\) 的一个极限点，则存在一个极限点 \(x\)（\(\mathfrak{U}\) 的），使得 \(f(x) = y\)。
+\item
+  \(\Longrightarrow\) b)：若 \(f\) 逆紧，则 \(f\) 是闭的（第 1 目，命题 1），且对每个 \(y \in Y\)，映射 \(f_{\{y\}}: \overline{f}^1(y) \to \{y\}\) 是逆紧的{[}第 1 目，命题 3a){]}。由引理 1，这蕴含 \(\overline{f}^1(y)\) 是拟紧的。
+\item
+  \(\Longrightarrow\) c)：设 \(\mathfrak{F}\) 与 \(y\) 满足 c) 的假设。设 \(\mathfrak{B}\) 是由 \(\mathfrak{F}\) 的诸集合的闭包组成的 X 上的滤子基。由于 \(f\) 是闭的，我们有 \(f(\overline{\mathbf{M}}) = \overline{f}(\mathbf{M})\)（对每个 \(\mathbf{M} \in \mathfrak{F}\)；§ 5，第 4 目，命题 9）。这表明诸集合 \(\overline{\mathbf{M}} \cap \overline{f}^1(y)\)（\(\mathbf{M} \in \mathfrak{F}\)）都非空，因而构成 \(\overline{f}^1(y)\) 上的一个滤子基，其元素是 \(\overline{f}^1(y)\) 的闭子集。既然 \(\overline{f}^1(y)\) 是拟紧的，存在一点 \(x \in \overline{f}^1(y)\)，它属于所有的集合 \(\overline{\mathbf{M}}\)（当 M 跑遍 \(\mathfrak{F}\) 时）。于是 \(f(x) = y\)，且 \(x\) 是 \(\mathfrak{F}\) 的一个聚点。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  \(\Longrightarrow\) d)：平凡。
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  \(\Longrightarrow\) a)：我们先证明若 d) 成立，则 \(f\) 是闭映射。设 A 是 X 的一个非空闭子集，\(\mathfrak{F}\) 是 X 的包含 A 的子集组成的滤子。则 A 是 \(\mathfrak{F}\) 的聚点集。设 B 是滤子基 \(f(\mathfrak{F})\) 在 Y 上的聚点集；B 是闭的且显然包含 \(f(A)\)；我们将证明 \(B = f(A)\)。设 \(y \in B\)，\(\mathfrak{B}\) 是 \(y\) 在 Y 中的邻域滤子；则由假设，\(\mathfrak{W} = \overline{f}^{1}(\mathfrak{V})\) 的每个集合都与 \(\mathfrak{F}\) 的每个集合相交；故 \(\mathfrak{W}\) 是 X 上的一个滤子基，且存在 X 上的一个超滤子 \(\mathfrak{U}\)，它比 \(\mathfrak{F}\) 与以 \(\mathfrak{W}\) 为基的滤子都细（§ 6，第 2 目，命题 1，推论 1 及第 4 目，定理 1）。以 \(f(\mathfrak{U})\) 为基的超滤子比 \(\mathfrak{V}\) 细，因此收敛于 \(y\)。依据 d)，存在一点 \(x \in X\)，使得 \(f(x) = y\) 且 \(\mathfrak{U}\) 收敛于 \(x\)；由于 \(\mathfrak{U}\) 比 \(\mathfrak{F}\) 细，\(x\) 是 \(\mathfrak{F}\) 的一个聚点；故 \(x \in A\)。这表明 \(B = f(A)\)，因而 \(f\) 是闭的。
+\end{enumerate}
+
+为完成证明，还须证明 \(f \times \iota_{\mathbf{Z}}\) 对每个拓扑空间 \(\mathbf{Z}\) 都是闭的。由已证的结果，只须证明若 \(f\) 满足条件 d)，则 \(f \times \iota_{\mathbf{Z}}\) 也满足。这是下述一般引理的推论：
+
+引理 2. 若 \((f_{\iota})_{\iota\in I}\) 是一族连续映射 \(f_{\iota}:\mathbf{X}_{\iota}\to \mathbf{Y}_{\iota}\)，其中每个都满足定理 1 的条件 d)，则积映射
+
+\[
+f: (x _ {\iota}) \rightarrow (f _ {\iota} (x _ {\iota}))
+\]
+
+也满足 d)。
+
+设 \(\mathfrak{U}\) 是 \(\mathbf{X} = \prod_{\iota} \mathbf{X}_{\iota}\) 上的一个超滤子，\(y = (y_{\iota})\) 是 \(\mathbf{Y} = \prod_{\iota} \mathbf{Y}_{\iota}\) 的一点，使得 \(f(\mathfrak{U})\) 收敛于 \(y\)。这意味着诸超滤子基 \(\operatorname{pr}_{\iota}(f(\mathfrak{U})) = f_{\iota} (\operatorname{pr}_{\iota}(\mathfrak{U}))\) 中的每一个都收敛于 \(y_{\iota}\)（\(\S 7\)，第 6 目，命题 10，推论 1）。依据条件 d)，对每个 \(\iota \in I\)，存在 \(x_{\iota} \in \mathbf{X}_{\iota}\)，使得 \(f_{\iota}(x_{\iota}) = y_{\iota}\) 且 \(\operatorname{pr}_{\iota}(\mathfrak{U})\) 收敛于 \(x_{\iota}\)；但这样 \(\mathfrak{U}\) 便收敛于 \(x = (x_{\iota})\)（同上），且我们有 \(f(x) = y\)。这就完成了引理 2 从而定理 1 的证明。
+
+推论 1. 拓扑空间 X 是拟紧的，当且仅当映射 \(X \rightarrow P\) 是逆紧的。
+
+把 a) \(\Longleftrightarrow\) b) 应用于 \(\mathbf{X} \to \mathbf{P}\) 即可。
+
+推论 2. 拟紧空间 X 到豪斯多夫空间 Y 中的每个连续映射 f 都是逆紧的。
+
+复合 \(X \xrightarrow{f} Y \to P\) 由推论 1 是逆紧的；故由第 1 目命题 5 d)，f 是逆紧的。或者，利用 § 9，第 4 目，定理 2，推论 2，应用定理 1 的判别准则 b)。
+
+推论 3. 若 \((f_{\iota})\) 是一族逆紧映射，则积映射 \((x_{\iota})\to (f_{\iota}(x_{\iota}))\) 是逆紧的。
+
+鉴于定理 1，这就是上面的引理 2。
+
+若把这个推论应用于映射族 \(X_{\iota} \rightarrow P\) 并利用推论 1，便得到 Tychonoff 定理（§ 9，第 5 目，定理 3）。
+
+推论 4. 设 X 是豪斯多夫空间，\(f_{\iota}: \mathbf{X} \to \mathbf{Y}_{\iota}\) 是一族逆紧映射。则映射 \(f: x \to (f_{\iota}(x))\)（X 到 \(\prod_{\iota} Y_{\iota}\) 中的）是逆紧的。
+
+证明与有限族情形（第 1 目，命题 5，推论 3）相同，利用上面的推论 3 以及 \(\mathbf{X}^{\mathbf{I}}\) 的对角线是闭的这一事实（\(\S\) 8，第 1 目，命题 1）。
+
+推论 5. 若 X 是任意拟紧空间，Y 是任意拓扑空间，则投影 \(\mathbf{pr}_2: \mathbf{X} \times \mathbf{Y} \to \mathbf{Y}\) 是逆紧的。
+
+因为我们可以把 Y 与 \(P \times Y\) 等同，把 \(pr_{2}\) 与 \(X \rightarrow P\) 和 \(\iota_{Y}\) 的积等同，而这两者都是逆紧映射。
+
+例. 设 X 是一个集合，\(f: \mathbf{X} \to \mathbf{X}'\) 是 X 到拓扑空间 \(\mathbf{X}'\) 上的一个映射；用 \(f\) 下 \(\mathbf{X}'\) 的拓扑的逆像来拓扑化 X。则 \(f\) 是逆紧的，因为 \(f\) 是闭的（\(\S 5\)，第 1 目，例 3），且 \(\mathbf{X}'\) 的一个点的逆像是 X 的一个子空间，其拓扑是最粗拓扑，因而是拟紧的。
+
+注. 当 Y 是豪斯多夫空间时，定理 1 的条件 d) 等价于下述条件：
+
+d′) 若 \(\mathfrak{U}\) 是 \(\mathbf{X}\) 上的一个超滤子，使得 \(f(\mathfrak{U})\) 是收敛滤子基，则 \(\mathfrak{U}\) 收敛。
+
+因为若 \(\mathfrak{U}\) 收敛于 \(x\) 且 \(f(\mathfrak{U})\) 收敛于 \(y\)，则 \(\mathbf{Y}\) 中极限的唯一性与 \(f\) 的连续性表明必有 \(y = f(x)\)。同样，当 Y 是豪斯多夫空间时，定理 1 的条件 c) 等价于：
+
+c′) 若 \(\mathfrak{F}\) 是 \(\mathbf{X}\) 上的一个滤子，使得 \(f(\mathfrak{F})\) 有一个聚点，则 \(\mathfrak{F}\) 有一个聚点。
+
+\[
+\text { For } \quad \mathrm{c}) \Longrightarrow \mathrm{c} ^ {\prime}) \Longrightarrow \mathrm{d} ^ {\prime}) \Longrightarrow \mathrm{d}) \Longrightarrow \mathrm{c}).
+\]
+
+另一方面，若 Y 不是豪斯多夫的，则 d′) 不再蕴含 d)；例如，取 X 由一点组成，Y 由两点组成并带最粗拓扑。
+
+命题 6. 设 \(f: \mathbf{X} \to \mathbf{Y}\) 是一个逆紧映射，\(\mathbf{K}\) 是 \(\mathbf{Y}\) 的一个拟紧子集。则 \(f^1(\mathbf{K})\) 是拟紧的。
+
+由第 1 目命题 3，映射 \(f_{\mathbf{K}}: \overline{f}^{1}(\mathbf{K}) \to \mathbf{K}\) 是逆紧的。由于 \(\mathbf{K} \to \mathbf{P}\) 是逆紧映射（定理 1，推论 1），由第 1 目命题 5 a)，复合 \(\overline{f}^{1}(\mathbf{K}) \xrightarrow{f_{\mathbf{K}}} \mathbf{K} \to \mathbf{P}\) 是逆紧的，于是由定理 1 推论 1，\(\overline{f}^{1}(\mathbf{K})\) 是拟紧的。
+

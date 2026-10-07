@@ -1,0 +1,84 @@
+\subsection{交错代数}
+
+设 A 是一个交换环，F 是一个（未必结合的）A-代数。对于 F 中任意三个元素 x, y, z，我们记
+
+\[
+a (x, y, z) = x (y z) - (x y) z\tag{1}
+\]
+
+（ \(x, y, z\) 的结合子）； \(a\) 显然是 \(\mathbf{F} \times \mathbf{F} \times \mathbf{F}\) 到 \(\mathbf{F}\) 中的一个 A-三线性映射。
+
+引理 1. 对所有 \(p, q, r, s\) （属于代数 \(\mathbf{F}\) ），
+
+\[
+a (p q, r, s) - a (p, q r, s) + a (p, q, r s) = a (p, q, r) s + p a (q, r, s).\tag{2}
+\]
+
+验证由定义 (1) 立即得出。
+
+命题 1. 对 A-代数 F，以下条件等价：
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  对 \(x, y\) （ \(\mathbf{F}\) 中元素的每个有序对），由 \(x\) 和 \(y\) 生成的子代数是结合的。
+\item
+  三线性映射 \((x, y, z) \mapsto a(x, y, z)\) 是交错的（§ 7，第 3 号）。
+\item
+  对 \(x, y\) （ \(\mathbf{F}\) 中元素的每个有序对）， \(x^2y = x(xy)\) 和 \(yx^2 = (yx)x\) 。
+\end{enumerate}
+
+显然（a）蕴含（c）。我们证明（c）蕴含（b）：根据定义（§ 7，第 3 号），要证明（b），只需验证 \(a(x, x, y) = 0\) 和 \(a(x, y, y) = 0\) ，而这正是（c）。
+
+为了证明(b)蕴含(a)，我们使用以下4个引理：
+
+引理 2. 设 E 是一个 A-代数，使得三线性映射 \((x,y,z)\mapsto a(x,y,z)\) 是交错的，S 是 E 的一个生成系，U 是 E 的一个包含 S 的子 A-模，并且满足 \(sU\subset U\) 和 \(Us\subset U\) （对所有 \(s\in S\) ）。则 U = E。
+
+集合 \(U'\) 由 \(x \in E\) （满足 \(xU \subset U\) 和 \(Ux \subset U\) ）组成，它显然是 E 的一个子 A-模，且根据假设它包含 S。另一方面，对 \(U'\) 中的 x, y 和 \(u \in U\) ，根据假设
+
+\[
+(x y) u = x (y u) + a (x, y, u) = x (y u) - a (x, u, y) = x (y u) - (x u) y + x (u y) \in \mathrm{U};
+\]
+
+过渡到反代数，我们类似地有 \(u(xy) \in \mathbf{U}\) 。因此 \(\mathbf{U}'\) 是 \(\mathbf{E}\) 的一个子代数，并且由于它包含 \(\mathbf{S}\) , \(\mathbf{U}' = \mathbf{E}\) 。因此 \(\mathbf{EU} \subset \mathbf{U}\) ，更有 \(\mathbf{UU} \subset \mathbf{U}\) ，这证明了 \(\mathbf{U}\) 是 \(\mathbf{E}\) 的一个子代数；由于它包含 \(\mathbf{S}\) , \(\mathbf{U} = \mathbf{E}\) ，这就证明了引理。
+
+F 的子集 H 称为强结合的，如果当 u、v、w 中至少有两个元素属于 H 时 \(a(u, v, w) = 0\) 。
+
+引理 3. 假设映射 \(a\) 是交错的。如果 \(\mathbf{H}\) 是 \(\mathbf{F}\) 的一个强结合子集，则 \(\mathbf{F}\) 的由 \(\mathbf{H}\) 生成的子代数是强结合的。
+
+由于 F 的强结合子集的集合是归纳的，只需证明：若 H 是 F 的一个极大强结合子集，则 H 是 F 的一个子代数。由于 H 显然是 F 的一个子 A-模，只需验证对 H 中任意两个元素 u、v, \(H \cup \{uv\}\) 也是强结合的，因为根据 H 的定义，这将蕴含 \(uv \in H\) 。现在，对所有 \(z \in H\) 以及所有 \(t \in F\) ，由 (2)
+
+\[
+a (u v, t, z) - a (u, v t, z) + a (u, v, t z) = 0
+\]
+
+因为 \(\mathbf{H}\) 是强结合的；由于 \(u, v, z\) 属于 \(\mathbf{H}\) ，同时
+
+\[
+a (u, v t, z) = a (u, v, t z) = 0,
+\]
+
+，因此 \(a(uv, t, z) = 0\) 。利用 a 是交错的这一事实，这表明 \(a(p, q, r) = 0\) （只要 p、q、r 这三个元素中至少有两个属于 \(H \cup \{uv\}\) ），由此即得引理。
+
+引理 4. 假设映射 \(a\) 是交错的。那么，对所有 \(x \in \mathbf{F}\) ， \(\mathbf{F}\) 的由 \(x\) 生成的子代数是强结合的。
+
+\(a(u,v,w) = 0\) （只要 \(u, v, w\) 这三个元素中有两个等于 \(x\) ），于是只需应用引理 3。
+
+引理 5. 假设映射 \(a\) 是交错的，并设 \(\mathbf{X}, \mathbf{Y}\) 是 \(\mathbf{F}\) 的两个强结合子代数。则 \(\mathbf{E}\) 的由 \(\mathbf{X} \cup \mathbf{Y}\) 生成的子代数是结合的。
+
+设 Z 为 \(z \in E\) （满足 \(a(u, v, z) = 0\) ，对所有 \(u \in X\) 和 \(v \in Y\) ）的集合，它显然是一个包含 X 和 Y 的子 A-模，因为 X 和 Y 是强结合的；由引理 2，只需验证：对 \(u \in X\) 和 \(v \in Y\) , \(uZ \subset Z\) , \(vZ \subset Z\) , \(Zu \subset Z\) 和 \(Zv \subset Z\) 。现在，对 X 中的 \(u, u'\) ， \(v \in Y\) 和 \(z \in Z\) ，由 (2)
+
+\[
+a (u ^ {\prime} u, z, v) - a (u ^ {\prime}, u z, v) + a (u ^ {\prime}, u, z v) = a (u ^ {\prime}, u, z) v + u ^ {\prime} a (u, z, v) = 0
+\]
+
+这是由于 X 是强结合的以及 Z 的定义。但鉴于 X 是强结合的， \(a(u', u, zv) = 0\) ，并且由于 \(u'u \in X\) ，按 Z 的定义有 \(a(u'u, z, v) = 0\) 。因此 \(a(u', uz, v) = 0\) ，这表明 \(uZ \subset Z\) 。现在将 (2) 应用于 \((p, q, r, s) = (v, z, u, u')\) ，我们类似地得到 \(Zu \subset Z\) 。交换 X 与 Y 的角色，并利用 a 是交错的事实，我们得到 \(vZ \subset Z\) 和 \(Zv \subset Z\) ；由此得引理。
+
+现在，为证明命题 1 中 (b) 蕴含 (a)，只需取 \(\mathbf{X} = \{x\}\) 和 \(\mathbf{Y} = \{y\}\) ，并利用引理 4。
+
+定义 1. 代数 \(\mathbf{F}\) 称为交错的，如果它满足命题 1 的等价条件。
+
+结合代数显然是交错代数。在第 3 号中，我们将给出一个交错但不结合的代数的例子。
+
+若 \(\mathbf{F}\) 是一个交错 A-代数，则每个 A-代数 \(\mathbf{F} \otimes_{\mathbf{A}} \mathbf{A}'\) （由 \(\mathbf{F}\) 通过标量扩张（§ 1，第 5 号）得到）都是一个交错 \(\mathbf{A}'\) -代数，这由命题 1 的条件 (b) 得出。
+
